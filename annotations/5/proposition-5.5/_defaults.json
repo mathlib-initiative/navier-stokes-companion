@@ -1,0 +1,101 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 5.5",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low COVERAGE] The radial clause of (5.42), D^I(q^{1/2}u_{r,B} − V_0/√(2X)) = O_I(q^{2h}), is stated nowhere. Only q^A u_r = O(q^h) appears, and only in band-chart (EnvelopeJets) form.; [low CONTENT] (5.43) is stated only at the weaker end of the paper's displayed chain, C q^h ζ δ^{-N}. The sharper C_I q^{2h} ζ δ^{-N_I} is proved internally but never stated.; [low COVERAGE] (5.44) is partly stated: q^A u_θ = c(1+η²)^{-1}X^{-1/2-λ} and q^A u_z = 0 on the mean window. The full u_B = u^(0), including the radial and stream part, is not …; 1 more in REPORT.md.",
+  "location": {
+    "page": 60,
+    "rect": [0.133552, 0.212787, 0.734171, 0.120648]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "item": "proposition-5.5",
+      "locator": {
+        "physical": [60],
+        "printed": [60],
+        "text": "Section 5, Proposition 5.5, p. 60"
+      },
+      "region": "proposition-5.5@p060",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["CONFIRMED_CONTENT: BaseRadialJets.final_radial_envelope (BaseRadialJets.lean:375) and AllBandBaseJets.final_radial_envelope (:437) give only the Q^h envelope. A decls.jsonl search for q^(2*h) signatures turns up only tangential and generic slowSum bounds, none for radial, stream or V_0.", "CONFIRMED_CONTENT: ConstructedSlowBase.WeightedStressBound (ConstructedSlowBase.lean:438) uses D * q ^ h * activeZeta * activeDelta⁻¹ ^ N. BaseResidual.weighted_slowSum_bound (:1801) weakens q^{2h} to q^h via hpow (:1867). SlowBorelBase.normalized_stress_weighted_compact (:1618) does the same.", "ATTRIBUTION_GAP: FinalSlowBase.exists_final_base (FinalSlowBase.lean:639): PhysicalApproach l h 0 (boxRadius W upper) → AllJetsFlat. GlobalBaseError.error_allJetsFlat (:141) fixes one base with nominalExteriorRadius ≤ upper and allows any compact-carrier approach with no X bound. The main chain uses error_joint_jetRate (:184) and error_jetRate (:107).", "CONVENTION: SlowBorelBase.normalized_tangential_bounds (SlowBorelBase.lean:1530) and AllBandBaseJets.normalized_tangential_bounds (:91) are generic. FinalSlowBase.scales_admissible_on (:261) supplies admissibility. AllBandBaseJets.final_estimates (:423) is the band-chart form. Identifications: SlowBorelBase.angularMoment_eq_normalizedSwirl (:1586) and BaseChartJets.axial_eq_normalized_velocity (:688).", "CONFIRMED_CONTENT: BaseRankPatch.normalized_mean_fields (BaseRankPatch.lean:232) and rank_fields (:289) give only the swirl and axial components. The mean window has clock in (pulseStart−8, pulseStart−3) (ReservedPatches.leftOffset/rightOffset), while nominalOuterX = pulseEndRadius+1 (AssembledSlowBase.nominalOuterX_eq_pulse), so ActualBaseVelocityBounds.actual_leading_eq does not apply on I_mean.", "CONFIRMED_CONTENT: SlowBaseEndpoint.final_fields_awayExtensions (SlowBaseEndpoint.lean:421) covers velocity and pressure only. WholeDomainCompactBounds.residualExtension (:89) extends only the NS residual of u_B, p_B, inside a proof (WholeDomainStageBounds.lean:87). No AwayExtensions statement exists for FinalSlowBase.stressForce or error.", "ATTRIBUTION_GAP: ActualBaseVelocityBounds.actual_leading_eq (:435) and ActualBasePressureBounds.actual_leading_eq (:63) give EqOn on cartesianExterior h (nominalOuterX W). actual_exterior_coefficients (:417) shows axial 0 and its primitive vanish there, so leadingVelocity = u^(0). nominalOuterX_lt_switch (AssembledSlowBase.lean:912), with switchStart = tailStart+1/5 < tailEnd = tailStart+3, gives nominalOuterX < activeRight.", "The proposition is spread across many declarations. Most clauses are stated:\n- exists_final_base: (5.41), smoothness, div u_B = 0, stress support, (5.43) at rate q^h.\n- GlobalBaseError: flatness (a) for one fixed base.\n- actual_leading_eq (velocity and pressure): (f) on X > nominalOuterX, which lies below X_b.\n- normalized_tangential_bounds: the tangential part of (5.42), in generic form.\n- normalized_mean_fields: the tangential part of (5.44).\n- final_fields_awayExtensions: endpoint extensions for u_B and p_B.\n\nReal but low-severity gaps remain:\n- the radial V_0 clause of (5.42);\n- the q^{2h} rate in (5.43);\n- the radial and stream part of u_B = u^(0) on I_mean;\n- endpoint extensions for T_phys and E_B.\n\nThe MATHEMATICS skeptic's claim that (f) is unstated on [X_+, X_b] is refuted. Nothing affects the main result."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The radial clause of (5.42), D^I(q^{1/2}u_{r,B} − V_0/√(2X)) = O_I(q^{2h}), is stated nowhere. Only q^A u_r = O(q^h) appears, and only in band-chart (EnvelopeJets) form."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "(5.43) is stated only at the weaker end of the paper's displayed chain, C q^h ζ δ^{-N}. The sharper C_I q^{2h} ζ δ^{-N_I} is proved internally but never stated."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "exists_final_base takes ∀ upper ∃ base, and its flatness clause covers only X ≤ boxRadius W upper. The paper's order (one base, then every X_max) is stated separately in GlobalBaseError."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The tangential estimates of (5.42) are not stated for the final base in the (q,X,η)/D^I form. They exist as a generic lemma and as band-chart transports, each needing hi ≤ boxRadius W upper."
+            },
+            {
+              "confidence": 0.82,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "(5.44) is partly stated: q^A u_θ = c(1+η²)^{-1}X^{-1/2-λ} and q^A u_z = 0 on the mean window. The full u_B = u^(0), including the radial and stream part, is not stated. actual_leading_eq does not reach I_mean, which lies below nominalOuterX."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Endpoint extensions across η = ±1 (t = 1, x ≠ 0) are stated, as smooth extensions, only for u_B and p_B. None is stated for T_phys or E_B."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Clause (f), u_B − u^(0) and p_B − p^(0) vanishing for X ≥ X_+ < X_b, is stated in ActualBaseVelocityBounds/ActualBasePressureBounds.actual_leading_eq on X > nominalOuterX. It is not in exists_final_base, whose heat EqOn starts at nominalExteriorRadius > X_b."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.82. Findings: [low COVERAGE: CONFIRMED_CONTENT] The radial clause of (5.42), D^I(q^{1/2}u_{r,B} − V_0/√(2X)) = O_I(q^{2h}), is stated nowhere. Only q^A u_r = O(q^h) appears, and only in band-chart (EnvelopeJets) form.; [low CONTENT: CONFIRMED_CONTENT] (5.43) is stated only at the weaker end of the paper's displayed chain, C q^h ζ δ^{-N}. The sharper C_I q^{2h} ζ δ^{-N_I} is proved internally but never stated.; [low CONTENT: ATTRIBUTION_GAP] exists_final_base takes ∀ upper ∃ base, and its flatness clause covers only X ≤ boxRadius W upper. The paper's order (one base, then every X_max) is stated separately in GlobalBaseError.; [low COVERAGE: CONVENTION] The tangential estimates of (5.42) are not stated for the final base in the (q,X,η)/D^I form. They exist as a generic lemma and as band-chart transports, each needing hi ≤ boxRadius W upper.; [low COVERAGE: CONFIRMED_CONTENT] (5.44) is partly stated: q^A u_θ = c(1+η²)^{-1}X^{-1/2-λ} and q^A u_z = 0 on the mean window. The full u_B = u^(0), including the radial and stream part, is not stated. actual_leading_eq does not reach I_mean, which lies below nominalOuterX.; [low COVERAGE: CONFIRMED_CONTENT] Endpoint extensions across η = ±1 (t = 1, x ≠ 0) are stated, as smooth extensions, only for u_B and p_B. None is stated for T_phys or E_B.; [low COVERAGE: ATTRIBUTION_GAP] Clause (f), u_B − u^(0) and p_B − p^(0) vanishing for X ≥ X_+ < X_b, is stated in ActualBaseVelocityBounds/ActualBasePressureBounds.actual_leading_eq on X > nominalOuterX. It is not in exists_final_base, whose heat EqOn starts at nominalExteriorRadius > X_b.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

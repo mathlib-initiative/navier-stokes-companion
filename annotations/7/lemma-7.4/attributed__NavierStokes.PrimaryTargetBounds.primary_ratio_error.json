@@ -1,0 +1,31 @@
+{
+  "id": "lemma-7.4/attributed/NavierStokes.PrimaryTargetBounds.primary_ratio_error",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryTargetBounds.primary_ratio_error",
+      "line": 300,
+      "module": "NavierStokes.PrimaryTargetBounds",
+      "path": "NavierStokes/PrimaryTargetBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryTargetBounds.lean#L300"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryTargetBounds.primary_ratio_error",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ‖(−ρ)K_a + (y/x)N_a − modelVector c0 s K‖ ≤ ratioConstant/S. This is a vector bound that folds in the Lemma 7.1 frame error. The scalar bound |y/x − c0√(1+s²)| ≤ 4|h|coneConstant/S for the actual frame appears only as `hprimary` inside its proof.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 300,
+        "text": "theorem primary_ratio_error (i : ι) {p : Slow} (hp : p ∈ D.carrier i)\n    {gap : ℝ} (hgap : 0 < gap)\n    (hg : ∀ v ∈ Icc 0 (a.length i),\n      gap ≤ ViscousPropagator.referenceEigenvalue (a.lam i) u (a.length i) v)\n    (hcone : 2 * GrowingMode.coneConstant gap (modalConstant M u) ≤ D.scale i)\n    {v : ℝ} (hv : v ∈ Icc 0 (a.length i)) :\n    ‖pulseRatio (a.frame i) (a.lam i) u (a.length i) p v -\n      modelVector (a.c0 i) (a.slope i (p,v)) (a.K i)‖ ≤ ratioConstant M u gap / D.scale i"
+      }
+    }
+  }
+}

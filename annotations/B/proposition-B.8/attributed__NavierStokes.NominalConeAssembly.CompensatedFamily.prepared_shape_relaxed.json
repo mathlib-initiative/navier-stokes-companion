@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.8/attributed/NavierStokes.NominalConeAssembly.CompensatedFamily.prepared_shape_relaxed",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalConeAssembly.CompensatedFamily.prepared_shape_relaxed",
+      "line": 1074,
+      "module": "NavierStokes.NominalConeAssembly",
+      "path": "NavierStokes/NominalConeAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L1074"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalConeAssembly.CompensatedFamily.prepared_shape_relaxed",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (M : PreparedWitness F N delta radiusFloor) → Xi ≤ X → X ≤ M.controls.radius·e^{-8} → η ∈ [-1,1] → IsRelaxed (G.assemblePrepared hF M hr).profiles h (X,η)  (p1>2 at Xi discharged by continuation_first_at_Xi)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1074,
+        "text": "theorem prepared_shape_relaxed {D : ℝ} (hF : OutgoingProfile.Specification F D)\n    {N : ℕ} {delta radiusFloor : ℝ}\n    (M : MatchingConeBounds.PreparedWitness F N delta radiusFloor)\n    (hr : G.radiusFloor ≤ radiusFloor) {X eta : ℝ}\n    (hX : NominalProfile.Xi ≤ X) (hR : X ≤ M.controls.radius * Real.exp (-8))\n    (heta : eta ∈ HeatedOutgoing.parameterDomain) :\n    ActivationContinuation.IsRelaxed (G.assemblePrepared hF M hr).profiles F.data.h (X, eta)"
+      }
+    }
+  }
+}

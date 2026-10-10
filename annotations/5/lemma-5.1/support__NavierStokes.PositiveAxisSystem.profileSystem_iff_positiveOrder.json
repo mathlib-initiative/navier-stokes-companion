@@ -1,0 +1,26 @@
+{
+  "id": "lemma-5.1/support/NavierStokes.PositiveAxisSystem.profileSystem_iff_positiveOrder",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PositiveAxisSystem.profileSystem_iff_positiveOrder",
+      "line": 605,
+      "module": "NavierStokes.PositiveAxisSystem",
+      "path": "NavierStokes/PositiveAxisSystem.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisSystem.lean#L605"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PositiveAxisSystem.profileSystem_iff_positiveOrder",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 605,
+        "text": "theorem profileSystem_iff_positiveOrder {h C r eta : ℝ} (hr : r ≠ 0)\n    {n : ℕ} (hn : 0 < n) (phi u beta : ℕ → InnerProfile) (k p omegaQuotient : InnerProfile)\n    (hphi : ContDiffAt ℝ 2 (phi n) (r ^ 2, eta)) (hu : ContDiffAt ℝ 2 (u n) (r ^ 2, eta))\n    (hk : DifferentiableAt ℝ k (r ^ 2, eta)) (hp : DifferentiableAt ℝ p (r ^ 2, eta))\n    (hbeta : beta n (r ^ 2, eta) = betaValue h (slowPower h n) eta\n      (actualJet (u n) (r ^ 2, eta)) (actualJet k (r ^ 2, eta))) :\n    ProfileSystem h (slowPower h n) C r eta\n      (baseAtOrderZero (fun j => actualJet (phi j) (r ^ 2, eta))\n        (fun j => actualJet (u j) (r ^ 2, eta)) (fun j => beta j (r ^ 2, eta)))\n      (actualLowerSource h n phi u beta omegaQuotient (r ^ 2, eta)) (phi n) (u n) k p ↔\n    PositiveOrderEquations h C eta (r ^ 2) n\n      (fun j => actualJet (phi j) (r ^ 2, eta)) (fun j => actualJet (u j) (r ^ 2, eta))\n      (fun j => beta j (r ^ 2, eta)) (actualJet k (r ^ 2, eta)) (actualJet p (r ^ 2, eta))\n      (precedingDiffusion h (angularPower h) phi n (r ^ 2, eta))\n      (precedingDiffusion h (axialPower h) u n (r ^ 2, eta)) (omegaQuotient (r ^ 2, eta))"
+      }
+    }
+  }
+}

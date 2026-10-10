@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.4/key/NavierStokesR3.theorem_1_1_with_dissipation",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.theorem_1_1_with_dissipation",
+      "line": 66,
+      "module": "NavierStokes.R3.Theorem",
+      "path": "NavierStokes/R3/Theorem.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/Theorem.lean#L66"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.theorem_1_1_with_dissipation",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∀ ν > 0, ∃ u p f K, CandidateProperties ν u p f K ∧ ¬Nonempty (GlobalFiniteEnergySolution ν f) ∧ [the four conjuncts of candidate_energy_estimates]; existential packaging for the constructed witness, off the main path",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "different_formulation",
+      "role": "key",
+      "snippet": {
+        "line": 66,
+        "text": "theorem theorem_1_1_with_dissipation (ν : ℝ) (hν : 0 < ν) :\n    ∃ u : VelocityField, ∃ p : PressureField, ∃ f : VelocityField, ∃ K : Set Space,\n      CandidateProperties ν u p f K ∧\n      ¬ Nonempty (GlobalFiniteEnergySolution ν f) ∧\n      IntervalIntegrable (CompactEnergy.l2Norm f) volume 0 1 ∧\n      IntegrableOn (CompactEnergy.dissipation u) (Ico (0 : ℝ) 1) ∧\n      (∀ T ∈ Ico (0 : ℝ) 1,\n        CompactEnergy.l2Sq u T +\n          2 * ν * (∫ t in (0 : ℝ)..T, CompactEnergy.dissipation u t) ≤\n            (CompactEnergy.cumulativeForceNorm f T) ^ 2) ∧\n      2 * ν * (∫ t in Ico (0 : ℝ) 1, CompactEnergy.dissipation u t) ≤\n        (CompactEnergy.cumulativeForceNorm f 1) ^ 2"
+      }
+    }
+  }
+}

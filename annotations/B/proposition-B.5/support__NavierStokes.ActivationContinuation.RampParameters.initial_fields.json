@@ -1,0 +1,26 @@
+{
+  "id": "proposition-B.5/support/NavierStokes.ActivationContinuation.RampParameters.initial_fields",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationContinuation.RampParameters.initial_fields",
+      "line": 2002,
+      "module": "NavierStokes.ActivationContinuation",
+      "path": "NavierStokes/ActivationContinuation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationContinuation.lean#L2002"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationContinuation.RampParameters.initial_fields",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 2002,
+        "text": "theorem initial_fields {p : Point} (hη : p.2 ∈ ReferencePath.parameterInterval)\n    (hX : p.1 ≤ (ReferencePath.Input.ofNatural hΛ F).endpoint * Real.exp r.refTime) :\n    r.profiles.f p = StressActivation.FromReference.f (ReferencePath.Input.ofNatural hΛ F)\n      r.actTime r.kappa r.refTime p ∧\n    r.profiles.U p = StressActivation.FromReference.U (ReferencePath.Input.ofNatural hΛ F)\n      r.actTime r.kappa r.refTime p"
+      }
+    }
+  }
+}

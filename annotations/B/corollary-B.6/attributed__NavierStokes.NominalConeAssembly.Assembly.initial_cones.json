@@ -1,0 +1,31 @@
+{
+  "id": "corollary-B.6/attributed/NavierStokes.NominalConeAssembly.Assembly.initial_cones",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalConeAssembly.Assembly.initial_cones",
+      "line": 1431,
+      "module": "NavierStokes.NominalConeAssembly",
+      "path": "NavierStokes/NominalConeAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L1431"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalConeAssembly.Assembly.initial_cones",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: (IsRelaxed on 0<y≤activationTime) ∧ ∃ t, 0<t ∧ t ≤ A.witness.controls.activationTime ∧ ∀ y η, 0<y → y≤t → η ∈ parameterDomain → IsTrue A.witness.profiles h (chart (activeLeft A.witness) (y,η))",
+        "status": "unconfirmed",
+        "verdict": "attribution_gap"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1431,
+        "text": "theorem initial_cones :\n    (∀ y eta : ℝ, 0 < y → y ≤ A.witness.controls.activationTime →\n      eta ∈ HeatedOutgoing.parameterDomain →\n      ActivationContinuation.IsRelaxed A.witness.profiles d.profile.data.h\n        (chart (activeLeft A.witness) (y, eta))) ∧\n    ∃ t : ℝ, 0 < t ∧ t ≤ A.witness.controls.activationTime ∧\n      ∀ y eta : ℝ, 0 < y → y ≤ t → eta ∈ HeatedOutgoing.parameterDomain →\n        IsTrue A.witness.profiles d.profile.data.h (chart (activeLeft A.witness) (y, eta))"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-7.7/attributed/NavierStokes.CurlClassBounds.cylindricalCurl_vectorPotential",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CurlClassBounds.cylindricalCurl_vectorPotential",
+      "line": 620,
+      "module": "NavierStokes.CurlClassBounds",
+      "path": "NavierStokes/CurlClassBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L620"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CurlClassBounds.cylindricalCurl_vectorPotential",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: CylindricalGeometry U R Vr Vθ Vz → K ≠ 0 → Φ, a smooth on U → phaseNormal ≠ 0 on U → normalDot (phaseNormal) (a x) = 0 on U → x ∈ U → cylindricalCurl (vectorPotential K .. Φ a) x = vectorMode K Φ (realizedCoefficient K .. Φ a) x   [(7.38)]",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 620,
+        "text": "theorem cylindricalCurl_vectorPotential {U : Set D} {R : D → ℝ} {Vr Vθ Vz : D → D}\n    (G : CylindricalGeometry U R Vr Vθ Vz) {K : ℝ} (hK : K ≠ 0)\n    {Φ : D → ℝ} {a : D → ComplexVector} (hΦ : ContDiffOn ℝ ∞ Φ U) (ha : ContDiffOn ℝ ∞ a U)\n    (hn : ∀ x ∈ U, HarmonicCalculus.phaseNormal R Vr Vθ Vz Φ x ≠ 0)\n    (ht : ∀ x ∈ U, HarmonicCalculus.normalDot (HarmonicCalculus.phaseNormal R Vr Vθ Vz Φ x) (a x) = 0)\n    {x : D} (hx : x ∈ U) :\n    cylindricalCurl R Vr Vθ Vz (vectorPotential K R Vr Vθ Vz Φ a) x =\n      HarmonicCalculus.vectorMode K Φ (realizedCoefficient K R Vr Vθ Vz Φ a) x"
+      }
+    }
+  }
+}

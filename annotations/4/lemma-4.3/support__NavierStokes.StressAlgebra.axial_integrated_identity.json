@@ -1,0 +1,26 @@
+{
+  "id": "lemma-4.3/support/NavierStokes.StressAlgebra.axial_integrated_identity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.StressAlgebra.axial_integrated_identity",
+      "line": 212,
+      "module": "NavierStokes.StressAlgebra",
+      "path": "NavierStokes/StressAlgebra.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressAlgebra.lean#L212"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.StressAlgebra.axial_integrated_identity",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 212,
+        "text": "theorem axial_integrated_identity\n    {h η X : ℝ} (p : AxialMomentData h η X)\n    (hint : IntervalIntegrable\n      (fun x => axialSource h η x (p.W x) (p.U x) (p.Ux x) (p.Uη x)\n        (p.P x) (p.Px x) (p.Pη x)) volume 0 X) :\n    intervalIntegral\n      (fun x => axialSource h η x (p.W x) (p.U x) (p.Ux x) (p.Uη x)\n        (p.P x) (p.Px x) (p.Pη x)) 0 X volume =\n      axialPrimitive h η p.W p.U p.M p.Mη p.S p.Sη p.P p.Pη X"
+      }
+    }
+  }
+}

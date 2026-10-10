@@ -1,0 +1,29 @@
+{
+  "id": "proposition-9.3/attributed/NavierStokes.ActualCycleResidualBounds.baseError_native",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCycleResidualBounds.baseError_native",
+      "line": 371,
+      "module": "NavierStokes.ActualCycleResidualBounds",
+      "path": "NavierStokes/ActualCycleResidualBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean#L371"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCycleResidualBounds.baseError_native",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (B : ℕ) (α : ℝ) : NativeBounds 4 (liftDomain strip.domain) (h * α) (fun _ => 0) (fun (_ : Unit) => baseError B); actual_iterate_base_error (l.892): every iterate has errors.base = baseError B"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 371,
+        "text": "theorem baseError_native (B : ℕ) (α : ℝ) :\n    NativeBounds 4 (HarmonicResidual.liftDomain ActualInitialization.geometry.strip.domain)\n      (ActualPrimary.h * α) (fun _ => 0) (fun (_ : Unit) => ActualInitialization.baseError B)"
+      }
+    }
+  }
+}

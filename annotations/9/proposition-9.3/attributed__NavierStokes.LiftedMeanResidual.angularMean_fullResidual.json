@@ -1,0 +1,29 @@
+{
+  "id": "proposition-9.3/attributed/NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
+      "line": 1174,
+      "module": "NavierStokes.LiftedMeanResidual",
+      "path": "NavierStokes/LiftedMeanResidual.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LiftedMeanResidual.lean#L1174"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (H : MeanHypotheses U c u) (hx : x ∈ U) : angularMeanVector (fullResidual c u) n x i = u.meanResidual c n x i  -- meanResidual = ![dr pressure − gr, thetaResidual, axialResidual] + ⟨errors.base⟩_θ"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1174,
+        "text": "theorem angularMean_fullResidual {U : Set D} {c : CorrectionState.Context D} {u : CorrectionState.State D}\n    (H : MeanHypotheses U c u) (n : ℕ) {x : D} (hx : x ∈ U) (i : Fin 3) :\n    angularMeanVector (fullResidual c u) n x i = u.meanResidual c n x i"
+      }
+    }
+  }
+}

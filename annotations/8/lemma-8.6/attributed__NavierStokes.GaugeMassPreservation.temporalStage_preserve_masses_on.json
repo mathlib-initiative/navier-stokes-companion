@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.6/attributed/NavierStokes.GaugeMassPreservation.temporalStage_preserve_masses_on",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GaugeMassPreservation.temporalStage_preserve_masses_on",
+      "line": 256,
+      "module": "NavierStokes.GaugeMassPreservation",
+      "path": "NavierStokes/GaugeMassPreservation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMassPreservation.lean#L256"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GaugeMassPreservation.temporalStage_preserve_masses_on",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: s ∈ U.carrier → radialMoment 2 (new mean.angular) n s = radialMoment 2 (old) n s ∧ radialMoment 1 (new mean.axial) n s = radialMoment 1 (old) n s  [(8.2) preserved]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 256,
+        "text": "theorem temporalStage_preserve_masses_on\n    (hmθ : ∀ n, ContinuousOn (u.mean.angular n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hmz : ∀ n, ContinuousOn (u.mean.axial n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hθ : ∀ n, ContDiffOn ℝ ∞ (u.thetaResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hz : ∀ n, ContDiffOn ℝ ∞ (u.axialResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hpθ : ∀ n, PhysicalMeanDomain.PeriodicOn U.carrier (u.thetaResidual c n))\n    (hpz : ∀ n, PhysicalMeanDomain.PeriodicOn U.carrier (u.axialResidual c n))\n    (hsz : ∀ n, SupportedGauge g.radial.inner g.radial.outer (qLength coord) U.carrier (u.axialResidual c n))\n    (n : ℕ) {s : Plane} (hs : s ∈ U.carrier) :\n    CorrectionState.radialMoment 2 (temporalStageState g h index axial c u).mean.angular n s =\n        CorrectionState.radialMoment 2 u.mean.angular n s ∧\n      CorrectionState.radialMoment 1 (temporalStageState g h index axial c u).mean.axial n s =\n        CorrectionState.radialMoment 1 u.mean.axial n s"
+      }
+    }
+  }
+}

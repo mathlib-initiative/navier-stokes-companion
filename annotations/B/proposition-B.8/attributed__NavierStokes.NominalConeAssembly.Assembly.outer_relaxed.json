@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.8/attributed/NavierStokes.NominalConeAssembly.Assembly.outer_relaxed",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalConeAssembly.Assembly.outer_relaxed",
+      "line": 1414,
+      "module": "NavierStokes.NominalConeAssembly",
+      "path": "NavierStokes/NominalConeAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L1414"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalConeAssembly.Assembly.outer_relaxed",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Xi ≤ p.1 → p.1 < activeRight A.witness → p.2 ∈ [-1,1] → IsRelaxed A.witness.profiles h p  (shape cone, repair cone, then outer cone)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1414,
+        "text": "theorem outer_relaxed {p : Point} (hXi : NominalProfile.Xi ≤ p.1)\n    (hend : p.1 < activeRight A.witness) (heta : p.2 ∈ HeatedOutgoing.parameterDomain) :\n    ActivationContinuation.IsRelaxed A.witness.profiles d.profile.data.h p"
+      }
+    }
+  }
+}

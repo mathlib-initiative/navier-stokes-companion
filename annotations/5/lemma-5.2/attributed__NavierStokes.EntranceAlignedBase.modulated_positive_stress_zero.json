@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/attributed/NavierStokes.EntranceAlignedBase.modulated_positive_stress_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.EntranceAlignedBase.modulated_positive_stress_zero",
+      "line": 833,
+      "module": "NavierStokes.EntranceAlignedBase",
+      "path": "NavierStokes/EntranceAlignedBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L833"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.EntranceAlignedBase.modulated_positive_stress_zero",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: 0<n, X ≤ zeroEnd → stressTheta n (X,η) = 0 ∧ stressAxial n (X,η) = 0 for every η",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 833,
+        "text": "theorem modulated_positive_stress_zero {n : ℕ} (hn : 0 < n) {p : ℝ × ℝ}\n    (hp : p.1 ≤ zeroEnd W H d.modulation.left) :\n    (modulatedCoefficients H v).stressTheta n p = 0 ∧ (modulatedCoefficients H v).stressAxial n p = 0"
+      }
+    }
+  }
+}

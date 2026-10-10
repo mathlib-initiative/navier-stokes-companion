@@ -1,0 +1,26 @@
+{
+  "id": "lemma-4.4/support/NavierStokes.SeedHandbackJets.stocks_comparison",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SeedHandbackJets.stocks_comparison",
+      "line": 196,
+      "module": "NavierStokes.SeedHandbackJets",
+      "path": "NavierStokes/SeedHandbackJets.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean#L196"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SeedHandbackJets.stocks_comparison",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 196,
+        "text": "theorem stocks_comparison (k : ℕ) (h X₀ X₁ μ B B₀ : ℝ)\n    (hh : 0 < h) (hh' : h < 1/2) (hX₀ : 0 < X₀) (hXX : X₀ ≤ X₁)\n    (hμ : 0 < μ) (hB : 0 ≤ B) (hB₀ : 0 ≤ B₀) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ X ∈ Icc X₀ X₁, ∀ P₀ : ℝ → ℝ,\n      ContDiffOn ℝ ∞ P₀ J → Bound (k+1) P₀ B₀ →\n      ∀ f g : Curves, ∀ ε : ℝ, 0 ≤ ε →\n      (∀ i, PairBound (k+1) (f i) (g i) B 1 ε) →\n      (∀ η ∈ J, μ ≤ f 0 η) → (∀ η ∈ J, μ ≤ g 0 η) →\n      ∀ i, Bound k (fun η => stocks h X P₀ g i η - stocks h X P₀ f i η) (C*ε)"
+      }
+    }
+  }
+}

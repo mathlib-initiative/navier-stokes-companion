@@ -1,0 +1,31 @@
+{
+  "id": "lemma-8.7/key/NavierStokes.FiveRowRank.exists_five_row_repair",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FiveRowRank.exists_five_row_repair",
+      "line": 311,
+      "module": "NavierStokes.FiveRowRank",
+      "path": "NavierStokes/FiveRowRank.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveRowRank.lean#L311"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FiveRowRank.exists_five_row_repair",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: 0<lam, C≠0, 0<a<b, V R = C·R^(-1-2lam) and G R = 0 on Ioo a b ⊢ ∃ dv ga, ContDiff ∞, compact support, tsupport ⊆ Ioo a b ∧ FiveRows V G d dv ga (d : Fin 3 → ℝ arbitrary). Existence only, no uniqueness.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "different_formulation",
+      "role": "key",
+      "snippet": {
+        "line": 311,
+        "text": "theorem exists_five_row_repair (lam C a b : ℝ) (d : Debt) (hlam : 0 < lam) (hC : C ≠ 0)\n    (ha : 0 < a) (hab : a < b) (V G : ℝ → ℝ)\n    (hV : ∀ R ∈ Ioo a b, V R = background lam C R)\n    (hG : ∀ R ∈ Ioo a b, G R = 0) :\n    ∃ dv ga : ℝ → ℝ,\n      ContDiff ℝ ∞ dv ∧ ContDiff ℝ ∞ ga ∧\n      HasCompactSupport dv ∧ HasCompactSupport ga ∧\n      tsupport dv ⊆ Ioo a b ∧ tsupport ga ⊆ Ioo a b ∧ FiveRows V G d dv ga"
+      }
+    }
+  }
+}

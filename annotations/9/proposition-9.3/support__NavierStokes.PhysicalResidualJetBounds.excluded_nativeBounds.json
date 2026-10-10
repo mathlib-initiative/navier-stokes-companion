@@ -1,0 +1,27 @@
+{
+  "id": "proposition-9.3/support/NavierStokes.PhysicalResidualJetBounds.excluded_nativeBounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhysicalResidualJetBounds.excluded_nativeBounds",
+      "line": 1027,
+      "module": "NavierStokes.PhysicalResidualJetBounds",
+      "path": "NavierStokes/PhysicalResidualJetBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualJetBounds.lean#L1027"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhysicalResidualJetBounds.excluded_nativeBounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1027,
+        "text": "theorem excluded_nativeBounds {N : ℕ} {U : Set Cylinder} {gain : ℝ} {loss : ℕ → ℝ}\n    (hN : 1 ≤ N) (hU : IsOpen U) (e : CorrectionState.ExcludedErrors Point)\n    (hb : NativeBounds N U gain loss (fun (_ : Unit) => e.base))\n    (hg : NativeBounds N U gain loss (fun (_ : Unit) => e.gaussian))\n    (ha : NativeBounds N U gain loss (fun (_ : Unit) => e.aliasError)) :\n    NativeBounds N U gain loss (fun (_ : Unit) => e.total)"
+      }
+    }
+  }
+}

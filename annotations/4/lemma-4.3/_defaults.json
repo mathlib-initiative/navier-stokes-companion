@@ -1,0 +1,57 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 4.3",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 28,
+    "rect": [0.134051, 0.326307, 0.73368, 0.098782]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-4.3",
+      "locator": {
+        "physical": [28],
+        "printed": [28],
+        "text": "Section 4, Lemma 4.3, p. 28"
+      },
+      "region": "lemma-4.3@p028",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["CONVENTION: RadialDomain (ProfileHistories.lean:31: isOpen carrier, scale_mem); Profiles.f_smooth/U_smooth : ContDiffOn ℝ ∞ _ D.carrier and pressure0_smooth (L303-308); hp : p ∈ D.carrier in angularLag_integrated L591 and axialLag_integrated L601", "CONVENTION: StressAlgebra.angularSource (StressAlgebra.lean:32); Profiles.pressure (ProfileHistories.lean:327); W_formula (L364); angularLag_equation_logarithmic (L676) recovers the log form for 0<X, f≠0", "Both rows of (4.16) are stated term by term: angularLag_integrated (ProfileHistories.lean:591) and axialLag_integrated (L601). I checked D = axialExponent, A = velocityExponent and d = coordinateFactor. I checked H = 2XF, S's integrand U² − Xf² = U² − E²/2, Π = Π(0,η) + C_p, and that angularLag/axialLag are (4.10) with C_Q = C_N = 0. The proof route is the paper's: the FTC identities plus ∂_X(XW). Lean is more general in h and positivity. The only gap is open-domain smoothness, which Whitney/Seeley extension recovers. Profiles is instantiated (ReferencePath:603, ModulatedHistories:628). Correcting the auditor's note: the theorems are cited downstream, at ActivationStocks:57/77, RepairConeBounds:984/988, NominalConeAssembly:687/694 and ReferenceUniformStocks:174. Separate from this item: Lemma 4.4 applies (4.16) to profiles that are not smooth at the axis."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean needs f, U smooth on an open, axis-star-shaped domain. Any such domain containing (X,η) also straddles X=0, and at η=±1 it reaches past the endpoints. The paper's profiles are C^∞ only on the closed [0,X_c]×[−1,1]. An extension is therefore needed at every point, not only at the boundary."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean writes the source integrands in regular form: X·H_X for H·l, H_η for H(log E)_η, and Px = f² for Π_X. It builds Π as pressure0(η) + ∫_0^X f². W uses average(∂ηU), which W_formula equates with ∂ηA_X(U). All of these match the paper's (4.9), (4.10) and (4.15) for X>0 and φ>0."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.90. Findings: [low CONTENT: CONVENTION] Lean needs f, U smooth on an open, axis-star-shaped domain. Any such domain containing (X,η) also straddles X=0, and at η=±1 it reaches past the endpoints. The paper's profiles are C^∞ only on the closed [0,X_c]×[−1,1]. An extension is therefore needed at every point, not only at the boundary.; [low CONTENT: CONVENTION] Lean writes the source integrands in regular form: X·H_X for H·l, H_η for H(log E)_η, and Px = f² for Π_X. It builds Π as pressure0(η) + ∫_0^X f². W uses average(∂ηU), which W_formula equates with ∂ηA_X(U). All of these match the paper's (4.9), (4.10) and (4.15) for X>0 and φ>0.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

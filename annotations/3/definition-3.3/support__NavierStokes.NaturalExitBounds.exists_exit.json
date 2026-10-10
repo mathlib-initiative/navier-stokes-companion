@@ -1,0 +1,24 @@
+{
+  "id": "definition-3.3/support/NavierStokes.NaturalExitBounds.exists_exit",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalExitBounds.exists_exit",
+      "line": 155,
+      "module": "NavierStokes.NaturalExitBounds",
+      "path": "NavierStokes/NaturalExitBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalExitBounds.lean#L155"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalExitBounds.exists_exit",
+        "kind": "theorem"
+      },
+      "snippet": {
+        "line": 155,
+        "text": "theorem exists_exit (hsmall : NaturalAxisRange.Parameters h j) (hσ : 0 < σ)\n    (hP0 : ContDiff ℝ ∞ P0) {δ : ℝ} (hδ : 0 < δ)\n    (hcut : ∀ η ∈ Icc (-1 : ℝ) 1, |NaturalAxisData.Z h j P0 η| ≤ δ →\n      99 / 100 < NaturalAxisData.chi h j σ η) :\n    0 < lowerConstant d ∧ ∃ B : ℕ → ℝ, (∀ m, 1 ≤ B m) ∧\n      ∃ M > 0, ∀ Λ ≥ M, ∀ C, entranceNormalization d Λ δ ≤ C →\n        ∃ E : EntranceProfile d Λ C, Estimates d E B"
+      }
+    }
+  }
+}

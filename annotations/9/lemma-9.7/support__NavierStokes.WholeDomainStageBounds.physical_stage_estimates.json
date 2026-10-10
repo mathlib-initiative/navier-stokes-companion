@@ -1,0 +1,26 @@
+{
+  "id": "lemma-9.7/support/NavierStokes.WholeDomainStageBounds.physical_stage_estimates",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WholeDomainStageBounds.physical_stage_estimates",
+      "line": 92,
+      "module": "NavierStokes.WholeDomainPhysicalStageTheorem",
+      "path": "NavierStokes/WholeDomainPhysicalStageTheorem.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WholeDomainPhysicalStageTheorem.lean#L92"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WholeDomainStageBounds.physical_stage_estimates",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 92,
+        "text": "theorem physical_stage_estimates (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) :\n    0 < commonQ B N0 ∧\n    (∀ J m, LogBound h (commonQ B N0) (finiteVelocity B N0 hN J) m (-finiteLoss B N0 m) ∧\n      LogBound h (commonQ B N0) (finitePressure B N0 hN J) m (-finiteLoss B N0 m)) ∧\n    (∀ J m, ∃ C : ℝ, 0 ≤ C ∧ ∀ w ∈ CutStageEstimates.physicalSublevel h (commonQ B N0),\n      ‖iteratedFDeriv ℝ m (fun z => navierStokesResidual\n        (finiteVelocity B N0 hN J) (finitePressure B N0 hN J) z.1 z.2) w‖ ≤\n        C * physicalQ h w ^ (h*ActualIterationLedger.sigma J-ActualCycleResidualBounds.fixedLoss m)) ∧\n    (∀ j m, LogBound h (commonQ B N0)\n      (MixedFiniteBackground.stageVelocity (potentialStages B N0 hN) (directStages B N0 hN) (j+1)) m\n      (ActualIterationLedger.gain h (j+1)-SharpPhysicalCarrier.physicalLoss h m) ∧\n      LogBound h (commonQ B N0) (pressureStages B N0 hN (j+1)) m\n      (ActualIterationLedger.gain h (j+1)-SharpPhysicalCarrier.physicalLoss h m))"
+      }
+    }
+  }
+}

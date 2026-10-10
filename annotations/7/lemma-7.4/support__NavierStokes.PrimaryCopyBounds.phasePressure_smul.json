@@ -1,0 +1,26 @@
+{
+  "id": "lemma-7.4/support/NavierStokes.PrimaryCopyBounds.phasePressure_smul",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryCopyBounds.phasePressure_smul",
+      "line": 650,
+      "module": "NavierStokes.PrimaryCopyBounds",
+      "path": "NavierStokes/PrimaryCopyBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCopyBounds.lean#L650"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryCopyBounds.phasePressure_smul",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 650,
+        "text": "theorem phasePressure_smul (p : PhaseConstruction U)\n    (χ : ι → D → PhaseCalculus.Slow × ℝ) (frequency : ι → ℝ)\n    (a : ι → D → ℝ) (u : ι → D → ProblemStatement.Space) (i : ι) (x : D) :\n    phasePressure p χ frequency (fun i x => a i x • u i x) i x =\n      a i x • phasePressure p χ frequency u i x"
+      }
+    }
+  }
+}

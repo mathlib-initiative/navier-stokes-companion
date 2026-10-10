@@ -1,0 +1,32 @@
+{
+  "id": "proposition-9.1/attributed/NavierStokes.ParticularWaveBounds.constructed_particular_wave",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ParticularWaveBounds.constructed_particular_wave",
+      "line": 1934,
+      "module": "NavierStokes.ParticularWaveBounds",
+      "path": "NavierStokes/ParticularWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularWaveBounds.lean#L1934"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ParticularWaveBounds.constructed_particular_wave",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Same primitive hypotheses, arbitrary cutoff ψ ∈ UnweightedClass 0: WaveClass P α a.amplitude ∧ WaveClass P α (a.corrected ψ).amplitude ∧ WaveClass P (α+1/2) (a.corrected ψ).pressure ∧ WaveClass P (α+1/2−3κ) (a.constructedGood ψ) ∧ residual + source·carrier = (constructedGood + excludedSlotError)·car",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1934,
+        "text": "theorem constructed_particular_wave\n    {s : StripData (P × Plane)} {α κ : ℝ} {dirs : GraphDirections (P × Plane)}\n    (base : WaveCoefficients (P × Plane))\n    (t : ℕ → TangentData P ProblemStatement.Space) (source : ℕ → P × Plane → ComplexVector)\n    (g : ℕ → Geometry) (copy : ℕ → Frequency) (L : ℕ → ℝ) (hL : ∀ n, 0 < L n)\n    (W : ℕ → ℝ → ℝ)\n    (hr : CopyControl s α (fun n => (realData (t n) (source n)).linearData) g copy L W)\n    (hi : CopyControl s α (fun n => (imagData (t n) (source n)).linearData) g copy L W)\n    (hb : InputBounds s (fun n p => W n ((g n).coordinates (copy n) p.2).2) α κ dirs (zeroAmplitudes base))\n    (hN : PhaseJetBounds.PolynomialJets (CurlClassBounds.phaseDomain s)\n      (fun n p => (t n).normal (nativePoint (g n) (copy n) p)))\n    (hNdot : UnweightedClass s 0 (fun n p => (t n).normalDot (nativePoint (g n) (copy n) p)))\n    (hA : UnweightedClass s 0 (fun n p => (t n).action (nativePoint (g n) (copy n) p)))\n    (hf : WaveClass s (fun n p => W n ((g n).coordinates (copy n) p.2).2) α source)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.LeadingStressWeights.activation_direction_positive",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStressWeights.activation_direction_positive",
+      "line": 893,
+      "module": "NavierStokes.LeadingStressWeights",
+      "path": "NavierStokes/LeadingStressWeights.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L893"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStressWeights.activation_direction_positive",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: kappa < 1 → ∃ G : EdgeFactor [-1,1] (activationTime^2) (activationStress W ∘ swap), (∀ η, 0 < (G.coefficient (η,0)).1) ∧ HasTrueDirectionCollar … (v_s ≥ 2 + ε on the collar)",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 893,
+        "text": "theorem activation_direction_positive (W : NominalProfile.Witness F) (hκ : W.controls.kappa < 1) :\n    ∃ G : EdgeFactor (Icc (-1 : ℝ) 1) (W.controls.activationTime ^ 2)\n        (fun q : ℝ × ℝ => activationStress W (q.2, q.1)),\n      (∀ eta ∈ Icc (-1 : ℝ) 1, 0 < (G.coefficient (eta, 0)).1) ∧\n      HasTrueDirectionCollar (Icc (-1 : ℝ) 1)\n        (fun q : ℝ × ℝ => activationStress W (q.2, q.1)) G.coefficient\n        (activationSpeed W) (activationSlope W) G.width"
+      }
+    }
+  }
+}

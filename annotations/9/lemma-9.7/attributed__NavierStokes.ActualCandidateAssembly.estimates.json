@@ -1,0 +1,31 @@
+{
+  "id": "lemma-9.7/attributed/NavierStokes.ActualCandidateAssembly.estimates",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCandidateAssembly.estimates",
+      "line": 1090,
+      "module": "NavierStokes.ActualCandidateAssembly",
+      "path": "NavierStokes/ActualCandidateAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCandidateAssembly.lean#L1090"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCandidateAssembly.estimates",
+        "kind": "def"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: estimates B N0 hN : MixedCandidateAssembly.StageEstimates h (qbig B N0) potentialStages directStages pressureStages; the record the summation step consumes, on the one qbig domain",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1090,
+        "text": "noncomputable def estimates (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) :\n    MixedCandidateAssembly.StageEstimates h (ActualCandidateConstruction.qbig B N0)\n      (potentialStages B N0 hN) (directStages B N0 hN) (pressureStages B N0 hN)"
+      }
+    }
+  }
+}

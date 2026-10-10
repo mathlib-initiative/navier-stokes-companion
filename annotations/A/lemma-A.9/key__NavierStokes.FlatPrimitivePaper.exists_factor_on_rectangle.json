@@ -1,0 +1,31 @@
+{
+  "id": "lemma-A.9/key/NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
+      "line": 76,
+      "module": "NavierStokes.FlatPrimitivePaper",
+      "path": "NavierStokes/FlatPrimitivePaper.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatPrimitivePaper.lean#L76"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: ∀ E finite-dim, K ⊆ E compact, 0<δ₀, 0<c, j:ℕ, U open ⊇ K ×ˢ Icc 0 δ₀, b : E×ℝ→ℝ with ContDiffOn ℝ ∞ b U: ∃ B : E×ℝ→ℝ, ContDiff ℝ ∞ B ∧ (∀ p∈K, B(p,0)=b(p,0)/c) ∧ (∀ p∈K, ∀ δ∈Ioc 0 δ₀, ∫ u in 0..δ, (exp(-c/u^2)/u^j)*b(p,u) = (1/2)*exp(-c/δ^2)*δ^(3-(j:ℝ))*B(p,δ)) ∧ (∀ n, ∃ C≥0, ∀ p∈K, ∀ δ∈Icc 0 δ₀, ‖",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "lean_stronger",
+      "role": "key",
+      "snippet": {
+        "line": 76,
+        "text": "theorem exists_factor_on_rectangle {K : Set E} (hK : IsCompact K)\n    {δ₀ c : ℝ} (hδ : 0 < δ₀) (hc : 0 < c) (j : ℕ)\n    {U : Set (E × ℝ)} (hU : IsOpen U) (hKU : K ×ˢ Icc 0 δ₀ ⊆ U)\n    {b : E × ℝ → ℝ} (hb : ContDiffOn ℝ ∞ b U) :\n    ∃ B : E × ℝ → ℝ, ContDiff ℝ ∞ B ∧\n      (∀ p ∈ K, B (p, 0) = b (p, 0) / c) ∧\n      (∀ p ∈ K, ∀ δ ∈ Ioc 0 δ₀,\n        (∫ u in (0 : ℝ)..δ, (Real.exp (-c / u ^ 2) / u ^ j) * b (p, u)) =\n          (1 / 2 : ℝ) * Real.exp (-c / δ ^ 2) * δ ^ (3 - (j : ℝ)) * B (p, δ)) ∧\n      (∀ n : ℕ, ∃ C ≥ 0, ∀ p ∈ K, ∀ δ ∈ Icc 0 δ₀,\n        ‖iteratedFDeriv ℝ n B (p, δ)‖ ≤ C)"
+      }
+    }
+  }
+}

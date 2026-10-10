@@ -1,0 +1,27 @@
+{
+  "id": "corollary-7.8/support/NavierStokes.LabelSumBounds.harmonic_covariance_sum_mem",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LabelSumBounds.harmonic_covariance_sum_mem",
+      "line": 624,
+      "module": "NavierStokes.LabelSumBounds",
+      "path": "NavierStokes/LabelSumBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean#L624"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LabelSumBounds.harmonic_covariance_sum_mem",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 624,
+        "text": "theorem harmonic_covariance_sum_mem {s : StripData D} {P : ι → ℕ → D → ℝ} {α β : ℝ}\n    {d h : ℝ} {vr vt : TorusInverse.Plane}\n    {sys : PartitionedCovariance.SlotSystem d h vr vt}\n    (labels : ℕ → Finset ι) (label : ℕ → ι → SlotColoring.Label)\n    (hinj : ∀ n, Set.InjOn (label n) (labels n : Set ι))\n    (hlevel : ∀ n l, l ∈ labels n → 1 ≤ (label n l).1)\n    (χ : ℕ → D → WindowPoint) (hχ : ∀ n, ContinuousOn (χ n) s.domain)\n    (Y : ℕ → D → TorusInverse.Plane)\n    (a b : ι → HarmonicBlock D) (N : ℕ) (hband : ∀ l, (a l).BandLimited N)\n    (hfreq : ∀ l, (b l).frequency = (a l).frequency)\n    (hphase : ∀ l, (b l).phase = (a l).phase)\n    (hangular : ∀ l, (b l).angularFrequency = (a l).angularFrequency)\n    (ha : ∀ i j, UniformWaveClass s P α (fun l n x => (a l).velocity n i j x))\n    (hb : ∀ i j, UniformWaveClass s P β (fun l n x => (b l).velocity n i j x))\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

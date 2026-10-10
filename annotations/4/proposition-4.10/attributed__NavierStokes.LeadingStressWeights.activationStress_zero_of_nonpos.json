@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.LeadingStressWeights.activationStress_zero_of_nonpos",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStressWeights.activationStress_zero_of_nonpos",
+      "line": 997,
+      "module": "NavierStokes.LeadingStressWeights",
+      "path": "NavierStokes/LeadingStressWeights.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L997"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStressWeights.activationStress_zero_of_nonpos",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: x ≤ 0 → activationStress W (x,η) = 0 (with nominal_activation_stress: T0 = 0 on 0 < X ≤ X_a for W)",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 997,
+        "text": "theorem activationStress_zero_of_nonpos {x eta : ℝ} (hx : x ≤ 0)\n    (hη : eta ∈ Icc (-1 : ℝ) 1) : activationStress W (x, eta) = 0"
+      }
+    }
+  }
+}

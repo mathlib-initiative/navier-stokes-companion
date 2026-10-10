@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.6/attributed/NavierStokes.SignedCovariance.assembled_cross_covariance",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedCovariance.assembled_cross_covariance",
+      "line": 324,
+      "module": "NavierStokes.SignedCovariance",
+      "path": "NavierStokes/SignedCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L324"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedCovariance.assembled_cross_covariance",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: doubleAverage(primary·signed + signed·primary)_i = ∑ᶠ U, outer² ε mask² R_U i; R of any sign"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 324,
+        "text": "theorem assembled_cross_covariance {D h : ℝ} {vr vt : Plane} (sys : SlotSystem D h vr vt)\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (N : ℕ) (hN : 1 ≤ N)\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    (outer ε : UnsignedLabel → ℝ) (T R : UnsignedLabel → Vec2)\n    {q : ℝ} (hq : 0 < q) (x : SlotColoring.Position)\n    (hε : ∀ U, mask D (tailLabel N U) q x ≠ 0 → 0 ≤ ε U)\n    (hcone : ∀ U, mask D (tailLabel N U) q x ≠ 0 → SmoothCovariance.StrictCone (P U).matrix (T U))\n    (i : Fin 2) :\n    doubleAverage (fun Y θ =>\n      assembledRadial P hdet outer ε T q x Y θ * signedTangent P hdet outer ε T R q x i Y θ +\n      signedRadial P hdet outer ε T R q x Y θ * assembledTangent P hdet outer ε T q x i Y θ) =\n      ∑ᶠ U : UnsignedLabel, outer U ^ 2 * ε U * mask D (tailLabel N U) q x ^ 2 * R U i"
+      }
+    }
+  }
+}

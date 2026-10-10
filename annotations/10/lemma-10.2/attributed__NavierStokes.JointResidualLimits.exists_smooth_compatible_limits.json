@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.2/attributed/NavierStokes.JointResidualLimits.exists_smooth_compatible_limits",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.JointResidualLimits.exists_smooth_compatible_limits",
+      "line": 308,
+      "module": "NavierStokes.JointResidualLimits",
+      "path": "NavierStokes/JointResidualLimits.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L308"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.JointResidualLimits.exists_smooth_compatible_limits",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For f smooth on t<1 with VanishingJointJets f and AwayExtensions f: ∃ L, (∀ n, L 0 n = 0) ∧ (∀ n, TendstoLocallyUniformly (iteratedFDeriv ℝ n f (t,·)) (L · n) (𝓝[<] 1)) ∧ (∀ n, ContDiff ℝ ∞ (L · n)) ∧ (∀ n x, HasFDerivAt (L · n) ((L x (n+1)).curryLeft.comp (inr ℝ ℝ Space)) x). Abstract form of the l",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 308,
+        "text": "theorem exists_smooth_compatible_limits {f : SpaceTime → V}\n    (hf : ContDiffOn ℝ ∞ f (SpacetimeEndpoint.openPast 1))\n    (hzero : VanishingJointJets f) (hext : AwayExtensions f) :\n    ∃ L : Space → FormalMultilinearSeries ℝ SpaceTime V,\n      (∀ n : ℕ, L 0 n = 0) ∧\n      (∀ n : ℕ, TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n f (t, x))\n        (fun x => L x n) (𝓝[<] (1 : ℝ))) ∧\n      (∀ n : ℕ, ContDiff ℝ ∞ (fun x => L x n)) ∧\n      (∀ n : ℕ, ∀ x : Space, HasFDerivAt (fun y => L y n)\n        ((L x (n + 1)).curryLeft.comp (ContinuousLinearMap.inr ℝ ℝ Space)) x)"
+      }
+    }
+  }
+}

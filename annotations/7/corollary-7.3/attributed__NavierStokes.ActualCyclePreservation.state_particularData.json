@@ -1,0 +1,31 @@
+{
+  "id": "corollary-7.3/attributed/NavierStokes.ActualCyclePreservation.state_particularData",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCyclePreservation.state_particularData",
+      "line": 850,
+      "module": "NavierStokes.ActualCyclePreservation",
+      "path": "NavierStokes/ActualCyclePreservation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean#L850"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCyclePreservation.state_particularData",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∀ B N0, geometricThreshold ≤ N0 → ∀ j : ℕ (stage), ActualParticularCycleData.Data (state B N0 j) (sigma j)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 850,
+        "text": "theorem state_particularData (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (j : ℕ) :\n    ActualParticularCycleData.Data (state B N0 j) (ActualIterationLedger.sigma j)"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.5/key/NavierStokesR3.WholeSpaceUniqueness.classical_uniqueness_on_Icc",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.WholeSpaceUniqueness.classical_uniqueness_on_Icc",
+      "line": 30,
+      "module": "NavierStokes.R3.WholeSpaceUniqueness",
+      "path": "NavierStokes/R3/WholeSpaceUniqueness.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/WholeSpaceUniqueness.lean#L30"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.WholeSpaceUniqueness.classical_uniqueness_on_Icc",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: 0<T; u,v,p,q ContDiffOn ℝ ∞ on slab 0 T = Icc 0 T ×ˢ univ; IsCompact K; ∀ t∈Icc 0 T, tsupport u(t,·) ⊆ K; UniformFiniteEnergy (Icc 0 T) v; div u = div v = 0 on Ioo 0 T; navierStokesResidual 1 u p = navierStokesResidual 1 v q on Ioo 0 T × ℝ³; u(0,·)=v(0,·) ⊢ ∀ t∈Icc 0 T, ∀ x, u(t,x)=v(t,x)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "lean_stronger",
+      "role": "key",
+      "snippet": {
+        "line": 30,
+        "text": "theorem classical_uniqueness_on_Icc {T : ℝ} (hT : 0 < T)\n    {u v : VelocityField} {p q : PressureField} {K : Set Space}\n    (hu : ContDiffOn ℝ ∞ u (Comparison.slab 0 T))\n    (hv : ContDiffOn ℝ ∞ v (Comparison.slab 0 T))\n    (hp : ContDiffOn ℝ ∞ p (Comparison.slab 0 T))\n    (hq : ContDiffOn ℝ ∞ q (Comparison.slab 0 T))\n    (hK : IsCompact K)\n    (hsupp : ∀ t ∈ Icc (0 : ℝ) T, tsupport (fun x => u (t, x)) ⊆ K)\n    (hev : UniformFiniteEnergy (Icc (0 : ℝ) T) v)\n    (hdu : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x, spatialDivergence u t x = 0)\n    (hdv : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x, spatialDivergence v t x = 0)\n    (hNS : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x,\n      navierStokesResidual 1 u p t x = navierStokesResidual 1 v q t x)\n    (hzero : ∀ x, u (0, x) = v (0, x)) :\n    ∀ t ∈ Icc (0 : ℝ) T, ∀ x, u (t, x) = v (t, x)"
+      }
+    }
+  }
+}

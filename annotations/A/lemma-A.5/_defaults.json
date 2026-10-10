@@ -1,0 +1,65 @@
+{
+  "kind": "lemma",
+  "label": "Lemma A.5",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 133,
+    "rect": [0.133552, 0.603988, 0.734178, 0.219406]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-A.5",
+      "locator": {
+        "physical": [133],
+        "printed": [133],
+        "text": "Appendix A, Lemma A.5, p. 133"
+      },
+      "region": "lemma-A.5@p133",
+      "verdicts": [
+        {
+          "confidence": 0.91,
+          "evidence": ["CONVENTION: SchedulePressure.lean L175 axisPressure_even, L180 axisPressure_lower_bound, L206/L211 axisPressure_deriv_pos/neg, L226 axisPressure_radius_independent, L235/L239 complexAxisPressure_analytic/_ofReal; OutgoingHistories.lean L859 Pi_eq_future_integral; CorrectedPressureBounds.lean L672", "CONVENTION: SchedulePressure.axisPressure_radius_independent, SchedulePressure.lean:226: (-(1/2) * ∫ y, finalAngular d (y - Real.log X_R, η) ^ 2) = axisPressure d η; physical form OutgoingDilation.axisDatum_unchanged, OutgoingDilation.lean:278 (0 < XR)", "CONVENTION: OutgoingHistories.Pi_eq_future_integral, OutgoingHistories.lean:859 (Pi w := history (initialPi d) (pressureWeight w); Pi_hasDerivAt L205; Pi_eq_past_integral L818); CorrectedPressureBounds.correctedPi_eq_axisPressure_add L672; UniformAngularReset.exists_scheduled_reset L937", "I read p.133 (statement), p.134 (proof), pp.129-130 (A.5)-(A.13), and the Lean in SchedulePressure, PressureDatum, CorrectedPressureBounds, OutgoingHistories and OutgoingDilation. axisPressure d is (A.21) for the bump-free finalAngular, which equals P f(η) e^{y/10} on y ≤ 0 and matches the slope, interpolation, hold and tail stages. All six clauses are proved for every TailData and every real η, with analyticity on the strip |Im z| < 1/2, so the Lean implies the lemma. Both skeptics agreed and raised nothing new. I added the pairing skeptic's OutgoingHistories.Pi_eq_future_integral as the closest match to (A.23), and OutgoingDilation.axisDatum_unchanged for X_R-independence in physical coordinates. The three findings are encoding choices. I did not re-audit every Section A.2 stage; that belongs to Proposition A.4."],
+          "findings": [
+            {
+              "confidence": 0.94,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration states Lemma A.5. Its clauses are separate theorems about one object, SchedulePressure.axisPressure d, with (A.23) in CorrectedPressureBounds and OutgoingHistories. The lemma is their conjunction."
+            },
+            {
+              "confidence": 0.94,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "X_R-independence is stated as translation invariance of the log-coordinate integral, for every real X_R, including X_R ≤ 0 where Real.log is a junk value. The Lean profile has no X_R parameter."
+            },
+            {
+              "confidence": 0.92,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "(A.23) is stated in y = log(X/X_R) for every ResetWitness, not in X for one fixed complete profile. The ODE Π_X = E²/(2X) appears as d/dy Π = E²/2."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.91. Findings: [low CONTENT: CONVENTION] No single declaration states Lemma A.5. Its clauses are separate theorems about one object, SchedulePressure.axisPressure d, with (A.23) in CorrectedPressureBounds and OutgoingHistories. The lemma is their conjunction.; [low CONTENT: CONVENTION] X_R-independence is stated as translation invariance of the log-coordinate integral, for every real X_R, including X_R ≤ 0 where Real.log is a junk value. The Lean profile has no X_R parameter.; [low CONTENT: CONVENTION] (A.23) is stated in y = log(X/X_R) for every ResetWitness, not in X for one fixed complete profile. The ODE Π_X = E²/(2X) appears as d/dy Π = E²/2.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

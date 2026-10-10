@@ -1,0 +1,85 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 9.3",
+  "status": "formalized",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] Lean proves the properties only for the stage states of the fixed cycle iteration, with concrete exponents 1/2+σ_j and 1+σ_j, not for an arbitrary finite sequence of the listed operations ….",
+  "location": {
+    "page": 103,
+    "rect": [0.134051, 0.557195, 0.733681, 0.325052]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "item": "proposition-9.3",
+      "locator": {
+        "physical": [103, 104],
+        "printed": [103, 104],
+        "text": "Section 9, Proposition 9.3, p. 103"
+      },
+      "region": "proposition-9.3@p103",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["CONFIRMED_CONTENT: ActualCyclePreservation.state_runInvariant (ActualCyclePreservation.lean:826) quantifies over `state B N0 j` = CycleState.iterate (fun _ => fixedParameters B N0) … (l.149) only. Mid-cycle supports are separate step lemmas, e.g. ActualCycleAssembly.cycle_refined_signed_inputSupport.", "ATTRIBUTION_GAP: MeanStateRegularity.PrimitiveData.theta (MeanStateRegularity.lean:377), .axial_reconstructed (:398), .source (:373), .pressure (:388) conclude GaugeMomentBalances.MovingField (GaugeMomentBalances.lean:461: ContDiffOn on slowDomain U.carrier = {p | p.2.1 ∈ U}, SupportedGauge a b in Icc (ℓ·a) (ℓ·b)). Inputs are the invariant fields `primitives` and `reconstructed` (CorrectionStep.lean:9408). Invariant.meanGood_eq_reduced_sub (ActualCycleResidualBounds.lean:196): meanGoodResidual = reducedMeanResidual − axisymmetricAlias on the strip.", "CONVENTION: Invariant.gaussian_field_native (ActualCycleResidualBounds.lean:833), Invariant.axis_native (:168) with alias_eq_lift (:192), baseError_native (:371) with actual_iterate_base_error (:892); sum lemma PhysicalResidualJetBounds.excluded_nativeBounds (PhysicalResidualJetBounds.lean:1027). Invariant.native_residual (:845) applies them only at gain h(1/2+σ).", "CONVENTION: Invariant.fullResidual_decomposition (ActualCycleResidualBounds.lean:310) needs z ∈ liftDomain strip.domain. PhysicalResidualBridge.context_fullResidual_physical (PhysicalResidualBridge.lean:770); Invariant.stateRealization (ActualCycleResidualBounds.lean:1089) derives StateRealization from PhysicalFields (:1015) and ActualBaseResidual.fixed_base_residual; ActualCandidateAssembly.physicalData (ActualCandidateAssembly.lean:1079) proves PhysicalData for all J.", "CONVENTION: Invariant.fullResidual_decomposition (ActualCycleResidualBounds.lean:310): hz : z ∈ liftDomain strip.domain. CycleAnalyticInvariant.meanHypotheses : MeanHypotheses G.strip.domain c x.state feeds LiftedMeanResidual.angularMean_fullResidual (LiftedMeanResidual.lean:1174). LocalSignedRequest.movingStrip_domain (LocalSignedRequest.lean:191): strip.domain = carrier ∩ {profile ∈ Ioo a b}.", "No single declaration states Prop 9.3; all three voters agree on OK/different_formulation and I confirm it from the sources. Its clauses are fields or consequences of the stage-j invariant CycleAnalyticInvariant, proved for every j by state_runInvariant: chart decomposition and label sum, band-independent finite harmonic set, support and smoothness of f, W_{1/2+σ_j} and M_{1+σ_j} bounds, all-power bounds on the three excluded errors, and the exact mean identity with (8.12) pressure. One real low difference stands: only the fixed iteration is covered. The zero-extension clause exists elsewhere (PrimitiveData.theta etc.), contrary to the auditor. Unverified here, as all voters note: refinedCarrier versus Ω_γ of (6.28) and the (8.3) formulas."],
+          "findings": [
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Lean proves the properties only for the stage states of the fixed cycle iteration, with concrete exponents 1/2+σ_j and 1+σ_j, not for an arbitrary finite sequence of the listed operations with abstract exponents α, μ."
+            },
+            {
+              "confidence": 0.7,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The zero-extension clause for mean coefficients is stated elsewhere: E_θ, E_z, g_r and the reconstructed p_m are MovingFields (smooth at all radii, vanishing outside the closed shell). The auditor missed these; only the flat alias part lacks it."
+            },
+            {
+              "confidence": 0.8,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "(9.5) is not one physical-norm theorem. Lean gives chart-native bounds with arbitrary gain h·α for the base, Gaussian and alias errors separately, on the lifted open shell for bands n ≥ 4."
+            },
+            {
+              "confidence": 0.8,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean's R = G + F is a chart identity on the lifted strip. The physical form goes through a bridge whose realization hypotheses are discharged in the repository for every stage, not left external as the auditor said."
+            },
+            {
+              "confidence": 0.6,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The label-sum decomposition (9.4) and the mean identity (9.6) are Lean statements only on the lifted open active shell; the paper states them on the whole chart. Exterior and shell edges are handled by separate statements."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.72. Findings: [low CONTENT: CONFIRMED_CONTENT] Lean proves the properties only for the stage states of the fixed cycle iteration, with concrete exponents 1/2+σ_j and 1+σ_j, not for an arbitrary finite sequence of the listed operations with abstract exponents α, μ.; [low CONTENT: ATTRIBUTION_GAP] The zero-extension clause for mean coefficients is stated elsewhere: E_θ, E_z, g_r and the reconstructed p_m are MovingFields (smooth at all radii, vanishing outside the closed shell). The auditor missed these; only the flat alias part lacks it.; [low CONTENT: CONVENTION] (9.5) is not one physical-norm theorem. Lean gives chart-native bounds with arbitrary gain h·α for the base, Gaussian and alias errors separately, on the lifted open shell for bands n ≥ 4.; [low CONTENT: CONVENTION] Lean's R = G + F is a chart identity on the lifted strip. The physical form goes through a bridge whose realization hypotheses are discharged in the repository for every stage, not left external as the auditor said.; [low CONTENT: CONVENTION] The label-sum decomposition (9.4) and the mean identity (9.6) are Lean statements only on the lifted open active shell; the paper states them on the whole chart. Exterior and shell edges are handled by separate statements.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

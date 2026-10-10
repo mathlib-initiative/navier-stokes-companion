@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.2/attributed/NavierStokes.CommonCoverSolve.LinearData.anchoredSolve_unique",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CommonCoverSolve.LinearData.anchoredSolve_unique",
+      "line": 472,
+      "module": "NavierStokes.CommonCoverSolve",
+      "path": "NavierStokes/CommonCoverSolve.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean#L472"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CommonCoverSolve.LinearData.anchoredSolve_unique",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: If u a = 0 and HasDerivAt u (A(s)u + forcing(s)) s on Icc a b, then u = anchoredSolve on Icc a b. This is uniqueness within the projected ODE (7.13) only."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 472,
+        "text": "theorem anchoredSolve_unique (k : Frequency)\n    (hA : ContinuousOn d.coefficient (U ×ˢ univ))\n    (hB : ContinuousOn d.forcingMap (U ×ˢ univ))\n    (hf : ContinuousOn d.source (U ×ˢ univ))\n    {p : P} (hp : p ∈ U) (Y : Plane) {u : ℝ → E} (hu0 : u a = 0)\n    (hu : ∀ s ∈ Icc a b, HasDerivAt u\n      (d.coefficientAlong g k ((p, Y), s) (u s) + d.forcingAlong g k ((p, Y), s)) s) :\n    EqOn u (d.anchoredSolve g hab k (p, Y)) (Icc a b)"
+      }
+    }
+  }
+}

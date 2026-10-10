@@ -1,0 +1,26 @@
+{
+  "id": "lemma-8.8/support/NavierStokes.LocalRankDefect.rankStage_debt_eq",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalRankDefect.rankStage_debt_eq",
+      "line": 688,
+      "module": "NavierStokes.LocalRankDefect",
+      "path": "NavierStokes/LocalRankDefect.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalRankDefect.lean#L688"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalRankDefect.rankStage_debt_eq",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 688,
+        "text": "theorem rankStage_debt_eq (g : VariableGaugeMean.GaugeData P) (r : CorrectionState.RankData P)\n    (axial : P × PressureStream.Plane) (c : CorrectionState.Context (Point P))\n    (u : CorrectionState.State (Point P)) :\n    CorrectionState.debt c (VariableGaugeMean.rankStageState g r axial c u) =\n      defects c.operators c.base (updated u.mean (VariableGaugeMean.rankIncrementState g r axial c u))\n        u.covariance"
+      }
+    }
+  }
+}

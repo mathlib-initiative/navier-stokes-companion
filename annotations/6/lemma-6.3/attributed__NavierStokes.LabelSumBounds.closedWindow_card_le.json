@@ -1,0 +1,31 @@
+{
+  "id": "lemma-6.3/attributed/NavierStokes.LabelSumBounds.closedWindow_card_le",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LabelSumBounds.closedWindow_card_le",
+      "line": 289,
+      "module": "NavierStokes.LabelSumBounds",
+      "path": "NavierStokes/LabelSumBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean#L289"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LabelSumBounds.closedWindow_card_le",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: (∀ l ∈ F, 1 ≤ l.1 ∧ x ∈ closedWindow d l) → F.card ≤ 2250, closedWindow = Icc (l.1−2) (l.1+2) ×ˢ physicalBox d l: bound (i) on enlarged windows, used by the main chain",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 289,
+        "text": "theorem closedWindow_card_le (d : ℝ) (x : WindowPoint) (F : Finset SlotColoring.Label)\n    (hF : ∀ l ∈ F, 1 ≤ l.1 ∧ x ∈ closedWindow d l) : F.card ≤ 2250"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "proposition-8.4/attributed/NavierStokes.GaugeMomentBalances.reconstructed_state_axial_moment",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GaugeMomentBalances.reconstructed_state_axial_moment",
+      "line": 593,
+      "module": "NavierStokes.GaugeMomentBalances",
+      "path": "NavierStokes/GaugeMomentBalances.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean#L593"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GaugeMomentBalances.reconstructed_state_axial_moment",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Same axial identity, with the residual evaluated on reconstructState g c u (so no fixed-point hypothesis is needed).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 593,
+        "text": "theorem reconstructed_state_axial_moment {coord : ℝ} (U : SlowRegion coord)\n    (g : VariableGaugeMean.GaugeData Plane) (ha : 0 < g.radial.inner) (hd : 0 < g.radial.exponent)\n    (hg : ∀ n, g.length n = VariableGaugeMean.qLength coord)\n    (ε fast : ℕ → ℝ) (z t v : Plane) (c : Context Point) (u : State Point)\n    (ho : c.operators = nativeOperators g.radial ε fast z t v)\n    (H : MovingAxialInputs U g.radial.inner g.radial.outer c u)\n    (hf : MovingField U g.radial.inner g.radial.outer (u.gr c))\n    (hmass : ∀ n s, s ∈ U.carrier → CorrectionState.radialMoment 1 u.mean.axial n s = 0)\n    (n : ℕ) {s : Plane} (hs : s ∈ U.carrier) :\n    CorrectionState.radialMoment 1 ((VariableGaugeMean.reconstructState g c u).axialResidual c) n s =\n      ε n * fderiv ℝ (axialDebtPotential g c u n) s z"
+      }
+    }
+  }
+}

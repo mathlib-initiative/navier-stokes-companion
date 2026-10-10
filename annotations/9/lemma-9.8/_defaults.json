@@ -1,0 +1,57 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 9.8",
+  "status": "formalized",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] Lean drops the log factor and the flat error E_{j,m} from the residual bound (9.18). This is a strictly stronger conclusion, and the paper's form follows with E_{j,m}=0.; [low CONTENT] The bounds hold on {t<1, q<commonQ}, where commonQ = Q(residualBand) is smaller than the construction's qbig. The paper places them on Lemma 9.7's domain 0<q<q_big.",
+  "location": {
+    "page": 113,
+    "rect": [0.134051, 0.24694, 0.733684, 0.189114]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-9.8",
+      "locator": {
+        "physical": [113],
+        "printed": [113],
+        "text": "Section 9, Lemma 9.8, p. 113"
+      },
+      "region": "lemma-9.8@p113",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["CONFIRMED_CONTENT: paper_physical_loss, WholeDomainPhysicalStageTheorem.lean:260-264: ‖D^k residual‖ ≤ C * q^(h*sigma J - paperJetLoss B N0 m), with no (1+|log q|)^P term and no +E", "CONFIRMED_CONTENT: paper_physical_loss quantifies ∀ w ∈ CutStageEstimates.physicalSublevel h (commonQ B N0); commonQ_lt_original (WholeDomainActualStageBounds.lean:20) gives commonQ < ActualCandidateConstruction.qbig", "The auditor and both skeptics agree."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Lean drops the log factor and the flat error E_{j,m} from the residual bound (9.18). This is a strictly stronger conclusion, and the paper's form follows with E_{j,m}=0."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The bounds hold on {t<1, q<commonQ}, where commonQ = Q(residualBand) is smaller than the construction's qbig. The paper places them on Lemma 9.7's domain 0<q<q_big."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.85. Findings: [low CONTENT: CONFIRMED_CONTENT] Lean drops the log factor and the flat error E_{j,m} from the residual bound (9.18). This is a strictly stronger conclusion, and the paper's form follows with E_{j,m}=0.; [low CONTENT: CONFIRMED_CONTENT] The bounds hold on {t<1, q<commonQ}, where commonQ = Q(residualBand) is smaller than the construction's qbig. The paper places them on Lemma 9.7's domain 0<q<q_big.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

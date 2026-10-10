@@ -1,0 +1,27 @@
+{
+  "id": "lemma-4.9/support/NavierStokes.TerminalHistoryBridge.terminal_forward_cone",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalHistoryBridge.terminal_forward_cone",
+      "line": 1482,
+      "module": "NavierStokes.TerminalHistoryBridge",
+      "path": "NavierStokes/TerminalHistoryBridge.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean#L1482"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalHistoryBridge.terminal_forward_cone",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1482,
+        "text": "theorem terminal_forward_cone (F : Profile) {XR C B y η : ℝ}\n    (hF : OutgoingProfile.Specification F B) (w : CompensationWitness F XR C)\n    (hsmall : TerminalCone.SmallTail F.data) (hXR : TerminalCone.radiusThreshold F ≤ XR)\n    (hy : TerminalCone.terminalStart F.data ≤ y) (hy' : y < OutgoingTail.tailEnd F.data)\n    (hη : η ∈ HeatedOutgoing.parameterDomain) :\n    HeatSwitchCone.TrueAt F XR w.coefficients (y,η) ∧\n    HeatSwitchCone.normalP F XR w.coefficients (y,η) =\n      TerminalEdgeFactor.profileP (normalization F XR) F.data (shift F XR) (TerminalCone.profilePoint F y η) ∧\n    HeatSwitchCone.normalJ F XR w.coefficients (y,η) =\n      TerminalEdgeFactor.profileJ (normalization F XR) F.data (shift F XR) (TerminalCone.profilePoint F y η)"
+      }
+    }
+  }
+}

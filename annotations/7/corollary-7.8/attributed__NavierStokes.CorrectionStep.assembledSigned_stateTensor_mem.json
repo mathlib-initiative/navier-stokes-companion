@@ -1,0 +1,32 @@
+{
+  "id": "corollary-7.8/attributed/NavierStokes.CorrectionStep.assembledSigned_stateTensor_mem",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionStep.assembledSigned_stateTensor_mem",
+      "line": 3214,
+      "module": "NavierStokes.CorrectionStep",
+      "path": "NavierStokes/CorrectionStep.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L3214"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionStep.assembledSigned_stateTensor_mem",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: SignedFamily f, β≤η, γ≤δ+β, γ≤α+η, γ≤2β, native slot support, u.oscillation = fieldSum old : TensorClass s γ ((u.addIncrement m p (tangent+curl) q e).covariance − u.covariance − symmetricCovariance primary tangent)   [C(U+V)−C(U)−B(W0,LΣ) ∈ M_γ: (7.41) without Σ, plus aggregate (7.42)]",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 3214,
+        "text": "theorem assembledSigned_stateTensor_mem {s : StripData D} {P : ι → ℕ → D → ℝ}\n    {α δ β η γ : ℝ} (f : LabelSumBounds.SignedFamily s P α δ β η)\n    (hβη : β ≤ η) (hγd : γ ≤ δ + β) (hγc : γ ≤ α + η) (hγs : γ ≤ 2 * β)\n    {d h : ℝ} {vr vt : TorusInverse.Plane} {sys : PartitionedCovariance.SlotSystem d h vr vt}\n    (labels : ℕ → Finset ι) (label : ℕ → ι → SlotColoring.Label)\n    (hinj : ∀ n, Set.InjOn (label n) (labels n : Set ι))\n    (hlevel : ∀ n l, l ∈ labels n → 1 ≤ (label n l).1)\n    (χ : ℕ → D → LabelSumBounds.WindowPoint) (hχ : ∀ n, ContinuousOn (χ n) s.domain)\n    (Y : ℕ → D → TorusInverse.Plane)\n    (hp : LabelSumBounds.SupportedOscillations sys label χ Y s.domain (fun l => (f.primary l).oscillation))\n    (ho : LabelSumBounds.SupportedOscillations sys label χ Y s.domain (fun l => (f.old l).oscillation))\n    (ht : LabelSumBounds.SupportedOscillations sys label χ Y s.domain (fun l => (f.tangent l).oscillation))\n    (hc : LabelSumBounds.SupportedOscillations sys label χ Y s.domain (fun l => (f.curl l).oscillation))\n    (u : State D) (hu : u.oscillation = LabelSumBounds.fieldSum labels (fun l => (f.old l).oscillation))\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "lemma-10.2/support/NavierStokes.MixedDiagonalResidual.residual_eq_originalResidual",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MixedDiagonalResidual.residual_eq_originalResidual",
+      "line": 45,
+      "module": "NavierStokes.MixedDiagonalResidual",
+      "path": "NavierStokes/MixedDiagonalResidual.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MixedDiagonalResidual.lean#L45"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MixedDiagonalResidual.residual_eq_originalResidual",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 45,
+        "text": "theorem residual_eq_originalResidual (a : ℕ → ℝ) (q : SpaceTime → ℝ)\n    (A B : ℕ → VelocityField) (P : ℕ → PressureField) :\n    residual a q A B P = MixedPeriodicAssembly.originalResidual\n      (SolenoidalDiagonal.potentialSum a q A)\n      (SolenoidalDiagonal.potentialSum a q B)\n      (SolenoidalDiagonal.potentialSum a q P)"
+      }
+    }
+  }
+}

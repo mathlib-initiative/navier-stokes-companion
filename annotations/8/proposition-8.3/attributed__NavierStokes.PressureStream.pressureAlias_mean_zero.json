@@ -1,0 +1,29 @@
+{
+  "id": "proposition-8.3/attributed/NavierStokes.PressureStream.pressureAlias_mean_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PressureStream.pressureAlias_mean_zero",
+      "line": 616,
+      "module": "NavierStokes.PressureStream",
+      "path": "NavierStokes/PressureStream.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean#L616"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PressureStream.pressureAlias_mean_zero",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: f ContDiff, RadiallySupported a b, TorusPeriodicLift ⊢ torusAverage (pressureAlias d a b M hab v f) p = 0. Zero auxiliary mean of A_0(g_r − ρP), fixed shell only."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 616,
+        "text": "theorem pressureAlias_mean_zero {d a b M : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (v : Plane)\n    {f : Lift S → ℝ} (hf : ContDiff ℝ ∞ f) (hs : RadialAlias.RadiallySupported a b f)\n    (hp : TorusPeriodicLift f) (p : ℝ × S) :\n    torusAverage (pressureAlias d a b M hab v f) p = 0"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "proposition-5.5/attributed/NavierStokes.ActualBasePressureBounds.actual_leading_eq",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualBasePressureBounds.actual_leading_eq",
+      "line": 63,
+      "module": "NavierStokes.ActualBasePressureBounds",
+      "path": "NavierStokes/ActualBasePressureBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualBasePressureBounds.lean#L63"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualBasePressureBounds.actual_leading_eq",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: EqOn (FinalSlowBase.pressure H v upper B) (cartesianMonomial h (-2A) ((coefficients H v).pressure 0)) (cartesianExterior h (nominalOuterX W)): (f) p_B = p^(0) for X > X_+"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 63,
+        "text": "theorem actual_leading_eq (upper : ℝ) (B : ℕ) :\n    EqOn (FinalSlowBase.pressure H v upper B)\n      (cartesianMonomial F.data.h (-2 * CoordinateAlgebra.A F.data.h)\n        ((FinalSlowBase.coefficients H v).pressure 0))\n      (BaseExterior.cartesianExterior F.data.h (AssembledSlowBase.nominalOuterX W))"
+      }
+    }
+  }
+}

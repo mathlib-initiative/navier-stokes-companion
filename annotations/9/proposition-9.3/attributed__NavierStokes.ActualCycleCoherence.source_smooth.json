@@ -1,0 +1,29 @@
+{
+  "id": "proposition-9.3/attributed/NavierStokes.ActualCycleCoherence.source_smooth",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCycleCoherence.source_smooth",
+      "line": 386,
+      "module": "NavierStokes.ActualCycleCoherence",
+      "path": "NavierStokes/ActualCycleCoherence.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleCoherence.lean#L386"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCycleCoherence.source_smooth",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ContDiffOn ℝ ∞ (ParticularWaveAssembly.residualSource (commonContext B) x.state (blocks l) (gaussian l) (aliasCoefficients l) j n) ActualInitialization.geometry.domain  -- smooth on the full slow domain, across the shell edges"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 386,
+        "text": "theorem source_smooth (hS : ∀ l n, IsClosed (S l n))\n    (hpos : ∀ l n z, z ∈ ActualInitialization.geometry.domain → z ∈ S l n → 0 < z.1)\n    (l : Index B N0) (j : ℤ) (n : ℕ) :\n    ContDiffOn ℝ ∞ (ParticularWaveAssembly.residualSource (commonContext B) x.state\n      (x.coefficients.blocks l) (x.coefficients.gaussian l) (x.coefficients.aliasCoefficients l) j n)\n      ActualInitialization.geometry.domain"
+      }
+    }
+  }
+}

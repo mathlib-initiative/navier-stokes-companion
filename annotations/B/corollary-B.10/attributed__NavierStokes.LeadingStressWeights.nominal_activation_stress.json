@@ -1,0 +1,31 @@
+{
+  "id": "corollary-B.10/attributed/NavierStokes.LeadingStressWeights.nominal_activation_stress",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStressWeights.nominal_activation_stress",
+      "line": 228,
+      "module": "NavierStokes.LeadingStressWeights",
+      "path": "NavierStokes/LeadingStressWeights.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L228"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStressWeights.nominal_activation_stress",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: y ≤ W.controls.referenceWidth → η ∈ [-1,1] → stress W.profiles F.data.h (chart (activeLeft W) (y, η)) = activationStress W (y, η)",
+        "status": "unconfirmed",
+        "verdict": "attribution_gap"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 228,
+        "text": "theorem nominal_activation_stress {y eta : ℝ} (hy : y ≤ W.controls.referenceWidth)\n    (hη : eta ∈ Icc (-1 : ℝ) 1) :\n    stress W.profiles F.data.h (NominalConeAssembly.chart (NominalConeAssembly.activeLeft W) (y, eta)) =\n      activationStress W (y, eta)"
+      }
+    }
+  }
+}

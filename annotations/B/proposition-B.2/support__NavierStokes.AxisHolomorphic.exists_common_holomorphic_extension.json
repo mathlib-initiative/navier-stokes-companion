@@ -1,0 +1,26 @@
+{
+  "id": "proposition-B.2/support/NavierStokes.AxisHolomorphic.exists_common_holomorphic_extension",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisHolomorphic.exists_common_holomorphic_extension",
+      "line": 539,
+      "module": "NavierStokes.AxisHolomorphic",
+      "path": "NavierStokes/AxisHolomorphic.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisHolomorphic.lean#L539"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisHolomorphic.exists_common_holomorphic_extension",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 539,
+        "text": "theorem exists_common_holomorphic_extension (I J : Window) (hleft : I.left < J.left)\n    (hright : J.right < I.right) {ε R : ℝ} (hε : 0 < ε) (hR20 : R < 20) :\n    ∃ δ : ℝ, 0 < δ ∧ ∃ B : ℕ → ℝ, (∀ k, 0 ≤ B k) ∧\n      ∀ (A : AxisSpace I ε) (Y : ℝ), |Y| ≤ R → ∀ k : ℕ,\n        AnalyticOnNhd ℂ (complexProfile I ε A k Y) (parameterTube J δ) ∧\n        (∀ z ∈ parameterTube J δ, ‖complexProfile I ε A k Y z‖ ≤ B k * ‖A‖) ∧\n        (∀ z ∈ parameterTube J δ,\n          iteratedDeriv k (fun y => complexProfile I ε A 0 y z) Y =\n            complexProfile I ε A k Y z) ∧\n        (∀ (m : ℕ) (x : ℝ), x ∈ J.interval →\n          iteratedDeriv m (complexProfile I ε A k Y) (x : ℂ) =\n            (mixedSeries I ε A k m (Y, x) : ℂ))"
+      }
+    }
+  }
+}

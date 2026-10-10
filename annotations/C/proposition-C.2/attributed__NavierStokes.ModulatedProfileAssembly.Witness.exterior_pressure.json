@@ -1,0 +1,31 @@
+{
+  "id": "proposition-C.2/attributed/NavierStokes.ModulatedProfileAssembly.Witness.exterior_pressure",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ModulatedProfileAssembly.Witness.exterior_pressure",
+      "line": 598,
+      "module": "NavierStokes.ModulatedProfileAssembly",
+      "path": "NavierStokes/ModulatedProfileAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileAssembly.lean#L598"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ModulatedProfileAssembly.Witness.exterior_pressure",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: eta ∈ d.parameters → (repairPatch W).right ≤ X → v.profiles.pressure (X,eta) = W.profiles.pressure (X,eta); exterior_mass/angular/transport/energy give M, I, J, S",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 598,
+        "text": "theorem exterior_pressure {X eta : ℝ} (heta : eta ∈ d.parameters)\n    (hX : (repairPatch W).right ≤ X) :\n    v.profiles.pressure (X, eta) = W.profiles.pressure (X, eta)"
+      }
+    }
+  }
+}

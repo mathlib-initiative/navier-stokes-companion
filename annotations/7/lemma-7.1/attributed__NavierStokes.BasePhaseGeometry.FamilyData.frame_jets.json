@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.1/attributed/NavierStokes.BasePhaseGeometry.FamilyData.frame_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BasePhaseGeometry.FamilyData.frame_jets",
+      "line": 1069,
+      "module": "NavierStokes.BasePhaseGeometry",
+      "path": "NavierStokes/BasePhaseGeometry.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean#L1069"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BasePhaseGeometry.FamilyData.frame_jets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: PhaseJetBounds.FrameJets on the enlarged slot: polynomial-in-S jets of β, ρ, ρ', rotation, K_a, N_a, (1+ρ²)⁻¹, h, h⁻¹, h'/h, d"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1069,
+        "text": "theorem frame_jets (hh : 0 ≤ h) (hr : 0 < r0) (hM : 1 ≤ M)\n    (hu : 0 < u) (huM : u ≤ M) (hL : 1 / (2 * r0) ≤ M)\n    (hslot : 4 * r0 * ChartScales.Tg ≤ M) (hlarge : ∀ i, LargeBand h M u (a.band i)) :\n    PhaseJetBounds.FrameJets (D.slot a.slot (fun _ => isOpen_Ioo)) a.frame"
+      }
+    }
+  }
+}

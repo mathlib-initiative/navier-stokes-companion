@@ -1,0 +1,26 @@
+{
+  "id": "lemma-7.7/support/NavierStokes.CopyAngularInvariance.realizedCoefficient_angular_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CopyAngularInvariance.realizedCoefficient_angular_zero",
+      "line": 341,
+      "module": "NavierStokes.CopyAngularInvariance",
+      "path": "NavierStokes/CopyAngularInvariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CopyAngularInvariance.lean#L341"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CopyAngularInvariance.realizedCoefficient_angular_zero",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 341,
+        "text": "theorem realizedCoefficient_angular_zero (hR : Invariant θ R)\n    (hr : Invariant θ Vr) (hθ : Invariant θ Vθ) (hz : Invariant θ Vz)\n    (hΦ : AffinePhase θ m Φ) (ha : Invariant θ a) (K : ℝ) (i : Fin 3) (x : D) :\n    HarmonicCalculus.along (fun _ => θ)\n      (fun y => CurlClassBounds.realizedCoefficient K R Vr Vθ Vz Φ a y i) x = 0"
+      }
+    }
+  }
+}

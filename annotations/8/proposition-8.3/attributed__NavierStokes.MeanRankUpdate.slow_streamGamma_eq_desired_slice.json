@@ -1,0 +1,29 @@
+{
+  "id": "proposition-8.3/attributed/NavierStokes.MeanRankUpdate.slow_streamGamma_eq_desired_slice",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanRankUpdate.slow_streamGamma_eq_desired_slice",
+      "line": 1881,
+      "module": "NavierStokes.MeanRankUpdate",
+      "path": "NavierStokes/MeanRankUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanRankUpdate.lean#L1881"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanRankUpdate.slow_streamGamma_eq_desired_slice",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Slice r ↦ f (r, p.2.1) smooth, supported in [lo,hi], ∫ r, r * f (r, p.2.1) = 0, streamPotential differentiable at p ⊢ streamGamma … (streamPotential power lo hi M (0,v) (slowLift f)) p = f (p.1, p.2.1). Y-independent Δγ = γ_d, fibre-wise for any shell."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1881,
+        "text": "theorem slow_streamGamma_eq_desired_slice {lo hi power M : ℝ}\n    (hlo : 0 < lo) (horder : lo < hi) (hp : 0 < power) (v : PressureStream.Plane)\n    (f : ℝ × E → ℝ) (p : PressureStream.Lift E)\n    (hf : ContDiff ℝ ∞ (fun r => f (r, p.2.1)))\n    (hs : support (fun r => f (r, p.2.1)) ⊆ Icc lo hi)\n    (hm : (∫ r, r * f (r, p.2.1)) = 0)\n    (hΨ : DifferentiableAt ℝ (PressureStream.streamPotential power lo hi M ((0 : E), v) (slowLift f)) p) :\n    PressureStream.streamGamma (PressureStream.physicalSpeed power M) ((0 : E), v)\n      (PressureStream.streamPotential power lo hi M ((0 : E), v) (slowLift f)) p = f (p.1, p.2.1)"
+      }
+    }
+  }
+}

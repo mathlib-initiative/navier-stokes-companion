@@ -1,0 +1,31 @@
+{
+  "id": "proposition-7.5/attributed/NavierStokes.ActualPrimaryBounds.chart_cut_amplitude_uniform",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualPrimaryBounds.chart_cut_amplitude_uniform",
+      "line": 806,
+      "module": "NavierStokes.ActualPrimaryBounds",
+      "path": "NavierStokes/ActualPrimaryBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryBounds.lean#L806"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualPrimaryBounds.chart_cut_amplitude_uniform",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: UniformWaveClass (productStrip strip) fullEnvelope (1/2) (chartCoefficients with chartCutoff).amplitude: η_β W_0 ∈ W_{1/2} uniformly in the label",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 806,
+        "text": "theorem chart_cut_amplitude_uniform :\n    LabelSumBounds.UniformWaveClass (HarmonicWaveInteraction.productStrip strip) fullEnvelope (1 / 2)\n      (fun l : SignedLabel B N0 =>\n        ((ActualPrimary.chartCoefficients l.1 l.2).withCutoff (ActualPrimary.chartCutoff l.1 l.2)).amplitude)"
+      }
+    }
+  }
+}

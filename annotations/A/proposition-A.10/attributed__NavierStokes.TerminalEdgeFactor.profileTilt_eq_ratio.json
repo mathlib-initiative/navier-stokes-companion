@@ -1,0 +1,31 @@
+{
+  "id": "proposition-A.10/attributed/NavierStokes.TerminalEdgeFactor.profileTilt_eq_ratio",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalEdgeFactor.profileTilt_eq_ratio",
+      "line": 1322,
+      "module": "NavierStokes.TerminalEdgeFactor",
+      "path": "NavierStokes/TerminalEdgeFactor.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1322"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalEdgeFactor.profileTilt_eq_ratio",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: 0 < x → profileAxialStress C d y0 (η,x) / profileAngularStress C d y0 (η,x) = profileTilt C d y0 (η,x), where profileTilt = y.2^6 * profileAxialFactor / profileAngularFactor — (A.50) identity",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1322,
+        "text": "theorem profileTilt_eq_ratio (C : ℝ) (d : TailData) (y0 η : ℝ) {x : ℝ} (hx : 0 < x) :\n    profileAxialStress C d y0 (η, x) / profileAngularStress C d y0 (η, x) =\n      profileTilt C d y0 (η, x)"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "proposition-8.3/support/NavierStokes.GaugeAliasDecay.pressureSource_zero_mass",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GaugeAliasDecay.pressureSource_zero_mass",
+      "line": 729,
+      "module": "NavierStokes.GaugeAliasDecay",
+      "path": "NavierStokes/GaugeAliasDecay.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeAliasDecay.lean#L729"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GaugeAliasDecay.pressureSource_zero_mass",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 729,
+        "text": "theorem pressureSource_zero_mass {coord a b : ℝ} (U : SlowRegion coord) (hab : a < b)\n    {f : Point Plane → ℝ}\n    (hf : ContDiffOn ℝ ∞ f (PhysicalMeanDomain.slowDomain U.carrier))\n    (hs : SupportedGauge a b (qLength coord) U.carrier f) {s : Plane} (hsm : s ∈ U.carrier) :\n    PressureStream.pressureMass (pressureSource a b hab (qLength coord) f) s = 0"
+      }
+    }
+  }
+}

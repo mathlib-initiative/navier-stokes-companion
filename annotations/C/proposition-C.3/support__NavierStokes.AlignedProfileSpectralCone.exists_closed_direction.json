@@ -1,0 +1,26 @@
+{
+  "id": "proposition-C.3/support/NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
+      "line": 433,
+      "module": "NavierStokes.AlignedProfileSpectralCone",
+      "path": "NavierStokes/AlignedProfileSpectralCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AlignedProfileSpectralCone.lean#L433"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 433,
+        "text": "theorem exists_closed_direction (hcone : LeadingStressWeights.FullTrueCone v) :\n    ∃ D : (ℝ × ℝ) → Plane,\n      ContinuousOn D (Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W)) ∧\n      (∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W), ‖D p‖ = 1) ∧\n      (∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Ioo (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W),\n        D p = PrimaryRepresentatives.normalDirection\n          (planeOfPair (LeadingStressWeights.logStress v.profiles F.data.h p))) ∧\n      ∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W),\n        ∀ omega : ℝ, 0 < omega → PrimaryRepresentatives.ReferenceCone omega (logShear v omega p) ∧\n          PrimaryRepresentatives.TargetCone omega (logShear v omega p) (D p)"
+      }
+    }
+  }
+}

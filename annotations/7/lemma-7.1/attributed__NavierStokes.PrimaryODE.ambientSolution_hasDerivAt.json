@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.1/attributed/NavierStokes.PrimaryODE.ambientSolution_hasDerivAt",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryODE.ambientSolution_hasDerivAt",
+      "line": 211,
+      "module": "NavierStokes.PrimaryODE",
+      "path": "NavierStokes/PrimaryODE.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L211"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryODE.ambientSolution_hasDerivAt",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Kinematics ⇒ ambient image of the modal solution (coefficient diag(λ,−λ) − j²d + E) satisfies t' = projectedRhs n n' t (baseAction F g t) f (damping j), i.e. the (7.10) identity along solutions"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 211,
+        "text": "theorem ambientSolution_hasDerivAt (hab : a ≤ b) (d : FrameData Q) (j : ℤ)\n    (x₀ : Q → State) (f : Q × ℝ → Space) {U : Set Q}\n    (hA : ContinuousOn (d.coefficient j) (U ×ˢ Icc a b))\n    (hf : ContinuousOn (d.forcing f) (U ×ˢ Icc a b))\n    {p : Q} (hp : p ∈ U) (hk : d.Kinematics p (Icc a b)) {v : ℝ} (hv : v ∈ Icc a b) :\n    HasDerivAt (ambientSolution hab d j x₀ f p)\n      (TangentProjection.projectedRhs (d.normal (p, v)) (d.normalMotion (p, v))\n        (ambientSolution hab d j x₀ f p v)\n        (MovingFrameODE.baseAction (d.F (p, v)) (d.shear (p, v))\n          (ambientSolution hab d j x₀ f p v))\n        (f (p, v)) (d.damping j (p, v))) v"
+      }
+    }
+  }
+}

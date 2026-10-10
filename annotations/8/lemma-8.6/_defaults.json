@@ -1,0 +1,69 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 8.6",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [medium CONTENT] Lean's torus-inverse estimate needs m+5 input derivatives; the paper's (8.19) states m+4. The Lean bound is strictly weaker by one derivative and no m+4 version exists in the repository. The ….",
+  "location": {
+    "page": 95,
+    "rect": [0.133552, 0.705011, 0.734171, 0.150058]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "item": "lemma-8.6",
+      "locator": {
+        "physical": [95, 96],
+        "printed": [95, 96],
+        "text": "Section 8, Lemma 8.6, p. 95"
+      },
+      "region": "lemma-8.6@p095",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.SmoothFamilyTorusInverse.inverse_finiteJets (SmoothFamilyTorusInverse.lean:865): `JetBound f S (n + 5) C → JetBound (inverse d f) S n (K * C)`; ParametricTorusInverse.mixedJet_inverse_bound (:654): `xJet (w.length + 5)`; UniformFourierAlias.realInverse_finiteJets (:611): `∀ j ≤ m + 5`. Origin: applyMultiplier_finiteJets (:847) loses n + l + 4 with l = 1, because coefficient decay is summed against Σ weight^{-4} (SmoothFourierData.summable_weight_inv_four :343). A search of decls.jsonl for any inverse bound with a +4 loss finds only the centering lemma nonbarPart_finiteJets (:1020), not N^{-1}.", "CONVENTION: existence: TemporalMeanUpdate.absoluteInverse_solves :238 (+ _smooth :218, _zeroMean :227); uniqueness: timeDerivative_unique :128; formula: absoluteInverse :215 := directionalInverse .temporal (coefficient f); (8.20): MeanChartCompatibility.temporalAtIndex :498, temporalAtIndex_physical_pull :513, chartPrefactor_bound :296; (8.21)-(8.22): temporal_mean_update :818, axialUpdate_eq_desired_sub_alias :775, meanClass_desiredIncrement :1040, meanClass_scaledRadialUpdate :1097, meanClass_axialUpdate :1513; flatness: axialAlias_fastDerivative_superflat :1247; (8.2): desiredIncrement_barMass :584, axialUpdate_zeroMean :793, GaugeMassPreservation.temporalStage_preserve_masses_on :256.", "CONVENTION: WeightedClasses.MemClass (WeightedClasses.lean:107) has fields weight_nonneg, smooth (ContDiffOn ℝ ∞ (f n) s.domain) and bounds; MeanClass (:115) is MemClass with weight ζ. meanClass_desiredIncrement (:1040) and meanClass_axialUpdate (:1513) take hfc (ContDiff), hp (TorusPeriodicLift) and hs (RadiallySupported) as separate hypotheses.", "All three voters agree on DELTA and lean_weaker, and my own reading of pp. 95-96 against the Lean confirms it. Every clause of Lemma 8.6 is stated somewhere (existence, uniqueness, series, chart agreement, (8.20)-(8.22), classes, flatness, (8.2)), except that the displayed estimate (8.19) is proved only with a five-derivative loss where the paper states four. That is real but harmless downstream. The auditor's other two findings are true encoding observations, not defects; I keep them as conventions with recovery arguments, against both skeptics' votes to drop them. Declarations are corrected to add the common-index forms (temporalAtIndex and its theorems) the pairing skeptic found, which match the paper's c_{i0} more literally than the native-index desiredIncrement."],
+          "findings": [
+            {
+              "confidence": 0.93,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "medium",
+              "summary": "Lean's torus-inverse estimate needs m+5 input derivatives; the paper's (8.19) states m+4. The Lean bound is strictly weaker by one derivative and no m+4 version exists in the repository. The paper's m+4 is correct."
+            },
+            {
+              "confidence": 0.75,
+              "contested": true,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration bundles Lemma 8.6; its clauses are spread over about 15 declarations in 7 files. Every clause is stated by some declaration (one with the m+5 weakening), so this is a decomposition, not a coverage gap."
+            },
+            {
+              "confidence": 0.75,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean's MeanClass carries smoothness on the strip domain and the weighted all-order bounds. Torus periodicity, radial support and global smoothness, which Definition 6.4 puts inside M_α, are separate hypotheses and conclusions. The auditor wrongly listed smoothness and zero mean as omitted."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "severity": "medium",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation lean weaker, confidence 0.88. Findings: [medium CONTENT: CONFIRMED_CONTENT] Lean's torus-inverse estimate needs m+5 input derivatives; the paper's (8.19) states m+4. The Lean bound is strictly weaker by one derivative and no m+4 version exists in the repository. The paper's m+4 is correct.; [low COVERAGE: CONVENTION] No single declaration bundles Lemma 8.6; its clauses are spread over about 15 declarations in 7 files. Every clause is stated by some declaration (one with the m+5 weakening), so this is a decomposition, not a coverage gap.; [low CONTENT: CONVENTION] Lean's MeanClass carries smoothness on the strip domain and the weighted all-order bounds. Torus periodicity, radial support and global smoothness, which Definition 6.4 puts inside M_α, are separate hypotheses and conclusions. The auditor wrongly listed smoothness and zero mean as omitted.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

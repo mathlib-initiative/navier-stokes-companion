@@ -1,0 +1,31 @@
+{
+  "id": "lemma-B.4/attributed/NavierStokes.ReferenceUniformStocks.uniform_reference_quantities",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ReferenceUniformStocks.uniform_reference_quantities",
+      "line": 414,
+      "module": "NavierStokes.ReferenceUniformStocks",
+      "path": "NavierStokes/ReferenceUniformStocks.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceUniformStocks.lean#L414"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ReferenceUniformStocks.uniform_reference_quantities",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation incomparable; the auditor's reading: (hs : NaturalAxisRange.Parameters h j) (hσ : 0<σ) (hscale : stabilityScale … ≤ Λ) (k) (ha : 0<a) (haR : a ≤ R) : Uniform k, over q : Choice d Λ × PositiveSlab a R, of η ↦ C·E(X,η), (C·E(X,η))⁻¹, profileStockOne (= p1) and axialLag/L (= n_s)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 414,
+        "text": "theorem uniform_reference_quantities (hs : NaturalAxisRange.Parameters h j) (hσ : 0 < σ)\n    (hscale : AxisReference.stabilityScale d.coefficients.epsilon (profileErrorConstant d) ≤ Λ)\n    (k : ℕ) {a R : ℝ} (ha : 0 < a) (haR : a ≤ R) :\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      q.1.C*(q.1.profiles hΛ hP0).E (q.2,η)) ∧\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      (q.1.C*(q.1.profiles hΛ hP0).E (q.2,η))⁻¹) ∧\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      ActivationStocks.profileStockOne (q.1.profiles hΛ hP0) h (q.2,η)) ∧\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      (q.1.profiles hΛ hP0).axialLag h (q.2,η) / NaturalAxisData.L h η)"
+      }
+    }
+  }
+}

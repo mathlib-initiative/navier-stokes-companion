@@ -1,0 +1,57 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 4.11",
+  "status": "formalized",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] Lean needs the data to be C^∞ on an open O ⊇ K. The paper asks only for smoothness on the closed rectangle, with one-sided derivatives at η=±1. Bridging the ….",
+  "location": {
+    "page": 38,
+    "rect": [0.133356, 0.757386, 0.734821, 0.108815]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-4.11",
+      "locator": {
+        "physical": [38, 39],
+        "printed": [38, 39],
+        "text": "Section 4, Lemma 4.11, p. 38"
+      },
+      "region": "lemma-4.11@p038",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["CONFIRMED_CONTENT: TrueConeLoopPaper.exists_local_family_with_margin, TrueConeLoopPaper.lean:22-24: (hO : IsOpen O) (hKO : K ⊆ O) (ha : ContDiffOn ℝ ∞ a O) … (hp₂ : ContDiffOn ℝ ∞ p₂ O). FlatPrimitivePaper.smooth_extension_on_compact (line 20) also starts from an open set.", "CONVENTION: TrueConeLoop.HasConeMargin, TrueConeLoop.lean:283: ε ≤ A ∧ ε ≤ A(1+(C/A)²)−2 ∧ ε ≤ p₁+p₂(C/A)−2 ∧ ε ≤ coneBound(..)−A(1+(C/A)²)", "I checked pp.38-39 and (4.20)-(4.22) against TrueConeLoopPaper.lean:21. With m=t_s, nominalSpeed is v_s, p₁+p₂m is P_c, p₂−p₁m is J_c and coneBound is 𝒰. With C=−b_L, the means, period one and endpoint agreement on K∩N all match the paper. ε is chosen uniformly before x and φ. v>2 is needed only on B, which is equivalent by continuity. The output is two-sided C^∞.\n\nTwo differences remain. The margin form is a convention, and I verified its recovery: μ_L=min(ε,2ε²). The regularity hypothesis is also stronger in Lean. That one needs a classical extension theorem, so the relation is different_formulation, with the Lean weaker on the regularity axis.\n\nThere are no sorries. The theorem sits off the main chain, which uses realized_loop_stable instead."],
+          "findings": [
+            {
+              "confidence": 0.78,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Lean needs the data to be C^∞ on an open O ⊇ K. The paper asks only for smoothness on the closed rectangle, with one-sided derivatives at η=±1. Bridging the two needs a Seeley/Whitney extension, which the repository does not formalise."
+            },
+            {
+              "confidence": 0.9,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The paper's margin is on Ψ=(a, v−2, c−v, 2(c−v)²−(v−2)j²) of (4.35). Lean's HasConeMargin bounds (a, v−2, c−2, 𝒰(c,j)−v) instead. HasConeMargin ε implies Ψ_i ≥ min(ε, 2ε²)."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.86. Findings: [low CONTENT: CONFIRMED_CONTENT] Lean needs the data to be C^∞ on an open O ⊇ K. The paper asks only for smoothness on the closed rectangle, with one-sided derivatives at η=±1. Bridging the two needs a Seeley/Whitney extension, which the repository does not formalise.; [low CONTENT: CONVENTION] The paper's margin is on Ψ=(a, v−2, c−v, 2(c−v)²−(v−2)j²) of (4.35). Lean's HasConeMargin bounds (a, v−2, c−2, 𝒰(c,j)−v) instead. HasConeMargin ε implies Ψ_i ≥ min(ε, 2ε²).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.6/attributed/NavierStokes.SignedWaveUpdate.CovarianceControl.increment_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedWaveUpdate.CovarianceControl.increment_class",
+      "line": 159,
+      "module": "NavierStokes.SignedWaveUpdate",
+      "path": "NavierStokes/SignedWaveUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean#L159"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedWaveUpdate.CovarianceControl.increment_class",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: CovarianceControl s H T → (∀ i, R_i ∈ MeanClass β) → increment ∈ WaveClass s 1 β  [(7.33) with β = α−1]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 159,
+        "text": "theorem increment_class (h : CovarianceControl s H T) {R : ℕ → D → Vec2} {β : ℝ}\n    (hR : ∀ i, MeanClass s β (fun n x => R n x i)) (j : Fin 2) :\n    WaveClass s (fun _ _ => 1) β\n      (fun n x => SignedCovariance.increment (H n x) (T n x) (R n x) j)"
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 7.2",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] ParticularCopyBounds.uniform_coefficients_jets, the general bound, assumes frame-level forcing bounds on the closed pulse interval. All six constructors of that hypothesis take a source class weighted by copyEnvelope, zero off the closed …; [low CONTENT] Uniqueness is proved only among solutions of the projected ODE (7.13), with two-sided derivatives even at the endpoints. Uniqueness among pairs (t_m, π_m) with tangency, zero data and (7.5) is …; [low CONTENT] On the actual chain, the derivative bounds and the joint and one-sided smoothness of t_m and π_m are proved only on the open pulse interval Ioo 0 L, or for ….",
+  "location": {
+    "page": 77,
+    "rect": [0.134051, 0.724912, 0.734126, 0.149]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "item": "proposition-7.2",
+      "locator": {
+        "physical": [77, 78],
+        "printed": [77, 78],
+        "text": "Section 7, Proposition 7.2, p. 77"
+      },
+      "region": "proposition-7.2@p077",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.WaveEnvelopeTransport.copyEnvelope (NavierStokes/WaveEnvelopeTransport.lean:54): ∑' k, if g.coordinates k Y ∈ rectangle r L then W (g.coordinates k Y).2 else 0, with rectangle r L = Icc (-r) r ×ˢ Icc 0 L (L24); so it is 0 at any Y in no copy's closed rectangle.; NavierStokes.ParticularCopyBounds.uniform_coefficients_jets (NavierStokes/ParticularCopyBounds.lean:492): From UniformModalControl hr/hi and a local source class on cells: amplitude ∈ UniformLocalJets α and pressure ∈ UniformLocalJets (α+1/2) of complexCopyCoefficients, weight √ζ·W on cells. No hypothesis on the source off the cells.; NavierStokes.ParticularCopyBounds.UniformModalControl (NavierStokes/ParticularCopyBounds.lean:363): Record of frame-level inputs; input_jets (L401–409) bounds jets of copyFrame.forcing (copySource source g k) at (x,v), v ∈ Icc 0 L, by ε^α·√ζ·C·growth^m·envelope v, with envelope_pos : 0 < envelope (L388).; NavierStokes.ActualParticularControl.referenceControl (NavierStokes/ActualParticularControl.lean:609): Builds UniformModalControl from hf : UniformWaveClass (sourceStrip s) (groupedEnvelope g r L referenceP) α f (L617–619); hf is used only for smoothness and the input-jet lemma.; NavierStokes.ActualParticularControl.actualSourceControl (NavierStokes/ActualParticularControl.lean:710): Builds UniformModalControl from h : ∀ i, UniformWaveClass (sourceStrip s) (groupedEnvelope …) α (residual velocity component) (L721–724), via referenceControl.; NavierStokes.ScaledActualParticularControl.scaledControl (NavierStokes/ScaledActualParticularControl.lean:139): Builds UniformModalControl from hf : UniformWaveClass (sourceStrip s) (groupedEnvelope (geometry …) r (length F clock) (envelope F clock)) α f (L149–150).; NavierStokes.ScaledActualParticularControl.actualControl (NavierStokes/ScaledActualParticularControl.lean:320): Builds UniformModalControl from hsource : ∀ i, UniformWaveClass (sourceStrip s) (groupedEnvelope …) α (residual velocity component) (L336–338).; NavierStokes.ActualParticularStageControls.selectedControl (NavierStokes/ActualParticularStageControls.lean:661): scaledControl applied to the selected data, from H : UniformWaveClass (sourceStrip (angleStrip slowStrip)) nativeEnvelope α (currentSource x j).; NavierStokes.ActualParticularStageControls.selectedActualControl (NavierStokes/ActualParticularStageControls.lean:736): UniformModalControl for the selected tangent with the current source, from the same H with nativeEnvelope (L739–741), via selectedControl.; NavierStokes.ActualParticularControl.source_path_bounds (NavierStokes/ActualParticularControl.lean:203): From hf : UniformWaveClass (sourceStrip s) (groupedEnvelope g r L W) α f: jets of f ∘ sourceArgument at (x,v), |ξ| ≤ r, v ∈ Icc 0 L, are ≤ C·growth^m·ε^α·√ζ·W v. The proof applies hf.bounds only at those path points (L232–236).; NavierStokes.ActualParticularControl.frame_input_jets (NavierStokes/ActualParticularControl.lean:274): Derives the coefficient, frame-forcing and synthesis-column jet bounds on Icc 0 L from the same copyEnvelope-weighted hf; hf enters only through source_path_bounds (L315–317) and hf.smooth (L368).; NavierStokes.ActualParticularControl.groupedEnvelope (NavierStokes/ActualParticularControl.lean:195): fun l n x => WaveEnvelopeTransport.copyEnvelope (g l n) (r l n) (L l n) (W l n) x.2.; NavierStokes.ParticularWaveBounds.forced_ambient_family_envelope_jets (NavierStokes/ParticularWaveBounds.lean:1065): If the source f has EnvelopeJets on D × V (V open ⊇ Icc 0 L) against w·W with 0 < W, then PrimaryODE.ambientSolution with zero initial data has the same EnvelopeJets on D × Ioo 0 L. Amplitude only; referenced nowhere else in the repository.; NavierStokes.ActualParticularStageControls.raw_jets (NavierStokes/ActualParticularStageControls.lean:924): From H : UniformWaveClass (sourceStrip (angleStrip slowStrip)) nativeEnvelope α (currentSource x j): amplitude ∈ UniformLocalJets α and pressure ∈ UniformLocalJets (α+1/2) on controlPatch.; NavierStokes.ActualParticularStageControls.nativeEnvelope (NavierStokes/ActualParticularStageControls.lean:435): envelope l n (z.1.1, z.2), where envelope (L428) is WaveEnvelopeTransport.copyEnvelope of the chart geometry, slots.radius, the phase length and pulseEnvelope.; NavierStokes.ActualParticularStageControls.current_source_class (NavierStokes/ActualParticularStageControls.lean:560): From the cycle residual hypothesis H (UniformVelocity … meanEnvelope α of the residual block): UniformWaveClass (sourceStrip (angleStrip slowStrip)) nativeEnvelope α (currentSource x j). Supports 'supplies the class on the actual chain'; it does not by itself establish anything about the main theorem.; NavierStokes.LabelSumBounds.UniformWaveClass (NavierStokes/LabelSumBounds.lean:45): UniformClass s (√ζ·P) α f; UniformClass (L33) requires ContDiffOn ∞ on s.domain and jets ≤ C·ε^α·growth^p·weight at every x ∈ s.domain, so a zero weight forces all jets to vanish.; NavierStokes.WeightedClasses.MemClass (NavierStokes/WeightedClasses.lean:107): smooth: ContDiffOn ∞ on s.domain; bounds at every x ∈ s.domain against majorant = C·ε^α·growth^p·w. Same shape as UniformClass, which is the class the cited hypotheses actually use.; NavierStokes.CommonCoverClass.sourceStrip (NavierStokes/CommonCoverClass.lean:851): parameterStrip s (ContinuousLinearMap.fst ℝ P Plane): domain = fst ⁻¹' s.domain, i.e. s.domain × Plane, with weights pulled back from the slow factor.", "CONFIRMED_CONTENT: CommonCoverSolve.LinearData.anchoredSolve_unique (CommonCoverSolve.lean:472): hypothesis HasDerivAt u (coefficientAlong·u + forcingAlong) on Icc a b. No declaration derives (7.13) from (7.5) plus n·t=0.", "CONFIRMED_CONTENT: ActualParticularStageControls.controlPatch (L794) and ModalControl/UniformModalControl.current_slot (ParticularCopyBounds.lean:47) use Ioo 0 L. ParticularOneSided.commonCoefficients_oneSided (L169) has hsupp : tsupport κ ⊆ univ ×ˢ Ioo a b. The closed version is only the generic forced_joint_jet_bound_within (ParticularWithinBounds.lean:21), which is not instantiated.", "CONVENTION: ParticularCopyBounds.UniformModalControl energy/input_jets (ParticularCopyBounds.lean:363–405); ScaledActualParticularControl.scaledControl (L139); StripData.growth and MemClass (WeightedClasses.lean:47,107).", "CONVENTION: CommonCoverSolve.commonSolve_periodic (L545), commonSolve_contDiffOn (L716) and ParticularOneSided.commonCoefficients_oneSided (L169) all concern Σ_k κ·copySolve_k. CommonCoverSolve.LinearData.copySolve_deck (L293) gives uncut descent.", "Lean covers every clause of Prop 7.2: existence with (7.13) on H_w, tangency, (7.5) with the printed π_m, descent, supports, uniform (7.14)–(7.15) and the one-sided clause. But every route from the paper's source bound to (7.14)–(7.15) assumes a UniformWaveClass whose copyEnvelope weight vanishes off the closed rectangles, and requires smoothness on all of s.domain × Plane. That forces temporal zero extension, which the paper explicitly does not assume. The hypothesis is therefore strictly stronger, so the relation is lean_weaker and the verdict SINGLE_SOURCE_DELTA (medium). The main chain is unaffected via current_source_class. The PAIRING skeptic's ModalControl-based (7.5) and tangency declarations replace the ModalCopyControl ones. Uniqueness only for the projected ODE and bounds only on the open interval stay low."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "ParticularCopyBounds.uniform_coefficients_jets, the general bound, assumes frame-level forcing bounds on the closed pulse interval. All six constructors of that hypothesis take a source class weighted by copyEnvelope, zero off the closed rectangles, so such a source vanishes beyond both pulse endpoints. Proposition 7.2 does not assume that."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Uniqueness is proved only among solutions of the projected ODE (7.13), with two-sided derivatives even at the endpoints. Uniqueness among pairs (t_m, π_m) with tangency, zero data and (7.5) is not stated. The converse step is routine."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "On the actual chain, the derivative bounds and the joint and one-sided smoothness of t_m and π_m are proved only on the open pulse interval Ioo 0 L, or for κ-localized sums with tsupport κ ⊆ Ioo a b. The paper states the bounds on the closed interval 0≤v≤L_s."
+            },
+            {
+              "confidence": 0.75,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Two encoding choices: the general bound theorem takes frame-level inputs, which scaledControl discharges, and the degrees b'_I, a'_I are merged into one degree p on S·max(1,δ⁻¹). The merge is equivalent because the paper's δ = min{1,…} ≤ 1."
+            },
+            {
+              "confidence": 0.65,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Descent, joint smoothness and the one-sided τ=0 clause are stated for the κ-localized periodized sum, not for the uncut t_m and π_m."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation lean weaker, confidence 0.78. Findings: [low CONTENT: CONFIRMED_CONTENT] ParticularCopyBounds.uniform_coefficients_jets, the general bound, assumes frame-level forcing bounds on the closed pulse interval. All six constructors of that hypothesis take a source class weighted by copyEnvelope, zero off the closed rectangles, so such a source vanishes beyond both pulse endpoints. Proposition 7.2 does not assume that.; [low CONTENT: CONFIRMED_CONTENT] Uniqueness is proved only among solutions of the projected ODE (7.13), with two-sided derivatives even at the endpoints. Uniqueness among pairs (t_m, π_m) with tangency, zero data and (7.5) is not stated. The converse step is routine.; [low CONTENT: CONFIRMED_CONTENT] On the actual chain, the derivative bounds and the joint and one-sided smoothness of t_m and π_m are proved only on the open pulse interval Ioo 0 L, or for κ-localized sums with tsupport κ ⊆ Ioo a b. The paper states the bounds on the closed interval 0≤v≤L_s.; [low CONTENT: CONVENTION] Two encoding choices: the general bound theorem takes frame-level inputs, which scaledControl discharges, and the degrees b'_I, a'_I are merged into one degree p on S·max(1,δ⁻¹). The merge is equivalent because the paper's δ = min{1,…} ≤ 1.; [low CONTENT: CONVENTION] Descent, joint smoothness and the one-sided τ=0 clause are stated for the κ-localized periodized sum, not for the uncut t_m and π_m.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

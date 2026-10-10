@@ -1,0 +1,31 @@
+{
+  "id": "lemma-B.7/attributed/NavierStokes.ReferenceEndpointRate.exists_endpointLog_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ReferenceEndpointRate.exists_endpointLog_bound",
+      "line": 226,
+      "module": "NavierStokes.ReferenceEndpointRate",
+      "path": "NavierStokes/ReferenceEndpointRate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean#L226"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ReferenceEndpointRate.exists_endpointLog_bound",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: (1 ≤ Λ) (0 < σ) (stabilityScale ≤ Λ) (N) : ∃ B ≥ 0, ∀ q : Choice d Λ, ∀ T κ w₁ w₂, κ ∈ Icc 0 1 → ∀ n ≤ N, ∀ η ∈ J, |iteratedDeriv n (endpointLog T κ w₁ w₂ q.C) η| ≤ B  (first line of (B.32))",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 226,
+        "text": "theorem exists_endpointLog_bound (hΛ1 : 1 ≤ Λ) (hσ : 0 < σ)\n    (hscale : AxisReference.stabilityScale d.coefficients.epsilon (profileErrorConstant d) ≤ Λ)\n    (N : ℕ) : ∃ B, 0 ≤ B ∧ ∀ q : Choice d Λ, ∀ T κ w₁ w₂ : ℝ,\n      κ ∈ Icc (0:ℝ) 1 → ∀ n ≤ N, ∀ η ∈ J,\n      |iteratedDeriv n ((reference d hΛ hP0 hs q).endpointLog T κ w₁ w₂ q.C) η| ≤ B"
+      }
+    }
+  }
+}

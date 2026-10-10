@@ -1,0 +1,32 @@
+{
+  "id": "lemma-10.5/attributed/NavierStokesR3.PressureRecovery.pressure_gradient_recovery",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.PressureRecovery.pressure_gradient_recovery",
+      "line": 419,
+      "module": "NavierStokes.R3.PressureRecovery",
+      "path": "NavierStokes/R3/PressureRecovery.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureRecovery.lean#L419"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.PressureRecovery.pressure_gradient_recovery",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: Under the comparison hypotheses (both fields of uniform finite energy, no pressure growth condition): ∫∂_k(p−q)ψ = −Σ_ij pressurePair i j (tensorDiff u v t i j)(∂_kψ), i.e. ∇π = ∇π_* with π_* = ΣR_iR_j g_ij, weakly",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 419,
+        "text": "theorem pressure_gradient_recovery {T t : ℝ} {u v : VelocityField} {p q : PressureField}\n    (hT : 0 < T)\n    (hu : ContDiffOn ℝ ∞ u (Comparison.slab 0 T))\n    (hv : ContDiffOn ℝ ∞ v (Comparison.slab 0 T))\n    (hp : ContDiffOn ℝ ∞ p (Comparison.slab 0 T))\n    (hq : ContDiffOn ℝ ∞ q (Comparison.slab 0 T))\n    (hdivu : ∀ s ∈ Ioo 0 T, ∀ x, spatialDivergence u s x = 0)\n    (hdivv : ∀ s ∈ Ioo 0 T, ∀ x, spatialDivergence v s x = 0)\n    (hNS : ∀ s ∈ Ioo 0 T, ∀ x,\n      navierStokesResidual u p s x = navierStokesResidual v q s x)\n    (heu : NavierStokesR3.ProblemStatement.UniformFiniteEnergy (Icc 0 T) u)\n    (hev : NavierStokesR3.ProblemStatement.UniformFiniteEnergy (Icc 0 T) v)\n    (ht : t ∈ Ioo 0 T) {ψ : Space → ℝ}\n    (hψ : ContDiff ℝ ∞ ψ) (hcψ : HasCompactSupport ψ) (k : Fin 3) :\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

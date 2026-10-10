@@ -1,0 +1,26 @@
+{
+  "id": "lemma-A.8/support/NavierStokes.TerminalHistoryBridge.terminal_axialResidual",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalHistoryBridge.terminal_axialResidual",
+      "line": 815,
+      "module": "NavierStokes.TerminalHistoryBridge",
+      "path": "NavierStokes/TerminalHistoryBridge.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean#L815"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalHistoryBridge.terminal_axialResidual",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 815,
+        "text": "theorem terminal_axialResidual (F : Profile) {XR C : ℝ} (w : CompensationWitness F XR C)\n    {p : SimilarityProfile.PhysicalPoint} (ht : p.1 < 1) (hs : 0 < p.2.1)\n    (hfull : 1/2 < Real.log (SimilarityProfile.X F.data.h p /\n      OutgoingDilation.switchRadius F XR) + 1/5) :\n    SimilarityProfile.partialZ (TerminalPressure.outgoingPressure (normalization F XR) F.data (shift F XR)) p =\n      SimilarityProfile.q F.data.h p^(-TerminalPressure.amplitudeExponent F.data.h-1) *\n        axialResidual F XR w.coefficients (logPoint XR (SimilarityProfile.inner F.data.h p))"
+      }
+    }
+  }
+}

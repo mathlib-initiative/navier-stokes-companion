@@ -1,0 +1,27 @@
+{
+  "id": "proposition-6.6/support/NavierStokes.CommonBaseContext.operator_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CommonBaseContext.operator_bounds",
+      "line": 140,
+      "module": "NavierStokes.CommonBaseContext",
+      "path": "NavierStokes/CommonBaseContext.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonBaseContext.lean#L140"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CommonBaseContext.operator_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 140,
+        "text": "theorem operator_bounds {h : ℝ} (hh : 0 ≤ h) (U : LocalSignedRequest.SlowRegion (2*h))\n    {index : ℕ → ℕ} (hi : ∀ n, index n ≤ ChartScales.nativeIndex h n)\n    {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b) (hcL : 0 < cL) (hcR : 0 < cR) :\n    MeanIncrementBounds.OperatorBounds (BaseContextAssembly.movingStrip hh U a b cL cR ha hcL hcR)\n      (operators h index a b hab) ChartScales.kappa"
+      }
+    }
+  }
+}

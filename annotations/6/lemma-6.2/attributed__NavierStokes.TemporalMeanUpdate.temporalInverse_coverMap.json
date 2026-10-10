@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/attributed/NavierStokes.TemporalMeanUpdate.temporalInverse_coverMap",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TemporalMeanUpdate.temporalInverse_coverMap",
+      "line": 525,
+      "module": "NavierStokes.TemporalMeanUpdate",
+      "path": "NavierStokes/TemporalMeanUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L525"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TemporalMeanUpdate.temporalInverse_coverMap",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: real-family form of the temporal inverse commuting with the cover, factor (Tg^n)⁻¹"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 525,
+        "text": "theorem temporalInverse_coverMap {f : PressureStream.Lift S → ℝ}\n    (hf : ContDiff ℝ ∞ f) (hp : PressureStream.TorusPeriodicLift f)\n    (hm : ∀ p, PressureStream.torusAverage f p = 0) (n : ℕ) (z : PressureStream.Lift S) :\n    temporalInverse (fun p => f (p.1, (p.2.1, coverMap n p.2.2))) z =\n      (ChartScales.Tg ^ n)⁻¹ * temporalInverse f (z.1, (z.2.1, coverMap n z.2.2))"
+      }
+    }
+  }
+}

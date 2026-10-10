@@ -1,0 +1,31 @@
+{
+  "id": "lemma-9.7/attributed/NavierStokes.ActualCandidateAssembly.physicalData",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCandidateAssembly.physicalData",
+      "line": 1079,
+      "module": "NavierStokes.ActualCandidateAssembly",
+      "path": "NavierStokes/ActualCandidateAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCandidateAssembly.lean#L1079"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCandidateAssembly.physicalData",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∀ J, ActualCycleResidualBounds.PhysicalData B (residualBand B N0) (cycle B N0 J).state (uncutVelocity potentialStages directStages J) (uncutPrefix pressureStages (J+1)): on each band source n ≥ residualBand the uncut finite sums are C^2 / differentiable and germ-equal to base + increments of the J-t",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1079,
+        "text": "theorem physicalData (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) :\n    ∀ J, ActualCycleResidualBounds.PhysicalData B (ActualCandidateConstruction.residualBand B N0)\n      (ActualCandidateConstruction.cycle B N0 J).state\n      (MixedDiagonalResidual.uncutVelocity (potentialStages B N0 hN) (directStages B N0 hN) J)\n      (DiagonalJetBounds.uncutPrefix (pressureStages B N0 hN) (J + 1))"
+      }
+    }
+  }
+}

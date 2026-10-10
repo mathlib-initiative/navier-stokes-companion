@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.1/attributed/NavierStokes.PositiveAxisDifferential.positive_solution_unique",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PositiveAxisDifferential.positive_solution_unique",
+      "line": 257,
+      "module": "NavierStokes.PositiveAxisDifferential",
+      "path": "NavierStokes/PositiveAxisDifferential.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisDifferential.lean#L257"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PositiveAxisDifferential.positive_solution_unique",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (hF : LowerInputRegularity T U h F) (hV : IsDifferentialSolution R U (coefficient0 …) (coefficient1 …) (sourceField …) V), R<T : ∀ r∈[0,R], z∈U, V r z = positiveSolution hR h lam C F r z",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 257,
+        "text": "theorem positive_solution_unique {R T : ℝ} (hR : 0 ≤ R) (hRT : R < T)\n    {U : Set ℂ} (hU : IsOpen U) {h : ℂ} (lam C : ℂ)\n    {F : PositiveAxisSystem.CoefficientData}\n    (hF : PositiveAxisExistence.LowerInputRegularity T U h F)\n    {V : Field}\n    (hV : IsDifferentialSolution R U\n      (PositiveAxisSystem.coefficient0 h lam C F) (PositiveAxisSystem.coefficient1 h F)\n      (PositiveAxisSystem.sourceField h C F) V) :\n    ∀ r ∈ Icc (0 : ℝ) R, ∀ z ∈ U,\n      V r z = PositiveAxisExistence.positiveSolution hR h lam C F r z"
+      }
+    }
+  }
+}

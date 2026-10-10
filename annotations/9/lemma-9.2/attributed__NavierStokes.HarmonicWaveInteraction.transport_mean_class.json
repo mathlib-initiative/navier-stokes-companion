@@ -1,0 +1,31 @@
+{
+  "id": "lemma-9.2/attributed/NavierStokes.HarmonicWaveInteraction.transport_mean_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HarmonicWaveInteraction.transport_mean_class",
+      "line": 404,
+      "module": "NavierStokes.HarmonicWaveInteraction",
+      "path": "NavierStokes/HarmonicWaveInteraction.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicWaveInteraction.lean#L404"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HarmonicWaveInteraction.transport_mean_class",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clause (iii), one ordered product. Same hypotheses with ModeSolenoidal s c a only, ∀ m : ℤ (including 0) ⊢ MeanClass s (α+β-κ) (HarmonicResidual.transport … (blockAmplitude a n) (blockAmplitude b n) i m)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 404,
+        "text": "theorem transport_mean_class {s : StripData D} {κ α β : ℝ} {P : ℕ → D → ℝ}\n    (c : CorrectionState.Context D) (ho : MeanIncrementBounds.OperatorBounds s c.operators κ)\n    (hR : ∀ x ∈ s.domain, 0 < c.operators.radius x)\n    {a b : CorrectionState.HarmonicBlock D} {N : ℕ}\n    (ha : a.WaveBounds s P α) (hb : b.WaveBounds s P β)\n    (ha0 : ZeroMode a) (hb0 : ZeroMode b) (hN : a.BandLimited N)\n    (hΦ : ∀ n, ContDiffOn ℝ ∞ (a.phase n) s.domain)\n    (hk : ∀ n, a.frequency n ≠ 0) (hdiv : ModeSolenoidal s c a)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1) (m : ℤ) (i : Fin 3) :\n    MeanClass s (α + β - κ)\n      (fun n x => HarmonicResidual.transport (HarmonicResidual.contextFrame c n)\n        (a.frequency n) (a.phase n) (a.angularFrequency n)\n        (blockAmplitude a n) (blockAmplitude b n) i m x)"
+      }
+    }
+  }
+}

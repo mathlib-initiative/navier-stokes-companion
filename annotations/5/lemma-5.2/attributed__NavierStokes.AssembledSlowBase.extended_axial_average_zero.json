@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/attributed/NavierStokes.AssembledSlowBase.extended_axial_average_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AssembledSlowBase.extended_axial_average_zero",
+      "line": 619,
+      "module": "NavierStokes.AssembledSlowBase",
+      "path": "NavierStokes/AssembledSlowBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean#L619"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AssembledSlowBase.extended_axial_average_zero",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: 0<n, B²/2 ≤ X, |η|≤1 → average (extended U_n) = 0  (F_n/X vanishes beyond X_+)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 619,
+        "text": "theorem extended_axial_average_zero {h C : ℝ} (s : Scheme S h C)\n    (hI : Icc (-1 : ℝ) 1 ⊆ S) {n : ℕ} (hn : 0 < n) {p : ℝ × ℝ}\n    (hX : s.B ^ 2 / 2 ≤ p.1) (heta : |p.2| ≤ 1) :\n    ProfileHistories.average (extendedCoefficient s hI n 1) p = 0"
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 8.2",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 90,
+    "rect": [0.133356, 0.627486, 0.734382, 0.246459]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-8.2",
+      "locator": {
+        "physical": [90, 91],
+        "printed": [90, 91],
+        "text": "Section 8, Lemma 8.2, p. 90"
+      },
+      "region": "lemma-8.2@p090",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["CONVENTION: VariableGaugeMean.meanClass_compactPrimitive L1692, meanClass_streamPotential L2032, compactPrimitive_radial_identity L2115, streamGamma_eq_desired_sub_alias L2169; GaugeAliasDecay.meanClass_compactAlias_superflat L504, meanClass_dividedAlias_superflat L539; SignedStressPrimitive.sigma L164 (e : ℕ, shift 0), LocalSignedRequest.meanClass_physicalBarSigma L565. No declaration applies divideRadius twice to compactPrimitive (r^2 f).", "CONVENTION: PressureStream.torusAverage_physicalAlias L589 and MeanRankUpdate.slow_physicalAlias_zero L391 (hypothesis RadiallySupported a b with fixed a, b); VariableGaugeMean.compactPrimitive_fiberLocal L317; no torusAverage statement about compactAlias in decls.jsonl. For slow sources the moving-shell form exists for every e: SignedStressPrimitive.physical_weighted_sigma_hasDerivAt L804.", "CONVENTION: LocalSignedRequest.SlowRegion L111 (fields: isOpen, time_pos, q_mem : coordinateQ coord s ∈ Icc qlo qhi; no boundedness); WeightedClasses.MemClass.bounds L107 (∃ C p, ∀ n x); GaugeAliasDecay.meanClass_compactAlias_superflat L504 (U, index, D bound before the conclusion).", "I read pp. 90–91 and the Lean statements. The operators match (8.5)–(8.6): shift M(s^d−R^d)v_r, v_r=(1,1−√2), M=Λ^i·Q^{d_r/2}, κ_s=10^{-5}, D_r=graphDr. For torus-dependent sources the moving-gauge files state shell support, periodicity, class preservation, (8.7) and (8.8) for e=0 and e=1. SignedStressPrimitive states T_e for every e on torus-independent sources, the only place the paper uses T_2 (8.18). What is unstated (torus-dependent e=2, moving-gauge mean-zero) follows by conjugating with R^e and freezing the slow fibre; every step is a stated lemma. Auditor and both skeptics agree; I added the periodicity, e=1 support and general-e declarations. A reader who insists on a named e=2 instance would call this partial."],
+          "findings": [
+            {
+              "confidence": 0.65,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration states Lemma 8.2; its clauses are spread over about twelve. For torus-dependent sources only e=0 and e=1 are instantiated; e=2 exists only for torus-independent sources (SignedStressPrimitive.sigma). The torus-dependent T_2 is unstated."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "⟨A_e f⟩_Y = 0 and the zero remainder for Y-independent sources are stated for the fixed-endpoint physicalAlias, not for the moving-gauge compactAlias. Support in the (Z,T)-projection is only implicit in FiberLocal."
+            },
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Raised in the pairing skeptic's notes: Lean's class constants are chosen after the slow region U and the common-index sequence, while the paper wants constants independent of band, label and point. One band-independent U covers every band chart, so nothing is lost."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.75. Findings: [low COVERAGE: CONVENTION] No single declaration states Lemma 8.2; its clauses are spread over about twelve. For torus-dependent sources only e=0 and e=1 are instantiated; e=2 exists only for torus-independent sources (SignedStressPrimitive.sigma). The torus-dependent T_2 is unstated.; [low COVERAGE: CONVENTION] ⟨A_e f⟩_Y = 0 and the zero remainder for Y-independent sources are stated for the fixed-endpoint physicalAlias, not for the moving-gauge compactAlias. Support in the (Z,T)-projection is only implicit in FiberLocal.; [low CONTENT: CONVENTION] Raised in the pairing skeptic's notes: Lean's class constants are chosen after the slow region U and the common-index sequence, while the paper wants constants independent of band, label and point. One band-independent U covers every band chart, so nothing is lost.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

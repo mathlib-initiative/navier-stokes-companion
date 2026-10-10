@@ -1,0 +1,26 @@
+{
+  "id": "lemma-5.1/support/NavierStokes.SlowRecursion.sequence_mixed_pullback_holomorphic",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SlowRecursion.sequence_mixed_pullback_holomorphic",
+      "line": 1230,
+      "module": "NavierStokes.SlowRecursion",
+      "path": "NavierStokes/SlowRecursion.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowRecursion.lean#L1230"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SlowRecursion.sequence_mixed_pullback_holomorphic",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1230,
+        "text": "theorem sequence_mixed_pullback_holomorphic {core buffer : ℝ} {U : Set ℂ} {h : ℝ}\n    (c : Domain (radius core buffer 0) U h) (hcore : 0 < core) (hbuffer : 0 < buffer)\n    (C : ℝ) (base : Coefficient (radius core buffer 0) U) (n : ℕ) (i : Fin 5) (k m : ℕ)\n    {r : ℝ} (hr : r ∈ Ioo (-core) core) :\n    DifferentiableOn ℂ\n      (fun z => BoundaryAxisJets.mixedAxisJet (sequence c hcore hbuffer C base n i) k m (r ^ 2, z)) U"
+      }
+    }
+  }
+}

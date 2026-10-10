@@ -1,0 +1,31 @@
+{
+  "id": "corollary-B.6/attributed/NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
+      "line": 1042,
+      "module": "NavierStokes.ActivationHolomorphic",
+      "path": "NavierStokes/ActivationHolomorphic.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationHolomorphic.lean#L1042"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: Same hypotheses, k : ℕ ⊢ Regular (Ioi (-R)) Ω (radialJet F k) for F ∈ {E.f, E.U, E.Ubar, E.Pi}",
+        "status": "unconfirmed",
+        "verdict": "attribution_gap"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1042,
+        "text": "theorem all_radial_jets {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2*δ < ReferencePath.rampLimit) (κ : ℝ) (k : ℕ) :\n    Regular (Ioi (-R)) Ω (radialJet (E.f T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.U T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.Ubar T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.Pi T κ δ) k)"
+      }
+    }
+  }
+}

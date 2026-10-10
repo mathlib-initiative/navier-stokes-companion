@@ -1,0 +1,73 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 7.5",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] Invertibility of H (and the positivity and lower bound on H⁻¹T_{0,*}) is proved only on carrier L ∩ closure(active shell, q∈[1/2,2]) ∩ {T>0}. The paper claims invertibility throughout each enlarged …; [low COVERAGE] No exported declaration states the derivative half of (7.25), |D^I y_σ| ≤ C_I S_*^{b_I} ζ δ^{-a_I}, for the actual y_σ = H⁻¹T_{0,*}. Only generic or conditional jet lemmas exist, and …; [low CONTENT] The W_0-level claims hold only after multiplication by η_β. The covariance identity is C(η_β W_0) = ε η_β² T_{0,*} (and only where ζ>0), and the W_{1/2} jets are for the …; 1 more in REPORT.md.",
+  "location": {
+    "page": 82,
+    "rect": [0.132964, 0.418732, 0.734767, 0.264365]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-7.5",
+      "locator": {
+        "physical": [82],
+        "printed": [82],
+        "text": "Section 7, Proposition 7.5, p. 82"
+      },
+      "region": "proposition-7.5@p082",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["CONFIRMED_CONTENT: CorrectionInitialization.ActualPrimary.covariance_bounds (CorrectionInitialization.lean:3974), Choice.covariance (L3907) and PrimaryTargetBounds.exists_constructed_bounds (PrimaryTargetBounds.lean:1014) all assume `p ∈ PositiveRepresentatives.positivePart (PrimaryGeometryAssembly.referenceSet nominal)`. referenceSet = closure of activeReference (PrimaryRepresentatives.lean:412): `q ∈ Icc (1/2) 2` and `p.1^2/(2q) ∈ Icc a b`. carrier L = openCell (PrimaryGeometryAssembly.lean:29), the 2-mesh box, which is not contained in that set.", "CONFIRMED_CONTENT: The generic lemmas PrimaryCopyBounds.covariance_weights_jets (PrimaryCopyBounds.lean:252) and SignedCopyBounds.NativeCovariance.weights_jets (SignedCopyBounds.lean:427) are consumed only inside covariance_amplitudes_jets/primaryVelocity_jets (PrimaryCopyBounds.lean:306,450) and increment_jets (SignedCopyBounds.lean:473-474). nativeBaseVelocity_jets (CorrectionInitialization.lean:4464) applies them to nativeReferenceBounds (L4448) internally, but its conclusion is about the velocity.", "CONFIRMED_CONTENT: CorrectionInitialization.ActualPrimary.tangentMode_pair_covariance (CorrectionInitialization.lean:4667): RHS `ε * spatialMask L p ^ 2 * actualTarget p i`, hypothesis `0 < movingWeight p`. rawVelocity (L4004) puts `spatialMask L x.1 * cutoff` inside PartitionedCovariance.amplitude; rawVelocity_jets (L4535) bounds that masked field. The unmasked form is only in the conditional, unused PrimaryCopyBounds.exists_prepared_pair_jets (L1172).", "CONFIRMED_CONTENT: CorrectionInitialization.ActualPrimary.attachedPair_regular (CorrectionInitialization.lean:5062) gives NativeRegularity of outerRawVelocity (L4810) = `outerCutoff (pulseCoordinates L x).2 • rawVelocity j L x`, and rawVelocity carries spatialMask·cutoff. NativeRegularity (WaveEdgeExtension.lean:593) concerns that composite field. No declaration has the zero extension of SmoothCovariance.amplitudes (covariance L p) (actualTarget p) j as its subject.", "I checked the auditor's claims against the source and all three voters agree. No single declaration states Prop 7.5; its clauses are spread across the actual chain choice/Choice → exists_constructed_bounds → covariance_bounds (ZeroOrderBounds), sourcePair_strictCone, rawVelocity/rawVelocity_jets, attachedPair_regular, chart_cut_amplitude_uniform and tangentMode_pair_covariance. The hypotheses are discharged in choice_nonempty, so nothing is vacuous. I upheld all four low findings. (i)–(iii) hold only on carrier ∩ referenceSet. The derivative half of (7.25) is never exported for the actual y_σ. (vi) and (v) are stated only after η_β masking. (iv) is stated only for the full cut field, not for a_σ. All are recoverable or harmless downstream. I added the skeptics' supporting declarations: Choice, covariance_eq_integral, nativeReferenceBounds, covariance_amplitudes_jets and diagonal_covariance."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Invertibility of H (and the positivity and lower bound on H⁻¹T_{0,*}) is proved only on carrier L ∩ closure(active shell, q∈[1/2,2]) ∩ {T>0}. The paper claims invertibility throughout each enlarged slow neighborhood."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "No exported declaration states the derivative half of (7.25), |D^I y_σ| ≤ C_I S_*^{b_I} ζ δ^{-a_I}, for the actual y_σ = H⁻¹T_{0,*}. Only generic or conditional jet lemmas exist, and they are used inside other proofs."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The W_0-level claims hold only after multiplication by η_β. The covariance identity is C(η_β W_0) = ε η_β² T_{0,*} (and only where ζ>0), and the W_{1/2} jets are for the η_β-masked field. The paper's unmasked (7.26) and its unmasked estimates are never stated."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Clause (iv) is about a_σ itself. Lean proves smooth zero extension at the shell edges only for the full field outerCutoff·η_β·√ε·a_σ·χ_g·t^h_σ. Nothing states it for a_σ = √y_σ."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.82. Findings: [low CONTENT: CONFIRMED_CONTENT] Invertibility of H (and the positivity and lower bound on H⁻¹T_{0,*}) is proved only on carrier L ∩ closure(active shell, q∈[1/2,2]) ∩ {T>0}. The paper claims invertibility throughout each enlarged slow neighborhood.; [low COVERAGE: CONFIRMED_CONTENT] No exported declaration states the derivative half of (7.25), |D^I y_σ| ≤ C_I S_*^{b_I} ζ δ^{-a_I}, for the actual y_σ = H⁻¹T_{0,*}. Only generic or conditional jet lemmas exist, and they are used inside other proofs.; [low CONTENT: CONFIRMED_CONTENT] The W_0-level claims hold only after multiplication by η_β. The covariance identity is C(η_β W_0) = ε η_β² T_{0,*} (and only where ζ>0), and the W_{1/2} jets are for the η_β-masked field. The paper's unmasked (7.26) and its unmasked estimates are never stated.; [low CONTENT: CONFIRMED_CONTENT] Clause (iv) is about a_σ itself. Lean proves smooth zero extension at the shell edges only for the full field outerCutoff·η_β·√ε·a_σ·χ_g·t^h_σ. Nothing states it for a_σ = √y_σ.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

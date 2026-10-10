@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.2/attributed/NavierStokes.LocalizedCurlRealization.complexCopyCoefficients_tangent_at",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalizedCurlRealization.complexCopyCoefficients_tangent_at",
+      "line": 275,
+      "module": "NavierStokes.LocalizedCurlRealization",
+      "path": "NavierStokes/LocalizedCurlRealization.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalizedCurlRealization.lean#L275"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalizedCurlRealization.complexCopyCoefficients_tangent_at",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: Under the same ModalControl hr/hi, normalDot (base.normal …) (complexCopyCoefficients … amplitude n x) = 0 on s.domain ∩ C n k. This is the tangency n_Φ·t_m = 0."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 275,
+        "text": "theorem complexCopyCoefficients_tangent_at\n    (base : WaveCoefficients (P × Plane)) (hL : ∀ n, 0 < L n)\n    (hr : ParticularCopyBounds.ModalControl s α frame\n      (fun n => realData (t n) (source n)) harmonic g L envelope C)\n    (hi : ParticularCopyBounds.ModalControl s α frame\n      (fun n => imagData (t n) (source n)) harmonic g L envelope C)\n    (n : ℕ) (k : Frequency) {x : P × Plane} (hx : x ∈ s.domain) (hk : x ∈ C n k)\n    (hN : base.normal s dirs n x = (t n).normal (nativePoint (g n) k x)) :\n    normalDot (base.normal s dirs n x)\n      ((complexCopyCoefficients base t source g (fun _ => k) L hL).amplitude n x) = 0"
+      }
+    }
+  }
+}

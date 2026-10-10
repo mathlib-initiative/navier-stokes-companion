@@ -1,0 +1,26 @@
+{
+  "id": "proposition-B.3/support/NavierStokes.NaturalEntrance.p1_eq_scaled_regularAngularLag",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalEntrance.p1_eq_scaled_regularAngularLag",
+      "line": 1271,
+      "module": "NavierStokes.NaturalEntrance",
+      "path": "NavierStokes/NaturalEntrance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L1271"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalEntrance.p1_eq_scaled_regularAngularLag",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1271,
+        "text": "theorem p1_eq_scaled_regularAngularLag {h j Λ : ℝ} {P0 a : ℝ → ℝ}\n    {f U V Pr : ℝ × ℝ → ℝ} (hs : IsNaturalSolution h j Λ P0 a f U V Pr)\n    (hΛ : 0 < Λ) {p : ℝ × ℝ} (hp : p ∈ domain Λ) (hX : p.1 ≠ 0)\n    (hL : NaturalAxisData.L h p.2 ≠ 0)\n    (hf : ∀ x ∈ uIcc (0 : ℝ) p.1, f (x, p.2) ≠ 0) :\n    p1 f p = p.1 * regularAngularLag h f U V p / NaturalAxisData.L h p.2"
+      }
+    }
+  }
+}

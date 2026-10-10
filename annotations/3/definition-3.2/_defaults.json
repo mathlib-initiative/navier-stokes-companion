@@ -1,0 +1,81 @@
+{
+  "kind": "definition",
+  "label": "Definition 3.2",
+  "status": "formalized",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] The paper (p.27) says Q_s, N_s are axis-regular in the scalar sense of Def 3.2. Lean proves them smooth only for X≠0, and Prop 4.2's residual theorem is stated only ….",
+  "location": {
+    "page": 18,
+    "rect": [0.134051, 0.551544, 0.732586, 0.054111]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "definition-3.2",
+      "locator": {
+        "physical": [18],
+        "printed": [18],
+        "text": "Section 3, Definition 3.2, p. 18"
+      },
+      "region": "definition-3.2@p018",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["CONVENTION: GlobalSlowProfiles.Regular (GlobalSlowProfiles.lean:33); BaseResidual.prefixVelocity_smooth (BaseResidual.lean:734) and prefixPressure_smooth (:1501) conclude ContDiffOn ℝ ∞ _ past, with past = Iio 1 ×ˢ univ (:547)", "CONVENTION: ProfileHistories.RadialDomain/Profiles (ProfileHistories.lean:31,303); SlowBorelBase.SmoothCoefficients (SlowBorelBase.lean:1106); ParametricRadialExtension.extension_contDiff/extension_eq (ParametricRadialExtension.lean:202,208)", "CONFIRMED_CONTENT: ProfileHistories.Profiles.angularLag_smoothAt (ProfileHistories.lean:609, hX : p.1 ≠ 0), axialLag_smoothAt (:614, hX : p.1 ≠ 0); LeadingStress.navierStokesResidual_tangential (LeadingStress.lean:571, hs : 0 < radialEnergy x); no other ContDiff lemma for the lags exists", "CONVENTION: GlobalSlowProfiles.Regular (GlobalSlowProfiles.lean:33); SlowRecursion.Regular (SlowRecursion.lean:23); ParametricEvenDescent.contDiffOn_descend (ParametricEvenDescent.lean:213); ParametricRadialExtension.extension_contDiff/extension_eq (ParametricRadialExtension.lean:202,208)", "REFUTED: BaseResidual.prefixVelocity_smooth (BaseResidual.lean:734), prefixPressure_smooth (:1501); SlowBorelBase.uncutPrefix (SlowBorelBase.lean:261): f 0 + Σ_{j<J+1} positiveCoefficient j, with positiveCoefficient 0 = 0. LeadingStress.physicalVelocity (LeadingStress.lean:372) uses radialB, and contDiffAt_radialB needs s ≠ 0.", "Definition 3.2 (p.18) has two parts. For scalar profiles, GlobalSlowProfiles.Regular and SlowRecursion.Regular define axis regularity as even smoothness in the signed radius. Lean proves this equivalent to the paper's one-sided (X,η) sense (contDiffOn_descend, extension_contDiff/extension_eq). For fields, Lean fields are total on ℝ×ℝ³, so 'extends smoothly across r=0 for t<1' is written inline as ContDiffOn ℝ ∞ on Iio 1 ×ˢ univ. That is proved for the construction's leading field (prefixVelocity_smooth/prefixPressure_smooth at J=0) and for the full base. So the result is different_formulation, not a gap. The only real gap is the unproved axis smoothness of Q_s, N_s and of the Prop 4.2 field; it is low severity and routed to Prop 4.2. MATHEMATICS dissents: it wants SINGLE_SOURCE_DELTA/partial because no named field-sense predicate exists."],
+          "findings": [
+            {
+              "confidence": 0.75,
+              "contested": true,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single Lean def names 'regular at the axis'. The scalar sense has named predicates (GlobalSlowProfiles.Regular, SlowRecursion.Regular). The field sense is written inline as ContDiffOn ℝ ∞ on Iio 1 ×ˢ univ of total Cartesian fields. This is an encoding choice, not a gap."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean's scalar encodings are two-sided: ContDiffOn on an open RadialDomain containing the axis, or ContDiff on ℝ². The paper asks for a one-sided extension to X=0. The two are equivalent, and Lean proves the extension step."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The paper (p.27) says Q_s, N_s are axis-regular in the scalar sense of Def 3.2. Lean proves them smooth only for X≠0, and Prop 4.2's residual theorem is stated only off the axis. This is a use of Def 3.2, not the definition itself."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean's scalar predicate is even smoothness in the signed radius R, with X=R²/2, rather than one-sided (X,η)-smoothness. The two are equivalent: Whitney descent and the radial extension are proved in Lean, and the converse is composition with R²/2."
+            },
+            {
+              "confidence": 0.75,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "REFUTED",
+              "severity": "low",
+              "summary": "Skeptic claim: Lean proves field-sense axis regularity only for the Borel-summed base u_B, not for u^(0). The premise is wrong, because prefixVelocity_smooth/prefixPressure_smooth at J=0 cover the uncut leading field. Only the local Prop 4.2 field LeadingStress.physicalVelocity lacks an axis theorem."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.72. Findings: [low COVERAGE: CONVENTION] No single Lean def names 'regular at the axis'. The scalar sense has named predicates (GlobalSlowProfiles.Regular, SlowRecursion.Regular). The field sense is written inline as ContDiffOn ℝ ∞ on Iio 1 ×ˢ univ of total Cartesian fields. This is an encoding choice, not a gap.; [low CONTENT: CONVENTION] Lean's scalar encodings are two-sided: ContDiffOn on an open RadialDomain containing the axis, or ContDiff on ℝ². The paper asks for a one-sided extension to X=0. The two are equivalent, and Lean proves the extension step.; [low CONTENT: CONFIRMED_CONTENT] The paper (p.27) says Q_s, N_s are axis-regular in the scalar sense of Def 3.2. Lean proves them smooth only for X≠0, and Prop 4.2's residual theorem is stated only off the axis. This is a use of Def 3.2, not the definition itself.; [low CONTENT: CONVENTION] Lean's scalar predicate is even smoothness in the signed radius R, with X=R²/2, rather than one-sided (X,η)-smoothness. The two are equivalent: Whitney descent and the radial extension are proved in Lean, and the converse is composition with R²/2.; [low CONTENT: REFUTED] Skeptic claim: Lean proves field-sense axis regularity only for the Borel-summed base u_B, not for u^(0). The premise is wrong, because prefixVelocity_smooth/prefixPressure_smooth at J=0 cover the uncut leading field. Only the local Prop 4.2 field LeadingStress.physicalVelocity lacks an axis theorem.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

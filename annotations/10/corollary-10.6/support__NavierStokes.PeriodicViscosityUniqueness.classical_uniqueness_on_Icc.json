@@ -1,0 +1,27 @@
+{
+  "id": "corollary-10.6/support/NavierStokes.PeriodicViscosityUniqueness.classical_uniqueness_on_Icc",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PeriodicViscosityUniqueness.classical_uniqueness_on_Icc",
+      "line": 65,
+      "module": "NavierStokes.PeriodicViscosityUniqueness",
+      "path": "NavierStokes/PeriodicViscosityUniqueness.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicViscosityUniqueness.lean#L65"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PeriodicViscosityUniqueness.classical_uniqueness_on_Icc",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 65,
+        "text": "theorem classical_uniqueness_on_Icc {ν a b : ℝ} (hν : 0 < ν)\n    {u v : VelocityField} {p q : PressureField} {f : VelocityField}\n    (hu : ContDiffOn ℝ ∞ u (slab a b))\n    (hv : ContDiffOn ℝ ∞ v (slab a b))\n    (hp : ContDiffOn ℝ ∞ p (slab a b))\n    (hq : ContDiffOn ℝ ∞ q (slab a b))\n    (hpu : UnitSpatialPeriodsOn (Icc a b) u)\n    (hpv : UnitSpatialPeriodsOn (Icc a b) v)\n    (hpp : UnitSpatialPeriodsOn (Icc a b) p)\n    (hpq : UnitSpatialPeriodsOn (Icc a b) q)\n    (hdu : ∀ t ∈ Ioo a b, ∀ x : Space, spatialDivergence u t x = 0)\n    (hdv : ∀ t ∈ Ioo a b, ∀ x : Space, spatialDivergence v t x = 0)\n    (hNSu : ∀ t ∈ Ioo a b, ∀ x : Space,\n      NavierStokesR3.ProblemStatement.navierStokesResidual ν u p t x = f (t, x))\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

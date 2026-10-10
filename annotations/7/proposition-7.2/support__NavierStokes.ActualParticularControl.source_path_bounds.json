@@ -1,0 +1,27 @@
+{
+  "id": "proposition-7.2/support/NavierStokes.ActualParticularControl.source_path_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularControl.source_path_bounds",
+      "line": 203,
+      "module": "NavierStokes.ActualParticularControl",
+      "path": "NavierStokes/ActualParticularControl.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularControl.lean#L203"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularControl.source_path_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 203,
+        "text": "theorem source_path_bounds\n    (s : StripData P) (g : Label → ℕ → Geometry) (r L : Label → ℕ → ℝ)\n    (W : Label → ℕ → ℝ → ℝ) (hW : ∀ l n v, 0 ≤ W l n v)\n    (hsep : ∀ l n, WaveEnvelopeTransport.Separated (g l n) (r l n) (L l n))\n    {A : ℝ} {a : ℕ} (hA : 1 ≤ A)\n    (hgeometry : ∀ l n, CommonCoverClass.argumentCost (g l n) ≤ A * s.slow n^a)\n    {α : ℝ} {f : Label → ℕ → P × Plane → V}\n    (hf : UniformWaveClass (CommonCoverClass.sourceStrip s) (groupedEnvelope g r L W) α f)\n    (N : ℕ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∃ m : ℕ, ∀ l n k (x : P × Plane), x.1 ∈ s.domain →\n      ((g l n).coordinates k x.2).1 ∈ Icc (-(r l n)) (r l n) →\n      ∀ v ∈ Icc 0 (L l n), ∀ j ≤ N,\n      ‖iteratedFDeriv ℝ j (fun z : (P × Plane) × ℝ =>\n        f l n (CommonCoverClass.sourceArgument (g l n) k z)) (x,v)‖ ≤\n      C * s.growth n x.1^m * (s.epsilon n^α * Real.sqrt (s.zeta x.1)) * W l n v"
+      }
+    }
+  }
+}

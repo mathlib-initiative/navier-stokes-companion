@@ -1,0 +1,31 @@
+{
+  "id": "proposition-9.5/attributed/NavierStokes.ActualInitialization.initial_mean_all_components",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualInitialization.initial_mean_all_components",
+      "line": 1471,
+      "module": "NavierStokes.ActualInitialization",
+      "path": "NavierStokes/ActualInitialization.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialization.lean#L1471"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualInitialization.initial_mean_all_components",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∀ i : Fin 3, MeanClass strip (6/5) (meanGoodResidual (commonContext B) · · i) for initialState B N0.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1471,
+        "text": "theorem initial_mean_all_components (B N0 : ℕ) (i : Fin 3) :\n    MeanClass strip (6/5) (fun n x =>\n      (initialState B N0).meanGoodResidual (ActualPrimary.commonContext B) n x i)"
+      }
+    }
+  }
+}

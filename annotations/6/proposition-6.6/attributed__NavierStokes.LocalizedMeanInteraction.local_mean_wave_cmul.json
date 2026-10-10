@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.LocalizedMeanInteraction.local_mean_wave_cmul",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalizedMeanInteraction.local_mean_wave_cmul",
+      "line": 49,
+      "module": "NavierStokes.LocalizedMeanInteraction",
+      "path": "NavierStokes/LocalizedMeanInteraction.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalizedMeanInteraction.lean#L49"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalizedMeanInteraction.local_mean_wave_cmul",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: LocalMean s C α f → LocalWave s C P β g → ζ≤1 → LocalWave s C P (α+β) (f·g)   [pre-cutoff M·W on labelled rectangles]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 49,
+        "text": "theorem local_mean_wave_cmul {s : StripData D} {C : ℕ → I → Set D}\n    {P : ℕ → I → D → ℝ} {α β : ℝ} {f g : ℕ → I → D → ℂ}\n    (hf : LocalMean s C α f) (hg : LocalWave s C P β g)\n    (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1) :\n    LocalWave s C P (α + β) (fun n l x => f n l x * g n l x)"
+      }
+    }
+  }
+}

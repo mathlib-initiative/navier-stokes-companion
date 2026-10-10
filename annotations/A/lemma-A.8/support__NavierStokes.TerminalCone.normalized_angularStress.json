@@ -1,0 +1,26 @@
+{
+  "id": "lemma-A.8/support/NavierStokes.TerminalCone.normalized_angularStress",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalCone.normalized_angularStress",
+      "line": 229,
+      "module": "NavierStokes.TerminalCone",
+      "path": "NavierStokes/TerminalCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean#L229"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalCone.normalized_angularStress",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 229,
+        "text": "theorem normalized_angularStress (C : ℝ) (d : OutgoingTail.TailData) (y0 δ : ℝ) {eta : ℝ}\n    (heta : eta ^ 2 < 1) :\n    TerminalStress.terminalStress C d.h (TerminalPressure.outgoingTaper d y0)\n      (eta ^ 2) eta (TerminalEdgeFactor.profileRadius y0 δ) =\n        TerminalEdgeFactor.profileAngularStress C d y0 (eta, δ)"
+      }
+    }
+  }
+}

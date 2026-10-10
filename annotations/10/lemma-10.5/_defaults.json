@@ -1,0 +1,73 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 10.5",
+  "status": "formalized",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] Lean states the comparison for any smooth reference solution with fixed compact support on [0,T]. The force drops out as equal residuals, so the specific u of Prop 10.1 and …; [low CONTENT] candidate_unique_on_Icc takes the whole CandidateProperties bundle, including speed_unbounded and energy_bounded, which Lemma 10.5 does not use. Applying that form to the paper's u would therefore also need (10.21) and Lemma …; [low CONTENT] v ∈ L^∞([0,T];L²) appears as UniformFiniteEnergy: a bound on ½∫|v(t)|² at every t∈[0,T], not almost every t. For continuous v the two agree by Fatou's lemma, because every time is …; 1 more in REPORT.md.",
+  "location": {
+    "page": 121,
+    "rect": [0.134051, 0.598315, 0.731893, 0.057542]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-10.5",
+      "locator": {
+        "physical": [121],
+        "printed": [121],
+        "text": "Section 10, Lemma 10.5, p. 121"
+      },
+      "region": "lemma-10.5@p121",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokesR3.WholeSpaceUniqueness.classical_uniqueness_on_Icc, NavierStokes/R3/WholeSpaceUniqueness.lean:30–44: hypotheses hsupp (tsupport u(t) ⊆ K), hNS (residual 1 u p = residual 1 v q on Ioo 0 T)", "CONFIRMED_CONTENT: candidate_unique_on_Icc (WholeSpaceUniqueness.lean:72) hypothesis h : CandidateProperties 1 u p f K; CandidateProperties.speed_unbounded at R3/ProblemStatement.lean:109; main path at R3FiniteEnergyComparison.lean:59 calls classical_uniqueness_on_Icc directly", "CONFIRMED_CONTENT: UniformFiniteEnergy, NavierStokes/R3/ProblemStatement.lean:81–83 (∀ t ∈ times, SquareIntegrableAtTime ∧ kineticEnergy ≤ E)", "CONFIRMED_CONTENT: WholeSpaceComparisonClosure.pressureEnvelope (WholeSpaceComparisonClosure.lean:25); PressureFlux.exists_uniform_actual_pressure_flux_bound (PressureFlux.lean:576)", "The auditor and both skeptics agree."],
+          "findings": [
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Lean states the comparison for any smooth reference solution with fixed compact support on [0,T]. The force drops out as equal residuals, so the specific u of Prop 10.1 and f of Lemma 10.3 are not needed. This is a strictly more general statement."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "candidate_unique_on_Icc takes the whole CandidateProperties bundle, including speed_unbounded and energy_bounded, which Lemma 10.5 does not use. Applying that form to the paper's u would therefore also need (10.21) and Lemma 10.4. classical_uniqueness_on_Icc has no such dependency, and the main theorem uses it."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "v ∈ L^∞([0,T];L²) appears as UniformFiniteEnergy: a bound on ½∫|v(t)|² at every t∈[0,T], not almost every t. For continuous v the two agree by Fatou's lemma, because every time is a limit of good times."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The proof route differs from the paper's. The pressure-flux bound (10.19) is checked in a different envelope, (B^{1/2}+1)(A/R+R^{-2})+R^{-7/4}B^{3/4}, using L^{6/5}–L^6 duality and a heat-kernel R_iR_j representation rather than L^{3/2} and Calderón–Zygmund. So the paper's argument as written is not what was checked, but the result is unaffected."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.88. Findings: [low CONTENT: CONFIRMED_CONTENT] Lean states the comparison for any smooth reference solution with fixed compact support on [0,T]. The force drops out as equal residuals, so the specific u of Prop 10.1 and f of Lemma 10.3 are not needed. This is a strictly more general statement.; [low CONTENT: CONFIRMED_CONTENT] candidate_unique_on_Icc takes the whole CandidateProperties bundle, including speed_unbounded and energy_bounded, which Lemma 10.5 does not use. Applying that form to the paper's u would therefore also need (10.21) and Lemma 10.4. classical_uniqueness_on_Icc has no such dependency, and the main theorem uses it.; [low CONTENT: CONFIRMED_CONTENT] v ∈ L^∞([0,T];L²) appears as UniformFiniteEnergy: a bound on ½∫|v(t)|² at every t∈[0,T], not almost every t. For continuous v the two agree by Fatou's lemma, because every time is a limit of good times.; [low CONTENT: CONFIRMED_CONTENT] The proof route differs from the paper's. The pressure-flux bound (10.19) is checked in a different envelope, (B^{1/2}+1)(A/R+R^{-2})+R^{-7/4}B^{3/4}, using L^{6/5}–L^6 duality and a heat-kernel R_iR_j representation rather than L^{3/2} and Calderón–Zygmund. So the paper's argument as written is not what was checked, but the result is unaffected.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

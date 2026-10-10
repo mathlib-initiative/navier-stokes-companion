@@ -1,0 +1,61 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 4.9",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [medium CONTENT] The lemma is a conditional about any leading field that is regular at the axis, agrees with the family beyond X_tail and satisfies (4.28) and (4.25). Lean proves the clauses …; [low CONTENT] The backward-integral formulas are proved only where the heat switch is complete (strictly X > e^{1/2}X_tail). Lemma 4.9 displays them without a radial restriction, and they are not stated directly ….",
+  "location": {
+    "page": 36,
+    "rect": [0.13341, 0.318178, 0.734329, 0.244516]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "item": "lemma-4.9",
+      "locator": {
+        "physical": [36],
+        "printed": [36],
+        "text": "Section 4, Lemma 4.9, p. 36"
+      },
+      "region": "lemma-4.9@p036",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["CONFIRMED_CONTENT: forward_stresses_eq_profile (TerminalHistoryBridge.lean:1401) and physical_forward*_eq_terminal (L1216, L1246) are about forwardTheta/forwardAxial of F. The regular-field versions, nominal_terminal_stress (LeadingStressWeights.lean:321), nominal_terminal_shears (L643) and Witness.terminal_true (NominalConeAssembly.lean:946), take the concrete W : NominalProfile.Witness F (NominalProfile.lean:2481). That is a construction, not a hypothesis class. FiveMomentCertificate is never used to derive the stress.", "CONFIRMED_CONTENT: physical_forwardTheta_eq_terminal / physical_forwardAxial_eq_terminal (TerminalHistoryBridge.lean:1216, 1246) require hfull : 1/2 < log(X/switchRadius)+1/5, i.e. y > terminalStart = tailStart+1/2 (TerminalCone.lean:21). TerminalStress.forward_eq_backward_iff (TerminalStress.lean:623) is abstract and is never applied to the field on all r > 0.", "I uphold SINGLE_SOURCE_DELTA/partial; all three voters agree on it. I checked the sources. Each clause holds for F's forward stress and for the constructed W: q^{-A-1/2} backward formulas, T_0=0 for δ≤0, b_s=0, 2+h<a≤2+2h, T_θ>0, cone gap ≥ 3/2, (4.32) with δ^{∓3} and C^∞ factors, inf b_θ>0, uniformity in η. The intervals match: terminalStart=tailStart+1/2, tailEnd=tailStart+3. I adopt the PAIRING skeptic's correction. For the regular field, the cone and shear clauses come from Witness.terminal_true and nominal_terminal_shears, not from the family-level terminal_forward_cone or radialB_after_endpoint. Per the MATHEMATICS skeptic, transfer to v over the full interval needs stress_outside, because modulated_terminal_stress only covers x<outerWidth≤1. Both findings are upheld unanimously."],
+          "findings": [
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "medium",
+              "summary": "The lemma is a conditional about any leading field that is regular at the axis, agrees with the family beyond X_tail and satisfies (4.28) and (4.25). Lean proves the clauses only for the family's own forward stress and for the specific constructed field W (and v)."
+            },
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The backward-integral formulas are proved only where the heat switch is complete (strictly X > e^{1/2}X_tail). Lemma 4.9 displays them without a radial restriction, and they are not stated directly for the regular field's stress."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "medium",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.85. Findings: [medium CONTENT: CONFIRMED_CONTENT] The lemma is a conditional about any leading field that is regular at the axis, agrees with the family beyond X_tail and satisfies (4.28) and (4.25). Lean proves the clauses only for the family's own forward stress and for the specific constructed field W (and v).; [low CONTENT: CONFIRMED_CONTENT] The backward-integral formulas are proved only where the heat switch is complete (strictly X > e^{1/2}X_tail). Lemma 4.9 displays them without a radial restriction, and they are not stated directly for the regular field's stress.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

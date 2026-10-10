@@ -1,0 +1,26 @@
+{
+  "id": "lemma-A.1/support/NavierStokes.SmoothPowerMomentMatrix.integral_contDiffOn_of_moving_support",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SmoothPowerMomentMatrix.integral_contDiffOn_of_moving_support",
+      "line": 25,
+      "module": "NavierStokes.SmoothPowerMomentMatrix",
+      "path": "NavierStokes/SmoothPowerMomentMatrix.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothPowerMomentMatrix.lean#L25"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SmoothPowerMomentMatrix.integral_contDiffOn_of_moving_support",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 25,
+        "text": "theorem integral_contDiffOn_of_moving_support [ProperSpace E]\n    (U : Set E) (hU : IsOpen U) (F : E × ℝ → ℝ)\n    (hF : ContDiffOn ℝ ∞ F (U ×ˢ univ)) (l u : E → ℝ)\n    (hl : ContinuousOn l U) (hu : ContinuousOn u U)\n    (hs : ∀ p ∈ U, support (fun t => F (p, t)) ⊆ Icc (l p) (u p)) :\n    ContDiffOn ℝ ∞ (fun p => ∫ t, F (p, t)) U"
+      }
+    }
+  }
+}

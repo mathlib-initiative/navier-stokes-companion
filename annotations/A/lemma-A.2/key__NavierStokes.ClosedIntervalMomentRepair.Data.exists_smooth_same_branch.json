@@ -1,0 +1,31 @@
+{
+  "id": "lemma-A.2/key/NavierStokes.ClosedIntervalMomentRepair.Data.exists_smooth_same_branch",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ClosedIntervalMomentRepair.Data.exists_smooth_same_branch",
+      "line": 151,
+      "module": "NavierStokes.ClosedIntervalMomentRepair",
+      "path": "NavierStokes/ClosedIntervalMomentRepair.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ClosedIntervalMomentRepair.lean#L151"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ClosedIntervalMomentRepair.Data.exists_smooth_same_branch",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: (D : Data E) (hsmall : D.Small 0) : ∃ c : ℝ → E, ∃ hc : ContDiffOn ℝ ∞ c I, ‖ofContDiffOn c _‖_{CK 0} ≤ 2 * D.inverseNorm 0 * D.debtNorm 0 ∧ (∀ x ∈ I, D.B x (c x) + D.A x (c x) (c x) = D.d x) ∧ (∀ k, D.Small k → ‖ofContDiffOn c _‖_{CK k} ≤ 2 * D.inverseNorm k * D.debtNorm k) ∧ (∀ e, ContinuousOn e I",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "lean_stronger",
+      "role": "key",
+      "snippet": {
+        "line": 151,
+        "text": "theorem exists_smooth_same_branch (hsmall : D.Small 0) :\n    ∃ c : ℝ → E, ∃ hc : ContDiffOn ℝ ∞ c I,\n      ‖ofContDiffOn c (hc.of_le ("
+      }
+    }
+  }
+}

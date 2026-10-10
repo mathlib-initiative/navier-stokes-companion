@@ -1,0 +1,77 @@
+{
+  "kind": "corollary",
+  "label": "Corollary 8.5",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 95,
+    "rect": [0.132964, 0.106219, 0.734767, 0.172511]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "item": "corollary-8.5",
+      "locator": {
+        "physical": [95],
+        "printed": [95],
+        "text": "Section 8, Corollary 8.5, p. 95"
+      },
+      "region": "corollary-8.5@p095",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["CONVENTION: SignedStressPrimitive.physicalBump L594 / physicalAdjusted L596 (density * mass e F); LocalSignedRequest.physicalBarSigma_angular_divergence L867, _axial_divergence L881; GaugeMomentBalances.state_angular_moment L572, state_axial_moment L623 (needs hfixed = (8.12)); StateMomentBalances.state_radialMoment_eq L738", "CONVENTION: SignedStressPrimitive.primitive L162 (compactIntegral (cutoff P) on r^e F); LocalSignedRequest.physicalBarSigma_eq_negative_primitive L855; LocalSignedRequest.physicalAdjusted_moment_zero L895", "ATTRIBUTION_GAP: SignedStressPrimitive.physicalSigma_eq_negative_primitive L719 / physicalAdjusted_moment_zero L764 / physicalSigma_slice_compact L777 take (hq : ContDiff ℝ ∞ q). SimilarityCoordinates.coordinateQ L123 is piecewise ('if 0<a∧a<1∧0<p.1 then choose … else 1'). Faithful instances: LocalSignedRequest L855, L895, L920 (via frozenBar_sigma).", "CONVENTION: LocalSignedRequest.requestedStress L591 (physical); normalizedRequest_represents L762 gives normalizedRequest(Q^{-1/2}r,(Ct,Y)) = ε_n^{-1}·Q^{2A}·physicalRequestedStress; L855/L867/L881 assume s ∈ U.carrier, 0<r", "All three voters agree on SINGLE_SOURCE_OK / different_formulation, and I confirmed it against the source. requestedStress defines (H_θ, H_z). The moving-shell lemmas L855/L867/L881 state the formula and both divergence identities with bump × measured mass. GaugeMomentBalances L572/L623 identify that mass with ε∂_Z J_θ and ε∂_Z(J_z+c_ρP), the axial case using hfixed for (8.12). Support and Y-independence come from L905, L920 and L632. Following the PAIRING skeptic, I swapped the generic lemmas L719/L764/L777 for their moving-shell instances, since coordinateQ is piecewise, and I dropped sigma_fiberLocal. Lean fixes particular bump profiles, but they satisfy the paper's normalization (physicalDensity_moment), so this is not material. The hypotheses are satisfiable (f = 0), so there is no vacuity."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration states (8.18) with ε∂_Z J. Lean's H subtracts bump × measured weighted mass ∫R^e⟨E⟩. Prop 8.4's moment lemmas identify that mass with ε∂_Z J_θ and ε∂_Z(J_z+c_ρP), so the paper's form needs one substitution."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean's T_e cuts off with the bump's CDF (cutoff P) on R^e F, not the slow cutoff χ_m of (8.4)-(8.6). The adjusted source has zero weighted mass, so both definitions give the same H."
+            },
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Recovery mis-pairs some citations. The generic SignedStressPrimitive lemmas (L719, L764, L777) need ContDiff q globally, which coordinateQ is not. Moving-shell instances that freeze q at s exist and should be cited. sigma_fiberLocal concerns sigma, not physicalBarSigma."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean states H in physical variables (r, slow point, physical bumps), locally on a SlowRegion U with r>0. (8.18) is in normalized chart variables (R, y). The chart view is a separate exact rescaling lemma."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.85. Findings: [low CONTENT: CONVENTION] No single declaration states (8.18) with ε∂_Z J. Lean's H subtracts bump × measured weighted mass ∫R^e⟨E⟩. Prop 8.4's moment lemmas identify that mass with ε∂_Z J_θ and ε∂_Z(J_z+c_ρP), so the paper's form needs one substitution.; [low CONTENT: CONVENTION] Lean's T_e cuts off with the bump's CDF (cutoff P) on R^e F, not the slow cutoff χ_m of (8.4)-(8.6). The adjusted source has zero weighted mass, so both definitions give the same H.; [low CONTENT: ATTRIBUTION_GAP] Recovery mis-pairs some citations. The generic SignedStressPrimitive lemmas (L719, L764, L777) need ContDiff q globally, which coordinateQ is not. Moving-shell instances that freeze q at s exist and should be cited. sigma_fiberLocal concerns sigma, not physicalBarSigma.; [low CONTENT: CONVENTION] Lean states H in physical variables (r, slow point, physical bumps), locally on a SlowRegion U with r>0. (8.18) is in normalized chart variables (R, y). The chart view is a separate exact rescaling lemma.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

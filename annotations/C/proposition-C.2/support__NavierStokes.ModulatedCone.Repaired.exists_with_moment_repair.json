@@ -1,0 +1,27 @@
+{
+  "id": "proposition-C.2/support/NavierStokes.ModulatedCone.Repaired.exists_with_moment_repair",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ModulatedCone.Repaired.exists_with_moment_repair",
+      "line": 1414,
+      "module": "NavierStokes.ModulatedCone",
+      "path": "NavierStokes/ModulatedCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L1414"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ModulatedCone.Repaired.exists_with_moment_repair",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1414,
+        "text": "theorem exists_with_moment_repair {D D' : RadialDomain}\n    (W : ModulatedHistories.Window) (r : TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (hK : IsCompact K) (hKW : ∀ p ∈ K, p.1 ∈ Icc W.left W.right)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₁ : ContDiff ℝ ∞ p₁) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (haK : ∀ p ∈ K, 0 < a p)\n    (S : Set Point) (hS : IsCompact S) (hSW : ∀ p ∈ S, W.right ≤ p.1)\n    (haNom : ∀ p ∈ K ∪ S, a p = angularShear E p)\n    (hbNom : ∀ p ∈ K ∪ S, a p * m p = signedAxialShear E U p)\n    (hrelaxed : ∀ p ∈ K, TrueConeLoop.nominalSpeed (a p) (m p) <\n      ConeAlgebra.coneBound (p₁ p + p₂ p * m p) (p₂ p - p₁ p * m p))\n    (hScone : ∀ p ∈ S, TrueConeLoop.InTrueCone (p₁ p) (p₂ p) (a p) (a p * m p))\n    (P : ℝ → Profiles D) (Q : Profiles D')\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

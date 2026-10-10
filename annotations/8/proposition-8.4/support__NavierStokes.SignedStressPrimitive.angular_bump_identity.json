@@ -1,0 +1,26 @@
+{
+  "id": "proposition-8.4/support/NavierStokes.SignedStressPrimitive.angular_bump_identity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedStressPrimitive.angular_bump_identity",
+      "line": 991,
+      "module": "NavierStokes.SignedStressPrimitive",
+      "path": "NavierStokes/SignedStressPrimitive.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L991"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedStressPrimitive.angular_bump_identity",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 991,
+        "text": "theorem angular_bump_identity (P : Patch) (ε : ℝ)\n    {v radialFlux axialFlux virtualFlux : MeanField}\n    (hv : SmoothShell P.a P.b v) (hr : SmoothShell P.a P.b radialFlux)\n    (hz : SmoothShell P.a P.b axialFlux) (hT : SmoothShell P.a P.b virtualFlux)\n    (hmass : radialMoment 2 v = 0) (z : MeanPoint) :\n    bumpCorrection P 2 (angularBalance ε v radialFlux axialFlux virtualFlux) z =\n      momentDensity P 2 z.1 * (ε * fderiv ℝ (radialMoment 2 axialFlux) z.2 (0, 1))"
+      }
+    }
+  }
+}

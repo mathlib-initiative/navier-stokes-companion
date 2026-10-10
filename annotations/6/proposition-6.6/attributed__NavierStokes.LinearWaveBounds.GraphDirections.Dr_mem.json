@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.LinearWaveBounds.GraphDirections.Dr_mem",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LinearWaveBounds.GraphDirections.Dr_mem",
+      "line": 132,
+      "module": "NavierStokes.LinearWaveBounds",
+      "path": "NavierStokes/LinearWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L132"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LinearWaveBounds.GraphDirections.Dr_mem",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: general weight w: MemClass s w α f → … → MemClass s w (α−κ) (d.Dr f); Dz_mem l.140 (α+1), Dt_mem l.146 (α), Dfast_mem l.151 (α, BandBound 0 fastScale)   [W column of (6.32)]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 132,
+        "text": "theorem Dr_mem {s : StripData D} {w : ℕ → D → ℝ} {α κ : ℝ}\n    (d : GraphDirections D) {f : ℕ → D → E} (hf : MemClass s w α f)\n    (hρ : UnweightedClass s 0 (fun _ => d.radialProfile))\n    (hM : BandBound s (-κ) d.radialScale) (hκ : 0 ≤ κ) :\n    MemClass s w (α - κ) (d.Dr f)"
+      }
+    }
+  }
+}

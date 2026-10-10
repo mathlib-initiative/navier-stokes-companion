@@ -1,0 +1,27 @@
+{
+  "id": "lemma-B.1/support/NavierStokes.AxisEvaluationAlgebra.inverseMixed_actual_equation",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisEvaluationAlgebra.inverseMixed_actual_equation",
+      "line": 487,
+      "module": "NavierStokes.AxisEvaluationAlgebra",
+      "path": "NavierStokes/AxisEvaluationAlgebra.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisEvaluationAlgebra.lean#L487"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisEvaluationAlgebra.inverseMixed_actual_equation",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 487,
+        "text": "theorem inverseMixed_actual_equation (I : Window) {ε : ℝ} (hε : 0 < ε)\n    (r : ℕ) (hr : 1 ≤ r) (A B : AxisSpace I ε) {Y η : ℝ}\n    (hY : Y ∈ Ioo (-20 : ℝ) 20) (hη : η ∈ Ioo I.left I.right) :\n    Y * iteratedDeriv 2 (fun y => profile I ε (inverseMixed I hε r hr A B) (y, η)) Y +\n      (r : ℝ) * deriv (fun y => profile I ε (inverseMixed I hε r hr A B) (y, η)) Y =\n      deriv (fun x => profile I ε A (Y, x)) η *\n        (Y * deriv (fun y => profile I ε B (y, η)) Y)"
+      }
+    }
+  }
+}

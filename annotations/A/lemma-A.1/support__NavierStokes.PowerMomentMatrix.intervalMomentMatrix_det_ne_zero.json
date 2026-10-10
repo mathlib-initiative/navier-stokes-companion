@@ -1,0 +1,26 @@
+{
+  "id": "lemma-A.1/support/NavierStokes.PowerMomentMatrix.intervalMomentMatrix_det_ne_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PowerMomentMatrix.intervalMomentMatrix_det_ne_zero",
+      "line": 216,
+      "module": "NavierStokes.PowerMomentMatrix",
+      "path": "NavierStokes/PowerMomentMatrix.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PowerMomentMatrix.lean#L216"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PowerMomentMatrix.intervalMomentMatrix_det_ne_zero",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 216,
+        "text": "theorem intervalMomentMatrix_det_ne_zero {n : ℕ} (a l u : Fin n → ℝ)\n    (μ : Fin n → Measure ℝ) [∀ j, IsFiniteMeasure (μ j)]\n    (ha : Function.Injective a) (hl : ∀ j, 0 < l j)\n    (hsep : ∀ i j, i < j → u i < l j)\n    (hmass : ∀ j, μ j (Set.Icc (l j) (u j)) ≠ 0) :\n    (intervalMomentMatrix a l u μ).det ≠ 0"
+      }
+    }
+  }
+}

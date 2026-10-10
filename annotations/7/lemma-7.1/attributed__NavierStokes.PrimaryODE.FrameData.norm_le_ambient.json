@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.1/attributed/NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
+      "line": 1065,
+      "module": "NavierStokes.PrimaryODE",
+      "path": "NavierStokes/PrimaryODE.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L1065"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (hne : h ≠ 0) (hh : |1/h| ≤ H) : ‖w‖ ≤ (1+H)‖ambient z w‖ (bounded left inverse B^ℓ); uniform H from reference_profile_bounds / eigenBound"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1065,
+        "text": "theorem FrameData.norm_le_ambient {Q : Type} (d : FrameData Q) (z : Q × ℝ) (w : State)\n    {H : ℝ} (hne : d.eigenvector z ≠ 0) (hh : |1 / d.eigenvector z| ≤ H) :\n    ‖w‖ ≤ (1 + H) * ‖d.ambient z w‖"
+      }
+    }
+  }
+}

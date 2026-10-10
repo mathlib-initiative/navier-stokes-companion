@@ -1,0 +1,31 @@
+{
+  "id": "corollary-B.6/attributed/NavierStokes.ActualSlowAxis.base",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualSlowAxis.base",
+      "line": 213,
+      "module": "NavierStokes.ActualSlowAxis",
+      "path": "NavierStokes/ActualSlowAxis.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean#L213"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualSlowAxis.base",
+        "kind": "def"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: base E … C hS : Coefficient S (parameterDomain Ω) := makeBase (domain E hS) (C·element 0) (element 1) (element 2) (element 3) = ![C·f, U, Ubar−U, Π, betaOperator c 0 U (Ubar−U)]; each entry an AxisFunction (ContDiffOn ℝ ∞ on Ioo (-S) S ×ˢ parameterDomain Ω, holomorphic in z, even in r)",
+        "status": "unconfirmed",
+        "verdict": "attribution_gap"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 213,
+        "text": "noncomputable def base {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) (hP0 : ContDiff ℝ ∞ P0)\n    (C : ℝ) {S : ℝ} (hS : 0 < S) : Coefficient S (parameterDomain Ω)"
+      }
+    }
+  }
+}

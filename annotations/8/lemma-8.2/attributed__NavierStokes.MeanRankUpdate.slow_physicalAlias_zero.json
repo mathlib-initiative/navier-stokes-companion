@@ -1,0 +1,31 @@
+{
+  "id": "lemma-8.2/attributed/NavierStokes.MeanRankUpdate.slow_physicalAlias_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanRankUpdate.slow_physicalAlias_zero",
+      "line": 391,
+      "module": "NavierStokes.MeanRankUpdate",
+      "path": "NavierStokes/MeanRankUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanRankUpdate.lean#L391"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanRankUpdate.slow_physicalAlias_zero",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: f smooth, RadiallySupported a b, ∀ s, ∫ r, f (r,s) = 0 ⊢ physicalAlias d a b M (0,v) (slowLift f) p = 0. Last sentence of the lemma, e=0 form, fixed endpoints.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 391,
+        "text": "theorem slow_physicalAlias_zero {a b d M : ℝ} (ha : 0 < a) (hab : a < b) (hd : 0 < d)\n    (v : PressureStream.Plane) {f : ℝ × E → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hs : RadialAlias.RadiallySupported a b f) (hm : ∀ s, (∫ r, f (r, s)) = 0)\n    (p : PressureStream.Lift E) :\n    RadialPullback.physicalAlias d a b M ((0 : E), v) (slowLift f) p = 0"
+      }
+    }
+  }
+}

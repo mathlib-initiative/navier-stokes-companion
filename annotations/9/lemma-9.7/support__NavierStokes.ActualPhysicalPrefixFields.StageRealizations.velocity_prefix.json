@@ -1,0 +1,26 @@
+{
+  "id": "lemma-9.7/support/NavierStokes.ActualPhysicalPrefixFields.StageRealizations.velocity_prefix",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualPhysicalPrefixFields.StageRealizations.velocity_prefix",
+      "line": 358,
+      "module": "NavierStokes.ActualPhysicalPrefixFields",
+      "path": "NavierStokes/ActualPhysicalPrefixFields.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPhysicalPrefixFields.lean#L358"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualPhysicalPrefixFields.StageRealizations.velocity_prefix",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 358,
+        "text": "theorem StageRealizations.velocity_prefix {B N0 Nr : ℕ}\n    {p : ℕ → CycleParameters (ActualInitialization.Index B N0)}\n    {qbig : ℝ} {A D : ℕ → VelocityField} {P : ℕ → PressureField}\n    (H : StageRealizations B N0 Nr p qbig A D P)\n    (hA : ∀ k, ContDiffOn ℝ ∞ (A k) (CutStageEstimates.physicalSublevel h qbig))\n    (n : ℕ) (hn : Nr ≤ n) {a : ℝ} (ha : 0 < a) (i : PolarCharts.Index) (J : ℕ) :\n    EqOn (MixedDiagonalResidual.uncutVelocity A D J)\n      (CyclePhysicalPrefixes.velocity a i (ActualCycleResidualBounds.actualBandGraph n) n (commonContext B)\n        (CycleState.iterate p (commonContext B) (ActualInitialization.initialCycleState B N0) J).state)\n      (cartesianChartDomain qbig n a i)"
+      }
+    }
+  }
+}

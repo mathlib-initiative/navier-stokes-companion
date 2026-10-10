@@ -1,0 +1,31 @@
+{
+  "id": "proposition-9.5/attributed/NavierStokes.ActualInitialization.difference_coefficients_uniform",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualInitialization.difference_coefficients_uniform",
+      "line": 1082,
+      "module": "NavierStokes.ActualInitialization",
+      "path": "NavierStokes/ActualInitialization.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialization.lean#L1082"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualInitialization.difference_coefficients_uniform",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: UniformWaveClass strip envelope (17/25) (primaryBlock − tangentBlock velocity coefficients): w − w_0^tan ∈ W_{0.68}, derived from class 1 − κ.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1082,
+        "text": "theorem difference_coefficients_uniform (B N0 : ℕ) (i : Fin 3) (j : ℤ) :\n    LabelSumBounds.UniformWaveClass strip envelope (17/25)\n      (fun l : Index B N0 => fun n x => (primaryBlock l).velocity n i j x - (tangentBlock l).velocity n i j x)"
+      }
+    }
+  }
+}

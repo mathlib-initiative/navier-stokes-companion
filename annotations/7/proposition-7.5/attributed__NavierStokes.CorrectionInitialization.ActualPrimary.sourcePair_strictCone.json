@@ -1,0 +1,31 @@
+{
+  "id": "proposition-7.5/attributed/NavierStokes.CorrectionInitialization.ActualPrimary.sourcePair_strictCone",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.sourcePair_strictCone",
+      "line": 4619,
+      "module": "NavierStokes.CorrectionInitialization",
+      "path": "NavierStokes/CorrectionInitialization.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L4619"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionInitialization.ActualPrimary.sourcePair_strictCone",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: p ∈ carrier L, p ∈ positivePart(referenceSet), 0 < movingWeight p ⟹ StrictCone (sourcePair L p).pairData.matrix (actualTarget p): both components of H⁻¹T_{0,*} positive",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 4619,
+        "text": "theorem sourcePair_strictCone (L : Label B N0) (p : PhaseCalculus.Slow)\n    (hp : p ∈ (PrimaryGeometryAssembly.domain nominal (choice B N0).prepared.N).carrier L)\n    (hK : p ∈ PositiveRepresentatives.positivePart (PrimaryGeometryAssembly.referenceSet nominal))\n    (hw : 0 < PrimaryTargetBounds.movingWeight nominal p) :\n    SmoothCovariance.StrictCone (sourcePair L p hp).pairData.matrix\n      (fun k => PrimaryTargetBounds.actualTarget modulation p k)"
+      }
+    }
+  }
+}

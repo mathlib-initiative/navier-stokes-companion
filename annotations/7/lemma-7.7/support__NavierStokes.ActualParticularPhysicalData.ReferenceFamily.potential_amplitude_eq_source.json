@@ -1,0 +1,26 @@
+{
+  "id": "lemma-7.7/support/NavierStokes.ActualParticularPhysicalData.ReferenceFamily.potential_amplitude_eq_source",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularPhysicalData.ReferenceFamily.potential_amplitude_eq_source",
+      "line": 841,
+      "module": "NavierStokes.ActualParticularPhysicalData",
+      "path": "NavierStokes/ActualParticularPhysicalData.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularPhysicalData.lean#L841"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularPhysicalData.ReferenceFamily.potential_amplitude_eq_source",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 841,
+        "text": "theorem potential_amplitude_eq_source (N : ℕ) (i : Fin 3) (k : Copy)\n    (I : PhysicalWaveSum.WaveIndex N) (x : LiftPoint) :\n    (F.potentialFamily N i).amplitude k I x = ChartScales.Q I.1.val.1 ^ (-h) •\n      CartesianCopySource.rotatedSource (F.nativePotential N) (k, I) I.1.val.1 x i"
+      }
+    }
+  }
+}

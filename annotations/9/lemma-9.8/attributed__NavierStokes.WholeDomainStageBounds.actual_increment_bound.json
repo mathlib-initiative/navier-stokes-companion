@@ -1,0 +1,31 @@
+{
+  "id": "lemma-9.8/attributed/NavierStokes.WholeDomainStageBounds.actual_increment_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WholeDomainStageBounds.actual_increment_bound",
+      "line": 114,
+      "module": "NavierStokes.WholeDomainPhysicalStageTheorem",
+      "path": "NavierStokes/WholeDomainPhysicalStageTheorem.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WholeDomainPhysicalStageTheorem.lean#L114"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WholeDomainStageBounds.actual_increment_bound",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: (9.17) at order m: the sum of the four stage-(j+1) norms is ≤ C q^(gain h (j+1) − physicalLoss h m)(1+|log q|)^P on physicalSublevel h (commonQ B N0).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 114,
+        "text": "theorem actual_increment_bound (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (j m : ℕ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∃ P : ℕ, ∀ w ∈ CutStageEstimates.physicalSublevel h (commonQ B N0),\n      ‖iteratedFDeriv ℝ m (potentialStages B N0 hN (j+1)) w‖ +\n        ‖iteratedFDeriv ℝ m (directStages B N0 hN (j+1)) w‖ +\n        ‖iteratedFDeriv ℝ m (pressureStages B N0 hN (j+1)) w‖ +\n        ‖iteratedFDeriv ℝ m (MixedFiniteBackground.stageVelocity\n          (potentialStages B N0 hN) (directStages B N0 hN) (j+1)) w‖ ≤\n      C * physicalQ h w ^ (ActualIterationLedger.gain h (j+1)-SharpPhysicalCarrier.physicalLoss h m) *\n        (1+|Real.log (physicalQ h w)|)^P"
+      }
+    }
+  }
+}

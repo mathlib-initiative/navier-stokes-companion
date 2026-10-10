@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.6/attributed/NavierStokes.TemporalMeanUpdate.meanClass_desiredIncrement",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TemporalMeanUpdate.meanClass_desiredIncrement",
+      "line": 1040,
+      "module": "NavierStokes.TemporalMeanUpdate",
+      "path": "NavierStokes/TemporalMeanUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L1040"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TemporalMeanUpdate.meanClass_desiredIncrement",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: MeanClass s α f → (∀ n, ContDiff (f n)) → (∀ n, TorusPeriodicLift (f n)) → MeanClass s α (fun n => desiredIncrement h n (f n))  [Δv, γ_d ∈ M_α]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1040,
+        "text": "theorem meanClass_desiredIncrement {a b cL cR h : ℝ}\n    (ha : 0 < a) (hcL : 0 < cL) (hcR : 0 < cR) (hh : 0 ≤ h)\n    (ε R : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hR : ∀ n, 1 ≤ R n)\n    (hscale : ∀ n, ChartScales.S n ≤ R n)\n    {α : ℝ} {f : ℕ → PressureStream.Lift S → ℝ}\n    (hf : WeightedClasses.MeanClass\n      (WeightedRadialPrimitive.logStripData a b cL cR ha hcL hcR ε R hε hεone hR) α f)\n    (hfc : ∀ n, ContDiff ℝ ∞ (f n)) (hp : ∀ n, PressureStream.TorusPeriodicLift (f n)) :\n    WeightedClasses.MeanClass\n      (WeightedRadialPrimitive.logStripData a b cL cR ha hcL hcR ε R hε hεone hR) α\n      (fun n => desiredIncrement h n (f n))"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "proposition-9.1/support/NavierStokes.LocalizedWaveBounds.uniform_common_bounds_from_supported_native",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalizedWaveBounds.uniform_common_bounds_from_supported_native",
+      "line": 1196,
+      "module": "NavierStokes.LocalizedWaveBounds",
+      "path": "NavierStokes/LocalizedWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalizedWaveBounds.lean#L1196"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalizedWaveBounds.uniform_common_bounds_from_supported_native",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1196,
+        "text": "theorem uniform_common_bounds_from_supported_native (K : L → PeriodizedWaveBounds.Cells D I)\n    (hs : ∀ l n i, support ((a l).cutoff n i) ⊆ (K l).carrier n i)\n    (C : L → ℕ → I → Set D)\n    {s : StripData D} {d : GraphDirections D} {W : L → ℕ → D → ℝ} {α κ : ℝ}\n    (hW : ∀ l n x, x ∈ s.domain → 0 ≤ W l n x)\n    (h : InputBounds s (fun (n : ℕ) (j : L × I) => C j.1 n j.2)\n      (fun n j x => W j.1 n x) α κ d (jointNativeFamily a))\n    (hκ : κ ≤ 1 / 2) {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ l n i x, x ∈ s.domain → x ∈ C l n i →\n      b ≤ ‖(a l).background.normal s d n x‖)\n    (hupper : ∀ l n i x, x ∈ s.domain → x ∈ C l n i →\n      ‖(a l).background.normal s d n x‖ ≤ M)\n    (hfreq : LocalUnweighted s (fun (n : ℕ) (j : L × I) => C j.1 n j.2)\n      (1 / 2) (fun n j _ => 1 / (a j.1).background.frequency n))\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

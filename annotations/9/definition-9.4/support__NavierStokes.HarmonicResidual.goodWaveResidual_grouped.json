@@ -1,0 +1,26 @@
+{
+  "id": "definition-9.4/support/NavierStokes.HarmonicResidual.goodWaveResidual_grouped",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HarmonicResidual.goodWaveResidual_grouped",
+      "line": 1275,
+      "module": "NavierStokes.HarmonicResidual",
+      "path": "NavierStokes/HarmonicResidual.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicResidual.lean#L1275"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HarmonicResidual.goodWaveResidual_grouped",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1275,
+        "text": "theorem goodWaveResidual_grouped {ι : Type*} (labels : Finset ι) (data : ι → LabelData D)\n    {U : Set D} (hU : IsOpen U) {g : Frame D} (hg : g.Regular U)\n    (B M : D → ComplexVector) (p : D → ℂ) (virtual : D → Fin 3 → ℝ)\n    (hB : ∀ i, ContDiffOn ℝ ∞ (fun y => B y i) U)\n    (hM : ∀ i, ContDiffOn ℝ ∞ (fun y => M y i) U) (hp : ContDiffOn ℝ ∞ p U)\n    (hd : ∀ l ∈ labels, (data l).Regular U)\n    (hdisj : ∀ l ∈ labels, ∀ j ∈ labels, l ≠ j →\n      Disjoint (tsupport (data l).wave) (tsupport (data j).wave))\n    (hkp : ∀ l ∈ labels, (data l).angularFrequency ≠ 0) {x : D × ℝ}\n    (hx : x ∈ liftDomain U) (i : Fin 3) :\n    goodWaveResidual labels data g B M p virtual x i =\n      ∑ l ∈ labels, (field ((data l).waveResidualCoefficients g B M i)\n        (data l).frequency (data l).phase (data l).angularFrequency x).re"
+      }
+    }
+  }
+}

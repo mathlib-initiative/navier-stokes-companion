@@ -1,0 +1,31 @@
+{
+  "id": "corollary-7.3/attributed/NavierStokes.ActualParticularStageControls.common_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularStageControls.common_bounds",
+      "line": 1356,
+      "module": "NavierStokes.ActualParticularStageControls",
+      "path": "NavierStokes/ActualParticularStageControls.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularStageControls.lean#L1356"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularStageControls.common_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∀ x, PreservesCarriers x → InputSupport x → geometricThreshold ≤ N0 → ∀ j ≠ 0, source class for currentSource x j ⊢ UniformWaveClass on the fixed source strip for (data x l j).common.amplitude (α) and .common.pressure (α+1/2), plus the corrected and good parts",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1356,
+        "text": "theorem common_bounds (x : CycleState (Label B N0)) (hx : PreservesCarriers x)\n    (hs : InputSupport x) (hN : ActualCarrierGeometry.geometricThreshold ≤ N0)\n    {α : ℝ} (j : ℤ) (hj : j ≠ 0)\n    (H : LabelSumBounds.UniformWaveClass\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      nativeEnvelope α (currentSource x j)) :\n    let s"
+      }
+    }
+  }
+}

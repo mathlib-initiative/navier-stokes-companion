@@ -1,0 +1,31 @@
+{
+  "id": "proposition-A.10/attributed/NavierStokes.TerminalCone.profile_cone_margin",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalCone.profile_cone_margin",
+      "line": 398,
+      "module": "NavierStokes.TerminalCone",
+      "path": "NavierStokes/TerminalCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean#L398"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalCone.profile_cone_margin",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: SmallTail d → 32 ≤ K → 0 ≤ δ → δ ≤ 5/2 → eta ∈ Icc (-1) 1 → 2 + d.h < profileSpeed C d y0 (eta,δ) ∧ profileSpeed … ≤ 2 + 2*d.h ∧ 3/2 ≤ profileConeGap C d y0 (eta,δ), with C = releasedNormalization d K, y0 = log K − 1/5 (endpoint δ = 0 included)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 398,
+        "text": "theorem profile_cone_margin (d : OutgoingTail.TailData) (hsmall : SmallTail d)\n    {K δ eta : ℝ} (hK : 32 ≤ K) (hδ : 0 ≤ δ) (hδ' : δ ≤ 5 / 2)\n    (heta : eta ∈ Icc (-1 : ℝ) 1) :\n    2 + d.h < TerminalEdgeFactor.profileSpeed (TerminalPressure.releasedNormalization d K) d\n      (Real.log K - 1 / 5) (eta, δ) ∧\n    TerminalEdgeFactor.profileSpeed (TerminalPressure.releasedNormalization d K) d\n      (Real.log K - 1 / 5) (eta, δ) ≤ 2 + 2 * d.h ∧\n    3 / 2 ≤ TerminalEdgeFactor.profileConeGap (TerminalPressure.releasedNormalization d K) d\n      (Real.log K - 1 / 5) (eta, δ)"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-7.7/attributed/NavierStokes.ActualParticularPhysicalData.ReferenceFamily.pressure_amplitude_eq_source",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularPhysicalData.ReferenceFamily.pressure_amplitude_eq_source",
+      "line": 848,
+      "module": "NavierStokes.ActualParticularPhysicalData",
+      "path": "NavierStokes/ActualParticularPhysicalData.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularPhysicalData.lean#L848"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularPhysicalData.ReferenceFamily.pressure_amplitude_eq_source",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (F.pressureFamily N).amplitude k I x = Q_I^(-(2·A h)) • F.nativePressure N (k,I) .. (cylindricalMap x)   [physical pressure = Q^{-2A} × chart pressure]",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 848,
+        "text": "theorem pressure_amplitude_eq_source (N : ℕ) (k : Copy)\n    (I : PhysicalWaveSum.WaveIndex N) (x : LiftPoint) :\n    (F.pressureFamily N).amplitude k I x = ChartScales.Q I.1.val.1 ^ (-(2 * CoordinateAlgebra.A h)) •\n      F.nativePressure N (k, I) I.1.val.1 (PhysicalClassBounds.cylindricalMap x)"
+      }
+    }
+  }
+}

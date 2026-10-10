@@ -1,0 +1,26 @@
+{
+  "id": "lemma-A.9/support/NavierStokes.ParametricKernelBounds.kernel_iteratedFDeriv_bound_of_jetBounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ParametricKernelBounds.kernel_iteratedFDeriv_bound_of_jetBounds",
+      "line": 324,
+      "module": "NavierStokes.ParametricKernelBounds",
+      "path": "NavierStokes/ParametricKernelBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricKernelBounds.lean#L324"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ParametricKernelBounds.kernel_iteratedFDeriv_bound_of_jetBounds",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 324,
+        "text": "theorem kernel_iteratedFDeriv_bound_of_jetBounds {b : E × ℝ → ℝ}\n    (hb : ContDiff ℝ ∞ b) (c : ℝ) (j n : ℕ) {R : ℝ} (hR : 0 ≤ R)\n    {B : ℝ} (hB : 0 ≤ B)\n    (hjets : ∀ k ≤ n, ∀ z : E × ℝ, ‖z‖ ≤ R → ‖iteratedFDeriv ℝ k b z‖ ≤ B) :\n    ∃ C : ℝ, ∃ N : ℕ, 0 ≤ C ∧ ∀ y : E × ℝ, ∀ t : ℝ,\n      ‖y‖ ≤ R → 0 ≤ t →\n      ‖iteratedFDeriv ℝ n (fun z => kernel c j b z t) y‖ ≤\n        C * (1 + t) ^ N * Real.exp (-c * t)"
+      }
+    }
+  }
+}

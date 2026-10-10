@@ -1,0 +1,31 @@
+{
+  "id": "proposition-9.9/attributed/NavierStokes.LocalPaper.Properties.exterior_heat_equation",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalPaper.Properties.exterior_heat_equation",
+      "line": 40,
+      "module": "NavierStokes.LocalPaperHeat",
+      "path": "NavierStokes/LocalPaperHeat.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperHeat.lean#L40"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalPaper.Properties.exterior_heat_equation",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: 0<τ → 0<r → −∂_τ K = ∂_r² K + ∂_r K / r − K / r² for K = amplitude C h",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 40,
+        "text": "theorem Properties.exterior_heat_equation\n    (hp : Properties h qstar Xa Xext C A D u p) {τ r : ℝ}\n    (hτ : 0 < τ) (hr : 0 < r) :\n    -deriv (fun τ => LocalHeatFormula.amplitude C h τ r) τ =\n      iteratedDeriv 2 (LocalHeatFormula.amplitude C h τ) r +\n        deriv (LocalHeatFormula.amplitude C h τ) r / r -\n        LocalHeatFormula.amplitude C h τ r / r ^ 2"
+      }
+    }
+  }
+}

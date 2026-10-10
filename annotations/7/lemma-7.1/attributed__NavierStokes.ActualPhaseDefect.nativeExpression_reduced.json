@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.1/attributed/NavierStokes.ActualPhaseDefect.nativeExpression_reduced",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualPhaseDefect.nativeExpression_reduced",
+      "line": 544,
+      "module": "NavierStokes.ActualPhaseDefect",
+      "path": "NavierStokes/ActualPhaseDefect.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPhaseDefect.lean#L544"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualPhaseDefect.nativeExpression_reduced",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (hT : 0 < T) : nativeExpression j L n k x = ε_L · reducedExpression j L n k x (E_ik = ε·reduced, b = ε·reducedRadial)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 544,
+        "text": "theorem nativeExpression_reduced (j : Fin 2) (L : Label B N0) (n : ℕ)\n    (k : TorusInverse.Frequency) {x : FullPoint} (hT : 0 < x.1.2.1.1) :\n    nativeExpression j L n k x = ChartScales.epsilon h (BaseChartJets.cellBand L) *\n      reducedExpression j L n k x"
+      }
+    }
+  }
+}

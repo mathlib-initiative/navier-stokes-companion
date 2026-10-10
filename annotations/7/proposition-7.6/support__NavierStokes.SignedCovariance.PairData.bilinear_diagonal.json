@@ -1,0 +1,27 @@
+{
+  "id": "proposition-7.6/support/NavierStokes.SignedCovariance.PairData.bilinear_diagonal",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedCovariance.PairData.bilinear_diagonal",
+      "line": 107,
+      "module": "NavierStokes.SignedCovariance",
+      "path": "NavierStokes/SignedCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L107"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedCovariance.PairData.bilinear_diagonal",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 107,
+        "text": "theorem PairData.bilinear_diagonal {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt}\n    {U : UnsignedLabel} (P : PairData sys U)\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (a b : ℝ) (j i : Fin 2) :\n    doubleAverage (fun Y θ =>\n      wave a (SlotColoring.nativeIndex h U.1) (P.rawRadial hdet j) (P.modes j) (P.phases j) Y θ *\n      wave b (SlotColoring.nativeIndex h U.1) (P.rawTangent hdet j i) (P.modes j) (P.phases j) Y θ) =\n      a * b * P.matrix i j"
+      }
+    }
+  }
+}

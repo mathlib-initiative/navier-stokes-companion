@@ -1,0 +1,27 @@
+{
+  "id": "proposition-B.8/support/NavierStokes.NominalConeAssembly.heated_lags_before_patch",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalConeAssembly.heated_lags_before_patch",
+      "line": 832,
+      "module": "NavierStokes.NominalConeAssembly",
+      "path": "NavierStokes/NominalConeAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L832"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalConeAssembly.heated_lags_before_patch",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 832,
+        "text": "theorem heated_lags_before_patch (F : Profile) {R : ℝ} (hR : 0 < R)\n    (coef : ℝ → HeatedOutgoing.Coeff) {p : Point} (hp : p.1 ≤ OutgoingDilation.patchClock F)\n    (heta : p.2 ∈ HeatedOutgoing.parameterDomain) :\n    HeatSwitchCone.Qs F R coef p = OutgoingHistories.Qs F.reset F.amp p ∧\n      HeatSwitchCone.Ns F R coef p = OutgoingHistories.Ns F.reset F.amp p"
+      }
+    }
+  }
+}

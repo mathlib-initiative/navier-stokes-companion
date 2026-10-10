@@ -1,0 +1,73 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 9.9",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 114,
+    "rect": [0.134051, 0.519665, 0.734863, 0.042445]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-9.9",
+      "locator": {
+        "physical": [114],
+        "printed": [114],
+        "text": "Section 9, Proposition 9.9, p. 114"
+      },
+      "region": "proposition-9.9@p114",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["CONVENTION: LocalPaper.Properties.potential_extensions/direct_extensions/pressure_extensions and *_jets_bounded, NavierStokes/LocalPaperTheorem.lean:67-72; UniformJetsOnScaleStrips, LocalPaperTheorem.lean:34 (∀ c c', 0 < c, no bound on c'); AwayExtensions, NavierStokes/JointResidualLimits.lean:81", "CONVENTION: Properties.exterior, NavierStokes/LocalPaperTheorem.lean:79-83; corollaries in NavierStokes/LocalPaperHeat.lean: exterior_profile_smooth (:22), exterior_profile_derivatives_bounded (:27), exterior_amplitude_formula (:34), exterior_heat_equation (:40), exterior_radial_form (:51); exteriorProfile, NavierStokes/LocalHeatFormula.lean:19", "CONVENTION: SolenoidalDiagonal.cutStage/potentialSum, NavierStokes/SolenoidalDiagonal.lean:32-38 (sum over all j, including 0); SmoothCutoffs.cutoffBump rIn = 1/2, NavierStokes/SmoothCutoffs.lean:27; LocalPotentialRebundle.potential/direct, NavierStokes/LocalPotentialRebundle.lean:26-30; velocity_eq_original, LocalPotentialRebundle.lean:96; LocalPaperDomain.qstar, NavierStokes/LocalPaperDomain.lean:16", "CONVENTION: Import walk from NavierStokes/ComparatorSolution.lean (609 NavierStokes modules reached): LocalPaperTheorem, LocalPaperHeat, LocalResidualFlatness, LocalAngularGrowth, PaperLocalization and PaperResults are not reached; ActualCandidateAssembly and MixedCandidateWitness are. LocalPaperTheorem is imported only via LocalPaperHeat.lean, PaperLocalization.lean and PaperResults.lean. Bridge: PaperLocalization.local_theorem_with_compact_candidate, NavierStokes/PaperLocalization.lean:28", "I read pp.15-16 and 114-116 and the Lean myself. LocalPaper.properties_of_schedule asserts every clause of Theorem 3.1 for the explicit cutoff sums; selected_schedule discharges its hypotheses, so local_theorem is unconditional. The constants, q, X, A=1/2+h, the viscosity-one residual and the ray of (3.6) match. Lean is stronger: smoothness on all of t<1, strips without c'<q_*, and real extensions across t=1. The auditor's three findings are encoding choices with recoveries, and both skeptics upheld them. The mathematics skeptic's aside that (3.6) names no θ is wrong: the paper lists (r,θ,z,t) with θ=0. I add one low note on the import path. The atlas header saying nothing states this item is stale."],
+          "findings": [
+            {
+              "confidence": 0.92,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Theorem 3.1(ii)'s compatible limits are encoded as AwayExtensions, a smooth extension across t=1 at every x≠0. The strip bounds also drop c'<q_*. Both are stronger than the paper's clause."
+            },
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Properties.exterior states (3.5) through BaseExterior.heatVelocity and heatPressureField. The explicit K = r^(−1−2h)·H_ext(τ/r²), the smoothness and bounded derivatives of H_ext, the heat equation and the pressure integral are separate proved corollaries."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The bookkeeping differs from (9.21). Stage 0 is also multiplied by χ(a_0 q), the base's axial potential is moved into the direct field, and q_* is min(Q, (1/2)/(a_0+1)), not q_big. local_theorem hides that the fields are sums."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Added by the judge from the auditor's notes. The Lean statement of Proposition 9.9 is a leaf: ComparatorSolution.lean does not transitively import LocalPaperTheorem, so the headline theorems do not pass through this statement as the paper's proof does."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.88. Findings: [low CONTENT: CONVENTION] Theorem 3.1(ii)'s compatible limits are encoded as AwayExtensions, a smooth extension across t=1 at every x≠0. The strip bounds also drop c'<q_*. Both are stronger than the paper's clause.; [low CONTENT: CONVENTION] Properties.exterior states (3.5) through BaseExterior.heatVelocity and heatPressureField. The explicit K = r^(−1−2h)·H_ext(τ/r²), the smoothness and bounded derivatives of H_ext, the heat equation and the pressure integral are separate proved corollaries.; [low CONTENT: CONVENTION] The bookkeeping differs from (9.21). Stage 0 is also multiplied by χ(a_0 q), the base's axial potential is moved into the direct field, and q_* is min(Q, (1/2)/(a_0+1)), not q_big. local_theorem hides that the fields are sums.; [low CONTENT: CONVENTION] Added by the judge from the auditor's notes. The Lean statement of Proposition 9.9 is a leaf: ComparatorSolution.lean does not transitively import LocalPaperTheorem, so the headline theorems do not pass through this statement as the paper's proof does.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

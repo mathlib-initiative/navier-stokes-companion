@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.6/attributed/NavierStokes.UniformFourierAlias.realInverse_finiteJets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.UniformFourierAlias.realInverse_finiteJets",
+      "line": 611,
+      "module": "NavierStokes.UniformFourierAlias",
+      "path": "NavierStokes/UniformFourierAlias.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformFourierAlias.lean#L611"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.UniformFourierAlias.realInverse_finiteJets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: ∃ K ≥ 0, ∀ f A C, ContDiff f → ParameterPeriodic f → (∀ j ≤ m + 5, ‖D^j f‖ ≤ C on A × Plane) → ∀ j ≤ m, ‖D^j (realInverse d f)‖ ≤ K * C  [real-valued (8.19), still m+5]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 611,
+        "text": "theorem realInverse_finiteJets (d : Direction) (m : ℕ) :\n    ∃ K : ℝ, 0 ≤ K ∧ ∀ (f : P × Plane → ℝ) (A : Set P) (C : ℝ),\n      ContDiff ℝ ∞ f → ParameterPeriodic f → 0 ≤ C →\n      (∀ j ≤ m + 5, ∀ p ∈ A, ∀ Y, ‖iteratedFDeriv ℝ j f (p, Y)‖ ≤ C) →\n      ∀ j ≤ m, ∀ p ∈ A, ∀ Y, ‖iteratedFDeriv ℝ j (realInverse d f) (p, Y)‖ ≤ K * C"
+      }
+    }
+  }
+}

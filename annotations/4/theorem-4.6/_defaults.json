@@ -1,0 +1,101 @@
+{
+  "kind": "theorem",
+  "label": "Theorem 4.6",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [medium COVERAGE] No declaration was found stating Theorem 4.6 as a whole. Most of its content is separate lemmas about a nominal profile W and modulation v. exists_weighted_profile bundles only parts of …; [low CONTENT] The edge identities n(X_a)∥(a,−b_s) and n(X_b)=(1,0) are stated only for the activation and terminal model stresses. The final-stress collar lemmas give only a positive angular coefficient and ε-margins.",
+  "location": {
+    "page": 32,
+    "rect": [0.133462, 0.770033, 0.732495, 0.088965]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "item": "theorem-4.6",
+      "locator": {
+        "physical": [32, 33],
+        "printed": [32, 33],
+        "text": "Section 4, Theorem 4.6, p. 32"
+      },
+      "region": "theorem-4.6@p032",
+      "verdicts": [
+        {
+          "confidence": 0.83,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.LeadingStressWeights.exists_weighted_profile (NavierStokes/LeadingStressWeights.lean:1154): ∃ F W d v, FullTrueCone v ∧ WeightedBounds (lower bound and derivative bounds of the log stress against the flat weight) ∧ an inner and an outer EdgeFactor with positive angular coefficient and HasTrueDirectionCollar. Nothing from (i), (ii), (v), (vi); no uniform κ; no edge identities. Not referenced anywhere else in the repository.; NavierStokes.FinalSlowBase.ProfileData (NavierStokes/FinalSlowBase.lean:619): Structure with fields outgoing, nominal, certificate : NominalConeAssembly.Certificate nominal, loop, modulation, fullTrueCone : FullTrueCone modulation. Two fields are Prop-valued and the nested witnesses carry more (h ≤ 1/1000, row restoration), so the original 'store no properties' is false and the checker's 'only parameter bounds and the open-annulus cone' is too narrow.; NavierStokes.FinalSlowBase.actualProfile (NavierStokes/FinalSlowBase.lean:634): noncomputable def actualProfile : ProfileData := Classical.choice profileData_nonempty. Its certificate, modulation and fullTrueCone are consumed downstream (e.g. CorrectionInitialization.lean:3886-3925), in files inside the import closure of ComparatorSolution.; NavierStokes.LeadingStressWeights.FullTrueCone (NavierStokes/LeadingStressWeights.lean:453): ∀ p with activeLeft W < p.1 < activeRight W and p.2 ∈ [-1,1], TrueConeLoop.InTrueCone of the stocks and shears of v.profiles: strict cone inequalities pointwise on the open annulus, with no uniform margin.; NavierStokes.NominalConeAssembly.Certificate (NavierStokes/NominalConeAssembly.lean:1362): Prop structure for the nominal W: relaxed cone on the open annulus, true cone on an initial collar and on the outgoing region.; NavierStokes.LeadingStressWeights.inner_direction_positive (NavierStokes/LeadingStressWeights.lean:946): FullTrueCone v → ∃ inner EdgeFactor G for the final stress with 0 < (G.coefficient (η,0)).1 and HasTrueDirectionCollar. The tilt identity at the edge is used inside the proof but is not in the statement.; NavierStokes.LeadingStressWeights.outer_direction_positive (NavierStokes/LeadingStressWeights.lean:968): ∃ outer EdgeFactor G for the final stress with positive angular coefficient at the edge and HasTrueDirectionCollar; does not state n(X_b) = (1,0).; NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor_aligned (NavierStokes/ActiveAnnulusWeight.lean:1039): For the activation model stress: ∃ EdgeFactor G with positive angular coefficient and tilt (G.coefficient (η,0)) = referenceP2/referenceP1 at the edge. The inner edge identity is stated for the model, not for v.; NavierStokes.TerminalEdgeFactor.profileTilt_zero (NavierStokes/TerminalEdgeFactor.lean:1333): profileTilt C d y0 (η, 0) = 0 for the terminal model stress: the outer edge identity, stated for the model only.; NavierStokes.LeadingStressWeights.modulated_activation_stress (NavierStokes/LeadingStressWeights.lean:278): For x < innerWidth v and η ∈ [-1,1], the left-chart final stress of v equals activationStress W (x, η). With modulated_terminal_stress (line 410) this is why the edge identities look recoverable by composition.; NavierStokes.LeadingStressWeights.modulated_terminal_shears (NavierStokes/LeadingStressWeights.lean:660): For x < outerWidth v: logShearA v.profiles equals the terminal model speed and logShearB v.profiles (η, rightEdge W − x) = 0. So b_s(X_b,η) = 0 is stated for the final profile and is not listed as missing.; NavierStokes.ActiveAnnulusWeight.HasTrueDirectionCollar (NavierStokes/ActiveAnnulusWeight.lean:868): HasStrictDirectionCollar (line 853: direction∘B is ContDiffOn an open set containing K×[0,d], with ε-margins for directionProjection and directionGap) plus ε ≤ v−2 on the collar. Margins and smoothness on edge collars only.; NavierStokes.LeadingStressWeights.closed_shear_positive (NavierStokes/LeadingStressWeights.lean:826): FullTrueCone v → for η ∈ [-1,1] and y in the closed log-annulus, 0 < logShearA and 2 < logSpeed. Pointwise, no uniform lower bound.; NavierStokes.AlignedProfileSpectralCone.exists_closed_direction (NavierStokes/AlignedProfileSpectralCone.lean:433): FullTrueCone v → ∃ D ContinuousOn the closed annulus, ‖D‖ = 1, equal to the normalized stress inside, with strict ReferenceCone and TargetCone at every closed-annulus point. Continuous, not smooth; pointwise, no κ.; NavierStokes.NominalProfile.Witness.five_moments (NavierStokes/NominalProfile.lean:2536): η ∈ [-1,1] → FiveMomentCertificate W.U W.E (powerH …) (F.axisDatum η) η: integrability and vanishing of the mass, transport, energy and angular-minus-power integrals, for the nominal fields W.U, W.E only.; NavierStokes.ModulatedProfileAssembly.Witness (NavierStokes/ModulatedProfileAssembly.lean:432): Structure of the modulated profile v. Field restored: the five cumulative rows (M, I, J, S, pressure) of v equal those of W for X ≥ (repairPatch W).right; field true_cone on the modulation interval. No statement of the limits at infinity for v.; NavierStokes.NominalProfile.AxisStage (NavierStokes/NominalProfile.lean:62): Fields small : SmallParameters F.data.h j (0 < h ≤ 1/1000 at NaturalAxisData.lean:41), normalization, normalization_large : entranceNormalization … ≤ normalization. Only normalization_pos (line 79) is derived; no 1 < normalization. Whether the threshold exceeds 1 was not traced.; NavierStokes.FinalSlowBase.exists_final_base (NavierStokes/FinalSlowBase.lean:639): ∃ F W H ld v with FullTrueCone, WeightedBounds, stress support and physical-space facts about the slow base (smoothness, divergence, residual identity, heat exterior). Not clauses (i), (v), (vi) of Theorem 4.6; unreferenced elsewhere.; NavierStokes.ConstructedSlowBase.exists_actual_base (NavierStokes/ConstructedSlowBase.lean:932): ∃ F W ld v with the open-annulus cone, admissible scales, a weighted stress bound and physical-space facts about the summed base. Not a statement of Theorem 4.6; unreferenced elsewhere.", "REFUTED: NominalProfile.Witness (NominalProfile.lean:2481) field axis : AxisStage F; AxisStage.small : NaturalAxisData.SmallParameters F.data.h j (NominalProfile.lean:64); SmallParameters.h_pos, h_le : h ≤ 1/1000 (NaturalAxisData.lean:41-44); actualProfile.nominal.axis.small.h_le", "CONVENTION: NominalProfile.AxisStage.normalization_large (NominalProfile.lean:68); NaturalEntrance.entranceNormalization (NaturalEntrance.lean:855); NaturalAxisCoefficients.AnalyticInputs.normalizationThreshold (l.532) = exp(Λ·realPartSup …); AxisStage.normalization_pos only", "ATTRIBUTION_GAP: EntranceAlignedBase.base_phi_axial_pressure (EntranceAlignedBase.lean:200), modified_ACT_fields (l.180), base_beta_pos/base_beta_axis (V_0/X); modulatedScheme (l.802) instantiates Q := v.profiles; X_a < cutoffInner < analyticEnd (window_order, l.40); SlowRecursion.AxisFunction.holomorphic (SlowRecursion.lean:71)", "CONVENTION: LeadingStressWeights.closed_shear_positive (l.826) pointwise; AlignedProfileSpectralCone.exists_closed_direction (l.433) ContinuousOn D with strict TargetCone at every closed point; ActiveAnnulusWeight.HasStrictDirectionCollar (l.853) ContDiffOn direction∘B on open W ⊇ K×[0,d]", "CONFIRMED_CONTENT: ActiveAnnulusWeight.exists_natural_activation_factor_aligned (ActiveAnnulusWeight.lean:1039); TerminalEdgeFactor.profileTilt_zero (TerminalEdgeFactor.lean:1333); LeadingStressWeights.inner_direction_positive (l.946) and outer_direction_positive (l.968) omit both identities", "CONVENTION: LeadingStressWeights.stress_zero_before (LeadingStressWeights.lean:1067); EntranceAlignedBase.zero_coefficients (EntranceAlignedBase.lean:310): order-zero angular/axial residual coefficients vanish for 0<X<X_a", "No declaration bundles Theorem 4.6. Its clauses are proved as separate lemmas about the same generic witness chain, so the relation is partial and the verdict DELTA (medium coverage). Checked in source: h ≤ 1/1000 survives in every NominalProfile.Witness through axis.small (NaturalAxisData.lean:41), which refutes both the auditor's h claim and PAIRING's h<1/20 claim. Analyticity on [0,X_an] does transfer to v: EntranceAlignedBase.base_phi_axial_pressure/modified_ACT_fields with modulatedScheme, and φ(0)>0 follows via FromReference.f_pos. The uniform κ and (4.13) are recoverable encodings. C>1 is a free normalization. The one genuine unstated content is the edge-direction identities for the final stress (low). No mathematical error was found."],
+          "findings": [
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "medium",
+              "summary": "No declaration was found stating Theorem 4.6 as a whole. Most of its content is separate lemmas about a nominal profile W and modulation v. exists_weighted_profile bundles only parts of (iii)–(iv). ProfileData/actualProfile fix one profile, keeping witnesses, the nominal cone certificate and open-annulus cone."
+            },
+            {
+              "confidence": 0.92,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "REFUTED",
+              "severity": "low",
+              "summary": "Claim (auditor F1, and PAIRING's missed item) that h<1/100 is not exported for the fixed profile, with only h<λ/2<1/20 known after Classical.choice. Wrong: every NominalProfile.Witness carries axis.small with h ≤ 1/1000, and ProfileData keeps it."
+            },
+            {
+              "confidence": 0.7,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "C>1 is not exported. C is the free normalization W.axis.normalization, constrained only by normalization ≥ entranceNormalization = exp(Λ·sup)·(1+…). That threshold is not shown to be ≥1."
+            },
+            {
+              "confidence": 0.8,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Auditor F2: η-analyticity on [0,X_an] is said to be stated only for activation-stage fields, not the final profile. Wrong: EntranceAlignedBase states it for any FiniteModification, v included, as equality with holomorphic hierarchy coefficients on [0,cutoffInner)."
+            },
+            {
+              "confidence": 0.78,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Auditor F3: the uniform κ, uniform lower bounds on F, a, v_s−2, and the smooth closed-annulus extension of n are not stated. Lean gives strict pointwise cone inequalities on the closed annulus, a continuous closed direction, and smooth edge collars."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The edge identities n(X_a)∥(a,−b_s) and n(X_b)=(1,0) are stated only for the activation and terminal model stresses. The final-stress collar lemmas give only a positive angular coefficient and ε-margins."
+            },
+            {
+              "confidence": 0.75,
+              "contested": true,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Clause (ii)'s 'for 0≤X≤X_a the profiles solve (4.13)' was missing from the auditor's summary. The ODE is not written out in Lean, but (4.13) is by definition the vanishing-stress equations, and T_0=0 on [0,X_a] is stated."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "medium",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.83. Findings: [medium COVERAGE: CONFIRMED_CONTENT] No declaration was found stating Theorem 4.6 as a whole. Most of its content is separate lemmas about a nominal profile W and modulation v. exists_weighted_profile bundles only parts of (iii)–(iv). ProfileData/actualProfile fix one profile, keeping witnesses, the nominal cone certificate and open-annulus cone.; [low CONTENT: REFUTED] Claim (auditor F1, and PAIRING's missed item) that h<1/100 is not exported for the fixed profile, with only h<λ/2<1/20 known after Classical.choice. Wrong: every NominalProfile.Witness carries axis.small with h ≤ 1/1000, and ProfileData keeps it.; [low CONTENT: CONVENTION] C>1 is not exported. C is the free normalization W.axis.normalization, constrained only by normalization ≥ entranceNormalization = exp(Λ·sup)·(1+…). That threshold is not shown to be ≥1.; [low CONTENT: ATTRIBUTION_GAP] Auditor F2: η-analyticity on [0,X_an] is said to be stated only for activation-stage fields, not the final profile. Wrong: EntranceAlignedBase states it for any FiniteModification, v included, as equality with holomorphic hierarchy coefficients on [0,cutoffInner).; [low CONTENT: CONVENTION] Auditor F3: the uniform κ, uniform lower bounds on F, a, v_s−2, and the smooth closed-annulus extension of n are not stated. Lean gives strict pointwise cone inequalities on the closed annulus, a continuous closed direction, and smooth edge collars.; [low CONTENT: CONFIRMED_CONTENT] The edge identities n(X_a)∥(a,−b_s) and n(X_b)=(1,0) are stated only for the activation and terminal model stresses. The final-stress collar lemmas give only a positive angular coefficient and ε-margins.; [low COVERAGE: CONVENTION] Clause (ii)'s 'for 0≤X≤X_a the profiles solve (4.13)' was missing from the auditor's summary. The ODE is not written out in Lean, but (4.13) is by definition the vanishing-stress equations, and T_0=0 on [0,X_a] is stated.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

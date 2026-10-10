@@ -1,0 +1,31 @@
+{
+  "id": "proposition-9.9/attributed/NavierStokes.LocalPaper.Properties.exterior_amplitude_formula",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalPaper.Properties.exterior_amplitude_formula",
+      "line": 34,
+      "module": "NavierStokes.LocalPaperHeat",
+      "path": "NavierStokes/LocalPaperHeat.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperHeat.lean#L34"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalPaper.Properties.exterior_amplitude_formula",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: 0<r → amplitude C h τ r = r^(−1−2h) * exteriorProfile C h (τ/r²)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 34,
+        "text": "theorem Properties.exterior_amplitude_formula\n    (_hp : Properties h qstar Xa Xext C A D u p) (τ : ℝ) {r : ℝ} (hr : 0 < r) :\n    LocalHeatFormula.amplitude C h τ r =\n      r ^ (-1 - 2 * h) * LocalHeatFormula.exteriorProfile C h (τ / r ^ 2)"
+      }
+    }
+  }
+}

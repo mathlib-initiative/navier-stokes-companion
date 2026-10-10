@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/attributed/NavierStokes.StateMomentBalances.physicalCompact_periodic",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.StateMomentBalances.physicalCompact_periodic",
+      "line": 838,
+      "module": "NavierStokes.StateMomentBalances",
+      "path": "NavierStokes/StateMomentBalances.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StateMomentBalances.lean#L838"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.StateMomentBalances.physicalCompact_periodic",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: TorusPeriodicLift f ⊢ TorusPeriodicLift (physicalCompact d a b M (0,v) f)  (radial integration preserves periodicity in H)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 838,
+        "text": "theorem physicalCompact_periodic (d a b M : ℝ) (v : PressureStream.Plane)\n    {f : Lift S → ℝ} (hp : PressureStream.TorusPeriodicLift f) :\n    PressureStream.TorusPeriodicLift (RadialPullback.physicalCompact d a b M (0, v) f)"
+      }
+    }
+  }
+}

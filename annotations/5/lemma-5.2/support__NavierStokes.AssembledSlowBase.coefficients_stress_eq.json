@@ -1,0 +1,26 @@
+{
+  "id": "lemma-5.2/support/NavierStokes.AssembledSlowBase.coefficients_stress_eq",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AssembledSlowBase.coefficients_stress_eq",
+      "line": 392,
+      "module": "NavierStokes.AssembledSlowBase",
+      "path": "NavierStokes/AssembledSlowBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean#L392"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AssembledSlowBase.coefficients_stress_eq",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 392,
+        "text": "theorem coefficients_stress_eq (Z0 : ZeroOrderSolved s inner)\n    (hI : Icc (-1 : ℝ) 1 ⊆ S) (n : ℕ) {w : ℝ × ℝ}\n    (hX : 0 ≤ w.1) (heta : |w.2| ≤ 1) :\n    (coefficients L B0 Z0 hI).stressTheta n w = SlowResidualMatching.thetaStress h C (asSlowProfiles s) n w ∧\n    (coefficients L B0 Z0 hI).stressAxial n w = SlowResidualMatching.zStress h (asSlowProfiles s) n w"
+      }
+    }
+  }
+}

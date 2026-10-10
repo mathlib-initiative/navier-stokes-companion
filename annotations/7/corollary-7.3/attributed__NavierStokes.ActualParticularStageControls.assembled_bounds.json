@@ -1,0 +1,31 @@
+{
+  "id": "corollary-7.3/attributed/NavierStokes.ActualParticularStageControls.assembled_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularStageControls.assembled_bounds",
+      "line": 1455,
+      "module": "NavierStokes.ActualParticularStageControls",
+      "path": "NavierStokes/ActualParticularStageControls.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularStageControls.lean#L1455"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularStageControls.assembled_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∀ x, hx, hs, geometricThreshold ≤ N0, ResidualBounds x α, ∀ N : ℕ (harmonic cutoff) ⊢ UniformWaveClass on nativeStrip for the velocity (α), pressure (α+1/2) and good part of outputBlock x N",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1455,
+        "text": "theorem assembled_bounds (x : CycleState (Label B N0))\n    (hx : PreservesCarriers x) (hs : InputSupport x)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0)\n    {α : ℝ} (H : ResidualBounds x α) (N : ℕ) :\n    (∀ i j, LabelSumBounds.UniformWaveClass (BaseContextAssembly.nativeStrip nominal standardRegion)\n      meanEnvelope α (fun l n z => (outputBlock x N l).velocity n i j z)) ∧\n    (∀ j, LabelSumBounds.UniformWaveClass (BaseContextAssembly.nativeStrip nominal standardRegion)\n      meanEnvelope (α+1/2) (fun l n z => (outputBlock x N l).pressure n j z)) ∧\n    (∀ i j, LabelSumBounds.UniformWaveClass (BaseContextAssembly.nativeStrip nominal standardRegion)\n      meanEnvelope (α+1/2-3*ChartScales.kappa)\n      (fun l n z => (outputGood x N l).velocity n i j z))"
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "proposition-9.1/attributed/NavierStokes.LinearWaveBounds.excludedSlotError_carrier_physical_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LinearWaveBounds.excludedSlotError_carrier_physical_bound",
+      "line": 932,
+      "module": "NavierStokes.LinearWaveBounds",
+      "path": "NavierStokes/LinearWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L932"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LinearWaveBounds.excludedSlotError_carrier_physical_bound",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∃ C, ∀ n ≥ 4, ∀ p with scaledRadial in annulus, |t| ≤ 1, physicalLift h n p ∈ s.domain, q/2 ≤ Q n ≤ 2q, Φ with jet bounds: ‖iteratedFDeriv ℝ m ((excludedSlotError·character(carrier·j·Φ)) ∘ physicalLift h n) p‖ ≤ C·q^N (Cartesian infinite-order flatness of the tails)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 932,
+        "text": "theorem excludedSlotError_carrier_physical_bound {s : StripData LiftPoint}\n    (g : GaussianTailFlat.SlotFamily s) (d : GraphDirections LiftPoint)\n    (hfast : ∀ n, g.linear n (d.fastScale n • d.fast) = (g.length n)⁻¹)\n    (edges : GaussianTailFlat.FlatEdges s) (scales : GaussianTailFlat.BandScaleControl s)\n    {P : ℕ → LiftPoint → ℝ} {α c : ℝ} {a source : ℕ → LiftPoint → ComplexVector}\n    (ha : WaveClass s P α a) (hf : WaveClass s P α source) (hc : 0 < c)\n    (hP : ∀ n x, x ∈ s.domain →\n      P n x ≤ Real.exp (-c * (g.coordinate n x - 1 / 2) ^ 2 * g.length n))\n    (ha_smooth : ∀ n, ContDiffOn ℝ ∞ (a n) {x | g.coordinate n x ∈ Ioo 0 1})\n    (hf_smooth : ∀ n, ContDiff ℝ ∞ (source n))\n    {h rLower rUpper B e H : ℝ} (hh : 0 ≤ h) (hh1 : h ≤ 1 / 2) (hrLower : 0 < rLower)\n    (hB : 1 ≤ B) (he : 0 ≤ e) (hH : 0 ≤ H) (i : Fin 3) (m : ℕ) (N : ℝ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℕ, 4 ≤ n → ∀ p : ProblemStatement.SpaceTime,\n      scaledRadial n p ∈ annulus rLower rUpper → |p.1| ≤ 1 → physicalLift h n p ∈ s.domain →\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

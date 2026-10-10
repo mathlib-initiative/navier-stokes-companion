@@ -1,0 +1,29 @@
+{
+  "id": "proposition-9.3/attributed/NavierStokes.ActualCycleResidualBounds.Invariant.gaussian_field_native",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCycleResidualBounds.Invariant.gaussian_field_native",
+      "line": 833,
+      "module": "NavierStokes.ActualCycleResidualBounds",
+      "path": "NavierStokes/ActualCycleResidualBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean#L833"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCycleResidualBounds.Invariant.gaussian_field_native",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (hN) (α : ℝ) : NativeBounds 4 (liftDomain strip.domain) (h * α) (fun m => (2 * h) * m) (fun (_ : Unit) => x.state.errors.gaussian)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 833,
+        "text": "theorem gaussian_field_native (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (α : ℝ) :\n    NativeBounds 4 (HarmonicResidual.liftDomain ActualInitialization.geometry.strip.domain)\n      (ActualPrimary.h * α) (fun m => (2 * ActualPrimary.h) * m)\n      (fun (_ : Unit) => x.state.errors.gaussian)"
+      }
+    }
+  }
+}

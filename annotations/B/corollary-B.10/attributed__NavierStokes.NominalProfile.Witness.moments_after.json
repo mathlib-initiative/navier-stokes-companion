@@ -1,0 +1,31 @@
+{
+  "id": "corollary-B.10/attributed/NavierStokes.NominalProfile.Witness.moments_after",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.Witness.moments_after",
+      "line": 2576,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L2576"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.Witness.moments_after",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: heatJoin ≤ r → η ∈ [-1,1] → moments W.U W.E r η = moments of the HeatedOutgoing outer profile  (rows ∫U, ∫√(2x)E, ∫U√(2x)E, ∫(U² − E²/2), ∫E²/(2x), as in (4.15))",
+        "status": "unconfirmed",
+        "verdict": "attribution_gap"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 2576,
+        "text": "theorem moments_after {r eta : ℝ} (hr : W.controls.heatJoin ≤ r)\n    (hη : eta ∈ HeatedOutgoing.parameterDomain) :\n    moments W.U W.E r eta =\n      moments (HeatedOutgoing.U F W.controls.radius)\n        (HeatedOutgoing.E F W.controls.radius W.heat.physical.coefficients) r eta"
+      }
+    }
+  }
+}

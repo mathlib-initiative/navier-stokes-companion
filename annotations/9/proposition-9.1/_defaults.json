@@ -1,0 +1,89 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 9.1",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 101,
+    "rect": [0.134051, 0.697178, 0.734859, 0.14264]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-9.1",
+      "locator": {
+        "physical": [101],
+        "printed": [101],
+        "text": "Section 9, Proposition 9.1, p. 101"
+      },
+      "region": "proposition-9.1@p101",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["ATTRIBUTION_GAP: LinearWaveBounds.constructed_linear_wave_with_flat_error (NavierStokes/LinearWaveBounds.lean:898) takes h : InputBounds s P α κ d a; field InputBounds.pressure (LinearWaveBounds.lean:289) : WaveClass s P (α + 1/2) a.pressure. Derived in ParticularWaveBounds.pressure_class (ParticularWaveBounds.lean:757); combined in SignedWaveUpdate.coefficients_inputBounds (SignedWaveUpdate.lean:222, f := MemClass.zero).", "ATTRIBUTION_GAP: ParticularWaveBounds.constructed_particular_wave (ParticularWaveBounds.lean:1934): WaveClass s P (α + 1/2) (a.corrected s dirs ψ).pressure. constructed_particular_wave_with_flat_error (1995) has no pressure or amplitude conjunct. complexCopy_inputBounds (1778) concludes InputBounds … (complexCopyCoefficients …), whose pressure field is the uncut class; its hypotheses are a subset of those of 1934.", "ATTRIBUTION_GAP: constructed_particular_wave_with_flat_error (ParticularWaveBounds.lean:1995): ∀ β : ℝ, UnweightedClass s β (excludedSlotError dirs slot.cutoff a.amplitude source). LinearWaveBounds.excludedSlotError_carrier_physical_bound (LinearWaveBounds.lean:932): ‖iteratedFDeriv ℝ m ((excludedSlotError·character) ∘ physicalLift h n) p‖ ≤ C * q ^ N, with ha_smooth, hf_smooth : ContDiff ℝ ∞ (source n), 4 ≤ n. excludedSlotError_stripped_bound (882): C * Q n ^ N without growth.", "CONVENTION: WeightedClasses.MemClass (NavierStokes/WeightedClasses.lean:107): fields weight_nonneg, smooth, bounds only. Conclusion of ParticularWaveBounds.constructed_particular_wave_with_flat_error (1995) is WaveClass s P (α + 1/2 − 3κ) (a.constructedGood …) on s.domain. Support is tracked separately, e.g. PeriodizedWaveBounds.CopyData.globalGood_support (PeriodizedWaveBounds.lean:1141).", "ATTRIBUTION_GAP: ParticularWaveBounds.CopyControl (ParticularWaveBounds.lean:563: energy, exponential_bound, input_jets); hW and hg in constructed_particular_wave_with_flat_error (1995). grep: constructed_particular_wave* used only inside ParticularWaveBounds; constructed_modal_particular_wave only at ParticularWaveAssembly.lean:1540 (LocalControl.local_result, 1528); LocalControl (1422) occurs elsewhere only as a hypothesis. Pipeline: LocalizedWaveBounds.uniform_common_bounds_from_supported_native (1196) at CorrectionStep.lean:7849; harmonicResidual_eq_good_add_excluded_on (1373) at CorrectionStep.lean:5946; LocalizedGaussianBounds.uniform_globalGaussian_all_gains_from_supported_native (431) at ActualGaussianCoverage.lean:863.", "ATTRIBUTION_GAP: ParticularWaveBounds.constructed_particular_wave_with_flat_error (ParticularWaveBounds.lean:1995): copy is a fixed parameter; WaveClass (MemClass.bounds, WeightedClasses.lean:107) gives ∃ C p after it. Uniform form: LocalizedWaveBounds.uniform_common_bounds_from_supported_native (LocalizedWaveBounds.lean:1196) concluding LabelSumBounds.UniformClass (LabelSumBounds.lean:33, bounds ∀ l n x with one C, p) over labels and copy cells.", "All three voters give SINGLE_SOURCE_OK / different_formulation; I confirm after reading pp. 101–102 and the Lean. Exponents match (good part α+1/2−3κ, pressure α+1/2), linearResidual matches (9.1)+(9.2), and excludedSlotError = (D_fast ψ)t + (1−ψ)f is exactly the paper's two tails. The full item is the conjunction of constructed_particular_wave(_with_flat_error), complexCopy_inputBounds and excludedSlotError_carrier_physical_bound, plus, for homogeneous pulses, the generic LinearWaveBounds theorem with pressure_class. I promote the generic theorem to co-'states' (PAIRING skeptic): the repo labels it the proposition (stale 'Proposition 9.3') and it alone covers f = 0. All six findings are low: attribution gaps or the class-encoding convention. Lean was not run; orphan status rests on grep."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Homogeneous-pulse case exists only through the generic theorem, which assumes π_m ∈ W_{α+1/2} (InputBounds.pressure) where the paper concludes it. The class is proved separately by pressure_class with f = 0."
+            },
+            {
+              "confidence": 0.82,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The item's conclusions are spread over three declarations with the same hypotheses: with_flat_error omits the pressure class; constructed_particular_wave gives it only for the cut pressure ψπ_m; uncut π_m ∈ W_{α+1/2} is in complexCopy_inputBounds."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Headline flatness is chart-normalized (∀β, UnweightedClass β, with (S·max(1,δ⁻¹))^p growth allowed). The paper's Cartesian O(q^N) claim is a separate theorem with extra hypotheses (n ≥ 4, global source smoothness, phase-jet bounds, lift in domain)."
+            },
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "WaveClass/MemClass records only smoothness and jet bounds on the open strip. Definition 6.5's support in Ω_γ, θ-independence and smooth zero extension are not part of the Lean conclusion for the residual."
+            },
+            {
+              "confidence": 0.62,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Item-level theorems assume abstract control data (CopyControl energy/exponential bounds, Gaussian envelope hW = (7.16), ExactConditions on the output). They are not used by the main theorem; the modal form is reached only via LocalControl, never constructed."
+            },
+            {
+              "confidence": 0.7,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Single-copy theorems fix one copy sequence copy : ℕ → Frequency and one label; constants are existential afterwards. Uniformity over copies and labels, required by the section convention, is stated only in the pipeline's UniformClass theorems."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.78. Findings: [low CONTENT: ATTRIBUTION_GAP] Homogeneous-pulse case exists only through the generic theorem, which assumes π_m ∈ W_{α+1/2} (InputBounds.pressure) where the paper concludes it. The class is proved separately by pressure_class with f = 0.; [low CONTENT: ATTRIBUTION_GAP] The item's conclusions are spread over three declarations with the same hypotheses: with_flat_error omits the pressure class; constructed_particular_wave gives it only for the cut pressure ψπ_m; uncut π_m ∈ W_{α+1/2} is in complexCopy_inputBounds.; [low CONTENT: ATTRIBUTION_GAP] Headline flatness is chart-normalized (∀β, UnweightedClass β, with (S·max(1,δ⁻¹))^p growth allowed). The paper's Cartesian O(q^N) claim is a separate theorem with extra hypotheses (n ≥ 4, global source smoothness, phase-jet bounds, lift in domain).; [low CONTENT: CONVENTION] WaveClass/MemClass records only smoothness and jet bounds on the open strip. Definition 6.5's support in Ω_γ, θ-independence and smooth zero extension are not part of the Lean conclusion for the residual.; [low CONTENT: ATTRIBUTION_GAP] Item-level theorems assume abstract control data (CopyControl energy/exponential bounds, Gaussian envelope hW = (7.16), ExactConditions on the output). They are not used by the main theorem; the modal form is reached only via LocalControl, never constructed.; [low CONTENT: ATTRIBUTION_GAP] Single-copy theorems fix one copy sequence copy : ℕ → Frequency and one label; constants are existential afterwards. Uniformity over copies and labels, required by the section convention, is stated only in the pipeline's UniformClass theorems.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

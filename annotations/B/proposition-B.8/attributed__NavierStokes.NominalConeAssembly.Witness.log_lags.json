@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.8/attributed/NavierStokes.NominalConeAssembly.Witness.log_lags",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalConeAssembly.Witness.log_lags",
+      "line": 669,
+      "module": "NavierStokes.NominalConeAssembly",
+      "path": "NavierStokes/NominalConeAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L669"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalConeAssembly.Witness.log_lags",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: W.controls.heatJoin < (chart R p).1 → p.2 ∈ [-1,1] → W.profiles.angularLag h (chart R p) = HeatSwitchCone.Qs F R W.heat.coefficients p ∧ W.profiles.axialLag h (chart R p) = HeatSwitchCone.Ns F R W.heat.coefficients p"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 669,
+        "text": "theorem log_lags {p : Point} (hp : W.controls.heatJoin < (chart W.controls.radius p).1)\n    (heta : p.2 ∈ HeatedOutgoing.parameterDomain) :\n    W.profiles.angularLag F.data.h (chart W.controls.radius p) =\n        HeatSwitchCone.Qs F W.controls.radius W.heat.coefficients p ∧\n    W.profiles.axialLag F.data.h (chart W.controls.radius p) =\n        HeatSwitchCone.Ns F W.controls.radius W.heat.coefficients p"
+      }
+    }
+  }
+}

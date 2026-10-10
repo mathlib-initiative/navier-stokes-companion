@@ -1,0 +1,57 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 8.1",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 89,
+    "rect": [0.134051, 0.215269, 0.734127, 0.238953]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-8.1",
+      "locator": {
+        "physical": [89],
+        "printed": [89],
+        "text": "Section 8, Proposition 8.1, p. 89"
+      },
+      "region": "proposition-8.1@p089",
+      "verdicts": [
+        {
+          "confidence": 0.87,
+          "evidence": ["CONVENTION: LiftedMeanResidual.fullResidual (LiftedMeanResidual.lean:314) with virtualDivergence (l.304); link to the real residual: PhysicalResidualBridge.context_fullResidual_eq_graph (l.747) and context_fullResidual_physical (l.770), hypothesis hbase", "ATTRIBUTION_GAP: MeanResidual.exact_cartesian_mean_balances (MeanResidual.lean:1091): '... − radialDivergence 2 Ttheta q = Etheta b m o Ttheta q', with Etheta (l.804) ending '− radialDivergence 2 Ttheta q'; retain_base_error (l.1154)", "I checked p.89 against the Lean myself. thetaResidual, axialResidual and gr (MeanIncrementBounds.lean:328-342) match (8.3) term by term. That covers the fluxes, the W indices, p_m inside D_z, viscosity c=1/1/0 and radialDiv 2/1. Covariance is ⟨w_i w_j⟩_θ. fullResidual is R(B+a) − R(B) + virtualDivergence + E_B, with the pressure increment p_m plus an oscillatory part of zero mean. angularMean_fullResidual proves its mean equals reduced + avg(E_B). Under hbase (the normalized (5.41)), context_fullResidual_eq_graph identifies fullResidual with the actual residual, which is a routine recovery. The Lean is more general in places: it needs no flatness of E_B, no (8.2) and any Σ works. MeanHypotheses is instantiated, so it is not vacuous, and the key files contain no sorry. Both findings are low: one is an encoding choice, the other concerns a secondary candidate."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "fullResidual is defined as (R(u) − R(u_B)) + stress divergence of virtualTheta/virtualAxial + E_B, not as R(u) itself. It equals the actual normalized residual only under the separate base identity hbase (the normalized (5.41)), proved in PhysicalResidualBridge."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The physical candidate exact_cartesian_mean_balances is unnormalized (viscosity 1, no torus). Its Ttheta and Tz cancel identically, and base-error retention lives in the separate arithmetic lemma retain_base_error. Neither is used outside MeanResidual.lean."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.87. Findings: [low CONTENT: CONVENTION] fullResidual is defined as (R(u) − R(u_B)) + stress divergence of virtualTheta/virtualAxial + E_B, not as R(u) itself. It equals the actual normalized residual only under the separate base identity hbase (the normalized (5.41)), proved in PhysicalResidualBridge.; [low CONTENT: ATTRIBUTION_GAP] The physical candidate exact_cartesian_mean_balances is unnormalized (viscosity 1, no torus). Its Ttheta and Tz cancel identically, and base-error retention lives in the separate arithmetic lemma retain_base_error. Neither is used outside MeanResidual.lean.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

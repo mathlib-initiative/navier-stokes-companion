@@ -1,0 +1,73 @@
+{
+  "kind": "definition",
+  "label": "Definition 6.4",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [medium CONTENT] The Lean mean class MeanClass states only smoothness on the open strip and the (6.24) bounds, so alone it does not imply torus periodicity. Periodicity and vanishing off the shell ….",
+  "location": {
+    "page": 69,
+    "rect": [0.133462, 0.75032, 0.734269, 0.105672]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "definition-6.4",
+      "locator": {
+        "physical": [69, 70],
+        "printed": [69, 70],
+        "text": "Section 6, Definition 6.4, p. 69"
+      },
+      "region": "definition-6.4@p069",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.WeightedClasses.MeanClass (NavierStokes/WeightedClasses.lean:115): abbrev MeanClass s α f := MemClass s (fun _ x => s.zeta x) α f; it adds nothing to MemClass beyond fixing the weight ζ.; NavierStokes.WeightedClasses.MemClass (NavierStokes/WeightedClasses.lean:107): Three fields: weight_nonneg; smooth (ContDiffOn ℝ ∞ (f n) s.domain); bounds (for each m, some C ≥ 0 and p with ‖iteratedFDeriv j (f n) x‖ ≤ C ε_n^α (slow n · max 1 δ⁻¹)^p · w n x on the domain for j ≤ m). No periodicity, support or chart clause; StripData (:31) has no torus data.; NavierStokes.GaugeMomentBalances.MovingField (NavierStokes/GaugeMomentBalances.lean:461): For each band n: f n is smooth on slowDomain U.carrier (all radii), is SupportedGauge a b (nonzero only for radius in the closed shell [ℓ·a, ℓ·b]), and is PeriodicOn U.carrier.; NavierStokes.PhysicalMeanDomain.PeriodicOn (NavierStokes/PhysicalMeanDomain.lean:71): ∀ r s, s ∈ U → FourierAlias.TorusPeriodic (fun Y => f (r,(s,Y))), i.e. invariance under integer translations of the plane variable Y.; NavierStokes.PhysicalResidualNaturality.StateOn (NavierStokes/PhysicalResidualNaturality.lean:844): On U, each field of state s at band n (mean, pressure, oscillation, errors) equals a scaled pullback along the linear equivalence e of state r's field at band nr. With bandChartEquiv on band overlaps it is agreement between two band charts of one state. It is a whole-state identity; equivalence with (6.20) was not traced.; NavierStokes.ActualInitialization.initial_on_overlap (NavierStokes/ActualInitialization.lean:674): StateOn for initialState against itself on slowDomain (overlap n m) with bandChartEquiv, when index n + k = index m. An instance for the initial state only.; NavierStokes.CorrectionStep.CycleAnalyticInvariant (NavierStokes/CorrectionStep.lean:9408): One structure with, among others, covariance : MeanClass G.strip 1, cumulative : CumulativeBounds G.strip (MeanClass for the mean triple and pressure), primitives : PrimitiveData G.region G.patch.a G.patch.b c x.state, and reconstructed.; NavierStokes.MeanStateRegularity.PrimitiveData (NavierStokes/MeanStateRegularity.lean:339): Fields: operator and base data; mean : MovingTriple (MovingField for the three mean components); covariance : MovingField for every entry; virtualTheta and virtualAxial : MovingField.; NavierStokes.MeanStateRegularity.PrimitiveData.pressure (NavierStokes/MeanStateRegularity.lean:388): From PrimitiveData, positive inner radius and exponent, gauge length = qLength, and (reconstructState g c u).pressure = u.pressure, concludes MovingField for u.pressure.; NavierStokes.ActualCyclePreservation.state_runInvariant (NavierStokes/ActualCyclePreservation.lean:826): For N0 above the geometric threshold and every stage j, RunInvariant holds for state B N0 j: analytic (CycleAnalyticInvariant on ActualInitialization.geometry), coherent (includes StateOn on all band overlaps via StateCoherent) and periodic (wave coefficients).; NavierStokes.MeanIncrementBounds.SmoothOn (NavierStokes/MeanIncrementBounds.lean:76): SmoothOn U f := ∀ n, ContDiffOn ℝ ∞ (f n) U.; NavierStokes.CorrectionStep.GaugeSupported (NavierStokes/CorrectionStep.lean:4453): GaugeSupported a b ell U f := ∀ n, SupportedGauge a b ell U (f n).", "REFUTED: BaseContextAssembly.nativeStrip (BaseContextAssembly.lean:231) is movingStrip (:153) with ChartScales.epsilon h (= Q n ^ h, ChartScales.lean:29), slowScale = max 1 (n²) (:31), a = √(2·activeLeft), b = √(2·activeRight), cL = edgeExponent/4 and cR = 1. Through LocalSignedRequest.movingStripData (:182) the radius is R/√q̃, and derivatives are taken in chart R.", "REFUTED: MeanMomentBounds.meanClass_pressureMass_lift (MeanMomentBounds.lean:375) concludes UnweightedClass (logStripData …) of x ↦ pressureMass(f n)(x.2.1). The domain Prod.fst⁻¹'Ioo a b contains every slow s, so ‖D^jF(s)‖ ≤ ‖D^j(F∘π)(√(ab),(s,0))‖ ≤ C ε^α (S·c)^p, with c = max(1, 2/log(b/a))... a fixed constant.", "CONVENTION: PrimaryTargetBounds.leftRadius = √(2·activeLeft) (PrimaryTargetBounds.lean:667); WeightedRadialPrimitive.delta/zeta (WeightedRadialPrimitive.lean:32-33) with logPosition = log(r/a); FlatCutoff.edge c x = exp(-c/x²); BaseContextAssembly.slowScale (:31).", "The quantitative clause (6.24) is faithful as MeanClass over the main-chain strip, BaseContextAssembly.nativeStrip, which equals ActualInitialMean.strip and geometry.strip. That strip fixes ε = Q^h, S = max(1,ℓ²), the flat ζ and a comparable δ, and differentiates in R. S_α (6.25) is UnweightedClass over localSlowStripData. The class itself omits torus descent, smooth zero extension and the (6.20) compatibility. These appear only as separate predicates (MovingField, PeriodicOn, overlap StateOn), which the cycle invariant carries alongside. So Lean's M_α is strictly larger, and the verdict is DELTA, partial. The auditor's secondary findings, that no strip fixes every datum and that the lifted S_α encoding is weaker, are refuted by both skeptics, and I confirmed this in the source."],
+          "findings": [
+            {
+              "confidence": 0.8,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "medium",
+              "summary": "The Lean mean class MeanClass states only smoothness on the open strip and the (6.24) bounds, so alone it does not imply torus periodicity. Periodicity and vanishing off the shell are a separate predicate, MovingField; band-chart compatibility is StateOn. No single predicate bundles them."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "REFUTED",
+              "severity": "low",
+              "summary": "The auditor claimed no single Lean strip fixes every datum of (6.23)/(6.24). That is false. nativeStrip, which is ActualInitialMean.strip and geometry.strip, fixes ε = Q^h, S = max(1,ℓ²), the flat ζ and the log δ, and differentiates in physical R."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "REFUTED",
+              "severity": "low",
+              "summary": "The auditor claimed UnweightedClass(logStripData) in meanClass_pressureMass_lift is weaker than S_α. It is not. The function is constant in x.1 and Y, so evaluating at x.1 = √(ab), where δ is a fixed constant, and composing with insertSlow gives exactly (6.25)."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "On the actual strip the shell variable is r = R/√q̃ = √(2X), not X. Hence a_a = 4cL = edgeExponent, a_b = 4, δ_Lean = min(1, ½log(X/X_a), ½log(X_b/X)) ∈ [δ/2, δ], and S = max(1, ℓ²). All of these are equivalent up to constants."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "medium",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.82. Findings: [medium CONTENT: CONFIRMED_CONTENT] The Lean mean class MeanClass states only smoothness on the open strip and the (6.24) bounds, so alone it does not imply torus periodicity. Periodicity and vanishing off the shell are a separate predicate, MovingField; band-chart compatibility is StateOn. No single predicate bundles them.; [low CONTENT: REFUTED] The auditor claimed no single Lean strip fixes every datum of (6.23)/(6.24). That is false. nativeStrip, which is ActualInitialMean.strip and geometry.strip, fixes ε = Q^h, S = max(1,ℓ²), the flat ζ and the log δ, and differentiates in physical R.; [low CONTENT: REFUTED] The auditor claimed UnweightedClass(logStripData) in meanClass_pressureMass_lift is weaker than S_α. It is not. The function is constant in x.1 and Y, so evaluating at x.1 = √(ab), where δ is a fixed constant, and composing with insertSlow gives exactly (6.25).; [low CONTENT: CONVENTION] On the actual strip the shell variable is r = R/√q̃ = √(2X), not X. Hence a_a = 4cL = edgeExponent, a_b = 4, δ_Lean = min(1, ½log(X/X_a), ½log(X_b/X)) ∈ [δ/2, δ], and S = max(1, ℓ²). All of these are equivalent up to constants.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

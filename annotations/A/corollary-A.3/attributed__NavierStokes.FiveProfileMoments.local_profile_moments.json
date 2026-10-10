@@ -1,0 +1,29 @@
+{
+  "id": "corollary-A.3/attributed/NavierStokes.FiveProfileMoments.local_profile_moments",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FiveProfileMoments.local_profile_moments",
+      "line": 1137,
+      "module": "NavierStokes.FiveProfileMoments",
+      "path": "NavierStokes/FiveProfileMoments.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L1137"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FiveProfileMoments.local_profile_moments",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (∀ x ∈ Ioo P.left P.right, U x = G) → (∀ x ∈ Ioo P.left P.right, E x = A * x^b) → ∫ x in Ioi 0, profileChangeDensity U E (A·u P c) (A·e P c) x i = physicalMoments P b A G c i"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1137,
+        "text": "theorem local_profile_moments (P : Patch) (b A G : ℝ) (c : Coeff) (U E : ℝ → ℝ)\n    (hU : ∀ x ∈ Ioo P.left P.right, U x = G)\n    (hE : ∀ x ∈ Ioo P.left P.right, E x = A * x ^ b) (i : Fin 5) :\n    (∫ x in Ioi (0 : ℝ), profileChangeDensity U E (fun y => A * u P c y) (fun y => A * e P c y) x i) =\n      physicalMoments P b A G c i"
+      }
+    }
+  }
+}

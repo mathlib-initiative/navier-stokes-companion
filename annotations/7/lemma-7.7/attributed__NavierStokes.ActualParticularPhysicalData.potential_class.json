@@ -1,0 +1,31 @@
+{
+  "id": "lemma-7.7/attributed/NavierStokes.ActualParticularPhysicalData.potential_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularPhysicalData.potential_class",
+      "line": 252,
+      "module": "NavierStokes.ActualParticularPhysicalData",
+      "path": "NavierStokes/ActualParticularPhysicalData.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularPhysicalData.lean#L252"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularPhysicalData.potential_class",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: PolynomialJets N, UniformClass s w α a, b ≤ ‖N‖ ≤ M, UniformBandBound s β (1/K) → UniformClass s w (α+β) (potentialMap K N a), potentialMap = (i/K)‖N‖⁻²(N×·)   [C_m ∈ W_{α+1/2}, β = 1/2]",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 252,
+        "text": "theorem potential_class {ι X : Type} [Countable ι] [Nonempty ι]\n    [NormedAddCommGroup X] [NormedSpace ℝ X]\n    {s : WeightedClasses.StripData X} {w : ι → ℕ → X → ℝ} {α β : ℝ}\n    {N : ι → ℕ → X → ProblemStatement.Space}\n    {a : ι → ℕ → X → ComplexVector} {K : ι → ℕ → ℝ}\n    (hN : PhaseJetBounds.PolynomialJets (UniformPrimaryWeights.jointDomain s)\n      (fun q => N q.2 q.1))\n    (ha : LabelSumBounds.UniformClass s w α a) {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ l n x, x ∈ s.domain → b ≤ ‖N l n x‖)\n    (hupper : ∀ l n x, x ∈ s.domain → ‖N l n x‖ ≤ M)\n    (hK : UniformPrimaryWeights.UniformBandBound s β (fun l n => 1 / K l n)) :\n    LabelSumBounds.UniformClass s w (α + β)\n      (fun l n x => potentialMap (K l n) (N l n x) (a l n x))"
+      }
+    }
+  }
+}

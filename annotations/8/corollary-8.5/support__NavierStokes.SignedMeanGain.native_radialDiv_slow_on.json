@@ -1,0 +1,27 @@
+{
+  "id": "corollary-8.5/support/NavierStokes.SignedMeanGain.native_radialDiv_slow_on",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedMeanGain.native_radialDiv_slow_on",
+      "line": 337,
+      "module": "NavierStokes.SignedMeanGain",
+      "path": "NavierStokes/SignedMeanGain.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean#L337"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedMeanGain.native_radialDiv_slow_on",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 337,
+        "text": "theorem native_radialDiv_slow_on (r : ReconstructionData) (ε fast : ℕ → ℝ)\n    (z t : S) (v : PressureStream.Plane) {U : Set S} (hU : IsOpen U)\n    {F : ℕ → ℝ × S → ℝ}\n    (hF : SmoothOn (slowDomain U) (liftSlow F))\n    (e : ℝ) (n : ℕ) {x : PressureStream.Lift S} (hx : x.2.1 ∈ U) :\n    (nativeOperators r ε fast z t v).radialDiv e (liftSlow F) n x =\n      IntegratedMeanBalances.radialDivergence e (fun q => F n (q, x.2.1)) x.1"
+      }
+    }
+  }
+}

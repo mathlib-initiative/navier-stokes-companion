@@ -1,0 +1,28 @@
+{
+  "id": "proposition-9.3/support/NavierStokes.PhysicalResidualBridge.context_fullResidual_physical",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhysicalResidualBridge.context_fullResidual_physical",
+      "line": 770,
+      "module": "NavierStokes.PhysicalResidualBridge",
+      "path": "NavierStokes/PhysicalResidualBridge.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualBridge.lean#L770"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhysicalResidualBridge.context_fullResidual_physical",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 770,
+        "text": "theorem context_fullResidual_physical {Q : ℝ} (hQ : 0 < Q) (h : ℝ) (k n : ℕ)\n    (c : CorrectionState.Context Lift) (s : CorrectionState.State Lift)\n    (H : MatchesAt c.operators (commonGraph Q h k) n)\n    {U : Set Cylinder} (hU : IsOpen U) (hR : ∀ x ∈ U, x.1.1 ≠ 0)\n    {p₀ : Cylinder → ℝ}\n    (hB : ∀ i, ContDiffOn ℝ ∞ (fun x => baseComponents c n x i) U)\n    (ha : ∀ i, ContDiffOn ℝ ∞ (fun x => incrementComponents s n x i) U)\n    (hp₀ : ContDiffOn ℝ ∞ p₀ U) (hp : ContDiffOn ℝ ∞ (s.totalPressureIncrement n) U)\n    {t : ℝ} {q : Space} (hz : (t, q) ∈ (commonGraph Q h k).source U)\n    (hbase : ∀ i, graphResidual (Q ^ h) ScaledGraph.radius (commonGraph Q h k).radial\n      ScaledGraph.angular (commonGraph Q h k).axial (commonGraph Q h k).temporal\n      (baseComponents c n) p₀ ((commonGraph Q h k).map (t, q)) i =\n        LiftedMeanResidual.virtualDivergence c n ((commonGraph Q h k).map (t, q)) i +\n          s.errors.base n ((commonGraph Q h k).map (t, q)) i)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

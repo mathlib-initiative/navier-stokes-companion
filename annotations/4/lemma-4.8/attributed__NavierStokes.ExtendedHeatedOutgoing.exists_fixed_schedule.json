@@ -1,0 +1,29 @@
+{
+  "id": "lemma-4.8/attributed/NavierStokes.ExtendedHeatedOutgoing.exists_fixed_schedule",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ExtendedHeatedOutgoing.exists_fixed_schedule",
+      "line": 932,
+      "module": "NavierStokes.ExtendedHeatedOutgoing",
+      "path": "NavierStokes/ExtendedHeatedOutgoing.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ExtendedHeatedOutgoing.lean#L932"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ExtendedHeatedOutgoing.exists_fixed_schedule",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: ∀ P m > 0, ∃ lam B > 0, ∀ h, 0<h → 2h<lam → ∃ F, ScheduleBounds F ∧ OutgoingProfile.Specification F B ∧ ∃ a∈(1,3/2), Ioo(-a,a) ⊆ energyDomain F ∧ ∃ XR₀ C, ∀ XR ≥ XR₀, ∃ w, Specification F XR w.coefficients (lam = min(resetLam,delta,1/120)/2; no cone conjunct)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 932,
+        "text": "theorem exists_fixed_schedule (P m : ℝ) (hP : 0 < P) (hm : 0 < m) :\n    ∃ lam B : ℝ, 0 < lam ∧ 0 < B ∧ ∀ h : ℝ, 0 < h → 2 * h < lam →\n      ∃ F : Profile, F.data.core.P = P ∧ F.data.core.m = m ∧ F.data.core.lam = lam ∧\n        F.data.h = h ∧ ScheduleBounds F ∧ OutgoingProfile.Specification F B ∧\n        ∃ a : ℝ, 1 < a ∧ a < 3 / 2 ∧ Ioo (-a) a ⊆ energyDomain F ∧\n        ∃ XR₀ C : ℝ, 0 < XR₀ ∧ 0 < C ∧ ∀ XR : ℝ, XR₀ ≤ XR →\n          ∃ w : Witness F XR C, Specification F XR w.coefficients"
+      }
+    }
+  }
+}

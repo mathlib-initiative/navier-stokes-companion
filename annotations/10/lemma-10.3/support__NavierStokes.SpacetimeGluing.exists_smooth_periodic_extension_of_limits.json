@@ -1,0 +1,26 @@
+{
+  "id": "lemma-10.3/support/NavierStokes.SpacetimeGluing.exists_smooth_periodic_extension_of_limits",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SpacetimeGluing.exists_smooth_periodic_extension_of_limits",
+      "line": 400,
+      "module": "NavierStokes.SpacetimeGluing",
+      "path": "NavierStokes/SpacetimeGluing.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpacetimeGluing.lean#L400"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SpacetimeGluing.exists_smooth_periodic_extension_of_limits",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 400,
+        "text": "theorem exists_smooth_periodic_extension_of_limits {T : ℝ} {f : SpaceTime → V}\n    {J : SpaceTime → FormalMultilinearSeries ℝ SpaceTime V}\n    {L : Space → FormalMultilinearSeries ℝ SpaceTime V}\n    (hzero : ∀ z : SpaceTime, z.1 < T → (J z 0).curry0 = f z)\n    (hderiv : ∀ n : ℕ, ∀ z : SpaceTime, z.1 < T →\n      HasFDerivAt (fun y => J y n) (J z (n + 1)).curryLeft z)\n    (hlim : ∀ n : ℕ, TendstoLocallyUniformly (fun t x => J (t, x) n)\n      (fun x => L x n) (𝓝[<] T))\n    (hperiod : ProblemStatement.UnitSpatialPeriodsOn (Iio T) f) :\n    ∃ F : SpaceTime → V, ContDiff ℝ ∞ F ∧\n      EqOn F f (SpacetimeEndpoint.openPast T) ∧\n      ProblemStatement.UnitSpatialPeriodsOn univ F ∧\n      (∀ t : ℝ, T + 1 ≤ t → ∀ x : Space, F (t, x) = 0) ∧\n      ∀ n : ℕ, ∀ x : Space, iteratedFDeriv ℝ n F (T, x) = L x n"
+      }
+    }
+  }
+}

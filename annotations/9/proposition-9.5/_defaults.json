@@ -1,0 +1,57 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 9.5",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 106,
+    "rect": [0.134051, 0.73428, 0.73368, 0.073495]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-9.5",
+      "locator": {
+        "physical": [106],
+        "printed": [106],
+        "text": "Section 9, Proposition 9.5, p. 106"
+      },
+      "region": "proposition-9.5@p106",
+      "verdicts": [
+        {
+          "confidence": 0.83,
+          "evidence": ["CONVENTION: CorrectionState.MeanResidualBounds (NavierStokes/CorrectionState.lean:216) bounds u.meanGoodResidual = meanResidual − meanExcluded (CorrectionState.lean:137-141); CorrectionStep.CycleAnalyticInvariant.raw_mean_bounds (NavierStokes/CorrectionStep.lean:9470): MeanClass G.strip (1+σ) (x.state.thetaResidual c) ∧ MeanClass G.strip (1+σ) (x.state.axialResidual c)", "ATTRIBUTION_GAP: CorrectionStep.CycleAnalyticInvariant (NavierStokes/CorrectionStep.lean:9408) has no mean-divergence or decomposition field. Stated elsewhere: ActualInitialization.initial_fullDivergence (:1485), initial_fullResidual (:1491), initial_excluded_all_gains (:1507); ActualCandidateAssembly.initialPotential (:36) and initialDirect (:42). The invariant's meanHypotheses field (LiftedMeanResidual.MeanHypotheses, LiftedMeanResidual.lean:820) does carry base_divergence and total_divergence, and solenoidal gives ModeSolenoidal per label.", "All three voters agree on OK and different_formulation; I confirmed it from pp. 106-107 and the Lean source. initial_runInvariant (σ_0 = 1/5, state 0 = initialCycleState) unfolds to residual W_{7/10}, mean and defects at 6/5, cumulative M_{9/10}/M_{19/10}, wave W_{1/2}, difference W_{17/25}, zero moments and reconstruction. The construction order matches (8.12), (8.20), (8.25). PAIRING's correction stands: the analytic part is the refinedCarrier version, ActualCoreSupport.initial_invariant. MATHEMATICS dissents only on materiality; both findings are low and recoverable. PAIRING's claim that MeanHypotheses lacks divergence data is wrong. Not checked here: virtualTheta/virtualAxial against (8.3), the chart residual's Q-normalization, and the edge weight against (6.23)."],
+          "findings": [
+            {
+              "confidence": 0.9,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The invariant's mean field bounds the good mean residual (E minus the angular means of the stored Gaussian and alias errors), not E_θ, E_z directly. raw_mean_bounds recovers E_θ, E_z ∈ M_{6/5} from the same invariant."
+            },
+            {
+              "confidence": 0.8,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Definition 9.4's structural clauses (mean correction divergence-free and curl-plus-azimuthal, Prop 9.3 decomposition with flat remainder) are not dedicated fields of the stage invariant. Separate stage-0 theorems and the construction supply them."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.83. Findings: [low CONTENT: CONVENTION] The invariant's mean field bounds the good mean residual (E minus the angular means of the stored Gaussian and alias errors), not E_θ, E_z directly. raw_mean_bounds recovers E_θ, E_z ∈ M_{6/5} from the same invariant.; [low CONTENT: ATTRIBUTION_GAP] Definition 9.4's structural clauses (mean correction divergence-free and curl-plus-azimuthal, Prop 9.3 decomposition with flat remainder) are not dedicated fields of the stage invariant. Separate stage-0 theorems and the construction supply them.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

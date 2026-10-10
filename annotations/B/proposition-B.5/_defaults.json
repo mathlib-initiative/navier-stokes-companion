@@ -1,0 +1,65 @@
+{
+  "kind": "proposition",
+  "label": "Proposition B.5",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 151,
+    "rect": [0.134051, 0.724176, 0.734126, 0.088055]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-B.5",
+      "locator": {
+        "physical": [151],
+        "printed": [151],
+        "text": "Appendix B, Proposition B.5, p. 151"
+      },
+      "region": "proposition-B.5@p151",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["ATTRIBUTION_GAP: ActivationCone.natural_activation_direction (ActivationCone.lean:908): activatedStress (T·u,η) = activation 1 κ u • D(…), D smooth, D(·,(0,η)).1 ≥ ε > 0. ContinuationWitness (ActivationContinuation.lean:1925) has no such field. Bridges: LeadingStressWeights.activation_stress (L184), RampParameters.initial_fields (L2002), physical_initial_shears/stocks (NominalConeAssembly.lean:1097/1212).", "ATTRIBUTION_GAP: InitialActivationBound (ActivationContinuation.lean:1598) versus NominalConeAssembly.Initial.activation_cone (NominalConeAssembly.lean:1251): IsRelaxed w.parameters.profiles on 0<y≤actTime and IsTrue on 0<y≤θ·actTime, taking only the witness w as input.", "CONVENTION: StressActivation.activation (StressActivation.lean:29), activation_smooth (L34), activation_zero (L57), activation_flat_form (L212): activation = (1−κ)·edge(T²)/stepDenominator. FlatCutoff.iteratedDeriv_edge_zero (FlatCutoff.lean:155): iteratedDeriv m (edge c) 0 = 0. ActiveAnnulusWeight.exists_natural_activation_factor (L1014).", "I read p.151 with pp.27, 30–31, 150, 152–153 and the Lean sources. Coordinates match: shearA = a, shearB = −b_s, projection = P_c, transverse = J_c, shearSize = v_s, coneBound = 𝒰, IsTrue = admissible cone, p1 = XQ_s/L. Each clause is proved: smooth continuation with f>0, unchanged for X ≤ 4/Λ, admissible cone on a first collar, relaxed cone on (X0,110], a = 4/5 and shearB = 0 from holdRadius < 110, p1 > 2, and the factorization with smooth D nonzero at the edge. Lean adds explicit margins, S_q > 5/4 and uniformity in Λ, C. hcut is the paper's (B.2) alternative, discharged at NominalProfile.prepare_axis_with_cutoff. No sorry in the files read. All findings are packaging; none is material. No docstring cites B.5, so the pairing is inferred."],
+          "findings": [
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The factorization T0 = e_a·B0 is not a field of the continuation witness. It is a separate theorem about the formula-level activatedStress, for all T and κ. Proved bridges identify that object with the stress of w.parameters.profiles."
+            },
+            {
+              "confidence": 0.92,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The witness states the first-collar cone through InitialActivationBound, in the log coordinate on formula objects. The statement for the profile's own cone coordinates is a downstream theorem."
+            },
+            {
+              "confidence": 0.88,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No theorem says in so many words that activation (e_a) vanishes to infinite order. Flatness is carried by the definition, as in the paper, and the explicit flat factor's derivatives are proved to vanish at 0."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.88. Findings: [low CONTENT: ATTRIBUTION_GAP] The factorization T0 = e_a·B0 is not a field of the continuation witness. It is a separate theorem about the formula-level activatedStress, for all T and κ. Proved bridges identify that object with the stress of w.parameters.profiles.; [low CONTENT: ATTRIBUTION_GAP] The witness states the first-collar cone through InitialActivationBound, in the log coordinate on formula objects. The statement for the profile's own cone coordinates is a downstream theorem.; [low CONTENT: CONVENTION] No theorem says in so many words that activation (e_a) vanishes to infinite order. Flatness is carried by the definition, as in the paper, and the explicit flat factor's derivatives are proved to vanish at 0.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

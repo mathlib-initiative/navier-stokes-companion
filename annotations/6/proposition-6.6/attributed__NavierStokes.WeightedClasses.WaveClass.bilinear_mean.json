@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.WeightedClasses.WaveClass.bilinear_mean",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WeightedClasses.WaveClass.bilinear_mean",
+      "line": 413,
+      "module": "NavierStokes.WeightedClasses",
+      "path": "NavierStokes/WeightedClasses.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean#L413"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WeightedClasses.WaveClass.bilinear_mean",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: WaveClass s P α f → WaveClass s P β g → 0≤P≤1 → MeanClass s (α+β) (L f g)   [(6.31), m+m'=0, after cutoff]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 413,
+        "text": "theorem WaveClass.bilinear_mean {s : StripData D} {P : ℕ → D → ℝ}\n    {α β : ℝ} {f : ℕ → D → E} {g : ℕ → D → F}\n    (hf : WaveClass s P α f) (hg : WaveClass s P β g)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1)\n    (L : E →L[ℝ] F →L[ℝ] G) :\n    MeanClass s (α + β) (fun n x => L (f n x) (g n x))"
+      }
+    }
+  }
+}

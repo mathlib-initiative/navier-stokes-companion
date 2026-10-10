@@ -1,0 +1,26 @@
+{
+  "id": "lemma-4.4/support/NavierStokes.LeadingStressWeights.stress_eq_of_coordinates",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStressWeights.stress_eq_of_coordinates",
+      "line": 84,
+      "module": "NavierStokes.LeadingStressWeights",
+      "path": "NavierStokes/LeadingStressWeights.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L84"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStressWeights.stress_eq_of_coordinates",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 84,
+        "text": "theorem stress_eq_of_coordinates {D D' : RadialDomain} (P : Profiles D) (Q : Profiles D')\n    (h : ℝ) {p : Point} (hX : 0 < p.1) (hQ : Q.f p ≠ 0) (hf : P.f p = Q.f p)\n    (ha : ActivationContinuation.shearA P p = ActivationContinuation.shearA Q p)\n    (hb : ActivationContinuation.shearB P p = ActivationContinuation.shearB Q p)\n    (hp1 : ReferenceBounds.p1 P h p = ReferenceBounds.p1 Q h p)\n    (hp2 : ReferenceBounds.p2 P h p = ReferenceBounds.p2 Q h p) :\n    stress P h p = stress Q h p"
+      }
+    }
+  }
+}

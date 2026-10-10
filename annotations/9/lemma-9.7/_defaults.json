@@ -1,0 +1,57 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 9.7",
+  "status": "formalized",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low COVERAGE] The derivative-count clause has no Lean statement. Lean carries all-order smooth classes through the cycle and states a finite constant for each stage and order directly, so the paper's DAG ….",
+  "location": {
+    "page": 111,
+    "rect": [0.133552, 0.714294, 0.734624, 0.070765]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-9.7",
+      "locator": {
+        "physical": [111],
+        "printed": [111],
+        "text": "Section 9, Lemma 9.7, p. 111"
+      },
+      "region": "lemma-9.7@p111",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["CONFIRMED_CONTENT: No counterpart. Repository and decls.jsonl docstring searches for 'finitely many', derivative count, input jets, DAG/acyclic hit only Section 4 kernels, Borel and cutoff machinery. Closest: CutStageEstimates.RawStageBounds (NavierStokes/CutStageEstimates.lean:199), constants C j m; CorrectionStep.CycleAnalyticInvariant (NavierStokes/CorrectionStep.lean:9408) keeps SmoothCoefficients and all-order wave classes, so no count is needed.", "CONVENTION: ActualCandidateAssembly.stages_smooth (NavierStokes/ActualCandidateAssembly.lean:879), physicalData (:1079), stageRealizations (:1059); ActualCandidateConstruction.qbig, qbig_pos, physicalDomain (NavierStokes/ActualCandidateConstruction.lean:155, 157, 189); WholeDomainStageBounds.commonQ (NavierStokes/WholeDomainActualStageBounds.lean:13), commonQ_lt_original.", "I read p.111-112 and the Lean. All three voters agree on verdict and relation; I keep both. qbig is one positive number with no stage or order argument, physicalDomain is exactly {0<q<q_big}, and stages_smooth plus physicalData give smooth uncut partial sums identified with the cycle's construction. The hypothesis hN is met by selectedThreshold_geometry, so nothing is vacuous. The only dispute is finding 1: accurate but not material, so I rule CONVENTION, not CONTENT and not REFUTED. The derivative-count clause is unstated (low coverage gap); 'partial' is defensible on that ground, but the clause is proof bookkeeping whose consequence is stated. I added physicalData and the prefix lemmas from the skeptics."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The derivative-count clause has no Lean statement. Lean carries all-order smooth classes through the cycle and states a finite constant for each stage and order directly, so the paper's DAG counting was not what was checked."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "'Well defined on 0<q<q_big' is encoded as total fields that are C^∞ on {t<1} ∩ {physicalQ < qbig} and agree chartwise with the cycle's constructions. The Lemma 9.8 bounds use the smaller commonQ = qbig/2."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.80. Findings: [low COVERAGE: CONFIRMED_CONTENT] The derivative-count clause has no Lean statement. Lean carries all-order smooth classes through the cycle and states a finite constant for each stage and order directly, so the paper's DAG counting was not what was checked.; [low CONTENT: CONVENTION] 'Well defined on 0<q<q_big' is encoded as total fields that are C^∞ on {t<1} ∩ {physicalQ < qbig} and agree chartwise with the cycle's constructions. The Lemma 9.8 bounds use the smaller commonQ = qbig/2.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

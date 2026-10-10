@@ -1,0 +1,26 @@
+{
+  "id": "lemma-4.3/support/NavierStokes.ProfileHistories.Profiles.angularLag_equation_logarithmic",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ProfileHistories.Profiles.angularLag_equation_logarithmic",
+      "line": 676,
+      "module": "NavierStokes.ProfileHistories",
+      "path": "NavierStokes/ProfileHistories.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileHistories.lean#L676"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ProfileHistories.Profiles.angularLag_equation_logarithmic",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 676,
+        "text": "theorem angularLag_equation_logarithmic (h : ℝ) {p : Point} (hp : p ∈ D.carrier)\n    (hX : 0 < p.1) (hf : P.f p ≠ 0) :\n    p.1 * deriv (fun x => P.angularLag h (x, p.2)) p.1 +\n      (1 + p.1 * deriv (fun x => Real.log (P.H (x, p.2))) p.1) * P.angularLag h p =\n        -P.W h p * (p.1 * deriv (fun x => Real.log (P.H (x, p.2))) p.1) -\n          h * (1 - 2 * p.2 * P.U p) -\n            (axialExponent h * p.2 + coordinateFactor p.2 * P.U p) *\n              deriv (fun η => Real.log (P.E (p.1, η))) p.2"
+      }
+    }
+  }
+}

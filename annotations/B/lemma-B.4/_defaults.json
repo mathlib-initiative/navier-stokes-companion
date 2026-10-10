@@ -1,0 +1,73 @@
+{
+  "kind": "lemma",
+  "label": "Lemma B.4",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] Lean's reference continuation damps slopes with Mathlib's Real.smoothTransition (glue exp(-1/x)), not the paper's step σ of (A.5) (glue exp(-1/y²)), which the repo defines separately as OutgoingSchedule.sigma. The bounds are proved ….",
+  "location": {
+    "page": 150,
+    "rect": [0.133356, 0.597989, 0.734821, 0.122499]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-B.4",
+      "locator": {
+        "physical": [150],
+        "printed": [150],
+        "text": "Appendix B, Lemma B.4, p. 150"
+      },
+      "region": "lemma-B.4@p150",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.ReferenceBounds.ReferenceBoundsOnHold.at_hundred, ReferenceBounds.lean:1017: `3 < p1 … (100, η)`. Full clause: NavierStokes.AppendixJoiningResults.reference_first_gt_three, AppendixJoiningResults.lean:67: `(hX : X ∈ Icc (100 : ℝ) 110) … 3 < p1 (referenceProfiles E.profile hΛ hδ hδT hP0) h (X, η)`.", "CONVENTION: NavierStokes.NaturalAxisData.SmallParameters, NaturalAxisData.lean:41-45 (`h_le : h ≤ 1 / 1000`, `j_le : j ≤ 1 / 1000`); hypothesis `hsmall` of exists_reference_bounds, ReferenceBounds.lean:1181. Its docstring: 'A concrete range of choices permitted by the manuscript's smallness order.'", "ATTRIBUTION_GAP: NavierStokes.ReferenceUniformStocks.uniform_reference_quantities, ReferenceUniformStocks.lean:414 (`hscale : AxisReference.stabilityScale … ≤ Λ`; `Uniform k` over `Choice d Λ × PositiveSlab a R`). Docstring of exists_reference_bounds, ReferenceBounds.lean:1176: 'Lemma 5.2 for the actual reference path'.", "CONFIRMED_CONTENT: NavierStokes.ReferencePath.slopeCutoff, ReferencePath.lean:39: `1 - Real.smoothTransition ((t - δ) / δ)`, used by continuation (L63) and refF/refU (L468, L471). Contrast NavierStokes.OutgoingSchedule.sigma, OutgoingSchedule.lean:26 (section 'The manuscript's smooth step'), built on FlatCutoff.edge c x = exp(-c / x^2), FlatCutoff.lean:26.", "I read p.150 and the Lean statements. Three declarations together state Lemma B.4: exists_reference_bounds (order Λ, C, t_1; the bounds (B.23) on [0,110]×[-1,1], strict, with c = 1/4), reference_first_gt_three (p_1 > 3 on [100,110]) and uniform_reference_quantities (the closing C^k sentence, for all C ≥ 1 and all 2δ < log(41/40)). Every conclusion is at least as strong as the paper's, so the verdict stays OK. The relation is incomparable, not lean_stronger: the Lean continuation uses Mathlib's smooth step instead of (A.5), so there is no literal implication. The narrower h, j range is a convention that the paper's smallness order satisfies. All deltas are low. The proofs of (B.24)-(B.25) were not audited."],
+          "findings": [
+            {
+              "confidence": 0.92,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The headline structure gives p_{1,r} > 3 only at X = 100. The paper's interval X_b ≤ X ≤ X_i is stated by a separate theorem, reference_first_gt_three, derived from the same ReferenceBoundsOnHold."
+            },
+            {
+              "confidence": 0.78,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "exists_reference_bounds assumes SmallParameters (h ≤ 1/1000, j ≤ 1/1000), narrower than p.144's printed 0<h≤10^-2 and 0<j_0≤.05. The paper's own smallness order puts its fixed parameters inside the Lean range."
+            },
+            {
+              "confidence": 0.9,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The closing uniform-C^k sentence is not in the headline theorem. uniform_reference_quantities states it, more strongly, with its own threshold stabilityScale ≤ Λ. The headline docstring cites a stale 'Lemma 5.2'."
+            },
+            {
+              "confidence": 0.68,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Lean's reference continuation damps slopes with Mathlib's Real.smoothTransition (glue exp(-1/x)), not the paper's step σ of (A.5) (glue exp(-1/y²)), which the repo defines separately as OutgoingSchedule.sigma. The bounds are proved for a different (φ_r, U_r)."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "incomparable",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation incomparable, confidence 0.82. Findings: [low CONTENT: ATTRIBUTION_GAP] The headline structure gives p_{1,r} > 3 only at X = 100. The paper's interval X_b ≤ X ≤ X_i is stated by a separate theorem, reference_first_gt_three, derived from the same ReferenceBoundsOnHold.; [low CONTENT: CONVENTION] exists_reference_bounds assumes SmallParameters (h ≤ 1/1000, j ≤ 1/1000), narrower than p.144's printed 0<h≤10^-2 and 0<j_0≤.05. The paper's own smallness order puts its fixed parameters inside the Lean range.; [low CONTENT: ATTRIBUTION_GAP] The closing uniform-C^k sentence is not in the headline theorem. uniform_reference_quantities states it, more strongly, with its own threshold stabilityScale ≤ Λ. The headline docstring cites a stale 'Lemma 5.2'.; [low CONTENT: CONFIRMED_CONTENT] Lean's reference continuation damps slopes with Mathlib's Real.smoothTransition (glue exp(-1/x)), not the paper's step σ of (A.5) (glue exp(-1/y²)), which the repo defines separately as OutgoingSchedule.sigma. The bounds are proved for a different (φ_r, U_r).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

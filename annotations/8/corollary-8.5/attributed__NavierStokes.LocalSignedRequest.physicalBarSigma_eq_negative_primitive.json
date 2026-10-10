@@ -1,0 +1,29 @@
+{
+  "id": "corollary-8.5/attributed/NavierStokes.LocalSignedRequest.physicalBarSigma_eq_negative_primitive",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalSignedRequest.physicalBarSigma_eq_negative_primitive",
+      "line": 855,
+      "module": "NavierStokes.LocalSignedRequest",
+      "path": "NavierStokes/LocalSignedRequest.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean#L855"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalSignedRequest.physicalBarSigma_eq_negative_primitive",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: U : SlowRegion coord, f ContDiffOn slowDomain U.carrier, MovingSupport P.a P.b coord U.carrier f, s ∈ U.carrier ⊢ physicalBarSigma P e (coordinateQ coord) f (r,s) = -(∫ t in 0..r, t^e * physicalAdjusted P e (coordinateQ coord) (torusAverage f) (t,s)) / r^e"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 855,
+        "text": "theorem physicalBarSigma_eq_negative_primitive {coord : ℝ} (U : SlowRegion coord)\n    (P : SignedStressPrimitive.Patch) (e : ℕ) {f : Point → ℝ}\n    (hf : ContDiffOn ℝ ∞ f (PhysicalMeanDomain.slowDomain U.carrier))\n    (hs : MovingSupport P.a P.b coord U.carrier f) {s : Plane} (hsp : s ∈ U.carrier) (r : ℝ) :\n    SignedStressPrimitive.physicalBarSigma P e (SimilarityCoordinates.coordinateQ coord) f (r, s) =\n      -(∫ t in (0 : ℝ)..r, t ^ e * SignedStressPrimitive.physicalAdjusted P e\n        (SimilarityCoordinates.coordinateQ coord) (PressureStream.torusAverage f) (t, s)) / r ^ e"
+      }
+    }
+  }
+}

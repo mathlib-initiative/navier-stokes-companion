@@ -1,0 +1,32 @@
+{
+  "id": "lemma-5.4/key/NavierStokes.GenericTupleRealization.Result.flat_residual_of_support_local_raw_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GenericTupleRealization.Result.flat_residual_of_support_local_raw_bounds",
+      "line": 105,
+      "module": "NavierStokes.GenericSupportLocalSummation",
+      "path": "NavierStokes/GenericSupportLocalSummation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSupportLocalSummation.lean#L105"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GenericTupleRealization.Result.flat_residual_of_support_local_raw_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: H : Result … a; g → ∞; P : SupportedPolynomial SpaceTime (Fin 3 ⊕ κ); constant smooth on U; each term coefficient ContDiffAt on U ∩ region t with ‖D^m c‖ ≤ Cc m Λ^{Pc m} q^{-Kc m} there; FactorSupportAt (raw and cut increments) off region t; ‖D^m P.eval(stageComponents J)‖ ≤ Cr J m Λ^{Pr J m} q^{rho",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "lean_stronger",
+      "role": "key",
+      "snippet": {
+        "line": 105,
+        "text": "theorem Result.flat_residual_of_support_local_raw_bounds {κ : Type*} {U : Set SpaceTime} {q : SpaceTime → ℝ}\n    {u0 : VelocityField} {s0 : κ → PressureField} {A B : ℕ → VelocityField}\n    {R : κ → ℕ → PressureField} {g L : ℕ → ℝ} {a : ℕ → ℕ}\n    (H : Result U q u0 s0 A B R g L a) (hU : IsOpen U)\n    (hqs : ContDiffOn ℝ ∞ q U) (hq : ∀ w ∈ U, 0 < q w ∧ q w ≤ 1)\n    (hu0 : ContDiffOn ℝ ∞ u0 U) (hs0 : ∀ k, ContDiffOn ℝ ∞ (s0 k) U)\n    (hA : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (A j) U)\n    (hB : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (B j) U)\n    (hR : ∀ k j, 1 ≤ j → ContDiffOn ℝ ∞ (R k j) U)\n    (hgtop : Tendsto g atTop atTop) (P : SupportedPolynomial SpaceTime (Fin 3 ⊕ κ))\n    (hconst : ContDiffOn ℝ ∞ P.constant U)\n    (region : ((SpaceTime → ℝ) × Expression SpaceTime (Fin 3 ⊕ κ) Empty) → Set SpaceTime)\n    (hc : ∀ t ∈ P.terms, ∀ x ∈ U, x ∈ region t → ContDiffAt ℝ ∞ t.1 x)\n    (Cc Pc Kc : ℕ → ℝ)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

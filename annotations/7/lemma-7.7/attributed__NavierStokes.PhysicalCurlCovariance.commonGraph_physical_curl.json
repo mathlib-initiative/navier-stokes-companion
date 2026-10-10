@@ -1,0 +1,31 @@
+{
+  "id": "lemma-7.7/attributed/NavierStokes.PhysicalCurlCovariance.commonGraph_physical_curl",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhysicalCurlCovariance.commonGraph_physical_curl",
+      "line": 464,
+      "module": "NavierStokes.PhysicalCurlCovariance",
+      "path": "NavierStokes/PhysicalCurlCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalCurlCovariance.lean#L464"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhysicalCurlCovariance.commonGraph_physical_curl",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: physical potential = frame(realPotential (commonGraph Q h k) (Q^(-h)) B) near (t,q) → Re(cylindricalCurl B (map (t,q)) i) = Q^(A h) * frame(-(q 1)) (spatialCurl A (t, chart q)) i, A h = 1/2 + h   [potential weight Q^{1/2-A}, velocity Q^{-A}]",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 464,
+        "text": "theorem commonGraph_physical_curl {Q : ℝ} (hQ : 0 < Q) (h : ℝ) (k : ℕ)\n    {B : Cylinder → ComplexVector} {t : ℝ} {q : Space} (hr : 0 < q 0)\n    (hB : ∀ i, DifferentiableAt ℝ (fun y => B y i) ((commonGraph Q h k).map (t, q)))\n    {A : VelocityField} (hA : DifferentiableAt ℝ A (t, CylindricalResidual.chart q))\n    (hrep : (fun z : SpaceTime => A (z.1, CylindricalResidual.chart z.2)) =ᶠ[𝓝 (t, q)]\n      (fun z => CylindricalResidual.frame (z.2 1)\n        (ScaledGraph.realPotential (commonGraph Q h k) (Q ^ (-h)) B z))) (i : Fin 3) :\n    (CurlClassBounds.cylindricalCurl PhysicalResidualBridge.ScaledGraph.radius\n      (commonGraph Q h k).radial PhysicalResidualBridge.ScaledGraph.angular\n      (commonGraph Q h k).axial B ((commonGraph Q h k).map (t, q)) i).re =\n      Q ^ CoordinateAlgebra.A h * CylindricalResidual.frame (-(q 1))\n        (SpatialCurl.spatialCurl A (t, CylindricalResidual.chart q)) i"
+      }
+    }
+  }
+}

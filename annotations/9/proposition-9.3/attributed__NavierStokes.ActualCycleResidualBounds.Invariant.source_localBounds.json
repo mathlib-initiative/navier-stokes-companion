@@ -1,0 +1,29 @@
+{
+  "id": "proposition-9.3/attributed/NavierStokes.ActualCycleResidualBounds.Invariant.source_localBounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCycleResidualBounds.Invariant.source_localBounds",
+      "line": 146,
+      "module": "NavierStokes.ActualCycleResidualBounds",
+      "path": "NavierStokes/ActualCycleResidualBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean#L146"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCycleResidualBounds.Invariant.source_localBounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (hj : j ≠ 0) : LocalSourceBounds geometry.strip h (1/2 + σ) (fun l n z => √(strip.zeta z) * envelope l n z) (fun l n z => (source x l).velocity n i j z)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 146,
+        "text": "theorem source_localBounds (i : Fin 3) (j : ℤ) (hj : j ≠ 0) :\n    LocalSourceBounds ActualInitialization.geometry.strip ActualPrimary.h (1/2 + σ)\n      (fun l n z => Real.sqrt (ActualInitialization.geometry.strip.zeta z) * ActualInitialization.envelope l n z)\n      (fun l n z => (source x l).velocity n i j z)"
+      }
+    }
+  }
+}

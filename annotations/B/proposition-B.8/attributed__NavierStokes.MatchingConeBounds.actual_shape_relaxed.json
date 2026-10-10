@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.8/attributed/NavierStokes.MatchingConeBounds.actual_shape_relaxed",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MatchingConeBounds.actual_shape_relaxed",
+      "line": 776,
+      "module": "NavierStokes.MatchingConeBounds",
+      "path": "NavierStokes/MatchingConeBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean#L776"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MatchingConeBounds.actual_shape_relaxed",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: MatchingBounds c N rho → rho ≤ resetSolver.radius → SmallControl c 1 eps → Xi ≤ X → X ≤ c.radius·e^{-8} → η ∈ [-1,1] → 2 < p1(c.profiles)(Xi,η) → 2 < p1(c.profiles)(X,η) ∧ IsRelaxed (c.profiles hsep) h (X,η)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 776,
+        "text": "theorem actual_shape_relaxed {N : ℕ} {rho eps X eta : ℝ}\n    (hm : MatchingDebtBounds.MatchingBounds c N rho)\n    (hrho : rho ≤ NominalProfile.resetSolver.radius)\n    (hscale : shapeScale A.small A.preparation ≤ A.scale)\n    (hc : MatchingDebtBounds.SmallControl c 1 eps) (heps : 0 ≤ eps)\n    (heps1 : eps ≤ min 1 (1 / A.scale))\n    (hX : NominalProfile.Xi ≤ X) (hR : X ≤ c.radius * Real.exp (-8))\n    (hη : eta ∈ Icc (-1 : ℝ) 1)\n    (hinit : 2 < ReferenceBounds.p1 (c.profiles hsep) F.data.h (NominalProfile.Xi, eta)) :\n    2 < ReferenceBounds.p1 (c.profiles hsep) F.data.h (X, eta) ∧\n      ActivationContinuation.IsRelaxed (c.profiles hsep) F.data.h (X, eta)"
+      }
+    }
+  }
+}

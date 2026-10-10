@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.1/attributed/NavierStokes.PhaseJetBounds.PhaseFamily.polynomial_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhaseJetBounds.PhaseFamily.polynomial_jets",
+      "line": 554,
+      "module": "NavierStokes.PhaseJetBounds",
+      "path": "NavierStokes/PhaseJetBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseJetBounds.lean#L554"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhaseJetBounds.PhaseFamily.polynomial_jets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: PolynomialJets of n_Φ, n_Φ', shear on D.slot"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 554,
+        "text": "theorem PhaseFamily.polynomial_jets (a : PhaseFamily ι) (D : Domain ι Slow)\n    (V : ι → Set ℝ) (hV : ∀ i, IsOpen (V i))\n    (hF : PolynomialJets D a.F) (hG : PolynomialJets D a.G)\n    {r M : ℝ} (hr : 0 < r) (hM : 1 ≤ M)\n    (hconstant : ∀ i, |a.epsilon i| ≤ M ∧ |a.p i| ≤ M ∧ |a.pz i| ≤ M ∧ |a.x0 i| ≤ M)\n    (heps : ∀ i, a.epsilon i ≠ 0)\n    (hR : ∀ i, ∀ q ∈ D.carrier i, r ≤ |q.1| ∧ |q.1| ≤ M)\n    (hslot : ∀ i, ∀ v ∈ V i, |v| ≤ M * D.scale i) :\n    PolynomialJets (D.slot V hV) a.normal ∧\n      PolynomialJets (D.slot V hV) a.velocity ∧\n      PolynomialJets (D.slot V hV) a.shear"
+      }
+    }
+  }
+}

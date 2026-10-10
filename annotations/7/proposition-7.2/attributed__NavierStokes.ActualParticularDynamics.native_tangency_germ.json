@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.2/attributed/NavierStokes.ActualParticularDynamics.native_tangency_germ",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularDynamics.native_tangency_germ",
+      "line": 831,
+      "module": "NavierStokes.ActualParticularDynamics",
+      "path": "NavierStokes/ActualParticularDynamics.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularDynamics.lean#L831"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularDynamics.native_tangency_germ",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: Actual-chain tangency: under the same hypotheses, normalDot (background.normal) (amplitude) = 0 eventually near z ∈ controlPatch."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 831,
+        "text": "theorem native_tangency_germ {x : CycleState (Label B N0)} (Hc : PreservesCarriers x)\n    {α : ℝ} (j : ℤ) (hj : j ≠ 0)\n    (Hs : LabelSumBounds.UniformWaveClass\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      nativeEnvelope α (currentSource x j))\n    (l : Label B N0) (n : ℕ) (k : Frequency) {z : Native}\n    (hz : z ∈ controlPatch l n k) :\n    (fun y => normalDot ((data x l j).background.normal\n      (ParticularParameters.nativeStrip associatedStrip) (directions (B"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-9.2/attributed/NavierStokes.HarmonicMeanInteraction.meanCross_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HarmonicMeanInteraction.meanCross_class",
+      "line": 310,
+      "module": "NavierStokes.HarmonicMeanInteraction",
+      "path": "NavierStokes/HarmonicMeanInteraction.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicMeanInteraction.lean#L310"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HarmonicMeanInteraction.meanCross_class",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clause (i). OperatorBounds s c.operators κ, κ ≤ 1/2, radius > 0, IncrementBounds s H h (radial ∈ M_{H+1}; angular, axial ∈ M_H), b.WaveBounds s P α, phase normal ∈ UnweightedClass 0, BandBound s (-1/2) for b.frequency and b.angularFrequency, P ≥ 0, j ≠ 0 ⊢ WaveClass s P (α+H-1/2) (fun n x => meanCro",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 310,
+        "text": "theorem meanCross_class {s : StripData D} {κ α H : ℝ} {P : ℕ → D → ℝ}\n    (c : CorrectionState.Context D) (ho : MeanIncrementBounds.OperatorBounds s c.operators κ)\n    (hκ : κ ≤ 1 / 2) (hR : ∀ x ∈ s.domain, 0 < c.operators.radius x)\n    {h : MeanIncrementBounds.Triple D} (hh : MeanIncrementBounds.IncrementBounds s H h)\n    {b : CorrectionState.HarmonicBlock D} (hb : b.WaveBounds s P α)\n    (hN : ∀ i, UnweightedClass s 0 (fun n x => slowNormal c ho hR b.phase n x i))\n    (hk : BandBound s (-(1 / 2)) b.frequency)\n    (hkp : BandBound s (-(1 / 2)) (fun n => (b.angularFrequency n : ℝ)))\n    (hP : ∀ n x, x ∈ s.domain → 0 ≤ P n x) {j : ℤ} (hj : j ≠ 0) (i : Fin 3) :\n    WaveClass s P (α + H - 1 / 2) (fun n x => meanCross c h b n i j x)"
+      }
+    }
+  }
+}

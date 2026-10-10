@@ -1,0 +1,26 @@
+{
+  "id": "proposition-B.3/support/NavierStokes.NaturalEntrance.EntranceProfile.regular_lag_coordinates",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalEntrance.EntranceProfile.regular_lag_coordinates",
+      "line": 1340,
+      "module": "NavierStokes.NaturalEntrance",
+      "path": "NavierStokes/NaturalEntrance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L1340"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalEntrance.EntranceProfile.regular_lag_coordinates",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1340,
+        "text": "theorem EntranceProfile.regular_lag_coordinates {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (F : EntranceProfile d Λ C)\n    (hsmall : NaturalAxisRange.Parameters h j) (hΛ : 0 < Λ)\n    {p : ℝ × ℝ} (hp : rescalePoint Λ p ∈ entranceSet) (hX : 0 < p.1) :\n    p1 F.profile.family.f p = p.1 * regularAngularLag h F.profile.family.f\n        F.profile.family.U F.profile.family.Ubar p / NaturalAxisData.L h p.2 ∧\n      p2 F.profile.family.f F.profile.family.U p =\n        p.1 * regularAxialLag h F.profile.family.U F.profile.family.Ubar F.profile.family.Pi p /\n          (NaturalAxisData.L h p.2 * angularVelocity F.profile.family.f p)"
+      }
+    }
+  }
+}

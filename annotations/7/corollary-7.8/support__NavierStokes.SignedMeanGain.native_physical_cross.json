@@ -1,0 +1,26 @@
+{
+  "id": "corollary-7.8/support/NavierStokes.SignedMeanGain.native_physical_cross",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedMeanGain.native_physical_cross",
+      "line": 510,
+      "module": "NavierStokes.SignedMeanGain",
+      "path": "NavierStokes/SignedMeanGain.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean#L510"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedMeanGain.native_physical_cross",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 510,
+        "text": "theorem native_physical_cross\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (N : ℕ) (hN : 1 ≤ N)\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    {q : ℝ} (hq : 0 < q) (hqN : q ≤ ChartScales.Q N) (x : SlotColoring.Position)\n    (T σ : SignedWaveUpdate.Vec2)\n    (hcone : ∀ U, mask d (tailLabel N U) q x ≠ 0 →\n      SmoothCovariance.StrictCone (P U).matrix (chartTarget h q N T U)) (i : Fin 2) :\n    let primary"
+      }
+    }
+  }
+}

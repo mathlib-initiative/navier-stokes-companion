@@ -1,0 +1,69 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 6.2",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low COVERAGE] Two sub-claims of clause (d) have no Lean statement: that torus translation preserves common-torus descent, and that the operations introduce no new dyadic band. Both are trivial, and the second ….",
+  "location": {
+    "page": 67,
+    "rect": [0.134051, 0.362122, 0.734121, 0.088676]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "item": "lemma-6.2",
+      "locator": {
+        "physical": [67],
+        "printed": [67],
+        "text": "Section 6, Lemma 6.2, p. 67"
+      },
+      "region": "lemma-6.2@p067",
+      "verdicts": [
+        {
+          "confidence": 0.83,
+          "evidence": ["ATTRIBUTION_GAP: TorusCoverDegree.preimage_nativeRectangle_sheets (L221), pairwise_disjoint_sheetRectangles_of_injOn (L234), covering_bijOn_sheetRectangle_of_injOn (L259), card_liftedRectangles_of_injOn (L283); TorusAverages.integral_torusCovering_iterate (L94); CommonCoverSolve.coveringNorm_le_bound / inverseCoveringNorm_le_bound (L749/L759)", "CONFIRMED_CONTENT: No declaration found; decls.jsonl search for translat*/shift × periodic/deck/subcover hits only unrelated lemmas (ActualCyclePeriodicity.*, FourierAlias.torusMean_translate). CorrectionInitialization.lean:1262-1263 docstring: 'explicit common torus index at every step'", "CONVENTION: TemporalMeanUpdate.absoluteInverse_coverMap (L246) and temporalInverse_coverMap (L525) are temporal only; TorusInverse.directionalInverse_periodic (L578) covers both Directions; grep finds no Direction.radial use outside TorusInverse.lean", "I read p.67 and the Lean source myself. torusCovering is J_g on column vectors, and Sheet d = Z²/J^d Z² has index 14^d. The preimage of nativeRectangle (a sup-norm square) is a disjoint union of sheets, each mapped bijectively onto R_γ, and there are 14^gap ≤ 14^Δmax of them. Normalized Haar integrals are invariant under the cover for continuous f, and measure preservation covers every integrable f. ‖J^{±d}‖ ≤ coveringBound D for d ≤ D. Radial integration, averaging and inversion preserve periodicity in H. The auditor and both skeptics agree, and no skeptic raised a missed finding. The verdict is DELTA/partial only because no declaration bundles the lemma and two trivial sub-claims of (d) are unstated. All findings are low severity."],
+          "findings": [
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration states Lemma 6.2, and no docstring cites it. Clauses (a)–(c) are each stated faithfully, (c) and (b) at least as strongly as the paper, across TorusCoverDegree, TorusAverages and CommonCoverSolve/CommonCoverClass."
+            },
+            {
+              "confidence": 0.78,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Two sub-claims of clause (d) have no Lean statement: that torus translation preserves common-torus descent, and that the operations introduce no new dyadic band. Both are trivial, and the second is built into the architecture through an explicit common index."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Cover-pullback naturality of directional inversion is proved only for v_t. For v_r, only Z²-periodicity in the common variable H is stated. That is the Lean encoding of common-torus descent, and radial inversion is never used outside TorusInverse.lean."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.83. Findings: [low COVERAGE: ATTRIBUTION_GAP] No single declaration states Lemma 6.2, and no docstring cites it. Clauses (a)–(c) are each stated faithfully, (c) and (b) at least as strongly as the paper, across TorusCoverDegree, TorusAverages and CommonCoverSolve/CommonCoverClass.; [low COVERAGE: CONFIRMED_CONTENT] Two sub-claims of clause (d) have no Lean statement: that torus translation preserves common-torus descent, and that the operations introduce no new dyadic band. Both are trivial, and the second is built into the architecture through an explicit common index.; [low COVERAGE: CONVENTION] Cover-pullback naturality of directional inversion is proved only for v_t. For v_r, only Z²-periodicity in the common variable H is stated. That is the Lean encoding of common-torus descent, and radial inversion is never used outside TorusInverse.lean.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

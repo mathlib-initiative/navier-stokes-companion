@@ -1,0 +1,49 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 4.4",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [medium COVERAGE] No declaration stating part (i) as a whole was found. Generic lemmas state its steps separately: 𝔪₁=𝔪₂ (NominalProfile.moments_propagate), a, b_s, V₀ (NaturalCoefficientBridge.radialFlux_congr_germ) and, for axis-regular profiles, Π, p_s, T₀. Beyond ….",
+  "location": {
+    "page": 28,
+    "rect": [0.132964, 0.700936, 0.732993, 0.199263]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-4.4",
+      "locator": {
+        "physical": [28, 29],
+        "printed": [28, 29],
+        "text": "Section 4, Lemma 4.4, p. 28"
+      },
+      "region": "lemma-4.4@p028",
+      "verdicts": [
+        {
+          "confidence": 0.87,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.NominalProfile.moments_propagate (NavierStokes/NominalProfile.lean:486): For arbitrary fields U,E,V,G and a ≤ r: five densities integrable on (0,r], moments equal at a, and (U,E)=(V,G) at (x,η) for all x>a imply moments U E r η = moments V G r η (all five rows of (4.15)).; NavierStokes.NaturalCoefficientBridge.radialFlux_congr_germ (NavierStokes/NaturalCoefficientBridge.lean:280): If U = V and average U = average V near w, then radialFlux h lam U = radialFlux h lam V near w. Generic; needs a full neighbourhood, so it does not give X = X_h itself.; NavierStokes.SlowDivergence.radialFlux (NavierStokes/SlowDivergence.lean:21): radialFlux h lam U p = X/L · (2ηU − 2η(D+lam)·average U − d·∂_η(average U)); at lam = 0 this is the paper's V₀ of (4.7). So V₀ does have a Lean counterpart.; NavierStokes.LeadingStressWeights.stress_outside (NavierStokes/LeadingStressWeights.lean:98): For a modulated witness v over nominal W: 0 < X, η ∈ [-1,1], and X < modulation.left or repairPatch.right < X (strict) imply stress v.profiles h p = stress W.profiles h p. Proof combines fields_outside, stocks_outside, shears_outside, stress_eq_of_coordinates.; NavierStokes.LeadingStressWeights.stress_eq_of_coordinates (NavierStokes/LeadingStressWeights.lean:84): For Profiles P, Q at a point with X > 0, Q.f ≠ 0: equal f, shearA, shearB, p1, p2 imply stress P h p = stress Q h p (the T₀ step, pointwise).; NavierStokes.ModulatedExterior.pressure_equal_after (NavierStokes/ModulatedExterior.lean:61): For Profiles P, Q with common pressure0, equal ∫f² at (B,η) and f equal on [B,X] at η: P.pressure (X,η) = Q.pressure (X,η). Requires (r,η) in both domains for all r ∈ [0,X], including the axis.; NavierStokes.ModulatedExterior.integral_equal_after (NavierStokes/ModulatedExterior.lean:28): For real functions f, g continuous on [0,X], 0 ≤ B ≤ X: ∫₀ᴮ f = ∫₀ᴮ g and f = g on [B,X] imply ∫₀ˣ f = ∫₀ˣ g (one row).; NavierStokes.ActivationStocks.profiles_stocks_congr (NavierStokes/ActivationStocks.lean:833): For Profiles P, Q at (X,η), X > 0, η in an open set J: f, U equal at the point and all five histories equal at (X,ξ) for ξ ∈ J imply profileStockOne and profileStockTwo (p_s) equal at the point.; NavierStokes.ModulatedCone.shears_eq_of_radial_eventuallyEq (NavierStokes/ModulatedCone.lean:514): For arbitrary functions: E = F and U = V on a two-sided radial neighbourhood of p.1 imply angularShear and signedAxialShear (a, −b_s) agree at p. Does not cover X = X_h under tail agreement.; NavierStokes.ModulatedProfileAssembly.Witness.stocks_outside (NavierStokes/ModulatedProfileAssembly.lean:627): Site instance: outside the open modulation/repair interval the modulated profile's two stocks equal the nominal ones; applies profiles_stocks_congr with rows from rows_outside (witness field restored).; NavierStokes.ModulatedProfileAssembly.Witness.shears_outside (NavierStokes/ModulatedProfileAssembly.lean:641): Site instance: for X < modulation.left or X > repairPatch.right (strict), the modulated profile's shears equal the nominal ones; applies shears_eq_of_radial_eventuallyEq.; NavierStokes.ModulatedHistories.actual_histories_restored (NavierStokes/ModulatedHistories.lean:988): Site-specific: after the repair patch (X ≥ P.right) the repaired, localized profile's five axis histories equal the original ones; proved by a support argument, not by moments_propagate.; NavierStokes.NominalProfile.joined_moments (NavierStokes/NominalProfile.lean:515): For r ≥ matchFraction, moments of the joined pair equal moments of F.U, F.E; the proof applies moments_propagate (call at :530).; NavierStokes.NominalProfile.Controls.heated_moments (NavierStokes/NominalProfile.lean:2012): For r ≥ heatJoin, moments of (c.U, heatedE) equal those of the heated outgoing pair; the proof is a direct application of moments_propagate (:2017).; NavierStokes.NominalConeAssembly.coordinates_of_prefix (NavierStokes/NominalConeAssembly.lean:122): Generic bundle for Profiles P, Q with common pressure0 agreeing for X ≤ R (prefix, not tail): shearA, shearB, p1, p2 agree at points with 0 < X ≤ R.; NavierStokes.ProfileHistories.Profiles (NavierStokes/ProfileHistories.lean:303): Structure with f, U smooth on a RadialDomain (:31), an open set containing every radial segment down to the axis; E := √(2X)·f. So f = E/√(2X) must be smooth through X = 0.", "Part (ii) is stated faithfully by SeedHandbackJets.profile_comparison_norm, with profile_comparison as its pointwise form, and the Lean version is slightly stronger. Checked against pp. 26–29:\n- The formulas match: W, Q_s and N_s of (4.16), p_s = (XQ_s/L, XN_s/(LE)) of (4.11), the densities of (4.15), and D, A, d, L.\n- iteratedFDerivWithin on Icc gives the one-sided η-derivatives, and the norm is the max-component sup.\n- C is chosen before the profiles and depends on (k, h, X₀, X₁, μ, B, B₀).\n- The sSup is not vacuous: the sets are bounded.\n- Junk values of the Lebesgue integrals are harmless, because stocks_comparison holds for arbitrary curves.\n\nPart (i) has no single statement. moments_propagate (from the skeptic) covers 𝔪₁=𝔪₂. stress_eq_of_coordinates, found here, covers the T₀ step pointwise. Nothing generic covers V₀. Overall the relation is partial, with one medium COVERAGE finding."],
+          "findings": [
+            {
+              "confidence": 0.87,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "medium",
+              "summary": "No declaration stating part (i) as a whole was found. Generic lemmas state its steps separately: 𝔪₁=𝔪₂ (NominalProfile.moments_propagate), a, b_s, V₀ (NaturalCoefficientBridge.radialFlux_congr_germ) and, for axis-regular profiles, Π, p_s, T₀. Beyond a join, the only combination found is at the modulation-repair site (LeadingStressWeights.stress_outside), without V₀."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "medium",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.87. Findings: [medium COVERAGE: CONFIRMED_CONTENT] No declaration stating part (i) as a whole was found. Generic lemmas state its steps separately: 𝔪₁=𝔪₂ (NominalProfile.moments_propagate), a, b_s, V₀ (NaturalCoefficientBridge.radialFlux_congr_germ) and, for axis-regular profiles, Π, p_s, T₀. Beyond a join, the only combination found is at the modulation-repair site (LeadingStressWeights.stress_outside), without V₀.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

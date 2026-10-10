@@ -1,0 +1,89 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 4.10",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low COVERAGE] No single declaration states Proposition 4.10. The cone certificate's only existence theorems give one W (NominalConeAssembly.exists_certificate), built at Λ = Λ0, C = C0. Its ingredients are stated for every …; [low CONTENT] In Lean's (4.33), the leading coefficient at y=0 is fixed only by a positive first component and a direction. The paper's B_a(0,η)=F(X_a,η)𝔰(X_a,η) is not stated, and the 1/y^order prefactor's order …; [low COVERAGE] No declaration states η-analyticity of the matched profile's fields (f, U, Π, V0/X and their radial derivatives) on one complex neighbourhood over [0, X_an]. Witness and Certificate have no analyticity ….",
+  "location": {
+    "page": 36,
+    "rect": [0.13341, 0.679948, 0.734767, 0.220499]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-4.10",
+      "locator": {
+        "physical": [36, 37],
+        "printed": [36, 37],
+        "text": "Section 4, Proposition 4.10, p. 36"
+      },
+      "region": "proposition-4.10@p036",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.NominalConeAssembly.exists_certificate (NavierStokes/NominalConeAssembly.lean:1512): (d : PreparedOutgoing.PreparedProfile) : ∃ W : NominalProfile.Witness d.profile, Certificate W. No C, Λ or radius-floor argument; proof is assembly_exists then Assembly.certificate.; NavierStokes.NominalConeAssembly.exists_nominal_cone (NavierStokes/NominalConeAssembly.lean:1517): ∃ (F : Profile) (W : NominalProfile.Witness F), Certificate W, from PreparedOutgoing.exists_prepared and exists_certificate. No C quantifier.; NavierStokes.NominalConeAssembly.Certificate (NavierStokes/NominalConeAssembly.lean:1362): Prop structure on a Witness W: IsRelaxed W.profiles for 4/Λ < X < radius·exp(tailEnd), η ∈ [-1,1]; ∃ t ∈ (0, activationTime] with IsTrue at chart (4/Λ) (y,η) for 0 < y ≤ t; IsTrue on holdStart ≤ y < tailEnd in the radius chart.; NavierStokes.NominalConeAssembly.Assembly.certificate (NavierStokes/NominalConeAssembly.lean:1458): theorem certificate : Certificate A.witness, for the section variable A : Assembly d, so it holds for every Assembly, not for one chosen C.; NavierStokes.NominalConeAssembly.assembly_exists (NavierStokes/NominalConeAssembly.lean:1482): Nonempty (Assembly d). Body sets floor := max of four thresholds depending only on d, calls preparedWitness_exists with it (L1488), then uses the prepared witness M only through M.bounds.*, M.axis and M.controls (L1496-1507).; NavierStokes.MatchingConeBounds.preparedWitness_exists (NavierStokes/MatchingConeBounds.lean:976): Nonempty (PreparedWitness F N delta radiusFloor) for an arbitrary radiusFloor. The proof instantiates the ordered theorem at Λ0 (hscale Λ0 hΛ le_rfl, L992) and at C0 (hnormalization C0 le_rfl, L993).; NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation (NavierStokes/MatchingConeBounds.lean:852): For arbitrary radiusFloor: ∃ rho jcap, ∀ small j, prep, cutoff → ∃ Λ0, ∀ Λ ≥ Λ0, ∃ T > 0, ∃ C0 ≥ 1, ∀ C ≥ C0, ∃ EntranceProfile E, ∀ J ε, ∃ tolerance, ∃ ContinuationWitness w, PreparedBounds c N rho delta radiusFloor. It concludes no Certificate and no cone on the whole range; it supplies the ingredients only.; NavierStokes.MatchingConeBounds.PreparedBounds (NavierStokes/MatchingConeBounds.lean:825): Prop structure: MatchingBounds c N rho, debt_radius, scale_large, SmallControl, radius_large : radiusFloor ≤ c.radius, and coefficient and endpoint jet bounds ≤ delta.; NavierStokes.MatchingConeBounds.PreparedWitness (NavierStokes/MatchingConeBounds.lean:952): Structure bundling an AxisStage, a ContinuationWitness, shapeTime, rho and PreparedBounds for Controls.ofContinuation. The ordered theorem's output at any (Λ, C) has this shape.; NavierStokes.MatchingConeBounds.PreparedBounds.shape_relaxed (NavierStokes/MatchingConeBounds.lean:837): Given PreparedBounds and 2 < p1 at (Xi, η): IsRelaxed (c.profiles) at (X, η) for Xi = 110 ≤ X ≤ c.radius·exp(-8), η ∈ [-1,1]. Generic in the axis stage and controls.; NavierStokes.RepairConeBounds.exists_repair_cone (NavierStokes/RepairConeBounds.lean:1262): ∃ delta R0 > 0 depending only on F, ∀ A c with separation ≤ exp(-8), two order-1 jet bounds ≤ delta and R0 ≤ c.radius: IsRelaxed (c.profiles) on [radius·exp(-8), radius·exp(-5)] given SmallDebt.; NavierStokes.NominalConeAssembly.Initial.activation_cone (NavierStokes/NominalConeAssembly.lean:1251): For any EntranceProfile E and ContinuationWitness w: IsRelaxed for 0 < y ≤ actTime, and IsTrue for 0 < y ≤ t with some t ∈ (0, actTime], at (radius N.endpoint y, η), η ∈ [-1,1].; NavierStokes.ActivationContinuation.ContinuationWitness (NavierStokes/ActivationContinuation.lean:1925): Structure: ramp parameters, initial_activation bound, relaxed : IsRelaxed parameters.profiles for X ∈ [startRadius, 110] and η ∈ [-1,1], final_first : 2 < p1 on [holdRadius, 110], and two small-control fields.; NavierStokes.NaturalEntrance.EntranceProfile (NavierStokes/NaturalEntrance.lean:1096): Structure: coefficient profile, source_lower, slope_positive (0 < p1 on the entrance set for X > 0), cone_margin : 9/4 < coneSize at (4/Λ, η) for η ∈ [-1,1].; NavierStokes.MatchingDebtBounds.exists_ordered_nominal_witness (NavierStokes/MatchingDebtBounds.lean:853): … ∀ C ≥ C0, ∃ W : NominalProfile.Witness F with axis.j = j, scale = Λ, normalization = C, shapeTime = T ∧ MatchingBounds W.controls N rho. No cone clause. Used only by exists_nominal_witness and PreparedProfile.large_nominal, so it is not on the path to exists_certificate.; NavierStokes.BaseWitnessClosure.actual_base_compatible (NavierStokes/BaseWitnessClosure.lean:65): Conjunction that includes NominalConeAssembly.Certificate ActualPrimary.nominal for the one fixed profile. No C quantifier.; NavierStokes.FinalSlowBase.profileData_nonempty (NavierStokes/FinalSlowBase.lean:627): Nonempty ProfileData, obtained from NominalConeAssembly.exists_nominal_cone; actualProfile (L634) is Classical.choice of it and is the profile used downstream.", "ATTRIBUTION_GAP: LeadingStressWeights.nominal_activation_stress (L228); LeadingStressWeights.activation_direction_positive (L893): EdgeFactor … (activationTime^2) with positive first coefficient and HasTrueDirectionCollar; ActiveAnnulusWeight.EdgeFactor.collar (L310) and EdgeFactor.derivative_bound (L378).", "CONFIRMED_CONTENT: ActiveAnnulusWeight.EdgeFactor (ActiveAnnulusWeight.lean:247): T = (edge c x / x^order) • coefficient, order existential. activation_direction_positive (LeadingStressWeights.lean:893) drops the tilt identity of exists_natural_activation_factor_aligned (ActiveAnnulusWeight.lean:1039).", "CONFIRMED_CONTENT: EntranceAlignedBase.nominal_ACT_fields (L171) identifies only W.f and W.U with nominalACT up to analyticEnd W. AssembledSlowBase.nominalTube (L1030) gives the complex tube for the ACT data. Π and V0/X are not covered, and no declaration composes these.", "REFUTED: LeadingStressWeights.nominal_activation_stress (L228, any y ≤ referenceWidth) with activationStress_zero_of_nonpos (L997); LeadingStressWeights.stress_zero_before (L1067); EntranceAlignedBase.natural_raw_stresses_zero (L439); EntranceAlignedBase.zero_coefficients (L310).", "ATTRIBUTION_GAP: MatchingDebtBounds.exists_ordered_nominal_witness (MatchingDebtBounds.lean:853): … ∃ T>0, ∃ C0, ∀ C ≥ C0, ∃ W, W.axis.scale = Λ ∧ W.axis.normalization = C ∧ W.controls.shapeTime = T ∧ MatchingBounds; radius = matchingRadius F C = 110(CP)^10.", "No declaration states Proposition 4.10, and the repository never cites it. The Lean builds one joined profile on all X ≥ 0. exists_ordered_nominal_witness gives the paper's order of choices for every C ≥ C0, so it covers (i) and (iii): smoothness, the moment match at e^{-5} and the shared Π0. The cone clauses of (ii) come only from exists_certificate, for one internally chosen C. The skeptics found better pairings. (4.33) is stated for W's own T0, through nominal_activation_stress, activation_direction_positive and the EdgeFactor bounds. T0 = 0 holds on the closed interval up to X_a. The real residual gaps are: no cone for every C ≥ C0, no analyticity statement for W, and the exact leading coefficient B_a(0) with order 0 unstated. The verdict is DELTA with relation partial."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "No single declaration states Proposition 4.10. The cone certificate's only existence theorems give one W (NominalConeAssembly.exists_certificate), built at Λ = Λ0, C = C0. Its ingredients are stated for every C ≥ C0 and any radius floor (MatchingConeBounds.exists_ordered_prepared_continuation); the uniform certificate is not stated."
+            },
+            {
+              "confidence": 0.75,
+              "contested": true,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The auditor said (4.33) appears only for an upstream activated stress and that the bounds are unstated. In fact W's own T0 equals activationStress W on the first collar, which has an EdgeFactor with c = t1², and generic lemmas give both bounds."
+            },
+            {
+              "confidence": 0.6,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "In Lean's (4.33), the leading coefficient at y=0 is fixed only by a positive first component and a direction. The paper's B_a(0,η)=F(X_a,η)𝔰(X_a,η) is not stated, and the 1/y^order prefactor's order is hidden by an existential, so smooth g_a with g_a(0)>0 is not literal."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "No declaration states η-analyticity of the matched profile's fields (f, U, Π, V0/X and their radial derivatives) on one complex neighbourhood over [0, X_an]. Witness and Certificate have no analyticity clause."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "REFUTED",
+              "severity": "low",
+              "summary": "The auditor said T0 = 0 is stated only for X ≤ X_a/2. That is wrong. For the nominal Witness, T0 = 0 on (0, X_a] (closed), at X = 0 by formula, and on [0, X_a] for the final witness. (4.13) holds on (0, X_a), and the endpoint follows by continuity."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The ordered choice (j, then Λ, then T_sh and C0, then every C ≥ C0) and the closing sentence (X_R → ∞ with Λ and T_sh fixed) are stated for the full matched Witness. The auditor omitted this and called large_nominal the closest."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.82. Findings: [low COVERAGE: CONFIRMED_CONTENT] No single declaration states Proposition 4.10. The cone certificate's only existence theorems give one W (NominalConeAssembly.exists_certificate), built at Λ = Λ0, C = C0. Its ingredients are stated for every C ≥ C0 and any radius floor (MatchingConeBounds.exists_ordered_prepared_continuation); the uniform certificate is not stated.; [low COVERAGE: ATTRIBUTION_GAP] The auditor said (4.33) appears only for an upstream activated stress and that the bounds are unstated. In fact W's own T0 equals activationStress W on the first collar, which has an EdgeFactor with c = t1², and generic lemmas give both bounds.; [low CONTENT: CONFIRMED_CONTENT] In Lean's (4.33), the leading coefficient at y=0 is fixed only by a positive first component and a direction. The paper's B_a(0,η)=F(X_a,η)𝔰(X_a,η) is not stated, and the 1/y^order prefactor's order is hidden by an existential, so smooth g_a with g_a(0)>0 is not literal.; [low COVERAGE: CONFIRMED_CONTENT] No declaration states η-analyticity of the matched profile's fields (f, U, Π, V0/X and their radial derivatives) on one complex neighbourhood over [0, X_an]. Witness and Certificate have no analyticity clause.; [low CONTENT: REFUTED] The auditor said T0 = 0 is stated only for X ≤ X_a/2. That is wrong. For the nominal Witness, T0 = 0 on (0, X_a] (closed), at X = 0 by formula, and on [0, X_a] for the final witness. (4.13) holds on (0, X_a), and the endpoint follows by continuity.; [low COVERAGE: ATTRIBUTION_GAP] The ordered choice (j, then Λ, then T_sh and C0, then every C ≥ C0) and the closing sentence (X_R → ∞ with Λ and T_sh fixed) are stated for the full matched Witness. The auditor omitted this and called large_nominal the closest.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "corollary-7.3/support/NavierStokes.ActualParticularControl.referenceControl",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularControl.referenceControl",
+      "line": 609,
+      "module": "NavierStokes.ActualParticularControl",
+      "path": "NavierStokes/ActualParticularControl.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularControl.lean#L609"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularControl.referenceControl",
+        "kind": "def"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 609,
+        "text": "noncomputable def referenceControl\n    (s : StripData P) (F : PhaseConstruction D) (χ : P →L[ℝ] PhaseCalculus.Slow)\n    (g : Label → ℕ → Geometry) (r : Label → ℕ → ℝ)\n    (hscale : ∀ l n, D.scale (l,n) = s.slow n)\n    (hsep : ∀ l n, WaveEnvelopeTransport.Separated (g l n) (r l n) (F.L (l,n)))\n    {A : ℝ} {a : ℕ} (hA : 1 ≤ A)\n    (hgeometry : ∀ l n, CommonCoverClass.argumentCost (g l n) ≤ A*s.slow n^a)\n    (j : ℤ) (hj : j ≠ 0) {α : ℝ} (f : Label → ℕ → P × Plane → ProblemStatement.Space)\n    (hf : UniformWaveClass (CommonCoverClass.sourceStrip s)\n      (groupedEnvelope g r (fun l n => F.L (l,n))\n        (fun l n => referenceP (F.lam (l,n)) (F.u (l,n)) (F.L (l,n)))) α f) :\n    ParticularCopyBounds.UniformModalControl (CommonCoverClass.sourceStrip s) α\n      (fun l n => nativeFrame (F.frame (l,n)) χ)\n      (fun l n => PrimaryCopyBridge.frameTangentData (nativeFrame (F.frame (l,n)) χ) j (f l n))\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

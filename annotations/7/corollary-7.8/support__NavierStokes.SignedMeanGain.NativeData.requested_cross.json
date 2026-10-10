@@ -1,0 +1,26 @@
+{
+  "id": "corollary-7.8/support/NavierStokes.SignedMeanGain.NativeData.requested_cross",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedMeanGain.NativeData.requested_cross",
+      "line": 1226,
+      "module": "NavierStokes.SignedMeanGain",
+      "path": "NavierStokes/SignedMeanGain.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean#L1226"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedMeanGain.NativeData.requested_cross",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1226,
+        "text": "theorem NativeData.requested_cross {G : Geometry} (B : NativeData G)\n    (c : Context Point) (u : State Point) (i : Fin 2) :\n    Agree G.strip.domain\n      (StateMomentBalances.meanBar (LabelSumBounds.symmetricCovariance\n        (LabelSumBounds.fieldSum B.labels (fun l => (B.primaryBlocks l).oscillation))\n        (LabelSumBounds.fieldSum B.labels (fun l => (B.signedBlocks c u l).oscillation)) 0 i.succ))\n      (fun n x => LocalSignedRequest.requestedStress G.patch G.coord c u n x i)"
+      }
+    }
+  }
+}

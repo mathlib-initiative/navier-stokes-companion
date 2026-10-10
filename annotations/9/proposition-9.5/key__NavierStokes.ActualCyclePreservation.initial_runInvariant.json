@@ -1,0 +1,31 @@
+{
+  "id": "proposition-9.5/key/NavierStokes.ActualCyclePreservation.initial_runInvariant",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCyclePreservation.initial_runInvariant",
+      "line": 773,
+      "module": "NavierStokes.ActualCyclePreservation",
+      "path": "NavierStokes/ActualCyclePreservation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean#L773"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCyclePreservation.initial_runInvariant",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∀ B N0, RunInvariant (ActualIterationLedger.sigma 0) (state B N0 0): analytic Invariant at σ = 1/5 (sigma_zero), plus chart Coherent and torus Periodic; state B N0 0 = initialCycleState B N0 (state_zero, rfl).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "different_formulation",
+      "role": "key",
+      "snippet": {
+        "line": 773,
+        "text": "theorem initial_runInvariant (B N0 : ℕ) :\n    RunInvariant (ActualIterationLedger.sigma 0) (state B N0 0)"
+      }
+    }
+  }
+}

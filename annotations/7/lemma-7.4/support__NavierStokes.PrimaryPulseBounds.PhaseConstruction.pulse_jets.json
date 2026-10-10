@@ -1,0 +1,26 @@
+{
+  "id": "lemma-7.4/support/NavierStokes.PrimaryPulseBounds.PhaseConstruction.pulse_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryPulseBounds.PhaseConstruction.pulse_jets",
+      "line": 1622,
+      "module": "NavierStokes.PrimaryPulseBounds",
+      "path": "NavierStokes/PrimaryPulseBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryPulseBounds.lean#L1622"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryPulseBounds.PhaseConstruction.pulse_jets",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1622,
+        "text": "theorem PhaseConstruction.pulse_jets {D : Domain ι Slow} (p : PhaseConstruction D) :\n    EnvelopeJets (productDomain D (fun _ => Ioo (0 : ℝ) 1) (fun _ => isOpen_Ioo))\n      (fun i z => referenceP (p.lam i) (p.u i) (p.L i) (p.L i * z.2))\n      (fun i => normalizedPulse (p.frame i) (p.lam i) (p.u i) (p.L i))"
+      }
+    }
+  }
+}

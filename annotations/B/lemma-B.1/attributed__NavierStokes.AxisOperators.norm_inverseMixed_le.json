@@ -1,0 +1,29 @@
+{
+  "id": "lemma-B.1/attributed/NavierStokes.AxisOperators.norm_inverseMixed_le",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisOperators.norm_inverseMixed_le",
+      "line": 719,
+      "module": "NavierStokes.AxisOperators",
+      "path": "NavierStokes/AxisOperators.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisOperators.lean#L719"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisOperators.norm_inverseMixed_le",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: 0<ε → 1 ≤ r → ‖inverseMixed I hε r hr‖ ≤ 5120/ε; jets are differentialFamily r 1 (j ↦ j) (L512), i.e. J_r of ∑_{i+j=n} ∑_{k+l=m} C(m,k) ∂^{1+k}F_i · j ∂^l G_j: (B.6) with C_ρ = 5120/ρ"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 719,
+        "text": "theorem norm_inverseMixed_le (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r) :\n    ‖inverseMixed I hε r hr‖ ≤ 5120 / ε"
+      }
+    }
+  }
+}

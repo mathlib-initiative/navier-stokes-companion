@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.6/attributed/NavierStokes.SignedCovariance.extendedIncrement_regular",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedCovariance.extendedIncrement_regular",
+      "line": 872,
+      "module": "NavierStokes.SignedCovariance",
+      "path": "NavierStokes/SignedCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L872"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedCovariance.extendedIncrement_regular",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: local edge model on U ×ˢ Ioi 0 with WeightedJets c inputs and PolyBound edge/(H⁻¹T)_j → zero extension of increment is C^∞ on U ×ˢ univ, WeightedJets (c/2), all jets vanish at δ = 0"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 872,
+        "text": "theorem extendedIncrement_regular {U : Set E} (hU : IsOpen U) {c : ℝ} (hc : 0 < c)\n    {H : E × ℝ → Mat2} {T R : E × ℝ → Vec2} {S : E × ℝ → ℝ} (j : Fin 2)\n    (hS : ∀ p ∈ WeightedQuotients.edgeStrip U, 1 ≤ S p)\n    (hscale : WeightedQuotients.LocallyBoundedScale U S)\n    (hH : ∀ i j, ContDiffOn ℝ ∞ (fun p => H p i j) (U ×ˢ Ioi 0))\n    (hT : ∀ i, ContDiffOn ℝ ∞ (fun p => T p i) (U ×ˢ Ioi 0))\n    (hR : ∀ i, ContDiffOn ℝ ∞ (fun p => R p i) (U ×ˢ Ioi 0))\n    (hcone : ∀ p ∈ U ×ˢ Ioi (0 : ℝ), SmoothCovariance.StrictCone (H p) (T p))\n    (hlower : WeightedQuotients.PolyBound (WeightedQuotients.edgeStrip U) S (fun p => p.2⁻¹)\n      (fun p => FlatCutoff.edge c p.2 / ((H p)⁻¹.mulVec (T p)) j))\n    (hYjets : WeightedQuotients.WeightedJets c U S (fun p => ((H p)⁻¹.mulVec (T p)) j))\n    (hRjets : WeightedQuotients.WeightedJets c U S (fun p => ((H p)⁻¹.mulVec (R p)) j)) :\n    ContDiffOn ℝ ∞ (extendedIncrement H T R j) (U ×ˢ univ) ∧\n      WeightedQuotients.WeightedJets (c / 2) U S (extendedIncrement H T R j) ∧\n      ∀ m : ℕ, ∀ x ∈ U, iteratedFDeriv ℝ m (extendedIncrement H T R j) (x, 0) = 0"
+      }
+    }
+  }
+}

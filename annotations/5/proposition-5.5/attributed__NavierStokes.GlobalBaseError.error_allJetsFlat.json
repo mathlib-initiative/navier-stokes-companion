@@ -1,0 +1,29 @@
+{
+  "id": "proposition-5.5/attributed/NavierStokes.GlobalBaseError.error_allJetsFlat",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GlobalBaseError.error_allJetsFlat",
+      "line": 141,
+      "module": "NavierStokes.GlobalBaseError",
+      "path": "NavierStokes/GlobalBaseError.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalBaseError.lean#L141"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GlobalBaseError.error_allJetsFlat",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: nominalExteriorRadius W ≤ upper → (compact carrier, t<1 eventually, q→0) → AllJetsFlat l q (FinalSlowBase.error H v upper B): (a) for one fixed base, with no bound on X"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 141,
+        "text": "theorem error_allJetsFlat (upper : ℝ) (B : ℕ)\n    (hupper : BaseExterior.nominalExteriorRadius W ≤ upper)\n    {l : Filter SpaceTime} {K : Set SpaceTime} (hK : IsCompact K)\n    (hcarrier : ∀ᶠ z in l, z ∈ K) (ht : ∀ᶠ z in l, z.1 < 1)\n    (hq : Tendsto (fun z => (cartesianChart F.data.h z).1) l (𝓝 0)) :\n    ResidualStability.AllJetsFlat l (fun z => (cartesianChart F.data.h z).1)\n      (FinalSlowBase.error H v upper B)"
+      }
+    }
+  }
+}

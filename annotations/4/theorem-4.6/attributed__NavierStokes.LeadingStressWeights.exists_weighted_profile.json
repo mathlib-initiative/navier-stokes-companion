@@ -1,0 +1,30 @@
+{
+  "id": "theorem-4.6/attributed/NavierStokes.LeadingStressWeights.exists_weighted_profile",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStressWeights.exists_weighted_profile",
+      "line": 1154,
+      "module": "NavierStokes.LeadingStressWeights",
+      "path": "NavierStokes/LeadingStressWeights.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L1154"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStressWeights.exists_weighted_profile",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: ∃ F W d v, FullTrueCone v ∧ WeightedBounds (Icc (-1) 1) (activationTime^2) (leftEdge W) (rightEdge W) (logStress v.profiles h) ∧ inner/outer EdgeFactor with positive angular coefficient and HasTrueDirectionCollar  [closest bundle; covers (iii)-(iv) only]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1154,
+        "text": "theorem exists_weighted_profile :\n    ∃ (F : OutgoingProfile.Profile) (W : NominalProfile.Witness F)\n      (d : ModulatedProfileAssembly.LoopData W) (v : ModulatedProfileAssembly.Witness d),\n      FullTrueCone v ∧\n      WeightedBounds (Icc (-1 : ℝ) 1) (W.controls.activationTime ^ 2)\n        (leftEdge W) (rightEdge W) (logStress v.profiles F.data.h) ∧\n      (∃ G : EdgeFactor (Icc (-1 : ℝ) 1) (W.controls.activationTime ^ 2)\n          (leftChart (leftEdge W) (logStress v.profiles F.data.h)),\n        (∀ eta ∈ Icc (-1 : ℝ) 1, 0 < (G.coefficient (eta, 0)).1) ∧\n        HasTrueDirectionCollar (Icc (-1 : ℝ) 1)\n          (leftChart (leftEdge W) (logStress v.profiles F.data.h)) G.coefficient\n          (leftChart (leftEdge W) (logSpeed v.profiles))\n          (leftChart (leftEdge W) (logSlope v.profiles)) G.width) ∧\n      (∃ G : EdgeFactor (Icc (-1 : ℝ) 1) 4\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

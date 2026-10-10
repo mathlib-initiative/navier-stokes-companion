@@ -1,0 +1,26 @@
+{
+  "id": "definition-9.4/support/NavierStokes.GaugeRadialResidualBounds.similarity_identity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GaugeRadialResidualBounds.similarity_identity",
+      "line": 215,
+      "module": "NavierStokes.GaugeRadialResidualBounds",
+      "path": "NavierStokes/GaugeRadialResidualBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeRadialResidualBounds.lean#L215"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GaugeRadialResidualBounds.similarity_identity",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 215,
+        "text": "theorem similarity_identity (c : Context Point) (u : State Point)\n    (H : MeanStateRegularity.PrimitiveData U a b c u)\n    (hr : RadialMatch U.carrier gauge c.operators)\n    (hfixed : (VariableGaugeMean.reconstructState gauge c u).pressure = u.pressure)\n    (n : ℕ) {x : Point} (hx : x.2.1 ∈ U.carrier) :\n    u.radialResidual c n x - VariableGaugeMean.pressureAliasState gauge c u n (x, 0) 0 =\n      -VariableGaugeMean.density a b hab (VariableGaugeMean.qLength (2 * h)) x *\n        pressureDefect c u n x.2.1"
+      }
+    }
+  }
+}

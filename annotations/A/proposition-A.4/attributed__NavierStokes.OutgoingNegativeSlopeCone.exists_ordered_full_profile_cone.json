@@ -1,0 +1,31 @@
+{
+  "id": "proposition-A.4/attributed/NavierStokes.OutgoingNegativeSlopeCone.exists_ordered_full_profile_cone",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.OutgoingNegativeSlopeCone.exists_ordered_full_profile_cone",
+      "line": 137,
+      "module": "NavierStokes.OutgoingNegativeSlopeCone",
+      "path": "NavierStokes/OutgoingNegativeSlopeCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingNegativeSlopeCone.lean#L137"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.OutgoingNegativeSlopeCone.exists_ordered_full_profile_cone",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Same ordered quantifiers as exists_ordered_profile_cone, concluding FullCleanOutgoingCone F.reset XR left (clean cone plus TrueAt wherever the transition slope is negative)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 137,
+        "text": "theorem exists_ordered_full_profile_cone :\n    ∃ M : ℝ, 0 < M ∧ ∀ m : ℝ, M ≤ m → ∀ P : ℝ,\n      OutgoingEntranceCone.amplitudeThreshold m ≤ P → ∀ K : ℝ, 0 < K →\n      ∃ lam0 : ℝ, 0 < lam0 ∧ ∀ F : OutgoingProfile.Profile,\n        F.data.core.P = P → F.data.core.m = m → F.coefficientBound = K →\n        F.data.core.wait = 60 * Real.log (1 / F.data.core.lam) →\n        F.data.core.lam < lam0 → F.data.h ≤ OutgoingCone.heightThreshold m F.data.core.lam →\n        ∀ left : ℝ, left ≤ 0 →\n          ∃ XR0 : ℝ, 0 < XR0 ∧ ∀ XR : ℝ, XR0 < XR →\n            FullCleanOutgoingCone F.reset XR left"
+      }
+    }
+  }
+}

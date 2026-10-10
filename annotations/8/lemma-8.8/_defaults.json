@@ -1,0 +1,65 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 8.8",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 98,
+    "rect": [0.133462, 0.73397, 0.734267, 0.109929]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-8.8",
+      "locator": {
+        "physical": [98, 99],
+        "printed": [98, 99],
+        "text": "Section 8, Lemma 8.8, p. 98"
+      },
+      "region": "lemma-8.8@p098",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["CONVENTION: DefectIncrementBounds.actualRadialError_eq_formula (DefectIncrementBounds.lean:401); LocalRankDefect.RankGeometry.debt_eq_remainders (LocalRankDefect.lean:811); MeanLocalDefectBounds.rankStage_gain_of_targets (MeanLocalDefectBounds.lean:298)", "ATTRIBUTION_GAP: MovingMomentBounds.rankStage_defectBounds (MovingMomentBounds.lean:359), hypothesis hb : BaseBounds (movingStripData …) c.base, called at CorrectionStep.lean:5492 with hrInc from gaugeRankStage_constructed. MeanLocalDefectBounds is imported only by NavierStokes/PaperAdditionalResults.lean:3", "CONVENTION: RankStateBounds.NormalizedParameters.coefficient (RankStateBounds.lean:90) with hB : B ≠ 0 only; SimilarityCoordinates.coordinateEta_abs_lt_one (SimilarityCoordinates.lean:368), used at MeanRankUpdate.lean:644; LocalBaseBounds.angular_smooth (MeanLocalDefectBounds.lean:30)", "I read pp. 98-99 and (8.3), (8.12), (8.15), (8.24) against the Lean. gr, debt, radialRemainder and remainders match the paper term by term, and the debt normalization matches (8.17). rankStage_gain_of_targets gives exactly R_g ∈ M_{α+0.9−2κ} and new defects ∈ S_{α+0.9−2κ} with H = α, κ = κ_s, under hypotheses the paper's imply; it drops the V bound and divergence-freeness. All three voters agree and I found no material difference. I reclassified DefectIncrementBounds.rankStage_defect_class as a variant, added the pairing skeptic's three closer helpers, and added one convention finding on the hypothesis mapping. Definition 6.4 (the classes M_α, S_α) was not audited here."],
+          "findings": [
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration states the whole lemma: (8.26) is a generic identity, (8.27) is RankGeometry.debt_eq_remainders, and the class gain is rankStage_gain_of_targets. All three concern the same objects and together cover every clause."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The paper's support-local form is proved but not consumed. rankStage_gain_of_targets has no callers; the main chain uses MovingMomentBounds.rankStage_defectBounds, with base bounds on the whole strip and increment bounds supplied separately."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Judge-added. Three paper hypotheses have no Lean counterpart: the lower bound a_0, divergence-freeness of (β,v,γ), and the bound on V. Lean instead makes standing setup explicit (OperatorBounds, W shell-supported, patch strictly inside the gauge shell)."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.85. Findings: [low CONTENT: CONVENTION] No single declaration states the whole lemma: (8.26) is a generic identity, (8.27) is RankGeometry.debt_eq_remainders, and the class gain is rankStage_gain_of_targets. All three concern the same objects and together cover every clause.; [low CONTENT: ATTRIBUTION_GAP] The paper's support-local form is proved but not consumed. rankStage_gain_of_targets has no callers; the main chain uses MovingMomentBounds.rankStage_defectBounds, with base bounds on the whole strip and increment bounds supplied separately.; [low CONTENT: CONVENTION] Judge-added. Three paper hypotheses have no Lean counterpart: the lower bound a_0, divergence-freeness of (β,v,γ), and the bound on V. Lean instead makes standing setup explicit (OperatorBounds, W shell-supported, patch strictly inside the gauge shell).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

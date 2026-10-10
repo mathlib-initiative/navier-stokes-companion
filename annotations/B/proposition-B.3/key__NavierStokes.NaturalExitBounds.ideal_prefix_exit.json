@@ -1,0 +1,31 @@
+{
+  "id": "proposition-B.3/key/NavierStokes.NaturalExitBounds.ideal_prefix_exit",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalExitBounds.ideal_prefix_exit",
+      "line": 230,
+      "module": "NavierStokes.NaturalExitBounds",
+      "path": "NavierStokes/NaturalExitBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalExitBounds.lean#L230"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalExitBounds.ideal_prefix_exit",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: For the ideal-prefix pressure datum (PressureDatum.Admissible g a cap, g = amplitude²·e^{y/5} and a = 1 on y≤0): ∃ δ σ > 0, ∃ d : AnalyticInputs, 0 < lowerConstant d ∧ ∃ B, ∃ M>0, ∀Λ≥M, ∀C ≥ entranceNormalization d Λ δ, ∃ E, Estimates d E B",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "lean_stronger",
+      "role": "key",
+      "snippet": {
+        "line": 230,
+        "text": "theorem ideal_prefix_exit {h j : ℝ} (hsmall : NaturalAxisRange.Parameters h j)\n    {g a : ℝ → ℝ} {cap amplitude : ℝ}\n    (hp : PressureDatum.Admissible g a cap) (hA : 2 ≤ amplitude)\n    (hg : ∀ y ≤ 0, g y = amplitude ^ 2 * Real.exp ((1 / 5 : ℝ) * y))\n    (ha : ∀ y ≤ 0, a y = 1) :\n    ∃ δ σ : ℝ, 0 < δ ∧ 0 < σ ∧\n      ∃ d : AnalyticInputs h j σ (PressureDatum.pressure g a),\n        0 < lowerConstant d ∧ ∃ B : ℕ → ℝ, (∀ m, 1 ≤ B m) ∧\n          ∃ M > 0, ∀ Λ ≥ M, ∀ C, entranceNormalization d Λ δ ≤ C →\n            ∃ E : EntranceProfile d Λ C, Estimates d E B"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.5/key/NavierStokesR3.WholeSpaceUniqueness.candidate_unique_on_Icc",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.WholeSpaceUniqueness.candidate_unique_on_Icc",
+      "line": 72,
+      "module": "NavierStokes.R3.WholeSpaceUniqueness",
+      "path": "NavierStokes/R3/WholeSpaceUniqueness.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/WholeSpaceUniqueness.lean#L72"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.WholeSpaceUniqueness.candidate_unique_on_Icc",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: h : CandidateProperties 1 u p f K; T<1; v,q ContDiffOn ∞ on slab 0 T; UniformFiniteEnergy (Icc 0 T) v; div v=0 on Ioo 0 T; navierStokesResidual 1 v q = f on Ioo 0 T; v(0,·)=0 ⊢ ∀ t∈Icc 0 T, ∀ x, u(t,x)=v(t,x)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "lean_stronger",
+      "role": "key",
+      "snippet": {
+        "line": 72,
+        "text": "theorem candidate_unique_on_Icc {u : VelocityField} {p : PressureField}\n    {f : VelocityField} {K : Set Space} (h : CandidateProperties 1 u p f K)\n    {T : ℝ} (hT : T < 1) {v : VelocityField} {q : PressureField}\n    (hv : ContDiffOn ℝ ∞ v (Comparison.slab 0 T))\n    (hq : ContDiffOn ℝ ∞ q (Comparison.slab 0 T))\n    (hev : UniformFiniteEnergy (Icc (0 : ℝ) T) v)\n    (hdv : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x, spatialDivergence v t x = 0)\n    (hNSv : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x, navierStokesResidual 1 v q t x = f (t, x))\n    (hvzero : ∀ x, v (0, x) = 0) :\n    ∀ t ∈ Icc (0 : ℝ) T, ∀ x, u (t, x) = v (t, x)"
+      }
+    }
+  }
+}

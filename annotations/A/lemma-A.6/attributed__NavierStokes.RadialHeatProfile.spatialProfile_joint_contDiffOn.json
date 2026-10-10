@@ -1,0 +1,31 @@
+{
+  "id": "lemma-A.6/attributed/NavierStokes.RadialHeatProfile.spatialProfile_joint_contDiffOn",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.RadialHeatProfile.spatialProfile_joint_contDiffOn",
+      "line": 666,
+      "module": "NavierStokes.RadialHeatProfile",
+      "path": "NavierStokes/RadialHeatProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L666"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.RadialHeatProfile.spatialProfile_joint_contDiffOn",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: 1 < a → ContDiffOn ℝ ∞ (fun p => spatialProfile a p.2 p.1) {p | 0 < p.1 ∧ 0 ≤ p.2}, i.e. (X,ν) ↦ X^(1/2-a) * profile a (2ν/X) is jointly smooth on X>0, ν≥0.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 666,
+        "text": "theorem spatialProfile_joint_contDiffOn {a : ℝ} (ha : 1 < a) :\n    ContDiffOn ℝ ∞ (fun p : ℝ × ℝ => spatialProfile a p.2 p.1)\n      {p | 0 < p.1 ∧ 0 ≤ p.2}"
+      }
+    }
+  }
+}

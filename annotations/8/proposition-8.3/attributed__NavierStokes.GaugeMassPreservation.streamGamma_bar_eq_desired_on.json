@@ -1,0 +1,29 @@
+{
+  "id": "proposition-8.3/attributed/NavierStokes.GaugeMassPreservation.streamGamma_bar_eq_desired_on",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GaugeMassPreservation.streamGamma_bar_eq_desired_on",
+      "line": 83,
+      "module": "NavierStokes.GaugeMassPreservation",
+      "path": "NavierStokes/GaugeMassPreservation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMassPreservation.lean#L83"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GaugeMassPreservation.streamGamma_bar_eq_desired_on",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: f smooth, SupportedGauge, PeriodicOn, s ∈ U, ∫ r, r * torusAverage f (r,s) = 0 ⊢ ∀ R, torusAverage (streamGamma … (streamPotential … f)) (R,s) = torusAverage f (R,s). This is ⟨Δγ⟩_Y = ⟨γ_d⟩_Y in the moving gauge."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 83,
+        "text": "theorem streamGamma_bar_eq_desired_on {coord a b d M : ℝ} (U : SlowRegion coord)\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (v : Plane)\n    {f : Point → ℝ} (hf : ContDiffOn ℝ ∞ f (PhysicalMeanDomain.slowDomain U.carrier))\n    (hs : SupportedGauge a b (qLength coord) U.carrier f)\n    (hp : PhysicalMeanDomain.PeriodicOn U.carrier f)\n    {s : Plane} (hsm : s ∈ U.carrier)\n    (hm : (∫ r, r * PressureStream.torusAverage f (r, s)) = 0) (R : ℝ) :\n    PressureStream.torusAverage (PressureStream.streamGamma (PressureStream.physicalSpeed d M)\n      ((0 : Plane), v) (streamPotential d a b M (qLength coord) v f)) (R, s) =\n      PressureStream.torusAverage f (R, s)"
+      }
+    }
+  }
+}

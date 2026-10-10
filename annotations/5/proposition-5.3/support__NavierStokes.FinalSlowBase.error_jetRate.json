@@ -1,0 +1,26 @@
+{
+  "id": "proposition-5.3/support/NavierStokes.FinalSlowBase.error_jetRate",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FinalSlowBase.error_jetRate",
+      "line": 335,
+      "module": "NavierStokes.FinalSlowBase",
+      "path": "NavierStokes/FinalSlowBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FinalSlowBase.lean#L335"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FinalSlowBase.error_jetRate",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 335,
+        "text": "theorem error_jetRate (upper : ℝ) (B : ℕ) {l : Filter ProblemStatement.SpaceTime} {radius : ℝ}\n    (P : BaseResidual.PhysicalApproach l F.data.h 0 radius) (hr : radius ≤ boxRadius W upper)\n    (m : ℕ) (n : ℝ) (hn : 0 ≤ n) :\n    DiagonalResidual.JetRate l (fun z => (cartesianChart F.data.h z).1) (error H v upper B) m n"
+      }
+    }
+  }
+}

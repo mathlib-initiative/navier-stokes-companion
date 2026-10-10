@@ -1,0 +1,26 @@
+{
+  "id": "lemma-7.7/support/NavierStokes.CurlClassBounds.longitudinal_from_curl_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CurlClassBounds.longitudinal_from_curl_class",
+      "line": 731,
+      "module": "NavierStokes.CurlClassBounds",
+      "path": "NavierStokes/CurlClassBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L731"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CurlClassBounds.longitudinal_from_curl_class",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 731,
+        "text": "theorem longitudinal_from_curl_class (ha : MemClass s w α a) (hκ : 0 ≤ κ)\n    (hr : UnweightedClass s (-κ) Vr) (hz : UnweightedClass s 1 Vz)\n    (hR : UnweightedClass s 0 (fun _ x => (R x)⁻¹))\n    (hK : ∀ n, K n ≠ 0) (hfreq : BandBound s (1 / 2) (fun n => 1 / K n))\n    (hΦ : ∀ n, DifferentiableOn ℝ (Φ n) s.domain)\n    (hθ : ∀ n x, x ∈ s.domain → HarmonicCalculus.along (Vθ n) (fun y => a n y 1) x = 0)\n    (G : ∀ n, CylindricalGeometry s.domain R (Vr n) (Vθ n) (Vz n))\n    (A : ℕ → D → ComplexVector) (hA : ∀ n, ContDiffOn ℝ ∞ (A n) s.domain)\n    (hreal : ∀ n, EqOn (HarmonicCalculus.vectorMode (K n) (Φ n) (a n))\n      (cylindricalCurl R (Vr n) (Vθ n) (Vz n) (A n)) s.domain) :\n    MemClass s w (α + 1 / 2 - κ) (fun n x => HarmonicCalculus.normalDot\n      (HarmonicCalculus.phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n) x) (a n x))"
+      }
+    }
+  }
+}

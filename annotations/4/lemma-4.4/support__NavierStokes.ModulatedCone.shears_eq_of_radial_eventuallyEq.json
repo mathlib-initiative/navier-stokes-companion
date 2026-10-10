@@ -1,0 +1,26 @@
+{
+  "id": "lemma-4.4/support/NavierStokes.ModulatedCone.shears_eq_of_radial_eventuallyEq",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ModulatedCone.shears_eq_of_radial_eventuallyEq",
+      "line": 514,
+      "module": "NavierStokes.ModulatedCone",
+      "path": "NavierStokes/ModulatedCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L514"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ModulatedCone.shears_eq_of_radial_eventuallyEq",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 514,
+        "text": "theorem shears_eq_of_radial_eventuallyEq\n    {E U F V : RadialParameter → ℝ} {p : RadialParameter}\n    (hE : (fun X => E (X, p.2)) =ᶠ[𝓝 p.1] (fun X => F (X, p.2)))\n    (hU : (fun X => U (X, p.2)) =ᶠ[𝓝 p.1] (fun X => V (X, p.2))) :\n    angularShear E p = angularShear F p ∧\n      signedAxialShear E U p = signedAxialShear F V p"
+      }
+    }
+  }
+}

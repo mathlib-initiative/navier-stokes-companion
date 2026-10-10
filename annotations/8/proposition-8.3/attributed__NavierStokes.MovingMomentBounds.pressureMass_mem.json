@@ -1,0 +1,29 @@
+{
+  "id": "proposition-8.3/attributed/NavierStokes.MovingMomentBounds.pressureMass_mem",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MovingMomentBounds.pressureMass_mem",
+      "line": 51,
+      "module": "NavierStokes.MovingMomentBounds",
+      "path": "NavierStokes/MovingMomentBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingMomentBounds.lean#L51"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MovingMomentBounds.pressureMass_mem",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: MeanClass (movingStripData U a b …) α f (f smooth, SupportedGauge) ⊢ UnweightedClass (localSlowStripData U.carrier …) α (fun n => pressureMass (f n)). This is P ∈ S_α."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 51,
+        "text": "theorem pressureMass_mem {α : ℝ} {f : ℕ → Point → ℝ}\n    (hf : ∀ n, ContDiffOn ℝ ∞ (f n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hs : ∀ n, SupportedGauge a b (qLength coord) U.carrier (f n))\n    (hclass : MeanClass (movingStripData U a b cL cR ha hcL hcR ε L hε hεone hL) α f) :\n    UnweightedClass\n      (PhysicalMeanDomain.localSlowStripData U.carrier U.isOpen ε L hε hεone hL) α\n      (fun n => PressureStream.pressureMass (f n))"
+      }
+    }
+  }
+}

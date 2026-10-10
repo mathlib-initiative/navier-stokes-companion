@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.8/attributed/NavierStokes.NominalProfile.Controls.pressure_after_match",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.Controls.pressure_after_match",
+      "line": 1719,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L1719"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.Controls.pressure_after_match",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: c.separation ≤ e^{-8} → c.radius·e^{-5} ≤ X → η ∈ parameterInterval → SmallDebt → c.Pi (X,η) = OutgoingDilation.Pi F c.radius (X,η), with c.Pi = F.axisDatum η + moments c.U c.E X η 4"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1719,
+        "text": "theorem pressure_after_match (hsep : c.separation ≤ Real.exp (-8))\n    {X eta : ℝ} (hX : c.radius * matchFraction ≤ X)\n    (hη : eta ∈ ReferencePath.parameterInterval) (hs : SmallDebt F c.debt eta) :\n    c.Pi (X, eta) = OutgoingDilation.Pi F c.radius (X, eta)"
+      }
+    }
+  }
+}

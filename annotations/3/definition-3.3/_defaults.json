@@ -1,0 +1,66 @@
+{
+  "kind": "definition",
+  "label": "Definition 3.3",
+  "status": {
+    "pin": {
+      "type": "repository",
+      "commit": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "url": "https://github.com/openai/NavierStokesAndEuler"
+    },
+    "value": "not_formalized"
+  },
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 18,
+    "rect": [0.134051, 0.607959, 0.731906, 0.177577]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "definition-3.3",
+      "locator": {
+        "physical": [18, 19],
+        "printed": [18, 19],
+        "text": "Section 3, Definition 3.3, p. 18"
+      },
+      "region": "definition-3.3@p018",
+      "relation": "supporting",
+      "role": "support",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["CONVENTION: NavierStokes.OutgoingEntranceCone.exists_ordered_actual_preliminary_cone (NavierStokes/OutgoingEntranceCone.lean:2156): ∃ M>0, ∀ v:TailData, M ≤ m → amplitudeThreshold m ≤ P → lam ≤ lambdaThreshold P m → h ≤ heightThreshold m lam → (Qs lower bound) ∧ ∃ gap XR₀>0, ∀ XR>XR₀, cone inequalities on preliminaryWindow v. Same order as (A.6) on p.129: M_d, P_*, λ, h, then X_R.; NavierStokes.OutgoingEntranceCone.heightThreshold (NavierStokes/OutgoingEntranceCone.lean:1812): heightThreshold m lam = min (1/100) (min (lam/4) (exp(-(entranceTime m + 3/5))/8)); an explicit cap on h by λ and by e^{-(T_d+2.6)}/8.; NavierStokes.OutgoingEntranceCone.entranceTime (NavierStokes/OutgoingEntranceCone.lean:1226): entranceTime m = exp m + 12. With Parameters.dropLength = exp m + 10 (OutgoingSchedule.lean:302) this is T_d + 2 for the paper's T_d = e^{M_d}+10 (p.129).; NavierStokes.OutgoingEntranceCone.amplitudeThreshold (NavierStokes/OutgoingEntranceCone.lean:1809): amplitudeThreshold m = exp(exp m + 11) + 1, i.e. e^{T_d+1}+1, which exceeds the paper's e^{T_d}.; NavierStokes.HeatedOutgoing.exists_fixed_schedule (NavierStokes/HeatedOutgoing.lean:886): ∀ P m>0, ∃ lam B>0, ∀ h>0, 2*h<lam → ∃ F with those parameters, Specification F B ∧ ∃ XR₀ C>0, ∀ XR ≥ XR₀, ∃ w, Specification F XR w.coefficients. Docstring gives the order of choices for this theorem only. No e^{-T_d} cap.; NavierStokes.NaturalAxisData.SmallParameters (NavierStokes/NaturalAxisData.lean:41): structure SmallParameters (h j : ℝ) : Prop with 0<h, h ≤ 1/1000, 0<j, j ≤ 1/1000; docstring: 'A concrete range of choices permitted by the manuscript's smallness order.' An explicit numeric cap.; NavierStokes.OutgoingProfile.exists_outgoing_profile (NavierStokes/OutgoingProfile.lean:640): ∃ lam₀ C>0, ∀ lam, 0<lam → lam<lam₀ → ∀ h>0, 2*h<lam → ∃ F, …, Specification F C. Bare 2h<λ (line 642), no e^{-T_d} cap; supports the checker's 'not only exists_fixed_lambda'.; NavierStokes.ScheduledProfileChoice.exists_scheduled_core_below (NavierStokes/ScheduledProfileChoice.lean:20): ∃ K B core, …, core.lam < cap K ∧ core.lam < 1/120 ∧ ∀ h>0, 2*h<core.lam → ∃ F, … Bare 2h<λ (line 26).; NavierStokes.ScheduledProfileChoice.exists_scheduled_profile_below (NavierStokes/ScheduledProfileChoice.lean:60): ∃ K lam B, …, ∀ h>0, 2*h<lam → ∃ F, … Bare 2h<λ (line 64).; NavierStokes.ScheduledProfileChoice.exists_scheduled_family_below (NavierStokes/ScheduledProfileChoice.lean:105): Given caller-supplied cap and extraHeight: ∃ K B H core, …, 2*H<core.lam ∧ H ≤ extraHeight core ∧ H ≤ 1/1000 ∧ ∀ h, 0<h → h ≤ H → ∃ F, … λ and every height cap are bound before h.; NavierStokes.OutgoingTail.TailData (NavierStokes/OutgoingTail.lean:103): structure with core : OutgoingSchedule.Parameters, h : ℝ, 0<h, and a field requiring 2*h < core.lam (line 107). No e^{-T_d} cap in the structure.; NavierStokes.PreparedOutgoing.exists_prepared (NavierStokes/PreparedOutgoing.lean:36): Statement: Nonempty PreparedProfile. The proof (lines 52-54) passes OutgoingCone.heightThreshold M core.lam as extraHeight to exists_scheduled_family_below and takes h = H, so the e^{-T_d} cap is imposed in the proof, not shown in the statement.; NavierStokes.OutgoingCone.heightThreshold (NavierStokes/OutgoingCone.lean:451): heightThreshold m lam = min (OutgoingEntranceCone.heightThreshold m lam) (lam/100000); the cap exists_prepared uses.; NavierStokes.BasePhaseGeometry.Representatives.ordered_constants (NavierStokes/BasePhaseGeometry.lean:1113): For compact K: ∃ M ≥ 1, …, (∀ q ∈ K, ParameterBounds M …) ∧ ∃ N ≥ N0, ∀ n ≥ N, LargeBand h M u n ∧ T ≤ S n. Constant uniform over K is bound before the band threshold; named in the ruling's witness as an example of uniformity.", "ATTRIBUTION_GAP: OutgoingEntranceCone.heightThreshold (OutgoingEntranceCone.lean:1812) is min(1/100, lam/4, exp(-(entranceTime m + 3/5))/8), with entranceTime m = e^m+12 = T_d+2 (line 1226). amplitudeThreshold m = exp(e^m+11)+1 > e^{T_d}. Both are used in the ordered chain at :2156.", "Definition 3.3 (p.18) is a reading convention: ≪ means sufficiently small given the data already fixed, choices go right to left, large parameters come from small reciprocals, and smallness is uniform over profile domains. Page 19 holds only Table 1. Nothing in NavierStokes/ defines ≪ or cites Definition 3.3, so the relation is absent. Lean encodes each use through binder order, which is why the ledger is CONVENTION. All three voters agree. I verified every cited declaration in decls.jsonl and the source. Following the PAIRING skeptic, I added exists_ordered_actual_preliminary_cone, heightThreshold and exists_scheduled_family_below as the closest instances of the (A.6) chain (p.129). They show the e^{-T_d} cap is present, contrary to the auditor's consequence text. The auditor's page and count citations were corrected."],
+          "findings": [
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "A repository search found no Lean declaration that defines ≪ or states Definition 3.3's order-of-choices convention in general. The uses examined are encoded as quantifier order or explicit caps. Not all 26 occurrences of ≪ in the paper were traced."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The auditor's consequence says Lean has only 2h<λ where (A.6) asks h ≪ min{λ, e^{-T_d}}. That holds for some statements only (OutgoingTail.TailData and several theorems constrain h by 2h<λ alone). heightThreshold carries the e^{-T_d} cap, and the full (A.6) order appears in exists_ordered_actual_preliminary_cone."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "absent",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation absent, confidence 0.90. Findings: [low COVERAGE: CONVENTION] A repository search found no Lean declaration that defines ≪ or states Definition 3.3's order-of-choices convention in general. The uses examined are encoded as quantifier order or explicit caps. Not all 26 occurrences of ≪ in the paper were traced.; [low CONTENT: ATTRIBUTION_GAP] The auditor's consequence says Lean has only 2h<λ where (A.6) asks h ≪ min{λ, e^{-T_d}}. That holds for some statements only (OutgoingTail.TailData and several theorems constrain h by 2h<λ alone). heightThreshold carries the e^{-T_d} cap, and the full (A.6) order appears in exists_ordered_actual_preliminary_cone.",
+          "verdict": "attribution_gap"
+        }
+      ]
+    }
+  }
+}

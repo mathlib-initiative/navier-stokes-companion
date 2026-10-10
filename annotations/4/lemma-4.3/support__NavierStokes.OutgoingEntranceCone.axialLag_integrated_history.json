@@ -1,0 +1,26 @@
+{
+  "id": "lemma-4.3/support/NavierStokes.OutgoingEntranceCone.axialLag_integrated_history",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.OutgoingEntranceCone.axialLag_integrated_history",
+      "line": 831,
+      "module": "NavierStokes.OutgoingEntranceCone",
+      "path": "NavierStokes/OutgoingEntranceCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingEntranceCone.lean#L831"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.OutgoingEntranceCone.axialLag_integrated_history",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 831,
+        "text": "theorem axialLag_integrated_history (v : TailData) (y η : ℝ) :\n    axialLag v y η = -transportW v.core v.h y η * (dropCoefficient v.core.m y * η) +\n      4 * v.h * η * normalizedEnergyHistory v.core y η -\n        d η * deriv (normalizedEnergyHistory v.core y) η +\n          4 * A v.h * η * entrancePressure v y η -\n            d η * deriv (entrancePressure v y) η"
+      }
+    }
+  }
+}

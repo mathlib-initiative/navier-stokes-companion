@@ -1,0 +1,73 @@
+{
+  "kind": "lemma",
+  "label": "Lemma A.8",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 140,
+    "rect": [0.132964, 0.637546, 0.735068, 0.115221]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-A.8",
+      "locator": {
+        "physical": [140],
+        "printed": [140],
+        "text": "Appendix A, Lemma A.8, p. 140"
+      },
+      "region": "lemma-A.8@p140",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["CONVENTION: TerminalHistoryBridge.physical_forwardTheta_eq_terminal L1216 (w only), physical_forwardAxial_eq_terminal L1246 (hF and w), forward_stresses_eq_profile L1401; HeatedOutgoing.Specification L793 (mass_zero, angular_zero, energy_zero, renormalized_zero, pressure_canonical, after_pulse, switch_overlap), built by CompensationWitness.specification L841", "CONVENTION: physical_forwardTheta_eq_terminal L1216 and physical_forwardAxial_eq_terminal L1246: hfull : 1/2 < Real.log (X/switchRadius F XR) + 1/5; forward_stresses_eq_profile L1401: hy : TerminalCone.terminalStart F.data ≤ y, proved by EqOn.of_subset_closure", "ATTRIBUTION_GAP: LeadingStressWeights.stress_zero_after L431 (stress v.profiles h p = 0 for activeRight W ≤ p.1, activeRight = radius * exp tailEnd = X_b); otherwise forward_stresses_eq_profile L1401 (no upper bound on y) with TerminalEdgeFactor.profileStress_of_nonpos L1627; for W.profiles, nominal_terminal_stress L321 with the same lemma", "ATTRIBUTION_GAP: LeadingStressWeights.nominal_terminal_stress L321, step at L351-353: `hforward : stress W.profiles F.data.h p = (forwardTheta F .. (y, eta), forwardAxial F .. (y, eta))`; ingredients NominalConeAssembly.Witness.log_fields L635, log_stocks L701, log_shears L718; definitions TerminalHistoryBridge.forwardTheta L219, forwardAxial L225, LeadingStress.theta L34, axial L38", "All three voters agree and my reading confirms it. (A.46) is stated literally by physical_forwardTheta_eq_terminal and physical_forwardAxial_eq_terminal: q^(-A-1/2) times the (4.11) stress formula equals r^-2 ∫_r^∞ u² R_θ and r^-1 ∫ ∂_z p ds (s = r'²/2), with leadingResidual equal to (A.52) and positive sign. Vanishing for X ≥ X_b is stress_zero_after for the final stress. nominal_terminal_stress ties the genuine axis-defined stress to the backward form, so I promote it to part. Differences are low: concrete family with derived hypotheses, strict endpoint, split statements. I dropped forward_eq_backward_iff, canonicalPressure_contDiffAt and actual_history_limits as off-chain. Hypotheses are satisfiable (exists_compensation)."],
+          "findings": [
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration states Lemma A.8. The theorems are about the concrete heated family (F, w), and the moment conditions are derived Specification fields, not hypotheses. The angular theorem takes only w, not hF."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The literal (A.46) identities need strict y_tail > 1/2; the paper says y ≥ 1/2. The endpoint and η = ±1 appear only in the profile-coordinate closure theorem."
+            },
+            {
+              "confidence": 0.75,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Vanishing for X ≥ X_b is a named theorem only for the final modulated stress. For the heated field of Prop A.7 it is a two-step corollary through the flat edge factor."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Raised by the PAIRING skeptic. The (A.46) theorems are about forwardTheta/forwardAxial. Their equality with the genuine LeadingStress.theta/axial is only an internal `have hforward` in nominal_terminal_stress, for the nominal witness."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.82. Findings: [low CONTENT: CONVENTION] No single declaration states Lemma A.8. The theorems are about the concrete heated family (F, w), and the moment conditions are derived Specification fields, not hypotheses. The angular theorem takes only w, not hF.; [low CONTENT: CONVENTION] The literal (A.46) identities need strict y_tail > 1/2; the paper says y ≥ 1/2. The endpoint and η = ±1 appear only in the profile-coordinate closure theorem.; [low CONTENT: ATTRIBUTION_GAP] Vanishing for X ≥ X_b is a named theorem only for the final modulated stress. For the heated field of Prop A.7 it is a two-step corollary through the flat edge factor.; [low CONTENT: ATTRIBUTION_GAP] Raised by the PAIRING skeptic. The (A.46) theorems are about forwardTheta/forwardAxial. Their equality with the genuine LeadingStress.theta/axial is only an internal `have hforward` in nominal_terminal_stress, for the nominal witness.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

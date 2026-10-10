@@ -1,0 +1,89 @@
+{
+  "kind": "definition",
+  "label": "Definition 9.4",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 106,
+    "rect": [0.13316, 0.351694, 0.735022, 0.379462]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "definition-9.4",
+      "locator": {
+        "physical": [106],
+        "printed": [106],
+        "text": "Section 9, Definition 9.4, p. 106"
+      },
+      "region": "definition-9.4@p106",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["ATTRIBUTION_GAP: CycleAnalyticInvariant (CorrectionStep.lean:9408) fields solenoidal, meanHypotheses, masses; curl statements at ActualMeanPotentialRealization.cycleMeanPrefix_curl (:663), ActualParticularRealization.cycle_velocity_realization (:547), CurrentSignedCurl.currentPotential_sum_curl (:275)", "CONVENTION: CorrectionState.MeanResidualBounds (CorrectionState.lean:216) on meanGoodResidual; CycleAnalyticInvariant.raw_mean_bounds (CorrectionStep.lean:9470); thetaResidual/axialResidual (MeanIncrementBounds.lean:328, 333) match (8.3) term by term", "CONVENTION: CycleAnalyticInvariant fields pressure, covariance, gaussianFlat, axisFlat, primitives; RunInvariant.coherent/.periodic (ActualCyclePreservation.lean:768); state_runInvariant (:826)", "CONVENTION: CycleAnalyticInvariant.inputSupport : HarmonicSourceSupport.InputSupportOn (HarmonicSourceSupport.lean:678); residualSource_complement_germ_on (:719); bands/sourceBand keep the finite harmonic sets", "ATTRIBUTION_GAP: GaugeRadialResidualBounds.similarity_identity (:215); ActualCycleResidualBounds.Invariant.current_pressureAlias_class (:175) and radial_mean_class (:217); reached from the run invariant through ActualCyclePreservation.broad_invariant (:301)", "CONVENTION: PhysicalResidualBridge.context_fullResidual_physical (:770); HarmonicResidual.residualBlock (:1438); HarmonicResidual.goodWaveResidual_grouped (:1275); field residual : UniformVelocity P (1/2+σ) (j ≠ 0)", "I read p.106 and the Lean. RunInvariant (sigma j), with core CycleAnalyticInvariant, carries every quantitative clause: sigma_j = 1/5 + j/10; residual in W_{1/2+σ}; E_θ, E_z in M_{1+σ} (via raw_mean_bounds); (P, J_θ, J_z) in S_{1+σ} with debt rows matching (8.12), (8.15); wave 1/2, difference 17/25 = 0.68, mean 9/10 and 19/10; the two zero moments; pressure reconstruction. thetaResidual, axialResidual and gr match (8.3). All three voters agree on verdict and on the four findings; none is material. The only disagreement is a citation in the auditor's recovery argument, which the skeptics corrected and I confirmed. The curl-of-potential clause is absent from the predicate but stated in realization files."],
+          "findings": [
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The stage predicate has no curl-of-potential clause for the wave or the mean. It keeps exact per-mode solenoidality, total and base divergence-free, and the moments. The curl representations are proved separately in realization files."
+            },
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The (9.8) bound on E_θ, E_z is stored on the good mean residual (Gaussian and alias means subtracted). raw_mean_bounds recovers the exact thetaResidual and axialResidual in MeanClass (1+σ)."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The Lean predicate adds p_w ∈ W_1, covariance ∈ M_1, flat Gaussian and alias families, primitive moving-support data, chart coherence and torus periodicity. It is proved at every stage by state_runInvariant."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Supports are imposed on the stored block, Gaussian and alias input coefficients, not on the residual source coefficients f_{γ,m} of Prop. 9.3(i). Residual support is derived, since the residual is computed locally from the block."
+            },
+            {
+              "confidence": 0.9,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The closing 'Consequently' sentence is not a field. It is similarity_identity, with flatness of the remainder from current_pressureAlias_class. The auditor's recovery argument cited axisFlat, which bounds the accumulated alias instead."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The auditor left the normalization of G_wave unchecked. The Lean residual is the chart residual, equal to Q^(2A+1/2) times the physical one; residualBlock is its per-label nonzero-harmonic part with Gaussian and alias coefficients removed."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.85. Findings: [low CONTENT: ATTRIBUTION_GAP] The stage predicate has no curl-of-potential clause for the wave or the mean. It keeps exact per-mode solenoidality, total and base divergence-free, and the moments. The curl representations are proved separately in realization files.; [low CONTENT: CONVENTION] The (9.8) bound on E_θ, E_z is stored on the good mean residual (Gaussian and alias means subtracted). raw_mean_bounds recovers the exact thetaResidual and axialResidual in MeanClass (1+σ).; [low CONTENT: CONVENTION] The Lean predicate adds p_w ∈ W_1, covariance ∈ M_1, flat Gaussian and alias families, primitive moving-support data, chart coherence and torus periodicity. It is proved at every stage by state_runInvariant.; [low CONTENT: CONVENTION] Supports are imposed on the stored block, Gaussian and alias input coefficients, not on the residual source coefficients f_{γ,m} of Prop. 9.3(i). Residual support is derived, since the residual is computed locally from the block.; [low CONTENT: ATTRIBUTION_GAP] The closing 'Consequently' sentence is not a field. It is similarity_identity, with flatness of the remainder from current_pressureAlias_class. The auditor's recovery argument cited axisFlat, which bounds the accumulated alias instead.; [low CONTENT: CONVENTION] The auditor left the normalization of G_wave unchecked. The Lean residual is the chart residual, equal to Q^(2A+1/2) times the physical one; residualBlock is its per-label nonzero-harmonic part with Gaussian and alias coefficients removed.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

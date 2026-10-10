@@ -1,0 +1,29 @@
+{
+  "id": "corollary-A.3/attributed/NavierStokes.TerminalCompensation.exists_normalized_compensation",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalCompensation.exists_normalized_compensation",
+      "line": 390,
+      "module": "NavierStokes.TerminalCompensation",
+      "path": "NavierStokes/TerminalCompensation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCompensation.lean#L390"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalCompensation.exists_normalized_compensation",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: 0 ≤ lam → ∃ g ε C, … ∀ d ∈ ball 0 ε, momentMap P lam (g d) = d ∧ bounds ∧ positivity: three E bumps solve the normalized (C_p, S, I) changes for base x^(-1/2-lam)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 390,
+        "text": "theorem exists_normalized_compensation (P : Patch) (lam : ℝ) (hlam : 0 ≤ lam) :\n    ∃ (g : Coeff → Coeff) (ε C : ℝ), 0 < ε ∧ 0 < C ∧\n      ContDiffOn ℝ ∞ g (Metric.ball 0 ε) ∧ g 0 = 0 ∧\n      ∀ d ∈ Metric.ball (0 : Coeff) ε,\n        momentMap P lam (g d) = d ∧ ‖g d‖ ≤ C * ‖d‖ ∧ ‖fderiv ℝ g d‖ ≤ C ∧\n        ∀ x : ℝ,\n          (|correction P (g d) x| ≤ C * ‖d‖ ∧\n            |deriv (correction P (g d)) x| ≤ C * ‖d‖) ∧\n          (0 < x → 0 < baseProfile lam x + correction P (g d) x)"
+      }
+    }
+  }
+}

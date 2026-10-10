@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.6/attributed/NavierStokes.MeanChartCompatibility.temporalAtIndex_physical_pull",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanChartCompatibility.temporalAtIndex_physical_pull",
+      "line": 513,
+      "module": "NavierStokes.MeanChartCompatibility",
+      "path": "NavierStokes/MeanChartCompatibility.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L513"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanChartCompatibility.temporalAtIndex_physical_pull",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: coverPull l P i (Q n^(−A h)) (temporalAtIndex h n i f) z = physicalTemporal (coverPull l P i (Q n^(−(2A h+1/2))) f) z  [one physical update −N_abs^{-1}E° for every common index: chart agreement, (8.20)]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 513,
+        "text": "theorem temporalAtIndex_physical_pull (h : ℝ) (n i : ℕ) (l : ℝ) (P : S →L[ℝ] T)\n    {f : PressureStream.Lift T → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hp : PressureStream.TorusPeriodicLift f) (z : PressureStream.Lift S) :\n    coverPull l P i (ChartScales.Q n ^ (-CoordinateAlgebra.A h)) (temporalAtIndex h n i f) z =\n      physicalTemporal (coverPull l P i (ChartScales.Q n ^ (-(2 * CoordinateAlgebra.A h + 1 / 2))) f) z"
+      }
+    }
+  }
+}

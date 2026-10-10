@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.4/key/NavierStokesR3.CompactEnergy.candidate_energy_estimates",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.CompactEnergy.candidate_energy_estimates",
+      "line": 279,
+      "module": "NavierStokes.R3.IntegratedDissipation",
+      "path": "NavierStokes/R3/IntegratedDissipation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/IntegratedDissipation.lean#L279"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.CompactEnergy.candidate_energy_estimates",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: 0 < ν, hc : CandidateProperties ν u p f K → IntervalIntegrable (l2Norm f) volume 0 1 ∧ IntegrableOn (dissipation u) (Ico 0 1) ∧ (∀ T ∈ Ico 0 1, l2Sq u T + 2ν ∫₀ᵀ dissipation u ≤ (cumulativeForceNorm f T)^2) ∧ 2ν ∫_{Ico 0 1} dissipation u ≤ (cumulativeForceNorm f 1)^2",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "different_formulation",
+      "role": "key",
+      "snippet": {
+        "line": 279,
+        "text": "theorem candidate_energy_estimates {ν : ℝ} (hν : 0 < ν)\n    {u f : VelocityField} {p : PressureField} {K : Set Space}\n    (hc : ProblemStatement.CandidateProperties ν u p f K) :\n    IntervalIntegrable (l2Norm f) volume 0 1 ∧\n    IntegrableOn (dissipation u) (Ico (0 : ℝ) 1) ∧\n    (∀ T ∈ Ico (0 : ℝ) 1,\n      l2Sq u T + 2 * ν * (∫ t in (0 : ℝ)..T, dissipation u t) ≤\n        (cumulativeForceNorm f T) ^ 2) ∧\n    2 * ν * (∫ t in Ico (0 : ℝ) 1, dissipation u t) ≤\n      (cumulativeForceNorm f 1) ^ 2"
+      }
+    }
+  }
+}

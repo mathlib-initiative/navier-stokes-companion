@@ -1,0 +1,26 @@
+{
+  "id": "proposition-4.10/support/NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
+      "line": 310,
+      "module": "NavierStokes.ActiveAnnulusWeight",
+      "path": "NavierStokes/ActiveAnnulusWeight.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L310"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 310,
+        "text": "theorem EdgeFactor.collar {K : Set E} (hK : IsCompact K) {c : ℝ} {T : E × ℝ → V}\n    (F : EdgeFactor K c T) :\n    ∃ d m : ℝ, 0 < d ∧ d < F.width ∧ d ≤ 1 ∧ 0 < m ∧\n      K ×ˢ Icc (0 : ℝ) d ⊆ F.domain ∧\n      ∀ p ∈ K, ∀ x : ℝ, 0 < x → x ≤ d → m * FlatCutoff.edge c x ≤ ‖T (p,x)‖"
+      }
+    }
+  }
+}

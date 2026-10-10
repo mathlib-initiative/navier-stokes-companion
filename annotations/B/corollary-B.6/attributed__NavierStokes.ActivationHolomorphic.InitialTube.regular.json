@@ -1,0 +1,31 @@
+{
+  "id": "corollary-B.6/attributed/NavierStokes.ActivationHolomorphic.InitialTube.regular",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationHolomorphic.InitialTube.regular",
+      "line": 1028,
+      "module": "NavierStokes.ActivationHolomorphic",
+      "path": "NavierStokes/ActivationHolomorphic.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationHolomorphic.lean#L1028"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationHolomorphic.InitialTube.regular",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: 0<T, 0<δ, 2δ<rampLimit, κ ⊢ Regular (Ioi (-R)) Ω for each of E.f, E.U, E.Ubar, E.Pi (T κ δ)",
+        "status": "unconfirmed",
+        "verdict": "attribution_gap"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1028,
+        "text": "theorem regular {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2*δ < ReferencePath.rampLimit) (κ : ℝ) :\n    Regular (Ioi (-R)) Ω (E.f T κ δ) ∧\n    Regular (Ioi (-R)) Ω (E.U T κ δ) ∧\n    Regular (Ioi (-R)) Ω (E.Ubar T κ δ) ∧\n    Regular (Ioi (-R)) Ω (E.Pi T κ δ)"
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "corollary-7.8/attributed/NavierStokes.LabelSumBounds.SignedFamily.remainder_sum_mem",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LabelSumBounds.SignedFamily.remainder_sum_mem",
+      "line": 1004,
+      "module": "NavierStokes.LabelSumBounds",
+      "path": "NavierStokes/LabelSumBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean#L1004"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LabelSumBounds.SignedFamily.remainder_sum_mem",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: same hypotheses : MeanClass s γ (signedRemainder (fieldSum primary) (fieldSum old) (fieldSum tangent) (fieldSum curl) i j)   [aggregate (7.42), γ ≤ min(δ+β, α+η, 2β)]",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1004,
+        "text": "theorem SignedFamily.remainder_sum_mem {s : StripData D} {P : ι → ℕ → D → ℝ} {α δ β η γ : ℝ}\n    (f : SignedFamily s P α δ β η) (hβη : β ≤ η)\n    (hγd : γ ≤ δ + β) (hγc : γ ≤ α + η) (hγs : γ ≤ 2 * β)\n    {d h : ℝ} {vr vt : TorusInverse.Plane}\n    {sys : PartitionedCovariance.SlotSystem d h vr vt}\n    (labels : ℕ → Finset ι) (label : ℕ → ι → SlotColoring.Label)\n    (hinj : ∀ n, Set.InjOn (label n) (labels n : Set ι))\n    (hlevel : ∀ n l, l ∈ labels n → 1 ≤ (label n l).1)\n    (χ : ℕ → D → WindowPoint) (hχ : ∀ n, ContinuousOn (χ n) s.domain)\n    (Y : ℕ → D → TorusInverse.Plane)\n    (hp : SupportedOscillations sys label χ Y s.domain (fun l => (f.primary l).oscillation))\n    (ho : SupportedOscillations sys label χ Y s.domain (fun l => (f.old l).oscillation))\n    (ht : SupportedOscillations sys label χ Y s.domain (fun l => (f.tangent l).oscillation))\n    (hc : SupportedOscillations sys label χ Y s.domain (fun l => (f.curl l).oscillation))\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

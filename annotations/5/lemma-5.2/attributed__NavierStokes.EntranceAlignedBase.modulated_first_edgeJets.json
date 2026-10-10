@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/attributed/NavierStokes.EntranceAlignedBase.modulated_first_edgeJets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.EntranceAlignedBase.modulated_first_edgeJets",
+      "line": 876,
+      "module": "NavierStokes.EntranceAlignedBase",
+      "path": "NavierStokes/EntranceAlignedBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L876"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.EntranceAlignedBase.modulated_first_edgeJets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: c>0 → PolynomialEdgeJets (outerWindow (exp(activeRight−1)) activeRight) (activeZeta c …) (activeDelta …) (stressPair (modulatedCoefficients H v) 1)  ((5.13), n=1, terminal collar)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 876,
+        "text": "theorem modulated_first_edgeJets {c : ℝ} (hc : 0 < c) :\n    BaseResidual.PolynomialEdgeJets\n      (BaseResidual.outerWindow (Real.exp (ConstructedSlowBase.activeRight W - 1))\n        (ConstructedSlowBase.activeRight W))\n      (BaseResidual.activeZeta c (Real.log (NominalConeAssembly.activeLeft W)) (ConstructedSlowBase.activeRight W))\n      (BaseResidual.activeDelta (Real.log (NominalConeAssembly.activeLeft W)) (ConstructedSlowBase.activeRight W))\n      (BaseResidual.stressPair (modulatedCoefficients H v) 1)"
+      }
+    }
+  }
+}

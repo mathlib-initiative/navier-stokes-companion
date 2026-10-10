@@ -1,0 +1,30 @@
+{
+  "id": "lemma-8.6/attributed/NavierStokes.VariableGaugeMean.temporalIncrementState_classes",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.VariableGaugeMean.temporalIncrementState_classes",
+      "line": 2837,
+      "module": "NavierStokes.VariableGaugeMean",
+      "path": "NavierStokes/VariableGaugeMean.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean#L2837"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.VariableGaugeMean.temporalIncrementState_classes",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: nativeIndex h n ≤ index n + D → MeanClass α (thetaResidual), MeanClass α (axialResidual) → radial ∈ MeanClass (α+1) ∧ angular ∈ MeanClass α ∧ axial ∈ MeanClass α  [(8.21) classes, common index, moving gauge; divergence: temporalIncrementState_divergence_zero :2959]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 2837,
+        "text": "theorem temporalIncrementState_classes\n    {h α : ℝ} (hh : 0 ≤ h) (hscale : ∀ n, ChartScales.S n ≤ L n) (index : ℕ → ℕ) (D : ℕ)\n    (hgap : ∀ n, ChartScales.nativeIndex h n ≤ index n + D)\n    (axial : PressureStream.Plane × PressureStream.Plane)\n    (c : CorrectionState.Context Point) (u : CorrectionState.State Point)\n    (heps : c.operators.epsilon = ε)\n    (hθ : ∀ n, ContDiffOn ℝ ∞ (u.thetaResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hz : ∀ n, ContDiffOn ℝ ∞ (u.axialResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hpθ : ∀ n, PhysicalMeanDomain.PeriodicOn U.carrier (u.thetaResidual c n))\n    (hpz : ∀ n, PhysicalMeanDomain.PeriodicOn U.carrier (u.axialResidual c n))\n    (hsz : ∀ n, SupportedGauge g.radial.inner g.radial.outer (qLength coord) U.carrier (u.axialResidual c n))\n    (hcθ : MeanClass (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR ε L hε hεone hL)\n      α (u.thetaResidual c))\n    (hcz : MeanClass (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR ε L hε hεone hL)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

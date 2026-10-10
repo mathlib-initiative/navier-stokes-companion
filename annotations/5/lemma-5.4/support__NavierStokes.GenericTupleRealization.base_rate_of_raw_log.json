@@ -1,0 +1,26 @@
+{
+  "id": "lemma-5.4/support/NavierStokes.GenericTupleRealization.base_rate_of_raw_log",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GenericTupleRealization.base_rate_of_raw_log",
+      "line": 14,
+      "module": "NavierStokes.GenericSummationRealization",
+      "path": "NavierStokes/GenericSummationRealization.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSummationRealization.lean#L14"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GenericTupleRealization.base_rate_of_raw_log",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 14,
+        "text": "theorem base_rate_of_raw_log {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W]\n    {U : Set SpaceTime} {q : SpaceTime → ℝ} {f : SpaceTime → W}\n    (hq : ∀ w ∈ U, 0 < q w) (C P K : ℕ → ℝ)\n    (hb : ∀ m w, w ∈ U → ‖iteratedFDeriv ℝ m f w‖ ≤\n      C m * (1 + |Real.log (q w)|) ^ P m * q w ^ (-K m)) :\n    ∀ m, JetRate (scaleApproach U q) q f m (-(K m + 1))"
+      }
+    }
+  }
+}

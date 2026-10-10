@@ -1,0 +1,69 @@
+{
+  "kind": "lemma",
+  "label": "Lemma B.1",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 145,
+    "rect": [0.132964, 0.506424, 0.736496, 0.172651]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "item": "lemma-B.1",
+      "locator": {
+        "physical": [145],
+        "printed": [145],
+        "text": "Appendix B, Lemma B.1, p. 145"
+      },
+      "region": "lemma-B.1@p145",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["ATTRIBUTION_GAP: AxisOperators.lean L330, L479-491, L719-731; AxisEvaluationAlgebra.lean L148, L478, L487; AxisInverseFactors.lean L210, L253. No docstring names Lemma B.1, (B.5) or (B.6); the only source label is the draft tag 'GAX.2' at AxisCoefficientSpace.lean L428. PaperAdditionalResults.lean (30 lines, imports only) has no bundle.", "CONVENTION: AxisOperators.regularInverse L470 (rowData with inverseScale); AxisEvaluationAlgebra.regularInverse_actual_equation L478 and regularInverse_axis_zero L148; AxisEvaluation.profile_smooth L260. No uniqueness lemma among the regularInverse*/radialDivisor* entries of decls.jsonl or in Axis*/NaturalAxis* files (grep 'uniq'). NilpotentVolterra.eq_regularPrimitive_of_hasDerivAt needs W(0)=0 and does not apply.", "CONVENTION: AxisOperators.norm_average_le L479; AxisOperators.norm_inverseMixed_le L719; AxisContraction.naturalRemainder L337-366 (bu = O.average u, then O.mixed1 bu u and O.mixed2 bu φ); AxisEvaluationAlgebra.average_integral L470 identifies average with A_X.", "I read p.145 and the five Axis* files. weight (L28) is a_{αβ} of (B.4) exactly, and axisSpace_norm_le_iff makes the norm the sup quotient. Every clause has a faithful counterpart: product ≤ 64, J_r ≤ 80, average ≤ 1, mulY ≤ 80, I ≤ 80, ∂_η I ≤ 80/ρ, mixed (B.6) ≤ 5120/ρ, both derivative-omitted variants, and 64 per inserted factor. Lean covers every natural r ≥ 1, any window and explicit constants, so lean_stronger stands, with one caveat: uniqueness of the regular solution is not formalised (routine, unused downstream). All three findings have correct premises and are low; none is a material difference. The verdict and relation were unanimous; the MATHEMATICS skeptic dissented only on whether findings 0 and 2 are material."],
+          "findings": [
+            {
+              "confidence": 0.88,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No declaration bundles or cites Lemma B.1. Its clauses are proved faithfully in about fifteen declarations across AxisOperators, AxisEvaluationAlgebra and AxisInverseFactors, so the pairing is inferred, not declared."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean defines J_ν by the coefficient rows (B.5) and proves that this series is a smooth solution with G(0)=0. The uniqueness implicit in the paper's 'the solution' is not stated anywhere in Lean."
+            },
+            {
+              "confidence": 0.88,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The variant with F replaced by A_X(F) has no dedicated declaration. It is the composite of norm_inverseMixed_le with norm_average_le (≤ 1), and AxisContraction uses exactly that composite."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.88. Findings: [low CONTENT: ATTRIBUTION_GAP] No declaration bundles or cites Lemma B.1. Its clauses are proved faithfully in about fifteen declarations across AxisOperators, AxisEvaluationAlgebra and AxisInverseFactors, so the pairing is inferred, not declared.; [low CONTENT: CONVENTION] Lean defines J_ν by the coefficient rows (B.5) and proves that this series is a smooth solution with G(0)=0. The uniqueness implicit in the paper's 'the solution' is not stated anywhere in Lean.; [low CONTENT: CONVENTION] The variant with F replaced by A_X(F) has no dedicated declaration. It is the composite of norm_inverseMixed_le with norm_average_le (≤ 1), and AxisContraction uses exactly that composite.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

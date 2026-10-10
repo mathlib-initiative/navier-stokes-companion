@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.2/attributed/NavierStokes.MixedPeriodicAssembly.boundaryLimits_locallyUniform",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MixedPeriodicAssembly.boundaryLimits_locallyUniform",
+      "line": 310,
+      "module": "NavierStokes.MixedPeriodicAssembly",
+      "path": "NavierStokes/MixedPeriodicAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MixedPeriodicAssembly.lean#L310"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MixedPeriodicAssembly.boundaryLimits_locallyUniform",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (hz : VanishingJointJets (originalResidual A v p)) (eA ev ep : AwayExtensions …) (n) : TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n (periodicResidual A v p) (t,x)) (fun x => boundaryLimits A v p eA ev ep x n) (𝓝[<] 1). The limit clause of the lemma, conditional on hz/eA/ev/ep.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 310,
+        "text": "theorem boundaryLimits_locallyUniform {A v : VelocityField} {p : PressureField}\n    (hz : JointResidualLimits.VanishingJointJets (originalResidual A v p))\n    (eA : JointResidualLimits.AwayExtensions A)\n    (ev : JointResidualLimits.AwayExtensions v)\n    (ep : JointResidualLimits.AwayExtensions p) (n : ℕ) :\n    TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n (periodicResidual A v p) (t, x))\n      (fun x => boundaryLimits A v p eA ev ep x n) (𝓝[<] (1 : ℝ))"
+      }
+    }
+  }
+}

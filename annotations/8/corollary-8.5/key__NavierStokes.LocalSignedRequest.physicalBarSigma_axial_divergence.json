@@ -1,0 +1,29 @@
+{
+  "id": "corollary-8.5/key/NavierStokes.LocalSignedRequest.physicalBarSigma_axial_divergence",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalSignedRequest.physicalBarSigma_axial_divergence",
+      "line": 881,
+      "module": "NavierStokes.LocalSignedRequest",
+      "path": "NavierStokes/LocalSignedRequest.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean#L881"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalSignedRequest.physicalBarSigma_axial_divergence",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: same hyps ⊢ radialDivergence 1 (fun t => physicalBarSigma P 1 (coordinateQ coord) f (t,s)) r = -physicalAdjusted P 1 (coordinateQ coord) (torusAverage f) (r,s)"
+      },
+      "relation": "different_formulation",
+      "role": "key",
+      "snippet": {
+        "line": 881,
+        "text": "theorem physicalBarSigma_axial_divergence {coord : ℝ} (U : SlowRegion coord)\n    (P : SignedStressPrimitive.Patch) {f : Point → ℝ}\n    (hf : ContDiffOn ℝ ∞ f (PhysicalMeanDomain.slowDomain U.carrier))\n    (hs : MovingSupport P.a P.b coord U.carrier f) {s : Plane} (hsp : s ∈ U.carrier)\n    {r : ℝ} (hr : 0 < r) :\n    IntegratedMeanBalances.radialDivergence 1\n      (fun t => SignedStressPrimitive.physicalBarSigma P 1 (SimilarityCoordinates.coordinateQ coord) f (t, s)) r =\n      -SignedStressPrimitive.physicalAdjusted P 1 (SimilarityCoordinates.coordinateQ coord)\n        (PressureStream.torusAverage f) (r, s)"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "proposition-9.6/attributed/NavierStokes.CorrectionAnalyticStep.step",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionAnalyticStep.step",
+      "line": 521,
+      "module": "NavierStokes.CorrectionAnalyticStep",
+      "path": "NavierStokes/CorrectionAnalyticStep.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionAnalyticStep.lean#L521"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionAnalyticStep.step",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (D : StaticData …) (H : CycleAnalyticInvariant … σ x) (hσ : 1/5 ≤ σ) (hκsmall : κ ≤ 1/100000) (d : StepData … H hσ) : StepResult …, whose field `invariant` is CycleAnalyticInvariant … (σ+1/10) (x.step p c); generic step with the native wave outputs supplied as StepData",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 521,
+        "text": "theorem step (D : StaticData G h index axial r c κ)\n    (H : CycleAnalyticInvariant G c primary P S σ x)\n    (hσ : 1/5 ≤ σ) (hκsmall : κ ≤ 1/100000)\n    (d : StepData G h index axial particular signed r c x primary P S D H hσ) :\n    StepResult G h index axial particular signed r c x primary P S (σ"
+      }
+    }
+  }
+}

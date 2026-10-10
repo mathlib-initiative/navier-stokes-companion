@@ -1,0 +1,57 @@
+{
+  "kind": "proposition",
+  "label": "Proposition C.2",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] The last sentence (η-jets within O(1/N) of the input before the patch) is not stated for the nominal witness. Only the generic, never-applied exists_with_moment_repair_all_jets states it; the Witness comes from ….",
+  "location": {
+    "page": 161,
+    "rect": [0.133214, 0.243733, 0.734964, 0.17277]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-C.2",
+      "locator": {
+        "physical": [161],
+        "printed": [161],
+        "text": "Appendix C, Proposition C.2, p. 161"
+      },
+      "region": "proposition-C.2@p161",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["CONFIRMED_CONTENT: ModulatedProfileAssembly.Witness (NavierStokes/ModulatedProfileAssembly.lean:432) has `frequency : ℕ` (435) and no rate field. exists_witness (451) takes N and c at line 488 from ModulatedCone.Repaired.exists_with_moment_repair (NavierStokes/ModulatedCone.lean:1414), whose conclusion (1447) is `∃ (N : ℕ) (c) (hc), 0 < N ∧ cone ∧ rows ∧ unchanged-outside`. The rate clause `∀ q : ℕ, ∃ Nq C : ℝ, 1 ≤ Nq ∧ 0 < C ∧ ∀ n : ℝ, Nq ≤ n → … ≤ C / n` exists only in ModulatedProfileJetRates.exists_with_moment_repair_all_jets (NavierStokes/ModulatedProfileJetRates.lean:347, clause at 394), which is referenced only by `import` in NavierStokes/PaperAdditionalResults.lean:27.", "CONVENTION: Witness.frequency : ℕ and frequency_pos (NavierStokes/ModulatedProfileAssembly.lean:435-436); `∃ (d : LoopData W) (v : Witness d)` in exists_of_certificate (1101). N is chosen as `max Nc Nr`, above the cone and solver thresholds (NavierStokes/ModulatedCone.lean:1475). `∀ n : ℕ, N ≤ n → …` appears only in ModulatedProfileJetRates.exists_with_moment_repair_all_jets (NavierStokes/ModulatedProfileJetRates.lean:382), for generic data.", "All three voters agree, and my own reading of p.161 and the sources confirms it. exists_of_certificate, with the Witness and LoopData fields and the Witness lemmas, states positivity, the admissible cone on (X_a,X_b)×[-1,1] (InTrueCone is (4.20)-(4.21) with C = -b_s), the unchanged collars, axis rectangle and later patches, and exact restoration of (M,I,J,S,Π), Q_s, N_s beyond the first patch, for one frequency N. The closing O(1/N) sentence and the for-all-large-N form are stated only by the generic, unapplied exists_with_moment_repair_all_jets. So the relation is partial at low severity; the main result is unaffected because the paper fixes one N. I added the PAIRING skeptic's three supporting declarations."],
+          "findings": [
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The last sentence (η-jets within O(1/N) of the input before the patch) is not stated for the nominal witness. Only the generic, never-applied exists_with_moment_repair_all_jets states it; the Witness comes from a no-rate sibling theorem."
+            },
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Paper: any sufficiently large N. Instantiated Lean: one N > 0. The paper's proof ends by fixing one N, so the existential is the proposition as used; the family in N matters only for the O(1/N) clause (first finding)."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.82. Findings: [low CONTENT: CONFIRMED_CONTENT] The last sentence (η-jets within O(1/N) of the input before the patch) is not stated for the nominal witness. Only the generic, never-applied exists_with_moment_repair_all_jets states it; the Witness comes from a no-rate sibling theorem.; [low CONTENT: CONVENTION] Paper: any sufficiently large N. Instantiated Lean: one N > 0. The paper's proof ends by fixing one N, so the existential is the proposition as used; the family in N matters only for the O(1/N) clause (first finding).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

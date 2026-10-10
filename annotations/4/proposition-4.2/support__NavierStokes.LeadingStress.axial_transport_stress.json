@@ -1,0 +1,26 @@
+{
+  "id": "proposition-4.2/support/NavierStokes.LeadingStress.axial_transport_stress",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStress.axial_transport_stress",
+      "line": 499,
+      "module": "NavierStokes.LeadingStress",
+      "path": "NavierStokes/LeadingStress.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean#L499"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStress.axial_transport_stress",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 499,
+        "text": "theorem axial_transport_stress {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {p : SimilarityProfile.PhysicalPoint} (hp : p.1 < 1) (hs : 0 < p.2.1)\n    (hw : inner h p ∈ Ω.carrier) :\n    SlowExpansionResidual.transportResidual 0 1 (fluxProfile P h) (axialProfile P h)\n        (axialProfile P h) (SimilarityProfile.partialZ (pressureProfile P h)) p +\n        axialAxialViscosity P h p = -radialDivergence 1 (physicalStressAxial P h) p"
+      }
+    }
+  }
+}

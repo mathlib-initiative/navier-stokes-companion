@@ -1,0 +1,26 @@
+{
+  "id": "lemma-5.2/support/NavierStokes.ConstructedSlowBase.firstStress_edgeJets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ConstructedSlowBase.firstStress_edgeJets",
+      "line": 468,
+      "module": "NavierStokes.ConstructedSlowBase",
+      "path": "NavierStokes/ConstructedSlowBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConstructedSlowBase.lean#L468"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ConstructedSlowBase.firstStress_edgeJets",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 468,
+        "text": "theorem firstStress_edgeJets (Cedge : ℝ) (tail : OutgoingTail.TailData) (y0 : ℝ)\n    {d : Coefficients} (hd : SmoothCoefficients d)\n    {c left width inner : ℝ} (hc : 0 < c) (hw : 0 < width)\n    (hl : Real.exp left < inner) (hi : inner ≤ Real.exp (y0 + 3 - width))\n    (hz : ∀ w : Inner, w.1 < inner → stressPair d 1 w = 0)\n    (he : ∀ w ∈ outerWindow (Real.exp (y0 + 3 - width)) (y0 + 3),\n      stressPair d 1 =ᶠ[𝓝 w] (fun v => (SlowFirstOrderEdge.stressX Cedge tail y0 v, 0))) :\n    PolynomialEdgeJets (activeWindow left (y0 + 3))\n      (activeZeta c left (y0 + 3)) (activeDelta left (y0 + 3)) (stressPair d 1)"
+      }
+    }
+  }
+}

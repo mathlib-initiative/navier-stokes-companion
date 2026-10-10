@@ -1,0 +1,29 @@
+{
+  "id": "proposition-9.3/attributed/NavierStokes.MeanStateRegularity.PrimitiveData.axial_reconstructed",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanStateRegularity.PrimitiveData.axial_reconstructed",
+      "line": 398,
+      "module": "NavierStokes.MeanStateRegularity",
+      "path": "NavierStokes/MeanStateRegularity.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanStateRegularity.lean#L398"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanStateRegularity.PrimitiveData.axial_reconstructed",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (hfixed : (reconstructState g c u).pressure = u.pressure) : MovingField U g.radial.inner g.radial.outer (u.axialResidual c); likewise PrimitiveData.source (l.373) for u.gr c and PrimitiveData.pressure (l.388) for u.pressure"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 398,
+        "text": "theorem axial_reconstructed {g : VariableGaugeMean.GaugeData Plane}\n    (H : PrimitiveData U g.radial.inner g.radial.outer c u)\n    (ha : 0 < g.radial.inner) (hd : 0 < g.radial.exponent)\n    (hg : ∀ n, g.length n = VariableGaugeMean.qLength coord)\n    (hfixed : (VariableGaugeMean.reconstructState g c u).pressure = u.pressure) :\n    GaugeMomentBalances.MovingField U g.radial.inner g.radial.outer (u.axialResidual c)"
+      }
+    }
+  }
+}

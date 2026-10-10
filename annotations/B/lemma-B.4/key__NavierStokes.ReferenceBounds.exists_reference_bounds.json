@@ -1,0 +1,31 @@
+{
+  "id": "lemma-B.4/key/NavierStokes.ReferenceBounds.exists_reference_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ReferenceBounds.exists_reference_bounds",
+      "line": 1180,
+      "module": "NavierStokes.ReferenceBounds",
+      "path": "NavierStokes/ReferenceBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean#L1180"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ReferenceBounds.exists_reference_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation incomparable; the auditor's reading: (d : AnalyticInputs h j σ P0) (hsmall : SmallParameters h j) (hσ : 0<σ) (hP0 : ContDiff ℝ ∞ P0) (hν : 0<ν) (hcut : ∀ η∈[-1,1], |Z h j P0 η| ≤ ν → 99/100 < chi h j σ η) : ∃ M>0, ∀ Λ (hΛ : 0<Λ), M ≤ Λ → ∃ C₀>0, ∀ C ≥ C₀, ∃ E : EntranceProfile d Λ C, ∃ r>0, ∀ δ (hδ : 0<δ), δ<r → ∃ hδT : 2δ < rampLimit,",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "incomparable",
+      "role": "key",
+      "snippet": {
+        "line": 1180,
+        "text": "theorem exists_reference_bounds {h j σ ν : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hσ : 0 < σ) (hP0 : ContDiff ℝ ∞ P0) (hν : 0 < ν)\n    (hcut : ∀ η ∈ Icc (-1 : ℝ) 1, |NaturalAxisData.Z h j P0 η| ≤ ν →\n      99 / 100 < NaturalAxisData.chi h j σ η) :\n    ∃ M > 0, ∀ Λ : ℝ, ∀ hΛ : 0 < Λ, M ≤ Λ →\n      ∃ C₀ > 0, ∀ C : ℝ, C₀ ≤ C →\n        ∃ E : NaturalEntrance.EntranceProfile d Λ C,\n          ∃ r > 0, ∀ δ : ℝ, ∀ hδ : 0 < δ, δ < r →\n            ∃ hδT : 2 * δ < ReferencePath.rampLimit,\n              ReferenceBoundsOnHold E.profile hΛ hδ hδT hP0"
+      }
+    }
+  }
+}

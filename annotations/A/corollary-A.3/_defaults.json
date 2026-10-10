@@ -1,0 +1,69 @@
+{
+  "kind": "corollary",
+  "label": "Corollary A.3",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 128,
+    "rect": [0.133356, 0.358714, 0.734369, 0.149432]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "item": "corollary-A.3",
+      "locator": {
+        "physical": [128],
+        "printed": [128],
+        "text": "Appendix A, Corollary A.3, p. 128"
+      },
+      "region": "corollary-A.3@p128",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/OutgoingDilation.lean: M_scaling L104 `M F XR eta X = XR * F.M eta (X / XR)`; I_scaling L108 and J_scaling L115 with factor `XR * Real.sqrt XR`; S_scaling L122 with factor `XR`; canonicalKernel_scaling L97 (`XR⁻¹ * F.canonicalKernel eta (X / XR)`) and canonicalKernel_integral L248 (factor 1); H_scaling L80 `H F XR p = Real.sqrt XR * F.H (p.1 / XR, p.2)`. All rest on the generic integral_dilate_Ioc L31 (arbitrary f).", "CONVENTION: FiveProfileMoments.exists_normalized_repair L411 with normalizedMap L336, whose first block is matrixEquiv P.leftHalf (axialPowers b) c.1 (quadraticBilin L304 has first component 0). TerminalCompensation.exists_normalized_compensation L390 (`0 ≤ lam`), physicalMoments_eq L540, mixed_moment_unchanged L794. HeatedOutgoing.M_unchanged L454 (rfl) and J_unchanged L456.", "CONVENTION: FiveProfileMoments.u / e (L288-289) are `correction P.leftHalf c.1` and `correction P.rightHalf c.2`; u_mul_e (L291) `u P c x * e P d x = 0`; quadraticBilin (L304) has no mixed c.1·c.2 term. Within each block the cells are ordered and disjoint (intervals_separated L55), as Lemma A.1 requires.", "I read p.128, (4.15) on p.28, Lemmas A.1/A.2 and the Lean. physicalMoments_hasFDerivAt_zero gives the invertible Jacobian of the five moment changes for b ∉ {−1/2, 1/2, 3/2} and A ≠ 0; the densities, row operations, block weights and exponent condition match the paper. normalizedMap_identity gives the exact form (A.2). All three voters agree on the verdict and relation. The PAIRING skeptic is right on finding 0: OutgoingDilation states all five (A.4) factors, which the auditor and the MATHEMATICS skeptic missed. Findings 1 and 2 are accurate observations but encoding choices with written recoveries. No docstring cites the corollary; the pairing rests on content."],
+          "findings": [
+            {
+              "confidence": 0.88,
+              "contested": true,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Auditor said (A.4) is unstated for M and J. That is wrong: OutgoingDilation states all five factors and the H relation under X = XR·x, for the constructed outgoing profile, with C_p in tail form."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The U₀=0 clause (three E-corrections prescribe I, S, C_p and preserve M, J) is not one theorem. It follows from exists_normalized_repair at G=0, and TerminalCompensation states it for α = −1/2−λ, λ ≥ 0, including α = −1/2."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean proves invertibility for one fixed bump family: U-bumps on the left half of the patch, E-bumps on the right half. So u·e = 0 and the δU·δE cross term in J vanishes. The paper allows any Lemma A.1 families."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.86. Findings: [low COVERAGE: ATTRIBUTION_GAP] Auditor said (A.4) is unstated for M and J. That is wrong: OutgoingDilation states all five factors and the H relation under X = XR·x, for the constructed outgoing profile, with C_p in tail form.; [low CONTENT: CONVENTION] The U₀=0 clause (three E-corrections prescribe I, S, C_p and preserve M, J) is not one theorem. It follows from exists_normalized_repair at G=0, and TerminalCompensation states it for α = −1/2−λ, λ ≥ 0, including α = −1/2.; [low CONTENT: CONVENTION] Lean proves invertibility for one fixed bump family: U-bumps on the left half of the patch, E-bumps on the right half. So u·e = 0 and the δU·δE cross term in J vanishes. The paper allows any Lemma A.1 families.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

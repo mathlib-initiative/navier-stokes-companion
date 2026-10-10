@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.WeightedClasses.MeanClass.bilinear",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WeightedClasses.MeanClass.bilinear",
+      "line": 440,
+      "module": "NavierStokes.WeightedClasses",
+      "path": "NavierStokes/WeightedClasses.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean#L440"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WeightedClasses.MeanClass.bilinear",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: MeanClass s α f → MeanClass s β g → ζ ≤ 1 → MeanClass s (α+β) (L f g)   [M_α M_β ⊂ M_{α+β}]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 440,
+        "text": "theorem MeanClass.bilinear {s : StripData D} {α β : ℝ}\n    {f : ℕ → D → E} {g : ℕ → D → F}\n    (hf : MeanClass s α f) (hg : MeanClass s β g)\n    (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1) (L : E →L[ℝ] F →L[ℝ] G) :\n    MeanClass s (α + β) (fun n x => L (f n x) (g n x))"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-A.6/attributed/NavierStokes.RadialHeatProfile.profile_derivative_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.RadialHeatProfile.profile_derivative_bound",
+      "line": 234,
+      "module": "NavierStokes.RadialHeatProfile",
+      "path": "NavierStokes/RadialHeatProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L234"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.RadialHeatProfile.profile_derivative_bound",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: 1 < a → ∀ n, 0 ≤ z → |iteratedDerivWithin n (profile a) (Ici 0) z| ≤ |(Γ a)⁻¹ * derivativeCoeff a n| * Γ(a+n). Uniform on all of [0,∞).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 234,
+        "text": "theorem profile_derivative_bound {a : ℝ} (ha : 1 < a) (n : ℕ) {z : ℝ} (hz : 0 ≤ z) :\n    |iteratedDerivWithin n (profile a) (Ici 0) z| ≤\n      |(Real.Gamma a)⁻¹ * derivativeCoeff a n| * Real.Gamma (a + (n : ℝ))"
+      }
+    }
+  }
+}

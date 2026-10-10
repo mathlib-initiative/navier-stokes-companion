@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/attributed/NavierStokes.EntranceAlignedBase.aligned_higher_support",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.EntranceAlignedBase.aligned_higher_support",
+      "line": 517,
+      "module": "NavierStokes.EntranceAlignedBase",
+      "path": "NavierStokes/EntranceAlignedBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L517"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.EntranceAlignedBase.aligned_higher_support",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: 2≤n → tsupport (stressTheta n, stressAxial n) ⊆ Icc zeroEnd nominalOuterX ×ˢ Icc (−outer) outer  (supp T_n ⊂ [X_-,X_+]); modulatedCoefficients is an instance (L805)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 517,
+        "text": "theorem aligned_higher_support {n : ℕ} (hn : 2 ≤ n) :\n    tsupport (fun p => ((alignedCoefficients W H Q M hlo).stressTheta n p,\n      (alignedCoefficients W H Q M hlo).stressAxial n p)) ⊆\n      Icc (zeroEnd W H lo) (nominalOuterX W) ×ˢ\n        Icc (-(commonWindow (scheme W H Q M hlo) M.contains).outer)\n          (commonWindow (scheme W H Q M hlo) M.contains).outer"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "corollary",
+  "label": "Corollary 10.6",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 125,
+    "rect": [0.134051, 0.271892, 0.731898, 0.129774]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "corollary-10.6",
+      "locator": {
+        "physical": [125],
+        "printed": [125],
+        "text": "Section 10, Corollary 10.6, p. 125"
+      },
+      "region": "corollary-10.6@p125",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.PeriodicPaper.breakdownStatement (NavierStokes/PeriodicPaperTheorem.lean:148): ∃ u p f K, CandidateProperties ν u p f K ∧ ¬ Nonempty (GlobalSmoothSolution ν f), with no uniqueness conjunct. Uniqueness: NavierStokes.PeriodicViscosityUniqueness.classical_uniqueness_on_Icc (NavierStokes/PeriodicViscosityUniqueness.lean:65).", "I read p.125–126 and PeriodicPaperTheorem.lean:26–162. periodic_corollary proves, for every ν>0, ℤ³-periodic lifts (u,p,f) solving Navier–Stokes on (0,1) with zero datum, a time-compact smooth force, SpeedUnboundedAtOne (equivalent to the limsup, since slices are continuous), one compact K inside the open cube with tsupport ∩ closed cube ⊆ K (equivalent to supp ⊆ π(K): the tsupport is ℤ³-invariant and K+k misses the closed cube for k≠0), and no global smooth periodic competitor. The only gap is the uniqueness presupposed by \"the solution\", stated separately in classical_uniqueness_on_Icc. Auditor and both skeptics agree. I adopt the pairing skeptic's correction: the Comparator theorem is supporting, not part."],
+          "findings": [
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "breakdownStatement asserts that some smooth periodic solution blows up at t=1. It has no clause saying this is 'the' solution. The uniqueness the paper presupposes is a separate Lean theorem."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.90. Findings: [low CONTENT: ATTRIBUTION_GAP] breakdownStatement asserts that some smooth periodic solution blows up at t=1. It has no clause saying this is 'the' solution. The uniqueness the paper presupposes is a separate Lean theorem.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

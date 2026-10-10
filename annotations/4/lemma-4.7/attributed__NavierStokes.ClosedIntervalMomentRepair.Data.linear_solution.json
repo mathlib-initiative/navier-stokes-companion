@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.7/attributed/NavierStokes.ClosedIntervalMomentRepair.Data.linear_solution",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ClosedIntervalMomentRepair.Data.linear_solution",
+      "line": 210,
+      "module": "NavierStokes.ClosedIntervalMomentRepair",
+      "path": "NavierStokes/ClosedIntervalMomentRepair.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ClosedIntervalMomentRepair.lean#L210"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ClosedIntervalMomentRepair.Data.linear_solution",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (∀ x ∈ I, A x = 0) ⊢ x ↦ (B x)⁻¹ (d x) is C^∞ on I, solves the equation, ‖·‖_{C^k} ≤ νₖ‖d‖ₖ ∀ k",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 210,
+        "text": "theorem linear_solution (hA : ∀ x ∈ I, D.A x = 0) :\n    ∃ hc : ContDiffOn ℝ ∞ (fun x => (D.B x).inverse (D.d x)) I,\n      (∀ x ∈ I, D.B x ((D.B x).inverse (D.d x)) +\n        D.A x ((D.B x).inverse (D.d x)) ((D.B x).inverse (D.d x)) = D.d x) ∧\n      ∀ k : ℕ, ‖ofContDiffOn (fun x => (D.B x).inverse (D.d x))\n        (hc.of_le ("
+      }
+    }
+  }
+}

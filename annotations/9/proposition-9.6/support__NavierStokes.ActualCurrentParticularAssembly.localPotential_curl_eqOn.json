@@ -1,0 +1,26 @@
+{
+  "id": "proposition-9.6/support/NavierStokes.ActualCurrentParticularAssembly.localPotential_curl_eqOn",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCurrentParticularAssembly.localPotential_curl_eqOn",
+      "line": 254,
+      "module": "NavierStokes.ActualCurrentParticularAssembly",
+      "path": "NavierStokes/ActualCurrentParticularAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCurrentParticularAssembly.lean#L254"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCurrentParticularAssembly.localPotential_curl_eqOn",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 254,
+        "text": "theorem localPotential_curl_eqOn\n    {x : CycleState (ActualInitialization.Index B N0)} {σ : ℝ}\n    (H : ActualParticularCycleData.Invariant σ x)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (qbig : ℝ) (n : ℕ)\n    {a : ℝ} (ha : 0 < a) (i : PolarCharts.Index) :\n    EqOn (SpatialCurl.spatialCurl (localPotential (ActualCycleParameters.particularState x) n))\n      (CyclePhysicalPrefixes.polarVelocityMap a i\n        (CyclePhysicalPrefixes.velocityMap (ActualCycleResidualBounds.actualBandGraph n)\n          ((ActualCycleParameters.fixedParameters B N0).particularVelocity x.coefficients\n            (ActualPrimary.commonContext B) x.state n)))\n      (ActualPhysicalPrefixFields.cartesianChartDomain qbig n a i)"
+      }
+    }
+  }
+}

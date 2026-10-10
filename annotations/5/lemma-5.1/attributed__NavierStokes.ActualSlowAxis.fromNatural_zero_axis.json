@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.1/attributed/NavierStokes.ActualSlowAxis.fromNatural_zero_axis",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualSlowAxis.fromNatural_zero_axis",
+      "line": 478,
+      "module": "NavierStokes.ActualSlowAxis",
+      "path": "NavierStokes/ActualSlowAxis.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean#L478"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualSlowAxis.fromNatural_zero_axis",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∀ n>0, ∀ i : Fin 5, η∈[−1,1]: coefficients n i (0,η) = 0",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 478,
+        "text": "theorem fromNatural_zero_axis {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) {n : ℕ} (hn : 0 < n)\n    (i : Fin 5) {eta : ℝ} (heta : eta ∈ Icc (-1 : ℝ) 1) :\n    (fromNatural hp hP0 F hΛ hsmall hσ hT hδ hδT κ).coefficients n i (0, (eta : ℂ)) = 0"
+      }
+    }
+  }
+}

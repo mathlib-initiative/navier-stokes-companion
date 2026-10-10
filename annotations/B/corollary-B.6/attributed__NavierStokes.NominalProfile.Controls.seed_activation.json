@@ -1,0 +1,31 @@
+{
+  "id": "corollary-B.6/attributed/NavierStokes.NominalProfile.Controls.seed_activation",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.Controls.seed_activation",
+      "line": 620,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L620"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.Controls.seed_activation",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: p.2 ∈ parameterInterval, p.1 ≤ (4/A.scale)·exp c.referenceWidth ⊢ c.seedF p = FromReference.f A.referenceInput c.activationTime c.kappa c.referenceWidth p ∧ c.seedU p = FromReference.U … p",
+        "status": "unconfirmed",
+        "verdict": "attribution_gap"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 620,
+        "text": "theorem seed_activation {p : Point} (hη : p.2 ∈ ReferencePath.parameterInterval)\n    (hp : p.1 ≤ (4 / A.scale) * Real.exp c.referenceWidth) :\n    c.seedF p = StressActivation.FromReference.f A.referenceInput\n      c.activationTime c.kappa c.referenceWidth p ∧\n    c.seedU p = StressActivation.FromReference.U A.referenceInput\n      c.activationTime c.kappa c.referenceWidth p"
+      }
+    }
+  }
+}

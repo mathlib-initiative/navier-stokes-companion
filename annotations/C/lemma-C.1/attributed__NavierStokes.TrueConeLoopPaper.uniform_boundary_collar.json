@@ -1,0 +1,31 @@
+{
+  "id": "lemma-C.1/attributed/NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
+      "line": 60,
+      "module": "NavierStokes.TrueConeLoopPaper",
+      "path": "NavierStokes/TrueConeLoopPaper.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoopPaper.lean#L60"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: B compact, N open ⊇ B, loop = (a, a·m) on K∩N ⊢ ∃ δ>0, ∀x∈K, ∀y∈B, dist x y < δ → ∀φ, A(x,φ) = a x ∧ C(x,φ) = a x·m x  (the collar width δ_∂ of (C.3))",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 60,
+        "text": "theorem uniform_boundary_collar {K B N : Set E} (hB : IsCompact B)\n    (hN : IsOpen N) (hBN : B ⊆ N) {a m : E → ℝ} {A C : E × ℝ → ℝ}\n    (hmatch : ∀ x ∈ K ∩ N, ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x) :\n    ∃ δ : ℝ, 0 < δ ∧ ∀ x ∈ K, ∀ y ∈ B, dist x y < δ →\n      ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-6.1/key/NavierStokes.PartitionedCovariance.exists_slotSystem",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PartitionedCovariance.exists_slotSystem",
+      "line": 233,
+      "module": "NavierStokes.PartitionedCovariance",
+      "path": "NavierStokes/PartitionedCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L233"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PartitionedCovariance.exists_slotSystem",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∀ D h, 0 ≤ h → ∀ vr vt, Nonempty (SlotSystem D h vr vt): ∃ radius > 0, (∀ L, InjOn quotientPoint (slotSet h radius vr vt L)) ∧ (∀ L M, Adj D L M → Disjoint (liftedSupport (nativeIndex h L.1) (slotSet … L)) (liftedSupport (nativeIndex h M.1) (slotSet … M)))",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "different_formulation",
+      "role": "key",
+      "snippet": {
+        "line": 233,
+        "text": "theorem exists_slotSystem (D h : ℝ) (hh : 0 ≤ h) (vr vt : Plane) :\n    Nonempty (SlotSystem D h vr vt)"
+      }
+    }
+  }
+}

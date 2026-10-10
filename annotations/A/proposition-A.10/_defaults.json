@@ -1,0 +1,73 @@
+{
+  "kind": "proposition",
+  "label": "Proposition A.10",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 142,
+    "rect": [0.132964, 0.37346, 0.734775, 0.246463]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-A.10",
+      "locator": {
+        "physical": [142],
+        "printed": [142],
+        "text": "Appendix A, Proposition A.10, p. 142"
+      },
+      "region": "proposition-A.10@p142",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["CONVENTION: TerminalHistoryBridge.terminal_forward_cone (TerminalHistoryBridge.lean:1482); TerminalEdgeFactor.profileAngularStress_factorization (:876), profileAxialStress_factorization (:971), profileTilt_eq_ratio (:1322), profileStress_jets (:1288); TerminalEdgePaper.profileStress_lower_bound (:16); ActiveAnnulusWeight.terminal_true_direction (:1217); bridges TerminalHistoryBridge.forward_stresses_eq_profile (:1401) and LeadingStressWeights.nominal_terminal_stress (LeadingStressWeights.lean:321)", "CONVENTION: TerminalCone.profile_full_true_cone (hsmall : SmallTail d) (hK : 32 ≤ K) (TerminalCone.lean:452); TerminalCone.profile_cone_margin (:398); terminal_forward_cone (hsmall) (hXR : radiusThreshold F ≤ XR) (TerminalHistoryBridge.lean:1484); TerminalCone.SmallTail (:50); TerminalCone.radiusThreshold (:524)", "ATTRIBUTION_GAP: OutgoingProfile.Specification.ideal_prefix (OutgoingProfile.lean:580; structure at :557); NominalConeAssembly.Witness.terminal_true : … → IsTrue W.profiles F.data.h (chart W.controls.radius (y, eta)) (NominalConeAssembly.lean:946); LeadingStressWeights.nominal_terminal_stress : stress W.profiles F.data.h (chart …) = profileStress … (eta, tailEnd F.data − y) (LeadingStressWeights.lean:321); NominalProfile.Witness.axis : AxisStage F (NominalProfile.lean:2481)", "CONVENTION: TerminalEdgeFactor.profileStress_jets : ‖iteratedFDeriv ℝ i (profileStress C d y0) (η, x)‖ ≤ A * FlatCutoff.edge 4 x / x ^ N (TerminalEdgeFactor.lean:1288); TerminalEdgePaper.profileStress_lower_bound : c * FlatCutoff.edge 4 x / x ^ 3 ≤ ‖profileStress C d y0 (η, x)‖ (TerminalEdgePaper.lean:16); radial-chart analogue for the final stress: LeadingStressWeights.weighted_bounds (LeadingStressWeights.lean:528) via ActiveAnnulusWeight.WeightedBounds (:644)", "I read p.142 (with pp.30-32, 140-143) and the Lean source; no Lean was run. Auditor and both skeptics agree, and I concur. Every clause is stated: the cone on [terminalStart, tailEnd); the smooth direction and gap margin; (A.48)-(A.50) by exact factorizations with globally smooth coefficients; (A.51) by jet and lower bounds. The differences are packaging, explicit smallness thresholds that the paper's own proof uses, and (η,δ) coordinates. I added NominalConeAssembly.Witness.terminal_true and LeadingStressWeights.nominal_terminal_stress, which state the cone and the stress identity for the joined regular-axis profile, and replaced terminal_strict_direction by the stronger terminal_true_direction. The PAIRING skeptic regards the two nominal-profile theorems as consumers, not statements."],
+          "findings": [
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration states A.10. The cone, the direction collar, (A.48)-(A.50) and (A.51) are separate theorems, mostly about the backward-formula profileStress in (η,δ) coordinates. Bridge lemmas identify it with the actual leading stress."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Clause (i) and the full-interval gap margin carry explicit hypotheses: SmallTail (h ≤ 1/4, h ≤ 1/(1+releaseBudget)) and radiusThreshold F ≤ XR (switch radius ≥ 32). The paper's statement leaves these implicit; its proof invokes them."
+            },
+            {
+              "confidence": 0.78,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "terminal_forward_cone has no regular-axis hypothesis. It is about the concrete pre-axis outgoing family (Specification with ideal_prefix, CompensationWitness). The regular-axis statement exists for the joined nominal profile: Witness.terminal_true and nominal_terminal_stress."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The (A.51) bounds use iteratedFDeriv in edge coordinates (η,δ) and the sup norm on ℝ×ℝ. The paper's ∂^I are mixed derivatives in profile variables and |·| is Euclidean."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.86. Findings: [low CONTENT: CONVENTION] No single declaration states A.10. The cone, the direction collar, (A.48)-(A.50) and (A.51) are separate theorems, mostly about the backward-formula profileStress in (η,δ) coordinates. Bridge lemmas identify it with the actual leading stress.; [low CONTENT: CONVENTION] Clause (i) and the full-interval gap margin carry explicit hypotheses: SmallTail (h ≤ 1/4, h ≤ 1/(1+releaseBudget)) and radiusThreshold F ≤ XR (switch radius ≥ 32). The paper's statement leaves these implicit; its proof invokes them.; [low CONTENT: ATTRIBUTION_GAP] terminal_forward_cone has no regular-axis hypothesis. It is about the concrete pre-axis outgoing family (Specification with ideal_prefix, CompensationWitness). The regular-axis statement exists for the joined nominal profile: Witness.terminal_true and nominal_terminal_stress.; [low CONTENT: CONVENTION] The (A.51) bounds use iteratedFDeriv in edge coordinates (η,δ) and the sup norm on ℝ×ℝ. The paper's ∂^I are mixed derivatives in profile variables and |·| is Euclidean.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-A.6/attributed/NavierStokes.TerminalStress.heatAmplitude_heat_equation",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalStress.heatAmplitude_heat_equation",
+      "line": 161,
+      "module": "NavierStokes.TerminalStress",
+      "path": "NavierStokes/TerminalStress.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalStress.lean#L161"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalStress.heatAmplitude_heat_equation",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: ∀ C, 1 < a → t < 1 → 0 < r → deriv (fun t => heatAmplitude C a t r) t = deriv (deriv (heatAmplitude C a t)) r + deriv (heatAmplitude C a t) r / r - heatAmplitude C a t r / r^2",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 161,
+        "text": "theorem heatAmplitude_heat_equation (C : ℝ) {a t r : ℝ} (ha : 1 < a)\n    (ht : t < 1) (hr : 0 < r) :\n    deriv (fun t => heatAmplitude C a t r) t =\n      deriv (deriv (heatAmplitude C a t)) r + deriv (heatAmplitude C a t) r / r -\n        heatAmplitude C a t r / r ^ 2"
+      }
+    }
+  }
+}

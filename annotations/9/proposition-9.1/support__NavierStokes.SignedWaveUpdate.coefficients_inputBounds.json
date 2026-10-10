@@ -1,0 +1,27 @@
+{
+  "id": "proposition-9.1/support/NavierStokes.SignedWaveUpdate.coefficients_inputBounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedWaveUpdate.coefficients_inputBounds",
+      "line": 222,
+      "module": "NavierStokes.SignedWaveUpdate",
+      "path": "NavierStokes/SignedWaveUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean#L222"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedWaveUpdate.coefficients_inputBounds",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 222,
+        "text": "theorem coefficients_inputBounds\n    {s : StripData D} {d : LinearWaveBounds.GraphDirections D}\n    {a : LinearWaveBounds.WaveCoefficients D} {P₀ P : ℕ → D → ℝ} {α₀ β κ : ℝ}\n    (hbase : LinearWaveBounds.InputBounds s P₀ α₀ κ d a)\n    {H : ℕ → D → Mat2} {T R : ℕ → D → Vec2} {mask : ℕ → D → ℝ}\n    {v Ndot : ℕ → D → Space} {A : ℕ → D → Space →L[ℝ] Space}\n    (hcov : CovarianceControl s H T)\n    (hR : ∀ i, MeanClass s β (fun n x => R n x i))\n    (hm : UnweightedClass s 0 mask) (hv : MemClass s P 0 v)\n    (hN : PhaseJetBounds.PolynomialJets (CurlClassBounds.phaseDomain s) (a.normal s d))\n    (hNdot : UnweightedClass s 0 Ndot) (hA : UnweightedClass s 0 A)\n    {b M : ℝ} (hb : 0 < b)\n    (hlo : ∀ n x, x ∈ s.domain → b ≤ ‖a.normal s d n x‖)\n    (hhi : ∀ n x, x ∈ s.domain → ‖a.normal s d n x‖ ≤ M)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

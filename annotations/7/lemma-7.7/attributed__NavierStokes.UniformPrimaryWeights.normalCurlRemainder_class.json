@@ -1,0 +1,32 @@
+{
+  "id": "lemma-7.7/attributed/NavierStokes.UniformPrimaryWeights.normalCurlRemainder_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.UniformPrimaryWeights.normalCurlRemainder_class",
+      "line": 453,
+      "module": "NavierStokes.UniformPrimaryWeights",
+      "path": "NavierStokes/UniformPrimaryWeights.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformPrimaryWeights.lean#L453"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.UniformPrimaryWeights.normalCurlRemainder_class",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: label-uniform version: UniformClass s w α a, uniform normal/direction/band hypotheses → UniformClass s w (α+1/2-κ) (curlRemainder K .. (normalCoefficient N a))   [r_m class with constants uniform over labels, as (6.29) needs]",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 453,
+        "text": "theorem normalCurlRemainder_class [Countable ι] [Nonempty ι]\n    {R : ι → ℕ → D → ℝ} {Vr Vθ Vz : ι → ℕ → D → D} {K : ι → ℕ → ℝ}\n    {N : ι → ℕ → D → RealVector} {a : ι → ℕ → D → ComplexVector}\n    (hN : PhaseJetBounds.PolynomialJets (jointDomain s) (fun q => N q.2 q.1))\n    (ha : UniformClass s w α a) {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ l n x, x ∈ s.domain → b ≤ ‖N l n x‖)\n    (hupper : ∀ l n x, x ∈ s.domain → ‖N l n x‖ ≤ M)\n    (hκ : 0 ≤ κ)\n    (hr : UniformClass s (fun _ _ _ => 1) (-κ) Vr)\n    (hθ : UniformClass s (fun _ _ _ => 1) 0 Vθ)\n    (hz : UniformClass s (fun _ _ _ => 1) 1 Vz)\n    (hR : UniformClass s (fun _ _ _ => 1) 0 (fun l n x => (R l n x)⁻¹))\n    (hK : UniformBandBound s (1 / 2) (fun l n => 1 / K l n)) :\n    UniformClass s w (α + 1 / 2 - κ) (fun l n =>\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

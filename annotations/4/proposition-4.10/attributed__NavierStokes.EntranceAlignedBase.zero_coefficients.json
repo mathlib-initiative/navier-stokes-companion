@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.EntranceAlignedBase.zero_coefficients",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.EntranceAlignedBase.zero_coefficients",
+      "line": 310,
+      "module": "NavierStokes.EntranceAlignedBase",
+      "path": "NavierStokes/EntranceAlignedBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L310"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.EntranceAlignedBase.zero_coefficients",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: 0 < X < activeLeft W → order-zero angular and axial coefficients vanish ((4.13) on (0, X_a))",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 310,
+        "text": "theorem zero_coefficients {p : ℝ × ℝ} (hX : 0 < p.1)\n    (he : p.1 < NominalConeAssembly.activeLeft W) (heta : p.2 ∈ S) :\n    SlowExpansionResidual.angularCoefficient F.data.h (asSlowProfiles (scheme W H Q M hlo)) 0 p = 0 ∧\n    SlowExpansionResidual.axialCoefficient F.data.h (asSlowProfiles (scheme W H Q M hlo)) 0 p = 0"
+      }
+    }
+  }
+}

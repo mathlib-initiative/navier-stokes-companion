@@ -1,0 +1,31 @@
+{
+  "id": "lemma-7.7/attributed/NavierStokes.CurlClassBounds.realizedCoefficient_divergence",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CurlClassBounds.realizedCoefficient_divergence",
+      "line": 666,
+      "module": "NavierStokes.CurlClassBounds",
+      "path": "NavierStokes/CurlClassBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L666"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CurlClassBounds.realizedCoefficient_divergence",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: same hypotheses → cylindricalDivergence (vectorMode K Φ (realizedCoefficient ..)) x = 0   [exact div-free]",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 666,
+        "text": "theorem realizedCoefficient_divergence {U : Set D} {R : D → ℝ} {Vr Vθ Vz : D → D}\n    (G : CylindricalGeometry U R Vr Vθ Vz) {K : ℝ} (hK : K ≠ 0)\n    {Φ : D → ℝ} {a : D → ComplexVector} (hΦ : ContDiffOn ℝ ∞ Φ U) (ha : ContDiffOn ℝ ∞ a U)\n    (hn : ∀ x ∈ U, HarmonicCalculus.phaseNormal R Vr Vθ Vz Φ x ≠ 0)\n    (ht : ∀ x ∈ U, HarmonicCalculus.normalDot (HarmonicCalculus.phaseNormal R Vr Vθ Vz Φ x) (a x) = 0)\n    {x : D} (hx : x ∈ U) :\n    HarmonicCalculus.cylindricalDivergence R Vr Vθ Vz\n      (HarmonicCalculus.vectorMode K Φ (realizedCoefficient K R Vr Vθ Vz Φ a)) x = 0"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "lemma-4.4/support/NavierStokes.NominalProfile.moments_propagate",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.moments_propagate",
+      "line": 486,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L486"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.moments_propagate",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 486,
+        "text": "theorem moments_propagate {U E V G : Field} {a r eta : ℝ} (har : a ≤ r)\n    (hU : ∀ i : Fin 5, IntegrableOn\n      (fun x => density (fun t => U (t, eta)) (fun t => E (t, eta)) x i) (Ioc 0 r))\n    (hV : ∀ i : Fin 5, IntegrableOn\n      (fun x => density (fun t => V (t, eta)) (fun t => G (t, eta)) x i) (Ioc 0 r))\n    (head : moments U E a eta = moments V G a eta)\n    (tail : ∀ x, a < x → U (x, eta) = V (x, eta) ∧ E (x, eta) = G (x, eta)) :\n    moments U E r eta = moments V G r eta"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "theorem-4.6/attributed/NavierStokes.AssembledSlowBase.modified_positive_patch",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AssembledSlowBase.modified_positive_patch",
+      "line": 1560,
+      "module": "NavierStokes.AssembledSlowBase",
+      "path": "NavierStokes/AssembledSlowBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean#L1560"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AssembledSlowBase.modified_positive_patch",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: R ∈ positive window → Q.U = 0 ∧ Q.E = background λ amplitude R  [(vi) I_pos]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1560,
+        "text": "theorem modified_positive_patch {R eta : ℝ} (heta : eta ∈ S)\n    (hR : R ∈ ReservedPatches.radialWindow F W.controls.radius .positive) :\n    Q.U (R ^ 2 / 2, eta) = 0 ∧\n    Q.E (R ^ 2 / 2, eta) =\n      FiveRowRank.background F.data.core.lam (ReservedPatches.radialAmplitude F W.controls.radius eta) R"
+      }
+    }
+  }
+}

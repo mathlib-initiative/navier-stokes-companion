@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.WaveInteractionBounds.wave_cmul_wave",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WaveInteractionBounds.wave_cmul_wave",
+      "line": 90,
+      "module": "NavierStokes.WaveInteractionBounds",
+      "path": "NavierStokes/WaveInteractionBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean#L90"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WaveInteractionBounds.wave_cmul_wave",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: WaveClass s P α f → WaveClass s P β g → ζ≤1 → 0≤P≤1 → WaveClass s P (α+β) (f·g)   [(6.31), m+m'≠0]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 90,
+        "text": "theorem wave_cmul_wave {s : StripData D} {P : ℕ → D → ℝ} {α β : ℝ}\n    {f g : ℕ → D → ℂ} (hf : WaveClass s P α f) (hg : WaveClass s P β g)\n    (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1) :\n    WaveClass s P (α + β) (fun n x => f n x * g n x)"
+      }
+    }
+  }
+}

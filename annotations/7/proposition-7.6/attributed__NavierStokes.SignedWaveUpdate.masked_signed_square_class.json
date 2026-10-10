@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.6/attributed/NavierStokes.SignedWaveUpdate.masked_signed_square_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedWaveUpdate.masked_signed_square_class",
+      "line": 1328,
+      "module": "NavierStokes.SignedWaveUpdate",
+      "path": "NavierStokes/SignedWaveUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean#L1328"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedWaveUpdate.masked_signed_square_class",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: CovarianceControl → R ∈ MeanClass (B−1/2−κ) → mask² · ε · squareColumn ∈ MeanClass (2B−2κ)  [B = α−1/2, κ = 0: C(η_β LΣ) ∈ M_{2α−1}]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1328,
+        "text": "theorem masked_signed_square_class {s : StripData D} {H : ℕ → D → Mat2} {T R : ℕ → D → Vec2}\n    (h : CovarianceControl s H T) (B κ : ℝ)\n    (hR : ∀ i, MeanClass s (B - 1 / 2 - κ) (fun n x => R n x i))\n    {mask : ℕ → D → ℝ} (hm : UnweightedClass s 0 mask) (i : Fin 2) :\n    MeanClass s (2 * B - 2 * κ)\n      (fun n x => mask n x ^ 2 * (s.epsilon n * SignedCovariance.squareColumn (H n x) (T n x) (R n x) i))"
+      }
+    }
+  }
+}

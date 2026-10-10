@@ -1,0 +1,31 @@
+{
+  "id": "proposition-B.2/attributed/NavierStokes.NaturalProfile.exists_profileFamily",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalProfile.exists_profileFamily",
+      "line": 603,
+      "module": "NavierStokes.NaturalProfile",
+      "path": "NavierStokes/NaturalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalProfile.lean#L603"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalProfile.exists_profileFamily",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∃ Λ₀ > 0, ∀ Λ ≥ Λ₀, ∀ C ≥ d.normalizationThreshold Λ, Nonempty (ProfileFamily d Λ C)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 603,
+        "text": "theorem exists_profileFamily {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (hsmall : NaturalAxisRange.Parameters h j)\n    (hσ : 0 < σ) (hP0 : ContDiff ℝ ∞ P0) :\n    ∃ Λ₀ : ℝ, 0 < Λ₀ ∧ ∀ Λ : ℝ, Λ₀ ≤ Λ →\n      ∀ C : ℝ, d.normalizationThreshold Λ ≤ C → Nonempty (ProfileFamily d Λ C)"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "lemma-4.9/attributed/NavierStokes.TerminalHistoryBridge.physical_forwardTheta_eq_terminal",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalHistoryBridge.physical_forwardTheta_eq_terminal",
+      "line": 1216,
+      "module": "NavierStokes.TerminalHistoryBridge",
+      "path": "NavierStokes/TerminalHistoryBridge.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean#L1216"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalHistoryBridge.physical_forwardTheta_eq_terminal",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: (w : CompensationWitness F XR C) (ht : t<1) (hr : 0<r) (hfull : 1/2 < log(X/switchRadius)+1/5) ⊢ q^(-A-1/2) * forwardTheta F XR w.coefficients (logPoint ..) = terminalStress .. t z r = (∫_{u>r} u^2 leadingResidual)/r^2"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1216,
+        "text": "theorem physical_forwardTheta_eq_terminal (F : Profile) {XR C t r z : ℝ}\n    (w : CompensationWitness F XR C) (ht : t < 1) (hr : 0 < r)\n    (hfull : 1/2 < Real.log (SimilarityProfile.X F.data.h (TerminalStress.radiusPoint t r z) /\n      OutgoingDilation.switchRadius F XR)+1/5) :\n    SimilarityProfile.q F.data.h (TerminalStress.radiusPoint t r z)^(-TerminalPressure.amplitudeExponent F.data.h-1/2) *\n      forwardTheta F XR w.coefficients (logPoint XR (SimilarityProfile.inner F.data.h (TerminalStress.radiusPoint t r z))) =\n        TerminalStress.terminalStress (normalization F XR) F.data.h\n          (TerminalPressure.outgoingTaper F.data (shift F XR)) t z r"
+      }
+    }
+  }
+}

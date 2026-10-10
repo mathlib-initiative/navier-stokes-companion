@@ -1,0 +1,26 @@
+{
+  "id": "lemma-8.8/support/NavierStokes.RankStateBounds.rankIncrementState_bounds_of_components",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.RankStateBounds.rankIncrementState_bounds_of_components",
+      "line": 297,
+      "module": "NavierStokes.RankStateBounds",
+      "path": "NavierStokes/RankStateBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RankStateBounds.lean#L297"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.RankStateBounds.rankIncrementState_bounds_of_components",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 297,
+        "text": "theorem rankIncrementState_bounds_of_components {H : ℝ}\n    (heps : BandBound (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR\n      ε L hε hεone hL) 1 c.operators.epsilon)\n    (hdebt : ∀ i : Fin 3, UnweightedClass (PhysicalMeanDomain.localSlowStripData U.carrier U.isOpen\n      ε L hε hεone hL) H (fun n x => CorrectionState.debt c u n x i)) :\n    IncrementBounds (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR\n      ε L hε hεone hL) H (VariableGaugeMean.rankIncrementState g r axial c u)"
+      }
+    }
+  }
+}

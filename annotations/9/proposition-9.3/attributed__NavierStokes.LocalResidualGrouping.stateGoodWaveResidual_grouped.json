@@ -1,0 +1,29 @@
+{
+  "id": "proposition-9.3/attributed/NavierStokes.LocalResidualGrouping.stateGoodWaveResidual_grouped",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalResidualGrouping.stateGoodWaveResidual_grouped",
+      "line": 296,
+      "module": "NavierStokes.LocalResidualGrouping",
+      "path": "NavierStokes/LocalResidualGrouping.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalResidualGrouping.lean#L296"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalResidualGrouping.stateGoodWaveResidual_grouped",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (h : ExtractionRegular U …) (hx : x ∈ liftDomain U) : stateGoodWaveResidual c s n x i = ∑ l ∈ labels n, (residualBlock c s (blocks l) (gaussian l) (aliasCoeffs l)).oscillation n x i"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 296,
+        "text": "theorem stateGoodWaveResidual_grouped {ι : Type*} {U : Set D} (hU : IsOpen U)\n    {c : Context D} {s : State D} {labels : ℕ → Finset ι}\n    {blocks : ι → HarmonicBlock D} {gaussian aliasCoeffs : ι → BlockCoefficients D}\n    {axis : MeanVector D}\n    (hrep : AxisymmetricResidualGrouping.Representation labels blocks gaussian aliasCoeffs s axis)\n    {n : ℕ} (h : ExtractionRegular U c s labels blocks gaussian aliasCoeffs n)\n    {x : D × ℝ} (hx : x ∈ liftDomain U) (i : Fin 3) :\n    stateGoodWaveResidual c s n x i = ∑ l ∈ labels n,\n      (residualBlock c s (blocks l) (gaussian l) (aliasCoeffs l)).oscillation n x i"
+      }
+    }
+  }
+}

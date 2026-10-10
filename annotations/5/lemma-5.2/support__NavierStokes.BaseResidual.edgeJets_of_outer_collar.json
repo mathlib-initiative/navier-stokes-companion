@@ -1,0 +1,26 @@
+{
+  "id": "lemma-5.2/support/NavierStokes.BaseResidual.edgeJets_of_outer_collar",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BaseResidual.edgeJets_of_outer_collar",
+      "line": 2687,
+      "module": "NavierStokes.BaseResidual",
+      "path": "NavierStokes/BaseResidual.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean#L2687"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BaseResidual.edgeJets_of_outer_collar",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 2687,
+        "text": "theorem edgeJets_of_outer_collar {V : Type} [NormedAddCommGroup V] [NormedSpace ℝ V]\n    {f : Inner → V} (hf : ContDiff ℝ ∞ f) {c left right inner cut : ℝ}\n    (hc : 0 < c) (hl : Real.exp left < inner) (_hi : inner ≤ cut) (hr : cut < Real.exp right)\n    (hzero : ∀ w : Inner, w.1 < inner → f w = 0)\n    (ho : PolynomialEdgeJets (outerWindow cut right) (activeZeta c left right)\n      (activeDelta left right) f) :\n    PolynomialEdgeJets (activeWindow left right) (activeZeta c left right)\n      (activeDelta left right) f"
+      }
+    }
+  }
+}

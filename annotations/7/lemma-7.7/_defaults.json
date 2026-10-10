@@ -1,0 +1,81 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 7.7",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 86,
+    "rect": [0.133498, 0.23311, 0.734677, 0.188539]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-7.7",
+      "locator": {
+        "physical": [86],
+        "printed": [86],
+        "text": "Section 7, Lemma 7.7, p. 86"
+      },
+      "region": "lemma-7.7@p086",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["CONVENTION: CurlClassBounds.curlRemainder_waveClass (CurlClassBounds.lean:758) hypotheses hr/hθ/hz/hR, hN/hlower/hupper, hK; cylindricalCurl_vectorPotential L620; realizedCoefficient_divergence L666; longitudinal_class L706", "ATTRIBUTION_GAP: WeightedClasses.WaveClass (WeightedClasses.lean:118); CopyAngularInvariance.coefficient_invariant L312, curlRemainder_invariant L327, realizedCoefficient_invariant L334; CurlClassBounds tsupport lemmas L792–L827", "REFUTED: CurlClassBounds.curlRemainder (CurlClassBounds.lean:269) = (1/K)•(i•cylindricalCurl B); realizedCoefficient L603; CopyAngularInvariance.cylindricalCurl_invariant", "CONVENTION: CurlClassBounds.cylindricalCurl_vectorPotential docstring (L618); curlRemainder_waveClass docstring (L757); CurlGeometry.normalized_double_cross docstring (L75)", "CONVENTION: WeightedClasses.WaveClass (WeightedClasses.lean:118) := MemClass s (√ζ·P) α f; MemClass (L107) fields weight_nonneg, smooth, bounds only", "I read pp. 85-86 and the Lean. cylindricalCurl matches (7.37), frame term included. vectorPotential is C_m e^{ikmΦ}, and curlRemainder is curl_*(C_m), exactly as (7.38) defines r_m. longitudinal_identity, with phaseFactor = Ki, is (7.39). The class, divergence, support and weight clauses are all stated: CurlClassBounds, UniformPrimaryWeights, potential_class, CopyAngularInvariance, commonGraph_physical_curl and pressure_amplitude_eq_source. Hypotheses can be met (ScaledGraph.geometry, PrimaryPulseBounds). I added the skeptics' θ-invariance declarations. For clause (v) I used pressure_amplitude_eq_source in place of pressure_scaling, which only relates two chart weights. longitudinal_class is never used downstream, but it still states the clause. The verdict and relation stand."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration bundles Lemma 7.7. Its clauses are separate theorems over an abstract StripData/CylindricalGeometry, and the paper's inputs ((6.32), Lemma 7.1, 1/(km) ≲ ε^{1/2}) become explicit hypotheses."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "WaveClass is only the weighted-bound part of Def. 6.5 (no ∂_θ = 0, no support). The core is true, but the claim that θ-independence of r_m is not stated is wrong: CopyAngularInvariance states it for C_m, r_m and a_m, and the tsupport lemmas cover supports."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "REFUTED",
+              "severity": "low",
+              "summary": "The auditor flagged that Lean's r_m is the full curl_*(C_m), θ-derivatives included, while the paper displays a θ-free formula. This is no difference: the paper defines r_m by (7.38) itself, and the display is derived from that using θ-independence."
+            },
+            {
+              "confidence": 0.8,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The docstrings cite candidate-manuscript numbering ('Formula (30)', 'Lemma 9.2's curl remainder', 'Lemma 8.8'), not (7.38) and Lemma 7.7. This affects traceability only."
+            },
+            {
+              "confidence": 0.65,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "WaveClass also omits Def. 6.5's lift-compatibility (6.20) across overlapping chart representations and bounds only on s.domain. Lemma 7.7 inherits this from the Def. 6.5 encoding."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.82. Findings: [low CONTENT: CONVENTION] No single declaration bundles Lemma 7.7. Its clauses are separate theorems over an abstract StripData/CylindricalGeometry, and the paper's inputs ((6.32), Lemma 7.1, 1/(km) ≲ ε^{1/2}) become explicit hypotheses.; [low CONTENT: ATTRIBUTION_GAP] WaveClass is only the weighted-bound part of Def. 6.5 (no ∂_θ = 0, no support). The core is true, but the claim that θ-independence of r_m is not stated is wrong: CopyAngularInvariance states it for C_m, r_m and a_m, and the tsupport lemmas cover supports.; [low CONTENT: REFUTED] The auditor flagged that Lean's r_m is the full curl_*(C_m), θ-derivatives included, while the paper displays a θ-free formula. This is no difference: the paper defines r_m by (7.38) itself, and the display is derived from that using θ-independence.; [low CONTENT: CONVENTION] The docstrings cite candidate-manuscript numbering ('Formula (30)', 'Lemma 9.2's curl remainder', 'Lemma 8.8'), not (7.38) and Lemma 7.7. This affects traceability only.; [low CONTENT: CONVENTION] WaveClass also omits Def. 6.5's lift-compatibility (6.20) across overlapping chart representations and bounds only on s.domain. Lemma 7.7 inherits this from the Def. 6.5 encoding.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

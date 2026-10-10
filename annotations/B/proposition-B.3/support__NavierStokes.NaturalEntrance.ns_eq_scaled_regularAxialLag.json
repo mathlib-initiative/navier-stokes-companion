@@ -1,0 +1,26 @@
+{
+  "id": "proposition-B.3/support/NavierStokes.NaturalEntrance.ns_eq_scaled_regularAxialLag",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalEntrance.ns_eq_scaled_regularAxialLag",
+      "line": 1329,
+      "module": "NavierStokes.NaturalEntrance",
+      "path": "NavierStokes/NaturalEntrance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L1329"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalEntrance.ns_eq_scaled_regularAxialLag",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1329,
+        "text": "theorem ns_eq_scaled_regularAxialLag {h j Λ : ℝ} {P0 a : ℝ → ℝ}\n    {f U V Pr : ℝ × ℝ → ℝ} (hs : IsNaturalSolution h j Λ P0 a f U V Pr)\n    (hΛ : 0 < Λ) {p : ℝ × ℝ} (hp : p ∈ domain Λ) (hX : p.1 ≠ 0)\n    (hL : NaturalAxisData.L h p.2 ≠ 0) :\n    ns U p = regularAxialLag h U V Pr p / NaturalAxisData.L h p.2"
+      }
+    }
+  }
+}

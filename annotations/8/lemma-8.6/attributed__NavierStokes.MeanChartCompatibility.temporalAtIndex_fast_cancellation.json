@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.6/attributed/NavierStokes.MeanChartCompatibility.temporalAtIndex_fast_cancellation",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanChartCompatibility.temporalAtIndex_fast_cancellation",
+      "line": 651,
+      "module": "NavierStokes.MeanChartCompatibility",
+      "path": "NavierStokes/MeanChartCompatibility.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L651"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanChartCompatibility.temporalAtIndex_fast_cancellation",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: fastAtIndex h n i (temporalAtIndex h n i f) z = −centered f z  [c_{i0} N_{i0} Δv = −E°_θ at a common index]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 651,
+        "text": "theorem temporalAtIndex_fast_cancellation (h : ℝ) (n i : ℕ) {f : PressureStream.Lift S → ℝ}\n    (hf : ContDiff ℝ ∞ f) (hp : PressureStream.TorusPeriodicLift f) (z : PressureStream.Lift S) :\n    fastAtIndex h n i (temporalAtIndex h n i f) z = -TemporalMeanUpdate.centered f z"
+      }
+    }
+  }
+}

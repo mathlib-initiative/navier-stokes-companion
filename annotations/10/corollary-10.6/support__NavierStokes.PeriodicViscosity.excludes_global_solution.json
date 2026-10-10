@@ -1,0 +1,27 @@
+{
+  "id": "corollary-10.6/support/NavierStokes.PeriodicViscosity.excludes_global_solution",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PeriodicViscosity.excludes_global_solution",
+      "line": 24,
+      "module": "NavierStokes.PeriodicViscosity",
+      "path": "NavierStokes/PeriodicViscosity.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicViscosity.lean#L24"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PeriodicViscosity.excludes_global_solution",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 24,
+        "text": "theorem excludes_global_solution {ν : ℝ} (hν : 0 < ν)\n    {u v : VelocityField} {p q : PressureField} {f : VelocityField}\n    (hu : ContDiffOn ℝ ∞ u preSingularDomain)\n    (hp : ContDiffOn ℝ ∞ p preSingularDomain)\n    (hpu : UnitSpatialPeriodsOn (Ico (0 : ℝ) 1) u)\n    (hpp : UnitSpatialPeriodsOn (Ico (0 : ℝ) 1) p)\n    (huzero : ∀ x : Space, u (0, x) = 0)\n    (hdu : ∀ t ∈ Ico (0 : ℝ) 1, ∀ x : Space, spatialDivergence u t x = 0)\n    (hNSu : ∀ t ∈ Ioo (0 : ℝ) 1, ∀ x : Space,\n      NavierStokesR3.ProblemStatement.navierStokesResidual ν u p t x = f (t, x))\n    (hblow : SpeedUnboundedAtOne u)\n    (hv : ContDiffOn ℝ ∞ v futureDomain)\n    (hq : ContDiffOn ℝ ∞ q futureDomain)\n    (hpv : UnitSpatialPeriodsOn (Ici (0 : ℝ)) v)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

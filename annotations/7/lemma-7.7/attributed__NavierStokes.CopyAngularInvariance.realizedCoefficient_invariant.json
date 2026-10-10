@@ -1,0 +1,31 @@
+{
+  "id": "lemma-7.7/attributed/NavierStokes.CopyAngularInvariance.realizedCoefficient_invariant",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CopyAngularInvariance.realizedCoefficient_invariant",
+      "line": 334,
+      "module": "NavierStokes.CopyAngularInvariance",
+      "path": "NavierStokes/CopyAngularInvariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CopyAngularInvariance.lean#L334"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CopyAngularInvariance.realizedCoefficient_invariant",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: same hypotheses + AffinePhase θ m Φ → Invariant θ (realizedCoefficient K .. Φ a)   [a_m θ-independent]",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 334,
+        "text": "theorem realizedCoefficient_invariant (hR : Invariant θ R)\n    (hr : Invariant θ Vr) (hθ : Invariant θ Vθ) (hz : Invariant θ Vz)\n    (hΦ : AffinePhase θ m Φ) (ha : Invariant θ a) (K : ℝ) :\n    Invariant θ (CurlClassBounds.realizedCoefficient K R Vr Vθ Vz Φ a)"
+      }
+    }
+  }
+}

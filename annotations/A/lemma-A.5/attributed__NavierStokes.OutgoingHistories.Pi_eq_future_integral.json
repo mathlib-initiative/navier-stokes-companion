@@ -1,0 +1,31 @@
+{
+  "id": "lemma-A.5/attributed/NavierStokes.OutgoingHistories.Pi_eq_future_integral",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.OutgoingHistories.Pi_eq_future_integral",
+      "line": 859,
+      "module": "NavierStokes.OutgoingHistories",
+      "path": "NavierStokes/OutgoingHistories.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingHistories.lean#L859"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.OutgoingHistories.Pi_eq_future_integral",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: ∀ (w : ResetWitness d K) y eta, Pi w (y, eta) = -(1/2) * ∫ t in Ioi y, E w (t, eta) ^ 2, where Pi w := history (initialPi d) (E²/2) integrates Π_y = E²/2 from the datum  -- (A.23), paper's direction",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 859,
+        "text": "theorem Pi_eq_future_integral (w : ResetWitness d K) (y eta : ℝ) :\n    Pi w (y, eta) = -(1 / 2 : ℝ) * ∫ t in Ioi y, E w (t, eta) ^ 2"
+      }
+    }
+  }
+}

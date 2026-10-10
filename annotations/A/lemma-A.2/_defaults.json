@@ -1,0 +1,49 @@
+{
+  "kind": "lemma",
+  "label": "Lemma A.2",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 127,
+    "rect": [0.133356, 0.579963, 0.734818, 0.244406]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-A.2",
+      "locator": {
+        "physical": [127],
+        "printed": [127],
+        "text": "Appendix A, Lemma A.2, p. 127"
+      },
+      "region": "lemma-A.2@p127",
+      "verdicts": [
+        {
+          "confidence": 0.92,
+          "evidence": ["REFUTED: NavierStokes.ClosedIntervalCk.CK (ClosedIntervalCk.lean:112, Pi sup norm on jets); norm_ofContDiffOn_le_iff (:273): ‖ofContDiffOn f hf‖ ≤ B ↔ ∀ n ≤ k, ∀ x : I, ‖iteratedDerivWithin n f I x‖ ≤ B; Data.inverseNorm / quadraticNorm (ClosedIntervalMomentRepair.lean:38, 41) are operator norms in that norm.", "I read p.127, p.128 and p.34 and the three Lean files. Data.exists_smooth_same_branch (ClosedIntervalMomentRepair.lean:151) carries every clause: Small 0 is 8β_0²κ_0d_0 ≤ 1 (the _zero lemmas give the pointwise sups), the C⁰ ball, the equation on I = [-1,1], C^∞ on the closed interval, uniqueness among continuous functions in the ball, zero-started iteration converging in C⁰, and (A.3) for each k with Small k on the same c. Q = 0 makes every Small k hold (κ_k = 0); linear_solution also states it. Lean is stronger: any real Banach E, uniform convergence. The one finding is refuted: p.34 fixes the same max-derivative norm. No sorry or axiom in the three files; proofs not checked. No docstring cites \"Lemma A.2\"; the match is by content."],
+          "findings": [
+            {
+              "confidence": 0.9,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "REFUTED",
+              "severity": "low",
+              "summary": "Auditor: Lean fixes the C^k(K) norm as max over n≤k of sup|c^(n)| while the paper leaves it unspecified. The premise is wrong: the paper fixes exactly this norm on p.34, so nothing differs."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.92. Findings: [low CONTENT: REFUTED] Auditor: Lean fixes the C^k(K) norm as max over n≤k of sup|c^(n)| while the paper leaves it unspecified. The premise is wrong: the paper fixes exactly this norm on p.34, so nothing differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.6/attributed/NavierStokes.SignedCovariance.physical_signed_cross_covariance",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedCovariance.physical_signed_cross_covariance",
+      "line": 409,
+      "module": "NavierStokes.SignedCovariance",
+      "path": "NavierStokes/SignedCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L409"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedCovariance.physical_signed_cross_covariance",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: 0<q ≤ Q N, StrictCone on active labels, σ : Vec2 arbitrary → physical cross average with chartStress σ = σ i  [B(W_0, LΣ) = Σ]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 409,
+        "text": "theorem physical_signed_cross_covariance {D h : ℝ} {vr vt : Plane} (sys : SlotSystem D h vr vt)\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (N : ℕ) (hN : 1 ≤ N)\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    {q : ℝ} (hq : 0 < q) (hqN : q ≤ ChartScales.Q N) (x : SlotColoring.Position) (T0 σ : Vec2)\n    (hcone : ∀ U, mask D (tailLabel N U) q x ≠ 0 →\n      SmoothCovariance.StrictCone (P U).matrix (chartTarget h q N T0 U)) (i : Fin 2) :\n    doubleAverage (fun Y θ =>\n      assembledRadial P hdet (physicalOuter h N) (physicalViscosity h N) (chartTarget h q N T0) q x Y θ *\n        signedTangent P hdet (physicalOuter h N) (physicalViscosity h N)\n          (chartTarget h q N T0) (chartStress h N σ) q x i Y θ +\n      signedRadial P hdet (physicalOuter h N) (physicalViscosity h N)\n          (chartTarget h q N T0) (chartStress h N σ) q x Y θ *\n        assembledTangent P hdet (physicalOuter h N) (physicalViscosity h N) (chartTarget h q N T0) q x i Y θ) =\n      σ i"
+      }
+    }
+  }
+}

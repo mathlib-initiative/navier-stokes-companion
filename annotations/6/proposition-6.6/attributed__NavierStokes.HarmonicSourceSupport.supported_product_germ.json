@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.HarmonicSourceSupport.supported_product_germ",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HarmonicSourceSupport.supported_product_germ",
+      "line": 552,
+      "module": "NavierStokes.HarmonicSourceSupport",
+      "path": "NavierStokes/HarmonicSourceSupport.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicSourceSupport.lean#L552"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HarmonicSourceSupport.supported_product_germ",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: same hypotheses, U open → ∀ᶠ y in 𝓝 x, ∀ i j, realLift(u l n) y i * realLift(v k n) y j = 0; supported_transport_zero l.567 for u·∇v"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 552,
+        "text": "theorem supported_product_germ (hU : IsOpen U)\n    (hu : SupportedOscillations sys label χ Y U u)\n    (hv : SupportedOscillations sys label χ Y U v)\n    {l k : ι} {n : ℕ} (hl : 1 ≤ (label n l).1) (hk : 1 ≤ (label n k).1)\n    (hne : label n l ≠ label n k) {x : D × ℝ} (hx : x.1 ∈ U) :\n    ∀ᶠ y in 𝓝 x, ∀ i j,\n      LinearWaveResidual.realLift (u l n) y i * LinearWaveResidual.realLift (v k n) y j = 0"
+      }
+    }
+  }
+}

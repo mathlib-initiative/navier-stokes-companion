@@ -1,0 +1,31 @@
+{
+  "id": "proposition-B.3/attributed/NavierStokes.NaturalExitParameterJets.exists_exit_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalExitParameterJets.exists_exit_jets",
+      "line": 198,
+      "module": "NavierStokes.NaturalExitParameterJets",
+      "path": "NavierStokes/NaturalExitParameterJets.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalExitParameterJets.lean#L198"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalExitParameterJets.exists_exit_jets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: ∀N ∃B≥1, ∀Λ ≥ stabilityScale, ∀C>0, ∀E : CoefficientProfile, ∀X with ΛX∈[0,4.1], ∀n≤N, η∈parameterInterval: η-jets of Φ, log Φ, u, p1, ns bounded by B",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 198,
+        "text": "theorem exists_exit_jets (hσ : 0 < σ) (N : ℕ) :\n    ∃ B, 1 ≤ B ∧ ∀ Λ, 0 < Λ →\n      AxisReference.stabilityScale d.coefficients.epsilon (profileErrorConstant d) ≤ Λ →\n      ∀ C, 0 < C → ∀ E : CoefficientProfile d Λ C,\n      ∀ X, Λ * X ∈ Icc (0 : ℝ) (41 / 10) → ∀ n ≤ N, ∀ η ∈ parameterInterval,\n        |iteratedDeriv n (fun ξ => E.family.phi (Λ * X, ξ)) η| ≤ B ∧\n        |iteratedDeriv n (fun ξ => Real.log (E.family.phi (Λ * X, ξ))) η| ≤ B ∧\n        |iteratedDeriv n (fun ξ => E.family.u (Λ * X, ξ)) η| ≤ B ∧\n        |iteratedDeriv n (fun ξ => p1 E.family.f (X, ξ)) η| ≤ B ∧\n        |iteratedDeriv n (fun ξ => ns E.family.U (X, ξ)) η| ≤ B"
+      }
+    }
+  }
+}

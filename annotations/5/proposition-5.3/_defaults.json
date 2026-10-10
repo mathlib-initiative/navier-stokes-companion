@@ -1,0 +1,65 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 5.3",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] Estimate (5.25) is proved only eventually along PhysicalApproach filters (q→0, t<1), i.e. for q<δ. The paper's range 0<q≤1 with η∈[-1,1] (η=±1 means t=1) is not stated for q∈[δ,1].",
+  "location": {
+    "page": 55,
+    "rect": [0.132964, 0.362472, 0.735212, 0.154335]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-5.3",
+      "locator": {
+        "physical": [55],
+        "printed": [55],
+        "text": "Section 5, Proposition 5.3, p. 55"
+      },
+      "region": "proposition-5.3@p055",
+      "verdicts": [
+        {
+          "confidence": 0.84,
+          "evidence": ["CONFIRMED_CONTENT: BaseResidual.finite_error_rate (BaseResidual.lean:2477) concludes FiniteJetRate, which is '∀ᶠ x in l' (DiagonalResidual.lean:37); PhysicalApproach (BaseResidual.lean:350) has 'scale : Tendsto … l (𝓝 0)' and 'past : ∀ᶠ z in l, z.1 < 1'", "CONVENTION: finite_error_rate hypotheses hd, hc, hfinite, hp/hu/hb, hv/heu/hep, hL (BaseResidual.lean:2477-2491); ConstructedSlowBase.repaired_jetRate (L145) takes hf and ha; FinalSlowBase.finiteIdentities (L107) and error_jetRate (L335) supply them", "CONVENTION: BaseResidual.prefixVelocity (BaseResidual.lean:623) := spatialCurl (prefixPotential …); AxisymmetricFields.velocity (L39); divergence_velocity_on (L208); prefixProfile_smooth on profilePast = Iio 1 ×ˢ univ (BaseResidual.lean:548); bridge BasePrefixIdentity.prefixVelocity_eq_slowVelocity (L235)", "I read p.55 and the Lean source. finite_error_rate matches (5.25) where it applies:\n- It uses the uncut prefix over orders 0..N, with stress exponent −A−1/2+2hj.\n- residual − prefixStressForce equals F_slow; the sign is checked through tangentialStressForce.\n- The exponent 2Nh−2−M gives K_m = 2h+2+m, which does not depend on N.\n- iteratedFDeriv dominates each partial in (5.23).\n- The axis is covered, since lo = 0 is allowed.\n\nThe real delta is that the bound holds only for small q, along filters with q→0 and t<1, not for the stated 0<q≤1 (low severity).\n\nThe other two findings are encoding choices, each recoverable by a mechanical step:\n- The estimate is stated generically; FinalSlowBase.error_jetRate supplies all its inputs.\n- Divergence-freeness follows from the curl form.\n\nBoth skeptics correctly noted that repaired_jetRate does not discharge FiniteIdentities. Existence is GlobalSlowProfiles.sequence. Overall: partial."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Estimate (5.25) is proved only eventually along PhysicalApproach filters (q→0, t<1), i.e. for q<δ. The paper's range 0<q≤1 with η∈[-1,1] (η=±1 means t=1) is not stated for q∈[δ,1]."
+            },
+            {
+              "confidence": 0.8,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No declaration states (5.25) for the constructed sequence. finite_error_rate is generic in (d,f), and its hypotheses are discharged for the actual base only inside FinalSlowBase.error_jetRate. The auditor wrongly said repaired_jetRate discharges every hypothesis: it takes FiniteIdentities and AdmissibleScales as inputs."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No named theorem says the finite prefix velocity is divergence-free. It holds by encoding: prefixVelocity is definitionally AxisymmetricFields.velocity (prefixStream) (prefixSwirl), a curl, so divergence_velocity_on applies on t<1, including the axis. The paper derives it from (5.2) instead."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.84. Findings: [low CONTENT: CONFIRMED_CONTENT] Estimate (5.25) is proved only eventually along PhysicalApproach filters (q→0, t<1), i.e. for q<δ. The paper's range 0<q≤1 with η∈[-1,1] (η=±1 means t=1) is not stated for q∈[δ,1].; [low CONTENT: CONVENTION] No declaration states (5.25) for the constructed sequence. finite_error_rate is generic in (d,f), and its hypotheses are discharged for the actual base only inside FinalSlowBase.error_jetRate. The auditor wrongly said repaired_jetRate discharges every hypothesis: it takes FiniteIdentities and AdmissibleScales as inputs.; [low COVERAGE: CONVENTION] No named theorem says the finite prefix velocity is divergence-free. It holds by encoding: prefixVelocity is definitionally AxisymmetricFields.velocity (prefixStream) (prefixSwirl), a curl, so divergence_velocity_on applies on t<1, including the axis. The paper derives it from (5.2) instead.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

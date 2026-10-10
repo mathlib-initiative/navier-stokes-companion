@@ -1,0 +1,26 @@
+{
+  "id": "proposition-8.4/support/NavierStokes.IntegratedMeanBalances.integrated_axial_constructed_pressure",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.IntegratedMeanBalances.integrated_axial_constructed_pressure",
+      "line": 931,
+      "module": "NavierStokes.IntegratedMeanBalances",
+      "path": "NavierStokes/IntegratedMeanBalances.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/IntegratedMeanBalances.lean#L931"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.IntegratedMeanBalances.integrated_axial_constructed_pressure",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 931,
+        "text": "theorem integrated_axial_constructed_pressure {d a b M : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (ε : ℝ) (v : ℝ × ℝ)\n    {f : PressureStream.Lift MeanParameter → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hs : RadialAlias.RadiallySupported a b f) (hper : PressureStream.TorusPeriodicLift f)\n    {γ radialFlux axialFlux virtualFlux : MeanField}\n    (hγ : SmoothShell a b γ) (hr : SmoothShell a b radialFlux)\n    (hz : SmoothShell a b axialFlux) (hT : SmoothShell a b virtualFlux)\n    (hmass : radialMoment 1 γ = 0) (p : MeanParameter) :\n    (∫ r in Ioi (0 : ℝ), r * axialBalance ε γ radialFlux axialFlux\n      (reconstructedMeanPressure d a b M hab v f) virtualFlux (r, p)) =\n      ε * fderiv ℝ (fun q => axialDefect axialFlux (averagedRadialSource f) q +\n        pressureCoefficient (normalizedMeanDensity a b hab) q *\n          pressureTotal (averagedRadialSource f) q) p (0, 1)"
+      }
+    }
+  }
+}

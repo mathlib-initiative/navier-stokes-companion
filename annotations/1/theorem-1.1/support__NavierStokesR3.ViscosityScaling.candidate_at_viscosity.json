@@ -1,0 +1,26 @@
+{
+  "id": "theorem-1.1/support/NavierStokesR3.ViscosityScaling.candidate_at_viscosity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.ViscosityScaling.candidate_at_viscosity",
+      "line": 172,
+      "module": "NavierStokes.R3.ViscosityScaling",
+      "path": "NavierStokes/R3/ViscosityScaling.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean#L172"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.ViscosityScaling.candidate_at_viscosity",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 172,
+        "text": "theorem candidate_at_viscosity {u f : VelocityField} {p : PressureField}\n    {K : Set Space} (h : ProblemStatement.CandidateProperties 1 u p f K)\n    {ν : ℝ} (hν : 0 < ν) :\n    ProblemStatement.CandidateProperties ν (scaledVelocity ν u) (scaledPressure ν p)\n      (scaledVelocity ν f) ((fun x : Space => Real.sqrt ν • x) '' K)"
+      }
+    }
+  }
+}

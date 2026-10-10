@@ -1,0 +1,27 @@
+{
+  "id": "corollary-7.8/support/NavierStokes.CorrectionStep.signedTensorRemainder_mem",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionStep.signedTensorRemainder_mem",
+      "line": 2366,
+      "module": "NavierStokes.CorrectionStep",
+      "path": "NavierStokes/CorrectionStep.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L2366"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionStep.signedTensorRemainder_mem",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 2366,
+        "text": "theorem signedTensorRemainder_mem {s : StripData D} {P : ℕ → D → ℝ}\n    {α δ β η γ : ℝ} (primary old tangent curl : HarmonicBlock D) (N : ℕ)\n    (hop : SameCarrier old primary) (hot : SameCarrier old tangent)\n    (hoc : SameCarrier old curl)\n    (hpN : primary.BandLimited N) (hoN : old.BandLimited N)\n    (htN : tangent.BandLimited N) (hcN : curl.BandLimited N)\n    (ho : old.WaveBounds s P α)\n    (hd : (subBlock old primary).WaveBounds s P δ)\n    (ht : tangent.WaveBounds s P β) (hc : curl.WaveBounds s P η)\n    (hp0 : ∀ n i, primary.velocity n i 0 = 0) (ho0 : ∀ n i, old.velocity n i 0 = 0)\n    (ht0 : ∀ n i, tangent.velocity n i 0 = 0) (hc0 : ∀ n i, curl.velocity n i 0 = 0)\n    (hβη : β ≤ η) (hγd : γ ≤ δ + β) (hγc : γ ≤ α + η) (hγs : γ ≤ 2 * β)\n    (hkp : ∀ n, old.angularFrequency n ≠ 0)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

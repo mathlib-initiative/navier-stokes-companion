@@ -1,0 +1,31 @@
+{
+  "id": "lemma-A.6/attributed/NavierStokes.TerminalEdgeFactor.profileCarrier_contDiff",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalEdgeFactor.profileCarrier_contDiff",
+      "line": 787,
+      "module": "NavierStokes.TerminalEdgeFactor",
+      "path": "NavierStokes/TerminalEdgeFactor.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L787"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalEdgeFactor.profileCarrier_contDiff",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: (d : TailData) → ContDiff ℝ ∞ (profileCarrier C d y0), profileCarrier (η,x) = C * S^(spatialExponent(1+d.h)) * extension (1+d.h) (2(1-η²)/S), S = exp(y0+3-x). Only for TailData h (h < 1/20).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 787,
+        "text": "theorem profileCarrier_contDiff (C : ℝ) (d : TailData) (y0 : ℝ) :\n    ContDiff ℝ ∞ (profileCarrier C d y0)"
+      }
+    }
+  }
+}

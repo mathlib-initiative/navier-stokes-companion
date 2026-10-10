@@ -1,0 +1,73 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 5.1",
+  "status": "formalized",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] No Lean statement says that [0,a] reaches into Theorem 4.6(i)'s inner collar, where the cone inequalities hold with a uniform margin. The instance stops at X ≤ endpoint·e^δ with endpoint ….",
+  "location": {
+    "page": 47,
+    "rect": [0.133989, 0.518297, 0.734913, 0.161223]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-5.1",
+      "locator": {
+        "physical": [47],
+        "printed": [47],
+        "text": "Section 5, Lemma 5.1, p. 47"
+      },
+      "region": "lemma-5.1@p047",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["CONVENTION: PositiveAxisDifferential.positive_solution_unique (PositiveAxisDifferential.lean:257); its class IsDifferentialSolution (l.53) has axis_zero : W 0 z = 0 for all six components and holomorphic z-slices on the same U. LocalHierarchy (SlowRecursion.lean:1256) has no uniqueness field.", "CONFIRMED_CONTENT: ActualSlowAxis.fromNatural_positive_order (ActualSlowAxis.lean:392), hypothesis hcollar : X ≤ endpoint * exp δ; ReferencePath.Input.endpoint = 4/scale (ReferencePath.lean:375); exists_local_slow_hierarchy (SlowRecursion.lean:1283) takes any core.", "ATTRIBUTION_GAP: SlowRecursion.lowerHistory/recursionStep (SlowRecursion.lean:918–946); PositiveAxisExistence.exists_positive_order_solution (PositiveAxisExistence.lean:864) and positive_solution_unique (PositiveAxisDifferential.lean:257) quantify over arbitrary lower data F with LowerInputRegularity.", "ATTRIBUTION_GAP: SlowRecursion.Domain (SlowRecursion.lean:400) is satisfied by U = ∅. ActualSlowAxis.fromNatural_window (l.365) and fromNatural_uniform_tube (l.370) supply a nonempty U ⊇ [−1,1]; fromNatural_zero_axis (l.478), fromNatural_positive_order (l.392) and fromNatural_profiles_smooth (l.468) state the clauses on that U.", "All three voters agree, and I checked the cited code myself. Existence comes from the ActualSlowAxis.fromNatural instance of exists_local_slow_hierarchy. It gives one radius and one complex tube around [−1,1] for every n, which is stronger than the paper's order-dependent neighbourhoods. It also gives (5.2)–(5.6) on 0<X≤endpoint·e^δ, zero axis values for all five stored components, joint C^∞ profiles and η-holomorphy of every mixed jet. Uniqueness is positive_solution_unique for system (5.7), which matches the paper's own proof; it lives only in PaperAdditionalResults, off the main chain. stepRaw/stepComponent_profile ties that theorem to the hierarchy. Four residual differences, all low severity: the uniqueness class is stated for (5.7) rather than for profiles; the inner-collar placement of a is missing; the recursion takes uncut lower orders; and the generic theorem is vacuous when U = ∅."],
+          "findings": [
+            {
+              "confidence": 0.72,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Uniqueness is proved only for the six-component system (5.7) with complex η and all six components zero at the axis. Uniqueness for real-η profile solutions of (5.2)–(5.6) is not stated. The reduction is routine."
+            },
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "No Lean statement says that [0,a] reaches into Theorem 4.6(i)'s inner collar, where the cone inequalities hold with a uniform margin. The instance stops at X ≤ endpoint·e^δ with endpoint = 4/Λ, and nothing links this to X_a or the (4.26) margin."
+            },
+            {
+              "confidence": 0.72,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The paper feeds order n the finalized lower orders, with their cutoffs and moment corrections. The Lean hierarchy feeds it its own uncut inner lower orders, so on (X_keep, a²] it solves a different recursion. The per-order theorems accept any regular lower history."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "VACUITY",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The generic exists_local_slow_hierarchy does not require [−1,1] ⊂ U. With U = ∅ every LocalHierarchy field except `starts` is vacuous. The content comes from the ActualSlowAxis instance, where U contains a fixed tube around [−1,1]."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.78. Findings: [low CONTENT: CONVENTION] Uniqueness is proved only for the six-component system (5.7) with complex η and all six components zero at the axis. Uniqueness for real-η profile solutions of (5.2)–(5.6) is not stated. The reduction is routine.; [low CONTENT: CONFIRMED_CONTENT] No Lean statement says that [0,a] reaches into Theorem 4.6(i)'s inner collar, where the cone inequalities hold with a uniform margin. The instance stops at X ≤ endpoint·e^δ with endpoint = 4/Λ, and nothing links this to X_a or the (4.26) margin.; [low CONTENT: ATTRIBUTION_GAP] The paper feeds order n the finalized lower orders, with their cutoffs and moment corrections. The Lean hierarchy feeds it its own uncut inner lower orders, so on (X_keep, a²] it solves a different recursion. The per-order theorems accept any regular lower history.; [low VACUITY: ATTRIBUTION_GAP] The generic exists_local_slow_hierarchy does not require [−1,1] ⊂ U. With U = ∅ every LocalHierarchy field except `starts` is vacuous. The content comes from the ActualSlowAxis instance, where U contains a fixed tube around [−1,1].",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "proposition-B.2/support/NavierStokes.NaturalAxisCoefficients.AnalyticInputs.uniformAmplitude",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalAxisCoefficients.AnalyticInputs.uniformAmplitude",
+      "line": 546,
+      "module": "NavierStokes.NaturalAxisCoefficients",
+      "path": "NavierStokes/NaturalAxisCoefficients.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisCoefficients.lean#L546"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalAxisCoefficients.AnalyticInputs.uniformAmplitude",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 546,
+        "text": "theorem AnalyticInputs.uniformAmplitude {h j σ : ℝ} {P : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P) :\n    ∀ Λ : ℝ, 0 ≤ Λ → ∀ C : ℝ, d.normalizationThreshold Λ ≤ C →\n      ∃ a : AxisSpace window d.coefficients.epsilon,\n        ‖a‖ ≤ d.amplitudeBound ∧\n        NaturalAxisBridge.RadiallyConstant window d.coefficients.epsilon a ∧\n        ∀ x ∈ window.interval,\n          NaturalAxisBridge.inputValue window d.coefficients.epsilon a x =\n            realAmplitude h j σ Λ C x"
+      }
+    }
+  }
+}

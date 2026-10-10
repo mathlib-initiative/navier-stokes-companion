@@ -1,0 +1,93 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 8.3",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 92,
+    "rect": [0.134051, 0.827145, 0.583779, 0.021322]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "item": "proposition-8.3",
+      "locator": {
+        "physical": [92, 93],
+        "printed": [92, 93],
+        "text": "Section 8, Proposition 8.3, p. 92"
+      },
+      "region": "proposition-8.3@p092",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["CONVENTION: VariableGaugeMean.meanPressure_radial_identity (VariableGaugeMean.lean:2144), meanClass_meanPressure (:1873), GaugeAliasDecay.meanClass_compactAlias_superflat (GaugeAliasDecay.lean:504), MovingMomentBounds.pressureMass_mem (MovingMomentBounds.lean:51), GaugeMassPreservation.streamGamma_bar_eq_desired_on (GaugeMassPreservation.lean:83)", "CONVENTION: PressureStream.meanPressure_bar_hasDerivAt (PressureStream.lean:697) and pressureAlias_mean_zero (:616) take hf : ContDiff ℝ ∞ f, hs : RadiallySupported a b f, hp : TorusPeriodicLift f; their only users are IntegratedMeanBalances.lean:885/927 and StateMomentBalances.lean:835. MeanRankUpdate.slow_streamGamma_eq_desired_slice (MeanRankUpdate.lean:1881); LocalRankDefect.RankGeometry.axial_exact (LocalRankDefect.lean:651)", "CONVENTION: VariableGaugeMean.meanClass_streamBeta (VariableGaugeMean.lean:2046) concludes MeanClass α; meanClass_scaledTemporalStreamBeta (:2776) concludes MeanClass (α + 1) for streamBeta (ε n • w) with source temporalAtIndex h n (index n) (f n); LocalRankDefect.RankGeometry.increment_bounds (LocalRankDefect.lean:857) for the rank source", "CONVENTION: GaugeStateCoherence.meanPressure_fiberLocal (GaugeStateCoherence.lean:63); VariableGaugeMean.compactPrimitive_fiberLocal (VariableGaugeMean.lean:317); FiberLocal defined at PhysicalMeanDomain.lean:486; radial support in meanPressure_q_supportedGauge (:1851) and streamPotential_supportedGauge (:2911)", "CONVENTION: PressureStream.rho (PressureStream.lean:36), rho_support (:50) ⊆ Icc a b; RadialPullback.physicalCompact (RadialPullback.lean:336) via TransportPrimitive.interiorCutoff (TransportPrimitive.lean:473), which varies on the middle third of [a^d, b^d]", "CONVENTION: GaugeAliasDecay.meanClass_compactAlias_superflat (GaugeAliasDecay.lean:504): hM : Mbase ≠ 0, hgap : nativeIndex h n ≤ index n + D, hS : ChartScales.S n ≤ L n, hp : PeriodicOn, hm : pressureMass (f n) s = 0 ⊢ ∀ β, MeanClass … β (compactAlias …). ChartScales.S n = n^2 (ChartScales.lean:28), epsilon h n = Q n ^ h (:29)", "I read pp. 90–93 and the Lean statements. Signs and operators match: graphDr p_m = g_r − ρP − A_0(g_r − ρP); streamGamma = γ_d − R⁻¹A_0(Rγ_d); streamBeta(ε•w) = −ε∂_ZΨ; I_c = pastIntegral − χ·totalIntegral as in (8.9). Every clause is stated or recoverable in a few lines, mostly in the moving √q gauge. Three clauses exist only on a fixed shell, Δβ ∈ M_{α+1} only for specific sources, and slow-support retention only as fibre locality; each has a written recovery that the repository itself uses elsewhere. No hypothesis is vacuous. Both skeptics reached the same verdict; the only dissent concerns which declarations best cover the Y-independent clause, and I added those."],
+          "findings": [
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration states Proposition 8.3. Its clauses are spread over about 20 lemmas, some on a fixed shell (PressureStream, MeanRankUpdate) and some in the moving √q gauge (VariableGaugeMean, GaugeAliasDecay, MovingMomentBounds, GaugeMassPreservation)."
+            },
+            {
+              "confidence": 0.82,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "(8.13b) and the zero Y-mean of A_0(g_r − ρP) are stated only for a fixed shell with a globally smooth periodic source. The Y-independent clause has a slice lemma and a moving-gauge instance for the rank source, but no general moving-gauge statement."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Δβ ∈ M_{α+1} is stated with the ε factor only for specific sources (temporal stage, rank stage). For a general γ_d ∈ M_α the Lean states only −∂_ZΨ ∈ M_α for a fixed direction w."
+            },
+            {
+              "confidence": 0.82,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Retention of the (Z,T)-projection of the source support is not stated as a support lemma. The Lean states the stronger FiberLocal property; only radial support is stated directly."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The Lean fixes concrete choices the paper leaves free: ρ is a normed ContDiffBump in the middle half of the same [a,b] used for the source shell, and the cutoff is interiorCutoff(a^d, b^d) in the power chart."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Judge-added. Flatness is stated as MeanClass β for every β in chart variables, at the actual radial frequency with periodicity and index-gap hypotheses, not as an O(q^N) bound on physical derivatives."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.78. Findings: [low CONTENT: CONVENTION] No single declaration states Proposition 8.3. Its clauses are spread over about 20 lemmas, some on a fixed shell (PressureStream, MeanRankUpdate) and some in the moving √q gauge (VariableGaugeMean, GaugeAliasDecay, MovingMomentBounds, GaugeMassPreservation).; [low CONTENT: CONVENTION] (8.13b) and the zero Y-mean of A_0(g_r − ρP) are stated only for a fixed shell with a globally smooth periodic source. The Y-independent clause has a slice lemma and a moving-gauge instance for the rank source, but no general moving-gauge statement.; [low CONTENT: CONVENTION] Δβ ∈ M_{α+1} is stated with the ε factor only for specific sources (temporal stage, rank stage). For a general γ_d ∈ M_α the Lean states only −∂_ZΨ ∈ M_α for a fixed direction w.; [low CONTENT: CONVENTION] Retention of the (Z,T)-projection of the source support is not stated as a support lemma. The Lean states the stronger FiberLocal property; only radial support is stated directly.; [low CONTENT: CONVENTION] The Lean fixes concrete choices the paper leaves free: ρ is a normed ContDiffBump in the middle half of the same [a,b] used for the source shell, and the cutoff is interiorCutoff(a^d, b^d) in the power chart.; [low CONTENT: CONVENTION] Judge-added. Flatness is stated as MeanClass β for every β in chart variables, at the actual radial frequency with periodicity and index-gap hypotheses, not as an O(q^N) bound on physical derivatives.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

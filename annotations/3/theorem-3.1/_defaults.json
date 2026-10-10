@@ -1,0 +1,57 @@
+{
+  "kind": "theorem",
+  "label": "Theorem 3.1",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 15,
+    "rect": [0.133462, 0.515829, 0.735439, 0.372456]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "theorem-3.1",
+      "locator": {
+        "physical": [15, 16],
+        "printed": [15, 16],
+        "text": "Section 3, Theorem 3.1, p. 15"
+      },
+      "region": "theorem-3.1@p015",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.LocalPaper.Properties.exterior (LocalPaperTheorem.lean:79-83) vs Properties.exterior_radial_form (:51), exterior_amplitude_formula (:34), exterior_profile_smooth (:22), exterior_profile_derivatives_bounded (:27), exterior_heat_equation (:40) in LocalPaperHeat.lean", "ATTRIBUTION_GAP: NavierStokesR3.theorem_1_1_with_initial_rest (R3/Theorem.lean:26) -> ActualCandidate.selected_candidate_one_with_initial_rest (R3/ActualCandidate.lean:143); PaperLocalization.local_theorem_with_compact_candidate (PaperLocalization.lean:28) uses LocalPaper.properties_of_schedule", "I read pp.15-16 and checked LocalPaperTheorem.lean, LocalPaperHeat.lean and the definitions: q solves q−z²q^{2h}=τ; X=r²/(2q); A=1/2+h; viscosity-1 residual; angularField=b(t,r,z)e_θ; ray=(√(2Xτ),0,0) with component 1 = u_θ. Properties has one field per clause (i)-(iv). Lean is stronger: the fields are smooth on all of t<1, the strips drop c'<q*, and smooth extensions exist at every terminal x≠0. Strip limit points have q≥c, which forces z≠0. The (3.5) formulas come from LocalPaperHeat corollaries that hold for every witness. No sorry. No vacuity: a pure heat swirl is singular at the axis (algebraic branch), C=0 or z-independent swirl contradicts the growth in (iv) via Duhamel, and so any witness is the real construction. Both findings are ATTRIBUTION_GAP."],
+          "findings": [
+            {
+              "confidence": 0.88,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Properties.exterior names BaseExterior.heatVelocity/heatPressureField rather than the explicit (3.5) formulas. Those formulas, H_ext regularity and the swirl heat equation are proved separately, for every Properties witness, in LocalPaperHeat.lean."
+            },
+            {
+              "confidence": 0.72,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "local_theorem is not on the Comparator path: R3 theorem_1_1_with_initial_rest goes through ActualCandidateAssembly.selected_witness. The paper's chain (Thm 3.1, then §3.5 localization) is proved for the same fields in PaperLocalization."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.88. Findings: [low CONTENT: ATTRIBUTION_GAP] Properties.exterior names BaseExterior.heatVelocity/heatPressureField rather than the explicit (3.5) formulas. Those formulas, H_ext regularity and the swirl heat equation are proved separately, for every Properties witness, in LocalPaperHeat.lean.; [low CONTENT: ATTRIBUTION_GAP] local_theorem is not on the Comparator path: R3 theorem_1_1_with_initial_rest goes through ActualCandidateAssembly.selected_witness. The paper's chain (Thm 3.1, then §3.5 localization) is proved for the same fields in PaperLocalization.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

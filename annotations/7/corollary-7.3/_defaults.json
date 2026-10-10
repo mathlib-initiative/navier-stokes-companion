@@ -1,0 +1,57 @@
+{
+  "kind": "corollary",
+  "label": "Corollary 7.3",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 80,
+    "rect": [0.134051, 0.460017, 0.731904, 0.070993]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "corollary-7.3",
+      "locator": {
+        "physical": [80],
+        "printed": [80],
+        "text": "Section 7, Corollary 7.3, p. 80"
+      },
+      "region": "corollary-7.3@p080",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["CONVENTION: ActualParticularStageControls.raw_jets (ActualParticularStageControls.lean:924) has the shape ∀ x : CycleState (Label B N0), ∀ j ≠ 0, then UniformLocalJets.bounds (PeriodizedWaveBounds.lean:254) = ∀ m, ∃ C, ∃ p over the fixed controlPatch (:794). The threshold is (choice B N0).prepared.N (CorrectionInitialization.lean:3929), and Prepared (PrimaryGeometryAssembly.lean:244) has no harmonic or order field.", "ATTRIBUTION_GAP: ActualParticularStageControls.raw_jets hypothesis H : UniformWaveClass … (currentSource x j). ParticularCopyBounds.uniform_coefficients_jets (ParticularCopyBounds.lean:492) takes any source with UniformLocalJets bounds plus a UniformModalControl. ActualParticularControl.referenceControl (ActualParticularControl.lean:609) builds that control for any f in the class and any j ≠ 0, given a PhaseConstruction.", "I read p.80 myself and checked the cited declarations in source. All 24 names exist in decls.jsonl. raw_jets quantifies ∀ x ∀ j≠0 over the fixed controlPatch, with bounds of the form ∀ m ∃ C ∃ p. Label B N0 is fixed by (choice B N0).prepared.N. Prepared.large is required once, for all n ≥ N. nextCoefficients keeps the labels and doubles residualBand, and selected_energy is uniform in j≠0. Both skeptics independently upheld both findings, and no new findings were raised. I added the skeptics' better declarations: common_bounds, finite_harmonic_uniform, controlPatch, uniform_coefficients_jets and referenceControl. The auditor's 'mildly stronger' remark is not a strengthening: per-j bounds with constants chosen after j are equivalent to the finite-M form, by taking a maximum over the finitely many harmonics. 'Full pulse interval' and the Ioo/Icc distinction belong to Prop 7.2."],
+          "findings": [
+            {
+              "confidence": 0.82,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No declaration states Corollary 7.3 as such. The uniformity in stage, harmonic set and derivative order is encoded structurally. The domain (Label B N0, slowStrip, controlPatch) is fixed first, and constants and degrees come afterwards via quantifier order (∀ x ∀ j≠0 ∀ m ∃ C ∃ p)."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "raw_jets and common_bounds apply the inverse to the literal residual currentSource x j of an arbitrary cycle state, not to an arbitrary prescribed source f_m. The general prescribed-source form exists in uniform_coefficients_jets together with referenceControl."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.82. Findings: [low CONTENT: CONVENTION] No declaration states Corollary 7.3 as such. The uniformity in stage, harmonic set and derivative order is encoded structurally. The domain (Label B N0, slowStrip, controlPatch) is fixed first, and constants and degrees come afterwards via quantifier order (∀ x ∀ j≠0 ∀ m ∃ C ∃ p).; [low CONTENT: ATTRIBUTION_GAP] raw_jets and common_bounds apply the inverse to the literal residual currentSource x j of an arbitrary cycle state, not to an arbitrary prescribed source f_m. The general prescribed-source form exists in uniform_coefficients_jets together with referenceControl.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

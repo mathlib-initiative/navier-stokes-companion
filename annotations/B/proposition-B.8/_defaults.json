@@ -1,0 +1,77 @@
+{
+  "kind": "proposition",
+  "label": "Proposition B.8",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 155,
+    "rect": [0.134051, 0.505271, 0.731905, 0.103977]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "item": "proposition-B.8",
+      "locator": {
+        "physical": [155],
+        "printed": [155],
+        "text": "Appendix B, Proposition B.8, p. 155"
+      },
+      "region": "proposition-B.8@p155",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["CONVENTION: NominalConeAssembly.assembly_exists (NominalConeAssembly.lean:1482) combines MatchingConeBounds.preparedWitness_exists (MatchingConeBounds.lean:976) with RepairConeBounds.exists_repair_cone (RepairConeBounds.lean:1262); matching is NominalProfile.Controls.moments_at_match (:1023), physical_moments (:1352), physical_after_match (:674), pressure_after_match (:1719).", "CONVENTION: MatchingConeBounds.exists_ordered_prepared_continuation (MatchingConeBounds.lean:852): '∀ J epsilon, 0 < epsilon → ∃ tolerance, 0 < tolerance ∧ tolerance ≤ epsilon ∧ ∃ w : ContinuationWitness E … (max N J) tolerance, … PreparedBounds c N rho delta radiusFloor'.", "CONVENTION: RepairConeBounds.model_margins (RepairConeBounds.lean:755): '3/5 ≤ familyA F (v,p) ∧ familySpeed F (v,p) ≤ 1 ∧ exp(-8)/2 ≤ familyProjection F (v,p)'; exists_repair_cone_log (:1223): 'hfloor : 6 ≤ c.radius * Real.exp (-8)' then ConeAlgebra.relaxed_cone_of_le_two (ConeAlgebra.lean:97).", "CONVENTION: NominalConeAssembly.Witness.log_lags (NominalConeAssembly.lean:669): W.profiles.angularLag/axialLag = HeatSwitchCone.Qs/Ns for heatJoin < X; heated_lags_before_patch (:832): HeatSwitchCone.Qs/Ns = OutgoingHistories.Qs/Ns for p.1 ≤ OutgoingDilation.patchClock F. Raised in the MATHEMATICS skeptic's notes.", "I read p.155 (statement), pp.154–157 (B.34)–(B.40), (4.15)/(4.16) p.28, (4.21) p.31, (A.7) p.129, and the Lean statements. IsRelaxed is exactly (4.21) with a>0; moments rows match (4.15); X_i = 110 and X_R = 110(CP)^10 are the paper's own values (pp.36, 150). All three clauses are proved about one Controls object: cone on [110, R e^{-8}] and [R e^{-8}, R e^{-5}], exact five-row/field/pressure match at x = e^{-5}, and equality with the outer profile beyond. No single declaration bundles them, hence different_formulation with a routine recovery. All voters agree on OK; the only dissent (finding 2) is that a proof-route difference is not a statement delta, which I accept by ruling it CONVENTION. Lean hypotheses (2 ≤ P, h ≤ 1/1000) are weaker than the paper's; non-vacuous via exists_nominal_cone."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration states Proposition B.8. The cone up to log x = −5, the exact field/pressure/five-row match and the propagation are separate theorems, held together only in NominalConeAssembly.Assembly and its existence proof."
+            },
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The packaged ordered statement is existential in the activation transitions (for every ε some tolerance ≤ ε and some continuation witness work); the paper reads as all sufficiently small transitions. ∀ C ≥ C0 is kept."
+            },
+            {
+              "confidence": 0.8,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "On the restore/repair annulus Lean's intermediate margins differ from (B.36)–(B.37): a ≥ 3/5, v_s ≤ 1, normalized projection ≥ e^{-8}/2, floor R·e^{-8} ≥ 6. Same strategy and same conclusion; proof-internal, not a statement difference."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Clause (iii) for Q_s, N_s has no Controls-level statement. Equality of the lags with the reference outer profile is stated only for the final heat-completed Witness, and with the unheated reference only up to the heat patch clock."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.82. Findings: [low CONTENT: CONVENTION] No single declaration states Proposition B.8. The cone up to log x = −5, the exact field/pressure/five-row match and the propagation are separate theorems, held together only in NominalConeAssembly.Assembly and its existence proof.; [low CONTENT: CONVENTION] The packaged ordered statement is existential in the activation transitions (for every ε some tolerance ≤ ε and some continuation witness work); the paper reads as all sufficiently small transitions. ∀ C ≥ C0 is kept.; [low CONTENT: CONVENTION] On the restore/repair annulus Lean's intermediate margins differ from (B.36)–(B.37): a ≥ 3/5, v_s ≤ 1, normalized projection ≥ e^{-8}/2, floor R·e^{-8} ≥ 6. Same strategy and same conclusion; proof-internal, not a statement difference.; [low CONTENT: CONVENTION] Clause (iii) for Q_s, N_s has no Controls-level statement. Equality of the lags with the reference outer profile is stated only for the final heat-completed Witness, and with the unheated reference only up to the heat patch clock.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

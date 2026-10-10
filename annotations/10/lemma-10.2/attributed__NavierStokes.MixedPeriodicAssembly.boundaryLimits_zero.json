@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.2/attributed/NavierStokes.MixedPeriodicAssembly.boundaryLimits_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MixedPeriodicAssembly.boundaryLimits_zero",
+      "line": 275,
+      "module": "NavierStokes.MixedPeriodicAssembly",
+      "path": "NavierStokes/MixedPeriodicAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MixedPeriodicAssembly.lean#L275"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MixedPeriodicAssembly.boundaryLimits_zero",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: boundaryLimits A v p eA ev ep 0 n = 0. True by definition of the limit object; it carries the origin clause only together with boundaryLimits_joint or the Witness jet clause.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 275,
+        "text": "@[simp] theorem boundaryLimits_zero (A v : VelocityField) (p : PressureField)\n    (eA : JointResidualLimits.AwayExtensions A)\n    (ev : JointResidualLimits.AwayExtensions v)\n    (ep : JointResidualLimits.AwayExtensions p) (n : ℕ) :\n    boundaryLimits A v p eA ev ep 0 n = 0"
+      }
+    }
+  }
+}

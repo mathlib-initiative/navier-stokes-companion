@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.3/attributed/NavierStokes.CandidateFromLimits.exists_candidate_force",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CandidateFromLimits.exists_candidate_force",
+      "line": 186,
+      "module": "NavierStokes.CandidateFromLimits",
+      "path": "NavierStokes/CandidateFromLimits.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CandidateFromLimits.lean#L186"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CandidateFromLimits.exists_candidate_force",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: Given locally uniform limits L of the residual's derivatives as t↑1 (Lemma 10.2 as a hypothesis) and periodic u, p: ∃ F, periodic CandidateProperties (activated u, p) F ∧ ContDiff ℝ ∞ F ∧ periodic ∧ (∀ t, 2 ≤ t → ∀ x, F (t,x) = 0) ∧ jets at t=1 equal L ∧ decay. The Borel extension (10.11) for the pe",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 186,
+        "text": "theorem exists_candidate_force\n    (huper : UnitSpatialPeriodsOn (Ico (0 : ℝ) 1) u)\n    (hpper : UnitSpatialPeriodsOn (Ico (0 : ℝ) 1) p)\n    (hdiv : ∀ t ∈ Ico (0 : ℝ) 1, ∀ x : Space, spatialDivergence u t x = 0)\n    (hunbounded : SpeedUnboundedAtOne u) :\n    ∃ F : VelocityField,\n      CandidateProperties (activatedVelocity u) (activatedPressure p) F ∧\n      ContDiff ℝ ∞ F ∧ UnitSpatialPeriodsOn univ F ∧\n      (∀ t : ℝ, 2 ≤ t → ∀ x : Space, F (t, x) = 0) ∧\n      (∀ n : ℕ, ∀ x : Space, iteratedFDeriv ℝ n F (1, x) = L x n) ∧\n      (∀ m : ℕ, ∀ K : ℝ, 0 ≤ K → ∃ C : ℝ, 0 < C ∧\n        ∀ t : ℝ, 0 ≤ t → ∀ x : Space, ∀ directions : Fin m → Fin 4, ∀ j : Fin 3,\n          |(iteratedFDeriv ℝ m F (t, x)\n            (fun i => CompactForceDecay.spacetimeCoordinate (directions i))) j| ≤\n            C * (1 + t) ^ (-K))"
+      }
+    }
+  }
+}

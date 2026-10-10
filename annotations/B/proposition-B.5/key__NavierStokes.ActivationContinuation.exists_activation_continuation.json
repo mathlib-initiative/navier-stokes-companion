@@ -1,0 +1,31 @@
+{
+  "id": "proposition-B.5/key/NavierStokes.ActivationContinuation.exists_activation_continuation",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationContinuation.exists_activation_continuation",
+      "line": 1945,
+      "module": "NavierStokes.ActivationContinuation",
+      "path": "NavierStokes/ActivationContinuation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationContinuation.lean#L1945"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationContinuation.exists_activation_continuation",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: (d : AnalyticInputs h j σ P0) (hsmall : SmallParameters h j) (0<σ) (P0 smooth) (0<ν) (hcut : ∀ η∈[-1,1], |Z η| ≤ ν → 99/100 < χ η) : ∃ M ≥ 1, ∀ Λ ≥ M, ∃ C0 ≥ 1, ∀ C ≥ C0, ∃ E : EntranceProfile d Λ C, ∀ N, ∀ ε>0, Nonempty (ContinuationWitness E hΛ hsmall hP0 N ε)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "lean_stronger",
+      "role": "key",
+      "snippet": {
+        "line": 1945,
+        "text": "theorem exists_activation_continuation {h j σ ν : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hσ : 0 < σ) (hP0 : ContDiff ℝ ∞ P0) (hν : 0 < ν)\n    (hcut : ∀ η ∈ Icc (-1 : ℝ) 1, |NaturalAxisData.Z h j P0 η| ≤ ν →\n      99 / 100 < NaturalAxisData.chi h j σ η) :\n    ∃ M : ℝ, 1 ≤ M ∧ ∀ Λ : ℝ, ∀ hΛ : 0 < Λ, M ≤ Λ →\n      ∃ C0 : ℝ, 1 ≤ C0 ∧ ∀ C : ℝ, C0 ≤ C →\n        ∃ E : NaturalEntrance.EntranceProfile d Λ C,\n          ∀ N : ℕ, ∀ ε : ℝ, 0 < ε → Nonempty (ContinuationWitness E hΛ hsmall hP0 N ε)"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.HarmonicCovariance.angularProduct_mem",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HarmonicCovariance.angularProduct_mem",
+      "line": 29,
+      "module": "NavierStokes.HarmonicCovariance",
+      "path": "NavierStokes/HarmonicCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicCovariance.lean#L29"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HarmonicCovariance.angularProduct_mem",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: wave coefficients a_j ∈ W_α, b_{-j} ∈ W_β on finite F, 0≤P≤1, kp≠0 → MeanClass s (α+β) (angularMean (field a · field b))"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 29,
+        "text": "theorem angularProduct_mem {s : StripData D} {P : ℕ → D → ℝ} {α β : ℝ}\n    (a b : ℕ → Coefficients D) (F : Finset ℤ)\n    (hF : ∀ n, (a n).support ⊆ F)\n    (ha : ∀ j ∈ F, WaveClass s P α (fun n x => a n j x))\n    (hb : ∀ j ∈ F, WaveClass s P β (fun n x => b n (-j) x))\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1)\n    (k : ℕ → ℝ) (phase : ℕ → D → ℝ) (kp : ℕ → ℤ) (hkp : ∀ n, kp n ≠ 0) :\n    MeanClass s (α + β) (fun n x => HarmonicFields.angularMean\n      (fun θ => field (a n) (k n) (phase n) (kp n) (x, θ) *\n        field (b n) (k n) (phase n) (kp n) (x, θ)))"
+      }
+    }
+  }
+}

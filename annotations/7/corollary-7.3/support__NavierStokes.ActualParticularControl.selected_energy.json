@@ -1,0 +1,26 @@
+{
+  "id": "corollary-7.3/support/NavierStokes.ActualParticularControl.selected_energy",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularControl.selected_energy",
+      "line": 46,
+      "module": "NavierStokes.ActualParticularControl",
+      "path": "NavierStokes/ActualParticularControl.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularControl.lean#L46"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularControl.selected_energy",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 46,
+        "text": "theorem selected_energy (F : PhaseConstruction D) (i : ι)\n    {p : PhaseCalculus.Slow} (hp : p ∈ D.carrier i) {v : ℝ}\n    (hv : v ∈ Icc 0 (F.L i)) {j : ℤ} (hj : j ≠ 0) (z : PrimaryODE.State) :\n    ⟪z, (F.frame i).coefficient j (p,v) z⟫_ℝ ≤\n      (GaussianEnvelope.referenceRate (F.lam i) (F.u i) (F.L i) v +\n        (F.E + 4 * F.C) / D.scale i) * ‖z‖^2"
+      }
+    }
+  }
+}

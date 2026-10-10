@@ -1,0 +1,29 @@
+{
+  "id": "lemma-B.1/attributed/NavierStokes.AxisOperators.jet_regularInverse_succ",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisOperators.jet_regularInverse_succ",
+      "line": 501,
+      "module": "NavierStokes.AxisOperators",
+      "path": "NavierStokes/AxisOperators.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisOperators.lean#L501"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisOperators.jet_regularInverse_succ",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: x ∈ I.interval → inputJet (regularInverse r A) (n+1) m x = inputJet A n m x / radialDivisor r n, radialDivisor r n = (n+1)(n+r): first half of (B.5)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 501,
+        "text": "theorem jet_regularInverse_succ (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r)\n    (A : AxisSpace I ε) (n m : ℕ) {x : ℝ} (hx : x ∈ I.interval) :\n    inputJet I ε (regularInverse I hε r hr A) (n + 1) m x =\n      inputJet I ε A n m x / radialDivisor r n"
+      }
+    }
+  }
+}

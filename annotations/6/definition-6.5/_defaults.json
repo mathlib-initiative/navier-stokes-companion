@@ -1,0 +1,65 @@
+{
+  "kind": "definition",
+  "label": "Definition 6.5",
+  "status": "partial",
+  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] WaveClass, UniformWaveClass and HarmonicBlock.WaveBounds state only smoothness and the (6.29) bounds. Common-torus descent, band-chart compatibility (the (6.20) counterpart) and support are separate predicates: Periodic, Coherent and the inputSupport field of …; [low CONTENT] The class allows any nonnegative P: there is no 0<P≤1 and no restriction to v ∈ [0,L_s]. The concrete copyEnvelope is zero off the padded rectangles in an unrestricted H-plane. ….",
+  "location": {
+    "page": 70,
+    "rect": [0.133498, 0.574278, 0.734233, 0.279389]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "definition-6.5",
+      "locator": {
+        "physical": [70, 71],
+        "printed": [70, 71],
+        "text": "Section 6, Definition 6.5, p. 70"
+      },
+      "region": "definition-6.5@p070",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.WeightedClasses.MemClass (NavierStokes/WeightedClasses.lean:107): Prop structure with three fields only: weight_nonneg, smooth (ContDiffOn ∞ on s.domain), bounds (∀ m ∃ C ≥ 0, p, ∀ n, x ∈ domain, j ≤ m: ‖iteratedFDeriv j (f n) x‖ ≤ C ε_n^α (S_n·max 1 δ⁻¹)^p w n x).; NavierStokes.WeightedClasses.WaveClass (NavierStokes/WeightedClasses.lean:118): abbrev: MemClass with weight √(ζ x)·P n x; no descent, compatibility or support field.; NavierStokes.LabelSumBounds.UniformClass (NavierStokes/LabelSumBounds.lean:33): Same three fields as MemClass with a label index; C and p are chosen before the label l.; NavierStokes.LabelSumBounds.UniformWaveClass (NavierStokes/LabelSumBounds.lean:45): abbrev: UniformClass with weight √(ζ x)·P l n x.; NavierStokes.CorrectionState.HarmonicBlock.WaveBounds (NavierStokes/CorrectionState.lean:192): ∀ i : Fin 3, ∀ j : ℤ, j ≠ 0 → WaveClass s P α (fun n x => b.velocity n i j x); adds only the nonzero-harmonic restriction.; NavierStokes.CorrectionStep.CycleAnalyticInvariant (NavierStokes/CorrectionStep.lean:9408): One Prop structure on a CycleState; fields include inputSupport (:9415, InputSupportOn G.domain (labelCarrier l) on each label's blocks), wave (:9432, UniformWaveClass G.strip P (1/2) on velocity coefficients) and difference (:9436, exponent 17/25).; NavierStokes.HarmonicSourceSupport.InputSupportOn (NavierStokes/HarmonicSourceSupport.lean:678): The real-projected velocity, pressure, Gaussian and alias coefficients are NonzeroSupportedOn U (K n); NonzeroSupportedOn (:620) is ∀ j ≠ 0, ∀ x ∈ U, x ∉ K → c j x = 0.; NavierStokes.ActualCyclePreservation.Invariant (NavierStokes/ActualCyclePreservation.lean:259): abbrev: CycleAnalyticInvariant for ActualInitialization.geometry with P := ActualInitialization.envelope and labelCarrier := ActualCoreSupport.refinedCarrier.; NavierStokes.ActualCoreSupport.refinedCarrier (NavierStokes/ActualCoreSupport.lean:41): closure of positiveCore (:35): positive time, x ∈ ActualInitialization.labelCarrier l n, radialRatio ∈ Icc leftRadius rightRadius, nativeQ ∈ Icc (1/2) 2. Match with Ω_γ of (6.28) not traced.; NavierStokes.ActualInitialExcluded.labelCarrier (NavierStokes/ActualInitialExcluded.lean:730): Points whose native slow point and some lift coordinates k lie in actualSourceCore = actualSlowCore ×ˢ sourceCell (ActualGaussianCoverage.lean:1026); ActualInitialization.labelCarrier (:1129) is this set.; NavierStokes.ActualGaussianCoverage.sourceCell (NavierStokes/ActualGaussianCoverage.lean:176): sourceCell r L c := Icc (-r) r ×ˢ Icc ((L/c)/6) (5*(L/c)/6): the carrier restricts the second (temporal) coordinate to the middle two thirds, like supp ψ in (6.16).; NavierStokes.ActualCyclePreservation.RunInvariant (NavierStokes/ActualCyclePreservation.lean:768): Prop structure with fields analytic : Invariant σ x, coherent : ActualCycleCoherence.Coherent x, periodic : ActualCyclePeriodicity.Periodic x.; NavierStokes.ActualCyclePreservation.state_runInvariant (NavierStokes/ActualCyclePreservation.lean:826): For all B, N0 with ActualCarrierGeometry.geometricThreshold ≤ N0 and all j: RunInvariant (sigma j) (state B N0 j); state (:149) is the iterate of the fixed cycle from the initial cycle state. Proved by induction; no sorry in the file.; NavierStokes.ActualCyclePeriodicity.Periodic (NavierStokes/ActualCyclePeriodicity.lean:249): For every l, n with ActualWaveRegularityData.Ordered l n and every lattice k: each stored velocity, pressure and Gaussian coefficient is invariant under translation by pointDeck k = (0,(0,latticePoint k)) on geometry.domain. Conditional on Ordered (common index ≤ label's native index).; NavierStokes.ActualCycleCoherence.Coherent (NavierStokes/ActualCycleCoherence.lean:56): Fields state, blocks, axis, labels; blocks = BlocksCoherent (:43): whenever index n + k = index m, BlockFieldsOn holds on slowDomain (overlap n m) along bandChartEquiv h n m k (rescaling of R and slow coordinates, coverMap k on the torus variable).; NavierStokes.PhysicalResidualNaturality.BlockFieldsOn (NavierStokes/PhysicalResidualNaturality.lean:481): Phase identity (frequency·phase EqOn U), equal nonzero angular frequency, and equality up to scale factors of the real velocity, pressure, Gaussian and alias fields for every θ; a field-level comparison between two band charts, not (6.20) verbatim.; NavierStokes.ActualWaveRegularity.ModeData (NavierStokes/ActualWaveRegularity.lean:390): Per-mode record with deck identities for cutoff, amplitude, radius, radial field and phase, and radial zero germs outside a radial interval. Supports the original's 'descent and support appear separately', not its 'only at the use sites'.; NavierStokes.PhysicalWaveSum.RegularFamily (NavierStokes/PhysicalWaveSum.lean:745): Prop structure; field geometry_support (:753): a nonzero amplitude forces the scaled radius into an annulus, ‖(Z,T)‖ ≤ Z and |η| ≤ r0; mask_support (:759). Supports 'support appears separately'.; NavierStokes.WaveStateRegularity.CoefficientSupport (NavierStokes/WaveStateRegularity.lean:197): For active labels, a nonzero velocity coefficient (any harmonic, including zero) at x with slow point in U forces x.1 ∈ Icc (qLength·a) (qLength·b): a separate radial-support predicate.", "CONFIRMED_CONTENT: MemClass.weight_nonneg (WeightedClasses.lean:108) is the only constraint on the weight. WaveEnvelopeTransport.copyEnvelope :54 uses rectangle r L = Icc(-r,r) ×ˢ Icc 0 L (:24). CommonCoverClass.sourceStrip :851 pulls back along fst and leaves Plane unrestricted. P ≤ 1 is proved separately as ActualCurrentParticularBounds.native_envelope_le_one :193.", "ATTRIBUTION_GAP: ActualParticularStageControls.Native :33. ActualParticularControl.angleStrip :472 and forgetAngle :475, with the sourceFamily_uniform docstring 'The additional angular variable is genuinely absent'. CorrectionState.HarmonicBlock :170: Coefficients D is a Finsupp over ℤ with no θ input. HarmonicBlock.WaveBounds :192 (∀ j ≠ 0). HarmonicWaveInteraction.lifted_amplitude_angularIndependent :144.", "All voters agree on SINGLE_SOURCE_DELTA and partial. The Lean W_α is WaveClass, which is MemClass with weight √ζ·P. UniformWaveClass adds label uniformity, and HarmonicBlock.WaveBounds gives the wave-level clause (j≠0, grouped harmonics). Clause (f) matches (6.29) by a routine recovery: finite-dimensional norm equivalence, δ≤1 so max 1 δ⁻¹=δ⁻¹, real exponents rounded up, and a finite max over I. Shell-edge zero extension follows from the bounds. ∂_θ a=0 and m≠0 are structural in HarmonicBlock. Common-torus descent, the (6.20) compatibility and supp ⊂ Ω_γ are in no class. They live in separate use-site data, so the item is stated only in part. The concrete envelope makes membership stronger in v and H than the paper's pre-cutoff class."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "WaveClass, UniformWaveClass and HarmonicBlock.WaveBounds state only smoothness and the (6.29) bounds. Common-torus descent, band-chart compatibility (the (6.20) counterpart) and support are separate predicates: Periodic, Coherent and the inputSupport field of CycleAnalyticInvariant. RunInvariant conjoins them with the exponent-1/2 bounds. No single W_α predicate was found."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The class allows any nonnegative P: there is no 0<P≤1 and no restriction to v ∈ [0,L_s]. The concrete copyEnvelope is zero off the padded rectangles in an unrestricted H-plane. Concrete members therefore vanish there and are flat at v=0 and v=L, which is effectively the cut-off class."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "WaveClass does not contain ∂_θ a=0, m≠0 or the grouping of equal label–harmonic pairs. On Native=(Parameter×ℝ)×Plane the ℝ factor is the angle, so θ-dependent members exist. HarmonicBlock states these clauses faithfully by type and by WaveBounds."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "partial",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_DELTA, relation partial, confidence 0.82. Findings: [low CONTENT: CONFIRMED_CONTENT] WaveClass, UniformWaveClass and HarmonicBlock.WaveBounds state only smoothness and the (6.29) bounds. Common-torus descent, band-chart compatibility (the (6.20) counterpart) and support are separate predicates: Periodic, Coherent and the inputSupport field of CycleAnalyticInvariant. RunInvariant conjoins them with the exponent-1/2 bounds. No single W_α predicate was found.; [low CONTENT: CONFIRMED_CONTENT] The class allows any nonnegative P: there is no 0<P≤1 and no restriction to v ∈ [0,L_s]. The concrete copyEnvelope is zero off the padded rectangles in an unrestricted H-plane. Concrete members therefore vanish there and are flat at v=0 and v=L, which is effectively the cut-off class.; [low CONTENT: ATTRIBUTION_GAP] WaveClass does not contain ∂_θ a=0, m≠0 or the grouping of equal label–harmonic pairs. On Native=(Parameter×ℝ)×Plane the ℝ factor is the angle, so θ-dependent members exist. HarmonicBlock states these clauses faithfully by type and by WaveBounds.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

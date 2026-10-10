@@ -1,0 +1,27 @@
+{
+  "id": "lemma-8.8/support/NavierStokes.MovingMomentBounds.rankStage_defectBounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MovingMomentBounds.rankStage_defectBounds",
+      "line": 359,
+      "module": "NavierStokes.MovingMomentBounds",
+      "path": "NavierStokes/MovingMomentBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingMomentBounds.lean#L359"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MovingMomentBounds.rankStage_defectBounds",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 359,
+        "text": "theorem rankStage_defectBounds {κ H σ : ℝ}\n    (hop : LocalRankDefect.LocalOperators U.carrier c.operators)\n    (hbc : SmoothTriple (LocalRankDefect.positiveDomain U.carrier) c.base)\n    (hmc : SmoothTriple (PhysicalMeanDomain.slowDomain U.carrier) u.mean)\n    (hms : SupportedTriple g.radial.inner g.radial.outer (qLength coord) U.carrier u.mean)\n    (hWc : ∀ i j, SmoothOn (PhysicalMeanDomain.slowDomain U.carrier) (u.covariance i j))\n    (hWs : ∀ i j, Support g.radial.inner g.radial.outer (qLength coord) U.carrier (u.covariance i j))\n    (hV : LocalRankDefect.IsSlowOn U.carrier c.base.angular)\n    (hG : LocalRankDefect.IsSlowOn U.carrier c.base.axial)\n    (ho : OperatorBounds (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR ε L hε hεone hL)\n      c.operators κ)\n    (hb : BaseBounds (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR ε L hε hεone hL) c.base)\n    (hm : MeanIncrementBounds.CumulativeBounds\n      (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR ε L hε hεone hL) u.mean)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

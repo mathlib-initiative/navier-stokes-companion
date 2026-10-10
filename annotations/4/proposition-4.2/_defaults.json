@@ -1,0 +1,57 @@
+{
+  "kind": "proposition",
+  "label": "Proposition 4.2",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 27,
+    "rect": [0.134051, 0.494553, 0.733689, 0.098886]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-4.2",
+      "locator": {
+        "physical": [27],
+        "printed": [27],
+        "text": "Section 4, Proposition 4.2, p. 27"
+      },
+      "region": "proposition-4.2@p027",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["CONVENTION: LeadingStress.radialDivergence_physicalStressTheta (LeadingStress.lean:392) and radialDivergence_physicalStressAxial (:409); theta_divergence_coefficient (:123) and axial_divergence (:167). StressAlgebra.stressFree_* (StressAlgebra.lean:316,324) are bare real identities with no downstream use.", "REFUTED: LeadingStress.lean:33,37,137,564 docstrings say 'Proposition 3.2'. A grep of NavierStokes/ finds navierStokesResidual_tangential only in LeadingStress.lean. The main chain reaches T_0 through ZerothStressIdentity.coefficients_stress_zero_eq (ZerothStressIdentity.lean:334) and raw_stresses_eq (:281).", "I read p.27 and pp.25-26 and re-checked LeadingStress.lean:571 myself. velocity = pack(-(x0B+x1F), x0F-x1B, U) gives u_θ = rF, and angularComponent is v·e_θ. radialB = -V/(2s) gives r u_r = V_0 (4.7). Π_X = f² = E²/(2X). The sources match H·S_q and S_n of (4.9). angularLag and axialLag are (4.10) with C=0. theta and axial equal F(XQ_s/L - a) and F(XN_s/(LE) + b_s) (4.11). The viscosity add-ons are ∂_z²u_θ and ∂_z²u_z (4.12). radialDivergence is (∂_r + k/r). The residual is (3.1). Hypotheses are local, with f≠0 only pointwise, so they are weaker than the paper's global φ>0: lean_stronger. Clause (4.13) is recovered routinely. No sorry or axiom appears in the dependency files. Both findings are low and non-material."],
+          "findings": [
+            {
+              "confidence": 0.78,
+              "contested": true,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No declaration has (4.13) as its conclusion. The clause is encoded as explicit formulas for the stress divergence whose zero sets are exactly (4.13). Recovery is a one-line rearrangement, so this is not a material gap."
+            },
+            {
+              "confidence": 0.8,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "REFUTED",
+              "severity": "low",
+              "summary": "The facts are accurate: the docstrings cite 'Proposition 3.2' (older draft numbering), and navierStokesResidual_tangential is a leaf. Neither is a mathematical difference from Prop 4.2, so the CONTENT premise fails. Keep it as a traceability note only."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.88. Findings: [low COVERAGE: CONVENTION] No declaration has (4.13) as its conclusion. The clause is encoded as explicit formulas for the stress divergence whose zero sets are exactly (4.13). Recovery is a one-line rearrangement, so this is not a material gap.; [low CONTENT: REFUTED] The facts are accurate: the docstrings cite 'Proposition 3.2' (older draft numbering), and navierStokesResidual_tangential is a leaf. Neither is a mathematical difference from Prop 4.2, so the CONTENT premise fails. Keep it as a traceability note only.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

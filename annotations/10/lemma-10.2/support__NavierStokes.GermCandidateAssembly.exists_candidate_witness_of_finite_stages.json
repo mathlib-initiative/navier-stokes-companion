@@ -1,0 +1,27 @@
+{
+  "id": "lemma-10.2/support/NavierStokes.GermCandidateAssembly.exists_candidate_witness_of_finite_stages",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GermCandidateAssembly.exists_candidate_witness_of_finite_stages",
+      "line": 164,
+      "module": "NavierStokes.GermCandidateAssembly",
+      "path": "NavierStokes/GermCandidateAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GermCandidateAssembly.lean#L164"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GermCandidateAssembly.exists_candidate_witness_of_finite_stages",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 164,
+        "text": "theorem exists_candidate_witness_of_finite_stages (upper : ℝ) (bandFloor : ℕ)\n    {qbig C : ℝ} (hqbig : 0 < qbig)\n    (initial : VelocityField) (stages : ℕ → VelocityField)\n    (D : ℕ → DirectAngularDiagonal.AngularData (LocalAngularDiagonal.localSlowDomain F.data.h qbig))\n    (pInitial : PressureField) (pStages : ℕ → PressureField)\n    (E : StageEstimates F.data.h qbig\n      (potentialStages H v upper bandFloor initial stages) (LocalAngularDiagonal.rawSeries D)\n      (pressureStages H v upper bandFloor pInitial pStages))\n    (hInitial : MixedDiagonalExtensions.SublevelShrinkingSupport F.data.h C qbig initial)\n    (hStages : ∀ j, MixedDiagonalExtensions.SublevelShrinkingSupport F.data.h C qbig (stages j))\n    (hDirect : ∀ j, MixedDiagonalExtensions.SublevelShrinkingSupport F.data.h C qbig\n      (LocalAngularDiagonal.rawSeries D j))\n    (hpInitial : MixedDiagonalExtensions.SublevelShrinkingSupport F.data.h C qbig pInitial)\n    (hpStages : ∀ j, MixedDiagonalExtensions.SublevelShrinkingSupport F.data.h C qbig (pStages j))\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

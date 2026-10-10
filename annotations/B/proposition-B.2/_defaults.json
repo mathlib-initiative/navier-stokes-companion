@@ -1,0 +1,65 @@
+{
+  "kind": "proposition",
+  "label": "Proposition B.2",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 146,
+    "rect": [0.134051, 0.778163, 0.73368, 0.081836]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "proposition-B.2",
+      "locator": {
+        "physical": [146, 147],
+        "printed": [146, 147],
+        "text": "Appendix B, Proposition B.2, p. 146"
+      },
+      "region": "proposition-B.2@p146",
+      "verdicts": [
+        {
+          "confidence": 0.87,
+          "evidence": ["CONVENTION: NavierStokes.NaturalProfile.ProfileFamily (NaturalProfile.lean:559), field natural: IsNaturalSolution … (angularProfile (realAmplitude h j σ Λ C) Λ phi) …; realAmplitude = exp(Λ·realPhase)/C (NaturalAxisCoefficients.lean:508); IsNaturalSolution.pressure_equation: partialY Pr p = (f p)^2 (NaturalProfile.lean:291)", "CONVENTION: NavierStokes.NaturalAxisBridge.UniformMixedError (NaturalAxisBridge.lean:689) is stated in the scaled variable only. ReferenceJetBounds.natural_U_radial (:94) and natural_radial_jet_error (:546) cover first-order cases only. Repo grep for a general Λ^(r−1) bound finds nothing.", "ATTRIBUTION_GAP: exists_common_joint_analytic_profiles (NaturalAxisJointAnalytic.lean:126): ∃ Ω, IsOpen Ω ∧ … AnalyticOnNhd ℝ F.family.phi Ω. AxisHolomorphic.exists_common_holomorphic_extension (AxisHolomorphic.lean:539): ∃ δ > 0, ∃ B, ∀ A : AxisSpace I ε … AnalyticOnNhd ℂ (complexProfile I ε A k Y) (parameterTube J δ). CoefficientProfile.norm_ball, phi_eq, u_eq (NaturalEntrance.lean:936). Neither theorem is used anywhere else in the repo.", "I read pp. 25–27 and 144–148 and the Lean. For fixed d, Λ₀ and open Ω, exists_common_joint_analytic_profiles gives every Λ ≥ Λ₀ and C ≥ exp(Λ sup Re∫ζ*) a CoefficientProfile carrying: (4.13)/(B.15) cleared of the φ-denominator on |ΛX|<20 with f>0 on 0≤ΛX≤4.1; the form (B.12); Φ(0)=1, u(0)=0; the all-order bound (B.13) against f0(Yχ) and −YZ*/(2L), constants depending only on d; joint real analyticity. Data match (B.1)–(B.3). The three differences (F=φ/C normalization, scaled-only bounds, complex tube stated generically in AxisHolomorphic) are each recovered routinely. The pairing skeptic's correction stands: the headline is unused downstream; the main path uses exists_coefficientProfile."],
+          "findings": [
+            {
+              "confidence": 0.93,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean's angular profile is f = (φ*/C)·Φ(ΛX,η), the paper's F = φ/C of (4.4), not φ = φ*Φ. The equations are degree-one homogeneous in φ and Π_X = f² = φ²/C², so φ = C·f recovers the paper's form."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No declaration states the unscaled bound C_{r,s}Λ^{r−1}; Lean bounds only scaled Y-derivatives. Recovery: ∂_X^r[Ψ(ΛX,η)] = Λ^r(∂_Y^rΨ)(ΛX,η), so the C_{r,s}/Λ bound becomes C_{r,s}Λ^{r−1}."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The headline gives real joint analyticity on a fixed real Ω, not the Λ,C-uniform complex parameter tube. The tube is AxisHolomorphic.exists_common_holomorphic_extension (δ, bounds chosen before A) applied to F.coefficients, whose (B.4)-norm ball has fixed ε."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.87. Findings: [low CONTENT: CONVENTION] Lean's angular profile is f = (φ*/C)·Φ(ΛX,η), the paper's F = φ/C of (4.4), not φ = φ*Φ. The equations are degree-one homogeneous in φ and Π_X = f² = φ²/C², so φ = C·f recovers the paper's form.; [low COVERAGE: CONVENTION] No declaration states the unscaled bound C_{r,s}Λ^{r−1}; Lean bounds only scaled Y-derivatives. Recovery: ∂_X^r[Ψ(ΛX,η)] = Λ^r(∂_Y^rΨ)(ΛX,η), so the C_{r,s}/Λ bound becomes C_{r,s}Λ^{r−1}.; [low CONTENT: ATTRIBUTION_GAP] The headline gives real joint analyticity on a fixed real Ω, not the Λ,C-uniform complex parameter tube. The tube is AxisHolomorphic.exists_common_holomorphic_extension (δ, bounds chosen before A) applied to F.coefficients, whose (B.4)-norm ball has fixed ε.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

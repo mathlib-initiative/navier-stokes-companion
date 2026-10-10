@@ -1,0 +1,29 @@
+{
+  "id": "lemma-4.8/attributed/NavierStokes.HeatSwitchCone.preserves_true_cone",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HeatSwitchCone.preserves_true_cone",
+      "line": 1018,
+      "module": "NavierStokes.HeatSwitchCone",
+      "path": "NavierStokes/HeatSwitchCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatSwitchCone.lean#L1018"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HeatSwitchCone.preserves_true_cone",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: CleanOutgoingCone F.reset anchor left → 0<anchor → ∀ C, ∃ XR₀, ∀ XR ≥ XR₀, ∀ w : CompensationWitness F XR C, ∀ p ∈ trueWindow, TrueAt F XR w.coefficients p"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1018,
+        "text": "theorem preserves_true_cone (F : Profile) {anchor left : ℝ}\n    (h : OutgoingCone.CleanOutgoingCone F.reset anchor left) (ha : 0 < anchor) (C : ℝ) :\n    ∃ XR₀ : ℝ, 0 < XR₀ ∧ ∀ XR : ℝ, XR₀ ≤ XR →\n      ∀ w : HeatedOutgoing.CompensationWitness F XR C,\n      ∀ p ∈ OutgoingCone.trueWindow F.data, TrueAt F XR w.coefficients p"
+      }
+    }
+  }
+}

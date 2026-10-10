@@ -1,0 +1,29 @@
+{
+  "id": "proposition-5.5/attributed/NavierStokes.SlowBorelBase.normalized_tangential_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SlowBorelBase.normalized_tangential_bounds",
+      "line": 1530,
+      "module": "NavierStokes.SlowBorelBase",
+      "path": "NavierStokes/SlowBorelBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean#L1530"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SlowBorelBase.normalized_tangential_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: generic d, a admissible on innerBox lo hi: ∀ m, ∃ B, ∀ q∈(0,1], w∈innerBox: ‖blownJet m (normalizedSwirl − leadingSwirl)‖ ≤ B q^{2h} ∧ ‖blownJet m (slowSum axial − axial 0)‖ ≤ B q^{2h}"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1530,
+        "text": "theorem normalized_tangential_bounds {a : ℕ → ℕ} {h C lo hi : ℝ}\n    (hh : 0 < h) (hlo : 0 < lo) {d : Coefficients} (hd : SmoothCoefficients d)\n    (ha : AdmissibleScales h (coefficientBundle C d) (innerBox lo hi) a) (m : ℕ) :\n    ∃ B : ℝ, 0 < B ∧ ∀ q : ℝ, 0 < q → q ≤ 1 → ∀ w ∈ innerBox lo hi,\n      ‖blownJet m (fun y => normalizedSwirl a h C d y - leadingSwirl C d y.2) (q, w)‖ ≤\n        B * q ^ (2 * h) ∧\n      ‖blownJet m (fun y => slowSum a h d.axial y - d.axial 0 y.2) (q, w)‖ ≤\n        B * q ^ (2 * h)"
+      }
+    }
+  }
+}

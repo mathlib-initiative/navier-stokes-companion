@@ -1,0 +1,31 @@
+{
+  "id": "theorem-1.1/key/NavierStokesR3.H3Comparison.theorem_1_1_with_maximalH3",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.H3Comparison.theorem_1_1_with_maximalH3",
+      "line": 109,
+      "module": "NavierStokes.R3.H3MaximalLifespan",
+      "path": "NavierStokes/R3/H3MaximalLifespan.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/H3MaximalLifespan.lean#L109"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.H3Comparison.theorem_1_1_with_maximalH3",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: theorem_1_1 conjunction plus IsMaximalClassicalH3Solution ν f 0 1 u p and admissibleH3Lifespans ν f 0 = Ioc 0 1 (stronger variant)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "different_formulation",
+      "role": "key",
+      "snippet": {
+        "line": 109,
+        "text": "theorem theorem_1_1_with_maximalH3 (ν : ℝ) (hν : 0 < ν) :\n    ∃ u : VelocityField, ∃ p : PressureField, ∃ f : VelocityField, ∃ K : Set Space,\n      CandidateProperties ν u p f K ∧ ¬Nonempty (GlobalFiniteEnergySolution ν f) ∧\n      IsMaximalClassicalH3Solution ν f (fun _ => 0) 1 u p ∧\n      admissibleH3Lifespans ν f (fun _ => 0) = Ioc (0 : ℝ) 1"
+      }
+    }
+  }
+}

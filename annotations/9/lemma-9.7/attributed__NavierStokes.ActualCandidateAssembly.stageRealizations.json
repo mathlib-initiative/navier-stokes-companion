@@ -1,0 +1,31 @@
+{
+  "id": "lemma-9.7/attributed/NavierStokes.ActualCandidateAssembly.stageRealizations",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCandidateAssembly.stageRealizations",
+      "line": 1059,
+      "module": "NavierStokes.ActualCandidateAssembly",
+      "path": "NavierStokes/ActualCandidateAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCandidateAssembly.lean#L1059"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCandidateAssembly.stageRealizations",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: StageRealizations B N0 (residualBand B N0) (parameterSequence B N0) (qbig B N0) potentialStages directStages pressureStages: for every stage k, band n ≥ residualBand, a > 0, chart i, EqOn of curl(A k), D k, P k with the cycle's chart-level parts on cartesianChartDomain (qbig B N0) n a i",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1059,
+        "text": "theorem stageRealizations (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) :\n    ActualPhysicalPrefixFields.StageRealizations B N0 (ActualCandidateConstruction.residualBand B N0)\n      (ActualCandidateConstruction.parameterSequence B N0) (ActualCandidateConstruction.qbig B N0)\n      (potentialStages B N0 hN) (directStages B N0 hN) (pressureStages B N0 hN)"
+      }
+    }
+  }
+}

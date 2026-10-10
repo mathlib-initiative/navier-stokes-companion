@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.2/attributed/NavierStokes.LeadingStress.radialDivergence_physicalStressTheta",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStress.radialDivergence_physicalStressTheta",
+      "line": 392,
+      "module": "NavierStokes.LeadingStress",
+      "path": "NavierStokes/LeadingStress.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean#L392"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStress.radialDivergence_physicalStressTheta",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: radialDivergence 2 (physicalStressTheta P h) p = q^(-A-1) * (√(2X) * (f*sourceTheta/L + 2*(X f_XX + 2 f_X))) at inner h p (s>0, t<1, f≠0, point in Ω); the zero set of the bracket is the first equation of (4.13)",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 392,
+        "text": "theorem radialDivergence_physicalStressTheta {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {p : SimilarityProfile.PhysicalPoint} (hp : p.1 < 1) (hs : 0 < p.2.1)\n    (hw : inner h p ∈ Ω.carrier) (hf : P.f (inner h p) ≠ 0) :\n    radialDivergence 2 (physicalStressTheta P h) p =\n      SimilarityProfile.q h p ^ (-A h - 1) * (Real.sqrt (2 * (inner h p).1) *\n        (P.f (inner h p) * sourceTheta P h (inner h p) / L h (inner h p).2 +\n          2 * ((inner h p).1 * partialX (partialX P.f) (inner h p) +\n            2 * partialX P.f (inner h p))))"
+      }
+    }
+  }
+}

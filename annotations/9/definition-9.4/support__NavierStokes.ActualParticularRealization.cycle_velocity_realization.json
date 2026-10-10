@@ -1,0 +1,26 @@
+{
+  "id": "definition-9.4/support/NavierStokes.ActualParticularRealization.cycle_velocity_realization",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularRealization.cycle_velocity_realization",
+      "line": 547,
+      "module": "NavierStokes.ActualParticularRealization",
+      "path": "NavierStokes/ActualParticularRealization.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularRealization.lean#L547"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularRealization.cycle_velocity_realization",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 547,
+        "text": "theorem cycle_velocity_realization {z : SpaceTime}\n    (hz : z ∈ (PhysicalResidualBridge.commonGraph (ChartScales.Q n) h i).source\n      (bandDomain D h (ChartScales.Q n) (ChartScales.Q D.reference.band) (gap n) U))\n    (hchart : z ∈ PhysicalCurlCovariance.validCylindrical delta chart) :\n    polarVelocityMap delta chart\n      (velocityMap (PhysicalResidualBridge.commonGraph (ChartScales.Q n) h i)\n        ((cycleBlock D s h gap N).oscillation n)) (z.1, CylindricalResidual.chart z.2) =\n      SpatialCurl.spatialCurl (labelPotential D h (ChartScales.Q D.reference.band) I delta N)\n        (z.1, CylindricalResidual.chart z.2)"
+      }
+    }
+  }
+}

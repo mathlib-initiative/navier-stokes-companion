@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.6/attributed/NavierStokes.TemporalMeanUpdate.axialAlias_fastDerivative_superflat",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TemporalMeanUpdate.axialAlias_fastDerivative_superflat",
+      "line": 1247,
+      "module": "NavierStokes.TemporalMeanUpdate",
+      "path": "NavierStokes/TemporalMeanUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L1247"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TemporalMeanUpdate.axialAlias_fastDerivative_superflat",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: 0 < h → ∀ m N, ∃ C ≥ 0, ∀ᶠ n, ∀ j ≤ m, ∀ z, ‖D^j (fastDerivative h n (axialAlias …)) z‖ ≤ C * epsilon h n ^ N  [c N a flat]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1247,
+        "text": "theorem axialAlias_fastDerivative_superflat {a b d cL cR h α : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (hcL : 0 < cL) (hcR : 0 < cR) (hh : 0 < h)\n    {f : ℕ → PressureStream.Lift S → ℝ}\n    (hf : WeightedClasses.MeanClass (UniformFourierAlias.chartStrip a b cL cR ha hcL hcR h hh) α f)\n    (hfc : ∀ n, ContDiff ℝ ∞ (f n)) (hp : ∀ n, PressureStream.TorusPeriodicLift (f n))\n    (hs : ∀ n, RadialAlias.RadiallySupported a b (f n)) (m N : ℕ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ᶠ n in atTop, ∀ j ≤ m, ∀ z : PressureStream.Lift S,\n      ‖iteratedFDeriv ℝ j (fastDerivative h n\n        (axialAlias d a b (ChartScales.radialCoefficient h n) (vector .radial) h n (f n))) z‖ ≤\n          C * ChartScales.epsilon h n ^ N"
+      }
+    }
+  }
+}

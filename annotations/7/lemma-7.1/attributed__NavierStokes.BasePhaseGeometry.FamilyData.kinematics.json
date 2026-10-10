@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.1/attributed/NavierStokes.BasePhaseGeometry.FamilyData.kinematics",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BasePhaseGeometry.FamilyData.kinematics",
+      "line": 918,
+      "module": "NavierStokes.BasePhaseGeometry",
+      "path": "NavierStokes/BasePhaseGeometry.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean#L918"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BasePhaseGeometry.FamilyData.kinematics",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (a.frame i).Kinematics q (Icc 0 L): actual v-derivatives of β, ρ, h, K_a, N_a (B′)"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 918,
+        "text": "theorem kinematics (hh : 0 ≤ h) (hr : 0 < r0) (hM : 1 ≤ M)\n    (hu : |u| ≤ M) (hL : 1 / (2 * r0) ≤ M) (hslot : 4 * r0 * ChartScales.Tg ≤ M)\n    (i : ι) (hn : LargeBand h M u (a.band i)) {q : Slow} (hq : q ∈ D.carrier i) :\n    (a.frame i).Kinematics q (Icc 0 (a.length i))"
+      }
+    }
+  }
+}

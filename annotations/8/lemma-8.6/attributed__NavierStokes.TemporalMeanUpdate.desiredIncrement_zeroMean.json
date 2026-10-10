@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.6/attributed/NavierStokes.TemporalMeanUpdate.desiredIncrement_zeroMean",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TemporalMeanUpdate.desiredIncrement_zeroMean",
+      "line": 573,
+      "module": "NavierStokes.TemporalMeanUpdate",
+      "path": "NavierStokes/TemporalMeanUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L573"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TemporalMeanUpdate.desiredIncrement_zeroMean",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: ContDiff f → TorusPeriodicLift f → ∀ p, torusAverage (desiredIncrement h n f) p = 0  [zero auxiliary mean; axialUpdate_zeroMean :793 for Δγ; desiredIncrement_barMass :584 for (8.2)]"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 573,
+        "text": "theorem desiredIncrement_zeroMean (h : ℝ) (n : ℕ) {f : PressureStream.Lift S → ℝ}\n    (hf : ContDiff ℝ ∞ f) (hp : PressureStream.TorusPeriodicLift f) (p : ℝ × S) :\n    PressureStream.torusAverage (desiredIncrement h n f) p = 0"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "corollary-7.3/support/NavierStokes.ActualParticularControl.finite_harmonic_uniform",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularControl.finite_harmonic_uniform",
+      "line": 519,
+      "module": "NavierStokes.ActualParticularControl",
+      "path": "NavierStokes/ActualParticularControl.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularControl.lean#L519"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularControl.finite_harmonic_uniform",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 519,
+        "text": "theorem finite_harmonic_uniform\n    (s : StripData E) (w : Label → ℕ → E → ℝ) (α : ℝ)\n    (H : Finset ℤ) (f : ℤ → Label → ℕ → E → V)\n    (hf : ∀ j ∈ H, UniformClass s w α (f j)) :\n    UniformClass s (fun l : Label × {j : ℤ // j ∈ H} => w l.1) α\n      (fun l => f l.2.1 l.1)"
+      }
+    }
+  }
+}

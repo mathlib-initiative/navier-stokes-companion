@@ -1,0 +1,81 @@
+{
+  "kind": "lemma",
+  "label": "Lemma 9.2",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 102,
+    "rect": [0.134051, 0.849713, 0.734126, 0.039829]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-9.2",
+      "locator": {
+        "physical": [102, 103],
+        "printed": [102, 103],
+        "text": "Section 9, Lemma 9.2, p. 102"
+      },
+      "region": "lemma-9.2@p102",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["CONVENTION: meanCross_class HarmonicMeanInteraction.lean:310; mixed_wave_class HarmonicWaveInteraction.lean:471; transport_mean_class :404; supported_transport_zero HarmonicSourceSupport.lean:567; interactionBlock_uniform UniformHarmonicInteraction.lean:376", "CONVENTION: HarmonicWaveInteraction.lean:404 transport_mean_class: MeanClass s (α+β-κ) of HarmonicResidual.transport … i m; repo grep finds 0 references", "CONVENTION: WeightedClasses.lean:107-120 MemClass/MeanClass/WaveClass; HarmonicSourceSupport.lean:23 NonzeroSupported, :151 transport_supported", "CONVENTION: meanCross_class hκ, hN, hk, hkp; mixed_wave_class ha0, hb0, hM, hN, hda, hdb, hP1; ModeSolenoidal HarmonicWaveInteraction.lean:135; discharged for actual blocks at PrimaryResidualClass.lean:623, CorrectionStep.lean:4319, 7205", "REFUTED: LocalResidualGrouping.lean:33 transport_zero_of_disjoint_on → :70 nonlinearResidual_sum → :296 stateGoodWaveResidual_grouped, called at CorrectionStep.lean:9272; disjointness from ActualCycleResidualBounds.lean:687 Invariant.actual_disjoint", "I read pp. 102-103 and Defs 6.4/6.5 and the Lean sources. All four clauses are stated: (i) meanCross_class gives W_{α+μ−1/2} at j ≠ 0 with the mean in IncrementBounds (radial M_{μ+1}, others M_μ); (ii) mixed_wave_class gives W_{α+β−κ} for the symmetric same-carrier transport; (iii) transport_mean_class gives M_{α+β−κ} per ordered product, and the sum follows by MemClass.add; (iv) cross-label transport vanishes (supported_transport_zero; chain form transport_zero_of_disjoint_on). HarmonicResidual.transport includes the frame and phase terms. Differences are packaging, explicit context hypotheses and class encoding, each recoverable. All three voters agreed on OK; I only correct the pairing skeptic's claim that clause (iv) is unused at transport level."],
+          "findings": [
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No single declaration bundles Lemma 9.2 and no docstring cites it. The four clauses are separate theorems; interactionBlock_uniform packages only (i) and (ii), with an extra (b·∇)b term and a min of exponents."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The zero-harmonic clause is stated only for one ordered transport (transport_mean_class, every m). The symmetric sum is never stated, and the declaration has no callers; Lean's mean equations use covariances."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean's W and M classes hold only smoothness and jet bounds on the strip domain. supp ⊂ Ω_γ, smooth zero extension and the 0 ≤ v ≤ L_s restriction are outside the class; support of product harmonics is proved separately."
+            },
+            {
+              "confidence": 0.87,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean makes the paper's context explicit as hypotheses: κ ≤ 1/2, phase normal in class 0, k and kp of order ε^(-1/2), 0 ≤ P ≤ 1, ζ ≤ 1, zero stored zero mode, finite band. 'Curl-generated' becomes per-mode solenoidality."
+            },
+            {
+              "confidence": 0.85,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "REFUTED",
+              "severity": "low",
+              "summary": "Skeptic's claim: the transport form of the distinct-label clause is unused, and the chain uses it only for covariances. The three named theorems do have no callers, but the chain uses a sibling transport statement."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "different_formulation",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.85. Findings: [low CONTENT: CONVENTION] No single declaration bundles Lemma 9.2 and no docstring cites it. The four clauses are separate theorems; interactionBlock_uniform packages only (i) and (ii), with an extra (b·∇)b term and a min of exponents.; [low CONTENT: CONVENTION] The zero-harmonic clause is stated only for one ordered transport (transport_mean_class, every m). The symmetric sum is never stated, and the declaration has no callers; Lean's mean equations use covariances.; [low CONTENT: CONVENTION] Lean's W and M classes hold only smoothness and jet bounds on the strip domain. supp ⊂ Ω_γ, smooth zero extension and the 0 ≤ v ≤ L_s restriction are outside the class; support of product harmonics is proved separately.; [low CONTENT: CONVENTION] Lean makes the paper's context explicit as hypotheses: κ ≤ 1/2, phase normal in class 0, k and kp of order ε^(-1/2), 0 ≤ P ≤ 1, ζ ≤ 1, zero stored zero mode, finite band. 'Curl-generated' becomes per-mode solenoidality.; [low CONTENT: REFUTED] Skeptic's claim: the transport form of the distinct-label clause is unused, and the chain uses it only for covariances. The three named theorems do have no callers, but the chain uses a sibling transport statement.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

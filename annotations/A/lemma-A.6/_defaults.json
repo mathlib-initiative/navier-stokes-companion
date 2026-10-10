@@ -1,0 +1,57 @@
+{
+  "kind": "lemma",
+  "label": "Lemma A.6",
+  "status": "formalized",
+  "note": "No confirmed finding (machine audit, unconfirmed).",
+  "location": {
+    "page": 138,
+    "rect": [0.134051, 0.209292, 0.733681, 0.117156]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "lemma-A.6",
+      "locator": {
+        "physical": [138],
+        "printed": [138],
+        "text": "Appendix A, Lemma A.6, p. 138"
+      },
+      "region": "lemma-A.6@p138",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/RadialHeatProfile.lean:10 (module doc) and :688 (docstring of profile_eq_integral) say 'Lemma 4.4'; grep of NavierStokes/ for 'Lemma A.6' finds nothing. Clauses: RadialHeatProfile.lean:121, :226, :234, :666; TerminalStress.lean:157, :161; HeatProfileExtension.lean:242.", "CONVENTION: HeatProfileExtension.physicalProfile_contDiffOn (HeatProfileExtension.lean:242) and physicalProfile_eq_profile (:249), hypothesis 1 < a only; RadialHeatProfile.spatialProfile_joint_contDiffOn (RadialHeatProfile.lean:666) on {X>0, ν≥0}; TerminalEdgeFactor.profileCarrier_contDiff (TerminalEdgeFactor.lean:787) takes d : TailData, and OutgoingTail.TailData.h_small (OutgoingTail.lean:107) with Parameters.lam_lt (OutgoingSchedule.lean:297) forces 2h < lam < 1/10.", "I read p.137-138 and the Lean sources. Every clause is stated: (A.32) is profile_eq_integral at a=1+h; positivity, C^∞ on Ici 0 and derivative bounds uniform on [0,∞); K is heatAmplitude, with the heat equation and K_r<0 for t<1, r>0, C>0; z-independence holds by construction; the profile identity is heat_argument (0<h<1/2). Hypotheses are only 1<a, so the Lean is stronger. I adopt the PAIRING skeptic's corrections: the heatAmplitude lemmas for (iii), and the physicalEdit lemmas dropped as Proposition A.7 neighbours. Its profileCarrier statements take TailData, so they cover h<1/20 only; finding 1 gives the general recovery. Both findings are traceability or encoding points, not defects."],
+          "findings": [
+            {
+              "confidence": 0.92,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration states Lemma A.6; its clauses sit in separate lemmas across RadialHeatProfile, TerminalStress and HeatProfileExtension, and the docstrings cite a stale 'Lemma 4.4' (now the comparison lemma, p.28). Each clause is stated faithfully."
+            },
+            {
+              "confidence": 0.78,
+              "contested": true,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "For general 0<h<1/2 no single lemma states smoothness of c∞X^{-A}H(2(1-η²)/X) on (0,∞)×[-1,1]. The H-factor is smooth on (0,∞)×ℝ for every a>1; the full product is stated only under TailData (h<1/20), in a log-X chart."
+            }
+          ],
+          "match_verdict": "SINGLE_SOURCE_OK",
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.88. Findings: [low CONTENT: ATTRIBUTION_GAP] No single declaration states Lemma A.6; its clauses sit in separate lemmas across RadialHeatProfile, TerminalStress and HeatProfileExtension, and the docstrings cite a stale 'Lemma 4.4' (now the comparison lemma, p.28). Each clause is stated faithfully.; [low CONTENT: CONVENTION] For general 0<h<1/2 no single lemma states smoothness of c∞X^{-A}H(2(1-η²)/X) on (0,∞)×[-1,1]. The H-factor is smooth on (0,∞)×ℝ for every a>1; the full product is stated only under TailData (h<1/20), in a log-X chart.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "corollary-10.6/support/NavierStokes.PeriodicPaper.CandidateProperties.force_derivative_decay",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PeriodicPaper.CandidateProperties.force_derivative_decay",
+      "line": 77,
+      "module": "NavierStokes.PeriodicPaperTheorem",
+      "path": "NavierStokes/PeriodicPaperTheorem.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicPaperTheorem.lean#L77"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PeriodicPaper.CandidateProperties.force_derivative_decay",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 77,
+        "text": "theorem CandidateProperties.force_derivative_decay {ν : ℝ} {u f : VelocityField}\n    {p : PressureField} {K : Set Space} (h : CandidateProperties ν u p f K)\n    (m : ℕ) (N : ℝ) (hN : 0 ≤ N) :\n    ∃ C : ℝ, 0 < C ∧ ∀ t : ℝ, 0 ≤ t → ∀ x : Space,\n      ‖iteratedFDeriv ℝ m f (t, x)‖ ≤ C * (1 + t) ^ (-N)"
+      }
+    }
+  }
+}

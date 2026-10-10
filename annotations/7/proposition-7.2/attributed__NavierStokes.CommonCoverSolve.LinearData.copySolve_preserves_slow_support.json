@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.2/attributed/NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
+      "line": 372,
+      "module": "NavierStokes.CommonCoverSolve",
+      "path": "NavierStokes/CommonCoverSolve.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean#L372"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: A source vanishing for p ∉ U gives copySolve (p,Y) = 0. With copySolve_preserves_transverse_support (L377), this covers the slow, shell and transverse supports."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 372,
+        "text": "theorem copySolve_preserves_slow_support {U : Set P}\n    (hf : ∀ p ∉ U, ∀ Y, d.source (p, Y) = 0) (k : Frequency) {p : P} (hp : p ∉ U)\n    (Y : Plane) : d.copySolve g hab k (p, Y) = 0"
+      }
+    }
+  }
+}

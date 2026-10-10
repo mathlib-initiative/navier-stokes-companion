@@ -1,0 +1,26 @@
+{
+  "id": "corollary-B.6/support/NavierStokes.ModulatedProfileAssembly.nominalBounds_of_certificate",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ModulatedProfileAssembly.nominalBounds_of_certificate",
+      "line": 1033,
+      "module": "NavierStokes.ModulatedProfileAssembly",
+      "path": "NavierStokes/ModulatedProfileAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileAssembly.lean#L1033"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ModulatedProfileAssembly.nominalBounds_of_certificate",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1033,
+        "text": "theorem nominalBounds_of_certificate {F : OutgoingProfile.Profile} (W : NominalProfile.Witness F)\n    (hW : NominalConeAssembly.Certificate W) :\n    ∃ b : NominalBounds W, ∀ p : Point,\n      NominalConeAssembly.activeLeft W < p.1 → p.1 < NominalConeAssembly.activeRight W →\n      p.2 ∈ Icc (-1 : ℝ) 1 →\n      (p.1 < b.modulation.left ∨ (repairPatch W).right < p.1) →\n      NominalConeAssembly.IsTrue W.profiles F.data.h p"
+      }
+    }
+  }
+}

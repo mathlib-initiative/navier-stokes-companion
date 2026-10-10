@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.2/attributed/NavierStokes.MixedPeriodicAssembly.boundaryLimits_joint",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MixedPeriodicAssembly.boundaryLimits_joint",
+      "line": 283,
+      "module": "NavierStokes.MixedPeriodicAssembly",
+      "path": "NavierStokes/MixedPeriodicAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MixedPeriodicAssembly.lean#L283"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MixedPeriodicAssembly.boundaryLimits_joint",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Same hypotheses: Tendsto (iteratedFDeriv ℝ n (periodicResidual A v p)) (𝓝[openPast 1] (1,x)) (𝓝 (boundaryLimits … x n)). At x = 0 this is the substantive origin-flatness clause (it consumes hz).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 283,
+        "text": "theorem boundaryLimits_joint {A v : VelocityField} {p : PressureField}\n    (hz : JointResidualLimits.VanishingJointJets (originalResidual A v p))\n    (eA : JointResidualLimits.AwayExtensions A)\n    (ev : JointResidualLimits.AwayExtensions v)\n    (ep : JointResidualLimits.AwayExtensions p) (n : ℕ) (x : Space) :\n    Tendsto (iteratedFDeriv ℝ n (periodicResidual A v p))\n      (𝓝[SpacetimeEndpoint.openPast 1] (1, x))\n      (𝓝 (boundaryLimits A v p eA ev ep x n))"
+      }
+    }
+  }
+}

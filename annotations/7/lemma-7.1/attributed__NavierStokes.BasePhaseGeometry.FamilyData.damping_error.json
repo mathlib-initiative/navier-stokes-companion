@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.1/attributed/NavierStokes.BasePhaseGeometry.FamilyData.damping_error",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BasePhaseGeometry.FamilyData.damping_error",
+      "line": 875,
+      "module": "NavierStokes.BasePhaseGeometry",
+      "path": "NavierStokes/BasePhaseGeometry.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean#L875"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BasePhaseGeometry.FamilyData.damping_error",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: |viscosity − referenceViscosity λ u L v| ≤ dampingConstant M / S (two-sided (7.11))"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 875,
+        "text": "theorem damping_error (hh : 0 ≤ h) (hr : 0 < r0) (hM : 1 ≤ M)\n    (hu : 0 < u) (huM : u ≤ M) (hL : 1 / (2 * r0) ≤ M)\n    (hslot : 4 * r0 * ChartScales.Tg ≤ M)\n    (i : ι) (hn : LargeBand h M u (a.band i)) {q : Slow} (hq : q ∈ D.carrier i)\n    {v : ℝ} (hv : v ∈ a.slot i) :\n    |(a.frame i).viscosity (q, v) -\n      ViscousPropagator.referenceViscosity (a.lam i) u (a.length i) v| ≤ dampingConstant M / D.scale i"
+      }
+    }
+  }
+}

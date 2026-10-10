@@ -1,0 +1,29 @@
+{
+  "id": "proposition-8.3/attributed/NavierStokes.VariableGaugeMean.streamPotential_supportedGauge",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.VariableGaugeMean.streamPotential_supportedGauge",
+      "line": 2911,
+      "module": "NavierStokes.VariableGaugeMean",
+      "path": "NavierStokes/VariableGaugeMean.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean#L2911"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.VariableGaugeMean.streamPotential_supportedGauge",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: SupportedGauge a b ell U f ⊢ SupportedGauge a b ell U (streamPotential d a b M ell v f). Vector potential supported in the active shell."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 2911,
+        "text": "theorem streamPotential_supportedGauge {a b d M : ℝ} (ha : 0 < a) (hab : a < b) (hd : 0 < d)\n    (ell : S → ℝ) (v : PressureStream.Plane) {U : Set S} (hU : IsOpen U)\n    (hl : ∀ s ∈ U, 0 < ell s) {f : PressureStream.Lift S → ℝ}\n    (hf : ContDiffOn ℝ ∞ f (PhysicalMeanDomain.slowDomain U)) (hs : SupportedGauge a b ell U f) :\n    SupportedGauge a b ell U (streamPotential d a b M ell v f)"
+      }
+    }
+  }
+}

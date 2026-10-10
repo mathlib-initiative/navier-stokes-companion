@@ -1,0 +1,26 @@
+{
+  "id": "lemma-10.2/support/NavierStokesR3.ActualCandidate.of_localized_fields",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.ActualCandidate.of_localized_fields",
+      "line": 78,
+      "module": "NavierStokes.R3.ActualCandidate",
+      "path": "NavierStokes/R3/ActualCandidate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ActualCandidate.lean#L78"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.ActualCandidate.of_localized_fields",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 78,
+        "text": "theorem of_localized_fields {A B : VelocityField} {P : PressureField} {f : VelocityField}\n    (h : NavierStokes.ProblemStatement.CandidateProperties\n      (R3CompactCandidate.periodicVelocity A B) (R3CompactCandidate.periodicPressure P) f)\n    (hf : ContDiff ℝ ∞ f) :\n    ProblemStatement.CandidateProperties 1\n      (R3CompactCandidate.velocity A B) (R3CompactCandidate.pressure P)\n      (PositiveTimeForce.force (R3CompactCandidate.compactForce f))\n      SpatialLocalization.supportCylinder"
+      }
+    }
+  }
+}
