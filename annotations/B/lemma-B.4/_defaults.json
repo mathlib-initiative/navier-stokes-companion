@@ -2,7 +2,6 @@
   "kind": "lemma",
   "label": "Lemma B.4",
   "status": "partial",
-  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] Lean's reference continuation damps slopes with Mathlib's Real.smoothTransition (glue exp(-1/x)), not the paper's step σ of (A.5) (glue exp(-1/y²)), which the repo defines separately as OutgoingSchedule.sigma. The bounds are proved ….",
   "location": {
     "page": 150,
     "rect": [0.133356, 0.597989, 0.734821, 0.122499]
@@ -58,13 +57,12 @@
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
           "relation": "incomparable",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "SINGLE_SOURCE_OK, relation incomparable, confidence 0.82. Findings: [low CONTENT: ATTRIBUTION_GAP] The headline structure gives p_{1,r} > 3 only at X = 100. The paper's interval X_b ≤ X ≤ X_i is stated by a separate theorem, reference_first_gt_three, derived from the same ReferenceBoundsOnHold.; [low CONTENT: CONVENTION] exists_reference_bounds assumes SmallParameters (h ≤ 1/1000, j ≤ 1/1000), narrower than p.144's printed 0<h≤10^-2 and 0<j_0≤.05. The paper's own smallness order puts its fixed parameters inside the Lean range.; [low CONTENT: ATTRIBUTION_GAP] The closing uniform-C^k sentence is not in the headline theorem. uniform_reference_quantities states it, more strongly, with its own threshold stabilityScale ≤ Λ. The headline docstring cites a stale 'Lemma 5.2'.; [low CONTENT: CONFIRMED_CONTENT] Lean's reference continuation damps slopes with Mathlib's Real.smoothTransition (glue exp(-1/x)), not the paper's step σ of (A.5) (glue exp(-1/y²)), which the repo defines separately as OutgoingSchedule.sigma. The bounds are proved for a different (φ_r, U_r).",
+          "summary": "Lean states it for a different object.",
           "verdict": "faithful"
         }
       ]

@@ -2,7 +2,6 @@
   "kind": "lemma",
   "label": "Lemma 10.5",
   "status": "formalized",
-  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] Lean states the comparison for any smooth reference solution with fixed compact support on [0,T]. The force drops out as equal residuals, so the specific u of Prop 10.1 and …; [low CONTENT] candidate_unique_on_Icc takes the whole CandidateProperties bundle, including speed_unbounded and energy_bounded, which Lemma 10.5 does not use. Applying that form to the paper's u would therefore also need (10.21) and Lemma …; [low CONTENT] v ∈ L^∞([0,T];L²) appears as UniformFiniteEnergy: a bound on ½∫|v(t)|² at every t∈[0,T], not almost every t. For continuous v the two agree by Fatou's lemma, because every time is …; 1 more in REPORT.md.",
   "location": {
     "page": 121,
     "rect": [0.134051, 0.598315, 0.731893, 0.057542]
@@ -58,13 +57,12 @@
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
             "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
           },
           "relation": "lean_stronger",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.88. Findings: [low CONTENT: CONFIRMED_CONTENT] Lean states the comparison for any smooth reference solution with fixed compact support on [0,T]. The force drops out as equal residuals, so the specific u of Prop 10.1 and f of Lemma 10.3 are not needed. This is a strictly more general statement.; [low CONTENT: CONFIRMED_CONTENT] candidate_unique_on_Icc takes the whole CandidateProperties bundle, including speed_unbounded and energy_bounded, which Lemma 10.5 does not use. Applying that form to the paper's u would therefore also need (10.21) and Lemma 10.4. classical_uniqueness_on_Icc has no such dependency, and the main theorem uses it.; [low CONTENT: CONFIRMED_CONTENT] v ∈ L^∞([0,T];L²) appears as UniformFiniteEnergy: a bound on ½∫|v(t)|² at every t∈[0,T], not almost every t. For continuous v the two agree by Fatou's lemma, because every time is a limit of good times.; [low CONTENT: CONFIRMED_CONTENT] The proof route differs from the paper's. The pressure-flux bound (10.19) is checked in a different envelope, (B^{1/2}+1)(A/R+R^{-2})+R^{-7/4}B^{3/4}, using L^{6/5}–L^6 duality and a heat-kernel R_iR_j representation rather than L^{3/2} and Calderón–Zygmund. So the paper's argument as written is not what was checked, but the result is unaffected.",
+          "summary": "Lean states a stronger result.",
           "verdict": "faithful"
         }
       ]

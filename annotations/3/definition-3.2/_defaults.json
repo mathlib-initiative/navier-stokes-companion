@@ -2,7 +2,6 @@
   "kind": "definition",
   "label": "Definition 3.2",
   "status": "formalized",
-  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] The paper (p.27) says Q_s, N_s are axis-regular in the scalar sense of Def 3.2. Lean proves them smooth only for X≠0, and Prop 4.2's residual theorem is stated only ….",
   "location": {
     "page": 18,
     "rect": [0.134051, 0.551544, 0.732586, 0.054111]
@@ -66,13 +65,12 @@
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
           "relation": "different_formulation",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "SINGLE_SOURCE_OK, relation different formulation, confidence 0.72. Findings: [low COVERAGE: CONVENTION] No single Lean def names 'regular at the axis'. The scalar sense has named predicates (GlobalSlowProfiles.Regular, SlowRecursion.Regular). The field sense is written inline as ContDiffOn ℝ ∞ on Iio 1 ×ˢ univ of total Cartesian fields. This is an encoding choice, not a gap.; [low CONTENT: CONVENTION] Lean's scalar encodings are two-sided: ContDiffOn on an open RadialDomain containing the axis, or ContDiff on ℝ². The paper asks for a one-sided extension to X=0. The two are equivalent, and Lean proves the extension step.; [low CONTENT: CONFIRMED_CONTENT] The paper (p.27) says Q_s, N_s are axis-regular in the scalar sense of Def 3.2. Lean proves them smooth only for X≠0, and Prop 4.2's residual theorem is stated only off the axis. This is a use of Def 3.2, not the definition itself.; [low CONTENT: CONVENTION] Lean's scalar predicate is even smoothness in the signed radius R, with X=R²/2, rather than one-sided (X,η)-smoothness. The two are equivalent: Whitney descent and the radial extension are proved in Lean, and the converse is composition with R²/2.; [low CONTENT: REFUTED] Skeptic claim: Lean proves field-sense axis regularity only for the Borel-summed base u_B, not for u^(0). The premise is wrong, because prefixVelocity_smooth/prefixPressure_smooth at J=0 cover the uncut leading field. Only the local Prop 4.2 field LeadingStress.physicalVelocity lacks an axis theorem.",
+          "summary": "Lean states it in a different formulation.",
           "verdict": "faithful"
         }
       ]

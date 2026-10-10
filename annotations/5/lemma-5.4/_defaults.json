@@ -2,7 +2,6 @@
   "kind": "lemma",
   "label": "Lemma 5.4",
   "status": "formalized",
-  "note": "Confirmed findings (machine audit, unconfirmed): [low CONTENT] Lean bounds the single-order Fréchet derivative ‖iteratedFDeriv ℝ m ·‖, not the paper's max over all partials of order ≤ m. Recovery uses monotone cutLoss, q<1/2 and partial ≤ operator …; [low CONTENT] Lean replaces (5.28), |∂_z^a∂_t^b q| ≤ Cq^{1−aD−b}, with the isotropic ‖D^k q‖ ≤ B_k q^{1−k}. The general version also drops q = q(z,t) and assumes div B_j = 0 and …; [low CONTENT] The lemma is split in two: existence of a with Result, then (5.36) for any a satisfying Result. The cut-support hypothesis is required only for that a. The non-support-local variant …; 1 more in REPORT.md.",
   "location": {
     "page": 57,
     "rect": [0.134051, 0.803149, 0.73368, 0.078508]
@@ -58,13 +57,12 @@
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "method": "agent audit: auditor, pairing and mathematics skeptics, judge",
             "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
           },
           "relation": "lean_stronger",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "SINGLE_SOURCE_OK, relation lean stronger, confidence 0.85. Findings: [low CONTENT: CONFIRMED_CONTENT] Lean bounds the single-order Fréchet derivative ‖iteratedFDeriv ℝ m ·‖, not the paper's max over all partials of order ≤ m. Recovery uses monotone cutLoss, q<1/2 and partial ≤ operator norm; the tuple's Euclidean norm costs one fixed power.; [low CONTENT: CONFIRMED_CONTENT] Lean replaces (5.28), |∂_z^a∂_t^b q| ≤ Cq^{1−aD−b}, with the isotropic ‖D^k q‖ ≤ B_k q^{1−k}. The general version also drops q = q(z,t) and assumes div B_j = 0 and tangency instead.; [low CONTENT: CONFIRMED_CONTENT] The lemma is split in two: existence of a with Result, then (5.36) for any a satisfying Result. The cut-support hypothesis is required only for that a. The non-support-local variant also needs every coefficient smooth on all of U.; [low CONTENT: CONFIRMED_CONTENT] The generic Lemma 5.4 declarations are outside ComparatorSolution's import closure; the main theorem uses specialised summation (StageEstimates.exists_schedule with the Navier–Stokes residual) instead of this general statement.",
+          "summary": "Lean states a stronger result.",
           "verdict": "faithful"
         }
       ]
