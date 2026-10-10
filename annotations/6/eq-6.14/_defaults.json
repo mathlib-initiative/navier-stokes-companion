@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.14)",
+  "status": "partial",
+  "location": {
+    "page": 66,
+    "rect": [0.303399, 0.209909, 0.56567, 0.041003]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.SlotColoring",
+      "path": "NavierStokes/SlotColoring.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.14",
+      "locator": {
+        "physical": [66],
+        "printed": [66],
+        "text": "Equation (6.14), p. 66, in the proof of Lemma 6.1"
+      },
+      "region": "eq-6.14@p066",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: |i(\\ell) - i(\\ell')| \\le 1 + \\frac{4(1+h)\\log 2 + 8/\\ell_0}{\\log T_g} \\le \\Delta_{\\max},"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Same conclusion — a uniform integer Δ_max bounding |i(ℓ)−i(ℓ′)| whenever |ℓ−ℓ′| ≤ 4 — reached through a different middle quantity. The two sides agree on the covering index itself: nativeArgument_expanded is exactly ((1+h)ℓ log 2 − 2 log ℓ)/log T_g with T_g = coverGrowth = 4+√2, and nativeIndex is its floor, so the ((1+h)ℓ log 2)-part contributes 4(1+h) log 2 in both. They differ in how the −2 log ℓ part is controlled. The paper uses the mean value theorem under the standing hypothesis ℓ ≥ ℓ₀, giving the term 8/ℓ₀ (= 2 · 4/ℓ₀); the Lean (log_level_gap, NavierStokes/SlotColoring.lean:342, |log n − log m| ≤ log 5 for n,m ≥ 1 with |n−m| ≤ 4) uses the ratio bound instead, giving 2 log 5 ≈ 3.219 in nativeGapBudget. Neither constant implies the other: the Lean needs only n,m ≥ 1 (no ℓ₀ threshold at all, so its hypotheses are weaker), but its constant is fixed, whereas the paper's 8/ℓ₀ is sharper for every ℓ₀ ≥ 3 and tends to 0. The flooring allowance also differs in shape: the paper writes 1 + (…) and then takes an integer upper bound, the Lean writes nativeGap = ⌈(…)⌉₊ + 1, which is at most one larger. The paper's displayed inequality with 8/ℓ₀ in it is therefore not what was checked. The surrounding result is unaffected: the only property used downstream is that Δ_max is one finite integer independent of the band (PartitionedCovariance.lean:243–248 consumes nativeIndex_gap solely to produce Δ = i(M)−i(L) ≤ nativeGap h as the hypothesis n ≤ D of centers_avoid_covering).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

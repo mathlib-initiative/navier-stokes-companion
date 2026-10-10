@@ -1,0 +1,26 @@
+{
+  "id": "eq-p086-2/support/NavierStokes.CopyAngularInvariance.coefficient_invariant",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CopyAngularInvariance.coefficient_invariant",
+      "line": 312,
+      "module": "NavierStokes.CopyAngularInvariance",
+      "path": "NavierStokes/CopyAngularInvariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CopyAngularInvariance.lean#L312"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CopyAngularInvariance.coefficient_invariant",
+        "kind": "theorem"
+      },
+      "relation": "uses",
+      "role": "support",
+      "snippet": {
+        "line": 312,
+        "text": "theorem coefficient_invariant (hR : Invariant θ R) (hr : Invariant θ Vr) (hθ : Invariant θ Vθ) (hz : Invariant θ Vz) (hΦ : AffinePhase θ m Φ) (ha : Invariant θ a) : Invariant θ (CurlClassBounds.coefficient R Vr Vθ Vz Φ a)  -- θ-independence of C_m: from this, `(coefficient_invariant …).component i |>.along_zero x` gives along (fun _ => θ) (fun y => coefficient … y i) x = 0, the same route CopyAngularInvariance.lean:346 takes for realizedCoefficient"
+      }
+    }
+  }
+}

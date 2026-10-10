@@ -1,0 +1,46 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.30)",
+  "status": "formalized",
+  "location": {
+    "page": 71,
+    "rect": [0.355376, 0.384955, 0.512807, 0.023539]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.WeightedClasses",
+      "path": "NavierStokes/WeightedClasses.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-6.30",
+      "locator": {
+        "physical": [71],
+        "printed": [71],
+        "text": "Equation (6.30), p. 71, in the statement of Proposition 6.6"
+      },
+      "region": "eq-6.30@p071",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathsf{M}_\\alpha \\mathsf{M}_\\beta \\subset \\mathsf{M}_{\\alpha+\\beta}, \\qquad \\mathsf{M}_\\alpha \\mathsf{W}_\\beta \\subset \\mathsf{W}_{\\alpha+\\beta}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same exponent addition and the same two inclusions, with two encoding points. (i) Both Lean lemmas carry the hypothesis hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1, which `StripData` does not impose (it only requires ζ smooth and ≥ 0); for the paper's ζ of (6.23), ζ = exp(−a_a/log²(X/X_a) − a_b/log²(X_b/X)) ≤ 1, so the hypothesis is automatic and the statements agree — this is the same ζ² ≤ ζ used in the paper's own proof on p. 72. (ii) Lean's M_α and W_α (`MeanClass`, `WaveClass`) are `MemClass` with weights ζ and √ζ·P, i.e. only the all-order derivative bounds of (6.24)/(6.29); the structural clauses of Definitions 6.4–6.5 (∂_θ f = 0, descent to the common torus, supp ⊂ Ω_γ, smooth zero extension) are carried by separate Lean predicates (e.g. `AngularIndependent`, `SupportedOscillations`) and are therefore not re-established by these inclusions. The Lean products are taken through an arbitrary continuous bilinear map, which covers the paper's scalar product.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

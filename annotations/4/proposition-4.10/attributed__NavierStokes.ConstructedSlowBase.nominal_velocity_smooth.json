@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.ConstructedSlowBase.nominal_velocity_smooth",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ConstructedSlowBase.nominal_velocity_smooth",
+      "line": 304,
+      "module": "NavierStokes.ConstructedSlowBase",
+      "path": "NavierStokes/ConstructedSlowBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConstructedSlowBase.lean#L304"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ConstructedSlowBase.nominal_velocity_smooth",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For ANY W : NominalProfile.Witness F and any StrictMono a: ContDiffOn R infinity (baseVelocity a F.data.h W.axis.normalization (nominalCoefficients W)) BaseResidual.past. A smooth Cartesian velocity across the axis for W's own base - but for the summed hierarchy over all orders, not for the order-ze",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 304,
+        "text": "theorem nominal_velocity_smooth {a : ℕ → ℕ} (ha : StrictMono a) :\n    ContDiffOn ℝ ∞ (baseVelocity a F.data.h W.axis.normalization (nominalCoefficients W))\n      BaseResidual.past"
+      }
+    }
+  }
+}

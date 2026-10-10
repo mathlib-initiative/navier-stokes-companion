@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 48.2",
+  "status": "formalized",
+  "location": {
+    "page": 48,
+    "rect": [0.282608, 0.432901, 0.435003, 0.039431]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p048-2",
+      "locator": {
+        "physical": [48],
+        "printed": [48],
+        "text": "Display 48.2, p. 48, in the proof of Lemma 5.1"
+      },
+      "region": "eq-p048-2@p048",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: (Gg)_i(\\xi) = \\int_0^{\\xi} (s/\\xi)^{c_i} g_i(s)\\,ds, \\qquad \\mathcal{K} = G(A_0 + A_1 \\partial_\\eta)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Two routine rewritings. (i) G: Lean's `radialInverse` is the normalized form r·∫₀¹ t^{c_i} F(tr) dt. Substituting s = tr turns this into ∫₀^r (s/r)^{c_i} F(s) ds, the paper's (Gg)_i; the repository proves exactly this identity in the scalar form as `regularPrimitive_eq_div` (regularPrimitive c f ξ = ξ^{-c}∫₀^ξ s^c f(s) ds for ξ ≠ 0), and `radialInverse` is `regularPrimitive (exponent i)` applied componentwise (NilpotentVolterra.lean:754). The normalized form is defined at r = 0 as well, where the paper's quotient is not; `regularPrimitive_equation` confirms it inverts d/dξ + c/ξ with zero axis data, which is what the paper asserts of G. The exponents c_i = (0,0,2,0,3,1) are `exponent`, with zero-based indices. (ii) 𝒦: the composite G∘(A_0 + A_1∂_η) does occur in Lean as a single applied expression, only under no name '𝒦'. `IntegralEquationOn` has body `W r z = radialInverse (equationRHS A₀ A₁ f W) r z`, and `equationRHS` (NilpotentVolterra.lean:786, the declaration cited for eq-5.7) is `f + A₀W + A₁∂_ηW`, so that body is literally the paper's W_n = G f_n + 𝒦W_n with G applied once to the whole sum. It is the `integral_equation` field (VolterraParity.lean:211) of `IsSymmetricIntegralSolution` (:206), which is in turn the `integral` field (PositiveAxisExistence.lean:841) of `IsPositiveOrderSolution` — i.e. it is the integral form actually carried by the constructed positive-order solution. `solutionSeries_equation` states the same identity for the Picard series: solutionSeries = F + pathInverse exponent (A₀·solutionSeries + A₁·∂_η solutionSeries), and `rhsPath` (NilpotentVolterra.lean:747) is the same sum. What has no counterpart is only the Lean *name*: 𝒦 is never abstracted as a standalone operator, so one cannot write `𝒦^k` directly. For the series expansion Lean instead splits G(A_0 + A_1∂_η) into the two letters `letter A₀ A₁ false F = radialInverse (A₀ F)` and `letter A₀ A₁ true F = radialInverse (A₁ ∂_η F)` and composes them with `word` over lists of booleans, so the paper's 𝒦^k becomes the sum of the 2^k words of length k — which is the form the paper itself uses two paragraphs later ('Summing the at most 2^k compositions'). That regrouping needs additivity of G, which is available: `pathInverse` is built as a ContinuousLinearMap (NilpotentVolterra.lean:210, with an explicit map_add').",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

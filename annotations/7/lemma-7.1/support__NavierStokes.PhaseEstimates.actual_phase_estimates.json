@@ -1,0 +1,28 @@
+{
+  "id": "lemma-7.1/support/NavierStokes.PhaseEstimates.actual_phase_estimates",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhaseEstimates.actual_phase_estimates",
+      "line": 883,
+      "module": "NavierStokes.PhaseEstimates",
+      "path": "NavierStokes/PhaseEstimates.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseEstimates.lean#L883"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhaseEstimates.actual_phase_estimates",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 883,
+        "text": "theorem actual_phase_estimates\n    {F G F0 G0 : Slow → ℝ} {U : Set Slow} {q q0 : Slow}\n    {ε target pz v θ B sigma u L M S k : ℝ} {K : Plane}\n    (hbase : LocalBaseBounds F G F0 G0 U M ε)\n    (hq : q ∈ U) (hq0 : q0 ∈ U) (hdiameter : ‖q - q0‖ ≤ 1 / S ^ 3)\n    (hR : q.1 ≠ 0) (hR0 : q0.1 ≠ 0)\n    (hg : shearVector F0 G0 q0 ≠ 0) (horth : ⟪K, shearVector F0 G0 q0⟫_ℝ = 0)\n    (hfreq : (!₂[target / q0.1, pz] : Plane) =\n      representativeFrequency B sigma u L K (shearVector F0 G0 q0))\n    (hM : 1 ≤ M) (hS : 1 ≤ S) (hk : 1 ≤ k) (hε : 0 < ε)\n    (htarget : |target| ≤ M) (hpz : |pz| ≤ M) (hB : |B| ≤ M)\n    (hsigma : |sigma| = 1) (hu : |u| ≤ M) (hgi : 1 / ‖shearVector F0 G0 q0‖ ≤ M)\n    (hL : 1 / |L| ≤ M / S) (hv : |v| ≤ M * S)\n    (hRi : |1 / q.1| ≤ M) (hR0i : |1 / q0.1| ≤ M) :\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

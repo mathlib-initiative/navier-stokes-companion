@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.7/attributed/NavierStokes.MeanRankUpdate.physical_rows_on_shaped_patch",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanRankUpdate.physical_rows_on_shaped_patch",
+      "line": 1153,
+      "module": "NavierStokes.MeanRankUpdate",
+      "path": "NavierStokes/MeanRankUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanRankUpdate.lean#L1153"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanRankUpdate.physical_rows_on_shaped_patch",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The five rows for the shaped profile X^(-1/2-lam) with amplitude B/(1+η^2), i.e. for the background in the exact form (8.24) writes it."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1153,
+        "text": "theorem physical_rows_on_shaped_patch {lam B a b q : ℝ} (hlam : 0 < lam) (hB : B ≠ 0)\n    (ha : 0 < a) (hab : a < b) (hq : 0 < q) (A η : ℝ) (d : Debt) (V G : ℝ → ℝ)\n    (hV : ∀ r ∈ Ioo (Real.sqrt q * a) (Real.sqrt q * b),\n      V r = q ^ (-A) * shapedAmplitude B η * (r ^ 2 / (2 * q)) ^ (-(1 / 2 + lam)))\n    (hG : ∀ r ∈ Ioo (Real.sqrt q * a) (Real.sqrt q * b), G r = 0) :\n    FiveRowRank.FiveRows V G d\n      (angularIncrement lam (shapedAmplitude B η * (2 : ℝ) ^ (1 / 2 + lam)) a b\n        (Real.sqrt q) (q ^ (-A)) d)\n      (desiredAxialIncrement lam (shapedAmplitude B η * (2 : ℝ) ^ (1 / 2 + lam)) a b\n        (Real.sqrt q) (q ^ (-A)) d)"
+      }
+    }
+  }
+}

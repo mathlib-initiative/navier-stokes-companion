@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 94.4",
+  "status": "formalized",
+  "location": {
+    "page": 94,
+    "rect": [0.241788, 0.482561, 0.516654, 0.040083]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p094-4",
+      "locator": {
+        "physical": [94],
+        "printed": [94],
+        "text": "Display 94.4, p. 94, in the proof of Proposition 8.4"
+      },
+      "region": "eq-p094-4@p094",
+      "verdicts": [
+        {
+          "confidence": 0.92,
+          "evidence": ["paper: \\int R\\,\\langle p_m\\rangle_Y\\,dR = -\\tfrac{1}{2}\\int R^2\\,\\partial_R\\langle p_m\\rangle_Y\\,dR = -\\tfrac{1}{2}\\int R^2\\,\\langle g_r\\rangle_Y\\,dR + c_\\rho\\,\\mathcal{P}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The endpoints of the paper's chain are stated with the same constants: `pressure_moment_reconstructed` assumes exactly (8.13), deriv p = g − ρ·P, and concludes moment 1 p = −(1/2)·moment 2 g + (moment 2 ρ / 2)·P, where moment 2 ρ / 2 = ½∫R²ρ dR is the paper's c_ρ of (8.15) and P is the paper's 𝒫 = ∫⟨g_r⟩_Y dR (`PressureStream.pressureMass f s = ∫ r, torusAverage f (r, s)`, PressureStream.lean:121). `constructed_pressure_moment` is the same identity for the auxiliary average ⟨p_m⟩_Y of the constructed pressure with no derivative assumed, and `moving_pressure_moment` is its moving-gauge form, where c_ρ carries the q-scaling as basePressureCoefficient·ell s². Rewritings: (i) the paper's middle member −½∫R²∂_R⟨p_m⟩_Y dR is not a separate Lean statement; it is `pressure_moment` taken with g := deriv p, which is in turn the n = 1 case of `moment_deriv_succ` (moment 2 (deriv p) = −2·moment 1 p) divided by −2; (ii) Lean's `moment` integrates over ℝ, the paper over R > 0, the two agreeing for shell-supported fields by `positive_radialMoment` (IntegratedMeanBalances.lean:826). The regularity hypotheses (smooth, compactly supported p, g, ρ) match the paper's smooth shell-supported data; the paper's normalisation ∫ρ dR = 1 of (8.12) is not needed for this identity and is not assumed in Lean. This is the identity actually used downstream, through `flux_pressure_moment` (line 717) into `integrated_axial_reconstructed` (line 735) and `integrated_axial_positive` (line 843).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

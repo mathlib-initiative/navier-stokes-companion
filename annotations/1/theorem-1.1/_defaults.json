@@ -17,24 +17,24 @@
       "region": "theorem-1.1@p001",
       "verdicts": [
         {
-          "confidence": 0.92,
-          "evidence": ["CONVENTION: CandidateProperties.speed_unbounded, NavierStokes/R3/ProblemStatement.lean:109; SpeedUnboundedAtOne, NavierStokes/ProblemStatement.lean:94-96; docstring R3/ProblemStatement.lean:85-87", "CONVENTION: CandidateProperties.navier_stokes (∀ t ∈ Ioo 0 1), R3/ProblemStatement.lean:106; GlobalFiniteEnergySolution.navier_stokes (∀ t ∈ Ioi 0), :133; design note at :19-22", "I read p.1 and the Lean source myself. NavierStokesR3.theorem_1_1 (R3/Theorem.lean:46) proves breakdownStatement. That matches every clause of the paper: f's zero extension is C_c^∞ supported in t>0; u and p are smooth up to t=0; one compact K holds both supports; the L² energy bound comes with integrability; blowup is pointwise unbounded speed; the 'Consequently' clause appears as ¬Nonempty of a competitor class with no extra assumptions. All cited declarations exist. A grep finds no sorry or axiom. zero_force_has_global_solution shows the excluded class is nonvacuous. Both findings are accurate but immaterial encoding choices with written recovery arguments, so I rule them CONVENTION. The competitor's smoothness up to t=0 follows the standard Clay C^∞(ℝ³×[0,∞)) reading."],
+          "confidence": 0.86,
+          "evidence": ["CONVENTION: NavierStokes.ProblemStatement.SpeedUnboundedAtOne, NavierStokes/ProblemStatement.lean:94, used as field speed_unbounded of NavierStokesR3.ProblemStatement.CandidateProperties (NavierStokes/R3/ProblemStatement.lean:109).", "CONVENTION: Field navier_stokes of NavierStokesR3.ProblemStatement.CandidateProperties, NavierStokes/R3/ProblemStatement.lean:106: ∀ t ∈ Ioo (0:ℝ) 1, ∀ x, navierStokesResidual ν u p t x = f (t,x). Compare divergence_free (:104) and zero_initial_velocity (:103), which do cover t = 0.", "NavierStokesR3.theorem_1_1 (R3/Theorem.lean:46) is unconditional and states Theorem 1.1 clause for clause: ∀ ν > 0, one u, p, f, K with smoothness on [0,1) × R³, f the zero extension of a C_c^∞(R³ × (0,∞)) field, one compact K containing both spatial supports on [0,1), (1.1) with ν multiplying only Δu, zero initial velocity, a uniform kinetic-energy bound on [0,1), unbounded speed as t ↑ 1, and no global smooth finite-energy competitor for the same force and datum. The only gaps are encodings: pointwise sup for the L∞ norm, and (1.1) imposed on (0,1) instead of [0,1). Both recover in a few lines from clauses present in the same structure, so the verdict is OK with relation different_formulation."],
           "findings": [
             {
-              "confidence": 0.93,
-              "contested": true,
+              "confidence": 0.9,
+              "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "limsup_{t↑1}‖u(t)‖_{L∞}=∞ is encoded as pointwise SpeedUnboundedAtOne. This is an encoding choice: each slice u(t,·) is continuous, so its essential sup equals its pointwise sup and the two statements are equivalent."
+              "summary": "The blow-up clause is rendered pointwise (SpeedUnboundedAtOne: some point x with |u(t,x)| > M at times arbitrarily close to 1) rather than as limsup of the L∞ norm; the two agree because the slices are continuous."
             },
             {
-              "confidence": 0.92,
-              "contested": true,
+              "confidence": 0.88,
+              "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The momentum equation is imposed only for 0<t<1 (candidate) and t>0 (competitor), not at t=0. This is an encoding choice that avoids a two-sided time fderiv at the boundary. It is recoverable for the candidate and makes the competitor exclusion stronger."
+              "summary": "The PDE (1.1) is imposed only on the open time interval Ioo 0 1, while the paper states it on R³ × [0,1); divergence-freeness and the initial condition are imposed on the closed-at-0 interval."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

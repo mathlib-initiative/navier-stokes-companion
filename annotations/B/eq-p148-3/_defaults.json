@@ -1,0 +1,46 @@
+{
+  "kind": "equation",
+  "label": "Display 148.3",
+  "status": "formalized",
+  "location": {
+    "page": 148,
+    "rect": [0.337359, 0.484231, 0.325443, 0.0448]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.AxisHolomorphic",
+      "path": "NavierStokes/AxisHolomorphic.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p148-3",
+      "locator": {
+        "physical": [148],
+        "printed": [148],
+        "text": "Display 148.3, p. 148, in the proof of Proposition B.2"
+      },
+      "region": "eq-p148-3@p148",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\sum_{\\alpha \\ge 0} \\binom{\\alpha + \\beta}{\\beta} (R/20)^{\\alpha} = (1 - R/20)^{-\\beta - 1}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The identity itself occurs only inside a proof, at AxisHolomorphic.lean:52, as Mathlib's `hasSum_choose_mul_geometric_of_norm_lt_one` for an arbitrary ratio s ∈ (0,1): ∑' n, C(n+m,m)·sⁿ = 1/(1-s)^(m+1), which is the paper's formula with α = n, β = m and the paper's R/20 as s (and (1-s)^{-β-1} written as 1/(1-s)^(m+1)). The repository keeps only the single-term consequence C(n+m,m)·sⁿ ≤ 1/(1-s)^(m+1) as a declaration (`choose_geometric_le`); and where the paper sums at x = R/20 for R < 20, the application `term_factorial_bound` chooses an s strictly between R/20 and 1 and retains the leftover geometric factor ((R/20)/s)ⁿ, which then gives the same conclusion the paper draws — a common positive parameter radius and summability for every |Y| ≤ R < 20 (`mixedSeries_factorial_bound`, AxisHolomorphic.lean:95). No declaration of the index states the identity itself; it is imported from Mathlib.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

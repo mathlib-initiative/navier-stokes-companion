@@ -17,48 +17,56 @@
       "region": "proposition-C.3@p163",
       "verdicts": [
         {
-          "confidence": 0.85,
-          "evidence": ["CONFIRMED_CONTENT: NavierStokes.LeadingStressWeights.exists_weighted_profile (NavierStokes/LeadingStressWeights.lean:1154): ∃ F W d v, FullTrueCone v ∧ WeightedBounds (Icc (-1) 1) (activationTime^2) (leftEdge W) (rightEdge W) (logStress v.profiles h) ∧ inner EdgeFactor with positive angular coefficient and HasTrueDirectionCollar ∧ outer EdgeFactor (constant 4) with the same. Nothing else; not referenced elsewhere in NavierStokes/.; NavierStokes.LeadingStressWeights.FullTrueCone (NavierStokes/LeadingStressWeights.lean:453): For every p with activeLeft W < p.1 < activeRight W and p.2 ∈ [-1,1]: TrueConeLoop.InTrueCone (0 < a, 2 < v_s, 2 < P, v_s < coneBound) for v.profiles. Pointwise strict cone on the open annulus only.; NavierStokes.LeadingStressWeights.weighted_bounds (NavierStokes/LeadingStressWeights.lean:528): (hcone : FullTrueCone v) → WeightedBounds (Icc (-1) 1) (W.controls.activationTime^2) (leftEdge W) (rightEdge W) (logStress v.profiles F.data.h), for every modulated witness v.; NavierStokes.ActiveAnnulusWeight.WeightedBounds (NavierStokes/ActiveAnnulusWeight.lean:644): One m > 0 with m·weight ≤ ‖T‖ on K × (a,b); for each order n, C and N with ‖iteratedFDeriv i T‖ ≤ C·weight/edgeDistance^N (i ≤ n) in the log chart, and the same in the physical X chart. Matches the form of (C.19).; NavierStokes.ActiveAnnulusWeight.weight (NavierStokes/ActiveAnnulusWeight.lean:23): weight c a b y = edge c (y-a) * edge 4 (b-y), edge c x = if x ≤ 0 then 0 else exp(-c/x^2) (FlatCutoff.lean:26); edgeDistance = min 1 (min (y-a) (b-y)) (line 25). With c = activationTime^2, a = log(4/scale), b = log(activeRight) this is (C.18), zero outside.; NavierStokes.LeadingStressWeights.stress_zero_before (NavierStokes/LeadingStressWeights.lean:1067): 0 ≤ p.1 → p.1 ≤ activeLeft W → p.2 ∈ Icc (-1) 1 → stress v.profiles F.data.h p = 0, for every witness v (no cone hypothesis).; NavierStokes.LeadingStressWeights.stress_zero_after (NavierStokes/LeadingStressWeights.lean:431): activeRight W ≤ p.1 → p.2 ∈ Icc (-1) 1 → stress v.profiles F.data.h p = 0, for every witness v.; NavierStokes.LeadingStressWeights.stress_ne_zero (NavierStokes/LeadingStressWeights.lean:462): FullTrueCone v → activeLeft W < p.1 → p.1 < activeRight W → p.2 ∈ Icc (-1) 1 → stress v.profiles F.data.h p ≠ 0.; NavierStokes.ActiveAnnulusWeight.HasTrueDirectionCollar (NavierStokes/ActiveAnnulusWeight.lean:868): HasStrictDirectionCollar (line 853: direction of the coefficient B smooth on an open set containing K × [0,d]; ε ≤ 1 + s·tilt and ε ≤ 2(1+s·tilt)^2 − (v−2)(tilt−s)^2 on the closed collar; direction T = direction B inside) plus ε ≤ v − 2 on the collar. Records no value of the edge direction.; NavierStokes.LeadingStressWeights.inner_direction_positive (NavierStokes/LeadingStressWeights.lean:946): FullTrueCone v → ∃ G : EdgeFactor … (leftChart (leftEdge W) (logStress v.profiles h)), positive first component of G.coefficient (η,0) ∧ HasTrueDirectionCollar. The alignment with the shear is used inside the proof for the model stress and is not exported; outer_direction_positive (line 968) is analogous.; NavierStokes.LeadingStressWeights.closed_shear_positive (NavierStokes/LeadingStressWeights.lean:826): FullTrueCone v → η ∈ [-1,1] → y ∈ [leftEdge W, rightEdge W] → 0 < logShearA v.profiles (η,y) ∧ 2 < logSpeed v.profiles (η,y). Pointwise; no uniform constant.; NavierStokes.AlignedProfileSpectralCone.exists_closed_direction (NavierStokes/AlignedProfileSpectralCone.lean:433): FullTrueCone v → ∃ D, ContinuousOn on the closed annulus, unit norm, equal to the normalized stress inside, with ReferenceCone and TargetCone at each closed-annulus point for each ω > 0. Continuous, not smooth; no single κ.; NavierStokes.NominalProfile.Witness.five_moments (NavierStokes/NominalProfile.lean:2536): FiveMomentCertificate W.U W.E (powerH …) (axisDatum η) η: integrability and the vanishing mass, transport, energy and angular integrals for the nominal W. FiveMomentCertificate occurs in no other file.; NavierStokes.ModulatedProfileAssembly.Witness.exterior_mass (NavierStokes/ModulatedProfileAssembly.lean:603): η ∈ d.parameters → repairPatch.right ≤ X → v.profiles.M (X,η) = W.profiles.M (X,η); exterior_angular, exterior_transport, exterior_energy, exterior_pressure (lines 598-617) are the same for the other rows. Equalities with the nominal profile, not vanishing statements.; NavierStokes.AssembledSlowBase.modified_mass_zero (NavierStokes/AssembledSlowBase.lean:1554): For any FiniteModification Q of W: Q.M (nominalOuterRadius W ^ 2 / 2, η) = 0. The mass moment alone is stated for the modified profile, at one exterior radius; hence 'full set' in the consequence.; NavierStokes.FinalSlowBase.exists_final_base (NavierStokes/FinalSlowBase.lean:639): ∃ F W H ld v with 23 conjuncts: FullTrueCone, WeightedBounds, radial support of every stress coefficient on [activeLeft, activeRight], smoothness, PDE identities, heat exterior for the physical fields. No edge collars, moments, patches or analyticity, so it does not state Theorem 4.6 either.", "ATTRIBUTION_GAP: EntranceAlignedBase.modified_ACT_fields (EntranceAlignedBase.lean:180) and base_phi_axial_pressure (:200), instantiated at v by modulatedScheme (:802); ModulatedExterior.modified_pressure_canonical_after (ModulatedExterior.lean:126) with actual_squared_swirl_restored (:325); AssembledSlowBase.modified_mass_zero (AssembledSlowBase.lean:1554) and modified_positive_patch (:1560); BaseRankPatch.modulated_mean_fields (BaseRankPatch.lean:55); ModulatedExterior.actual_fields_eq_heat (:353)", "CONFIRMED_CONTENT: LeadingStressWeights.inner_direction_positive (LeadingStressWeights.lean:946) and outer_direction_positive (:968) conclude ∃ G, 0 < (G.coefficient (η,0)).1 ∧ HasTrueDirectionCollar; HasStrictDirectionCollar (ActiveAnnulusWeight.lean:853) records no value of tilt (B (η,0)). The alignment is the halign hypothesis of EdgeFactor.aligned_collar (:806) and the change step of terminal_strict_direction (:1201)", "REFUTED: LeadingStressWeights.modulated_terminal_shears (LeadingStressWeights.lean:660): x < outerWidth v → η ∈ Icc (-1) 1 → … ∧ logShearB v.profiles (η, rightEdge W - x) = 0; outerWidth_pos (:388) admits x = 0; stress_eq (:26) gives stress = f • (p1 − shearA, p2 − shearB), so shearB = −b_s; modulated_terminal_speed_slope (:680) gives slope 0", "CONVENTION: LeadingStressWeights.closed_shear_positive (LeadingStressWeights.lean:826) and ModulatedProfileAssembly.Witness.positive_f (ModulatedProfileAssembly.lean:987) are pointwise; FullTrueCone (:453) is a pointwise InTrueCone on the open annulus; HasTrueDirectionCollar (ActiveAnnulusWeight.lean:868) covers collars; AlignedProfileSpectralCone.exists_closed_direction (:433) is ContinuousOn with a pointwise TargetCone", "Read in source: weight = exp(−T²/(y−a)²)·exp(−4/(b−y)²) with T = activationTime (the width in σ(y/T), i.e. t_1), a = log(4/Λ), b = log X_b, zero outside; edgeDistance = δ. So (C.18)/(C.19), the support clause and nonvanishing are stated faithfully, for every witness with FullTrueCone, with one order-independent lower constant and full derivative tensors. No declaration bundles \"all conclusions of Theorem 4.6\" for the modulated profile, so the relation is partial and the verdict DELTA, matching the Theorem 4.6 ruling. Both skeptics are right that b_s(X_b)=0 is exported (modulated_terminal_shears, x=0). The two edge-direction identities are stated only for model stresses. Uniform κ and lower bounds are recoverable by compactness."],
+          "confidence": 0.8,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.LeadingStressWeights.exists_weighted_profile, NavierStokes/LeadingStressWeights.lean:1154, concludes the weighted bounds and the two edge collars and nothing else; NavierStokes.FinalSlowBase.exists_final_base (NavierStokes/FinalSlowBase.lean:639) bundles fields, not Theorem 4.6.", "ATTRIBUTION_GAP: NavierStokes.AlignedProfileSpectralCone.modulated_representative_bounds, NavierStokes/AlignedProfileSpectralCone.lean:716-741: from FullTrueCone v and a Certificate H it produces a single M, u, eta and threshold N over K := referenceSet W, with ParameterBounds M (PrimaryRepresentatives.lean:347-356) at every representative and, for every p in positivePart K in the enlarged grid box of every label with N ≤ L.val.1, ⟪T p, normalDirection (g₀ rep)⟫ ≤ -eta and |c0 · ⟪T p, transverseDirection⟫ / ⟪T p, normalDirection⟫| + eta ≤ slopeRatio u. K is compact (:550) and maps into Icc (-1) 1 ×ˢ Icc (leftEdge W) (rightEdge W) by ReferencePointData.log_mem (:540); T is the closed-annulus direction of exists_closed_direction, through exists_reference_direction (:680). Its proof runs reference_cone (:654), i.e. closed_shear_positive (LeadingStressWeights.lean:826), into representative_parameter_bounds (PositiveRepresentatives.lean:647) and compact_parameter_bounds (PrimaryRepresentatives.lean:358). No declaration found states a lower bound for F, for a or for v_s - 2 severally, or one kappa ∈ (0,2) for (4.26).", "CONFIRMED_CONTENT: NavierStokes.LeadingStressWeights.inner_direction_positive (NavierStokes/LeadingStressWeights.lean:946) and outer_direction_positive (:968) conclude only ∃ G, (∀ η ∈ Icc (-1) 1, 0 < (G.coefficient (η,0)).1) ∧ HasTrueDirectionCollar …, and HasStrictDirectionCollar (ActiveAnnulusWeight.lean:853) records no value of tilt (B (p,0)). The nearest statements are for model stresses: exists_natural_activation_factor_aligned (ActiveAnnulusWeight.lean:1039) fixes the inner tilt of the activation model stress in a separate existential, and profileTilt_tendsto_zero (TerminalEdgeFactor.lean:1342) gives the outer model tilt only as a limit.", "ATTRIBUTION_GAP: NavierStokes.AlignedProfileSpectralCone.exists_closed_direction, NavierStokes/AlignedProfileSpectralCone.lean:435: ContinuousOn D (Icc (-1) 1 ×ˢ Icc (leftEdge W) (rightEdge W)), unit norm and agreement with normalDirection on the open annulus, with no ContDiffOn clause; the D is gluedDirection, which has no smoothness lemma in that file.", "CONVENTION: NavierStokes.ActiveAnnulusWeight.aligned_direction_margin, NavierStokes/ActiveAnnulusWeight.lean:767, with directionProjection s t = 1+s*t and directionGap v s t = 2*(1+s*t)^2-(v-2)*(t-s)^2 (:764-765), as used in HasStrictDirectionCollar (:853).", "ATTRIBUTION_GAP: NavierStokes.SlowRecursion.Regular, NavierStokes/SlowRecursion.lean:25, field holomorphic : ∀ r ∈ Ioo (-R) R, DifferentiableOn ℂ (fun z => F (r,z)) U, with real (:27) and profile (:278); reached for v.profiles by EntranceAlignedBase.base_phi_axial_pressure (NavierStokes/EntranceAlignedBase.lean:200) and base_beta_pos (:224) instantiated through modulatedScheme (:802) and modulated_baseFields_eq (:811), with AssembledSlowBase.baseFields_phi (:644).", "(C.18)'s weight and δ are encoded literally; (C.19)/(4.27), the support clause (:1067, :431) and nonvanishing (:462) are stated for the modulated witness. B's medium is refuted: clause (i)'s η-analyticity is stated for these profiles in the repository's DifferentiableOn ℂ encoding; B searched only AnalyticOn-family tokens. A is right that the two edge direction identities are stated nowhere for the modulated stress, and wrong that clause (v) reaches these profiles only by transfer: actual_exterior_coefficients states it for v directly. On (iii)'s uniformity A's low grade is right: modulated_representative_bounds (AlignedProfileSpectralCone.lean:716) performs the compactness step over the closed annulus for this witness and states one M, u, eta, so only the paper's wording and a kappa ∈ (0,2) are missing. DELTA and partial rest on the edge identities and the non-bundling; all findings are low."],
           "findings": [
             {
               "confidence": 0.9,
-              "contested": true,
-              "kind": "COVERAGE",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "We found no single declaration stating that the modulated profile satisfies all of Theorem 4.6. exists_weighted_profile conjoins the open-annulus cone, the bounds (C.19) with the weight (C.18) and two edge collars; stress support and other clauses are separate lemmas about the same witness."
-            },
-            {
-              "confidence": 0.75,
-              "contested": true,
+              "contested": false,
               "kind": "COVERAGE",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Auditor's sub-claim that (i), (v), (vi) and (4.25) are never restated for v.profiles is overstated. Lean restates the analytic rectangle, exterior pressure, zero exterior mass and both reserved patches for the modified profile."
-            },
-            {
-              "confidence": 0.82,
-              "contested": false,
-              "kind": "COVERAGE",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "The edge identities n(X_a) ∥ (a,−b_s) and n(X_b) = (1,0) are stated by no declaration about the modulated stress. The collar lemmas hide the coefficient behind ∃ G and export only positivity and ε-margins."
-            },
-            {
-              "confidence": 0.95,
-              "contested": true,
-              "kind": "COVERAGE",
-              "ledger": "REFUTED",
-              "severity": "low",
-              "summary": "Auditor's claim that b_s(X_b)=0 is not exported for the modulated profile is wrong: modulated_terminal_shears at x=0 states logShearB v.profiles (η, rightEdge W) = 0, and Lean's shearB is −b_s."
+              "summary": "No declaration was found stating that the Proposition C.2 profiles satisfy all conclusions of Theorem 4.6. exists_weighted_profile bundles (iii)-(iv) only; the other clauses are separate lemmas, in six files, about the same witness."
             },
             {
               "confidence": 0.78,
               "contested": false,
               "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Clause (iii)'s three named lower bounds, and the single kappa in (0,2) of (4.26), are stated in those words by no declaration found. The repository does perform the compactness step for this witness and states its uniform consequences in its own parameters."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The two edge direction identities of clause (iii) are stated by no declaration about the modulated stress: the collar lemmas hide the edge coefficient behind an existential and export only positivity of its first component and the margins."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Clause (iii) asks the unit direction to extend smoothly to the closed annulus; the assembled closed-annulus statement gives only ContinuousOn. The smooth collar extensions exist but are not glued into a smooth closed-annulus direction."
+            },
+            {
+              "confidence": 0.78,
+              "contested": false,
+              "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Lean states no single κ∈(0,2) for (4.26) on the closed annulus and no uniform lower bounds for F, a, v_s−2; it has pointwise strict inequalities there, ε-margins on both collars and a continuous closed direction."
+              "summary": "Lean writes (4.26) additively in unnormalised tilt coordinates, epsilon <= 1+st and epsilon <= 2(1+st)^2-(v-2)(t-s)^2, where the paper writes a multiplicative margin 2-kappa on the unit direction. The same condition once the tilt is bounded."
+            },
+            {
+              "confidence": 0.72,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Clause (i)'s η-analyticity is stated for these profiles, but in the repository's other encoding: holomorphy of the slow hierarchy's axis functions in the complex parameter, reached through the entrance scheme's identification of the base fields."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_DELTA",

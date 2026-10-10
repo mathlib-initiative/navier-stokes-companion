@@ -1,0 +1,26 @@
+{
+  "id": "lemma-B.1/support/NavierStokes.AxisInverseFactors.recoveredSource_mixed",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisInverseFactors.recoveredSource_mixed",
+      "line": 235,
+      "module": "NavierStokes.AxisInverseFactors",
+      "path": "NavierStokes/AxisInverseFactors.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisInverseFactors.lean#L235"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisInverseFactors.recoveredSource_mixed",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 235,
+        "text": "theorem recoveredSource_mixed (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r)\n    (F G : AxisSpace I ε) (n : ℕ) {x : ℝ} (hx : x ∈ I.interval) :\n    recoveredSource I ε r (inverseMixed I hε r hr F G) n x =\n      ∑ ij ∈ antidiagonal n, inputJet I ε F ij.1 1 x *\n        ((ij.2 : ℝ) * coefficient I (weight ε) G ij.2 x)"
+      }
+    }
+  }
+}

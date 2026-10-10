@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 92.1",
+  "status": "formalized",
+  "location": {
+    "page": 92,
+    "rect": [0.396059, 0.542436, 0.209004, 0.023245]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p092-1",
+      "locator": {
+        "physical": [92],
+        "printed": [92],
+        "text": "Display 92.1, p. 92, in section 8.3"
+      },
+      "region": "eq-p092-1@p092",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: I_m = \\{\\, \\sqrt{2X} \\;:\\; X \\in \\mathcal{I}_{\\mathrm{mean}} \\,\\}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean defines the radial patch by transporting the endpoints rather than by taking the set image: radialWindow F XR .mean = Ioo (√(2·left)) (√(2·right)), where window F XR .mean = Ioo (left) (right) is the Lean's I_mean (the `.mean` slot of the four reserved slots; its offsets -8/-3 sit strictly to the right of the `.positive` slot's -14/-9, matching the paper's sup I_pos < inf I_mean). The rewriting: X ↦ √(2X) is strictly increasing and continuous on [0,∞), so the image of an interval Ioo a b with 0 ≤ a is exactly Ioo √(2a) √(2b); hence the Lean set equals the paper's {√(2X) : X ∈ I_mean} whenever the window is nonnegative. The Lean also fixes I_mean as an open interval (the paper does not display its endpoint convention here), and ReservedPatches.radial_mem_window records the inverse direction R ∈ radialWindow ⇒ R²/2 ∈ window, i.e. the paper's X = R²/2.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

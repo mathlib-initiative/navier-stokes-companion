@@ -1,17 +1,13 @@
 {
   "kind": "lemma",
   "label": "Lemma 4.8",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 35,
     "rect": [0.133552, 0.220044, 0.734625, 0.539402]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration_verdict": {
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
       "item": "lemma-4.8",
       "locator": {
         "physical": [35],
@@ -21,45 +17,53 @@
       "region": "lemma-4.8@p035",
       "verdicts": [
         {
-          "confidence": 0.83,
-          "evidence": ["CONFIRMED_CONTENT: NavierStokes.ExtendedHeatedOutgoing.exists_fixed_schedule (NavierStokes/ExtendedHeatedOutgoing.lean:932): For all P, m > 0: ∃ lam B > 0, ∀ h with 0 < h, 2h < lam, ∃ F with ScheduleBounds F ∧ OutgoingProfile.Specification F B ∧ an open η-interval ∧ ∃ XR₀ C > 0, ∀ XR ≥ XR₀, ∃ w : Witness F XR C, Specification F XR w.coefficients. No cone conjunct; the name has no users in the repository.; NavierStokes.ExtendedHeatedOutgoing.exists_scheduled_profile (NavierStokes/ExtendedHeatedOutgoing.lean:711): Supplies lam, B and F for exists_fixed_schedule; its proof sets lam₀ := min resetLam (min delta (1/120)) and lam := lam₀/2 (L718-720), with no reference to the cone threshold of OutgoingCone.exists_ordered_profile_cone.; NavierStokes.ExtendedHeatedOutgoing.Specification (NavierStokes/ExtendedHeatedOutgoing.lean:846): Structure: fields smooth and E > 0 on (0,∞) × energyDomain F, zero mass/angular/energy/renormalized totals, canonical pressure, axis datum equal to F.axisDatum and analytic on a strip, U = M = J = 0 after the pulse, ideal prefix for X ≤ XR, heat exterior for log(X/switchRadius) + 1/5 ≥ 3. No cone field.; NavierStokes.ExtendedHeatedOutgoing.Witness.specification (NavierStokes/ExtendedHeatedOutgoing.lean:891): (w : Witness F XR C) (b : ScheduleBounds F) : Specification F XR w.coefficients, for any F, XR, C. Its only application is at L927 inside exists_open_profile.; NavierStokes.ExtendedHeatedOutgoing.exists_open_profile (NavierStokes/ExtendedHeatedOutgoing.lean:921): ScheduleBounds F → ∃ XR₀ C > 0, ∀ XR ≥ XR₀, ∃ w : Witness F XR C, Specification F XR w.coefficients. Used only at L944 by exists_fixed_schedule.; NavierStokes.PreparedOutgoing.PreparedProfile (NavierStokes/PreparedOutgoing.lean:22): Structure: a profile with OutgoingProfile.Specification, ScheduleBounds (field schedule, never projected anywhere in the repository), SmallTail, 2 ≤ P, h ≤ 1/1000, and for every left ≤ 0 an R0 > 0 with ProfileCleanCone profile R left for all R > R0 (cone of the unedited profile).; NavierStokes.PreparedOutgoing.exists_prepared (NavierStokes/PreparedOutgoing.lean:36): Nonempty PreparedProfile; the proof takes λ below the cap returned by OutgoingCone.exists_ordered_profile_cone, which is the cone threshold exists_fixed_schedule does not use.; NavierStokes.PreparedOutgoing.prepared (NavierStokes/PreparedOutgoing.lean:119): Classical.choice exists_prepared : PreparedProfile. Named by the original and the checker; used only by exists_matched_nominal in the same file. The composition holds for every PreparedProfile, this one included.; NavierStokes.NominalConeAssembly.CompensatedFamily (NavierStokes/NominalConeAssembly.lean:961): Structure over F: bound, radiusFloor > 0; for every XR ≥ radiusFloor an ExtendedHeatedOutgoing.Witness F XR bound exists, and for every such witness HeatSwitchCone.TrueAt F XR w.coefficients holds on trueWindow F.data = [holdStart, tailStart + 1/2] × [-1,1]. No Specification field.; NavierStokes.NominalConeAssembly.exists_compensatedFamily (NavierStokes/NominalConeAssembly.lean:971): CleanOutgoingCone F.reset anchor left → 0 < anchor → Nonempty (CompensatedFamily F), for any F.; NavierStokes.NominalConeAssembly.heated_relaxed_before_patch (NavierStokes/NominalConeAssembly.lean:874): For any F, R > 0, coef: p.1 < patchClock F → p.2 ∈ [-1,1] → OutgoingCone.RelaxedAt F.reset F.amp R p → HeatRelaxedAt F R coef p. A pointwise transfer; used only at L942 in Witness.clean_relaxed_before_hold.; NavierStokes.NominalConeAssembly.assembly_exists (NavierStokes/NominalConeAssembly.lean:1482): ∀ d : PreparedProfile, Nonempty (Assembly d). The proof uses d.clean (-5), exists_compensatedFamily, RepairConeBounds.exists_repair_cone and MatchingConeBounds.preparedWitness_exists; it calls neither Witness.specification nor heated_relaxed_before_patch. Supports the published sentence, not the original's claim that it performs the full composition.; NavierStokes.NominalConeAssembly.Assembly.certificate (NavierStokes/NominalConeAssembly.lean:1458): Certificate A.witness: relaxed cone of the nominal profile (a NominalProfile.Witness) on its active annulus, true cone on an initial collar and for y in [holdStart, tailEnd) in the chart at the witness's one radius. Reaches heated_relaxed_before_patch through Assembly.outer_relaxed (L1414).; NavierStokes.HeatSwitchCone.preserves_true_cone (NavierStokes/HeatSwitchCone.lean:1018): CleanOutgoingCone F.reset anchor left → 0 < anchor → ∀ C, ∃ XR₀ > 0, ∀ XR ≥ XR₀, ∀ w : HeatedOutgoing.CompensationWitness F XR C, ∀ p ∈ trueWindow F.data, TrueAt F XR w.coefficients p. A cone-only statement for the heated profile.; NavierStokes.HeatSwitchCone.compensated_source_margins (NavierStokes/HeatSwitchCone.lean:927): Uniform m > 0 lower bounds on Qs, radialA, normalV − 2, sourceC and leadingGap on trueWindow for all XR ≥ XR₀ and all CompensationWitnesses; it gives no margin for normalP − 2 or for the coneBound gap. Named only in the adjudication reason.", "CONFIRMED_CONTENT: PreparedOutgoing.PreparedProfile (PreparedOutgoing.lean:22) has fields amplitude_lower : 2 ≤ P and height_upper : h ≤ 1/1000. amplitudeThreshold m = e^{e^m+11}+1 and heightThreshold ≤ e^{-(e^m+12+3/5)}/8 (OutgoingEntranceCone.lean:1809-1813) are used only in exists_prepared's proof (hPamp, hFheight). dropLength = e^m+10 (OutgoingSchedule.lean:302).", "ATTRIBUTION_GAP: ReservedPatches.window L64, windows_disjoint L90, clock_inside_wait L114, clean_fields L309 (U=0 on every slot, heat included), heated_fields L333, heat_increment_support L393. Offsets (-25,-20),(-20,-15),(-14,-9),(-8,-3); .heat is I_2. ExtendedHeatedOutgoing.Specification.after_pulse gives U=M=J=0 for X ≥ pulseEndRadius.", "I read p.35 and checked the key declarations. Every clause of Lemma 4.8 is proved for the prepared profile. (i) and the moments come from Witness.specification; Π_0 from same_axis_datum and axisPressure_*; the intervals from ReservedPatches; the admissible cone from CompensatedFamily/preserves_true_cone; the relaxed cone from heated_relaxed_before_patch; the heat exterior from terminal_extended_heat and RadialHeatProfile. No declaration states the conjunction. exists_fixed_schedule, the atlas candidate, picks λ without the cone cap and has no cone. The inequalities P_*>e^{T_d} and h<e^{-T_d} are never conclusions. The interval clauses are faithful generic lemmas (attribution gap). Positive gap minima follow from the strict cone on a compact window, or from compensated_source_margins. The result is partial, a packaging delta, not a mathematical error."],
+          "confidence": 0.72,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.HeatSwitchCone.compensated_source_margins, NavierStokes/HeatSwitchCone.lean:927, concludes m <= Qs, radialA, normalV - 2, sourceC, leadingGap and |sourceC|,|normalV| <= T - not m <= normalP - 2 and not m <= coneBound(normalP,normalJ) - normalV. NavierStokes.HeatSwitchCone.preserves_true_cone, same file:1018, concludes only the pointwise TrueAt, via ConeAlgebra.finite_amplitude_cone (ConeAlgebra.lean:116), which is strict and non-quantitative. The margin statements that do cover those two gaps, OutgoingCone.clean_relaxed_margins (OutgoingCone.lean:550) and clean_true_margins (583), are for the unedited ResetWitness.", "ATTRIBUTION_GAP: NavierStokes.ExtendedHeatedOutgoing.exists_fixed_schedule, NavierStokes/ExtendedHeatedOutgoing.lean:932 (no cone or interval conjunct), with Specification at the same file:846. The intervals are in ReservedPatches.lean:137/309/333, the cones in OutgoingCone.lean:503/550/583, HeatSwitchCone.lean:927/1018/1085 and NominalConeAssembly.lean:874/971.", "ATTRIBUTION_GAP: NavierStokes.PreparedOutgoing.exists_prepared, NavierStokes/PreparedOutgoing.lean:36, yields PreparedProfile (same file:22) with fields amplitude_lower : 2 <= P and height_upper : h <= 1/1000 only. The thresholds themselves are definitional: amplitudeThreshold m = exp (exp m + 11) + 1 (OutgoingEntranceCone.lean:1809) and heightThreshold m lam = min (1/100) (min (lam/4) (exp (-(exp m + 12 + 3/5))/8)) (same file:1812 with entranceTime at 1226), against dropLength = exp m + 10 = T_d.", "ATTRIBUTION_GAP: NavierStokes.SlowDivergence.radialFlux, NavierStokes/SlowDivergence.lean:21, is (4.7) at lam = 0; radialFlux_at_axis (same file:26) is the only vanishing statement, at X = 0. ExtendedHeatedOutgoing.Specification.after_pulse (ExtendedHeatedOutgoing.lean:846) gives U = M = J = 0 for X >= pulseEndRadius.", "Every clause of Lemma 4.8 is matched: the prefix formulas and the five Pi_0 properties, the four reserved slots with c_patch f X^{-1/2-lambda}, the moment identities, X_b = e^3 X_tail, both cone rectangles verbatim as cleanWindow (-5) and trueWindow, and the heat tail. What differs is packaging and a logarithmic clock. The one substantive question is part (iii)'s gap minima for the heat-edited profile: compensated_source_margins covers only the source quantities, and preserves_true_cone reaches the other two gaps non-quantitatively. They are nonetheless recoverable by algebra alone on compensated_source_margins' constants m, T, which precede its radius and witness quantifiers, with finite_amplitude_cone applied at normalV + m^2/(12T^2). So the paper's statement follows from stated statements, and the four gaps are ATTRIBUTION_GAPs of low severity."],
           "findings": [
             {
-              "confidence": 0.85,
-              "contested": true,
+              "confidence": 0.8,
+              "contested": false,
               "kind": "COVERAGE",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "medium",
-              "summary": "No single declaration was found stating Lemma 4.8's conjunction for one family. The closest, ExtendedHeatedOutgoing.exists_fixed_schedule, takes arbitrary P, m > 0, has no cone conclusion, and its proof's λ = min(resetLam, δ, 1/120)/2 ignores the cone threshold. The heated profile's cones are stated separately."
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The positive minima for the heat-edited profile's gaps normalP - 2 and coneBound(normalP,normalJ) - normalV are the conclusion of no declaration. compensated_source_margins bounds the five source quantities instead; the two normalized gaps need UniformCone.compact_normalized_cone_gap instantiated."
             },
             {
               "confidence": 0.85,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "No Lean conclusion asserts P_* > e^{T_d} or h < e^{-T_d}. They appear only as hypotheses of exists_ordered_profile_cone and inside exists_prepared's proof. PreparedProfile exports only 2 ≤ P and h ≤ 1/1000."
-            },
-            {
-              "confidence": 0.8,
-              "contested": true,
               "kind": "COVERAGE",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Part (ii)'s four intervals and V_{0,o}=0 for X≥X_b are not conclusions of an existence theorem. The intervals are stated by generic ReservedPatches lemmas, valid for every F, XR, c. V_0 has no Lean counterpart but follows at once from after_pulse."
+              "summary": "No single declaration states Lemma 4.8. The nearest, exists_fixed_schedule with its Specification, carries (i), the moment identities and the heat tail, but says nothing about the four reserved intervals or about either cone condition."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The parameter inequalities P_* > e^{T_d} and 0 < h < min{1/100, lambda, e^{-T_d}} are the conclusion of no declaration. They appear as hypotheses of exists_ordered_profile_cone and are chosen inside exists_prepared's proof; PreparedProfile exports only 2 <= P and h <= 1/1000."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Part (iii)'s clause V_{0,o} = 0 for X >= X_b is stated by no declaration found. The repository defines V_0 as SlowDivergence.radialFlux at lambda = 0 and proves it vanishes only on the axis."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "partial",
-          "severity": "medium",
+          "relation": "different_formulation",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states part of it. No single declaration was found stating Lemma 4.8's conjunction for one family. The closest, ExtendedHeatedOutgoing.exists_fixed_schedule, takes arbitrary P, m > 0, has no cone conclusion, and its proof's λ = min(resetLam, δ, 1/120)/2 ignores the cone threshold. The heated profile's cones are stated separately.",
-          "verdict": "deviation"
+          "summary": "Lean states it in a different formulation.",
+          "verdict": "faithful"
         }
       ]
     }

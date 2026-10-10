@@ -17,36 +17,19 @@
       "region": "lemma-B.7@p154",
       "verdicts": [
         {
-          "confidence": 0.87,
-          "evidence": ["CONVENTION: NavierStokes.ReferenceEndpointRate.exists_entrance_envelope, NavierStokes/ReferenceEndpointRate.lean:278-283: '∀ q : Choice d Λ, ∀ T, 0 < T → … ≤ Cnat/Λ+Cjoin*(T+κ+w₁+w₂)'; δ is the field q.δ of ReferenceUniformStocks.Choice (ReferenceUniformStocks.lean:206) and does not appear on the right-hand side.", "CONVENTION: NavierStokes.ReferencePath.slopeCutoff, NavierStokes/ReferencePath.lean:39: 'def slopeCutoff (δ t : ℝ) : ℝ := 1 - Real.smoothTransition ((t - δ) / δ)', used by dampedSlope/continuation (L58-64), refF/refU (L468-471) and hence q.profiles in ReferenceEndpointRate.reference (L24). By contrast OutgoingSchedule.sigma (OutgoingSchedule.lean:26, from FlatCutoff.edge = exp(-c/x^2), FlatCutoff.lean:26) matches (A.5) and is used for e_a (StressActivation.damping) and for TransitionRamp.step.", "I read p.154 and ReferenceEndpointRate.lean. exists_entrance_envelope (L275) gives both lines of (B.32) in the paper's order of constants: Cnat before Λ; B and Cjoin after Λ, before the amplitude and every width. endpointLog and endpointU are log(C·E(110,η)) and U(110,η); U_* = 4η+j; J = [−1,1]; bounds for all n ≤ N match the paper's max-norm C^k. Lean generalizes (T separate from δ, κ ∈ [0,1], any w₁, w₂ ≥ 0), so the paper's case is an instance, up to one definitional convention: the (B.22) cutoff uses Mathlib's smoothTransition, not σ of (A.5). Non-vacuous by exists_coefficientProfile. The theorem is a side result (imported only by PaperAdditionalResults); the main chain uses the ε-form ordered_seed_bounds."],
-          "findings": [
-            {
-              "confidence": 0.9,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean separates the activation width T (in damping T κ) from the reference cutoff width q.δ; the paper uses t_1 for both. The bound is linear in T and uniform in δ, so T = δ = t_1 recovers (B.32)."
-            },
-            {
-              "confidence": 0.85,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "The Lean (B.22) reference cutoff is 1 − Real.smoothTransition (an exp(−1/x) step), not the paper's σ of (A.5) (exp(−1/y²)). G_i and ℓ_i belong to a sibling continuation; the paper's exact one is not a literal instance."
-            }
-          ],
+          "confidence": 0.82,
+          "evidence": ["exists_entrance_envelope states both lines of (B.32) in a single declaration, for the actual stock-driven continuation at X_i = 110, with the paper's ordering of constants: Cnat before Λ, then B and Cjoin before the amplitude q.C and before T, κ, w₁, w₂. The identifications ℓ_i = endpointLog (via E = √(2X)f and endpointLog_eq_physical), G_i = endpointU, U_* = 4η+j, t₁ = T, κ₀ = κ, ω_fin = w₁+w₂ are each supported by a stated declaration, so the only gap between the two statements is notational. The Lean version is also slightly more general (all κ ∈ [0,1], all widths, no cone hypothesis). Nothing material to report."],
+          "findings": [],
           "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "lean_stronger",
+          "relation": "different_formulation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states a stronger result.",
+          "summary": "Lean states it in a different formulation.",
           "verdict": "faithful"
         }
       ]

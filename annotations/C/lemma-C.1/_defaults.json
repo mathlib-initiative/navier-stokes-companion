@@ -17,32 +17,32 @@
       "region": "lemma-C.1@p158",
       "verdicts": [
         {
-          "confidence": 0.87,
-          "evidence": ["CONVENTION: NavierStokes.TrueConeLoop.HasConeMargin, NavierStokes/TrueConeLoop.lean:283: ε ≤ A ∧ ε ≤ A*(1+(C/A)^2) − 2 ∧ ε ≤ p₁+p₂*(C/A) − 2 ∧ ε ≤ coneBound (p₁+p₂*(C/A)) (p₂−p₁*(C/A)) − A*(1+(C/A)^2); asserted at NavierStokes/TrueConeLoopPaper.lean:39", "CONVENTION: NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin, NavierStokes/TrueConeLoopPaper.lean:21-24: (hO : IsOpen O) (hKO : K ⊆ O) (ha : ContDiffOn ℝ ∞ a O) (hm : ContDiffOn ℝ ∞ m O) (hp₁ : ContDiffOn ℝ ∞ p₁ O) (hp₂ : ContDiffOn ℝ ∞ p₂ O). The only extension lemma used, FlatPrimitivePaper.smooth_extension_on_compact (FlatPrimitivePaper.lean:20), starts from an open neighbourhood. grep finds no Seeley or Whitney in NavierStokes/.", "CONVENTION: NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin, NavierStokes/TrueConeLoopPaper.lean:40: (∀ x ∈ K ∩ N, ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x); NavierStokes.TrueConeLoopPaper.uniform_boundary_collar, NavierStokes/TrueConeLoopPaper.lean:60-64: ∃ δ : ℝ, 0 < δ ∧ ∀ x ∈ K, ∀ y ∈ B, dist x y < δ → ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x", "I read pp. 158–159 with (4.20), (4.21), (4.35) and Lemma 4.11, and the Lean source. With m = t_s, A = a_L, C = −b_L, exists_local_family_with_margin gives (C.1), a_L > 0, joint smoothness on an open U×ℝ and a uniform margin; uniform_boundary_collar gives δ_∂. All three voters agree on verdict, relation and declarations. Findings 0 and 2 have true premises and Lean-backed recoveries, so they are CONVENTION, not REFUTED. Finding 1 is the only real residue: the paper's one-sided smoothness at η=±1 needs a Whitney/Seeley extension that is not formalized. Lean is otherwise more general (any compact K, B; v_s > 2 only on B). No sorry or axiom in the files read; Lean was not run. Docstrings cite stale numbering."],
+          "confidence": 0.84,
+          "evidence": ["CONVENTION: NavierStokes.TrueConeLoop.HasConeMargin, NavierStokes/TrueConeLoop.lean:283, clauses ε ≤ p₁ + p₂·(C/A) − 2 and ε ≤ coneBound (p₁+p₂·(C/A)) (p₂−p₁·(C/A)) − A·(1+(C/A)^2); used in NavierStokes/TrueConeLoopPaper.lean:39", "ATTRIBUTION_GAP: NavierStokes/TrueConeLoopPaper.lean:40 gives only '∀ x ∈ K ∩ N, ∀ φ, A (x,φ) = a x ∧ C (x,φ) = a x * m x'; the width δ is supplied by NavierStokes.TrueConeLoopPaper.uniform_boundary_collar, NavierStokes/TrueConeLoopPaper.lean:60-64.", "CONVENTION: NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin, NavierStokes/TrueConeLoopPaper.lean:22-24, hypotheses hO : IsOpen O, hKO : K ⊆ O, ha : ContDiffOn ℝ ∞ a O (and likewise for m, p₁, p₂).", "TrueConeLoopPaper.exists_local_family_with_margin states Lemma C.1: same hypotheses (relaxed cone on the compact rectangle, admissible cone on a compact boundary set), a smooth period-one loop with a_L > 0, the mean condition (C.1) verbatim, a uniform cone margin, and agreement with the original shear near the boundary. Three encoding differences, all low: the margin is taken in (a, v_s−2, P_c−2, U−v_s) rather than in the gaps Ψ of (4.35); the single collar width δ∂ of (C.3) comes from the companion uniform_boundary_collar; and input smoothness is demanded on an open neighborhood of the closed rectangle. Each recovers routinely, the first through the already-formalized ConeAlgebra.true_cone_iff plus compactness. The Lean is also more general in the parameter space."],
           "findings": [
             {
-              "confidence": 0.93,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean's uniform margin bounds (A, v−2, P−2, 𝒰(P,J)−v) below by ε. The paper's (C.2) bounds Ψ = (a, v−2, c−v, 2(c−v)²−(v−2)j²) by κ_L. The paper's form follows with κ_L = min(ε, 2ε²)."
-            },
-            {
-              "confidence": 0.7,
+              "confidence": 0.9,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Lean assumes the data C^∞ on an open set O ⊇ K. The paper assumes smoothness on the closed rectangle, with one-sided derivatives at η=±1 (its stated convention, pp. 25, 39). The two agree only through a Whitney/Seeley extension, which is not formalized."
+              "summary": "(C.2) asks for a uniform margin in the four cone gaps Ψ of (4.35); the Lean asserts a uniform margin in a different, equivalent quadruple (a, v_s−2, P_c−2, U(P_c,J_c)−v_s). Equal positivity sets, different numbers."
             },
             {
-              "confidence": 0.93,
-              "contested": true,
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "(C.3)'s single collar width δ∂ with dist(X,∂I) < δ∂ is not in the family theorem, which gives an unquantified open N ⊇ B; the width comes from a second declaration in the same file."
+            },
+            {
+              "confidence": 0.72,
+              "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The headline theorem gives agreement with (a, a·m) on K∩N for an open N ⊇ B, not on a collar of width δ_∂. The companion theorem uniform_boundary_collar converts this to the collar form of (C.3)."
+              "summary": "The Lean hypothesis is ContDiffOn ℝ ∞ on an open O ⊇ K, i.e. data smooth past η = ±1; the paper assumes smoothness only on the closed rectangle I × [−1,1], with one-sided η-derivatives."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.30)",
+  "status": "formalized",
+  "location": {
+    "page": 136,
+    "rect": [0.313083, 0.326183, 0.556375, 0.047252]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.PulseCone",
+      "path": "NavierStokes/PulseCone.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.30",
+      "locator": {
+        "physical": [136],
+        "printed": [136],
+        "text": "Equation (A.30), p. 136, in section A.5"
+      },
+      "region": "eq-A.30@p136",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\frac{N_s}{E} = -R_b + (D + c_\\eta)m - D\\eta m_\\eta + O(C_{\\mathrm{pre}}\\lambda^{27})."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. The displayed identity is reproduced term for term: −R_b = −pulseRatio; (D + c_η)m = ((1/2 − h) + (1/2 − h)·η·shapeGradient η)·normalizedLag, with m the exact lag, not its expansion; −Dηm_η = −(1/2 − h)·η·∂_η(normalizedLag). Two ways the Lean is stronger, neither a weakening. First, `Ns_pulse_identity` is an exact equality with an explicit named remainder `axialHistoryError`, not an O(·). Second, that remainder is bounded by axialErrorConstant(P,m)·λ^29, whereas the paper writes O(C_pre λ^27); since λ ≤ 1/120 here, C_pre λ^29 ≤ C_pre λ^27, so the Lean bound implies the paper's and is tighter by two powers. The hypotheses attached to the bound (wait = 60 log(1/λ), λ ≤ 1/120, |amp η| ≤ 6/5, |amp'η| ≤ 1, |η| ≤ 1, 0 ≤ y ≤ pulseLength) are the standing setting of Section A.5.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

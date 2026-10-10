@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 7.5",
+  "status": "formalized",
+  "location": {
+    "page": 7,
+    "rect": [0.220462, 0.661982, 0.559295, 0.025153]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p007-5",
+      "locator": {
+        "physical": [7],
+        "printed": [7],
+        "text": "Display 7.5, p. 7, in section 3.1"
+      },
+      "region": "eq-p007-5@p007",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: q - z^2 q^{2h} = \\tau, \\qquad \\partial_q\\bigl(q - z^2 q^{2h}\\bigr) = 1 - 2h\\eta^2 \\ge 1 - 2h > 0 \\quad \\text{on } |\\eta| < 1."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both halves are present, each in the Lean's own variables. The implicit equation is literal (manuscript_coordinate_existsUnique, exponent 2h), and the elimination of η that yields it is forward_coordinate_identity. The derivative is given as the first entry of the Fréchet derivative of the two-variable map (q,z) ↦ (q - z²q^a, z) rather than as a one-variable ∂_q, and in the (z,q) variables: scalarSlope = 1 - 2h z² q^{2h-1}; scalarSlope_eq_L rewrites it to 1 - 2hη² at the coordinate point, which is the paper's value. The paper's middle term and the full chain are stated too: extended_L_lowerBound is 1 - a ≤ 1 - a·extendedEta², i.e. 1 - 2h ≤ 1 - 2hη² at a = 2h (and extendedEta = coordinateEta wherever τ > 0, by extendedEta_positive with positive_mem_domain), and extended_L_pos chains it to 0 < 1 - 2hη² exactly as the paper does; the same inequality appears in h, η notation as a step of TerminalPressure.logScaleDerivative_bound, and (privately) as SeedHandbackJets.L_lower. So the only reformulation is the packaging of ∂_q as the (1,1) entry of forwardMap_hasFDerivAt's triangular map. The Lean's hypothesis h < 1/2 (a < 1) is weaker than the paper's h < 1/100, and 1 - 2h > 0 is exactly h < 1/2, which is the a < 1 that supplies the strict end of the chain.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

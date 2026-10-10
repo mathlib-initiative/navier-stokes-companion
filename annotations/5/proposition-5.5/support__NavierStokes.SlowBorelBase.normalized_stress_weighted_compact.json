@@ -1,0 +1,27 @@
+{
+  "id": "proposition-5.5/support/NavierStokes.SlowBorelBase.normalized_stress_weighted_compact",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SlowBorelBase.normalized_stress_weighted_compact",
+      "line": 1618,
+      "module": "NavierStokes.SlowBorelBase",
+      "path": "NavierStokes/SlowBorelBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean#L1618"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SlowBorelBase.normalized_stress_weighted_compact",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1618,
+        "text": "theorem normalized_stress_weighted_compact {a : ℕ → ℕ} {h C : ℝ}\n    (hh : 0 < h) {d : Coefficients} (hd : SmoothCoefficients d)\n    {K U : Set Inner} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)\n    (ha : AdmissibleScales h (coefficientBundle C d) K a)\n    {r : Inner → ℝ} (hr : ContDiffOn ℝ ∞ r U) (m : ℕ) :\n    ∃ B : ℝ, 0 < B ∧ ∀ q : ℝ, 0 < q → q ≤ 1 → ∀ w ∈ K,\n      ‖blownJet m (fun y => r y.2 * (slowSum a h d.stressTheta y - d.stressTheta 0 y.2))\n        (q, w)‖ ≤ B * q ^ h ∧\n      ‖blownJet m (fun y => r y.2 * (slowSum a h d.stressAxial y - d.stressAxial 0 y.2))\n        (q, w)‖ ≤ B * q ^ h"
+      }
+    }
+  }
+}

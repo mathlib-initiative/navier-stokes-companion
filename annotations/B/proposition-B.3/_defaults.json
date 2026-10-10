@@ -17,24 +17,16 @@
       "region": "proposition-B.3@p148",
       "verdicts": [
         {
-          "confidence": 0.87,
-          "evidence": ["CONVENTION: NaturalEntrance.p1 (NaturalEntrance.lean:31), ns (:34), p2 (:39); bridges p1_eq_scaled_regularAngularLag (:1271), ns_eq_scaled_regularAxialLag (:1329), EntranceProfile.regular_lag_coordinates (:1340), regular_cone_at_four (:1366), Estimates.regular_lag_bounds (NaturalExitBounds.lean:203)", "CONFIRMED_CONTENT: NaturalExitBounds.Estimates.parameter_jets (NaturalExitBounds.lean:145) has iteratedDeriv in η only. NaturalExitParameterJets.exists_mixed_jets (:60) bounds ∂_η^n ∂_Y^k of Φ and u (hence of ns = −2u_Y via ns_eq_scaled, :186). exists_composed_jets (:79) and exists_quotient_jets (:122) are η-only at fixed Y.", "I read pp.144–150 and the Lean sources. exists_exit with Estimates states every clause: Φ > 1/8; (B.17) strict with 19/20; (B.18) with c_1, C_1 and the O(1/Λ) constant fixed before Λ and C; (B.19) with c_ex = 1/4; η-jets uniform in Λ and C. Sq, Sn, Q_s, N_s, W, H_c, Z_*, χ, f = φ/C and E match (4.8)–(4.10), (B.1)–(B.3), (B.12). Quantifier order (Λ ≥ M, then C ≥ C_0(Λ)) matches. Hypotheses are satisfiable (ideal_prefix_exit). Both skeptics agree on verdict and relation; their only split is whether the derivative-form encoding counts as a finding, which I rule a convention. No new findings. The module is off the main chain, which uses exists_entranceProfile."],
+          "confidence": 0.85,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/NaturalExitBounds.lean:145 Estimates.parameter_jets bounds only |iteratedDeriv m (fun ξ ↦ ·) η|; NaturalExitParameterJets.lean:198 exists_exit_jets likewise. Radial orders appear only in NaturalExitParameterJets.lean:60 exists_mixed_jets (for the two coefficient components, hence Φ and u) and in ProfileFamily.mixed_error : UniformMixedError (NaturalAxisBridge.lean:689), which is indexed by both k and m. exists_composed_jets (:79) and exists_quotient_jets (:123), which produce the log Φ and p₁ bounds, are stated at a fixed radius Y.", "NaturalExitBounds.exists_exit is Proposition B.3, and it is faithful: entranceSet is [0,4.1]×[-1,1]; Sq, p1, p2, ns, coneSize, regularAngularLag and the NaturalAxisData coefficients reproduce S_q, p₁, p₂, n_s, Q_s, W, H_c, Z_*, L, χ; and the five Estimates clauses are (i)–(v) with strict inequalities and explicit constants (c₀ = 1/8, c_ex = 1/4, c₁ = lowerConstant d, C₁ = B 0), all fixed before Λ and C, in the paper's Λ-then-C₀(Λ) order. The jet constants are uniform in Λ as well as C, which the paper does not claim. The only gap is packaging: the X-derivative half of the final sentence is not among the Estimates clauses, though exists_mixed_jets and ProfileFamily.mixed_error carry the radial orders for Φ and u. Non-vacuous via ideal_prefix_exit."],
           "findings": [
             {
-              "confidence": 0.9,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean defines p1 := −2X·f_X/f and ns := −2U_X (the proof's identities), not XQ_s/L and N_s/L. Integral forms are proved equal for X>0; (B.18) and (B.19) are restated in integral form, the η-jets only in derivative form."
-            },
-            {
-              "confidence": 0.6,
+              "confidence": 0.8,
               "contested": false,
               "kind": "COVERAGE",
-              "ledger": "CONFIRMED_CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Estimates bounds only η-jets. The closing remark on X-derivative constants (Λ-dependent, uniform in C) is not packaged: exists_mixed_jets gives Λ,C-uniform Y-jets of Φ and u only, nothing for log Φ or p1."
+              "summary": "Clause (v)'s radial-derivative half is not in Estimates: parameter_jets bounds only η-derivatives. Radial-order control exists separately (exists_mixed_jets for Φ and u; ProfileFamily.mixed_error), but not assembled for log Φ, p₁."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

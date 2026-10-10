@@ -1,0 +1,26 @@
+{
+  "id": "eq-p140-1/key/NavierStokes.HeatedOutgoing.Specification",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HeatedOutgoing.Specification",
+      "line": 793,
+      "module": "NavierStokes.HeatedOutgoing",
+      "path": "NavierStokes/HeatedOutgoing.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean#L793"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HeatedOutgoing.Specification",
+        "kind": "structure"
+      },
+      "relation": "defines",
+      "role": "key",
+      "snippet": {
+        "line": 793,
+        "text": "structure Specification (F : Profile) (XR : ℝ) (c : ℝ → Coeff) : Prop where … mass_zero : ∀ eta, (∫ X in Ioi 0, U F XR (X, eta)) = 0; angular_zero : ∀ eta, (∫ X in Ioi 0, H F XR c (X, eta) * U F XR (X, eta)) = 0; energy_zero : ∀ eta ∈ parameterDomain, totalS F XR c eta = 0; renormalized_zero : ∀ eta ∈ parameterDomain, (∫ X in Ioi 0, H F XR c (X, eta) - OutgoingDilation.powerH F XR X) = 0; pressure_canonical : ∀ eta X, Pi F XR c (X, eta) = -(1 / 2 : ℝ) * ∫ u in Ioi X, E F XR c (u, eta) ^ 2 / u; together with mass_integrable / angular_integrable / energy_integrable / renormalized_integrable and after_pulse : ∀ eta X, 0 < X → pulseEndRadius F XR ≤ X → U = 0 ∧ M F XR eta X = 0 ∧ J F XR c eta X = 0"
+      }
+    }
+  }
+}

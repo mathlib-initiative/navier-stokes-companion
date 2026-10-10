@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.32)",
+  "status": "formalized",
+  "location": {
+    "page": 57,
+    "rect": [0.298639, 0.606493, 0.570436, 0.027156]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-5.32",
+      "locator": {
+        "physical": [57],
+        "printed": [57],
+        "text": "Equation (5.32), p. 57, in section 5.4"
+      },
+      "region": "eq-5.32@p057",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: \\bigl|\\partial_{x,t}^{I} c_{a\\nu}(x,t)\\bigr| \\le C_I\\, q^{-K_I}\\, \\Lambda_{\\log}(q)^{P_I} \\qquad \\bigl((x,t) \\in \\Omega_{a\\nu}\\bigr)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Same inequality, assumed of strictly fewer coefficients, so the theorem carrying it is stronger. Term by term: `region t` is Ω_{aν}, `t.1` is c_{aν}, `Cc m / Pc m / Kc m` are C_I / P_I / K_I, and `(1 + |Real.log (q x)|)` is Λ_log(q) = 1 + |log q| as fixed on p. 56. Lean indexes the constants by the derivative order m only — not by the term t — which is exactly the paper's 'may be chosen common to that list for each fixed I' and independence of the truncation index. Two encoding points: (i) ‖iteratedFDeriv ℝ m c‖ bounds all Cartesian multi-indices I of order exactly m simultaneously, where the paper indexes by I ∈ ℕ_0^4; since there are finitely many I of each order the two directions convert by a constant absorbed into C_I resp. Cc m. (ii) Lean quantifies `∀ t ∈ P.terms`, i.e. over ν ≥ 1 only: the field-independent term `P.constant` (= c_{a0}, with Ω_{a0} = Ω in the paper) gets only a smoothness hypothesis and no growth bound at all. That is the paper's own observation that 'The terms c_{a0}, which are independent of U, cancel from that comparison', made into a formal weakening of the hypothesis. The paper's requirement that Ω_{aν} contain the field factors' supports before and after cutoffs is carried separately, by `hrawsupport` and `hcutsupport` (FactorSupportAt off `region t`), not by (5.32) itself.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

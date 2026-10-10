@@ -1,0 +1,28 @@
+{
+  "id": "proposition-B.2/key/NavierStokes.NaturalEntrance.exists_coefficientProfile",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalEntrance.exists_coefficientProfile",
+      "line": 971,
+      "module": "NavierStokes.NaturalEntrance",
+      "path": "NavierStokes/NaturalEntrance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L971"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalEntrance.exists_coefficientProfile",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: exists M > 0 such that for all Lambda >= M and all C with d.normalizationThreshold Lambda <= C, Nonempty (CoefficientProfile d Lambda C). This is the Lambda_0 / C_0(Lambda) quantifier order of the proposition."
+      },
+      "role": "key",
+      "snippet": {
+        "line": 971,
+        "text": "theorem exists_coefficientProfile {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (hsmall : NaturalAxisRange.Parameters h j)\n    (hσ : 0 < σ) (hP0 : ContDiff ℝ ∞ P0) :\n    ∃ M : ℝ, 0 < M ∧ ∀ Λ : ℝ, M ≤ Λ → ∀ C : ℝ,\n      d.normalizationThreshold Λ ≤ C → Nonempty (CoefficientProfile d Λ C)"
+      }
+    }
+  }
+}

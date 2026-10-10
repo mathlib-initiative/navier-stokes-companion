@@ -16,7 +16,7 @@
         "kind": "theorem"
       },
       "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: 0 < ν, hc : CandidateProperties ν u p f K → IntervalIntegrable (l2Norm f) volume 0 1 ∧ IntegrableOn (dissipation u) (Ico 0 1) ∧ (∀ T ∈ Ico 0 1, l2Sq u T + 2ν ∫₀ᵀ dissipation u ≤ (cumulativeForceNorm f T)^2) ∧ 2ν ∫_{Ico 0 1} dissipation u ≤ (cumulativeForceNorm f 1)^2",
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: For 0 < ν and hc : CandidateProperties ν u p f K: IntervalIntegrable (l2Norm f) volume 0 1 ∧ IntegrableOn (dissipation u) (Ico 0 1) ∧ (∀ T ∈ Ico 0 1, l2Sq u T + 2*ν*(∫ t in 0..T, dissipation u t) ≤ (cumulativeForceNorm f T)^2) ∧ 2*ν*(∫ t in Ico 0 1, dissipation u t) ≤ (cumulativeForceNorm f 1)^2.",
         "status": "unconfirmed",
         "verdict": "faithful"
       },

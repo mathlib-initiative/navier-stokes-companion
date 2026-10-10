@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.ActivationCone.natural_reference_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationCone.natural_reference_bounds",
+      "line": 772,
+      "module": "NavierStokes.ActivationCone",
+      "path": "NavierStokes/ActivationCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean#L772"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationCone.natural_reference_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For the natural entrance profile: exists tau in (0,delta], alpha > 0, M >= 1 with, for all y in Icc 0 tau and eta in Icc (-1) 1, alpha <= A(y,eta) and 2 + 1/8 < A(y,eta) + B(y,eta)^2/A(y,eta) (plus upper bounds), where A = referenceP1, B = referenceP2. y = 0 is included, so this is the paper's a(X_a",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 772,
+        "text": "theorem natural_reference_bounds {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2 * δ < ReferencePath.rampLimit) :\n    let N"
+      }
+    }
+  }
+}

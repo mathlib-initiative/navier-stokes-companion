@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.26)",
+  "status": "formalized",
+  "location": {
+    "page": 135,
+    "rect": [0.190598, 0.192415, 0.67847, 0.027369]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.26",
+      "locator": {
+        "physical": [135],
+        "printed": [135],
+        "text": "Equation (A.26), p. 135, in section A.5"
+      },
+      "region": "eq-A.26@p135",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: S_q = -h(1-2k\\eta^2) + (D+dk)\\,\\eta J_0', \\qquad Q_s \\ge c(\\eta^2 + e^{-y}) \\quad (0 \\le y \\le T_d)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. First formula: the Lean definition of the angular source carries one extra leading term, -slope·transportW, i.e. the paper's -l·W with W = 1 - L·k̄ (transportW, line 229, uses the averaged drop k̄ exactly as p.135 does). The paper drops it in (A.26) because the axial transition has l = 0; slope_drop proves slope dropLength lam y = 0 for 1 ≤ y ≤ T_d + 1, so on that interval the Lean definition reduces verbatim to -h(1 - 2kη²) + (D + dk)ηJ₀' with k = dropCoefficient c.m y (the coefficient of U = kη) and J₀' = shapeGradient η = 2η/(1+η²). Second formula: angularLag_lower is the paper's bound with the explicit absolute constant c = e^{-3/5}/4, independent of P, λ, h, m; the interval is 0 ≤ y ≤ T for an arbitrary T rather than specifically T_d, and the paper's 'h ≪ e^{-T_d}' is the explicit hypothesis h ≤ e^{-(T+3/5)}/8 (together with h ≤ 1/100 and |η| ≤ 1). angularLag is the solution of the lag equation with the ideal incoming datum (line 246), identified with the actual Q_s history by canonical_Qs_before.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

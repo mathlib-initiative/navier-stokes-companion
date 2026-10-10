@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 111.2",
+  "status": "formalized",
+  "location": {
+    "page": 111,
+    "rect": [0.172899, 0.407732, 0.654207, 0.09205]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.ExponentLedger",
+      "path": "NavierStokes/ExponentLedger.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p111-2",
+      "locator": {
+        "physical": [111],
+        "printed": [111],
+        "text": "Display 111.2, p. 111, in the proof of Proposition 9.6"
+      },
+      "region": "eq-p111-2@p111",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\begin{aligned} &\\min\\{\\tfrac12 - 3\\kappa_s,\\ \\tfrac12 - \\kappa_s,\\ B - \\kappa_s,\\ 0.4\\} \\ge 0.4, \\\\ &\\min\\{\\tfrac12 - 4\\kappa_s,\\ 0.4 - \\kappa_s,\\ \\tfrac12 - 2\\kappa_s,\\ B - 3\\kappa_s\\} \\ge 0.4 - \\kappa_s, \\\\ &H - B = \\tfrac12 - 2\\kappa_s > 0.1, \\qquad \\min\\{0.17,\\ 1 - 4\\kappa_s\\} = 0.17 > 0.1, \\\\ &0.9 - 4\\kappa_s > 0.1. \\end{aligned}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Recovery: lines one and two are stated literally — particularGain and signedGain are the paper's two minima, argument for argument and in the paper's order, and particular_gain_eq / signed_gain_eq give equality with 0.4 and 0.4 - κ, which is the display's ≥ together with the fact that the bound is attained. The remaining three lines are stated in margin form rather than as bare inequalities: H - B > 0.1 appears as waveExponent (σ + 1/10) < meanUpdateExponent σ κ, which is equivalent because waveExponent (σ + 1/10) = B + 1/10 (ExponentLedger.wave_increment); likewise min{0.17, 1 - 4κ_s} > 0.1 appears as meanExponent (σ + 1/10) < meanExponent σ + min (17/100) (1 - 4κ) and 0.9 - 4κ_s > 0.1 as meanExponent (σ + 1/10) < meanExponent σ + 9/10 - 4κ, using meanExponent (σ + 1/10) = C_* + 1/10; the identity H - B = 1/2 - 2κ_s and the equality min{0.17, 1 - 4κ_s} = 0.17 are stated separately and literally. Lean assumes κ ≤ 1/100000 and σ ≥ 1/5 where the paper fixes κ_s = 10⁻⁵ and uses B ≥ 0.7, so the Lean statements cover the paper's numbers and more.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

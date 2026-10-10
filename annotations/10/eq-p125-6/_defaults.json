@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 125.6",
+  "status": "formalized",
+  "location": {
+    "page": 125,
+    "rect": [0.216788, 0.862438, 0.566657, 0.023244]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p125-6",
+      "locator": {
+        "physical": [125],
+        "printed": [125],
+        "text": "Display 125.6, p. 125, in the proof of Corollary 10.6"
+      },
+      "region": "eq-p125-6@p125",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\partial_{t} U + (U \\cdot \\nabla) U - \\nu \\Delta U + \\nabla P_{\\mathrm{per}} = F_{\\mathrm{per}}, \\qquad \\operatorname{div} U = 0, \\qquad U(\\cdot,0) = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "equation",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The momentum equation matches term by term and sign by sign: navierStokesResidual ν U P_per = ∂_t U + (U·∇)U − ν ΔU + ∇P_per, set equal to F_per = periodize f; ν multiplies only the Laplacian, as in the paper. div U = 0 and U(·,0) = 0 are the other two Lean fields. Two packaging differences. (i) The three clauses are three separate statements rather than one display: navier_stokes_periodize, divergence_free_periodize and periodize_eq_zero_of_timeSlice; of_compact_candidate conjoins all three for the periodized triple as a single CandidateProperties, so the conjunction is stated. (ii) The paper's display leaves the time range to context, while Lean fixes it: the momentum equation on t ∈ Ioo 0 1, the divergence on t ∈ Ico 0 1, the initial condition at t = 0 — which is the range on which the paper's U and P_per are defined by eq-p125-4. navier_stokes_periodize and divergence_free_periodize themselves hold for an arbitrary set `times`, so the restriction is in the packaging, not in the lemmas.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

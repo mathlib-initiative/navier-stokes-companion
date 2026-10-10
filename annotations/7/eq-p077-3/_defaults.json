@@ -1,0 +1,39 @@
+{
+  "kind": "equation",
+  "label": "Display 77.3",
+  "status": "formalized",
+  "location": {
+    "page": 77,
+    "rect": [0.377224, 0.847346, 0.245775, 0.026565]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p077-3",
+      "locator": {
+        "physical": [77],
+        "printed": [77],
+        "text": "Display 77.3, p. 77, in the statement of Proposition 7.2"
+      },
+      "region": "eq-p077-3@p077",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: |D^I f_m| \\le C_I \\varepsilon^{\\alpha} S_*^{b_I} \\sqrt{\\zeta} \\delta^{-a_I} P(v)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean never writes this inequality out; it encodes the same class membership as a weighted-jet predicate, and that predicate is exactly the shape of the forcing hypothesis hf : LocalJets s (fun n x => Real.sqrt (s.zeta x) * W n x) alpha cells (fun n _ => source n) of ParticularCopyBounds.coefficients_jets (line 246). The rewriting has four parts. (i) Degrees: the paper carries two exponents, S_*^{b_I} and delta^{-a_I}; majorant carries one common degree p on growth n x = S_n * max 1 (delta x)⁻¹. The two are interchangeable, and the repository says so: WeightedClasses.MemClass.of_separate_bounds (line 147) converts separate S and inverse-edge-distance degrees into the common p = b + a, and a common p is the case b = a = p. (ii) max 1 (delta x)⁻¹ equals delta(x)⁻¹ wherever delta(x) ≤ 1, and is the larger of the two otherwise, so the Lean weight dominates the paper's. (iii) The envelope P(v) of (7.12) appears as an abstract weight factor W n x, tied to the transported envelope by a hypothesis envelope ≤ W; the same W appears in hypothesis and conclusion, so this is a change of majorant, not of content. (iv) D^I for one multi-index is replaced by the full ‖iteratedFDeriv ℝ j‖ for every j ≤ m, which bounds all multi-indices of order j. C and p are existentially quantified per differentiation order, matching the paper's C_I, b_I, a_I depending on I.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

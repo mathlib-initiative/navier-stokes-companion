@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 98.2",
+  "status": "formalized",
+  "location": {
+    "page": 98,
+    "rect": [0.348708, 0.279348, 0.302808, 0.14374]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p098-2",
+      "locator": {
+        "physical": [98],
+        "printed": [98],
+        "text": "Display 98.2, p. 98, in the proof of Lemma 8.7"
+      },
+      "region": "eq-p098-2@p098",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: (u_0,u_1,u_2)^T = A_\\theta^{-1}(0,-\\mathcal{P}_q,-\\mathcal{J}_{z,q})^T, \\qquad (s_0,s_1)^T = A_z^{-1}(0,-\\mathcal{J}_{\\theta,q})^T, \\qquad \\Delta v_{\\mathrm{phys}}(r,z,t) = q^{-A}\\sum_{j=0}^{2} u_j\\,\\eta_j(r/\\sqrt{q}), \\qquad \\gamma_{d,\\mathrm{phys}}(r,z,t) = q^{-A}\\sum_{j=0}^{1} s_j\\,\\eta_j(r/\\sqrt{q})."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Routine rewriting, in two steps. (1) Coefficients: Lean's `coefficients a l u b = M⁻¹.mulVec b` with M the moment matrix of the profiles and b = angularDebt / axialDebt. Because A_θ = diag(1, 2a, -a)·M and A_z = diag(1, a)·M' (row constants verified against FiveRowRank.pressure_row:189, angular_row:206, axial_row:223), A_θ⁻¹(0, -𝒫_q, -𝒥_{z,q})ᵀ = M⁻¹(0, -𝒫_q/(2a), 𝒥_{z,q}/a)ᵀ = M⁻¹·angularDebt, and A_z⁻¹(0, -𝒥_{θ,q})ᵀ = M'⁻¹·axialDebt — the Lean u_j and s_j are the display's, for Lean's own profile family. (2) Realization: ∑_j u_j η_j is `repair` (three summands for Δv via angularPowers, two for γ_d via axialPowers, matching j = 0,1,2 and j = 0,1), and the prefactor q^{-A} with argument r/√q is `scaleField ell U` at ell = √q, U = q^{-A}, instantiated exactly so in physical_rows_on_shaped_patch (MeanRankUpdate.lean:1153-1162). The q-subscripted targets correspond to `normalizeDebt ell U d` (line 33), which divides the physical debts by the matching ell/U powers before the inversion. Two caveats, neither a difference in this formula: the η_j are Lean's disjoint-cell bumps rather than the paper's e^{jd}-dilates, so the numerical u_j, s_j differ (recorded under eq-p097-3 and eq-p098-1); and the Lean fields are functions of r alone, the (z,t) dependence of Δv_phys entering through q and the amplitude as parameters of the chart point.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

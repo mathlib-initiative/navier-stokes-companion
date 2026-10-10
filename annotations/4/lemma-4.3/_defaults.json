@@ -18,23 +18,23 @@
       "verdicts": [
         {
           "confidence": 0.9,
-          "evidence": ["CONVENTION: RadialDomain (ProfileHistories.lean:31: isOpen carrier, scale_mem); Profiles.f_smooth/U_smooth : ContDiffOn ℝ ∞ _ D.carrier and pressure0_smooth (L303-308); hp : p ∈ D.carrier in angularLag_integrated L591 and axialLag_integrated L601", "CONVENTION: StressAlgebra.angularSource (StressAlgebra.lean:32); Profiles.pressure (ProfileHistories.lean:327); W_formula (L364); angularLag_equation_logarithmic (L676) recovers the log form for 0<X, f≠0", "Both rows of (4.16) are stated term by term: angularLag_integrated (ProfileHistories.lean:591) and axialLag_integrated (L601). I checked D = axialExponent, A = velocityExponent and d = coordinateFactor. I checked H = 2XF, S's integrand U² − Xf² = U² − E²/2, Π = Π(0,η) + C_p, and that angularLag/axialLag are (4.10) with C_Q = C_N = 0. The proof route is the paper's: the FTC identities plus ∂_X(XW). Lean is more general in h and positivity. The only gap is open-domain smoothness, which Whitney/Seeley extension recovers. Profiles is instantiated (ReferencePath:603, ModulatedHistories:628). Correcting the auditor's note: the theorems are cited downstream, at ActivationStocks:57/77, RepairConeBounds:984/988, NominalConeAssembly:687/694 and ReferenceUniformStocks:174. Separate from this item: Lemma 4.4 applies (4.16) to profiles that are not smooth at the axis."],
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/ProfileHistories.lean:591 (Q_s row) and NavierStokes/ProfileHistories.lean:601 (N_s row), both stated for the same `P : Profiles D`, the same `h` and the same point `p`.", "CONVENTION: NavierStokes/StressAlgebra.lean:32 angularSource = -W·x·Hx - h(1-2ηU)H - (Dη+dU)·Hη; the logarithmic form is recovered in StressAlgebra.lean:272 angular_source_logarithmic_form (H ≠ 0) and in ProfileHistories.lean:676 angularLag_equation_logarithmic together with logE_parameter_deriv (ProfileHistories.lean:667).", "Lemma 4.3 is stated twice over in the repository. StressAlgebra.lean:238/255 prove the two rows abstractly from differential moment data plus the W-balance ∂_X(XW) = 1-2DηU-dU_η (the paper's own proof step) and the pressure identities xΠ_X = E²/2, x(Π_η)_X = EE_η; ProfileHistories.lean:591/601 instantiate them at genuine integral histories. Every constant matches (D = 1/2-h, A = 1/2+h, d = 1-η²), every history matches (4.15), and Lean's Q_s, N_s are (4.10) with C_Q = C_N = 0 and are proved to solve (4.9). The Lean hypotheses are strictly weaker than the paper's (no (4.7) incompressibility, no range restriction on h, η, no φ > 0), so the item follows by instantiation. Only packaging and the logarithm-clearing convention are worth recording."],
           "findings": [
             {
-              "confidence": 0.85,
+              "confidence": 0.95,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The two rows of display (4.16) are two separate theorems about the same Profiles object, angularLag_integrated and axialLag_integrated; no single declaration conjoins them."
+            },
+            {
+              "confidence": 0.93,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Lean needs f, U smooth on an open, axis-star-shaped domain. Any such domain containing (X,η) also straddles X=0, and at η=±1 it reaches past the endpoints. The paper's profiles are C^∞ only on the closed [0,X_c]×[−1,1]. An extension is therefore needed at every point, not only at the boundary."
-            },
-            {
-              "confidence": 0.85,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean writes the source integrands in regular form: X·H_X for H·l, H_η for H(log E)_η, and Px = f² for Π_X. It builds Π as pressure0(η) + ∫_0^X f². W uses average(∂ηU), which W_formula equates with ∂ηA_X(U). All of these match the paper's (4.9), (4.10) and (4.15) for X>0 and φ>0."
+              "summary": "Lean clears the two logarithms of (4.8)-(4.9): the angular source is stored as H·S_q with X·H_X in place of H·l and H_η in place of H·(log E)_η, so E ≠ 0 is never needed."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",
@@ -43,10 +43,10 @@
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "different_formulation",
+          "relation": "lean_stronger",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states it in a different formulation.",
+          "summary": "Lean states a stronger result.",
           "verdict": "faithful"
         }
       ]

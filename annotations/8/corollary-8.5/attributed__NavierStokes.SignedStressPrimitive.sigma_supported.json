@@ -1,0 +1,29 @@
+{
+  "id": "corollary-8.5/attributed/NavierStokes.SignedStressPrimitive.sigma_supported",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedStressPrimitive.sigma_supported",
+      "line": 221,
+      "module": "NavierStokes.SignedStressPrimitive",
+      "path": "NavierStokes/SignedStressPrimitive.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L221"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedStressPrimitive.sigma_supported",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If F is radially supported in [P.a,P.b] then so is sigma P e F: clause (ii) in chart variables."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 221,
+        "text": "theorem sigma_supported (P : Patch) (e : ℕ) {F : ℝ × E → ℝ} (hF : Continuous F)\n    (hs : RadialAlias.RadiallySupported P.a P.b F) :\n    RadialAlias.RadiallySupported P.a P.b (sigma P e F)"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 86.2",
+  "status": "formalized",
+  "location": {
+    "page": 86,
+    "rect": [0.265134, 0.20808, 0.469777, 0.026329]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p086-2",
+      "locator": {
+        "physical": [86],
+        "printed": [86],
+        "text": "Display 86.2, p. 86, in section 7.4"
+      },
+      "region": "eq-p086-2@p086",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: r_m = \\left( -D_z (C_m)_\\theta,\\; D_z (C_m)_r - D_r (C_m)_z,\\; (D_r + R^{-1})(C_m)_\\theta \\right)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Lean keeps the two angular terms the paper deletes. Lean's remainder is r_m = curlRemainder K R Vr Vθ Vz (coefficient …) = (i/K)·curl_*(coefficient); since C_m = (i/K)·coefficient and the scalar i/K is constant in x, cylindricalCurl_const_smul (line 389, needing differentiability of the coefficient components) turns this into curl_* C_m, i.e. the full three components of (7.37) applied to C_m: ( R^{-1}∂_θ(C_m)_z − D_z(C_m)_θ, D_z(C_m)_r − D_r(C_m)_z, (D_r+R^{-1})(C_m)_θ − R^{-1}∂_θ(C_m)_r ). The paper's display drops the two R^{-1}∂_θ terms, justified in the sentence before it (\"Since C_m is independent of θ\"). Under that same θ-independence the two expressions agree term by term, signs and the R^{-1} connection term included; Lean carries the θ-independence as a separate hypothesis/lemma (AngularIndependent, CopyAngularInvariance.coefficient_invariant) rather than folding it into the formula, and I found no declaration stating the θ-stripped three-component form itself. No constant, exponent, sign or derivative count differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

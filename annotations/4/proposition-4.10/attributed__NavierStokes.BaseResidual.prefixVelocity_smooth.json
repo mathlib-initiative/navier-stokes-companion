@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.BaseResidual.prefixVelocity_smooth",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BaseResidual.prefixVelocity_smooth",
+      "line": 734,
+      "module": "NavierStokes.BaseResidual",
+      "path": "NavierStokes/BaseResidual.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean#L734"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BaseResidual.prefixVelocity_smooth",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0 < h < 1/2, SmoothCoefficients d, every J and every C: ContDiffOn R infinity (prefixVelocity J h C d) past. At J = 0 this is the paper's `smooth Cartesian velocity across the axis' for the order-zero triple, on all of space for t < 1.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 734,
+        "text": "theorem prefixVelocity_smooth {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {d : Coefficients} (hd : SmoothCoefficients d) (J : ℕ) (C : ℝ) :\n    ContDiffOn ℝ ∞ (prefixVelocity J h C d) past"
+      }
+    }
+  }
+}

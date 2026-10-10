@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (10.3)",
+  "status": "formalized",
+  "location": {
+    "page": 118,
+    "rect": [0.419172, 0.16236, 0.449896, 0.025432]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-10.3",
+      "locator": {
+        "physical": [118],
+        "printed": [118],
+        "text": "Equation (10.3), p. 118, in the proof of Proposition 10.1"
+      },
+      "region": "eq-10.3@p118",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: q \\le C_0\\big(\\tau + |z|^{1/D}\\big)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean bound is q ≤ 2τ + (2z²)^{1/(1-2h)} with τ = 1 - t, uniformly in r, where q = coordinateQ (2h) solves q - z²q^{2h} = τ. With CoordinateAlgebra.D h = 1/2 - h one has 1/D = 2/(1-2h), so (2z²)^{1/(1-2h)} = 2^{1/(1-2h)} |z|^{2/(1-2h)} = 2^{1/(1-2h)} |z|^{1/D}; taking C_0 = 2^{1/(1-2h)} (which is ≥ 2 for 0 < h < 1/2) gives exactly the paper's q ≤ C_0(τ + |z|^{1/D}). The paper's C_0 is an unspecified absolute constant, the Lean one is explicit, and only the upper half of the paper's ≍ is formalized here (the matching lower bounds live separately, e.g. LocalScaleGeometry.time_dist_le and axial_sq_le); the upper direction is the only one (10.3) asserts and the only one the proof of Proposition 10.1 uses.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

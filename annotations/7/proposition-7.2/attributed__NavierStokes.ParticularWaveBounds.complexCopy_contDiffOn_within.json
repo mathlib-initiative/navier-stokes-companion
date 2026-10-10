@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.2/attributed/NavierStokes.ParticularWaveBounds.complexCopy_contDiffOn_within",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ParticularWaveBounds.complexCopy_contDiffOn_within",
+      "line": 67,
+      "module": "NavierStokes.ParticularWithinPressure",
+      "path": "NavierStokes/ParticularWithinPressure.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularWithinPressure.lean#L67"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ParticularWaveBounds.complexCopy_contDiffOn_within",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: complexCopyVelocity and complexCopyPressure are ContDiffOn ℝ ∞ on {p | p.1 ∈ U ∧ (g.coordinates k p.2).2 ∈ Icc a b}: smoothness up to and including both pulse endpoints."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 67,
+        "text": "theorem complexCopy_contDiffOn_within (t : TangentData P ProblemStatement.Space)\n    (f : P × Plane → HarmonicCalculus.ComplexVector) (g : Geometry)\n    {a b : ℝ} (hab : a ≤ b) {U : Set P} (hU : Convex ℝ U) (hu : UniqueDiffOn ℝ U)\n    (hN : ContDiffOn ℝ ∞ t.normal (U ×ˢ univ))\n    (hNd : ContDiffOn ℝ ∞ t.normalDot (U ×ˢ univ))\n    (hK : ContDiffOn ℝ ∞ t.action (U ×ˢ univ))\n    (hδ : ContDiffOn ℝ ∞ t.damping (U ×ˢ univ))\n    (hf : ContDiffOn ℝ ∞ f (U ×ˢ univ))\n    (hn : ∀ x ∈ U ×ˢ univ, t.normal x ≠ 0) (k : Frequency) (frequency : ℝ) :\n    ContDiffOn ℝ ∞ (complexCopyVelocity t f g hab k)\n        {p : P × Plane | p.1 ∈ U ∧ (g.coordinates k p.2).2 ∈ Icc a b} ∧\n      ContDiffOn ℝ ∞ (complexCopyPressure t f g hab k frequency)\n        {p : P × Plane | p.1 ∈ U ∧ (g.coordinates k p.2).2 ∈ Icc a b}"
+      }
+    }
+  }
+}

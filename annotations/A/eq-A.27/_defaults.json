@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.27)",
+  "status": "formalized",
+  "location": {
+    "page": 135,
+    "rect": [0.319239, 0.552231, 0.549829, 0.0867]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.ShapedWaitBounds",
+      "path": "NavierStokes/ShapedWaitBounds.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.27",
+      "locator": {
+        "physical": [135],
+        "printed": [135],
+        "text": "Equation (A.27), p. 135, in section A.5"
+      },
+      "region": "eq-A.27@p135",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: Q_s \\ge c_{\\mathrm{pre}}\\left(\\eta^2 + \\lambda + e^{-(1-\\lambda)y}\\right), \\quad Q_s - \\frac{\\lambda - h + c_\\eta}{1-\\lambda} = O_{C^1_\\eta}\\!\\left(C_{\\mathrm{pre}}(1+y)e^{-(1-\\lambda)y}\\right), \\quad |N_s/E| \\le C_{\\mathrm{pre}}|\\eta|(1+y)e^{-(1/2-\\lambda)y}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three lines are present, bundled in one theorem, with these recodings. (i) The variable is the local coordinate t = y - holdStart on the constant-slope interval, ranging over 0 ≤ t ≤ wait; the paper's y is the same local coordinate ('In the local logarithmic radial coordinate on the constant-slope interval'). (ii) The subtracted equilibrium is literally (λ - h + c_η)/(1-λ) with c_η = D·η·J₀' = Dη·2η/(1+η²), the paper's c_η = DηJ₀' ≍ η²; the source holdSource is the paper's λ - h + c_η - λLk̄(0)e^{-y} verbatim. (iii) O_{C¹_η} is unfolded into the two separate bounds on |Q_s - equilibrium| and on its η-derivative, both by C_pre(1+t)e^{-(1-λ)t}. (iv) The third line matches, and the derivative version without the factor |η| (the paper's following sentence, 'One η derivative obeys the same estimate without |η|') is the fifth clause. (v) Constants are explicit: c_pre = holdFloor m = min(e^{-3/5-entranceTime m}/16, 1/16), which depends only on m and not on λ, as the paper requires ('A positive lower bound for Q_s, independent of λ, persists'); C_pre = holdConstant P m. (vi) Hypotheses |η| ≤ 1, h ≤ 1/100, h ≤ λ/4 and h ≤ e^{-(holdStart+3/5)}/8 make the paper's h ≪ min{λ, e^{-T_d}} quantitative.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

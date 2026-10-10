@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.18)",
+  "status": "formalized",
+  "location": {
+    "page": 29,
+    "rect": [0.339641, 0.34903, 0.529435, 0.189679]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.18",
+      "locator": {
+        "physical": [29],
+        "printed": [29],
+        "text": "Equation (4.18), p. 29, in the proof of Lemma 4.4"
+      },
+      "region": "eq-4.18@p029",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\Delta M = \\int_0^X (U_2 - U_1)\\,dx,\\qquad \\Delta I = \\int_0^X (H_2 - H_1)\\,dx,\\qquad \\Delta J = \\int_0^X (U_2H_2 - U_1H_1)\\,dx,\\qquad \\Delta S = \\int_0^X \\bigl(U_2^2 - U_1^2 - (E_2^2 - E_1^2)/2\\bigr)\\,dx,\\qquad \\Delta C_p = \\int_0^X \\frac{E_2^2 - E_1^2}{2x}\\,dx."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The five integrands agree term by term with the paper: Lean's `density` rows are U, √(2x)·E (= H), U·(√(2x)·E) (= UH), U²−E²/2 and E²/(2x), each evaluated at the running radius x while the history is a function of (X,η) — exactly the paper's 'left side at (X,η), each integrand at (x,η)'. The rewriting is in how Δ is formed: the paper writes each Δ as one integral of the difference of the two integrands, whereas Lean's `historyDifference` is the difference of the two integrals, Q.history i X η − P.history i X η. The two agree by linearity of the interval integral whenever both integrands are interval-integrable on [0,X], which holds under the paper's hypothesis that the five integrals define smooth functions; no Lean declaration was found that states the single-integral form. A second encoding of the same five rows (over the regular swirl f with E = √(2x)·f) is `ModulatedHistories.densityAt` together with `density_eq_physical`, which states the physical form H = √(2X)·E, UH, U²−E²/2, E²/(2X) explicitly.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

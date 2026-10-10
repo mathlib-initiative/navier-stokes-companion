@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 125.3",
+  "status": "formalized",
+  "location": {
+    "page": 125,
+    "rect": [0.381832, 0.47497, 0.236559, 0.073269]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p125-3",
+      "locator": {
+        "physical": [125],
+        "printed": [125],
+        "text": "Display 125.3, p. 125, in the proof of Corollary 10.6"
+      },
+      "region": "eq-p125-3@p125",
+      "verdicts": [
+        {
+          "confidence": 0.92,
+          "evidence": ["paper: \\widetilde{u}(x,t) = \\lambda u(\\lambda x, \\lambda^{2}(t-t_{0})), \\qquad \\widetilde{p}(x,t) = \\lambda^{2} p(\\lambda x, \\lambda^{2}(t-t_{0})), \\qquad \\widetilde{f}(x,t) = \\lambda^{3} f(\\lambda x, \\lambda^{2}(t-t_{0}))."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Term by term the amplitudes agree (λ, λ², λ³ ↔ l, l^2, l^3) and the spatial dilation agrees (λx ↔ l • x); Lean puts time first in the pair. The time change is written differently but is the same affine map: the paper fixes t₀ = 1 − λ⁻² one line above the display, and λ²(t − t₀) = λ²t − λ² + 1 = λ²(t−1)+1 = clock l t, so the rewriting is this one-line identity. Lean additionally composes u and p with zeroBefore, which truncates to zero exactly where clock l t < 0, i.e. t < t₀; on the display's stated range t ≥ t₀ it is inert, and it encodes the paper's next sentence (\"We extend all three by zero for t < t₀\"). force applies no zeroBefore, but compressedCandidate carries hc.force_support : CompactPositiveTimeSupport f (tsupport f ⊆ Ioi 0 × univ), so f vanishes at nonpositive times and force l f already vanishes for t ≤ t₀ without the wrapper.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

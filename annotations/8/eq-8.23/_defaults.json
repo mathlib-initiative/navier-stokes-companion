@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (8.23)",
+  "status": "formalized",
+  "location": {
+    "page": 96,
+    "rect": [0.334807, 0.477123, 0.534261, 0.028678]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-8.23",
+      "locator": {
+        "physical": [96],
+        "printed": [96],
+        "text": "Equation (8.23), p. 96, in the proof of Lemma 8.6"
+      },
+      "region": "eq-8.23@p096",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.92,
+          "evidence": ["paper: N_{\\mathrm{abs}} P_i = T_g^{\\,i}\\, P_i N_i, \\qquad N_{\\mathrm{abs}}^{-1} P_i = T_g^{-i}\\, P_i N_i^{-1}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The two halves of (8.23) are separate Lean theorems, stated pointwise rather than as a composition of operators, and with the standing regularity hypotheses written out. Matching of symbols: the paper's pullback P_i F(Y) = F(J_g^i Y) is `fun x => f (coverMap n x)`, where `coverMap n` iterates `coverLinear` = the matrix [[3,1],[1,5]] of (6.2); the paper's N_abs = v_t · ∂_Y and its chart version N_i = v_t · ∂_{Y_i} are the single Lean operator `timeDerivative f z = fderiv ℝ f z (vector .temporal)` with `vector .temporal = (√2 − 1, 1) = v_t`, read in the absolute resp. band variable; T_g is `ChartScales.Tg = SlotColoring.coverGrowth = 4 + √2`, exactly the paper's T_g; the paper's cited reason J_g v_t = T_g v_t is `coverLinear_temporal` (line 165), iterated to J_g^n v_t = T_g^n v_t by `coverMap_temporal` (line 172). First identity: Lean's `timeDerivative (P_n f) z = Tg^n • (timeDerivative f) (coverMap n z)` is N_abs P_i = T_g^i P_i N_i read at the point z. Second identity: `absoluteInverse (P_n f) = T_g^{-n} • P_n (absoluteInverse f)`, with `(Tg^n)⁻¹` for T_g^{-i}; `absoluteInverse` is the zero-Haar-mean Fourier inverse of `timeDerivative` (`absoluteInverse_solves`, line 238, and `absoluteInverse_zeroMean`, line 227), i.e. the paper's N^{-1} of (8.19). Signs, the direction of the conjugation (pullback on the right of N_abs, on the left of N_i), and the sign of the exponent agree in both halves. The extra Lean hypotheses — `ContDiff ℝ ∞ f`, `SmoothFourierData.UnitPeriodic f`, and for the inverse `TorusAverages.squareAverage f = 0` — are exactly the standing conditions under which the paper's N^{-1} of (8.19) is defined (smooth torus coefficient of zero Haar mean), so no generality in the paper's display is lost; the index is `n : ℕ`, matching the paper's restriction to i(ℓ) ≥ 0. The rewriting from the Lean form to the paper's operator form is: evaluate both operator sides at an arbitrary point z and unfold composition.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

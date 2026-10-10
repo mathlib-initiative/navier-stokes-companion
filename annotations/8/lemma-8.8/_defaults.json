@@ -18,31 +18,31 @@
       "verdicts": [
         {
           "confidence": 0.85,
-          "evidence": ["CONVENTION: DefectIncrementBounds.actualRadialError_eq_formula (DefectIncrementBounds.lean:401); LocalRankDefect.RankGeometry.debt_eq_remainders (LocalRankDefect.lean:811); MeanLocalDefectBounds.rankStage_gain_of_targets (MeanLocalDefectBounds.lean:298)", "ATTRIBUTION_GAP: MovingMomentBounds.rankStage_defectBounds (MovingMomentBounds.lean:359), hypothesis hb : BaseBounds (movingStripData …) c.base, called at CorrectionStep.lean:5492 with hrInc from gaugeRankStage_constructed. MeanLocalDefectBounds is imported only by NavierStokes/PaperAdditionalResults.lean:3", "CONVENTION: RankStateBounds.NormalizedParameters.coefficient (RankStateBounds.lean:90) with hB : B ≠ 0 only; SimilarityCoordinates.coordinateEta_abs_lt_one (SimilarityCoordinates.lean:368), used at MeanRankUpdate.lean:644; LocalBaseBounds.angular_smooth (MeanLocalDefectBounds.lean:30)", "I read pp. 98-99 and (8.3), (8.12), (8.15), (8.24) against the Lean. gr, debt, radialRemainder and remainders match the paper term by term, and the debt normalization matches (8.17). rankStage_gain_of_targets gives exactly R_g ∈ M_{α+0.9−2κ} and new defects ∈ S_{α+0.9−2κ} with H = α, κ = κ_s, under hypotheses the paper's imply; it drops the V bound and divergence-freeness. All three voters agree and I found no material difference. I reclassified DefectIncrementBounds.rankStage_defect_class as a variant, added the pairing skeptic's three closer helpers, and added one convention finding on the hypothesis mapping. Definition 6.4 (the classes M_α, S_α) was not audited here."],
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/DefectIncrementBounds.lean:401; NavierStokes/LocalRankDefect.lean:811; NavierStokes/MeanLocalDefectBounds.lean:298 (conclusion a conjunction of the MeanClass and UnweightedClass gains only)", "CONVENTION: MeanLocalDefectBounds.lean:298-317: hypotheses hop, hV, hG, hWs, hleft/hright, hparam/hB; LocalBaseBounds.angular_smooth (MeanLocalDefectBounds.lean:30) asks only smoothness of V, while the paper bounds V's derivatives by C_l S_*^{B_l}", "ATTRIBUTION_GAP: MeanLocalDefectBounds.lean:298 (no callers; the file is imported only at PaperAdditionalResults.lean:3) versus MovingMomentBounds.rankStage_defectBounds (MovingMomentBounds.lean:359), hypothesis hb : BaseBounds (movingStripData ...) c.base, called at CorrectionStep.lean:5492 and 8100", "Reading pp. 94, 97-99 against the Lean sources, every clause of Lemma 8.8 is stated: (8.26) as actualRadialError_eq_formula (equivalently gr_change), (8.27) as RankGeometry.debt_eq_remainders, and both gains as rankStage_gain_of_targets, with gr, radialRemainder, remainders and defects matching the paper term for term, including the 2b Dbeta + 2beta Dbeta, the -1/2 axial pressure moment and the exponent alpha + 0.9 - 2 kappa_s. No single declaration conjoins the three, which conjoin by unfolding alone, so the verdict is OK with relation different_formulation: A's lean_stronger overstates, since Lean also carries hypotheses the paper's lemma does not display, all of them part of the manuscript's standing setting."],
           "findings": [
             {
               "confidence": 0.9,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No single declaration states the whole lemma: (8.26) is a generic identity, (8.27) is RankGeometry.debt_eq_remainders, and the class gain is rankStage_gain_of_targets. All three concern the same objects and together cover every clause."
+              "summary": "No declaration states Lemma 8.8. Clause (i) is actualRadialError_eq_formula, clause (ii) is RankGeometry.debt_eq_remainders, clause (iii) is rankStage_gain_of_targets. All three speak of the same objects and conjoin by logic alone."
             },
             {
               "confidence": 0.8,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
+              "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The paper's support-local form is proved but not consumed. rankStage_gain_of_targets has no callers; the main chain uses MovingMomentBounds.rankStage_defectBounds, with base bounds on the whole strip and increment bounds supplied separately."
+              "summary": "Hypotheses are reorganized: Lean never assumes divergence-freeness of (beta,v,gamma) nor any growth bound on V, and instead makes the construction's standing setting explicit (LocalOperators, IsSlowOn V and G, shell-supported covariance, patch strictly inside the gauge shell, NormalizedParameters)."
             },
             {
               "confidence": 0.85,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Judge-added. Three paper hypotheses have no Lean counterpart: the lower bound a_0, divergence-freeness of (β,v,γ), and the bound on V. Lean instead makes standing setup explicit (OperatorBounds, W shell-supported, patch strictly inside the gauge shell)."
+              "summary": "The support-local form the paper emphasizes is proved but never consumed: rankStage_gain_of_targets has no call sites and its file is imported only by the paper-results aggregator; the main chain uses a variant with base bounds on the whole moving strip."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",
@@ -51,10 +51,10 @@
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "lean_stronger",
+          "relation": "different_formulation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states a stronger result.",
+          "summary": "Lean states it in a different formulation.",
           "verdict": "faithful"
         }
       ]

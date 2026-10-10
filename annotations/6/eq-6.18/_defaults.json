@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.18)",
+  "status": "formalized",
+  "location": {
+    "page": 67,
+    "rect": [0.279992, 0.2186, 0.58818, 0.053988]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.18",
+      "locator": {
+        "physical": [67],
+        "printed": [67],
+        "text": "Equation (6.18), p. 67, in section 6.3"
+      },
+      "region": "eq-6.18@p067",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: \\Delta_\\ell = i(\\ell) - i_0 \\in \\{0,\\dots,\\Delta_{\\max}\\}, \\qquad \\pi_{i(\\ell)} = \\pi_{\\Delta_\\ell} \\circ \\pi_{i_0}, \\\\ Y_i = J_g^{\\Delta_\\ell} H, \\qquad \\mathcal{R}_\\gamma^{H} = \\pi_{\\Delta_\\ell}^{-1}(\\mathcal{R}_\\gamma), \\qquad \\mathcal{R}_\\gamma^{\\mathrm{abs}} = \\pi_{i_0}^{-1}(\\mathcal{R}_\\gamma^{H})."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every clause occurs, none of them as a named definition. (1) Delta_l: the expression `nativeIndex h (cellBand ...) - CommonWindow.index h n` is formed literally at ParticularPaddedBackground.lean:114 (and ActualCarrierTransportBase.lean:83); `index_le` gives i_0 <= i(l), so Lean's truncated natural subtraction is the honest difference and Delta_l >= 0, and `gap_le` gives Delta_l <= `CommonWindow.gap h` = `SlotColoring.nativeGap h + nativeIndex h 0`. That bound is the paper's Delta_max plus a constant inserted to cover the n = 0 edge case; since the paper only asks for some integer Delta_max satisfying (6.14), a larger admissible bound is a different choice of the same free constant. (2) pi_{i(l)} = pi_{Delta_l} . pi_{i_0} is `pow_add` for `SlotGeometry.cover`, which appears only as a proof step -- SlotGeometry.lean:369-370, and again inside `commonLift_formula` (PhysicalWaveSum.lean:102, `rw [..., pow_add, Nat.add_sub_of_le hd]`) and PhysicalParticularWave.lean:243 -- never as a standalone lemma. (3) Y_i = J_g^{Delta_l} H is `up_down` together with `upLift_apply`: upLift d is coverPower d = J_g^d on the Plane factor and commonLift h n d = downLift d . physicalLift h n, so upLift Delta_l (commonLift h l Delta_l w) = physicalLift h l w, whose Plane component is Y_{i(l)} by `nativeGraph`; `cylinderChange_graph` is the same identity in the (Q, i) chart form. (4) R_gamma^H = pi_{Delta_l}^{-1}(R_gamma) is the set `(torusCovering^[g.gap]) preimage (nativeRectangle g r)` appearing on the left of `preimage_nativeRectangle_sheets`; Lean gives it no name, and states instead its decomposition into 14^{Delta} sheets. (5) R_gamma^abs is `SlotGeometry.liftedSupport level slot`, the one-step preimage at the total index on the universal cover R^2 (with torusEq for 'mod Z^2'), rather than the paper's two-step pi_{i_0}^{-1}(R_gamma^H); the rewriting is exactly clause (2) with level = i_0 + Delta_l, i.e. the `hp` step at SlotGeometry.lean:369. The torus covering itself matches: `TorusAverages.torusCovering` is the matrix [[3,1],[1,5]] of the manuscript.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

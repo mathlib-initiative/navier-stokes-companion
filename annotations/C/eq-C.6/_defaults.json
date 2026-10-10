@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (C.6)",
+  "status": "formalized",
+  "location": {
+    "page": 159,
+    "rect": [0.293327, 0.584475, 0.575738, 0.025973]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.LoopVariance",
+      "path": "NavierStokes/LoopVariance.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-C.6",
+      "locator": {
+        "physical": [159],
+        "printed": [159],
+        "text": "Equation (C.6), p. 159, in the proof of Lemma C.1"
+      },
+      "region": "eq-C.6@p159",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\partial_\\mu \\{ g(2 \\mu p) - 2 g(\\mu p) \\} \\;=\\; 2 p \\{ g'(2 \\mu p) - g'(\\mu p) \\} \\;>\\; 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The symbol g = log M_e never appears in the Lean, and no declaration states (C.6) in the variable μ with the factor 2p. What is stated is the same chain rule after two changes of packaging. (i) Variable: Lean differentiates in s = μp, so the factor 2p of the paper is a factor 2; the paper's derivative is p times the Lean's. (ii) Exponentiation: Lean differentiates V itself, baseVariance s = e^{g(2s) - 2g(s)} - 1, rather than the exponent. `baseVariance_hasDerivAt` gives deriv = 2 (baseVariance s + 1)(logSlope 2s - logSlope s); since logSlope = M_e'/M_e = g' by `normalizer_hasDerivAt` and `expNormalizer_pos`, and baseVariance s + 1 = e^{g(2s)-2g(s)} > 0, dividing by that positive factor and multiplying by p returns the paper's identity exactly. The positivity is likewise present and covers both signs the paper claims: for p > 0, μ > 0 the inequality is `logSlope_strictMono` (which rests on `moment_determinant_pos`, the paper's g'' > 0 as a tilted variance) via `baseVariance_deriv_pos`; for p < 0, μp < 0 and `baseVariance_deriv_neg` supplies deriv < 0, so p · deriv > 0 again. The conclusion the paper draws from (C.6), \"V increases strictly with μ > 0, also when p = 0\", is stated in full generality as `tiltVariance_strictMonoOn`, which is proved through `scaledRoot`/`signedRoot_deriv_pos` and so does not need the p ≠ 0 split at all.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 67.3",
+  "status": "formalized",
+  "location": {
+    "page": 67,
+    "rect": [0.36509, 0.319292, 0.269981, 0.041937]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p067-3",
+      "locator": {
+        "physical": [67],
+        "printed": [67],
+        "text": "Display 67.3, p. 67, in section 6.3"
+      },
+      "region": "eq-p067-3@p067",
+      "verdicts": [
+        {
+          "confidence": 0.65,
+          "evidence": ["paper: \\sum_{\\ell \\in \\mathcal{L}(U)} f_\\ell(Y_{i(\\ell)}) = \\sum_{\\ell \\in \\mathcal{L}(U)} f_\\ell(J_g^{\\Delta_\\ell} H)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean never writes this as an equality between two sums, because the right-hand side is the definition: the label sum is `WaveFamily.sum = finsum over I of f.term`, and each term's amplitude is already a function of the common-cover point, `f.amplitude I (commonLift h l (f.gap l) w)`. The paper's left-hand side is recovered pointwise by `up_down` -- upLift (Delta_l) (commonLift h l Delta_l w) = physicalLift h l w, whose Plane component is Y_{i(l)} -- so the two sums are equal term by term and the display follows by `finsum_congr` (or `Finset.sum_congr rfl`) in one line; no cancellation or reindexing is involved. The index set matches in the same sense as in (6.17): `masked_finsum_eventually` shows that near w the finsum is the finite sum over the Finset of labels active at w, which is L(U) for U small, up to labels versus bands. One difference of generality, recorded rather than charged: in `WaveFamily`/`RegularFamily` the gap `f.gap L` is an arbitrary per-label natural number constrained only by `gap_le : f.gap L <= Delta` and `gap_native : f.gap L <= nativeIndex h L.1`, so in that generality the H of two summands need not be the same torus, whereas the paper's display has one H for all l in L(U); a single common i_0 does appear at the actual instantiation (`padded_normal_germ`: gap = nativeIndex h (cellBand ...) - CommonWindow.index h n, common chart at CommonWindow.index h n). The extra generality is harmless for what the Lean proves there (`physical_sum_jet_bound`), which needs only a uniform bound on the gaps.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

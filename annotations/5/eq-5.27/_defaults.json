@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.27)",
+  "status": "formalized",
+  "location": {
+    "page": 56,
+    "rect": [0.269546, 0.543441, 0.599522, 0.04673]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.27",
+      "locator": {
+        "physical": [56],
+        "printed": [56],
+        "text": "Equation (5.27), p. 56, in section 5.4"
+      },
+      "region": "eq-5.27@p056",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: F_n = X\\,\\mathcal{A}_X(U_n), \\qquad \\mathcal{S}_n = q^{\\,1-A+\\lambda_n} F_n, \\qquad \\mathcal{A}_n = (\\mathcal{S}_n/r)\\,e_\\theta, \\qquad u_{z,n} = \\partial_s \\mathcal{S}_n, \\qquad r\\,u_{r,n} = -\\partial_z \\mathcal{S}_n."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same five formulas, re-encoded in two routine ways. (i) Lean's primitive object is H = S/s = q^{-A+λ_n} 𝒜_X(U_n) (prefixStream / streamFactor, exponent -CoordinateAlgebra.A h + slowOrder h n with A h = 1/2+h and slowOrder h n = 2nh = λ_n); multiplying by s and using s = qX (SimilarityProfile.X) and F_n = X 𝒜_X(U_n) (primitive_eq_mul_average) gives exactly S_n = q^{1-A+λ_n} F_n, and integratedStream is that product. (ii) The two velocity identities are stated for the finite prefix sum over n ≤ J rather than per order n: prefixStream_axial reads H + s ∂_s H = u_z, which is the product rule for ∂_s(sH) = ∂_s S, and prefixStream_flux reads -s ∂_z H = flux = r u_r, which is -∂_z(sH) = -∂_z S since s does not depend on z; slowVelocity_components identifies flux/r with u_r and slowAxial with u_z. The prefix identities are proved termwise (Finset.sum_congr), but I found no declaration stating them for a single order n.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

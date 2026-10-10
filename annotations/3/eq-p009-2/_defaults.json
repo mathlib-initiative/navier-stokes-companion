@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 9.2",
+  "status": "formalized",
+  "location": {
+    "page": 9,
+    "rect": [0.298327, 0.656285, 0.403925, 0.02962]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.LeadingStress",
+      "path": "NavierStokes/LeadingStress.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p009-2",
+      "locator": {
+        "physical": [9],
+        "printed": [9],
+        "text": "Display 9.2, p. 9, in section 3.2"
+      },
+      "region": "eq-p009-2@p009",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: R_\\theta^{(0)} = -\\left(\\partial_r + \\frac{2}{r}\\right) T_{r\\theta}, \\qquad R_z^{(0)} = -\\left(\\partial_r + \\frac{1}{r}\\right) T_{rz}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Two rewritings. (i) Coordinates: the Lean writes the cylindrical divergence in the regular similarity coordinate s = r²/2, as √(2s)·∂_s S + k·S/√(2s); since r = √(2s) and ∂_r = r·∂_s this is exactly (∂_r + k/r)S, and `radialDivergence_eq_deriv` (LeadingStress.lean:291) records that identification by stating the same quantity as deriv in r plus k·S/r. The paper's two cases k=2 (angular) and k=1 (axial) appear as `radialDivergence 2` and `radialDivergence 1`. (ii) The residual: the paper's R_θ^{(0)}, R_z^{(0)} are the θ- and z-components of the leading residual with radial viscosity retained and axial viscosity omitted; Lean states the identity for the full Cartesian Navier–Stokes residual component plus the exact axial-viscosity term (`thetaAxialViscosity`, `axialAxialViscosity`) on the left, which is the same quantity. Lean asserts the relation for the concrete constructed pair `physicalStressTheta`/`physicalStressAxial` (the q^{-A-1/2}-pullbacks of `theta`/`axial`) rather than positing a solvability condition on an unspecified T, i.e. the paper's \"We construct physical stress components ... satisfying\" is discharged. The statement carries side hypotheses 0 < h < 1/2, t < 1, positive radial energy and P.f ≠ 0 at the point; the paper's display is unconditional at this point in the outline.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

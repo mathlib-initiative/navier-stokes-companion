@@ -1,0 +1,30 @@
+{
+  "id": "lemma-9.7/key/NavierStokes.MixedDiagonalResidual.uncutVelocity_smooth",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MixedDiagonalResidual.uncutVelocity_smooth",
+      "line": 72,
+      "module": "NavierStokes.MixedDiagonalResidual",
+      "path": "NavierStokes/MixedDiagonalResidual.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MixedDiagonalResidual.lean#L72"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MixedDiagonalResidual.uncutVelocity_smooth",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: hU : IsOpen U, hA : ∀ j, ContDiffOn ℝ ∞ (A j) U, hB : ∀ j, ContDiffOn ℝ ∞ (B j) U ⊢ ∀ J, ContDiffOn ℝ ∞ (uncutVelocity A B J) U — the uncut (pre-cutoff) finite partial sum curl(∑_{j<J+1} A j) + ∑_{j<J+1} B j is smooth on the same U.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "role": "key",
+      "snippet": {
+        "line": 72,
+        "text": "theorem uncutVelocity_smooth {A B : ℕ → VelocityField} {U : Set SpaceTime}\n    (hU : IsOpen U) (hA : ∀ j, ContDiffOn ℝ ∞ (A j) U)\n    (hB : ∀ j, ContDiffOn ℝ ∞ (B j) U) (J : ℕ) :\n    ContDiffOn ℝ ∞ (uncutVelocity A B J) U"
+      }
+    }
+  }
+}

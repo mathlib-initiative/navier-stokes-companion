@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.2/attributed/NavierStokes.AxisReference.reference_profile_eq_series",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisReference.reference_profile_eq_series",
+      "line": 109,
+      "module": "NavierStokes.AxisReference",
+      "path": "NavierStokes/AxisReference.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisReference.lean#L109"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisReference.reference_profile_eq_series",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: The resolvent reference (1+T)^{-1} 1 evaluates to AxisSeries.profile chi Y, the Lean form of Phi^0 = f_0(Y chi) used in the proof on p.148."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 109,
+        "text": "theorem reference_profile_eq_series (I : Window) {ε : ℝ} (hε : 0 < ε)\n    (χ e : AxisSpace I ε) (hχ : RadiallyConstant I ε χ)\n    (he : RadiallyConstant I ε e) {η : ℝ} (hη : η ∈ I.interval)\n    (he0 : coefficient I (weight ε) e 0 η = 1) (Y : ℝ) :\n    AxisEvaluation.profile I ε (AxisResolvent.naturalResolvent I hε χ e) (Y, η) =\n      AxisSeries.profile (coefficient I (weight ε) χ 0 η) Y"
+      }
+    }
+  }
+}

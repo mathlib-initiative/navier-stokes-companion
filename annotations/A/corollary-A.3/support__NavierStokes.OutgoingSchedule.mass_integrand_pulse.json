@@ -1,0 +1,26 @@
+{
+  "id": "corollary-A.3/support/NavierStokes.OutgoingSchedule.mass_integrand_pulse",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.OutgoingSchedule.mass_integrand_pulse",
+      "line": 695,
+      "module": "NavierStokes.OutgoingSchedule",
+      "path": "NavierStokes/OutgoingSchedule.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean#L695"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.OutgoingSchedule.mass_integrand_pulse",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 695,
+        "text": "theorem mass_integrand_pulse (c : Parameters) (amp : ℝ → ℝ) (eta : ℝ) {y : ℝ}\n    (hy : c.pulseStart ≤ y) :\n    Real.exp y * axial c amp (y, eta) =\n      (momentScale c 0 * shape eta) *\n        (Real.exp ((c.exponents 0 + 1) * (y - c.pulseStart)) *\n          radialPulse c amp eta (Real.exp (y - c.pulseStart)))"
+      }
+    }
+  }
+}

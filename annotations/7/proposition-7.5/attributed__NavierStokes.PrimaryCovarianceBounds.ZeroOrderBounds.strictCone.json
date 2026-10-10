@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.5/attributed/NavierStokes.PrimaryCovarianceBounds.ZeroOrderBounds.strictCone",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryCovarianceBounds.ZeroOrderBounds.strictCone",
+      "line": 362,
+      "module": "NavierStokes.PrimaryCovarianceBounds",
+      "path": "NavierStokes/PrimaryCovarianceBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCovarianceBounds.lean#L362"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryCovarianceBounds.ZeroOrderBounds.strictCone",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: `0 < zeta → StrictCone H T`, i.e. `H.det ≠ 0` together with strictly positive Cramer weights; `weights_pos` (:356) gives `0 < SmoothCovariance.weights H T j`, the paper's positivity of the components of $H^{-1}\\mathcal{T}_{0,*}$."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 362,
+        "text": "theorem ZeroOrderBounds.strictCone {R detGap entryBound inverseLower zeta : ℝ}\n    {H : Mat2} {T : Vec2} (h : ZeroOrderBounds R detGap entryBound inverseLower zeta H T)\n    (hR : 0 < R) (ha : 0 < inverseLower) (hzeta : 0 < zeta) :\n    SmoothCovariance.StrictCone H T"
+      }
+    }
+  }
+}

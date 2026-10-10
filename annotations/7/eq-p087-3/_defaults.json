@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 87.3",
+  "status": "formalized",
+  "location": {
+    "page": 87,
+    "rect": [0.330562, 0.546007, 0.338813, 0.026847]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p087-3",
+      "locator": {
+        "physical": [87],
+        "printed": [87],
+        "text": "Display 87.3, p. 87, in the statement of Corollary 7.8"
+      },
+      "region": "eq-p087-3@p087",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: U = W_0^{\\mathrm{as}} + E, \\qquad U \\in \\mathsf{W}_{1/2}, \\qquad E \\in \\mathsf{W}_{\\rho}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same hypothesis, encoded as two coefficient-class fields plus a difference block rather than as one equation. (i) Class membership: by the paper's own Definition 6.5 (p70, 'Then w ∈ Wα means that every Aγ,m belongs to Wα, with the uniform bounds in (6.29)'), 'U ∈ W_{1/2}' is a bound on the grouped label-harmonic amplitudes; Lean's `old.WaveBounds s P α` (CorrectionState.lean:192) is exactly that — `∀ i (j : ℤ), j ≠ 0 → WaveClass s P α (b.velocity n i j)` — with `WaveClass` the ε^α·√ζ·P weighted all-order class (WeightedClasses.lean:118). The label-indexed form is `UniformWaveClass` in `SignedFamily.old_bounds`. (ii) The decomposition: Lean never writes `old = primary + E`. It takes `primary` and `old` as separate blocks on a common carrier (`hop : SameCarrier old primary`) and assumes the class bound on `subBlock old primary`, whose velocity coefficients are `old.velocity - primary.velocity`; `subBlock_oscillation` (CorrectionStep.lean:2329) gives `(subBlock old primary).oscillation = old.oscillation - primary.oscillation`, so E := U - W_0^as and `U = W_0^as + E` holds identically. The rewriting is therefore the substitution E := old - primary, and it is the one Lean actually performs: `signedRemainder_exact` (LabelSumBounds.lean:802) rewrites the remainder as `symmetricCovariance (old - primary) tangent + symmetricCovariance old curl + bilinearCovariance (tangent+curl) (tangent+curl)`, i.e. the paper's B(E, L^as Σ) + B(U, R) + C(V). (iii) Exponents: the paper fixes U ∈ W_{1/2} and leaves ρ free; Lean leaves both free (α for U, δ for E), so on this clause Lean is more general, and it is instantiated at literally α = 1/2, δ = 17/25 in `signed_tensor_bounds` (SignedMeanGain.lean:462). No constant, sign, harmonic restriction (j ≠ 0 on both sides) or weight differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

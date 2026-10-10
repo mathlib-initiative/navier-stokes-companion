@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.18)",
+  "status": "formalized",
+  "location": {
+    "page": 148,
+    "rect": [0.225025, 0.856511, 0.641273, 0.026253]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.18",
+      "locator": {
+        "physical": [148],
+        "printed": [148],
+        "text": "Equation (B.18), p. 148, in the statement of Proposition B.3"
+      },
+      "region": "eq-B.18@p148",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: p_1/X \\ge c_1 > 0, \\qquad 0 < p_1 \\le C_1, \\qquad n_s = -2U_X = Z_*/L + O(\\Lambda^{-1})."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three clauses of the block are present, each as a field of the single structure `Estimates`, over exactly the paper's range: `0 < X`, `Λ * X ≤ 41/10` (i.e. X ≤ 4.1/Λ), `η ∈ [-1,1]`. The rewriting: (a) the paper's unnamed c₁ is `lowerConstant d = 5/(32 * profileBound d.coefficients)`, positive by `lowerConstant_pos`, and C₁ is `B 0`; in `exists_exit` (NaturalExitBounds.lean:155) both `B` and `lowerConstant d` are produced before the threshold `M` and before `C`, so they are constants in the paper's sense. (b) The first equality `n_s = -2U_X` is the Lean definition of `ns`, not an asserted identity, so it holds by `rfl`. (c) The paper's `O(Λ^{-1})` is made explicit as `|ns U p - Z/L| ≤ jetBound ε 5 1 0 * profileErrorConstant d / Λ`, whose numerator depends only on the fixed analytic input `d` and not on Λ or C; `NaturalAxisData.Z h j P0 η` is the base axial datum Z_* and `NaturalAxisData.L h η = 1 - 2hη²`. (d) The `ns_error` field is quantified over `rescalePoint Λ p ∈ entranceSet`, which also allows X = 0, a slightly larger range than the paper's 0 < X. Conjoining the three fields is immediate. `regular_lag_bounds` restates the same three clauses with p₁ replaced by X·regularAngularLag/L and n_s by regularAxialLag/L, which is the paper's own p₁ = XQ_s/L, n_s = N_s/L.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 77.1",
+  "status": "formalized",
+  "location": {
+    "page": 77,
+    "rect": [0.415822, 0.186993, 0.168576, 0.026565]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.PhaseEstimates",
+      "path": "NavierStokes/PhaseEstimates.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p077-1",
+      "locator": {
+        "physical": [77],
+        "printed": [77],
+        "text": "Display 77.1, p. 77, in the proof of Lemma 7.1"
+      },
+      "region": "eq-p077-1@p077",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: S_*^2(\\varepsilon + \\varepsilon^2 + k^{-1}) \\le 1"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The paper imposes one inequality on the sum; the Lean imposes the same three products separately, as the three hypotheses hε1 : ε·S² ≤ 1, hε2 : S²ε² ≤ 1, hk2 : S²/k ≤ 1 of phaseError_le_four_div. Rewriting: ε ≥ 0 and k > 0 in context, so each of S²ε, S²ε², S²k⁻¹ is a nonnegative summand of S²(ε+ε²+k⁻¹) and the paper's inequality implies all three Lean hypotheses; conversely the three Lean hypotheses give S²(ε+ε²+k⁻¹) ≤ 3, so the two conditions agree up to the constant 3, which is immaterial since both are only used in the regime where they hold for all large band indices (eventually_band_conditions proves exactly the Lean triple there, matching the paper's next sentence \"this holds for all sufficiently large band indices\"). The purpose also matches: the conclusion phaseError S ε k ≤ 4/S is the paper's \"bound the errors multiplied by v = O(S_*) by C/S_*\", phaseError being 1/S + Sε² + S/k + εS.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

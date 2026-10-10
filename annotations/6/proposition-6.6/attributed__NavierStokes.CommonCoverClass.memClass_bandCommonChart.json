@@ -1,0 +1,30 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.CommonCoverClass.memClass_bandCommonChart",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CommonCoverClass.memClass_bandCommonChart",
+      "line": 971,
+      "module": "NavierStokes.CommonCoverClass",
+      "path": "NavierStokes/CommonCoverClass.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverClass.lean#L971"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CommonCoverClass.memClass_bandCommonChart",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: class membership at the same \\varepsilon exponent is preserved by the band-and-cover change of common-torus representative: the 'preserves the \\varepsilon exponent in a fixed common-torus representative' clause."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 971,
+        "text": "theorem memClass_bandCommonChart {V : Type} [NormedAddCommGroup V] [NormedSpace ℝ V]\n    (s : WeightedClasses.StripData (SlowPoint × Plane))\n    {w v : ℕ → SlowPoint × Plane → ℝ} {α h : ℝ} {f : ℕ → SlowPoint × Plane → V}\n    (hf : WeightedClasses.MemClass s w α f) (D : ℝ) (gapBound : ℕ)\n    (band index gap : ℕ → ℕ) (forward : ℕ → Bool)\n    (hband : ∀ n, 1 ≤ band n)\n    (hoverlap : ∀ n, band n ≤ band (index n) + 4 ∧ band (index n) ≤ band n + 4)\n    (hgap : ∀ n, gap n ≤ gapBound)\n    (hepsilon : ∀ n, s.epsilon n = ChartScales.epsilon h (band n))\n    (hslow : ∀ n, s.slow n = ChartScales.S (band n))\n    (hmap : ∀ n x, x ∈ s.domain →\n      bandCommonChart D (band n) (band (index n)) (forward n) (gap n) x ∈ s.domain)\n    (hdelta : ∀ n x, x ∈ s.domain →\n      s.delta (bandCommonChart D (band n) (band (index n)) (forward n) (gap n) x) = s.delta x)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

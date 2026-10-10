@@ -1,0 +1,25 @@
+{
+  "id": "eq-A.13/key/NavierStokes.OutgoingTail.tailDebt",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.OutgoingTail.tailDebt",
+      "line": 210,
+      "module": "NavierStokes.OutgoingTail",
+      "path": "NavierStokes/OutgoingTail.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingTail.lean#L210"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.OutgoingTail.tailDebt",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "snippet": {
+        "line": 210,
+        "text": "def tailDebt (d : TailData) : ℝ := (∫ t in (0:ℝ)..3, Real.exp ((1 - d.h) * t) * tailShapeDeriv d t) / (1 - d.rho)   -- Q_p, defined by the evaluated form; tailDebt_source_formula proves it equal to the paper's integral"
+      }
+    }
+  }
+}

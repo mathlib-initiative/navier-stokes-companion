@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 91.3",
+  "status": "formalized",
+  "location": {
+    "page": 91,
+    "rect": [0.297136, 0.820638, 0.405953, 0.039646]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p091-3",
+      "locator": {
+        "physical": [91],
+        "printed": [91],
+        "text": "Display 91.3, p. 91, in the proof of Lemma 8.2"
+      },
+      "region": "eq-p091-3@p091",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathcal{J}g = (-M^{-1})^{p} \\int_{\\mathbb{R}} \\partial_U^{p} \\mathcal{L}^{-p} F^{\\circ}(U+u,\\, y+Muv_r)\\,du."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The constant (−M⁻¹)^p, the power ∂_U^p, the p-fold inverse and the full-line integral over the translated line all match, and in totalIntegral_sourceJet the integral is at the paper's own point: totalIntegral M v f (U,y) = ∫ f(U+u, y+Muv_r) du with v = vector d = v_r. The paper's one display is the composition of three Lean statements rather than one: totalIntegral_sourceJet carries the identity for an abstract right inverse J of v_r·∂_y (smooth, radially supported on each iterate — the Lean form of the paper's 'every endpoint term vanishes by compact support'); fourierSourceJet_eq_parameterJet, with sourceJet_eq_deriv_inverse_iterate, identifies the iterate with the concrete ∂_U^p 𝓛^{-p} of the torus Fourier inverse; and totalIntegral_nonbarPart is the passage from F to F^∘ under the paper's vanishing weighted moment. Each step is a rewriting. wholeAlias_inverse_iterate states the same identity with the integration variable translated (take Y = y − MUv_r).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

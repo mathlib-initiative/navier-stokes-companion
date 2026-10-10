@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.33)",
+  "status": "formalized",
+  "location": {
+    "page": 37,
+    "rect": [0.32969, 0.159494, 0.539378, 0.048659]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.33",
+      "locator": {
+        "physical": [37],
+        "printed": [37],
+        "text": "Equation (4.33), p. 37, in the statement of Proposition 4.10"
+      },
+      "region": "eq-4.33@p037",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\mathcal{T}_0 = e^{-t_1^2/y_a^2} g_a(y_a) B_a(y_a,\\eta), \\qquad g_a(0) > 0, \\\\ B_a(0,\\eta) = F(X_a,\\eta)\\, \\mathfrak{s}(X_a,\\eta) \\neq 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean states the factorization as an `EdgeFactor` record rather than as the paper's three-factor product, and bundles the paper's g_a into the coefficient. The statement for the final assembled leading stress — the one (4.33) is about — is `inner_direction_positive` (LeadingStressWeights.lean:946): an `EdgeFactor (Icc (-1) 1) (t_1^2) (leftChart (leftEdge W) (logStress v.profiles F.data.h))` with first coefficient component strictly positive at y_a = 0 and a true direction collar. `activation_direction_positive` (:893) is the same statement one stage earlier, for the nominal witness's `activationStress` before the loop modulation; :954-957 obtains it and `EdgeFactor.transfer`s it along `modulated_activation_stress` to the assembled stress, keeping `coefficient` and `order` unchanged. Term by term: the Gaussian factor matches exactly — `FlatCutoff.edge c x = Real.exp (-c / x^2)` for x > 0, and the activation instance is built with `c = T^2 = t_1^2` and `x = y_a`, so `edge (t_1^2) y_a = e^{-t_1^2/y_a^2}`; the chart variable is y_a = log(X/X_a) by `nominal_activation_stress` together with `activeLeft W = 4/Λ = X_a`. The `EdgeFactor.identity` field reads T (p,x) = (edge c x / x^order) • coefficient (p,x), and `activationEdgeFactor` sets `order := 0`, so the Lean identity is exactly 𝒯_0 = e^{-t_1^2/y_a^2} · coefficient(η, y_a), with no spurious negative power. The recovery of the paper's form: `coefficient = activationCoefficient T κ D`, i.e. ((1-κ)/stepDenominator T y_a) • D((κ,t_1),(y_a/t_1, η)) — the scalar prefactor, a function of y_a alone, is the paper's g_a, and it is positive at y_a = 0 because κ < 1 and `stepDenominator T 0 > 0`, which is g_a(0) > 0; the vector factor is the paper's B_a. For B_a(0,η) = F(X_a,η)·𝔰(X_a,η) ≠ 0: `exists_actual_stress_direction` gives D((κ,T),(0,η)) = referenceAngular L (0,η) • (referenceP1 L (0,η), referenceP2 X0 L U (0,η)) — the angular amplitude at the attachment times the reference stress pair, which is the paper's amplitude F times the shear direction 𝔰 — and non-vanishing is `EdgeFactor.boundary_ne_zero`, sharpened by `exists_natural_activation_factor_aligned` to a strictly positive first component and a boundary tilt equal to referenceP2/referenceP1. Two further notational points: the Lean argument order is (η, y_a), the paper's is (y_a, η); and the paper writes one scalar 𝒯_0 where the Lean carries the pair (angular, axial), consistent with (4.32). Smoothness of g_a, B_a through y_a = 0 is `EdgeFactor.smooth` on an open domain containing K ×ˢ {0}.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

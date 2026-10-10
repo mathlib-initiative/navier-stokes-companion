@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 68.2",
+  "status": "formalized",
+  "location": {
+    "page": 68,
+    "rect": [0.262783, 0.322181, 0.474433, 0.059875]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.LabelCounting",
+      "path": "NavierStokes/LabelCounting.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p068-2",
+      "locator": {
+        "physical": [68],
+        "printed": [68],
+        "text": "Display 68.2, p. 68, in section 6"
+      },
+      "region": "eq-p068-2@p068",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\#\\{(\\ell, a, \\sigma) \\in \\Gamma : B_{\\ell,a} \\cap B \\neq \\varnothing\\} \\le C_B S_\\ell^{9}, \\qquad \\sup_{Z,T} \\#\\{(\\ell, a, \\sigma) \\in \\Gamma : B_{\\ell,a} \\cap (I_R \\times \\{Z\\} \\times \\{T\\}) \\neq \\varnothing\\} \\le C_{I_R} S_\\ell^{3}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Term by term the two bounds agree: exponents 9 and 3 on ChartScales.S n = n^2 = S_ℓ; the mesh spacing nativeSpacing n = (n^6)⁻¹ = S_n^{-3}, as in the paper's 'mesh of size S_ℓ^{-3}'; the labels are triples (band, grid index, sign), the sign counted separately; the chart set B is compact and the radial interval I_R bounded, as in the paper; the constants depend on B resp. I_R and are chosen before the band n and before Z, T (so sup_{Z,T} is faithfully a single C), matching C_B and C_{I_R}. Recovery of the encoding: 'B_{ℓ,a} ∩ B ≠ ∅' is Set.Nonempty of the intersection, '#' is Set.ncard with a Finiteness conjunct that the paper's '#' presupposes, sup_{Z,T} ≤ C is '∃ C, ∀ Z T, ≤ C', and the display's two inequalities are two Lean theorems conjoined verbatim in number_of_relevant_labels. The paper's 'Γ' is absent from compact_chart_count / bounded_radial_count (counting all labels of the band, hence at least as strong) and restored in number_of_relevant_labels_restrict. The paper's trailing sentence 'the same bounds hold for fixed-factor enlargements of the mesh boxes' is the free parameter A, and the underlying bounded_chart_count holds for bounded, not only compact, B — both strengthenings, not gaps. The Lean theorems carry the extra hypothesis 1 ≤ n, i.e. positive band index, which the paper's 'for a fixed band ℓ' also assumes.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

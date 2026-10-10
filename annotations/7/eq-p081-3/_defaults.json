@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 81.3",
+  "status": "formalized",
+  "location": {
+    "page": 81,
+    "rect": [0.166851, 0.273719, 0.666524, 0.041648]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p081-3",
+      "locator": {
+        "physical": [81],
+        "printed": [81],
+        "text": "Display 81.3, p. 81, in the proof of Lemma 7.4"
+      },
+      "region": "eq-p081-3@p081",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\left(\\log \\frac{z_+}{P}\\right)' = -(d - d_{\\mathrm{ref}}) + E_{11} + E_{12} r = O(S_*^{-1}), \\qquad \\left|\\log \\frac{z_+(v)}{P(v)}\\right| \\le \\frac{Cv}{S_*} \\le \\frac{C L_s}{S_*} \\le C."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean never forms log(z₊/P); it states the same two facts multiplicatively, and the rewriting is routine because z₊ > 0 (proved, not assumed: positive_invariant_cone) and P > 0 (hPpos). First half: with P' = (λ - d_ref)P (hP) and z₊' = (λ - d + E₁₁)z₊ + E₁₂z₋ (modalOperator), dividing relative_error_of_cone's left-hand side by p = z₊ gives exactly (log(z₊/P))' = -(d - d_ref) + E₁₁ + E₁₂(z₋/z₊), and its right-hand side δ + eps(1+r) = D/S_* + (C/S_*)(1 + K_b/S_*) ≤ (D + 2C)/S_* is the paper's O(S_*^{-1}) (the hmu step, scaled_growing_mode_bounds line 388). Second half: the two-sided envelope exp(∓(D+2C)L) · (z₊(a)/P(a)) · P(t) is the exponential of |log(z₊/P)| ≤ (D+2C)L, under the paper's normalisation z₊(a) = P(a) (used in primary_bounds line 470, hratio). The paper's chain Cv/S_* ≤ C L_s/S_* ≤ C becomes ((D+2C)/S)(t-a) ≤ (D+2C)L from hslot : b - a ≤ L*S, i.e. slot length L_s ≤ L·S_*. The constant is explicit (D + 2C, D from the damping error and 2C from the two coefficient errors) where the paper writes a generic C; no bound is weaker.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

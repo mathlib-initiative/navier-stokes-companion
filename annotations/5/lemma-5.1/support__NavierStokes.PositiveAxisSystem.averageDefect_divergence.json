@@ -1,0 +1,26 @@
+{
+  "id": "lemma-5.1/support/NavierStokes.PositiveAxisSystem.averageDefect_divergence",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PositiveAxisSystem.averageDefect_divergence",
+      "line": 682,
+      "module": "NavierStokes.PositiveAxisSystem",
+      "path": "NavierStokes/PositiveAxisSystem.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisSystem.lean#L682"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PositiveAxisSystem.averageDefect_divergence",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 682,
+        "text": "theorem averageDefect_divergence (Ω : ProfileHistories.RadialDomain) {u : InnerProfile}\n    (hu : ContDiffOn ℝ ∞ u Ω.carrier) (h lam : ℝ) {w : InnerPoint}\n    (hw : w ∈ Ω.carrier) (hL : ell h w.2 ≠ 0) :\n    partialX (SlowDivergence.radialFlux h lam u) w =\n      -axialValue h (-a h + lam) w.2 w.1 (actualJet u w)"
+      }
+    }
+  }
+}

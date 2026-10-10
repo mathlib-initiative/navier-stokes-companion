@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.31)",
+  "status": "partial",
+  "location": {
+    "page": 71,
+    "rect": [0.273789, 0.430106, 0.594393, 0.047178]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-6.31",
+      "locator": {
+        "physical": [71],
+        "printed": [71],
+        "text": "Equation (6.31), p. 71, in the statement of Proposition 6.6"
+      },
+      "region": "eq-6.31@p071",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: a_{\\gamma,m}\\,b_{\\gamma,m'} \\in \\begin{cases} \\mathsf{W}_{\\alpha+\\beta}, & m+m' \\neq 0,\\ \\text{with harmonic } m+m', \\\\ \\mathsf{M}_{\\alpha+\\beta}, & m+m' = 0,\\ \\text{after temporal cutoff.} \\end{cases}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Both branches exist, but as class lemmas with no harmonic side condition and no cutoff hypothesis, and the harmonic bookkeeping sits in a different place. `wave_cmul_wave` gives W_α·W_β ⊂ W_{α+β} and `WaveClass.bilinear_mean` (scalar form `wave_cmul_mean`) gives W_α·W_β ⊂ M_{α+β}, each from 0 ≤ P ≤ 1 and ζ ≤ 1 — the first without 'm+m' ≠ 0', the second without 'm+m' = 0' and without any temporal-cutoff hypothesis, because Lean's `MeanClass` is the ζ-weighted derivative bound alone and contains no ∂_θ = 0 or support clause, so the M-branch is proved for every wave product rather than only for the zero-harmonic one. The clause 'with harmonic m+m'' is encoded instead by the grading: `field_mul` makes a product of harmonic fields the convolution product in AddMonoidAlgebra (α → ℂ) ℤ, so harmonics add, and `carrier_add` adds the phase coefficients. The genuinely zero-harmonic statement of the second branch is `angularProduct_mem`: the angular mean (zero harmonic) of a product of two finite harmonic fields with W_α and W_β coefficients lies in M_{α+β}. Exponents α+β agree in every case; the weight improvement from √ζ·P to ζ matches the paper's ζ^{3/2}P_v ≤ √ζ P_v and ζP_v² ≤ ζ on p. 72.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

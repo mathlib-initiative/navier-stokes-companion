@@ -1,0 +1,26 @@
+{
+  "id": "eq-9.11/key/NavierStokes.CorrectionInitialization.zeroMean_theta",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionInitialization.zeroMean_theta",
+      "line": 1832,
+      "module": "NavierStokes.CorrectionInitialization",
+      "path": "NavierStokes/CorrectionInitialization.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L1832"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionInitialization.zeroMean_theta",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 1832,
+        "text": "theorem zeroMean_theta (c : Context D) (u : State D) (hm : u.mean = ⟨0, 0, 0⟩) : u.thetaResidual c = c.operators.radialDiv 2 (u.covariance 0 1) + c.operators.dz (u.covariance 2 1) - c.operators.radialDiv 2 c.virtualTheta"
+      }
+    }
+  }
+}

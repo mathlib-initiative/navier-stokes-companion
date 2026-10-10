@@ -1,0 +1,26 @@
+{
+  "id": "eq-p059-4/key/NavierStokes.ResidualStability.residual_add_sub_on",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ResidualStability.residual_add_sub_on",
+      "line": 355,
+      "module": "NavierStokes.ResidualStability",
+      "path": "NavierStokes/ResidualStability.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ResidualStability.lean#L355"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ResidualStability.residual_add_sub_on",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 355,
+        "text": "theorem residual_add_sub_on (hU : IsOpen U) (hu hw hp hr : ContDiffOn ℝ ∞ · U) (hz : z ∈ U) : navierStokesResidual (fun y => u y + w y) (fun y => p y + r y) z.1 z.2 - navierStokesResidual u p z.1 z.2 = temporalDerivative w z.1 z.2 - spatialLaplacian w z.1 z.2 + pressureGradient r z.1 z.2 + spatialDerivative u z.1 z.2 (w z) + spatialDerivative w z.1 z.2 (u z) + spatialDerivative w z.1 z.2 (w z)"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.19)",
+  "status": "partial",
+  "location": {
+    "page": 113,
+    "rect": [0.301675, 0.481433, 0.566503, 0.070479]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.19",
+      "locator": {
+        "physical": [113],
+        "printed": [113],
+        "text": "Equation (9.19), p. 113, in the proof of Lemma 9.8"
+      },
+      "region": "eq-9.19@p113",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\begin{array}{l|l} \\text{radial physical derivative} & 1/2 + h\\kappa_s \\\\ \\text{axial physical derivative} & D = 1/2 - h \\\\ \\text{time physical derivative} & 1 + h \\\\ \\text{derivative of the cylindrical frame} & 1/2. \\end{array} \\tag{9.19}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Three of the four printed rows are in the repository literally, each as a separate item rather than as one table. Row 3 (time, 1+h) is `native_time_power_le` verbatim. Row 2 is `CoordinateAlgebra.D h = 1/2 - h`, and it is used exactly as the axial entry `Q ^ (-D h)` of `chartLinear`. Row 1 is split: `native_radial_power_le` gives the `hκ` part (`radialCoefficient ≤ Q ^ (-h*kappa)`, with `ChartScales.kappa = 1/100000`, the paper's κ_s = 10^-5 of p.105), and `norm_scaledRadial_le` gives the `1/2` part; the `have hpow` step inside `nativeGraph_positive_jet_bound` combines them into `Q ^ (-h*kappa - k/2)`, which is at least as sharp as the printed `k(1/2 + hκ_s)` for k ≥ 1. Row 4 (cylindrical frame, 1/2) is not charged as 1/2 anywhere I found: `rotation_jets` bounds every jet of the frame by a constant in the normalized lift coordinate, and the Q^(-1/2) would come from the Cartesian entries of `chartLinear`. What the repository actually propagates downstream is not the per-direction table but the single worst row: `physicalLift_positive_jet_bound` charges Q^(-k(1+h)) for every derivative of any direction, and everything after it (SharpCommonGraphJets, SharpPhysicalPhase, SharpPhysicalCarrier) uses that uniform cost. Q here is ≤ 1 (`ChartScales.Q_le_one`), so a negative exponent is a loss, as in the paper.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

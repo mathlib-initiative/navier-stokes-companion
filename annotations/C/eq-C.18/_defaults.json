@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (C.18)",
+  "status": "formalized",
+  "location": {
+    "page": 163,
+    "rect": [0.252366, 0.56067, 0.615817, 0.070894]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-C.18",
+      "locator": {
+        "physical": [163],
+        "printed": [163],
+        "text": "Equation (C.18), p. 163, in the statement of Proposition C.3"
+      },
+      "region": "eq-C.18@p163",
+      "verdicts": [
+        {
+          "confidence": 0.93,
+          "evidence": ["paper: y_a = \\log(X/X_a), \\qquad y_b = \\log(X_b/X), \\qquad \\delta = \\min\\{1, y_a, y_b\\}, \\\\ \\zeta = \\exp\\!\\left(-\\frac{t_1^2}{y_a^2} - \\frac{4}{y_b^2}\\right) \\quad (X_a < X < X_b),"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same weight, written as a product of two one-sided flat cutoffs instead of one exponential, and in the logarithmic radial variable. Put y := Real.log X, a := leftEdge W = log X_a, b := rightEdge W = log X_b; then y - a = log(X/X_a) = y_a and b - y = log(X_b/X) = y_b. For y_a, y_b > 0 the Lean body gives weight = edge c y_a * edge 4 y_b = exp(-c/y_a^2) * exp(-4/y_b^2) = exp(-c/y_a^2 - 4/y_b^2) by Real.exp_add, and LeadingStressWeights.zeta instantiates c := W.controls.activationTime ^ 2, i.e. c = t_1^2 with t_1 > 0 (NominalProfile.Controls.activationTime_pos), so zeta v X = exp(-t_1^2/y_a^2 - 4/y_b^2) exactly as in (C.18), with the terminal-edge coefficient 4 hard-coded in `weight`. The paper's 'extended by zero for X ≤ X_a and X ≥ X_b' is not a separate clause in Lean: it is the `if x ≤ 0 then 0` branch of FlatCutoff.edge (so weight = 0 whenever y ≤ a or y ≥ b, cf. weight_zero_left / weight_zero_right), together with radialWeight's `if 0 < X then … else 0` which also covers X ≤ 0, a case the paper does not need since 0 < X_a. The paper's δ = min{1, y_a, y_b} is edgeDistance a b y = min 1 (min (y-a) (b-y)) verbatim, except that Lean defines it on all of ℝ rather than only on the radial interior; the two agree on X_a < X < X_b, which is where (C.18) and both bound statements use it.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

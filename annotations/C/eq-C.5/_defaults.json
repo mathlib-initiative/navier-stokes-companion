@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (C.5)",
+  "status": "formalized",
+  "location": {
+    "page": 159,
+    "rect": [0.289603, 0.345314, 0.579462, 0.045662]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-C.5",
+      "locator": {
+        "physical": [159],
+        "printed": [159],
+        "text": "Equation (C.5), p. 159, in the proof of Lemma C.1"
+      },
+      "region": "eq-C.5@p159",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: t(\\theta'; \\mu) \\;=\\; t_s + d_0 \\, \\frac{e^{\\mu p_{s,2} \\sin \\theta'} / M_e(\\mu p_{s,2}) - 1}{p_{s,2}}, \\qquad \\mu \\ge 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Term by term with m = t_s, d = d_0, p = p_{s,2}: `expTilt` is m + (d/p)(e^{μp cos θ}/M_e(μp) - 1), and d_0 · (e^{·}/M_e - 1)/p_{s,2} = (d_0/p_{s,2})(e^{·}/M_e - 1), so the two agree up to the same sin→cos translation of the angular origin recorded for (C.4). Two encoding points, neither a mathematical difference. (i) The paper restricts μ ≥ 0 in (C.5); the Lean definition is for all real μ, and the sign restriction reappears where it is used (`solveScale_nonneg`, `tiltVariance_strictMonoOn` on `Ici 0`). (ii) The paper's removable singularity at p_{s,2} = 0, with value t_s + d_0 μ sin θ', is not carried by `expTilt` itself (whose `d / p` is Lean's junk value 0 at p = 0, giving the constant m); it is carried by `extendedExpTilt`, which is defined by a case split to be cosineTilt m (dμ) = m + dμ cos θ at p = 0, exactly the paper's value, and by `regularizedTilt`, a denominator-free formula proved equal to it. I did not trace whether the smoothness in p across p = 0 that the paper gets from G(p)/p = ∫_0^1 G'(up) du is proved for this family here; that argument belongs to the surrounding prose rather than to this block.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

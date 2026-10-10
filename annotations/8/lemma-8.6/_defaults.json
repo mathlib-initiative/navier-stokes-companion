@@ -21,32 +21,24 @@
       "region": "lemma-8.6@p095",
       "verdicts": [
         {
-          "confidence": 0.88,
-          "evidence": ["CONFIRMED_CONTENT: NavierStokes.SmoothFamilyTorusInverse.inverse_finiteJets (SmoothFamilyTorusInverse.lean:865): `JetBound f S (n + 5) C → JetBound (inverse d f) S n (K * C)`; ParametricTorusInverse.mixedJet_inverse_bound (:654): `xJet (w.length + 5)`; UniformFourierAlias.realInverse_finiteJets (:611): `∀ j ≤ m + 5`. Origin: applyMultiplier_finiteJets (:847) loses n + l + 4 with l = 1, because coefficient decay is summed against Σ weight^{-4} (SmoothFourierData.summable_weight_inv_four :343). A search of decls.jsonl for any inverse bound with a +4 loss finds only the centering lemma nonbarPart_finiteJets (:1020), not N^{-1}.", "CONVENTION: existence: TemporalMeanUpdate.absoluteInverse_solves :238 (+ _smooth :218, _zeroMean :227); uniqueness: timeDerivative_unique :128; formula: absoluteInverse :215 := directionalInverse .temporal (coefficient f); (8.20): MeanChartCompatibility.temporalAtIndex :498, temporalAtIndex_physical_pull :513, chartPrefactor_bound :296; (8.21)-(8.22): temporal_mean_update :818, axialUpdate_eq_desired_sub_alias :775, meanClass_desiredIncrement :1040, meanClass_scaledRadialUpdate :1097, meanClass_axialUpdate :1513; flatness: axialAlias_fastDerivative_superflat :1247; (8.2): desiredIncrement_barMass :584, axialUpdate_zeroMean :793, GaugeMassPreservation.temporalStage_preserve_masses_on :256.", "CONVENTION: WeightedClasses.MemClass (WeightedClasses.lean:107) has fields weight_nonneg, smooth (ContDiffOn ℝ ∞ (f n) s.domain) and bounds; MeanClass (:115) is MemClass with weight ζ. meanClass_desiredIncrement (:1040) and meanClass_axialUpdate (:1513) take hfc (ContDiff), hp (TorusPeriodicLift) and hs (RadiallySupported) as separate hypotheses.", "All three voters agree on DELTA and lean_weaker, and my own reading of pp. 95-96 against the Lean confirms it. Every clause of Lemma 8.6 is stated somewhere (existence, uniqueness, series, chart agreement, (8.20)-(8.22), classes, flatness, (8.2)), except that the displayed estimate (8.19) is proved only with a five-derivative loss where the paper states four. That is real but harmless downstream. The auditor's other two findings are true encoding observations, not defects; I keep them as conventions with recovery arguments, against both skeptics' votes to drop them. Declarations are corrected to add the common-index forms (temporalAtIndex and its theorems) the pairing skeptic found, which match the paper's c_{i0} more literally than the native-index desiredIncrement."],
+          "confidence": 0.86,
+          "evidence": ["CONFIRMED_CONTENT: SmoothFamilyTorusInverse.inverse_finiteJets (NavierStokes/SmoothFamilyTorusInverse.lean:865) is ‖N^{-1}F‖_{C^n} ≤ K‖F‖_{C^{n+5}} once JetBound (:652) is unfolded; ParametricTorusInverse.mixedJet_inverse_bound (:654) and UniformFourierAlias.realInverse_finiteJets (:611) also lose 5. The 5 enters at applyMultiplier_finiteJets (SmoothFamilyTorusInverse.lean:847, n+l+4 with l=1) and, in the explicit chain, at coefficient_seminorm_bound (SmoothFourierData.lean:368), which majorises by Σ weight^{-4} (summable_weight_inv_four, :343). The sharp input coefficient_polynomial_bound (:264) is stated for every p with no loss.", "ATTRIBUTION_GAP: Existence: SmoothFourierData.inverse_solves_smooth_periodic (SmoothFourierData.lean:565) and TemporalMeanUpdate.absoluteInverse_solves (TemporalMeanUpdate.lean:238); smoothness and zero mean: absoluteInverse_smooth (:218), absoluteInverse_zeroMean (:227); uniqueness: timeDerivative_unique (:128); series: absoluteInverse (:215) over directionalInverse (TorusInverse.lean:301); (8.20): MeanChartCompatibility.temporalAtIndex (:498), temporalAtIndex_physical_pull (:513), TemporalMeanUpdate.chartPrefactor_bound (:296); (8.21)–(8.22): temporal_mean_update (:818), axialUpdate_eq_desired_sub_alias (:775), meanClass_desiredIncrement (:1040), meanClass_scaledRadialUpdate (:1097), meanClass_axialUpdate (:1513), axialAlias_fastDerivative_superflat (:1247); (8.2): desiredIncrement_zeroMean (:573), axialUpdate_zeroMean (:793), GaugeMassPreservation.temporalStage_preserve_masses_on (:256); (8.23): absoluteInverse_coverMap (:246).", "Both rulings read the mathematics the same way; they differ on whether the one-derivative gap in (8.19) is recoverable. It is not, by the rule that governs here: B's own derivation needs Σ_{k∈ℤ²} weight k^{-3} < ∞, and the repository states only the exponent-2 sum over ℤ (SmoothFourierData.lean:312) and the exponent-4 sum over ℤ² (:343). So DELTA, and lean_weaker, since inverse_finiteJets unfolds to the paper's own C^m-to-C^{n+5} shape, which the paper's estimate implies and which does not imply it. But A's medium is too strong: the manuscript cites (8.19) only within Lemma 8.6 and the covering remark, and the Lean class machinery takes a constant per order, so nothing downstream turns on 4 rather than 5. Low."],
           "findings": [
             {
-              "confidence": 0.93,
+              "confidence": 0.88,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONFIRMED_CONTENT",
-              "severity": "medium",
-              "summary": "Lean's torus-inverse estimate needs m+5 input derivatives; the paper's (8.19) states m+4. The Lean bound is strictly weaker by one derivative and no m+4 version exists in the repository. The paper's m+4 is correct."
+              "severity": "low",
+              "summary": "Every stated form of the (8.19) estimate loses five input derivatives where the paper states four. The four-loss form is stated nowhere and does not follow from stated declarations by logic alone: it needs the unstated summability of Σ weight^{-3} over ℤ²."
             },
             {
-              "confidence": 0.75,
-              "contested": true,
+              "confidence": 0.82,
+              "contested": false,
               "kind": "COVERAGE",
-              "ledger": "CONVENTION",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No single declaration bundles Lemma 8.6; its clauses are spread over about 15 declarations in 7 files. Every clause is stated by some declaration (one with the m+5 weakening), so this is a decomposition, not a coverage gap."
-            },
-            {
-              "confidence": 0.75,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean's MeanClass carries smoothness on the strip domain and the weighted all-order bounds. Torus periodicity, radial support and global smoothness, which Definition 6.4 puts inside M_α, are separate hypotheses and conclusions. The auditor wrongly listed smoothness and zero mean as omitted."
+              "summary": "No declaration states Lemma 8.6 as a whole. Its clauses are stated across about twenty declarations in seven files; apart from the estimate above each is faithful, and they conjoin by instantiation at the same objects."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_DELTA",
@@ -56,9 +48,9 @@
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
           "relation": "lean_weaker",
-          "severity": "medium",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states a weaker result. Lean's torus-inverse estimate needs m+5 input derivatives; the paper's (8.19) states m+4. The Lean bound is strictly weaker by one derivative and no m+4 version exists in the repository. The paper's m+4 is correct.",
+          "summary": "Lean states a weaker result.",
           "verdict": "deviation"
         }
       ]

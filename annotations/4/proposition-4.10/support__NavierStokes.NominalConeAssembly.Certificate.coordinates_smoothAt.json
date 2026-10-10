@@ -1,0 +1,26 @@
+{
+  "id": "proposition-4.10/support/NavierStokes.NominalConeAssembly.Certificate.coordinates_smoothAt",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalConeAssembly.Certificate.coordinates_smoothAt",
+      "line": 1371,
+      "module": "NavierStokes.NominalConeAssembly",
+      "path": "NavierStokes/NominalConeAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L1371"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalConeAssembly.Certificate.coordinates_smoothAt",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1371,
+        "text": "theorem Certificate.coordinates_smoothAt {F : Profile} {W : NominalProfile.Witness F}\n    (hW : Certificate W) {p : Point} (hl : activeLeft W < p.1) (hr : p.1 < activeRight W)\n    (heta : p.2 ∈ HeatedOutgoing.parameterDomain) :\n    ContDiffAt ℝ ∞ (ActivationContinuation.shearA W.profiles) p ∧\n      ContDiffAt ℝ ∞ (tilt W.profiles) p ∧\n      ContDiffAt ℝ ∞ (ReferenceBounds.p1 W.profiles F.data.h) p ∧\n      ContDiffAt ℝ ∞ (ReferenceBounds.p2 W.profiles F.data.h) p"
+      }
+    }
+  }
+}

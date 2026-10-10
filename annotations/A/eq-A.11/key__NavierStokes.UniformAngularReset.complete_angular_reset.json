@@ -1,0 +1,25 @@
+{
+  "id": "eq-A.11/key/NavierStokes.UniformAngularReset.complete_angular_reset",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.UniformAngularReset.complete_angular_reset",
+      "line": 1251,
+      "module": "NavierStokes.UniformAngularReset",
+      "path": "NavierStokes/UniformAngularReset.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformAngularReset.lean#L1251"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.UniformAngularReset.complete_angular_reset",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 1251,
+        "text": "∃ lam0 > 0, ∀ d, d.core.lam < lam0 → ∃ c, … ∧ (∀ eta y, y ∉ Ioo (d.releaseStart-4) d.releaseStart → correctedAngular d c (y,eta) = finalAngular d (y,eta)) ∧ (∀ eta, (∫ y, (correctedAngular d c (y,eta))^2 - (finalAngular d (y,eta))^2) = 0 ∧ √2 * correctedHistory d c eta = (exp R * √(2*exp R) * correctedAngular d c (R,eta))/(1 - d.core.lam))"
+      }
+    }
+  }
+}

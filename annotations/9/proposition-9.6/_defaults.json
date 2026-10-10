@@ -18,31 +18,23 @@
       "verdicts": [
         {
           "confidence": 0.82,
-          "evidence": ["ATTRIBUTION_GAP: CorrectionStep.CycleAnalyticInvariant (NavierStokes/CorrectionStep.lean:9408): only `solenoidal : ∀ l, ModeSolenoidal …` and `meanHypotheses` (total_divergence, LiftedMeanResidual.lean:838). Stated elsewhere: VariableGaugeMean.temporalIncrementState (:538) and rankIncrementState (:571) define radial/axial as streamBeta/streamGamma of a potential and add angular directly; ActualCurrentParticularAssembly.localPotential_curl_eqOn (:254) and CurrentSignedCurl.currentPotential_curl (:261) give spatialCurl potential = particular / signed velocity increment on each Cartesian chart domain.", "CONVENTION: CycleAnalyticInvariant.masses : GaugeMassPreservation.ZeroMassesOn G.region.carrier x.state (GaugeMassPreservation.lean:140, `∀ n s, s ∈ U → …`). SignedMeanGain.Geometry (SignedMeanGain.lean:565-569): slowStrip.domain = G.region.carrier and domain = PhysicalMeanDomain.slowDomain G.region.carrier = {p | p.2.1 ∈ carrier}.", "CONVENTION: next_runInvariant (ActualCyclePreservation.lean:817) `hN : ActualCarrierGeometry.geometricThreshold ≤ N0`; RunInvariant fields `coherent`, `periodic` (:768); CycleAnalyticInvariant fields `pressure`, `covariance`, `gaussianFlat`, `axisFlat` (CorrectionStep.lean:9408). hN feeds ActualCarrierGeometry.labelCarrier_disjoint (:342). The run uses N0 = startingThreshold 0 ≥ geometricThreshold (ActualCandidateConstruction.lean:207-210); initial_runInvariant (:773) and state_runInvariant (:826).", "I read pp.106-108 and the Lean. next_runInvariant (ActualCyclePreservation.lean:817) is the one-step statement for an arbitrary state: RunInvariant σ x, σ ≥ 1/5 gives RunInvariant (σ+1/10) for x.step with the same fixedParameters and context. Fields match (9.8)-(9.10): residual 1/2+σ, mean and debt 1+σ, wave 1/2, difference 17/25 against tangentBlock, cumulative 19/10 and 9/10, masses. CycleParameters.next has the paper's order (particular, signed, temporal on the centered part, rank), each through reconstructState. κ = 1/100000, σ_j = 1/5 + j/10. No sorry or axiom; the hypothesis is met at stage 0. All three voters agree on verdict, relation and declaration; the disagreement is only whether findings 1 and 2 are differences at all. I rule both conventions. Faithfulness still rests on Definition 9.4 and the class definitions, audited separately."],
+          "evidence": ["CONVENTION: NavierStokes.ActualCyclePreservation.next_runInvariant, NavierStokes/ActualCyclePreservation.lean:817, hypothesis `(hN : ActualCarrierGeometry.geometricThreshold ≤ N0)`; the same hypothesis is threaded through state_runInvariant (:826) and every stage accessor at :835-915.", "ATTRIBUTION_GAP: NavierStokes.CorrectionStep.CycleParameters.afterParticular / afterSigned, NavierStokes/CorrectionStep.lean:5042, 5066, add `particularVelocity`/`signedVelocity` as oscillation fields; the only wave-side clause in the invariant is `solenoidal : ∀ l, ModeSolenoidal …` (CorrectionStep.lean:9431). The mean side is explicit: VariableGaugeMean.temporalIncrementState:538 and rankIncrementState:571 use streamBeta/streamGamma of a potential.", "The repository states Proposition 9.6 as a preservation theorem for an explicit stage invariant along an explicitly constructed four-stage map. Every clause lines up: σ ↦ σ+1/10 gives both B_{j+1}=B_j+1/10 and C*_{j+1}=C*_j+1/10 because B=1/2+σ and C*=1+σ are the invariant's own exponents; (9.9) is `cumulative`+`wave`+`difference`, (9.10) is `masses`; the four corrections are the literal composition afterParticular→afterSigned→afterTemporal→afterRank, each followed by pressure reconstruction; the meridional mean increments are literally stream potentials and the azimuthal one is added directly. It is a reformulation, not a restatement, because Lean names the successor state instead of asserting existence, adds coherence and periodicity, and carries a largeness hypothesis on N0."],
           "findings": [
             {
-              "confidence": 0.78,
+              "confidence": 0.75,
               "contested": false,
               "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "next_runInvariant carries a largeness hypothesis `ActualCarrierGeometry.geometricThreshold ≤ N0` on the band-count parameter that has no counterpart in the paper's Proposition 9.6, which quantifies only over states at stage j."
+            },
+            {
+              "confidence": 0.6,
+              "contested": false,
+              "kind": "COVERAGE",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "The 'realized by their potentials' clause is absent from next_runInvariant's conclusion, which keeps only divergence-freeness. It holds definitionally for the mean increments and by separate curl theorems for the two wave increments."
-            },
-            {
-              "confidence": 0.85,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "(9.10) is preserved as ZeroMassesOn G.region.carrier, not at every slow point. The carrier is the chart's slow domain, on which every other bound of the invariant is also stated, so this is the paper's identity."
-            },
-            {
-              "confidence": 0.8,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean adds the hypothesis geometricThreshold ≤ N0 and uses a strengthened invariant (chart coherence, torus periodicity, pressure W_1, covariance M_1, flat errors). These encode construction parameters and Definition 9.4's 'as in Proposition 9.3'; the actual run satisfies them."
+              "summary": "Of the realization clause, the mean half is literal in the cycle (stream potentials for β and γ, direct azimuthal addition), but the wave half — increments as curls of their potentials — is not in next_runInvariant; the invariant records only per-mode solenoidality."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

@@ -1,0 +1,29 @@
+{
+  "id": "theorem-4.6/attributed/NavierStokes.PrimaryRepresentatives.compact_parameter_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryRepresentatives.compact_parameter_bounds",
+      "line": 358,
+      "module": "NavierStokes.PrimaryRepresentatives",
+      "path": "NavierStokes/PrimaryRepresentatives.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryRepresentatives.lean#L358"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryRepresentatives.compact_parameter_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: IsCompact K → ContinuousOn F → ContinuousOn g → (∀ q ∈ K, 0 < q.1) → (∀ q ∈ K, ReferenceCone (F q) (g q)) → ∃ M ≥ 1, ∀ q ∈ K, ParameterBounds M q.1 (F q) (g q). The stated infimum/supremum extraction behind clause (iii)'s uniform lower bounds."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 358,
+        "text": "theorem compact_parameter_bounds {K : Set Slow} (hK : IsCompact K)\n    {F : Slow → ℝ} {g : Slow → Plane} (hF : ContinuousOn F K) (hg : ContinuousOn g K)\n    (hR : ∀ q ∈ K, 0 < q.1) (hc : ∀ q ∈ K, ReferenceCone (F q) (g q)) :\n    ∃ M : ℝ, 1 ≤ M ∧ ∀ q ∈ K, ParameterBounds M q.1 (F q) (g q)"
+      }
+    }
+  }
+}

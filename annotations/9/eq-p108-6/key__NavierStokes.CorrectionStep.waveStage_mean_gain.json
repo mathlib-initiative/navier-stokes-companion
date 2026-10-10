@@ -1,0 +1,25 @@
+{
+  "id": "eq-p108-6/key/NavierStokes.CorrectionStep.waveStage_mean_gain",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionStep.waveStage_mean_gain",
+      "line": 9665,
+      "module": "NavierStokes.CorrectionStep",
+      "path": "NavierStokes/CorrectionStep.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L9665"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionStep.waveStage_mean_gain",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 9665,
+        "text": "let next := SignedMeanGain.waveStage G.gauge c u w q gaussian; MeanClass G.strip (1+σ-κ) (next.pressure-u.pressure) ∧ … ∧ MeanClass G.strip (1+σ-κ) (next.thetaResidual c) ∧ MeanClass G.strip (1+σ-κ) (next.axialResidual c) ∧ DefectBounds G.slowStrip (σ-κ) c next ∧ …"
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 159.4",
+  "status": "formalized",
+  "location": {
+    "page": 159,
+    "rect": [0.180655, 0.448497, 0.638737, 0.067886]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p159-4",
+      "locator": {
+        "physical": [159],
+        "printed": [159],
+        "text": "Display 159.4, p. 159, in the proof of Lemma C.1"
+      },
+      "region": "eq-p159-4@p159",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\langle t \\rangle_{\\theta'} = t_s, \\qquad P_c(t) \\ge P_c(t_s) - d_0 > 2, \\qquad V(\\mu, p_{s,2}) := \\langle (t - t_s)^2 \\rangle_{\\theta'} = \\frac{d_0^{\\,2}}{p_{s,2}^{\\,2}} \\left[ \\frac{M_e(2 \\mu p_{s,2})}{M_e(\\mu p_{s,2})^2} - 1 \\right]."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three identities are stated, each for the general family, but as separate theorems rather than one display; the only systematic change is again sin → cos (see eq-C.4). Clause by clause with m = t_s, d = d_0, p = p_{s,2}, P_c(t) = p₁ + p₂ t. (i) ⟨t⟩ = t_s is `expTilt_mean` / `extendedExpTilt_mean`, verbatim. (ii) The variance is `expTilt_variance`: (d/p)^2 (M_e(2μp)/M_e(μp)^2 - 1) is literally d_0^2/p_{s,2}^2 times the paper's bracket, with the same arguments 2μp and μp, the same square on the denominator and the same -1; `tiltVariance_formula` and `tiltVariance_eq_extended_integral` name this quantity V and extend it to p = 0 (`tiltVariance_zero_parameter` gives d^2μ^2/2, the paper's next sentence). (iii) P_c(t) ≥ P_c(t_s) - d_0 is `expTilt_projection_lower`, which gives the strict inequality p₁ + p₂ m - d < p₁ + p₂ t, hence slightly stronger than the paper's ≥; the paper's further \"> 2\" comes from its choice 0 < d_0 < ½ min(P_c(t_s) - 2), whereas Lean takes 2 ≤ p₁ + p₂ m - d as a hypothesis of `extendedExpTilt_projection_positive` and discharges it where the family is built (`exists_smooth_projected_tilt` sets d = (p₁ + p₂ m - 2)/2, NavierStokes/LoopVariance.lean:891). Conjoining the three Lean theorems is a one-line step, so this is packaging, not a mathematical difference.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

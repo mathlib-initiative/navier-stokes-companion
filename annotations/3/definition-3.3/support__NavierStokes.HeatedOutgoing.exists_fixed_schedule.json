@@ -15,6 +15,8 @@
         "id": "NavierStokes.HeatedOutgoing.exists_fixed_schedule",
         "kind": "theorem"
       },
+      "relation": "supporting",
+      "role": "support",
       "snippet": {
         "line": 886,
         "text": "theorem exists_fixed_schedule (P m : ℝ) (hP : 0 < P) (hm : 0 < m) :\n    ∃ lam B : ℝ, 0 < lam ∧ 0 < B ∧ ∀ h : ℝ, 0 < h → 2 * h < lam →\n      ∃ F : Profile, F.data.core.P = P ∧ F.data.core.m = m ∧\n        F.data.core.lam = lam ∧ F.data.h = h ∧ OutgoingProfile.Specification F B ∧\n        ∃ XR₀ C : ℝ, 0 < XR₀ ∧ 0 < C ∧ ∀ XR : ℝ, XR₀ ≤ XR →\n          ∃ w : CompensationWitness F XR C, Specification F XR w.coefficients"

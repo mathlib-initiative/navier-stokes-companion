@@ -1,0 +1,27 @@
+{
+  "id": "lemma-C.1/support/NavierStokes.ParametricModulation.exists_modulated_trueCone_profiles",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ParametricModulation.exists_modulated_trueCone_profiles",
+      "line": 580,
+      "module": "NavierStokes.ParametricModulation",
+      "path": "NavierStokes/ParametricModulation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean#L580"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ParametricModulation.exists_modulated_trueCone_profiles",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 580,
+        "text": "theorem exists_modulated_trueCone_profiles\n    (a m p₁ p₂ E U : RadialParameter → ℝ) (KX Kη : Set ℝ) (B : Set RadialParameter)\n    (hKX : IsCompact KX) (hKη : IsCompact Kη) (hB : IsCompact B) (hBK : B ⊆ KX ×ˢ Kη)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₁ : ContDiff ℝ ∞ p₁) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (haK : ∀ p ∈ KX ×ˢ Kη, 0 < a p)\n    (hPK : ∀ p ∈ KX ×ˢ Kη, 2 < p₁ p + p₂ p * m p)\n    (hrelaxed : ∀ p ∈ KX ×ˢ Kη, TrueConeLoop.nominalSpeed (a p) (m p) <\n      ConeAlgebra.coneBound (p₁ p + p₂ p * m p) (p₂ p - p₁ p * m p))\n    (htrueB : ∀ p ∈ B, 2 < TrueConeLoop.nominalSpeed (a p) (m p)) :\n    ∃ r : TrueConeRealization a m p₁ p₂ (KX ×ˢ Kη) B,\n      (∀ p ∈ KX ×ˢ Kη, ∀ θ, TrueConeLoop.InTrueCone (p₁ p) (p₂ p)\n        (r.angularLoop (p, θ)) (r.signedAxialLoop (p, θ))) ∧\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

@@ -17,52 +17,44 @@
       "region": "lemma-5.4@p057",
       "verdicts": [
         {
-          "confidence": 0.85,
-          "evidence": ["CONFIRMED_CONTENT: NavierStokes.GenericTupleRealization.Result, GenericTupleRealization.lean:48, fields tail_velocity (m ≤ J+2, loss max(cutLoss L (m+1), cutLoss L m)+1) and tail_scalars (m ≤ J+3, loss cutLoss L m)", "CONFIRMED_CONTENT: exists_angular_realization, GenericSummationRealization.lean:29, hypotheses hBq and haxial : q = fun w => Q (w.1, w.2 2); exists_realization, GenericTupleRealization.lean:80, hypotheses hdivB, htan", "CONFIRMED_CONTENT: Result.flat_residual_of_raw_bounds, GenericSummationRealization.lean:75, hypothesis hc : ∀ t ∈ P.terms, ContDiffOn ℝ ∞ t.1 U; Result.flat_residual_of_support_local_raw_bounds, GenericSupportLocalSummation.lean:105, hc only on U ∩ region t", "CONFIRMED_CONTENT: Import closure of NavierStokes.ComparatorSolution excludes GenericSummationRealization, GenericSupportLocalSummation, GenericTupleRealization; MixedCandidateAssembly.lean:67 StageEstimates.exists_schedule is in closure", "The auditor and both skeptics agree."],
+          "confidence": 0.84,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/GenericSummationRealization.lean:29 (exists_angular_realization, returning `Result` at GenericTupleRealization.lean:48) and NavierStokes/GenericSummationRealization.lean:75 (Result.flat_residual_of_raw_bounds, hypothesis `H : Result U q u0 s0 A B R g L a`)", "CONVENTION: NavierStokes/GenericTupleRealization.lean:88-89 (hbaseU, hbaseS as JetRate with exponent -K0 m); bridged by NavierStokes/GenericSummationRealization.lean:14 (base_rate_of_raw_log), which converts the logarithmic form to JetRate with K m + 1", "CONVENTION: NavierStokes/GenericTupleRealization.lean:83-84 (hBq : ‖iteratedFDeriv ℝ k q w‖ ≤ Bq k * q w ^ (1 - k)) and the identical hypothesis at GenericSummationRealization.lean:33-34", "The repository states Lemma 5.4 faithfully, in two pieces built on one shared `Result` record. Hypotheses (5.29)-(5.33) appear in essentially literal form, including Λ_log(q) = 1 + |log q|, the Ω_{aν} factor-support condition and the flat remainder E_{J,m} of (5.33). The conclusion is stronger than the paper's on several axes: integer scales, tail bounds for m ≤ J+2 (J+3 for scalars) rather than m ≤ J, an arbitrary Fintype of scalar entries, and the extra (5.40) test weights. The differences are re-encodings: the isotropic replacement of (5.28), the log-free base bound (bridged by base_rate_of_raw_log), and the split of the lemma into construction plus residual flatness. I found nothing stated more weakly than the paper and nothing missing."],
           "findings": [
             {
-              "confidence": 0.85,
+              "confidence": 0.88,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Lean bounds the single-order Fréchet derivative ‖iteratedFDeriv ℝ m ·‖, not the paper's max over all partials of order ≤ m. Recovery uses monotone cutLoss, q<1/2 and partial ≤ operator norm; the tuple's Euclidean norm costs one fixed power."
+              "summary": "No single declaration states Lemma 5.4. The construction with (5.34)/(5.35) is `exists_angular_realization`; the residual conclusion (5.36) is the separate `Result.flat_residual_of_raw_bounds`, which takes that same `Result` as its first argument."
             },
             {
-              "confidence": 0.85,
+              "confidence": 0.92,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
+              "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Lean replaces (5.28), |∂_z^a∂_t^b q| ≤ Cq^{1−aD−b}, with the isotropic ‖D^k q‖ ≤ B_k q^{1−k}. The general version also drops q = q(z,t) and assumes div B_j = 0 and tangency instead."
+              "summary": "In the tuple version, the base bound on U_0 is assumed without the paper's log factor: `JetRate … u0 m (-K0 m)` rather than C_m q^{-K_m}Λ_log(q)^{P_m}. The repository supplies the conversion itself."
             },
             {
-              "confidence": 0.85,
+              "confidence": 0.9,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
+              "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The lemma is split in two: existence of a with Result, then (5.36) for any a satisfying Result. The cut-support hypothesis is required only for that a. The non-support-local variant also needs every coefficient smooth on all of U."
-            },
-            {
-              "confidence": 0.85,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "The generic Lemma 5.4 declarations are outside ComparatorSolution's import closure; the main theorem uses specialised summation (StageEstimates.exists_schedule with the Navier–Stokes residual) instead of this general statement."
+              "summary": "Hypothesis (5.28) is replaced by the isotropic bound ‖D^k q‖ ≤ B_k q^{1-k} over all space-time directions, dropping the anisotropy parameter D. This weakens the hypothesis, so the Lean theorem is the more general one."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "lean_stronger",
+          "relation": "different_formulation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states a stronger result.",
+          "summary": "Lean states it in a different formulation.",
           "verdict": "faithful"
         }
       ]

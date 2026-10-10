@@ -1,0 +1,23 @@
+{
+  "id": "eq-8.23/key/NavierStokes.TemporalMeanUpdate.absoluteInverse_coverMap",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TemporalMeanUpdate.absoluteInverse_coverMap",
+      "line": 246,
+      "module": "NavierStokes.TemporalMeanUpdate",
+      "path": "NavierStokes/TemporalMeanUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L246"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TemporalMeanUpdate.absoluteInverse_coverMap"
+      },
+      "snippet": {
+        "line": 246,
+        "text": "theorem absoluteInverse_coverMap {f : Plane → ℂ} (hf : ContDiff ℝ ∞ f) (hp : SmoothFourierData.UnitPeriodic f) (hm : TorusAverages.squareAverage f = 0) (n : ℕ) : absoluteInverse (fun z => f (coverMap n z)) = fun z => (ChartScales.Tg ^ n)⁻¹ • absoluteInverse f (coverMap n z)"
+      }
+    }
+  }
+}

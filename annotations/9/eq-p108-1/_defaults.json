@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 108.1",
+  "status": "formalized",
+  "location": {
+    "page": 108,
+    "rect": [0.343294, 0.303514, 0.313629, 0.025482]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-p108-1",
+      "locator": {
+        "physical": [108],
+        "printed": [108],
+        "text": "Display 108.1, p. 108, in the proof of Proposition 9.6"
+      },
+      "region": "eq-p108-1@p108",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: w + \\Delta w, \\qquad (\\beta + \\Delta\\beta,\\; v + \\Delta v,\\; \\gamma + \\Delta\\gamma)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same update, written on a richer record. The paper's display replaces the wave field w by w+Δw and the mean triple (β,v,γ) by (β+Δβ, v+Δv, γ+Δγ). Lean's `State.addIncrement` performs exactly this: `oscillation := s.oscillation + u` is w ↦ w+Δw, and `mean := updated s.mean m` is the componentwise (radial, angular, axial) = (β, v, γ) addition of `MeanIncrementBounds.updated`. The rewriting is the dictionary oscillation↔w, mean.radial↔β, mean.angular↔v, mean.axial↔γ. Lean's record carries three further slots (pressure, oscillatoryPressure, errors) that the paper updates in separate displays on this page (the pressure one is eq-p108-2); taking those three increments to be 0 reduces `addIncrement` to the displayed formula exactly. No sign, factor or index differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "definition-9.4/support/NavierStokes.CorrectionStep.temporalIncrement_meanDivergence_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionStep.temporalIncrement_meanDivergence_zero",
+      "line": 1642,
+      "module": "NavierStokes.CorrectionStep",
+      "path": "NavierStokes/CorrectionStep.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L1642"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionStep.temporalIncrement_meanDivergence_zero",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1642,
+        "text": "theorem temporalIncrement_meanDivergence_zero (p : ReconstructionData) (h : ℝ)\n    (axial slowTime : S × PressureStream.Plane) (temporal : PressureStream.Plane)\n    (c : Context (PressureStream.Lift S)) (u : State (PressureStream.Lift S))\n    (ha : 0 < p.inner) (hd : 0 < p.exponent)\n    (hcompat : c.operators = graphOperators p c.operators.epsilon c.operators.fastCoefficient\n      axial slowTime temporal)\n    (hz : ∀ n, ContDiff ℝ ∞ (u.axialResidual c n))\n    (hpz : ∀ n, PressureStream.TorusPeriodicLift (u.axialResidual c n))\n    (hsz : ∀ n, RadialAlias.RadiallySupported p.inner p.outer (u.axialResidual c n))\n    (n : ℕ) (x : PressureStream.Lift S) :\n    meanDivergence c (temporalIncrement p h axial c u) n x = 0"
+      }
+    }
+  }
+}

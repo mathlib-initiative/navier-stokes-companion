@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.4/attributed/NavierStokes.ModulatedExterior.pressure_equal_after",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ModulatedExterior.pressure_equal_after",
+      "line": 61,
+      "module": "NavierStokes.ModulatedExterior",
+      "path": "NavierStokes/ModulatedExterior.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedExterior.lean#L61"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ModulatedExterior.pressure_equal_after",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: The Delta Pi = Delta C_p = 0 clause in the Profiles layer: with a common pressure0 datum, equal anchored primitive of f^2 at (B,eta), and f equal on Icc B X at eta, the two pressures agree at (X,eta). Needs (r,eta) in both carriers for every r in Icc 0 X, i.e. down to and including the axis.",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 61,
+        "text": "theorem pressure_equal_after {D D' : ProfileHistories.RadialDomain}\n    (P : ProfileHistories.Profiles D) (Q : ProfileHistories.Profiles D')\n    {B X eta : ℝ} (hB : 0 ≤ B) (hX : B ≤ X)\n    (hP : ∀ r ∈ Icc 0 X, (r, eta) ∈ D.carrier)\n    (hQ : ∀ r ∈ Icc 0 X, (r, eta) ∈ D'.carrier)\n    (h0 : P.pressure0 = Q.pressure0)\n    (hanchor : ProfileHistories.primitive (fun w => P.f w ^ 2) (B, eta) =\n      ProfileHistories.primitive (fun w => Q.f w ^ 2) (B, eta))\n    (htail : ∀ r ∈ Icc B X, P.f (r, eta) = Q.f (r, eta)) :\n    P.pressure (X, eta) = Q.pressure (X, eta)"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "proposition-9.6/attributed/NavierStokes.ActualCyclePreservation.state_runInvariant",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCyclePreservation.state_runInvariant",
+      "line": 826,
+      "module": "NavierStokes.ActualCyclePreservation",
+      "path": "NavierStokes/ActualCyclePreservation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean#L826"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCyclePreservation.state_runInvariant",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (hN : geometricThreshold ≤ N0) (j : ℕ) : RunInvariant (ActualIterationLedger.sigma j) (state B N0 j) — the induction over j, discharging hσ by sigma_admissible; this is the iterated form of Proposition 9.6.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 826,
+        "text": "theorem state_runInvariant (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (j : ℕ) :\n    RunInvariant (ActualIterationLedger.sigma j) (state B N0 j)"
+      }
+    }
+  }
+}

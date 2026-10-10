@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.1/attributed/NavierStokes.PrimaryMaterialDefect.defect_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryMaterialDefect.defect_class",
+      "line": 379,
+      "module": "NavierStokes.PrimaryMaterialDefect",
+      "path": "NavierStokes/PrimaryMaterialDefect.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryMaterialDefect.lean#L379"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryMaterialDefect.defect_class",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For a `PrimaryPulseBounds.PhaseConstruction U` P (the record produced by FamilyData.construction), native chart coordinates χ, and radial base b of unweighted class 1, the material defect of the wave coefficients built from P's phase lies in `UnweightedClass s 1`. By `finite_jet_bounds` that unfolds"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 379,
+        "text": "theorem defect_class (P : PrimaryPulseBounds.PhaseConstruction U)\n    (s : StripData E) (d : GraphDirections E) (χ : ℕ → E → Slot) (b : ℕ → Slow → ℝ)\n    (amplitude : ℕ → E → HarmonicCalculus.ComplexVector)\n    (pressure : ℕ → E → ℂ) (frequency : ℕ → ℝ)\n    (hχ : NativeCoordinates s d χ)\n    (hslow : PhaseJetBounds.PolynomialJets (PrimaryPulseBounds.phaseDomain s) (fun n x => (χ n x).1))\n    (hslot : UnweightedClass s 0 (fun n x => (χ n x).2.2))\n    (hscale : ∀ n, U.scale n = s.slow n)\n    (hmap : ∀ n, MapsTo (fun x => (χ n x).1) s.domain (U.carrier n))\n    (heps : ∀ n, P.phase.epsilon n = s.epsilon n)\n    (hR : ∀ n x, x ∈ s.domain → 0 < (χ n x).1.1)\n    (hb : UnweightedClass s 1 (fun n x => b n (χ n x).1)) :\n    UnweightedClass s 1 ((coefficients P b χ amplitude pressure frequency).defect s d)"
+      }
+    }
+  }
+}

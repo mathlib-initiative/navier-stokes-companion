@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.7)",
+  "status": "formalized",
+  "location": {
+    "page": 106,
+    "rect": [0.16491, 0.274704, 0.703272, 0.023539]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.7",
+      "locator": {
+        "physical": [106],
+        "printed": [106],
+        "text": "Equation (9.7), p. 106, in section 9.3"
+      },
+      "region": "eq-9.7@p106",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: u_* = (b + \\beta,\\; V + v,\\; G + \\gamma) + w, \\qquad p_* = p_{B,*} + p_m + p_w, \\qquad \\langle w \\rangle_\\theta = \\langle p_w \\rangle_\\theta = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The velocity half of (9.7) is literal: `totalVelocity` is componentwise (b+β, V+v, G+γ) + w, with the base triple from the Context, the mean triple (β,v,γ) and the oscillation w in the same radial/angular/axial order. The pressure half is split: a Lean `State` stores only the increment, so `totalPressureIncrement` is p_m + p_w and the fixed base pressure p_{B,*} is a separate summand `p₀` restored at the physical bridge, where the pressure handed to the Navier–Stokes residual is `p₀ y + s.totalPressureIncrement n y` = p_{B,*} + p_m + p_w. The two angular-mean conditions ⟨w⟩_θ = ⟨p_w⟩_θ = 0 are not fields of the same definition; they are the `oscillation_mean_zero` and `oscillatoryPressure_mean_zero` fields of `MeanHypotheses`, which the stage invariant carries (field `meanHypotheses` of `CycleAnalyticInvariant`), and `angularAverage` is the θ-average over [0, 2π] divided by 2π, i.e. ⟨·⟩_θ.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

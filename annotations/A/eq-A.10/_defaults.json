@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.10)",
+  "status": "formalized",
+  "location": {
+    "page": 130,
+    "rect": [0.142964, 0.372523, 0.726098, 0.023772]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.10",
+      "locator": {
+        "physical": [130],
+        "printed": [130],
+        "text": "Equation (A.10), p. 130, in section A.2"
+      },
+      "region": "eq-A.10@p130",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\log E = \\log e_{\\mathrm{end}} - (1/2+\\lambda)y - \\vartheta_f(y)J_0 - \\bigl(1-\\vartheta_f(y)\\bigr)\\log 2, \\qquad \\vartheta_f(y) = 1 - \\sigma(y/T_f)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean prescribes E in exponentiated product form instead of as log E; the two agree term by term after taking logarithms. Writing ŷ = y - d.core.endpoint (the paper's y, measured from pulse end X_end) and s = σ(ŷ/flattenLength): flattened = radialAmplitude(y)·shape η·exp(s(J_0 - log 2)) with shape η = (1+η²)⁻¹ = e^{-J_0}, so log E = log radialAmplitude(y) - (1-s)J_0 - s·log 2; with ϑ_f = 1 - s = 1 - σ(ŷ/T_f) these are exactly the paper's last two terms. radialAmplitude_hold (applicable since endpoint ≥ holdStart = dropLength + 2) gives log radialAmplitude(y) = log radialAmplitude(endpoint) - (1/2+λ)ŷ, and radialAmplitude(endpoint)·shape η is E(X_end,η) = e_end f, so log e_end = log radialAmplitude(endpoint). The two endpoint checks are proved separately: flattenFactor_before (ϑ_f = 1 at ŷ ≤ 0) and flattened_uniform (ϑ_f = 0 past flattenEnd = endpoint + T_f, where E = radialAmplitude/2, the paper's 'decreases to the constant 1/2'). Only choice made: the paper leaves T_f 'A fixed sufficiently large T_f'; the Lean fixes T_f = flattenLength = 10(stepBound+1)log 2 + 1, where stepBound is a proved bound on σ', and proves the paper's consequence -λ - 1/10 ≤ l ≤ -λ from it (flatteningSlope, flatteningSlope_bounds, OutgoingTail.lean:842 and 846).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

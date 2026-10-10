@@ -1,0 +1,29 @@
+{
+  "id": "corollary-8.5/attributed/NavierStokes.LocalSignedRequest.physicalSigma_fiber_congr",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalSignedRequest.physicalSigma_fiber_congr",
+      "line": 796,
+      "module": "NavierStokes.LocalSignedRequest",
+      "path": "NavierStokes/LocalSignedRequest.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean#L796"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalSignedRequest.physicalSigma_fiber_congr",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The same fibrewise congruence for the physically scaled primitive on the moving shell."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 796,
+        "text": "theorem physicalSigma_fiber_congr (P : SignedStressPrimitive.Patch) (e : ℕ)\n    {q : S → ℝ} {q' : T → ℝ} {f : ℝ × S → ℝ} {g : ℝ × T → ℝ}\n    {s : S} {t : T} (hq : q s = q' t) (he : ∀ r, f (r, s) = g (r, t)) (r : ℝ) :\n    SignedStressPrimitive.physicalSigma P e q f (r, s) =\n      SignedStressPrimitive.physicalSigma P e q' g (r, t)"
+      }
+    }
+  }
+}

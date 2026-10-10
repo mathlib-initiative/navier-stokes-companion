@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 69.4",
+  "status": "partial",
+  "location": {
+    "page": 69,
+    "rect": [0.357704, 0.649539, 0.284814, 0.029791]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p069-4",
+      "locator": {
+        "physical": [69],
+        "printed": [69],
+        "text": "Display 69.4, p. 69, in the statement of Proposition 6.6"
+      },
+      "region": "eq-p069-4@p069",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\partial^I a = \\partial_R^{I_1}\\partial_Z^{I_2}\\partial_T^{I_3}\\partial_{H_1}^{I_4}\\partial_{H_2}^{I_5} a, \\qquad I \\in \\mathbb{N}_0^5 ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No multi-index partial-derivative notation ∂^I was found anywhere in the NavierStokes namespace: the Lean measures regularity with the total Fréchet jet ‖iteratedFDeriv ℝ j (f n) x‖ and quantifies over the order j ≤ m, not over a five-component multi-index. The chart's five real coordinates do exist (LocalSignedRequest.Point = ℝ × ((ℝ×ℝ) × (ℝ×ℝ)), with the slow pair (Z,T) and harmonic pair (H₁,H₂) read off by BaseContextAssembly.slowCoordinates), so the paper's I ∈ ℕ₀⁵ has a referent, but MemClass itself is stated for an abstract normed space D and never names R, Z, T, H₁, H₂. The two encodings are interchangeable in the direction the paper uses — ‖∂^I a‖ ≤ ‖iteratedFDeriv ℝ |I| a‖ for every multi-index I of length |I|, since each coordinate partial is an evaluation of the |I|-linear iterated derivative on unit basis vectors — so the Lean bound is at least as strong as the paper's per-multi-index bound at the same order. I did not find a Lean lemma stating that comparison, and the converse direction (reconstituting the iterated-Fréchet norm from the coordinate partials) costs a dimensional constant; since this display only fixes notation for the bounds (6.24), (6.25) and (6.29), which the Lean states in its own notation, the surrounding results are still proved. Recorded as packaging/notation, not a mathematical gap.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

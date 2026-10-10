@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.32)",
+  "status": "formalized",
+  "location": {
+    "page": 71,
+    "rect": [0.366992, 0.58997, 0.501191, 0.10579]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-6.32",
+      "locator": {
+        "physical": [71],
+        "printed": [71],
+        "text": "Equation (6.32), p. 71, in the statement of Proposition 6.6"
+      },
+      "region": "eq-6.32@p071",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\begin{array}{c|c} \\text{operator} & \\text{mapping} \\\\ \\hline \\partial_{R,Z,T} & \\mathcal{C}_\\alpha \\longrightarrow \\mathcal{C}_\\alpha \\\\ D_r & \\mathcal{C}_\\alpha \\longrightarrow \\mathcal{C}_{\\alpha-\\kappa_s} \\\\ D_z = \\varepsilon\\partial_Z & \\mathcal{C}_\\alpha \\longrightarrow \\mathcal{C}_{\\alpha+1} \\\\ Q^{1+h} N_{\\mathrm{abs}} = c_{i_0} N_{i_0} & \\mathcal{C}_\\alpha \\longrightarrow \\mathcal{C}_\\alpha \\\\ -\\varepsilon\\partial_T & \\mathcal{C}_\\alpha \\longrightarrow \\mathcal{C}_{\\alpha+1} \\end{array}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every row has a Lean lemma with the same exponent shift, but the table is five separate lemmas rather than one statement, and two clauses of the surrounding sentence are not carried. Row 1 is `MemClass.directional` (and `Dt_mem` for ∂_T): a fixed directional derivative keeps α. Row 2 is `Dr_mem` (mean-coefficient form `OperatorBounds.dr`): the paper's fixed κ_s appears as an abstract κ ≥ 0 fixed by BandBound s (−κ) on the radial frequency, so the Lean is parametric where the paper names the chart exponent. Row 3 is `Dz_mem`, with D_z realised as the directional derivative along ε·e_Z and the gain +1 coming from BandBound s 1 ε. Row 4 is `Dfast_mem` (mean form `OperatorBounds.fastTime`): the fast-time operator with a coefficient of band exponent 0 keeps α; the operator identity Q^{1+h}N_abs = c_{i_0}N_{i_0} is not proved as an identity, Lean has a single `fastTime` operator carrying a band-bounded coefficient. Row 5 is `OperatorBounds.slowTime`, which includes the minus sign and gives α+1. The general lemmas are stated for `MemClass s w α` with an arbitrary weight w, so they cover the paper's 'C ∈ {M, W}' uniformly (the `OperatorBounds` versions are mean-only). Not carried: the sentence's claim that these operators also preserve (6.20), the common-torus compatibility, has no counterpart, since `MemClass` has no descent clause.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

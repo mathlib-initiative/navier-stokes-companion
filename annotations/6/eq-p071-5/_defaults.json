@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 71.5",
+  "status": "partial",
+  "location": {
+    "page": 71,
+    "rect": [0.369018, 0.51459, 0.262181, 0.02644]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p071-5",
+      "locator": {
+        "physical": [71],
+        "printed": [71],
+        "text": "Display 71.5, p. 71, in the statement of Proposition 6.6"
+      },
+      "region": "eq-p071-5@p071",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: (\\partial^I w_\\gamma)(\\partial^J w_{\\gamma'}) = 0 \\qquad (\\gamma \\neq \\gamma')."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration stating the product for an arbitrary pair of derivative multi-indices I, J was found. Lean states the undifferentiated cross-label vanishing: `supported_cross_product_zero` gives u_l(x,θ)_i · v_k(x,θ)_j = 0 whenever label n l ≠ label n k (level ≥ 1), from disjoint slot supports, and `supported_product_germ` upgrades it to vanishing on a whole neighbourhood. Derivatives enter only where the fields are used: `supported_transport_zero` (via `transport_zero_of_product_germ`) kills cross-label advection, but the cylindrical transport operator differentiates the right factor only, so the case I ≠ 0 and J ≠ 0 simultaneously is never stated. The paper's form does follow from the germ form for smooth fields: {u ≠ 0} is open and v ≡ 0 there, so at a point x either a neighbourhood has u ≡ 0, whence ∂^I u(x) = 0, or x lies in the closure of an open set on which v ≡ 0, whence ∂^J v(x) = 0 by continuity of the derivatives; with the disjoint-tsupport hypothesis of `zero_germ_of_disjoint_on` this is a two-line argument. Rated low because the cross-label cancellation the paper draws from this line is what the Lean proves, by the germ route.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/attributed/NavierStokes.EntranceAlignedBase.modulated_all_stress_support",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.EntranceAlignedBase.modulated_all_stress_support",
+      "line": 927,
+      "module": "NavierStokes.EntranceAlignedBase",
+      "path": "NavierStokes/EntranceAlignedBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L927"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.EntranceAlignedBase.modulated_all_stress_support",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: radialSupport (Icc (-1) 1) (activeLeft W) (activeRight W) for the stresses of every order n, including n = 0: the coarser [X_a, X_b] confinement.",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 927,
+        "text": "theorem modulated_all_stress_support (n : ℕ) :\n    SlowStressSupport.radialSupport (Icc (-1 : ℝ) 1) (NominalConeAssembly.activeLeft W)\n      (NominalConeAssembly.activeRight W) ((modulatedCoefficients H v).stressTheta n) ∧\n    SlowStressSupport.radialSupport (Icc (-1 : ℝ) 1) (NominalConeAssembly.activeLeft W)\n      (NominalConeAssembly.activeRight W) ((modulatedCoefficients H v).stressAxial n)"
+      }
+    }
+  }
+}

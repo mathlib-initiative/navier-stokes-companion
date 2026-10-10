@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/attributed/NavierStokes.GlobalSlowProfiles.profiles_x_pressure_derivative",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_x_pressure_derivative",
+      "line": 1701,
+      "module": "NavierStokes.GlobalSlowProfiles",
+      "path": "NavierStokes/GlobalSlowProfiles.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1701"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GlobalSlowProfiles.profiles_x_pressure_derivative",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: HasDerivAt for the pressure in the radial variable with the value prescribed by (5.5): Pi_n' = C^{-2} sum phi_i phi_j - Omega_{n-1}/(2X), globally in X.",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1701,
+        "text": "theorem profiles_x_pressure_derivative {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    {n : ℕ} (hn : 0 < n) {w : ℝ × ℝ} (hX : 0 < w.1) (heta : w.2 ∈ S) :\n    SimilarityProfile.partialX (xProfile (profiles s n).pressure) w =\n      xProfile (pressureSource C (fun j => (profiles s j).phi)\n        (previousOmegaDivX s.domain (fun j => (profiles s j).axial) (fun j => (profiles s j).beta) n) n) w"
+      }
+    }
+  }
+}

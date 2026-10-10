@@ -1,0 +1,31 @@
+{
+  "id": "corollary-10.6/attributed/NavierStokes.Comparator.navier_stokes_breakdown_periodic",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.Comparator.navier_stokes_breakdown_periodic",
+      "line": 23,
+      "module": "NavierStokes.ComparatorSolution",
+      "path": "NavierStokes/ComparatorSolution.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ComparatorSolution.lean#L23"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.Comparator.navier_stokes_breakdown_periodic",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clay alternative (D): ∃ u₀ f with InitialVelocityConditionPeriodic, ForceConditionPeriodic and no NavierStokesExistenceAndSmoothnessPeriodic. This is the consequence the paper draws from the corollary ('gives the periodic breakdown alternative (D)'), not the corollary itself: it drops the explicit b",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 23,
+        "text": "theorem navier_stokes_breakdown_periodic (nu : ℝ) (hnu : nu > 0) :\n    ∃ (u₀ : ℝ³ → ℝ³) (f : ℝ³ → ℝ → ℝ³),\n    InitialVelocityConditionPeriodic u₀ ∧ ForceConditionPeriodic f ∧\n    ¬ (∃ v p, NavierStokesExistenceAndSmoothnessPeriodic nu u₀ f v p)"
+      }
+    }
+  }
+}

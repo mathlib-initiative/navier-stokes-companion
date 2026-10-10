@@ -1,0 +1,26 @@
+{
+  "id": "eq-5.29/key/NavierStokes.GenericTupleRealization.incrementComponents",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GenericTupleRealization.incrementComponents",
+      "line": 17,
+      "module": "NavierStokes.GenericTupleSupport",
+      "path": "NavierStokes/GenericTupleSupport.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericTupleSupport.lean#L17"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GenericTupleRealization.incrementComponents",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "role": "key",
+      "snippet": {
+        "line": 17,
+        "text": "incrementComponents A B R (j : ℕ) : Fin 3 ⊕ κ → PressureField | .inl i => fun w => (SpatialCurl.spatialCurl (positiveStages A j) w + positiveStages B j w) i | .inr k => positiveStages (R k) j"
+      }
+    }
+  }
+}

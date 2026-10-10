@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.30)",
+  "status": "formalized",
+  "location": {
+    "page": 84,
+    "rect": [0.36819, 0.160068, 0.500877, 0.041272]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.PartitionedCovariance",
+      "path": "NavierStokes/PartitionedCovariance.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.30",
+      "locator": {
+        "physical": [84],
+        "printed": [84],
+        "text": "Equation (7.30), p. 84, in section 7"
+      },
+      "region": "eq-7.30@p084",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\sum_{\\beta=(\\ell,a)} Q^{-2A}\\,\\eta_\\beta^{2}\\,\\varepsilon\\,\\mathcal{T}_{0,*} \\;=\\; q^{-A-1/2}\\,\\mathcal{T}_{0}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The rewriting: `assembled_covariance` (PartitionedCovariance.lean:890) turns the left side of `physical_primary_covariance` into ∑ᶠ U, outer U ^ 2 * ε U * mask ^ 2 * T U i; instantiated at physicalOuter = Q^{-A}, physicalViscosity = ε = Q^h and chartTarget = (Q/q)^{A+1/2} T0 this is literally ∑_β Q^{-2A} η_β^2 ε T_{0,*}, and the theorem's right side is q^{-A-1/2} T0. Chaining the two gives the paper's identity; the chaining is done verbatim inside the proof (line 957). Encoding differences, all checked: (i) UnsignedLabel := ℕ × SlotColoring.Grid (PartitionedCovariance.lean:580), i.e. the paper's β = (ℓ,a), band index times slow box, so the index set agrees; (ii) the identity is stated one component at a time (i : Fin 2) rather than as a two-vector; (iii) the Lean sum is a `finsum` over the bands U.1 + N from a fixed N ≥ 1 with the hypothesis q ≤ Q N, which is what makes the cutoff sum ∑_β η_β^2 = 1 used by the paper hold (`physical_mask_tail_sum_sq`, applied at line 975); (iv) the left side is the actual double average of the assembled radial/tangential wave product, so the Lean proves the covariance identity the display abbreviates, under the strict-cone hypothesis on every active label.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 124.7",
+  "status": "formalized",
+  "location": {
+    "page": 124,
+    "rect": [0.162141, 0.802561, 0.675942, 0.035794]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p124-7",
+      "locator": {
+        "physical": [124],
+        "printed": [124],
+        "text": "Display 124.7, p. 124, in the proof of Theorem 1.1"
+      },
+      "region": "eq-p124-7@p124",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: v(y,t) = \\nu^{-1/2} v_{\\nu}(\\sqrt{\\nu}\\,y,\\,t), \\qquad P(y,t) = \\nu^{-1} P_{\\nu}(\\sqrt{\\nu}\\,y,\\,t), \\qquad \\|v(t)\\|_2^2 = \\nu^{-5/2}\\,\\|v_{\\nu}(t)\\|_2^2."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three formulas are present, reached by instantiating general lemmas rather than written out. In normalized_global_solution the competitor at viscosity ν is pushed through rescale_global_solution with a = (√ν)⁻¹: the velocity field is rescale a a⁻¹ v_ν = fun z => ν^{-1/2} • v_ν (z.1, √ν • z.2), which is the paper's v(y,t) = ν^{-1/2} v_ν(√ν y, t) after inv_inv and (√ν)⁻¹ = ν^{-1/2} (ν > 0); the pressure field is rescale (a²) a⁻¹ P_ν = fun z => ν^{-1} • P_ν (z.1, √ν • z.2), the paper's P(y,t) = ν^{-1} P_ν(√ν y, t). The resulting viscosity is a²·ν = 1 (hcoef), matching the paper's 'viscosity-one competitor'. The energy identity follows from kineticEnergy_spatial_smul at a = ν^{-1/2}, b = √ν: ‖a‖² · |(b³)⁻¹| = ν^{-1} · ν^{-3/2} = ν^{-5/2}, the paper's factor; Lean's kineticEnergy has a 1/2 that cancels on both sides. Notational differences only: Lean orders spacetime as (t, x); the Lean pipeline uses the inequality form UniformFiniteEnergy.spatial_smul where the paper states the exact identity, the exact identity being available as kineticEnergy_spatial_smul; and the paper writes the competitor pressure as capital P_ν here against lowercase p_ν in (10.22).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

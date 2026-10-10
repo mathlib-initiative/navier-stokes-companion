@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 136.3",
+  "status": "formalized",
+  "location": {
+    "page": 136,
+    "rect": [0.232781, 0.403839, 0.534652, 0.042853]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.PulseCone",
+      "path": "NavierStokes/PulseCone.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p136-3",
+      "locator": {
+        "physical": [136],
+        "printed": [136],
+        "text": "Display 136.3, p. 136, in section A.5"
+      },
+      "region": "eq-p136-3@p136",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: w = 2R_b - C_d \\partial_{\\xi_b} R_b + o(1), \\qquad C_d = \\frac{\\lambda(D + c_\\eta)(1-\\lambda)}{\\beta^{2}(\\lambda - h + c_\\eta)} \\le 2 + o(1)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The C_d formula is literal: λ(D + c_η)(1 − λ)/(β²(λ − h + c_η)) with D = 1/2 − h, c_η = geometricSource, β = decay = 1/2 − λ, λ − h + c_η = equilibriumNumerator — `derivativeCoefficient` is character-for-character that quotient. The expression 2R_b − C_d ∂_{ξ_b}R_b is `idealDirection` exactly. Three routine rewritings. (i) The `+ o(1)` is made quantitative: |w − idealDirection| ≤ componentConstant(P,m,A)·coneRate λ with coneRate λ = λ + √λ(1+log(1/λ)) → 0 (coneRate_tendsto_zero). (ii) `C_d ≤ 2 + o(1)` is rendered as the concrete C_d ≤ 2001/1000 under the explicit thresholds λ ≤ 10^-5 and h ≤ λ·10^-5, rather than as a limit; that is the numerical form the later margin 2.001·1.2 ≤ 2.41 of the next display needs. (iii) R_b in `idealDirection` is mainRatio = amp·mainPulse(λy), the main pulse without the exponentially small end-bump corrections; the paper likewise sets those aside ('Apart from exponentially small end bumps'). The passage from the exact coefficient (1 − λ)/β on R_b in `mainDirection` (PulseCone.lean:1039) to the paper's 2 costs directionMainErrorConstant·λ (mainDirection_ideal_error, PulseCone.lean:1585), absorbed in the same o(1), since (1 − λ)/(1/2 − λ) = 2 + 2λ/(1 − 2λ).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

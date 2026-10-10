@@ -1,0 +1,29 @@
+{
+  "id": "definition-9.4/attributed/NavierStokes.ActualCyclePreservation.state_invariant",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCyclePreservation.state_invariant",
+      "line": 835,
+      "module": "NavierStokes.ActualCyclePreservation",
+      "path": "NavierStokes/ActualCyclePreservation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean#L835"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCyclePreservation.state_invariant",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `theorem state_invariant (B N0 : Nat) (hN : ActualCarrierGeometry.geometricThreshold <= N0) (j : Nat) : Invariant (ActualIterationLedger.sigma j) (state B N0 j)` (ActualCyclePreservation.lean:835-838): under the carrier hypothesis hN on N0, for every j the j-th iterate is a state in the above sense "
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 835,
+        "text": "theorem state_invariant (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (j : ℕ) :\n    Invariant (ActualIterationLedger.sigma j) (state B N0 j)"
+      }
+    }
+  }
+}

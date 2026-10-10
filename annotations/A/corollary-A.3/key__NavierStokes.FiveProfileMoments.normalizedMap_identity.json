@@ -1,0 +1,30 @@
+{
+  "id": "corollary-A.3/key/NavierStokes.FiveProfileMoments.normalizedMap_identity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FiveProfileMoments.normalizedMap_identity",
+      "line": 356,
+      "module": "NavierStokes.FiveProfileMoments",
+      "path": "NavierStokes/FiveProfileMoments.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L356"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FiveProfileMoments.normalizedMap_identity",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: linearEquiv P b hb c + quadraticCLM P c c = normalizedMap P b c: the normalized five-moment change map is exactly B c + Q(c,c), a linear term plus one bilinear term with no remainder — the form (A.2).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "role": "key",
+      "snippet": {
+        "line": 356,
+        "text": "theorem normalizedMap_identity (P : Patch) (b : ℝ) (hb : GoodExponent b) (c : Coeff) :\n    linearEquiv P b hb c + quadraticCLM P c c = normalizedMap P b c"
+      }
+    }
+  }
+}

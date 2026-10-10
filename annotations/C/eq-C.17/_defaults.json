@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (C.17)",
+  "status": "formalized",
+  "location": {
+    "page": 163,
+    "rect": [0.258714, 0.163001, 0.609469, 0.026516]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-C.17",
+      "locator": {
+        "physical": [163],
+        "printed": [163],
+        "text": "Equation (C.17), p. 163, in the proof of Proposition C.2"
+      },
+      "region": "eq-C.17@p163",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\widetilde{\\mathfrak{m}}(X_{\\mathrm{rep}}, \\eta) = \\mathfrak{m}(X_{\\mathrm{rep}}, \\eta), \\qquad (\\widetilde{E}, \\widetilde{U}) = (E, U) \\quad \\text{for } X \\ge X_{\\mathrm{rep}}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. The paper asserts moment equality at the single radius X_rep and field equality (Ẽ, Ũ) = (E, U) on X ≥ X_rep. Lean states both on the whole closed range: rows_outside and the clause at ModulatedProfileJetRates.lean:387 give profileRows R (X, η) = profileRows Q (X, η) for every X ≥ the right endpoint of the repair patch, and fields_outside gives f and U equality on the entire complement of the open modulation interval, so in particular at X_rep itself and to its left of the patch as well. Each implies the paper's clause by instantiating X := X_rep (first clause) or restricting to X ≥ X_rep (second). The recovery is in that direction only: the paper derives the X > X_rep moment equality from the X = X_rep equality plus the field equality by integrating the transport relation outward, while Lean proves the integrated form directly. Recorded here as stronger, not as a defect. One encoding note, verified: the structure field that literally carries this property, ModulatedProfileAssembly.Witness.restored (:443), is a projection and does not appear in the declaration index, so the indexed consequences rows_outside / fields_outside / exterior_pressure are cited in its place; I read the field at its source line.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -18,23 +18,15 @@
       "verdicts": [
         {
           "confidence": 0.88,
-          "evidence": ["ATTRIBUTION_GAP: NavierStokes.LocalPaper.Properties.exterior (LocalPaperTheorem.lean:79-83) vs Properties.exterior_radial_form (:51), exterior_amplitude_formula (:34), exterior_profile_smooth (:22), exterior_profile_derivatives_bounded (:27), exterior_heat_equation (:40) in LocalPaperHeat.lean", "ATTRIBUTION_GAP: NavierStokesR3.theorem_1_1_with_initial_rest (R3/Theorem.lean:26) -> ActualCandidate.selected_candidate_one_with_initial_rest (R3/ActualCandidate.lean:143); PaperLocalization.local_theorem_with_compact_candidate (PaperLocalization.lean:28) uses LocalPaper.properties_of_schedule", "I read pp.15-16 and checked LocalPaperTheorem.lean, LocalPaperHeat.lean and the definitions: q solves q−z²q^{2h}=τ; X=r²/(2q); A=1/2+h; viscosity-1 residual; angularField=b(t,r,z)e_θ; ray=(√(2Xτ),0,0) with component 1 = u_θ. Properties has one field per clause (i)-(iv). Lean is stronger: the fields are smooth on all of t<1, the strips drop c'<q*, and smooth extensions exist at every terminal x≠0. Strip limit points have q≥c, which forces z≠0. The (3.5) formulas come from LocalPaperHeat corollaries that hold for every witness. No sorry. No vacuity: a pure heat swirl is singular at the axis (algebraic branch), C=0 or z-independent swirl contradicts the growth in (iv) via Duhamel, and so any witness is the real construction. Both findings are ATTRIBUTION_GAP."],
+          "evidence": ["ATTRIBUTION_GAP: Properties.exterior (NavierStokes/LocalPaperTheorem.lean:79-83) asserts only A w = 0, D w = BaseExterior.heatVelocity C h w, p w = BaseExterior.heatPressureField C h w and zero residual; the paper's expressions appear in Properties.exterior_radial_form / exterior_amplitude_formula / exterior_heat_equation / exterior_profile_smooth / exterior_profile_derivatives_bounded, NavierStokes/LocalPaperHeat.lean:22-72.", "NavierStokes.LocalPaper.local_theorem is an unconditional existential whose Properties structure carries clauses (i)-(iv) for one tuple (A, D, u, p): decomposition u = curl A + D with D = B e_θ for an axisymmetric B, exact divergence-freeness, Cartesian smoothness including the axis, scale-strip jet bounds plus genuine one-sided extensions, all-order residual flatness uniform on 0 ≤ X ≤ X_1 as q ↓ 0, the zero-residual heat exterior, and the (3.6) ray asymptotic. Every definition it uses matches the paper's (q solves q - z²q^{2h} = τ; X = r²/2q; R = ∂_t u + (u·∇)u - Δu + ∇p; A = 1/2 + h). It is stronger on the domain, on c', on the extensions and on the exponent. The only gap is packaging: the explicit (3.5) formulas sit in five companion theorems."],
           "findings": [
             {
               "confidence": 0.88,
-              "contested": true,
-              "kind": "CONTENT",
+              "contested": false,
+              "kind": "COVERAGE",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Properties.exterior names BaseExterior.heatVelocity/heatPressureField rather than the explicit (3.5) formulas. Those formulas, H_ext regularity and the swirl heat equation are proved separately, for every Properties witness, in LocalPaperHeat.lean."
-            },
-            {
-              "confidence": 0.72,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
-              "severity": "low",
-              "summary": "local_theorem is not on the Comparator path: R3 theorem_1_1_with_initial_rest goes through ActualCandidateAssembly.selected_witness. The paper's chain (Thm 3.1, then §3.5 localization) is proved for the same fields in PaperLocalization."
+              "summary": "The literal (3.5) formulas (K = r^{-1-2h}H_ext(τ/r²), H_ext smooth with bounded derivatives, p = -∫_r^∞ K²/ρ, the radial heat equation) are not inside local_theorem; five companion theorems supply them from a Properties hypothesis."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

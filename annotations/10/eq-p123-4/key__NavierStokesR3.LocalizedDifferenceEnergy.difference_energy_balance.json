@@ -1,0 +1,25 @@
+{
+  "id": "eq-p123-4/key/NavierStokesR3.LocalizedDifferenceEnergy.difference_energy_balance",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.LocalizedDifferenceEnergy.difference_energy_balance",
+      "line": 102,
+      "module": "NavierStokes.R3.LocalizedDifferenceEnergy",
+      "path": "NavierStokes/R3/LocalizedDifferenceEnergy.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/LocalizedDifferenceEnergy.lean#L102"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.LocalizedDifferenceEnergy.difference_energy_balance",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 102,
+        "text": "(1/2 : ℝ) * weightedEnergyRate χ (u - v) t + weightedDissipation χ (u - v) t = -(∫ x, χ x * ⟪(u-v)(t,x), spatialDerivative u t x ((u-v)(t,x))⟫_ℝ) + (1/2) * (∫ x, ‖(u-v)(t,x)‖^2 * ∑ i, spatialPartial i (spatialPartial i χ) x) + (1/2) * (∫ x, ‖(u-v)(t,x)‖^2 * fderiv ℝ χ x (v (t,x))) + ∫ x, (p-q)(t,x) * fderiv ℝ χ x ((u-v)(t,x))"
+      }
+    }
+  }
+}

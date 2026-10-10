@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.8/attributed/NavierStokes.OutgoingCone.clean_true_margins",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.OutgoingCone.clean_true_margins",
+      "line": 583,
+      "module": "NavierStokes.OutgoingCone",
+      "path": "NavierStokes/OutgoingCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingCone.lean#L583"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.OutgoingCone.clean_true_margins",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Same for trueWindow d: eps <= normalV - 2, eps <= normalP - 2, eps <= coneBound(normalP,normalJ) - normalV, for the unedited corrected profile.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 583,
+        "text": "theorem clean_true_margins {d : TailData} {K : ℝ} (w : ResetWitness d K)\n    {XR left : ℝ} (h : CleanOutgoingCone w XR left) :\n    ∃ eps : ℝ, 0 < eps ∧ ∀ p ∈ trueWindow d,\n      eps ≤ normalV w (CorrectedPulseAmplitude.amplitude d w.coefficients) p - 2 ∧\n      eps ≤ normalP w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p - 2 ∧\n      eps ≤ ConeAlgebra.coneBound\n        (normalP w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p)\n        (normalJ w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p) -\n          normalV w (CorrectedPulseAmplitude.amplitude d w.coefficients) p"
+      }
+    }
+  }
+}

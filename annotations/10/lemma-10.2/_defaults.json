@@ -17,40 +17,24 @@
       "region": "lemma-10.2@p118",
       "verdicts": [
         {
-          "confidence": 0.78,
-          "evidence": ["CONVENTION: MixedPeriodicAssembly.boundaryLimits_locallyUniform (NavierStokes/MixedPeriodicAssembly.lean:310) takes hz : VanishingJointJets (originalResidual A v p) and eA ev ep : AwayExtensions; ActualCandidateAssembly.Witness (NavierStokes/ActualCandidateAssembly.lean:1121) = ∃ a, SelectedSchedule … a ∧ ∃ ea eb ep, ∃ forcing, …; SelectedSchedule (NavierStokes/MixedCandidateWitness.lean:25) ends in VanishingJointJets (MixedDiagonalResidual.residual …), rfl-equal to originalResidual of the three sums (NavierStokes/MixedDiagonalResidual.lean:45)", "CONVENTION: MixedPeriodicAssembly.periodicResidual (NavierStokes/MixedPeriodicAssembly.lean:47); boundaryLimits_locallyUniform (:310) concludes TendstoLocallyUniformly … (𝓝[<] 1); boundaryLimits (:267) is evaluated at PeriodicResidualLimits.representative x", "CONVENTION: JointResidualLimits.VanishingJointJets (NavierStokes/JointResidualLimits.lean:84), AwayExtensions (:81); discharged in GermCandidateAssembly.exists_candidate_witness_of_finite_stages (NavierStokes/GermCandidateAssembly.lean:164) via StageEstimates.exists_schedule and MixedDiagonalExtensions.diagonal_awayExtensions_local", "CONVENTION: JointResidualLimits.boundaryLimits (NavierStokes/JointResidualLimits.lean:120): `if hx : x = 0 then 0 else ftaylorSeries …`; boundaryLimits_zero (:126) is `simp [boundaryLimits]`; MixedPeriodicAssembly.boundaryLimits_zero (NavierStokes/MixedPeriodicAssembly.lean:275) reduces to it through representative_zero", "All three voters agree on SINGLE_SOURCE_OK / different_formulation, and my reading of p.118 and the Lean confirms it. Lemma 10.2 has no standalone unconditional declaration, but selected_witness exports hz and ea/eb/ep, so boundaryLimits_locallyUniform applies in one step to the actual periodized residual; smoothness, compatibility, origin flatness and the R³ compact-support form follow from the smooth forcing with jets equal to boundaryLimits and from compactForce. I checked every cited name and line against decls.jsonl and the sources. All four findings are encoding choices with written recoveries. The only disagreement is whether the proof-route remark deserves a finding; I keep it as a low-severity convention note. The f-versus-f comparison belongs to Proposition 10.1."],
+          "confidence": 0.84,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.JointResidualLimits.exists_smooth_compatible_limits (NavierStokes/JointResidualLimits.lean:308) is generic in f, with no support clause; the only named on-path instance, MixedPeriodicAssembly.boundaryLimits_locallyUniform (NavierStokes/MixedPeriodicAssembly.lean:310), is for periodicResidual, not cutResidual. The missing clauses come from boundaryLimits_eq_extension (JointResidualLimits.lean:169) at the zero extension off supportCylinder, cutVelocity_tsupport (SpatialLocalization.lean:190), spatialCutoff_support_subset (:89), residual_eventually_zero (ResidualRegularity.lean:287) and boundaryLimits_uniformOn_compact (JointResidualLimits.lean:156) at K = supportCylinder (isCompact_supportCylinder, SpatialLocalization.lean:79).", "CONVENTION: NavierStokes.JointResidualLimits.exists_smooth_compatible_limits, NavierStokes/JointResidualLimits.lean:308: L : Space → FormalMultilinearSeries ℝ SpaceTime V, with compatibility clause HasFDerivAt (fun y => L y n) ((L x (n+1)).curryLeft.comp (ContinuousLinearMap.inr ℝ ℝ Space)) x.", "Every clause of Lemma 10.2 is recoverable from the statements of named declarations by instantiating, unfolding and conjoining, for the paper's own object f = cutResidual: the analytic core from exists_smooth_compatible_limits (JointResidualLimits.lean:308) instantiated by the three cutResidual lemmas; the support clause from boundaryLimits_eq_extension (:169) at the zero extension off supportCylinder, which is legitimate because cutVelocity_tsupport (SpatialLocalization.lean:190), spatialCutoff_support_subset (:89) and residual_eventually_zero (ResidualRegularity.lean:287) make f vanish there; the ℝ³-uniformity from boundaryLimits_uniformOn_compact (:156) at the compact cylinder plus that vanishing. No analytic fact outside the repository is used, so by the logic-alone rule this is OK, different_formulation, with the index-split encoding as the only convention and the absence of a single bundling declaration as a low attribution gap."],
           "findings": [
-            {
-              "confidence": 0.82,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "No single declaration states Lemma 10.2 unconditionally. The limit theorem is conditional on hz/eA/ev/ep; selected_witness exports exactly those hypotheses (via SelectedSchedule and ea/eb/ep) alongside a merged 10.2+10.3 forcing statement."
-            },
-            {
-              "confidence": 0.76,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean's f is the residual of the cut, lattice-periodized fields, not the compactly supported R³ residual. Convergence is locally uniform, and the limit tensors are periodic with no 'supported in K' clause."
-            },
-            {
-              "confidence": 0.66,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Proof route: the paper derives the limits from Theorem 3.1(ii) bounds plus FTC, exterior heat formulas, and flatness (10.9). Lean takes VanishingJointJets at (1,0) and smooth one-sided extensions at every x ≠ 0 as the intermediate facts."
-            },
             {
               "confidence": 0.85,
               "contested": false,
-              "kind": "VACUITY",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration states Lemma 10.2, and three of its clauses — instantiation at the paper's f, supp F_j ⊆ 𝒦 with F_j ∈ C_c^∞, and uniformity on all of ℝ³ — are stated nowhere as such, but each follows from stated declarations by instantiating and unfolding."
+            },
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "boundaryLimits_zero, cited as the counterpart of ∂^αF_j(0)=0, is true by definition: the limit object is defined to be 0 at x = 0. The substantive flatness is the convergence to it at the origin."
+              "summary": "Encoding: the paper's doubly indexed family of mixed partials ∂_x^α ∂_t^j is carried by one family of full spacetime Fréchet jets L x n, with the index split recovered by evaluating a jet at a fixed tuple of basis vectors."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

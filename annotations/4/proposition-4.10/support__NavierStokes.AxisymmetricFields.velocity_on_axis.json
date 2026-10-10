@@ -1,0 +1,26 @@
+{
+  "id": "proposition-4.10/support/NavierStokes.AxisymmetricFields.velocity_on_axis",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisymmetricFields.velocity_on_axis",
+      "line": 216,
+      "module": "NavierStokes.AxisymmetricFields",
+      "path": "NavierStokes/AxisymmetricFields.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean#L216"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisymmetricFields.velocity_on_axis",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 216,
+        "text": "theorem velocity_on_axis (H K : Profile) (t : ℝ) (x : Space)\n    (hH : DifferentiableAt ℝ H (profilePoint t x))\n    (hK : DifferentiableAt ℝ K (profilePoint t x)) (hx0 : x 0 = 0) (hx1 : x 1 = 0) :\n    velocity H K (t, x) = H (t, (0, x 2)) • coordinateVector 2"
+      }
+    }
+  }
+}

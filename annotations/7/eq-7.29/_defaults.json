@@ -1,0 +1,39 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.29)",
+  "status": "formalized",
+  "location": {
+    "page": 83,
+    "rect": [0.226279, 0.569569, 0.643181, 0.025973]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.29",
+      "locator": {
+        "physical": [83],
+        "printed": [83],
+        "text": "Equation (7.29), p. 83, in the statement of Lemma 7.4"
+      },
+      "region": "eq-7.29@p083",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: |\\det \\mathsf{H}| \\ge c/S_*, \\qquad \\|\\mathsf{H}^{-1}\\| \\le C\\sqrt{S_*}, \\qquad c\\sqrt{S_*}\\,|T| \\le y_\\sigma \\le C\\sqrt{S_*}\\,|T|."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The three clauses are packaged as one Lean structure, with R = sqrt(S_n) playing the paper's sqrt(S_*). Clause 1 is literal: `determinant` says detGap ≤ |det(normalizedMatrix R H)|, and `normalizedMatrix_det` rewrites that as detGap ≤ R^2 |det H| = S_n |det H|, i.e. |det H| ≥ detGap/S_*. The lower half of clause 3 is literal in the Lean's variables: `weights` says inverseLower*R*zeta ≤ y_j, i.e. y_sigma ≥ c sqrt(S_*) zeta, where the Lean carries the flat edge factor zeta instead of |T| (the target is FlatCovariance.scaledTarget zeta (T0 p) = zeta·T0, with T0 continuous and, by the strict cone hypothesis, nonvanishing on the compact K, so |T| ≍ zeta there). Clause 2 and the upper half of clause 3 are not stated as such, but follow in two lines from the stated `entries` and `determinant` fields by the 2x2 Cramer/adjugate identities that the file already uses: |H i j| ≤ entryBound/R and |det H| ≥ detGap/R^2 give |(H⁻¹) i j| = |adj(H) i j|/|det H| ≤ (entryBound/R)·(R^2/detGap) = C·sqrt(S_*), and y_j = cramerNumerator_j/det H gives |y_j| ≤ 2(entryBound/R)|T|·(R^2/detGap) = C sqrt(S_*) |T|.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

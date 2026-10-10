@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 108.6",
+  "status": "formalized",
+  "location": {
+    "page": 108,
+    "rect": [0.295232, 0.677474, 0.410025, 0.026491]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p108-6",
+      "locator": {
+        "physical": [108],
+        "printed": [108],
+        "text": "Display 108.6, p. 108, in the proof of Proposition 9.6"
+      },
+      "region": "eq-p108-6@p108",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: E_\\theta,\\ E_z,\\ \\Delta g_r,\\ \\Delta p_m \\in \\mathsf{M}_{C_*-\\kappa_s}, \\qquad (\\mathcal{P},\\mathcal{J}_\\theta,\\mathcal{J}_z) \\in \\mathsf{S}_{C_*-\\kappa_s}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The paper's abbreviations are fixed on the same page: B = 1/2 + σ_j and C_* = B + 1/2 = 1 + σ_j, so M_{C_*−κ_s} is Lean's `MeanClass G.strip (1+σ-κ)` and S_{C_*−κ_s} is `UnweightedClass G.slowStrip (1+σ-κ)`. `waveStage_mean_gain` states four of the five memberships in one conclusion: Δp_m as `next.pressure - u.pressure`, E_θ as `next.thetaResidual c`, E_z as `next.axialResidual c`, and the triple (P, J_θ, J_z) as `DefectBounds G.slowStrip (σ-κ) c next`, which unfolds (CorrectionStep.lean:9711-9712 rewrites `1+(σ-κ) = 1+σ-κ`) to `∀ i : Fin 3, UnweightedClass (1+σ-κ) (debt … i)` with `debt` in the row order (P, J_θ, J_z). The fifth membership, Δg_r, is stated by a separate declaration, `gaugeWaveStage_mean_changes_mem`, at the same exponent α-κ; the α there is instantiated at 1+σ in the cycle, which is exactly the hypothesis `hXC : TensorClass G.strip (1+σ) (covarianceIncrement u.oscillation w)` that `waveStage_mean_gain` itself takes. The two post-stage states agree: `SignedMeanGain.waveStage g c u w q gaussian = reconstructState g c (u.addIncrement zeroTriple 0 w q ⟨0, gaussian, 0⟩)` (SignedMeanGain.lean:168) and `gaugeWaveStage g c u w q e = reconstructState g c (u.addIncrement zeroTriple 0 w q e)` (CorrectionStep.lean:3328) are the same function with e = ⟨0, gaussian, 0⟩. So the recovery is the conjunction of two theorems with a shared hypothesis — packaging, not mathematics.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.22)",
+  "status": "partial",
+  "location": {
+    "page": 68,
+    "rect": [0.315399, 0.84465, 0.553669, 0.04819]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.22",
+      "locator": {
+        "physical": [68],
+        "printed": [68],
+        "text": "Equation (6.22), p. 68, in section 6"
+      },
+      "region": "eq-6.22@p068",
+      "verdicts": [
+        {
+          "confidence": 0.62,
+          "evidence": ["paper: D_H H_w = I - v_t \\lambda_t, \\qquad D_H v = \\frac{T_g^{\\Delta}}{c_i}\\,\\lambda_t = O(S_*)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Both derivatives are available, but neither identity is written as displayed, and the first is replaced by a norm bound. (i) D_H H_w: path_eq_affine states that H_w is affine in H with derivative pathLinear, defined as the composite J_g^{-Δ} ∘ basis ∘ P_ξ ∘ basis⁻¹ ∘ J_g^{Δ}. That composite does equal I - v_tλ_t: writing J_g^Δ X = α v_r + β v_t, one gets basis⁻¹ = (α, β/c_i), P_ξ kills the second slot, and J_g^{-Δ}(α v_r) = X - β T_g^{-Δ} v_t = X - λ_t(X) v_t, using cover_pow_radialDirection and cover_pow_timeDirection (v_r, v_t are eigenvectors) and λ_t = etaCoordinate with λ_t(v_r)=0, λ_t(v_t)=1. I did not find that identity recorded anywhere: of the seven occurrences of pathLinear in NavierStokes/, what the repository proves and then uses is the norm bound norm_pathLinear_le and its consequence for iterated derivatives of f ∘ path, not the projection form. The paper's own use of (6.22) — that the map is affine so higher derivatives vanish — is served by path_eq_affine. (ii) D_H v: the exact coefficient is stated, but on basis vectors and for instantiated geometries rather than as the functional identity — geometry_temporal gives coordinateLinear v_t = (0, (Q^{1+h})⁻¹) = (0, T_g^Δ/c_i) and geometry_radial gives v_r ↦ (Λ^Δ, 0), whose second slot is 0, so the v-component of D_H is (T_g^Δ/c_i)λ_t; these are for the slot geometry with gap = nativeIndex h n, not for a general Δ. The same derivative in the physical chart is slotTime_derivative, fderiv (slotTime) = Q^{-1-h}·(time component). (iii) The O(S_*) is bandGeometry_argumentCost_le, argumentCost ≤ C_B,D · ChartScales.S n with S n = n² = S_ℓ, transferred to the chart change by norm_currentLinear_le; it is a bound in the band's own S_ℓ, which the paper identifies with S_* two paragraphs earlier (\"All these S_ℓ are comparable\"), and it bounds the whole coordinate map, not the functional λ_t alone.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

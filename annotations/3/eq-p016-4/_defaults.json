@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 16.4",
+  "status": "formalized",
+  "location": {
+    "page": 16,
+    "rect": [0.276683, 0.654431, 0.449174, 0.028853]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p016-4",
+      "locator": {
+        "physical": [16],
+        "printed": [16],
+        "text": "Display 16.4, p. 16, in section 3.5"
+      },
+      "region": "eq-p016-4@p016",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: f \\in C_c^\\infty(\\mathbb{R}^3 \\times (0,\\infty); \\mathbb{R}^3), \\qquad \\mathscr{R}(u,p) = f \\quad (0 \\le t < 1)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Equivalent after one trivial rewriting at the left endpoint. The force class matches exactly: ContDiff ℝ ∞ f together with HasCompactSupport f and tsupport f ⊆ Ioi 0 ×ˢ univ is the zero extension of an element of C_c^∞(ℝ³ × (0,∞); ℝ³), which the file's own docstring says it is intended to encode; compactness is in space-time, as the paper's notation requires (the Lean construction even puts the support in K × [0,2] via compactForce and PositiveTimeForce.force). The residual ℛ is navierStokesResidual at ν = 1, matching (3.1) term for term. The only apparent gap is the left endpoint: the paper asserts ℛ(u,p) = f for 0 ≤ t < 1, whereas CandidateProperties.navier_stokes asserts it for t ∈ Ioo 0 1, and all residual clauses found in the repository use Ioo (ProblemStatement.lean:112, MaximalLifespan.lean:35, R3CompactCandidate.lean:36, R3/ProblemStatement.lean:106); the stated reason is that ordinary derivatives at positive times avoid differentiating an arbitrary extension past t = 0. The closed endpoint is nevertheless stated in Lean: ParabolicScaling.zeroBefore_residual (R3/ParabolicCalculus.lean:71) concludes navierStokesResidual ν (zeroBefore u) (zeroBefore p) t x = f (t, x) for every t < 1 — hence at t = 0 and below — from CandidateProperties together with the hypothesis that u and p vanish for |t| ≤ 3/8, and that hypothesis is supplied for the actual candidate by ActualCandidate.selected_candidate_one_with_initial_rest (R3/ActualCandidate.lean:143). The rewriting back to the candidate's own fields is trivial: zeroBefore g z = g z for z.1 ≥ 0 (zeroBefore_eq_of_nonneg, R3/DelayedExtension.lean:23), and near t = 0 the two pairs agree outright — u, p vanish on |t| ≤ 3/8 and zeroBefore u, zeroBefore p vanish on t ≤ 3/8 (zeroBefore_eq_zero_of_le, R3/DelayedExtension.lean:42) — so residual_congr (R3/ParabolicCalculus.lean:61) transfers the identity at (0, x) to u, p themselves, with f(0, ·) = 0 on both sides by CompactPositiveTimeSupport.eq_zero_of_nonpos.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

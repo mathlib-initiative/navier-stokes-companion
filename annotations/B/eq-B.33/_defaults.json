@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.33)",
+  "status": "formalized",
+  "location": {
+    "page": 154,
+    "rect": [0.37056, 0.684603, 0.498899, 0.026717]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-B.33",
+      "locator": {
+        "physical": [154],
+        "printed": [154],
+        "text": "Equation (B.33), p. 154, in section B"
+      },
+      "region": "eq-B.33@p154",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: T_{\\mathrm{sh}} \\ge 20\\|\\sigma'\\|_{\\infty}\\bigl(\\mathcal{B}_0 + \\|\\log f\\|_{\\infty}\\bigr)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Routine rewriting by the triangle inequality. The Lean condition is `20 * K * B ≤ T` with K any bound on |deriv OutgoingSchedule.sigma| (the paper's ‖σ′‖_∞) and B any bound on |logShape η − ℓ_i(η)| = |log f − ℓ_i|; the paper's right-hand side uses 𝓑_0 + ‖log f‖_∞ instead, which bounds that same quantity since ‖log f − ℓ_i‖_∞ ≤ ‖ℓ_i‖_∞ + ‖log f‖_∞ ≤ 𝓑_0 + ‖log f‖_∞ (𝓑_0 is the k = 0 case of (B.32)). So any T_sh meeting (B.33) meets the Lean hypothesis. In the construction the Lean instantiates B = 2·BJ with BJ = max(bound on ℓ_i jets, bound on log f jets) (MatchingDebtBounds.lean:694–697), and 2·max(a,b) ≥ a + b, so its B is itself ≥ 𝓑_0 + ‖log f‖_∞. The factor 20, the direction of the inequality, and the conclusion it buys — the logarithmic slope in [11/20, 13/20] = [.55, .65], the paper's next sentence — agree exactly. Two conventional slacks, both in the safe direction: `sigma_deriv_bounded` yields some bound K on |σ′| rather than the supremum, and `exists_duration` picks T = 1 + 20·K·B rather than the threshold itself.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

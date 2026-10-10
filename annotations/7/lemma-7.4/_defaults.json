@@ -17,40 +17,24 @@
       "region": "lemma-7.4@p080",
       "verdicts": [
         {
-          "confidence": 0.82,
-          "evidence": ["CONVENTION: PrimaryODE.primary_bounds (PrimaryODE.lean:433) takes herr/hν/hlam as hypotheses. The composition with BasePhaseGeometry.FamilyData.coefficientControl (:934) appears only as `hprimary` inside PrimaryTargetBounds.primary_ratio_error (:300), and inside exists_family_bounds (:485) via canonicalPrimaryPulse_bounds, which concludes Gaussian envelopes rather than P. Pressure: phasePressure_carrier_jets (PrimaryCopyBounds.lean:634) is applied only in ActualPrimary.rawPressure_jets (CorrectionInitialization.lean:4560).", "CONVENTION: BasePhaseGeometry.FamilyData.pulse_jets (BasePhaseGeometry.lean:1079) and PrimaryPulseBounds.phase_normalizedPulse_envelope_jets (:1443) use productDomain D (fun _ => Ioo 0 1). normalizedPulse (:1133) evaluates the ambient pulse at v = L·z.2. fundamental_eq_primary (:639) identifies it with `primary`.", "CONVENTION: GrowingMode.lean:240 (scaled_positive_invariant_cone) and :428 (original_coordinate_bounds) cite '(28)'. PrimaryODE.lean:209 (ambientSolution_hasDerivAt) cites 'equation (27)'.", "CONVENTION: PrimaryRepresentatives.transverseDirection (PrimaryRepresentatives.lean:191) is −quarterTurn(normalDirection g), with quarterTurn w = (−w₁, w₀) (MovingFrameODE.lean:~315). PrimaryGeometryAssembly.family (:302) sets K := transverseDirection. MovingFrameODE.frameOfUnit has frame 1 = quarterTurn K. PhaseEstimates.representativeFrequency (:69) = B(K − σug/(L|g|²)), with x0 = σBu/2.", "All three voters agree and I checked the sources myself. primary is the m=1 homogeneous modal solution with z₊(0)=P(0), z₋(0)=0, and its ambient image solves t'=A_Φt−dt. referenceP is (7.12). primary_bounds gives uniform cP≤x≤CP and y/x=h+O(1/S), with h=c0√(1+s²). FamilyData.coefficientControl discharges its hypotheses for the actual frames. FamilyData.pulse_jets gives the C S^m P derivative bounds, and phasePressure_carrier_jets the √ε pressure gain. Every gap is packaging: an abstract lemma plus an instantiation, normalized θ, docstring numbering, and a K orientation convention. Two corrections to the auditor's descriptions: canonicalPrimaryPulse_bounds concludes Gaussian envelopes, and primary_ratio_error is a vector bound. Neither changes the verdict."],
+          "confidence": 0.74,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/PrimaryODE.lean:433 primary_bounds states (7.21); NavierStokes/ActualSignedDynamics.lean:75 nativeUnit_hasDerivAt states the homogeneous equation; NavierStokes/PrimaryPulseBounds.lean:582 fundamental fixes the seed; NavierStokes/PrimaryPulseBounds.lean:1443 phase_normalizedPulse_envelope_jets the jets; NavierStokes/SignedCopyBounds.lean:603 coefficients_jets the pressure gain.", "CONVENTION: MovingFrameODE.lean:315 quarterTurn w = !₂[-w 1, w 0]; MovingFrameODE.lean:382-386 normalFrame n 0 = normalDirection n, normalFrame n 1 = quarterTurn (normalDirection n); PrimaryRepresentatives.lean:191 transverseDirection g = -quarterTurn (normalDirection g); PrimaryGeometryAssembly.lean:316 family.K := transverseDirection (shear …).", "Every clause of Lemma 7.4 is stated in Lean, for both signs, with the paper's P(v), c_0 and s(v) appearing literally in the definitions (referenceP, PrimaryRepresentatives.c0, slotMagnitude). Nothing is weaker or missing, so the verdict is OK. It is different_formulation rather than equivalent because the lemma is split across four declarations at two abstraction levels, the ratio error is stated relatively rather than as O(S_*^{-1}), the jets are in the normalized pulse coordinate, and the transverse frame vector is built by +quarterTurn against the paper's -quarterTurn, compensated by the frozen K being the negative of the paper's. The recovery in each case is a few lines."],
           "findings": [
             {
-              "confidence": 0.75,
+              "confidence": 0.82,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration states Lemma 7.4. Its four clauses sit in four declarations: the ODE with the z_+(0)=P(0), z_-(0)=0 seed, (7.21), the jet bounds, and the ε^{1/2} pressure — and at two different levels of abstraction."
+            },
+            {
+              "confidence": 0.72,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "No single declaration states (7.21) for the actual pulses. The bound is proved abstractly in primary_bounds, and its hypotheses are discharged by FamilyData.coefficientControl only inside proofs. The exposed ratio is a vector bound, and the pressure gain is instantiated only on amplitude-weighted pulses."
-            },
-            {
-              "confidence": 0.85,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "The derivative bounds are stated on the normalized open slot θ=v/L∈(0,1), with joint jets in (slow point, θ) and weight P(Lθ). The paper states them in v on [0,L_s]."
-            },
-            {
-              "confidence": 0.6,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Docstrings cite '(28)' and '(27)' from an older manuscript numbering, rather than (7.21) and the projected equation in (7.13)."
-            },
-            {
-              "confidence": 0.8,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "The reference transverse direction has the opposite orientation: in Lean K = (N_z, −N_θ) and N_a = quarterTurn(K_a); in the paper K = (−N_z, N_θ) and N_a = −quarterTurn(K_a). So Lean's sign σ pulse is the paper's (−σ) pulse with a negated phase."
+              "summary": "Frame orientation is reversed twice and cancels. Lean's second frame vector is +quarterTurn K_a, not the paper's N_a = −quarterTurn K_a; but the frozen transverse direction is −quarterTurn N, the negative of the paper's K, so both frames end at the same N."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

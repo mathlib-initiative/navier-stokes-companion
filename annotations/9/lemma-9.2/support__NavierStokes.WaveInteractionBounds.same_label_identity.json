@@ -1,0 +1,26 @@
+{
+  "id": "lemma-9.2/support/NavierStokes.WaveInteractionBounds.same_label_identity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WaveInteractionBounds.same_label_identity",
+      "line": 437,
+      "module": "NavierStokes.WaveInteractionBounds",
+      "path": "NavierStokes/WaveInteractionBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean#L437"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WaveInteractionBounds.same_label_identity",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 437,
+        "text": "theorem same_label_identity {s : StripData D} {κ : ℝ} (G : Geometry s κ)\n    (Φ : ℕ → D → ℝ) (ν ξ : ℕ → ℝ) (a b : Family D)\n    (hbθ : AngularIndependent G b) (n : ℕ) {x : D} (hx : x ∈ s.domain)\n    (hΦ : DifferentiableAt ℝ (Φ n) x)\n    (hb : ∀ i, DifferentiableAt ℝ (fun y => b n y i) x) (i : Fin 3) :\n    LinearWaveResidual.transport (G.radius n) (G.radial n) (G.angular n) (G.axial n)\n      (vectorMode (ν n) (Φ n) (a n)) (vectorMode (ξ n) (Φ n) (b n)) x i =\n        sameCoefficient G Φ ξ a b n x i * carrier (ν n + ξ n) (Φ n) x"
+      }
+    }
+  }
+}

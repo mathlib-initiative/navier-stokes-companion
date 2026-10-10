@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.2/attributed/NavierStokes.JointResidualLimits.boundaryLimits_smooth",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.JointResidualLimits.boundaryLimits_smooth",
+      "line": 220,
+      "module": "NavierStokes.JointResidualLimits",
+      "path": "NavierStokes/JointResidualLimits.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L220"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.JointResidualLimits.boundaryLimits_smooth",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ContDiff ℝ ∞ (fun x => boundaryLimits f hext x n) for every n, given ContDiffOn ℝ ∞ f (openPast 1), VanishingJointJets f, AwayExtensions f. The C^∞ half of F_j ∈ C_c^∞.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 220,
+        "text": "theorem boundaryLimits_smooth {f : SpaceTime → V}\n    (hf : ContDiffOn ℝ ∞ f (SpacetimeEndpoint.openPast 1))\n    (hzero : VanishingJointJets f) (hext : AwayExtensions f) (n : ℕ) :\n    ContDiff ℝ ∞ (fun x => boundaryLimits f hext x n)"
+      }
+    }
+  }
+}

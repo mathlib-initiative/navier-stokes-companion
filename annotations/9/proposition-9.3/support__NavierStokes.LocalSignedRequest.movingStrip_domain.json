@@ -1,0 +1,26 @@
+{
+  "id": "proposition-9.3/support/NavierStokes.LocalSignedRequest.movingStrip_domain",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalSignedRequest.movingStrip_domain",
+      "line": 191,
+      "module": "NavierStokes.LocalSignedRequest",
+      "path": "NavierStokes/LocalSignedRequest.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean#L191"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalSignedRequest.movingStrip_domain",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 191,
+        "text": "theorem movingStrip_domain {coord : ℝ} (U : SlowRegion coord)\n    (a b cL cR : ℝ) (ha : 0 < a) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n)\n    (x : Point) :\n    x ∈ (movingStripData U a b cL cR ha hcL hcR ε L hε hεone hL).domain ↔\n      x.2.1 ∈ U.carrier ∧ (profileMap coord x).1 ∈ Ioo a b"
+      }
+    }
+  }
+}

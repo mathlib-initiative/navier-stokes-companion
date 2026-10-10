@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.45)",
+  "status": "partial",
+  "location": {
+    "page": 61,
+    "rect": [0.182989, 0.247525, 0.686088, 0.040598]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.45",
+      "locator": {
+        "physical": [61],
+        "printed": [61],
+        "text": "Equation (5.45), p. 61, in the proof of Proposition 5.5"
+      },
+      "region": "eq-5.45@p061",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.62,
+          "evidence": ["paper: r\\,u^{\\mathrm{cut}}_{r,n} \\;=\\; q^{2nh}\\Big[\\chi(c_n q)\\,V_n \\;-\\; \\tfrac{2\\eta}{L}\\,(c_n q)\\,\\chi'(c_n q)\\,F_n\\Big], \\qquad u^{\\mathrm{cut}}_{z,n} \\;=\\; q^{-A+2nh}\\,\\chi(c_n q)\\,U_n ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The axial half matches: baseVelocity_axial states u_z as physicalProfile with the weight exponent −A(h) + the stagewise q^{2nh}χ(c_n q) carried by coefficientWeight, i.e. the paper's q^{−A+2nh}χ(c_n q)U_n. The radial half is reached by a different route. The paper differentiates the cut stream function in Z and displays the resulting two terms, including the explicit cutoff-derivative term −(2η/L)(c_n q)χ'(c_n q)F_n. Lean never writes that term: it defines the velocity as the exact spatial curl of the cut potential (AxisymmetricFields.velocity) and r u_r as −(r/2)·∂_Z of the normalized stream function (reducedRadial), so divergence-freeness is an identity (baseVelocity_divergence_zero) and no χ' term is ever produced; a repository search for an explicit derivative of SmoothCutoffs.scaledCutoff/cutoff inside a velocity formula found none, and SlowBorelBase's only stagewise derivative identity is hasDerivAt_slowSum_X (line 833), in the X direction, where the comment records 'The cutoff depends only on q, so no radial cutoff term appears.' The paper's formula as written — in particular the coefficient 2η/L on the χ' term — was therefore not checked; what is checked is that the field obtained by curling the cut potential is solenoidal and has the stated axial profile. Only the surrounding bookkeeping (divergence, support, mean patch) depends on it, and the Lean proves that bookkeeping by its own route, so this is low.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

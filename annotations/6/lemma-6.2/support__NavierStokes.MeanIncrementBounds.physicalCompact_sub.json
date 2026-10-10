@@ -1,0 +1,27 @@
+{
+  "id": "lemma-6.2/support/NavierStokes.MeanIncrementBounds.physicalCompact_sub",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanIncrementBounds.physicalCompact_sub",
+      "line": 916,
+      "module": "NavierStokes.MeanIncrementBounds",
+      "path": "NavierStokes/MeanIncrementBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanIncrementBounds.lean#L916"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanIncrementBounds.physicalCompact_sub",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 916,
+        "text": "theorem physicalCompact_sub {a b d : ℝ} (ha : 0 < a) (hab : a < b) (hd : 0 < d)\n    {f g : ℝ × P → ℝ} (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)\n    (hsf : RadialAlias.RadiallySupported a b f)\n    (hsg : RadialAlias.RadiallySupported a b g) (M : ℝ) (v : P) :\n    RadialPullback.physicalCompact d a b M v (fun x => f x - g x) =\n      fun x => RadialPullback.physicalCompact d a b M v f x -\n        RadialPullback.physicalCompact d a b M v g x"
+      }
+    }
+  }
+}

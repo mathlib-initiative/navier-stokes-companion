@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 144.1",
+  "status": "formalized",
+  "location": {
+    "page": 144,
+    "rect": [0.262631, 0.512249, 0.474961, 0.026565]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p144-1",
+      "locator": {
+        "physical": [144],
+        "printed": [144],
+        "text": "Display 144.1, p. 144, in section B.1"
+      },
+      "region": "eq-p144-1@p144",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\Pi_0 \\le -c P_*^2 f^2, \\qquad \\eta \\Pi_{0\\eta} > 0 \\quad (\\eta \\neq 0), \\qquad f = (1+\\eta^2)^{-1}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The two clauses are stated separately and with the constant made explicit. First clause: `pressure_le_of_ideal_prefix` gives Π₀ ≤ -(5/2)·P²·((1+η²)⁻¹)², which is the paper's Π₀ ≤ -cP_*²f² with c = 5/2 and f = (1+η²)⁻¹ exactly as the display defines it, and for every real η (the paper asserts it near [-1,1]). Second clause: ηΠ_{0η} > 0 for η ≠ 0 is the conjunction of `deriv_pressure_pos` (η > 0 ⇒ Π' > 0) and `deriv_pressure_neg` (η < 0 ⇒ Π' < 0), both under the positive-mass side condition that `PressureDatum.exponent_mass_pos_of_ideal_prefix` supplies from the same ideal-prefix hypotheses; multiplying by η gives the display in one line. The amplitude is identified through the hypothesis g y = P²e^{y/5} (y ≤ 0), so the Lean P plays the paper's P_*. Separately: the Section B.1 results themselves run on the strictly weaker record `NaturalAxisData.PressureData` (Π₀ ≤ -1 and 0 ≤ ηΠ_{0η}, non-strict), which makes those theorems stronger, not weaker; the P_*²-scaled form of the display is retained where it matters, in `AxisRootPressureBounds`.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

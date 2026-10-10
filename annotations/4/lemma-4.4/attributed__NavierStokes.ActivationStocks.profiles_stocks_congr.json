@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.4/attributed/NavierStokes.ActivationStocks.profiles_stocks_congr",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationStocks.profiles_stocks_congr",
+      "line": 833,
+      "module": "NavierStokes.ActivationStocks",
+      "path": "NavierStokes/ActivationStocks.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationStocks.lean#L833"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationStocks.profiles_stocks_congr",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: The Delta p_s = 0 clause in the Profiles layer: for P : Profiles D, Q : Profiles D' at (X,eta) with 0 < X, eta in an open J, equal f and U at the point and equal profileHistory for every row at (X,xi) for all xi in J, one gets profileStockOne and profileStockTwo equal at (X,eta). Requires both point",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 833,
+        "text": "theorem profiles_stocks_congr {D E : RadialDomain} (P : Profiles D) (Q : Profiles E)\n    (h : ℝ) {J : Set ℝ} (hJ : IsOpen J) {X η : ℝ} (hη : η ∈ J)\n    (hp : (X, η) ∈ D.carrier) (hq : (X, η) ∈ E.carrier) (hX : 0 < X)\n    (hf : P.f (X, η) = Q.f (X, η)) (hfne : Q.f (X, η) ≠ 0)\n    (hu : P.U (X, η) = Q.U (X, η))\n    (hH : ∀ r ξ, ξ ∈ J → profileHistory P r (X, ξ) = profileHistory Q r (X, ξ)) :\n    profileStockOne P h (X, η) = profileStockOne Q h (X, η) ∧\n      profileStockTwo P h (X, η) = profileStockTwo Q h (X, η)"
+      }
+    }
+  }
+}

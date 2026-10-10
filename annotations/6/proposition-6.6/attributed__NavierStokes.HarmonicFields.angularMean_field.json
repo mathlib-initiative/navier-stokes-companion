@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.HarmonicFields.angularMean_field",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HarmonicFields.angularMean_field",
+      "line": 192,
+      "module": "NavierStokes.HarmonicFields",
+      "path": "NavierStokes/HarmonicFields.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicFields.lean#L192"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HarmonicFields.angularMean_field",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: for kp \\ne 0, angularMean (fun \\theta => field c k \\Phi kp (x,\\theta)) = c 0 x: angular averaging returns exactly the zero harmonic of c, so the averaged object has harmonic set contained in {0} — the 'angular averaging preserves finite harmonic sets' clause. angularMean_product (:241) is the compan"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 192,
+        "text": "theorem angularMean_field {α : Type*} (c : Coefficients α) (k : ℝ) (Φ : α → ℝ)\n    {kp : ℤ} (hkp : kp ≠ 0) (x : α) :\n    angularMean (fun θ => field c k Φ kp (x, θ)) = c 0 x"
+      }
+    }
+  }
+}

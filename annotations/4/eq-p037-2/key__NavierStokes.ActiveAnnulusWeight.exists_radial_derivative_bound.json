@@ -1,0 +1,26 @@
+{
+  "id": "eq-p037-2/key/NavierStokes.ActiveAnnulusWeight.exists_radial_derivative_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActiveAnnulusWeight.exists_radial_derivative_bound",
+      "line": 572,
+      "module": "NavierStokes.ActiveAnnulusWeight",
+      "path": "NavierStokes/ActiveAnnulusWeight.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L572"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActiveAnnulusWeight.exists_radial_derivative_bound",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 572,
+        "text": "theorem exists_radial_derivative_bound … (FL : EdgeFactor K c (leftChart a T)) (FR : EdgeFactor K 4 (rightChart b T)) (n : ℕ) : ∃ C, 0 < C ∧ ∃ N, ∀ p ∈ K, ∀ X ∈ Ioo (Real.exp a) (Real.exp b), ‖iteratedFDeriv ℝ n (radialPullback T) (p,X)‖ ≤ C * radialWeight c a b X / edgeDistance a b (Real.log X)^N  -- docstring: \"The same weight controls genuine derivatives in `X`, not just in `log X`.\""
+      }
+    }
+  }
+}

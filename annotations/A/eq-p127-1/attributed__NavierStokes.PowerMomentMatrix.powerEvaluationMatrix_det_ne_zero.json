@@ -1,0 +1,24 @@
+{
+  "id": "eq-p127-1/attributed/NavierStokes.PowerMomentMatrix.powerEvaluationMatrix_det_ne_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PowerMomentMatrix.powerEvaluationMatrix_det_ne_zero",
+      "line": 143
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PowerMomentMatrix.lean#L143"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PowerMomentMatrix.powerEvaluationMatrix_det_ne_zero",
+        "kind": "theorem"
+      },
+      "relation": "implies",
+      "role": "attributed",
+      "snippet": {
+        "line": 143,
+        "text": "theorem powerEvaluationMatrix_det_ne_zero (a x : Fin n → ℝ) (ha : Function.Injective a) (hx : StrictMono x) (hpos : ∀ j, 0 < x j) : (powerEvaluationMatrix a x).det ≠ 0, where powerEvaluationMatrix a x i j = x j ^ a i — the nonvanishing of the integrand's factor det[x_j^{α_i}] at ordered positive nodes, which the Lean proof feeds into the det B ≠ 0 conclusion by another route"
+      }
+    }
+  }
+}

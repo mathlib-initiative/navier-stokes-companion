@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.7)",
+  "status": "formalized",
+  "location": {
+    "page": 64,
+    "rect": [0.265729, 0.369371, 0.600582, 0.050703]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.7",
+      "locator": {
+        "physical": [64],
+        "printed": [64],
+        "text": "Equation (6.7), p. 64, in section 6.1"
+      },
+      "region": "eq-6.7@p064",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.95,
+          "evidence": ["paper: |v_r \\cdot n| \\ge \\frac{c}{1+|n|},\\qquad |v_t \\cdot n| \\ge \\frac{c}{1+|n|}\\qquad (n \\in \\mathbb{Z}^2 \\setminus \\{0\\})."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Same inequality, same two directions, same quantifier, with an explicit constant in place of the paper's unnamed c: the Lean proves c = 1/6. The directions agree with (6.2): v_r = (1, -b_g) = (1, 1-√2) is radialSymbol and v_t = (b_g, 1) = (√2-1, 1) is timeSymbol, and TorusInverse.vector gives the same two vectors where the inverse operators use them. |n| is the Euclidean length (frequencyLength), as in the paper, and the hypothesis k ≠ 0 is the paper's n ∈ ℤ²∖{0}. The proof is the paper's: conjugate_product_lower bounds the algebraic norm below by 1 and radialConjugate_upper / timeConjugate_upper bound the conjugate above by 3·|n|_{ℓ¹} ≤ 6·|n|, which is the paper's 'conjugate has absolute value at most C|n|'.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

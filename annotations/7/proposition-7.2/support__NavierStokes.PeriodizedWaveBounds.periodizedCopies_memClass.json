@@ -1,0 +1,27 @@
+{
+  "id": "proposition-7.2/support/NavierStokes.PeriodizedWaveBounds.periodizedCopies_memClass",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PeriodizedWaveBounds.periodizedCopies_memClass",
+      "line": 358,
+      "module": "NavierStokes.PeriodizedWaveBounds",
+      "path": "NavierStokes/PeriodizedWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodizedWaveBounds.lean#L358"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PeriodizedWaveBounds.periodizedCopies_memClass",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 358,
+        "text": "theorem periodizedCopies_memClass {s : StripData (P × Plane)} {w : ℕ → P × Plane → ℝ}\n    {α : ℝ} (g : ℕ → Geometry) (K : ℕ → Set Plane) (hK : ∀ n, IsCompact (K n))\n    (hinj : ∀ n, InjOn quotientPoint ((fun z => (g n).center + (g n).basis z) '' K n))\n    (κ : ℕ → Plane → ℝ) (hκ : ∀ n, support (κ n) ⊆ K n)\n    (f : ℕ → Frequency → P × Plane → E)\n    (hw : ∀ n x, x ∈ s.domain → 0 ≤ w n x)\n    (hj : LocalJets s w α (fun n => nativeCell (g n) (K n))\n      (fun n k x => κ n ((g n).coordinates k x.2) • f n k x)) :\n    MemClass s w α (fun n => ParticularWaveBounds.periodizedCopies (g n) (κ n) (f n))"
+      }
+    }
+  }
+}

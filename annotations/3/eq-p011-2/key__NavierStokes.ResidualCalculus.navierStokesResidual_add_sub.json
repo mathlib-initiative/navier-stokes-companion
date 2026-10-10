@@ -1,0 +1,23 @@
+{
+  "id": "eq-p011-2/key/NavierStokes.ResidualCalculus.navierStokesResidual_add_sub",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ResidualCalculus.navierStokesResidual_add_sub",
+      "line": 111,
+      "module": "NavierStokes.ResidualCalculus",
+      "path": "NavierStokes/ResidualCalculus.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ResidualCalculus.lean#L111"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ResidualCalculus.navierStokesResidual_add_sub"
+      },
+      "snippet": {
+        "line": 111,
+        "text": "navierStokesResidual (fun z => u z + e z) (fun z => p z + q z) t x - navierStokesResidual u p t x = temporalDerivative e t x - spatialLaplacian e t x + pressureGradient q t x + spatialDerivative u t x (e (t,x)) + spatialDerivative e t x (u (t,x)) + spatialDerivative e t x (e (t,x))"
+      }
+    }
+  }
+}

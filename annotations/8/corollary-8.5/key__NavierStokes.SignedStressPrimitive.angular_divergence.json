@@ -1,0 +1,28 @@
+{
+  "id": "corollary-8.5/key/NavierStokes.SignedStressPrimitive.angular_divergence",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedStressPrimitive.angular_divergence",
+      "line": 352,
+      "module": "NavierStokes.SignedStressPrimitive",
+      "path": "NavierStokes/SignedStressPrimitive.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L352"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedStressPrimitive.angular_divergence",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: F : ContDiff, RadiallySupported P.a P.b, 0 < r |- radialDivergence 2 (fun t => sigma P 2 F (t,p)) r = -adjusted P 2 F (r,p). The chart-variable form of the first identity of Corollary 8.5, for a general shell-supported source."
+      },
+      "role": "key",
+      "snippet": {
+        "line": 352,
+        "text": "theorem angular_divergence (P : Patch) {F : ℝ × E → ℝ}\n    (hF : ContDiff ℝ ∞ F) (hs : RadialAlias.RadiallySupported P.a P.b F) (p : E) {r : ℝ} (hr : 0 < r) :\n    IntegratedMeanBalances.radialDivergence 2 (fun t => sigma P 2 F (t, p)) r =\n      -adjusted P 2 F (r, p)"
+      }
+    }
+  }
+}

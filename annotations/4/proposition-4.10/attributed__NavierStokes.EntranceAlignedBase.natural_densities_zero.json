@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.EntranceAlignedBase.natural_densities_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.EntranceAlignedBase.natural_densities_zero",
+      "line": 404,
+      "module": "NavierStokes.EntranceAlignedBase",
+      "path": "NavierStokes/EntranceAlignedBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L404"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.EntranceAlignedBase.natural_densities_zero",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For R in Icc 0 (sqrt (2 * activeLeft W)): thetaDensity .. 0 (R,eta) = 0 and zDensity .. 0 (R,eta) = 0. The repository itself closes the interval here, by EqOn on Ioo and closure_Ioo.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 404,
+        "text": "theorem natural_densities_zero {R eta : ℝ}\n    (hR : R ∈ Icc 0 (Real.sqrt (2 * NominalConeAssembly.activeLeft W))) (heta : eta ∈ S) :\n    SlowResidualMatching.thetaDensity F.data.h W.axis.normalization\n      (asSlowProfiles (scheme W H Q M hlo)) 0 (R, eta) = 0 ∧\n    SlowResidualMatching.zDensity F.data.h (asSlowProfiles (scheme W H Q M hlo)) 0 (R, eta) = 0"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "eq-A.47/key/NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
+      "line": 76,
+      "module": "NavierStokes.FlatPrimitivePaper",
+      "path": "NavierStokes/FlatPrimitivePaper.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatPrimitivePaper.lean#L76"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 76,
+        "text": "∃ B : E × ℝ → ℝ, ContDiff ℝ ∞ B ∧ (∀ p ∈ K, B (p, 0) = b (p, 0) / c) ∧ (∀ p ∈ K, ∀ δ ∈ Ioc 0 δ₀, (∫ u in (0:ℝ)..δ, (Real.exp (-c / u ^ 2) / u ^ j) * b (p, u)) = (1 / 2 : ℝ) * Real.exp (-c / δ ^ 2) * δ ^ (3 - (j : ℝ)) * B (p, δ)) ∧ (∀ n : ℕ, ∃ C ≥ 0, ∀ p ∈ K, ∀ δ ∈ Icc 0 δ₀, ‖iteratedFDeriv ℝ n B (p, δ)‖ ≤ C)"
+      }
+    }
+  }
+}

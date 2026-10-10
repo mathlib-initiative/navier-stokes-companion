@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 119.1",
+  "status": "partial",
+  "location": {
+    "page": 119,
+    "rect": [0.275181, 0.177119, 0.449644, 0.040249]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p119-1",
+      "locator": {
+        "physical": [119],
+        "printed": [119],
+        "text": "Display 119.1, p. 119, in the proof of Lemma 10.2"
+      },
+      "region": "eq-p119-1@p119",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\sup_{K_0}\\bigl|\\partial_x^{\\alpha}\\partial_t^{j}G(\\cdot,t')-\\partial_x^{\\alpha}\\partial_t^{j}G(\\cdot,t)\\bigr|\\;\\le\\;|t'-t|\\;\\sup_{K_0\\times[t,t']}\\bigl|\\partial_x^{\\alpha}\\partial_t^{j+1}G\\bigr|."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The Lean takes the same mean-value step in a different shape, and only inside a proof. The paper bounds one mixed component ∂_x^α∂_t^j G, in the time direction only, by |t'-t| times the supremum of the single next time derivative ∂_x^α∂_t^{j+1} G over the compact set K_0×[t,t']. The Lean theorem's statement (GenericEndpointExtension.lean:455-458) is only `UniformContinuousOn (iteratedFDeriv ℝ n f) s` — it carries no constant, no increment and no (n+1)-st derivative. The quantitative inequality lives one level down, as the proof step `hLip : LipschitzOnWith K (iteratedFDeriv ℝ n f) s` at line 461, whose constant `K = ⟨max C 0, _⟩` (line 460) is internal to the proof: it is a Lipschitz bound on the whole joint jet over an open convex s, for any C bounding ‖iteratedFDeriv ℝ (n+1) f‖ on all of s, with the displacement measured in the full (t,x) norm rather than |t'-t|. Specialising s to a product neighbourhood and the two points to (t',x) and (t,x) gives a bound of the paper's left side, but with the larger right side |t'-t|·sup_s‖(n+1)-jet‖ in place of |t'-t|·sup_{K_0×[t,t']}|∂_x^α∂_t^{j+1}G|, so the displayed inequality as written is not supplied. The use the paper makes of it — every fixed derivative is uniformly Cauchy as t ↑ 1, so the limits exist — is proved: `actualJet_uniformContinuousOn` feeds `exists_limit_of_uniformContinuousOn` (GenericEndpointExtension.lean:481,488) and then `OffplaneJetExtensions.extension_of_local_jets`, whose docstring records that the endpoint derivative limits are constructed there rather than assumed.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

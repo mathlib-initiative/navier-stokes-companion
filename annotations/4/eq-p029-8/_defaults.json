@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 29.8",
+  "status": "formalized",
+  "location": {
+    "page": 29,
+    "rect": [0.24068, 0.741616, 0.518863, 0.044009]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p029-8",
+      "locator": {
+        "physical": [29],
+        "printed": [29],
+        "text": "Display 29.8, p. 29, in the proof of Lemma 4.4"
+      },
+      "region": "eq-p029-8@p029",
+      "verdicts": [
+        {
+          "confidence": 0.65,
+          "evidence": ["paper: \\Delta H = \\sqrt{2X}\\,\\Delta E,\\qquad \\Delta W = -\\frac{2D\\eta\\,\\Delta M + d\\,\\partial_\\eta \\Delta M}{X},\\qquad \\Delta\\Pi = \\Delta C_p."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Only the third identity is stated as such. ΔΠ = ΔC_p is `profileRows_sub`: with the shared axis datum (hp : P.pressure0 = Q.pressure0) the difference of the five rows equals the difference of the five bare cumulative integrals, and row 4 of those is ∫f² = C_p — exactly the paper's 'the last identity is the use of the common axis pressure datum'. The other two were not found as declarations, and each follows in one line from a stated Lean identity; the entries for `XW_eq_histories`, `H` and `E` are tagged `implies`/`uses` for that reason, not `states`/`defines`. ΔW: subtract two instances of `XW_eq_histories` and divide by X, giving X·ΔW = −2Dη·ΔM − d·Δ(∂_ηM) = −(2DηΔM + d∂_ηΔM) after commuting ∂_η with the difference. ΔH = √(2X)ΔE: both H = 2Xf and E = √(2X)f are linear in f, so ΔH = 2XΔf = √(2X)·√(2X)Δf = √(2X)ΔE for X > 0. These one-line rewritings are not used by the Lean proof of the surrounding estimate: `SeedHandbackJets.profile_comparison` / `profile_comparison_norm` never form the difference identities, and instead bound every difference generically through the `PairBound` algebra (add/sub/mul/inverse) propagated by `PolynomialExpression.eval_pairBound` over `outputExpression`. Searches for a theorem whose statement is a difference of two W's, of two H's or of two E's returned nothing.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

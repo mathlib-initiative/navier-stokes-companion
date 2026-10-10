@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.4)",
+  "status": "formalized",
+  "location": {
+    "page": 103,
+    "rect": [0.356428, 0.718191, 0.512636, 0.064147]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-9.4",
+      "locator": {
+        "physical": [103],
+        "printed": [103],
+        "text": "Equation (9.4), p. 103, in the statement of Proposition 9.3"
+      },
+      "region": "eq-9.4@p103",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\mathcal{G}^{[j]}_* - \\langle \\mathcal{G}^{[j]}_* \\rangle_\\theta = \\sum_{\\gamma \\in \\Gamma} \\sum_{m \\in \\mathscr{H}_j} f^{[j]}_{\\gamma,m} e^{i k_\\gamma m \\Phi_\\gamma}, \\qquad \\mathscr{H}_j \\subset \\mathbb{Z} \\setminus \\{0\\}, \\qquad |\\mathscr{H}_j| < \\infty."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. No single declaration carries the double sum; it is the composition of two identities. The outer sum over γ ∈ Γ is `fullGoodWaveResidual_grouped`, whose left-hand side `fullGoodWaveResidual` is literally 𝒢 minus its angular average. The inner sum over m is `block_expansion`, applied with J = modes x.coefficients.residualBand, which is legitimate by `source_support`; the two conjoin by rewriting under the Finset sum. Three encoding differences, all routine: (a) the Lean takes the real part of the complex harmonic sum, the coefficients being the realified `waveResidualCoefficients` of `HarmonicResidual.residualBlock` (HarmonicResidual.lean:1438, via `ofBlock`'s `realCoefficients`); (b) the exponent is m·(k_γ Φ_γ(x) + k_{p,γ}·θ), i.e. the Lean carries the integer angular frequency as a separate field and the paper's Φ_γ must be read as the full phase including the angular variable; (c) there is no Q^(2A+1/2) factor — the identity is homogeneous in 𝒢, so multiplying through gives the starred form. The two side conditions are stated: |ℋ_j| < ∞ holds twice over (coefficients are an `AddMonoidAlgebra … ℤ`, so finitely supported by construction, and `source_support` bounds the support inside Icc(−M, M) with M = x.coefficients.residualBand, a field of the coefficient data and so independent of both the label and the band n, matching \"ℋ_j depends on the finite construction but not on the band\"); 0 ∉ ℋ_j is `source_zero`.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

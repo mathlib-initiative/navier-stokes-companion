@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.AxisymmetricFields.smooth_velocity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisymmetricFields.smooth_velocity",
+      "line": 192,
+      "module": "NavierStokes.AxisymmetricFields",
+      "path": "NavierStokes/AxisymmetricFields.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean#L192"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisymmetricFields.smooth_velocity",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ContDiff R infinity H and ContDiff R infinity K imply ContDiff R infinity (velocity H K). This IS the (4.4)-to-(4.5) implication: smooth profiles in (t,s,z) give a smooth Cartesian velocity, the axis included, with no removable-singularity step. It asks for smoothness on ALL of the (s,z) plane.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 192,
+        "text": "theorem smooth_velocity {H K : Profile}\n    (hH : ContDiff ℝ ∞ H) (hK : ContDiff ℝ ∞ K) : ContDiff ℝ ∞ (velocity H K)"
+      }
+    }
+  }
+}

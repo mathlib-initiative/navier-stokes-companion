@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.2/attributed/NavierStokes.JointResidualLimits.boundaryLimits_eq_extension",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.JointResidualLimits.boundaryLimits_eq_extension",
+      "line": 169,
+      "module": "NavierStokes.JointResidualLimits",
+      "path": "NavierStokes/JointResidualLimits.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L169"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.JointResidualLimits.boundaryLimits_eq_extension",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Given VanishingJointJets f, AwayExtensions f, any x and ANY e : OneSidedExtension f x: boundaryLimits f hext x n = iteratedFDeriv ℝ n e.value (1,x). Proved by tendsto_nhds_unique against past_filter_neBot (:162). Instantiated at the zero extension on ℝ × supportCylinderᶜ this is exactly the support ",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 169,
+        "text": "theorem boundaryLimits_eq_extension {f : SpaceTime → V} (hzero : VanishingJointJets f)\n    (hext : AwayExtensions f) {x : Space} (e : OneSidedExtension f x) (n : ℕ) :\n    boundaryLimits f hext x n = iteratedFDeriv ℝ n e.value (1, x)"
+      }
+    }
+  }
+}

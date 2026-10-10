@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 108.3",
+  "status": "formalized",
+  "location": {
+    "page": 108,
+    "rect": [0.175033, 0.459719, 0.650157, 0.042842]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p108-3",
+      "locator": {
+        "physical": [108],
+        "printed": [108],
+        "text": "Display 108.3, p. 108, in the proof of Proposition 9.6"
+      },
+      "region": "eq-p108-3@p108",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.74,
+          "evidence": ["paper: \\Delta w_m = \\mathrm{curl}_*\\!\\left(\\frac{\\mathrm{i}\\,n_\\Phi \\times (\\psi t_m)}{km\\,|n_\\Phi|^2}\\, e^{ikm\\Phi}\\right), \\qquad \\Delta p_{w,m} = \\psi \\pi_m e^{ikm\\Phi}, \\qquad \\mathscr{L}_m(t_m,\\pi_m) = -f_m."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three formulas are present, each up to a stated encoding. (i) The potential: Lean's `vectorPotential K R Vr Vθ Vz Φ a` is vectorMode K Φ applied to (i/K)·(n_Φ × a)/|n_Φ|², i.e. literally i n_Φ × a /(K|n_Φ|²) e^{iKΦ} with K = km and a = ψt_m (the ψ supplied by `withCutoff`, which multiplies amplitude and pressure by the same ψ, matching ψt_m and ψπ_m). Δw_m is its curl_*, which is `cylindricalCurl` (the cylindrical curl including the frame-connection term in its axial component). (ii) `cylindricalCurl_vectorPotential` states that this curl equals vectorMode K Φ (realizedCoefficient) = (a + curlRemainder) e^{iKΦ}, i.e. the realized amplitude is ψt_m plus the O(1/km) curl remainder; the paper's display itself only defines Δw_m as the curl, so this is a match, but note Lean makes the remainder explicit at this point whereas the paper's display does not name it. Lean's theorem also carries two hypotheses the display leaves implicit: n_Φ ≠ 0 on the chart, and the tangency normalDot n_Φ (a x) = 0. (iii) Δp_{w,m} = ψπ_m e^{ikmΦ}: the ψπ_m coefficient is `withCutoff`'s pressure field and the e^{ikmΦ} realization is `HarmonicBlock.oscillatoryPressure`, which takes the real part of HarmonicFields.field and carries an extra angular factor e^{i j kp θ} — a real-part/conjugate-pair encoding of the paper's complex display, consistent with the paper's own next sentence about retaining conjugate pairs. (iv) ℒ_m(t_m,π_m) = -f_m is stated as `complexCopyCoefficients_principal_at`, with ℒ_m = `LinearWaveResidual.principal` matching (9.1) term for term: transport along V_f, the shear matrix K, the εκ²|n_Φ|² damping and the ik n_Φ π pressure term. No constant, sign or exponent differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

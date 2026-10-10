@@ -1,0 +1,26 @@
+{
+  "id": "eq-p112-1/key/NavierStokes.FlatKernelBounds.Expr.diff",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FlatKernelBounds.Expr.diff",
+      "line": 106,
+      "module": "NavierStokes.FlatKernelBounds",
+      "path": "NavierStokes/FlatKernelBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatKernelBounds.lean#L106"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FlatKernelBounds.Expr.diff",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "role": "key",
+      "snippet": {
+        "line": 106,
+        "text": "def Expr.diff : Expr → Expr | .jet k => .mul (.jet (k + 1)) (Expr.invRoot.pow 3) | .add e f => .add e.diff f.diff | .mul e f => .add (.mul e.diff f) (.mul e f.diff) | …"
+      }
+    }
+  }
+}

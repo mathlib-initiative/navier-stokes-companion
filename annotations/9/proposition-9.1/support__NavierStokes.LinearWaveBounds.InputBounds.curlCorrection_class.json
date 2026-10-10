@@ -1,0 +1,26 @@
+{
+  "id": "proposition-9.1/support/NavierStokes.LinearWaveBounds.InputBounds.curlCorrection_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LinearWaveBounds.InputBounds.curlCorrection_class",
+      "line": 549,
+      "module": "NavierStokes.LinearWaveBounds",
+      "path": "NavierStokes/LinearWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L549"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LinearWaveBounds.InputBounds.curlCorrection_class",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 549,
+        "text": "theorem curlCorrection_class (h : InputBounds s P α κ d a) {R : D → ℝ}\n    (hR : a.radius = fun _ => R)\n    (hN : PhaseJetBounds.PolynomialJets (CurlClassBounds.phaseDomain s) (a.normal s d))\n    {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ n x, x ∈ s.domain → b ≤ ‖a.normal s d n x‖)\n    (hupper : ∀ n x, x ∈ s.domain → ‖a.normal s d n x‖ ≤ M)\n    (hK : BandBound s (1 / 2) (fun n => 1 / a.frequency n)) :\n    WaveClass s P (α + 1 / 2 - κ) (a.curlCorrection s d)"
+      }
+    }
+  }
+}

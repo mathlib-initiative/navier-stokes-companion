@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.13)",
+  "status": "formalized",
+  "location": {
+    "page": 65,
+    "rect": [0.283196, 0.792165, 0.585872, 0.028654]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.13",
+      "locator": {
+        "physical": [65],
+        "printed": [65],
+        "text": "Equation (6.13), p. 65, in the statement of Lemma 6.1"
+      },
+      "region": "eq-6.13@p065",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\gamma \\neq \\gamma', \\quad K_\\gamma \\cap K_{\\gamma'} \\neq \\varnothing \\quad \\Longrightarrow \\quad \\overline{\\mathcal{R}^{\\mathrm{abs},+}_{\\gamma}} \\cap \\overline{\\mathcal{R}^{\\mathrm{abs},+}_{\\gamma'}} = \\varnothing ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Both sides assert the same disjointness of the two lifted enlarged rectangles, but the Lean states it under a weaker hypothesis than the paper's. Paper: γ ≠ γ' and K_γ ∩ K_{γ'} ≠ ∅. Lean: SlotColoring.Adj D L M (SlotColoring.lean:116), i.e. 1 ≤ L.1, 1 ≤ M.1, L ≠ M, |L.1 − M.1| ≤ 4, and (physicalBox D L ∩ physicalBox D M).Nonempty — exactly the enlarged-box interaction graph the paper builds in Step 1 of the proof ('enlarged slow boxes intersect … band indices differ by at most four'). Recovery of (6.13) as written: if the slow supports meet at a point with q > 0 then both physical masks are nonzero (or both closed windows contain) that point, so closedWindow_adjacency / masks_force_adjacency give Adj D L M, and the Lean conclusion then applies; so the Lean implies the paper's implication for every pair with 1 ≤ level, which covers Γ = {(ℓ,a,σ) : ℓ ≥ ℓ₀} of (6.8) since ℓ₀ is chosen large. The converse fails (Adj can hold when the K's do not meet), so the Lean conclusion is strictly more general. Two encoding points, both matching: the paper's R^+_γ is open (|ξ|,|η| < 2r₀) and (6.13) takes closures, while orientedRectangle is the closed rectangle |ξ|,|η| ≤ 2r — the closure; and liftedSupport of that compact rectangle is the locally finite lattice union π_{i(ℓ)}^{-1}(closure R^+_γ) = closure of R^{abs,+}_γ. The radius is a single field of SlotSystem, independent of the label and of the band, as the paper requires; the centers slotCenter h L depend on L only through its colour, which is consistent since Adj-related labels get different colours (SlotColoring.color_proper, SlotColoring.lean:185).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

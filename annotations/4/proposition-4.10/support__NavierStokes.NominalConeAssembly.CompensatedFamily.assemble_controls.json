@@ -1,0 +1,26 @@
+{
+  "id": "proposition-4.10/support/NavierStokes.NominalConeAssembly.CompensatedFamily.assemble_controls",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalConeAssembly.CompensatedFamily.assemble_controls",
+      "line": 998,
+      "module": "NavierStokes.NominalConeAssembly",
+      "path": "NavierStokes/NominalConeAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L998"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalConeAssembly.CompensatedFamily.assemble_controls",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 998,
+        "text": "theorem assemble_controls {D : ℝ} (hF : OutgoingProfile.Specification F D)\n    (A : AxisStage F) (c : Controls A) (hr : G.radiusFloor ≤ c.radius)\n    (hsep : c.separation ≤ Real.exp (-8))\n    (hs : ∀ eta ∈ HeatedOutgoing.parameterDomain, SmallDebt F c.debt eta) :\n    (G.assemble hF A c hr hsep hs).controls = c"
+      }
+    }
+  }
+}

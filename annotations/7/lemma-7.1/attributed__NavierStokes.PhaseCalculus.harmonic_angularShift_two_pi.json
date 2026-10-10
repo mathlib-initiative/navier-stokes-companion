@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.1/attributed/NavierStokes.PhaseCalculus.harmonic_angularShift_two_pi",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhaseCalculus.harmonic_angularShift_two_pi",
+      "line": 192,
+      "module": "NavierStokes.PhaseCalculus",
+      "path": "NavierStokes/PhaseCalculus.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseCalculus.lean#L192"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhaseCalculus.harmonic_angularShift_two_pi",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If k*p = (m : ℝ) for an integer m, then harmonic k j ε p pz x0 F G (angularShift (2π) q) = harmonic k j ε p pz x0 F G q, where harmonic = exp(i k j Φ). I.e. every integer harmonic e^{ikjΦ} is single-valued in θ."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 192,
+        "text": "theorem harmonic_angularShift_two_pi (k : ℝ) (j m : ℤ) (ε p pz x0 : ℝ)\n    (F G : Slow → ℝ) (q : Slot) (hkp : k * p = (m : ℝ)) :\n    harmonic k j ε p pz x0 F G (angularShift (2 * Real.pi) q) =\n      harmonic k j ε p pz x0 F G q"
+      }
+    }
+  }
+}

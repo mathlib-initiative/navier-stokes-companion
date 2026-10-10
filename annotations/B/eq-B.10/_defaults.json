@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.10)",
+  "status": "formalized",
+  "location": {
+    "page": 146,
+    "rect": [0.312897, 0.16792, 0.556171, 0.04397]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.AxisWeightEstimates",
+      "path": "NavierStokes/AxisWeightEstimates.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.10",
+      "locator": {
+        "physical": [146],
+        "printed": [146],
+        "text": "Equation (B.10), p. 146, in the proof of Lemma B.1"
+      },
+      "region": "eq-B.10@p146",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\frac{\\mathfrak{a}_{i,k+1}}{\\mathfrak{a}_{i+1,k}}\\;=\\;\\frac{20}{\\rho}\\,(i+1)\\,\\frac{(i+2)^2}{(i+1)^2}\\,\\frac{(k+1)^2}{(k+2)^2}\\;\\le\\;\\frac{80}{\\rho}\\,(i+1)"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The right-hand bound is stated verbatim by weight_parameter_radial_shift_ratio, with ε in place of ρ. As in (B.9) the exact middle member is split: coreWeight_parameter_shift is the equality coreWeight i (k+1) = (20/ε)(i+1) coreWeight (i+1) k, i.e. the paper's leading factor (20/ρ)(i+1) exactly, and the two square-decay quotients squareDecay i / squareDecay (i+1) = (i+2)^2/(i+1)^2 and squareDecay (k+1) / squareDecay k = (k+1)^2/(k+2)^2 are the paper's remaining two factors, stated in the repository only in inequality form (≤ 4 and ≤ 1 respectively); recovering the displayed equality is one unfolding of squareDecay. The product 20 · 4 · 1 = 80 gives the paper's (80/ρ)(i+1). I checked the binomial bookkeeping behind the (i+1): binom(i+k+1,k+1)/binom(i+k+1,k) = (i+1)/(k+1) cancels the (k+1) from the factorial, which is what coreWeight_parameter_shift asserts. Lean quantifies over all i, k : ℕ and all real ε > 0.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

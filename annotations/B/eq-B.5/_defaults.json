@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.5)",
+  "status": "formalized",
+  "location": {
+    "page": 145,
+    "rect": [0.320954, 0.544429, 0.548506, 0.040179]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.5",
+      "locator": {
+        "physical": [145],
+        "printed": [145],
+        "text": "Equation (B.5), p. 145, in the statement of Lemma B.1"
+      },
+      "region": "eq-B.5@p145",
+      "verdicts": [
+        {
+          "confidence": 0.92,
+          "evidence": ["paper: (\\mathcal{J}_\\nu F)_{\\alpha+1} = \\frac{F_\\alpha}{(\\alpha+1)(\\alpha+\\nu)}, \\qquad (\\mathcal{J}_\\nu F)_0 = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The formula is the paper's under α↔n, ν↔r: radialDivisor r n = (n+1)(n+r), and the Lean n-th coefficient inputJet I ε A n 0 η is F_α(η) (profile = Σ Yⁿ · inputJet A n 0 η, no factorial normalisation). Rewriting: the two Lean theorems carry an extra index m, the order of the η-derivative; m = 0 is (B.5) verbatim, larger m is its η-derivative, which the paper's identity of functions of η gives at once. The definitional direction is reversed: Lean takes (B.5) as the definition of J_ν (inverseScale/inverseData, and the raw-coefficient regularInverseJet) and proves the paper's defining properties afterwards — the ODE Y G_YY + ν G_Y = F in regularInverse_actual_equation and G(0)=0 in AxisEvaluationAlgebra.regularInverse_axis_zero (line 148) — whereas the paper defines J_ν by the ODE and states (B.5) as a consequence. Lean's hypothesis is 1 ≤ r, more general than the paper's ν ∈ {1,2}.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

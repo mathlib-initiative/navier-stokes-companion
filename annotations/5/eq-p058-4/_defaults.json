@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 58.4",
+  "status": "partial",
+  "location": {
+    "page": 58,
+    "rect": [0.383694, 0.452743, 0.232835, 0.028844]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p058-4",
+      "locator": {
+        "physical": [58],
+        "printed": [58],
+        "text": "Display 58.4, p. 58, in the proof of Lemma 5.4"
+      },
+      "region": "eq-p058-4@p058",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\bigl|\\partial_z^{a'}\\partial_t^{b'}\\chi(aq)\\bigr|\\le C_{a',b'}\\,q^{-a'D-b'},"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Both statements bound derivatives of the composed cutoff by a negative power of q with a constant independent of the scale a, and the quantifier order matches (the constant is chosen before a, as the paper's 'with constants independent of a' requires). What differs is the exponent bookkeeping. The paper separates the orders: a' Cartesian space derivatives cost q^{-D} each and b' time derivatives cost q^{-1} each, with 0 < D < 1 coming from its hypothesis (5.28), |∂_z^a ∂_t^b q| ≤ C_{a,b} q^{1-aD-b}. The Lean has no D and no space/time split: `cutoff_jet_bound` takes a single total Fréchet order m, assumes ‖D^k q‖ ≤ B_k q^{1-k} (the D = 1 case of (5.28)), and concludes ‖D^m(χ∘(a·q))‖ ≤ C q^{-m}. Setting D = 1 and m = a' + b' makes the two coincide; for D < 1 the paper's bound is strictly sharper on q ≤ 1, since q^{-a'D-b'} ≤ q^{-a'-b'}. The Lean's hypothesis is correspondingly weaker (the paper's (5.28) implies it, because 1 - aD - b ≥ 1 - a - b and q ≤ 1), so the two implications are a consistent D = 1 specialization rather than a contradiction. The sharpening is a weaker intermediate bound that still suffices: the extra loss is absorbed into the per-order exponent reduction, the paper's ℓ'_m and the Lean's `CutStageEstimates.cutLoss`, and the downstream stage bound (`cut_product_bound`, `exists_cut_stage_constants`) is proved with it. Norms differ cosmetically too: the paper's |·|_m-style absolute value of a single mixed partial against the Lean's operator norm of the full iterated Fréchet derivative.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

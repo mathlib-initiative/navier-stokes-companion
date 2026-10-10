@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (10.13)",
+  "status": "formalized",
+  "location": {
+    "page": 121,
+    "rect": [0.289577, 0.254688, 0.579492, 0.041846]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-10.13",
+      "locator": {
+        "physical": [121],
+        "printed": [121],
+        "text": "Equation (10.13), p. 121, in the statement of Lemma 10.4"
+      },
+      "region": "eq-10.13@p121",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\|u(t)\\|_2^2 + 2\\int_0^t \\|\\nabla u(s)\\|_2^2\\,ds \\le \\mathcal{F}(t)^2 \\qquad (0 \\le t < 1)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Term for term at viscosity one the two are the same inequality: l2Sq u T = ∫‖u(T,x)‖² = ‖u(t)‖₂²; dissipation u t = Σ_{i<3} ∫‖∂_i u(t,·)‖² = ‖∇u(t)‖₂²; cumulativeForceNorm f T = ∫₀^T ‖f(s)‖₂ ds = F(t); the range T ∈ Ico 0 1 is the paper's 0 ≤ t < 1; the factor 2 on the dissipation and the square on the right are the same. The Lean is more general in one respect: it carries a viscosity ν > 0 and reads 2·ν·∫ dissipation, so the paper's (10.13) is the instance ν = 1 (the paper's Section 10.3 works at viscosity one, cf. Lemma 10.5). One hypothesis difference, recorded rather than charged: the Lean assumes the bundle CandidateProperties ν, one field of which (energy_bounded : UniformFiniteEnergy (Ico 0 1) u) is the uniform kinetic-energy boundedness that the paper states as a consequence of this lemma ('In particular…'). This is not circular as written: the proof text of candidate_energy_dissipation_le and of the lemma it calls, candidate_l2Norm_le_cumulativeForceNorm (IntegratedDissipation.lean:143), uses only smoothness, support, zero datum, divergence-freeness and the equation, never hc.energy_bounded; and NavierStokesR3.CompactEnergy.uniform_finite_energy (CompactEnergy.lean:343) proves that field from the same data, which is how ActualCandidate.of_localized_fields (ActualCandidate.lean:119) discharges it. theorem_1_1_with_dissipation states the inequality for the constructed fields with no candidate hypothesis at all.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

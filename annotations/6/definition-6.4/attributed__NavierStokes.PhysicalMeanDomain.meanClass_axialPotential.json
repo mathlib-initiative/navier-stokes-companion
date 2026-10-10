@@ -1,0 +1,31 @@
+{
+  "id": "definition-6.4/attributed/NavierStokes.PhysicalMeanDomain.meanClass_axialPotential",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhysicalMeanDomain.meanClass_axialPotential",
+      "line": 1686,
+      "module": "NavierStokes.PhysicalMeanDomain",
+      "path": "NavierStokes/PhysicalMeanDomain.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalMeanDomain.lean#L1686"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhysicalMeanDomain.meanClass_axialPotential",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Its hypothesis block (lines 1691-1693) carries all four clauses of M_α verbatim for one family f : ℕ → Lift S → ℝ: hf : ∀ n, ContDiffOn ℝ ∞ (f n) (slowDomain U); hp : ∀ n, PeriodicOn U (f n); hs : ∀ n, SupportedOn a b U (f n); hclass : MeanClass (localStripData a b cL cR …) α f. The identical block ",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1686,
+        "text": "theorem meanClass_axialPotential {a b d cL cR h : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (hcL : 0 < cL) (hcR : 0 < cR) (hh : 0 ≤ h)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n)\n    (hscale : ∀ n, ChartScales.S n ≤ L n)\n    (U : Set S) (hU : IsOpen U) {α : ℝ} {f : ℕ → PressureStream.Lift S → ℝ}\n    (hf : ∀ n, ContDiffOn ℝ ∞ (f n) (slowDomain U)) (hp : ∀ n, PeriodicOn U (f n))\n    (hs : ∀ n, SupportedOn a b U (f n))\n    (hclass : MeanClass (localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) α f)\n    (M : ℕ → ℝ) (v : ℕ → PressureStream.Plane) :\n    MeanClass (localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) α\n      (fun n => TemporalMeanUpdate.axialPotential d a b (M n) (v n) h n (f n))"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "equation",
+  "label": "Display 59.3",
+  "status": "formalized",
+  "location": {
+    "page": 59,
+    "rect": [0.234011, 0.372238, 0.534545, 0.040586]
+  },
+  "target": {
+    "pin": {
+      "line": 139
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p059-3",
+      "locator": {
+        "physical": [59],
+        "printed": [59],
+        "text": "Display 59.3, p. 59, in the proof of Lemma 5.4"
+      },
+      "region": "eq-p059-3@p059",
+      "role": "key",
+      "snippet": {
+        "line": 139
+      },
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\frac{g_{J+1}}{2}-\\ell'_{m+s} \\ge N+H_m+(d-1)(K_{m+s}+1), \\qquad \\rho_J-K^{\\mathcal{F}}_m \\ge N+1."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same two conditions on J, with the paper's explicit constants replaced by the aggregates the Lean construction builds. First inequality: Lean requires n ≤ gain J − a.loss m with gain J = g (J+1)/2 (fixed at GenericTupleRealization.lean:62 and GenericSupportLocalSummation.lean:59), n = N, and a.loss m the single loss function assembled for the whole polynomial by TailRates.add / ApproximationRates.mul / mul_coefficient_local — the role played in the paper by ℓ'_{m+s} + H_m + (d−1)(K_{m+s}+1). The paper's index shift m → m+s is internal to that assembly (ApproximationRates.directional raises the jet index by one at each derivative node). Second inequality: Lean requires n ≤ rho J − Lres m, which is ρ_J − K^F_m ≥ N; the paper's margin N+1 is its allowance for absorbing the logarithm of (5.33) by one power of q^{-1}, an absorption the Lean has already performed before stating hres as a JetRate (see jetRate_of_log_bound_add_flat, GenericRealizationBounds.lean:205, which likewise yields exponent r − 1 and also carries the flat remainder E_{J,m}). The paper's side condition J ≥ m + s is Lean's `a.threshold m ≤ J`, enforced by `let J := max (a.threshold m) J₀` (line 141). The order of choices is the same: (m, N) first, then J, then the neighbourhood and constants.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

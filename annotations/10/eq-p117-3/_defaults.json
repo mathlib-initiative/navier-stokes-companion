@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 117.3",
+  "status": "formalized",
+  "location": {
+    "page": 117,
+    "rect": [0.322714, 0.591451, 0.354791, 0.026348]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p117-3",
+      "locator": {
+        "physical": [117],
+        "printed": [117],
+        "text": "Display 117.3, p. 117, in section 10.1"
+      },
+      "region": "eq-p117-3@p117",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\Psi = r^{-1}\\mathcal{I}_c\\!\\left(r\\gamma_{d,\\mathrm{phys}}\\right), \\qquad \\mathcal{I}_c g = \\mathcal{I}g - \\chi_m \\mathcal{J}g,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Ψ = r⁻¹I_c(rγ_d) is literally the body of PressureStream.streamPotential (divideRadius ∘ physicalCompact ∘ weightedSource), and I_c g = I g − χ_m J g is literally the body of TransportPrimitive.compactIntegral, with I = pastIntegral and J = totalIntegral. Two encoding differences. (a) Limits: Lean's I integrates over u ∈ (−∞,0] and J over all of ℝ along the transport line z + (u,(Mu)•v), where the paper writes ∫_0^r and ∫_0^∞ in r; physicalCompact_eq_radialIntegral converts these to ∫_a^r and ∫_a^b in the physical radius, which equals the paper's 0..r and 0..∞ because g is shell-supported in [a,b] with smooth zero extension. (b) Lean states one operator carrying the transport speed M and the power coordinate U = R^d, so the paper's phase shift ((r')^{d_r} − r^{d_r})v_r of (8.4) is the case M = 1 of Lean's M(s^d − r^d)•v and the normalized (8.5) is M = Λ_{i g0}Q^{d_r}/2; χ_m is TransportPrimitive.interiorCutoff (a^d) (b^d) evaluated at r^d, matching the paper's slow cutoff that is zero on the inner collar and one on the outer collar of the active shell.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

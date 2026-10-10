@@ -1,0 +1,26 @@
+{
+  "id": "lemma-10.3/support/NavierStokes.CompactSpatialForceDecay.jet_decay",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CompactSpatialForceDecay.jet_decay",
+      "line": 44,
+      "module": "NavierStokes.CompactSpatialForceDecay",
+      "path": "NavierStokes/CompactSpatialForceDecay.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CompactSpatialForceDecay.lean#L44"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CompactSpatialForceDecay.jet_decay",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 44,
+        "text": "theorem jet_decay {S : Set Space} (hS : IsCompact S) {f : VelocityField}\n    (hf : ContDiffOn ℝ ∞ f futureDomain) (hs : SupportedIn S f)\n    (htime : CompactFutureTimeSupport f) (m : ℕ) (K : ℝ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ t : ℝ, 0 ≤ t → ∀ x : Space,\n      ‖iteratedFDerivWithin ℝ m f futureDomain (t, x)‖ ≤ C / (1 + ‖x‖ + t) ^ K"
+      }
+    }
+  }
+}

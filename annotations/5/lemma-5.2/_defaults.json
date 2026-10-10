@@ -1,7 +1,7 @@
 {
   "kind": "lemma",
   "label": "Lemma 5.2",
-  "status": "formalized",
+  "status": "partial",
   "location": {
     "page": 50,
     "rect": [0.133356, 0.230839, 0.734825, 0.256856]
@@ -17,45 +17,45 @@
       "region": "lemma-5.2@p050",
       "verdicts": [
         {
-          "confidence": 0.82,
-          "evidence": ["CONVENTION: GlobalSlowProfiles.exists_step L799 (generic step, no stress clauses); GlobalSlowProfiles.sequence L901; stress clauses only in EntranceAlignedBase.aligned_higher_support L517, modulated_positive_radialSupport L898, modulated_higherInteriorSupport L838", "CONFIRMED_CONTENT: GlobalSlowProfiles.profiles_inner_eq L1814 (agreement for 0≤X<inner only) with EntranceAlignedBase.localization L153 (inner = cutoffInner); profiles_inner_tangential L1887 transfers the inner equations by germ locality. No holomorphy statement exists for profiles s n.", "CONVENTION: EntranceAlignedBase.modulated_first_edgeJets L876 (collar only), modulated_positive_stress_zero L833, modulated_higherInteriorSupport L838, modulated_quotients_smooth L975; BaseResidual.edgeJets_of_outer_collar L2687 and compact_weighted_jet_bound L2666 used inside ConstructedSlowBase.weighted_on_actual_scales L446. The generic ConstructedSlowBase.firstStress_edgeJets L468 is not instantiated, because its germ hypothesis at η=±1 is unavailable.", "All three voters agree, and I checked the Lean directly. exists_step and the profiles_* theorems cover the extension, (5.2), (5.5), m_n=0 and support in [0,X_+]. Every cited name and line matches decls.jsonl, except compact_weighted_jet_bound, which is at BaseResidual L2666. Agreement holds for X < cutoffInner > zeroEnd, and the stress supports are proved for modulatedCoefficients = alignedCoefficients. Radii are fixed and ordered by window_order, zeroEnd_lt_outer and outer_before_upper. Two findings are formulation choices with recovery written down: the recursion encoding of the induction, and the per-order (5.13). The η-holomorphy maintenance clause is genuinely unstated but unused, so it is low. ζ's identity with Theorem 4.6(iv) is left to that item. The 'Lemma 5.2' docstring in ReferenceBounds is stale numbering and actually refers to B.4."],
+          "confidence": 0.8,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.GlobalSlowProfiles.EvenProfile, NavierStokes/GlobalSlowProfiles.lean:62, is ContDiffOn R infinity with eta ranging over a real Set R; no field of Scheme (:730), Admissible (:758) or StepProperties (:786) and no conclusion of exists_step (:799) mentions holomorphy. The only eta-holomorphy in the slow construction is NavierStokes.SlowRecursion.AxisFunction.holomorphic, NavierStokes/SlowRecursion.lean:71, a property of the inner coefficient type over a complex parameter set U, and nothing transports it across the cutoff and moment repair.", "ATTRIBUTION_GAP: GlobalSlowProfiles.exists_step, NavierStokes/GlobalSlowProfiles.lean:799, is the inductive step; GlobalSlowProfiles.sequence, :901, is the recursion; the radii are fields of Scheme, :730, and ordered by EntranceAlignedBase.window_order, NavierStokes/EntranceAlignedBase.lean:66, zeroEnd_lt_outer, :700, and ConstructedSlowBase.outer_before_upper, NavierStokes/ConstructedSlowBase.lean:554.", "ATTRIBUTION_GAP: The (5.13) shape is BaseResidual.PolynomialEdgeJets, NavierStokes/BaseResidual.lean:1640, with delta = ActiveAnnulusWeight.edgeDistance, NavierStokes/ActiveAnnulusWeight.lean:25, which is min 1 (min (y-a) (b-y)) verbatim. For n = 1 it is obtained by feeding EntranceAlignedBase.modulated_first_edgeJets (:876, collar), modulated_positive_stress_zero (:833), modulated_smooth (:826) and zeroEnd_lt_outer_collar (:709) into BaseResidual.edgeJets_of_outer_collar (:2687). For n >= 2 the N = 0 form follows from modulated_higherInteriorSupport (:838) with BaseResidual.compact_weighted_jet_bound (:2666) or SlowStressSupport.logarithmic_weighted_jets (NavierStokes/SlowStressSupport.lean:1130). What is exported instead is the summed ConstructedSlowBase.WeightedStressBound (:438) via weighted_on_actual_scales (:446).", "Every clause of Lemma 5.2 is stated somewhere for the final globalized profiles - the equations (5.2) and (5.5), the moment vanishing, the support of all five components of P_n including F_n/X, smoothness at the axis and across X >= 0, inner agreement on an interval larger than [0, X_-], both stress supports, and the ingredients of (5.13) - except one: that the extension retains Lemma 5.1's eta-parameter regularity on [0, a^2]. The globalization is carried out entirely in the real-smooth EvenProfile category, and holomorphy in eta exists in the repository only for the inner AxisFunction type. Recovering the clause needs analytic facts the repository does not state, so the relation is partial and the verdict DELTA. B's verdict and severity were right; A's citations on the F_n/X support, firstStress_edgeJets and the sharp n >= 2 support were right."],
           "findings": [
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "medium",
+              "summary": "The clause that the globalized order-n profile retains Lemma 5.1's eta-parameter regularity (holomorphy near [-1,1]) throughout [0,a^2] is stated by no declaration: the whole globalization lives in a real-smooth category."
+            },
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration states Lemma 5.2. Its clauses are spread over GlobalSlowProfiles, AssembledSlowBase and EntranceAlignedBase, and the induction is encoded as well-founded recursion over a Scheme whose radii are fixed once."
+            },
             {
               "confidence": 0.78,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No single declaration states Lemma 5.2. The induction lemma over arbitrary lower-order data is encoded as a well-founded recursion (exists_step, sequence). Stress clauses are proved only for the constructed modulated sequence."
-            },
-            {
-              "confidence": 0.8,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "The clause that the extension keeps the η-holomorphic regularity of Lemma 5.1 throughout [0,a²] is not stated for the global profiles. Lean's inner solution is a fixed local hierarchy, and agreement is stated only for X < cutoffInner."
-            },
-            {
-              "confidence": 0.8,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "The per-order estimate (5.13) is not stated as a theorem for the final coefficients. For n=1 it is assembled only inside modulated_weighted_on_actual_scales; for n≥2 only interior support and quotient smoothness are stated."
+              "summary": "The per-order jet bound (5.13) for the final modulated coefficients is not exported as a declaration; the repository exports the summed bound plus the collar and interior ingredients, from which (5.13) follows by instantiating stated theorems."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_OK",
+          "match_verdict": "SINGLE_SOURCE_DELTA",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "different_formulation",
-          "severity": "none",
+          "relation": "partial",
+          "severity": "medium",
           "status": "unconfirmed",
-          "summary": "Lean states it in a different formulation.",
-          "verdict": "faithful"
+          "summary": "Lean states part of it. The clause that the globalized order-n profile retains Lemma 5.1's eta-parameter regularity (holomorphy near [-1,1]) throughout [0,a^2] is stated by no declaration: the whole globalization lives in a real-smooth category.",
+          "verdict": "deviation"
         }
       ]
     }

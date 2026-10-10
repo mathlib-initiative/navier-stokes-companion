@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.24)",
+  "status": "formalized",
+  "location": {
+    "page": 55,
+    "rect": [0.265123, 0.296373, 0.603946, 0.026091]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.24",
+      "locator": {
+        "physical": [55],
+        "printed": [55],
+        "text": "Equation (5.24), p. 55, in section 5.3"
+      },
+      "region": "eq-5.24@p055",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\mathcal{F}_{\\mathrm{slow}}(u,p,T) \\;=\\; \\mathscr{R}(u,p) + \\bigl(\\partial_r + 2/r\\bigr) T_\\theta\\, e_\\theta + \\bigl(\\partial_r + 1/r\\bigr) T_z\\, e_z."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. There is no Lean definition named for F_slow as an operator on a triple (u,p,T); the combination appears inline in the statement of finite_error_rate as navierStokesResidual u p - prefixStressForce, and the two sign conventions compose to the paper's formula. Term by term: R(u,p) is navierStokesResidual, which is ∂_t u + (u·∇)u - Δu + ∇p, matching (3.1) at viscosity one. radialDivergence k S = √(2s)·∂_s S + k·S/√(2s); since s = r²/2 gives ∂_r = r ∂_s = √(2s) ∂_s and √(2·radialEnergy x) = √(x0²+x1²) = r (AxisymmetricFields.radialEnergy x = (x0²+x1²)/2), this is exactly (∂_r + k/r)S, with k = 2 on the θ stress and k = 1 on the z stress as in the paper. The sign: tangentialStressForce packs the Cartesian vector (x1·a/r, -x0·a/r, -z), and the Lean azimuthal direction is e_θ = (-x1, x0, 0)/r (the comment and components of AxisymmetricResidual.velocity, NavierStokes/AxisymmetricResidual.lean:262, give angular velocity r·F contributing (-x1·F, x0·F, 0)), so tangentialStressForce = -[(∂_r+2/r)T_θ e_θ + (∂_r+1/r)T_z e_z]; it is then subtracted, and the two minus signs cancel, so the statement's field is literally F_slow(u,p,T). Remaining difference is packaging: the stress pair T = (T_θ, T_z) is carried as two separate scalar profile arguments, not a pair, and F_slow is never applied to a general triple under one name.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

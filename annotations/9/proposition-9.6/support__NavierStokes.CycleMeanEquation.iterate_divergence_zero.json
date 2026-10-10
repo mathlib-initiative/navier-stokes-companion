@@ -1,0 +1,26 @@
+{
+  "id": "proposition-9.6/support/NavierStokes.CycleMeanEquation.iterate_divergence_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CycleMeanEquation.iterate_divergence_zero",
+      "line": 562,
+      "module": "NavierStokes.CycleMeanEquation",
+      "path": "NavierStokes/CycleMeanEquation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CycleMeanEquation.lean#L562"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CycleMeanEquation.iterate_divergence_zero",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 562,
+        "text": "theorem iterate_divergence_zero {ι : Type} {coord : ℝ}\n    (U : LocalSignedRequest.SlowRegion coord) (p : ℕ → CycleParameters ι)\n    (c : Context Point) (seed : CycleState ι) (V : Set Point)\n    (hV : ∀ j, (p j).strip.domain = V)\n    (H₀ : LiftedMeanResidual.MeanHypotheses V c seed.state)\n    (H : ∀ j, StepData U (p j) (CycleState.iterate p c seed j).coefficients c\n      (CycleState.iterate p c seed j).state)\n    (j n : ℕ) {x : Point × ℝ} (hx : x ∈ LiftedMeanResidual.cylinder V) :\n    fullDivergence c (CycleState.iterate p c seed j).state n x = 0"
+      }
+    }
+  }
+}

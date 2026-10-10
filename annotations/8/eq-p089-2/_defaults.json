@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 89.2",
+  "status": "formalized",
+  "location": {
+    "page": 89,
+    "rect": [0.253498, 0.492773, 0.493234, 0.074346]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p089-2",
+      "locator": {
+        "physical": [89],
+        "printed": [89],
+        "text": "Display 89.2, p. 89, in the proof of Proposition 8.1"
+      },
+      "region": "eq-p089-2@p089",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\begin{aligned}(u\\cdot\\nabla u)_r &= (D_r + 1/R)\\,u_r^2 + R^{-1}\\partial_\\theta(u_\\theta u_r) + D_z(u_z u_r) - u_\\theta^2/R,\\\\ (u\\cdot\\nabla u)_\\theta &= (D_r + 2/R)(u_r u_\\theta) + R^{-1}\\partial_\\theta u_\\theta^2 + D_z(u_z u_\\theta),\\\\ (u\\cdot\\nabla u)_z &= (D_r + 1/R)(u_r u_z) + R^{-1}\\partial_\\theta(u_\\theta u_z) + D_z u_z^2.\\end{aligned}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Both sides of the paper's display are present in Lean, twice over, and in each case the Lean statement is the unconditional identity of which the paper's display is the divergence-free specialisation. (1) Physical cylindrical coordinates, single field: MeanResidual.conservativeRadial/Angular/Axial are the full NS residual with the transport term written exactly as the paper's three right-hand sides — radialDivergence c f = dr f + (c/r) f is the paper's (D_r + c/R), dtheta f / radius is R^{-1}∂_θ, and the coefficients c = 1, 2, 1 and the centrifugal −(w 1)^2/r match term for term, index order included (J 1 0 = u_θ u_r etc.). residualRadial/Angular/Axial are the same residual with the transport term in convective form (transport w f = w_r ∂_r f + (w_θ/r)∂_θ f + w_z ∂_z f, plus −u_θ²/r resp. +u_r u_θ/r). conservativeRadial_eq etc. state conservative = convective + u_i·divergence w, with no divergence-free hypothesis: the paper's assumption div u = 0 is replaced by an explicit correction term, so the Lean implies the paper's display, and the display is recovered by setting divergence w q = 0 and cancelling the ∂_t, viscous and pressure terms, which occur identically on both sides. (2) Lifted/normalised coordinates, in the paper's own operators D_r, D_z: LiftedMeanResidual.conservativeFlux has exactly the paper's three right-hand sides for a general stress J (with J = u⊗u giving the display), and advectionIncrement_eq_conservative states the identity under two divergence-free hypotheses — but for the increment (B·∇)a + (a·∇)B + (a·∇)a with J = B⊗a + a⊗B + a⊗a rather than for one field. Taking B = 0 collapses it to the paper's single-field statement: realTransport with first argument 0 vanishes, realTransport with second argument 0 vanishes, quadraticFlux 0 a i j = a_i a_j, and realDivergence of 0 is 0, so the hypothesis hBd is automatic. The paper's claim is therefore checked; nothing in it is weakened.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

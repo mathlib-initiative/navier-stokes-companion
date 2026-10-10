@@ -17,24 +17,32 @@
       "region": "lemma-9.7@p111",
       "verdicts": [
         {
-          "confidence": 0.8,
-          "evidence": ["CONFIRMED_CONTENT: No counterpart. Repository and decls.jsonl docstring searches for 'finitely many', derivative count, input jets, DAG/acyclic hit only Section 4 kernels, Borel and cutoff machinery. Closest: CutStageEstimates.RawStageBounds (NavierStokes/CutStageEstimates.lean:199), constants C j m; CorrectionStep.CycleAnalyticInvariant (NavierStokes/CorrectionStep.lean:9408) keeps SmoothCoefficients and all-order wave classes, so no count is needed.", "CONVENTION: ActualCandidateAssembly.stages_smooth (NavierStokes/ActualCandidateAssembly.lean:879), physicalData (:1079), stageRealizations (:1059); ActualCandidateConstruction.qbig, qbig_pos, physicalDomain (NavierStokes/ActualCandidateConstruction.lean:155, 157, 189); WholeDomainStageBounds.commonQ (NavierStokes/WholeDomainActualStageBounds.lean:13), commonQ_lt_original.", "I read p.111-112 and the Lean. All three voters agree on verdict and relation; I keep both. qbig is one positive number with no stage or order argument, physicalDomain is exactly {0<q<q_big}, and stages_smooth plus physicalData give smooth uncut partial sums identified with the cycle's construction. The hypothesis hN is met by selectedThreshold_geometry, so nothing is vacuous. The only dispute is finding 1: accurate but not material, so I rule CONVENTION, not CONTENT and not REFUTED. The derivative-count clause is unstated (low coverage gap); 'partial' is defensible on that ground, but the clause is proof bookkeeping whose consequence is stated. I added physicalData and the prefix lemmas from the skeptics."],
+          "confidence": 0.78,
+          "evidence": ["CONVENTION: NavierStokes.ActualCandidateAssembly.stages_smooth, NavierStokes/ActualCandidateAssembly.lean:879, 'ContDiffOn ℝ ∞ (potentialStages B N0 hN j) (ActualCandidateConstruction.physicalDomain B N0)'; NavierStokes/ActualCandidateConstruction.lean:189 and NavierStokes/CutStageEstimates.lean:672 for the domain; NavierStokes/PhysicalWaveSum.lean:394 for 0 < q.", "CONVENTION: No declaration found: searches of decls.jsonl for budget/derivative-count identifiers and of NavierStokes/ for 'finitely many input', 'derivative budget', 'acyclic graph' returned nothing on point. Instead every stage is C^∞: NavierStokes/MixedCandidateAssembly.lean:31-33 (potential_smooth/direct_smooth/pressure_smooth), instantiated at NavierStokes/ActualCandidateAssembly.lean:1090 and :879.", "ATTRIBUTION_GAP: NavierStokes.ActualCandidateAssembly.stages_smooth (ActualCandidateAssembly.lean:879) states smoothness of the stages, not of the prefixes; NavierStokes.MixedDiagonalResidual.uncutVelocity_smooth (MixedDiagonalResidual.lean:72) is the generic prefix step; no 'ContDiffOn ℝ ∞ (DiagonalJetBounds.uncutPrefix …)' declaration exists for the pressure prefix at qbig B N0.", "Both substantive clauses are accounted for. The common-domain clause is stated in Lean, with q_big = qbig B N0 > 0 depending only on the construction data and the smoothness holding at order ∞ on the one sublevel set {0 < q < q_big}; the prefix version is a three-line conjunction of stages_smooth, physicalDomain_open and uncutVelocity_smooth, so the gap is packaging, not mathematics. 'Well defined' is necessarily re-expressed as C^∞ smoothness, since Lean fields are total — an encoding choice that is stronger, not weaker. The derivative-budget clause has no formalisation, but C^∞ regularity makes the count unnecessary rather than unproved. Stage-dependent constants are explicit. Hence different_formulation, SINGLE_SOURCE_OK, three low findings."],
           "findings": [
             {
               "confidence": 0.85,
               "contested": false,
-              "kind": "COVERAGE",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "The derivative-count clause has no Lean statement. Lean carries all-order smooth classes through the cycle and states a finite constant for each stage and order directly, so the paper's DAG counting was not what was checked."
-            },
-            {
-              "confidence": 0.85,
-              "contested": true,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "'Well defined on 0<q<q_big' is encoded as total fields that are C^∞ on {t<1} ∩ {physicalQ < qbig} and agree chartwise with the cycle's constructions. The Lemma 9.8 bounds use the smaller commonQ = qbig/2."
+              "summary": "'Well defined on 0 < q < q_big' has no literal counterpart: Lean fields are total functions, so definedness is encoded as C^∞ smoothness on the sublevel set physicalSublevel h (qbig B N0) = preterminal ∩ {physicalQ < qbig}."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The second clause — the finite input-derivative budget, proved on p. 112 by the DAG recursion D_{v,a}(m) = max_{w→v} D_{w,a}(m+d_{v,w}) — has no formal counterpart; no declaration was found that counts derivatives of inputs."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration says 'the actual construction's finite partial sums are smooth on one common 0 < q < q_big'. It is stages_smooth plus physicalDomain_open plus the generic uncutVelocity_smooth, with the pressure prefix needing a ContDiffOn.sum step that no declaration records."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

@@ -1,0 +1,26 @@
+{
+  "id": "eq-4.33/attributed/NavierStokes.ActiveAnnulusWeight.EdgeFactor.transfer",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.transfer",
+      "line": 261,
+      "module": "NavierStokes.ActiveAnnulusWeight",
+      "path": "NavierStokes/ActiveAnnulusWeight.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L261"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.transfer",
+        "kind": "def"
+      },
+      "relation": "implies",
+      "role": "attributed",
+      "snippet": {
+        "line": 261,
+        "text": "noncomputable def EdgeFactor.transfer (F : EdgeFactor K c T) (hw : 0 < w) (hww : w ≤ F.width) (he : ∀ p ∈ K, ∀ x, 0 < x → x < w → S (p,x) = T (p,x)) : EdgeFactor K c S where coefficient := F.coefficient; order := F.order; width := w  -- carries the nominal factorization (order 0, same coefficient) over to the assembled stress at LeadingStressWeights.lean:955"
+      }
+    }
+  }
+}

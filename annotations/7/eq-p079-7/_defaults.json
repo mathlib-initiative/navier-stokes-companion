@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 79.7",
+  "status": "formalized",
+  "location": {
+    "page": 79,
+    "rect": [0.192886, 0.79749, 0.614802, 0.027324]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p079-7",
+      "locator": {
+        "physical": [79],
+        "printed": [79],
+        "text": "Display 79.7, p. 79, in the proof of Proposition 7.2"
+      },
+      "region": "eq-p079-7@p079",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: D_H H_w = I_2 - v_t \\lambda_t, \\qquad D_H^a H_w = 0 \\quad (a \\ge 2), \\qquad D_H v = T_g^{\\,i-i_0} \\lambda_t / c_i = O(S_*)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Lean states the three facts for an abstract common-cover `Geometry` rather than in the manuscript's matrix notation; the rewriting is routine. (i) `path_eq_affine` says H ↦ H_w (w = eta held fixed) is affine with linear part `pathLinear = pointLinear ∘ horizontal ∘ coordinateLinear`. Because `pointLinear = coverPower^gap⁻¹ ∘ basis` and `coordinateLinear = basis.symm ∘ coverPower^gap` are mutually inverse and `horizontal z = (z.1, 0) = z - (0, z.2)`, one gets pathLinear Y = Y - (coordinateLinear Y).2 • pointLinear (0,1), i.e. exactly I₂ - v_t λ_t, with v_t = pointLinear (0,1) = T_g^{-(i-i₀)} c_i v_t and λ_t = (coordinateLinear ·).2. (ii) D_H^a H_w = 0 for a ≥ 2 is the affineness itself; no declaration states the vanishing second derivative separately — the Lean consumes it through the affine jet bounds (`norm_iteratedFDeriv_affine_le`, `sourceArgument_jet_bound`). (iii) `coordinates_eq_affine` gives D_H v = (coordinateLinear ·).2, and for the manuscript geometry `bandGeometry` (basis = B ∘ (z ↦ (z.1, c_i z.2)), coverPower^gap = T_g^{i-i₀} on the transverse direction) that second component is T_g^{i-i₀} λ_t / c_i; the size clause '= O(S_*)' is `bandGeometry_argumentCost_le`, which bounds argumentCost — hence ‖coordinateLinear‖ — by a constant fixed before the band, copy and source, times `ChartScales.S n`.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

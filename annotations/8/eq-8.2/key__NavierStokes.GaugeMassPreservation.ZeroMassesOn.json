@@ -1,0 +1,26 @@
+{
+  "id": "eq-8.2/key/NavierStokes.GaugeMassPreservation.ZeroMassesOn",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GaugeMassPreservation.ZeroMassesOn",
+      "line": 140,
+      "module": "NavierStokes.GaugeMassPreservation",
+      "path": "NavierStokes/GaugeMassPreservation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMassPreservation.lean#L140"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GaugeMassPreservation.ZeroMassesOn",
+        "kind": "def"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 140,
+        "text": "def ZeroMassesOn (U : Set Plane) (u : State Point) : Prop := ∀ n s, s ∈ U → CorrectionState.radialMoment 2 u.mean.angular n s = 0 ∧ CorrectionState.radialMoment 1 u.mean.axial n s = 0"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "corollary-7.8/support/NavierStokes.SignedMeanGain.meanBar_symmetricCovariance",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedMeanGain.meanBar_symmetricCovariance",
+      "line": 1208,
+      "module": "NavierStokes.SignedMeanGain",
+      "path": "NavierStokes/SignedMeanGain.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean#L1208"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedMeanGain.meanBar_symmetricCovariance",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1208,
+        "text": "theorem meanBar_symmetricCovariance (p t : Oscillation Point)\n    (hp : LabelSumBounds.AngularContinuous p) (ht : LabelSumBounds.AngularContinuous t)\n    (i j : Fin 3) (n : ℕ) (x : Point) :\n    StateMomentBalances.meanBar (LabelSumBounds.symmetricCovariance p t i j) n x =\n      PartitionedCovariance.doubleAverage (fun Y θ =>\n        p n ((x.1, (x.2.1, Y)), θ) i * t n ((x.1, (x.2.1, Y)), θ) j +\n        t n ((x.1, (x.2.1, Y)), θ) i * p n ((x.1, (x.2.1, Y)), θ) j)"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "proposition-B.2/support/NavierStokes.TransitionRamp.naturalU_error_jet",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TransitionRamp.naturalU_error_jet",
+      "line": 2033,
+      "module": "NavierStokes.TransitionRamp",
+      "path": "NavierStokes/TransitionRamp.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TransitionRamp.lean#L2033"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TransitionRamp.naturalU_error_jet",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 2033,
+        "text": "theorem naturalU_error_jet {C : ℝ} (E : NaturalEntrance.CoefficientProfile d Λ C)\n    {X η : ℝ} (hY : Λ * X ∈ Ioo (-20 : ℝ) 20) (hη : η ∈ parameterInterval) (n : ℕ) :\n    iteratedDeriv n (fun ξ => E.family.U (X, ξ) - NaturalAxisData.U j ξ) η =\n      (1 / Λ) * AxisEvaluation.mixedSeries window d.coefficients.epsilon E.coefficients.2 0 n (Λ * X, η)"
+      }
+    }
+  }
+}

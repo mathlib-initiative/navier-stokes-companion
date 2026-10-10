@@ -1,0 +1,26 @@
+{
+  "id": "proposition-7.6/support/NavierStokes.FlatCovariance.signedAmplitude_contDiffOn",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FlatCovariance.signedAmplitude_contDiffOn",
+      "line": 333,
+      "module": "NavierStokes.FlatCovariance",
+      "path": "NavierStokes/FlatCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatCovariance.lean#L333"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FlatCovariance.signedAmplitude_contDiffOn",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 333,
+        "text": "theorem signedAmplitude_contDiffOn\n    (hG : ∀ i j, ContDiffOn ℝ ∞ (fun x => G x i j) s)\n    (hT : ∀ i, ContDiffOn ℝ ∞ (fun x => T x i) s)\n    (hR : ∀ i, ContDiffOn ℝ ∞ (fun x => R x i) s)\n    (hcone : ∀ x ∈ s, SmoothCovariance.StrictCone (G x) (T x))\n    (hgap : ∀ i, (σ + κ i) / 2 < τ) (i : Fin 2) :\n    ContDiffOn ℝ ∞ (fun x => signedAmplitude σ τ κ G T R x i) s"
+      }
+    }
+  }
+}

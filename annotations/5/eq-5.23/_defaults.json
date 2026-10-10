@@ -1,0 +1,48 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.23)",
+  "status": "formalized",
+  "location": {
+    "page": 55,
+    "rect": [0.404809, 0.127104, 0.464259, 0.033697]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.DiagonalResidual",
+      "path": "NavierStokes/DiagonalResidual.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-5.23",
+      "locator": {
+        "physical": [55],
+        "printed": [55],
+        "text": "Equation (5.23), p. 55, in section 5.3"
+      },
+      "region": "eq-5.23@p055",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: |V|_m \\;=\\; \\max_{|\\alpha|+b\\,\\le\\, m} \\bigl|\\partial_x^{\\alpha}\\partial_t^{b} V\\bigr|."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The repository has no declaration defining a seminorm |V|_m as a pointwise maximum over multi-indices; the role of (5.23) is played by the operator norm ‖iteratedFDeriv ℝ m V x‖ of the full m-th Fréchet derivative on spacetime, used inside JetRate/FiniteJetRate. Recovery, on the 4-dimensional spacetime: each ∂_x^α ∂_t^b V with |α|+b = m is D^m V evaluated at m coordinate unit vectors, so max_{|α|+b=m} |∂_x^α ∂_t^b V| ≤ ‖D^m V‖; conversely expanding D^m V multilinearly in the coordinate basis gives ‖D^m V‖ ≤ 4^m · max_{|α|+b=m} |∂_x^α ∂_t^b V|. FiniteJetRate quantifies ∀ m ≤ M under one constant C, which is the same as bounding the max over |α|+b ≤ M, and every use of |·|_m in the manuscript is inside an estimate ≤ C q^(…), so the dimensional factor 4^m is absorbed by C. Two further packaging points: the paper's |·|_m applies to a tuple V of fields (max also over the tuple entries) whereas the Lean estimates are stated separately per field; and the Lean q in JetRate is an explicit argument (instantiated as (cartesianChart h z).1) rather than the paper's fixed similarity coordinate.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "eq-p160-5/key/NavierStokes.TrueConeLoop.speedCutoff",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TrueConeLoop.speedCutoff",
+      "line": 26
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L26"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TrueConeLoop.speedCutoff",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "role": "key",
+      "snippet": {
+        "line": 26,
+        "text": "def speedCutoff (δ v : ℝ) : ℝ := 1 - Real.smoothTransition ((v - lowSpeed δ) / (δ / 8))  -- the paper's ζ_L, with lowSpeed δ = 2 + δ/8 (line 22) and highSpeed δ = 2 + δ/4 (line 23)"
+      }
+    }
+  }
+}

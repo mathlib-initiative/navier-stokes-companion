@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (8.19)",
+  "status": "partial",
+  "location": {
+    "page": 95,
+    "rect": [0.253605, 0.76641, 0.614572, 0.045982]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-8.19",
+      "locator": {
+        "physical": [95],
+        "printed": [95],
+        "text": "Equation (8.19), p. 95, in the statement of Lemma 8.6"
+      },
+      "region": "eq-8.19@p095",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: N^{-1}F \\;=\\; \\sum_{k \\in \\mathbb{Z}^2 \\setminus \\{0\\}} \\frac{\\widehat{F}(k)}{2\\pi i\\, v_t \\cdot k}\\, e^{2\\pi i k \\cdot y}, \\qquad \\|N^{-1}F\\|_{C^m_y} \\le C_m \\|F\\|_{C^{m+4}_y}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The Fourier series matches term for term: TorusInverse.inverseCoeff multiplies the coefficient by (2πi·symbol .temporal k)⁻¹ with symbol .temporal k = v_t·k (symbol_formula) and vector .temporal = (√2−1, 1) = (b_g, 1), the paper's v_t from (6.2); the k = 0 term is 0 by inverseCoeff_zero, so the Lean sum over all of ℤ² equals the paper's sum over ℤ²\\{0}. The existence/uniqueness claim is also stated (inverse_solves_smooth_torus, timeDerivative_unique). The norm bound differs by one derivative: the paper asserts C^m_y controlled by C^{m+4}_y, while every bound found in the Lean loses five torus derivatives. inverse_derivativeWord_bound bounds a word of m torus derivatives of the inverse by coeffSeminorm (m+1), and coefficient_seminorm_bound buys coeffSeminorm p from jets of order p+4, giving m+5; the packaged statements say so explicitly (mixedJet_inverse_bound: 'a mixed output jet with r torus derivatives requires only r+5 pure torus derivatives'; SmoothFamilyTorusInverse.inverse_finiteJets, read at line 865, requires JetBound f S (n+5) and its docstring says 'five torus derivatives lost'). The extra derivative comes from the Lean's choice of the summable majorant ∑ weight k ^(-4) (summable_weight_inv_four) where the paper's count uses (1+|k|)^{-3}, which is already summable in two dimensions; no '_three' majorant exists in the index. Partly offsetting, the Lean hypothesis is only on pure x- and pure y-derivative words (xJet of f and of swapFunction f) of that order, not on the full C^{m+5} norm. Rated low because what the later argument uses is a fixed finite derivative loss, and the M_α classes bound every fixed derivative order.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

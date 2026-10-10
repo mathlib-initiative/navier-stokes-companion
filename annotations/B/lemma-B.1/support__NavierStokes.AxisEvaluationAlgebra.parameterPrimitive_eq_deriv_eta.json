@@ -1,0 +1,26 @@
+{
+  "id": "lemma-B.1/support/NavierStokes.AxisEvaluationAlgebra.parameterPrimitive_eq_deriv_eta",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisEvaluationAlgebra.parameterPrimitive_eq_deriv_eta",
+      "line": 408,
+      "module": "NavierStokes.AxisEvaluationAlgebra",
+      "path": "NavierStokes/AxisEvaluationAlgebra.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisEvaluationAlgebra.lean#L408"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisEvaluationAlgebra.parameterPrimitive_eq_deriv_eta",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 408,
+        "text": "theorem parameterPrimitive_eq_deriv_eta (I : Window) {ε : ℝ} (hε : 0 < ε)\n    (A : AxisSpace I ε) {Y η : ℝ} (hY : Y ∈ Ioo (-20 : ℝ) 20)\n    (hη : η ∈ Ioo I.left I.right) :\n    profile I ε (parameterPrimitive I hε A) (Y, η) =\n      deriv (fun x => profile I ε (primitive I hε A) (Y, x)) η"
+      }
+    }
+  }
+}

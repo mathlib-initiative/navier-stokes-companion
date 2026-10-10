@@ -1,0 +1,27 @@
+{
+  "id": "proposition-5.5/support/NavierStokes.SlowBorelBase.angularMoment_eq_normalizedSwirl",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SlowBorelBase.angularMoment_eq_normalizedSwirl",
+      "line": 1586,
+      "module": "NavierStokes.SlowBorelBase",
+      "path": "NavierStokes/SlowBorelBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean#L1586"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SlowBorelBase.angularMoment_eq_normalizedSwirl",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1586,
+        "text": "theorem angularMoment_eq_normalizedSwirl {a : ℕ → ℕ} (ha : StrictMono a) {h : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) {d : Coefficients} (hd : SmoothCoefficients d)\n    (C : ℝ) {t : ℝ} (ht : t < 1) (x : ProblemStatement.Space) :\n    -x 1 * baseVelocity a h C d (t, x) 0 + x 0 * baseVelocity a h C d (t, x) 1 =\n      Real.sqrt (2 * AxisymmetricFields.radialEnergy x) *\n        (cartesianChart h (t, x)).1 ^ (-CoordinateAlgebra.A h) *\n          normalizedSwirl a h C d (cartesianChart h (t, x))"
+      }
+    }
+  }
+}

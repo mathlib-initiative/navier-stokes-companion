@@ -1,0 +1,30 @@
+{
+  "id": "definition-6.4/key/NavierStokes.MeanMomentBounds.GlobalBandJets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanMomentBounds.GlobalBandJets",
+      "line": 29,
+      "module": "NavierStokes.MeanMomentBounds",
+      "path": "NavierStokes/MeanMomentBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanMomentBounds.lean#L29"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanMomentBounds.GlobalBandJets",
+        "kind": "def"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: GlobalBandJets ε S α f : ∀ m, ∃ C ≥ 0, ∃ p, ∀ n x, ∀ j ≤ m, ‖iteratedFDeriv ℝ j (f n) x‖ ≤ C · (ε n)^α · (S n)^p. This is (6.25): no ζ, no inverse-edge factor, uniform in band and point.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "role": "key",
+      "snippet": {
+        "line": 29,
+        "text": "noncomputable def GlobalBandJets (ε S : ℕ → ℝ) (α : ℝ) (f : ℕ → D → E) : Prop"
+      }
+    }
+  }
+}

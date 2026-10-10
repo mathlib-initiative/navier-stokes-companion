@@ -1,0 +1,46 @@
+{
+  "kind": "equation",
+  "label": "Display 135.2",
+  "status": "formalized",
+  "location": {
+    "page": 135,
+    "rect": [0.332229, 0.337246, 0.337724, 0.044052]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.OutgoingEntranceCone",
+      "path": "NavierStokes/OutgoingEntranceCone.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p135-2",
+      "locator": {
+        "physical": [135],
+        "printed": [135],
+        "text": "Display 135.2, p. 135, in section A.5"
+      },
+      "region": "eq-p135-2@p135",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\frac{|N_s|}{E^2} \\le C|\\eta|\\left(\\frac{e^{T_d}}{P_*^2} + 1 + y\\right) \\le C|\\eta|(1+y)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean states only the right-hand member of the paper's two-step chain, and in cleared form |N_s| ≤ C|η|(1+y)E² rather than |N_s|/E² ≤ C|η|(1+y); the two are the same inequality because E = angular P dropLength lam (y,η) > 0 (angular_pos, OutgoingSchedule.lean:159). The intermediate member C|η|(e^{T_d}/P_*² + 1 + y) is nowhere stated; in its place the hypothesis exp(dropLength+1) ≤ P² (the paper's P_* > e^{T_d}) is used inside the proof, at line 990, to get E² ≥ 1/4 and absorb the geometric part — the same mechanism as the paper's first step, so the bound the later argument uses is the one proved. C is the explicit axialBound = 259 + 4·pressureBound, depending only on the previously fixed pressure envelope; the range is 0 ≤ y ≤ T_d + 1 and |η| ≤ 1. The identification of the Lean axialLag with the paper's N_s is canonical_Ns_before.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

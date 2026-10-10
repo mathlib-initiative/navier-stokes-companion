@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 101.1",
+  "status": "formalized",
+  "location": {
+    "page": 101,
+    "rect": [0.241183, 0.209877, 0.51764, 0.025482]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p101-1",
+      "locator": {
+        "physical": [101],
+        "printed": [101],
+        "text": "Display 101.1, p. 101, in section 9"
+      },
+      "region": "eq-p101-1@p101",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\mathscr{R}(u,p) = \\partial_t u + (u\\cdot\\nabla)u - \\Delta u + \\nabla p, \\qquad \\mathscr{R}_* = Q^{2A+1/2}\\,\\mathscr{R}(u,p)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both halves are present, but in separate declarations rather than one display. First half: `ProblemStatement.navierStokesResidual` is the paper's ℛ(u,p) term for term — ∂_t u (`temporalDerivative`, the ordinary time derivative), (u·∇)u (`advection`, the spatial Fréchet derivative applied to u), −Δu (`spatialLaplacian`, the componentwise Euclidean Laplacian, so the sign and the derivative count agree) and +∇p (`pressureGradient`), at viscosity exactly one as the paper's display also takes it. It is the same operator the local construction uses: `CylindricalResidual.navierStokesResidual_cylindrical` (NavierStokes/CylindricalResidual.lean:495) rewrites it in the cylindrical frame. Second half: no declaration introduces a named object ℛ_*. The exponent 2A+1/2 appears exactly, in two places. `CorrectionStep.RepresentsPhysical` imposes normalized = Q^(2A+1/2) × physical on the residual-class error fields (with Q^A on velocity and Q^(2A) on pressure, matching the p. 101 sentence about the recovery factors Q^(-A), Q^(-2A), Q^(-2A-1/2)); and the hypotheses of `LocalSignedRequest.normalizedRequest_represents` state the same relation for the θ- and z-components of the mean residual, with the chart substitution r ↦ Q^(-1/2) r. `SignedStressPrimitive.normalizedResidual` packages the same normalization as a definition, but with the local slow scale q in place of the band scale Q (and the chart pullback r = √q·R folded in via `nativeSource`); recovering the display from it needs the paper's q ≍ Q, whereas recovering it from `RepresentsPhysical` is a direct read-off. The rewriting is therefore: ℛ(u,p) is `navierStokesResidual` verbatim, and ℛ_* is that field multiplied by `Q n ^ (2 * A + 1 / 2)` as `RepresentsPhysical.baseError` writes it, componentwise in the chart frame.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.4/attributed/NavierStokes.NaturalCoefficientBridge.radialFlux_congr_germ",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalCoefficientBridge.radialFlux_congr_germ",
+      "line": 280,
+      "module": "NavierStokes.NaturalCoefficientBridge",
+      "path": "NavierStokes/NaturalCoefficientBridge.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCoefficientBridge.lean#L280"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalCoefficientBridge.radialFlux_congr_germ",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: For arbitrary U V : InnerProfile, U =f[nhds w] V and average U =f[nhds w] average V imply radialFlux h lam U =f[nhds w] radialFlux h lam V. No regularity hypothesis of any kind. It gives Delta V_0 = 0 at every X > X_h from the paper's tail hypothesis; its germ is two-sided, so it gives nothing at th",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 280,
+        "text": "theorem radialFlux_congr_germ (h lam : ℝ) {U V : InnerProfile} {w : InnerPoint}\n    (hu : U =ᶠ[𝓝 w] V)\n    (ha : ProfileHistories.average U =ᶠ[𝓝 w] ProfileHistories.average V) :\n    SlowDivergence.radialFlux h lam U =ᶠ[𝓝 w] SlowDivergence.radialFlux h lam V"
+      }
+    }
+  }
+}

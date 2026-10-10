@@ -1,0 +1,26 @@
+{
+  "id": "eq-p132-2/key/NavierStokes.ReleaseMoments.complete_release_moments",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ReleaseMoments.complete_release_moments",
+      "line": 531,
+      "module": "NavierStokes.ReleaseMoments",
+      "path": "NavierStokes/ReleaseMoments.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReleaseMoments.lean#L531"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ReleaseMoments.complete_release_moments",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 531,
+        "text": "∃ lam0 > 0, ∀ d, d.core.lam < lam0 → ∃ c, ContDiff ℝ ∞ (correctedAngular d c) ∧ ∀ eta, IntegrableOn (fun X => radialH d c eta X - radialPowerH d X) (Ioi 0) ∧ (∫ X in Ioi 0, radialH d c eta X - radialPowerH d X) = 0 ∧ ∀ X, 0 < X → tailEnd d ≤ log X → (∫ u in Ioc 0 X, radialH d c eta u) = X * radialH d c eta X / (1 - d.h)"
+      }
+    }
+  }
+}

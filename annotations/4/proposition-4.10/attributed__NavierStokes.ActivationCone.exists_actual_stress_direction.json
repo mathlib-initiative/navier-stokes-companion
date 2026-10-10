@@ -1,0 +1,32 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.ActivationCone.exists_actual_stress_direction",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationCone.exists_actual_stress_direction",
+      "line": 489,
+      "module": "NavierStokes.ActivationCone",
+      "path": "NavierStokes/ActivationCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean#L489"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationCone.exists_actual_stress_direction",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: exists a smooth D with D((kappa,T),(0,eta)) = (referenceAngular L (0,eta) * referenceP1 L (0,eta), referenceAngular L (0,eta) * referenceP2 .. (0,eta)) and activatedStress .. (T u, eta) = activation 1 kappa u * D((kappa,T),(u,eta)) componentwise. The (4.33) factorization, with the edge value equal t",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 489,
+        "text": "theorem exists_actual_stress_direction (h : ℝ) {X0 : ℝ} (hX0 : 0 < X0)\n    (initial : HistoryRow → ℝ → ℝ) {J K : Set ℝ} (hJ : IsOpen J) (hKJ : K ⊆ J)\n    {L U : Field} (hL : ContDiffOn ℝ ∞ L (logDomain J hJ).carrier)\n    (hU : ContDiffOn ℝ ∞ U (logDomain J hJ).carrier)\n    (hi : ∀ r, ContDiffOn ℝ ∞ (initial r) J)\n    (hcoef : ∀ η ∈ J, NaturalAxisData.L h η ≠ 0) {T0 : ℝ}\n    (hmatch : ∀ y ∈ Icc (0 : ℝ) T0, ∀ η ∈ K,\n      ActivationStocks.logViewOne h X0 (referenceAngular L)\n          (logHistory X0 initial (referenceAngular L) U) (y, η) = referenceP1 L (y, η) ∧\n      ActivationStocks.logViewTwo h X0 (referenceAngular L) U\n          (logHistory X0 initial (referenceAngular L) U) (y, η) = referenceP2 X0 L U (y, η)) :\n    ∃ D : ActivationBounds.ScaledPoint → ℝ × ℝ,\n      ContDiffOn ℝ ∞ D (ActivationBounds.scaledDomain J) ∧\n      (∀ κ T η : ℝ, D ((κ, T), (0, η)) =\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

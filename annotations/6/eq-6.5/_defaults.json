@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.5)",
+  "status": "formalized",
+  "location": {
+    "page": 63,
+    "rect": [0.28631, 0.522243, 0.581866, 0.043314]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.5",
+      "locator": {
+        "physical": [63],
+        "printed": [63],
+        "text": "Equation (6.5), p. 63, in section 6.1"
+      },
+      "region": "eq-6.5@p063",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: Y_i = J_g^{\\,i} Y \\pmod{\\mathbb{Z}^2}, \\qquad i = i(\\ell) = \\left\\lfloor \\log_{T_g} \\frac{Q^{-1-h}}{S_*} \\right\\rfloor."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both halves are present. Y_i = J_g^i Y is `cover ^ i` applied to the graph: nativeGraph is exactly (cover ^ nativeIndex h n) applied to r^{d_r}v_r + t v_t, again on the universal cover rather than in 𝕋², with the quotient carried by torusEq (cover_pow_torusEq is the statement that J_g^i descends to the torus, so the cover representative determines Y_i mod ℤ²). The index formula is nativeArgument h n = log(Q_n^{-1-h}/n²)/log(T_g), which is log_{T_g}(Q^{-1-h}/S_*) with S_* = ℓ² = n², and nativeIndex is its floor. One convention: Lean takes the natural-number floor ⌊·⌋₊, which clamps to 0 where the paper's integer floor ⌊·⌋ would be negative. The two agree exactly on the range the paper uses, since nativeArgument_nonneg gives 0 ≤ nativeArgument h n for h ≥ 0 and n ≥ 4, and the paper restricts to \"Only large ℓ, for which i(ℓ) ≥ 0\". The paper's deck-translation characterization of which functions descend to the band torus (translations a with J_g^i a ∈ ℤ²) is not stated as a declaration in this form; the repository instead works with liftedSupport, the set of ℤ²-reindexed copies of a slot at level i.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

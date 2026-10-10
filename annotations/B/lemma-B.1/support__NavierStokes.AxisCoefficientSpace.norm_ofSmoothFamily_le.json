@@ -1,0 +1,26 @@
+{
+  "id": "lemma-B.1/support/NavierStokes.AxisCoefficientSpace.norm_ofSmoothFamily_le",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisCoefficientSpace.norm_ofSmoothFamily_le",
+      "line": 419,
+      "module": "NavierStokes.AxisCoefficientSpace",
+      "path": "NavierStokes/AxisCoefficientSpace.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisCoefficientSpace.lean#L419"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisCoefficientSpace.norm_ofSmoothFamily_le",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 419,
+        "text": "theorem norm_ofSmoothFamily_le (I : Window) (w : ℕ → ℕ → ℝ) (hw : ∀ n m, 0 < w n m)\n    (F : ℕ → ℝ → ℝ) (hF : ∀ n, ContDiffOn ℝ ∞ (F n) I.interval)\n    (C : ℝ) (hC : 0 ≤ C)\n    (hbound : ∀ n m x, x ∈ I.interval →\n      |iteratedDerivWithin m (F n) I.interval x| ≤ C * w n m) :\n    ‖ofSmoothFamily I w hw F hF C hC hbound‖ ≤ C"
+      }
+    }
+  }
+}

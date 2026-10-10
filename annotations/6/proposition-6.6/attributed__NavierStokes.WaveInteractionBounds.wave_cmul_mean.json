@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.WaveInteractionBounds.wave_cmul_mean",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WaveInteractionBounds.wave_cmul_mean",
+      "line": 83,
+      "module": "NavierStokes.WaveInteractionBounds",
+      "path": "NavierStokes/WaveInteractionBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean#L83"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WaveInteractionBounds.wave_cmul_mean",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: WaveClass s P \\alpha f \\to WaveClass s P \\beta g \\to (0 \\le P \\le 1 on s.domain) \\to MeanClass s (\\alpha+\\beta) (fun n x => f n x * g n x): despite the name, the conclusion is MeanClass — the coefficient-level m+m' = 0 row of (6.31), with no hypothesis on m+m'."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 83,
+        "text": "theorem wave_cmul_mean {s : StripData D} {P : ℕ → D → ℝ} {α β : ℝ}\n    {f g : ℕ → D → ℂ} (hf : WaveClass s P α f) (hg : WaveClass s P β g)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1) :\n    MeanClass s (α + β) (fun n x => f n x * g n x)"
+      }
+    }
+  }
+}

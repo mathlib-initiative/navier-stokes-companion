@@ -1,7 +1,7 @@
 {
   "kind": "lemma",
   "label": "Lemma 4.7",
-  "status": "formalized",
+  "status": "partial",
   "location": {
     "page": 34,
     "rect": [0.134051, 0.471688, 0.734126, 0.263907]
@@ -17,37 +17,37 @@
       "region": "lemma-4.7@p034",
       "verdicts": [
         {
-          "confidence": 0.85,
-          "evidence": ["CONFIRMED_CONTENT: SmoothPowerMomentMatrix.Family.compact_inverse_jet_bound, SmoothPowerMomentMatrix.lean:184 (also compact_inverse_jets_bound L197): (hU : IsOpen U) (hKU : K ⊆ U); Family fields bump_nonnegative, bump_support, separated hold ∀ p ∈ U (L93-111); integral_contDiffOn_of_moving_support (L26) also needs IsOpen U.", "CONVENTION: SmoothPowerMomentMatrix.Family, SmoothPowerMomentMatrix.lean:100-105: lower_continuous, upper_continuous : ContinuousOn (fun p => lower/upper p j) U; separated : ∀ p ∈ U, ∀ i j, i < j → upper p i < lower p j", "I read p.34, Lemma A.1 (p.126) and the Lean sources myself. bumpMomentMatrix_det_ne_zero proves invertibility under weaker hypotheses than the paper's (continuity instead of smoothness), and because of the supports the full-line integral equals ∫_0^∞. In Data, inverseNorm, quadraticNorm and debtNorm are exactly ν_k, q_k and ‖d‖_{C^k}, using the CK max-derivative norm with the sup norm on Fin m→ℝ. Small is exactly the printed condition. exists_smooth_same_branch gives a smooth solution, uniqueness in the C^0 ball and the C^k bound. linear_solution covers Q=0. The family clause (compact_inverse_jet(s)_bound) needs an open domain, which is a confirmed low finding. It also needs continuous endpoints, which is a CONVENTION following A.1. I added compact_inverse_jets_bound (L197). MomentRepair.exists_unique_small_correction is at L206, not L153."],
+          "confidence": 0.78,
+          "evidence": ["CONFIRMED_CONTENT: SmoothPowerMomentMatrix.Family.compact_inverse_jets_bound, NavierStokes/SmoothPowerMomentMatrix.lean:197, hypotheses (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U); Family (same file:93-108) imposes bump_nonnegative, bump_support, separated, lower_pos ∀ p ∈ U; the smoothness of p ↦ matrix p (matrix_contDiffOn, :153) comes from integral_contDiffOn_of_moving_support (:25), which also requires IsOpen U.", "ATTRIBUTION_GAP: PowerMomentMatrix.bumpMomentMatrix_det_ne_zero (NavierStokes/PowerMomentMatrix.lean:261); SmoothPowerMomentMatrix.Family.compact_inverse_jets_bound (NavierStokes/SmoothPowerMomentMatrix.lean:197); ClosedIntervalMomentRepair.Data.exists_smooth_same_branch (NavierStokes/ClosedIntervalMomentRepair.lean:151); Data.linear_solution (same file:210).", "I read p. 34, Lemma A.1 (p. 126) and Lemma A.2 (p. 127), and the Lean sources. Assertion (ii) is formalized closely and in places more strongly: Data (L16) is the printed hypothesis, inverseNorm/quadraticNorm/debtNorm are exactly ν_k, q_k, ‖d‖_{C^k} for the CK norm max_{n≤k} sup_I‖∂ⁿf‖, Small k is the printed threshold, and exists_smooth_same_branch and linear_solution give both of its sentences. The first sentence of (i) is bumpMomentMatrix_det_ne_zero, with continuity in place of smoothness. Only the family clause fails the logic-alone test: Lean's Family lives on an open parameter set, the paper's lives on a compact one, and no declaration bounds the jets of B⁻¹ over a non-open parameter set. That is a real, if inconsequential, restriction, so DELTA with a low finding."],
           "findings": [
             {
-              "confidence": 0.8,
+              "confidence": 0.75,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONFIRMED_CONTENT",
               "severity": "low",
-              "summary": "The family clause needs every hypothesis (nonnegativity, support, separation) on an open U containing K. A family given only on the compact set [-1,1], smooth up to the endpoints, is not covered and may have no admissible extension."
+              "summary": "The family clause of assertion (i) is stated only for data satisfying every hypothesis on an open parameter set U ⊇ K. The paper's family is smooth on the compact parameter set and need not extend; no declaration bounds the jets of B⁻¹ over a non-open parameter set."
             },
             {
-              "confidence": 0.7,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Family also requires continuous lower/upper endpoints with upper p i < lower p j. Lemma 4.7's wording only asks that the hypotheses hold at each parameter, so smooth families without continuously choosable separating intervals are excluded."
+              "summary": "No single declaration states Lemma 4.7. Its clauses are four declarations in three files: the matrix invertibility, the family bound, the quadratic solve on [-1,1], and the Q = 0 case."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_OK",
+          "match_verdict": "SINGLE_SOURCE_DELTA",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "different_formulation",
+          "relation": "lean_weaker",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states it in a different formulation.",
-          "verdict": "faithful"
+          "summary": "Lean states a weaker result.",
+          "verdict": "deviation"
         }
       ]
     }

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 149.7",
+  "status": "formalized",
+  "location": {
+    "page": 149,
+    "rect": [0.311534, 0.819969, 0.379469, 0.042429]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p149-7",
+      "locator": {
+        "physical": [149],
+        "printed": [149],
+        "text": "Display 149.7, p. 149, in the proof of Proposition B.3"
+      },
+      "region": "eq-p149-7@p149",
+      "verdicts": [
+        {
+          "confidence": 0.93,
+          "evidence": ["paper: f_0(z) + z f_0'(z) \\le 1 - t + \\frac{t^2}{4} - \\frac{t^3}{36} + \\frac{t^4}{576} < -.18."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The quartic polynomial is identical term by term (1 - t + t²/4 - t³/36 + t⁴/576, AxisProfile.quarticUpper), and both inequalities of the display are proved for the exact convergent series, not only formally. The rewriting is the paper's own substitution t = z/2: the Lean carries t as the variable throughout, so f₀(z) is bessel 1 t and the combination f₀(z) + z f₀'(z) is bessel 1 t + t·(d/dt) bessel 1 t, which bessel_one_add_mul_deriv identifies with bessel 0 t = ∑ (-t)^n/(n!)². The hypothesis differs slightly in the harmless direction: the paper has 1.98 < t = 2χ ≤ 2, the Lean assumes only 99/50 ≤ t ≤ 2, so the Lean statement covers the paper's range and the endpoint t = 1.98 as well. The paper's accompanying remark that the value at t = 1.98 is -75535511/400000000 is not stated as such; the Lean proves the strict bound by an explicit nlinarith certificate instead.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

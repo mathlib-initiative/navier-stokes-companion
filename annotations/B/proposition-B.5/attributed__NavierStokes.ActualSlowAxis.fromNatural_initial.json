@@ -1,0 +1,31 @@
+{
+  "id": "proposition-B.5/attributed/NavierStokes.ActualSlowAxis.fromNatural_initial",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualSlowAxis.fromNatural_initial",
+      "line": 402,
+      "module": "NavierStokes.ActualSlowAxis",
+      "path": "NavierStokes/ActualSlowAxis.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean#L402"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualSlowAxis.fromNatural_initial",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0 ≤ X ≤ 4/Λ the continuation's coefficients equal C · F.family.f (X,η) and F.family.U (X,η); a second, direct statement of the 'unchanged for X ≤ X₀' clause downstream.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 402,
+        "text": "theorem fromNatural_initial {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) {X eta : ℝ}\n    (hX : 0 ≤ X) (hinitial : X ≤ 4 / Λ) (heta : eta ∈ ReferencePath.parameterInterval) :\n    let A"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (8.10)",
+  "status": "partial",
+  "location": {
+    "page": 91,
+    "rect": [0.337021, 0.72475, 0.532046, 0.030862]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-8.10",
+      "locator": {
+        "physical": [91],
+        "printed": [91],
+        "text": "Equation (8.10), p. 91, in the proof of Lemma 8.2"
+      },
+      "region": "eq-8.10@p091",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\|\\mathcal{L}^{-p}H\\|_{C_y^{m}} \\le C_{m,p}\\,\\|H\\|_{C_y^{m+p+3}},\\qquad p \\ge 1."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. Same operator (the Fourier multiplier (2πi v_r·k)^{-1}, TorusInverse.multiplier) and the same shape of estimate, with the constant fixed before the source, but the derivative loss is larger and only p = 1 is stated as one declaration. inverse_finiteJets concludes a C^n bound on 𝓛^{-1}f from a C^{n+5} bound on f, where (8.10) at p = 1 asks for C^{m+4}: the extra order comes from the summable lattice majorant Σ_k weight(k)^{-4} (SmoothFourierData.summable_weight_inv_four, used through rapid_coefficient/coefficient_seminorm_bound with p+4 derivatives), against the paper's Σ_{k∈Z²}(1+|k|)^{-3}. No declaration was found for 𝓛^{-p} with the paper's single p+3 loss; higher p is reached by iterating one inverse at a time, which is why totalIntegral_finiteJets and exactAlias_finiteJets consume m + 6p input jets (5 per inverse plus 1 radial derivative per integration by parts) rather than the paper's ~2p+3. Two incidental differences in the Lean's favour: its inverse annihilates the zero Fourier mode by construction (multiplier d 0 = 0), so no zero-mean hypothesis on H is needed, and JetBound bounds joint parameter-and-torus jets, not only the paper's C^m_y (mixedJet_inverse_bound is the purely-y version, with the same loss 5).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

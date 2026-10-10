@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.2/attributed/NavierStokes.LabelSupportPreservation.particular_zero_germs",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LabelSupportPreservation.particular_zero_germs",
+      "line": 225,
+      "module": "NavierStokes.LabelSupportPreservation",
+      "path": "NavierStokes/LabelSupportPreservation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSupportPreservation.lean#L225"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LabelSupportPreservation.particular_zero_germs",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Off the label's sourceRegions, the corrected common amplitude, the common pressure and the global Gaussian are each =ᶠ[𝓝 x] 0: zero germs, i.e. smooth zero extension across the support boundaries."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 225,
+        "text": "theorem particular_zero_germs\n    (hinj : ∀ l n, InjOn TorusAverages.quotientPoint\n      ((fun z => (reference l n).center + (reference l n).basis z) ''\n        (referenceWindow (r l n) (F.L (l,n)) (hr l n) (F.L_pos (l,n))).outer))\n    (outStrip : StripData ((P × ℝ) × Plane)) (d : GraphDirections ((P × ℝ) × Plane))\n    (l : Label) (n : ℕ) {x : (P × ℝ) × Plane} (hx : x.1.1 ∈ s.domain)\n    (hn : (x.1.1, x.2) ∉ sourceRegions F clock reference gap r S l n) :\n    (((data F clock reference gap r hr base tangent ctx u b G A j l).commonCorrected outStrip d).amplitude n\n      =ᶠ[𝓝 x] fun _ => 0) ∧\n    ((data F clock reference gap r hr base tangent ctx u b G A j l).common.pressure n\n      =ᶠ[𝓝 x] fun _ => 0) ∧\n    ((data F clock reference gap r hr base tangent ctx u b G A j l).globalGaussian d n\n      =ᶠ[𝓝 x] fun _ => 0)"
+      }
+    }
+  }
+}

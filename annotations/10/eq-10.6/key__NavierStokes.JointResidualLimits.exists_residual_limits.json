@@ -1,0 +1,24 @@
+{
+  "id": "eq-10.6/key/NavierStokes.JointResidualLimits.exists_residual_limits",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.JointResidualLimits.exists_residual_limits",
+      "line": 295
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L295"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.JointResidualLimits.exists_residual_limits",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 295,
+        "text": "∃ L : Space → FormalMultilinearSeries ℝ SpaceTime V, (∀ n, L 0 n = 0) ∧ (∀ n x, Tendsto (iteratedFDeriv ℝ n f) (𝓝[openPast 1] (1, x)) (𝓝 (L x n))) ∧ (∀ n, TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n f (t, x)) (fun x => L x n) (𝓝[<] 1))"
+      }
+    }
+  }
+}

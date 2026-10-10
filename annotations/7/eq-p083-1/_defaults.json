@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 83.1",
+  "status": "formalized",
+  "location": {
+    "page": 83,
+    "rect": [0.31977, 0.126737, 0.360765, 0.041846]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p083-1",
+      "locator": {
+        "physical": [83],
+        "printed": [83],
+        "text": "Display 83.1, p. 83, in the statement of Lemma 7.4"
+      },
+      "region": "eq-p083-1@p083",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: h_\\sigma \\;=\\; \\frac{|\\det(v_r,v_t)|}{2}\\left(\\int \\chi_g^2 \\, d\\xi_g\\right) c_i \\int_0^{L_s} \\psi^2 x^2 \\, dv."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean h_σ is `pairScales kappa ci P j = kappa * ci j * mass (P j).ψ (P j).x`, instantiated at `kappa = PartitionedCovariance.nativePrefactor vr vt r0` (used that way at PrimaryCovarianceBounds.lean:312 and :405). Unfolding the two definitions gives (|det(v_r,v_t)|/2)·(∫ χ^2 dξ)·c_i·∫_ℝ ψ^2 x^2 dv, which is the paper's formula except that the transverse integral runs over all of ℝ rather than [0, L_s]. The two integrals are equal: `PulseBounds.cutoff_zero` forces ψ = 0 off Icc (r^2/6) (5r^2/6) ⊂ [0, r^2] = [0, L_s], which is the same support argument the Lean uses in `actualColumn_eq_intervalIntegral` (PulseCovariance.lean:578) to pass from the ℝ-integral to ∫_0^{r^2}. No constant, exponent, sign or variable range differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

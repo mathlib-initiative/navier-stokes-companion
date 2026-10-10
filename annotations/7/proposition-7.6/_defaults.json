@@ -8,10 +8,6 @@
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration_verdict": {
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
       "item": "proposition-7.6",
       "locator": {
         "physical": [84],
@@ -21,40 +17,32 @@
       "region": "proposition-7.6@p084",
       "verdicts": [
         {
-          "confidence": 0.8,
-          "evidence": ["CONVENTION: SignedCovariance.increment (SignedCovariance.lean:28); CovarianceControl (SignedWaveUpdate.lean:100); increment_class (:159); signedVector_class (:191); masked_signed_square_class (:1328); physical_signed_cross_covariance (SignedCovariance.lean:409)", "CONVENTION: WeightedClasses.MemClass (WeightedClasses.lean:107): fields weight_nonneg, smooth, bounds only; signedVector_class concludes WaveClass only", "CONVENTION: SignedCovariance.extendedIncrement_regular (SignedCovariance.lean:872); StripData (WeightedClasses.lean:31) has abstract ζ, δ on an open domain with no edge relation", "ATTRIBUTION_GAP: ActualSignedStageControls.nativeCovariance (ActualSignedStageControls.lean:816) : UniformNativeCovariance; NativeCovariance.increment_jets (SignedCopyBounds.lean:469); signedVector_jets (:506). CovarianceControl is consumed in CorrectionStep (signed_bounds at :3958).", "I checked p. 84 and the Lean myself. The definitions are increment (L28) and signedScalar/signedVector. Each claim of Prop 7.6 has a lemma: (7.33) is increment_wave_class/increment_class. η_β LΣ ∈ W_{α−1/2} is signedVector_class. B(W_0,LΣ)=Σ is cross_reconstruct plus assembled/physical_signed_cross_covariance, with R and σ of any sign. C ∈ M_{2α−1} is assembled_signed_square plus masked_signed_square_class, where B=α−1/2 gives 2α−1. Zero extension is extendedIncrement_regular. The exponents check. CovarianceControl's hypotheses are no stronger than what Prop 7.5 supplies, and they can be met. All four findings are low-severity packaging or citation issues with written recovery arguments. One fix to a skeptic: increment_wave_class is at line 623, not 719. All voters agree."],
+          "confidence": 0.78,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/SignedWaveUpdate.lean:191 signedVector_class (clause 1), NavierStokes/SignedCovariance.lean:409 physical_signed_cross_covariance (clause 2), NavierStokes/SignedCovariance.lean:676 native_signed_square_class (clause 3)", "CONVENTION: NavierStokes/SignedCovariance.lean:28 increment H T R j = (H⁻¹.mulVec R) j / (2 * amplitudes H T j) — no 1/ε; NavierStokes/SignedWaveUpdate.lean:191 concludes WaveClass … (β + 1/2)", "CONFIRMED_CONTENT: No match in decls.jsonl for increment_add / increment_smul / increment_linear / signedVector_add; NavierStokes/SignedCovariance.lean:28 defines increment as (H⁻¹.mulVec R) j / (2 * amplitudes H T j)", "Every clause of Proposition 7.6 is stated in Lean, in full generality (arbitrary real exponent, arbitrary unrestricted real two-vector request), by theorems I read in source: the definition (7.31) is SignedCovariance.increment plus SignedWaveUpdate.signedVector; the W_{α−1/2} bound is signedVector_class; the derivative bound (7.33) is signed_quotient_class; the cross identity (7.34)/(7.32) is cross_reconstruct lifted to physical_signed_cross_covariance, whose symmetric double average is exactly the paper's B; the M_{2α−1} class is native_signed_square_class; the smooth zero extension at the shell edges, jointly in all slow parameters and with the √ζ edge weight, is extendedIncrement_regular. The only differences I found are packaging (three theorems, not one), the ε-normalization of the request, and the unstated — but definitionally immediate — linearity in Σ. None is a mathematical weakening, so the verdict is OK with relation different_formulation."],
           "findings": [
             {
-              "confidence": 0.82,
+              "confidence": 0.85,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No single declaration packages Prop 7.6. Its clauses are spread across generic lemmas stated for R = Σ/ε (β = α−1), with Prop 7.5's outputs bundled as CovarianceControl. Linearity of Σ ↦ LΣ holds by definition, with no lemma stating it."
-            },
-            {
-              "confidence": 0.75,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "MemClass/MeanClass/WaveClass only assert smoothness on an open domain plus weighted jet bounds. The qualitative parts of W_α and M_α (∂_θ = 0, support in Ω_γ, common-torus descent, zero extension) are not in the class conclusions."
-            },
-            {
-              "confidence": 0.65,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Smooth zero extension at the shell edges is proved only in a standalone local edge model with its own WeightedJets/PolyBound hypotheses. It is not derived from CovarianceControl or the MeanClass conclusions, and nothing else uses it."
+              "summary": "No single declaration states (7.32). Its three clauses are three separate general theorems in two modules; conjoining them is routine but is nowhere written as one statement of Proposition 7.6."
             },
             {
               "confidence": 0.85,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
+              "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The recovery argument's link to the actual pipeline is mis-cited. ActualSignedStageControls.nativeCovariance builds SignedCopyBounds.UniformNativeCovariance, not CovarianceControl. The actual (7.33) and W bounds come from parallel NativeCovariance lemmas."
+              "summary": "The Lean theorems take the already-ε-divided request R = Σ/ε as the input, not Σ. Hence exponents read β + 1/2 and 2β rather than α − 1/2 and 2α − 1."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "The paper's words '(7.31) defines a linear operation LΣ' have no corresponding declaration: no lemma states Σ ↦ LΣ is additive or homogeneous."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

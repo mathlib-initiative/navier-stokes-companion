@@ -1,0 +1,26 @@
+{
+  "id": "proposition-7.6/support/NavierStokes.FlatCovariance.signed_inverse_power_target_contDiffOn",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FlatCovariance.signed_inverse_power_target_contDiffOn",
+      "line": 360,
+      "module": "NavierStokes.FlatCovariance",
+      "path": "NavierStokes/FlatCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatCovariance.lean#L360"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FlatCovariance.signed_inverse_power_target_contDiffOn",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 360,
+        "text": "theorem signed_inverse_power_target_contDiffOn\n    (hG : ∀ i j, ContDiffOn ℝ ∞ (fun x => G x i j) s)\n    (hT : ∀ i, ContDiffOn ℝ ∞ (fun x => T x i) s)\n    (hR : ∀ i, ContDiffOn ℝ ∞ (fun x => R x i) s)\n    (hcone : ∀ x ∈ s, SmoothCovariance.StrictCone (G x) (T x))\n    (hgap : ∀ i, (σ + κ i) / 2 < τ) (i : Fin 2) (loss : ℕ) :\n    ContDiffOn ℝ ∞ (fun x => signedAmplitude σ τ κ G T\n      (fun y j => (y ^ loss)⁻¹ * R y j) x i) s"
+      }
+    }
+  }
+}

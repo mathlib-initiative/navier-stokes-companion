@@ -18,23 +18,15 @@
       "verdicts": [
         {
           "confidence": 0.87,
-          "evidence": ["CONVENTION: NavierStokesR3.ProblemStatement.CandidateProperties, NavierStokes/R3/ProblemStatement.lean:92, fields `energy_bounded : UniformFiniteEnergy (Ico 0 1) u` (:108) and `speed_unbounded` (:109); used by candidate_integrable_dissipation at NavierStokes/R3/IntegratedDissipation.lean:77, `obtain ⟨E, hE, henergy⟩ := hc.energy_bounded`", "ATTRIBUTION_GAP: NavierStokesR3.ActualCandidate.of_localized_fields, NavierStokes/R3/ActualCandidate.lean:119, `exact CompactEnergy.uniform_finite_energy …`; constant `(1 / 2) * (C * Real.exp 1)` at NavierStokes/R3/CompactEnergy.lean:354; candidate_energy_estimates is referenced only at NavierStokes/R3/Theorem.lean:79; the main theorem goes through NavierStokesR3.theorem_1_1 (NavierStokes/ComparatorR3Theorem.lean:43)", "I read p.121 and the Lean. candidate_energy_estimates gives F(1) < ∞, (10.13) with 2ν (ν = 1 is the paper), integrable dissipation on [0,1) and an endpoint bound, for any CandidateProperties ν tuple. of_localized_fields supplies that tuple for the constructed fields at ν = 1, with energy_bounded proved by uniform_finite_energy from the paper's hypotheses alone. The totalized Bochner integrals are genuine because the slices are continuous with compact support. So the lemma is recovered by a short composition: different_formulation, OK. Finding 0 is a hypothesis-bundle packaging choice (CONVENTION). Finding 1's facts are right, but it concerns Theorem 1.1's proof route, not this statement; the faithful (10.13) exists off the main path (ATTRIBUTION_GAP, contested). No sorry in the files read."],
+          "evidence": ["CONVENTION: NavierStokesR3.CompactEnergy.candidate_energy_dissipation_le, NavierStokes/R3/IntegratedDissipation.lean:203, hypothesis hc : CandidateProperties ν u p f K, whose fields energy_bounded (NavierStokes/R3/ProblemStatement.lean:108) and speed_unbounded (:109) the paper's lemma does not assume.", "All four conclusions of Lemma 10.4 are stated in Lean with the paper's own objects: F(1) < ∞ as interval integrability of the continuous nonnegative t ↦ ‖f(t)‖₂; (10.13) verbatim at ν = 1 with l2Sq = ‖u‖₂², dissipation = ‖∇u‖₂², cumulativeForceNorm = F; finiteness of the total dissipation as genuine IntegrableOn over Ico 0 1, not a totalized integral; and uniform boundedness of the kinetic energy, both with the sharp constant F(1)²/2 and, from the paper's hypotheses alone, in uniform_finite_energy. The Lean is stronger: every ν > 0, plus a quantitative total-dissipation bound. theorem_1_1_with_dissipation asserts all of it unconditionally for the constructed fields. The only gap is packaging: the estimates are stated under the full candidate bundle."],
           "findings": [
             {
-              "confidence": 0.84,
+              "confidence": 0.85,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "candidate_energy_estimates takes the whole CandidateProperties bundle, which already contains the uniform energy bound (the lemma's 'in particular' conclusion) and the blowup field. Finite dissipation is proved from that assumed bound by Young, not from (10.13)."
-            },
-            {
-              "confidence": 0.8,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
-              "severity": "low",
-              "summary": "On the path to Theorem 1.1 the bounded-energy input the paper credits to Lemma 10.4 is uniform_finite_energy, a Gronwall bound with constant ½·C·e. The sharp (10.13) is proved separately and feeds only theorem_1_1_with_dissipation."
+              "summary": "The Lean (10.13) is stated under the whole CandidateProperties bundle, which includes energy_bounded — the uniform kinetic-energy bound that the paper's Lemma 10.4 derives — and the unrelated speed_unbounded blow-up hypothesis."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",
@@ -43,10 +35,10 @@
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "different_formulation",
+          "relation": "lean_stronger",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states it in a different formulation.",
+          "summary": "Lean states a stronger result.",
           "verdict": "faithful"
         }
       ]

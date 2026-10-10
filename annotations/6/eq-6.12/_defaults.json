@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.12)",
+  "status": "formalized",
+  "location": {
+    "page": 65,
+    "rect": [0.327631, 0.659457, 0.541437, 0.022585]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.12",
+      "locator": {
+        "physical": [65],
+        "printed": [65],
+        "text": "Equation (6.12), p. 65, in section 6.2"
+      },
+      "region": "eq-6.12@p065",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: D_r v = D_z v = 0,\\qquad t_* v = 1,\\qquad N_i \\xi_g = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Lean does not state the four scalar identities separately; it states, for each of the three direction fields of (6.6), the full image of that field under the slot chart, which contains (6.12) as one component each and pins the other components too. `slot_coordinates_radial`: the image of D_r is `eR = ((1,(0,0)),(0,0))`, whose v-component (the last slot) is 0 — that is D_r v = 0 — and whose R-component is 1, which (6.12) does not assert. `slot_coordinates_axial`: the image of D_z is `Q^h • eZ`, again with v-component 0 — that is D_z v = 0 — and Z-component ε = Q^h. `slot_coordinates_temporal`: the image of t_* is `eV − ε • eT`, whose v-component is 1 — that is t_* v = 1 — together with the −ε ∂_T that (6.12) leaves implicit. `slot_coordinate_temporal`: the plane coordinate of the temporal direction is `(0, c_i⁻¹)`, whose first component 0 is N_i ξ_g = 0 directly. The second component is not N_i η_g: the Lean pair is in the (ξ_g, v) coordinates of (6.11), so `(0, c_i⁻¹)` reads N_i v = 1/c_i, and the paper's companion identity N_i η_g = 1 (stated in the prose just above (6.12)) follows only after substituting v = (η_g + r_0)/c_i, i.e. η_g = c_i v − r_0, which gives N_i η_g = c_i · N_i v = 1 because c_i is constant within the chart. That substitution is the one recorded in `TorusAverages.transverseStretch` and folded into the basis by `slotGeometry_basis`; I did not find it carried out in a Lean lemma whose statement is `N_i η_g = 1`. Two caveats on scope, both verified by reading the statements: the temporal pair is stated only at `gap = 0` and only for the band chart of its own label (`Q l.1`, `nativeIndex h l.1`), which is where (6.12) is used, whereas the radial and axial ones are general in `gap`, `Q` and `i`; and no standalone scalar lemma of the shape `o.dr v = 0` was found, so a reader of (6.12) has to take the v-component of these pushforward identities.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

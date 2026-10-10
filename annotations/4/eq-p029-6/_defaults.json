@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 29.6",
+  "status": "formalized",
+  "location": {
+    "page": 29,
+    "rect": [0.288067, 0.582182, 0.424097, 0.025876]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p029-6",
+      "locator": {
+        "physical": [29],
+        "printed": [29],
+        "text": "Display 29.6, p. 29, in the proof of Lemma 4.4"
+      },
+      "region": "eq-p029-6@p029",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: \\Delta\\mathfrak{m}(X,\\eta) = \\Delta\\mathfrak{m}(X_h,\\eta) = 0 \\qquad (X \\ge X_h,\\ -1 \\le \\eta \\le 1)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. `integral_equal_after` is exactly the paper's propagation, one cumulative integral at a time: with B = X_h, its `hanchor` is Δ(row)(X_h,η) = 0, its `htail` is the agreement of the integrands on [X_h,X] that the paper deduces from (U_1,E_1) = (U_2,E_2) there, and its conclusion is Δ(row)(X,η) = 0 for X ≥ X_h. Two differences of packaging. (a) The paper asserts it for the 5-tuple 𝔪 = (M,I,J,S,C_p) at once; the Lean lemma is scalar, so one applies it five times — once per integrand — which is routine since under the paper's smoothness hypothesis all five integrands are continuous on [0,X]. The pressure row additionally needs the shared axis datum Π_ax, and `pressure_equal_after` supplies exactly that case. (b) Lean adds an explicit `ContinuousOn` hypothesis on [0,X] that the paper leaves to its standing smoothness assumption. `Witness.rows_outside` is listed only as a user of the conclusion, not as a statement of it: it is the five-row equality for one particular modulated-assembly witness, obtained from the structure field `v.restored` rather than from the general propagation, so it is an instance and not the general statement. No general five-row 'equal beyond X_h' declaration was found; `ModulatedProfileAssembly.rows_eq_of_nonnegative` is the nearest, and it assumes agreement on all of [0,X] rather than only on [X_h,X].",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

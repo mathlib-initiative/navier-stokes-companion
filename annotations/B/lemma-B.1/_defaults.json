@@ -1,17 +1,13 @@
 {
   "kind": "lemma",
   "label": "Lemma B.1",
-  "status": "formalized",
+  "status": "partial",
   "location": {
     "page": 145,
     "rect": [0.132964, 0.506424, 0.736496, 0.172651]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration_verdict": {
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
       "item": "lemma-B.1",
       "locator": {
         "physical": [145],
@@ -21,45 +17,53 @@
       "region": "lemma-B.1@p145",
       "verdicts": [
         {
-          "confidence": 0.88,
-          "evidence": ["ATTRIBUTION_GAP: AxisOperators.lean L330, L479-491, L719-731; AxisEvaluationAlgebra.lean L148, L478, L487; AxisInverseFactors.lean L210, L253. No docstring names Lemma B.1, (B.5) or (B.6); the only source label is the draft tag 'GAX.2' at AxisCoefficientSpace.lean L428. PaperAdditionalResults.lean (30 lines, imports only) has no bundle.", "CONVENTION: AxisOperators.regularInverse L470 (rowData with inverseScale); AxisEvaluationAlgebra.regularInverse_actual_equation L478 and regularInverse_axis_zero L148; AxisEvaluation.profile_smooth L260. No uniqueness lemma among the regularInverse*/radialDivisor* entries of decls.jsonl or in Axis*/NaturalAxis* files (grep 'uniq'). NilpotentVolterra.eq_regularPrimitive_of_hasDerivAt needs W(0)=0 and does not apply.", "CONVENTION: AxisOperators.norm_average_le L479; AxisOperators.norm_inverseMixed_le L719; AxisContraction.naturalRemainder L337-366 (bu = O.average u, then O.mixed1 bu u and O.mixed2 bu φ); AxisEvaluationAlgebra.average_integral L470 identifies average with A_X.", "I read p.145 and the five Axis* files. weight (L28) is a_{αβ} of (B.4) exactly, and axisSpace_norm_le_iff makes the norm the sup quotient. Every clause has a faithful counterpart: product ≤ 64, J_r ≤ 80, average ≤ 1, mulY ≤ 80, I ≤ 80, ∂_η I ≤ 80/ρ, mixed (B.6) ≤ 5120/ρ, both derivative-omitted variants, and 64 per inserted factor. Lean covers every natural r ≥ 1, any window and explicit constants, so lean_stronger stands, with one caveat: uniqueness of the regular solution is not formalised (routine, unused downstream). All three findings have correct premises and are low; none is a material difference. The verdict and relation were unanimous; the MATHEMATICS skeptic dissented only on whether findings 0 and 2 are material."],
+          "confidence": 0.8,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.AxisOperators.regularInverse, NavierStokes/AxisOperators.lean:470, defines J_r by the coefficient rule inverseScale, i.e. by (B.5). AxisEvaluationAlgebra.lean:478 (ODE), :148 (G(0)=0) and AxisEvaluation.lean:260 (smooth on strip I 20) prove that this element is a regular solution. Nothing states that a regular solution is this element.", "ATTRIBUTION_GAP: AxisOperators.lean:330 (product ≤ 64), :479 (average ≤ 1), :482 (primitive ≤ 80), :485 (regularInverse ≤ 80), :488 (parameterPrimitive ≤ 80/ε), :491 (mulY ≤ 80), :719/:725/:731 ((B.6) and its two derivative-omitted variants), AxisInverseFactors.lean:210/:253 (extra factors). No declaration conjoins them; a grep of NavierStokes/ for 'Lemma B|B\\.5|B\\.6' finds no citing docstring, the only tag being 'GAX.2' at AxisCoefficientSpace.lean:428.", "ATTRIBUTION_GAP: NavierStokes.AxisOperators.norm_inverseMixed_le, NavierStokes/AxisOperators.lean:719, and NavierStokes.AxisOperators.norm_average_le, :479; the omitted-derivative variants are stated outright at :725 and :731, the averaged one is not. AxisEvaluationAlgebra.lean:470 (average_integral) identifies `average` with A_X.", "CONVENTION: NavierStokes.AxisWeightEstimates.productWeightSum_le, NavierStokes/AxisWeightEstimates.lean:298, bounds the weight convolution by 64·weight ε n m via squareDecay_convolution_le (:125), which gives 8 per index where (B.7) gives 8∑_{i≥1}i^{-2} =: C_sq ≈ 13.16. The docstring at :297 calls 64 'the manuscript's uniform algebra constant', which for this manuscript it is not.", "Read p. 145 and p. 146 and the five Axis* files. The space is literal: weight is 𝔞_{αβ}, axisSpace_norm_le_iff is ‖·‖_ρ. Every boundedness clause is stated, each for every r ≥ 1 and with the paper's own shift constants 80, 80/ρ, 1 from (B.9)-(B.10); (B.6) and both derivative-omitted variants carry an explicit C_ρ = 5120/ρ, and the extra-factor clause is stated for a whole list. Those clauses conjoin by logic alone. What does not is the first sentence of (B.5): Lean defines J_r by (B.5) and proves it is a regular solution, while the paper asserts the regular solution has those coefficients. The converse needs an ODE uniqueness argument stated nowhere, so partial/DELTA, with the gap low by consequence."],
           "findings": [
             {
-              "confidence": 0.88,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "CONFIRMED_CONTENT",
               "severity": "low",
-              "summary": "No declaration bundles or cites Lemma B.1. Its clauses are proved faithfully in about fifteen declarations across AxisOperators, AxisEvaluationAlgebra and AxisInverseFactors, so the pairing is inferred, not declared."
+              "summary": "Lemma B.1 defines J_ν as *the* smooth solution of YG_YY+νG_Y=F with G(0)=0 and asserts its coefficients are (B.5). Lean defines J_r by (B.5) and proves the converse direction only; no declaration states that these properties determine G."
             },
             {
-              "confidence": 0.8,
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No declaration states Lemma B.1, and none cites it. Its boundedness clauses are stated faithfully one at a time across about fifteen declarations in five files, so the pairing is inferred rather than declared."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The (B.6) variant with F replaced by A_X(F) has no declaration of its own, unlike the two derivative-omitted variants. It is the one-line composite of norm_inverseMixed_le with norm_average_le."
+            },
+            {
+              "confidence": 0.85,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Lean defines J_ν by the coefficient rows (B.5) and proves that this series is a smooth solution with G(0)=0. The uniqueness implicit in the paper's 'the solution' is not stated anywhere in Lean."
-            },
-            {
-              "confidence": 0.88,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "The variant with F replaced by A_X(F) has no dedicated declaration. It is the composite of norm_inverseMixed_le with norm_average_le (≤ 1), and AxisContraction uses exactly that composite."
+              "summary": "Lean's algebra constant is 64; the paper's proof route gives C_sq² = (8·π²/6)² ≈ 173. Lemma B.1 and (B.6) name no constant, so Lean's 64 and 5120/ε are its own sharper numbers, not the manuscript's."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_OK",
+          "match_verdict": "SINGLE_SOURCE_DELTA",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "lean_stronger",
+          "relation": "partial",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states a stronger result.",
-          "verdict": "faithful"
+          "summary": "Lean states part of it.",
+          "verdict": "deviation"
         }
       ]
     }

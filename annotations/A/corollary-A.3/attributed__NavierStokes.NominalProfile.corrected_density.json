@@ -1,0 +1,31 @@
+{
+  "id": "corollary-A.3/attributed/NavierStokes.NominalProfile.corrected_density",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.corrected_density",
+      "line": 263,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L263"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.corrected_density",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: density (correctedU) (correctedE) x i = density U E x i + physicalDensity resetPatch (1/10) (idealAmplitude F eta) (idealU eta) (resetCoefficients F debt eta) x i, under the hypotheses U = u_c and E = A x^{1/10} on the patch: the FiveProfileMoments increments are exactly the change of the cumulative",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 263,
+        "text": "theorem corrected_density (F : Profile) (U E : Field) (debt : ℝ → Debt) (eta x : ℝ)\n    (hU : ∀ x ∈ Ioo resetPatch.left resetPatch.right, U (x, eta) = idealU eta)\n    (hE : ∀ x ∈ Ioo resetPatch.left resetPatch.right, E (x, eta) = idealE F (x, eta)) (i : Fin 5) :\n    density (fun t => correctedU F U debt (t, eta)) (fun t => correctedE F E debt (t, eta)) x i =\n      density (fun t => U (t, eta)) (fun t => E (t, eta)) x i +\n        FiveProfileMoments.physicalDensity resetPatch (1 / 10)\n          (idealAmplitude F eta) (idealU eta) (resetCoefficients F debt eta) x i"
+      }
+    }
+  }
+}

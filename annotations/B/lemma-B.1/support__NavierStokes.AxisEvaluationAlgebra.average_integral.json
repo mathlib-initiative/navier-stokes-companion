@@ -1,0 +1,26 @@
+{
+  "id": "lemma-B.1/support/NavierStokes.AxisEvaluationAlgebra.average_integral",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisEvaluationAlgebra.average_integral",
+      "line": 470,
+      "module": "NavierStokes.AxisEvaluationAlgebra",
+      "path": "NavierStokes/AxisEvaluationAlgebra.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisEvaluationAlgebra.lean#L470"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisEvaluationAlgebra.average_integral",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 470,
+        "text": "theorem average_integral (I : Window) {ε : ℝ} (hε : 0 < ε)\n    (A : AxisSpace I ε) {Y η : ℝ} (hY : Y ∈ Ioo (-20 : ℝ) 20)\n    (hη : η ∈ Ioo I.left I.right) :\n    Y * profile I ε (average I hε A) (Y, η) =\n      ∫ y in (0 : ℝ)..Y, profile I ε A (y, η)"
+      }
+    }
+  }
+}

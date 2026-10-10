@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.6/attributed/NavierStokes.TemporalMeanUpdate.axialUpdate_zeroMean",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TemporalMeanUpdate.axialUpdate_zeroMean",
+      "line": 793,
+      "module": "NavierStokes.TemporalMeanUpdate",
+      "path": "NavierStokes/TemporalMeanUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L793"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TemporalMeanUpdate.axialUpdate_zeroMean",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: torusAverage (axialUpdate d a b M v h n f) p = 0 for all p, under smoothness, torus periodicity and radial support of f: the same zero-mean clause for Δγ."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 793,
+        "text": "theorem axialUpdate_zeroMean {d a b M : ℝ} (ha : 0 < a) (hab : a < b) (hd : 0 < d)\n    (v : Plane) (h : ℝ) (n : ℕ) {f : PressureStream.Lift S → ℝ}\n    (hf : ContDiff ℝ ∞ f) (hp : PressureStream.TorusPeriodicLift f)\n    (hs : RadialAlias.RadiallySupported a b f) (p : ℝ × S) :\n    PressureStream.torusAverage (axialUpdate d a b M v h n f) p = 0"
+      }
+    }
+  }
+}

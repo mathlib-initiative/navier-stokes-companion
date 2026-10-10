@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.34)",
+  "status": "formalized",
+  "location": {
+    "page": 138,
+    "rect": [0.287781, 0.364242, 0.580398, 0.04474]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.34",
+      "locator": {
+        "physical": [138],
+        "printed": [138],
+        "text": "Equation (A.34), p. 138, in the proof of Lemma A.6"
+      },
+      "region": "eq-A.34@p138",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.93,
+          "evidence": ["paper: \\mathcal{H}^{(m)}(Z) = \\frac{(-1)^m (h)_m}{\\Gamma(1+h)} \\int_0^\\infty e^{-v} v^{h+m} (1+Zv)^{-h-m}\\, dv,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same formula, assembled from one theorem plus three definitions and the coefficient lemma rather than displayed as one identity. Rewriting: put a = 1 + h (the Lean hypothesis is 1 < a, i.e. h > 0, as in the paper). iteratedDerivWithin_profile gives H^{(m)}(Z) = profileJet (1+h) m Z; unfolding profileJet, moment and kernel gives (Γ(1+h))⁻¹ · derivativeCoeff (1+h) m · ∫_{v>0} e^{-v} v^{(1+h)+m-1} (1+Zv)^{1-(1+h)-m} dv, and (1+h)+m-1 = h+m, 1-(1+h)-m = -h-m, so both exponents agree with the paper term for term; derivativeCoeff_eq_rising turns the coefficient into (-1)^m ∏_{k<m}(h+k) = (-1)^m (h)_m with the paper's own convention (b)_m = b(b+1)⋯(b+m-1), (b)_0 = 1 (AppendixHeatResults.rising, rising_zero, rising_succ). The normalisation Γ(a) = Γ(1+h) matches, the domain of integration Ioi 0 matches ∫_0^∞, and the derivative is one-sided on Ici 0 for Z ≥ 0 (iteratedDerivWithin_profile) and two-sided for Z > 0 (iteratedDeriv_profile), matching the paper's half-line statement. Non-vacuous: integrability of the kernel is proved separately (kernel_integrable, RadialHeatProfile.lean:69), so `moment` is a genuine integral and not a junk value.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

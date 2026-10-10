@@ -1,0 +1,26 @@
+{
+  "id": "proposition-8.1/support/NavierStokes.PhysicalResidualBridge.fullResidual_eq_graph",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhysicalResidualBridge.fullResidual_eq_graph",
+      "line": 628,
+      "module": "NavierStokes.PhysicalResidualBridge",
+      "path": "NavierStokes/PhysicalResidualBridge.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualBridge.lean#L628"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhysicalResidualBridge.fullResidual_eq_graph",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 628,
+        "text": "theorem fullResidual_eq_graph {U : Set E} (hU : IsOpen U) (ε : ℝ) (R : E → ℝ)\n    {Vr Vθ Vz : E → E} (Vt : E → E)\n    (hr : ContDiffOn ℝ ∞ Vr U) (hθ : ContDiffOn ℝ ∞ Vθ U) (hz : ContDiffOn ℝ ∞ Vz U)\n    {B a : E → Fin 3 → ℝ} {p₀ p : E → ℝ}\n    (hB : ∀ i, ContDiffOn ℝ ∞ (fun y => B y i) U)\n    (ha : ∀ i, ContDiffOn ℝ ∞ (fun y => a y i) U)\n    (hp₀ : ContDiffOn ℝ ∞ p₀ U) (hp : ContDiffOn ℝ ∞ p U) {x : E} (hx : x ∈ U)\n    (virtual error : Fin 3 → ℝ)\n    (hbase : ∀ i, graphResidual ε R Vr Vθ Vz Vt B p₀ x i = virtual i + error i)\n    (i : Fin 3) :\n    complexIncrement ε R Vr Vθ Vz Vt B a p x i + virtual i + error i =\n      graphResidual ε R Vr Vθ Vz Vt (fun y j => B y j + a y j)\n        (fun y => p₀ y + p y) x i"
+      }
+    }
+  }
+}

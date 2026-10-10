@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.19)",
+  "status": "formalized",
+  "location": {
+    "page": 79,
+    "rect": [0.26552, 0.23821, 0.603548, 0.023034]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-7.19",
+      "locator": {
+        "physical": [79],
+        "printed": [79],
+        "text": "Equation (7.19), p. 79, in the proof of Proposition 7.2"
+      },
+      "region": "eq-7.19@p079",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\|V_m(v,w)\\| \\le C\\,P(v)/P(w), \\qquad 0 \\le w \\le v \\le L_s, \\quad m \\neq 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean never defines a forward fundamental matrix V_m; it bounds the value of every solution of the homogeneous equation instead. homogeneous_forward_bound gives ‖u(v)‖ ≤ exp((D+4C)L)·(P(v)/P(a))·‖u(a)‖ on any [a,b] with b−a ≤ L·S, for every nonzero harmonic j, with a constant free of j; since V_m(v,w)x is by definition the value at v of the homogeneous solution equal to x at w, taking the supremum over ‖x‖ ≤ 1 gives ‖V_m(v,w)‖ ≤ C·P(v)/P(w) with C = exp((D+4C)L), which is (7.19). The operator A_m of (7.17) matches the Lean coefficient exactly: FrameData.coefficient j = modalOperator with damping j z = j²·viscosity z, i.e. diag(λ,−λ) − m²d·I₂ + E. The paper's uniformity in m (its 'the exponential in (7.18) is at most one') is FrameData.energy_bound / ViscousPropagator.high_harmonic_damping, which use j² ≥ 1 for j ≠ 0. The exponential factor is explicit in Lean rather than absorbed into C; slot_exponential_bound (and the hslot hypothesis of homogeneous_forward_bound) makes it a constant on a slot of length O(S_*).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

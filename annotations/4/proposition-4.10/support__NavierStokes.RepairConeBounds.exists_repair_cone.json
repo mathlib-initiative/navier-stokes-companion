@@ -1,0 +1,26 @@
+{
+  "id": "proposition-4.10/support/NavierStokes.RepairConeBounds.exists_repair_cone",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.RepairConeBounds.exists_repair_cone",
+      "line": 1262,
+      "module": "NavierStokes.RepairConeBounds",
+      "path": "NavierStokes/RepairConeBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RepairConeBounds.lean#L1262"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.RepairConeBounds.exists_repair_cone",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1262,
+        "text": "theorem exists_repair_cone (F : Profile) :\n    ∃ delta R0 : ℝ, 0 < delta ∧ 0 < R0 ∧\n      ∀ (A : NominalProfile.AxisStage F) (c : NominalProfile.Controls A)\n        (hsep : c.separation ≤ Real.exp (-8)),\n        JetBounds.FiniteJetBound 1 (endpointError c) (Icc (-1) 1) delta →\n        JetBounds.FiniteJetBound 1 (NominalProfile.resetCoefficients F c.debt) (Icc (-1) 1) delta →\n        R0 ≤ c.radius → ∀ p : Point,\n          p.1 ∈ Icc (c.radius * Real.exp (-8)) (c.radius * Real.exp (-5)) →\n          p.2 ∈ Icc (-1) 1 → NominalProfile.SmallDebt F c.debt p.2 →\n            ActivationContinuation.IsRelaxed (c.profiles hsep) F.data.h p"
+      }
+    }
+  }
+}

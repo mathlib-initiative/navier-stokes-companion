@@ -1,0 +1,31 @@
+{
+  "id": "proposition-9.1/attributed/NavierStokes.LinearWaveBounds.InputBounds.remainder_components",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LinearWaveBounds.InputBounds.remainder_components",
+      "line": 455,
+      "module": "NavierStokes.LinearWaveBounds",
+      "path": "NavierStokes/LinearWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L455"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LinearWaveBounds.InputBounds.remainder_components",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Every term of (9.2) lies in `WaveClass s P (α + 1/2 - 3κ)`; the component lemmas reproduce the p.102 gain table (slow transport `1-κ`, phase defect `1/2`, base derivatives `1`, pressure gradient `1/2-κ`, viscous derivatives `1-2κ`, mixed/phase divergence `1/2-κ`, angular connection `1/2`).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 455,
+        "text": "theorem remainder_components (h : InputBounds s P α κ d a) (i : Fin 3) :\n    WaveClass s P (α + 1 / 2 - 3 * κ) (fun n x => a.remainder s d n x i)"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "proposition-B.2/support/NavierStokes.NaturalProfile.pullback_second_Y",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalProfile.pullback_second_Y",
+      "line": 91,
+      "module": "NavierStokes.NaturalProfile",
+      "path": "NavierStokes/NaturalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalProfile.lean#L91"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalProfile.pullback_second_Y",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 91,
+        "text": "theorem pullback_second_Y {F : ℝ × ℝ → ℝ}\n    (hF : ContDiffOn ℝ ∞ F (AxisEvaluation.strip window 20))\n    (Λ : ℝ) {p : ℝ × ℝ} (hp : p ∈ domain Λ) :\n    iteratedDeriv 2 (fun X : ℝ => pullback Λ F (X, p.2)) p.1 =\n      Λ ^ 2 * iteratedDeriv 2 (fun Y : ℝ => F (Y, p.2)) (Λ * p.1)"
+      }
+    }
+  }
+}

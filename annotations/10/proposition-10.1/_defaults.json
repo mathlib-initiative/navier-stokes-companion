@@ -17,18 +17,9 @@
       "region": "proposition-10.1@p117",
       "verdicts": [
         {
-          "confidence": 0.88,
-          "evidence": ["CONVENTION: NavierStokes.PaperLocalization.local_theorem_with_compact_candidate, NavierStokes/PaperLocalization.lean:28-38: `∃ h qstar Xa Xext C, ∃ A D v, ∃ q, ∃ u, ∃ p, ∃ f, ∃ K, LocalPaper.Properties h qstar Xa Xext C A D v q ∧ CandidateProperties 1 u p f K ∧ … ∧ ∃ U, IsOpen U ∧ 0 ∈ U ∧ ∀ t ∈ Ico (3/4) 1, ∀ x ∈ U, u (t, x) = v (t, x) ∧ p (t, x) = q (t, x)`. The proof (line 42) fills (v, q) by LocalPaper.properties_of_schedule (NavierStokes/LocalPaperTheorem.lean:128).", "I read pp. 117-118 and PaperLocalization.lean:28 with the definitions it unfolds to. Every clause of Proposition 10.1 is stated: compact K, joint smoothness on [0,1) × R³, both slice supports in K, div u = 0, u = p = 0 for |t| ≤ 3/8, and agreement with (v, q) on an open U ∋ 0 for t ∈ [3/4,1). The extra conjuncts (force, equation, energy, blow-up, non-existence) only strengthen it. The theorem has no hypotheses; grep finds no sorry or axiom; I did not build it. Auditor and both skeptics agree and raised no finding. I add one convention. Separately, the main theorem never uses this declaration, so clause (d) is off the checked route to Theorem 1.1."],
-          "findings": [
-            {
-              "confidence": 0.85,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Judge-added, not a defect. Proposition 10.1 has no standalone statement: it is bundled with Theorem 3.1 and Theorem 1.1's conclusions, and u^loc, p^loc are existential witnesses (v, q) pinned only by LocalPaper.Properties."
-            }
-          ],
+          "confidence": 0.86,
+          "evidence": ["Proposition 10.1 is stated, clause for clause, inside NavierStokes.PaperLocalization.local_theorem_with_compact_candidate: compact K containing both spatial supports on [0,1), smoothness on Ico 0 1 ×ˢ univ = ℝ³ × [0,1), divergence freedom on [0,1), u = p = 0 for |t| ≤ 3/8, and equality with the local theorem's v, q on the open set plateau ∋ 0 for t ∈ [3/4,1). The same declaration also asserts the equation, force, energy bound, blowup and nonexistence conclusions, so it is strictly stronger; that is extra content, not a defect. The witnesses are the explicit localized fields χ_t(curl(χ_x A) + χ_x B) and χ_t χ_x p^loc of (10.4), so nothing is vacuous. Nothing to report."],
+          "findings": [],
           "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",

@@ -21,48 +21,32 @@
       "region": "lemma-7.1@p075",
       "verdicts": [
         {
-          "confidence": 0.8,
-          "evidence": ["CONVENTION: PrimaryRepresentatives.transverseDirection (PrimaryRepresentatives.lean:191) = −quarterTurn(normalDirection g); quarterTurn w = (−w_z, w_θ) (MovingFrameODE.lean:315); used as K in PrimaryGeometryAssembly.family (PrimaryGeometryAssembly.lean:316)", "CONVENTION: PhaseEstimates.nonzeroRound (PhaseEstimates.lean:25); FamilyData.phase p := roundedFrequency (BasePhaseGeometry.lean:574-576); nonzeroRound_error gives |nonzeroRound x − x| ≤ 1", "REFUTED: PrimaryODE.FrameData.ambient (PrimaryODE.lean:93); ambient_tangent (:115); FrameData.norm_le_ambient (:1065) ‖w‖ ≤ (1+H)‖ambient z w‖ with |1/h| ≤ H; uniform H from BasePhaseGeometry.reference_profile_bounds (:381) and eigenBound (used at :863); identity via ambientSolution_hasDerivAt (:211)", "ATTRIBUTION_GAP: PrimaryMaterialDefect.defect_class (PrimaryMaterialDefect.lean:379), WeightedClasses.StripData.growth; ActualPhaseDefect.nativeExpression_reduced (ActualPhaseDefect.lean:544), native_reduced_polynomial (:740), native_reduced_finite_jets (:812)", "CONVENTION: PrimaryGeometryAssembly.openCell (PrimaryGeometryAssembly.lean:29) = cube ∩ PositiveRepresentatives.positiveTime; positiveTime := {p | 0 < p.2.2} (PositiveRepresentatives.lean:23); FamilyData.phase_estimates/modal_errors/damping_error require q ∈ D.carrier i", "All parties agree on SINGLE_SOURCE_OK and different_formulation, and I confirm it.\n\nThe clauses are spread across these declarations:\n- (i): angularMode_ne_zero, carrier_mul_angular_frequency and harmonic_theta_periodic.\n- (7.9a): phase_estimates.\n- (iii): frame_jets and polynomial_jets.\n- (7.10): ambient, ambient_tangent, norm_le_ambient, ambientSolution_hasDerivAt and modal_errors.\n- (7.11): damping_error.\n- E_ik: ActualPhaseDefect.nativeExpression_reduced with native_reduced_polynomial, not only defect_class.\n- Instantiation: PrimaryGeometryAssembly.exists_prepared and construction, one threshold over labels and signs.\n\nRulings on the findings:\n- Finding 2's absence premise is refuted.\n- The K sign and the rounding rule are conventions.\n- The positive-time domain is a convention.\n\nOne correction to the auditor's recovery: modal_error_opNorm_le gives |E| ≤ 4C/S, not 2C/S. This is harmless."],
+          "confidence": 0.78,
+          "evidence": ["ATTRIBUTION_GAP: BasePhaseGeometry.FamilyData.construction, NavierStokes/BasePhaseGeometry.lean:985 (fields normal_close, modal_errors, damping_error); periodicity in PhaseCalculus.lean:192 + BasePhaseGeometry.lean:593,596; E_ik in PrimaryMaterialDefect.lean:379; jets in PhaseJetBounds.lean:554 and BasePhaseGeometry.lean:1069; q_* in BasePhaseGeometry.lean:474", "CONVENTION: PrimaryODE.FrameData.errorA/errorB/errorC, NavierStokes/PrimaryODE.lean:49-58; error11..error22 at PrimaryODE.lean:60-74; bounds in BasePhaseGeometry.FamilyData.modal_errors, NavierStokes/BasePhaseGeometry.lean:842; the exact coordinate reduction is MovingFrameODE.projectedRhs_eq_tangentMotion, NavierStokes/MovingFrameODE.lean:197 and modal_equations_iff at MovingFrameODE.lean:686", "ATTRIBUTION_GAP: PrimaryODE.FrameData.norm_le_ambient, NavierStokes/PrimaryODE.lean:1065 and ambient_norm_le at PrimaryODE.lean:1041; their only consumer is ambient_homogeneous_forward_bound (PrimaryODE.lean:1108), which a repository-wide grep found unused elsewhere in NavierStokes/. The hypotheses hold for the family by FamilyData.slope_bound (BasePhaseGeometry.lean:677) and the reference-profile bounds used in modal_errors (BasePhaseGeometry.lean:855-864).", "Every clause of Lemma 7.1 is stated in Lean, for the same general label family and with the same label-uniform band threshold, but spread over five files. The quantitative content matches exactly where I could compare definitions: B_s^2 = lambda_0/(eps k^2 (1+u^2)^{3/2}), d_ref = eps k^2 B_s^2(1+s^2), lambda(v) = lambda_0/sqrt(1+s(v)^2), S_* = l^2, and the eigenpair identities lam/c0 = 2F0 N_theta, lam*c0 = -(2F0 N_theta + |g0|) reproduce lambda_0^2 = -2F0 N_theta(2F0 N_theta + |g0|) and c0 = lambda_0/(2F0 N_theta). The E_ik identity matches p. 76 term by term. The only differences I found are formulation and packaging, so OK with different_formulation; the one place I would not certify is the edge-weight factor in the defect jet bound, which I left untraced rather than assert either way."],
           "findings": [
-            {
-              "confidence": 0.85,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean's tangential direction is K = (N_z, −N_θ), the opposite quarter turn to the paper's (−N_z, N_θ). The Lean frame also uses N_a = quarterTurn(K_a), so the two sign flips cancel. Lean's phase pair is the paper's pair relabelled: Φ_lean(σ) = −Φ_paper(−σ), up to rounding."
-            },
             {
               "confidence": 0.88,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "The angular wave number kp is rounded by floor, with 0 replaced by 1 (nonzeroRound). The paper takes the nearest nonzero integer to kp̃."
+              "summary": "No single declaration carries all of Lemma 7.1. Its clauses are stated across five files for the same label family; the quantitative core (7.9)-(7.11) is bundled only in a `def` that builds a `PhaseConstruction` record."
             },
             {
               "confidence": 0.85,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "REFUTED",
-              "severity": "low",
-              "summary": "The auditor said no 3×2 matrix B or left inverse B^ℓ is defined and that B^ℓ boundedness is not stated. Both claims are wrong. B is FrameData.ambient, its range lies in n_Φ^⊥ (ambient_tangent), and norm_le_ambient bounds the left inverse uniformly. What remains is that the identity is stated in eigen-coordinates."
-            },
-            {
-              "confidence": 0.8,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
-              "severity": "low",
-              "summary": "The auditor's E_ik bound (defect_class) is generic and conditional on hb, and it carries a S·max(1,δ⁻¹) edge weight in strip coordinates. However, a faithful slow-pulse statement exists for the actual labels: E_ik = ε·nativeReduced, and nativeReduced has polynomial jets with no δ loss."
-            },
-            {
-              "confidence": 0.6,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Lean's carriers are open cells intersected with positiveTime = {T > 0}, so (7.9)–(7.11) and the jet bounds are stated only for T > 0. The paper's slow neighbourhoods are taken relative to τ ≥ 0, with one-sided derivatives at τ = 0."
+              "summary": "(7.10) is never formed as the matrix identity for a 3x2 B over C^2. Lean states it entrywise in real moving-eigenbasis coordinates: errorA/B/C against (0, lambda/h, lambda*h), then modal11..22 against diag(lambda, -lambda)."
+            },
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The 'uniformly bounded left inverse' clause is stated only as generic FrameData lemmas with hypotheses |rho| <= R, |1/eigenvector| <= H. No declaration was found instantiating them for the constructed phase family, though both hypotheses are proved there."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

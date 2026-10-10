@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (8.20)",
+  "status": "formalized",
+  "location": {
+    "page": 96,
+    "rect": [0.270324, 0.14246, 0.598745, 0.02949]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-8.20",
+      "locator": {
+        "physical": [96],
+        "printed": [96],
+        "text": "Equation (8.20), p. 96, in the statement of Lemma 8.6"
+      },
+      "region": "eq-8.20@p096",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\Delta v = -c_{i_0}^{-1} N_{i_0}^{-1} E_\\theta^{\\circ}, \\qquad \\gamma_d = -c_{i_0}^{-1} N_{i_0}^{-1} E_z^{\\circ}, \\qquad c_{i_0}^{-1} \\le C S_*."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same two formulas, written with the Lean's names. The prefactor matches exactly: ChartScales.timeCoefficient h n = T_g^{nativeIndex h n} · Q n^{1+h} is the paper's c_{i_0} = T_g^{i_0}Q^{1+h} (p. 95), and chartPrefactor is its inverse; temporalInverse is the real part of the (8.19) inverse applied to the centered (zero auxiliary mean) source, i.e. N_{i_0}^{-1}E^∘. temporalAtIndex instantiates the angular case (thetaResidual, giving Δv) and temporalPotential the axial case (axialResidual, giving γ_d). The third clause is chartPrefactor_bound, with the constant made explicit as C = T_g and S_* as ChartScales.S n = n²; it carries the extra hypotheses 0 ≤ h and 4 ≤ n. The restriction to bands n ≥ 4 is recovered for all bands by chartPrefactor_bandBound_all (TemporalMeanUpdate.lean:323), which gives the same band bound with constant T_g + ∑_{i<4} chartPrefactor h i whenever ChartScales.S n ≤ s.slow n; so the clause 'c_{i_0}^{-1} ≲ S_*' holds unrestricted at the cost of a larger constant.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

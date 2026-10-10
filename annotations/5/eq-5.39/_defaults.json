@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.39)",
+  "status": "partial",
+  "location": {
+    "page": 59,
+    "rect": [0.246657, 0.276591, 0.622411, 0.028313]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.39",
+      "locator": {
+        "physical": [59],
+        "printed": [59],
+        "text": "Equation (5.39), p. 59, in the proof of Lemma 5.4"
+      },
+      "region": "eq-5.39@p059",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: |\\mathcal{F}(U)-\\mathcal{F}(U^{[J]})|_m \\le C_m\\, q^{-H_m}\\, |e|_{m+s}\\bigl(1+|U^{[J]}|_{m+s}+|e|_{m+s}\\bigr)^{d-1},"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration was found stating this inequality: I found nothing bounding ‖D^m(F(U) − F(U^{[J]}))‖ by q^{-H_m}|e|_{m+s}(1+|U^{[J]}|_{m+s}+|e|_{m+s})^{d-1}, and no Lean object in this part of the development carries the paper's degree parameter d at all (Expression, GenericDifferentialPolynomial.lean:185-190, is an untyped syntax tree with no degree field). The Lean reaches the same place by another route: the differential polynomial is a syntax tree, and the comparison of F(U) with F(U^{[J]}) is propagated through it by structural induction (Expression.approximation_eval, line 217). At each product node ApproximationRates.mul performs the paper's own 'subtracting two monomials one factor at a time', splitting f·g − fs·gs = (f−fs)·g + fs·(g−gs) (lines 128 and 131) and adding the exponents: tailLoss m = max (maxJetLoss a.tailLoss m + maxJetLoss b.growthLoss m) (maxJetLoss b.tailLoss m + maxJetLoss a.growthLoss m). So the paper's factor (1 + |U^{[J]}|_{m+s} + |e|_{m+s})^{d-1} becomes an additive accumulation of the stage growth exponents over the remaining factors, the order shift m → m+s becomes ApproximationRates.directional bumping the jet index by one at each derivative node (line 162-164), and q^{-H_m} becomes a loss function of m alone, independent of J. The statement the paper derives from (5.39) and then uses — the difference has a J-independent loss, JetRate (f − stage J) m (gain J − loss m) — is what TailRates.rate records and what the rest of the Lean proof consumes; (5.39) itself, as a norm inequality in |e|_{m+s} and |U^{[J]}|_{m+s}, is not stated anywhere I found.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.15)",
+  "status": "formalized",
+  "location": {
+    "page": 131,
+    "rect": [0.241724, 0.705418, 0.627344, 0.029136]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-A.15",
+      "locator": {
+        "physical": [131],
+        "printed": [131],
+        "text": "Equation (A.15), p. 131, in section A.3"
+      },
+      "region": "eq-A.15@p131",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\|c_i\\|_{C^1_\\eta} \\le C_{\\mathrm{pre}}\\,e^{-c/\\lambda}\\bigl(1+|\\mathrm{Amp}|\\bigr), \\qquad M = J = 0 \\quad\\text{after the pulse.}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both clauses are stated, in two pieces each. First clause: Lean fixes the paper's unnamed c to 1/4 (exp(-(1/(4·lam)))), and splits the C¹_η norm into a value bound (`pulse_coefficients_exp_bound`, with 1 + |amp η| on the right) and an η-derivative bound obtained from `pulse_coefficients_hasDerivAt` composed with `affineCoefficients_exp_bound`, whose right-hand side is |1 + 3η²| + |amp'| rather than 1 + |Amp|; that is exactly the paper's own gloss two lines below the display (\"the affine coefficients of 1 and Amp have the stated parameter bounds\"). `paper_correction_bounds` packages the same estimate for the correction itself at every fixed radial derivative order k, matching \"Every fixed y derivative satisfies the same estimate\". Second clause: `exact_axial_moments` gives M = J = 0 at c.endpoint = c.pulseStart + 13/c.lam, and `massMoment_after_pulse`/`angularMoment_after_pulse` extend it to all y ≥ endpoint, i.e. \"after the pulse\".",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

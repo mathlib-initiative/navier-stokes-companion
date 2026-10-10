@@ -1,0 +1,27 @@
+{
+  "id": "lemma-7.1/support/NavierStokes.LinearWaveResidual.materialPhaseDefect_slot_formula",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LinearWaveResidual.materialPhaseDefect_slot_formula",
+      "line": 270,
+      "module": "NavierStokes.LinearWaveResidual",
+      "path": "NavierStokes/LinearWaveResidual.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean#L270"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LinearWaveResidual.materialPhaseDefect_slot_formula",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 270,
+        "text": "theorem materialPhaseDefect_slot_formula (ε p pz x₀ : ℝ)\n    (b F G : PhaseCalculus.Slow → ℝ) (q : PhaseCalculus.Slot)\n    (hε : ε ≠ 0) (hR : 0 < q.1.1)\n    (hF : DifferentiableAt ℝ F q.1) (hG : DifferentiableAt ℝ G q.1) :\n    materialPhaseDefect (fun y : PhaseCalculus.Slot => y.1.1)\n      (fun y => b y.1) (fun y => F y.1) (fun y => G y.1)\n      (fun _ => PhaseCalculus.eR) (fun _ => PhaseCalculus.eTheta)\n      (fun _ => ε • PhaseCalculus.eZ)\n      (timeDirection ε (fun _ => PhaseCalculus.eV) (fun _ => PhaseCalculus.eT))\n      (PhaseCalculus.phase ε p pz x₀ F G) q =\n      b q.1 * x₀ - q.2.2 *\n        (b q.1 * (p * PhaseCalculus.slowR F q.1 + pz * PhaseCalculus.slowR G q.1) -\n          ε * (p * PhaseCalculus.slowT F q.1 + pz * PhaseCalculus.slowT G q.1) +\n          ε * G q.1 * (p * PhaseCalculus.slowZ F q.1 + pz * PhaseCalculus.slowZ G q.1))"
+      }
+    }
+  }
+}

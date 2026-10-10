@@ -1,0 +1,21 @@
+{
+  "id": "eq-p055-5/key/NavierStokes.SlowResidualMatching.zStress_identity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SlowResidualMatching.zStress_identity",
+      "line": 470
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowResidualMatching.lean#L470"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SlowResidualMatching.zStress_identity"
+      },
+      "snippet": {
+        "line": 470,
+        "text": "theorem zStress_identity {S : Set ℝ} (hS : IsOpen S) (h : ℝ) (f : SlowProfiles) (n : ℕ) (hF : SlowStressSupport.Smooth S (zDensity h f n)) {w : InnerPoint} (hX : 0 < w.1) (heta : w.2 ∈ S) : Real.sqrt (2 * w.1) * partialX (zStress h f n) w + zStress h f n w / Real.sqrt (2 * w.1) = -axialCoefficient h f n w"
+      }
+    }
+  }
+}

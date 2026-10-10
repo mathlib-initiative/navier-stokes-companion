@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 160.5",
+  "status": "formalized",
+  "location": {
+    "page": 160,
+    "rect": [0.313623, 0.441445, 0.372746, 0.065017]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.TrueConeLoop",
+      "path": "NavierStokes/TrueConeLoop.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p160-5",
+      "locator": {
+        "physical": [160],
+        "printed": [160],
+        "text": "Display 160.5, p. 160, in the proof of Lemma C.1"
+      },
+      "region": "eq-p160-5@p160",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\begin{aligned} v &= v_* && \\text{if } v_s \\le 2 + \\delta_L/8,\\\\ 2 &< v_s \\le v \\le v_* && \\text{if } 2 + \\delta_L/8 < v_s < 2 + \\delta_L/4,\\\\ v &= v_s > 2 && \\text{if } v_s \\ge 2 + \\delta_L/4. \\end{aligned}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same thresholds and same corrected speed (lowSpeed 2+δ/8, highSpeed 2+δ/4, targetSpeed 2+δ/2, correction = ζ^2(v_*-v_s), correctedSpeed = v_s+ρ), but the Lean does not state the trichotomy as one display; it proves the three clauses separately and organizes them as a dichotomy on whether the cutoff vanishes. Recovery, clause by clause: (i) v_s ≤ 2+δ_L/8 gives speedCutoff = 1 (speedCutoff_one), so correction_formula gives correction = 1^2·(v_*-v_s) and correctedSpeed = v + (v_*-v) = v_*; no declaration isolates this equality — it is a one-line rewrite, performed inline at TrueConeLoop.lean:111 inside correctedSpeed_gt_two. (ii) in the middle regime, v_s ≤ v is correction_nonneg and v ≤ v_* is correction_le_gap, whose hypothesis v_s ≤ highSpeed δ = 2+δ_L/4 is the paper's; 2 < v_s is immediate from v_s > 2+δ_L/8 and δ_L > 0. (iii) v_s ≥ 2+δ_L/4 gives correction = 0 (correction_zero) hence v = v_s, and v_s > 2 since δ_L > 0. The Lean writes the regime-2 upper bound a second time as correctedSpeed_le_target_of_active, under the hypothesis 'cutoff ≠ 0' rather than the paper's interval condition; that version is the one used in seed_cone.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

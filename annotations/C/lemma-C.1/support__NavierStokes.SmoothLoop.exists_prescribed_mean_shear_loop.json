@@ -1,0 +1,26 @@
+{
+  "id": "lemma-C.1/support/NavierStokes.SmoothLoop.exists_prescribed_mean_shear_loop",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SmoothLoop.exists_prescribed_mean_shear_loop",
+      "line": 562,
+      "module": "NavierStokes.SmoothLoop",
+      "path": "NavierStokes/SmoothLoop.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean#L562"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SmoothLoop.exists_prescribed_mean_shear_loop",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 562,
+        "text": "theorem exists_prescribed_mean_shear_loop (a b ρ : ℝ) (ha : 0 < a) (hρ : 0 ≤ ρ) :\n    ∃ A C : ℝ → ℝ,\n      ContDiff ℝ (∞ : WithTop ℕ∞) A ∧ ContDiff ℝ (∞ : WithTop ℕ∞) C ∧\n      Function.Periodic A 1 ∧ Function.Periodic C 1 ∧\n      (∫ φ in (0 : ℝ)..1, A φ) = a ∧ (∫ φ in (0 : ℝ)..1, C φ) = -b ∧\n      ∀ φ, 0 < A φ ∧\n        A φ * (1 + (C φ / A φ) ^ 2) = a * (1 + (-b / a) ^ 2) + ρ"
+      }
+    }
+  }
+}

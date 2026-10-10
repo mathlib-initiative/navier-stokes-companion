@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (8.9)",
+  "status": "formalized",
+  "location": {
+    "page": 91,
+    "rect": [0.278954, 0.260725, 0.590113, 0.095048]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.TransportPrimitive",
+      "path": "NavierStokes/TransportPrimitive.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-8.9",
+      "locator": {
+        "physical": [91],
+        "printed": [91],
+        "text": "Equation (8.9), p. 91, in the proof of Lemma 8.2"
+      },
+      "region": "eq-8.9@p091",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: A_-(U,y) = \\int_{-\\infty}^{0} F(U+u,\\, y+Muv_r)\\,du,\\qquad A_+(U,y) = \\int_{0}^{\\infty} F(U+u,\\, y+Muv_r)\\,du,\\qquad \\mathcal{J}g = A_- + A_+,\\qquad \\mathcal{I}_c g = (1-\\chi_m)A_- - \\chi_m A_+."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. A_-, A_+ and 𝒥g are the Lean definition bodies verbatim: the shift z + (u,(M*u)•v) is the paper's (U+u, y+Muv_r), the integration ranges Iic 0, Ioi 0 and ℝ are the paper's three ranges, and past_add_future is the third line 𝒥g = A_- + A_+ (it needs continuity and compact radial support, which the paper's zero-extended F has). The fourth line differs only in packaging: Lean defines ℐ_c g as A_- − χ(U)·𝒥g (the paper's own third line of (8.4)/(8.5)), and substituting 𝒥g = A_- + A_+ gives (1−χ)A_- − χA_+ in one step. Two encoding choices: the cutoff is evaluated at the radial coordinate z.1 = U rather than written as χ_m(QR²/(2q)), and the auxiliary variable lives in a normed space E (the universal cover of the torus) rather than on T² itself.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

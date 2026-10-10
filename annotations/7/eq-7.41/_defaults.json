@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.41)",
+  "status": "formalized",
+  "location": {
+    "page": 87,
+    "rect": [0.277123, 0.623189, 0.591951, 0.025482]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.41",
+      "locator": {
+        "physical": [87],
+        "printed": [87],
+        "text": "Equation (7.41), p. 87, after the statement of Corollary 7.8"
+      },
+      "region": "eq-7.41@p087",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\mathcal{C}(U + V) - \\mathcal{C}(U) = \\Sigma + \\mathcal{B}(E, \\mathcal{L}^{\\mathrm{as}}\\Sigma) + \\mathcal{B}(U, R) + \\mathcal{C}(V)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean states the identity in three pieces and leaves the Σ-substitution explicit. covariance_increment_split (SignedMeanGain.lean:154) gives C(U+V) - C(U) = B(P,T) + signedRemainder P U T K for arbitrary oscillations; signedRemainder_exact (LabelSumBounds.lean:802) rewrites that remainder as B(U-P,T) + B(U,K) + C(T+K), which is exactly B(E, L^as Σ) + B(U,R) + C(V) under the dictionary P = W_0^as, E = U - P, T = L^as Σ, K = R, V = T + K; native_family_cross (SignedMeanGain.lean:1284) replaces the remaining B(P,T) by the requested stress Σ. Two encoding points, neither changing content: (i) the paper's C and B carry the Y-average (⟨⟨·⟩_θ⟩_Y) whereas Lean's bilinearCovariance is the θ-average alone, so the Lean identity holds before the torus mean and the paper's form follows by applying meanBar — the Σ-identity native_family_cross is itself stated after meanBar; (ii) the paper's C, B are the two-vector (rθ, rz) components, the Lean identity is for the full 3x3 tensor and so covers them. The Lean identity needs no class hypotheses at all (only angular continuity), where the paper assumes U ∈ W_{1/2}, E ∈ W_ρ, Σ ∈ M_α.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

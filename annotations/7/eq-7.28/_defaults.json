@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.28)",
+  "status": "formalized",
+  "location": {
+    "page": 83,
+    "rect": [0.301966, 0.340273, 0.567494, 0.026565]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.28",
+      "locator": {
+        "physical": [83],
+        "printed": [83],
+        "text": "Equation (7.28), p. 83, in the statement of Lemma 7.4"
+      },
+      "region": "eq-7.28@p083",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\mathsf{H}_\\sigma \\;=\\; h_\\sigma\\bigl(-A_c N - \\sigma u_* K + e_\\sigma\\bigr), \\qquad |e_\\sigma| \\;\\le\\; C S_*^{-1/2}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The paper's single display is two Lean statements that conjoin in one line. (a) Factorization: `pairMatrix_factorization` gives H i j = (pairScales …) j * (normalizedPair P) i j, which is H_σ = h_σ · (unit-mass direction) with h_σ exactly the scalar of eq-p083-1. (b) Direction: setting e_σ := normalizedPair P (·,σ) − H0 (·,σ), `normalizedPair_entry_error` bounds |e_σ| ≤ (E + D·concentrationConstant)/r; at H0 = `signedModel c₀ u` (used so in `PulseCovariance.compact_actual_positive_inverse`, line 747, via `normalizedMatrix_entry_error`) the column σ of signedModel is ![c₀√(1+u_*²), −σu_*], and with A_c = −c₀√(1+u_*²) that is −A_c N − σ u_* K, matching the paper's signs and the N/K components. (c) Rate: the Lean bound is C/r, and r² = L_s (`slotRadius_sq`) with L_s ≍ S_* in the chart (`chart_length_identity`, `chart_scalar_factor_bounds`, PrimaryCovarianceBounds.lean:177 and :181), so C/r = C L_s^{-1/2} ≍ C S_*^{-1/2} — the paper's rate. What the Lean leaves as an explicit hypothesis rather than a conclusion is the paper's input sentence 'by Lemma 7.4, its ratio to x differs by O(S_*^{-1}) from −s(v)K + c₀√(1+s(v)²)N': it appears as `hratio : |t v i / x v − H0 i j| ≤ E/r² + D|v − r²/2|/r²`, with the affine drift of s(v) carried by the D-term (`PulseCovariance.affineSlope`, `modelDirection_affine_drift`).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

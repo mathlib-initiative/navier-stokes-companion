@@ -1,0 +1,31 @@
+{
+  "id": "lemma-6.1/attributed/NavierStokes.SlotGeometry.rotated_axes_injective",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SlotGeometry.rotated_axes_injective",
+      "line": 436,
+      "module": "NavierStokes.SlotGeometry",
+      "path": "NavierStokes/SlotGeometry.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlotGeometry.lean#L436"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SlotGeometry.rotated_axes_injective",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `(β : ℝ) : Function.Injective (fun q => q.1 • (1,-β) + q.2 • (β,1))`. The `(ξ,η)`-half of \"injectively parametrized\" for the manuscript's axes `v_r = (1,-b_g)`, `v_t = (b_g,1)`.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 436,
+        "text": "theorem rotated_axes_injective (β : ℝ) :\n    Function.Injective (fun q : Plane =>\n      q.1 • ((1, -β) : Plane) + q.2 • ((β, 1) : Plane))"
+      }
+    }
+  }
+}

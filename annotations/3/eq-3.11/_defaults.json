@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (3.11)",
+  "status": "formalized",
+  "location": {
+    "page": 18,
+    "rect": [0.257588, 0.139801, 0.610595, 0.070728]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-3.11",
+      "locator": {
+        "physical": [18],
+        "printed": [18],
+        "text": "Equation (3.11), p. 18, in section 3.6"
+      },
+      "region": "eq-3.11@p018",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.84,
+          "evidence": ["paper: \\nabla_* f = (D_r f,\\, D_\\theta f,\\, D_z f), \\qquad \\operatorname{div}_* a = (D_r + R^{-1}) a_r + D_\\theta a_\\theta + D_z a_z, \\qquad \\operatorname{curl}_* a = \\big( D_\\theta a_z - D_z a_\\theta,\\; D_z a_r - D_r a_z,\\; (D_r + R^{-1}) a_\\theta - D_\\theta a_r \\big)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three operators appear, but as separate definitions in three files rather than as one display, and with D_θ written out as R⁻¹ times a bare angular derivative instead of as the single symbol D_θ = R^{-1}∂_θ of the line above (3.11). Component by component: HarmonicCalculus.cylindricalDivergence is (D_r + R^{-1})a_r + D_θ a_θ + D_z a_z with D_r = along Vr, D_θ = (R)⁻¹ • along Vθ, D_z = along Vz; CurlClassBounds.cylindricalCurl has exactly the paper's three curl components in the same order and with the same signs, including the connection term (R)⁻¹ • a 1 in the axial component; CurlGeometry.cylindricalCurl / cylindricalDiv are the same two formulas in a purely algebraic form over a commutative ring with q standing for R^{-1} and Dθ for ∂_θ. For ∇_*, LinearWaveResidual.gradient is exactly the paper's triple for a plain scalar p : E → ℂ, in the same frame idiom (along Vr/Vθ/Vz, R) as the divergence and curl above, with D_θ = R⁻¹ along Vθ; LiftedMeanResidual.realGradient is the same body for a real scalar, with * for •. LinearWaveResidual.gradient is consumed at LinearWaveResidual.lean:60 inside linearResidual, in the pressure-gradient slot of the momentum residual, i.e. it is the ∇_* the later argument uses. HarmonicResidual.gradient is a weaker variant of the same formula, in the coefficient algebra of a normalized graph (oscillatory factor stripped, angular dependence carried by the harmonic index kp) rather than on a plain scalar. The Lean operators act through frame direction fields Vr, Vθ, Vz rather than through the paper's explicitly √Q-scaled D_r, D_z.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

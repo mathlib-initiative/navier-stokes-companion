@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 94.3",
+  "status": "formalized",
+  "location": {
+    "page": 94,
+    "rect": [0.257016, 0.361351, 0.486184, 0.063031]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.IntegratedMeanBalances",
+      "path": "NavierStokes/IntegratedMeanBalances.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p094-3",
+      "locator": {
+        "physical": [94],
+        "printed": [94],
+        "text": "Display 94.3, p. 94, in the proof of Proposition 8.4"
+      },
+      "region": "eq-p094-3@p094",
+      "verdicts": [
+        {
+          "confidence": 0.92,
+          "evidence": ["paper: \\int R^2\\,(v_{RR} + R^{-1} v_R - R^{-2} v)\\,dR = (2 - 1 - 1)\\int v\\,dR = 0,\\qquad \\int R\\,(\\gamma_{RR} + R^{-1}\\gamma_R)\\,dR = -\\int \\gamma_R\\,dR + \\int \\gamma_R\\,dR = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The two displayed identities are stated verbatim as two lemmas, with the paper's weights and signs: moment 2 (angularRadialViscosity f) = 0 unfolds to ∫ r²(f'' + f'/r − f/r²) dr = 0 (the v-line) and moment 1 (axialRadialViscosity f) = 0 to ∫ r(f'' + f'/r) dr = 0 (the γ-line). Two rewritings: (i) Lean's `moment` integrates over all of ℝ, the paper over R > 0 — for the shell-supported profiles of Proposition 8.4 these coincide by `positive_radialMoment` (IntegratedMeanBalances.lean:826, proved from `positive_integral_eq_integral`, line 224, for support ⊆ Icc a b with 0 < a); (ii) Lean's hypothesis is smoothness plus compact support rather than shell support, so the division by r at r = 0 (a junk value in Lean) is neutralised almost everywhere by `weighted_angular_viscosity_ae` / `weighted_axial_viscosity_ae` (lines 166, 173). The paper's middle member (2 − 1 − 1)∫v dR is not displayed as a term; the same accounting is produced in the Lean proofs by two applications of `moment_deriv_succ` followed by `linarith` (lines 206–209, 220–222), and for the γ-line Lean cancels ∫ r f'' against ∫ f' exactly as the paper cancels −∫γ_R + ∫γ_R. Both lemmas are the ones actually invoked in the Proposition 8.4 chain, at IntegratedMeanBalances.lean:666 (`integrated_angular_balance`) and :702 (`integrated_axial_balance`).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

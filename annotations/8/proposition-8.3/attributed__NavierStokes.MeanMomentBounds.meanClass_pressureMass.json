@@ -1,0 +1,29 @@
+{
+  "id": "proposition-8.3/attributed/NavierStokes.MeanMomentBounds.meanClass_pressureMass",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanMomentBounds.meanClass_pressureMass",
+      "line": 404,
+      "module": "NavierStokes.MeanMomentBounds",
+      "path": "NavierStokes/MeanMomentBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanMomentBounds.lean#L404"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanMomentBounds.meanClass_pressureMass",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: MeanClass ... alpha f implies UnweightedClass (slowStripData ...) alpha (fun n => pressureMass (f n)): 'g_r in M_alpha implies P in S_alpha'."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 404,
+        "text": "theorem meanClass_pressureMass\n    {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1)\n    (hS : ∀ n, 1 ≤ S n) {α : ℝ} {f : ℕ → PressureStream.Lift P → ℝ}\n    (hf : ∀ n, ContDiff ℝ ∞ (f n))\n    (hs : ∀ n, RadialAlias.RadiallySupported a b (f n))\n    (hclass : MeanClass (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α f) :\n    UnweightedClass (slowStripData (D"
+      }
+    }
+  }
+}

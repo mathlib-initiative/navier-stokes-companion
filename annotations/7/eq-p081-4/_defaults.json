@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 81.4",
+  "status": "formalized",
+  "location": {
+    "page": 81,
+    "rect": [0.262938, 0.469482, 0.474347, 0.02449]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p081-4",
+      "locator": {
+        "physical": [81],
+        "printed": [81],
+        "text": "Display 81.4, p. 81, in section 7"
+      },
+      "region": "eq-p081-4@p081",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: t \\cdot \\mathcal{K} t = -2F t_r t_\\theta + (2F + R F_R) t_r t_\\theta + G_R t_r t_z = g \\cdot \\bigl( t_r (t_\\theta , t_z) \\bigr)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. No declaration was found that states the scalar identity itself; what Lean has is the matrix whose quadratic form it is, written in a form that already performs the display's cancellation. Coordinates in `Space = EuclideanSpace ℝ (Fin 3)` are radial, angular, axial (file header, MovingFrameODE.lean:14), `tail w = !₂[w 1, w 2] = w_tan` and `pack r w = !₂[r, w 0, w 1]`, so `baseAction F g t` has radial component -2F t_θ and tangential component t_r • ((2F) e_θ + g): this is exactly the matrix K of the paper's (7.6), rows (0,-2F,0), (2F+RF_R,0,0), (G_R,0,0), once g = (R F_R, G_R) (paper p. 74: \"set F = V/R and g = (RF_R, G_R)\"), which is `shearVector`. Sign convention agrees: `baseAction` is passed as the argument `Kt` of `TangentProjection.projectedRhs` (TangentProjection.lean:30), matching t' + K t + ... = -f in (7.5). The rewriting is one step: ⟪t, baseAction F g t⟫ = t_r(-2F t_θ) + ⟪t_tan, t_r • (2F e_θ + g)⟫ = -2F t_r t_θ + 2F t_r t_θ + t_r ⟪g, t_tan⟫ = g · (t_r(t_θ,t_z)), using `inner_pack_left` (MovingFrameODE.lean:56) and `inner_unitTheta` (line 61) — the same -2F / +2F cancellation the display exhibits. No Lean lemma performs it.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

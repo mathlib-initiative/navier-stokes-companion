@@ -8,10 +8,6 @@
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration_verdict": {
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
       "item": "corollary-A.3",
       "locator": {
         "physical": [128],
@@ -21,32 +17,24 @@
       "region": "corollary-A.3@p128",
       "verdicts": [
         {
-          "confidence": 0.86,
-          "evidence": ["ATTRIBUTION_GAP: NavierStokes/OutgoingDilation.lean: M_scaling L104 `M F XR eta X = XR * F.M eta (X / XR)`; I_scaling L108 and J_scaling L115 with factor `XR * Real.sqrt XR`; S_scaling L122 with factor `XR`; canonicalKernel_scaling L97 (`XR⁻¹ * F.canonicalKernel eta (X / XR)`) and canonicalKernel_integral L248 (factor 1); H_scaling L80 `H F XR p = Real.sqrt XR * F.H (p.1 / XR, p.2)`. All rest on the generic integral_dilate_Ioc L31 (arbitrary f).", "CONVENTION: FiveProfileMoments.exists_normalized_repair L411 with normalizedMap L336, whose first block is matrixEquiv P.leftHalf (axialPowers b) c.1 (quadraticBilin L304 has first component 0). TerminalCompensation.exists_normalized_compensation L390 (`0 ≤ lam`), physicalMoments_eq L540, mixed_moment_unchanged L794. HeatedOutgoing.M_unchanged L454 (rfl) and J_unchanged L456.", "CONVENTION: FiveProfileMoments.u / e (L288-289) are `correction P.leftHalf c.1` and `correction P.rightHalf c.2`; u_mul_e (L291) `u P c x * e P d x = 0`; quadraticBilin (L304) has no mixed c.1·c.2 term. Within each block the cells are ordered and disjoint (intervals_separated L55), as Lemma A.1 requires.", "I read p.128, (4.15) on p.28, Lemmas A.1/A.2 and the Lean. physicalMoments_hasFDerivAt_zero gives the invertible Jacobian of the five moment changes for b ∉ {−1/2, 1/2, 3/2} and A ≠ 0; the densities, row operations, block weights and exponent condition match the paper. normalizedMap_identity gives the exact form (A.2). All three voters agree on the verdict and relation. The PAIRING skeptic is right on finding 0: OutgoingDilation states all five (A.4) factors, which the auditor and the MATHEMATICS skeptic missed. Findings 1 and 2 are accurate observations but encoding choices with written recoveries. No docstring cites the corollary; the pairing rests on content."],
+          "confidence": 0.85,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/FiveProfileMoments.lean:411 exists_normalized_repair and :638 physicalMoments_eq (G is a free real, never specialised to 0 together with a vanishing axial block); the E-only instance is NavierStokes/TerminalCompensation.lean:390 exists_normalized_compensation with :794 mixed_moment_unchanged, for exponents -1/2-λ only.", "CONVENTION: NavierStokes/FiveProfileMoments.lean:476 physicalDensity and :483 physicalMoments integrate over all of ℝ (:690 physicalMoments_positive_axis identifies this with ∫ over (0,∞)); the cumulative form is NominalProfile.moments (NominalProfile.lean:244) and SeedHandbackJets.Profile.history (:249), bridged by FiveProfileMoments.local_profile_moments (:1137) and NominalProfile.corrected_density (:263) with physicalDensity_integral_prefix (:274). FiveProfileMoments.lean:288-291 u, e, u_mul_e place the two U bumps in P.leftHalf and the three E bumps in P.rightHalf, so quadraticBilin (:304) has no U-E cross term.", "All four clauses are stated. (A.4) is NominalProfile.moments_dilate (:1322): dilationFactor = (ρ,ρ^{3/2},ρ^{3/2},ρ,1) on the cumulative moments of the five (4.15) integrands, with the √ρ of H inside density_dilate; the axial factors also appear as identities in OutgoingSchedule (:695,:715). FiveProfileMoments.lean is a close formalization of the rest: physicalDensity is the five increments with H=√(2x)E, physicalDebt/normalizedDebt are the paper's row operations, axialPowers/angularPowers the two blocks' weights, GoodExponent exactly α∉{-1/2,1/2,3/2}, physicalMoments_hasFDerivAt_zero the invertible Jacobian and normalizedMap_identity the exact form (A.2). What differs is packaging: the U_0=0 clause, and the split of (A.4) from the correction machinery."],
           "findings": [
             {
-              "confidence": 0.88,
-              "contested": true,
+              "confidence": 0.8,
+              "contested": false,
               "kind": "COVERAGE",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Auditor said (A.4) is unstated for M and J. That is wrong: OutgoingDilation states all five factors and the H relation under X = XR·x, for the constructed outgoing profile, with C_p in tail form."
+              "summary": "Clause 3 (at U_0=0 the three E bumps prescribe (I,S,C_p) and preserve M,J) is not one declaration in the five-moment setting; it follows in a few lines from the stated five-moment declarations, and holds as a separate E-only construction."
             },
             {
               "confidence": 0.85,
-              "contested": true,
+              "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The U₀=0 clause (three E-corrections prescribe I, S, C_p and preserve M, J) is not one theorem. It follows from exists_normalized_repair at G=0, and TerminalCompensation states it for α = −1/2−λ, λ ≥ 0, including α = −1/2."
-            },
-            {
-              "confidence": 0.85,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean proves invertibility for one fixed bump family: U-bumps on the left half of the patch, E-bumps on the right half. So u·e = 0 and the δU·δE cross term in J vanishes. The paper allows any Lemma A.1 families."
+              "summary": "Within FiveProfileMoments the moments are full-axis increments rather than cumulative \\int_0^X (the cumulative form lives elsewhere and is bridged), and the U and E bumps are forced into disjoint halves of the correction interval, removing the mixed U-E term from the quadratic form."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

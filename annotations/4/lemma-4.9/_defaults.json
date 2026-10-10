@@ -8,10 +8,6 @@
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration_verdict": {
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
       "item": "lemma-4.9",
       "locator": {
         "physical": [36],
@@ -21,24 +17,32 @@
       "region": "lemma-4.9@p036",
       "verdicts": [
         {
-          "confidence": 0.85,
-          "evidence": ["CONFIRMED_CONTENT: forward_stresses_eq_profile (TerminalHistoryBridge.lean:1401) and physical_forward*_eq_terminal (L1216, L1246) are about forwardTheta/forwardAxial of F. The regular-field versions, nominal_terminal_stress (LeadingStressWeights.lean:321), nominal_terminal_shears (L643) and Witness.terminal_true (NominalConeAssembly.lean:946), take the concrete W : NominalProfile.Witness F (NominalProfile.lean:2481). That is a construction, not a hypothesis class. FiveMomentCertificate is never used to derive the stress.", "CONFIRMED_CONTENT: physical_forwardTheta_eq_terminal / physical_forwardAxial_eq_terminal (TerminalHistoryBridge.lean:1216, 1246) require hfull : 1/2 < log(X/switchRadius)+1/5, i.e. y > terminalStart = tailStart+1/2 (TerminalCone.lean:21). TerminalStress.forward_eq_backward_iff (TerminalStress.lean:623) is abstract and is never applied to the field on all r > 0.", "I uphold SINGLE_SOURCE_DELTA/partial; all three voters agree on it. I checked the sources. Each clause holds for F's forward stress and for the constructed W: q^{-A-1/2} backward formulas, T_0=0 for δ≤0, b_s=0, 2+h<a≤2+2h, T_θ>0, cone gap ≥ 3/2, (4.32) with δ^{∓3} and C^∞ factors, inf b_θ>0, uniformity in η. The intervals match: terminalStart=tailStart+1/2, tailEnd=tailStart+3. I adopt the PAIRING skeptic's correction. For the regular field, the cone and shear clauses come from Witness.terminal_true and nominal_terminal_shears, not from the family-level terminal_forward_cone or radialB_after_endpoint. Per the MATHEMATICS skeptic, transfer to v over the full interval needs stress_outside, because modulated_terminal_stress only covers x<outerWidth≤1. Both findings are upheld unanimously."],
+          "confidence": 0.8,
+          "evidence": ["CONFIRMED_CONTENT: NominalProfile.Witness (NavierStokes/NominalProfile.lean:2481) computes profiles := W.controls.extendedProfiles W.heat W.separated, so Witness.five_moments (:2536) and Witness.pressure_canonical (:2543) are conclusions about a construction, not hypotheses; the terminal theorems (TerminalHistoryBridge.lean:1216, 1246, 1482; LeadingStressWeights.lean:321, 431, 643) all take such a witness as input. TerminalStress.forward_eq_backward_iff (TerminalStress.lean:623) states the general mechanism for an abstract residual and is never instantiated at a hypothesis-class field.", "CONFIRMED_CONTENT: physical_forwardTheta_eq_terminal (NavierStokes/TerminalHistoryBridge.lean:1216) and physical_forwardAxial_eq_terminal (:1246) both assume hfull : 1/2 < Real.log (X / switchRadius …) + 1/5, with switchStart = tailStart + 1/5; the conclusion is the equality with TerminalStress.terminalStress / TerminalPressure.axialBackwardStress.", "ATTRIBUTION_GAP: TerminalHistoryBridge.lean:1216, 1246; LeadingStressWeights.lean:431, 643, 968; NominalConeAssembly.lean:946; TerminalCone.lean:534, 546; TerminalEdgeFactor.lean:1256, 1467 — ten declarations, no conjunction.", "Every conclusion of Lemma 4.9 is stated in Lean — both backward representations, vanishing past X_b, the cone with b_s = 0 and the explicit margin κ_o = 3/2, and the (4.32) factorization with smooth coefficients and inf b_θ > 0 uniform in η. But they are stated of constructed objects: a CompensationWitness, an assembled NominalProfile.Witness whose profiles are computed, a modulated assembly. The paper's hypotheses (4.28) and (4.25) are theorems about these constructions, never binders. Going from the instance to the paper's quantifier is not instantiation, conjunction or unfolding, so by the logic-alone rule the verdict is DELTA and the relation lean_weaker, not partial: no clause is missing. Severity stays low because the paper's one conditional use is on an object Lean covers on both sides."],
           "findings": [
             {
-              "confidence": 0.88,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "medium",
-              "summary": "The lemma is a conditional about any leading field that is regular at the axis, agrees with the family beyond X_tail and satisfies (4.28) and (4.25). Lean proves the clauses only for the family's own forward stress and for the specific constructed field W (and v)."
-            },
-            {
-              "confidence": 0.7,
+              "confidence": 0.85,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONFIRMED_CONTENT",
               "severity": "low",
-              "summary": "The backward-integral formulas are proved only where the heat switch is complete (strictly X > e^{1/2}X_tail). Lemma 4.9 displays them without a radial restriction, and they are not stated directly for the regular field's stress."
+              "summary": "Lemma 4.9 is conditional: any regular field matching the family and satisfying (4.28), (4.25) gets the conclusions. Lean proves the conclusions only of its constructed objects (CompensationWitness F, NominalProfile.Witness W, the modulated assembly), never from those hypotheses."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONFIRMED_CONTENT",
+              "severity": "low",
+              "summary": "Lemma 4.9 states the two backward representations for the physical stress without a radial restriction. Lean's versions carry hfull, which unfolds to y > 1/2 in tail coordinates — the restriction the paper puts on Lemma A.8, not on 4.9 — and is strict where A.8 writes y ≥ 1/2."
+            },
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration bundles Lemma 4.9's clauses. The representations, T_0 = 0 past X_b, the cone with b_s = 0 and the margin, and the (4.32) edge factorization with inf b_θ > 0 are in five different files and conjoin only after the coordinate dictionary is applied."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_DELTA",
@@ -47,10 +51,10 @@
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "partial",
-          "severity": "medium",
+          "relation": "lean_weaker",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states part of it. The lemma is a conditional about any leading field that is regular at the axis, agrees with the family beyond X_tail and satisfies (4.28) and (4.25). Lean proves the clauses only for the family's own forward stress and for the specific constructed field W (and v).",
+          "summary": "Lean states a weaker result.",
           "verdict": "deviation"
         }
       ]

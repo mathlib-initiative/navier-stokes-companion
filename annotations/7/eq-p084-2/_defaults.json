@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 84.2",
+  "status": "formalized",
+  "location": {
+    "page": 84,
+    "rect": [0.206993, 0.222449, 0.586415, 0.026101]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p084-2",
+      "locator": {
+        "physical": [84],
+        "printed": [84],
+        "text": "Display 84.2, p. 84, in section 7"
+      },
+      "region": "eq-p084-2@p084",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.93,
+          "evidence": ["paper: Q^{-2A}\\,\\varepsilon\\,\\mathcal{T}_{0,*} = Q^{-2A+h}\\,(Q/q)^{A+1/2}\\,\\mathcal{T}_{0} = Q^{-A+h+1/2}\\,q^{-A-1/2}\\,\\mathcal{T}_{0} = q^{-A-1/2}\\,\\mathcal{T}_{0}. \\qquad (A = 1/2 + h)"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The rewriting: the Lean states the scalar identity with the common factor T_0 stripped; multiply both sides by T_0 i and substitute T_{0,*} = (Q/q)^{A+1/2} T_0 (chartTarget, line 940) to recover the paper's chain — this is exactly what the calc at PartitionedCovariance.lean:959–969 does. Term by term the exponents agree: (Q^{-A})^2 = Q^{-2A}, Q^h = ε, (Q/q)^{A+1/2}, right side q^{-A-1/2}. What is not literally present: the two intermediate displayed expressions Q^{-2A+h}(Q/q)^{A+1/2} and Q^{-A+h+1/2} q^{-A-1/2} are not written as such; the cancellation Q^{-A+h+1/2} = Q^0 appears inside the proof as `he : (-velocityExponent h * 2 + h) + (velocityExponent h + 1 / 2) = 0` (line 798), which is the same computation with A = 1/2 + h unfolded. The hypothesis A = 1/2 + h is built into the definition `velocityExponent` rather than assumed in the statement, and the Lean adds the positivity hypotheses 0 < Q, 0 < q needed for real rpow arithmetic (the paper's Q = 2^{-ℓ} and q are positive).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

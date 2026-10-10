@@ -1,0 +1,27 @@
+{
+  "id": "corollary-8.5/support/NavierStokes.StateMomentBalances.averaged_thetaResidual",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.StateMomentBalances.averaged_thetaResidual",
+      "line": 749,
+      "module": "NavierStokes.StateMomentBalances",
+      "path": "NavierStokes/StateMomentBalances.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StateMomentBalances.lean#L749"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.StateMomentBalances.averaged_thetaResidual",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 749,
+        "text": "theorem averaged_thetaResidual {a b : ℝ} (ha : 0 < a)\n    (r : ReconstructionData) (ε fast : ℕ → ℝ) (z t : S) (v : PressureStream.Plane)\n    (c : Context (Lift S)) (u : State (Lift S))\n    (ho : c.operators = nativeOperators r ε fast z t v) (H : AngularInputs a b c u)\n    (n : ℕ) :\n    averaged (u.thetaResidual c) n = angularBalanceAlong (ε n) z t\n      (averaged u.mean.angular n) (averaged (thetaRadialFlux c u) n)\n      (averaged (thetaAxialFlux c u) n) (averaged c.virtualTheta n)"
+      }
+    }
+  }
+}

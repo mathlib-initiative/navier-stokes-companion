@@ -1,0 +1,27 @@
+{
+  "id": "lemma-8.6/support/NavierStokes.UniformFourierAlias.realCentered_finiteJets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.UniformFourierAlias.realCentered_finiteJets",
+      "line": 626,
+      "module": "NavierStokes.UniformFourierAlias",
+      "path": "NavierStokes/UniformFourierAlias.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformFourierAlias.lean#L626"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.UniformFourierAlias.realCentered_finiteJets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 626,
+        "text": "theorem realCentered_finiteJets (m : ℕ) :\n    ∃ K : ℝ, 0 ≤ K ∧ ∀ (f : P × Plane → ℝ) (A : Set P) (C : ℝ),\n      ContDiff ℝ ∞ f → ParameterPeriodic f → 0 ≤ C →\n      (∀ j ≤ m + 4, ∀ p ∈ A, ∀ Y, ‖iteratedFDeriv ℝ j f (p, Y)‖ ≤ C) →\n      ∀ j ≤ m, ∀ p ∈ A, ∀ Y, ‖iteratedFDeriv ℝ j (realCentered f) (p, Y)‖ ≤ K * C"
+      }
+    }
+  }
+}

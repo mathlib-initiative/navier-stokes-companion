@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.9/attributed/NavierStokes.LeadingStressWeights.modulated_terminal_shears",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStressWeights.modulated_terminal_shears",
+      "line": 660,
+      "module": "NavierStokes.LeadingStressWeights",
+      "path": "NavierStokes/LeadingStressWeights.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L660"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStressWeights.modulated_terminal_shears",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: The same shear identities for the modulated assembly, but only on the outer collar x < outerWidth v.",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 660,
+        "text": "theorem modulated_terminal_shears {x eta : ℝ} (hx : x < outerWidth v)\n    (hη : eta ∈ Icc (-1 : ℝ) 1) :\n    logShearA v.profiles (eta, rightEdge W - x) =\n      TerminalEdgeFactor.profileSpeed (TerminalHistoryBridge.normalization F W.controls.radius)\n        F.data (TerminalHistoryBridge.shift F W.controls.radius) (eta, x) ∧\n    logShearB v.profiles (eta, rightEdge W - x) = 0"
+      }
+    }
+  }
+}

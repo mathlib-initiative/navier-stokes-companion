@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 11.4",
+  "status": "formalized",
+  "location": {
+    "page": 11,
+    "rect": [0.337426, 0.609764, 0.32626, 0.064754]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.Scaling",
+      "path": "NavierStokes/Scaling.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p011-4",
+      "locator": {
+        "physical": [11],
+        "printed": [11],
+        "text": "Display 11.4, p. 11, in section 3.3"
+      },
+      "region": "eq-p011-4@p011",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: A_{\\mathrm{wave}} \\asymp q^{-1/2 - h/2}, \\qquad \\ell_{\\mathrm{wave}} \\asymp q^{1/2 + h/2}, \\qquad \\frac{A_{\\mathrm{wave}}}{q^{-1/2-h}} \\asymp \\frac{\\ell_{\\mathrm{wave}}}{q^{1/2}} \\asymp q^{h/2}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The paper's three asymptotic relations are stated in Lean with the asymptotics discharged, not suppressed, and the structure of the third display is reproduced exactly. The Lean's A_wave is the product coreVelocity Q h * sqrt(Q^h) = q^{-1/2-h} * q^{h/2}, which is exactly the paper's A_wave/q^{-1/2-h} ~ q^{h/2}, and wave_amplitude_power states the resulting power Q^{-1/2-h/2} as an equality, not a two-sided bound. Likewise the Lean's wavelength is radialLength Q * sqrt(Q^h) = q^{1/2} * q^{h/2}, which is the paper's l_wave/q^{1/2} ~ q^{h/2}, and wave_length_power states the power Q^{1/2+h/2} exactly. The common value q^{h/2} of the two quotients is sqrt_viscosity. Where the paper writes ~, the only loss in Lean is the integer rounding of the carrier frequency k = ceil(eps^{-1/2}): waveLength Q h = radialLength Q / k, and wave_length_bounds gives the two-sided bound with the explicit constants 1/2 and 1, i.e. the paper's ~ with named constants. The paper's 'suppressing logarithmic factors and weights that vanish at the support boundary' corresponds to Scaling.waveVelocity carrying a separate free real envelope factor, which wave_amplitude_power omits. Notation: the Lean writes Q for the paper's q. The module is scalar bookkeeping only; grep found no other NavierStokes file importing Scaling.waveVelocity, Scaling.waveLength or Scaling.wave_amplitude_power, so these powers are stated but not consumed by the construction (that is a fact about the module, not a difference in the formula).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.9)",
+  "status": "formalized",
+  "location": {
+    "page": 65,
+    "rect": [0.366569, 0.138484, 0.5025, 0.046202]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.9",
+      "locator": {
+        "physical": [65],
+        "printed": [65],
+        "text": "Equation (6.9), p. 65, in section 6.2"
+      },
+      "region": "eq-6.9@p065",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\eta_\\gamma(R,Z,T) = \\chi_\\ell(q)\\, \\chi_{\\ell,a}(R,Z,T), \\qquad K_\\gamma = \\operatorname{supp}_{(r,z,t)} (\\eta_\\gamma \\circ \\mathcal{C}_\\ell)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The product is the same: `labelMask n k (q, X) = dyadicMask n q * slowMask n k X` is η_γ(R,Z,T) = χ_ℓ(q)χ_{ℓ,a}(R,Z,T), with `dyadicMask` the band cutoff (its tsupport is exactly q/Q ∈ [1/2,2]) and `slowMask` the grid cutoff; `PhysicalWaveSum.physicalMask` (and the curried `PartitionedCovariance.physicalMask`) is the composite η_γ ∘ C_ℓ, since `physicalSlowMask D n k x = slowMask n k (slowCoordinates D n x)`. Encoding differences: (i) Lean carries q as an independent first coordinate of the point (ℝ × Position) rather than as the function q(r,z,t), and the Position coordinate is (r, z, τ), so K_γ = `tsupport (PhysicalWaveSum.physicalMask D L)` is the closed support in (q, r, z, τ) rather than in (r,z,t); (ii) Lean's labels carry a sign in `SlotColoring.Label = ℕ × (Grid × Bool)` but `physicalMask` reads only `L.1` and `L.2.1`, which is exactly the paper's η_{(ℓ,a,+)} = η_{(ℓ,a,-)} stated just after (6.9); (iii) the named set `labelRegion` is the product of the two closed supports, a closed superset of K_γ rather than K_γ itself — `physicalMask_tsupport_subset` proves the inclusion, and the downstream disjointness arguments use `labelRegion` in place of K_γ.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

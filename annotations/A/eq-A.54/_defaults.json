@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.54)",
+  "status": "formalized",
+  "location": {
+    "page": 142,
+    "rect": [0.266784, 0.791437, 0.602676, 0.043929]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.TerminalStress",
+      "path": "NavierStokes/TerminalStress.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.54",
+      "locator": {
+        "physical": [142],
+        "printed": [142],
+        "text": "Equation (A.54), p. 142, in the proof of Proposition A.10"
+      },
+      "region": "eq-A.54@p142",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: T_\\theta \\;=\\; K f_r \\;+\\; \\frac{1}{r^2}\\int_r^{\\infty}\\bigl(r' K - r'^2 K_{r'}\\bigr) f_{r'}\\, dr' \\;+\\; \\frac{1}{qL r^2}\\int_r^{\\infty} r'^2 K f' \\, dr' ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Term by term the same: Lean's `correction` is literally (r'K − r'^2 K_{r'}) f_{r'}, and u^2 * timeResidual is u^2 K f'/(qL). The only rewritings are bookkeeping: the factor 1/(qL) sits inside the Lean integrand (timeDenominator h t z does not depend on the integration variable u, so it factors out to the paper's 1/(qLr^2) prefactor), and the two integrals are written separately over Ioi r and divided by r^2 once. Lean's statement additionally carries explicit hypotheses the paper leaves implicit: integrability of the three integrands and a vanishing-boundary condition for the integration by parts (the hv/hc/hT/hb arguments).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

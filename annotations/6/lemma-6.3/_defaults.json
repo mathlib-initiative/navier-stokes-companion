@@ -17,9 +17,18 @@
       "region": "lemma-6.3@p068",
       "verdicts": [
         {
-          "confidence": 0.9,
-          "evidence": ["I checked p. 68 and pp. 64-65 against LabelCounting.lean. The mesh S_ℓ^{-3} with S = n², Q = 2^{-n}, and the chart exponents (1/2, D, 1) match. supp χ_ℓ lies in [Q/2,2Q], which is the dyadicMask tsupport. B_{ℓ,a} lies inside normalizedBox 1, and inside normalizedBox 2 for any grid offset. K_γ lies inside pointwiseLabels. The constants are chosen before n, Z, T, D, q and x. The .Finite conjuncts keep ncard from being vacuous. A arbitrary covers the enlargement clause, and _restrict handles Γ. The Lean is stronger: it counts all labels, is uniform in D and allows any bounded I. The voters agree and nobody raised a finding. Separately, the main chain uses only the 2250 overlap count, not the S^9 or S^3 counts. That limits what is checked downstream, but it does not make the statement unfaithful."],
-          "findings": [],
+          "confidence": 0.86,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/LabelCounting.lean:28 relevantLabels n A B = {L | L.1 = n ∧ (normalizedBox A L ∩ B).Nonempty}; the bridge tsupport (slowMask n k) ⊆ normalizedBox A (n,k,σ) for A ≥ 1 is NavierStokes/LabelCounting.lean:67, used only for the pointwise clause (line 244)", "All three bounds of Lemma 6.3 and its enlargement clause are stated as one theorem, number_of_relevant_labels (and with an arbitrary label family in number_of_relevant_labels_restrict), over the genuine objects: mesh S_ℓ^{-3} with S_ℓ = ℓ², the chart (6.1), the dyadic cutoff's closed support, and both signs. The exponents S^9 and S^3 and the uniformity of the constants in the band and in (Z,T) match. The Lean counts larger sets (closed enlarged boxes, free q, bounded instead of compact B), so each bound implies the paper's. The only gap is packaging: clauses (ii) and (iii) are not composed with the inclusion of the actual cutoff supports into those boxes, which is a one-line step proved in the same file."],
+          "findings": [
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Clauses (ii) and (iii) are counted for the enlarged grid boxes normalizedBox A L, never for the partition's own supports tsupport (slowMask n a); the inclusion lemma exists but no declaration composes it with the counts."
+            }
+          ],
           "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",

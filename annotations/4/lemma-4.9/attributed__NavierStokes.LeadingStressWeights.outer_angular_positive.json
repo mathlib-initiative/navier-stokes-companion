@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.9/attributed/NavierStokes.LeadingStressWeights.outer_angular_positive",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStressWeights.outer_angular_positive",
+      "line": 860,
+      "module": "NavierStokes.LeadingStressWeights",
+      "path": "NavierStokes/LeadingStressWeights.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L860"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStressWeights.outer_angular_positive",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: Positivity of the angular stress on the outer collar of the assembled field.",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 860,
+        "text": "theorem outer_angular_positive :\n    ∃ r : ℝ, 0 < r ∧ r < outerWidth v ∧\n      ∀ eta ∈ Icc (-1 : ℝ) 1, ∀ x : ℝ, 0 < x → x ≤ r →\n        0 < (rightChart (rightEdge W) (logStress v.profiles F.data.h) (eta, x)).1"
+      }
+    }
+  }
+}

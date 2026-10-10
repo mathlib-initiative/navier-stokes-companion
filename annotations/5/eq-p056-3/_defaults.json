@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 56.3",
+  "status": "formalized",
+  "location": {
+    "page": 56,
+    "rect": [0.311348, 0.629222, 0.377528, 0.040999]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-p056-3",
+      "locator": {
+        "physical": [56],
+        "printed": [56],
+        "text": "Display 56.3, p. 56, in section 5.4"
+      },
+      "region": "eq-p056-3@p056",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathcal{A}_n = \\frac{\\mathcal{S}_n}{r^{2}}\\,(-x_2, x_1, 0) = \\frac{1}{2}\\, q^{-A+\\lambda_n}\\,\\frac{F_n}{X}\\,(-x_2, x_1, 0)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean definition body is literally the paper's right-hand side with H in place of q^{-A+λ_n} F_n/X: potential's first two components are (-(1/2) x_2 H, (1/2) x_1 H) (Lean's x 0, x 1 are the paper's x_1, x_2), and H = streamFactor = Σ_n q^{-A+λ_n} average(U_n) with average = 𝒜_X = F_n/X. Two conventional differences: Lean sums over n rather than naming a single 𝒜_n, and Lean's potential carries a third component K e_z (the swirl potential) that the paper's 𝒜_n does not have. The paper's remark that F_n/X is smooth at X = 0 is Lean's use of average (an integral over [0,1]) rather than primitive/X.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

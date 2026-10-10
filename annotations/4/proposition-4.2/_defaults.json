@@ -17,24 +17,16 @@
       "region": "proposition-4.2@p027",
       "verdicts": [
         {
-          "confidence": 0.88,
-          "evidence": ["CONVENTION: LeadingStress.radialDivergence_physicalStressTheta (LeadingStress.lean:392) and radialDivergence_physicalStressAxial (:409); theta_divergence_coefficient (:123) and axial_divergence (:167). StressAlgebra.stressFree_* (StressAlgebra.lean:316,324) are bare real identities with no downstream use.", "REFUTED: LeadingStress.lean:33,37,137,564 docstrings say 'Proposition 3.2'. A grep of NavierStokes/ finds navierStokesResidual_tangential only in LeadingStress.lean. The main chain reaches T_0 through ZerothStressIdentity.coefficients_stress_zero_eq (ZerothStressIdentity.lean:334) and raw_stresses_eq (:281).", "I read p.27 and pp.25-26 and re-checked LeadingStress.lean:571 myself. velocity = pack(-(x0B+x1F), x0F-x1B, U) gives u_θ = rF, and angularComponent is v·e_θ. radialB = -V/(2s) gives r u_r = V_0 (4.7). Π_X = f² = E²/(2X). The sources match H·S_q and S_n of (4.9). angularLag and axialLag are (4.10) with C=0. theta and axial equal F(XQ_s/L - a) and F(XN_s/(LE) + b_s) (4.11). The viscosity add-ons are ∂_z²u_θ and ∂_z²u_z (4.12). radialDivergence is (∂_r + k/r). The residual is (3.1). Hypotheses are local, with f≠0 only pointwise, so they are weaker than the paper's global φ>0: lean_stronger. Clause (4.13) is recovered routinely. No sorry or axiom appears in the dependency files. Both findings are low and non-material."],
+          "confidence": 0.85,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.StressAlgebra.stressFree_angular_lag_algebra, NavierStokes/StressAlgebra.lean:316, and stressFree_axial_lag_algebra, :324, quantify over free reals x, L, φ, φx, φxx (resp. Ux, Uxx) with no profile, no derivative relation and no stress hypothesis; the profile-level form is two lines from NavierStokes/LeadingStress.lean:123 and :167.", "The first and principal sentence of Proposition 4.2 is stated exactly by LeadingStress.navierStokesResidual_tangential for the actual Cartesian residual (3.1) of the leading field, after unfolding theta/axial as the two entries of T_0 in (4.11), physicalStress* as q^{-A-1/2}T_0, and radialDivergence k as ∂_r + k/r. I checked the paper's ℛ, (4.7), (4.8), (4.9) sources and the C_Q = C_N = 0 choice against the Lean definitions and they agree term by term. The 'in particular' clause (4.13) is present with the right constants and signs, but split across an unquantified algebra lemma and the lag equations rather than stated for profiles; that is packaging, so OK with one low finding."],
           "findings": [
             {
-              "confidence": 0.78,
-              "contested": true,
-              "kind": "COVERAGE",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "No declaration has (4.13) as its conclusion. The clause is encoded as explicit formulas for the stress divergence whose zero sets are exactly (4.13). Recovery is a one-line rearrangement, so this is not a material gap."
-            },
-            {
               "confidence": 0.8,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "REFUTED",
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "The facts are accurate: the docstrings cite 'Proposition 3.2' (older draft numbering), and navierStokesResidual_tangential is a leaf. Neither is a mathematical difference from Prop 4.2, so the CONTENT premise fails. Keep it as a traceability note only."
+              "summary": "The 'in particular' clause (4.13) is stated nowhere as a statement about the profiles: Lean has it as a free-variable real identity plus the lag equations, or implicitly in the two divergence identities."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",
@@ -43,10 +35,10 @@
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "lean_stronger",
+          "relation": "different_formulation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states a stronger result.",
+          "summary": "Lean states it in a different formulation.",
           "verdict": "faithful"
         }
       ]

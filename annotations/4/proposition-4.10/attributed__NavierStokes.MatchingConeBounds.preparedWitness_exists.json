@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.MatchingConeBounds.preparedWitness_exists",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MatchingConeBounds.preparedWitness_exists",
+      "line": 976,
+      "module": "NavierStokes.MatchingConeBounds",
+      "path": "NavierStokes/MatchingConeBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean#L976"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MatchingConeBounds.preparedWitness_exists",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Nonempty (PreparedWitness F N delta radiusFloor). Its proof (lines 980-996) is exactly exists_ordered_prepared_continuation instantiated at Lambda = Lambda0, C = C0, J = 0, epsilon = 1, then packed with the PreparedWitness constructor.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 976,
+        "text": "theorem preparedWitness_exists (F : OutgoingProfile.Profile) (hP : 2 ≤ F.data.core.P)\n    (hh : F.data.h ≤ 1 / 1000) (N : ℕ) (hN : 1 ≤ N)\n    {delta : ℝ} (hdelta : 0 < delta) (radiusFloor : ℝ) :\n    Nonempty (PreparedWitness F N delta radiusFloor)"
+      }
+    }
+  }
+}

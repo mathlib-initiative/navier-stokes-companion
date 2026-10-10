@@ -1,0 +1,26 @@
+{
+  "id": "proposition-5.3/support/NavierStokes.BasePrefixIdentity.prefixVelocity_eq_slowVelocity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BasePrefixIdentity.prefixVelocity_eq_slowVelocity",
+      "line": 235,
+      "module": "NavierStokes.BasePrefixIdentity",
+      "path": "NavierStokes/BasePrefixIdentity.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePrefixIdentity.lean#L235"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BasePrefixIdentity.prefixVelocity_eq_slowVelocity",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 235,
+        "text": "theorem prefixVelocity_eq_slowVelocity {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {d : Coefficients} (hd : SmoothCoefficients d) {f : SlowExpansionResidual.SlowProfiles}\n    (hm : VelocityMatches h d f) (J : ℕ) (C : ℝ)\n    {t : ℝ} (ht : t < 1) (x : ProblemStatement.Space)\n    (hs : 0 < AxisymmetricFields.radialEnergy x) :\n    BaseResidual.prefixVelocity J h C d (t, x) =\n      SlowExpansionResidual.slowVelocity J h C f (t, x)"
+      }
+    }
+  }
+}

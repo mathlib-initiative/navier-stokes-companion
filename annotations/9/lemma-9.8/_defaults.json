@@ -18,30 +18,30 @@
       "verdicts": [
         {
           "confidence": 0.85,
-          "evidence": ["CONFIRMED_CONTENT: paper_physical_loss, WholeDomainPhysicalStageTheorem.lean:260-264: ‖D^k residual‖ ≤ C * q^(h*sigma J - paperJetLoss B N0 m), with no (1+|log q|)^P term and no +E", "CONFIRMED_CONTENT: paper_physical_loss quantifies ∀ w ∈ CutStageEstimates.physicalSublevel h (commonQ B N0); commonQ_lt_original (WholeDomainActualStageBounds.lean:20) gives commonQ < ActualCandidateConstruction.qbig", "The auditor and both skeptics agree."],
+          "evidence": ["CONVENTION: NavierStokes.WholeDomainStageBounds.paper_physical_loss, NavierStokes/WholeDomainPhysicalStageTheorem.lean:260-264 (and the underlying actual_finite_residual_bound, NavierStokes/WholeDomainActualStageBounds.lean:37-42): the residual conclusion is `... <= C * physicalQ h w ^ (h * sigma J - paperJetLoss B N0 m)` with no added term and no (1+|log q|)^P factor.", "ATTRIBUTION_GAP: NavierStokes.WholeDomainStageBounds.paper_physical_loss (NavierStokes/WholeDomainPhysicalStageTheorem.lean:243) only uses ActualIterationLedger.gain h (j+1) in the exponent; `Tendsto (gain h) atTop atTop` is a conjunct of NavierStokes.ActualIterationLedger.fixed_ledger (NavierStokes/ActualIterationLedger.lean:421), and gain h j = h*j/10 by definition (line 29).", "paper_physical_loss states all three displays of Lemma 9.8 for the actual section-9 iteration, on one common positive-threshold domain: the increment bound with exponent gain h (j+1) - physicalLoss h m, where gain h j = hj/10 is the paper's g_j and physicalLoss h m = 2A(h) + (m+1)(1+3h/2) is j-independent and carries the extra potential-recovery derivative; the prefix bound with the stage-independent paperJetLoss; and the residual bound with exponent h*sigma J, sigma J = 1/5 + J/10. The Lean fields match (9.15) definitionally. The only differences are in the paper's favour: the residual clause drops E_{J,m} and the log factor. The g_j -> infinity clause lives in fixed_ledger instead."],
           "findings": [
             {
-              "confidence": 0.85,
+              "confidence": 0.9,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
+              "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Lean drops the log factor and the flat error E_{j,m} from the residual bound (9.18). This is a strictly stronger conclusion, and the paper's form follows with E_{j,m}=0."
+              "summary": "Lean's (9.18) clause has neither the paper's additive flat remainder E_{J,m} nor the logarithmic factor: it is strictly stronger than the printed display, in the safe direction."
             },
             {
               "confidence": 0.85,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "The bounds hold on {t<1, q<commonQ}, where commonQ = Q(residualBand) is smaller than the construction's qbig. The paper places them on Lemma 9.7's domain 0<q<q_big."
+              "summary": "The divergence clause g_j = hj/10 -> infinity printed inside (9.17) is not asserted by paper_physical_loss; it is stated separately in the ledger theorem, so the item needs two declarations."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
           "relation": "lean_stronger",
           "severity": "none",

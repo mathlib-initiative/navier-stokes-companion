@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 110.6",
+  "status": "formalized",
+  "location": {
+    "page": 110,
+    "rect": [0.293647, 0.842367, 0.413197, 0.02495]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p110-6",
+      "locator": {
+        "physical": [110],
+        "printed": [110],
+        "text": "Display 110.6, p. 110, in the proof of Proposition 9.6"
+      },
+      "region": "eq-p110-6@p110",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: E_\\theta,\\ E_z \\in M_{\\min(C_*+0.17,\\,H+1-2\\kappa_s)}, \\qquad (P, J_\\theta, J_z) \\in S_H."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Recovery: Lean states the first clause with a free exponent β constrained by hβ : β ≤ H + 1 - 2κ and by bar hypotheses MeanClass s β (meanBar E_θ), MeanClass s β (meanBar E_z), instead of writing a min. Instantiating β := min(C_* + 0.17, H + 1 - 2κ) discharges hβ, and the bar hypotheses follow from the paper's (9.14) bounds ⟨E_θ⟩_Y, ⟨E_z⟩_Y ∈ M_{C_*+0.17} by MeanClass.mono_exponent, since β ≤ C_* + 0.17; the conclusion is then the display's first clause. gaugeTemporalStage_next_mean is the weaker instance β := C_* + 0.1 that the cycle actually consumes, and ExponentLedger.temporal_mean_gain_identity with completed_mean_gain_eq performs the min arithmetic on the exponents. Two encoding points: (i) the Lean conclusion for the axial component is stated for axialResidual minus temporalAliasState, which is what the paper also means here — its preceding sentence says the changes belong to the class \"after subtracting Fax in the axial component\"; (ii) the second clause, (P, Jθ, Jz) ∈ S_H, is a separate declaration (temporalStage_debt_mem) rather than a conjunct of the first, and is stated as UnweightedClass … H of the three debt rows on the local slow strip. Conjoining the two gives the display.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -21,32 +21,24 @@
       "region": "corollary-8.5@p095",
       "verdicts": [
         {
-          "confidence": 0.85,
-          "evidence": ["CONVENTION: SignedStressPrimitive.physicalBump L594 / physicalAdjusted L596 (density * mass e F); LocalSignedRequest.physicalBarSigma_angular_divergence L867, _axial_divergence L881; GaugeMomentBalances.state_angular_moment L572, state_axial_moment L623 (needs hfixed = (8.12)); StateMomentBalances.state_radialMoment_eq L738", "CONVENTION: SignedStressPrimitive.primitive L162 (compactIntegral (cutoff P) on r^e F); LocalSignedRequest.physicalBarSigma_eq_negative_primitive L855; LocalSignedRequest.physicalAdjusted_moment_zero L895", "ATTRIBUTION_GAP: SignedStressPrimitive.physicalSigma_eq_negative_primitive L719 / physicalAdjusted_moment_zero L764 / physicalSigma_slice_compact L777 take (hq : ContDiff ℝ ∞ q). SimilarityCoordinates.coordinateQ L123 is piecewise ('if 0<a∧a<1∧0<p.1 then choose … else 1'). Faithful instances: LocalSignedRequest L855, L895, L920 (via frozenBar_sigma).", "CONVENTION: LocalSignedRequest.requestedStress L591 (physical); normalizedRequest_represents L762 gives normalizedRequest(Q^{-1/2}r,(Ct,Y)) = ε_n^{-1}·Q^{2A}·physicalRequestedStress; L855/L867/L881 assume s ∈ U.carrier, 0<r", "All three voters agree on SINGLE_SOURCE_OK / different_formulation, and I confirmed it against the source. requestedStress defines (H_θ, H_z). The moving-shell lemmas L855/L867/L881 state the formula and both divergence identities with bump × measured mass. GaugeMomentBalances L572/L623 identify that mass with ε∂_Z J_θ and ε∂_Z(J_z+c_ρP), the axial case using hfixed for (8.12). Support and Y-independence come from L905, L920 and L632. Following the PAIRING skeptic, I swapped the generic lemmas L719/L764/L777 for their moving-shell instances, since coordinateQ is piecewise, and I dropped sigma_fiberLocal. Lean fixes particular bump profiles, but they satisfy the paper's normalization (physicalDensity_moment), so this is not material. The hypotheses are satisfiable (f = 0), so there is no vacuity."],
+          "confidence": 0.86,
+          "evidence": ["ATTRIBUTION_GAP: SignedMeanGain.physicalSigma_cancels, NavierStokes/SignedMeanGain.lean:739, ends at removedBump = physicalDensity * mass e (torusAverage f); the identification of that mass with eps d_Z J_theta is GaugeMomentBalances.state_angular_moment, NavierStokes/GaugeMomentBalances.lean:572 (via StateMomentBalances.state_radialMoment_eq, NavierStokes/StateMomentBalances.lean:738), and in chart variables SignedStressPrimitive.angular_bump_identity, NavierStokes/SignedStressPrimitive.lean:991.", "CONVENTION: SignedStressPrimitive.primitive/sigma, NavierStokes/SignedStressPrimitive.lean:162,164 (compactIntegral with cutoff P applied to r^e * adjusted); LocalSignedRequest.physicalBarSigma_eq_negative_primitive, NavierStokes/LocalSignedRequest.lean:855, which reduces it to -r^{-e} times the plain integral from 0 to r; LocalSignedRequest.physicalAdjusted_moment_zero, NavierStokes/LocalSignedRequest.lean:895.", "CONVENTION: SignedStressPrimitive.momentDensity, NavierStokes/SignedStressPrimitive.lean:116, with weighted_momentDensity (L127) giving r^e * momentDensity P e r = density P r for both e = 2 and e = 1; momentDensity_moment (L136) gives both normalizations, momentDensity_tsupport (L147) the interior support.", "Both rulings reach SINGLE_SOURCE_OK / different_formulation and both are right about that; they disagree only on pairing, and the disagreement dissolves because the repository states the corollary's content twice and states the bridge between the two presentations (StateMomentBalances.lean:749, 937, 579, 583), which B had listed as untraced. I pair the item with both chains. The recovery uses only instantiation, definition unfolding and substitution of stated equations; the one hypothesis that could have required an unstated analytic fact, smoothness of the assembled source, is itself stated (SignedRequestContinuation.lean:137, 175). Three low findings survive. B's claims that Y-independence and the fixed-(Z,T) remark are stated nowhere are refuted by LocalSignedRequest.lean:632, 670, 796."],
           "findings": [
             {
-              "confidence": 0.85,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "No single declaration states (8.18) with ε∂_Z J. Lean's H subtracts bump × measured weighted mass ∫R^e⟨E⟩. Prop 8.4's moment lemmas identify that mass with ε∂_Z J_θ and ε∂_Z(J_z+c_ρP), so the paper's form needs one substitution."
-            },
-            {
-              "confidence": 0.85,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean's T_e cuts off with the bump's CDF (cutoff P) on R^e F, not the slow cutoff χ_m of (8.4)-(8.6). The adjusted source has zero weighted mass, so both definitions give the same H."
-            },
-            {
-              "confidence": 0.9,
+              "confidence": 0.88,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Recovery mis-pairs some citations. The generic SignedStressPrimitive lemmas (L719, L764, L777) need ContDiff q globally, which coordinateQ is not. Moving-shell instances that freeze q at s exist and should be cited. sigma_fiberLocal concerns sigma, not physicalBarSigma."
+              "summary": "No single declaration displays the corollary's right-hand side. The closest, physicalSigma_cancels, carries the bump as a mass factor; turning that factor into epsilon d_Z J needs a second, separately stated moment identity."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean's T_e subtracts bump times measured mass rather than the paper's cutoff remainder with chi_m. The two agree on the adjusted source because its weighted radial integral vanishes, which Lean states."
             },
             {
               "confidence": 0.8,
@@ -54,7 +46,7 @@
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Lean states H in physical variables (r, slow point, physical bumps), locally on a SlowRegion U with r>0. (8.18) is in normalized chart variables (R, y). The chart view is a separate exact rescaling lemma."
+              "summary": "The paper allows two independent interior profiles sigma_theta, sigma_z; Lean ties them to one density by momentDensity P e r = inversePower P e r * density P r, so R^2 sigma_theta = R sigma_z pointwise."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

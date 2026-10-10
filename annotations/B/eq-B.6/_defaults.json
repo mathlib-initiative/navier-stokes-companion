@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.6)",
+  "status": "formalized",
+  "location": {
+    "page": 145,
+    "rect": [0.352198, 0.61594, 0.517262, 0.028291]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.6",
+      "locator": {
+        "physical": [145],
+        "printed": [145],
+        "text": "Equation (B.6), p. 145, in the statement of Lemma B.1"
+      },
+      "region": "eq-B.6@p145",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: \\bigl\\| \\mathcal{J}_\\nu[(\\partial_\\eta F)(\\mathcal{D}_X G)] \\bigr\\|_\\rho \\le C_\\rho \\|F\\|_\\rho \\|G\\|_\\rho."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Lean states the bound as an operator norm of a bilinear map, ‖inverseMixed I hε r hr‖ ≤ 5120/ε, not pointwise; two applications of the operator-norm inequality give ‖inverseMixed A B‖ ≤ (5120/ε)·‖A‖·‖B‖, which is (B.6) with the paper's unnamed C_ρ realised as the explicit 5120/ρ. The norms coincide: weight ε n m is (B.4)'s 𝔞_{αβ} and axisSpace_norm_le_iff is the printed quotient norm, with Lean's ε the paper's ρ. The operand matches: inverseMixed is built as one composite (jet_inverseMixed: convolution with ∂_η on the first factor, the degree factor j = D_Y on the second, divided by (n+1)(n+r)), and inverseMixed_actual_equation verifies Y u_YY + r u_Y = (∂_η F)(Y ∂_Y G), i.e. u = J_ν[(∂_η F)(D_X G)] with u(0,η)=0 (inverseMixed_axis_zero, line 377); D_X = X∂_X = Y∂_Y is the paper's own identification. Lean's hypothesis is 1 ≤ r, more general than the paper's ν ∈ {1,2}.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

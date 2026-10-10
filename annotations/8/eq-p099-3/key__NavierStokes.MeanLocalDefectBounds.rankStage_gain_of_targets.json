@@ -1,0 +1,23 @@
+{
+  "id": "eq-p099-3/key/NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets",
+      "line": 298,
+      "module": "NavierStokes.MeanLocalDefectBounds",
+      "path": "NavierStokes/MeanLocalDefectBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanLocalDefectBounds.lean#L298"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets"
+      },
+      "snippet": {
+        "line": 298,
+        "text": "theorem rankStage_gain_of_targets … (htarget : ∀ i : Fin 3, UnweightedClass (localSlowStripData …) H (fun n x => debt c u n x i)) (hH : 9 / 10 ≤ H) : MeanClass (movingStripData …) (H + 9 / 10 - 2 * κ) (actualRadialError c.operators c.base u.mean (rankIncrementState g r axial c u) u.covariance) ∧ ∀ i : Fin 3, UnweightedClass (localSlowStripData …) (H + 9 / 10 - 2 * κ) (fun n x => debt c (rankStageState g r axial c u) n x i)"
+      }
+    }
+  }
+}

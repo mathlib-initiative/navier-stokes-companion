@@ -1,0 +1,24 @@
+{
+  "id": "eq-7.29/key/NavierStokes.PrimaryCovarianceBounds.ZeroOrderBounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryCovarianceBounds.ZeroOrderBounds",
+      "line": 337,
+      "module": "NavierStokes.PrimaryCovarianceBounds",
+      "path": "NavierStokes/PrimaryCovarianceBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCovarianceBounds.lean#L337"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryCovarianceBounds.ZeroOrderBounds",
+        "kind": "structure"
+      },
+      "snippet": {
+        "line": 337,
+        "text": "structure ZeroOrderBounds (R detGap entryBound inverseLower zeta) (H : Mat2) (T : Vec2) where determinant : detGap ≤ |(normalizedMatrix R H).det|; entries : ∀ i j, |R * H i j| ≤ entryBound; weights : ∀ j, inverseLower * R * zeta ≤ SmoothCovariance.weights H T j"
+      }
+    }
+  }
+}

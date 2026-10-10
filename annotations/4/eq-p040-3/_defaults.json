@@ -1,0 +1,48 @@
+{
+  "kind": "equation",
+  "label": "Display 40.3",
+  "status": "formalized",
+  "location": {
+    "page": 40,
+    "rect": [0.309469, 0.387361, 0.379332, 0.047194]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-p040-3",
+      "locator": {
+        "physical": [40],
+        "printed": [40],
+        "text": "Display 40.3, p. 40, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p040-3@p040",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: (U_0, E_0)(X, \\eta) = \\begin{cases} (U_{\\mathrm{in}}, E_{\\mathrm{in}})(X, \\eta), & X \\le X_h, \\\\ (U_{\\mathrm{out}}, E_{\\mathrm{out}})(X, \\eta), & X \\ge X_h. \\end{cases}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same piecewise definition, written in the rescaled radius. The paper puts X_h = X_R e^{-5} and cuts at X ≤ X_h; Lean works with x = X / X_R and cuts at p.1 ≤ matchFraction = Real.exp (-5), the two cuts being the same set under x = X/X_R (matchRadius, line 144, records X_h = matchingRadius * matchFraction in unrescaled form). That the Lean radius variable is the rescaled one was checked against idealE (line 176), which is idealAmplitude * p.1^(1/10) with OutgoingSchedule.shape η = (1+η^2)⁻¹, matching the paper's common value (4η, P_*(1+η^2)^{-1}(X/X_R)^{1/10}) on the overlap. One encoding choice: the paper's two branches overlap at X = X_h (the clauses read X ≤ X_h and X ≥ X_h, consistent because, in the paper's words, both definitions agree 'on a neighborhood of X_h'); Lean's if-then-else is a total function and assigns the single point x = e^{-5} to the inner branch. Recovery is the paper's own overlap statement.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

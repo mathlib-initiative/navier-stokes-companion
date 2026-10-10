@@ -17,24 +17,24 @@
       "region": "lemma-4.11@p038",
       "verdicts": [
         {
-          "confidence": 0.86,
-          "evidence": ["CONFIRMED_CONTENT: TrueConeLoopPaper.exists_local_family_with_margin, TrueConeLoopPaper.lean:22-24: (hO : IsOpen O) (hKO : K ⊆ O) (ha : ContDiffOn ℝ ∞ a O) … (hp₂ : ContDiffOn ℝ ∞ p₂ O). FlatPrimitivePaper.smooth_extension_on_compact (line 20) also starts from an open set.", "CONVENTION: TrueConeLoop.HasConeMargin, TrueConeLoop.lean:283: ε ≤ A ∧ ε ≤ A(1+(C/A)²)−2 ∧ ε ≤ p₁+p₂(C/A)−2 ∧ ε ≤ coneBound(..)−A(1+(C/A)²)", "I checked pp.38-39 and (4.20)-(4.22) against TrueConeLoopPaper.lean:21. With m=t_s, nominalSpeed is v_s, p₁+p₂m is P_c, p₂−p₁m is J_c and coneBound is 𝒰. With C=−b_L, the means, period one and endpoint agreement on K∩N all match the paper. ε is chosen uniformly before x and φ. v>2 is needed only on B, which is equivalent by continuity. The output is two-sided C^∞.\n\nTwo differences remain. The margin form is a convention, and I verified its recovery: μ_L=min(ε,2ε²). The regularity hypothesis is also stronger in Lean. That one needs a classical extension theorem, so the relation is different_formulation, with the Lean weaker on the regularity axis.\n\nThere are no sorries. The theorem sits off the main chain, which uses realized_loop_stable instead."],
+          "confidence": 0.84,
+          "evidence": ["CONVENTION: NavierStokes.TrueConeLoop.HasConeMargin, NavierStokes/TrueConeLoop.lean:283-285, third and fourth conjuncts `ε ≤ p₁ + p₂ * (C / A) - 2` and `ε ≤ coneBound … - A * (1 + (C / A) ^ 2)`; used as the margin clause of exists_local_family_with_margin, NavierStokes/TrueConeLoopPaper.lean:39. No declaration in the index states a lower bound on Ψ of (4.35) itself.", "CONVENTION: NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin, NavierStokes/TrueConeLoopPaper.lean:22-24: `hO : IsOpen O`, `hKO : K ⊆ O`, `ha : ContDiffOn ℝ ∞ a O` (and likewise m, p₁, p₂); NavierStokes/TrueConeLoop.lean:768-769 is stronger still, `ContDiff ℝ ∞ a` on all of E.", "Two declarations state Lemma 4.11: TrueConeLoopPaper.exists_local_family_with_margin and its global-data form in TrueConeLoop. With m = t_s and C = −b_L, the Lean hypotheses are exactly (4.20)–(4.21) on the rectangle plus v_s > 2 on the end faces, and the conclusions are the period-one family, the mean (a, −b_s), the admissible cone at every φ with p_s fixed, a uniform positive margin, and φ-independence near the radial boundary. The two departures are encoding: the margin lives in the (4.21) coordinates rather than the Ψ of (4.35) (bridged by ConeAlgebra.true_cone_iff plus compactness), and smoothness is assumed on an open neighbourhood rather than on the closed rectangle. Both are low and conventional; the Lean statement is otherwise more general."],
           "findings": [
+            {
+              "confidence": 0.86,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "Lean's uniform margin is in the (4.21) coordinates — ε ≤ P_c − 2 and ε ≤ U(P_c,J_c) − v — not the paper's Ψ of (4.35), whose third and fourth gaps are P_c − v and 2(P_c−v)² − (v−2)J_c²."
+            },
             {
               "confidence": 0.78,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "Lean needs the data to be C^∞ on an open O ⊇ K. The paper asks only for smoothness on the closed rectangle, with one-sided derivatives at η=±1. Bridging the two needs a Seeley/Whitney extension, which the repository does not formalise."
-            },
-            {
-              "confidence": 0.9,
-              "contested": true,
-              "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The paper's margin is on Ψ=(a, v−2, c−v, 2(c−v)²−(v−2)j²) of (4.35). Lean's HasConeMargin bounds (a, v−2, c−2, 𝒰(c,j)−v) instead. HasConeMargin ε implies Ψ_i ≥ min(ε, 2ε²)."
+              "summary": "The Lean hypotheses require the data smooth on an open set containing the parameter rectangle (or globally); the paper requires smoothness only on the closed rectangle I × [−1,1], with one-sided derivatives at η = ±1."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

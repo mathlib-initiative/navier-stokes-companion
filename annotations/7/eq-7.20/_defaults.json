@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.20)",
+  "status": "formalized",
+  "location": {
+    "page": 79,
+    "rect": [0.274526, 0.470583, 0.594542, 0.044886]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.WeightedODEJets",
+      "path": "NavierStokes/WeightedODEJets.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.20",
+      "locator": {
+        "physical": [79],
+        "printed": [79],
+        "text": "Equation (7.20), p. 79, in the proof of Proposition 7.2"
+      },
+      "region": "eq-7.20@p079",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: (D^I z_m)' = A_m D^I z_m + D^I g_m + \\sum_{0<J\\le I} \\binom{I}{J} (D^J A_m) D^{I-J} z_m."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same equation, written with ordered words of directional derivatives instead of multi-indices. jet_solution_hasDerivWithinAt says (D^I z)' = A·D^I z + jetSource, and jetSource = D^I g + crossJet; productJet_split is the Leibniz identity D^I(Az) = A·D^I z + crossJet. The paper's binomial multiplicity (I choose J) is produced by counting ordered words rather than written as a coefficient: productJet enumerates all 2^{|I|} ordered choices of which factor each derivative hits (its docstring: 'retaining ordered differentiation and therefore automatically retaining every mixed-term multiplicity'), and crossJet is the subsum with at least one derivative on A, which is Σ_{0<J≤I} (I choose J)(D^J A)D^{I−J}z. The paper's side condition that D^I differentiates only parameters, holding v fixed, and commutes with ∂_v, is structural in Lean: the parameter space P and the time variable t ∈ Icc a b are separate arguments. The Lean derives the equation for the constructed solution family rather than assuming the jets exist (jet_solution_eq_solution), which is if anything more than the paper asserts here.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

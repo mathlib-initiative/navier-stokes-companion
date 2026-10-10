@@ -1,0 +1,30 @@
+{
+  "id": "corollary-A.3/key/NavierStokes.NominalProfile.moments_dilate",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.moments_dilate",
+      "line": 1322,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L1322"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.moments_dilate",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For R > 0: moments (dilateField R U) (dilateField R E) X eta = fun i => dilationFactor R i * moments U E (X/R) eta i. With dilateField R f (X,η) = f (X/R,η) (i.e. the paper's X = ρx) and dilationFactor R = ![R, R√R, R√R, R, 1] = (ρ,ρ^{3/2},ρ^{3/2},ρ,1), this is (A.4) as a single statement about all ",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "role": "key",
+      "snippet": {
+        "line": 1322,
+        "text": "theorem moments_dilate (R : ℝ) (hR : 0 < R) (U E : Field) (X eta : ℝ) :\n    moments (dilateField R U) (dilateField R E) X eta =\n      fun i => dilationFactor R i * moments U E (X / R) eta i"
+      }
+    }
+  }
+}

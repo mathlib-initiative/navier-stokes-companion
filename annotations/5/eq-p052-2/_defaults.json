@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 52.2",
+  "status": "formalized",
+  "location": {
+    "page": 52,
+    "rect": [0.289257, 0.228839, 0.42171, 0.025209]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p052-2",
+      "locator": {
+        "physical": [52],
+        "printed": [52],
+        "text": "Display 52.2, p. 52, in the proof of Lemma 5.2"
+      },
+      "region": "eq-p052-2@p052",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathbf{m}_n = 0 \\iff B_U\\boldsymbol{\\alpha}_n = -\\mathbf{d}_{U,n},\\qquad B_E\\boldsymbol{\\beta}_n = -\\mathbf{d}_{E,n}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. No single declaration states the biconditional. It is obtained in a few lines: rowDensity_increment plus linearDensity_on_patch give that the five moments are exactly affine in the order-n corrections, m_n = m⁰_n + (∫R·δU, ∫R²δE, 2A∫R^{-2-2λ}δE, A∫R^{1-2λ}δU, -A∫R^{-2λ}δE); dividing rows 3,4,5 by 2A, A, -A turns the five conditions into the two systems with right-hand sides -d_{U,n}, -d_{E,n} in the normalization of eq-p052-1, and matrixEquiv_apply says the left-hand sides are B_Uα_n and B_Eβ_n for δU = Σα_j b_j^U, δE = Σβ_j b_j^E. Direction ⇐ is what the construction uses (weighted_moments_exact, line 192); direction ⇒ is coefficients_unique together with the invertibility of the two matrices. Instantiation difference, not a mathematical one: the paper allows any nonnegative bumps with ordered disjoint supports in J_pos normalized by ∫b_j dR = 1, while Lean fixes the cell bumps of FiveRowRank.cellLower/cellUpper and never uses the normalization.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

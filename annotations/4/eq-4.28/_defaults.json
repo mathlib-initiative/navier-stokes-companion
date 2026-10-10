@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.28)",
+  "status": "formalized",
+  "location": {
+    "page": 33,
+    "rect": [0.154093, 0.636992, 0.714085, 0.044635]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.28",
+      "locator": {
+        "physical": [33],
+        "printed": [33],
+        "text": "Equation (4.28), p. 33, in the statement of Theorem 4.6"
+      },
+      "region": "eq-4.28@p033",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: M(\\infty,\\eta) = J(\\infty,\\eta) = S(\\infty,\\eta) = 0,\\qquad \\int_0^\\infty (H - H_{\\mathrm{pow}})\\,dX = 0,\\qquad H_{\\mathrm{pow}} = \\sqrt{2X}\\,c_\\infty X^{-A},"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The rewriting is from the paper's cumulative radial integrals at X = ∞ to Lebesgue integrals over Ioi 0. The paper's M, I, J, S of (4.15) are ∫_0^X of the densities U, H, U·H, U²−E²/2; its M(∞,η)=J(∞,η)=S(∞,η)=0 therefore says ∫_0^∞ U = 0, ∫_0^∞ U·H = 0, ∫_0^∞ (U²−E²/2) = 0. FiveMomentCertificate's mass_zero, transport_zero, energy_zero are literally those three with H expanded as √(2X)·E (the paper's (4.8) H = √(2X)E; Lean's Witness.H p = Real.sqrt (2 * p.1) * W.E p, NominalProfile.lean:2498), and angular_zero is ∫_0^∞ (√(2X)E − powerH X) = 0, i.e. the paper's ∫_0^∞ (H − H_pow) dX = 0. The limit-of-cumulative-integrals form and the Lebesgue-integral form agree because the same structure carries the four IntegrableOn … (Ioi 0) hypotheses, so the cumulative integrals converge and the limit is the integral. H_pow matches term by term: OutgoingDilation.powerH F XR X = √(2X) · powerE F XR X and powerE_coefficient rewrites powerE F XR X as (powerConstant F.data · XR^(1/2+h)) · X^(−(1/2+h)), so c_∞ = powerConstant F.data · XR^A, which does not mention η — the paper's \"c_∞ > 0 is independent of η\" — and powerConstant_pos gives its positivity. This is the same c_∞ that appears in the prefactor of (4.29): see the two-line computation recorded under eq-4.29, carrierAmplitude F · (switchRadius F XR)^A = powerConstant F.data · XR^A. Witness.five_moments asserts the certificate for every eta in HeatedOutgoing.parameterDomain, matching the paper's quantification over η.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

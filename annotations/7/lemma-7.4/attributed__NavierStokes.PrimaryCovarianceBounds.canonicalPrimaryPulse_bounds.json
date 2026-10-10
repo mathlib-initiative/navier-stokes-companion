@@ -1,0 +1,32 @@
+{
+  "id": "lemma-7.4/attributed/NavierStokes.PrimaryCovarianceBounds.canonicalPrimaryPulse_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryCovarianceBounds.canonicalPrimaryPulse_bounds",
+      "line": 554,
+      "module": "NavierStokes.PrimaryCovarianceBounds",
+      "path": "NavierStokes/PrimaryCovarianceBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCovarianceBounds.lean#L554"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryCovarianceBounds.canonicalPrimaryPulse_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Concludes PulseCovariance.PulseBounds r (primaryLower C D K) (primaryUpper C D K) b B ψ x (lines 573-575). That structure's fields component_lower/component_upper (PulseCovariance.lean:141-142) are the two-sided bound on x against Gaussians: a*gaussian B (r^2/2) r v ≤ x v ≤ A*gaussian b (r^2/2) r v ",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 554,
+        "text": "theorem canonicalPrimaryPulse_bounds\n    (d : PrimaryODE.FrameData Q) (lam u : ℝ) {L r : ℝ} (hL : 0 < L)\n    (hr : 1 ≤ r) (hrsq : r ^ 2 = L)\n    (U : Set Q) (hA : ContinuousOn (d.coefficient 1) (U ×ˢ Icc 0 L))\n    (p : Q) (hp : p ∈ U) (hk : d.Kinematics p (Icc 0 L))\n    {gap b B S C D K : ℝ} (hgap : 0 < gap) (hb : 0 < b) (hB : 0 < B)\n    (hC : 0 ≤ C) (hD : 0 ≤ D) (hS : 0 < S)\n    (hlarge : 2 * GrowingMode.coneConstant gap C ≤ S) (hslot : L ≤ K * S)\n    (heigen : ∀ v ∈ Icc 0 L,\n      d.eigenvalue (p, v) = ViscousPropagator.referenceEigenvalue lam u L v)\n    (herr : ∀ v ∈ Icc 0 L,\n      |d.error11 (p, v)| ≤ C / S ∧ |d.error12 (p, v)| ≤ C / S ∧\n      |d.error21 (p, v)| ≤ C / S ∧ |d.error22 (p, v)| ≤ C / S)\n    (hvisc : ∀ v ∈ Icc 0 L,\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

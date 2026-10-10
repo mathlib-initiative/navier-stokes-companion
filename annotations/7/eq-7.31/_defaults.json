@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.31)",
+  "status": "formalized",
+  "location": {
+    "page": 84,
+    "rect": [0.26507, 0.367902, 0.603996, 0.045928]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.31",
+      "locator": {
+        "physical": [84],
+        "printed": [84],
+        "text": "Equation (7.31), p. 84, in section 7"
+      },
+      "region": "eq-7.31@p084",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: d_\\Sigma = \\mathsf{H}^{-1}(\\Sigma/\\varepsilon), \\qquad \\delta a_\\sigma = \\frac{(d_\\Sigma)_\\sigma}{2 a_\\sigma}, \\qquad \\mathcal{L}\\Sigma = \\sqrt{\\varepsilon} \\sum_{\\sigma = \\pm} \\delta a_\\sigma\\, b_\\sigma."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three formulas are present, but split differently. (i) d_Σ has no name of its own: H⁻¹(Σ/ε) occurs as `H⁻¹.mulVec R` inside `increment`, and the division by ε is supplied by the caller's R — in the physical instantiation R = `chartStress h N σ U = Q^{2A} σ / ε` (SignedCovariance.lean:385), which is Σ/ε together with the Q^{2A} physical-to-chart rescaling of Section 10.2, not part of (7.31) itself. (ii) a_σ is `SmoothCovariance.amplitudes H T j = Real.sqrt (SmoothCovariance.weights H T j)` (SmoothCovariance.lean:53), Cramer's explicit solve rather than a matrix inverse; `amplitudes_are_inverse_weights` (PartitionedCovariance.lean:438) proves it equals √((H⁻¹T)_j) under StrictCone, so the denominator 2a_σ is the paper's fixed primary coefficient of (7.24). (iii) LΣ is not one named object: its radial and tangential components are `signedRadial`/`signedTangent`, whose sum runs over pairs (label, σ) rather than over σ alone at a fixed label, and whose per-term amplitude `outer * (√ε * δa_σ * mask)` already carries the physical factor Q^{-A} and the slow cutoff η_β, whereas the paper applies η_β only afterwards in (7.32). `signedScalar` is the cutoff-parametric scalar form and reduces to the paper's √ε δa_σ at mask ≡ 1. The band bookkeeping matches: `signedScalar_class` (SignedWaveUpdate.lean:176) sends R of band β to a wave of band β + 1/2, and R = Σ/ε with Σ ∈ M_α has band α − 1, giving the paper's LΣ ∈ W_{α−1/2}.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

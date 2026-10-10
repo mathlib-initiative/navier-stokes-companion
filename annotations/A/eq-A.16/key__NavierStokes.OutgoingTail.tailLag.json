@@ -1,0 +1,26 @@
+{
+  "id": "eq-A.16/key/NavierStokes.OutgoingTail.tailLag",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.OutgoingTail.tailLag",
+      "line": 738,
+      "module": "NavierStokes.OutgoingTail",
+      "path": "NavierStokes/OutgoingTail.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingTail.lean#L738"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.OutgoingTail.tailLag",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "role": "key",
+      "snippet": {
+        "line": 738,
+        "text": "tailLag d t = tailNumerator d t / tailShape d t, with tailNumerator d t = exp (-(1 - d.h)*t) * (primitive (weightedTailDerivative d) 3 - primitive (weightedTailDerivative d) t) and weightedTailDerivative d v = exp ((1 - d.h)*v) * tailShapeDeriv d v"
+      }
+    }
+  }
+}

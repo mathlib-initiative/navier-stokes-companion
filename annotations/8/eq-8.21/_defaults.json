@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (8.21)",
+  "status": "formalized",
+  "location": {
+    "page": 96,
+    "rect": [0.320652, 0.205415, 0.548416, 0.047437]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-8.21",
+      "locator": {
+        "physical": [96],
+        "printed": [96],
+        "text": "Equation (8.21), p. 96, in the statement of Lemma 8.6"
+      },
+      "region": "eq-8.21@p096",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: (\\Delta\\beta, \\Delta v, \\Delta\\gamma) = \\bigl(-\\varepsilon \\partial_Z \\mathsf{T}_1 \\gamma_d,\\; \\Delta v,\\; \\gamma_d - \\mathcal{A}_1 \\gamma_d\\bigr), \\qquad (\\Delta\\beta, \\Delta v, \\Delta\\gamma) \\in \\mathsf{M}_{\\alpha+1} \\times \\mathsf{M}_\\alpha \\times \\mathsf{M}_\\alpha."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean triple is the same three fields, with the paper's T_1γ_d realized as PressureStream.streamPotential and the paper's (8.14) read left to right. First component: streamBeta (ε n • axial) Ψ_* = −∂_{ε·Z}Ψ_* = −ε ∂_Z T_1 γ_d, the scalar pulling out by linearity of the directional derivative (TemporalMeanUpdate.radialUpdate_smul_direction, line 688). Third component: the Lean writes streamGamma Ψ_* = (D_r + 1/R)Ψ_*, which is the left-hand form of the paper's (8.14); its equality with the paper's displayed γ_d − 𝒜_1γ_d is a separate lemma (axialUpdate_eq_desired_sub_alias) rather than part of the same statement. Second component: temporalAtIndex applied to the angular residual, the Δv of (8.20). The class memberships are stated as the conjunction temporalIncrementState_classes with exactly the exponents α+1, α, α, and also individually in TemporalMeanUpdate (meanClass_scaledRadialUpdate, meanClass_desiredIncrement, meanClass_axialUpdate). The Lean versions carry hypotheses the display leaves to the ambient lemma (smoothness, torus periodicity, radial support, 0 ≤ h, ChartScales.S n ≤ L n, and a bounded gap nativeIndex h n ≤ index n + D for the common chart index).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

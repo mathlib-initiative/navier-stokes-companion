@@ -1,0 +1,23 @@
+{
+  "id": "eq-7.16/key/NavierStokes.GaussianEnvelope.reference_uniform_gaussian_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GaussianEnvelope.reference_uniform_gaussian_bounds",
+      "line": 268
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaussianEnvelope.lean#L268"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GaussianEnvelope.reference_uniform_gaussian_bounds",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 268,
+        "text": "∃ c C : ℝ, 0 < c ∧ 0 < C ∧ ∀ ell, 0 < ell → ∀ time ∈ Set.Icc 0 ell, Real.exp (-C * (time - ell/2)^2 / ell) ≤ envelope (referenceRate lam u ell) (ell/2) time ∧ envelope (referenceRate lam u ell) (ell/2) time ≤ Real.exp (-c * (time - ell/2)^2 / ell)"
+      }
+    }
+  }
+}

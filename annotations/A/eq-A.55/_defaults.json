@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.55)",
+  "status": "formalized",
+  "location": {
+    "page": 143,
+    "rect": [0.15884, 0.192174, 0.710233, 0.042748]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.TerminalPressure",
+      "path": "NavierStokes/TerminalPressure.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.55",
+      "locator": {
+        "physical": [143],
+        "printed": [143],
+        "text": "Equation (A.55), p. 143, in the proof of Proposition A.10"
+      },
+      "region": "eq-A.55@p143",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: |p_z| \\le C q^{-D} K^2 \\rho_o \\psi_o, \\qquad |T_z| \\le C r q^{-D} K^2 \\rho_o \\psi_o, \\qquad \\left|\\frac{T_z}{T_\\theta}\\right| \\le C q^{1-D} K = C\\,E_{\\mathrm{pow}}\\,H(2d/X)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three bounds are stated, with Lean's constants explicit where the paper writes an unnamed C. (i) |p_z|: canonicalPressure_partialZ_bound gives |p_z| ≤ |logScaleDerivative| K^2 (1 − f), and logScaleDerivative_bound bounds that prefactor by (2/(1−2h)) q^{−D}; composing them is the paper's first bound with C = 2/(1−2h), and 1 − f = ρ_o ψ_o by tailShape_deficit. (ii) |T_z|: axialBackwardStress_bound has the geometric factor (R^2 − r^2)/(2r) in place of the paper's r, equal to it up to the annulus ratio (on r ≤ R ≤ Λ r it is ≤ ((Λ^2−1)/2) r). (iii) The tilt: terminal_tilt_bound is exactly |T_z|/T_θ ≤ C q^{1−D} K with C = tiltConstant h Λ, and it bundles 0 < T_θ with the quotient bound. The closing equality C q^{1−D} K = C E_pow H(2d/X) is not a standalone Lean declaration: it appears as a calc step inside the proof of released_heat_bound (line 1342), where q^{1−D}·physicalHeat is rewritten as outgoingAmplitude · (Kq)^A/s^A · profile(2(1−t)/s) using 1 − D = A, and is then used only in the ≤ direction to conclude ≤ outgoingAmplitude.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

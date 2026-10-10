@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 126.4",
+  "status": "formalized",
+  "location": {
+    "page": 126,
+    "rect": [0.414698, 0.769117, 0.170787, 0.031787]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p126-4",
+      "locator": {
+        "physical": [126],
+        "printed": [126],
+        "text": "Display 126.4, p. 126, in the statement of Lemma A.1"
+      },
+      "region": "eq-p126-4@p126",
+      "verdicts": [
+        {
+          "confidence": 0.93,
+          "evidence": ["paper: B_{ij} = \\int_0^{\\infty} x^{\\alpha_i} \\beta_j(x)\\, dx"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The matrix entry agrees term by term — row index i selects the real exponent (a i = α_i, Real.rpow since a : Fin n → ℝ), column index j selects the bump β_j, the integrand is the same product x^{α_i}·β_j(x) against Lebesgue measure, and the paper's m is the Lean n. The one difference is the domain of integration: the Lean definition body at PowerMomentMatrix.lean:253 integrates over all of ℝ (`∫ t, t ^ a i * β j t`), the paper over (0,∞). The rewriting is one step and the repository writes it out: under the standing hypotheses `hsupp : support (β j) ⊆ Icc (l j) (u j)` with `hl : 0 < l j` the integrand vanishes off (0,∞), so `setIntegral_eq_integral_of_forall_compl_eq_zero` gives the half-line form; that is exactly SmoothPowerMomentMatrix.lean:120-128, whose statement `D.matrix p i j = ∫ t in Ioi (0 : ℝ), t ^ D.exponent p i * D.bump p j t` is the paper's display verbatim (Ioi 0 versus the paper's lower limit 0 differs by a null set). Note the half-line form is stated only for the parameterised `Family` wrapper, not as a standalone lemma about `bumpMomentMatrix`; the full-line definition is what every invertibility result is phrased against.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

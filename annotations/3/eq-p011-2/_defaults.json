@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 11.2",
+  "status": "formalized",
+  "location": {
+    "page": 11,
+    "rect": [0.260278, 0.466139, 0.479446, 0.026454]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p011-2",
+      "locator": {
+        "physical": [11],
+        "printed": [11],
+        "text": "Display 11.2, p. 11, in section 3.3"
+      },
+      "region": "eq-p011-2@p011",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\mathscr{R}(u_B + w,\\, p_B + \\pi) \\;=\\; \\mathscr{R}(u_B, p_B) \\;+\\; \\mathcal{L}_{u_B}(w, \\pi) \\;+\\; \\nabla \\cdot (w \\otimes w),"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Three routine rewritings, no mathematical difference. (i) The Lean states the identity in difference form R(u+w,p+pi) - R(u,p) = ... rather than R(u+w,p+pi) = R(u,p) + ...; these are the same equation in a normed vector space. (ii) The Lean writes the quadratic term as spatialDerivative e t x (e (t,x)), i.e. (w.grad)w, where the paper writes div(w (x) w); since div(w (x) w) = (w.grad)w + (div w)w and the paper's increment w is divergence-free by hypothesis, the two agree on exactly the objects the paper applies the identity to. The Lean carries no divergence-free hypothesis, so on that point it is the more general statement, but it never produces the div(w (x) w) form itself. (iii) ResidualCalculus works pointwise at a fixed (t,x) with explicit differentiability hypotheses (DifferentiableAt in time, ContDiff 2 in space for u and e, DifferentiableAt for p and q) and at viscosity exactly one, which is the viscosity of the paper's R as well (the paper's L has -Delta w with coefficient one). CorrectionStep.nonlinearResidual_add_sub is the same identity with a perturbation a already present: setting a = 0 collapses its three transport terms to transport b b, which is the paper's quadratic term.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

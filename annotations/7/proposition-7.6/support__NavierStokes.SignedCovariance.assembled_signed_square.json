@@ -1,0 +1,26 @@
+{
+  "id": "proposition-7.6/support/NavierStokes.SignedCovariance.assembled_signed_square",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedCovariance.assembled_signed_square",
+      "line": 367,
+      "module": "NavierStokes.SignedCovariance",
+      "path": "NavierStokes/SignedCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L367"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedCovariance.assembled_signed_square",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 367,
+        "text": "theorem assembled_signed_square {D h : ℝ} {vr vt : Plane} (sys : SlotSystem D h vr vt)\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (N : ℕ) (hN : 1 ≤ N)\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    (outer ε : UnsignedLabel → ℝ) (T R : UnsignedLabel → Vec2)\n    {q : ℝ} (hq : 0 < q) (x : SlotColoring.Position)\n    (hε : ∀ U, mask D (tailLabel N U) q x ≠ 0 → 0 ≤ ε U) (i : Fin 2) :\n    doubleAverage (fun Y θ => signedRadial P hdet outer ε T R q x Y θ *\n      signedTangent P hdet outer ε T R q x i Y θ) =\n      ∑ᶠ U : UnsignedLabel, outer U ^ 2 * ε U * mask D (tailLabel N U) q x ^ 2 *\n        squareColumn (P U).matrix (T U) (R U) i"
+      }
+    }
+  }
+}

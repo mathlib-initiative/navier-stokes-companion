@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.1/attributed/NavierStokes.BasePhaseGeometry.exists_large_band",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BasePhaseGeometry.exists_large_band",
+      "line": 474,
+      "module": "NavierStokes.BasePhaseGeometry",
+      "path": "NavierStokes/BasePhaseGeometry.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean#L474"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BasePhaseGeometry.exists_large_band",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For h>0, 1 ≤ M, any prior cutoff N0 and any T, there is N ≥ N0 with LargeBand h M u n and T ≤ S n for every n ≥ N. LargeBand bundles 4 ≤ n, 2 ≤ S n, S²ε² ≤ 1, S²/k ≤ 1, εS² ≤ 1, phaseConstant M / S n ≤ normalLower M u / 2. The threshold depends only on h, M, u, T, N0 — not on the label — so q_* = Q "
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 474,
+        "text": "theorem exists_large_band (h M u T : ℝ) (hh : 0 < h) (hM : 1 ≤ M) (N0 : ℕ) :\n    ∃ N ≥ N0, ∀ n ≥ N, LargeBand h M u n ∧ T ≤ ChartScales.S n"
+      }
+    }
+  }
+}

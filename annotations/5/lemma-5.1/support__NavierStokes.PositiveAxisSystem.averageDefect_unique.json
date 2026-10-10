@@ -1,0 +1,26 @@
+{
+  "id": "lemma-5.1/support/NavierStokes.PositiveAxisSystem.averageDefect_unique",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PositiveAxisSystem.averageDefect_unique",
+      "line": 692,
+      "module": "NavierStokes.PositiveAxisSystem",
+      "path": "NavierStokes/PositiveAxisSystem.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisSystem.lean#L692"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PositiveAxisSystem.averageDefect_unique",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 692,
+        "text": "theorem averageDefect_unique (Ω : ProfileHistories.RadialDomain) {u k : InnerProfile}\n    (hu : ContDiffOn ℝ ∞ u Ω.carrier) (hk : ContDiffOn ℝ ∞ k Ω.carrier)\n    (hrow : ∀ w ∈ Ω.carrier, w.1 * (partialX u w + partialX k w) + k w = 0)\n    {w : InnerPoint} (hw : w ∈ Ω.carrier) : k w = averageDefect u w"
+      }
+    }
+  }
+}

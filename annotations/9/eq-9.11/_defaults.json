@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.11)",
+  "status": "formalized",
+  "location": {
+    "page": 107,
+    "rect": [0.160328, 0.229762, 0.70874, 0.053312]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.11",
+      "locator": {
+        "physical": [107],
+        "printed": [107],
+        "text": "Equation (9.11), p. 107, in the proof of Proposition 9.5"
+      },
+      "region": "eq-9.11@p107",
+      "verdicts": [
+        {
+          "confidence": 0.84,
+          "evidence": ["paper: \\begin{aligned}\n\\langle E_\\theta\\rangle_Y &= (\\partial_R + 2/R)\\big(\\langle W_{r\\theta}\\rangle_Y - \\Sigma_\\theta^{(0)}\\big) - (\\partial_R + 2/R)\\big(\\Sigma_\\theta - \\Sigma_\\theta^{(0)}\\big) + \\varepsilon\\partial_Z\\langle W_{z\\theta}\\rangle_Y,\\\\\n\\langle E_z\\rangle_Y &= (\\partial_R + 1/R)\\big(\\langle W_{rz}\\rangle_Y - \\Sigma_z^{(0)}\\big) - (\\partial_R + 1/R)\\big(\\Sigma_z - \\Sigma_z^{(0)}\\big) + \\varepsilon\\partial_Z\\langle W_{zz} + p_m\\rangle_Y.\n\\end{aligned}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same identity, grouped differently and stated one step earlier. Dictionary verified term by term: o.radialDiv 2 f = o.dr f + 2·f/R is (∂_R+2/R) and o.radialDiv 1 is (∂_R+1/R) (MeanIncrementBounds.lean:65); o.dz f = ε_n·∂_{eZ} f is ε∂_Z (:53); u.covariance 0 1 / 2 1 / 0 2 / 2 2 are W_{rθ}, W_{zθ}, W_{rz}, W_{zz}; c.virtualTheta, c.virtualAxial are Σ_θ, Σ_z; u.pressure is p_m; meanBar is the lifted torus average ⟨·⟩_Y (StateMomentBalances.lean:23). The hypothesis u.mean = ⟨0,0,0⟩ is the paper's 'before the mean velocities are added' — it is what kills the o.time, o.viscosity and b·m flux terms of (8.3) that are absent from (9.11). Two routine rewritings recover the paper's display. (i) Grouping: Lean writes radialDiv c W − radialDiv c Σ where the paper writes radialDiv c (W − Σ^{(0)}) − radialDiv c (Σ − Σ^{(0)}); these agree because radialDiv c f = dr f + c•(invRadius·f) is ℝ-linear in f, so the Σ^{(0)} terms cancel. Σ^{(0)} itself is the Lean's leadingStress / BaseContextAssembly.leadingVirtualStress, and the paper's first grouped difference is literally ActualPrimaryCovariance.averagedDefect. (ii) Averaging: the two Lean lemmas are pointwise identities in the lifted variable before ⟨·⟩_Y is applied; meanBar_fluxBalance_on then gives meanBar(radialDiv c R + dz A − radialDiv c T) = radialDiv c (meanBar R − meanBar T) + dz (meanBar A) on the slow domain, which is exactly how CorrectionInitialization.zeroMean_bar_bounds (:2472, lines 2502-2512) composes them, with A := u.covariance 2 2 + u.pressure in the axial case — the paper's ⟨W_{zz}+p_m⟩_Y. meanBar_fluxBalance_on carries regularity hypotheses the paper's display does not display (smoothness on the slow domain, Y-periodicity, radius = Prod.fst, radialProfile independent of Y); these are discharged for the actual initialization in that caller. No constant, exponent, sign, index or derivative count differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

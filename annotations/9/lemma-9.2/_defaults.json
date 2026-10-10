@@ -18,15 +18,23 @@
       "verdicts": [
         {
           "confidence": 0.85,
-          "evidence": ["CONVENTION: meanCross_class HarmonicMeanInteraction.lean:310; mixed_wave_class HarmonicWaveInteraction.lean:471; transport_mean_class :404; supported_transport_zero HarmonicSourceSupport.lean:567; interactionBlock_uniform UniformHarmonicInteraction.lean:376", "CONVENTION: HarmonicWaveInteraction.lean:404 transport_mean_class: MeanClass s (α+β-κ) of HarmonicResidual.transport … i m; repo grep finds 0 references", "CONVENTION: WeightedClasses.lean:107-120 MemClass/MeanClass/WaveClass; HarmonicSourceSupport.lean:23 NonzeroSupported, :151 transport_supported", "CONVENTION: meanCross_class hκ, hN, hk, hkp; mixed_wave_class ha0, hb0, hM, hN, hda, hdb, hP1; ModeSolenoidal HarmonicWaveInteraction.lean:135; discharged for actual blocks at PrimaryResidualClass.lean:623, CorrectionStep.lean:4319, 7205", "REFUTED: LocalResidualGrouping.lean:33 transport_zero_of_disjoint_on → :70 nonlinearResidual_sum → :296 stateGoodWaveResidual_grouped, called at CorrectionStep.lean:9272; disjointness from ActualCycleResidualBounds.lean:687 Invariant.actual_disjoint", "I read pp. 102-103 and Defs 6.4/6.5 and the Lean sources. All four clauses are stated: (i) meanCross_class gives W_{α+μ−1/2} at j ≠ 0 with the mean in IncrementBounds (radial M_{μ+1}, others M_μ); (ii) mixed_wave_class gives W_{α+β−κ} for the symmetric same-carrier transport; (iii) transport_mean_class gives M_{α+β−κ} per ordered product, and the sum follows by MemClass.add; (iv) cross-label transport vanishes (supported_transport_zero; chain form transport_zero_of_disjoint_on). HarmonicResidual.transport includes the frame and phase terms. Differences are packaging, explicit context hypotheses and class encoding, each recoverable. All three voters agreed on OK; I only correct the pairing skeptic's claim that clause (iv) is unused at transport level."],
+          "evidence": ["ATTRIBUTION_GAP: wave_mean_bound WaveInteractionBounds.lean:374 with wave_mean_identity:399; meanCross_class HarmonicMeanInteraction.lean:310; same_label_curl_interaction WaveInteractionBounds.lean:1157 and mixed_wave_class HarmonicWaveInteraction.lean:471; opposite_mean_bound:602 and transport_mean_class HarmonicWaveInteraction.lean:404; transport_zero_of_disjoint_on LocalResidualGrouping.lean:33 and slot_curl_transport_zero WaveInteractionBounds.lean:1012.", "CONVENTION: WeightedClasses.lean:107 MemClass (weight nonneg, ContDiffOn on s.domain, jet bounds only), :115 MeanClass, :118 WaveClass; the support clause is HarmonicSourceSupport.lean:23 NonzeroSupported, propagated through the product by :151 transport_supported.", "CONVENTION: same_label_curl_interaction WaveInteractionBounds.lean:1157 and opposite_mean_bound:602 each state one ordered transport; mixed_wave_class HarmonicWaveInteraction.lean:471 does symmetrize (blockTransport c a a b + blockTransport c a b a), while transport_mean_class:404 is per ordered product. MemClass.add is WeightedClasses.lean:204.", "CONVENTION: wave_mean_bound WaveInteractionBounds.lean:374 (hκ1, hν : BandBound s (-(1/2)) ν, hζ, hP); mixed_wave_class HarmonicWaveInteraction.lean:471 (ha0, hb0, hM, hN, hda, hdb, hP1); same_label_curl_interaction:1157 keeps the literal curl hypothesis and derives solenoidality.", "All four clauses of Lemma 9.2 are stated, with the paper's exponents and the paper's radial/tangential asymmetry of the mean: clause (i) as wave_mean_bound with wave_mean_identity and as meanCross_class; clause (ii) as same_label_curl_interaction and mixed_wave_class; clause (iii) as opposite_mean_bound with opposite_identity and as transport_mean_class at m = 0; clause (iv) as transport_zero_of_disjoint_on and slot_curl_transport_zero. Recovering the paper's sentences needs only instantiation, the stated product identities and MemClass.add — no unstated analytic fact — so the verdict is OK. The relation is different_formulation, not equivalent: Lean bounds carrier coefficients, and its WaveClass is the jet-bound half of Definition 6.5, the support clause being carried separately."],
           "findings": [
             {
               "confidence": 0.9,
               "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration states Lemma 9.2. Its four clauses are separate theorems in four files, and in the WaveInteractionBounds encoding clause (i) needs a bound and a product identity read together before it says anything about the product."
+            },
+            {
+              "confidence": 0.82,
+              "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "No single declaration bundles Lemma 9.2 and no docstring cites it. The four clauses are separate theorems; interactionBlock_uniform packages only (i) and (ii), with an extra (b·∇)b term and a min of exponents."
+              "summary": "Lean's WaveClass and MeanClass are only the jet-bound half of Definitions 6.5 and 6.4. The θ-independence, supp ⊂ Ω_γ and smooth-zero-extension clauses of W-membership live outside the class, in the separate predicate NonzeroSupported."
             },
             {
               "confidence": 0.88,
@@ -34,31 +42,15 @@
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The zero-harmonic clause is stated only for one ordered transport (transport_mean_class, every m). The symmetric sum is never stated, and the declaration has no callers; Lean's mean equations use covariances."
-            },
-            {
-              "confidence": 0.8,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean's W and M classes hold only smoothness and jet bounds on the strip domain. supp ⊂ Ω_γ, smooth zero extension and the 0 ≤ v ≤ L_s restriction are outside the class; support of product harmonics is proved separately."
-            },
-            {
-              "confidence": 0.87,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean makes the paper's context explicit as hypotheses: κ ≤ 1/2, phase normal in class 0, k and kp of order ε^(-1/2), 0 ≤ P ≤ 1, ζ ≤ 1, zero stored zero mode, finite band. 'Curl-generated' becomes per-mode solenoidality."
+              "summary": "In the WaveInteractionBounds encoding clauses (ii) and (iii) are stated for one ordered product at a time; the paper's symmetric sum is two applications plus MemClass.add. The harmonic encoding symmetrizes the wave part but not the zero harmonic."
             },
             {
               "confidence": 0.85,
-              "contested": true,
+              "contested": false,
               "kind": "CONTENT",
-              "ledger": "REFUTED",
+              "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Skeptic's claim: the transport form of the distinct-label clause is unused, and the chain uses it only for covariances. The three named theorems do have no callers, but the chain uses a sibling transport statement."
+              "summary": "Lean turns the paper's standing context into explicit hypotheses — κ ≤ 1/2, BandBound (-1/2) on frequency and angular frequency, ζ ≤ 1, 0 ≤ P ≤ 1, zero stored mode, finite band — and replaces 'curl-generated' by mode solenoidality, which is weaker."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

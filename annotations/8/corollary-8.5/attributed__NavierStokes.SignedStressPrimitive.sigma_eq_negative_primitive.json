@@ -1,0 +1,29 @@
+{
+  "id": "corollary-8.5/attributed/NavierStokes.SignedStressPrimitive.sigma_eq_negative_primitive",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedStressPrimitive.sigma_eq_negative_primitive",
+      "line": 272,
+      "module": "NavierStokes.SignedStressPrimitive",
+      "path": "NavierStokes/SignedStressPrimitive.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L272"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedStressPrimitive.sigma_eq_negative_primitive",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: sigma P e F z = -(integral over t in 0..z.1 of t^e * adjusted P e F (t,z.2)) / z.1^e: the explicit -T_e formula of (8.18), with the slow point z.2 entering only as a parameter of the integrand."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 272,
+        "text": "theorem sigma_eq_negative_primitive (P : Patch) (e : ℕ) {F : ℝ × E → ℝ}\n    (hF : ContDiff ℝ ∞ F) (hs : RadialAlias.RadiallySupported P.a P.b F) (z : ℝ × E) :\n    sigma P e F z = -(∫ r in (0 : ℝ)..z.1, r ^ e * adjusted P e F (r, z.2)) / z.1 ^ e"
+      }
+    }
+  }
+}

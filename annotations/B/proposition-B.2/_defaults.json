@@ -8,6 +8,10 @@
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
       "item": "proposition-B.2",
       "locator": {
         "physical": [146, 147],
@@ -17,32 +21,24 @@
       "region": "proposition-B.2@p146",
       "verdicts": [
         {
-          "confidence": 0.87,
-          "evidence": ["CONVENTION: NavierStokes.NaturalProfile.ProfileFamily (NaturalProfile.lean:559), field natural: IsNaturalSolution … (angularProfile (realAmplitude h j σ Λ C) Λ phi) …; realAmplitude = exp(Λ·realPhase)/C (NaturalAxisCoefficients.lean:508); IsNaturalSolution.pressure_equation: partialY Pr p = (f p)^2 (NaturalProfile.lean:291)", "CONVENTION: NavierStokes.NaturalAxisBridge.UniformMixedError (NaturalAxisBridge.lean:689) is stated in the scaled variable only. ReferenceJetBounds.natural_U_radial (:94) and natural_radial_jet_error (:546) cover first-order cases only. Repo grep for a general Λ^(r−1) bound finds nothing.", "ATTRIBUTION_GAP: exists_common_joint_analytic_profiles (NaturalAxisJointAnalytic.lean:126): ∃ Ω, IsOpen Ω ∧ … AnalyticOnNhd ℝ F.family.phi Ω. AxisHolomorphic.exists_common_holomorphic_extension (AxisHolomorphic.lean:539): ∃ δ > 0, ∃ B, ∀ A : AxisSpace I ε … AnalyticOnNhd ℂ (complexProfile I ε A k Y) (parameterTube J δ). CoefficientProfile.norm_ball, phi_eq, u_eq (NaturalEntrance.lean:936). Neither theorem is used anywhere else in the repo.", "I read pp. 25–27 and 144–148 and the Lean. For fixed d, Λ₀ and open Ω, exists_common_joint_analytic_profiles gives every Λ ≥ Λ₀ and C ≥ exp(Λ sup Re∫ζ*) a CoefficientProfile carrying: (4.13)/(B.15) cleared of the φ-denominator on |ΛX|<20 with f>0 on 0≤ΛX≤4.1; the form (B.12); Φ(0)=1, u(0)=0; the all-order bound (B.13) against f0(Yχ) and −YZ*/(2L), constants depending only on d; joint real analyticity. Data match (B.1)–(B.3). The three differences (F=φ/C normalization, scaled-only bounds, complex tube stated generically in AxisHolomorphic) are each recovered routinely. The pairing skeptic's correction stands: the headline is unused downstream; the main path uses exists_coefficientProfile."],
+          "confidence": 0.82,
+          "evidence": ["CONVENTION: NavierStokes.NaturalProfile.ProfileFamily, NavierStokes/NaturalProfile.lean:565 — natural : IsNaturalSolution ... (angularProfile (realAmplitude h j sigma Lambda C) Lambda phi) ..., with realAmplitude = exp(Lambda * realPhase)/C = phi_*/C (NaturalAxisCoefficients.lean:508); IsNaturalSolution.pressure_equation, NaturalProfile.lean:302, partialY Pr p = (f p)^2", "CONFIRMED_CONTENT: NavierStokes.NaturalAxisBridge.UniformMixedError, NavierStokes/NaturalAxisBridge.lean:689, bounds only mixedDerivative k m of the rescaled Phi, u, against the rescaled comparison profiles. No declaration was found bounding any mixed derivative of the unscaled ProfileFamily.f / .U against the unscaled comparison profiles with a Lambda^{r-1} factor.", "Every clause of Proposition B.2 is stated in Lean, and instantiated for the constructed schedule by SchedulePressure.natural_profileFamily: the Lambda_0 / C_0(Lambda) quantifier order and C_0 = sup|phi_*| of (B.16); the form (B.12) including Pi = Pi_0 + Lambda^{-1} I(g^2 Phi^2); Phi(0,eta) = 1 and u(0,eta) = 0; joint analyticity on one fixed open set containing [0,4.1] x [-1,1], independent of Lambda and C; and (B.13) with the comparison functions proved equal to f_0(Y chi) and -Y Z_*/(2L). Lean proves the error bound on |Y| <= R for every R < 20 and the equations on all of domain Lambda. The two deltas are an amplitude-normalization convention (phi vs phi/C) and the unstated chain-rule restatement in unscaled radial derivatives."],
           "findings": [
             {
-              "confidence": 0.93,
-              "contested": true,
+              "confidence": 0.9,
+              "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Lean's angular profile is f = (φ*/C)·Φ(ΛX,η), the paper's F = φ/C of (4.4), not φ = φ*Φ. The equations are degree-one homogeneous in φ and Π_X = f² = φ²/C², so φ = C·f recovers the paper's form."
+              "summary": "Lean's unscaled angular field is g*Phi = phi/C, not the paper's phi = phi_* Phi. The amplitude C is divided out throughout, consistently with the pressure law partialY Pr = f^2 matching Pi_X = phi^2/C^2."
             },
             {
               "confidence": 0.85,
               "contested": false,
               "kind": "COVERAGE",
-              "ledger": "CONVENTION",
+              "ledger": "CONFIRMED_CONTENT",
               "severity": "low",
-              "summary": "No declaration states the unscaled bound C_{r,s}Λ^{r−1}; Lean bounds only scaled Y-derivatives. Recovery: ∂_X^r[Ψ(ΛX,η)] = Λ^r(∂_Y^rΨ)(ΛX,η), so the C_{r,s}/Λ bound becomes C_{r,s}Λ^{r−1}."
-            },
-            {
-              "confidence": 0.75,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
-              "severity": "low",
-              "summary": "The headline gives real joint analyticity on a fixed real Ω, not the Λ,C-uniform complex parameter tube. The tube is AxisHolomorphic.exists_common_holomorphic_extension (δ, bounds chosen before A) applied to F.coefficients, whose (B.4)-norm ball has fixed ε."
+              "summary": "The closing remark of the statement — that in unscaled radial derivatives the (B.13) bound reads C_{r,s} Lambda^{r-1} — was not found as a Lean statement; only the rescaled form and the r = 0 axial case are stated."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",
@@ -51,10 +47,10 @@
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "different_formulation",
+          "relation": "lean_stronger",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states it in a different formulation.",
+          "summary": "Lean states a stronger result.",
           "verdict": "faithful"
         }
       ]

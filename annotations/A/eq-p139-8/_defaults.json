@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 139.8",
+  "status": "formalized",
+  "location": {
+    "page": 139,
+    "rect": [0.344557, 0.86485, 0.313427, 0.036343]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.TerminalCompensation",
+      "path": "NavierStokes/TerminalCompensation.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p139-8",
+      "locator": {
+        "physical": [139],
+        "printed": [139],
+        "text": "Display 139.8, p. 139, in the proof of Proposition A.7"
+      },
+      "region": "eq-p139-8@p139",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: f x_*^{-3/2-\\lambda}, \\qquad -f x_*^{-1/2-\\lambda}, \\qquad \\sqrt{2}\\, x_*^{1/2}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The three power weights match exactly: the Lean's derivative of the normalized moment map at c = 0 is the matrix with entries ∫ x^{p_i} β_j(x), p = (-3/2 - λ, -1/2 - λ, 1/2), which are the paper's exponents. Rather than a derivative statement, the Lean states the exact decomposition momentMap = linearEquiv + quadraticCLM (momentMap_identity), whose quadratic part is O(‖c‖^2), so the derivative at c = 0 is the stated matrix; I found no declaration that states a Fréchet derivative of momentMap at 0 directly (the only fderiv in this file, line 394, bounds the derivative of the solver g). What the Lean drops are the three row prefactors f, -f and sqrt 2. Each is accounted for by the normalization convention of eq-A.43: (a) the Lean's base profile is x^{slope lam} with the shape f absorbed into the amplitude a = e_* f, and it normalizes by 2a^2 = 2 e_*^2 f^2 instead of the paper's e_*^2, which removes the single power of f that the paper's first two weights carry (the paper's base profile carries f but its δE does not); (b) the minus sign in the second weight is the paper's S(∞) = ∫(U^2 - E^2/2), whose change is minus the Lean's row ∫(A^2 - B^2) up to the positive factor 1/2, so the two rows differ by the nonzero factor -1/2 and vanish together; (c) the sqrt 2 is in the Lean's third normalizer R*sqrt(2R)*a rather than in the weight. So Lean's rows = paper's rows times the nonzero diagonal (1/f, -1/f, 1/sqrt 2); the downstream use is invertibility of the 3x3 matrix (linearMatrix_det_ne_zero, line 224) and solvability for c, both unaffected by a nonzero row rescaling.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

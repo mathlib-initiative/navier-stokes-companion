@@ -1,7 +1,7 @@
 {
   "kind": "lemma",
   "label": "Lemma 6.2",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 67,
     "rect": [0.134051, 0.362122, 0.734121, 0.088676]
@@ -10,7 +10,7 @@
     "org.mathlib-initiative.formal-companion.overlay": {
       "declaration_verdict": {
         "status": "unconfirmed",
-        "verdict": "deviation"
+        "verdict": "faithful"
       },
       "item": "lemma-6.2",
       "locator": {
@@ -21,8 +21,8 @@
       "region": "lemma-6.2@p067",
       "verdicts": [
         {
-          "confidence": 0.83,
-          "evidence": ["ATTRIBUTION_GAP: TorusCoverDegree.preimage_nativeRectangle_sheets (L221), pairwise_disjoint_sheetRectangles_of_injOn (L234), covering_bijOn_sheetRectangle_of_injOn (L259), card_liftedRectangles_of_injOn (L283); TorusAverages.integral_torusCovering_iterate (L94); CommonCoverSolve.coveringNorm_le_bound / inverseCoveringNorm_le_bound (L749/L759)", "CONFIRMED_CONTENT: No declaration found; decls.jsonl search for translat*/shift × periodic/deck/subcover hits only unrelated lemmas (ActualCyclePeriodicity.*, FourierAlias.torusMean_translate). CorrectionInitialization.lean:1262-1263 docstring: 'explicit common torus index at every step'", "CONVENTION: TemporalMeanUpdate.absoluteInverse_coverMap (L246) and temporalInverse_coverMap (L525) are temporal only; TorusInverse.directionalInverse_periodic (L578) covers both Directions; grep finds no Direction.radial use outside TorusInverse.lean", "I read p.67 and the Lean source myself. torusCovering is J_g on column vectors, and Sheet d = Z²/J^d Z² has index 14^d. The preimage of nativeRectangle (a sup-norm square) is a disjoint union of sheets, each mapped bijectively onto R_γ, and there are 14^gap ≤ 14^Δmax of them. Normalized Haar integrals are invariant under the cover for continuous f, and measure preservation covers every integrable f. ‖J^{±d}‖ ≤ coveringBound D for d ≤ D. Radial integration, averaging and inversion preserve periodicity in H. The auditor and both skeptics agree, and no skeptic raised a missed finding. The verdict is DELTA/partial only because no declaration bundles the lemma and two trivial sub-claims of (d) are unstated. All findings are low severity."],
+          "confidence": 0.8,
+          "evidence": ["ATTRIBUTION_GAP: Clause (a): CommonCoverClass.norm_coverChange_le, NavierStokes/CommonCoverClass.lean:912 (with 959, CommonBaseContext.lean:373). Clause (b): NavierStokes/TorusCoverDegree.lean:221, 234, 259, 283, 302. Clause (c): NavierStokes/TorusAverages.lean:94, 129. Clause (d), descent: TorusInverse.lean:578, FourierAlias.lean:62 and 165, StateMomentBalances.lean:838, TemporalMeanUpdate.lean:197, 372, 633, SubcoverPeriodicity.lean:259. Clause (d), no new band: TorusInverse.lean:566, UniformFourierAlias.lean:512 and 529, PhysicalMeanDomain.lean:486/501/529/555, CommonCoverSolve.lean:372, WaveEnvelopeTransport.lean:299.", "CONVENTION: The encoding is in NavierStokes/TorusInverse.lean:566 (inverse_preserves_parameter_support, every Direction, arbitrary parameter type), UniformFourierAlias.lean:512 and 529, CommonCoverSolve.lean:372, WaveEnvelopeTransport.lean:299, and PhysicalMeanDomain.lean:486 (FiberLocal) with 501, 529, 555, 1213. The paper's L(U) is formalized at NavierStokes/LabelCounting.lean:28 (relevantLabels) and 189 (pointwiseLabels), but those two names occur in no other file of NavierStokes/, and every theorem about them (259, 275) is a cardinality bound or monotonicity under intersection; nothing relates them to physicalCompact, centered, totalIntegral or directionalInverse.", "Clause (a) is norm_coverChange_le with coveringBound Delta_max, extended to all orders by bandCommonChart_envelope. Clause (b) is the TorusCoverDegree cluster under the paper's own injectivity hypothesis, with card_sheet for 14^Delta. Clause (c) is integral_torusCovering_iterate, (6.19) verbatim. Clause (d)'s descent half has a stated preservation lemma for each operation, with directionalInverse_periodic quantified over both Directions. Its 'no new dyadic band' half is, by the paper's own justification, that the operations hold the slow variables fixed, and the repository states that generally: inverse_preserves_parameter_support, realCentered/realInverse_preserves_parameter_support, copySolve_preserves_slow_support, grouped_path_zero_of_slow_support, and FiberLocal for the radial integral, the torus average and centering. What is absent is only the link to LabelCounting's L(U): an encoding gap, recovered above, so low CONVENTION, and the item is OK."],
           "findings": [
             {
               "confidence": 0.88,
@@ -30,36 +30,28 @@
               "kind": "COVERAGE",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No single declaration states Lemma 6.2, and no docstring cites it. Clauses (a)–(c) are each stated faithfully, (c) and (b) at least as strongly as the paper, across TorusCoverDegree, TorusAverages and CommonCoverSolve/CommonCoverClass."
+              "summary": "No single declaration states Lemma 6.2 and no docstring cites it. Clauses (a), (b), (c) and (d) are spread over about a dozen files; each is stated for the general object and they conjoin by instantiation and conjunction."
             },
             {
-              "confidence": 0.78,
+              "confidence": 0.8,
               "contested": false,
-              "kind": "COVERAGE",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "Two sub-claims of clause (d) have no Lean statement: that torus translation preserves common-torus descent, and that the operations introduce no new dyadic band. Both are trivial, and the second is built into the architecture through an explicit common index."
-            },
-            {
-              "confidence": 0.75,
-              "contested": false,
-              "kind": "COVERAGE",
+              "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Cover-pullback naturality of directional inversion is proved only for v_t. For v_r, only Z²-periodicity in the common variable H is stated. That is the Lean encoding of common-torus descent, and radial inversion is never used outside TorusInverse.lean."
+              "summary": "Clause (d)'s 'no new dyadic band' is stated in a different encoding: slow-parameter support preservation and slow-fiber locality of each operation, with the band index an explicit argument, rather than invariance of a label set. No declaration connects it to LabelCounting's L(U)."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "partial",
+          "relation": "different_formulation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states part of it.",
-          "verdict": "deviation"
+          "summary": "Lean states it in a different formulation.",
+          "verdict": "faithful"
         }
       ]
     }

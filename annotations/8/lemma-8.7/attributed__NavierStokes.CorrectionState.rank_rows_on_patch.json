@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.7/attributed/NavierStokes.CorrectionState.rank_rows_on_patch",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionState.rank_rows_on_patch",
+      "line": 462,
+      "module": "NavierStokes.CorrectionState",
+      "path": "NavierStokes/CorrectionState.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L462"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionState.rank_rows_on_patch",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The same five rows for the correction state's model fields on the reserved patch, the form in which the inverse is consumed downstream."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 462,
+        "text": "theorem rank_rows_on_patch (r : RankData S) (c : Context (Lift S)) (u : State (Lift S))\n    (n : ℕ) (x : S) (Y : PressureStream.Plane)\n    (hlam : 0 < r.lambda) (hC : r.coefficient n x ≠ 0)\n    (ha : 0 < r.inner) (hab : r.inner < r.outer) (hell : 0 < r.length n x)\n    (hU : r.velocity n x ≠ 0)\n    (hV : ∀ R ∈ Ioo (r.length n x * r.inner) (r.length n x * r.outer),\n      c.base.angular n (R, (x, Y)) =\n        MeanRankUpdate.background r.lambda (r.coefficient n x) (r.length n x) (r.velocity n x) R)\n    (hG : ∀ R ∈ Ioo (r.length n x * r.inner) (r.length n x * r.outer),\n      c.base.axial n (R, (x, Y)) = 0) :\n    FiveRowRank.FiveRows (fun R => c.base.angular n (R, (x, Y)))\n      (fun R => c.base.axial n (R, (x, Y))) (debt c u n x)\n      (fun R => rankAngular r c u n (R, x))\n      (fun R => rankDesiredAxial r c u n (R, x))"
+      }
+    }
+  }
+}

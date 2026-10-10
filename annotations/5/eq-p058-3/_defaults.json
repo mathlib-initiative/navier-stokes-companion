@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 58.3",
+  "status": "partial",
+  "location": {
+    "page": 58,
+    "rect": [0.301796, 0.369566, 0.396898, 0.047114]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p058-3",
+      "locator": {
+        "physical": [58],
+        "printed": [58],
+        "text": "Display 58.3, p. 58, in the proof of Lemma 5.4"
+      },
+      "region": "eq-p058-3@p058",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: a^{k}\\,\\chi^{(k)}(aq)\\prod_{\\nu=1}^{k}\\partial_z^{a_\\nu}\\partial_t^{b_\\nu}q,\\qquad \\sum_{\\nu}a_\\nu=a',\\quad \\sum_{\\nu}b_\\nu=b'."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The paper writes the Faà di Bruno term structure of a mixed space-time derivative of χ(aq) with q = q(z,t): a prefactor a^k χ^{(k)}(aq) times a product of k derivatives of q whose multi-indices sum to (a',b'). No Lean declaration forms that expansion. What the repository states instead is (i) the exact one-variable chain rule `scaledCutoff_iteratedDeriv`, iteratedDeriv n (scaledCutoff a) q = a^n · χ^{(n)}(a q) — this is the paper's term in the degenerate case where q is itself the variable, so every ∂q factor is 1 and only k = n survives; (ii) the k = 1 case for a genuine composite χ(q(w.1,·)), as the `have hc` step at GenericSolenoidalRealization.lean:81, giving ∇(χ∘q) = χ'(q)·∇q; and (iii) for general order, the norm-level composition bound `composition_jet_bound` (a wrapper of Mathlib's norm_iteratedFDerivWithin_comp_le), ‖D^m(g∘f)‖ ≤ m!·C·D^m, which is what `cutoff_jet_bound` actually uses to reach the same conclusion without ever naming the individual chain-rule terms. There is also no z/t split: the Lean works with one total Fréchet order throughout. The surrounding result (the derivative bound of the next display) is proved, so the missing expansion costs nothing.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

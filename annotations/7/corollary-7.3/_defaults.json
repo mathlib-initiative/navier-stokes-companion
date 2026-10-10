@@ -18,23 +18,31 @@
       "verdicts": [
         {
           "confidence": 0.82,
-          "evidence": ["CONVENTION: ActualParticularStageControls.raw_jets (ActualParticularStageControls.lean:924) has the shape ∀ x : CycleState (Label B N0), ∀ j ≠ 0, then UniformLocalJets.bounds (PeriodizedWaveBounds.lean:254) = ∀ m, ∃ C, ∃ p over the fixed controlPatch (:794). The threshold is (choice B N0).prepared.N (CorrectionInitialization.lean:3929), and Prepared (PrimaryGeometryAssembly.lean:244) has no harmonic or order field.", "ATTRIBUTION_GAP: ActualParticularStageControls.raw_jets hypothesis H : UniformWaveClass … (currentSource x j). ParticularCopyBounds.uniform_coefficients_jets (ParticularCopyBounds.lean:492) takes any source with UniformLocalJets bounds plus a UniformModalControl. ActualParticularControl.referenceControl (ActualParticularControl.lean:609) builds that control for any f in the class and any j ≠ 0, given a PhaseConstruction.", "I read p.80 myself and checked the cited declarations in source. All 24 names exist in decls.jsonl. raw_jets quantifies ∀ x ∀ j≠0 over the fixed controlPatch, with bounds of the form ∀ m ∃ C ∃ p. Label B N0 is fixed by (choice B N0).prepared.N. Prepared.large is required once, for all n ≥ N. nextCoefficients keeps the labels and doubles residualBand, and selected_energy is uniform in j≠0. Both skeptics independently upheld both findings, and no new findings were raised. I added the skeptics' better declarations: common_bounds, finite_harmonic_uniform, controlPatch, uniform_coefficients_jets and referenceControl. The auditor's 'mildly stronger' remark is not a strengthening: per-j bounds with constants chosen after j are equivalent to the finite-M form, by taking a maximum over the finitely many harmonics. 'Full pulse interval' and the Ioo/Icc distinction belong to Prop 7.2."],
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.ActualParticularControl.finite_harmonic_uniform, NavierStokes/ActualParticularControl.lean:519, concludes `UniformClass s (fun l : Label × {j // j ∈ H} => w l.1) alpha (fun l => f l.2.1 l.1)` with C := A+B, p := a+b; raw_jets (NavierStokes/ActualParticularStageControls.lean:924) concludes PeriodizedWaveBounds.UniformLocalJets (PeriodizedWaveBounds.lean:254), a different structure. A repository grep for `finite_harmonic_uniform` returns one hit, its own declaration.", "CONVENTION: NavierStokes/ActualSignedGeometry.lean:30 standardSlowRegion (carrier {z | 0 < z.1 ∧ coordinateQ (2*h) z ∈ Ioo (1/2) 2}, qlo = 1/2, qhi = 2), which is CorrectionInitialization.standardRegion (:5169) and hence the region inside slowStrip (ActualParticularStageControls.lean:413) and inside the strip of assembled_bounds (:1455). The one stated comparison is NavierStokes/ActualCandidateConstruction.lean:180 nativeScale_lt_qbig, which needs residualBand B N0 = firstBand B N0 + 1 ≤ n.", "ATTRIBUTION_GAP: The hypothesis of raw_jets (NavierStokes/ActualParticularStageControls.lean:924) is H : UniformWaveClass … (currentSource x j), with currentSource defined at :555. The general form is ParticularCopyBounds.uniform_coefficients_jets (NavierStokes/ParticularCopyBounds.lean:492), stated for an arbitrary `source` and arbitrary `harmonic : ℤ`, whose UniformModalControl hypothesis ActualParticularControl.referenceControl (ActualParticularControl.lean:609) supplies for any f in the uniform wave class and any j ≠ 0.", "I read p. 80 and pp. 77-79 from the images and every declaration either ruling gave the role `states` or `part` in its source file. The corollary is a uniformity remark; Lean encodes it by fixing the strip, the patch and the threshold as closed terms and quantifying the stage, the harmonic, the exponent and the derivative order afterwards. raw_jets alone carries both sentences for the stage solve: its domain mentions no j, no x and no m, and UniformLocalJets.bounds chooses C and p after m. common_bounds, finite_harmonic_uniform and assembled_bounds supply the finite-harmonic-set form, assembled_bounds literally over modes N = {j ≠ 0, |j| ≤ N}. Nothing in the recovery needs an unstated estimate. Three low findings: the UniformLocalJets/UniformClass mismatch in the folding lemma, the band-coordinate encoding of 0 < q < q_*, and the residual-versus-prescribed source."],
           "findings": [
             {
-              "confidence": 0.82,
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The finite-harmonic-set folding of the corollary's second sentence is proved only for LabelSumBounds.UniformClass, not for the UniformLocalJets conclusion of raw_jets, and the declaration that proves it has no caller. For the raw solve the finite maximum is left to the reader."
+            },
+            {
+              "confidence": 0.7,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "No declaration states Corollary 7.3 as such. The uniformity in stage, harmonic set and derivative order is encoded structurally. The domain (Label B N0, slowStrip, controlPatch) is fixed first, and constants and degrees come afterwards via quantifier order (∀ x ∀ j≠0 ∀ m ∃ C ∃ p)."
+              "summary": "The paper's physical domain 0 < q < q_* is encoded as a fixed normalized dyadic window 1/2 < q < 2 read in band coordinates, plus a band-index floor. Exactly one direction of the dictionary is stated by a single lemma, and only for bands strictly beyond the floor."
             },
             {
-              "confidence": 0.75,
+              "confidence": 0.8,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "raw_jets and common_bounds apply the inverse to the literal residual currentSource x j of an arbitrary cycle state, not to an arbitrary prescribed source f_m. The general prescribed-source form exists in uniform_coefficients_jets together with referenceControl."
+              "summary": "raw_jets and common_bounds apply the zero-data inverse to the stage's literal residual currentSource x j, not to an arbitrary prescribed source f_m. The general prescribed-source form of the operator bound is stated, but in two other declarations that must be composed."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

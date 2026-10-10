@@ -1,0 +1,24 @@
+{
+  "id": "eq-10.6/key/NavierStokes.JointResidualLimits.boundaryLimits_joint",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.JointResidualLimits.boundaryLimits_joint",
+      "line": 130
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L130"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.JointResidualLimits.boundaryLimits_joint",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 130,
+        "text": "theorem boundaryLimits_joint (hzero : VanishingJointJets f) (hext : AwayExtensions f) (n : ℕ) (x : Space) : Tendsto (iteratedFDeriv ℝ n f) (𝓝[SpacetimeEndpoint.openPast 1] (1, x)) (𝓝 (boundaryLimits f hext x n))"
+      }
+    }
+  }
+}

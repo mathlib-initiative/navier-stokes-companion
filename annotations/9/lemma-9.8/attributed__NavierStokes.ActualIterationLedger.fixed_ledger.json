@@ -1,0 +1,31 @@
+{
+  "id": "lemma-9.8/attributed/NavierStokes.ActualIterationLedger.fixed_ledger",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualIterationLedger.fixed_ledger",
+      "line": 418,
+      "module": "NavierStokes.ActualIterationLedger",
+      "path": "NavierStokes/ActualIterationLedger.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualIterationLedger.lean#L418"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualIterationLedger.fixed_ledger",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: For 0 < h: sigma 0 = 1/5, sigma (n+1) = sigma n + 1/10, gain h 0 = 0, 0 < gain h j for j >= 1, Monotone (gain h), and Tendsto (gain h) atTop atTop. This is where the 'g_j -> infinity' clause of (9.17) is asserted.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 418,
+        "text": "theorem fixed_ledger {h : ℝ} (hh : 0 < h) :\n    (0 ≤ kappa ∧ kappa ≤ 1 / 100000) ∧ sigma 0 = 1 / 5 ∧\n    (∀ n, sigma (n + 1) = sigma n + 1 / 10) ∧ gain h 0 = 0 ∧\n    (∀ j, 1 ≤ j → 0 < gain h j) ∧ Monotone (gain h) ∧ Tendsto (gain h) atTop atTop ∧\n    (∀ j, 1 ≤ j →\n      gain h j ≤ h * waveNative kappa j + (-h) + (offsets h).wavePotential ∧\n      gain h j ≤ h * meanNative kappa j + (offsets h).meanStream ∧\n      gain h j ≤ h * meanNative kappa j + (offsets h).directAngular ∧\n      gain h j ≤ h * wavePressureNative kappa j + (-(2 * CoordinateAlgebra.A h)) + (offsets h).wavePressure ∧\n      gain h j ≤ h * meanNative kappa j + (offsets h).meanPressure)"
+      }
+    }
+  }
+}

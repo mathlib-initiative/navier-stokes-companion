@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 123.6",
+  "status": "partial",
+  "location": {
+    "page": 123,
+    "rect": [0.260172, 0.589482, 0.481617, 0.040179]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p123-6",
+      "locator": {
+        "physical": [123],
+        "printed": [123],
+        "text": "Display 123.6, p. 123, in the proof of Lemma 10.5"
+      },
+      "region": "eq-p123-6@p123",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\tfrac12 E_R' + \\tfrac12 A_R^2 \\;\\le\\; \\|\\nabla u\\|_\\infty E_R + \\frac{C_T}{R} \\qquad \\text{for almost every } t \\in (0,T)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The Lean never states the paper's inequality with the dissipation retained on the left. Its differential inequality is E' ≤ 2*G*E + D/R, i.e. the paper's display after discarding (1/2)A_R^2 ≥ 0; the discard happens inside one `nlinarith only [henergy, hbound, hC0radius, sq_nonneg A]` at ComparisonRateBound.lean:148, so no intermediate `have` of the form (1/2)E' + (1/2)A^2 ≤ ... exists either. Two further weakenings: the Lean's energy coefficient is a constant G with ‖∇u(t,x)‖ ≤ G for all t ∈ [0,T] and all x, rather than the paper's time-dependent ‖∇u(t)‖_∞ (the paper notes this is bounded on [0,T] just below the display, so the hypothesis is available); and the Lean requires the inequality at every t ∈ Ioo 0 T rather than for almost every t ∈ (0,T) — for the smooth fields of eq_of_pressure_flux_bound it holds at every interior t, so this costs nothing here. Severity low rather than medium because the retained (1/2)A_R^2 is never used afterwards in the paper: the very next step is Gronwall, which needs only E_R' ≤ 2‖∇u‖_∞E_R + 2C_T/R. The retained form itself is two lines away: exists_cutoff_absorption is applied with δ = 1/2, which together with difference_energy_balance gives (1/2)E' + (1/2)A^2 ≤ G*E + C0/R^2 + D/R. I searched decls.jsonl for every occurrence of `weightedDissipation`: it appears only in its own definition, in dissipationRoot, in weightedDissipation_nonneg, and in the two difference_energy_balance statements, so no declaration states this inequality.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

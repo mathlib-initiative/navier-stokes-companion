@@ -1,0 +1,31 @@
+{
+  "id": "proposition-B.5/attributed/NavierStokes.ActivationContinuation.RampParameters.final_shears",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationContinuation.RampParameters.final_shears",
+      "line": 1579,
+      "module": "NavierStokes.ActivationContinuation",
+      "path": "NavierStokes/ActivationContinuation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationContinuation.lean#L1579"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationContinuation.RampParameters.final_shears",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For η ∈ [-1,1] and r.holdRadius ≤ p.1: shearA r.profiles p = 4/5 ∧ shearB r.profiles p = 0. This is 'a = .8 and D_X U = 0', and it holds on all of [holdRadius, ∞) rather than only at X_i.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1579,
+        "text": "theorem final_shears {p : Point} (hη : p.2 ∈ Icc (-1 : ℝ) 1) (hx : r.holdRadius ≤ p.1) :\n    shearA r.profiles p = 4 / 5 ∧ shearB r.profiles p = 0"
+      }
+    }
+  }
+}

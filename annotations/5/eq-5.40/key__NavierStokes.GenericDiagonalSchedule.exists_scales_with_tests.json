@@ -1,0 +1,25 @@
+{
+  "id": "eq-5.40/key/NavierStokes.GenericDiagonalSchedule.exists_scales_with_tests",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GenericDiagonalSchedule.exists_scales_with_tests",
+      "line": 43,
+      "module": "NavierStokes.GenericDiagonalSchedule",
+      "path": "NavierStokes/GenericDiagonalSchedule.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDiagonalSchedule.lean#L43"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GenericDiagonalSchedule.exists_scales_with_tests",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 43,
+        "text": "theorem exists_scales_with_tests (tests : ℕ → Finset κ) (B P γ : ℕ → κ → ℝ) (hγ : ∀ j k, k ∈ tests j → 0 < γ j k) … : ∃ a : ℕ → ℕ, … (∀ j, 2 * a j ≤ a (j+1)) ∧ … ∧ ∀ j k, k ∈ tests j → ∀ r : ℝ, 0 < r → r ≤ 1 / (a j : ℝ) → |DiagonalScale.logPowerWeight (B j k) (P j k) (γ j k) r| ≤ (1/2 : ℝ) ^ j"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (8.11)",
+  "status": "formalized",
+  "location": {
+    "page": 92,
+    "rect": [0.266111, 0.734434, 0.602963, 0.049873]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-8.11",
+      "locator": {
+        "physical": [92],
+        "printed": [92],
+        "text": "Equation (8.11), p. 92, in section 8.3"
+      },
+      "region": "eq-8.11@p092",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: u_* = Q^{A} u_{\\mathrm{phys}},\\quad g_* = Q^{2A+1/2} g_{\\mathrm{phys}},\\quad p_* = Q^{2A} p_{\\mathrm{phys}},\\quad \\Psi_* = Q^{A-1/2}\\Psi_{\\mathrm{phys}},\\quad \\rho_* = Q^{1/2}\\rho_{\\mathrm{phys}}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean does not write five separate normalizations. It has one exponent-parametrized chart pull, fieldOnPhysical h n i a f z = Q n ^ (-a) * f (physicalToChart h n i z), stated as fieldOnPhysical_apply, which is the paper's relation solved for the physical field: f_phys(z) = Q^{-a} f_*(φ z) is the same equation as f_*(φ z) = Q^{a} f_phys(z), since Q n > 0. The paper's five lines are then the five instantiations a = A (velocity, and the temporal variant fieldOnPhysicalTZ), a = 2A + 1/2 (the source g), a = 2A (pressure), a = A - 1/2 (stream potential Ψ), with ρ handled separately because it carries a length density rather than a field weight: density_chart gives the factor (chartScale n)⁻¹ = Q^{1/2}. I checked each exponent against a declaration that uses it with the matching object: Q^A for the velocity in velocity_chart_slow, Q^{2A} for the pressure in pressure_chart_slow, the pair (2A+1/2 → 2A) for source → pressure in physicalPressure_naturality with pressure_unit_factor, the pair (A → A-1/2) for velocity → stream potential in physicalStreamPotential_naturality with stream_unit_factor, Q^{2A+1/2} for the residual source in normalizedRequest_represents, and Q^{1/2} for ρ. The Lean's A is CoordinateAlgebra.A h = 1/2 + h and its Q is ChartScales.Q n, so the exponents are in the paper's own symbols; the Lean also carries a cover index i and a slow-time chart map that the paper leaves implicit in the star.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

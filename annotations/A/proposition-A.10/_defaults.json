@@ -8,6 +8,10 @@
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
       "item": "proposition-A.10",
       "locator": {
         "physical": [142],
@@ -17,40 +21,32 @@
       "region": "proposition-A.10@p142",
       "verdicts": [
         {
-          "confidence": 0.86,
-          "evidence": ["CONVENTION: TerminalHistoryBridge.terminal_forward_cone (TerminalHistoryBridge.lean:1482); TerminalEdgeFactor.profileAngularStress_factorization (:876), profileAxialStress_factorization (:971), profileTilt_eq_ratio (:1322), profileStress_jets (:1288); TerminalEdgePaper.profileStress_lower_bound (:16); ActiveAnnulusWeight.terminal_true_direction (:1217); bridges TerminalHistoryBridge.forward_stresses_eq_profile (:1401) and LeadingStressWeights.nominal_terminal_stress (LeadingStressWeights.lean:321)", "CONVENTION: TerminalCone.profile_full_true_cone (hsmall : SmallTail d) (hK : 32 ≤ K) (TerminalCone.lean:452); TerminalCone.profile_cone_margin (:398); terminal_forward_cone (hsmall) (hXR : radiusThreshold F ≤ XR) (TerminalHistoryBridge.lean:1484); TerminalCone.SmallTail (:50); TerminalCone.radiusThreshold (:524)", "ATTRIBUTION_GAP: OutgoingProfile.Specification.ideal_prefix (OutgoingProfile.lean:580; structure at :557); NominalConeAssembly.Witness.terminal_true : … → IsTrue W.profiles F.data.h (chart W.controls.radius (y, eta)) (NominalConeAssembly.lean:946); LeadingStressWeights.nominal_terminal_stress : stress W.profiles F.data.h (chart …) = profileStress … (eta, tailEnd F.data − y) (LeadingStressWeights.lean:321); NominalProfile.Witness.axis : AxisStage F (NominalProfile.lean:2481)", "CONVENTION: TerminalEdgeFactor.profileStress_jets : ‖iteratedFDeriv ℝ i (profileStress C d y0) (η, x)‖ ≤ A * FlatCutoff.edge 4 x / x ^ N (TerminalEdgeFactor.lean:1288); TerminalEdgePaper.profileStress_lower_bound : c * FlatCutoff.edge 4 x / x ^ 3 ≤ ‖profileStress C d y0 (η, x)‖ (TerminalEdgePaper.lean:16); radial-chart analogue for the final stress: LeadingStressWeights.weighted_bounds (LeadingStressWeights.lean:528) via ActiveAnnulusWeight.WeightedBounds (:644)", "I read p.142 (with pp.30-32, 140-143) and the Lean source; no Lean was run. Auditor and both skeptics agree, and I concur. Every clause is stated: the cone on [terminalStart, tailEnd); the smooth direction and gap margin; (A.48)-(A.50) by exact factorizations with globally smooth coefficients; (A.51) by jet and lower bounds. The differences are packaging, explicit smallness thresholds that the paper's own proof uses, and (η,δ) coordinates. I added NominalConeAssembly.Witness.terminal_true and LeadingStressWeights.nominal_terminal_stress, which state the cone and the stress identity for the joined regular-axis profile, and replaced terminal_strict_direction by the stronger terminal_true_direction. The PAIRING skeptic regards the two nominal-profile theorems as consumers, not statements."],
+          "confidence": 0.78,
+          "evidence": ["ATTRIBUTION_GAP: TerminalHistoryBridge.terminal_forward_cone (TerminalHistoryBridge.lean:1482) gives the cone clause; ActiveAnnulusWeight.terminal_true_direction (ActiveAnnulusWeight.lean:1217) the smooth direction and the gap; TerminalEdgeFactor.lean:876/971/1322/1342/1288 and TerminalEdgePaper.lean:16 give (A.48)-(A.51). No declaration conjoins them.", "CONVENTION: TerminalHistoryBridge.terminal_forward_cone (TerminalHistoryBridge.lean:1482) takes OutgoingProfile.Specification F B, a CompensationWitness, TerminalCone.SmallTail F.data (TerminalCone.lean:50: h \\le 1/4 and h \\le 1/(1+releaseBudget)) and TerminalCone.radiusThreshold F \\le XR; it never assumes M(\\infty)=J(\\infty)=S(\\infty)=0 as a hypothesis.", "CONVENTION: TerminalEdgeFactor.profileStress_jets (TerminalEdgeFactor.lean:1288) and TerminalEdgePaper.profileStress_lower_bound (TerminalEdgePaper.lean:16) produce A, N, c depending only on C, d, y0, n, b; profileS y0 x = exp(y0+3-x) (line 745) has no chartQ, and physicalStress_normalizedParam (line 1635) links the q-carrying physicalStress to profileStress.", "Every clause of A.10 is stated in Lean, for the same objects, with the paper's own constants: the admissible cone on .5 \\le y < 3 (terminal_forward_cone, full_interval_true_cone with full_interval_direction_margin), the smooth extension of the stress direction and the uniform lower bound on 2-(a-2)(T_z/T_\\theta)^2 through it (terminal_true_direction, and 3/2 \\le profileConeGap on the closed interval), (A.48)-(A.50) as the two factorizations plus profileTilt, and both halves of (A.51). The differences are the edge coordinate \\delta = 3-y with tailStart-shifted y, the FlatCutoff.edge encoding of e^{-4/\\delta^2}, hypotheses taken from the construction instead of Lemma A.8, and the fact that nothing conjoins the clauses. Hence different_formulation, not a defect."],
           "findings": [
             {
-              "confidence": 0.9,
+              "confidence": 0.85,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "No single declaration states A.10. The cone, the direction collar, (A.48)-(A.50) and (A.51) are separate theorems, mostly about the backward-formula profileStress in (η,δ) coordinates. Bridge lemmas identify it with the actual leading stress."
-            },
-            {
-              "confidence": 0.88,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Clause (i) and the full-interval gap margin carry explicit hypotheses: SmallTail (h ≤ 1/4, h ≤ 1/(1+releaseBudget)) and radiusThreshold F ≤ XR (switch radius ≥ 32). The paper's statement leaves these implicit; its proof invokes them."
-            },
-            {
-              "confidence": 0.78,
-              "contested": true,
-              "kind": "CONTENT",
+              "kind": "COVERAGE",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "terminal_forward_cone has no regular-axis hypothesis. It is about the concrete pre-axis outgoing family (Specification with ideal_prefix, CompensationWitness). The regular-axis statement exists for the joined nominal profile: Witness.terminal_true and nominal_terminal_stress."
+              "summary": "No single declaration states Proposition A.10. Its clauses are stated separately across TerminalHistoryBridge, TerminalCone, TerminalEdgeFactor, ActiveAnnulusWeight and TerminalEdgePaper; each clause was found and they conjoin routinely."
             },
             {
-              "confidence": 0.88,
+              "confidence": 0.7,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The (A.51) bounds use iteratedFDeriv in edge coordinates (η,δ) and the sup norm on ℝ×ℝ. The paper's ∂^I are mixed derivatives in profile variables and |·| is Euclidean."
+              "summary": "The paper hypothesises Lemma A.8's regular axis and exact moments on a general field; the Lean theorems instead quantify over the constructed terminal profile and add SmallTail d and 32 \\le switchRadius, discharging the moments inside the construction."
+            },
+            {
+              "confidence": 0.6,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The final clause of (A.51), that the constants do not depend on the physical scale q, is encoded structurally rather than asserted: the profile* family carries no q, and a separate lemma identifies the physical stress at the normalized parameter with it."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

@@ -1,0 +1,29 @@
+{
+  "id": "proposition-9.5/attributed/NavierStokes.ActualInitialMean.initial_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualInitialMean.initial_bounds",
+      "line": 636,
+      "module": "NavierStokes.ActualInitialMean",
+      "path": "NavierStokes/ActualInitialMean.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialMean.lean#L636"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualInitialMean.initial_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: For all B N0, with no hypotheses: CumulativeBounds strip (initialized B N0) ∧ MeanResidualBounds strip (1/5) (commonContext B) (initialized B N0) ∧ DefectBounds slowStrip (1/5) (commonContext B) (initialized B N0) ∧ ZeroMassesOn ActualPrimary.standardRegion.carrier (initialized B N0). This is the in"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 636,
+        "text": "theorem initial_bounds (B N0 : ℕ) :\n    CumulativeBounds strip (initialized B N0) ∧\n      MeanResidualBounds strip (1 / 5) (ActualPrimary.commonContext B) (initialized B N0) ∧\n      DefectBounds slowStrip (1 / 5) (ActualPrimary.commonContext B) (initialized B N0) ∧\n      GaugeMassPreservation.ZeroMassesOn ActualPrimary.standardRegion.carrier (initialized B N0)"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "proposition-5.5/attributed/NavierStokes.BaseRadialJets.reducedRadial_polynomial",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BaseRadialJets.reducedRadial_polynomial",
+      "line": 239,
+      "module": "NavierStokes.BaseRadialJets",
+      "path": "NavierStokes/BaseRadialJets.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseRadialJets.lean#L239"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BaseRadialJets.reducedRadial_polynomial",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: PolynomialJets (unitScale D) (fun i => reducedRadial a h d (Q i)): uniform jet boundedness of the q^{1/2}-normalized radial velocity. Nothing is subtracted from it and no q^{2h} rate appears, so the leading radial profile V_0/√(2X) is not identified."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 239,
+        "text": "theorem reducedRadial_polynomial {ι : Type*} {D : Domain ι Slow}\n    {a : ℕ → ℕ} {h C r M qlo qhi lo hi : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (hr : 0 < r) (hM : 1 ≤ M)\n    (hqlo : 0 < qlo) (hqhi : 0 < qhi) (hlo : 0 < lo)\n    (H : GeometryBounds D h r M qlo qhi lo hi)\n    {d : SlowBorelBase.Coefficients} (hd : SlowBorelBase.SmoothCoefficients d)\n    (ha : SlowBorelBase.AdmissibleScales h (SlowBorelBase.coefficientBundle C d)\n      (SlowBorelBase.innerBox lo hi) a)\n    (Q : ι → ℝ) (hQ : ∀ i, 0 < Q i) (hQ1 : ∀ i, Q i ≤ 1)\n    (hsmall : ∀ i, Q i * qhi ≤ 1) :\n    PolynomialJets (unitScale D) (fun i => reducedRadial a h d (Q i))"
+      }
+    }
+  }
+}

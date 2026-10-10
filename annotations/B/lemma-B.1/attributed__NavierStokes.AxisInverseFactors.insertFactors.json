@@ -1,0 +1,26 @@
+{
+  "id": "lemma-B.1/attributed/NavierStokes.AxisInverseFactors.insertFactors",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisInverseFactors.insertFactors",
+      "line": 164,
+      "module": "NavierStokes.AxisInverseFactors",
+      "path": "NavierStokes/AxisInverseFactors.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisInverseFactors.lean#L164"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisInverseFactors.insertFactors",
+        "kind": "def"
+      },
+      "relation": "definition",
+      "role": "attributed",
+      "snippet": {
+        "line": 164,
+        "text": "def insertFactors (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r)\n    (A : AxisSpace I ε) : List (AxisSpace I ε) → AxisSpace I ε\n  | [] => A\n  | B :: Bs => insertFactors I hε r hr (insert I hε r hr A B) Bs"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 108.2",
+  "status": "formalized",
+  "location": {
+    "page": 108,
+    "rect": [0.273567, 0.34906, 0.453085, 0.030268]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p108-2",
+      "locator": {
+        "physical": [108],
+        "printed": [108],
+        "text": "Display 108.2, p. 108, in the proof of Proposition 9.6"
+      },
+      "region": "eq-p108-2@p108",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\mathcal{P}_{\\mathrm{new}} = \\int \\langle g_{r,\\mathrm{new}}\\rangle_Y\\, dR, \\qquad p_{m,\\mathrm{new}} = \\mathsf{T}_0\\big(g_{r,\\mathrm{new}} - \\rho\\,\\mathcal{P}_{\\mathrm{new}}\\big)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both formulas are present with the same constants and the same integrand; the only gap between the display and the Lean is what realizes T_0. 𝒫_new = ∫⟨g_r,new⟩_Y dR is `pressureMass` literally (torus average, then radial integral). g_r,new - ρ𝒫_new is `pressureSource` literally, with `rho` a normalized bump of unit radial mass supported in [a,b]. T_0 is realized as `RadialPullback.physicalCompact`, the compactly supported radial primitive in the pullback coordinate rather than a symbol named T_0; what I checked is the characterising identity `meanPressure_radial_residual`, which gives ∂_R(meanPressure f) - f = -ρ·pressureMass f - pressureAlias. That is the paper's T_0 property, with an extra `pressureAlias` term coming from the chart pullback that the display does not show. That `g_{r,new}` is the source of the *updated* state is supplied by `reconstructPressure`, which applies `meanPressure` to `u.gr c n` after the increment.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

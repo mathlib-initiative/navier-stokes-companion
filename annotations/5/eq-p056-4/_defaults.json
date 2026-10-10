@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 56.4",
+  "status": "partial",
+  "location": {
+    "page": 56,
+    "rect": [0.209704, 0.798901, 0.581705, 0.026328]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p056-4",
+      "locator": {
+        "physical": [56],
+        "printed": [56],
+        "text": "Display 56.4, p. 56, in section 5.4"
+      },
+      "region": "eq-p056-4@p056",
+      "verdicts": [
+        {
+          "confidence": 0.65,
+          "evidence": ["paper: A_n = \\mathcal{A}_n, \\qquad B_n = u_{\\theta,n}\\,e_\\theta, \\qquad p_n = q^{-2A+\\lambda_n}\\,\\Pi_n, \\qquad T_n = q^{-A-1/2+\\lambda_n}\\,\\mathcal{T}_n."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Three of the four entries match with the paper's exponents exactly: p_n with -2A + λ_n (basePressure), and the stress pair T = (T_θ, T_z) with -A - 1/2 + λ_n (baseStressTheta, baseStressAxial); A_n is streamFactor/summedPotential as in (5.27). The fourth differs in form: the Lean slow base has no separate entry B_n = u_{θ,n} e_θ. The azimuthal part is carried as the axial component K = swirlPotential (exponent 1/2 - A + λ_n on -C⁻¹∫_0^X φ_n) of the same vector potential, and is produced by the same curl; by velocity_zero/velocity_one the K-part of the curl is (-r ∂_s K) e_θ, an azimuthal field of the paper's shape, so the route differs but reaches an azimuthal field. The paper instead keeps B_n as a field and cuts it directly, relying on azimuthal fields with θ-independent amplitude being divergence-free (the Lean generic lemma, exists_realization, does provide that route through its B argument with hdivB/htan, but the slow base does not use it). Lean's divergence-freeness is then automatic, being a curl.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

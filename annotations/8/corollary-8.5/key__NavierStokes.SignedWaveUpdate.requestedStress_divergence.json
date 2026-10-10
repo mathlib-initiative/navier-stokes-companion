@@ -1,0 +1,28 @@
+{
+  "id": "corollary-8.5/key/NavierStokes.SignedWaveUpdate.requestedStress_divergence",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedWaveUpdate.requestedStress_divergence",
+      "line": 73,
+      "module": "NavierStokes.SignedWaveUpdate",
+      "path": "NavierStokes/SignedWaveUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean#L73"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedWaveUpdate.requestedStress_divergence",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Both identities at once for the pair requestedStress = ![barSigma P 2 (thetaResidual), barSigma P 1 (axialResidual)]: radialDivergence 2 (component 0) = -adjusted P 2 (torusAverage thetaResidual) and radialDivergence 1 (component 1) = -adjusted P 1 (torusAverage axialResidual), under ContDiff and Ra"
+      },
+      "role": "key",
+      "snippet": {
+        "line": 73,
+        "text": "theorem requestedStress_divergence (p : SignedStressPrimitive.Patch)\n    (c : CorrectionState.Context (PressureStream.Lift E))\n    (u : CorrectionState.State (PressureStream.Lift E)) (n : ℕ)\n    (ht : ContDiff ℝ ∞ (u.thetaResidual c n))\n    (hz : ContDiff ℝ ∞ (u.axialResidual c n))\n    (hst : RadialAlias.RadiallySupported p.a p.b (u.thetaResidual c n))\n    (hsz : RadialAlias.RadiallySupported p.a p.b (u.axialResidual c n))\n    (z : E) {r : ℝ} (hr : 0 < r) :\n    IntegratedMeanBalances.radialDivergence 2 (fun t => requestedStress p c u n (t,z) 0) r =\n      -SignedStressPrimitive.adjusted p 2 (PressureStream.torusAverage (u.thetaResidual c n)) (r,z) ∧\n    IntegratedMeanBalances.radialDivergence 1 (fun t => requestedStress p c u n (t,z) 1) r =\n      -SignedStressPrimitive.adjusted p 1 (PressureStream.torusAverage (u.axialResidual c n)) (r,z)"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.39)",
+  "status": "formalized",
+  "location": {
+    "page": 86,
+    "rect": [0.194304, 0.355288, 0.67477, 0.027201]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.39",
+      "locator": {
+        "physical": [86],
+        "printed": [86],
+        "text": "Equation (7.39), p. 86, in the statement of Lemma 7.7"
+      },
+      "region": "eq-7.39@p086",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: \\mathrm{i}km\\, n_\\Phi \\cdot a_m \\;=\\; -\\bigl((D_r + R^{-1})(a_m)_r + D_z (a_m)_z\\bigr), \\qquad n_\\Phi \\cdot a_m \\in \\mathsf{W}_{\\alpha + 1/2 - \\kappa_s}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both halves of (7.39) are stated, in two declarations rather than one display. Left half: with Lean's frequency κ playing the paper's km, phaseFactor κ unfolds (HarmonicCalculus.lean:68) to iκ, normalDot (phaseNormal …) (a x) is n_Φ · a with the frame components 0,1,2 = r,θ,z, and strippedDivergence unfolds (HarmonicCalculus.lean:395) to along Vr (a_r) + R⁻¹ a_r + along Vz (a_z), which is exactly (D_r + R^{-1})(a_m)_r + D_z(a_m)_z; the sign (−) matches. So the identity is term-for-term the paper's, no rewriting needed. Right half: longitudinal_class concludes MemClass s w (α + 1/2 − κ) for the same contraction n_Φ · a, with the frequency gain supplied by hfreq : BandBound s (1/2) (fun n => 1 / K n) (the paper's '(km)^{-1} increases the ε exponent by 1/2') and the radial loss by hr : UnweightedClass s (-κ) Vr (the paper's κ_s of (6.32)); the exponent α + 1/2 − κ matches α + 1/2 − κ_s. The only recoverable gaps are packaging: (i) the paper states one display, Lean states two theorems in two files; (ii) Lean carries as explicit hypotheses what the paper's setting supplies — exact divergence-freeness (hdiv), which Lemma 7.7 asserts of (t_m + r_m)e^{ikmΦ} = curl_* A_m and which CurlClassBounds.realizedCoefficient_divergence (CurlClassBounds.lean:666) discharges, and θ-independence of the amplitude (haθ / hθ), which is part of membership in W_α by Definition 6.5 ('∂_θ a_{γ,m} = 0'). Conjoining the two theorems under those hypotheses gives (7.39) as written.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

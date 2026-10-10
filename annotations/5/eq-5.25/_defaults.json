@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.25)",
+  "status": "partial",
+  "location": {
+    "page": 55,
+    "rect": [0.26048, 0.453144, 0.608588, 0.025972]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.25",
+      "locator": {
+        "physical": [55],
+        "printed": [55],
+        "text": "Equation (5.25), p. 55, in the statement of Proposition 5.3"
+      },
+      "region": "eq-5.25@p055",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\bigl|\\mathcal{F}_{\\mathrm{slow}}\\bigl(\\mathcal{U}^{[N]}\\bigr)\\bigr|_{m} \\;\\le\\; C_{N,m}\\, q^{\\,2h(N+1)-K_{m}}, \\qquad K_{m}\\ \\text{independent of } N."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The formula itself matches. Left-hand side: Lean bounds `navierStokesResidual (prefixVelocity N …) (prefixPressure N …) - prefixStressForce N …`. `navierStokesResidual u p = ∂_t u + (u·∇)u − Δu + ∇p` (ProblemStatement.lean:82), and `prefixStressForce = stressForce = tangentialStressForce`, whose Cartesian pack is (x₁/r·a, −x₀/r·a, −z) with a = (∂_r+2/r)T_θ and z = (∂_r+1/r)T_z; subtracting it therefore ADDS the paper's two stress-divergence terms, so the bounded object is exactly 𝓕_slow(𝒰^{[N]}) of (5.24). (I checked the sign on the axial slot, which is unambiguous: pack's third component is −z against e_z = (0,0,1); the θ slot is consistent with e_θ = (−x₁/r, x₀/r, 0).) The prefix fields are the uncut n = 0..N sums (`uncutPrefix h f J y = f 0 y.2 + ∑ j ∈ range (J+1), positiveCoefficient h f j y`), with the stress slot carried at base exponent −A−1/2, matching q^{−A−1/2+λ_n}𝒯_n. Exponent: Lean's rate 2Nh − 2 − M equals the paper's 2h(N+1) − K_M with K_M = 2h + 2 + M, which is independent of N; instantiating the theorem at M := m gives the paper's bound for each m with K_m = 2h+2+m, so the N-dependence and the N-independence of the loss agree exactly. Lean's constant C is existentially quantified after N and M are fixed, matching 'C_{N,m} may depend on N'. The norm is ‖iteratedFDeriv ℝ m‖ (operator norm of the m-th space–time Fréchet derivative) where the paper uses max_{|a|+b≤m} |∂_x^a ∂_t^b V|; these differ by a dimensional constant absorbed in C. WHAT IS WEAKER: the paper asserts the bound at every point of the fixed compact profile range for every 0 < q ≤ 1; the Lean statement asserts it only `∀ᶠ z in l` for a filter carrying `PhysicalApproach l h lo hi`, which demands `Tendsto (fun z => (cartesianChart h z).1) l (𝓝 0)` — i.e. a germ statement valid for all sufficiently small q, on a compact carrier with t < 1, not a uniform bound over q ∈ (0,1]. Extending it to all q ∈ (0,1] would need a separate compactness/continuity argument that is not stated. The profile range itself matches: `innerBox lo hi = Icc lo hi ×ˢ Icc (-1) 1`, and the sole consumer `baseResidual_jetRate_axis` (BaseResidual.lean:2514) instantiates lo = 0, the paper's 0 ≤ X ≤ X_max, −1 ≤ η ≤ 1. Rated low because that consumer is the only use of `finite_error_rate` in the repository and it only needs the q → 0 form (it converts the estimate into `JetRate … m n` for every n ≥ 0, residual flatness), so the surrounding result is still proved. Separately, `FiniteIdentities h C d f` — the Step-1 exact cancellation identity — is a hypothesis of the Lean theorem rather than something it proves; that concerns the construction clause of Proposition 5.3, not inequality (5.25).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

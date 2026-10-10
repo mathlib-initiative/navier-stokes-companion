@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 40.2",
+  "status": "formalized",
+  "location": {
+    "page": 40,
+    "rect": [0.296717, 0.258252, 0.40702, 0.025744]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p040-2",
+      "locator": {
+        "physical": [40],
+        "printed": [40],
+        "text": "Display 40.2, p. 40, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p040-2@p040",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: T_d = e^{M_d} + 10, \\qquad P_* > e^{T_d}, \\qquad X_R = 110\\,(\\mathsf{C} P_*)^{10}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. All three clauses are present, and the amplitude clause is stronger in Lean than in the paper. T_d = e^{M_d} + 10 is Parameters.dropLength (= Real.exp c.m + 10, same constant, same exponential) and X_R = 110(C P_*)^{10} is matchingRadius/resetRadius with Xi = 110. The paper's P_* > e^{T_d} appears as amplitudeThreshold m ≤ P with amplitudeThreshold m = Real.exp (Real.exp m + 11) + 1 (OutgoingEntranceCone.lean:1809), which is exactly e^{T_d+1} + 1, since the file itself proves dropLength + 1 = Real.exp m + 11 at :1855. Direction checked: e^{T_d+1} + 1 > e^{T_d}, so the Lean hypothesis implies the paper's and not conversely. It is assumed exactly where the paper assumes it: at chosen_parameters_bounds (:1845), exists_ordered_preliminary_bounds (:1869), OutgoingCone.exists_ordered_clean_cone (:460) and exists_ordered_profile_cone (:503); and it is met by the profile actually constructed, since PreparedOutgoing.exists_prepared sets P := max 2 (amplitudeThreshold M) at PreparedOutgoing.lean:39 with core.m = M. The weaker-looking hypothesis Real.exp (c.dropLength + 1) ≤ c.P ^ 2 seen at OutgoingEntranceCone.lean:987, 1037, 1050 and OutgoingCone.lean:257, 408 is not a substitute for the clause: it is derived from amplitudeThreshold m ≤ P at OutgoingEntranceCone.lean:1853.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

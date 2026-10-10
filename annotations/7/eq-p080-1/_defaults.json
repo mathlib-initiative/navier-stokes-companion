@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 80.1",
+  "status": "formalized",
+  "location": {
+    "page": 80,
+    "rect": [0.234814, 0.21354, 0.530592, 0.02811]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p080-1",
+      "locator": {
+        "physical": [80],
+        "printed": [80],
+        "text": "Display 80.1, p. 80, in the proof of Proposition 7.2"
+      },
+      "region": "eq-p080-1@p080",
+      "verdicts": [
+        {
+          "confidence": 0.84,
+          "evidence": ["paper: n_\\Phi \\cdot t_m' = -n_\\Phi' \\cdot t_m - m^2 d\\,(n_\\Phi \\cdot t_m), \\qquad (n_\\Phi \\cdot t_m)' = -m^2 d\\,(n_\\Phi \\cdot t_m)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both identities are present with δ = m²d, but stated about the vector field rather than literally about t'_m. `projectedRhs` is the Lean's right-hand side of (7.13) (𝒜_Φ t_m - m²d t_m - proj_{n_Φ^⊥} f_m: the -Kt + ((⟪n,Kt⟫-⟪n',t⟫)/⟪n,n⟫)•n part is 𝒜_Φ t_m), so `normal_projectedRhs` reads n_Φ·(RHS) = -n'_Φ·t_m - m²d (n_Φ·t_m); substituting t'_m = RHS, which `anchoredSolve_projected_equation` states for the copy solve, gives the paper's first identity. The second identity is `tangency_defect_derivative` verbatim (derivative of ⟪n,t⟫ equals -δ⟪n,t⟫ along a solution). Term by term the signs, the single derivative n'_Φ, and the damping coefficient agree. Remaining encoding gap: the Lean works in a real inner-product space (the instance is `ProblemStatement.Space`), while the paper's t_m, f_m are complex harmonic amplitudes paired with a real n_Φ; all coefficients in this display are real and the Lean builds the complex coefficient from separate real and imaginary solves (`realData`/`imagData` in LocalizedCurlRealization), so the complexification is componentwise.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.29)",
+  "status": "formalized",
+  "location": {
+    "page": 33,
+    "rect": [0.330609, 0.708966, 0.537568, 0.06522]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.29",
+      "locator": {
+        "physical": [33],
+        "printed": [33],
+        "text": "Equation (4.29), p. 33, in the statement of Theorem 4.6"
+      },
+      "region": "eq-4.29@p033",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: U = V_0 = 0,\\qquad E = c_\\infty X^{-A}\\,\\mathcal{H}(2d/X),\\qquad \\mathcal{H}(Z) = \\frac{1}{\\Gamma(1+h)}\\int_0^\\infty e^{-v} v^{h} (1+Zv)^{-h}\\,dv."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three clauses are stated; the rewriting is the unfolding of the Lean's definitions and the passage between the profile chart and the Cartesian chart. (a) U = V_0 = 0: nominal_base_eq_heat says the actual summed nominal base velocity equals heatVelocity (nominalHeatNormalization W) h on cartesianExterior h (nominalExteriorRadius W), and heatVelocity C h = AxisymmetricResidual.velocity 0 (heatCoefficient C h) 0, whose documented and checked convention is \"radial velocity -rB, angular velocity rF, axial velocity U\": with B = 0 and the third argument 0 the radial and axial components vanish identically, which is exactly the paper's V_0 = 0 and U = 0, and heatVelocity_eq_angularVector exhibits the field as a multiple of the azimuthal unit vector. In the profile chart the U = 0 half is also stated separately by Witness.after_pulse_open past pulseEndRadius. (b) E: nominal_angular_pure_heat identifies the profile-chart swirl with heatCoefficient on the exterior, and heatCoefficient_eq plus physicalHeat make the azimuthal velocity equal to C · spatialProfile (1+h) (1−t) s = C · s^{−A}𝓗(2τ/s), which is the sentence the paper writes immediately after (4.29) (\"the exact radial heat solution\"). In the paper's own (X,η) variables the same clause is E_eventual_heat: unfolding spatialProfile at a = 1 + h gives X ^ spatialExponent (1+h) * profile (1+h) (2 * d / X) = X^{−A}·𝓗(2d/X), with d supplied by ParametricHeatTail.diffusion eta = 1 − eta², and the prefactor carrierAmplitude F * (switchRadius F XR)^(exponent h) carrying no η. That prefactor is the c_∞ of (4.28): carrierAmplitude F = powerConstant F.data · exp(−A·switchStart) and switchRadius F XR = XR · exp(switchStart), so the product is powerConstant F.data · XR^A, the constant powerE_coefficient exhibits. (c) 𝓗: profile_eq_integral at a = 1 + h reads (Γ(1+h))⁻¹ ∫_{v>0} e^{−v} v^{(1+h)−1} (1+zv)^{1−(1+h)} = (1/Γ(1+h)) ∫_0^∞ e^{−v} v^h (1+zv)^{−h} dv — the same Gamma factor, the same exponent h on v and the same exponent −h on (1+Zv). (d) Threshold: the paper asserts (4.29) for X ≥ X_b; the Lean asserts it for X > nominalExteriorRadius W = max(nominalOuterX W, max(radius, nominalHeatSwitch W · e³)), a strict inequality and a radius of the Lean's own choosing. I verified only that this radius discharges the hlate hypothesis of E_eventual_heat (nominal_late_ratio) and therefore lies beyond the Lean's heat-switch; I did not check it equals the paper's X_b, which the paper fixes in parts (ii)–(iv) by where the stress profile 𝒯_0 vanishes.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

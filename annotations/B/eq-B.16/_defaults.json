@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.16)",
+  "status": "formalized",
+  "location": {
+    "page": 147,
+    "rect": [0.431198, 0.80723, 0.438258, 0.035136]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.16",
+      "locator": {
+        "physical": [147],
+        "printed": [147],
+        "text": "Equation (B.16), p. 147, in the proof of Proposition B.2"
+      },
+      "region": "eq-B.16@p147",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathsf{C} \\;\\ge\\; \\sup_{\\eta \\in \\Omega} |\\phi_*(\\eta)|."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean writes the same condition on C in exponential form: with φ* = exp(Λ F) and F = axisPhase (the primitive of complexGradient, which is -L·H/(H²+σ²), i.e. ζ* of (B.3)), one has |φ*(η)| = exp(Λ Re F(η)), and since exp is increasing sup_Ω |φ*| = exp(Λ · sup_Ω Re F) = exp(Λ · realPartSup F K), which is the Lean hypothesis `Real.exp (Λ * realPartSup F K) ≤ C` and the body of `normalizationThreshold`. Two side conditions differ in packaging: the supremum is taken over a compact set K containing the closed ρ-tube about the real window rather than over the paper's Ω, and the Lean requires only 0 ≤ Λ where the paper has Λ ≥ 1 (the paper's constraint is stronger, so the Lean hypothesis is the one that is assumed in the paper's situation).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

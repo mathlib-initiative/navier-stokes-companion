@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.AssembledSlowBase.nominalACT_histories",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AssembledSlowBase.nominalACT_histories",
+      "line": 1151,
+      "module": "NavierStokes.AssembledSlowBase",
+      "path": "NavierStokes/AssembledSlowBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean#L1151"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AssembledSlowBase.nominalACT_histories",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0 <= X <= 4/Lambda: W.profiles.Ubar = (nominalACT W).Ubar and W.profiles.pressure = (nominalACT W).pressure. Proved by histories_congr_below with the pressure0 agreement supplied by rfl (line 1155).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1151,
+        "text": "theorem nominalACT_histories {X eta : ℝ} (hX : 0 ≤ X) (hi : X ≤ 4 / W.axis.scale)\n    (heta : eta ∈ ReferencePath.parameterInterval) :\n    W.profiles.Ubar (X, eta) = (nominalACT W).Ubar (X, eta) ∧\n    W.profiles.pressure (X, eta) = (nominalACT W).pressure (X, eta)"
+      }
+    }
+  }
+}

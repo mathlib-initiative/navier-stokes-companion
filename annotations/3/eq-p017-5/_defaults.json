@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 17.5",
+  "status": "formalized",
+  "location": {
+    "page": 17,
+    "rect": [0.265917, 0.784613, 0.468389, 0.032224]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p017-5",
+      "locator": {
+        "physical": [17],
+        "printed": [17],
+        "text": "Display 17.5, p. 17, in section 3.6"
+      },
+      "region": "eq-p017-5@p017",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: (R, Z, T) = \\left( r/\\sqrt{Q},\\; z/Q^{D},\\; \\tau/Q \\right), \\qquad \\varepsilon = Q^{h}, \\qquad S_{*} = \\ell^{2}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The three normalizations are present but split across three files and written multiplicatively rather than as quotients. Radial: chartScale n = Q n ^ (-(1/2)), so chartScale n * r = r / √Q since Q n > 0 (ChartScales.Q_pos). Axial and temporal: slowToChart multiplies z by Q ^ (-D h) and τ by Q ^ (-1), i.e. Z = z/Q^D and T = τ/Q, with the paper's exponent D realized as CoordinateAlgebra.D h = 1/2 - h. physicalToChart_apply states the whole map in one formula, except that it carries an extra fourth slot (the auxiliary lift, acted on by TemporalMeanUpdate.coverMap i) that the paper's triple does not mention. ε = Q^h is ChartScales.epsilon verbatim. S_* = ℓ² is ChartScales.S n = n², matching because ChartScales.Q n is an abbreviation for SlotColoring.dyadicQ n = 2^{-n}, so the Lean band index n plays the role of the paper's band index ℓ and Q = 2^{-ℓ}. No single declaration bundles the coordinate triple together with ε and S_*.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

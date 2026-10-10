@@ -17,32 +17,24 @@
       "region": "lemma-6.1@p065",
       "verdicts": [
         {
-          "confidence": 0.87,
-          "evidence": ["CONVENTION: PartitionedCovariance.SlotSystem.disjoint (PartitionedCovariance.lean:228-231) assumes SlotColoring.Adj (SlotColoring.lean:116). Bridge: LabelSumBounds.physicalMask_tsupport_closedWindow (LabelSumBounds.lean:308) + closedWindow_adjacency (L269); masks_force_adjacency (PartitionedCovariance.lean:297).", "ATTRIBUTION_GAP: ActualGaussianCoverage.actualSlowCore (ActualGaussianCoverage.lean:1014) := tsupport nativeMask; ActualCarrierGeometry.labelCarrier_window docstring 'missing dyadic factor is not restored'. Faithful model: PhysicalWaveSum.physicalMask (PhysicalWaveSum.lean:235) = dyadicMask·physicalSlowMask, linked to Adj by LabelSumBounds.lean:308/269.", "CONVENTION: SlotSystem.injective (PartitionedCovariance.lean:227); CorrectionInitialization.ActualPrimary.vectors_det (CorrectionInitialization.lean:3896); SlotGeometry.rotated_axes_injective (SlotGeometry.lean:436).", "PartitionedCovariance.exists_slotSystem states Lemma 6.1. It gives one radius depending only on h, v_r, v_t, explicit rational centres per label colour, quotient injectivity on the closed 2r-rectangles, and disjoint closed ℤ²-periodic lifts π_{i(ℓ)}^{-1} under Adj. I checked: cover=J_g, nativeIndex=i(ℓ) for ℓ≥4, physicalBox matches the S_*^{-3} mesh under C_ℓ=(r/√Q,z/Q^D,(1−t)/Q), and labels and signs are coloured distinctly. The hypothesis is Adj, a superset of meeting K_γ pairs. physicalMask_tsupport_closedWindow and closedWindow_adjacency close that gap in Lean, so the formulation is different but recoverable. The closed Lean rectangles cover the closures. The two minor findings concern downstream carriers and the det≠0 encoding."],
+          "confidence": 0.86,
+          "evidence": ["ATTRIBUTION_GAP: `NavierStokes.PartitionedCovariance.SlotSystem`, NavierStokes/PartitionedCovariance.lean:228, field `disjoint : ∀ L M, SlotColoring.Adj D L M → Disjoint (liftedSupport (nativeIndex h L.1) (slotSet …L)) (liftedSupport (nativeIndex h M.1) (slotSet …M))`. The bridge is NavierStokes/LabelSumBounds.lean:269 together with NavierStokes/SquaredPartition.lean:669 and NavierStokes/LabelSumBounds.lean:308.", "ATTRIBUTION_GAP: NavierStokes/SlotColoring.lean:446-462 binds the injectivity component of `exists_oriented_slots` to `_` (via `colored_labels_have_slots`, SlotGeometry.lean:462); the clause is retained at SlotGeometry.lean:415-418 and as `SlotSystem.injective`, PartitionedCovariance.lean:227.", "Every clause of Lemma 6.1 is stated in Lean for the manuscript's actual data: the covering matrix [[3,1],[1,5]], the axes (1,1-√2) and (√2-1,1), the native index ⌊log_{T_g}(Q^{-1-h}/S_*)⌋, explicit rational color centers, one positive radius independent of label and band, the injectivity of the enlarged parametrization into 𝕋², and cross-label disjointness of the lifted enlarged rectangles. `exists_slotSystem` carries both clauses with a single radius. The only reformulation is the hypothesis: Lean uses the proof's own adjacency graph `Adj` rather than `K_γ ∩ K_{γ'} ≠ ∅`, with the implication proved separately in LabelSumBounds and SquaredPartition. Lean's rectangles are closed, matching the paper's closures in (6.13)."],
           "findings": [
             {
-              "confidence": 0.88,
+              "confidence": 0.85,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "SlotSystem.disjoint takes the proof's interaction relation Adj (two-mesh boxes overlap, levels within 4) as its hypothesis, not K_γ∩K_γ'≠∅. Adj contains every pair whose supports meet, so the Lean is stronger. Lean proves the bridge."
-            },
-            {
-              "confidence": 0.8,
-              "contested": true,
               "kind": "CONTENT",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "The actual-construction label carriers use only tsupport of the native mask χ_{ℓ,a}, with band localisation from q/Q∈(1/4,4). They omit the dyadic factor χ_ℓ(q) and are therefore broader than K_γ. A faithful model of K_γ exists elsewhere."
+              "summary": "The lemma-level declaration states disjointness under `SlotColoring.Adj` (enlarged boxes overlap, band gap ≤ 4), not under `K_γ ∩ K_{γ'} ≠ ∅`; the implication from meeting slow supports is proved in two other files."
             },
             {
               "confidence": 0.9,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "'Injectively parametrized' is encoded as InjOn quotientPoint on the closed rectangle set, for arbitrary vr, vt. Injectivity of (ξ,η)↦c+ξv_r+ηv_t also needs det(v_r,v_t)≠0, which is proved separately for the actual vectors."
+              "summary": "`SlotColoring.physical_labels_have_auxiliary_slots`, the physical-label form of the lemma, discards the injectivity clause it could carry; injectivity survives only in the abstract `exists_oriented_slots` and in the `SlotSystem` structure."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

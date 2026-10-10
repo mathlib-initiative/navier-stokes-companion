@@ -1,0 +1,26 @@
+{
+  "id": "lemma-4.4/support/NavierStokes.NominalConeAssembly.radialPartial_of_left",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalConeAssembly.radialPartial_of_left",
+      "line": 113,
+      "module": "NavierStokes.NominalConeAssembly",
+      "path": "NavierStokes/NominalConeAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L113"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalConeAssembly.radialPartial_of_left",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 113,
+        "text": "theorem radialPartial_of_left {D D' : RadialDomain} {F G : Field}\n    (hF : ContDiffOn ℝ ∞ F D.carrier) (hG : ContDiffOn ℝ ∞ G D'.carrier)\n    {R : ℝ} {p : Point} (hp : p ∈ D.carrier) (hq : p ∈ D'.carrier)\n    (hR : p.1 ≤ R) (he : ∀ x ≤ R, F (x, p.2) = G (x, p.2)) :\n    radialPartial F p = radialPartial G p"
+      }
+    }
+  }
+}

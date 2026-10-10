@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.30)",
+  "status": "formalized",
+  "location": {
+    "page": 57,
+    "rect": [0.263031, 0.317162, 0.606043, 0.02656]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.30",
+      "locator": {
+        "physical": [57],
+        "printed": [57],
+        "text": "Equation (5.30), p. 57, in section 5.4"
+      },
+      "region": "eq-5.30@p057",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: |Z_j|_m \\le C_{j,m}\\, q^{\\,g_j-\\ell_m}\\, \\Lambda_{\\log}(q)^{P_{j,m}}, \\qquad 0 < g_1 \\le g_2 \\le \\cdots \\longrightarrow \\infty,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same estimate, with two encoding choices and the side clauses split off. (a) Jet norm: the paper's |·|_m is defined at (5.23) as the pointwise max of ∂_x^α ∂_t^b over |α|+b ≤ m; Lean uses ‖iteratedFDeriv ℝ m (A j) x‖, the exactly-order-m Fréchet jet. Paper ⇒ Lean because the order-m Fréchet norm is bounded by a dimension-and-m constant times the max of the order-m partials (absorb it into C j m); Lean ⇒ paper by taking C'_{j,m} = max_{m' ≤ m} C_{j,m'}, P'_{j,m} = max_{m' ≤ m} P_{j,m'} and using q ≤ 1 with ℓ nondecreasing. (b) Per entry: `hraw` asks for RawStageBounds on each entry `representatives A B R e` of Z_j separately, with the SAME g and L but entry-dependent C e, P e, whereas the paper writes one C_{j,m}, P_{j,m} for the whole tuple; the two convert by max over the finitely many entries. (c) The side clauses of (5.30) are separate hypotheses, not part of RawStageBounds: 0 < g_j is `hg` (for j ≥ 1), g_1 ≤ g_2 ≤ ⋯ is `hgmono`, and g_j → ∞ is `hgtop` in `flat_residual_of_raw_bounds`. (d) The paper's 'nonnegative, nondecreasing losses ℓ_m independent of j' is Lean's `L : ℕ → ℝ`, which is independent of j but is NOT required nonnegative or monotone — `CutStageEstimates.cutLoss L m = finiteBound L m + m` with `finiteBound L m = 1 + Σ_{k ≤ m} |L k|` makes the loss actually used nonnegative and nondecreasing, so Lean assumes less here. (e) Lean carries the side condition q x ≤ 1 and x ∈ S, matching the paper's domain 0 < q < q_0 ≤ 1; the factor order (Λ_log before the q-power) differs only by commutativity.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

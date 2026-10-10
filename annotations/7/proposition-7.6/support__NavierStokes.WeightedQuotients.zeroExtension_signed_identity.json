@@ -1,0 +1,26 @@
+{
+  "id": "proposition-7.6/support/NavierStokes.WeightedQuotients.zeroExtension_signed_identity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WeightedQuotients.zeroExtension_signed_identity",
+      "line": 725,
+      "module": "NavierStokes.WeightedQuotients",
+      "path": "NavierStokes/WeightedQuotients.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedQuotients.lean#L725"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WeightedQuotients.zeroExtension_signed_identity",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 725,
+        "text": "theorem zeroExtension_signed_identity {U : Set E} {g r : E × ℝ → ℝ}\n    (hpos : ∀ p ∈ U ×ˢ Ioi (0 : ℝ), 0 < g p) {p : E × ℝ} (hp : p.1 ∈ U) :\n    2 * FlatZeroExtension.zeroExtension (fun p => Real.sqrt (g p)) p *\n      FlatZeroExtension.zeroExtension (fun p => r p / (2 * Real.sqrt (g p))) p =\n      FlatZeroExtension.zeroExtension r p"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.14)",
+  "status": "formalized",
+  "location": {
+    "page": 110,
+    "rect": [0.161007, 0.128357, 0.707893, 0.023727]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.14",
+      "locator": {
+        "physical": [110],
+        "printed": [110],
+        "text": "Equation (9.14), p. 110, in the proof of Proposition 9.6"
+      },
+      "region": "eq-9.14@p110",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\langle E_\\theta \\rangle_Y,\\ \\langle E_z \\rangle_Y \\in \\mathcal{M}_{C_* + 0.17}, \\qquad E_\\theta, E_z \\in \\mathcal{M}_H, \\qquad (\\mathcal{P}, \\mathcal{J}_\\theta, \\mathcal{J}_z) \\in \\mathcal{S}_H, \\qquad H = C_* - 2\\kappa_s"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All four clauses are stated, but across two declarations rather than one. With C_* = ExponentLedger.meanExponent sigma = 1 + sigma, the Lean exponents 1 + sigma - 2*kappa and 1 + sigma + 17/100 are literally H = C_* - 2k_s and C_* + 0.17, and H matches ExponentLedger.meanUpdateExponent by definition. native_signed_mean_gain supplies E_theta, E_z in M_H and <E_theta>_Y, <E_z>_Y in M_{C_*+0.17} (with <.>_Y = StateMomentBalances.meanBar, thetaResidual/axialResidual playing E_theta/E_z for the stage output v = waveStage ...). The third clause, (P, J_theta, J_z) in S_H, is waveStage_defectBounds, and there it is stated for an arbitrary tau with 1 + tau <= alpha - kappa, i.e. more generally than the paper's single instance; the paper's H is an admissible tau because C_* - 2k <= C_* + 0.17 - k. finish_mean_stages then carries all four as one hypothesis block at exactly these exponents, which is where the conjunction (9.14) is actually used. Packaging only: nothing is weaker and nothing is missing.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

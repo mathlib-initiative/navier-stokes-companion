@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 87.6",
+  "status": "formalized",
+  "location": {
+    "page": 87,
+    "rect": [0.233057, 0.781594, 0.533911, 0.066465]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p087-6",
+      "locator": {
+        "physical": [87],
+        "printed": [87],
+        "text": "Display 87.6, p. 87, in the proof of Corollary 7.8"
+      },
+      "region": "eq-p087-6@p087",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\begin{aligned}\\mathcal{C}(U+V)-\\mathcal{C}(U) &= \\mathcal{B}(U,V)+\\mathcal{C}(V)\\\\ &= \\mathcal{B}(W_0^{\\mathrm{as}},\\mathcal{L}^{\\mathrm{as}}\\Sigma)+\\mathcal{B}(E,\\mathcal{L}^{\\mathrm{as}}\\Sigma)+\\mathcal{B}(U,R)+\\mathcal{C}(V)\\\\ &= \\Sigma+\\mathcal{B}(E,\\mathcal{L}^{\\mathrm{as}}\\Sigma)+\\mathcal{B}(U,R)+\\mathcal{C}(V).\\end{aligned}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every equality of the chain is stated in Lean, but by four theorems rather than one display, and at a different level of averaging; the recovery is routine. Conventions: the paper's (7.23) sets C(w) = ⟨⟨w_r w_tan⟩_θ⟩_Y and B(w,v) = ⟨⟨w_r v_tan + v_r w_tan⟩_θ⟩_Y, i.e. B is already symmetrized and both are two-vectors formed from the double average; Lean carries the full 3x3 angular-average tensor `bilinearCovariance` / `symmetricCovariance` and applies the auxiliary-torus average `meanBar` separately, so the paper's B(w,v) is `meanBar (symmetricCovariance w v 0 1)` and `… 0 2` — exactly the content of `meanBar_symmetricCovariance` (SignedMeanGain.lean:1208). Line 1: `covariance_increment_exact` gives C(U+V) − C(U) = B_full(U,V) + B_full(V,U) + B_full(V,V), which is the paper's B(U,V) + C(V) once B is read as the symmetrized form. Line 2: `incrementTensor_split` (equivalently `covariance_increment_split`) separates the increment into `crossTensor` = symmetricCovariance primary tangent = B(W_0^as, L^as Σ) and `remainderTensor`, and `signedRemainder_exact` expands the remainder into symmetricCovariance (old − primary) tangent + symmetricCovariance old curl + bilinearCovariance (tangent+curl) (tangent+curl) = B(E, L^as Σ) + B(U, R) + C(V), using E = U − W_0^as as in the Corollary's hypothesis U = W_0^as + E. Note the split at `covariance_increment_split` is definitional — `signedRemainder` is literally defined as the increment minus the cross, and `p` there is an unconstrained oscillation — so what it supplies is the paper's grouping, and the mathematical content of line 2 sits in `signedRemainder_exact`. Line 3: the substitution B(W_0^as, L^as Σ) = Σ is `native_physical_cross` (SignedMeanGain.lean:510) for an arbitrary two-vector σ at one chart point, and `native_family_cross` (line 1284) for the assembled label families with Σ instantiated as the requested stress `physicalSigma`; both are stated for the double average, which is the paper's B, and both give the two components (0,1), (0,2) that make up the paper's two-vector. The chain is used in this grouped form in the Lean proof of `signed_mean_gain_of_cross` (SignedMeanGain.lean:996-1009).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

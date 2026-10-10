@@ -1,0 +1,26 @@
+{
+  "id": "lemma-10.5/support/NavierStokesR3.PressureFlux.exists_uniform_actual_pressure_flux_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.PressureFlux.exists_uniform_actual_pressure_flux_bound",
+      "line": 576,
+      "module": "NavierStokes.R3.PressureFlux",
+      "path": "NavierStokes/R3/PressureFlux.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureFlux.lean#L576"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.PressureFlux.exists_uniform_actual_pressure_flux_bound",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 576,
+        "text": "theorem exists_uniform_actual_pressure_flux_bound {T : ℝ} {u v : VelocityField}\n    {p q : PressureField} (H : PressureRecovery.Hypotheses T u v p q)\n    (M₀ U₀ G₀ : ℝ) (hM₀ : 0 ≤ M₀) (hU₀ : 0 ≤ U₀) (hG₀ : 0 ≤ G₀)\n    (hM : ∀ t ∈ Icc 0 T, MemLp (fun x => (u - v) (t, x)) 2 volume ∧\n      comparisonLpNorm 2 (fun x => (u - v) (t, x)) ≤ M₀)\n    (hU : ∀ t ∈ Icc 0 T, MemLp (fun x => u (t, x)) 3 volume ∧\n      comparisonLpNorm 3 (fun x => u (t, x)) ≤ U₀)\n    (hG : ∀ t ∈ Icc 0 T, ∀ i j : Fin 3,\n      Integrable (tensorDiff u v t i j) volume ∧ comparisonLpNorm 1 (tensorDiff u v t i j) ≤ G₀) :\n    ∃ CP : ℝ, 0 ≤ CP ∧ ∀ R : ℝ, 1 ≤ R → ∀ t ∈ Ioo 0 T,\n      |∫ x, (p - q) (t, x) * fderiv ℝ (ComparisonCutoffs.weight R) x ((u - v) (t, x))| ≤ CP *\n        ((cutoffL6 (ComparisonCutoffs.cutoff R) (u - v) t ^ (1 / 2 : ℝ) + 1) *\n          (dissipationRoot (ComparisonCutoffs.cutoff R) (u - v) t / R + 1 / R ^ 2) +\n          R ^ (-(7 / 4 : ℝ)) * cutoffL6 (ComparisonCutoffs.cutoff R) (u - v) t ^ (3 / 4 : ℝ))"
+      }
+    }
+  }
+}

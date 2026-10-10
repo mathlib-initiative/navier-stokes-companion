@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.26)",
+  "status": "partial",
+  "location": {
+    "page": 55,
+    "rect": [0.168243, 0.830025, 0.700825, 0.036621]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.26",
+      "locator": {
+        "physical": [55],
+        "printed": [55],
+        "text": "Equation (5.26), p. 55, in the proof of Proposition 5.3"
+      },
+      "region": "eq-5.26@p055",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.74,
+          "evidence": ["paper: \\left| \\partial_{x_\\perp}^{\\beta} \\partial_z^{k} \\partial_t^{l} \\bigl[ q^{b} g(x_\\perp/\\sqrt{q},\\eta) \\bigr] \\right| \\le C_m (1+|b|)^m \\|g\\|_{C^m} \\, q^{\\,b - a/2 - Dk - l}, \\qquad m = a + k + l."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. Same object and same shape of bound, but a cruder exponent and a non-explicit constant. (i) Exponent: the paper charges a/2 per transverse derivative, D = 1/2 - h per axial derivative and 1 per time derivative, giving q^{b - a/2 - Dk - l}; the Lean charges one power of q per physical derivative of any type, giving q^{b - m} with m the total order (the docstring at BaseResidual.lean:152-153 states this loss explicitly, and ActualBaseVelocityBounds.monomial_rate packages the same rate b - m on a filter). Since 0 < h < 1/2 gives 0 < D < 1/2, we have a/2 + Dk + l ≤ a + k + l = m, so for 0 < q ≤ 1 the Lean right-hand side is at least the paper's and is strictly larger whenever a or k is nonzero: the Lean bound is implied by (5.26) and not conversely. (ii) Constant: the paper's constant is explicit, C_m (1 + |b|)^m ‖g‖_{C^m}, linear in the C^m norm of the profile and polynomial in |b|; the Lean constant is a bare existential depending on f, b, the compact set and m, with no stated dependence. (iii) Domain: the Lean quantifies over a fixed compact set K with q ≤ 1 and X in Icc lo hi (comparable to the paper's fixed compact profile range 0 ≤ X ≤ X_max, 0 < q ≤ 1), and monomial_rate localizes further to a PhysicalApproach filter rather than giving a pointwise bound on the whole range. Severity is low rather than medium because the conclusion (5.25) that (5.26) is applied to allows a lump loss K_m independent of N and a constant C_{N,m} that may depend on N, so the crude loss m and the non-uniform constant still suffice: BaseResidual.finite_error_rate (BaseResidual.lean:2477) does prove a rate 2*N*h - 2 - M whose loss 2 + M is independent of N.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

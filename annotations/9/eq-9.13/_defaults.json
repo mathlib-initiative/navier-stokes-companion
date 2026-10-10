@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.13)",
+  "status": "formalized",
+  "location": {
+    "page": 109,
+    "rect": [0.242755, 0.678571, 0.623938, 0.027048]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.13",
+      "locator": {
+        "physical": [109],
+        "printed": [109],
+        "text": "Equation (9.13), p. 109, in the proof of Proposition 9.6"
+      },
+      "region": "eq-9.13@p109",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\langle \\Delta W \\rangle_Y = \\mathcal{B}(w_0^{\\mathrm{tan}}, t_s) + \\mathcal{B}(w - w_0^{\\mathrm{tan}}, t_s) + \\mathcal{B}(w, r_s) + \\langle\\langle s \\otimes s \\rangle_\\theta\\rangle_Y, \\qquad s = t_s + r_s,\\ \\ \\mathcal{B}(a,b) = \\langle\\langle a \\otimes b + b \\otimes a \\rangle_\\theta\\rangle_Y"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Composition of two stated identities, plus one linear average. Putting p = w_0^tan (primary), u = w (old), t = t_s (tangent), k = r_s (curl), covariance_increment_split gives DeltaW = B(p,t) + signedRemainder p u t k, and signedRemainder_exact rewrites the remainder as B(u-p,t) + B(u,k) + <(t+k)(x)(t+k)>_theta. Term by term this is the paper's four summands, including the unsymmetrised last term <s (x) s>_theta with s = t_s + r_s. The one gap in form: the Lean identity is stated after the angular average only (bilinearCovariance = <.>_theta), pointwise in the fast-torus variable, whereas the paper displays it under <.>_Y as well; <.>_Y (PressureStream.torusAverage / StateMomentBalances.meanBar) is linear, so applying it to both sides of the Lean identity yields (9.13) verbatim. I did not find a declaration that states the Y-averaged form directly.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

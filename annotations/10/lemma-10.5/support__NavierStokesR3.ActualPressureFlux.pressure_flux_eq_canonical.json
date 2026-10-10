@@ -1,0 +1,26 @@
+{
+  "id": "lemma-10.5/support/NavierStokesR3.ActualPressureFlux.pressure_flux_eq_canonical",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.ActualPressureFlux.pressure_flux_eq_canonical",
+      "line": 38,
+      "module": "NavierStokes.R3.ActualPressureFlux",
+      "path": "NavierStokes/R3/ActualPressureFlux.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ActualPressureFlux.lean#L38"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.ActualPressureFlux.pressure_flux_eq_canonical",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 38,
+        "text": "theorem pressure_flux_eq_canonical {T t : ℝ} {u v : VelocityField} {p q : PressureField}\n    (H : Hypotheses T u v p q) (ht : t ∈ Ioo 0 T) {χ : Space → ℝ}\n    (hχ : ContDiff ℝ ∞ χ) (hcχ : HasCompactSupport χ) :\n    (∫ x : Space, (p - q) (t, x) * fderiv ℝ χ x ((u - v) (t, x))) =\n      (∑ i : Fin 3, ∑ j : Fin 3, pressurePair i j (tensorDiff u v t i j)\n        (realTest (fun x : Space => fderiv ℝ χ x ((u - v) (t, x)))\n          (fluxFunction_smooth hχ (difference_slice_smooth H ht))\n          (fluxFunction_hasCompactSupport hcχ (fun x : Space => (u - v) (t, x))))).re"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "definition-6.4/support/NavierStokes.WeightedRadialPrimitive.supported_meanClass_canonical_transport",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WeightedRadialPrimitive.supported_meanClass_canonical_transport",
+      "line": 1086,
+      "module": "NavierStokes.WeightedRadialPrimitive",
+      "path": "NavierStokes/WeightedRadialPrimitive.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedRadialPrimitive.lean#L1086"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WeightedRadialPrimitive.supported_meanClass_canonical_transport",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1086,
+        "text": "theorem supported_meanClass_canonical_transport\n    {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hS : ∀ n, 1 ≤ S n)\n    (α : ℝ) (M : ℕ → ℝ) (v : ℕ → E) (f : ℕ → ℝ × E → V)\n    (hf : ∀ n, ContDiff ℝ ∞ (f n)) (hs : ∀ n, RadialAlias.RadiallySupported a b (f n))\n    (hclass : WeightedClasses.MeanClass\n      (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α f) :\n    let g"
+      }
+    }
+  }
+}

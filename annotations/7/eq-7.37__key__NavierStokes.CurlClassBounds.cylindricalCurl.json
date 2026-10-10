@@ -1,0 +1,57 @@
+{
+  "id": "eq-7.37/key/NavierStokes.CurlClassBounds.cylindricalCurl",
+  "kind": "equation",
+  "label": "Equation (7.37)",
+  "status": "formalized",
+  "location": {
+    "page": 85,
+    "rect": [0.187899, 0.707734, 0.681163, 0.028623]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CurlClassBounds.cylindricalCurl",
+      "line": 213,
+      "module": "NavierStokes.CurlClassBounds",
+      "path": "NavierStokes/CurlClassBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L213"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CurlClassBounds.cylindricalCurl",
+        "kind": "def"
+      },
+      "item": "eq-7.37",
+      "locator": {
+        "physical": [85],
+        "printed": [85],
+        "text": "Equation (7.37), p. 85, in section 7.4"
+      },
+      "region": "eq-7.37@p085",
+      "relation": "defines",
+      "role": "key",
+      "snippet": {
+        "line": 213,
+        "text": "noncomputable def cylindricalCurl (R : D → ℝ) (Vr Vθ Vz : D → D) (a : D → ComplexVector) (x : D) : ComplexVector := ![(R x)⁻¹ • along Vθ (fun y => a y 2) x - along Vz (fun y => a y 1) x, along Vz (fun y => a y 0) x - along Vr (fun y => a y 2) x, along Vr (fun y => a y 1) x + (R x)⁻¹ • a x 1 - (R x)⁻¹ • along Vθ (fun y => a y 0) x]"
+      },
+      "verdicts": [
+        {
+          "confidence": 0.95,
+          "evidence": ["paper: \\operatorname{curl}_* A = \\left( R^{-1}\\partial_\\theta A_z - D_z A_\\theta,\\; D_z A_r - D_r A_z,\\; (D_r + R^{-1})A_\\theta - R^{-1}\\partial_\\theta A_r \\right)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "same",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has this formula.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

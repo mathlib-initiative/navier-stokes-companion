@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.35)",
+  "status": "formalized",
+  "location": {
+    "page": 58,
+    "rect": [0.303761, 0.143292, 0.565307, 0.041852]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.35",
+      "locator": {
+        "physical": [58],
+        "printed": [58],
+        "text": "Equation (5.35), p. 58, in the statement of Lemma 5.4"
+      },
+      "region": "eq-5.35@p058",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: |U - U^{[J]}|_m \\le 2^{-J} q^{\\,g_{J+1}/2 - \\ell'_m} \\qquad \\Bigl(0 < q < \\frac{1}{2a_J}\\Bigr)"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The paper's single tuple bound is two conjuncts in Lean: Result.tail_velocity for the velocity entry and Result.tail_scalars for the pressure/stress entries, with different explicit losses (max(cutLoss L (m+1), cutLoss L m) + 1 against cutLoss L m — the extra derivative being the curl). Taking ℓ'_m to be the larger of the two gives the paper's statement; both are functions of m and L only, so the paper's 'ℓ'_m is independent of J' holds. Constants and the domain condition match exactly: (1/2)^J = 2^{-J}, exponent g(J+1)/2 - ℓ'_m, condition q w < 1/(2 a_J). Two conventions: (i) Lean bounds ‖iteratedFDeriv ℝ m‖ at exactly order m while the paper's |V|_m of (5.23) is the pointwise max of ∂_x^α ∂_t^b V over |α|+b ≤ m; since a j ≥ 1 forces q < 1/2 and cutLoss is nondecreasing in m, the order-k bound for k ≤ m is itself ≤ 2^{-J} q^{g(J+1)/2 - ℓ'_m}, and each partial derivative is a value of iteratedFDeriv on unit coordinate vectors, so the Lean bounds imply the paper's max. (ii) Lean's order range is m ≤ J+2 (velocity) and m ≤ J+3 (scalars) with no lower bound on J, which contains the paper's range J ≥ max(1,m).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

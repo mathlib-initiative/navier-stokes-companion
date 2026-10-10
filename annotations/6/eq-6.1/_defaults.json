@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.1)",
+  "status": "formalized",
+  "location": {
+    "page": 62,
+    "rect": [0.143423, 0.822568, 0.725487, 0.04075]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.1",
+      "locator": {
+        "physical": [62],
+        "printed": [62],
+        "text": "Equation (6.1), p. 62, in section 6.1"
+      },
+      "region": "eq-6.1@p062",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: Q = 2^{-\\ell}, \\qquad \\varepsilon = Q^{h}, \\qquad S_{*} = \\ell^{2}, \\qquad R = \\frac{r}{\\sqrt{Q}}, \\qquad Z = \\frac{z}{Q^{D}}, \\qquad T = \\frac{\\tau}{Q}, \\qquad \\tau = 1 - t."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every scale of (6.1) is defined, in the direction the paper writes, but spread over several declarations rather than one. Identical: Q = 2^{-ℓ} (dyadicQ, with the dyadic index as a natural number n in place of ℓ), ε = Q^h (epsilon), S_* = ℓ² (S n = n²), D = 1/2 − h (CoordinateAlgebra.D). The physical-to-chart map is PhysicalGraphBounds.chartLinear, whose docstring calls it the \"Cartesian form of the exact chart (T, R cos θ, R sin θ, Z)\": chartLinear_apply gives the components (−Q^{-1}·t, (Q^{-1/2}·x, (Q^{-1/2}·y, Q^{-D h}·z))). The two space slots carry Q^{-1/2} on the Cartesian (x,y), so their norm is r/√Q, which is R = r/√Q; the third is Z = z/Q^D verbatim, with D h = 1/2 − h. The same radial scaling is also packaged on its own as scaledRadial n = Q^{-1/2} • radialProjection (radialProjection p = (p.2 0, p.2 1)), with inverse unscale_radial. For the time slot, physicalChart adds Q^{-1} to chartLinear's first component, and physicalChart_time states (physicalChart h n p).1 = (1 − p.1)/Q n, which is T = τ/Q with τ = 1 − t, as a theorem. So the only gap is packaging: no single declaration bundles the seven assignments, and the dyadic exponent is a natural number n rather than the paper's ℓ. Secondary remark: the band chart of SimilarityHomogeneity encodes the same scalings in the opposite direction and in a squared radial slot, chartToPhysical h Q (R,(Z,T)) = (1 − Q·T, (Q·R²/2, Q^D·Z)); chartToPhysical_radial (hypothesis 0 < Q only) gives the radial slot s = (√Q·R)²/2, from which r = √Q·R needs the square-root step and hence R ≥ 0, which the paper's annulus supplies.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

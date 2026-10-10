@@ -1,0 +1,26 @@
+{
+  "id": "definition-6.4/support/NavierStokes.CommonCoverClass.meanClass_profile_bandCommonChart",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CommonCoverClass.meanClass_profile_bandCommonChart",
+      "line": 1111,
+      "module": "NavierStokes.CommonCoverClass",
+      "path": "NavierStokes/CommonCoverClass.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverClass.lean#L1111"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CommonCoverClass.meanClass_profile_bandCommonChart",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1111,
+        "text": "theorem meanClass_profile_bandCommonChart\n    {V : Type} [NormedAddCommGroup V] [NormedSpace ℝ V]\n    {h a b : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2) (ha : 0 < a)\n    (band : ℕ → ℕ) (hband : ∀ n, 1 ≤ band n)\n    (ζ : ℝ → ℝ) (hζ : ContDiff ℝ ∞ ζ) (hζ0 : ∀ X ∈ Ioo a b, 0 ≤ ζ X)\n    {α : ℝ} {f : ℕ → SlowPoint × Plane → V}\n    (hf : WeightedClasses.MeanClass\n      (sourceStrip (profileSlowStrip hh hh1 ha band hband ζ hζ hζ0)) α f)\n    (gapBound : ℕ) (index gap : ℕ → ℕ) (forward : ℕ → Bool)\n    (hoverlap : ∀ n, band n ≤ band (index n) + 4 ∧ band (index n) ≤ band n + 4)\n    (hgap : ∀ n, gap n ≤ gapBound) :\n    WeightedClasses.MeanClass\n      (sourceStrip (profileSlowStrip hh hh1 ha band hband ζ hζ hζ0)) α\n      (fun n x => f (index n) (bandCommonChart (CoordinateAlgebra.D h)\n        (band n) (band (index n)) (forward n) (gap n) x))"
+      }
+    }
+  }
+}

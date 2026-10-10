@@ -1,0 +1,31 @@
+{
+  "id": "proposition-9.1/attributed/NavierStokes.ActualPrimaryDynamics.linearResidual_eq",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualPrimaryDynamics.linearResidual_eq",
+      "line": 1121,
+      "module": "NavierStokes.ActualPrimaryDynamics",
+      "path": "NavierStokes/ActualPrimaryDynamics.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryDynamics.lean#L1121"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualPrimaryDynamics.linearResidual_eq",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The homogeneous-pulse instance for the actual primary piece: `(piece U j L).linearResidual n x = (piece U j L).linearGoodField n x + (piece U j L).excluded n x`, proved from `ψ n x • a.principal = 0` (the homogeneous amplitude equation where the cutoff is nonzero) — the paper's `f_m = 0` case of the",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1121,
+        "text": "theorem linearResidual_eq (U : LocalSignedRequest.SlowRegion (2*h))\n    (j : Fin 2) (L : Label B N0) (n : ℕ) {x : FullPoint}\n    (hx : x ∈ ActualPrimaryCoherence.positiveRadialChart) (i : Fin 3) :\n    (piece U j L).linearResidual n x i =\n      (piece U j L).linearGoodField n x i + (piece U j L).excluded n x i"
+      }
+    }
+  }
+}

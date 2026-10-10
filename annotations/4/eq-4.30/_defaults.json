@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.30)",
+  "status": "formalized",
+  "location": {
+    "page": 34,
+    "rect": [0.334814, 0.143346, 0.534096, 0.02656]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.30",
+      "locator": {
+        "physical": [34],
+        "printed": [34],
+        "text": "Equation (4.30), p. 34, in the statement of Theorem 4.6"
+      },
+      "region": "eq-4.30@p034",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: U = 0,\\qquad E = c_{\\mathrm{patch}}\\,(1+\\eta^2)^{-1} X^{-1/2-\\lambda},"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The rewriting is the factorization of the amplitude, and for the positivity patch also the change from X to the radial variable R = √(2X). The paper asserts (4.30) on the two reserved intervals I_pos and I_mean; both are stated for the final leading profile W. (a) Mean patch: nominal_mean_fields gives W.U p = 0 ∧ W.E p = xAmplitude F XR p.2 · p.1^(−(1/2+λ)) on window … .mean, with λ = F.data.core.lam; xAmplitude_shape rewrites xAmplitude F XR eta = xAmplitude F XR 0 / (1 + eta²), so with c_patch := xAmplitude F XR 0 this is exactly E = c_patch (1+η²)^{−1} X^{−1/2−λ} and U = 0, verbatim. (b) Positivity patch: nominal_positive_patch gives W.U (R²/2, eta) = 0 ∧ W.E (R²/2, eta) = background λ (radialAmplitude F XR eta) R = xAmplitude F XR eta · 2^(1/2+λ) · R^(−1−2λ); by square_half_power, 2^(1/2+λ)·R^(−1−2λ) = (R²/2)^(−(1/2+λ)), so with X = R²/2 this is the same formula, xAmplitude F XR eta · X^(−(1/2+λ)), and the same factorization of the amplitude applies. (c) ReservedPatches.heated_fields is the underlying stage-level statement, for every Slot other than .heat — which covers .positive, .mean and also .modulation, slightly more than the paper asks here. c_patch = xAmplitude F XR 0 does not mention X or η (ReservedPatches.lean:269: it is built from the schedule parameters P, dropLength, lam, holdStart and XR), matching the paper's constant independent of X and η, and xAmplitude_pos gives its positivity. I did not check that the Lean's window log-offsets (leftOffset/rightOffset: .positive ↦ (−14,−9), .mean ↦ (−8,−3), ReservedPatches.lean:29,35) place the two patches where the paper places I_pos and I_mean inside (X_a, X_b).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

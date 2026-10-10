@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 82.2",
+  "status": "formalized",
+  "location": {
+    "page": 82,
+    "rect": [0.316779, 0.253881, 0.366669, 0.026639]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p082-2",
+      "locator": {
+        "physical": [82],
+        "printed": [82],
+        "text": "Display 82.2, p. 82, in section 7.3"
+      },
+      "region": "eq-p082-2@p082",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: b_\\sigma \\;=\\; \\chi_g(\\xi_g)\\, \\psi(v)\\, t^{\\mathrm{h}}_\\sigma \\cos(k\\Phi_\\sigma), \\qquad \\sigma \\in \\{+,-\\},"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The three factors match one for one — χ_g(ξ_g) is PartitionedCovariance.cutoff radius z.1, ψ(v) is GaussianTailFlat.profile / slotCutoff, and t^h_σ is PrimaryPulseBounds.normalizedPulse, the ambient-frame homogeneous pulse of Lemma 7.4 — and localPrimaryProfile is exactly their product; componentwise this is Pulse.radialProfile (using P.x, the radial component the paper calls x) and Pulse.tangentProfile i (using P.t). The regrouping: (i) the Lean never isolates b_σ as a named field. The carrier cos(kΦ_σ) is supplied by PartitionedCovariance.wave, whose first argument is an amplitude; b_σ is wave with that argument 1, whereas the construction instantiates it as `outer * amplitude ε (mask D U q x) P.matrix T j` (PairData.radialWave/tangentWave) and as commonAmplitude (tangentMode), i.e. with a_σ and the slow mask η_β already multiplied in — precisely the two factors the paper excludes from b_σ. (ii) The Lean composes with `covered n` / a tsum over TorusInverse.Frequency, the periodization of the auxiliary rectangle, where the paper says 'extend by zero off that sign's auxiliary rectangle'; disjointness of the two signs is carried by slotSet of signedLabel U j. (iii) ψ is evaluated at the normalized slot coordinate z.2 / L (L = slot length) rather than at v. (iv) cos(kΦ_σ) appears as cos(mode·θ + phase(Y)) with mode = k·p a nonzero integer, the equality being cosine_actual_phase; in tangentMode the same carrier appears as the real part of a complex vectorMode. Each step is a rewriting, not a change of content.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

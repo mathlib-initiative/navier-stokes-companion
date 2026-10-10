@@ -1,0 +1,39 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.17)",
+  "status": "formalized",
+  "location": {
+    "page": 148,
+    "rect": [0.420645, 0.813167, 0.445652, 0.023034]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.17",
+      "locator": {
+        "physical": [148],
+        "printed": [148],
+        "text": "Equation (B.17), p. 148, in the statement of Proposition B.3"
+      },
+      "region": "eq-B.17@p148",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: S_q \\ge 2.5 + .95\\,\\Lambda L \\chi."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Constants and factors agree exactly: `19/20` is .95, `5/2` is 2.5, `NaturalAxisData.L h η = 1 - 2*h*η^2` is L, `NaturalAxisData.chi h j σ η = H^2/(H^2+σ^2)` is χ, and the domain `rescalePoint Λ p ∈ entranceSet` unfolds to `Λ*X ∈ [0, 41/10] ∧ η ∈ [-1,1]`, i.e. the paper's rectangle [0,4.1]×[-1,1] in the rescaled radius Y = ΛX. The only differences are (i) the Lean asserts the strict inequality `… < Sq` where the paper writes `S_q ≥ …`, which implies the paper's claim, and (ii) the product is written `(19/20) * L * Λ * χ` rather than `.95 Λ L χ` — reassociation only. The S_q of the formula is `NavierStokes.NaturalEntrance.Sq` (NaturalEntrance.lean:27), `-transportW h V p * (1 + p.1 * partialY f p / f p) - h * (1 - 2 * p.2 * U p) - transportH h U p * (partialEta f p / f p)`, which matches the paper's defining formula S_q = -W l - h(1 - 2ηU) - H_c (log E)_η on p. 149 with l = 1 + D_X log Φ (the η-derivative of log E = log(√(2X)φ) equals φ_η/φ).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

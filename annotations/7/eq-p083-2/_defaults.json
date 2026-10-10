@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 83.2",
+  "status": "formalized",
+  "location": {
+    "page": 83,
+    "rect": [0.252003, 0.186184, 0.49621, 0.054195]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p083-2",
+      "locator": {
+        "physical": [83],
+        "printed": [83],
+        "text": "Display 83.2, p. 83, in the statement of Lemma 7.4"
+      },
+      "region": "eq-p083-2@p083",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: c\\sqrt{L_s} \\;\\le\\; \\int_0^{L_s} \\psi^2 x^2 \\, dv \\;\\le\\; C\\sqrt{L_s}, \\qquad \\int_0^{L_s} \\frac{|v - L_s/2|}{L_s}\\, \\psi^2 x^2 \\, dv \\;\\le\\; C."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Three routine rewritings, no change of content. (i) The Lean slot radius satisfies r^2 = L_s (`PrimaryCovarianceBounds.slotRadius_sq`, line 173), so its `r` is the paper's √L_s and `lowerMassConstant a B * r ≤ mass ≤ A²√(π/(2b))·r` is exactly c√L_s ≤ ∫ψ²x² ≤ C√L_s with explicit constants. (ii) The integrals are over ℝ, not [0, L_s]; they agree because ψ vanishes off Icc (r^2/6) (5r^2/6) (`PulseBounds.cutoff_zero`). (iii) The second bound is stated as centeredMoment ψ x (r²/2) ≤ A²·firstGaussianMoment(2b)·r², i.e. ∫|v − L_s/2|ψ²x² ≤ C·L_s; dividing by L_s > 0 gives the paper's ∫ (|v−L_s/2|/L_s) ψ²x² ≤ C. The paper's own justification (substitute w = (v − L_s/2)/√L_s, reduce to ∫e^{-cw²} and ∫|w|e^{-cw²}) is the same route the Lean takes, through `integral_gaussian_scaled` and `firstGaussianMoment`.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

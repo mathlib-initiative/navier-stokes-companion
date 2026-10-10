@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.2/attributed/NavierStokes.ParticularWaveBounds.commonPressure_periodic",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ParticularWaveBounds.commonPressure_periodic",
+      "line": 2472,
+      "module": "NavierStokes.ParticularWaveBounds",
+      "path": "NavierStokes/ParticularWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularWaveBounds.lean#L2472"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ParticularWaveBounds.commonPressure_periodic",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: PeriodicAt (commonPressure t f g hab κ frequency) p whenever PeriodicAt f p: the pressure coefficient descends to the same torus as the source."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 2472,
+        "text": "theorem commonPressure_periodic (t : TangentData P ProblemStatement.Space)\n    (f : P × Plane → ComplexVector) (g : Geometry) {a b : ℝ} (hab : a ≤ b) (κ : Plane → ℝ)\n    (frequency : ℝ) (p : P) (hp : PeriodicAt f p) : PeriodicAt (commonPressure t f g hab κ frequency) p"
+      }
+    }
+  }
+}

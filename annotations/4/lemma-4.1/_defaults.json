@@ -17,23 +17,14 @@
       "region": "lemma-4.1@p025",
       "verdicts": [
         {
-          "confidence": 0.92,
-          "evidence": ["CONFIRMED_CONTENT: NavierStokes.SimilarityProfile.partialT_pullback / partialZ_pullback (SimilarityProfile.lean:216, :233), hypothesis `hf : DifferentiableAt ℝ f (inner h p)` with `InnerProfile := ℝ × ℝ → ℝ` (L20); `s = p.2.1` ranges over all of ℝ", "The auditor and both skeptics agree."],
-          "findings": [
-            {
-              "confidence": 0.92,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "Lean profiles are functions on all of R^2 that are Frechet-differentiable at (X,eta). The paper's profiles live on X>=0 (on [0,X_c]x[-1,1] with one-sided boundary derivatives). On the axis s=0 the Lean statement needs a two-sided extension of f. This changes only the formulation."
-            }
-          ],
+          "confidence": 0.93,
+          "evidence": ["Lemma 4.1 is formalized twice over, as genuine derivatives: hasDerivAt_pullback_time/_z (and the partialT/partialZ restatements) give ∂_t(q^b f) = q^{b-1}T_b f and ∂_z(q^b f) = q^{b-D}Z_b f for arbitrary real b, with T_b and Z_b defined by timeCoeff/axialCoeff in exactly the paper's form, over the paper's L = 1-2hη². The underlying q, η, X are the manuscript's coordinates, not postulates: coordinateQ is the implicit root, tau_coordinate_identity and scalarSlope_eq_L tie it to τ = q(1-η²) and to L. The one difference is a weakening of the hypothesis from smooth f to differentiability at the point, which strengthens the Lean statement. Nothing to report."],
+          "findings": [],
           "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
           "relation": "lean_stronger",
           "severity": "none",

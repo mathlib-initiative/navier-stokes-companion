@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (10.1)",
+  "status": "formalized",
+  "location": {
+    "page": 117,
+    "rect": [0.256407, 0.37728, 0.612666, 0.082996]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-10.1",
+      "locator": {
+        "physical": [117],
+        "printed": [117],
+        "text": "Equation (10.1), p. 117, in section 10.1"
+      },
+      "region": "eq-10.1@p117",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\mathcal{S}_n = q^{1-A+2nh}\\int_0^X U_n(X',\\eta)\\,dX', \\qquad \\mathcal{S} = \\mathcal{S}_0 + \\sum_{n\\ge 1}\\chi(c_n q)\\,\\mathcal{S}_n, \\qquad \\mathcal{A}_{\\mathrm{base}} = \\frac{\\mathcal{S}}{r}\\,e_\\theta."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. No Lean declaration names the single stage S_n; integratedStream_eq_primitive states the summed form S = q^{1-A} * (prim_0 + Σ_{j≥1} χ(a_j q) q^{2hj} prim_j) with prim_j = ProfileHistories.primitive (d.axial j) = ∫_0^X U_j(X',η)dX'. Distributing the factor q^{1-A} across the sum gives the paper's S_n = q^{1-A+2nh}∫_0^X U_n dX' and S = S_0 + Σ χ(a_n q) S_n termwise, so the two displays agree; the cutoff scales are Lean's schedule a_n (SmoothCutoffs.scaledCutoff (a n) q = cutoff (a n * q)) where the paper writes c_n. For the third line, Lean carries the profile H = S/s with s = r²/2 (AxisymmetricFields.radialEnergy), and the azimuthal part of AxisymmetricFields.potential H K is (1/2)H(t,r²/2,z)(−x₂,x₁,0) = (S/r²)(−x₂,x₁,0) = (S/r)e_θ, i.e. the paper's A_base; Lean's potential additionally carries an axial component K e_z (SlowBorelBase.baseVelocity instantiates K = swirlPotential), which generates the swirl, whereas the paper's A_base is purely azimuthal and puts the swirl in the separate term B e_θ of (9.21). Setting K = 0 recovers the paper's display exactly.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

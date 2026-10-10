@@ -1,0 +1,25 @@
+{
+  "id": "eq-B.22/key/NavierStokes.OutgoingSchedule.sigma",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.OutgoingSchedule.sigma",
+      "line": 26,
+      "module": "NavierStokes.OutgoingSchedule",
+      "path": "NavierStokes/OutgoingSchedule.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean#L26"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.OutgoingSchedule.sigma",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "snippet": {
+        "line": 26,
+        "text": "def sigma (x : ℝ) := FlatCutoff.edge 1 x / (FlatCutoff.edge 1 x + FlatCutoff.edge 1 (1 - x)), with edge c x = if x ≤ 0 then 0 else exp (-c / x ^ 2) — literally the σ of (A.5); it is NOT the step wired into slopeCutoff"
+      }
+    }
+  }
+}

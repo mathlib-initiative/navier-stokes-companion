@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.46)",
+  "status": "formalized",
+  "location": {
+    "page": 141,
+    "rect": [0.254168, 0.670033, 0.6149, 0.043929]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.46",
+      "locator": {
+        "physical": [141],
+        "printed": [141],
+        "text": "Equation (A.46), p. 141, in the proof of Lemma A.8"
+      },
+      "region": "eq-A.46@p141",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: T_\\theta(r) \\;=\\; \\frac{1}{r^2}\\int_r^\\infty r'^2\\,\\mathcal{R}_\\theta^{(0)}(r')\\,dr',\\qquad T_z(r) \\;=\\; \\frac{1}{r}\\int_r^\\infty r'\\,\\mathcal{R}_z^{(0)}(r')\\,dr'."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The θ-half is literal: `backwardStress R r = (∫ u in Ioi r, u^2 * R u) / r^2` is r^{-2}∫_r^∞ r'^2 R(r') dr' with the paper's positive sign and the same weight r'^2, and `terminalStress` instantiates R by `leadingResidual`. The z-half is the same formula after one substitution: `axialBackwardStress` integrates in the axial variable s with s = r'^2/2, so ds = r' dr' and (∫_{s > r^2/2} ∂_zΠ ds)/r = (1/r)∫_r^∞ r' ∂_z p(r') dr'; under Lemma A.8's hypothesis U = 0 on the tail (encoded in Lean by `F.logU_after`, used by `Ns_after_endpoint` and `axialWeight_hasDerivAt`) the leading axial residual 𝓇_z^{(0)} reduces to ∂_z p^{(0)}, which is what `TerminalHistoryBridge.terminal_axialResidual` (line 815) records. The overall scaling T = q^{-A-1/2}𝒯_0 matches the two bridge theorems, since `TerminalPressure.amplitudeExponent h = 1/2 + h` equals `CoordinateAlgebra.A h`. Signs, weights and the direction of the integration (from r outwards to ∞) agree in both halves.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

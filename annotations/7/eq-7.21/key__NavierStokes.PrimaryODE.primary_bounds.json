@@ -1,0 +1,25 @@
+{
+  "id": "eq-7.21/key/NavierStokes.PrimaryODE.primary_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryODE.primary_bounds",
+      "line": 433,
+      "module": "NavierStokes.PrimaryODE",
+      "path": "NavierStokes/PrimaryODE.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L433"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryODE.primary_bounds",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 433,
+        "text": "∀ v ∈ Icc a b, 0 < radialPrimary hab d P p v ∧ (Real.exp (-(D + 2*C) * L) / 2) * P (p, v) ≤ radialPrimary hab d P p v ∧ radialPrimary hab d P p v ≤ (3 * Real.exp ((D + 2*C) * L) / 2) * P (p, v) ∧ |transversePrimary hab d P p v / radialPrimary hab d P p v - d.eigenvector (p, v)| ≤ 4 * |d.eigenvector (p, v)| * (GrowingMode.coneConstant lammin C / S)"
+      }
+    }
+  }
+}

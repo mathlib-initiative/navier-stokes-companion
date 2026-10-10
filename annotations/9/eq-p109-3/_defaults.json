@@ -1,0 +1,47 @@
+{
+  "kind": "equation",
+  "label": "Display 109.3",
+  "status": "formalized",
+  "location": {
+    "page": 109,
+    "rect": [0.301982, 0.587162, 0.377277, 0.023034]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.CorrectionStep",
+      "path": "NavierStokes/CorrectionStep.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p109-3",
+      "locator": {
+        "physical": [109],
+        "printed": [109],
+        "text": "Display 109.3, p. 109, in the proof of Proposition 9.6"
+      },
+      "region": "eq-p109-3@p109",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\begin{array}{r|l} \\text{signed-correction self-interaction} & 2B - 3\\kappa_s. \\end{array}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The row is the side condition `hγs : γ ≤ 2*β - κ` of `waveStage_residual_uniform`, instantiated at the signed stage with b = signedBlock of class β = 1/2+σ-κ: 2β - κ = 2(1/2+σ-κ) - κ = 1+2σ-3κ, and 2B = 2(1/2+σ_j) = 1+2σ_j, so this is exactly 2B − 3κ_s. The rewriting is the substitution of β only. As in eq-p109-2, Lean states it as an inequality the target exponent γ = B+1/10 must satisfy rather than as a tabulated order, and discharges it by `linarith` from 1/5 ≤ σ and κ ≤ 1/100000. Note on block boundaries: the display on p. 109 is a four-row table; the task's rect for eq-p109-2 covers rows 1-2 and the rect for eq-p109-3 covers row 4, leaving the third row, 'cross with old exact waves | B + 1/2 − 2κ_s', in the gap between the two rects. That row is also present in Lean, as the remaining side condition `hγc : γ ≤ α + β - κ` = 1/2 + (1/2+σ-κ) - κ = 1+σ-2κ = B+1/2−2κ_s, discharged by the second `by linarith` at CorrectionStep.lean:9628.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

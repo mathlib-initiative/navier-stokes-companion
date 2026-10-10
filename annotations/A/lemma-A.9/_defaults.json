@@ -17,23 +17,23 @@
       "region": "lemma-A.9@p141",
       "verdicts": [
         {
-          "confidence": 0.92,
-          "evidence": ["CONFIRMED_CONTENT: NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle, NavierStokes/FlatPrimitivePaper.lean:78-79, `(hU : IsOpen U) (hKU : K ×ˢ Icc 0 δ₀ ⊆ U) ... (hb : ContDiffOn ℝ ∞ b U)`", "The auditor and both skeptics agree."],
+          "confidence": 0.9,
+          "evidence": ["CONVENTION: NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle, NavierStokes/FlatPrimitivePaper.lean:78-79: `{U : Set (E × ℝ)} (hU : IsOpen U) (hKU : K ×ˢ Icc 0 δ₀ ⊆ U) (hb : ContDiffOn ℝ ∞ b U)`.", "A single declaration, `FlatPrimitivePaper.exists_factor_on_rectangle` (NavierStokes/FlatPrimitivePaper.lean:76), states Lemma A.9 in full: the identity (A.47) with the explicit factor 1/2 and the real power δ^{3-j}, the endpoint value B(0,η)=b(0,η)/c, and uniform bounds on every iterated derivative over K × [0,δ₀]. It is stated for an arbitrary compact K in an arbitrary finite-dimensional space, which is the manuscript's own generalisation sentence, and it gives B globally smooth rather than smooth only on the rectangle, so the Lean statement is stronger. The only divergence is the encoding of the coefficient's smoothness as `ContDiffOn` on an open neighbourhood of the closed rectangle, a convention point."],
           "findings": [
             {
-              "confidence": 0.92,
+              "confidence": 0.75,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
+              "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The paper assumes b is smooth on the closed rectangle [0,δ0]×K. Lean assumes b is ContDiffOn ∞ on an open set U containing K×[0,δ0]. These agree under the usual convention, or by Seeley/Whitney extension when smoothness only holds up to the boundary."
+              "summary": "Lean hypothesises smoothness of b on an open neighbourhood of K × [0,δ₀]; the paper writes smoothness on the closed rectangle itself. For a rectangle the two readings coincide, but Lean's is the formally stronger hypothesis."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
           "relation": "lean_stronger",
           "severity": "none",

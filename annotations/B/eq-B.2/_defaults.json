@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.2)",
+  "status": "formalized",
+  "location": {
+    "page": 144,
+    "rect": [0.346242, 0.769537, 0.52321, 0.043982]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.2",
+      "locator": {
+        "physical": [144],
+        "printed": [144],
+        "text": "Equation (B.2), p. 144, in section B.1"
+      },
+      "region": "eq-B.2@p144",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\chi = \\frac{H_*^2}{H_*^2 + \\sigma_*^2} > .99 \\quad \\text{where } |Z_*| \\le \\delta_*."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The quotient is defined verbatim and the implication |Z_*| ≤ δ_* ⇒ χ > .99 is the conclusion of `ideal_prefix_cutoff_parameters`, with .99 as 99/100 and δ_*, σ_* existentially produced exactly as the paper chooses them (the proof instantiates δ = j/10 and σ = √m/20, where m is the compact minimum of H_*² on {|Z_*| ≤ δ}); the paper's intermediate step 'choose δ_* so that {|Z_*| ≤ δ_*} avoids a neighborhood of η₀' is internal to the Lean proof (`low_Z_has_H_margin`) rather than a separate statement. One domain difference, from the sentence following the display: the paper makes these choices on a slightly larger compact interval I ⊃ [-1,1], whereas every Lean statement of the χ > .99 cutoff I found quantifies η over Icc (-1) 1. The holomorphic companion `NaturalAxisCoefficients.complexChi` and the enlarged window [-11/10, 11/10] exist, but I found no declaration asserting the cutoff on that window.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

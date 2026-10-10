@@ -1,0 +1,29 @@
+{
+  "id": "corollary-8.5/attributed/NavierStokes.LocalSignedRequest.sigma_fiber_congr",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalSignedRequest.sigma_fiber_congr",
+      "line": 670,
+      "module": "NavierStokes.LocalSignedRequest",
+      "path": "NavierStokes/LocalSignedRequest.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean#L670"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalSignedRequest.sigma_fiber_congr",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If f(r,s) = g(r,t) for every r, then sigma P e f (r,s) = sigma P e g (r,t) for every r: the primitive at slow point s depends on the source only through its slice at s -- clause (iv). physicalSigma_fiber_congr (L796) is the physical counterpart."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 670,
+        "text": "theorem sigma_fiber_congr (P : SignedStressPrimitive.Patch) (e : ℕ)\n    {f : ℝ × S → ℝ} {g : ℝ × T → ℝ} {s : S} {t : T}\n    (he : ∀ r, f (r, s) = g (r, t)) (r : ℝ) :\n    SignedStressPrimitive.sigma P e f (r, s) = SignedStressPrimitive.sigma P e g (r, t)"
+      }
+    }
+  }
+}

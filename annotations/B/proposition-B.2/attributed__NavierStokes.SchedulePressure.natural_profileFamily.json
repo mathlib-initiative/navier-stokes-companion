@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.2/attributed/NavierStokes.SchedulePressure.natural_profileFamily",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SchedulePressure.natural_profileFamily",
+      "line": 252,
+      "module": "NavierStokes.SchedulePressure",
+      "path": "NavierStokes/SchedulePressure.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SchedulePressure.lean#L252"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SchedulePressure.natural_profileFamily",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: For the outer schedule's TailData d, with SmallParameters d.h j and 2 <= d.core.P, there are delta, sigma > 0 with chi > 99/100 where |Z| <= delta, AnalyticInputs data for the actual axis pressure axisPressure d, and Lambda_0 > 0 with Nonempty (ProfileFamily data Lambda C) for all Lambda >= Lambda_0"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 252,
+        "text": "theorem natural_profileFamily (d : TailData) {j : ℝ}\n    (hsmall : NaturalAxisData.SmallParameters d.h j) (hP : 2 ≤ d.core.P) :\n    ∃ δ σ : ℝ, 0 < δ ∧ 0 < σ ∧\n      (∀ η ∈ Icc (-1 : ℝ) 1,\n        |NaturalAxisData.Z d.h j (axisPressure d) η| ≤ δ →\n          99 / 100 < NaturalAxisData.chi d.h j σ η) ∧\n      ∃ data : NaturalAxisCoefficients.AnalyticInputs d.h j σ (axisPressure d),\n        ∃ Λ₀ : ℝ, 0 < Λ₀ ∧ ∀ Λ : ℝ, Λ₀ ≤ Λ →\n          ∀ C : ℝ, data.normalizationThreshold Λ ≤ C →\n            Nonempty (NaturalProfile.ProfileFamily data Λ C)"
+      }
+    }
+  }
+}

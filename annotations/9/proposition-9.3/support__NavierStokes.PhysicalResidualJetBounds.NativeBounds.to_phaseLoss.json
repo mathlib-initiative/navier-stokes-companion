@@ -1,0 +1,26 @@
+{
+  "id": "proposition-9.3/support/NavierStokes.PhysicalResidualJetBounds.NativeBounds.to_phaseLoss",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhysicalResidualJetBounds.NativeBounds.to_phaseLoss",
+      "line": 1017,
+      "module": "NavierStokes.PhysicalResidualJetBounds",
+      "path": "NavierStokes/PhysicalResidualJetBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualJetBounds.lean#L1017"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhysicalResidualJetBounds.NativeBounds.to_phaseLoss",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1017,
+        "text": "theorem NativeBounds.to_phaseLoss {D E ι : Type} [NormedAddCommGroup D] [NormedSpace ℝ D]\n    [NormedAddCommGroup E] [NormedSpace ℝ E] {N : ℕ} {U : Set D} {gain gain' β : ℝ}\n    {f : ι → ℕ → D → E} (hf : NativeBounds N U gain (fun _ => 0) f)\n    (hN : 1 ≤ N) (hβ : 0 ≤ β) (hg : gain' ≤ gain) :\n    NativeBounds N U gain' (fun m => β * m) f"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "definition-6.5/support/NavierStokes.PrimaryCopyBounds.NativeJets.native_copy_sum_uniformClass",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryCopyBounds.NativeJets.native_copy_sum_uniformClass",
+      "line": 1479,
+      "module": "NavierStokes.PrimaryCopyBounds",
+      "path": "NavierStokes/PrimaryCopyBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCopyBounds.lean#L1479"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryCopyBounds.NativeJets.native_copy_sum_uniformClass",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1479,
+        "text": "theorem NativeJets.native_copy_sum_uniformClass\n    {V : JetDomain ι (P × TorusInverse.Plane)} {w : ι → P × TorusInverse.Plane → ℝ} {f : ι → P × TorusInverse.Plane → H}\n    (hf : NativeJets V w f) (s : StripData (P × TorusInverse.Plane))\n    (W : Λ → ℕ → P × TorusInverse.Plane → ℝ) (α : ℝ)\n    (index : Λ → ℕ → ι) (g : Λ → ℕ → Geometry) (Ω : Λ → ℕ → Set TorusInverse.Plane)\n    (hcompact : ∀ l n, IsCompact (Ω l n))\n    (hinj : ∀ l n, InjOn TorusAverages.quotientPoint\n      ((fun z => (g l n).center + (g l n).basis z) '' Ω l n))\n    (κ : ι → TorusInverse.Plane → ℝ) (hκ : PolynomialJets V.toDomain (fun i x => κ i x.2))\n    (hcut : ∀ l n, support (κ (index l n)) ⊆ Ω l n)\n    (hW : ∀ l n x, x ∈ s.domain → 0 ≤ W l n x)\n    (hmap : ∀ l n k x, x ∈ s.domain → (g l n).coordinates k x.2 ∈ Ω l n →\n      ParticularWaveBounds.nativePoint (g l n) k x ∈ V.carrier (index l n))\n    {A B : ℝ} (hA : 1 ≤ A) (hB : 1 ≤ B) (a b : ℕ)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "proposition-B.2/support/NavierStokes.AxisReference.exists_positive_scaled_profiles",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisReference.exists_positive_scaled_profiles",
+      "line": 275,
+      "module": "NavierStokes.AxisReference",
+      "path": "NavierStokes/AxisReference.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisReference.lean#L275"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisReference.exists_positive_scaled_profiles",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 275,
+        "text": "theorem exists_positive_scaled_profiles (I : Window) {ε : ℝ} (hε : 0 < ε)\n    (χ : AxisSpace I ε) (d : AxisContraction.AxisData (AxisSpace I ε))\n    (hd : CompatibleData I ε χ d)\n    (hχ : ∀ η ∈ I.interval, 0 ≤ inputValue I ε χ η ∧ inputValue I ε χ η ≤ 1)\n    (M : ℝ) (hM : 0 ≤ M) :\n    ∃ Λ₀ : ℝ, 0 < Λ₀ ∧ ∀ Λ : ℝ, Λ₀ ≤ Λ →\n      ∀ a : AxisSpace I ε, ‖a‖ ≤ M → RadiallyConstant I ε a →\n      ∃ Φ u B P : ℝ × ℝ → ℝ,\n        IsScaledSolution I (parameters I ε χ d) (1 / Λ) (inputValue I ε a) Φ u B P ∧\n        UniformMixedError I ε (errorConstant I hε χ d M hM / (2 * Λ))\n          Φ u (AxisEvaluation.profile I ε (referenceCoefficients I hε χ d).1)\n          (AxisEvaluation.profile I ε (referenceCoefficients I hε χ d).2) ∧\n        (∀ Y ∈ Icc (0 : ℝ) (41 / 10), ∀ η ∈ Ioo I.left I.right, 1 / 8 < Φ (Y, η)) ∧\n        (∀ η ∈ Ioo I.left I.right, 99 / 100 ≤ inputValue I ε χ η →\n          23 / 10 < -8 * partialY Φ (4, η) / Φ (4, η))"
+      }
+    }
+  }
+}

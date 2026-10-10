@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.10)",
+  "status": "formalized",
+  "location": {
+    "page": 75,
+    "rect": [0.177033, 0.742673, 0.692044, 0.038946]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.10",
+      "locator": {
+        "physical": [75],
+        "printed": [75],
+        "text": "Equation (7.10), p. 75, in the statement of Lemma 7.1"
+      },
+      "region": "eq-7.10@p075",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: B^{\\ell}(\\mathcal{A}_\\Phi B - B') = \\operatorname{diag}(\\lambda, -\\lambda) + E, \\qquad \\lambda(v) = \\frac{\\lambda_0}{\\sqrt{1+s(v)^2}}, \\qquad |E| \\le C/S_*."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean never forms the 3×2 matrix B, its left inverse B^ℓ, or the product B^ℓ(A_Φ B − B') as objects; it performs the same conjugation entry by entry and names only the result. The dictionary: `FrameData.ambient z w = tangent ρ (frame z) (w0+w1) (h·(w0−w1)) = (w0+w1)(e_r − ρK_a) + h(w0−w1)·(frame z 1)` is the map B, with ρ = radialSlope n = n_{Φ,r}/|n_{Φ,tan}| = s_a and frame z 0 = normalDirection n = K_a of (7.7); h = eigenvector = referenceProfile c0 u L v = c0·√(1+s(v)²), which is the scalar in the second column of (7.8). errorA/errorB/errorC (PrimaryODE.lean 49–58) are the three entries of the operator in the (x,y) coordinates minus their reference values 0, λ/h, λ·h, and `reference_off_diagonal` is the statement that those reference values are the diagonalizable ones; modal11…modal22 (MovingFrameODE.lean 678–681) are their transform into the (p,q) eigenbasis, including the term `rate = h'/h` and the frame rotation, which is where the paper's −B′ enters. `modal_equations_iff`/`hasDerivAt_modal` then say the projected equation in these coordinates has generator diag(λ,−λ) − d + E with E = (modal11, modal12; modal21, modal22), and `modal_errors` bounds each of the four entries by modalConstant M u / D.scale i, so ‖E‖ ≤ 4·C/S_* in operator norm (MovingFrameODE.modal_error_opNorm_le). λ matches exactly: `referenceEigenvalue λ₀ u L v = λ₀/√(1 + slotMagnitude²)` and slotMagnitude² = s(v)² (signedSlot_sq), with D.scale i = S_*. Two conventions differ: (a) the Lean splits E entrywise rather than using a matrix norm; (b) the Lean's second tangent basis vector is `quarterTurn (normalDirection n) = (−(K_a)_z, (K_a)_θ)`, i.e. minus the paper's N_a = ((K_a)_z, −(K_a)_θ), and correspondingly the structure fields `eigen12`/`eigen21` of `FamilyData` force the Lean's c0 to carry the opposite sign to the paper's c0 < 0; the two sign flips cancel in `ambient`, so the first modal eigenvalue is +λ in both. The paper's clause that B^ℓ is uniformly bounded is `FrameData.norm_le_ambient`, stated as a two-sided coordinate bound rather than as a norm of a named matrix.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

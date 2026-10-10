@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.36)",
+  "status": "formalized",
+  "location": {
+    "page": 138,
+    "rect": [0.200309, 0.484158, 0.66787, 0.026343]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-A.36",
+      "locator": {
+        "physical": [138],
+        "printed": [138],
+        "text": "Equation (A.36), p. 138, in the proof of Lemma A.6"
+      },
+      "region": "eq-A.36@p138",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\mathcal{H}(Z) = 1 - h(1+h)Z + O_h(Z^2), \\qquad |\\mathcal{H}(Z)-1| + |Z\\mathcal{H}'(Z)| \\le ChZ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Both clauses are stated, each with an explicit constant and on the whole half-line rather than on 'a fixed small nonnegative interval'. First clause: the paper's H(Z) = 1 - h(1+h)Z + O_h(Z^2) is small_argument_remainder with the remainder constant made explicit, h(1+h)^2(2+h), for every z ≥ 0; the linear coefficient h(1+h) agrees with (A.35) at m = 1 (first_endpoint_jet, AppendixHeatResults.lean:105, proves H'(0) = -h(1+h)). Second clause: the paper's |H(Z)-1| + |ZH'(Z)| ≤ ChZ with C uniform for 0 < h ≤ h₀ < 1/2 is uniform_small_argument with C = 2(1+h₀), for every z ≥ 0 and without needing h₀ < 1/2 (for h₀ < 1/2 it gives C < 3). Each Lean statement implies the corresponding paper clause; neither is weaker in any term, constant, exponent or domain. The only packaging difference is that the paper's single display is two Lean theorems.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

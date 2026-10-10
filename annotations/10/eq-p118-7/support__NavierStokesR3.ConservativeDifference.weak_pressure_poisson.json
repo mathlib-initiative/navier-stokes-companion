@@ -1,0 +1,23 @@
+{
+  "id": "eq-p118-7/support/NavierStokesR3.ConservativeDifference.weak_pressure_poisson",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.ConservativeDifference.weak_pressure_poisson",
+      "line": 431,
+      "module": "NavierStokes.R3.ConservativeDifference",
+      "path": "NavierStokes/R3/ConservativeDifference.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ConservativeDifference.lean#L431"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.ConservativeDifference.weak_pressure_poisson"
+      },
+      "snippet": {
+        "line": 431,
+        "text": "(∫ x, (p - q) (t, x) * scalarLaplacian ψ x) = -(∑ k : Fin 3, ∑ i : Fin 3, ∫ x, tensorDiff u v t k i x * spatialPartial i (spatialPartial k ψ) x), under hNS : ∀ x, navierStokesResidual u p t x = navierStokesResidual v q t x"
+      }
+    }
+  }
+}

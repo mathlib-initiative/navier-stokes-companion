@@ -1,0 +1,31 @@
+{
+  "id": "proposition-C.3/attributed/NavierStokes.ProfileHistories.Profiles.pressure_hasDerivAt",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ProfileHistories.Profiles.pressure_hasDerivAt",
+      "line": 434,
+      "module": "NavierStokes.ProfileHistories",
+      "path": "NavierStokes/ProfileHistories.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileHistories.lean#L434"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ProfileHistories.Profiles.pressure_hasDerivAt",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: p ∈ D.carrier → HasDerivAt (fun x => P.pressure (x,p.2)) (P.f p ^ 2) p.1, for every P : Profiles D. Opened at :434-439: Π_X = F^2, the smooth extension to X = 0 of clause (ii)'s radial pressure balance, holding at v.profiles with no transfer.",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 434,
+        "text": "theorem pressure_hasDerivAt {p : Point} (hp : p ∈ D.carrier) :\n    HasDerivAt (fun x => P.pressure (x, p.2)) (P.f p ^ 2) p.1"
+      }
+    }
+  }
+}

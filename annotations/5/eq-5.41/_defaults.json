@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.41)",
+  "status": "formalized",
+  "location": {
+    "page": 60,
+    "rect": [0.255771, 0.249199, 0.612413, 0.026091]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.41",
+      "locator": {
+        "physical": [60],
+        "printed": [60],
+        "text": "Equation (5.41), p. 60, in the statement of Proposition 5.5"
+      },
+      "region": "eq-5.41@p060",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\mathcal{R}(u_B, p_B) = -\\Big(\\partial_r + \\frac{2}{r}\\Big)\\mathcal{T}_{\\mathrm{phys},\\theta}\\, e_\\theta - \\Big(\\partial_r + \\frac{1}{r}\\Big)\\mathcal{T}_{\\mathrm{phys},z}\\, e_z + \\mathcal{E}_B ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same identity; the rewriting is Lean's Cartesian encoding of the cylindrical basis and of the radial derivative. (i) Lean's navierStokesResidual (ProblemStatement.lean:82) is ∂_t u + (u·∇)u − Δu + ∇p, viscosity one, matching the paper's definition of R(u,p) in (3.1). (ii) stressForce theta axial z = tangentialStressForce theta axial z.1 z.2 = pack (x₁/r·a) (−x₀/r·a) (−b) with r = √(2·radialEnergy x) = (x₀²+x₁²)^{1/2}, a = radialDivergence 2 𝒯_θ, b = radialDivergence 1 𝒯_z. (iii) radialDivergence k S = √(2s)·∂_s S + kS/√(2s) equals (∂_r + k/r)S, since s = r²/2 gives ∂_r = r∂_s (the repository proves exactly this reparametrisation in LeadingStress.hasDerivAt_radialSlice, LeadingStress.lean:266). (iv) a·(x₁,−x₀,0)/r = −a·e_θ for the standard counterclockwise e_θ = (−x₁,x₀,0)/r, and the third component is −b·e_z, so the Lean right-hand side is −(∂_r+2/r)𝒯_θ e_θ − (∂_r+1/r)𝒯_z e_z + ℰ_B. The repository states this conversion itself, so it is not an assumption of mine: ActualBaseResidual.tangentialStressForce_components (ActualBaseResidual.lean:421) proves, for 0 < q 0, that frame (−(q 1)) (tangentialStressForce theta axial t (chart q)) = pack 0 (−radialDivergence 2 theta (t,(r²/2,z))) (−radialDivergence 1 axial (t,(r²/2,z))). Since `frame θ` is rotation by θ (CylindricalResidual.lean:42, frame_apply at :45) and chart q = (r cos θ, r sin θ, z) (:29), `frame (−θ)` returns a vector's components in the standard counterclockwise basis e_r = (cos θ, sin θ, 0), e_θ = (−sin θ, cos θ, 0), e_z; the lemma therefore says the stress force is 0·e_r − (∂_r+2/r)𝒯_θ e_θ − (∂_r+1/r)𝒯_z e_z, which is (5.41)'s right-hand side verbatim, with no sign flip and no orientation convention left open. (The angular component of the vector potential, AxisymmetricFields.lean:34-35, is H·(−x₁,x₀)/2, counterclockwise likewise; the (x₁,−x₀) that appears in AxisymmetricFields.velocity_zero/velocity_one is the sign in the relation u_θ = −∂_r K between the axial potential component and the swirl, not an orientation convention.) One further encoding fact: in Lean ℰ_B is *defined* as the remainder (BaseResidual.baseResidual, line 1486, = residual − stressForce), so the identity is proved by `unfold; abel` and holds for every spacetime point with no hypotheses. The paper likewise introduces ℰ_B through (5.41); the mathematical content of Proposition 5.5 sits in the accompanying bound |∂^α ℰ_B| ≤ C q^M and the support clause, which are other blocks and were not audited here.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.33)",
+  "status": "formalized",
+  "location": {
+    "page": 57,
+    "rect": [0.272915, 0.734503, 0.596159, 0.028246]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-5.33",
+      "locator": {
+        "physical": [57],
+        "printed": [57],
+        "text": "Equation (5.33), p. 57, in section 5.4"
+      },
+      "region": "eq-5.33@p057",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: |\\mathcal{F}(U^{[J]})|_m \\le C_{J,m}\\, q^{\\,\\rho_J - K_m^{\\mathcal{F}}}\\, \\Lambda_{\\log}(q)^{P_{J,m}} + E_{J,m}, \\qquad \\rho_J \\longrightarrow \\infty,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The correspondence is one-to-one: U^{[J]} is `stageComponents u0 s0 A B R J` (base plus the uncut stages 1,…,J), C_{J,m} is `Cr J m`, P_{J,m} is `Pr J m`, ρ_J is `rho J` with 'ρ_J ⟶ ∞' as `hrho : Tendsto rho atTop atTop`, E_{J,m} is `error J m`, and C_{J,m,N} is the `Ce` produced by `he`. The paper's 'K_m^F is independent of J' is forced by the type `Kr : ℕ → ℝ`. 'Uniform over the full domain at that fixed stage' is `∀ x ∈ U`. Differences, all conventional: (a) |·|_m versus ‖iteratedFDeriv ℝ m ·‖, converting as for (5.30); (b) Lean's flat exponent `N` ranges over ℕ, the paper's over N generally — on the domain q ≤ 1 the natural exponents give every real one by rounding up; (c) the paper's normalization 0 ≤ E_{J,m} is not imposed in Lean, which only bounds `error` from above, and a lower bound is never used; (d) as for (5.31), `P.eval` is one output component of F, so the paper's N_F-component F is the conjunction over a of the Lean hypothesis.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

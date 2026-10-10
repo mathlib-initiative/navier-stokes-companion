@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 118.2",
+  "status": "partial",
+  "location": {
+    "page": 118,
+    "rect": [0.236212, 0.229597, 0.527807, 0.023364]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.SpatialLocalization",
+      "path": "NavierStokes/SpatialLocalization.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p118-2",
+      "locator": {
+        "physical": [118],
+        "printed": [118],
+        "text": "Display 118.2, p. 118, in the proof of Proposition 10.1"
+      },
+      "region": "eq-p118-2@p118",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\chi_x = 1 \\quad (r \\le r_0/2,\\ |z| \\le z_0/2), \\qquad \\operatorname{supp}\\chi_x \\Subset \\{r < r_0,\\ |z| < z_0\\}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The Lean fixes the radii absolutely instead of choosing them: r_0 = z_0 = 1/4 (supportCylinder is r² ≤ 1/16, |z| ≤ 1/4), and the plateau on which the cutoff is 1 is r² < 1/32, |z| < 1/8 — the axial plateau is exactly z_0/2 but the radial plateau r < 1/(4√2) ≈ 0.177 is larger than the paper's r_0/2 = 1/8, so the Lean plateau is not the paper's. The support statement is the weaker tsupport ⊆ the closed cylinder rather than compact containment ⋐ in the open one. Most importantly the paper's choice is constrained: it picks τ_0, z_0 with C_0(τ_0 + z_0^{1/D}) < q_*/2 so that by (10.3) the support of c lies in q < q_*/2, inside the local domain Ω_* = {τ > 0, q < q_*}; no such constraint, and no occurrence of q_* or of (10.3), appears in SpatialLocalization.lean. Smoothness in (r², z), the bounds 0 ≤ χ_x ≤ 1 and axisymmetry (spatialCutoff_rotation) do match. Rated low rather than medium because the margin the paper's constraint buys is not needed in the Lean development: the Lean local fields are built on PhysicalWaveSum.preterminal = {w | w.1 < 1}, i.e. they are defined and smooth on the whole time slab t < 1 rather than only on Ω_*, so an arbitrary fixed cylinder is admissible, and Proposition 10.1's conclusions are in fact proved (PaperLocalization.local_theorem_with_compact_candidate).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

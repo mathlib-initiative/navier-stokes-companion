@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
+      "line": 310,
+      "module": "NavierStokes.ActiveAnnulusWeight",
+      "path": "NavierStokes/ActiveAnnulusWeight.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L310"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Hypotheses: IsCompact K and an EdgeFactor F : EdgeFactor K c T. Conclusion: exists d m > 0 with d < F.width, d <= 1, K x Icc 0 d subset F.domain, and for all p in K and all x with 0 < x <= d, m * FlatCutoff.edge c x <= ||T (p,x)||. At K = Icc (-1) 1, c = t_1^2 and T = the activation stress this is t",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 310,
+        "text": "theorem EdgeFactor.collar {K : Set E} (hK : IsCompact K) {c : ℝ} {T : E × ℝ → V}\n    (F : EdgeFactor K c T) :\n    ∃ d m : ℝ, 0 < d ∧ d < F.width ∧ d ≤ 1 ∧ 0 < m ∧\n      K ×ˢ Icc (0 : ℝ) d ⊆ F.domain ∧\n      ∀ p ∈ K, ∀ x : ℝ, 0 < x → x ≤ d → m * FlatCutoff.edge c x ≤ ‖T (p,x)‖"
+      }
+    }
+  }
+}

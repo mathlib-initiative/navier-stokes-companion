@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.NominalProfile.baseU_ideal",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.baseU_ideal",
+      "line": 422,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L422"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.baseU_ideal",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0 < C and x in Ioo resetPatch.left resetPatch.right: baseU F C oldU (x,eta) = idealU eta = 4 eta. The paper's U_0 = 4 eta, on the band just inside X_h.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 422,
+        "text": "theorem baseU_ideal (F : Profile) {C x : ℝ} (hC : 0 < C)\n    (hx : x ∈ Ioo resetPatch.left resetPatch.right) (oldU : Field) (eta : ℝ) :\n    baseU F C oldU (x, eta) = idealU eta"
+      }
+    }
+  }
+}

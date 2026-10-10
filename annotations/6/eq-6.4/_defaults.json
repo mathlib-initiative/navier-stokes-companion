@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.4)",
+  "status": "formalized",
+  "location": {
+    "page": 63,
+    "rect": [0.327972, 0.405638, 0.540204, 0.047667]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.GraphCalculus",
+      "path": "NavierStokes/GraphCalculus.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.4",
+      "locator": {
+        "physical": [63],
+        "printed": [63],
+        "text": "Equation (6.4), p. 63, in section 6.1"
+      },
+      "region": "eq-6.4@p063",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: N_{\\mathrm{abs}} = v_t \\cdot \\partial_Y, \\qquad \\mathcal{L}_{\\mathrm{abs}} = v_r \\cdot \\partial_Y, \\\\ \\mathfrak{t} = \\partial_t + N_{\\mathrm{abs}}, \\qquad \\mathfrak{r} = \\partial_r + d_r r^{d_r - 1} \\mathcal{L}_{\\mathrm{abs}}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both operator identities of (6.4) are stated exactly, as theorems rather than as notation: timeOp_expanded is 𝔱 = ∂_t + v_t·∂_Y and radialOp_expanded is 𝔯 = ∂_r + d r^{d−1}(v_r·∂_Y), with radialSpeed d r = d·r^{d−1} supplying the coefficient d_r r^{d_r−1} verbatim. The rewriting is only that the dot products N_abs = v_t·∂_Y and L_abs = v_r·∂_Y have no declarations of their own: they appear expanded into components, v.1 ∂_{Y₁} + v.2 ∂_{Y₂}, which is auxiliary_directional_eq. The Lean statements are for arbitrary d, vr, vt (not only the (6.2) data). The paper's remark that ∂_t and ∂_r hold Y fixed, and that 𝔱 and 𝔯 are physical differentiation before restriction, is partialT_pullback and partialR_pullback; partialR_pullback additionally needs r ≠ 0, which the paper's annulus supplies.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

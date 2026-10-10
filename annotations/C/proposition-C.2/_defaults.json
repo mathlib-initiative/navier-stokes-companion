@@ -17,24 +17,24 @@
       "region": "proposition-C.2@p161",
       "verdicts": [
         {
-          "confidence": 0.82,
-          "evidence": ["CONFIRMED_CONTENT: ModulatedProfileAssembly.Witness (NavierStokes/ModulatedProfileAssembly.lean:432) has `frequency : ℕ` (435) and no rate field. exists_witness (451) takes N and c at line 488 from ModulatedCone.Repaired.exists_with_moment_repair (NavierStokes/ModulatedCone.lean:1414), whose conclusion (1447) is `∃ (N : ℕ) (c) (hc), 0 < N ∧ cone ∧ rows ∧ unchanged-outside`. The rate clause `∀ q : ℕ, ∃ Nq C : ℝ, 1 ≤ Nq ∧ 0 < C ∧ ∀ n : ℝ, Nq ≤ n → … ≤ C / n` exists only in ModulatedProfileJetRates.exists_with_moment_repair_all_jets (NavierStokes/ModulatedProfileJetRates.lean:347, clause at 394), which is referenced only by `import` in NavierStokes/PaperAdditionalResults.lean:27.", "CONVENTION: Witness.frequency : ℕ and frequency_pos (NavierStokes/ModulatedProfileAssembly.lean:435-436); `∃ (d : LoopData W) (v : Witness d)` in exists_of_certificate (1101). N is chosen as `max Nc Nr`, above the cone and solver thresholds (NavierStokes/ModulatedCone.lean:1475). `∀ n : ℕ, N ≤ n → …` appears only in ModulatedProfileJetRates.exists_with_moment_repair_all_jets (NavierStokes/ModulatedProfileJetRates.lean:382), for generic data.", "All three voters agree, and my own reading of p.161 and the sources confirms it. exists_of_certificate, with the Witness and LoopData fields and the Witness lemmas, states positivity, the admissible cone on (X_a,X_b)×[-1,1] (InTrueCone is (4.20)-(4.21) with C = -b_s), the unchanged collars, axis rectangle and later patches, and exact restoration of (M,I,J,S,Π), Q_s, N_s beyond the first patch, for one frequency N. The closing O(1/N) sentence and the for-all-large-N form are stated only by the generic, unapplied exists_with_moment_repair_all_jets. So the relation is partial at low severity; the main result is unaffected because the paper fixes one N. I added the PAIRING skeptic's three supporting declarations."],
+          "confidence": 0.85,
+          "evidence": ["CONFIRMED_CONTENT: ModulatedProfileAssembly.Witness (NavierStokes/ModulatedProfileAssembly.lean:432-449) has fields realization, frequency, frequency_pos, coefficients, coefficients_smooth, profiles, f_formula, U_formula, pressure0, restored, true_cone, and no rate field; exists_witness (:451) takes its N and c at :488 from ModulatedCone.Repaired.exists_with_moment_repair (NavierStokes/ModulatedCone.lean:1414), whose conclusion (:1447-1456) is `∃ N c hc, 0 < N ∧ cone ∧ rows restored ∧ unchanged outside the patch` with no bound in N. The rate clause exists only at NavierStokes/ModulatedProfileJetRates.lean:394-400, inside exists_with_moment_repair_all_jets (:347), where it is bound to that theorem's own `∃ H : SmoothRepairFamily` (:380) and to R := profileRepair (P n) patch A (H.coefficients n) (:395).", "ATTRIBUTION_GAP: exists_of_certificate (NavierStokes/ModulatedProfileAssembly.lean:1101) gives the cone on (activeLeft W, activeRight W) × [-1,1]; Witness.frequency/frequency_pos (:435-436), Witness.restored (:443) and Witness.true_cone (:445) are fields of the same v; Witness.positive_E (:996), Witness.fields_outside (:584), Witness.exterior_pressure (:598) with its four sibling rows (:603-617) and Witness.stocks_outside (:627) are theorems about that same v, and LoopData.after_initial (:288) with repairPatch_before_activeRight (:1020) and repairPatch_before_positive (:196) place the modified interval strictly inside the active annulus and before the .positive and .mean slots.", "Proposition C.2 has nine clauses. Clauses (i)-(viii) — one finite N > 0, a correction on the first reserved patch in the power-law interval, smoothness, Ẽ > 0, the admissible cone throughout (X_a,X_b), the unchanged collars, near-axis region and two later patches, and exact restoration of (𝔪,Π,Q_s,N_s) beyond the patch — are all stated for the single v : Witness d of exists_of_certificate and conjoin by logic alone. The closing O(N^{-1}) η-jet sentence is stated only by exists_with_moment_repair_all_jets, for generic data and for its own repair family, which no declaration identifies with v. The Lean therefore covers part of the item. Nothing traced downstream uses the rate, so the severity is low."],
           "findings": [
             {
-              "confidence": 0.75,
+              "confidence": 0.84,
               "contested": false,
-              "kind": "CONTENT",
+              "kind": "COVERAGE",
               "ledger": "CONFIRMED_CONTENT",
               "severity": "low",
-              "summary": "The last sentence (η-jets within O(1/N) of the input before the patch) is not stated for the nominal witness. Only the generic, never-applied exists_with_moment_repair_all_jets states it; the Witness comes from a no-rate sibling theorem."
+              "summary": "The closing O(N^-1) η-jet sentence is stated nowhere for the modulated profile of the fixed input profile. Only the generic, never-applied exists_with_moment_repair_all_jets states a rate, and it binds it to its own repair family, not to the Witness."
             },
             {
-              "confidence": 0.7,
+              "confidence": 0.86,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Paper: any sufficiently large N. Instantiated Lean: one N > 0. The paper's proof ends by fixing one N, so the existential is the proposition as used; the family in N matters only for the O(1/N) clause (first finding)."
+              "summary": "No single declaration bundles clauses (i)-(viii). They are spread over exists_of_certificate, the Witness structure fields and five namespace lemmas, all for the same v, and conjoin by instantiation and routine algebra alone."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_DELTA",

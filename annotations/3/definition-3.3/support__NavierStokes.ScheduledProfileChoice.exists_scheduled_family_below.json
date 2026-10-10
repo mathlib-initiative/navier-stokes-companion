@@ -15,6 +15,8 @@
         "id": "NavierStokes.ScheduledProfileChoice.exists_scheduled_family_below",
         "kind": "theorem"
       },
+      "relation": "supporting",
+      "role": "support",
       "snippet": {
         "line": 105,
         "text": "theorem exists_scheduled_family_below (P m : ℝ) (hP : 0 < P) (hm : 0 < m)\n    (cap : ℝ → ℝ) (hcap : ∀ K : ℝ, 0 < K → 0 < cap K)\n    (extraHeight : OutgoingSchedule.Parameters → ℝ)\n    (hextra : ∀ core : OutgoingSchedule.Parameters, 0 < extraHeight core) :\n    ∃ (K B H : ℝ) (core : OutgoingSchedule.Parameters),\n      0 < K ∧ 0 < B ∧ 0 < H ∧ core.P = P ∧ core.m = m ∧\n      core.wait = 60 * Real.log (1 / core.lam) ∧\n      core.lam < cap K ∧ core.lam < 1 / 120 ∧\n      2 * H < core.lam ∧ H ≤ extraHeight core ∧ H ≤ 1 / 1000 ∧\n      ∀ h : ℝ, 0 < h → h ≤ H →\n        ∃ F : Profile, F.data.core = core ∧ F.data.h = h ∧ F.coefficientBound = K ∧\n          ScheduleBounds F ∧ OutgoingProfile.Specification F B ∧ TerminalCone.SmallTail F.data"

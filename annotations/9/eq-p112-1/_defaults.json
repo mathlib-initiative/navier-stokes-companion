@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 112.1",
+  "status": "partial",
+  "location": {
+    "page": 112,
+    "rect": [0.374075, 0.351797, 0.252425, 0.028648]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p112-1",
+      "locator": {
+        "physical": [112],
+        "printed": [112],
+        "text": "Display 112.1, p. 112, in the proof of Lemma 9.7"
+      },
+      "region": "eq-p112-1@p112",
+      "verdicts": [
+        {
+          "confidence": 0.6,
+          "evidence": ["paper: D_{v,a}(m) \\;=\\; \\max_{w \\to v} D_{w,a}\\bigl(m + d_{v,w}\\bigr),"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration defines a function D_{v,a}(m) indexed by a source vertex a, and nothing in the repository builds a DAG of the correction construction. The same bookkeeping is carried out twice, each time inside one inductive expression type rather than once for the whole construction. (i) GenericDifferentialPolynomial.Expression has nodes input / coeff / add / mul / directional — the paper's \"sums, products, derivatives\" — but no node for the \"proved inverses\" the paper also lists as graph operations, and no node of general weight d_{v,w}: a derivative node adds exactly one order, so an operation costing d derivatives is d stacked nodes. Its ApproximationRates.threshold : ℕ → ℕ propagates by the paper's recursion: directional gives threshold m = a.threshold (m+1) (the edge weight d_{v,w} = 1), add gives max of the two children at the same m (d_{v,w} = 0), a coeff node gives 0, matching the initial value D_{b,a}(m) = 0 for b ≠ a, and in polynomial_jetRate_of_stages the input nodes are given threshold = id, matching D_{a,a}(m) = m. mul takes sup over k ≤ m of each child's threshold rather than the child's value at m; every threshold built here (id, 0, max, m ↦ θ(m+1), and sup over k ≤ m) is monotone, so that sup equals the child's value at m and the two agree, the Lean version being the safe choice for a non-monotone threshold. Two things do differ from the display. The propagated quantity is literally the approximation-stage index J required for the tail estimate at jet order m (tail_rate : ∀ m J, threshold m ≤ J → …), not a count of derivatives of an input field; the two are identified only through the hypothesis htail (m ≤ J) of polynomial_jetRate_of_stages, which is what forces threshold = id at the sources. And one function is carried instead of one per source a: the maximum over sources is taken as the recursion proceeds, so what is computed is max_a D_{v,a}(m), the coarsening the paper's conclusion uses. (ii) FlatKernelBounds.Expr.jetOrder is the same recursion for the kernel expressions: k at a jet k source node, 0 at every non-source node, max over the children at add and mul; there the m + d_{v,w} shift is performed by rewriting the expression with Expr.diff, which sends jet k to jet (k+1), instead of by shifting the counting function's argument. Neither construction is applied to the correction-stage graph of Lemma 9.7. In that chain the finiteness of the derivative counts is not needed as a separate step, because every stage field is asserted smooth of infinite order (ActualCandidateAssembly.stages_smooth : ∀ j, ContDiffOn ℝ ∞ (potentialStages …) (physicalDomain …), and likewise for directStages and pressureStages, lines 879-889) and the per-order estimates are stated with the derivative order m quantified in front of the constant (WholeDomainStageBounds.actual_finite_residual_bound). So the paper's formula as written was not checked; what was checked in its place is the same recursion for two restricted classes of expressions, plus infinite-order smoothness of the stage fields.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

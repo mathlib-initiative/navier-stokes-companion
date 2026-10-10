@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 64.1",
+  "status": "partial",
+  "location": {
+    "page": 64,
+    "rect": [0.304595, 0.126505, 0.393218, 0.043906]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.ChartScales",
+      "path": "NavierStokes/ChartScales.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p064-1",
+      "locator": {
+        "physical": [64],
+        "printed": [64],
+        "text": "Display 64.1, p. 64, in section 6.1"
+      },
+      "region": "eq-p064-1@p064",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\frac{1}{T_g}\\,\\frac{Q^{-1-h}}{S_*} < T_g^{\\,i(\\ell)} \\le \\frac{Q^{-1-h}}{S_*},\\qquad \\Lambda_g^{\\,i(\\ell)} = \\bigl(T_g^{\\,i(\\ell)}\\bigr)^{\\rho_g}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The second clause matches exactly: Lambda_pow_eq is Λ_g^{i} = (T_g^{i})^{ρ_g} for every i, with Λ_g = 4-√2, T_g = 4+√2 and ρ_g = log Λ_g / log T_g as in (6.2). The first clause is weaker on one side. The paper asserts T_g^{-1} Q^{-1-h}/S_* < T_g^{i(ℓ)} (strict); native_power_bounds proves only Q^{-1-h}/S_n ≤ T_g · T_g^{i(ℓ)}, i.e. the non-strict version, because the proof takes `(Nat.lt_floor_add_one _).le`. The upper bound T_g^{i(ℓ)} ≤ Q^{-1-h}/S_* is stated exactly. I searched for a strict variant and found none. The weakening costs nothing here: the only consumers are timeCoefficient_bounds and radialCoefficient_bounds, which are themselves two-sided non-strict and deliver the two '≍' comparisons of (6.6) that this display exists to prove. Two further encoding points, not defects: the index runs over the dyadic level n with Q n = 2^{-n} and S n = n² as in (6.1), and nativeIndex is a ℕ-valued floor under the hypothesis 4 ≤ n, matching the paper's restriction to large ℓ with i(ℓ) ≥ 0.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

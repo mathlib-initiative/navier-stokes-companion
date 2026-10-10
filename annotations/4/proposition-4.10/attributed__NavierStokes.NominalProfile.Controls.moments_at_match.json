@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.NominalProfile.Controls.moments_at_match",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.Controls.moments_at_match",
+      "line": 1023,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L1023"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.Controls.moments_at_match",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Given c.separation <= Real.exp (-8), eta in ReferencePath.parameterInterval and SmallDebt F c.debt eta: moments c.normalizedU c.normalizedE matchFraction eta = moments F.U F.E matchFraction eta. This is the paper's m(X_h,eta) = m_0(X_h,eta) in the normalized coordinate, with all three hypotheses sup",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1023,
+        "text": "theorem moments_at_match\n    (hsep : ShapeTransition.separation c.shapeTime A.normalization F.data.core.P ≤ Real.exp (-8))\n    {eta : ℝ} (hη : eta ∈ ReferencePath.parameterInterval) (hs : SmallDebt F c.debt eta) :\n    moments c.normalizedU c.normalizedE matchFraction eta = moments F.U F.E matchFraction eta"
+      }
+    }
+  }
+}

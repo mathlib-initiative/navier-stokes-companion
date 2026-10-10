@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.11)",
+  "status": "formalized",
+  "location": {
+    "page": 75,
+    "rect": [0.425706, 0.80434, 0.44337, 0.023772]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.11",
+      "locator": {
+        "physical": [75],
+        "printed": [75],
+        "text": "Equation (7.11), p. 75, in the statement of Lemma 7.1"
+      },
+      "region": "eq-7.11@p075",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: |d - d_{\\mathrm{ref}}| \\le C/S_*."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same inequality with d_ref written in an equal but unfolded form. The Lean's `(a.frame i).viscosity (q,v) = a.viscosity i * ‖a.phase.normal i (q,v)‖² = ε k² |n_Φ|²`, which is d of (7.5). Instead of the paper's d_ref = εk²B_s²(1+s²), the Lean compares with `referenceViscosity λ₀ u L v = λ₀(1+s²)/((1+u*²)√(1+u*²))`; these are the same number, since B_s² = λ₀/(εk²(1+u*²)^{3/2}) by `referenceScale`, and the proof of `damping_error` makes the identification explicitly (lines 889–896: `referenceScale_normalization` gives ε k² B_s² = λ₀/dampingDenominator u, and `signedSlot_sq` gives slope² = slotMagnitude² = s(v)²). D.scale i = ChartScales.S (band i) = ℓ² = S_*, and the Lean proves it for v ∈ Ioo(−L_s, 2L_s) ⊇ [0, L_s].",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

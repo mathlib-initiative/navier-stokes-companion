@@ -1,0 +1,30 @@
+{
+  "id": "lemma-10.3/key/NavierStokesR3.ActualCandidate.of_localized_fields",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.ActualCandidate.of_localized_fields",
+      "line": 78,
+      "module": "NavierStokes.R3.ActualCandidate",
+      "path": "NavierStokes/R3/ActualCandidate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ActualCandidate.lean#L78"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.ActualCandidate.of_localized_fields",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: From a periodic-model candidate `h` with globally smooth force `f`: `ProblemStatement.CandidateProperties 1 (R3CompactCandidate.velocity A B) (R3CompactCandidate.pressure P) (PositiveTimeForce.force (R3CompactCandidate.compactForce f)) SpatialLocalization.supportCylinder`. The force clauses it deliv",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "role": "key",
+      "snippet": {
+        "line": 78,
+        "text": "theorem of_localized_fields {A B : VelocityField} {P : PressureField} {f : VelocityField}\n    (h : NavierStokes.ProblemStatement.CandidateProperties\n      (R3CompactCandidate.periodicVelocity A B) (R3CompactCandidate.periodicPressure P) f)\n    (hf : ContDiff ℝ ∞ f) :\n    ProblemStatement.CandidateProperties 1\n      (R3CompactCandidate.velocity A B) (R3CompactCandidate.pressure P)\n      (PositiveTimeForce.force (R3CompactCandidate.compactForce f))\n      SpatialLocalization.supportCylinder"
+      }
+    }
+  }
+}

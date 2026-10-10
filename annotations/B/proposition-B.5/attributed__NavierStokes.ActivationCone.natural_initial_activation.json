@@ -1,0 +1,31 @@
+{
+  "id": "proposition-B.5/attributed/NavierStokes.ActivationCone.natural_initial_activation",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationCone.natural_initial_activation",
+      "line": 838,
+      "module": "NavierStokes.ActivationCone",
+      "path": "NavierStokes/ActivationCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean#L838"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationCone.natural_initial_activation",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Produces Tstar > 0 and θ ∈ (0,1] such that the same five cone conjuncts hold uniformly for every T ∈ Ioc 0 Tstar and every κ ∈ Ioo 0 1; the uniform source of InitialActivationBound.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 838,
+        "text": "theorem natural_initial_activation {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    (hP0 : ContDiff ℝ ∞ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2 * δ < ReferencePath.rampLimit) :\n    let N"
+      }
+    }
+  }
+}

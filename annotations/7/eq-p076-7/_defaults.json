@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 76.7",
+  "status": "formalized",
+  "location": {
+    "page": 76,
+    "rect": [0.17526, 0.688753, 0.649709, 0.023539]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p076-7",
+      "locator": {
+        "physical": [76],
+        "printed": [76],
+        "text": "Display 76.7, p. 76, in the proof of Lemma 7.1"
+      },
+      "region": "eq-p076-7@p076",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: e \\cdot (-\\mathcal{K}_0 e) = sK \\cdot g_0 = 0, \\qquad e \\cdot (-\\mathcal{K}_0 N) = 2F_0 N_\\theta, \\qquad N \\cdot (-\\mathcal{K}_0 e) = -(2F_0 N_\\theta + |g_0|)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean never writes the three bare inner products; it writes them already divided by the squared lengths ‖e‖² = 1+s² and ‖N‖² = 1, i.e. as the coordinate coefficients coeff11, coeff12, coeff21. Rewriting (reference case rot = 0, ρ' = 0, ρ = s, F = F_0, g = g_0): (1+s²)·coeff11 s 0 ⟪K,g₀⟫ = s⟪K,g₀⟫ = sK·g₀, the paper's first quantity; (1+s²)·coeff12 F₀ N_θ s 0 = 2F₀N_θ = e·(-𝒦_0 N); coeff21 F₀ N_θ ⟪N,g₀⟫ s 0 = -(2F₀N_θ + ⟪N,g₀⟫) = N·(-𝒦_0 e). The vanishing sK·g₀ = 0 is the Lean hypothesis `horth : ⟪B0 0, g0⟫_ℝ = 0` of frame_coefficients_close, and it is discharged for the actual construction by transverseDirection_inner_shear together with construction_transverse (the reference K is the transverse direction of the shear). The paper's |g_0| is ⟪N, g₀⟫ in frame_coefficients_close, which is the more general form; the two agree because g₀ = |g₀|N (norm_smul_normalDirection). Constants, signs, the factor 2 and the subscript θ agree term for term.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

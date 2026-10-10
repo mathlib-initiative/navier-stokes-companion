@@ -1,0 +1,28 @@
+{
+  "id": "lemma-7.7/support/NavierStokes.ActualCurrentParticularBounds.common_potential_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCurrentParticularBounds.common_potential_class",
+      "line": 75,
+      "module": "NavierStokes.ActualCurrentParticularBounds",
+      "path": "NavierStokes/ActualCurrentParticularBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCurrentParticularBounds.lean#L75"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCurrentParticularBounds.common_potential_class",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 75,
+        "text": "theorem common_potential_class\n    (a : L → PeriodizedWaveBounds.CopyData E I) (K : L → PeriodizedWaveBounds.Cells E I)\n    (hs : ∀ l n i, support ((a l).cutoff n i) ⊆ (K l).carrier n i)\n    (C : L → ℕ → I → Set E) {s : StripData E} {d : GraphDirections E}\n    {W : L → ℕ → E → ℝ} {α κ : ℝ}\n    (hW : ∀ l n x, x ∈ s.domain → 0 ≤ W l n x)\n    (hin : LocalizedWaveBounds.InputBounds s (fun n (i : L × I) => C i.1 n i.2)\n      (fun n i x => W i.1 n x) α κ d (LocalizedWaveBounds.jointNativeFamily a))\n    {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ l n i x, x ∈ s.domain → x ∈ C l n i → b ≤ ‖(a l).background.normal s d n x‖)\n    (hupper : ∀ l n i x, x ∈ s.domain → x ∈ C l n i → ‖(a l).background.normal s d n x‖ ≤ M)\n    (hfreq : LocalizedWaveBounds.LocalUnweighted s (fun n (i : L × I) => C i.1 n i.2)\n      (1 / 2) (fun n i _ => 1 / (a i.1).background.frequency n))\n    (hcover : ∀ l n i x, x ∈ s.domain → x ∈ (K l).carrier n i → x ∈ C l n i ∨\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.2/attributed/NavierStokes.AxisSeries.profile_eq_tsum",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisSeries.profile_eq_tsum",
+      "line": 176,
+      "module": "NavierStokes.AxisSeries",
+      "path": "NavierStokes/AxisSeries.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisSeries.lean#L176"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisSeries.profile_eq_tsum",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: profile chi Y = sum_{n} (-chi*Y/2)^n / (n! * (n+1)!), which is exactly the paper's f_0(z) = sum_{alpha>=0} (-z/2)^alpha / (alpha! (alpha+1)!) at z = Y chi."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 176,
+        "text": "theorem profile_eq_tsum (χ Y : ℝ) :\n    profile χ Y = ∑' n : ℕ, (-χ * Y / 2) ^ n /\n      ((n.factorial : ℝ) * ((n + 1).factorial : ℝ))"
+      }
+    }
+  }
+}

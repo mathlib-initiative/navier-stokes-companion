@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (8.22)",
+  "status": "formalized",
+  "location": {
+    "page": 96,
+    "rect": [0.310572, 0.287509, 0.558496, 0.027581]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-8.22",
+      "locator": {
+        "physical": [96],
+        "printed": [96],
+        "text": "Equation (8.22), p. 96, in the statement of Lemma 8.6"
+      },
+      "region": "eq-8.22@p096",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: c_{i_0} N_{i_0} \\Delta v = -E_\\theta^{\\circ}, \\qquad c_{i_0} N_{i_0} \\Delta\\gamma = -E_z^{\\circ} + c_{i_0} N_{i_0} a."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The first equation is stated verbatim: fastAtIndex / fastDerivative is exactly c_{i_0}N_{i_0} (the chart coefficient T_g^{i}Q^{1+h} times the derivative along vector .temporal = v_t), Δv is temporalAtIndex / desiredIncrement, and E_θ^∘ is TemporalMeanUpdate.centered fθ, so temporalAtIndex_fast_cancellation and desiredIncrement_fastDerivative read c_{i_0}N_{i_0}Δv = −E_θ^∘. The second equation needs one transposition and one naming step: the Lean states c_{i_0}N_{i_0}Δγ + E_z^∘ = −c_{i_0}N_{i_0}(𝒜_1γ_d) (axialUpdate_fast_residual), and axialUpdate_eq_desired_sub_alias fixes Δγ = γ_d − 𝒜_1γ_d, so the paper's a = −𝒜_1γ_d = −axialAlias; moving E_z^∘ to the right-hand side gives the paper's form exactly. temporal_mean_update bundles both equations in one statement. Both Lean theorems add the standing hypotheses 0 < a < b, 0 < d, smoothness, torus periodicity and radial support of the source.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

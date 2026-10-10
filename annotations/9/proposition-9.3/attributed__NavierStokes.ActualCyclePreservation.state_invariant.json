@@ -16,7 +16,9 @@
         "kind": "theorem"
       },
       "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: theorem state_invariant (B N0) (hN) (j : ℕ) : Invariant (sigma j) (state B N0 j)  -- stage-j invariant with the refined carrier (shell-restricted support)"
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: theorem state_invariant (B N0 : ℕ) (hN : geometricThreshold ≤ N0) (j : ℕ) : Invariant (ActualIterationLedger.sigma j) (state B N0 j). `state B N0 j` is `CycleState.iterate (fun _ => fixedParameters B N0) …` (:149). Supplies, for the stage-j state, the invariant bundle: inputSupport, sourceBand, resi",
+        "status": "unconfirmed",
+        "verdict": "deviation"
       },
       "relation": "part",
       "role": "attributed",

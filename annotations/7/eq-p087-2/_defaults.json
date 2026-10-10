@@ -1,0 +1,46 @@
+{
+  "kind": "equation",
+  "label": "Display 87.2",
+  "status": "formalized",
+  "location": {
+    "page": 87,
+    "rect": [0.224605, 0.304178, 0.551017, 0.026565]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.GaussianTailFlat",
+      "path": "NavierStokes/GaussianTailFlat.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p087-2",
+      "locator": {
+        "physical": [87],
+        "printed": [87],
+        "text": "Display 87.2, p. 87, in section 7"
+      },
+      "region": "eq-p087-2@p087",
+      "verdicts": [
+        {
+          "confidence": 0.74,
+          "evidence": ["paper: q^{-N} Q^{-M} S_*^{C} e^{-c S_*} \\le C_N \\exp\\!\\big(-c\\ell^2 + (M+N)\\ell \\log 2 + 2C \\log \\ell\\big) \\longrightarrow 0 ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same Gaussian-beats-any-power estimate; Lean states the conclusion and skips the paper's explicit middle exponential. The paper substitutes S_* = ℓ² and Q = 2^{-ℓ} to exhibit the exponent -cℓ² + (M+N)ℓ log 2 + 2C log ℓ and then lets ℓ → ∞; no declaration was found that writes that exponent. `gaussian_beats_Q_power` (line 230) instead gives, for every target exponent N_lean and every natural p, a uniform constant with (1+S n)^p e^{-c S n} ≤ C Q n ^ N_lean, where `ChartScales.S n = (n:ℝ)^2` and `ChartScales.Q n = 2^{-n}` — the paper's S_* and Q with ℓ = n. The rewriting: given the paper's M, N, C, apply the Lean lemma with p = ⌈C⌉ and N_lean = M + N + 1, using S_*^C ≤ (1 + S_*)^{⌈C⌉}; the paper's q^{-N} is converted to Q^{-N} up to the factor 2^N by q ≍ Q, so q^{-N} Q^{-M} S_*^C e^{-cS_*} ≤ 2^N C Q^{M+N+1-(M+N)} = 2^N C · 2^{-ℓ} → 0. `Q_rpow_eq_exp` (line 220) is exactly the paper's Q^{-M} = exp(Mℓ log 2) step. Two encoding differences, neither mathematical: the paper's ≍ is carried in Lean as the explicit two-sided hypothesis q/2 ≤ Q n ≤ 2q at the point of use (`SlotFamily.error_physical_bound`, line 807), and the paper's real exponent C on S_* is a natural exponent p in Lean. The paper's `→ 0` conclusion is strengthened in Lean to a quantitative bound C q^N at the place the limit is used.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.1)",
+  "status": "formalized",
+  "location": {
+    "page": 144,
+    "rect": [0.163016, 0.578043, 0.706436, 0.044161]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.NaturalAxisData",
+      "path": "NavierStokes/NaturalAxisData.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-B.1",
+      "locator": {
+        "physical": [144],
+        "printed": [144],
+        "text": "Equation (B.1), p. 144, in section B.1"
+      },
+      "region": "eq-B.1@p144",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.95,
+          "evidence": ["paper: U_* = 4\\eta + j_0, \\qquad H_* = D\\eta + dU_*, \\\\ W_* = 1 - dU_{*\\eta} - 2D\\eta U_*, \\qquad Z_* = -A(1 - 2\\eta U_*)U_* - H_* U_{*\\eta} - d\\Pi_{0\\eta} + 4A\\eta\\Pi_0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Term by term identical once the Lean substitutes the derivative U_{*η} = ∂_η(4η + j) = 4, which is forced by the first entry of the same display: `W` is written `1 - 4 * d η - 2 * D h * η * U j η` for the paper's 1 - dU_{*η} - 2DηU_*, and the second summand of `Z` is `H h j η * 4` for H_*U_{*η}. Signs, the factor (1 - 2ηU_*), the coefficient 4Aη and the placement of A and d all agree. Notation only: j_0 is `j`, Π₀ is the function argument `P`, Π_{0η} is `deriv P η`, and A, D, d are the (4.1) symbols A = 1/2 + h, D = 1/2 - h, d = 1 - η² defined in the same file — so, as in the paper, d is a function of η and D a constant.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

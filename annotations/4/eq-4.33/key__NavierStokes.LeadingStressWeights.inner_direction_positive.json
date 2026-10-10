@@ -1,0 +1,26 @@
+{
+  "id": "eq-4.33/key/NavierStokes.LeadingStressWeights.inner_direction_positive",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStressWeights.inner_direction_positive",
+      "line": 946,
+      "module": "NavierStokes.LeadingStressWeights",
+      "path": "NavierStokes/LeadingStressWeights.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L946"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStressWeights.inner_direction_positive",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 946,
+        "text": "theorem inner_direction_positive (hcone : FullTrueCone v) : ∃ G : EdgeFactor (Icc (-1:ℝ) 1) (W.controls.activationTime ^ 2) (leftChart (leftEdge W) (logStress v.profiles F.data.h)), (∀ eta ∈ Icc (-1:ℝ) 1, 0 < (G.coefficient (eta,0)).1) ∧ HasTrueDirectionCollar (Icc (-1:ℝ) 1) (leftChart (leftEdge W) (logStress v.profiles F.data.h)) G.coefficient (leftChart (leftEdge W) (logSpeed v.profiles)) (leftChart (leftEdge W) (logSlope v.profiles)) G.width"
+      }
+    }
+  }
+}

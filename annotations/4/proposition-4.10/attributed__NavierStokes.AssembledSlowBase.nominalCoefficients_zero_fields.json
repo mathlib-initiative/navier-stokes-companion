@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.AssembledSlowBase.nominalCoefficients_zero_fields",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AssembledSlowBase.nominalCoefficients_zero_fields",
+      "line": 1314,
+      "module": "NavierStokes.AssembledSlowBase",
+      "path": "NavierStokes/AssembledSlowBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean#L1314"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AssembledSlowBase.nominalCoefficients_zero_fields",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0 <= p.1 and |p.2| <= 1: (nominalCoefficients W).phi 0 p = W.axis.normalization * W.f p, .axial 0 p = W.U p, .pressure 0 p = W.Pi p. The order-zero data of the Cartesian reconstruction IS W's triple, on the paper's closed region, X = 0 included. This is the declaration that attaches the Cartesia",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1314,
+        "text": "theorem nominalCoefficients_zero_fields {p : ℝ × ℝ} (hX : 0 ≤ p.1) (heta : |p.2| ≤ 1) :\n    (nominalCoefficients W).phi 0 p = W.axis.normalization * W.f p ∧\n    (nominalCoefficients W).axial 0 p = W.U p ∧\n    (nominalCoefficients W).pressure 0 p = W.Pi p"
+      }
+    }
+  }
+}

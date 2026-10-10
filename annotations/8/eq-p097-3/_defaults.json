@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 97.3",
+  "status": "formalized",
+  "location": {
+    "page": 97,
+    "rect": [0.296426, 0.775127, 0.407373, 0.030337]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p097-3",
+      "locator": {
+        "physical": [97],
+        "printed": [97],
+        "text": "Display 97.3, p. 97, in the proof of Lemma 8.7"
+      },
+      "region": "eq-p097-3@p097",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\int x^p \\eta_j(x)\\,dx = \\mu_p e^{jdp}, \\qquad \\mu_p = \\int x^p \\eta_0(x)\\,dx > 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Stated in general form, though in the outgoing-pulse files rather than the Lemma 8.7 ones. `power_bump_integral_scale` (OutgoingPulseBounds.lean:543) says, for every real a, every k > 0 and every 0 < l < u, ∫ t^a·bump(kl,ku)(t) dt = k^{a+1}·∫ t^a·bump(l,u)(t) dt, and `bump_scale` (:452) identifies bump(kl,ku) with the dilate η_0(·/k) of the single template η_0 = `radialTemplate` (:411), a nonnegative bump supported in (e^{-3/20}, e^{3/20}), the paper's η_0 near x₀ = 1 > 0. The rewriting to the display is exactly the paper's amplitude normalisation: the paper writes η_j = a_j^{-1}η_0(·/a_j), so ∫ x^p η_j dx = a_j^{-1}·a_j^{p+1}μ_p = μ_p a_j^p = μ_p e^{jdp}, which is Lean's k^{a+1} divided by the k the paper puts in the amplitude. μ_p itself is `rowMoment a = ∫ x^a radialTemplate x` (:493), defined for arbitrary real a. At geometric centers the display is stated literally: `lower_scale`/`upper_scale` (:465, :473) give the cells as e^{center j}·(templateLower, templateUpper) with center j in arithmetic progression of step 2 — the paper's a_j = e^{jd}, d = 2 — and `actual_matrix_entry` (:565) states ∫ x^{p_i} η_j = μ_{p_i} e^{(p_i+1)c_j}. In log coordinates `AngularMomentReset.bump_moment` (:97) is the display verbatim for the translated family bump j y = template(y − 2j) (:24, :26), with `weighted_translate_integral` (:542) the general translate form. The positivity half: `AngularMomentReset.moment_pos` (:88) gives 0 < moment s for every real s; in the radial variable `rowMoment_pos` (:598) gives μ_p > 0 only for the two exponents of that instance, since `rowMoment_bounds` (:509) assumes −1 ≤ p ≤ 0, so general-p positivity of `rowMoment` is an unstated instance of the same three-line argument (nonnegative, continuous, nonzero at the center). What differs is scope and use, not content: the instantiated family there has two members (Fin 2), not the paper's j = 0,1,2, though the scaling lemma is for arbitrary k so it covers j = 2 as well; and this machinery serves the outgoing-pulse repair, not Lemma 8.7. The Lemma 8.7 pipeline (FiveRowRank / LocalizedMomentRepair / FiveProfileMoments) never invokes the product formula: its profiles are bumps on pairwise disjoint cells of the patch (`FiveRowRank.cellLower`/`cellUpper`), their moments stay as unevaluated integrals (`FiveProfileMoments.bumpMoment`, :151), and the invertibility this display serves is obtained there from `PowerMomentMatrix.intervalMomentMatrix_det_ne_zero` (:216) instead. That route difference is recorded under eq-p098-1; the identity itself is in the repository.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

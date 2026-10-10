@@ -1,0 +1,31 @@
+{
+  "id": "lemma-B.1/attributed/NavierStokes.AxisEvaluation.profile_smooth",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AxisEvaluation.profile_smooth",
+      "line": 260,
+      "module": "NavierStokes.AxisEvaluation",
+      "path": "NavierStokes/AxisEvaluation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisEvaluation.lean#L260"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AxisEvaluation.profile_smooth",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: 0<ε → ContDiffOn ℝ ∞ (profile I ε A) (strip I 20), strip I 20 = Ioo (-20) 20 ×ˢ Ioo I.left I.right (AxisEvaluation.lean:156): every element, J_r A included, evaluates to a function smooth across Y = 0.",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 260,
+        "text": "theorem profile_smooth (I : Window) {ε : ℝ} (hε : 0 < ε)\n    (A : AxisSpace I ε) : ContDiffOn ℝ ∞ (profile I ε A) (strip I 20)"
+      }
+    }
+  }
+}

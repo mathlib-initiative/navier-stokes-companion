@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 113.8",
+  "status": "partial",
+  "location": {
+    "page": 113,
+    "rect": [0.357971, 0.802506, 0.284281, 0.028804]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p113-8",
+      "locator": {
+        "physical": [113],
+        "printed": [113],
+        "text": "Display 113.8, p. 113, in the proof of Lemma 9.8"
+      },
+      "region": "eq-p113-8@p113",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: |\\nabla_x^a \\partial_t^b e^{ikm\\Phi}| \\le C_{a,b,m}\\, Q^{-a s_x - b s_t}\\, S_*^{P_{a,b,m}}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The oscillatory factor matches exactly: `character ((carrier h n)*(j)) Φ = exp(i·k·m·Φ)` with `carrier` the rounded integer frequency k and j the harmonic m, and the constant is allowed to depend on the order and on a bound H for |j|, as the paper's C_{a,b,m} does. The Q exponent differs: the Lean charges `derivativeCost h = s_t = 1 + 3h/2` for each of the m Cartesian derivatives whatever their direction, giving Q^(-m s_t) in place of the paper's Q^(-a s_x - b s_t) with m = a+b. Since s_x = 1/2 + h/2 < s_t = 1 + 3h/2 for h ≥ 0 and Q ≤ 1, the Lean factor is the larger loss whenever a ≥ 1, so the Lean bound follows from the paper's and not conversely. The slow factor S_*^{P_{a,b,m}} matches (`S n ^ (d+e*m)`). Severity is low because the paper itself collapses to the worst case one paragraph later: its ℓ_m = 2A+(m+1)s_t (eq-p114-1) charges s_t for every derivative, and that is exactly what the Lean's `physicalLoss` reaches.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

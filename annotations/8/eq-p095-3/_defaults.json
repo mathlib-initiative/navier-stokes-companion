@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 95.3",
+  "status": "formalized",
+  "location": {
+    "page": 95,
+    "rect": [0.341676, 0.302182, 0.316864, 0.063162]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p095-3",
+      "locator": {
+        "physical": [95],
+        "printed": [95],
+        "text": "Display 95.3, p. 95, in the proof of Corollary 8.5"
+      },
+      "region": "eq-p095-3@p095",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\int R^{2}\\bigl(\\langle E_\\theta\\rangle_Y - \\sigma_\\theta\\,\\varepsilon\\partial_Z\\mathcal{J}_\\theta\\bigr)\\,dR = 0,\\qquad \\int R\\bigl(\\langle E_z\\rangle_Y - \\sigma_z\\,\\varepsilon\\partial_Z(\\mathcal{J}_z + c_\\rho\\mathcal{P})\\bigr)\\,dR = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean states the same vanishing-moment step in source-generic form: mass e (⟨f⟩_Y − σ_e · mass e ⟨f⟩_Y) = 0, i.e. the bump is multiplied by the source's own weighted moment rather than by the paper's already-identified defect. The rewriting is routine and is the one the repository itself performs: for e = 2, f = u.thetaResidual, state_radialMoment_eq together with state_angular_moment give mass 2 ⟨E_θ⟩_Y = ε ∂_Z J_θ, so physicalAdjusted P 2 … = ⟨E_θ⟩_Y − σ_θ ε∂_Z J_θ pointwise and the first line follows; for e = 1, f = u.axialResidual, state_axial_moment gives mass 1 ⟨E_z⟩_Y = ε ∂_Z (axialDebtPotential) with axialDebtPotential = axialDefect + pressureCoefficient · pressureDefect, which is the paper's J_z + c_ρ P, giving the second line. The same substitution is carried out inside LocalSignedRequest.physicalBump_improvedClass_of_moment (LocalSignedRequest.lean:1016), applied with e = 2 and e = 1 at GaugeMomentBalances.lean:829 and :857. The bump normalization ∫R^e σ_e dR = 1 is physicalDensity_moment. Two encoding points, neither a mathematical difference: SignedStressPrimitive.mass integrates over all of ℝ rather than the paper's radial half-line (the integrand is compactly supported in the shell √q·[P.a, P.b] ⊂ (0,∞); physicalDensity_positive_moment records the Ioi 0 version for the bump), and the Lean statement is quantified over every exponent e and every smooth shell-supported source, the paper's two lines being the instances e = 2 and e = 1.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

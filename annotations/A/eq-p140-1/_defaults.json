@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 140.1",
+  "status": "formalized",
+  "location": {
+    "page": 140,
+    "rect": [0.152475, 0.67405, 0.696065, 0.04414]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p140-1",
+      "locator": {
+        "physical": [140],
+        "printed": [140],
+        "text": "Display 140.1, p. 140, in the statement of Lemma A.8"
+      },
+      "region": "eq-p140-1@p140",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: M(\\infty) = J(\\infty) = S(\\infty) = 0, \\qquad \\int_0^\\infty (H - H_{\\mathrm{pow}})\\, dX = 0, \\qquad \\Pi(X) = -\\frac{1}{2}\\int_X^\\infty \\frac{E(x)^2}{x}\\, dx."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three clauses are present, as fields of one structure, for the heated terminal profile Lemma A.8 is about. Clause 3 is literal: `pressure_canonical` is Π(X) = -(1/2)·∫_{u ∈ Ioi X} E(u,η)²/u, and for the heated profile `HeatedOutgoing.Pi` is defined by that very formula (so the field is definitional); `OutgoingProfile.Profile.Pi_canonical` proves the same formula for the reference profile. Clause 2 is literal: `renormalized_zero` is ∫_{Ioi 0} (H − powerH) = 0 with H = √(2X)·E and powerH = √(2X)·powerE, powerE = powerConstant·X^{−(1/2+h)}, matching the paper's H_pow = √(2X)·c_∞·X^{−A}. Clause 1 is the only rewriting: the paper writes M(∞)=J(∞)=S(∞)=0 as limits of the cumulative integrals M(X)=∫_0^X U dx, J(X)=∫_0^X UH dx, S(X)=∫_0^X (U²−E²/2) dx of (4.15), whereas Lean writes the improper integrals over Ioi 0 directly (`mass_zero`, `angular_zero`, `energy_zero` with totalS = ∫_{Ioi 0}(U²−E²/2)). The recovery is routine: the same structure carries `mass_integrable`, `angular_integrable`, `energy_integrable` on Ioi 0, so ∫_{Ioc 0 X} → ∫_{Ioi 0} as X → ∞ by dominated convergence, and ∫_{Ioi 0} = 0 is then exactly the vanishing of the limit. For M and J the Lean is in fact stronger: `after_pulse` gives M F XR eta X = 0 and J F XR c eta X = 0 outright for every X beyond the pulse end, not merely in the limit. Two further encoding points, neither a weakening on the paper's domain: `energy_zero` and `renormalized_zero` are restricted to η ∈ parameterDomain = Icc (-1) 1, which is the paper's η-range, while `mass_zero` and `angular_zero` hold for every real η; and the Lean adds the four integrability fields that the paper leaves implicit in asserting the moments.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

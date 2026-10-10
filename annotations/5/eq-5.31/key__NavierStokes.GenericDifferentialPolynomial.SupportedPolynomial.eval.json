@@ -1,0 +1,24 @@
+{
+  "id": "eq-5.31/key/NavierStokes.GenericDifferentialPolynomial.SupportedPolynomial.eval",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GenericDifferentialPolynomial.SupportedPolynomial.eval",
+      "line": 184,
+      "module": "NavierStokes.GenericSupportedPolynomial",
+      "path": "NavierStokes/GenericSupportedPolynomial.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSupportedPolynomial.lean#L184"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GenericDifferentialPolynomial.SupportedPolynomial.eval",
+        "kind": "def"
+      },
+      "snippet": {
+        "line": 184,
+        "text": "eval (P) (u : ι → D → ℝ) : D → ℝ := fun x => P.constant x + evalTerms u P.terms x, where evalTerms u ((c,e) :: es) x = c x * e.eval _ u x + evalTerms u es x"
+      }
+    }
+  }
+}

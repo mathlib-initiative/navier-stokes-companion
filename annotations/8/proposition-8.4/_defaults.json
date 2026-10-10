@@ -17,31 +17,39 @@
       "region": "proposition-8.4@p094",
       "verdicts": [
         {
-          "confidence": 0.86,
-          "evidence": ["CONFIRMED_CONTENT: PressureStream.rho (PressureStream.lean:36), VariableGaugeMean.density (VariableGaugeMean.lean:63), GaugeMomentBalances.pressureCoefficient (GaugeMomentBalances.lean:47)", "CONFIRMED_CONTENT: GaugeMomentBalances.MovingFluxInputs / MovingField (GaugeMomentBalances.lean:461,484): stress : MovingField U a b T; periodic : PeriodicOn", "The auditor and both skeptics agree."],
+          "confidence": 0.87,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/GaugeMomentBalances.lean:572 (first identity) and :623 (second identity) are two theorems, each concluding only for s ∈ U.carrier of a SlowRegion (NavierStokes/LocalSignedRequest.lean:111); the globally quantified NavierStokes/StateMomentBalances.lean:980 uses StateMomentBalances.pressureCoefficient r (StateMomentBalances.lean:805), a constant.", "CONVENTION: MovingFluxInputs.stress : MovingField U a b T (NavierStokes/GaugeMomentBalances.lean:484-489), instantiated at c.virtualTheta and c.virtualAxial by MovingAngularInputs/MovingAxialInputs (GaugeMomentBalances.lean:491-497); likewise FluxInputs.stress and stress_periodic (StateMomentBalances.lean:721-729).", "CONVENTION: CorrectionState.radialMoment (NavierStokes/CorrectionState.lean:226) = PressureStream.pressureMass (NavierStokes/PressureStream.lean:121) = ∫ r, torusAverage f (r,s) over ℝ; the shell hypotheses ha : 0 < a appear at GaugeMomentBalances.lean:573 and StateMomentBalances.lean:767, and MovingField.supported / Shell confine every integrand to [a,b] (resp. qLength·[a,b]).", "Both rulings reach SINGLE_SOURCE_OK and both are right to. The two identities of (8.16) are stated in Lean against the actual native-operator residuals of (8.3) and the actual defects of (8.15) and (8.12), with every ingredient matching term by term, including the paper's insistence that the whole product c_ρP stay inside ∂_Z with c_ρ variable. Nothing has to be supplied that the repository does not state: the paper's statement is recovered by instantiating the angular theorem at the moving gauge's shell and conjoining. I side with B on roles and on the packaging finding, and with A on the relation, since the Lean premises are incomparable with the paper's rather than weaker: they drop the divergence-free constraint but add shell support of Σ_a and confine the variable-c_ρ identity to a slow region."],
           "findings": [
             {
               "confidence": 0.86,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "The paper's ρ is any fixed bump ρ̂ ∈ C_c^∞(I_m) with ∫ρ̂=1. Lean fixes one concrete bump: a normalized ContDiffBump centered at the midpoint of [a,b], scaled by √q. So c_ρ is that bump's half second moment. The identity's form does not depend on which bump is chosen."
+              "summary": "No declaration states both identities of (8.16); they are separate theorems. The (Z,T)-dependent c_ρ the paper stresses appears only in the SlowRegion-local axial theorem, while the globally quantified axial theorem uses a constant c_ρ."
             },
             {
-              "confidence": 0.86,
+              "confidence": 0.8,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
+              "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "Lean states the item as two separate theorems, local to an open SlowRegion. It makes explicit three hypotheses the paper leaves implicit: auxiliary-torus periodicity, moving-shell support of every flux, and shell support of the residual stresses Σ_θ, Σ_z."
+              "summary": "The Lean hypothesis bundles additionally require the residual stresses Σ_θ, Σ_z to be smooth, shell-supported and torus-periodic. Proposition 8.4's statement lists no hypothesis on Σ_a, though its proof invokes their compact support."
+            },
+            {
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The paper's radial integrals run from 0 to ∞; the Lean moment integrates over all of ℝ. The two agree because each theorem hypothesizes support in a shell [a,b] with 0 < a, but the identification is an encoding choice, not a definitional one."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
           "relation": "different_formulation",
           "severity": "none",

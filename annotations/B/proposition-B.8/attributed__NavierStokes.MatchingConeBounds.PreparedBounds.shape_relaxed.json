@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.8/attributed/NavierStokes.MatchingConeBounds.PreparedBounds.shape_relaxed",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MatchingConeBounds.PreparedBounds.shape_relaxed",
+      "line": 837,
+      "module": "NavierStokes.MatchingConeBounds",
+      "path": "NavierStokes/MatchingConeBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean#L837"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MatchingConeBounds.PreparedBounds.shape_relaxed",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For Xi <= p.1 <= c.radius * exp(-8) and eta in the parameter domain, the constructed continuation satisfies `ActivationContinuation.IsRelaxed`. The strict relaxed cone on the shape-transition stretch up to log x = -8."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 837,
+        "text": "theorem PreparedBounds.shape_relaxed {F : OutgoingProfile.Profile} {A : NominalProfile.AxisStage F}\n    {c : NominalProfile.Controls A} {N : ℕ} {rho delta radiusFloor : ℝ}\n    (hb : PreparedBounds c N rho delta radiusFloor) {X eta : ℝ}\n    (hX : NominalProfile.Xi ≤ X) (hR : X ≤ c.radius * Real.exp (-8))\n    (hη : eta ∈ Icc (-1 : ℝ) 1)\n    (hinit : 2 < ReferenceBounds.p1 (c.profiles hb.matching.separation.le)\n      F.data.h (NominalProfile.Xi, eta)) :\n    ActivationContinuation.IsRelaxed (c.profiles hb.matching.separation.le) F.data.h (X, eta)"
+      }
+    }
+  }
+}

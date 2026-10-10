@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.25)",
+  "status": "formalized",
+  "location": {
+    "page": 134,
+    "rect": [0.270168, 0.759851, 0.598907, 0.043383]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.25",
+      "locator": {
+        "physical": [134],
+        "printed": [134],
+        "text": "Equation (A.25), p. 134, in section A.5"
+      },
+      "region": "eq-A.25@p134",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: Q_s = \\frac{(3/5)(4L-1) - h(1-8\\eta^2) + (D+4d)\\,\\eta J_0'}{8/5} \\;\\ge\\; c > 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Term by term the numerator is the paper's: L h η = 1 - 2hη², D h = 1/2 - h, d η = 1 - η² are the abbreviations of (4.1), and J₀' is expanded to its (A.7) value 2η/(1+η²) (f = (1+η²)⁻¹ = e^{-J₀}, J₀ = log(1+η²)); the denominator 8/5 and the coefficients (3/5), -h(1-8η²), (D+4d) agree exactly. Two routine recodings. (i) The equality is carried by a definition (idealAngularLag = idealAngularSource/(8/5), and RadialSchedule.idealLag likewise) rather than asserted of a separately constructed Q_s; that it really is the Q_s of the paper's scalar equation is the content of ideal_lag_equation, (1+3/5)·idealLag = idealSource, i.e. the constant particular solution at logarithmic slope l = 3/5, and of idealAngularLag_is_incoming_integral (OutgoingEntranceCone.lean:276), which writes the same quantity as ∫_{-∞}^0 e^{(8/5)t}S dt. (ii) The paper's unspecified c > 0 is the explicit c = 1, proved under 0 ≤ h ≤ 1/100 (RadialSchedule's variant: h ≤ 1/5) and |η| ≤ 1; the paper carries only 0 < h < 1/2 from (4.1) and -1 < η < 1 from (3.2), but h is small throughout Section A.5 by the ordering (A.6), and h ≤ 1/5 is exactly what makes the constant equal 1.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

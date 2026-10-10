@@ -1,0 +1,23 @@
+{
+  "id": "eq-5.33/key/NavierStokes.GenericTupleRealization.Result.flat_residual_of_raw_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GenericTupleRealization.Result.flat_residual_of_raw_bounds",
+      "line": 75,
+      "module": "NavierStokes.GenericSummationRealization",
+      "path": "NavierStokes/GenericSummationRealization.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSummationRealization.lean#L75"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GenericTupleRealization.Result.flat_residual_of_raw_bounds"
+      },
+      "snippet": {
+        "line": 75,
+        "text": "hypothesis: (rho : ℕ → ℝ) (hrho : Tendsto rho atTop atTop) (Cr Pr : ℕ → ℕ → ℝ) (Kr : ℕ → ℝ) (error : ℕ → ℕ → SpaceTime → ℝ) (hres : ∀ J m x, x ∈ U → ‖iteratedFDeriv ℝ m (P.eval (stageComponents u0 s0 A B R J)) x‖ ≤ Cr J m * (1 + |Real.log (q x)|) ^ Pr J m * q x ^ (rho J - Kr m) + error J m x) (he : ∀ J m N, ∃ Ce, 0 ≤ Ce ∧ ∀ x ∈ U, error J m x ≤ Ce * q x ^ (N : ℕ))"
+      }
+    }
+  }
+}

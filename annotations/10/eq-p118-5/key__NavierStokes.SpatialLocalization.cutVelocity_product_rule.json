@@ -1,0 +1,25 @@
+{
+  "id": "eq-p118-5/key/NavierStokes.SpatialLocalization.cutVelocity_product_rule",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SpatialLocalization.cutVelocity_product_rule",
+      "line": 200,
+      "module": "NavierStokes.SpatialLocalization",
+      "path": "NavierStokes/SpatialLocalization.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpatialLocalization.lean#L200"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SpatialLocalization.cutVelocity_product_rule"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 200,
+        "text": "theorem cutVelocity_product_rule (A : VelocityField) (t : ℝ) (x : Space) (hA : DifferentiableAt ℝ (fun y => A (t, y)) x) : cutVelocity A (t, x) = spatialCutoff x • SpatialCurl.spatialCurl A (t, x) + SpatialCurl.curlLinear ((fderiv ℝ spatialCutoff x).smulRight (A (t, x)))"
+      }
+    }
+  }
+}

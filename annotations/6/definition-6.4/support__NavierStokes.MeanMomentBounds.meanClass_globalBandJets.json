@@ -1,0 +1,26 @@
+{
+  "id": "definition-6.4/support/NavierStokes.MeanMomentBounds.meanClass_globalBandJets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanMomentBounds.meanClass_globalBandJets",
+      "line": 48,
+      "module": "NavierStokes.MeanMomentBounds",
+      "path": "NavierStokes/MeanMomentBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanMomentBounds.lean#L48"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanMomentBounds.meanClass_globalBandJets",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 48,
+        "text": "theorem meanClass_globalBandJets\n    {a b cL cR : ℝ} (ha : 0 < a) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1)\n    (hS : ∀ n, 1 ≤ S n) {α : ℝ} {f : ℕ → ℝ × D → E}\n    (hf : ∀ n, ContDiff ℝ ∞ (f n))\n    (hs : ∀ n, RadialAlias.RadiallySupported a b (f n))\n    (hclass : MeanClass (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α f) :\n    GlobalBandJets ε S α f"
+      }
+    }
+  }
+}

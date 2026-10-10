@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 40.1",
+  "status": "partial",
+  "location": {
+    "page": 40,
+    "rect": [0.190324, 0.155307, 0.619349, 0.050153]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p040-1",
+      "locator": {
+        "physical": [40],
+        "printed": [40],
+        "text": "Display 40.1, p. 40, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p040-1@p040",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: 0 < \\mathsf{C}^{-1} \\ll T_{\\mathrm{sh}}^{-1} \\ll \\Lambda^{-1} \\ll \\sigma_* \\ll \\delta_* \\ll j_0 \\ll \\varepsilon_m \\ll h \\ll \\lambda \\ll P_*^{-1} \\ll M_d^{-1} \\ll 1, \\\\ 0 < \\omega_{\\mathrm{fin}} \\ll t_1 \\ll \\kappa_0 \\ll \\mathsf{C}^{-1}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "hypothesis",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The ordering is stated, but as nested quantifiers rather than as a chain of ≪: the repository has no ≪ notation and no asymptotic-order predicate (greps for '≪' and for 'smallness convention' in NavierStokes/ returned nothing), so no single formula corresponds to the display, and each '≪' is replaced by an explicit threshold. What was opened and checked: (i) exists_ordered_profile_cone (OutgoingCone.lean:503, with its docstring at :457 saying so in these words) states exactly the first four steps of the paper's order and in the paper's order — ∃ M (= M_d), then m ≥ M, then P ≥ amplitudeThreshold m (so P_* is chosen after M_d and depends on it), then ∃ lam0 with lam < lam0 (λ after P_*, since lam0 is built at :475 from lambdaThreshold P m), then h ≤ heightThreshold m lam, and only then the radius XR; (ii) the thresholds make the two inner steps quantitative rather than qualitative: lambdaThreshold P m = min (1/20) (1/(4(entranceRatioBound P m)^2+1)) (OutgoingEntranceCone.lean:1810) is 'λ ≪ P_*^{-1}' in the form λ·(ratio bound)^2 ≤ 1/4, and heightThreshold m lam ≤ lam/100000 (OutgoingCone.lean:451) is 'h ≪ λ' in the form h ≤ λ/100000; (iii) exists_ordered_nominal_witness (MatchingDebtBounds.lean:853) states the rest of the chain in the paper's order — ∃ eps (= ε_m), then j with |j| ≤ eps (j_0 after ε_m), then ∃ Λ0 with Λ ≥ Λ0 (Λ^{-1} after j_0), then ∃ T (the shape time, T_sh^{-1} after Λ^{-1}), then ∃ C0 with C ≥ C0, so C is last; (iv) exists_prepared (PreparedOutgoing.lean:36) runs that order in its proof: M from exists_ordered_profile_cone at :38, then P := max 2 (amplitudeThreshold M) at :39, then the cap on lam at :44, then the family and the height at :51-56. What differs from the display: there is no declaration asserting the chain itself, σ_* and δ_* were not located in the Lean choice order, and the second line (0 < ω_fin ≪ t_1 ≪ κ_0 ≪ C^{-1}) has no counterpart that was found. The construction is nevertheless carried out, so the argument is not blocked.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

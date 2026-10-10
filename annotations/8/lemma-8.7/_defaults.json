@@ -8,6 +8,10 @@
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration_verdict": {
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
       "item": "lemma-8.7",
       "locator": {
         "physical": [97],
@@ -18,23 +22,15 @@
       "verdicts": [
         {
           "confidence": 0.82,
-          "evidence": ["CONFIRMED_CONTENT: NavierStokes.FiveRowRank.exists_five_row_repair (NavierStokes/FiveRowRank.lean:311) concludes '∃ dv ga : ℝ → ℝ, … FiveRows V G d dv ga', with no ∃! or uniqueness clause. five_rows_on_patch (L249) and LocalRankDefect.RankGeometry.fiveRows (LocalRankDefect.lean:758) are also existence-only. MomentRepair.coefficients_unique (MomentRepair.lean:53) is generic and is never applied to FiveRowRank.deltaV/gamma; grep for unique/∃!/Injective/LinearEquiv over FiveRowRank, LocalizedMomentRepair, MeanRankUpdate, LocalRankDefect and CorrectionState finds no instantiation. FiveProfileMoments.linearEquiv (L300) concerns a different patch repair with other bumps.", "CONVENTION: NavierStokes.MeanRankUpdate.rank_update_meanClass (NavierStokes/MeanRankUpdate.lean:899) takes hB : B ≠ 0, hq : chartQ coord p ∈ Icc qlo qhi and hz (weight margin on supportBand). NavierStokes.RankStateBounds.rankIncrementState_bounds (NavierStokes/RankStateBounds.lean:254) takes hparam : NormalizedParameters coord A B r U.carrier (coefficient = shapedAmplitude B (chartEta …), RankStateBounds.lean:90) and U : SlowRegion with q_mem : coordinateQ ∈ Icc qlo qhi (LocalSignedRequest.lean:111).", "I read pp. 97–98 (and 93–94, 69–70) and the Lean source. FiveRows is (8.25) verbatim; normalizeDebt with ell=√q, U=q^(−A) is (8.17); RankGeometry's angular_model/axial_model are (8.24) and are instantiated for the actual base. Every clause has a proved statement except uniqueness, which follows in one step from matrix_det_ne_zero and is unused downstream. Following both skeptics, I replace the auditor's fixed-gauge declarations for Δγ=γ_d, constraint preservation and defect cancellation with the LocalRankDefect.RankGeometry versions: they concern the same increment that rankIncrementState_bounds bounds, and CorrectionStep consumes them. Finding 2 is packaging, ruled a convention."],
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/FiveRowRank.lean:311 `exists_five_row_repair` concludes `∃ dv ga, … ∧ FiveRows V G d dv ga`; NavierStokes/MeanRankUpdate.lean:194 `physical_rows_on_patch` exhibits one named solution. No declaration asserting uniqueness *of the FiveRows solution* was found; what is stated is the uniqueness one level down, at the moments: `NavierStokes.FiveProfileMoments.matrixEquiv` (NavierStokes/FiveProfileMoments.lean:207) makes the bump-moment map a linear equivalence for any injective power list, and `matrixEquiv_apply` (:221) identifies its components with the moments of `correction P c = ∑ j, c j * bump P j`.", "Every clause of Lemma 8.7 is stated in Lean, each for the general object: (8.25) is `FiveRows` verbatim; solvability for arbitrary targets, the (8.17) normalization, linearity, angular independence, S_α → M_α, Δγ = γ_d, Δβ ∈ M_{α+1}, exact mass preservation and the defect cancellation each have a declaration I opened. The distribution across FiveRowRank, MeanRankUpdate, LocalRankDefect and RankStateBounds is packaging, and Lean is stronger in discharging hypothesis (8.24) for the actual base. Uniqueness of the combination is the one clause with no declaration at the five rows, but it is stated one level down as `FiveProfileMoments.matrixEquiv` over the same bumps, and the diagonal bridging it to (8.25) is proved. Hence `different_formulation` and OK, with one low-severity coverage gap."],
           "findings": [
             {
-              "confidence": 0.9,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "The paper claims a unique linear combination of the five rescaled bumps. Lean proves existence through the explicit inverse-matrix combination, and no declaration states uniqueness for the five-row system. It follows in one step from the proved nonsingular moment matrix."
-            },
-            {
               "confidence": 0.85,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No single declaration bundles Lemma 8.7; its clauses sit in about ten theorems. The S_α→M_α bound uses the explicit amplitude B/(1+η²) on a compact q-range and derives |a|≥a₀ from |η|≤1 instead of assuming it."
+              "summary": "The paper asserts a unique linear combination solving (8.25); no declaration stating uniqueness at the five rows was found, only existence of an explicit solution — though the uniqueness is available one level down, as `matrixEquiv`."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 80.2",
+  "status": "formalized",
+  "location": {
+    "page": 80,
+    "rect": [0.251127, 0.256763, 0.497964, 0.042023]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p080-2",
+      "locator": {
+        "physical": [80],
+        "printed": [80],
+        "text": "Display 80.2, p. 80, in the proof of Proposition 7.2"
+      },
+      "region": "eq-p080-2@p080",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: t_m' + \\mathcal{K} t_m + m^2 d\\, t_m + f_m = \\frac{n_\\Phi}{|n_\\Phi|^2}\\,\\bigl(n_\\Phi \\cdot \\mathcal{K} t_m - n_\\Phi' \\cdot t_m + n_\\Phi \\cdot f_m\\bigr)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. `projected_balance` is this display with δ = m²d and with t'_m written as its value `projectedRhs` along a solution (supplied by `anchoredSolve_projected_equation`). The right-hand sides match term by term: pressureCoefficient • n = ((⟪n,Kt⟫ - ⟪n',t⟫ + ⟪n,f⟫)/⟪n,n⟫) • n is the paper's (n_Φ/|n_Φ|²)(n_Φ·𝒦t_m - n'_Φ·t_m + n_Φ·f_m) — same three terms, same signs, scalar-times-vector instead of a vector divided by |n_Φ|², and ⟪n,n⟫ = |n_Φ|². The identity is unconditional in Lean, as in the paper (the m²d(n_Φ·t_m) terms cancel, so the tangency n_Φ·t_m = 0 is not needed). Encoding gap as in eq-p080-1: a real inner-product space against the paper's complex amplitudes. The sentence after the display, multiplying (7.13) by i k m n_Φ, concerns the separate factor i/(km) (`complex_pressure_sign`) and is not part of this block.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

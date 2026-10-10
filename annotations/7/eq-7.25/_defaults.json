@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.25)",
+  "status": "formalized",
+  "location": {
+    "page": 82,
+    "rect": [0.344827, 0.554728, 0.52335, 0.026565]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.25",
+      "locator": {
+        "physical": [82],
+        "printed": [82],
+        "text": "Equation (7.25), p. 82, in the statement of Proposition 7.5"
+      },
+      "region": "eq-7.25@p082",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: y_\\sigma \\ge c\\sqrt{S_*}\\,\\zeta, \\qquad |D^I y_\\sigma| \\le C_I S_*^{b_I}\\,\\zeta\\,\\delta^{-a_I}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both clauses are stated, in two different places, with the exponents repackaged. Clause (i), the lower bound: `ZeroOrderBounds.weights` reads `inverseLower * R * zeta ≤ weights H T j`, and `covariance_bounds` instantiates it with `R = Real.sqrt (ChartScales.S (cellBand L))` and `zeta = movingWeight nominal p` — that is exactly `y_σ ≥ c √S_* ζ` with c = `inverseLower`, a field of the parameter choice rather than an existentially quantified constant. Clause (ii), the jet bound: Lean's `NativeJets.bound` gives, for each order m, a single C and a single natural exponent p with ‖iteratedFDeriv ℝ j (y_σ) x‖ ≤ C · growth^p · w, where `growth = slow n · max(1, δ(x)⁻¹)` (WeightedClasses.lean:50) and `slow n = max 1 (ChartScales.S n)`. Expanding, that is C · S_*^p · max(1,δ⁻¹)^p · ζ, i.e. the paper's C_I S_*^{b_I} ζ δ^{-a_I} with the paper's two independent exponents b_I, a_I collapsed to a common p. The collapse is harmless in both directions and the repository says so in the docstring at WeightedClasses.lean:47-49 (\"separate finite degrees can always be increased to their sum\"), with `separate_powers_le_growth` as the formal bridge: slow^p · (max 1 δ⁻¹)^q ≤ growth^(p+q). Two further encoding differences: Lean bounds the full operator norm ‖iteratedFDeriv ℝ j‖ for all j ≤ m rather than a single multi-index partial D^I (that direction is lean_stronger, since each |D^I| is dominated by the norm of the iterated derivative of the same order), and δ enters as max(1, δ⁻¹), which agrees with δ^{-1} where δ ≤ 1 and is harmless where δ > 1. `covariance_weights_jets` is the general statement for an arbitrary smooth matrix/target family on a jet domain; it is applied to the actual primary data inside the proof of `primaryVelocity_jets` (step at line 450) rather than restated as a standalone named theorem about y_σ.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

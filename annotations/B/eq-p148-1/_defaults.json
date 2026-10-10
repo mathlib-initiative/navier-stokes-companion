@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 148.1",
+  "status": "formalized",
+  "location": {
+    "page": 148,
+    "rect": [0.283789, 0.192515, 0.432646, 0.042887]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p148-1",
+      "locator": {
+        "physical": [148],
+        "printed": [148],
+        "text": "Display 148.1, p. 148, in the proof of Proposition B.2"
+      },
+      "region": "eq-p148-1@p148",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\|\\mathcal{J}_2 F\\|_\\rho \\le \\frac{80}{(b+1)(b+2)} \\|F\\|_\\rho, \\qquad \\|T^k\\| \\le \\frac{(40 M_\\chi)^k}{k!\\,(k+1)!}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both inequalities are present, in coefficient form and with the paper's abstract multiplication bound instantiated. (i) The 𝒥₂ bound is `regularInverseJet_bound_on_order`: for data whose radial coefficients vanish below degree k (= the paper's b) each weighted jet obeys |𝒥₂f|ₙₘ ≤ (80/((k+1)(k+2)))·F·weight, which is the paper's operator inequality in the norm (B.4) because the Lean norm is the supremum of |jet|/weight (`axis_abs_jet_le` and `axis_norm_le_of_jet_bound`, AxisResolvent.lean:306 and :312); the Lean weight (AxisWeightEstimates.lean:28) is literally the (B.4) weight 20^{-n}ρ^{-m}m!C(n+m,m)/((n+1)²(m+1)²) with ε = ρ. (ii) `naturalOperator_pow_bound` is the second inequality for T = (1/2)𝒥₂M_χ, in the same shape K^k/(k!(k+1)!), with K = 2560‖χ‖ = 40·(64‖χ‖): the paper's M_χ (any bound for multiplication by χ on B_ρ) is instantiated by the Lean algebra constant 64‖χ‖ of `jetProduct_bound`. The constant is therefore the paper's with an explicit M_χ, not a weaker one.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "proposition-7.5/attributed/NavierStokes.PrimaryCopyBounds.primaryVelocity_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryCopyBounds.primaryVelocity_jets",
+      "line": 430,
+      "module": "NavierStokes.PrimaryCopyBounds",
+      "path": "NavierStokes/PrimaryCopyBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCopyBounds.lean#L430"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryCopyBounds.primaryVelocity_jets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: Jet bounds for `primaryVelocity … mask`, where `mask` is a free argument constrained only by `hm : PolynomialJets V.toDomain mask`; `primaryVelocity_mask_mul` (:377) exhibits the mask factorization, so `mask := 1` gives the unmultiplied $W_0$."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 430,
+        "text": "theorem primaryVelocity_jets (F : Fin 2 → PhaseConstruction U)\n    (pref : Fin 2 → ι → ℝ) (χ : ι → D → PhaseCalculus.Slow × ℝ) (ε : ι → ℝ)\n    (T : ι → D → SmoothCovariance.Vec2) (mask : ι → D → ℝ) (ζ : ι → D → ℝ)\n    (hscale : ∀ i, U.scale i = V.scale i)\n    (hχ : PolynomialJets V.toDomain χ)\n    (hmap : ∀ i x, x ∈ V.carrier i → χ i x ∈ U.carrier i ×ˢ Ioo (0 : ℝ) 1)\n    (hpref : ∀ j, PolynomialJets U (fun i _ => pref j i))\n    (hT : ∀ k, NativeJets V ζ (fun i x => T i x k))\n    (hm : PolynomialJets V.toDomain mask)\n    (hζ : ∀ i x, x ∈ V.carrier i → 0 < ζ i x)\n    {b M c : ℝ} (hb : 0 < b) (hM : 1 ≤ M) (hc : 0 < c)\n    (hzero : ∀ i x, x ∈ V.carrier i →\n      PrimaryCovarianceBounds.ZeroOrderBounds (Real.sqrt (V.scale i)) b M c (ζ i x)\n        (pulseMatrix F pref χ i x) (T i x)) (j : Fin 2) :\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

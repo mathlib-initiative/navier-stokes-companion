@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.17)",
+  "status": "formalized",
+  "location": {
+    "page": 113,
+    "rect": [0.245779, 0.267129, 0.622398, 0.028719]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.17",
+      "locator": {
+        "physical": [113],
+        "printed": [113],
+        "text": "Equation (9.17), p. 113, in the statement of Lemma 9.8"
+      },
+      "region": "eq-9.17@p113",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: |Z_j|_m + |\\Delta u_j|_m \\le C_{j,m}\\, q^{g_j-\\ell_m}\\,(1+|\\log q|)^{P_{j,m}},\\qquad g_j = \\tfrac{h}{10}\\,j \\longrightarrow \\infty"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every ingredient matches, with three encoding rewritings. (i) Norms: the paper's |V|_m is the pointwise max over multi-indices |α|+b ≤ m of ∂_x^α ∂_t^b V (definition (5.23), p. 55); Lean bounds max_{k ≤ m} ‖iteratedFDeriv ℝ k ·‖, equivalent up to a dimensional constant absorbed into C. (ii) Tuples: |Z_j|_m + |Δu_j|_m, with Z_j = (A_j, B_j, p_j) (paper p. 114: 'use the representatives Zj = ( A j , Bj , p j )'), becomes the sum of the four norms of potentialStages, directStages, pressureStages and stageVelocity = curl A + B; a sum of four terms lies between the max and 4× the max, so the two bounds differ only by the constant. (iii) Index: Lean states the bound at stage j+1 with exponent gain h (j+1) = h(j+1)/10, i.e. exactly g_i = hi/10 for every i ≥ 1, which is the range the paper uses (p. 114 'For j ≥ 1'); g_0 = 0 is the empty case. ℓ_m = physicalLoss h m carries no stage index, as the paper requires, and includes the one extra derivative for recovering velocities from potentials; C and P are produced under ∀ j m, so they may depend on j and m, matching C_{j,m}, P_{j,m}. 'g_j → ∞' is a separate declaration, gain_tendsto_atTop. The bound holds on physicalSublevel h (commonQ B N0) = preterminal ∩ {physicalQ h w < commonQ B N0} with commonQ ≤ 1, the paper's domain 0 < q < q_0 ≤ 1.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

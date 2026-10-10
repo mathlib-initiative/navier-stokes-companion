@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 83.6",
+  "status": "partial",
+  "location": {
+    "page": 83,
+    "rect": [0.322119, 0.657543, 0.35634, 0.060671]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p083-6",
+      "locator": {
+        "physical": [83],
+        "printed": [83],
+        "text": "Display 83.6, p. 83, in the statement of Lemma 7.4"
+      },
+      "region": "eq-p083-6@p083",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: D^I a_\\sigma = \\sum_{n=1}^{|I|} \\ \\sum_{\\substack{I_1+\\cdots+I_n=I \\\\ |I_\\nu|\\ge 1}} c_{I_1,\\ldots,I_n}\\, y_\\sigma^{1/2-n} \\prod_{\\nu=1}^{n} D^{I_\\nu} y_\\sigma."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The explicit Faa di Bruno expansion of the display — the sum over compositions I_1+...+I_n = I with coefficients c_{I_1,...,I_n} and the factor y_sigma^{1/2-n} — occurs nowhere in the Lean; no declaration forms it, and the repository contains no Faa di Bruno / OrderedFinpartition machinery at all. The Lean reaches the same destination (the derivative bound of the next display) by two norm-level routes instead. Route one: `comp_jet_bound` wraps Mathlib's norm_iteratedFDerivWithin_comp_le, which is the quantitative shadow of the same combinatorics, and feeds it the one-dimensional outer-derivative identity `iteratedDeriv_rpow` (d^n/dt^n t^p = rpowCoeff p n * t^{p-n}); at p = 1/2 that supplies exactly the paper's y^{1/2-n} factor, but only inside a norm estimate, with the composition combinatorics collapsed into the factor n.factorial. Route two: `sqrt_class` avoids the composition entirely, writing sqrt(g) = 2 * (g / (2 sqrt g)) and invoking a signed-quotient class lemma. The paper uses the display only to derive the next bound, which both routes prove, so the surrounding result is not affected.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

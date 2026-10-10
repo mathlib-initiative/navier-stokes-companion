@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 98.1",
+  "status": "partial",
+  "location": {
+    "page": 98,
+    "rect": [0.256337, 0.159927, 0.48844, 0.100392]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p098-1",
+      "locator": {
+        "physical": [98],
+        "printed": [98],
+        "text": "Display 98.1, p. 98, in the proof of Lemma 8.7"
+      },
+      "region": "eq-p098-1@p098",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: A_\\theta = \\begin{pmatrix} \\mu_2 & \\mu_2 e^{2d} & \\mu_2 e^{4d} \\\\ 2a\\mu_{-2-2\\lambda} & 2a\\mu_{-2-2\\lambda}e^{d(-2-2\\lambda)} & 2a\\mu_{-2-2\\lambda}e^{2d(-2-2\\lambda)} \\\\ -a\\mu_{-2\\lambda} & -a\\mu_{-2\\lambda}e^{-2d\\lambda} & -a\\mu_{-2\\lambda}e^{-4d\\lambda} \\end{pmatrix}, \\qquad A_z = \\begin{pmatrix} \\mu_1 & \\mu_1 e^{d} \\\\ a\\mu_{1-2\\lambda} & a\\mu_{1-2\\lambda}e^{d(1-2\\lambda)} \\end{pmatrix}, \\qquad a = a(\\eta)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Lean's coefficient matrix for the same two blocks is the unfactored moment matrix `LocalizedMomentRepair.matrix a l u = fun i j => ∫ t, t ^ a i * bump (l j) (u j) t`. Its exponent rows are the paper's exactly (angularPowers λ = ![2, -2-2λ, -2λ]; axialPowers λ = ![1, 1-2λ]), but two things of the display are absent from it. (i) In the Lemma 8.7 pipeline the entries are never evaluated to μ_p e^{jdp}: the profiles there are bumps on pairwise disjoint cells of the patch rather than e^{jd}-dilates of one η_0, their moments stay as the integrals `FiveProfileMoments.bumpMoment` (:151), and nonsingularity comes from `PowerMomentMatrix.intervalMomentMatrix_det_ne_zero` (:216) rather than from the displayed factorisation. The factorisation is not missing from the repository, only from this matrix: for the two-row outgoing-pulse instance of the very same `LocalizedMomentRepair.matrix`, `OutgoingPulseBounds.actual_matrix_entry` (:565) evaluates the entries to μ_{p_i} e^{(p_i+1)c_j}, `normalizedMatrix_entry` (:582) puts row i in the displayed shape μ_{p_i}·(1, e^{d p_i}), and `normalizedMatrix_det_ne_zero` (:618) proves the determinant nonzero by μ_0μ_1(e^{2β_0} − e^{2β_1}) ≠ 0 — the paper's own argument of dividing the rows by μ_p and reading the Vandermonde in the distinct e^{dp}. That is a 2×2 instance with the pulse exponents −(1/2+λ), −(1/2+2λ), so it is not a counterpart of A_θ (3×3, powers 2, −2−2λ, −2λ) or A_z (2×2, powers 1, 1−2λ); the paper's method is formalised, for other rows. (ii) The row constants 1, 2a, -a and 1, a are not in the Lean matrix: they are divided into the target vector instead (angularDebt C d = ![0, -(d 0)/(2C), d 2/C], axialDebt C d = ![0, -(d 1)/C]), with the amplitude C of `background lam C R = C * R ^ (-1 - 2λ)` (FiveRowRank.lean:110) playing a(η) of (8.24). I checked these constants against the Lean rows themselves: pressure_row (line 189) gives 2C ∫ R^{-2-2λ}Δv = -d₀, angular_row (206) gives C ∫ R^{1-2λ}γ = -d₁, axial_row (223) gives -C ∫ R^{-2λ}Δv = -d₂, matching the 2a, a, -a of the display. Since A_θ = diag(1, 2a, -a)·M and A_z = diag(1, a)·M', the two parametrisations determine the same correction; what the repository does not contain is the explicit matrix as displayed. The nonsingularity the paper reads off the Vandermonde is proved for the Lean matrix at arbitrary distinct exponents (matrix_det_ne_zero), which covers the paper's exponents for λ > 0 (angularPowers_injective, FiveRowRank.lean:84). Hence low, not medium.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

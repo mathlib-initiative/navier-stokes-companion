@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 9.3",
+  "status": "formalized",
+  "location": {
+    "page": 9,
+    "rect": [0.257735, 0.699361, 0.484991, 0.041847]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p009-3",
+      "locator": {
+        "physical": [9],
+        "printed": [9],
+        "text": "Display 9.3, p. 9, in section 3.2"
+      },
+      "region": "eq-p009-3@p009",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: T_{r\\theta}(r) = -\\frac{1}{r^2}\\int_0^r s^2 R_\\theta^{(0)}(s)\\,ds, \\qquad T_{rz}(r) = -\\frac{1}{r}\\int_0^r s R_z^{(0)}(s)\\,ds."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. `SlowStressSupport.stress m F (r,η)` unfolds to -(∫_0^r F(x,η)dx)/r^m for r > 0, which is the paper's formula once F is the weighted residual and m is 2 or 1: the factors s² and s sit inside F rather than in the integrand, because `thetaDensity` is the literal R²-weighted angular residual and `zDensity` the literal R-weighted axial residual (their own docstrings, and the order-zero computation `leading_thetaDensity`/`leading_zDensity`, ZerothStressIdentity.lean:140,153). The exponent 3 in the body of `thetaDensity` (R³/C, against R in `zDensity`) is not a mismatch with the paper's s²: the swirl is encoded with its own factor R/C, `swirlRadius C f w = (w.1/C)·f(radiusPoint w)` (SlowResidualMatching.lean:362), where the axial component uses the plain `toRadius` (line 360), and the leading φ-profile is C·P.f (the φ-component of `leadingProfiles` is reduced to `C * P.f q` at ZerothStressIdentity.lean:206); so R²·R_θ = (R³/C)·angularCoefficient while R·R_z = R·axialCoefficient. The pairing is checked at order zero in the file: `weightedTheta_eq` (ZerothStressIdentity.lean:125) gives weightedTheta = R²·LeadingStress.theta and `weightedAxial_eq` (:132) gives weightedAxial = R·LeadingStress.axial, and the R-derivatives of those weighted quantities (`weightedTheta_hasDerivAt`, :91, and `weightedAxial_hasDerivAt`, :108) are exactly minus the right-hand sides of `leading_thetaDensity` (:140) and `leading_zDensity` (:153). Differences, all conventional: (i) the Lean definition is extended by the value 0 for r ≤ 0, which the paper does not mention — the paper instead says \"Regularity at the axis fixes their integration constants\", and that lower endpoint 0 is what the Lean primitive uses; (ii) `thetaDensity` carries the swirl normalisation 1/C, matching `leadingProfiles.phi = C * P.f`, so the quotient is again the unnormalised stress — at order zero `raw_stresses_eq` (ZerothStressIdentity.lean:281) proves this primitive-defined stress equals the explicitly constructed `LeadingStress.theta`/`LeadingStress.axial`, so the identity itself and not only the notation is checked; (iii) in the slow hierarchy the density used is the conservative form `angularDensity`/`axialDensity`, equal to the literal weighted residual `angularWeighted` under the divergence-free hypothesis (`angularWeighted_eq_density`, SlowStressSupport.lean:458). The differentiated form of the same relation, d/dr(r² T) = -(r² R_θ), appears as the third conjunct of `angular_stress_support` (SlowStressSupport.lean:982), under the order restriction 2 ≤ n.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

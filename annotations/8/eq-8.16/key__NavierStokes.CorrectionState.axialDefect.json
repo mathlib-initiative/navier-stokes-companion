@@ -1,0 +1,26 @@
+{
+  "id": "eq-8.16/key/NavierStokes.CorrectionState.axialDefect",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionState.axialDefect",
+      "line": 236,
+      "module": "NavierStokes.CorrectionState",
+      "path": "NavierStokes/CorrectionState.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L236"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionState.axialDefect",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "role": "key",
+      "snippet": {
+        "line": 236,
+        "text": "axialDefect c u = radialMoment 1 (axialAxial c.base u.mean + u.covariance 2 2) - (1/2 : ℝ) • radialMoment 2 (u.gr c), with axialAxial b m = 2•(b.axial*m.axial) + m.axial*m.axial = 2Gγ + γ²"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "lemma-4.4/support/NavierStokes.FirstOrderBaseEdge.history_equal_after",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FirstOrderBaseEdge.history_equal_after",
+      "line": 575,
+      "module": "NavierStokes.FirstOrderBaseEdge",
+      "path": "NavierStokes/FirstOrderBaseEdge.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FirstOrderBaseEdge.lean#L575"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FirstOrderBaseEdge.history_equal_after",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 575,
+        "text": "theorem history_equal_after {D D' : ProfileHistories.RadialDomain}\n    (P : ProfileHistories.Profiles D) (Q : ProfileHistories.Profiles D') {R X eta : ℝ}\n    (hR : 0 ≤ R) (hX : R ≤ X)\n    (hP : ∀ x ∈ Icc 0 X, (x, eta) ∈ D.carrier)\n    (hQ : ∀ x ∈ Icc 0 X, (x, eta) ∈ D'.carrier)\n    (hI : P.I (R, eta) = Q.I (R, eta))\n    (he : ∀ x ∈ Icc R X, P.f (x, eta) = Q.f (x, eta)) :\n    P.I (X, eta) = Q.I (X, eta)"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.2)",
+  "status": "formalized",
+  "location": {
+    "page": 74,
+    "rect": [0.238158, 0.663551, 0.630027, 0.042787]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.2",
+      "locator": {
+        "physical": [74],
+        "printed": [74],
+        "text": "Equation (7.2), p. 74, in section 7.1"
+      },
+      "region": "eq-7.2@p074",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: k = \\lceil \\varepsilon^{-1/2} \\rceil, \\qquad B_s^2 = \\frac{\\lambda_0}{\\varepsilon k^2 (1+u_*^2)^{3/2}}, \\qquad s(v) = \\sigma\\left( \\frac{u_*}{2} + \\frac{u_* v}{L_s} \\right)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All three definitions are present, two of them verbatim. k: carrierFrequency ε = ⌈ε^(−1/2)⌉₊ is the paper's ⌈ε^{−1/2}⌉ (ε ∈ (0,1] so the natural and integer ceilings agree), instantiated at ε = ChartScales.epsilon h n by ChartScales.carrier. s(v): signedSlot sigma u L v = σ(u/2 + uv/L) is the display character for character, with σ = FamilyData.sigma, u = u_*, L = FamilyData.length = L_s. B_s: the Lean gives the amplitude itself rather than its square, B_s = referenceScale λ₀ (εk²) u_* = √(λ₀/(εk²·dampingDenominator u_*)), with dampingDenominator u = (1+u²)·√(1+u²) = (1+u²)^{3/2}; squaring the nonnegative square root (and that is exactly the paper's 'We take B_s > 0') gives the display's B_s². The instantiation viscosity = ε·k² is FamilyData.viscosity; referenceScale_normalization states the same identity in the cleared form εk²B_s² = λ₀/(1+u_*²)^{3/2}.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

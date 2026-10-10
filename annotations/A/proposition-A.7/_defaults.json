@@ -17,32 +17,24 @@
       "region": "proposition-A.7@p139",
       "verdicts": [
         {
-          "confidence": 0.88,
-          "evidence": ["CONVENTION: HeatedOutgoing.exists_heated_profile (NavierStokes/HeatedOutgoing.lean:875); HeatSwitchCone.preserves_true_cone (NavierStokes/HeatSwitchCone.lean:1018), hypothesis `h : OutgoingCone.CleanOutgoingCone F.reset anchor left`; HeatSwitchCone.exists_compensated_true_cone (:1085); CompensationWitness.specification (HeatedOutgoing.lean:841)", "REFUTED: OutgoingDilation.switchRadius_eq (NavierStokes/OutgoingDilation.lean:329): `switchRadius F XR = XR * Real.exp (tailStart F.data + 1 / 5)`; HeatTailEdit.switchStart (HeatTailEdit.lean:373): `tailStart d + 1 / 5`", "CONVENTION: HeatTailEdit.switch (NavierStokes/HeatTailEdit.lean:26): `OutgoingSchedule.sigma (Real.log (X / K) / (3 / 10))`; OutgoingSchedule.sigma (OutgoingSchedule.lean:26) with sigma_contDiff, sigma_zero, sigma_one, sigma_nonneg, sigma_le_one", "I read p.139 (plus pp.28, 137, 138, 140) and the Lean. All three voters agree on OK / different_formulation, and I confirm it. Every clause is stated: (A.39) is heatE with 𝓗 = RadialHeatProfile.profile (1+h), d = 1−η²; three Fin 3 bumps on the U = 0 patch; M, J unchanged for all η, X; S(∞), C_p(∞) (via axisDatum = −½∫E²/X) and ∫(H−H_pow) preserved on [-1,1]; E > 0; cone on [holdStart, y=.5] from the actual heated fields; axis datum and pre-patch E, Π unchanged. The PAIRING skeptic is right that the paper has X_K = e^{.2}X_tail, so the auditor's e^{1.8} discrepancy is refuted. The off-chain exists_heated_profile is faithful; the main chain uses the stronger extended bundle."],
+          "confidence": 0.82,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.HeatedOutgoing.Specification, NavierStokes/HeatedOutgoing.lean:793, has angular_positive but no cone field; the cone is NavierStokes.HeatSwitchCone.preserves_true_cone, NavierStokes/HeatSwitchCone.lean:1018, quantified over w : HeatedOutgoing.CompensationWitness F XR C.", "CONVENTION: NavierStokes.HeatTailEdit.multiplier, NavierStokes/HeatTailEdit.lean:29-30, uses HeatTailEdit.switch K X = OutgoingSchedule.sigma (Real.log (X/K)/(3/10)) with K = switchRadius F XR = XR*exp(tailStart + 1/5); OutgoingSchedule.sigma (OutgoingSchedule.lean:26) is smooth with 0 <= sigma <= 1, vanishing below 0 and equal to 1 above 1.", "Every clause of Proposition A.7 is stated in Lean for eta in the closed interval [-1,1] and for all sufficiently large X_R, with the edit (A.39), the heat factor (A.32), the diffusion d = 1-eta^2, the .2/.5 switch window and the three-bump second reserved patch all matching the paper definition by definition. The only gap is packaging: the cone clause lives in a separate theorem about the same witness, and the repository already conjoins the two elsewhere. The Lean statement is in places stronger (M(infty) = J(infty) = 0, an open eta-neighborhood, a cone window starting before the patch). Hence different_formulation and OK, with two low findings."],
           "findings": [
             {
-              "confidence": 0.9,
-              "contested": true,
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration states the whole proposition: the moment/positivity/axis clauses are HeatedOutgoing.Specification, the stress-cone clause is HeatSwitchCone.preserves_true_cone. Both are about the same CompensationWitness, so they conjoin by taking the larger radius threshold."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "No single declaration states A.7. Compensation and preserved quantities are in HeatedOutgoing.exists_heated_profile/Specification; the cone clause is a separate theorem that assumes the clean (Prop A.4) cone. The conjunction follows in two lines."
-            },
-            {
-              "confidence": 0.97,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "REFUTED",
-              "severity": "low",
-              "summary": "Auditor claimed the paper's scale is X_K = e²X_tail while Lean uses K = e^{0.2}X_tail, a fixed factor e^{1.8}. The paper actually has X_K = e^{.2}X_tail, which is Lean's switchRadius exactly."
-            },
-            {
-              "confidence": 0.9,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean fixes one particular step, χ_K(y) = σ((y−.2)/.3), where the paper says to choose a smooth step that is 0 for y ≤ .2 and 1 for y ≥ .5. The 0/1 regions match the paper exactly."
+              "summary": "The paper lets chi_K be any smooth step that is 0 for y <= .2 and 1 for y >= .5; Lean fixes the single step sigma(log(X/switchRadius)/(3/10)). Lean's statement is an instance of the paper's family, not a quantification over it."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

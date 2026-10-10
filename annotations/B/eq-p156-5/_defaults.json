@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 156.5",
+  "status": "formalized",
+  "location": {
+    "page": 156,
+    "rect": [0.244569, 0.869162, 0.510799, 0.025014]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p156-5",
+      "locator": {
+        "physical": [156],
+        "printed": [156],
+        "text": "Display 156.5, p. 156, in the proof of Proposition B.8"
+      },
+      "region": "eq-p156-5@p156",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: U\\ \\text{weights}:\\quad 1,\\ f x^{3/5};\\qquad E\\ \\text{weights}:\\quad x^{1/2},\\ f x^{1/10},\\ f x^{-9/10}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean carries the weights as exponents of a general good exponent b and specializes b = 1/10. `axialPowers b = ![0, b+1/2]` gives the two U weights x^0 = 1 and x^{3/5} (1/10 + 1/2 = 3/5); `angularPowers b = ![1/2, b, b-1]` gives the three E weights x^{1/2}, x^{1/10}, x^{-9/10}. `linearEquiv_apply` exhibits these as the entries of the derivative of the normalized moment map, and `physicalMoments_hasFDerivAt_zero` identifies that map's derivative at the ideal profile. The paper's factors f are the 'fixed nonzero normalizing factors' it allows itself: in Lean the ideal profile has E_0 = A x^b with A = idealAmplitude = P_*·shape(η) (= P_* f) and U_0 = G = 4η, and `physicalDebt A G` carries the per-row factors A, √2A, √2A^2, A^2, A^2, so the relative factor between the two U entries, and between the first and the last two E entries, is exactly one power of A = P_* f — matching '1, f x^{3/5}' and 'x^{1/2}, f x^{1/10}, f x^{-9/10}'. `physicalDebt`'s rows 3 and 4 are d_2 - G·d_1 and 2G·d_0 - d_3 up to factors, i.e. the paper's 'replace the J row by J - 4ηI, and the S row by S - 8ηM'. The one quantified difference: the Lean statement is for every b with b ∉ {-1/2, 1/2, 3/2}, the paper writes only the b = 1/10 instance; `good_initial` and `resetSolver_exists` supply that instance on resetPatch = [e^{-6}, e^{-5}], the paper's interval -6 < log x < -5.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

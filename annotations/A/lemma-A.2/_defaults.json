@@ -17,16 +17,16 @@
       "region": "lemma-A.2@p127",
       "verdicts": [
         {
-          "confidence": 0.92,
-          "evidence": ["REFUTED: NavierStokes.ClosedIntervalCk.CK (ClosedIntervalCk.lean:112, Pi sup norm on jets); norm_ofContDiffOn_le_iff (:273): ‖ofContDiffOn f hf‖ ≤ B ↔ ∀ n ≤ k, ∀ x : I, ‖iteratedDerivWithin n f I x‖ ≤ B; Data.inverseNorm / quadraticNorm (ClosedIntervalMomentRepair.lean:38, 41) are operator norms in that norm.", "I read p.127, p.128 and p.34 and the three Lean files. Data.exists_smooth_same_branch (ClosedIntervalMomentRepair.lean:151) carries every clause: Small 0 is 8β_0²κ_0d_0 ≤ 1 (the _zero lemmas give the pointwise sups), the C⁰ ball, the equation on I = [-1,1], C^∞ on the closed interval, uniqueness among continuous functions in the ball, zero-started iteration converging in C⁰, and (A.3) for each k with Small k on the same c. Q = 0 makes every Small k hold (κ_k = 0); linear_solution also states it. Lean is stronger: any real Banach E, uniform convergence. The one finding is refuted: p.34 fixes the same max-derivative norm. No sorry or axiom in the three files; proofs not checked. No docstring cites \"Lemma A.2\"; the match is by content."],
+          "confidence": 0.86,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.ClosedIntervalMomentRepair.Data.linear_solution, NavierStokes/ClosedIntervalMomentRepair.lean:210: under (hA : ∀ x ∈ I, D.A x = 0) and no Small hypothesis it asserts only ContDiffOn ℝ ∞, the pointwise equation, and ‖c‖_{Cᵏ} ≤ inverseNorm k * debtNorm k.", "exists_smooth_same_branch (ClosedIntervalMomentRepair.lean:151) states Lemma A.2 clause for clause on the literal interval I = Icc (-1) 1, with Small 0 proved equal to 8β₀²κ₀d₀ ≤ 1 for the paper's suprema, the same ball radius 2β₀d₀, uniqueness among continuous competitors in that ball, C∞ dependence on η, the Picard limit from zero, and (A.3) for every k meeting the printed k-th smallness condition, on the same branch. It is stated for an arbitrary complete normed space, so it implies the ℝ^m case. The only gap is cosmetic: the Q = 0 aside is carried by a separate theorem in the same file that omits the trivial uniqueness and iteration sub-clauses."],
           "findings": [
             {
-              "confidence": 0.9,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "REFUTED",
+              "confidence": 0.82,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Auditor: Lean fixes the C^k(K) norm as max over n≤k of sup|c^(n)| while the paper leaves it unspecified. The premise is wrong: the paper fixes exactly this norm on p.34, so nothing differs."
+              "summary": "The \"if Q = 0 there is no smallness requirement\" clause is stated by a second theorem, linear_solution, which gives existence, smoothness and sharper C^k bounds unconditionally but does not restate uniqueness in the ball or iteration-from-zero."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

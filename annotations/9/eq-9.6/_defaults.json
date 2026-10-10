@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.6)",
+  "status": "formalized",
+  "location": {
+    "page": 104,
+    "rect": [0.229366, 0.297498, 0.638816, 0.063759]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.6",
+      "locator": {
+        "physical": [104],
+        "printed": [104],
+        "text": "Equation (9.6), p. 104, in the statement of Proposition 9.3"
+      },
+      "region": "eq-9.6@p104",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.65,
+          "evidence": ["paper: W^{[j]}_{ab} = \\langle w^{[j]}_a w^{[j]}_b \\rangle_{\\theta}, \\qquad P^{[j]} = \\int \\langle g^{[j]}_r \\rangle_{Y}\\, dR, \\qquad p^{[j]}_m = T_0\\big(g^{[j]}_r - \\rho\\, P^{[j]}\\big), \\qquad \\big\\langle \\mathcal{G}^{[j]}_{*} + \\mathcal{F}^{[j]}_{*} - \\mathcal{E}_{B,*} \\big\\rangle_{\\theta} = \\big( D_r p^{[j]}_m - g^{[j]}_r,\\; E^{[j]}_{\\theta},\\; E^{[j]}_{z} \\big)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Equivalent, with the four formulas of this one display distributed over one theorem and several definitions, and with one convention. Term by term: W_ab = ⟨w_a w_b⟩_θ is `State.covariance` (the angular average of `bilinearCovariance`); P = ∫⟨g_r⟩_Y dR is `pressureDefect = radialMoment 0 (u.gr c)`, which unfolds to `PressureStream.pressureMass (g_r)` = ∫ r, torusAverage g_r — the same radial integral of the torus average that occurs inside the Lean's pressure; p_m = T_0(g_r − ρP) is `VariableGaugeMean.meanPressure`, whose source is literally `f z - density … * pressureMass f z.2.1` and whose T_0 is `compactPrimitive` (the Lean's ρ is the gauge-rescaled `VariableGaugeMean.density`, of integral one like the paper's ρ); and the mean equation itself is `angularMean_fullResidual`, whose right-hand side `meanResidual` is `reducedMeanResidual + meanBaseError`, with the three components of `reducedMeanResidual` being `radialResidual = D_r p_m − g_r`, `thetaResidual = E_θ` and `axialResidual = E_z`. So the paper's ⟨G_* + F_* − E_{B,*}⟩_θ corresponds to ⟨fullResidual⟩_θ minus the stored base error, the paper subtracting on the left what the Lean adds on the right. The convention: the Lean states the identity in normalized chart variables, so the starred rescaling by Q^{2A+1/2} that the paper applies to G, F and E_B before taking the angular mean is absorbed into the chart and does not appear; the rescaling is a single common positive factor on both sides of an identity, so it may be divided out.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

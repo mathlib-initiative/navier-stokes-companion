@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 76.8",
+  "status": "formalized",
+  "location": {
+    "page": 76,
+    "rect": [0.347257, 0.732738, 0.305711, 0.041322]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p076-8",
+      "locator": {
+        "physical": [76],
+        "printed": [76],
+        "text": "Display 76.8, p. 76, in the proof of Lemma 7.1"
+      },
+      "region": "eq-p076-8@p076",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.84,
+          "evidence": ["paper: \\begin{pmatrix} 0 & 2F_0 N_\\theta/(1+s^2) \\\\ -(2F_0 N_\\theta + |g_0|) & 0 \\end{pmatrix}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean never forms a 2×2 matrix object; the same linear map is carried by the two scalar coordinate right-hand sides rhsX, rhsY, whose coefficients are coeff11, coeff12, coeff21. Rewriting: set rot = 0, ρ' = 0, d = 0 (undamped), ρ = s, F = F_0, g = g_0. Then the coefficient of x in rhsX is coeff11 s 0 ⟪K,g₀⟫ - 0 = s⟪K,g₀⟫/(1+s²) = 0 (⟪K,g₀⟫ = 0, the paper's g_0 = |g_0|N), the coefficient of y in rhsX is coeff12 F₀ N_θ s 0 = 2F₀N_θ/(1+s²), the coefficient of x in rhsY is coeff21 F₀ N_θ ⟪N,g₀⟫ s 0 = -(2F₀N_θ + |g₀|), and the coefficient of y in rhsY is -d = 0 — entry for entry the paper's matrix, including the 1+s² only on the (1,2) entry (\"dividing the first coordinate by 1+s²\"). frame_coefficients_close and scalar_coefficients_close name exactly these three reference entries as the values the actual coefficients are compared with. The eigenvalue claim that accompanies the display is carried by reference_characteristic_equation (λ/√(1+s²) solves μ² = ab/(1+s²)) together with lambda0_div_c0 and lambda0_mul_c0, which identify a = 2F₀N_θ and b = -(2F₀N_θ + ‖g₀‖) for the constructed reference data.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

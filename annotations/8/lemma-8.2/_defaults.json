@@ -17,32 +17,32 @@
       "region": "lemma-8.2@p090",
       "verdicts": [
         {
-          "confidence": 0.75,
-          "evidence": ["CONVENTION: VariableGaugeMean.meanClass_compactPrimitive L1692, meanClass_streamPotential L2032, compactPrimitive_radial_identity L2115, streamGamma_eq_desired_sub_alias L2169; GaugeAliasDecay.meanClass_compactAlias_superflat L504, meanClass_dividedAlias_superflat L539; SignedStressPrimitive.sigma L164 (e : ℕ, shift 0), LocalSignedRequest.meanClass_physicalBarSigma L565. No declaration applies divideRadius twice to compactPrimitive (r^2 f).", "CONVENTION: PressureStream.torusAverage_physicalAlias L589 and MeanRankUpdate.slow_physicalAlias_zero L391 (hypothesis RadiallySupported a b with fixed a, b); VariableGaugeMean.compactPrimitive_fiberLocal L317; no torusAverage statement about compactAlias in decls.jsonl. For slow sources the moving-shell form exists for every e: SignedStressPrimitive.physical_weighted_sigma_hasDerivAt L804.", "CONVENTION: LocalSignedRequest.SlowRegion L111 (fields: isOpen, time_pos, q_mem : coordinateQ coord s ∈ Icc qlo qhi; no boundedness); WeightedClasses.MemClass.bounds L107 (∃ C p, ∀ n x); GaugeAliasDecay.meanClass_compactAlias_superflat L504 (U, index, D bound before the conclusion).", "I read pp. 90–91 and the Lean statements. The operators match (8.5)–(8.6): shift M(s^d−R^d)v_r, v_r=(1,1−√2), M=Λ^i·Q^{d_r/2}, κ_s=10^{-5}, D_r=graphDr. For torus-dependent sources the moving-gauge files state shell support, periodicity, class preservation, (8.7) and (8.8) for e=0 and e=1. SignedStressPrimitive states T_e for every e on torus-independent sources, the only place the paper uses T_2 (8.18). What is unstated (torus-dependent e=2, moving-gauge mean-zero) follows by conjugating with R^e and freezing the slow fibre; every step is a stated lemma. Auditor and both skeptics agree; I added the periodicity, e=1 support and general-e declarations. A reader who insists on a named e=2 instance would call this partial."],
+          "confidence": 0.8,
+          "evidence": ["ATTRIBUTION_GAP: e=0: VariableGaugeMean.lean:1692, :2115, :794; GaugeAliasDecay.lean:504. e=1: :2032, :2169, :2911; GaugeAliasDecay.lean:539. The e-general declarations, SignedStressPrimitive.lean:164 (sigma = -inversePower * compactIntegral (cutoff P) 0 0 (R^e F)) and :338, and LocalSignedRequest.lean:565, all fix the transport parameters at M = 0, v = 0, so they are not instances of the lemma's T_e, whose M = \\Lambda_g^{i_0}Q^{d_r/2} is nonzero; with M = 0 there is no aliasing and (8.8) has no content.", "ATTRIBUTION_GAP: PressureStream.lean:589 states the alias mean for physicalAlias with fixed endpoints a, b and hypotheses ContDiff f and RadiallySupported a b f that hold globally; SupportedGauge (VariableGaugeMean.lean:67) gives radial support only on the fibre over a slow point of U, so the lemma applies only after freezeSlow (VariableGaugeMean.lean:334, PhysicalMeanDomain.lean:509), exactly as the proof at VariableGaugeMean.lean:2123-2142 does for the identity. For (Z,T) support, PhysicalMeanDomain.lean:486, :501, :509, VariableGaugeMean.lean:317, :2093 give FiberLocal but no declaration states compactPrimitive ... 0 = 0.", "ATTRIBUTION_GAP: Shell support VariableGaugeMean.lean:794, :2911; (Z,T) support PhysicalMeanDomain.lean:486, :501, :509 and VariableGaugeMean.lean:317, :2093; M_\\alpha VariableGaugeMean.lean:1692, :2032; (8.7) VariableGaugeMean.lean:2115, :2169; remainder mean PressureStream.lean:589; (8.8) GaugeAliasDecay.lean:504, :539; finitely many derivatives GaugeAliasDecay.lean:283; last sentence MeanRankUpdate.lean:391, :406 and VariableGaugeMean.lean:2231.", "Lemma 8.2 is about the transported operators at M = \\Lambda_g^{i_0}Q^{d_r/2}. For those, the repository states every clause at e = 0 and e = 1 and nothing at e = 2; its e-general declarations (SignedStressPrimitive, LocalSignedRequest) fix M = 0 and so are not instances. But the e = 0 and e = 1 declarations are corollaries of lemmas quantified over the source, over M and over v, and the weight lemma meanClass_radialMultiply_moving holds for any smooth \\varphi, so the e = 2 statements are instances of what is stated, and the identity needs only graphDr_divideRadius twice. The remainder mean and the (Z,T) support clause are likewise assembled from stated fibre-locality and fixed-endpoint lemmas. No analytic fact outside the repository is used, so the verdict is OK with relation different_formulation, and the three findings are all low-severity attribution gaps."],
           "findings": [
             {
-              "confidence": 0.65,
+              "confidence": 0.82,
               "contested": false,
               "kind": "COVERAGE",
-              "ledger": "CONVENTION",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No single declaration states Lemma 8.2; its clauses are spread over about twelve. For torus-dependent sources only e=0 and e=1 are instantiated; e=2 exists only for torus-independent sources (SignedStressPrimitive.sigma). The torus-dependent T_2 is unstated."
+              "summary": "At the lemma's transported frequency the repository instantiates only e = 0 and e = 1. No declaration writes the e = 2 case of any clause for a transported operator; the general-e declarations are the untransported M = 0, v = 0 family."
             },
             {
               "confidence": 0.8,
               "contested": false,
               "kind": "COVERAGE",
-              "ledger": "CONVENTION",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "⟨A_e f⟩_Y = 0 and the zero remainder for Y-independent sources are stated for the fixed-endpoint physicalAlias, not for the moving-gauge compactAlias. Support in the (Z,T)-projection is only implicit in FiberLocal."
+              "summary": "Two clauses are stated nowhere for the moving-gauge operators: the vanishing torus mean of the remainder, and the (Z,T)-projection support. Both are recovered from stated lemmas, the first by freezing the slow fibre, the second from fibre-locality plus the unstated fact that the operators kill the zero source."
             },
             {
-              "confidence": 0.7,
+              "confidence": 0.85,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Raised in the pairing skeptic's notes: Lean's class constants are chosen after the slow region U and the common-index sequence, while the paper wants constants independent of band, label and point. One band-independent U covers every band chart, so nothing is lost."
+              "summary": "No single declaration states Lemma 8.2. Its seven clauses are proved separately across six files, each for the same general source class and the same hypotheses, so they conjoin by instantiation."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

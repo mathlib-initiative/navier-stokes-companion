@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.9)",
+  "status": "formalized",
+  "location": {
+    "page": 146,
+    "rect": [0.308103, 0.126721, 0.560965, 0.043805]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.AxisWeightEstimates",
+      "path": "NavierStokes/AxisWeightEstimates.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.9",
+      "locator": {
+        "physical": [146],
+        "printed": [146],
+        "text": "Equation (B.9), p. 146, in the proof of Lemma B.1"
+      },
+      "region": "eq-B.9@p146",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\frac{\\mathfrak{a}_{\\alpha\\beta}}{\\mathfrak{a}_{\\alpha+1,\\beta}}\\;=\\;20\\,\\frac{(\\alpha+2)^2}{(\\alpha+1)^2}\\,\\frac{\\alpha+1}{\\alpha+\\beta+1}\\;\\le\\;80"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean weight is the paper's 𝔞: weight ε n m = (1/20)^n (ε⁻¹)^m m! binom(n+m,m) / ((n+1)^2 (m+1)^2) is 𝔞_{αβ} with ε = ρ, n = α, m = β, and AxisSpace is CoefficientSpace with this weight (AxisCoefficientSpace.lean line 430). The final bound ≤ 80 is stated verbatim by weight_radial_shift_ratio. The middle member of (B.9) — the exact value of the ratio — is not displayed by any one declaration; it is split along weight_eq_core_decay into the core factor and the two square-decay factors. coreWeight_radial_identity gives the core ratio exactly: coreWeight α β / coreWeight (α+1) β = 20(α+1)/(α+β+1), the paper's second and third factors. The remaining factor squareDecay α / squareDecay (α+1) = (α+2)^2/(α+1)^2 is the paper's first factor; the repository states only the inequality form of it, squareDecay_le_four_succ (≤ 4), so recovering the displayed equality needs one line of unfolding squareDecay n = 1/(n+1)^2 and clearing denominators. The bound then combines 20 · 4 · 1 = 80 exactly as the paper does. The Lean statement is for every real ε > 0 and all n, m : ℕ, matching the paper's α, β ≥ 0 and ρ > 0.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

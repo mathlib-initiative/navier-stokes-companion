@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 120.6",
+  "status": "partial",
+  "location": {
+    "page": 120,
+    "rect": [0.322623, 0.85321, 0.354978, 0.027158]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p120-6",
+      "locator": {
+        "physical": [120],
+        "printed": [120],
+        "text": "Display 120.6, p. 120, in the proof of Lemma 10.3"
+      },
+      "region": "eq-p120-6@p120",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: |\\partial_x^{\\alpha} \\partial_t^{m} f(x,t)| \\;\\le\\; M_{\\alpha,m} (3+R)^{k} (1+|x|+t)^{-k}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Same decay shape C·(1+|x|+t)^{-k}, a different constant. The paper's constant is explicit — M_{α,m}(3+R)^k with M_{α,m} = ‖∂_x^α ∂_t^m f‖_∞ and 𝒦 ⊂ B(0,R), coming from 1+|x|+t ≤ 3+R on the support 𝒦 × [0,2]. Lean's C is only existentially quantified and is produced by compactness of Icc 0 (T+1) ×ˢ S (jet_decay lines 65–67), with no stated dependence on R or on ‖∂^α_x ∂^m_t f‖_∞; in that respect it is less informative than the display. In the other direction the Lean statement is more general: the exponent K ranges over all reals rather than integers k ≥ 0, and the left side is the norm of the whole one-sided jet tensor of total order m (all mixed space-time derivatives at once) rather than a single ∂_x^α ∂_t^m component. Both hold for t ≥ 0 only, matching the use the paper makes of the display, namely Fefferman's decay condition (5), which is the `decay` field of Comparator.ForceConditionDecay and asks exactly for an existential C. Searched for the explicit (3+R)^k form and found no declaration carrying it.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

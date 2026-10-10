@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.ModulatedProfileAssembly.exists_of_certificate",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ModulatedProfileAssembly.exists_of_certificate",
+      "line": 1101,
+      "module": "NavierStokes.ModulatedProfileAssembly",
+      "path": "NavierStokes/ModulatedProfileAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileAssembly.lean#L1101"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ModulatedProfileAssembly.exists_of_certificate",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For ANY W with Certificate W: exists d : LoopData W and v : Witness d such that the true cone holds at every p of the open active annulus. Its conclusion is definitionally FullTrueCone v.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1101,
+        "text": "theorem exists_of_certificate {F : OutgoingProfile.Profile} (W : NominalProfile.Witness F)\n    (hW : NominalConeAssembly.Certificate W) :\n    ∃ (d : LoopData W) (v : Witness d), ∀ p : Point,\n      NominalConeAssembly.activeLeft W < p.1 → p.1 < NominalConeAssembly.activeRight W →\n      p.2 ∈ Icc (-1 : ℝ) 1 →\n      TrueConeLoop.InTrueCone\n        (ActivationStocks.profileStockOne v.profiles F.data.h p)\n        (ActivationStocks.profileStockTwo v.profiles F.data.h p)\n        (ModulatedCone.angularShear v.profiles.E p)\n        (ModulatedCone.signedAxialShear v.profiles.E v.profiles.U p)"
+      }
+    }
+  }
+}

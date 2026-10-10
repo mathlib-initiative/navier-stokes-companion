@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 113.6",
+  "status": "partial",
+  "location": {
+    "page": 113,
+    "rect": [0.363413, 0.675751, 0.273396, 0.028804]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p113-6",
+      "locator": {
+        "physical": [113],
+        "printed": [113],
+        "text": "Display 113.6, p. 113, in the proof of Lemma 9.8"
+      },
+      "region": "eq-p113-6@p113",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: |\\nabla_x^a \\partial_t^b \\Phi_\\gamma| \\le C_{a,b}\\, Q^{-a/2 - b(1+h)}\\, S_*^{P_{a,b}},"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The Lean bound charges (1+h) for every Cartesian derivative of the physical phase, spatial ones included: for total order i = a+b it gives Q^(-i(1+h)) = Q^(-(a+b)(1+h)), where the paper gives Q^(-a/2 - b(1+h)). Since Q ≤ 1 and h ≥ 0, -(a+b)(1+h) ≤ -a/2 - b(1+h) with equality only when a = 0, so the Lean factor is the larger loss whenever a ≥ 1: the Lean statement is implied by the paper's, not conversely. The hypothesis a+b ≥ 1 matches (`1 ≤ i`), the slow factor S_*^{P_{a,b}} matches (`S n ^ ((d+1)*i)`, a power allowed to grow with the order), the constant depends only on the order and on fixed data, and the geometric-in-i form of the Lean bound is a strengthening in shape, not in the Q power. The loss is not recovered elsewhere: the same uniform (1+h) is what `common_jets` proves for the graph composition and what every consumer uses.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "lemma-C.1/support/NavierStokes.LoopVariance.exists_smooth_projected_tilt",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LoopVariance.exists_smooth_projected_tilt",
+      "line": 885,
+      "module": "NavierStokes.LoopVariance",
+      "path": "NavierStokes/LoopVariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LoopVariance.lean#L885"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LoopVariance.exists_smooth_projected_tilt",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 885,
+        "text": "theorem exists_smooth_projected_tilt (p₁ p₂ m V : ℝ)\n    (hP : 2 < p₁ + p₂ * m) (hV : 0 ≤ V) :\n    ∃ t : ℝ → ℝ, ContDiff ℝ (∞ : WithTop ℕ∞) t ∧\n      Function.Periodic t (2 * Real.pi) ∧ angularMean t = m ∧\n      angularMean (fun θ => (t θ - m) ^ 2) = V ∧\n      ∀ θ, 2 < p₁ + p₂ * t θ"
+      }
+    }
+  }
+}

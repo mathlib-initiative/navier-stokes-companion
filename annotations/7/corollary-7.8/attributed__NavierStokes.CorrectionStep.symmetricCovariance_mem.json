@@ -1,0 +1,31 @@
+{
+  "id": "corollary-7.8/attributed/NavierStokes.CorrectionStep.symmetricCovariance_mem",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionStep.symmetricCovariance_mem",
+      "line": 2344,
+      "module": "NavierStokes.CorrectionStep",
+      "path": "NavierStokes/CorrectionStep.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L2344"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionStep.symmetricCovariance_mem",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For same-carrier band-limited blocks a, b with WaveBounds α and β, vanishing zeroth coefficient, nonzero angular frequency and 0 ≤ P ≤ 1: TensorClass s (α+β) (symmetricCovariance a.oscillation b.oscillation). Instantiates to the first two bounds of (7.42) separately.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 2344,
+        "text": "theorem symmetricCovariance_mem {s : StripData D} {P : ℕ → D → ℝ} {α β : ℝ}\n    (a b : HarmonicBlock D) (hcarrier : SameCarrier a b) (N : ℕ)\n    (hNa : a.BandLimited N) (ha : a.WaveBounds s P α) (hb : b.WaveBounds s P β)\n    (ha0 : ∀ n i, a.velocity n i 0 = 0) (hb0 : ∀ n i, b.velocity n i 0 = 0)\n    (hkp : ∀ n, a.angularFrequency n ≠ 0)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1) :\n    TensorClass s (α + β) (symmetricCovariance a.oscillation b.oscillation)"
+      }
+    }
+  }
+}

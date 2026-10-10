@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 55.2",
+  "status": "formalized",
+  "location": {
+    "page": 55,
+    "rect": [0.278121, 0.215994, 0.443981, 0.046963]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-p055-2",
+      "locator": {
+        "physical": [55],
+        "printed": [55],
+        "text": "Display 55.2, p. 55, in section 5.3"
+      },
+      "region": "eq-p055-2@p055",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\mathcal{U}^{[N]} = \\bigl(u^{[N]}_{\\mathrm{slow}},\\, p^{[N]}_{\\mathrm{slow}},\\, T^{[N]}_{\\mathrm{slow}}\\bigr) = \\sum_{n=0}^{N} \\bigl(u_n,\\; p_n,\\; q^{-A-1/2+\\lambda_n}\\,\\mathcal{T}_n\\bigr)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every ingredient of the display is present with the paper's exponents, but the triple is never packaged as one Lean object; it travels as separate arguments (velocity, pressure, two stress scalars). Term by term: the sum runs over Finset.range (N+1), i.e. n = 0..N as in the paper; slowOrder h n = 2nh is λ_n (p. 45); finiteProfile N h b f attaches q^(b + λ_n) to the n-th coefficient. The stress scale is angularExponent h = -CoordinateAlgebra.A h - 1/2, so physicalThetaStress and physicalZStress are ∑_{n≤N} q^{-A-1/2+λ_n} T_n, exactly the paper's third entry; prefixStressTheta/prefixStressAxial use the same exponent -A-1/2. For the first two entries the paper's u_n, p_n are the physical coefficients of (5.1), which already carry their q-powers; Lean carries them explicitly — slowFlux with exponent 0 (ru_{r,n} = q^{λ_n}V_n), slowSwirl with -A-1/2 (u_{θ,n} = r q^{-A-1/2+λ_n}φ_n/C), slowAxial with -A (u_{z,n} = q^{-A+λ_n}U_n), slowPressure with -2A (p_n = q^{-2A+λ_n}Π_n). Two formulation differences, both routine: (i) the Lean Cartesian velocity is assembled from the summed profiles by the fixed axisymmetric ansatz (AxisymmetricResidual.velocity, whose components are -x0·B-x1·F, x0·F-x1·B, U) composed with RadialFluxResidual.radialB V = -V/(2s); both maps are linear in the profiles, so assembling the sums equals summing the assembled u_n; (ii) BaseResidual.prefixVelocity is instead defined as the curl of the prefix potential, and is identified with slowVelocity by NavierStokes.BasePrefixIdentity.prefixVelocity_eq_profiles (NavierStokes/BasePrefixIdentity.lean:157), off the axis.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

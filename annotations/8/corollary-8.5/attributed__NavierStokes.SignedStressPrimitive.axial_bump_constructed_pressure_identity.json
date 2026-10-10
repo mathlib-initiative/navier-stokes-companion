@@ -1,0 +1,29 @@
+{
+  "id": "corollary-8.5/attributed/NavierStokes.SignedStressPrimitive.axial_bump_constructed_pressure_identity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedStressPrimitive.axial_bump_constructed_pressure_identity",
+      "line": 1030,
+      "module": "NavierStokes.SignedStressPrimitive",
+      "path": "NavierStokes/SignedStressPrimitive.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L1030"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedStressPrimitive.axial_bump_constructed_pressure_identity",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: With the pressure supplied by reconstructedMeanPressure and radialMoment 1 gamma = 0: bumpCorrection P 1 (axialBalance ...) z = momentDensity P 1 z.1 * (eps * d_Z (axialMomentPotential ...) z.2), with axialMomentPotential = axialDefect + pressureCoefficient * pressureTotal = J_z + c_rho P."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1030,
+        "text": "theorem axial_bump_constructed_pressure_identity (P : Patch) {d M : ℝ}\n    (hd : 0 < d) (ε : ℝ) (v : ℝ × ℝ)\n    {f : PressureStream.Lift MeanParameter → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hs : RadialAlias.RadiallySupported P.a P.b f) (hper : PressureStream.TorusPeriodicLift f)\n    {γ radialFlux axialFlux virtualFlux : MeanField}\n    (hγ : SmoothShell P.a P.b γ) (hr : SmoothShell P.a P.b radialFlux)\n    (hz : SmoothShell P.a P.b axialFlux) (hT : SmoothShell P.a P.b virtualFlux)\n    (hmass : radialMoment 1 γ = 0) (z : MeanPoint) :\n    bumpCorrection P 1 (axialBalance ε γ radialFlux axialFlux\n      (reconstructedMeanPressure d P.a P.b M P.a_lt_b v f) virtualFlux) z =\n      momentDensity P 1 z.1 * (ε * fderiv ℝ (axialMomentPotential axialFlux\n        (averagedRadialSource f) (normalizedMeanDensity P.a P.b P.a_lt_b)) z.2 (0, 1))"
+      }
+    }
+  }
+}

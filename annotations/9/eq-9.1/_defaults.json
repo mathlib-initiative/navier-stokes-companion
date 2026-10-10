@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.1)",
+  "status": "formalized",
+  "location": {
+    "page": 101,
+    "rect": [0.281114, 0.617867, 0.587796, 0.026389]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.LinearWaveResidual",
+      "path": "NavierStokes/LinearWaveResidual.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.1",
+      "locator": {
+        "physical": [101],
+        "printed": [101],
+        "text": "Equation (9.1), p. 101, in the statement of Proposition 9.6"
+      },
+      "region": "eq-9.1@p101",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\mathscr{L}_m(a,\\pi) = Q^{1+h} N_{\\mathrm{abs}}\\,a + \\mathcal{K}a + \\varepsilon k^2 m^2 |n_\\Phi|^2 a + ikm\\,n_\\Phi\\pi. \\tag{9.1}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Term by term the two agree, after two encoding conventions. (1) One frequency parameter κ stands for the paper's product km: phaseFactor κ = κ·i and carrier κ Φ = exp(κ i Φ) (HarmonicCalculus.lean:68,77), so the Lean's third term ε·κ²·‖n_Φ‖²·a is the paper's εk²m²|n_Φ|²a and the Lean's fourth term phaseFactor κ · (n_Φ)_i · p is the paper's ikm n_Φ π, with the same single power of i, the same n_Φ (phaseNormal = (∂_rΦ, ∂_θΦ/R, ∂_zΦ), HarmonicCalculus.lean:189) and the same ε. (2) The prefactor Q^{1+h} on N_abs is folded into the direction field rather than written as a scalar: the Lean's first term is `along Vf a`, and along_scaled_direction (line 249) is the identity that pulls a scalar c back out, with the docstring naming c = Q^(1+h) on Nabs. At the instantiation used for the actual construction the fast direction is LinearWaveBounds.GraphDirections.fastField d n = d.fastScale n • d.fast (LinearWaveBounds.lean:112) with fastScale = ChartScales.timeCoefficient h n = Tg^(nativeIndex h n) * Q n^(1+h) (ChartScales.lean:32), i.e. Q^{1+h} times the band-pullback transfer factor the paper records for Nabs in the identity Nabs = Tg^i N_i on band pullbacks (text.txt:3323, p.63), the same pairing of Q^{1+h} with a transfer factor that the paper writes as Q^{1+h} Nabs = c_{i0} N_{i0} (text.txt:3732, p.72). The middle term matches exactly: the paper's K at (7.6) is the matrix with rows (0,−2F,0), (2F+RF_R,0,0), (G_R,0,0), and `shear` is ![-2F·a_1, (2F+R·∂_rF)·a_0, (∂_rG)·a_0], the same three entries with the same signs and the same radial derivatives. The Lean also keeps the slow part −ε∂_T outside `principal` (it sits in `remainder` via timeDirection ε Vf Vs = Vf − ε·Vs), which is what the paper does too: (9.1) holds only the principal operator, the slow transport being listed among the remaining terms.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

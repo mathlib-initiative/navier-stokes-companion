@@ -1,0 +1,29 @@
+{
+  "id": "theorem-4.6/attributed/NavierStokes.HeatedOutgoing.E_eventual_heat",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HeatedOutgoing.E_eventual_heat",
+      "line": 735,
+      "module": "NavierStokes.HeatedOutgoing",
+      "path": "NavierStokes/HeatedOutgoing.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean#L735"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HeatedOutgoing.E_eventual_heat",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: For 3 ≤ log (X / switchRadius F XR) + 1/5: E F XR c (X,eta) = (carrierAmplitude F · switchRadius^exponent) · RadialHeatProfile.spatialProfile (1 + h) (diffusion eta) X, and spatialProfile a τ s = s^{1/2-a}·profile a (2τ/s). With a = 1+h this is E = c·X^{-A}·H(2d/X), i.e. (4.29)."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 735,
+        "text": "theorem E_eventual_heat (F : Profile) (XR : ℝ) (c : ℝ → Coeff) (eta X : ℝ)\n    (hXR : 0 < XR) (hX : 0 < X)\n    (hlate : 3 ≤ Real.log (X / switchRadius F XR) + 1 / 5) :\n    E F XR c (X, eta) =\n      (OutgoingDilation.carrierAmplitude F * (switchRadius F XR) ^ HeatTailEdit.exponent F.data.h) *\n        RadialHeatProfile.spatialProfile (1 + F.data.h) (ParametricHeatTail.diffusion eta) X"
+      }
+    }
+  }
+}

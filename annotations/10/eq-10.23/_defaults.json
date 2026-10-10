@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (10.23)",
+  "status": "partial",
+  "location": {
+    "page": 124,
+    "rect": [0.242672, 0.734112, 0.624988, 0.049995]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-10.23",
+      "locator": {
+        "physical": [124],
+        "printed": [124],
+        "text": "Equation (10.23), p. 124, in the proof of Theorem 1.1"
+      },
+      "region": "eq-10.23@p124",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\|u_{\\nu}(t)\\|_2^2 = \\nu^{5/2}\\,\\|u(t)\\|_2^2, \\qquad \\nu\\int_0^1 \\|\\nabla u_{\\nu}\\|_2^2\\,dt = \\nu^{5/2}\\int_0^1 \\|\\nabla u\\|_2^2\\,dt."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. First equality: stated in Lean only in the general dilation form kineticEnergy (a • u(t, b•x)) t = (‖a‖² · |(b³)⁻¹|) · kineticEnergy u t. Substituting the (10.22) dilation a = √ν, b = ν^{-1/2} (the arguments rescale_candidate passes, with ν > 0) gives ‖a‖² = ν and |(b³)⁻¹| = ν^{3/2}, hence factor ν^{5/2} — exactly the paper's; Lean's kineticEnergy carries a 1/2 that the paper's ‖·‖₂² does not, but it multiplies both sides and cancels, and Lean's time argument comes first. So this half is a faithful general statement awaiting instantiation. Second equality (dissipation): no declaration was found relating ν∫₀¹‖∇u_ν‖₂² dt to ν^{5/2}∫₀¹‖∇u‖₂² dt, or any scaling law for CompactEnergy.dissipation u t = ∑_i ∫ ‖∂_i u(t,x)‖² dx. The Lean takes a different route to the same place: candidate_energy_estimates proves 2ν ∫_{[0,1)} dissipation u ≤ (cumulativeForceNorm f 1)² directly from CandidateProperties at the viscosity ν in question, so the already-rescaled candidate's dissipation is bounded without transporting the viscosity-one bound. CandidateProperties itself carries only energy_bounded (no dissipation clause), and that clause is supplied by the first equality's lemma, so Theorem 1.1 as formalized is unaffected.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

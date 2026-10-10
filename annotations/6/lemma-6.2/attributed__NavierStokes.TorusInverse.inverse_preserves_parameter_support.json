@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/attributed/NavierStokes.TorusInverse.inverse_preserves_parameter_support",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TorusInverse.inverse_preserves_parameter_support",
+      "line": 566,
+      "module": "NavierStokes.TorusInverse",
+      "path": "NavierStokes/TorusInverse.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusInverse.lean#L566"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TorusInverse.inverse_preserves_parameter_support",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For every d : Direction, any parameter type P, any a : P -> Frequency -> C and S : Set P, if a p = 0 for every p not in S then directionalInverse d (a p) x = 0 for every such p and every x. Docstring: 'Inversion uses only the torus variable and preserves support in every external parameter.' This is"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 566,
+        "text": "theorem inverse_preserves_parameter_support {P : Type*} (d : Direction)\n    (a : P → Frequency → ℂ) (S : Set P)\n    (hsupport : ∀ p, p ∉ S → ∀ k, a p k = 0) :\n    ∀ p, p ∉ S → ∀ x, directionalInverse d (a p) x = 0"
+      }
+    }
+  }
+}

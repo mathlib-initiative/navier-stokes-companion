@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 103.3",
+  "status": "formalized",
+  "location": {
+    "page": 103,
+    "rect": [0.179694, 0.795789, 0.499543, 0.049874]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p103-3",
+      "locator": {
+        "physical": [103],
+        "printed": [103],
+        "text": "Display 103.3, p. 103, in the statement of Proposition 9.3"
+      },
+      "region": "eq-p103-3@p103",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.6,
+          "evidence": ["paper: \\operatorname{supp}\\big(f^{[j]}_{\\gamma,m}\\big|_{\\mathcal{E}_\\gamma}\\big) \\subset \\Omega_\\gamma, \\qquad f^{[j]}_{\\gamma,m} \\in C^\\infty(\\mathcal{E}^+_\\gamma; \\mathbb{C}^3)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both clauses are stated, as two declarations rather than one display. Smoothness: `source_smooth` gives ContDiffOn ℝ ∞ of `residualSource`, whose codomain `ComplexVector = Fin 3 → ℂ` is the paper's ℂ³; it is proved on `ActualInitialization.geometry.domain` rather than on a per-label enlarged domain, and it carries two hypotheses on the carrier family (closedness, and positive radius on the domain) which `ActualParticularCycleData.native_source_smooth` (line 140) discharges with `ActualCoreSupport.refinedCarrier`, giving smoothness on the native chart domain. Support: the Lean clause is the germ statement `source_zero_germ`, that the coefficient vanishes on a whole neighbourhood of every domain point outside `labelCarrier l n` (ActualInitialExcluded.lean:730, the label's slow mask and Gaussian source rectangle); that is at least as strong as the inclusion supp ⊆ Ω_γ inside the domain, and it is also what the paper's following sentence about smooth zero extension asks for. `native_source_exterior` is the same vanishing in the native chart, outside the radial window. What I did not do is identify the Lean sets with the paper's: I compared the shape of the two statements, not `geometry.domain` against ℰ_γ⁺ or `labelCarrier l n` against Ω_γ of (6.28).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.28)",
+  "status": "partial",
+  "location": {
+    "page": 57,
+    "rect": [0.296144, 0.159183, 0.572931, 0.027158]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-5.28",
+      "locator": {
+        "physical": [57],
+        "printed": [57],
+        "text": "Equation (5.28), p. 57, in section 5.4"
+      },
+      "region": "eq-5.28@p057",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: |\\partial_z^a \\partial_t^b q| \\le C_{a,b}\\, q^{\\,1-aD-b}, \\qquad a, b \\ge 0, \\qquad 0 < D < 1."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "hypothesis",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Lean has no D-discount in the q-jet bound it assumes or proves: everywhere the loss is one power of q per derivative, i.e. the exponent 1 - m for the full space-time jet of order m, which is the D = 1 case of (5.28) — a value the paper's range 0 < D < 1 excludes. Direction of the implication: for 0 < q ≤ 1 one has q^{1-aD-b} ≤ q^{1-a-b}, so (5.28) with any 0 < D < 1 implies the Lean hypothesis (q is independent of the transverse variables, which Lean enforces through CutStageEstimates.physicalProjection, so only z and t derivatives occur); hence the Lean summation lemma consumes a weaker hypothesis than the paper's, and the actual similarity coordinate is proved to satisfy it (physicalQ_jet_bound). Conversely the Lean statement does not give the paper's sharper bound for a ≥ 2; the only D-weighted statement I found is the exact first-order rate ∂_z q = 2η q^{1-D}/L (qAxial_rpow), with the time rate -1/L. Rated low rather than none because the paper's inequality as written is not the one checked, even though what Lean checks suffices for the Lean development.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

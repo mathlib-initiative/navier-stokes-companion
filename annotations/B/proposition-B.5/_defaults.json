@@ -17,32 +17,24 @@
       "region": "proposition-B.5@p151",
       "verdicts": [
         {
-          "confidence": 0.88,
-          "evidence": ["ATTRIBUTION_GAP: ActivationCone.natural_activation_direction (ActivationCone.lean:908): activatedStress (T·u,η) = activation 1 κ u • D(…), D smooth, D(·,(0,η)).1 ≥ ε > 0. ContinuationWitness (ActivationContinuation.lean:1925) has no such field. Bridges: LeadingStressWeights.activation_stress (L184), RampParameters.initial_fields (L2002), physical_initial_shears/stocks (NominalConeAssembly.lean:1097/1212).", "ATTRIBUTION_GAP: InitialActivationBound (ActivationContinuation.lean:1598) versus NominalConeAssembly.Initial.activation_cone (NominalConeAssembly.lean:1251): IsRelaxed w.parameters.profiles on 0<y≤actTime and IsTrue on 0<y≤θ·actTime, taking only the witness w as input.", "CONVENTION: StressActivation.activation (StressActivation.lean:29), activation_smooth (L34), activation_zero (L57), activation_flat_form (L212): activation = (1−κ)·edge(T²)/stepDenominator. FlatCutoff.iteratedDeriv_edge_zero (FlatCutoff.lean:155): iteratedDeriv m (edge c) 0 = 0. ActiveAnnulusWeight.exists_natural_activation_factor (L1014).", "I read p.151 with pp.27, 30–31, 150, 152–153 and the Lean sources. Coordinates match: shearA = a, shearB = −b_s, projection = P_c, transverse = J_c, shearSize = v_s, coneBound = 𝒰, IsTrue = admissible cone, p1 = XQ_s/L. Each clause is proved: smooth continuation with f>0, unchanged for X ≤ 4/Λ, admissible cone on a first collar, relaxed cone on (X0,110], a = 4/5 and shearB = 0 from holdRadius < 110, p1 > 2, and the factorization with smooth D nonzero at the edge. Lean adds explicit margins, S_q > 5/4 and uniformity in Λ, C. hcut is the paper's (B.2) alternative, discharged at NominalProfile.prepare_axis_with_cutoff. No sorry in the files read. All findings are packaging; none is material. No docstring cites B.5, so the pairing is inferred."],
+          "confidence": 0.78,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.ActivationContinuation.exists_activation_continuation, NavierStokes/ActivationContinuation.lean:1945 (continuation, relaxed cone on [startRadius,110], 2 < p₁ on [holdRadius,110]); NavierStokes.NominalConeAssembly.Initial.activation_cone, NavierStokes/NominalConeAssembly.lean:1251 (relaxed on (X₀,startRadius], IsTrue on a first collar); NavierStokes.ActivationCone.natural_activation_direction, NavierStokes/ActivationCone.lean:908 (T₀ = e_a·B₀); NavierStokes.ActivationContinuation.RampParameters.final_shears, NavierStokes/ActivationContinuation.lean:1579 (a = 4/5, b = 0)", "ATTRIBUTION_GAP: NavierStokes.StressActivation.activation_zero, NavierStokes/StressActivation.lean:57 (y ≤ 0 → activation T κ y = 0); NavierStokes.StressActivation.activation_smooth, NavierStokes/StressActivation.lean:34; NavierStokes.StressActivation.activation_flat_form, NavierStokes/StressActivation.lean:212; NavierStokes.FlatCutoff.iteratedDeriv_edge_zero, NavierStokes/FlatCutoff.lean:155 (every iterated derivative of edge vanishes at the joining point) — none of these is stated for `activation` itself", "Every clause of Proposition B.5 is stated in Lean, but spread across three theorems about the same ContinuationWitness and expressed in the repository's own vocabulary (shearSize/projection/transverse for v_s/P_c/J_c, `activation` for e_a, `radius0`/`holdRadius` for X₀/X_b). On two points Lean is stronger than the paper: the smooth coefficient is bounded below by ε rather than merely nonzero, and a = .8, D_X U = 0 hold on all of [X_b, ∞) rather than only at X_i. The only clause with no declaration of its own is the infinite-order vanishing of e_a at X₀, which follows in a few lines from stated lemmas. Hence different_formulation and SINGLE_SOURCE_OK, with two low-severity packaging findings."],
           "findings": [
             {
-              "confidence": 0.9,
+              "confidence": 0.84,
               "contested": false,
-              "kind": "CONTENT",
+              "kind": "COVERAGE",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "The factorization T0 = e_a·B0 is not a field of the continuation witness. It is a separate theorem about the formula-level activatedStress, for all T and κ. Proved bridges identify that object with the stress of w.parameters.profiles."
+              "summary": "No single declaration states Proposition B.5. Its clauses are distributed over exists_activation_continuation, Initial.activation_cone and natural_activation_direction (plus final_shears and the 'before X₀' equalities), all about the same witness."
             },
             {
-              "confidence": 0.92,
+              "confidence": 0.72,
               "contested": false,
-              "kind": "CONTENT",
+              "kind": "COVERAGE",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "The witness states the first-collar cone through InitialActivationBound, in the log coordinate on formula objects. The statement for the profile's own cone coordinates is a downstream theorem."
-            },
-            {
-              "confidence": 0.88,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "No theorem says in so many words that activation (e_a) vanishes to infinite order. Flatness is carried by the definition, as in the paper, and the explicit flat factor's derivatives are proved to vanish at 0."
+              "summary": "The clause 'e_a vanishes to infinite order at X₀' is not itself asserted by any declaration found; the repository states the flatness of FlatCutoff.edge and the vanishing and smoothness of the activation, leaving the one-paragraph combination unstated."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",
@@ -51,10 +43,10 @@
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "lean_stronger",
+          "relation": "different_formulation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states a stronger result.",
+          "summary": "Lean states it in a different formulation.",
           "verdict": "faithful"
         }
       ]

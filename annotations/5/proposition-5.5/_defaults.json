@@ -21,64 +21,56 @@
       "region": "proposition-5.5@p060",
       "verdicts": [
         {
-          "confidence": 0.82,
-          "evidence": ["CONFIRMED_CONTENT: BaseRadialJets.final_radial_envelope (BaseRadialJets.lean:375) and AllBandBaseJets.final_radial_envelope (:437) give only the Q^h envelope. A decls.jsonl search for q^(2*h) signatures turns up only tangential and generic slowSum bounds, none for radial, stream or V_0.", "CONFIRMED_CONTENT: ConstructedSlowBase.WeightedStressBound (ConstructedSlowBase.lean:438) uses D * q ^ h * activeZeta * activeDelta⁻¹ ^ N. BaseResidual.weighted_slowSum_bound (:1801) weakens q^{2h} to q^h via hpow (:1867). SlowBorelBase.normalized_stress_weighted_compact (:1618) does the same.", "ATTRIBUTION_GAP: FinalSlowBase.exists_final_base (FinalSlowBase.lean:639): PhysicalApproach l h 0 (boxRadius W upper) → AllJetsFlat. GlobalBaseError.error_allJetsFlat (:141) fixes one base with nominalExteriorRadius ≤ upper and allows any compact-carrier approach with no X bound. The main chain uses error_joint_jetRate (:184) and error_jetRate (:107).", "CONVENTION: SlowBorelBase.normalized_tangential_bounds (SlowBorelBase.lean:1530) and AllBandBaseJets.normalized_tangential_bounds (:91) are generic. FinalSlowBase.scales_admissible_on (:261) supplies admissibility. AllBandBaseJets.final_estimates (:423) is the band-chart form. Identifications: SlowBorelBase.angularMoment_eq_normalizedSwirl (:1586) and BaseChartJets.axial_eq_normalized_velocity (:688).", "CONFIRMED_CONTENT: BaseRankPatch.normalized_mean_fields (BaseRankPatch.lean:232) and rank_fields (:289) give only the swirl and axial components. The mean window has clock in (pulseStart−8, pulseStart−3) (ReservedPatches.leftOffset/rightOffset), while nominalOuterX = pulseEndRadius+1 (AssembledSlowBase.nominalOuterX_eq_pulse), so ActualBaseVelocityBounds.actual_leading_eq does not apply on I_mean.", "CONFIRMED_CONTENT: SlowBaseEndpoint.final_fields_awayExtensions (SlowBaseEndpoint.lean:421) covers velocity and pressure only. WholeDomainCompactBounds.residualExtension (:89) extends only the NS residual of u_B, p_B, inside a proof (WholeDomainStageBounds.lean:87). No AwayExtensions statement exists for FinalSlowBase.stressForce or error.", "ATTRIBUTION_GAP: ActualBaseVelocityBounds.actual_leading_eq (:435) and ActualBasePressureBounds.actual_leading_eq (:63) give EqOn on cartesianExterior h (nominalOuterX W). actual_exterior_coefficients (:417) shows axial 0 and its primitive vanish there, so leadingVelocity = u^(0). nominalOuterX_lt_switch (AssembledSlowBase.lean:912), with switchStart = tailStart+1/5 < tailEnd = tailStart+3, gives nominalOuterX < activeRight.", "The proposition is spread across many declarations. Most clauses are stated:\n- exists_final_base: (5.41), smoothness, div u_B = 0, stress support, (5.43) at rate q^h.\n- GlobalBaseError: flatness (a) for one fixed base.\n- actual_leading_eq (velocity and pressure): (f) on X > nominalOuterX, which lies below X_b.\n- normalized_tangential_bounds: the tangential part of (5.42), in generic form.\n- normalized_mean_fields: the tangential part of (5.44).\n- final_fields_awayExtensions: endpoint extensions for u_B and p_B.\n\nReal but low-severity gaps remain:\n- the radial V_0 clause of (5.42);\n- the q^{2h} rate in (5.43);\n- the radial and stream part of u_B = u^(0) on I_mean;\n- endpoint extensions for T_phys and E_B.\n\nThe MATHEMATICS skeptic's claim that (f) is unstated on [X_+, X_b] is refuted. Nothing affects the main result."],
+          "confidence": 0.75,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.ConstructedSlowBase.WeightedStressBound, NavierStokes/ConstructedSlowBase.lean:438, concludes `≤ D * q ^ h * activeZeta c left right w * (activeDelta left right w)⁻¹ ^ N`; this is the form asserted by exists_final_base, NavierStokes/FinalSlowBase.lean:639. BaseResidual.weighted_slowSum_bound (NavierStokes/BaseResidual.lean:1801) and SlowBorelBase.normalized_stress_weighted_compact (SlowBorelBase.lean:1618) each derive q^(2*h) in their proofs and then discard it (BaseResidual.lean:1867, SlowBorelBase.lean:1633).", "CONFIRMED_CONTENT: NavierStokes.BaseRadialJets.reducedRadial_polynomial, NavierStokes/BaseRadialJets.lean:239, concludes only `PolynomialJets (unitScale D) (fun i => reducedRadial a h d (Q i))`; NavierStokes.BaseRadialJets.final_radial_envelope, NavierStokes/BaseRadialJets.lean:375, gives the fourth estimate. BaseChartJets.lean:438-447 `structure Estimates` has frequency_error and axial_error fields but no radial error field.", "CONFIRMED_CONTENT: NavierStokes.BaseRankPatch.normalized_mean_fields, NavierStokes/BaseRankPatch.lean:232, concludes exactly `normalizedSwirl ... = xAmplitude ... * p.1 ^ (-(1/2 + lam)) ∧ slowSum a h (coefficients H v).axial (q,p) = 0`. The neighbouring mean-interval results (:44, :55, :71) likewise constrain only U and E.", "CONFIRMED_CONTENT: NavierStokes.SlowBaseEndpoint.final_fields_awayExtensions, NavierStokes/SlowBaseEndpoint.lean:421, asserts `AwayExtensions (FinalSlowBase.velocity ...) ∧ AwayExtensions (FinalSlowBase.pressure ...)` and nothing for FinalSlowBase.stressForce or FinalSlowBase.error; a repository-wide sweep of AwayExtensions found no further field.", "ATTRIBUTION_GAP: SlowBorelBase.normalized_tangential_bounds (SlowBorelBase.lean:1530), BaseRadialJets.final_radial_envelope (BaseRadialJets.lean:375), ActualBaseVelocityBounds.actual_leading_eq (ActualBaseVelocityBounds.lean:435), ActualBasePressureBounds.actual_leading_eq (ActualBasePressureBounds.lean:63), SlowBaseEndpoint.final_fields_awayExtensions (SlowBaseEndpoint.lean:421), GlobalBaseError.error_allJetsFlat (GlobalBaseError.lean:141) — none of them a conjunct of FinalSlowBase.exists_final_base (FinalSlowBase.lean:639).", "CONVENTION: FinalSlowBase.exists_final_base (NavierStokes/FinalSlowBase.lean:639) asserts AllJetsFlat only under `BaseResidual.PhysicalApproach l h 0 (boxRadius W upper)`; GlobalBaseError.error_allJetsFlat (GlobalBaseError.lean:141) removes the radius restriction, since error_zero_outside_box (GlobalBaseError.lean:67) makes the error vanish beyond boxRadius W upper.", "Both audits ruled DELTA/partial and I concur: the sharp member of (5.43) cannot be recovered from the stated declarations by logic alone, since the repository states only the q^h edge-weighted bound and obtaining q^{2h} needs the analytic estimate its proofs perform internally and then discard. On the one point of disagreement, the severity of that gap, B was right and A wrong: A justified `low` by Propositions 7.5 and 7.6, but 7.5 uses only the order-zero target and 7.6 is parametric in Σ ∈ M_α, while p.107 does use the sharp exponent. On the radial estimate A was right and B overstated: nothing traced uses it. Three further clauses are stated elsewhere or partially, all low."],
           "findings": [
             {
-              "confidence": 0.85,
+              "confidence": 0.78,
               "contested": false,
               "kind": "COVERAGE",
               "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "The radial clause of (5.42), D^I(q^{1/2}u_{r,B} − V_0/√(2X)) = O_I(q^{2h}), is stated nowhere. Only q^A u_r = O(q^h) appears, and only in band-chart (EnvelopeJets) form."
-            },
-            {
-              "confidence": 0.88,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "(5.43) is stated only at the weaker end of the paper's displayed chain, C q^h ζ δ^{-N}. The sharper C_I q^{2h} ζ δ^{-N_I} is proved internally but never stated."
-            },
-            {
-              "confidence": 0.85,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
-              "severity": "low",
-              "summary": "exists_final_base takes ∀ upper ∃ base, and its flatness clause covers only X ≤ boxRadius W upper. The paper's order (one base, then every X_max) is stated separately in GlobalBaseError."
+              "severity": "medium",
+              "summary": "(5.43) asserts two bounds, C_I q^{2h} ζδ^{-N} and the weaker C_I q^h ζδ^{-N}. The Lean states only the q^h member; no declaration was found stating the edge-weighted stress error at rate q^{2h}."
             },
             {
               "confidence": 0.75,
               "contested": false,
               "kind": "COVERAGE",
-              "ledger": "CONVENTION",
+              "ledger": "CONFIRMED_CONTENT",
               "severity": "low",
-              "summary": "The tangential estimates of (5.42) are not stated for the final base in the (q,X,η)/D^I form. They exist as a generic lemma and as band-chart transports, each needing hi ≤ boxRadius W upper."
+              "summary": "The third estimate of (5.42), identifying the leading radial profile, was not found stated. The Lean has uniform boundedness of q^{1/2}u_{r,B} with nothing subtracted, and a q^h envelope for q^A u_{r,B}."
             },
             {
-              "confidence": 0.82,
+              "confidence": 0.7,
               "contested": false,
               "kind": "COVERAGE",
               "ledger": "CONFIRMED_CONTENT",
               "severity": "low",
-              "summary": "(5.44) is partly stated: q^A u_θ = c(1+η²)^{-1}X^{-1/2-λ} and q^A u_z = 0 on the mean window. The full u_B = u^(0), including the radial and stream part, is not stated. actual_leading_eq does not reach I_mean, which lies below nominalOuterX."
+              "summary": "(5.44)'s first clause, u_B = u^{(0)} as a full velocity identity on I_mean, was not found stated. The Lean mean-interval theorem gives the swirl formula and vanishing axial sum, saying nothing about the radial/stream component."
             },
             {
-              "confidence": 0.85,
+              "confidence": 0.72,
               "contested": false,
               "kind": "COVERAGE",
               "ledger": "CONFIRMED_CONTENT",
               "severity": "low",
-              "summary": "Endpoint extensions across η = ±1 (t = 1, x ≠ 0) are stated, as smooth extensions, only for u_B and p_B. None is stated for T_phys or E_B."
+              "summary": "The endpoint clause is stated for u_B and p_B only. No declaration was found giving continuous extension of the fixed derivatives of the stress τ_phys or the error ℰ_B to η = ±1."
             },
             {
               "confidence": 0.85,
-              "contested": true,
+              "contested": false,
               "kind": "COVERAGE",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Clause (f), u_B − u^(0) and p_B − p^(0) vanishing for X ≥ X_+ < X_b, is stated in ActualBaseVelocityBounds/ActualBasePressureBounds.actual_leading_eq on X > nominalOuterX. It is not in exists_final_base, whose heat EqOn starts at nominalExteriorRadius > X_b."
+              "summary": "Several clauses of the proposition are faithfully stated, but outside the omnibus theorem: (5.42)'s first, second and fourth estimates, the exterior identities at X ≥ X_+, the endpoint extensions, and the unrestricted error flatness."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The paper's 'for every fixed X_max, uniformly on [0,X_max]×[-1,1], |∂^α ℰ_B| ≤ C q^M' is encoded as flatness along filters with compact carrier and q → 0, and inside exists_final_base only for approaches of bounded similarity radius."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_DELTA",
@@ -88,9 +80,9 @@
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
           "relation": "partial",
-          "severity": "none",
+          "severity": "medium",
           "status": "unconfirmed",
-          "summary": "Lean states part of it.",
+          "summary": "Lean states part of it. (5.43) asserts two bounds, C_I q^{2h} ζδ^{-N} and the weaker C_I q^h ζδ^{-N}. The Lean states only the q^h member; no declaration was found stating the edge-weighted stress error at rate q^{2h}.",
           "verdict": "deviation"
         }
       ]

@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.5)",
+  "status": "partial",
+  "location": {
+    "page": 104,
+    "rect": [0.421887, 0.216751, 0.446295, 0.025589]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-9.5",
+      "locator": {
+        "physical": [104],
+        "printed": [104],
+        "text": "Equation (9.5), p. 104, in the statement of Proposition 9.3"
+      },
+      "region": "eq-9.5@p104",
+      "verdicts": [
+        {
+          "confidence": 0.6,
+          "evidence": ["paper: |\\mathcal{F}^{[j]}|_{m} \\le C_{j,m,N}\\, q^{N}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration was found stating the paper's packaged physical bound |F^{[j]}|_m ≤ C_{j,m,N} q^N for the stage's flat remainder. What the Lean states instead, by another formula, is all-powers flatness of each constituent of `errors.total` in chart scales. `NativeBounds N U gain loss f` unfolds (PhysicalResidualJetBounds.lean:375-380) to smoothness plus: ∀m ∃A ≥ 0, ∃p, ∀ l n, N ≤ n → ∀ x ∈ U, ∀ j ≤ m, ‖∂^j f_{l,n}(x)‖ ≤ A · Q_n^{gain − loss(m)} · S_n^p. The three constituents are bounded for EVERY real α, but not with identical data: `baseError_native` (:371) gives gain h·α, loss `fun _ => 0`, on the lifted domain; `axis_native` (:168) gives gain h·α, loss `fun _ => 0`, on the unlifted `strip.domain`; `gaussian_field_native` (:833) carries an extra band hypothesis hN and a per-order loss `fun m => 2·h·m`, on the lifted domain. So the gaussian chart bound already loses 2·h·m derivatives-worth of gain at order m: its exponent is h·α − 2·h·m, not h·α. All-powers flatness at each fixed order survives — α is universally quantified, so for fixed m the quantity h·α − 2·h·m is still arbitrarily large — but that step has to be said rather than assumed. Conjoining the three is therefore not available at loss 0: `excluded_nativeBounds` (PhysicalResidualJetBounds.lean:1027) requires one common N, U, gain and loss, and the repository supplies them in `native_residual` (:861-872), which first lifts `axis_native` to the lifted domain and weakens all three to gain h·(1/2+σ) with the common loss `fun m => 2·h·m` before calling it. Three differences from (9.5) as written. (i) Scale: the Lean bound is a chart bound in Q_n^{h·α−loss} with ε_n^α = Q_n^{h·α} (ChartScales.epsilon h n = Q n ^ h), not a physical bound in q^N; the repository's chart-to-physical dictionary is `selected_residual_jet_bound`, and it is applied to the realized state's full residual, not to the flat remainder alone, and it converts at a further derivative loss (physicalLoss h β m) that the paper's statement does not carry. (ii) Constant: the Lean's right-hand side keeps a slow factor S_n^p, so the constant is uniform over labels and points but not literally over bands; uniformity in the paper's sense is recovered by absorbing S_n^p into a slightly smaller exponent, which the ∀α quantifier permits but which I did not verify as a repository lemma. (iii) Range: the Lean bounds hold for bands n ≥ 4, and on the lifted strip domain for the base error and the gaussian field but on the unlifted strip domain for the alias, where the paper states them outright and on one domain. Severity low rather than medium because the surrounding argument is still proved: the Lean's downstream use of these three bounds is exactly `native_residual`, which deliberately weakens all the flat terms to the single common gain h·(1/2+σ) and common loss 2·h·m, so the later argument never needs (9.5)'s arbitrary power.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

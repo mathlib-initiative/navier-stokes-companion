@@ -1,0 +1,26 @@
+{
+  "id": "corollary-A.3/support/NavierStokes.FiveProfileMoments.exists_normalized_repair",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FiveProfileMoments.exists_normalized_repair",
+      "line": 411,
+      "module": "NavierStokes.FiveProfileMoments",
+      "path": "NavierStokes/FiveProfileMoments.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L411"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FiveProfileMoments.exists_normalized_repair",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 411,
+        "text": "theorem exists_normalized_repair (P : Patch) (b : ℝ) (hb : GoodExponent b) :\n    ∃ (g : Coeff → Coeff) (ε C : ℝ), 0 < ε ∧ 0 < C ∧\n      ContDiffOn ℝ ∞ g (Metric.ball 0 ε) ∧ g 0 = 0 ∧\n      ∀ d ∈ Metric.ball (0 : Coeff) ε,\n        normalizedMap P b (g d) = d ∧ ‖g d‖ ≤ C * ‖d‖ ∧ ‖fderiv ℝ g d‖ ≤ C ∧\n        ∀ x : ℝ, 0 < x → 0 < x ^ b + e P (g d) x"
+      }
+    }
+  }
+}

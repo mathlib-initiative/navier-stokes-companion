@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 64.4",
+  "status": "formalized",
+  "location": {
+    "page": 64,
+    "rect": [0.262776, 0.758843, 0.47467, 0.048855]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-p064-4",
+      "locator": {
+        "physical": [64],
+        "printed": [64],
+        "text": "Display 64.4, p. 64, in section 6.2"
+      },
+      "region": "eq-p064-4@p064",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\mathcal{A}_\\ell = \\left\\{ \\mathcal{C}_\\ell(r,z,t) \\ :\\ \\begin{matrix} 0 < q < q_{\\mathrm{big}},\\quad \\tfrac{1}{2} \\le q/Q \\le 2,\\quad \\tau \\ge 0, \\\\ X_a \\le r^2/(2q) \\le X_b \\end{matrix} \\right\\}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Lean writes the set directly in the slow coordinates (R,Z,T) that the paper obtains as the image under C_ℓ, rather than as `{C_ℓ(r,z,t) : …}`, and names the band ratio q/Q as its own existential variable q ∈ [1/2,2]. Clause by clause, with R = r/√Q, Z = z/Q^D, T = τ/Q and q̂ = q/Q: `0 ≤ p.2.2` is τ ≥ 0; `∃ q ∈ Icc (1/2) 2` is 1/2 ≤ q/Q ≤ 2 (and gives q > 0); `forwardScalar (2h) Z q̂ = T`, i.e. T = q̂ - Z² q̂^{2h}, is the paper's τ = q - z²q^{2h} ((3.2) on p. 7) divided by Q, using 2D + 2h = 1 so that z²q^{2h}/Q = Z²q̂^{2h}; `p.1 ^ 2 / (2 * q) ∈ Icc a b` is X_a ≤ R²/(2q̂) = r²/(2q) ≤ X_b, with a, b instantiated downstream as `NominalConeAssembly.activeLeft/activeRight`. `referenceCompact = closure (activeReference …)` supplies \"the closed active part\". Two differences that do not change the set of slow points used: Lean adds `0 ≤ p.1` (automatic for a radial coordinate), and Lean's set has no `0 < q < q_big` clause — since q/Q ∈ [1/2,2], q < q_big is a constraint on the band index rather than on the slow point (it holds for every point of the band as soon as 2Q ≤ q_big), and Lean carries it instead as the lower band index N in `BaseChartJets.CellIndex`.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

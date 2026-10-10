@@ -1,0 +1,26 @@
+{
+  "id": "lemma-B.7/support/NavierStokes.TransitionRamp.StockReference.prescribed_angular_control",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TransitionRamp.StockReference.prescribed_angular_control",
+      "line": 298,
+      "module": "NavierStokes.TransitionRamp",
+      "path": "NavierStokes/TransitionRamp.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TransitionRamp.lean#L298"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TransitionRamp.StockReference.prescribed_angular_control",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 298,
+        "text": "theorem prescribed_angular_control (hJ : IsOpen J) (T κ w₁ w₂ y : ℝ)\n    {η : ℝ} (hη : η ∈ J) :\n    -2 * deriv (fun x => R.logAmplitude T κ w₁ w₂ (x, η)) y =\n      (1 - step (R.bigTime + w₁) w₂ y) * damping T κ y * R.angularStock (y, η) +\n        (4 / 5 : ℝ) * step (R.bigTime + w₁) w₂ y"
+      }
+    }
+  }
+}

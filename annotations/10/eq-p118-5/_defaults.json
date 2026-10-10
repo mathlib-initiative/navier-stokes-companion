@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 118.5",
+  "status": "formalized",
+  "location": {
+    "page": 118,
+    "rect": [0.24681, 0.379264, 0.506597, 0.026328]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p118-5",
+      "locator": {
+        "physical": [118],
+        "printed": [118],
+        "text": "Display 118.5, p. 118, in the proof of Proposition 10.1"
+      },
+      "region": "eq-p118-5@p118",
+      "verdicts": [
+        {
+          "confidence": 0.79,
+          "evidence": ["paper: u = c\\,u^{\\mathrm{loc}} + \\nabla c \\times \\mathcal{A}, \\qquad \\operatorname{div} u = \\operatorname{div}\\operatorname{curl}(c\\mathcal{A}) + r^{-1}\\partial_\\theta(c\\mathcal{B}) = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The product rule is stated in Lean for the spatial cutoff alone: curl(χ_x𝒜) = χ_x curl𝒜 + curlLinear((fderiv χ_x x).smulRight 𝒜), and unfolding curlLinear (component 0 is L(e_1)_2 - L(e_2)_1 = ∂_1χ_x·𝒜_2 - ∂_2χ_x·𝒜_1, cyclically) shows that term is ∇χ_x × 𝒜. Adding χ_x·D and multiplying by the x-independent χ_t gives the paper's u = c·u^loc + ∇c × 𝒜, because ∇c = χ_t∇χ_x. It is stated with a differentiability hypothesis on 𝒜 at the point, which the paper leaves implicit, and the paper's identity for the full c is not assembled as one declaration. The divergence is split exactly as in the paper: the div∘curl term vanishes identically and the cut angular term vanishes by axisymmetry (spatialCut_angular is the Lean form of r^{-1}∂_θ(cℬ) = 0), but the stated divergence-free theorems are for the periodized field periodicVelocity, from which the compact candidate's divergence-free clause is obtained through of_localized_fields rather than by a direct statement about χ_t·(curl(χ_x𝒜) + χ_x D).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

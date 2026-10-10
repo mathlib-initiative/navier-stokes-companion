@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 144.3",
+  "status": "formalized",
+  "location": {
+    "page": 144,
+    "rect": [0.253002, 0.659853, 0.494224, 0.025896]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p144-3",
+      "locator": {
+        "physical": [144],
+        "printed": [144],
+        "text": "Display 144.3, p. 144, in section B.1"
+      },
+      "region": "eq-p144-3@p144",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: -W_* = 3 - 8h\\eta^2 + (1 - 2h) j_0 \\eta > 2.8, \\qquad Z_*(\\eta_0) \\ge c j_0 P_*^2 > 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same polynomial identity: `neg_W_formula` writes the jη coefficient as `2 * D h`, and D h = 1/2 - h unfolds it to the paper's (1 - 2h); the constant 3 and the -8hη² term agree verbatim. The inequality -W_* > 2.8 is `neg_W_gt` (14/5 < -W) for η ∈ [-1,1] over the paper's printed parameter range (`Parameters`: 0 < h ≤ 1/100, 0 < j ≤ 1/20 = .05); `neg_W_lower_bound` proves the stronger 2.87 on the same range. For the second assertion, `ideal_prefix_root_pressure_lower` gives j·B²/20 < Z at the (constructed, unique) root, i.e. the paper's cj_0P_*² with c = 1/20 and B the pressure-prefix amplitude — the P_*² scaling of the paper's bound is retained, and the root is localized more sharply than the paper's |η₀| ≍ j_0, to Ioo (-j/4) (-j/5). The one packaging difference: the two assertions of the display are two declarations in two files, not one.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

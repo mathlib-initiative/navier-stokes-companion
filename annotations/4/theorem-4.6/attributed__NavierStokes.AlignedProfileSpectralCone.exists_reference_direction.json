@@ -1,0 +1,29 @@
+{
+  "id": "theorem-4.6/attributed/NavierStokes.AlignedProfileSpectralCone.exists_reference_direction",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AlignedProfileSpectralCone.exists_reference_direction",
+      "line": 680,
+      "module": "NavierStokes.AlignedProfileSpectralCone",
+      "path": "NavierStokes/AlignedProfileSpectralCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AlignedProfileSpectralCone.lean#L680"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AlignedProfileSpectralCone.exists_reference_direction",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: FullTrueCone v → ∃ T, ContinuousOn T (referenceSet W) ∧ ∀ p ∈ referenceSet W, ‖T p‖ = 1 ∧ ReferenceCone ∧ TargetCone (referenceFrequency v p) (referenceShear v p) (T p) ∧ (on the open annulus T p = normalDirection (stressVector …)). The closed-annulus unit direction with the pointwise strict cone, i"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 680,
+        "text": "theorem exists_reference_direction (hcone : LeadingStressWeights.FullTrueCone v) :\n    ∃ T : Slow → Plane, ContinuousOn T (referenceSet W) ∧\n      ∀ p ∈ referenceSet W, ‖T p‖ = 1 ∧\n        PrimaryRepresentatives.ReferenceCone (referenceFrequency v p) (referenceShear v p) ∧\n        PrimaryRepresentatives.TargetCone (referenceFrequency v p) (referenceShear v p) (T p) ∧\n        ((PositiveRepresentatives.stableInner F.data.h p).1 ∈\n          Ioo (NominalConeAssembly.activeLeft W) (NominalConeAssembly.activeRight W) →\n          T p = PrimaryRepresentatives.normalDirection\n            (stressVector v.profiles F.data.h (PositiveRepresentatives.stableInner F.data.h p)))"
+      }
+    }
+  }
+}

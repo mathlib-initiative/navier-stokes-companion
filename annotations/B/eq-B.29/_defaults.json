@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.29)",
+  "status": "formalized",
+  "location": {
+    "page": 152,
+    "rect": [0.229828, 0.482276, 0.63924, 0.041418]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.29",
+      "locator": {
+        "physical": [152],
+        "printed": [152],
+        "text": "Equation (B.29), p. 152, in the proof of Proposition B.5"
+      },
+      "region": "eq-B.29@p152",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: t_s = \\frac{p_{2,r}}{p_{1,r}}\\,\\frac{E_r}{E}, \\qquad v_s = \\kappa v_r + O(y e_a), \\qquad P_c = v_r + O(y e_a), \\qquad J_c = O(y e_a)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All four clauses are stated; the rewriting is again only E = √(2X)·(angular field), so E_r/E = referenceAngular/activatedAngular, together with the (4.20) definitions being spelled out as `stockProjection p q t = p + q t` and `stockCross p q t = q - p t`. The t_s identity is `shearSlope_eq` term for term: (p_{2,r}/p_{1,r})·(E_r/E), with the common κ already cancelled (actualP1 = κ p_{1,r} and actualP2 = κ p_{2,r}·E_r/E, so the ratio has no κ) — the paper's 'the common κ cancels from the ratio t_s = -b_s/a'. The other three are the three conjuncts of `actual_comparisons`, with C·y·activation T κ y for O(y e_a): |P_c - v_r| (v_r = referenceSize), |v_s - κ v_r| (κ = damping T κ y), |J_c|. The constant C is produced before T and κ are quantified and is independent of both, which is the paper's 'No inverse power of κ₀ enters these error constants'; `shearSize_error` additionally gives v_s - κ v_r in closed form. Sign conventions agree: the paper's s = (a, -b_s) with b_s = 2 D_X U / E makes -b_s = X n_s/E, which is Lean's actualP2, so shearSlope = actualP2/actualP1 = -b_s/a = t_s.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

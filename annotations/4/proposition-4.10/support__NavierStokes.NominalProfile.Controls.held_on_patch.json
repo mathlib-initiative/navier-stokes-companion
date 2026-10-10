@@ -1,0 +1,26 @@
+{
+  "id": "proposition-4.10/support/NavierStokes.NominalProfile.Controls.held_on_patch",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.Controls.held_on_patch",
+      "line": 691,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L691"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.Controls.held_on_patch",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 691,
+        "text": "theorem held_on_patch\n    (hsep : ShapeTransition.separation c.shapeTime A.normalization F.data.core.P ≤ Real.exp (-8))\n    {eta : ℝ} (hη : eta ∈ ReferencePath.parameterInterval) :\n    ∀ x ∈ Ioo resetPatch.left resetPatch.right,\n      c.seedF (c.radius * x, eta) = A.normalization⁻¹ *\n        Real.exp (Real.log (c.radius * x / Xi) / 10 + c.initialShape eta) /\n          Real.sqrt (2 * (c.radius * x))"
+      }
+    }
+  }
+}

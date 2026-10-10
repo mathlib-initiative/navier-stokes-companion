@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 117.2",
+  "status": "formalized",
+  "location": {
+    "page": 117,
+    "rect": [0.371843, 0.512214, 0.256538, 0.02566]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.AxisymmetricFields",
+      "path": "NavierStokes/AxisymmetricFields.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p117-2",
+      "locator": {
+        "physical": [117],
+        "printed": [117],
+        "text": "Display 117.2, p. 117, in section 10.1"
+      },
+      "region": "eq-p117-2@p117",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: (\\mathcal{S}/r)\\,e_\\theta = a(r^2,z,t)\\,(-x_2,\\;x_1,\\;0)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The paper asserts the identity: near the axis S = r²a(r²,z,t) for a smooth scalar a, hence (S/r)e_θ = a(r²,z,t)(−x₂,x₁,0). Lean does not state this as an equation; it builds the Cartesian field directly in that form — the first two components of AxisymmetricFields.potential are (1/2)H(profilePoint t x)·(−x 1, x 0), with the profile argument s = radialEnergy x = r²/2 rather than r², and the axis-smooth scalar supplied as H (for the base, streamFactor = S/s, whose value at the axis is given by the radial average ProfileHistories.average rather than the quotient). The identification is a(r²,z,t) = (1/2)H(t, r²/2, z), so the two displays are the same formula up to the halved radial argument, the argument order (t,s,z) vs (r²,z,t) and the factor 1/2. Lean's potential additionally carries K e₂ in the third component, which the paper's purely azimuthal display does not.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

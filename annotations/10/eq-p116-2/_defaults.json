@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 116.2",
+  "status": "formalized",
+  "location": {
+    "page": 116,
+    "rect": [0.326472, 0.460787, 0.34706, 0.038113]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p116-2",
+      "locator": {
+        "physical": [116],
+        "printed": [116],
+        "text": "Display 116.2, p. 116, in section 10"
+      },
+      "region": "eq-p116-2@p116",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\sup_{s \\ge 0} \\bigl|\\mathcal{H}^{(m)}_{\\mathrm{ext}}(s)\\bigr| \\le 2^{A} c_{\\infty}\\, 4^{m}\\, (h)_{m}\\, (1+h)_{m} < \\infty,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The constant is stated literally, in the manuscript's own rising-factorial vocabulary: `AppendixHeatResults.derivative_bound_rising` is |H^{(m)}(z)| ≤ rising h m * rising (1+h) m = (h)_m (1+h)_m for every z ≥ 0, with `rising b n = ∏_{k<n}(b+k)`. Combining it with `exteriorProfile_iteratedDerivWithin`, H_ext^{(m)}(y) = 2^A c_∞ · 4^m · H^{(m)}(4y), gives the display's bound 2^A c_∞ 4^m (h)_m (1+h)_m in one step, with no Gamma rewriting; that combination is the only gap between the display and a single Lean statement, hence `equivalent` rather than `same`. The same bound is also packaged with Gamma functions as `exteriorProfile_derivative_bound` / `exteriorDerivativeBound` = |2^A c_∞| · 4^m · |Γ(1+h)⁻¹ · derivativeCoeff (1+h) m| · Γ(1+h+m), which `derivativeCoeff_eq_rising` (:49, derivativeCoeff (1+h) m = (-1)^m rising h m) and `gamma_add_nat` (:55, Γ(a+m) = Γ(a) · rising a m) turn into the same rising-factorial constant; the Lean carries an absolute value on the normalization, which the paper fixes positive in (4.28). sup over s ≥ 0 is the Lean's ∀ y ∈ Ici 0 / ∀ z, 0 ≤ z, and the m-th derivative is `iteratedDerivWithin … (Ici 0)`, the one-sided derivative on [0,∞) that the paper intends. The finiteness assertion \"< ∞\" is also available as the separate ∃ M statement `exterior_profile_derivatives_bounded`.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

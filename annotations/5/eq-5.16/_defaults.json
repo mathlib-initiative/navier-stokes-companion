@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.16)",
+  "status": "formalized",
+  "location": {
+    "page": 52,
+    "rect": [0.350258, 0.288043, 0.517918, 0.028096]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.16",
+      "locator": {
+        "physical": [52],
+        "printed": [52],
+        "text": "Equation (5.16), p. 52, in the proof of Lemma 5.2"
+      },
+      "region": "eq-5.16@p052",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\boldsymbol{\\alpha}_n = -B_U^{-1}\\mathbf{d}_{U,n},\\qquad \\boldsymbol{\\beta}_n = -B_E^{-1}\\mathbf{d}_{E,n}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Lean writes the solve as coefficients = B⁻¹ ·ᵥ (target moment vector) with no leading minus, and supplies the minus in the argument: in exists_parameterized_exact_repair (line 931) the debt is -moments, so the axial target is axialDebt A (-m⁰) = -d_{U,n} and the coefficient vector is B_U⁻¹(-d_{U,n}) = -B_U⁻¹ d_{U,n}, and likewise for β_n. The matrices are the paper's: matrix a l u i j = ∫ t^{a i} b_j(t) dt with exponents (1, 1-2λ) and (2, -2-2λ, -2λ), exactly (B_U)_{ij}, (B_E)_{ij} of p. 51. Invertibility, which the paper gets from Lemma A.1 and the distinct exponents plus ordered supports, is momentMatrix_det_ne_zero / LocalizedMomentRepair.matrix_det_ne_zero under the hypotheses Injective a, 0 < l j, l j < u j, ordered separation.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

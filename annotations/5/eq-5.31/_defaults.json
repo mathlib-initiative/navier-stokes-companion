@@ -1,0 +1,39 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.31)",
+  "status": "formalized",
+  "location": {
+    "page": 57,
+    "rect": [0.312953, 0.421414, 0.556122, 0.047468]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.31",
+      "locator": {
+        "physical": [57],
+        "printed": [57],
+        "text": "Equation (5.31), p. 57, in section 5.4"
+      },
+      "region": "eq-5.31@p057",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.87,
+          "evidence": ["paper: (\\mathcal{F}(U))^a = c_{a0}(x,t) + \\sum_{\\nu=1}^{M_a} c_{a\\nu}(x,t) \\prod_{r=1}^{d_{a\\nu}} \\partial_{x,t}^{\\beta_{a\\nu r}} U^{k_{a\\nu r}}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Lean's normal form has exactly the paper's shape — a field-independent `constant` (= c_{a0}) plus a finite list of (coefficient, monomial) pairs summed as Σ_ν c_{aν}·(monomial) — but the monomial slot is an arbitrary `Expression D ι Empty`, a finite tree built from `input k` (= U^k), `mul`, `add` and `directional v` (= the directional derivative ∂_v). The paper's ∏_{r=1}^{d_{aν}} ∂_{x,t}^{β_{aνr}} U^{k_{aνr}} is the special case obtained by `mul`-ing d_{aν} factors, each an iterate of `directional` along the coordinate basis vectors of SpaceTime = ℝ × Space (∂_t and ∂_{x_i}) applied to `input k_{aνr}`; so every paper monomial is an Expression, and Expression additionally allows sums inside a term and derivatives of products. The paper's explicit uniform bounds 1 ≤ d_{aν} ≤ d, |β_{aνr}| ≤ s, 1 ≤ k_{aνr} ≤ N_U are automatic in Lean: a single fixed Expression is a finite tree, hence of finite order and degree, and is by construction independent of the summation index j and the truncation index J, which is exactly what the paper demands of s, d and the coefficient list. One packaging difference: Lean's `eval` is scalar-valued, i.e. it encodes one output component (F(U))^a at a time, where the paper writes the vector 1 ≤ a ≤ N_F; the downstream theorems take P as a parameter, so applying them once per a ∈ {1,…,N_F} recovers the componentwise statement. The input index is `Fin 3 ⊕ κ`, matching U = (U^1,…,U^{N_U}) with three velocity components and the scalar entries.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

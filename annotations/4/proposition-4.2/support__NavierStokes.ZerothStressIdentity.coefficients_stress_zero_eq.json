@@ -1,0 +1,26 @@
+{
+  "id": "proposition-4.2/support/NavierStokes.ZerothStressIdentity.coefficients_stress_zero_eq",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ZerothStressIdentity.coefficients_stress_zero_eq",
+      "line": 334,
+      "module": "NavierStokes.ZerothStressIdentity",
+      "path": "NavierStokes/ZerothStressIdentity.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ZerothStressIdentity.lean#L334"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ZerothStressIdentity.coefficients_stress_zero_eq",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 334,
+        "text": "theorem coefficients_stress_zero_eq (hI : Icc (-1 : ℝ) 1 ⊆ S)\n    (hD : ∀ X, 0 ≤ X → ∀ eta ∈ S, (X, eta) ∈ Ω.carrier)\n    (hbase : s.base = AssembledSlowBase.baseFields s.domain C P hD)\n    {p : InnerPoint} (hX : 0 ≤ p.1) (heta : |p.2| ≤ 1)\n    (hf : ∀ X, 0 < X → X ≤ p.1 → P.f (X, p.2) ≠ 0) :\n    (AssembledSlowBase.coefficients L B0 Z0 hI).stressTheta 0 p = LeadingStress.theta P h p ∧\n      (AssembledSlowBase.coefficients L B0 Z0 hI).stressAxial 0 p = LeadingStress.axial P h p"
+      }
+    }
+  }
+}

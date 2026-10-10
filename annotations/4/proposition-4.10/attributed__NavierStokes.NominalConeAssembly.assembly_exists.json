@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.NominalConeAssembly.assembly_exists",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalConeAssembly.assembly_exists",
+      "line": 1482,
+      "module": "NavierStokes.NominalConeAssembly",
+      "path": "NavierStokes/NominalConeAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L1482"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalConeAssembly.assembly_exists",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Nonempty (Assembly d). The proof fixes cleanFloor (from d.clean at left = -5), G (from exists_compensatedFamily), delta and repairFloor (from exists_repair_cone), and floor := max G.radiusFloor (max (cleanFloor+1) (max repairFloor (TerminalCone.radiusThreshold d.profile))) BEFORE calling preparedWit",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1482,
+        "text": "theorem assembly_exists (d : PreparedOutgoing.PreparedProfile) : Nonempty (Assembly d)"
+      }
+    }
+  }
+}

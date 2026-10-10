@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.16)",
+  "status": "formalized",
+  "location": {
+    "page": 113,
+    "rect": [0.309953, 0.143476, 0.558225, 0.054648]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.16",
+      "locator": {
+        "physical": [113],
+        "printed": [113],
+        "text": "Equation (9.16), p. 113, in section 9"
+      },
+      "region": "eq-9.16@p113",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.68,
+          "evidence": ["paper: Q^{2A} p_j = p_w^{[j]} - p_w^{[j-1]} + \\mathsf{T}_0\\!\\left( g_r^{[j]} - g_r^{[j-1]} - \\rho\\left( \\mathcal{P}^{[j]} - \\mathcal{P}^{[j-1]} \\right) \\right)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every ingredient is stated, but in separate declarations and with Lean's own hypotheses; no single declaration displays (9.16). Rewriting: T_0(g_r − ρ𝒫) is `VariableGaugeMean.meanPressure = compactPrimitive ∘ pressureSource`, where `pressureSource f z = f z − density(z)·pressureMass f z.2.1` and `pressureMass f s = ∫ torusAverage f (r,s) dr`, i.e. exactly the paper's 𝒫 = ∫⟨g_r⟩_Y dR and p_m = T_0(g_r − ρ𝒫) of p. 108; `reconstructState` sets the state's pressure to that of its own g_r, and `cycle_reconstructed` says every stage of the actual cycle is reconstructed, so the mean pressure at stage j is T_0(g_r^{[j]} − ρ𝒫^{[j]}). `meanPressure_sub_on` then states T_0(f − g) = T_0 f − T_0 g; taking f = g_r^{[j]}, g = g_r^{[j−1]} and using linearity of `pressureMass` inside `pressureSource` gives p_m^{[j]} − p_m^{[j−1]} = T_0(g_r^{[j]} − g_r^{[j−1]} − ρ(𝒫^{[j]} − 𝒫^{[j−1]})), the mean part of (9.16). The Q^{2A} factor is the chart normalization: `pressureMeanStages` is `meanField … (2 * CoordinateAlgebra.A h) …` and `Atlas.physical_eq` gives physical = Q^{−degree} × normalized, so the physical increment times Q^{2A} is the normalized one. The wave part p_w^{[j]} − p_w^{[j−1]} is not inside this display at all: in Lean it is the two separate summands `particularPressure j + signedPressure j` of `positivePressure`. Differences that remain: Lean's linearity lemma carries ContDiffOn and SupportedGauge hypotheses and holds at points of a slow domain, where the paper asserts the identity outright 'in a fixed Q chart'; and the ρ-subtraction is built into the operator rather than written as a separate term.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

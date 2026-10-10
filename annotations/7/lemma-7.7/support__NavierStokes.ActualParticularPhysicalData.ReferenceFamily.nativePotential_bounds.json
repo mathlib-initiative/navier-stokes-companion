@@ -1,0 +1,27 @@
+{
+  "id": "lemma-7.7/support/NavierStokes.ActualParticularPhysicalData.ReferenceFamily.nativePotential_bounds",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualParticularPhysicalData.ReferenceFamily.nativePotential_bounds",
+      "line": 695,
+      "module": "NavierStokes.ActualParticularPhysicalData",
+      "path": "NavierStokes/ActualParticularPhysicalData.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularPhysicalData.lean#L695"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualParticularPhysicalData.ReferenceFamily.nativePotential_bounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 695,
+        "text": "theorem nativePotential_bounds (N : ℕ) {s : WeightedClasses.StripData NativePoint}\n    {w : SourceIndex N → ℕ → NativePoint → ℝ} {α : ℝ}\n    (ha : LocalPhysicalCopyBounds.LocalSourceBounds s h α w (F.nativeAmplitude N))\n    (hN : PhaseJetBounds.PolynomialJets (UniformPrimaryWeights.jointDomain s)\n      (fun q => F.nativeNormal N q.2 q.1)) {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ I n x, x ∈ s.domain → b ≤ ‖F.nativeNormal N I n x‖)\n    (hupper : ∀ I n x, x ∈ s.domain → ‖F.nativeNormal N I n x‖ ≤ M)\n    (hf : ∀ L : F.Label, (F.data L).carrierBlock.frequency (F.data L).reference.band =\n      ChartScales.carrier h L.val.val.1) (hh : 0 ≤ h) :\n    LocalPhysicalCopyBounds.LocalSourceBounds s h (α + 1 / 2) w (F.nativePotential N)"
+      }
+    }
+  }
+}

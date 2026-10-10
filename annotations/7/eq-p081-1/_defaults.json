@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 81.1",
+  "status": "partial",
+  "location": {
+    "page": 81,
+    "rect": [0.290386, 0.157791, 0.419269, 0.026253]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p081-1",
+      "locator": {
+        "physical": [81],
+        "printed": [81],
+        "text": "Display 81.1, p. 81, in the proof of Lemma 7.4"
+      },
+      "region": "eq-p081-1@p081",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: r' = E_{21} + (-2\\lambda + E_{22} - E_{11})\\,r - E_{12}\\,r^{2}, \\qquad r(0) = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration forms the quotient r = z₋/z₊ or asserts that it is differentiable with this derivative; I searched the sources and the index and found no Riccati/quotient ODE anywhere (the only occurrences of this polynomial in NavierStokes/ are GrowingMode.lean lines 76 and 92). The Lean takes another route, which its own module docstring states: \"The invariant region is proved using a quadratic boundary function, without dividing by the growing coordinate or assuming its positivity along the solution.\" In place of r it uses barrier t = (z t 1)² - r²(z t 0)² with r a *constant* half-width (a name collision with the paper's ratio function), and shows barrier ≤ 0 by a boundary-derivative argument. The two formulas are linked exactly: writing u = z₋/z₊, d/dt[z₋² - r²z₊²] = 2 z₊² u u' + 2 z₊ z₊'(u² - r²), so at u = ±r the barrier derivative is ±2 r z₊² times the display's right-hand side — and that right-hand side appears verbatim as the subject of upper_edge_factor_negative. The initial condition r(0) = 0 is stated, in the modal coordinates, by primary_initial (z₋(a) = 0 with z₊(a) = P(a) > 0). Only the paper's intermediate formula, not its conclusion, is missing: the cone bound it is used to prove is established (positive_invariant_cone, scaled_positive_invariant_cone).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

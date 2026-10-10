@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/attributed/NavierStokes.SubcoverPeriodicity.commonVelocity_subcoverPeriodic",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SubcoverPeriodicity.commonVelocity_subcoverPeriodic",
+      "line": 259,
+      "module": "NavierStokes.SubcoverPeriodicity",
+      "path": "NavierStokes/SubcoverPeriodicity.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SubcoverPeriodicity.lean#L259"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SubcoverPeriodicity.commonVelocity_subcoverPeriodic",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: SubcoverPeriodicAt d f p implies SubcoverPeriodicAt d (commonVelocity t f g hab kappa) p, where SubcoverPeriodicAt d f p (line 206) is invariance under Y |-> Y + latticePoint (coverIndex d k): the cutoff-weighted copy sum of (6.5) preserves descent in the band variable. commonPressure_subcoverPeriod"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 259,
+        "text": "theorem commonVelocity_subcoverPeriodic (t : TangentData P ProblemStatement.Space)\n    (f : P × Plane → ComplexVector) (g : Geometry) {a b : ℝ} (hab : a ≤ b)\n    (κ : Plane → ℝ) (d : ℕ) (p : P) (hf : SubcoverPeriodicAt d f p) :\n    SubcoverPeriodicAt d (commonVelocity t f g hab κ) p"
+      }
+    }
+  }
+}

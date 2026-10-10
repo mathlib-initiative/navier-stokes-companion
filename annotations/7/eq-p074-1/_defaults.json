@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 74.1",
+  "status": "formalized",
+  "location": {
+    "page": 74,
+    "rect": [0.173464, 0.177744, 0.653923, 0.041494]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.PrimaryRepresentatives",
+      "path": "NavierStokes/PrimaryRepresentatives.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p074-1",
+      "locator": {
+        "physical": [74],
+        "printed": [74],
+        "text": "Display 74.1, p. 74, in section 7.1"
+      },
+      "region": "eq-p074-1@p074",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: N = \\frac{g_0}{|g_0|}, \\qquad K = N^{\\perp}, \\qquad \\lambda_0^2 = -2F_0 N_\\theta\\,(2F_0 N_\\theta + |g_0|) > 0, \\qquad c_0 = \\frac{\\lambda_0}{2F_0 N_\\theta} < 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Four symbol-for-symbol matches with one orientation convention. N: normalDirection g = ‖g‖⁻¹ • g is g₀/|g₀|. The Plane index 0 is the θ component (shearVector F G q = (R·∂_R F, ∂_R G), PhaseEstimates.lean:845, matching the paper's g = (RF_R, G_R) in order (θ,z)), so coupling F g = 2F·(normalDirection g)₀ is the paper's 2F₀Nθ. λ₀: Lean defines lambda0 as the nonnegative square root of −coupling·(coupling+‖g‖) and ReferenceCone.lambda0_sq restates the display's λ₀² identity, lambda0_pos its positivity; c0 = lambda0/coupling is λ₀/(2F₀Nθ) and c0_neg is c₀ < 0. The paper's '> 0' and '< 0' are consequences of the profile bounds; in Lean they are consequences of the hypothesis ReferenceCone F g (0 < F, g 0 < 0, 0 < 2F·g 0 + ‖g‖²), which is the same content moved into a hypothesis record rather than asserted in the definition. K: MovingFrameODE.quarterTurn w = (−w₁, w₀) (counterclockwise), so the paper's K = (−N_z, Nθ) is quarterTurn N, whereas transverseDirection g = −quarterTurn(normalDirection g) = (N_z, −Nθ) — the other of the two unit vectors satisfying the display's 'K = N^⊥' (transverseDirection_unit, transverseDirection_inner_shear). The Lean fixes its orientation by quarterTurn K = N (quarterTurn_transverseDirection, PrimaryRepresentatives.lean:229), which is what makes BasePhaseGeometry.FamilyData.eigen12 read lam/c0 = 2·F₀·(quarterTurn K)₀ = 2F₀Nθ, i.e. exactly this display's c₀. The consequence of that sign choice for the wave vector is recorded under eq-p074-4.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

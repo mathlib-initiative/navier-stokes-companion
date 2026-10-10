@@ -1,0 +1,32 @@
+{
+  "id": "lemma-7.4/attributed/NavierStokes.PrimaryPulseBounds.phase_normalizedPulse_envelope_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PrimaryPulseBounds.phase_normalizedPulse_envelope_jets",
+      "line": 1443,
+      "module": "NavierStokes.PrimaryPulseBounds",
+      "path": "NavierStokes/PrimaryPulseBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryPulseBounds.lean#L1443"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PrimaryPulseBounds.phase_normalizedPulse_envelope_jets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: EnvelopeJets for the normalized homogeneous pulse: for every derivative order N there are C and m with ‖iteratedFDeriv ℝ j (f i) x‖ ≤ C * D.scale i ^ m * (envelope at x), jointly in the coefficient variables and the pulse coordinate. This is the clause 'every fixed derivative … is bounded by C_I S_*",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1443,
+        "text": "theorem phase_normalizedPulse_envelope_jets\n    (a : PhaseFamily ι) (D : Domain ι Slow) (V : ι → Set ℝ) (hV : ∀ i, IsOpen (V i))\n    (lam c0 u L ν B : ι → ℝ) (K : ι → Plane) (s δ : ι → Slow × ℝ → ℝ)\n    (hF : PolynomialJets D a.F) (hG : PolynomialJets D a.G)\n    {r b M : ℝ} (hr : 0 < r) (hb : 0 < b) (hM : 1 ≤ M)\n    (hconstant : ∀ i, |a.epsilon i| ≤ M ∧ |a.p i| ≤ M ∧ |a.pz i| ≤ M ∧ |a.x0 i| ≤ M)\n    (heps : ∀ i, a.epsilon i ≠ 0)\n    (hR : ∀ i, ∀ q ∈ D.carrier i, r ≤ |q.1| ∧ |q.1| ≤ M)\n    (hslot : ∀ i, ∀ v ∈ V i, |v| ≤ M * D.scale i)\n    (hlam : ∀ i, |lam i| ≤ M) (hc : ∀ i, b ≤ |c0 i| ∧ |c0 i| ≤ M)\n    (hu : ∀ i, |u i| ≤ M) (hrate : ∀ i, |u i / L i| * D.scale i ≤ M)\n    (hν : ∀ i, |ν i| ≤ M)\n    (hB : ∀ i, 2 * b ≤ B i ∧ B i ≤ M) (hK : ∀ i, ‖K i‖ = 1)\n    (hs : ∀ i, ∀ z ∈ (D.slot V hV).carrier i, |s i z| ≤ M)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

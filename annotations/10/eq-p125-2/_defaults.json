@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 125.2",
+  "status": "formalized",
+  "location": {
+    "page": 125,
+    "rect": [0.391804, 0.327253, 0.216396, 0.03696]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p125-2",
+      "locator": {
+        "physical": [125],
+        "printed": [125],
+        "text": "Display 125.2, p. 125, in the statement of Corollary 10.6"
+      },
+      "region": "eq-p125-2@p125",
+      "verdicts": [
+        {
+          "confidence": 0.93,
+          "evidence": ["paper: \\limsup_{t \\uparrow 1} \\|U(t)\\|_{L^\\infty(\\mathbb{T}^3)} = \\infty."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean never writes a limsup: `limsup` and `limSup` occur nowhere in NavierStokes/ (only in Euler/, which is out of scope). The clause is encoded as the quantifier unfolding `SpeedUnboundedAtOne u` = ∀ M > 0, ∀ δ > 0, ∃ t ∈ (0,1) with 1-δ < t and ∃ x with M < ‖u(t,x)‖. Recovery, both directions: for g(t) := ‖U(t)‖_{L^∞} with values in [0,∞], limsup_{t↑1} g(t) = ∞ holds iff for every M and every δ there is t ∈ (1-δ,1) with g(t) > M, which is the Lean statement once `∃ x, M < ‖u(t,x)‖` is identified with `sup_x ‖u(t,x)‖ > M`. That identification is the one encoding choice: the paper's L∞(T³) norm is an essential supremum over the torus, the Lean takes the pointwise Euclidean norm of the value at a single lifted point x ∈ ℝ³. They agree because U(t,·) is continuous (ContDiffOn on preSingularDomain) and 1-periodic in each coordinate (UnitSpatialPeriodsOn (Ico 0 1) u), so the lift's pointwise supremum equals the torus essential supremum; a point of the open set where the norm exceeds M has positive measure. The Lean also pins t to the open interval (0,1), matching `t ↑ 1` from below, and quantifies δ so the witnesses accumulate at 1 — the same content. `unbounded_speed_excludes_uniform_bound` (ProblemStatement.lean:159) confirms the intended reading: the condition contradicts any uniform bound ‖u(t,x)‖ ≤ C on [0,1) × ℝ³.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

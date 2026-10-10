@@ -1,0 +1,31 @@
+{
+  "id": "proposition-4.10/attributed/NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
+      "line": 1042,
+      "module": "NavierStokes.ActivationHolomorphic",
+      "path": "NavierStokes/ActivationHolomorphic.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationHolomorphic.lean#L1042"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For an InitialTube E over an input N, for 0 < T, admissible delta and any kappa and k: the k-th radial jets of E.f, E.U, E.Ubar and E.Pi are Regular (holomorphic in eta) on Ioi (-R) x Omega, one common complex neighbourhood Omega of the real parameter interval. Applied to E := nominalTube W this is ",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1042,
+        "text": "theorem all_radial_jets {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2*δ < ReferencePath.rampLimit) (κ : ℝ) (k : ℕ) :\n    Regular (Ioi (-R)) Ω (radialJet (E.f T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.U T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.Ubar T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.Pi T κ δ) k)"
+      }
+    }
+  }
+}

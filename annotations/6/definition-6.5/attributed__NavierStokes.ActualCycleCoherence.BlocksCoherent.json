@@ -1,0 +1,31 @@
+{
+  "id": "definition-6.5/attributed/NavierStokes.ActualCycleCoherence.BlocksCoherent",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualCycleCoherence.BlocksCoherent",
+      "line": 43,
+      "module": "NavierStokes.ActualCycleCoherence",
+      "path": "NavierStokes/ActualCycleCoherence.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleCoherence.lean#L43"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualCycleCoherence.BlocksCoherent",
+        "kind": "def"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: def BlocksCoherent (v : CycleCoefficients ι) := ∀ l n m k, CommonWindow.index h n + k = CommonWindow.index h m → BlockFieldsOn (slowDomain (overlap n m)) (bandChartEquiv h n m k) (bandVelocityScale h n m) (bandScale n m) (v.blocks l) (v.blocks l) … n m. (6.20) for every label, on the intersection of",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 43,
+        "text": "def BlocksCoherent {ι : Type} (v : CycleCoefficients ι) : Prop"
+      }
+    }
+  }
+}

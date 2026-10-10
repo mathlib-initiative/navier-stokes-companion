@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 109.1",
+  "status": "formalized",
+  "location": {
+    "page": 109,
+    "rect": [0.229422, 0.159724, 0.542182, 0.04414]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p109-1",
+      "locator": {
+        "physical": [109],
+        "printed": [109],
+        "text": "Display 109.1, p. 109, in the proof of Proposition 9.6"
+      },
+      "region": "eq-p109-1@p109",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.93,
+          "evidence": ["paper: M_e = \\int_0^\\infty r^e F_e(r)\\, dr, \\qquad \\sigma_e(r) = -r^{-e}\\int_0^r (r')^e\\bigl(F_e(r') - b_e(r')\\,M_e\\bigr)\\, dr'."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Lean states the paper's display literally, in the paper's own physical variables: `physicalSigma_eq_negative_primitive` (SignedStressPrimitive.lean:719) is σ_e(r) = −(∫_0^r (r')^e · physicalAdjusted) / r^e with `physicalAdjusted = F − physicalBump` and `physicalBump P e q F z = physicalDensity P e q z * mass e F z.2`, i.e. F_e − b_e M_e. Same minus sign, same outer r^{-e}, same limits 0..r, and the b_e it subtracts is `physicalDensity P e q z = momentDensity P e (r/√q) / (√q)^{e+1}`, which is literally the paper's q^{-(e+1)/2} b̂_e(r/√q) with lengthScale = √q. The docstring at :717 says as much ('No fixed-Q chart enters this definition or identity'). The band-coordinate version `sigma_eq_negative_primitive` (:272) is the same identity in the rescaled chart; `physicalSigma` is defined from it by `physicalSigma = lengthScale q · sigma P e (nativeSource q F) (r/√q, ·)` (:598), and :719 discharges the rescaling by `interval_dilate_weighted`. This physical layer is the one the cycle consumes: `SignedMeanGain.removedBump G e f` is `physicalBump G.patch e (coordinateQ G.coord) (torusAverage (f n))` and `SignedMeanGain.physicalSigma G e f` is `physicalBarSigma = physicalSigma ∘ torusAverage` (SignedMeanGain.lean:687-693; `physicalBarSigma_eq_negative_primitive` at SignedStressPrimitive.lean:880 is the same formula on the torus average). One convention remains: M_e, where Lean's `mass e F = ∫_ℝ r^e F(r,·) dr` runs over the whole line and the paper's over (0,∞); they agree because F is radially supported in [P.a, P.b] with P.a > 0, and the repository uses exactly that bridge (`IntegratedMeanBalances.positive_integral_eq_integral`, invoked at SignedStressPrimitive.lean:314 and :142). The normalisation ∫ x^e b̂_e(x) dx = 1 the paper imposes on the profile is `momentDensity_positive_moment` (:140). No constant, exponent, sign or limit of integration differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

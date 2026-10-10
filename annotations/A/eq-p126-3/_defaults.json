@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 126.3",
+  "status": "formalized",
+  "location": {
+    "page": 126,
+    "rect": [0.300547, 0.284938, 0.400858, 0.040179]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p126-3",
+      "locator": {
+        "physical": [126],
+        "printed": [126],
+        "text": "Display 126.3, p. 126, in section A"
+      },
+      "region": "eq-p126-3@p126",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\frac{1}{2}\\frac{d}{dt}\\|w\\|_{L^2(\\mathbb{T}^3)}^2 + \\nu\\|\\nabla w\\|_{L^2(\\mathbb{T}^3)}^2 \\le \\|\\nabla U\\|_\\infty\\,\\|w\\|_{L^2(\\mathbb{T}^3)}^2."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Two routine rewritings. (a) Packaging: Lean's `energy u v t = cubeIntegral (fun x => ‖(u-v)(t,x)‖^2)` is ‖w‖²_{L²(T³)} on the unit cube, `energyRate` is its t-derivative (energy_hasDerivAt, line 590), and `dissipation (u-v) t` is ‖∇w‖²_{L²}. Halving energy_balance and adding neg_coupling_le_energy gives ½·(d/dt)‖w‖² + dissipation = -coupling ≤ B·‖w‖², which is the display with B = sup over the cube of the operator norm ‖∇u‖, i.e. ‖∇U‖_∞. energy_balance is an exact identity, hence stronger than the inequality. (b) Viscosity: the file's `navierStokesResidual` is at viscosity exactly one (ProblemStatement.lean:81), so the dissipation coefficient is 1 and not ν; the general-ν statement the paper writes is obtained in the repository by the explicit change of variables in PeriodicViscosityUniqueness (rescale ν⁻¹ ν⁻¹, normalize_residual), which yields the ν-uniqueness the paper's Gronwall sentence is used for. No declaration was found carrying a ν-weighted dissipation term in a periodic difference-energy inequality; separately, `energy_rate_le` discards the dissipation term (it keeps only energyRate ≤ 2B·energy), which is weaker than the display but is all Gronwall needs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

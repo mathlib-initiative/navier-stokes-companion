@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.37)",
+  "status": "formalized",
+  "location": {
+    "page": 58,
+    "rect": [0.277023, 0.632832, 0.592045, 0.028295]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.DiagonalScale",
+      "path": "NavierStokes/DiagonalScale.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.37",
+      "locator": {
+        "physical": [58],
+        "printed": [58],
+        "text": "Equation (5.37), p. 58, in the proof of Lemma 5.4"
+      },
+      "region": "eq-5.37@p058",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\widehat{C}_{j,m}\\,\\Lambda_{\\log}(q)^{\\widehat{P}_{j,m}}\\,q^{g_j/2}\\le 2^{-j}\\qquad (0<q\\le a_j^{-1},\\ 0\\le m\\le j)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Term by term the two agree: `logPowerWeight (C j m) (p j m) (g j / 2) q` unfolds to C_{j,m}·(1+|log q|)^{P_{j,m}}·q^{g_j/2}, and the paper fixes Λ_log(q) = 1 + |log q| on p. 56, so the base, the logarithmic exponent and the power g_j/2 match; the right-hand side (1/2)^j is 2^{-j}; the q-range q ≤ 1/(a j) is the paper's 0 < q ≤ a_j^{-1}; and the positivity hypothesis `hg : ∀ j, 1 ≤ j → 0 < g j` is the paper's 'each holds for all sufficiently small q because g_j > 0'. The Lean is stronger on three counts: it imposes the bound for every m ≤ j + 2 rather than m ≤ j; it bounds the absolute value, so the statement survives negative constants; and it delivers the surrounding recursion in the same existence statement (2·a_j ≤ a_{j+1}, which is the paper's a_{j+1} ≥ 2a_j; strict monotonicity; 1/a_j eventually below any fixed q, which is the paper's local finiteness; and B ≤ a_0, which supplies the paper's a_1^{-1} < q_0). The witness is an integer sequence where the paper's a_j are reals, which narrows the witness rather than the claim. The Lean's own docstring attributes this to 'Lemma 11.3 of the candidate manuscript', a numbering that does not match this manuscript.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

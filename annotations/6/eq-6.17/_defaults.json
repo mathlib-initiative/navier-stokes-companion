@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.17)",
+  "status": "partial",
+  "location": {
+    "page": 67,
+    "rect": [0.271404, 0.144936, 0.596768, 0.054351]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.17",
+      "locator": {
+        "physical": [67],
+        "printed": [67],
+        "text": "Equation (6.17), p. 67, in section 6.3"
+      },
+      "region": "eq-6.17@p067",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: \\mathcal{D}_\\ell = \\operatorname{supp}_{(z,t)} \\chi_\\ell(q(z,t)), \\qquad \\mathcal{L}(U) = \\{\\ell : \\mathcal{D}_\\ell \\cap U \\neq \\varnothing\\}, \\\\ i_0 = \\min_{\\ell \\in \\mathcal{L}(U)} i(\\ell), \\qquad H = \\pi_{i_0}(Y)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. All four clauses have Lean counterparts, but the first three are not the paper's formulas. (i) D_l: `PhysicalWaveSum.labelRegion D L` is the product of the closed dyadic-mask support with the closed slow-mask support, in the parameter variables (q, x) and indexed by the whole label gamma = (l, a, sigma); the paper's D_l is the (z,t)-support of the band cutoff chi_l(q(z,t)) alone, indexed by the band. Its first factor is the closed band Q_l/2 <= q <= 2 Q_l (`labelRegion_band`, line 249), and the paper's set is reached only after pulling back along `physicalParams h` (q = physicalQ h w) and dropping the slow factor. (ii) L(U): `physical_active_neighborhood` produces a Finset s with I in s iff w lies in D_I, together with a neighbourhood of w in which no further label is active -- which is the paper's L(U) for U small -- but s is a set of labels (band, grid, sign, harmonic), not of bands; the band window actually used downstream is the explicit `CommonWindow.levels n = insert n (Icc (max 1 (n-2)) (n+2))`, shown by `active_level_mem` to contain every active band, i.e. a superset of the paper's L(U) rather than L(U). (iii) i_0: `CommonWindow.index h n` is the same `min` of i(.) but over `levels n`, not over L(U), so the Lean i_0 can be strictly smaller than the paper's -- a coarser common torus, which is still below every active band index (`index_le`) and still within a fixed gap (`gap_le`), so the later argument is unaffected. The one declaration that does state the paper's clause literally, `CommonCoverClass.exists_coarsest_band` (min over a finite set of levels with span <= 4), is not used anywhere else in the repository (grep for its name returns only its own line). (iv) H = pi_{i_0}(Y) is faithful: `commonLift h n d = downLift d . physicalLift h n`, whose Plane component is (cover^(i(n)-d))(Y) by `commonLift_formula`, Y being the universal-cover representative that `nativeGraph` maps to Y_i; the only encoding choice is that the common index enters as the gap parameter d = Delta_l rather than as a minimum. Severity low: the construction the paper wants from (6.17) -- a common index below every band index active near the point, with a bounded gap -- is stated and proved.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

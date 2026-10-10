@@ -1,0 +1,29 @@
+{
+  "id": "theorem-4.6/attributed/NavierStokes.SlowDivergence.radialFlux_smooth",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SlowDivergence.radialFlux_smooth",
+      "line": 68,
+      "module": "NavierStokes.SlowDivergence",
+      "path": "NavierStokes/SlowDivergence.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowDivergence.lean#L68"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SlowDivergence.radialFlux_smooth",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: ContDiffOn ℝ ∞ U Ω.carrier → (∀ p ∈ Ω.carrier, L h p.2 ≠ 0) → ContDiffOn ℝ ∞ (radialFlux h lam U) Ω.carrier. Clause (i)'s smoothness of V_0 on the open profile domain; radialFlux_div_radial (:29) rewrites V_0/X with the division by X removed, and radialFlux_eq_histories (:43) does the same through r"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 68,
+        "text": "theorem radialFlux_smooth (Ω : RadialDomain) {U : Field}\n    (hU : ContDiffOn ℝ ∞ U Ω.carrier) (h lam : ℝ)\n    (hL : ∀ p ∈ Ω.carrier, CoordinateAlgebra.L h p.2 ≠ 0) :\n    ContDiffOn ℝ ∞ (radialFlux h lam U) Ω.carrier"
+      }
+    }
+  }
+}

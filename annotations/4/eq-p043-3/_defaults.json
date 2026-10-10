@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 43.3",
+  "status": "formalized",
+  "location": {
+    "page": 43,
+    "rect": [0.339521, 0.290954, 0.320964, 0.040351]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.ModulatedHistories",
+      "path": "NavierStokes/ModulatedHistories.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p043-3",
+      "locator": {
+        "physical": [43],
+        "printed": [43],
+        "text": "Display 43.3, p. 43, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p043-3@p043",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\max_{0 \\le j \\le 2} \\ \\sup_{[Y_0,Y_1]\\times[-1,1]} \\big| \\partial_\\eta^j (\\mathfrak{m}_f - \\mathfrak{m}_N) \\big| \\le C/N"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. repairHistoryDifference is 𝔪_f - 𝔪_N row by row: the five cumulative integrals, up to radius X, of the change in density caused by the correction. repairHistory_scalar_jets is the display with j ≤ q in place of j ≤ 2 and with the small factor written as K·eps rather than C/N. The rewriting: take q = 2, S = [-1,1], and eps = C/N from exists_actual_restoring_repair; the side condition eps ≤ delta is the paper's own \"increasing N if necessary\". The Lean quantifies over all X ∈ ℝ with the integral clamped to the patch window [P.left, P.right], which covers the paper's X ∈ [Y_0,Y_1] and in addition gives the value beyond Y_1. The Lean hypothesis FiniteJetBound q c S eps on the coefficients corresponds to the paper's ‖c‖_{C²} ≤ 2ν₂D₂/N from the previous display.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

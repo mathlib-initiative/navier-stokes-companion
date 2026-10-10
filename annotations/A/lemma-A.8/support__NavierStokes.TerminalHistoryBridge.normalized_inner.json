@@ -1,0 +1,26 @@
+{
+  "id": "lemma-A.8/support/NavierStokes.TerminalHistoryBridge.normalized_inner",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalHistoryBridge.normalized_inner",
+      "line": 1276,
+      "module": "NavierStokes.TerminalHistoryBridge",
+      "path": "NavierStokes/TerminalHistoryBridge.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean#L1276"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalHistoryBridge.normalized_inner",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1276,
+        "text": "theorem normalized_inner (F : Profile) {XR : ℝ} (hXR : 0 < XR) (y : ℝ)\n    {η : ℝ} (hη : η^2 < 1) :\n    SimilarityProfile.q F.data.h (TerminalStress.radiusPoint (η^2)\n      (TerminalEdgeFactor.profileRadius (shift F XR) (TerminalCone.edgeDistance F y)) η) = 1 ∧\n    SimilarityProfile.inner F.data.h (TerminalStress.radiusPoint (η^2)\n      (TerminalEdgeFactor.profileRadius (shift F XR) (TerminalCone.edgeDistance F y)) η) = (XR*Real.exp y,η)"
+      }
+    }
+  }
+}

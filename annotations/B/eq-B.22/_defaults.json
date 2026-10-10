@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.22)",
+  "status": "formalized",
+  "location": {
+    "page": 150,
+    "rect": [0.303391, 0.496699, 0.565671, 0.047359]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.22",
+      "locator": {
+        "physical": [150],
+        "printed": [150],
+        "text": "Equation (B.22), p. 150, in section B.5"
+      },
+      "region": "eq-B.22@p150",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: \\begin{aligned}\n\\partial_y \\log \\phi_{\\mathrm{r}} &= \\bigl[\\,1 - \\sigma\\bigl((y - t_1)/t_1\\bigr)\\,\\bigr]\\,\\mathcal{D}_X \\log \\phi_{\\mathrm{nat}}(X,\\eta),\\\\\n\\partial_y U_{\\mathrm{r}} &= \\bigl[\\,1 - \\sigma\\bigl((y - t_1)/t_1\\bigr)\\,\\bigr]\\,\\mathcal{D}_X U_{\\mathrm{nat}}(X,\\eta),\n\\end{aligned}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Three encoding differences, all checked. (i) Derivative: the paper writes ∂_y on the left and 𝒟_X on the right; the Lean has both forms. ReferencePath.continuation_hasDerivAt is literally ∂_y of the continuation in the log variable y, and Input.same_radius_log_slope / same_radius_U_slope are the same identity multiplied through by X, i.e. 𝒟_X log φ_r = [cutoff]·𝒟_X log φ_nat and 𝒟_X U_r = [cutoff]·𝒟_X U_nat. The paper states 𝒟_X = X∂_X 'equivalently ∂_y' on this same page, so the rewriting is the paper's own. That 𝒟_X log φ_nat is what the right-hand side computes to is proved as radialPartial_logF (line 654: radialPartial N.logF p = X·∂_X f/f at X = X₀e^y) and radialPartial_logU (line 661). (ii) The smooth step: the paper's σ is fixed by (A.5) as e^{-1/y²}/(e^{-1/y²}+e^{-1/(1-y)²}); ReferencePath.slopeCutoff instead uses Mathlib's Real.smoothTransition, built from exp(-1/x) rather than exp(-1/x²). The repository does contain the manuscript's σ verbatim (OutgoingSchedule.sigma), but ReferencePath does not use it. The substitution is harmless for (B.22) because the only properties of the step invoked in ReferencePath.lean are the ones (A.5) also has and that the file proves for its own step: smoothness (slopeCutoff_smooth, line 41), range in [0,1] (slopeCutoff_mem, line 45), value 1 for y ≤ t₁ (slopeCutoff_one, line 50) and value 0 for y ≥ 2t₁ (slopeCutoff_zero, line 54). (iii) Range of validity: the paper prescribes (B.22) 'for t₁ < y < 2t₁' after saying φ_r, U_r agree with the analytic axis profile for y ≤ t₁; the Lean identity holds for every y (and, in the X form, for every X > 0 with y < log(41/40)), which subsumes the paper's three regimes — agreement below t₁ is continuation_eq_natural (line 102) and the constant extension above 2t₁ is continuation_frozen (line 121). The parameter bookkeeping matches: endpoint = 4/N.scale = X₀ = 4/Λ, logTime X = log(X/X₀) = y, δ = t₁, and the standing hypothesis 2δ < rampLimit = log(41/40) is exactly the paper's choice of t̄ with 4e^{2t̄} < 4.1 (4·41/40 = 4.1). η ranges over the open parameter interval rather than the closed [-1,1] of the paper's surrounding text.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

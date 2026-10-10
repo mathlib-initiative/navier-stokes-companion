@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.22)",
+  "status": "formalized",
+  "location": {
+    "page": 54,
+    "rect": [0.317271, 0.613593, 0.551796, 0.029731]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.22",
+      "locator": {
+        "physical": [54],
+        "printed": [54],
+        "text": "Equation (5.22), p. 54, in the proof of Lemma 5.2"
+      },
+      "region": "eq-5.22@p054",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: |\\mathcal{T}_1| \\le C\\,e^{-4/\\delta_b^2}\\,\\delta_b^{-3},\\qquad |\\partial^I \\mathcal{T}_1| \\le C_I\\,e^{-4/\\delta_b^2}\\,\\delta_b^{-N_I}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. The variable Lean calls y.2 (= x) is the paper's δ_b: SlowFirstOrderEdge.xChart sends w to (w.2, y0 + 3 - Real.log w.1), i.e. log X_b - log X with log X_b = y0 + 3, and FlatCutoff.edge 4 δ = e^{-4/δ^2}, so the Gaussian-flat weight and the constant 4 match exactly. Lean proves more than the first bound of (5.22): profileStress_factorization is an exact identity profileStress = (e^{-4/δ^2}/δ^3) · stressFactor with stressFactor smooth (stressFactor_contDiff), from which |𝒯_1| ≤ C e^{-4/δ^2}δ^{-3} follows by taking C = sup|stressFactor| over the compact collar η ∈ [-1,1], δ ∈ [0,b]; the paper's exponent 3 is Lean's exponent 3. For the derivative bound, profileStress_jets gives one pair (M, N) valid uniformly for all multi-indices of order i ≤ n, which is stronger than the paper's per-index constants C_I, N_I, and it covers joint η-and-δ derivatives on η ∈ [-1,1], 0 < x ≤ b. I did not verify that the N produced by profileStress_jets equals 3 at i = 0, so the sharp exponent in the first bound comes from the factorization, not from the jets theorem.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

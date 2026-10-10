@@ -18,13 +18,22 @@
       "verdicts": [
         {
           "confidence": 0.93,
-          "evidence": ["The auditor and both skeptics agree."],
-          "findings": [],
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/SeedConePaper.lean:37 `admissible_iff` (assertion (i)) and NavierStokes/SeedConePaper.lean:78 `compact_large_lag_with_admissibility` (assertion (ii)); neither statement mentions the other's content, and their conjunction is the lemma", "Both assertions are formalized in the paper's own coordinates in SeedConePaper.lean, and the definitions reproduce (4.20), (4.21) and $\\mathcal{U}$ term for term. `admissible_iff` has exactly the paper's hypotheses and conclusion for (i); `compact_large_lag_with_admissibility` has exactly the paper's three hypotheses on $K$, a strictly positive threshold, the closed condition $p_{s,1}\\ge P_K$, the substitution $p_{s,2}=wp_{s,1}$, and the conditional admissibility clause for (ii). Lean omits the paper's nonemptiness of $K$, which only widens the statement vacuously. Nothing analytic has to be supplied to recover the lemma, so the verdict is OK; but no declaration bundles the two assertions, which is a low-severity attribution gap and should be recorded."],
+          "findings": [
+            {
+              "confidence": 0.95,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration states Lemma 4.5. Assertion (i) is `admissible_iff` and assertion (ii) is `compact_large_lag_with_admissibility`, adjacent theorems in one namespace; each is complete and at the lemma's full generality."
+            }
+          ],
           "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
           "relation": "equivalent",
           "severity": "none",

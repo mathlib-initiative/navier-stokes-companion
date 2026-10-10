@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.10)",
+  "status": "formalized",
+  "location": {
+    "page": 65,
+    "rect": [0.29274, 0.437723, 0.576328, 0.076024]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.10",
+      "locator": {
+        "physical": [65],
+        "printed": [65],
+        "text": "Equation (6.10), p. 65, in section 6.2"
+      },
+      "region": "eq-6.10@p065",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\mathcal R_\\gamma = \\{c_\\gamma + \\xi v_r + \\eta v_t : |\\xi|,|\\eta| < r_0\\} \\ (\\mathrm{mod}\\ \\mathbb Z^2),\\qquad \\mathcal R_\\gamma^+ = \\{c_\\gamma + \\xi v_r + \\eta v_t : |\\xi|,|\\eta| < 2r_0\\} \\ (\\mathrm{mod}\\ \\mathbb Z^2),\\qquad \\mathcal R_\\gamma^{\\mathrm{abs}} = \\pi_{i(\\ell)}^{-1}(\\mathcal R_\\gamma),\\qquad \\mathcal R_\\gamma^{\\mathrm{abs},+} = \\pi_{i(\\ell)}^{-1}(\\mathcal R_\\gamma^+)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All four sets are present with the same centre, the same two directions v_r, v_t and the same two radii, but packaged differently. (i) The rectangle shape is `orientedRectangle c a b r = {c + ξ•a + η•b : |ξ| ≤ r, |η| ≤ r}`: Lean's inequalities are non-strict where the paper writes |ξ|,|η| < r_0, so the Lean set is the closure of the paper's; this is the routine rewriting, and it is the conservative direction for the use these sets are put to (the disjointness (6.13) that follows is asserted on the closures of these very sets, so proving it for the closed rectangles gives it for the open ones). (ii) `slotSet h r vr vt L = orientedRectangle (slotCenter h L) vr vt (2*r)`, so Lean's `SlotSystem.radius` field plays the paper's r_0 and `slotSet` is the doubled rectangle R_γ^+; R_γ itself is the same `orientedRectangle` at radius `r` (it is also realised, in the (ξ_g,v) coordinates of (6.11), as the core of `ActualSignedGeometry.clockWindow`), but I found no use site that instantiates `orientedRectangle` at the undoubled radius for a slot label. (iii) The `(mod ℤ²)` of the paper is not inside the set definition: Lean keeps the rectangle on the plane and carries the quotient separately, through `torusEq` inside `liftedSupport` and through `InjOn TorusAverages.quotientPoint` in the `injective` field of `SlotSystem`, which says exactly that the rectangle injects into the torus. (iv) The preimage operation π_{i(ℓ)}^{-1}(·) is `liftedSupport level slot = {Y | ∃ x ∈ slot, torusEq ((cover^level) Y) x}`, the preimage of the slot under the level-fold cover map up to ℤ²; the level used for a label is `SlotColoring.nativeIndex h L.1`, the Lean form of i(ℓ). `liftedSupport` is parametric in `slot`, so it expresses both R_γ^abs and R_γ^{abs,+} according to the radius fed in — but every instance I opened feeds it the *doubled* rectangle, so what the Lean actually builds is R_γ^{abs,+}, not R_γ^abs: `SlotSystem.disjoint` (PartitionedCovariance.lean:228–231) applies it to `slotSet h radius vr vt L` = `orientedRectangle … (2 * radius)`, and `SlotGeometry.exists_disjoint_lifted_slots` (SlotGeometry.lean:376–380) applies it to `rectangle (center m D i) (2 * r)`. That is the right object for what follows, since Lemma 6.1 / (6.13) is a disjointness statement about closure(R_γ^{abs,+}); R_γ^abs itself is defined in the paper but is not separately instantiated in Lean. A second, more literal rendering of the π^{-1}(·) clause exists and is not what I cite: `NavierStokes.TorusCoverDegree.preimage_nativeRectangle` (TorusCoverDegree.lean:153) states `(torusCovering^[g.gap]) ⁻¹' nativeRectangle g r = ⋃ k, liftedRectangle g r k`, an honest preimage under the cover map, but its region is `Metric.ball 0 r` in the chart coordinates rather than the |ξ|,|η| box of (6.10), so `orientedRectangle` / `liftedSupport` remains the closer shape match.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

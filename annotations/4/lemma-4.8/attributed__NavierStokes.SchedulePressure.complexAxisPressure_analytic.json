@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.8/attributed/NavierStokes.SchedulePressure.complexAxisPressure_analytic",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SchedulePressure.complexAxisPressure_analytic",
+      "line": 235,
+      "module": "NavierStokes.SchedulePressure",
+      "path": "NavierStokes/SchedulePressure.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SchedulePressure.lean#L235"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SchedulePressure.complexAxisPressure_analytic",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: complexAxisPressure d is AnalyticOnNhd on PressureDatum.strip, and complexAxisPressure_ofReal (same file:239) identifies it with axisPressure on the reals: analyticity on one complex neighbourhood of [-1,1].",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 235,
+        "text": "theorem complexAxisPressure_analytic (d : TailData) :\n    AnalyticOnNhd ℂ (complexAxisPressure d) PressureDatum.strip"
+      }
+    }
+  }
+}

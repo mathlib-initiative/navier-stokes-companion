@@ -1,0 +1,26 @@
+{
+  "id": "eq-9.2/key/NavierStokes.LinearWaveResidual.remainder",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LinearWaveResidual.remainder",
+      "line": 111,
+      "module": "NavierStokes.LinearWaveResidual",
+      "path": "NavierStokes/LinearWaveResidual.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean#L111"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LinearWaveResidual.remainder",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "role": "key",
+      "snippet": {
+        "line": 111,
+        "text": "remainder ε κ R b F G Vr Vθ Vz Vf Vs Φ a p x i := slowTransport ε b G Vs Vr Vz a x i + phaseFactor κ * ofReal (materialPhaseDefect R b F G Vr Vθ Vz (timeDirection ε Vf Vs) Φ x) * a x i + baseDerivativeRemainder R b F G Vr Vz a x i + strippedPressureGradient Vr Vz p x i - (ε:ℂ) * viscousRemainder R Vr Vθ Vz κ Φ a x i — the five groups of (9.2) in the paper's order"
+      }
+    }
+  }
+}

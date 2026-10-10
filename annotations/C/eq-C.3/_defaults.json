@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (C.3)",
+  "status": "formalized",
+  "location": {
+    "page": 159,
+    "rect": [0.272964, 0.126954, 0.596101, 0.045358]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-C.3",
+      "locator": {
+        "physical": [159],
+        "printed": [159],
+        "text": "Equation (C.3), p. 159, in the statement of Lemma C.1"
+      },
+      "region": "eq-C.3@p159",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: (a_L, -b_L)(X,\\eta,\\varphi) = (a, -b_s)(X,\\eta),\\qquad X \\in \\mathcal{I},\\quad \\operatorname{dist}(X, \\partial\\mathcal{I}) < \\delta_\\partial,\\quad (\\eta,\\varphi) \\in [-1,1] \\times (\\mathbb{R}/\\mathbb{Z})."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The equality itself is stated verbatim: A (x, φ) = a x ∧ C (x, φ) = a x * m x is (a_L, -b_L) = (a, -b_s) under the same dictionary as (C.1) (Lean's C is -b_L, a*m is -b_s), for every loop angle φ. Two differences in how the collar is described. (i) Lean measures the collar to the compact set B rather than to ∂I: the conclusion holds for x ∈ K with dist(x, B) < δ. B is the set on which the paper's extra hypothesis v_s > 2 is assumed (Lean's htrueB : ∀ x ∈ B, 2 < nominalSpeed (a x) (m x)), which the paper assumes 'in neighborhoods of both radial endpoints'; taking E = ℝ², K = I × [-1,1] and B = ∂I × [-1,1] (allowed, and named in the docstring of exists_compact_trueCone_family at TrueConeLoop.lean:728-731 as 'the two interval boundary faces'), dist((X,η), B) < δ holds whenever dist(X, ∂I) < δ, so the Lean conclusion with δ_∂ := δ gives exactly (C.3), η ∈ [-1,1] and φ included. (ii) Packaging: the paper gives δ_∂ inside the statement of Lemma C.1, while in Lean the agreement clause is part of exists_local_family_with_margin (as an open neighborhood N of B) and the positive uniform width δ is extracted by the separate theorem uniform_boundary_collar in the same file, whose hypothesis is exactly that clause. Conjoining the two is immediate.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

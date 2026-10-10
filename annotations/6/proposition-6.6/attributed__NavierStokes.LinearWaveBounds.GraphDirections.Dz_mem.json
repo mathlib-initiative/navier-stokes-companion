@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.LinearWaveBounds.GraphDirections.Dz_mem",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LinearWaveBounds.GraphDirections.Dz_mem",
+      "line": 140,
+      "module": "NavierStokes.LinearWaveBounds",
+      "path": "NavierStokes/LinearWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L140"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LinearWaveBounds.GraphDirections.Dz_mem",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: the \\varepsilon\\partial_Z : C_\\alpha \\to C_{\\alpha+1} row of (6.32), for arbitrary weight w."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 140,
+        "text": "theorem Dz_mem {s : StripData D} {w : ℕ → D → ℝ} {α : ℝ}\n    (d : GraphDirections D) {f : ℕ → D → E} (hf : MemClass s w α f) :\n    MemClass s w (α + 1) (d.Dz s f)"
+      }
+    }
+  }
+}

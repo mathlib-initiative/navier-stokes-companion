@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.17)",
+  "status": "partial",
+  "location": {
+    "page": 52,
+    "rect": [0.247137, 0.694779, 0.621039, 0.037553]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-5.17",
+      "locator": {
+        "physical": [52],
+        "printed": [52],
+        "text": "Equation (5.17), p. 52, in the proof of Lemma 5.2"
+      },
+      "region": "eq-5.17@p052",
+      "verdicts": [
+        {
+          "confidence": 0.6,
+          "evidence": ["paper: \\max_{k+\\ell\\le m}\\ \\sup_{X\\ge 0,\\ |\\eta|\\le 1} \\bigl|\\partial_X^{k}\\partial_\\eta^{\\ell}\\mathbf{P}_n(X,\\eta)\\bigr| \\;\\le\\; C_{n,m} \\;<\\; \\infty \\qquad (n\\ge 1,\\ m\\ge 0)"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration was found that states a jet bound for the profile tuple P_n. What the repository states is the same route in pieces: the four X-coordinate coefficients (φ_n, U_n, β_n = V_n/X, Π_n, indices 0..3 of `extendedCoefficient`) are ContDiff on all of ℝ² and have tsupport inside Icc (-1) (s.B²/2) × the parameter window, and `compact_jet_bound` is exactly the paper's 'compactness of [0,X₊]×[-1,1] now yields the coefficient bounds', stated for an arbitrary smooth map on an arbitrary compact set. Instantiating it at F = extendedCoefficient s hI n i and K = Icc 0 (s.B²/2) ×ˢ Icc (-1) 1 gives, for each n ≥ 1, each i and each m, a constant bounding ‖iteratedFDeriv ℝ m‖ on K, hence each mixed partial ∂_X^k ∂_η^ℓ with k+ℓ ≤ m (the partials are bounded by the derivative-tensor norm); off K the coefficients vanish, which is how the paper's unbounded range X ≥ 0 is reduced to a compact box. The fifth component F_n/X is `average` of the axial coefficient, smooth by `average_smooth`. So the difference is packaging: the instantiation to P_n with explicit constants C_{n,m} is not carried out in any declaration found, and Lean's bound is per-component in the operator norm rather than a max over mixed partials of the 5-tuple.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

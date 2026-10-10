@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 92.2",
+  "status": "formalized",
+  "location": {
+    "page": 92,
+    "rect": [0.304577, 0.597511, 0.391069, 0.035734]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p092-2",
+      "locator": {
+        "physical": [92],
+        "printed": [92],
+        "text": "Display 92.2, p. 92, in section 8.3"
+      },
+      "region": "eq-p092-2@p092",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\rho_{\\mathrm{phys}}(r,z,t) = q^{-1/2}\\,\\hat{\\rho}\\!\\left(r/\\sqrt{q}\\right), \\qquad \\rho = Q^{1/2}\\,\\rho_{\\mathrm{phys}}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. First half: VariableGaugeMean.density with ell := qLength (2*h) = √(coordinateQ …) is literally (√q)⁻¹ · ρ̂(r/√q), i.e. the paper's q^{-1/2}ρ̂(r/√q), once q^{-1/2} is read as (√q)⁻¹; the z- and t-dependence enters through the point z = (r,(t,Y)) at which q is evaluated rather than as explicit arguments. The bump ρ̂ is PressureStream.rho, a normalized ContDiffBump with ∫ρ̂ = 1 (rho_integral) and support ⊆ [a,b] (rho_support) for free endpoints a < b, so the Lean does not tie the support to the I_m of eq-p092-1 at the point of definition — the containment is supplied by the hypotheses of the call sites. Second half: ρ = Q^{1/2}ρ_phys is not a stipulation in Lean but the derived identity density_chart, whose factor (chartScale n)⁻¹ equals (Q n ^ (-(1/2)))⁻¹ = Q n ^ (1/2) by MeanChartCompatibility.chartScale; i.e. the chart representative at the pulled-back point is Q^{1/2} times the physical one.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

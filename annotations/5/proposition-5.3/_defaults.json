@@ -17,32 +17,56 @@
       "region": "proposition-5.3@p055",
       "verdicts": [
         {
-          "confidence": 0.84,
-          "evidence": ["CONFIRMED_CONTENT: BaseResidual.finite_error_rate (BaseResidual.lean:2477) concludes FiniteJetRate, which is '∀ᶠ x in l' (DiagonalResidual.lean:37); PhysicalApproach (BaseResidual.lean:350) has 'scale : Tendsto … l (𝓝 0)' and 'past : ∀ᶠ z in l, z.1 < 1'", "CONVENTION: finite_error_rate hypotheses hd, hc, hfinite, hp/hu/hb, hv/heu/hep, hL (BaseResidual.lean:2477-2491); ConstructedSlowBase.repaired_jetRate (L145) takes hf and ha; FinalSlowBase.finiteIdentities (L107) and error_jetRate (L335) supply them", "CONVENTION: BaseResidual.prefixVelocity (BaseResidual.lean:623) := spatialCurl (prefixPotential …); AxisymmetricFields.velocity (L39); divergence_velocity_on (L208); prefixProfile_smooth on profilePast = Iio 1 ×ˢ univ (BaseResidual.lean:548); bridge BasePrefixIdentity.prefixVelocity_eq_slowVelocity (L235)", "I read p.55 and the Lean source. finite_error_rate matches (5.25) where it applies:\n- It uses the uncut prefix over orders 0..N, with stress exponent −A−1/2+2hj.\n- residual − prefixStressForce equals F_slow; the sign is checked through tangentialStressForce.\n- The exponent 2Nh−2−M gives K_m = 2h+2+m, which does not depend on N.\n- iteratedFDeriv dominates each partial in (5.23).\n- The axis is covered, since lo = 0 is allowed.\n\nThe real delta is that the bound holds only for small q, along filters with q→0 and t<1, not for the stated 0<q≤1 (low severity).\n\nThe other two findings are encoding choices, each recoverable by a mechanical step:\n- The estimate is stated generically; FinalSlowBase.error_jetRate supplies all its inputs.\n- Divergence-freeness follows from the curl form.\n\nBoth skeptics correctly noted that repaired_jetRate does not discharge FiniteIdentities. Existence is GlobalSlowProfiles.sequence. Overall: partial."],
+          "confidence": 0.76,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.BaseResidual.finite_error_rate, NavierStokes/BaseResidual.lean:2477, conclusion FiniteJetRate l (fun z => (cartesianChart h z).1) (… - prefixStressForce N h C d) M (2*N*h-2-M); FiniteJetRate = ∃ C ≥ 0, ∀ᶠ x in l, … (NavierStokes/DiagonalResidual.lean:37); PhysicalApproach.scale : Tendsto (fun z => (cartesianChart h z).1) l (𝓝 0) (NavierStokes/BaseResidual.lean:356)", "ATTRIBUTION_GAP: GlobalSlowProfiles.sequence (NavierStokes/GlobalSlowProfiles.lean:901) with exists_step (799); SlowExpansionResidual.divergence_slowVelocity_eq_zero (NavierStokes/SlowExpansionResidual.lean:915) off-axis and AxisymmetricFields.divergence_velocity_on (NavierStokes/AxisymmetricFields.lean:208) on the axis, applied to prefixVelocity (NavierStokes/BaseResidual.lean:623); BaseResidual.finite_error_rate (NavierStokes/BaseResidual.lean:2477)", "ATTRIBUTION_GAP: SlowExpansionResidual.divergence_slowVelocity_eq_zero (NavierStokes/SlowExpansionResidual.lean:915) concludes spatialDivergence (slowVelocity N h C f) t x = 0 under t < 1 and 0 < radialEnergy x, with hdiv discharged for the Theorem 4.6 profiles by AssembledSlowBase.nominal_divergenceCoefficient (:1371, all n, 0 < p.1); BasePrefixIdentity.prefixVelocity_eq_slowVelocity (:235) identifies that field with prefixVelocity, again only for 0 < radialEnergy x; the axis is covered instead by AxisymmetricFields.divergence_velocity_on (:208), since prefixVelocity is definitionally spatialCurl (prefixPotential …) (BaseResidual.lean:617, 623)", "CONVENTION: NavierStokes.DiagonalResidual.FiniteJetRate, NavierStokes/DiagonalResidual.lean:37, clause ‖iteratedFDeriv ℝ m f x‖ ≤ C * (q x)^r, with the quantifier ∀ m ≤ M covering all orders up to M at one constant", "CONVENTION: finite_error_rate hypotheses hd, hc, hfinite, hp/hu/hb, hv/heu/hep, hL (NavierStokes/BaseResidual.lean:2479-2489); FinalSlowBase.coefficients_smooth (NavierStokes/FinalSlowBase.lean:104), finiteIdentities (107) and stressZeroCore (111) supply hd, hfinite, hc for the realized modulated base with no side hypothesis", "CONVENTION: GlobalSlowProfiles.Scheme fields seedAxial, seedPhi : ℕ → EvenProfile S and radii a < b ≤ B (NavierStokes/GlobalSlowProfiles.lean:735-753); Admissible.inner_axial/inner_phi pin data to the seed for |R| ≤ a and outer_axial/outer_phi for R ≥ b (lines 765-768); StepProperties (786) carries the coupling", "Clause (iii)'s content is right in Lean: the bounded quantity is literally F_slow(U^[N]) of (5.24), since stressForce is minus the two radial stress divergences, and the exponent 2Nh-2-M is 2h(N+1)-K_m with K_m = 2h+2+m, independent of N; the axis is included (lo = 0). Clauses (i) and (ii) are each one instantiation away from stated declarations. What is not stated is the quantifier of (5.25): Lean bounds the residual eventually along filters with q -> 0, so the threshold depends on N and m, while the paper asserts the bound at every 0 < q <= 1 and uses that uniformity as Lemma 5.4's hypothesis (5.33). Recovering it needs a compactness and continuity step no declaration states. Hence lean_weaker and DELTA, with A's verdict upheld and B's recovery argument rejected."],
           "findings": [
             {
-              "confidence": 0.85,
+              "confidence": 0.78,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "Estimate (5.25) is proved only eventually along PhysicalApproach filters (q→0, t<1), i.e. for q<δ. The paper's range 0<q≤1 with η∈[-1,1] (η=±1 means t=1) is not stated for q∈[δ,1]."
-            },
-            {
-              "confidence": 0.8,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "No declaration states (5.25) for the constructed sequence. finite_error_rate is generic in (d,f), and its hypotheses are discharged for the actual base only inside FinalSlowBase.error_jetRate. The auditor wrongly said repaired_jetRate discharges every hypothesis: it takes FiniteIdentities and AdmissibleScales as inputs."
+              "severity": "medium",
+              "summary": "(5.25) is asserted at every 0 < q ≤ 1 on a fixed compact profile range; the Lean gives only an eventual bound along filters whose scale tends to 0, so the threshold below which it holds depends on N and m."
             },
             {
               "confidence": 0.85,
               "contested": false,
               "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No declaration states Proposition 5.3. Its three clauses live in three files: the order-by-order construction in GlobalSlowProfiles, divergence-freeness in AxisymmetricFields/SpatialCurl, and the residual estimate in BaseResidual."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "Clause (ii) is stated for the finite sum, but only off the axis, and in a different file from clause (iii) under a different name for the same field. Reaching the axis needs the separate curl route."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "No named theorem says the finite prefix velocity is divergence-free. It holds by encoding: prefixVelocity is definitionally AxisymmetricFields.velocity (prefixStream) (prefixSwirl), a curl, so divergence_velocity_on applies on t<1, including the axis. The paper derives it from (5.2) instead."
+              "summary": "The paper's seminorm is the max of mixed space-time partials of order ≤ m; the Lean bounds the full iterated Fréchet derivative norm in the joint variable. The Lean norm dominates every such partial, so this costs nothing."
+            },
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "No declaration states (5.25) for the constructed sequence: finite_error_rate is generic in the coefficients d and profiles f and carries their hypotheses. They are discharged unconditionally for the realized base elsewhere, so the statement is not vacuous."
+            },
+            {
+              "confidence": 0.55,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The paper applies Lemma 5.1 afresh at each order; the Lean Scheme fixes the whole family of near-axis seeds in advance and the recursion repairs only the annulus a ≤ R ≤ b, coupling to the lower orders through the moment rows."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_DELTA",
@@ -51,10 +75,10 @@
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "partial",
-          "severity": "none",
+          "relation": "lean_weaker",
+          "severity": "medium",
           "status": "unconfirmed",
-          "summary": "Lean states part of it.",
+          "summary": "Lean states a weaker result. (5.25) is asserted at every 0 < q ≤ 1 on a fixed compact profile range; the Lean gives only an eventual bound along filters whose scale tends to 0, so the threshold below which it holds depends on N and m.",
           "verdict": "deviation"
         }
       ]

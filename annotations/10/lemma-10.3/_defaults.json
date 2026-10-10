@@ -1,7 +1,7 @@
 {
   "kind": "lemma",
   "label": "Lemma 10.3",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 120,
     "rect": [0.134051, 0.338182, 0.731893, 0.042374]
@@ -17,53 +17,37 @@
       "region": "lemma-10.3@p120",
       "verdicts": [
         {
-          "confidence": 0.87,
-          "evidence": ["CONFIRMED_CONTENT: NavierStokesR3.ProblemStatement.CandidateProperties (NavierStokes/R3/ProblemStatement.lean:92): Structure with force_smooth : ContDiff ℝ ∞ f (:101), force_support : CompactPositiveTimeSupport f (:102), navier_stokes on Ioo 0 1 (:106); K occurs only in support_compact, velocity_support, pressure_support (:96-100). No clause ties the force's support to K or bounds it in time.; NavierStokesR3.ProblemStatement.CompactPositiveTimeSupport (NavierStokes/R3/ProblemStatement.lean:66): HasCompactSupport f ∧ tsupport f ⊆ positiveTimeDomain, where positiveTimeDomain = Ioi 0 ×ˢ univ (:53).; NavierStokesR3.ActualCandidate.selected_candidate_one_with_initial_rest (NavierStokes/R3/ActualCandidate.lean:143): ∃ u p f K, CandidateProperties 1 u p f K ∧ ∀ t, |t| ≤ 3/8 → ∀ x, u (t,x) = 0 ∧ p (t,x) = 0. The force and K are hidden behind the existential; used by NavierStokesR3.theorem_1_1_with_initial_rest (R3/Theorem.lean:32).; NavierStokesR3.ActualCandidate.of_localized_fields (NavierStokes/R3/ActualCandidate.lean:78): Periodic CandidateProperties (periodicVelocity A B) (periodicPressure P) f → ContDiff ℝ ∞ f → R3 CandidateProperties 1 (velocity A B) (pressure P) (PositiveTimeForce.force (compactForce f)) supportCylinder. The proof (:88-89) gets force_support from force_compactPositiveTimeSupport with outerSupport_compact. A different declaration NavierStokes.R3CompactCandidate.of_localized_fields (R3CompactCandidate.lean:248) shares the short name.; NavierStokesR3.PositiveTimeForce.force_tsupport_subset (NavierStokes/R3/PositiveTimeForce.lean:61): IsCompact K → (∀ t x, x ∉ K → f (t,x) = 0) → tsupport (force f) ⊆ Icc (1/16) (21/16) ×ˢ K. Generic in f and K; its only use in the repository is :75, inside force_compactPositiveTimeSupport.; NavierStokesR3.PositiveTimeForce.force_compactPositiveTimeSupport (NavierStokes/R3/PositiveTimeForce.lean:72): Same two hypotheses → CompactPositiveTimeSupport (force f). Its proof first obtains the box from force_tsupport_subset, then weakens it.; NavierStokesR3.ActualCandidate.compactForce_supported_all_times (NavierStokes/R3/ActualCandidate.lean:71): For every f, t, x: x ∉ R3CompactCandidate.outerSupport → R3CompactCandidate.compactForce f (t,x) = 0. This is exactly the second hypothesis of force_tsupport_subset with K := outerSupport.; NavierStokes.R3CompactCandidate.compactForce_supported (NavierStokes/R3CompactCandidate.lean:94): CompactSpatialForceDecay.SupportedIn outerSupport (compactForce f), i.e. for t ≥ 0 and x ∉ outerSupport the pre-time-cutoff force vanishes. A stated spatial bound, so the original's 'the one proved bound' is inaccurate.; NavierStokes.R3CompactCandidate.outerSupport (NavierStokes/R3CompactCandidate.lean:41): (fun x => 2 • x) '' supportCylinder, i.e. {radialSquare ≤ 1/4, |x 2| ≤ 1/2}; compact by outerSupport_compact (:43).; NavierStokes.SpatialLocalization.supportCylinder (NavierStokes/SpatialLocalization.lean:72): {x | radialSquare x ≤ 1/16 ∧ |x 2| ≤ 1/4}, with radialSquare x = (x 0)^2 + (x 1)^2 (:32). Strictly contained in outerSupport as a set (e.g. (0,0,1/2)).; NavierStokes.R3CompactCandidate.outerCutoff_one (NavierStokes/R3CompactCandidate.lean:49): x ∈ supportCylinder → outerCutoff x = 1. With outerCutoff_zero_outside this gives supportCylinder ⊆ outerSupport in two lines; no lemma states that inclusion.; NavierStokes.R3CompactCandidate.outerCutoff_zero_outside (NavierStokes/R3CompactCandidate.lean:64): x ∉ outerSupport → outerCutoff x = 0.; NavierStokes.R3CompactCandidate.compactForce (NavierStokes/R3CompactCandidate.lean:88): compactForce f z = outerCutoff z.2 • f z.; NavierStokes.CandidateFromLimits.exists_candidate_force (NavierStokes/CandidateFromLimits.lean:186): For periodic u, p with residual limits L: ∃ F, periodic CandidateProperties (activated u, p) F ∧ ContDiff ℝ ∞ F ∧ periodic ∧ (∀ t, 2 ≤ t → ∀ x, F (t,x) = 0) ∧ jets at t=1 equal L ∧ decay. States the time bound 2 for the periodic, pre-cutoff force; the clause is not carried into MixedPeriodicAssembly.exists_candidate_force (:338) or ActualCandidateAssembly.Witness (:1121).; NavierStokes.PeriodicPaper.exists_compression_scale (NavierStokes/PeriodicPaperScalingSupport.lean:82): From R3 CandidateProperties ν u p f K: ∃ l > 1 compressing K, u, p and the force into the quarter cube. The proof (:94) uses compactness of K ∪ Prod.snd '' tsupport f, from support_compact and force_support.1 only.; NavierStokesR3.forceConditionDecay_of_compact (NavierStokes/R3/ComparatorBridge.lean:22): ContDiff ℝ ∞ f → HasCompactSupport f → Comparator.ForceConditionDecay (toComparator f). Applied at :86 (comparator_of_breakdown) with h.force_smooth and h.force_support.1, so the main path needs only compact support.", "CONVENTION: NavierStokesR3.PositiveTimeForce.force (NavierStokes/R3/PositiveTimeForce.lean:46) ∘ NavierStokes.R3CompactCandidate.compactForce (NavierStokes/R3CompactCandidate.lean:88), applied to the force from NavierStokes.MixedPeriodicAssembly.exists_candidate_force (MixedPeriodicAssembly.lean:338) = NavierStokes.CandidateFromLimits.force (CandidateFromLimits.lean:82) = SpacetimeGluing.smoothExtension. Agreement on (0,1) is proved at R3/ActualCandidate.lean:90-102.", "CONVENTION: NavierStokesR3.ProblemStatement.CandidateProperties.navier_stokes : ∀ t ∈ Ioo 0 1 (NavierStokes/R3/ProblemStatement.lean:106); module docstring :19-22 explains the choice; CompactPositiveTimeSupport.eq_zero_of_nonpos (:173); initial-rest clause of selected_candidate_one_with_initial_rest (NavierStokes/R3/ActualCandidate.lean:146-147); localized_residual_zero_early (:40).", "REFUTED: Verified in source: force_support at NavierStokes/R3/ProblemStatement.lean:102 (not :107); navier_stokes at :106 (not :110); the support step in of_localized_fields is PositiveTimeForce.force_compactPositiveTimeSupport at NavierStokes/R3/ActualCandidate.lean:88-89 (not force_tsupport_subset at :84-85; lines 84-85 are the force and K arguments of the conclusion).", "No declaration states Lemma 10.3 alone. Its content sits in the force clauses of R3 CandidateProperties (force_smooth :101, force_support :102, navier_stokes :106), exported on the main path by selected_candidate_one_with_initial_rest. Smoothness, compact support in t>0 and exact agreement with the residual on (0,1) are stated. \"Support in K×[0,2]\" is not, so the conclusion is strictly weaker. I keep medium: a conclusion clause is missing, though it is recoverable after enlarging K and does not touch the main result. The construction difference and the t=0 endpoint are conventions with written recoveries. The pairing skeptic's line corrections are verified and applied, and I add two of its declarations."],
+          "confidence": 0.86,
+          "evidence": ["ATTRIBUTION_GAP: `of_localized_fields` (NavierStokes/R3/ActualCandidate.lean:78-85) delivers `CandidateProperties 1 u p F SpatialLocalization.supportCylinder`, and `CandidateProperties` (NavierStokes/R3/ProblemStatement.lean:92-109) has no field relating the force's support to K. The rectangle `tsupport (force f) ⊆ Icc (1/16) (21/16) ×ˢ K` lives only in the generic `PositiveTimeForce.force_tsupport_subset` (NavierStokes/R3/PositiveTimeForce.lean:61), used at ActualCandidate.lean:88 only through `force_compactPositiveTimeSupport` (PositiveTimeForce.lean:72), which forgets it.", "CONVENTION: `CandidateProperties.navier_stokes : ∀ t ∈ Ioo (0:ℝ) 1, ∀ x, navierStokesResidual ν u p t x = f (t,x)` (NavierStokes/R3/ProblemStatement.lean:106); the module docstring (:19-23) gives the reason — the equation uses ordinary derivatives at positive times, with zero initial velocity imposed separately. Recovery: `localized_residual_zero_early` (NavierStokes/R3/ActualCandidate.lean:40) gives R(u,p)(0,x) = 0 and `CompactPositiveTimeSupport.eq_zero_of_nonpos` (R3/ProblemStatement.lean:173) gives F(0,x) = 0.", "Ruling B is right. `of_localized_fields` (R3/ActualCandidate.lean:78), whose hypotheses `selected_witness` (:1177) discharges unconditionally, delivers a globally smooth force with `CompactPositiveTimeSupport` — exactly C_c^∞(ℝ³×(0,∞)) as a zero extension — agreeing with the residual on Ioo 0 1, and at t = 0 by `localized_residual_zero_early` and `eq_zero_of_nonpos`. The paper's 𝒦 is existential, so instantiating 𝒦 := outerSupport and applying `force_tsupport_subset` to `compactForce_supported_all_times` gives supp f ⊆ 𝒦 × [1/16, 21/16] ⊆ 𝒦 × [0,2] for the same 𝒦 that carries u and p. Each step is instantiation, conjunction or unfolding, so the logic-alone rule gives OK. A's 'strictly weaker' holds only of the existential it chose as anchor; both remaining differences are packaging."],
           "findings": [
             {
               "confidence": 0.88,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No declaration was found stating that the candidate's force has support in K×[0,2]; the exported candidate keeps only compact support in t>0. For the explicit force of NavierStokesR3.ActualCandidate.of_localized_fields, two public lemmas give support in [1/16,21/16]×outerSupport, and outerSupport strictly contains the exported K."
+              "summary": "No single declaration bundles the force's support clause with the candidate: the spacetime rectangle is proved only in a generic lemma, and for the dilate outerSupport, while the delivered K is the strictly smaller supportCylinder."
             },
             {
-              "confidence": 0.86,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Proof-route difference only. Lean's force is timeCutoff·outerCutoff·F, with F the Taylor–Borel extension of the periodized, time-activated residual. The paper applies series (10.11) to the R³ limits F_j. The stated extension property is unchanged."
-            },
-            {
-              "confidence": 0.92,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "(10.5) defines f for 0 ≤ t < 1; Lean's navier_stokes clause covers t ∈ (0,1) only. This is a documented encoding choice, and agreement at t = 0 follows from the exported statement."
-            },
-            {
-              "confidence": 0.95,
+              "confidence": 0.9,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "REFUTED",
+              "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "PAIRING skeptic's bookkeeping note. Not a paper–Lean difference, so it is dropped as a finding. The three citation corrections are right and are applied in this ruling."
+              "summary": "The paper defines the force by (10.5) on the half-open range 0 ≤ t < 1; the Lean agreement clause is stated on the open interval Ioo 0 1. The endpoint t = 0 is recovered from two stated declarations."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "lean_weaker",
+          "relation": "different_formulation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states a weaker result.",
-          "verdict": "deviation"
+          "summary": "Lean states it in a different formulation.",
+          "verdict": "faithful"
         }
       ]
     }

@@ -1,0 +1,29 @@
+{
+  "id": "lemma-8.6/attributed/NavierStokes.SmoothFourierData.inverse_solves_smooth_periodic",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SmoothFourierData.inverse_solves_smooth_periodic",
+      "line": 565,
+      "module": "NavierStokes.SmoothFourierData",
+      "path": "NavierStokes/SmoothFourierData.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothFourierData.lean#L565"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SmoothFourierData.inverse_solves_smooth_periodic",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: For f : Plane → ℂ smooth, UnitPeriodic, with ∫∫_{[0,1]²} f = 0, and every x: fderiv ℝ (directionalInverse d (coefficient f)) x (vector d) = f x. Existence of a solution of Nφ = F given by the series (8.19)."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 565,
+        "text": "theorem inverse_solves_smooth_periodic (d : Direction) {f : Plane → ℂ}\n    (hf : ContDiff ℝ ∞ f) (hp : UnitPeriodic f)\n    (hmean : (∫ y in (0 : ℝ)..1, ∫ x in (0 : ℝ)..1, f (x, y)) = 0) (x : Plane) :\n    fderiv ℝ (directionalInverse d (coefficient f)) x (vector d) = f x"
+      }
+    }
+  }
+}

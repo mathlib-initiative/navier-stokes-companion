@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.2/attributed/NavierStokes.NaturalEntrance.reference_phi_value",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalEntrance.reference_phi_value",
+      "line": 320,
+      "module": "NavierStokes.NaturalEntrance",
+      "path": "NavierStokes/NaturalEntrance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L320"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalEntrance.reference_phi_value",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: sourceJets ... (referencePair v) p 0 = AxisSeries.profile (chi h j sigma p.2) p.1, i.e. the angular comparison profile of (B.13) is f_0(Y chi)."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 320,
+        "text": "theorem reference_phi_value {h j σ : ℝ} {P0 : ℝ → ℝ} (v : CoefficientFamily h j σ P0)\n    (p : entranceSet) :\n    sourceJets v.epsilon_pos (referencePair v) p 0 =\n      AxisSeries.profile (NaturalAxisData.chi h j σ p.val.2) p.val.1"
+      }
+    }
+  }
+}

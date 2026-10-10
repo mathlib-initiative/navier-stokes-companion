@@ -1,7 +1,7 @@
 {
   "kind": "lemma",
   "label": "Lemma A.1",
-  "status": "formalized",
+  "status": "partial",
   "location": {
     "page": 126,
     "rect": [0.134051, 0.716527, 0.731907, 0.132072]
@@ -17,29 +17,45 @@
       "region": "lemma-A.1@p126",
       "verdicts": [
         {
-          "confidence": 0.86,
-          "evidence": ["CONFIRMED_CONTENT: NavierStokes.SmoothPowerMomentMatrix.Family (SmoothPowerMomentMatrix.lean:93) fields bump_nonnegative/bump_support: ∀ p ∈ U; compact_inverse_jets_bound (L197) needs (hU : IsOpen U) (hKU : K ⊆ U); same in SmoothExponentialMomentMatrix.Family (L22) / L98", "The auditor and both skeptics agree."],
+          "confidence": 0.8,
+          "evidence": ["CONFIRMED_CONTENT: NavierStokes.SmoothPowerMomentMatrix.Family, NavierStokes/SmoothPowerMomentMatrix.lean:93, fields `bump_nonnegative : ∀ p ∈ U, ∀ j t, 0 ≤ bump p j t` (line 106) and `bump_support : ∀ p ∈ U, ∀ j, support (bump p j) ⊆ Icc (lower p j) (upper p j)` (line 108); `Family.compact_inverse_jets_bound` (line 197) takes `hU : IsOpen U`, `hK : IsCompact K`, `hKU : K ⊆ U`. Identical fields and hypotheses in NavierStokes/SmoothExponentialMomentMatrix.lean:22 and :98.", "ATTRIBUTION_GAP: NavierStokes/PowerMomentMatrix.lean:261 (`bumpMomentMatrix_det_ne_zero`) and NavierStokes/ExponentialMomentMatrix.lean:72 (`expBumpMomentMatrix_det_ne_zero`); neither mentions the other, and nothing bundles them with the parametric clause.", "CONVENTION: `bumpMomentMatrix` (NavierStokes/PowerMomentMatrix.lean:252) is `fun i j => ∫ t, t ^ a i * β j t` over ℝ; the identification with ∫ t in Ioi 0 appears only as `Family.matrix_eq_positive_integral` (NavierStokes/SmoothPowerMomentMatrix.lean:120), which needs a `Family`.", "Clauses (i) and (ii) are stated in Lean more generally than in the paper: continuity replaces smoothness, support in the closed interval replaces support in the interior, any finite size and arbitrary distinct real exponents are allowed, and the exponential clause imposes no sign condition. Clause (iii) is not. The Lean parametric theorems require a `Family` on an open U whose nonnegativity and support fields hold at every p ∈ U; those are closed conditions, and paper-admissible data on a compact parameter set need not extend. Bridging needs smoothness in p of the moving-support moment integral on a non-open domain, which the repository states only for open U. Both rulings reached OK by assuming that extension step; under the logic-alone rule the verdict is DELTA, relation partial."],
           "findings": [
             {
-              "confidence": 0.86,
+              "confidence": 0.82,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONFIRMED_CONTENT",
+              "severity": "medium",
+              "summary": "Clause (iii) is stated only for a `Family` on an open U, whose nonnegativity and support fields are required at every p ∈ U. Data meeting the paper's hypotheses on a compact parameter set need not extend to any such family."
+            },
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Clause (iii) is stated on an open U ⊇ K. Smoothness and every bump hypothesis (nonnegativity, support, separation) must hold on all of U. Data smooth only on a compact K with one-sided derivatives is not literally covered."
+              "summary": "No single declaration states Lemma A.1. Clauses (i) and (ii) are two theorems in two files, each at greater generality than the paper; they conjoin by logic alone, so this part is packaging only."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The Lean matrices integrate over all of ℝ, not the paper's (0,∞). They agree because the stated support hypothesis makes the integrand vanish off Icc (l j) (u j) ⊂ (0,∞), but that identification is stated only for `Family` data."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_OK",
+          "match_verdict": "SINGLE_SOURCE_DELTA",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "note": "machine audit, auditor and both skeptics agreed; not confirmed by a human"
+            "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "different_formulation",
-          "severity": "none",
+          "relation": "partial",
+          "severity": "medium",
           "status": "unconfirmed",
-          "summary": "Lean states it in a different formulation.",
-          "verdict": "faithful"
+          "summary": "Lean states part of it. Clause (iii) is stated only for a `Family` on an open U, whose nonnegativity and support fields are required at every p ∈ U. Data meeting the paper's hypotheses on a compact parameter set need not extend to any such family.",
+          "verdict": "deviation"
         }
       ]
     }

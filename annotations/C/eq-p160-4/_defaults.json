@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 160.4",
+  "status": "formalized",
+  "location": {
+    "page": 160,
+    "rect": [0.368778, 0.396288, 0.262667, 0.025307]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.TrueConeLoop",
+      "path": "NavierStokes/TrueConeLoop.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p160-4",
+      "locator": {
+        "physical": [160],
+        "printed": [160],
+        "text": "Display 160.4, p. 160, in the proof of Lemma C.1"
+      },
+      "region": "eq-p160-4@p160",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: v = \\bigl(1 - \\zeta_L(v_s)^2\\bigr) v_s + \\zeta_L(v_s)^2 v_*."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The convex-combination form itself is stated by no declaration; Lean states the equivalent pair correctedSpeed δ v = v + correction δ v (definition) and correction δ v = ζ²(v_* − v) (correction_formula, for 0 < δ), from which v + ζ²(v_* − v) = (1 − ζ²)v + ζ²v_* by `ring`. The rearrangement is the one the Lean proofs use regime by regime: ζ = 1 gives v = v_* (correctedSpeed_gt_two, line 111), ζ ≠ 0 gives v ≤ v_* (correctedSpeed_le_target_of_active) together with v_s ≤ v (correction_nonneg), and ζ = 0 gives v = v_s (correction_zero) — the paper's three cutoff regimes displayed just below this line.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 64.3",
+  "status": "formalized",
+  "location": {
+    "page": 64,
+    "rect": [0.28806, 0.681522, 0.424102, 0.04157]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p064-3",
+      "locator": {
+        "physical": [64],
+        "printed": [64],
+        "text": "Display 64.3, p. 64, in section 6.2"
+      },
+      "region": "eq-p064-3@p064",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathcal{C}_\\ell(r,z,t) = \\left( \\frac{r}{\\sqrt{Q}},\\ \\frac{z}{Q^{D}},\\ \\frac{1-t}{Q} \\right), \\qquad B_{\\ell,a} = \\operatorname{supp} \\chi_{\\ell,a}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same three rescalings, with two encoding choices. (i) The exponents match term by term: `axisExponent D = ![1/2, D, 1]` gives r/Q^{1/2}, z/Q^{D}, τ/Q, and `normalizedSlow_coordinates` prints the triple in that exact form. (ii) Lean's chart takes the remaining time τ as its third input coordinate instead of t, so the paper's `(1-t)/Q` is split into the substitution τ = 1-t (`timeShift p = (1 - p.1, p.2)`, and `physicalChart_time : (physicalChart h n p).1 = (1 - p.1)/Q n` for the Cartesian form of the same chart) followed by the division by Q. Recovery: slowCoordinates D n (r, z, 1-t) = C_ℓ(r,z,t) by unfolding axisExponent. (iii) `B_{ℓ,a} = supp χ_{ℓ,a}` has no named Lean constant; χ_{ℓ,a} is `SquaredPartition.slowMask n k` and B_{ℓ,a} is its `tsupport`, which `slowMask_tsupport_subset` places inside the one-mesh box around the grid point, as the paper's preceding sentence requires.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

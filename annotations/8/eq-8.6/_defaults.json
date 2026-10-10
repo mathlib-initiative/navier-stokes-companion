@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (8.6)",
+  "status": "partial",
+  "location": {
+    "page": 90,
+    "rect": [0.21617, 0.443158, 0.650138, 0.035833]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-8.6",
+      "locator": {
+        "physical": [90],
+        "printed": [90],
+        "text": "Equation (8.6), p. 90, in section 8.2"
+      },
+      "region": "eq-8.6@p090",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\mathcal{D}_e = D_r + e/R, \\qquad \\mathsf{T}_e f = R^{-e}\\,\\mathcal{I}_c(R^e f), \\qquad \\mathcal{A}_e f = R^{-e}(\\partial_R\\chi_m)\\,\\mathcal{J}(R^e f). \\qquad (e \\in \\{0,1,2\\})"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. Everything in the display is stated for a general index, but only for the unshifted transport; the shifted family of (8.4)/(8.5) is instantiated at e = 0 and e = 1 only. (i) General-e counterparts, all with M = 0, v = 0 (no auxiliary shift): IntegratedMeanBalances.radialDivergence c f r = deriv f r + c/r·f r is 𝒟_e for an arbitrary index; SignedStressPrimitive.primitive P e F = TransportPrimitive.compactIntegral (cutoff P) 0 0 (weightedSource e F) is 𝓘(R^e f) − χ𝓙(R^e f) verbatim, with χ = cutoff P a smooth 0→1 cutoff with plateaus strictly inside (a,b) (cutoff_zero :78, cutoff_one :82) whose derivative is the density (cutoff_deriv :98); sigma P e F = −inversePower P e R · primitive P e F = −R^{-e}𝓘_c(R^e f), i.e. −T_e f (its integral form −(∫_0^R r^e·adjusted)/R^e is sigma_eq_negative_primitive :272, and primitive_eq_integral :244 shows the moment-density form and the 𝓘 − χ𝓙 form are the same expression rewritten, not a different construction); bumpCorrection P e F z = momentDensity P e R · mass e F = R^{-e}(∂_Rχ)𝓙(R^e f) is 𝒜_e verbatim (total_weightedSource :226 identifies mass e F with 𝓙(R^e f)). angular_divergence :352 states 𝒟_2(sigma P 2 F) = −adjusted P 2 F, which under sigma = −T_2 and adjusted = f − 𝒜_2 f is the e = 2 case of (8.7); axial_divergence :366 is the e = 1 case. (ii) What is not there: the shifted operators, those whose integrand carries the transport shift y + M((R')^{d_r} − R^{d_r})v_r of (8.4)/(8.5), are written out only at e = 0 (physicalCompact/compactPrimitive, physicalAlias, with physicalAlias_eq_cutoff_derivative giving 𝒜_0 = (∂_Rχ_m)𝓙) and at e = 1 (streamPotential = R⁻¹𝓘_c(Rf), streamGamma = D_r + 1/R, and streamGamma_eq_desired_sub_alias, which is (8.7) at e = 1). No declaration was found that instantiates the shifted operator at e = 2, and no declaration was found defining the shifted T_e, 𝒜_e, 𝒟_e as one e-indexed family. That is the whole of the gap: a definition the paper writes once for e ∈ {0,1,2} is, in its shifted form, written twice.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/attributed/NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
+      "line": 372,
+      "module": "NavierStokes.CommonCoverSolve",
+      "path": "NavierStokes/CommonCoverSolve.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean#L372"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If the source vanishes at every slow point outside U, then copySolve g hab k (p,Y) = 0 for p not in U; commonSolve_preserves_slow_support (line 561) is the same for the cutoff-weighted copy sum. The Lean form of p. 105's 'zero data along an entire such path give zero solution'."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 372,
+        "text": "theorem copySolve_preserves_slow_support {U : Set P}\n    (hf : ∀ p ∉ U, ∀ Y, d.source (p, Y) = 0) (k : Frequency) {p : P} (hp : p ∉ U)\n    (Y : Plane) : d.copySolve g hab k (p, Y) = 0"
+      }
+    }
+  }
+}

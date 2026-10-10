@@ -1,0 +1,29 @@
+{
+  "id": "proposition-7.5/attributed/NavierStokes.PartitionedCovariance.PairData.diagonal_pair_reconstruct",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PartitionedCovariance.PairData.diagonal_pair_reconstruct",
+      "line": 722,
+      "module": "NavierStokes.PartitionedCovariance",
+      "path": "NavierStokes/PartitionedCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L722"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PartitionedCovariance.PairData.diagonal_pair_reconstruct",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: The reconstruction identity with a free outer factor; `weighted_columns_reconstruct` (:444) is `∑ j, amplitude ε mask H T j ^ 2 * H i j = ε * mask ^ 2 * T i` with `mask` a free real, so `mask := 1` gives the unmasked $\\mathcal{C}(W_0)=\\varepsilon\\mathcal{T}_{0,*}$."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 722,
+        "text": "theorem PairData.diagonal_pair_reconstruct {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt}\n    {U : UnsignedLabel} (P : PairData sys U) (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0)\n    (outer ε : ℝ) (hε : 0 ≤ ε) {T : Vec2} (hcone : SmoothCovariance.StrictCone P.matrix T)\n    (q : ℝ) (x : SlotColoring.Position) (i : Fin 2) :\n    (∑ j : Fin 2, doubleAverage (fun Y θ => P.radialWave hdet outer ε T q x j Y θ *\n      P.tangentWave hdet outer ε T q x j i Y θ)) =\n      outer ^ 2 * ε * mask D U q x ^ 2 * T i"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.14)",
+  "status": "formalized",
+  "location": {
+    "page": 131,
+    "rect": [0.155629, 0.396314, 0.713439, 0.05452]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.14",
+      "locator": {
+        "physical": [131],
+        "printed": [131],
+        "text": "Equation (A.14), p. 131, in section A.3"
+      },
+      "region": "eq-A.14@p131",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: e_b \\le C_{\\mathrm{pre}}\\lambda^{30},\\qquad \\left\\|\\frac{\\mathcal{A}_X(U)}{E}\\right\\|_{C^1_\\eta} \\le C_{\\mathrm{pre}}\\lambda^{29},\\qquad \\left\\|\\frac{S(X_{\\mathrm p})}{X_{\\mathrm p}e_b^2 f^2}\\right\\|_{C^1_\\eta} \\le C_{\\mathrm{pre}}\\bigl(1+\\log(1/\\lambda)\\bigr)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Bounds 1 and 2 are stated verbatim. Bound 1 is `pulseAmplitude c ≤ C*lam^30` = e_b ≤ C_pre λ^30. For bound 2, exp c.pulseStart = X_p and angular …(c.pulseStart, eta) = radialAmplitude(pulseStart)·shape(eta) = e_b f(η) = E(X_p,η), so the quotient is M/(X_p E) = 𝒜_{X_p}(U)/E; Lean bounds its value and its η-derivative separately by C λ^29 over |η| ≤ 1, which is the C¹_η norm up to the factor 2. Bound 3 is not one declaration: the Lean normalizes the axial and angular halves of S(X_p) separately by X_p e_b² (not by f²). Recovery: `prefixEnergy c η = prefixAxialEnergy·η² − prefixAngularEnergy·shape η²` is S(X_p) (the ∫U²dX and ∫(E²/2)dX prefix integrals with the η-shapes factored out); the step `hpre` inside `totalEnergy_normalized` gives λ·S(X_p)/(X_p e_b² f²) = normalizedPrefixAxial·(η(1+η²))² − normalizedPrefixAngular; on |η| ≤ 1 one has |η(1+η²)| ≤ 2 and |d/dη(η²(1+η²)²)| ≤ 16, so value and η-derivative are at most 16·(normalizedPrefixAxial + normalizedPrefixAngular); dividing `normalizedPrefix_bound` by λ turns its right-hand side into prefixBoundConstant·(1 + log(1/λ)). That is the paper's third bound with constant 16·prefixBoundConstant.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

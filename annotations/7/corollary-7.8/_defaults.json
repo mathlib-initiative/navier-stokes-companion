@@ -1,7 +1,7 @@
 {
   "kind": "corollary",
   "label": "Corollary 7.8",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 87,
     "rect": [0.133552, 0.507377, 0.732401, 0.086535]
@@ -17,53 +17,37 @@
       "region": "corollary-7.8@p087",
       "verdicts": [
         {
-          "confidence": 0.8,
-          "evidence": ["CONFIRMED_CONTENT: LabelSumBounds.SignedFamily.remainder_sum_mem (LabelSumBounds.lean:1004), SignedMeanGain.remainderTensor_mem (SignedMeanGain.lean:426), CorrectionStep.assembledSigned_stateTensor_mem (CorrectionStep.lean:3214), signedTensorRemainder_mem (:2366): all conclude one MeanClass/TensorClass γ of the sum; signedTensorRemainder_divergence_mem (:2414) gives the divergence only for the sum at specialized exponents", "ATTRIBUTION_GAP: SignedMeanGain.covariance_increment_split (:154), incrementTensor_split (:419) keep symmetricCovariance primary tangent. native_physical_cross (:510) and SignedCovariance.physical_signed_cross_covariance (SignedCovariance.lean:409) prove the cross covariance equals σ for arbitrary σ. NativeData.requested_cross (:1226): signedBlocks are hard-wired to requestedStress.", "CONVENTION: LabelSumBounds.SignedFamily (LabelSumBounds.lean:874): fields old_bounds, difference_bounds, tangent_bounds, curl_bounds, *_carrier, *_band; there is no divergence or curl-remainder field", "CONFIRMED_CONTENT: WeightedClasses.MemClass (WeightedClasses.lean:107): only weight_nonneg, smooth (ContDiffOn on s.domain) and bounds; MeanClass := MemClass s (fun _ x => s.zeta x)", "No single declaration states Corollary 7.8. The pieces are: covariance_increment_split/assembledSigned_stateTensor_mem (C(U+V)−C(U) = B(W0,LΣ) + remainder), signedRemainder_exact (remainder = B(E,LΣ)+B(U,R)+C(V)), native_physical_cross (B(W0,LΣ)=σ for every σ) and remainder_sum_mem (aggregate class). I checked the exponents δ+β, α_L+η, 2β against ρ+α−1/2, α+1/2−κ_s, 2α−1, and hβη ⇔ κ_s ≤ 1/2. The deltas: (7.42) is stated only for the sum (confirmed, low); Σ is identified at field level only for the requested stress (attribution gap); the abstract hypothesis package is a convention; the MemClass omissions are counted under Def 6.4. Relation: partial. I added assembledSigned_stateTensor_mem, covariance_increment_split, native_physical_cross and NativeData.requested_cross as better declarations."],
+          "confidence": 0.76,
+          "evidence": ["ATTRIBUTION_GAP: CorrectionStep.signedTensorRemainder_mem (CorrectionStep.lean:2366) concludes TensorClass s γ of the whole remainder under hγd/hγc/hγs; the per-term rules are symmetricCovariance_mem (CorrectionStep.lean:2344) and HarmonicCovariance.blockCovariance_mem (HarmonicCovariance.lean:116), and the proof at CorrectionStep.lean:2396-2402 derives exactly the three bounds before conjoining them.", "ATTRIBUTION_GAP: CorrectionStep.signedTensorRemainder (CorrectionStep.lean:2309) subtracts symmetricCovariance primary tangent, not a prescribed Σ. SignedMeanGain.native_physical_cross (SignedMeanGain.lean:510) proves the double-averaged cross equals σ for every σ; NativeData.requested_cross (:1226) and native_family_cross (:1284) transfer it to the assembled fields only with signedBlocks c u, i.e. Σ = requestedStress.", "The three contents of the corollary are all stated in Lean, in free exponents: the exact four-term expansion (CorrectionStep.lean:2309/2313), the remainder class bounds with exactly δ+β = ρ+α−1/2, α+η = α+1/2−κ_s, 2β = 2α−1 and κ_s < 1/2 appearing as β ≤ η (:2366, assembled at :3214), and the κ-loss of the radial divergence (MeanIncrementBounds.lean:287). The two deviations — Σ left as B(W0^as,L^asΣ), and the three bounds conjoined into one minimum — are recovered by instantiating and conjoining stated general declarations, so by the logic-alone rule the verdict is OK and both are low attribution gaps. Lean is in fact more general: U's, the tangent's and the curl's exponents stay free, and divergence-freeness is not assumed."],
           "findings": [
             {
               "confidence": 0.85,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No declaration states (7.42) as three separate memberships, or the per-term divergence loss. Lean bounds only the sum B(E,LΣ)+B(U,R)+C(V) in M_γ, γ ≤ min(ρ+α−1/2, α+1/2−κ_s, 2α−1). Each separate bound is an instance of harmonic_covariance_sum_mem."
+              "summary": "(7.42)'s three separate memberships are never stated together; Lean states one bound on the sum at γ ≤ min(δ+β, α+η, 2β). Each separate bound is an instantiation of a stated general product rule, so this is packaging, not content."
             },
             {
-              "confidence": 0.6,
-              "contested": true,
+              "confidence": 0.72,
+              "contested": false,
               "kind": "CONTENT",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "The field-level split leaves B(W0^as, L^asΣ) in place of Σ. The identification with Σ is stated for every σ only at the native-assembly level. At the field level it is stated only for the requested stress (requested_cross, native_family_cross)."
-            },
-            {
-              "confidence": 0.7,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "SignedFamily takes the classes of U, E, the tangent increment and R as abstract inputs. It does not require U or V to be divergence-free, the tangent to equal L^asΣ, or R to come from Lemma 7.7."
-            },
-            {
-              "confidence": 0.7,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "The conclusion class M_γ is MemClass: smoothness on s.domain plus ζ-weighted all-order bounds. It omits Definition 6.4's descent to each common torus and its explicit smooth zero extension outside the shell. This is cross-cutting with Def 6.4."
+              "summary": "The Lean split keeps the cross term as B(W0^as, L^asΣ) instead of Σ. Its identification with Σ is stated for arbitrary Σ only at the native-assembly level; at the level of the assembled fields of the split it is stated only for the pipeline's requested stress."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "partial",
+          "relation": "different_formulation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states part of it.",
-          "verdict": "deviation"
+          "summary": "Lean states it in a different formulation.",
+          "verdict": "faithful"
         }
       ]
     }

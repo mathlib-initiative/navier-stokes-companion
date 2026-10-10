@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (10.8)",
+  "status": "partial",
+  "location": {
+    "page": 119,
+    "rect": [0.268119, 0.440726, 0.600951, 0.042347]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-10.8",
+      "locator": {
+        "physical": [119],
+        "printed": [119],
+        "text": "Equation (10.8), p. 119, in the proof of Lemma 10.2"
+      },
+      "region": "eq-10.8@p119",
+      "verdicts": [
+        {
+          "confidence": 0.68,
+          "evidence": ["paper: \\bigl|\\partial_\\tau^{j}K(r,\\tau)\\bigr|\\le C_j\\,r^{-1-2h-2j},\\qquad \\left|\\partial_\\tau^{j}\\frac{K(\\rho,\\tau)^2}{\\rho}\\right|\\le C_j\\,\\rho^{-3-4h-2j}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration was found stating either majorant in the physical variables (r,τ): the powers r^{-1-2h-2j} and ρ^{-3-4h-2j} do not occur in the repository (searches listed below found only the j = 0 exponent -1-2h, in LocalHeatFormula.lean:70 and RenormalizedHeatMoment.lean:428/467). The Lean takes a different route to the same conclusion: instead of estimating K and K²/ρ in ρ with a j-dependent power, it factors the radial powers out exactly first. `BaseExterior.heatCoefficient_sq_scaled` (BaseExterior.lean:391) and `heatPressure_formula` rewrite the tail integral as -(C²/2)·s^{-2A}·heatPressureFactor h ν with s = r²/2, ν = (1-t)/s, A = 1/2 + h, after which only the dimensionless variables (ν,v) are estimated: `heatJet_bound` bounds every ν-derivative of the profile uniformly for v ≥ 1 (the factor (2/v)^n inside `heatJet` plays the role of the paper's r^{-2j}), and `heatPressureJet_dominated` supplies the single dominating function v ↦ v^{-2-2h}·B for every ν-derivative of the dimensionless pressure density. Under s = ρ²/2 the paper's second majorant integrates to the same weight — ρ^{-3-4h}dρ = (2s)^{-2-2h}ds, and -2A-1 = -2-2h — so the two majorants control the same integral, but the Lean's is uniform in the derivative order j while the paper's carries ρ^{-2j}. The paper's use of (10.8) (dominated convergence justifying ∂_τ^j p^loc(r,τ) = -∫_r^∞ ∂_τ^j(K(ρ,τ)²/ρ)dρ up to τ = 0) is reached as `heatPressureFactor_contDiffOn` and `BaseExterior.heatPressure_contDiffOn_closed`. I did not trace whether the Lean's smoothness route is used at exactly the point of Lemma 10.2 where the paper invokes (10.8).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

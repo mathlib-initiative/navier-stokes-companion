@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 125.5",
+  "status": "partial",
+  "location": {
+    "page": 125,
+    "rect": [0.307353, 0.804198, 0.385521, 0.04215]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p125-5",
+      "locator": {
+        "physical": [125],
+        "printed": [125],
+        "text": "Display 125.5, p. 125, in the proof of Corollary 10.6"
+      },
+      "region": "eq-p125-5@p125",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: (U \\cdot \\nabla) U (x,t) = \\sum_{k \\in \\mathbb{Z}^{3}} (\\widetilde{u}(x+k,t) \\cdot \\nabla) \\widetilde{u}(x+k,t)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration was found that writes the advection of the periodization as a lattice sum of the advections of the translates; `advection` (NavierStokes/ProblemStatement.lean:63, `spatialDerivative u t x (u (t,x))`) never appears under a tsum or Finset.sum anywhere in NavierStokes/. The Lean reaches the same conclusion by locality instead of by summing: periodize_eventuallyEq_translate gives, for each x, a lattice n with periodize u =ᶠ[𝓝 (t,x)] translate u n, and residual_viscosity_congr plus residual_translate (which is proved from advection_translate) then replace the whole nonlinear residual of U by that of the single translate. In effect the Lean uses only the one surviving term of the paper's sum and never forms the sum. The surrounding conclusion, eq-p125-6, is proved in full by this route, so this is packaging of the same \"at most one translate is nonzero\" observation (translate_eq_zero_on_innerCube) rather than a gap in the mathematics; what is not checked is the paper's displayed identity as an identity between a derivative and a sum.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

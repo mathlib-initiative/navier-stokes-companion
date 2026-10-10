@@ -1,0 +1,25 @@
+{
+  "id": "eq-7.27/key/NavierStokes.PartitionedCovariance.pairMatrix",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PartitionedCovariance.pairMatrix",
+      "line": 403,
+      "module": "NavierStokes.PartitionedCovariance",
+      "path": "NavierStokes/PartitionedCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L403"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PartitionedCovariance.pairMatrix",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "snippet": {
+        "line": 403,
+        "text": "fun i j => nativePrefactor vr vt r * (P j).column (ci j) i, with nativePrefactor vr vt r = (|vr.1*vt.2 - vr.2*vt.1|/2) * ∫ ξ, cutoff r ξ ^ 2 and (P j).column ci = PulseCovariance.actualColumn ci ψ x t"
+      }
+    }
+  }
+}

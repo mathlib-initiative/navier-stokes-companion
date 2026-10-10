@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 124.5",
+  "status": "partial",
+  "location": {
+    "page": 124,
+    "rect": [0.330918, 0.672422, 0.338389, 0.027158]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p124-5",
+      "locator": {
+        "physical": [124],
+        "printed": [124],
+        "text": "Display 124.5, p. 124, in the proof of Theorem 1.1"
+      },
+      "region": "eq-p124-5@p124",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\partial_x^{\\alpha}\\partial_t^{m} f_{\\nu}(x,t) \\;=\\; \\nu^{(1-|\\alpha|)/2}\\,(\\partial_y^{\\alpha}\\partial_t^{m} f)(x/\\sqrt{\\nu},\\,t)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration was found in NavierStokes/ stating the identity for a general multi-index α and a general time order m. The Lean's dilation is `rescale a b g = fun z => a • g (z.1, b • z.2)`, and the force f_ν of (10.22) is `scaledVelocity ν f = rescale (√ν) (√ν)⁻¹ f`, i.e. a = ν^{1/2}, b = ν^{-1/2}. On that substitution the three instances the Lean does state match the paper's exponent exactly: |α|=0, m=1 gives factor a = ν^{1/2} = ν^{(1-0)/2}; |α|=1, m=0 gives a·b = 1 = ν^{(1-1)/2}; the Laplacian (the |α|=2 contraction) gives a·b² = ν^{-1/2} = ν^{(1-2)/2}. Higher |α| and higher m are stated nowhere I found. What the paper draws from the general identity in the next sentence — f_ν still smooth and compactly supported — the Lean obtains without any derivative formula, from rescale_smooth and CompactPositiveTimeSupport.spatialScale; and the R3 force class (CandidateProperties.force_smooth, force_support) imposes no decay bounds, so the general-|α| form is not needed for Theorem 1.1 as formalized. The closest exact analogue in the repository, iteratedFDeriv_scale (iteratedFDeriv n (scale ell f) x = (ell*(ell⁻¹)^n) • iteratedFDeriv n f (ell⁻¹ • x)), is in Euler/PhysicalL2Scaling.lean, which is out of scope for this audit and is purely spatial (no ∂_t^m).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

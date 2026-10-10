@@ -1,7 +1,7 @@
 {
   "kind": "proposition",
   "label": "Proposition 6.6",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 71,
     "rect": [0.132964, 0.347347, 0.735218, 0.431275]
@@ -10,7 +10,7 @@
     "org.mathlib-initiative.formal-companion.overlay": {
       "declaration_verdict": {
         "status": "unconfirmed",
-        "verdict": "deviation"
+        "verdict": "faithful"
       },
       "item": "proposition-6.6",
       "locator": {
@@ -21,77 +21,69 @@
       "region": "proposition-6.6@p071",
       "verdicts": [
         {
-          "confidence": 0.8,
-          "evidence": ["CONFIRMED_CONTENT: NavierStokes.WeightedClasses.MemClass (NavierStokes/WeightedClasses.lean:107): Structure with three fields: weight_nonneg, smooth (ContDiffOn ℝ ∞ (f n) s.domain) and bounds (for each m, some C ≥ 0 and p with ‖iteratedFDeriv j (f n) x‖ ≤ C·ε^α·growth^p·w on the domain for j ≤ m). No support, periodicity or compatibility field.; NavierStokes.WeightedClasses.MeanClass (NavierStokes/WeightedClasses.lean:115): abbrev: MemClass with weight ζ.; NavierStokes.WeightedClasses.WaveClass (NavierStokes/WeightedClasses.lean:118): abbrev: MemClass with weight √ζ·P.; NavierStokes.WeightedClasses.WaveClass.bilinear_mean (NavierStokes/WeightedClasses.lean:413): WaveClass s P α f, WaveClass s P β g, 0 ≤ P ≤ 1 imply MeanClass s (α+β) (L f g). A statement about bounds only.; NavierStokes.WeightedClasses.MeanClass.bilinear (NavierStokes/WeightedClasses.lean:440): MeanClass s α f, MeanClass s β g, ζ ≤ 1 imply MeanClass s (α+β) (L f g). Bounds only.; NavierStokes.WeightedClasses.MeanClass.bilinear_wave (NavierStokes/WeightedClasses.lean:450): MeanClass s α f, WaveClass s P β g, ζ ≤ 1 imply WaveClass s P (α+β) (L f g). Bounds only.; NavierStokes.MeanIncrementBounds.OperatorBounds.dr (NavierStokes/MeanIncrementBounds.lean:257): OperatorBounds s o κ and MeanClass s α f imply MeanClass s (α−κ) (o.dr f). Bounds only.; NavierStokes.MeanIncrementBounds.OperatorBounds.dz (NavierStokes/MeanIncrementBounds.lean:261): MeanClass s α f implies MeanClass s (α+1) (o.dz f), with o.dz f = ε·∂_{eZ} f. Bounds only.; NavierStokes.MeanIncrementBounds.OperatorBounds.slowTime (NavierStokes/MeanIncrementBounds.lean:267): MeanClass s α f implies MeanClass s (α+1) (o.slowTime f), with o.slowTime f = −(ε·∂_{eT} f). Bounds only.; NavierStokes.MeanIncrementBounds.OperatorBounds.fastTime (NavierStokes/MeanIncrementBounds.lean:273): MeanClass s α f implies MeanClass s α (o.fastTime f), with o.fastTime f = fastCoefficient·∂_{vT} f. Bounds only.; NavierStokes.CommonBaseContext.pull (NavierStokes/CommonBaseContext.lean:231): pull gap f n x = f n (coverLift (gap n) x): precomposition with the integer cover power acting on the auxiliary variable only.; NavierStokes.CommonBaseContext.pull_dr (NavierStokes/CommonBaseContext.lean:239): (operators h index a b hab).dr (pull gap f) = pull gap ((operators h (index+gap) a b hab).dr f) for every f : ℕ → Point → ℝ.; NavierStokes.CommonBaseContext.pull_dz (NavierStokes/CommonBaseContext.lean:254): (operators h index).dz (pull gap f) = pull gap ((operators h (index+gap)).dz f) for every real scalar f.; NavierStokes.CommonBaseContext.pull_slowTime (NavierStokes/CommonBaseContext.lean:262): (operators h index).slowTime (pull gap f) = pull gap ((operators h (index+gap)).slowTime f) for every real scalar f.; NavierStokes.CommonBaseContext.pull_fastTime (NavierStokes/CommonBaseContext.lean:270): (operators h index).fastTime (pull gap f) = pull gap ((operators h (index+gap)).fastTime f), with fastCoefficient h index n = Tg^(index n)·Q n^(1+h), so the coefficient shifts by Tg^gap as on paper p.68.; NavierStokes.PhysicalResidualNaturality.FrameOn.scalarDr (NavierStokes/PhysicalResidualNaturality.lean:931): Given FrameOn U e c l between two contexts' frames, U open, and f n = a·(g nr ∘ e) on U: C.operators.dr f n = (a·l)·(Cr.operators.dr g nr ∘ e) on U.; NavierStokes.PhysicalResidualNaturality.FrameOn.scalarDz (NavierStokes/PhysicalResidualNaturality.lean:937): Same hypotheses: C.operators.dz f n = (a·l)·(Cr.operators.dz g nr ∘ e) on U.; NavierStokes.PhysicalResidualNaturality.FrameOn.scalarTime (NavierStokes/PhysicalResidualNaturality.lean:943): Same hypotheses: C.operators.time f n = (a·(c·l))·(Cr.operators.time g nr ∘ e) on U, where time is the combined slowTime + fastTime operator.; NavierStokes.PhysicalResidualNaturality.CoefficientsOn.differentiate (NavierStokes/PhysicalResidualNaturality.lean:159): If harmonic blocks satisfy c j x = a•d j (e x) on open U, e(V x) = b•W(e x) and the phases match, then differentiate V k Φ c and differentiate W kr Ψ d satisfy the same relation with weight a·b. Stated for a general direction field V.; NavierStokes.HarmonicSourceSupport.NonzeroSupported (NavierStokes/HarmonicSourceSupport.lean:23): Every nonzero harmonic of a coefficient block vanishes outside the set K; the zero harmonic is unrestricted.; NavierStokes.HarmonicSourceSupport.NonzeroSupported.add (NavierStokes/HarmonicSourceSupport.lean:40): NonzeroSupported K c and NonzeroSupported K d imply NonzeroSupported K (c + d).; NavierStokes.HarmonicSourceSupport.NonzeroSupported.mul (NavierStokes/HarmonicSourceSupport.lean:59): NonzeroSupported K c and NonzeroSupported K d imply NonzeroSupported K (c * d) (harmonic convolution).; NavierStokes.HarmonicSourceSupport.NonzeroSupported.differentiate (NavierStokes/HarmonicSourceSupport.lean:84): For closed K, NonzeroSupported K c implies NonzeroSupported K (differentiate V k Φ c) for any direction field V and phase kΦ.; NavierStokes.GaugeMomentBalances.MovingField (NavierStokes/GaugeMomentBalances.lean:461): Structure: each f n is smooth on the slow domain (all radii), is zero outside the moving shell [ℓ·a, ℓ·b] (SupportedGauge), and is torus-periodic in the auxiliary variable (PeriodicOn).; NavierStokes.MeanStateRegularity.MovingField.add (NavierStokes/MeanStateRegularity.lean:115): MovingField U a b f and MovingField U a b g imply MovingField U a b (f + g).; NavierStokes.MeanStateRegularity.MovingField.mul (NavierStokes/MeanStateRegularity.lean:129): MovingField U a b f and MovingField U a b g imply MovingField U a b (f * g).; NavierStokes.MeanStateRegularity.MovingField.dr (NavierStokes/MeanStateRegularity.lean:166): MovingField U a b f, 0 < a < b and OperatorData U.carrier o imply MovingField U a b (o.dr f).; NavierStokes.MeanStateRegularity.MovingField.dz (NavierStokes/MeanStateRegularity.lean:173): MovingField U a b f implies MovingField U a b (o.dz f) for any operator data o.; NavierStokes.MeanStateRegularity.MovingField.time (NavierStokes/MeanStateRegularity.lean:177): MovingField U a b f implies MovingField U a b (o.time f), the combined slowTime + fastTime operator; its proof is the sum of the two separate rows.; NavierStokes.CorrectionInitialization.MovingInitialization.PrimaryMeanData (NavierStokes/CorrectionInitialization.lean:3412): Stage structure that lists, for the covariance and the virtual stresses, MeanClass bounds, smoothness, PeriodicOn and GaugeSupported fields side by side. It has no (6.20) field and is not a general class predicate.", "CONFIRMED_CONTENT: A grep of decls.jsonl and NavierStokes/ for 'Proposition 6.6' and '(6.3[012])' returns nothing. The clause map is in the decls list (MemClass.sum l.359, MeanClass.bilinear l.440, wave_cmul_wave l.90, OperatorBounds.slowTime l.267, stageHarmonics_bound l.1128).", "ATTRIBUTION_GAP: LabelSumBounds.supported_cross_product_zero (LabelSumBounds.lean:523) and HarmonicSourceSupport.supported_product_germ (l.552) give the zero germ; supported_transport_zero (l.567) covers u·∇v. The auditor's LocalResidualGrouping.zero_germ_of_disjoint_on (l.25) assumes disjointness and is the weaker pairing.", "REFUTED: MeanIncrementBounds.Operators.slowTime = −(ε·∂_{eT}) (l.56) and fastTime = fastCoefficient·∂_{vT} (l.59). OperatorBounds.slowTime (l.267) gives α+1 and fastTime (l.273) gives α. CommonBaseContext.operator_bounds (l.140) instantiates them with fastCoefficient = Tg^{index}·Q^{1+h} (l.50).", "ATTRIBUTION_GAP: MeanIncrementBounds.OperatorBounds.{dr,dz,slowTime,fastTime} (l.257-273) take hf : MeanClass. The general-w analogues are LinearWaveBounds.GraphDirections.Dr_mem/Dz_mem/Dt_mem/Dfast_mem (l.132-151) and MemClass.graphDerivative/directional/band_smul (WeightedClasses.lean:476, 256, 335). PrimaryResidualClass.directions (l.24) wires them to the context operators.", "CONFIRMED_CONTENT: LocalizedWaveBounds.LocalClass (l.27) is indexed by label/copy with bounds on K n i. local_mean_wave_cmul and local_wave_mean_cmul (LocalizedMeanInteraction.lean:49, 58) exist. A decls.jsonl search for signatures containing LocalWave twice and LocalMean finds no wave·wave → mean lemma.", "ATTRIBUTION_GAP: LabelSumBounds.UniformClass (l.33) fixes C and p before label and band. UniformClass.sum (l.157), UniformClass.bilinear (l.205), uniform_wave_bilinear_mean (l.228), uniform_angularProduct (l.408). LocalizedWaveBounds.LocalClass (l.27) is uniform over copies.", "I read pp. 69-72 and the Lean sources. The weighted-bound algebra holds: sums, (6.30), both cases of (6.31), all (6.32) rows and the harmonic stages. For C=M the operator rows are concrete, through MeanIncrementBounds.OperatorBounds.{dr,dz,slowTime,fastTime} instantiated by CommonBaseContext.operator_bounds. This refutes auditor finding 3. Cross-label vanishing has derived disjointness (LabelSumBounds.supported_cross_product_zero). Label-uniform versions live in LabelSumBounds.UniformClass. Several gaps remain. The classes record bounds only: no support, no (6.20) compatibility, and θ-independence holds only through the type. Nothing states the pre-cutoff local zero-harmonic mean bound, and no single declaration states the proposition. So the relation is partial and the verdict DELTA. These are gaps in what is stated, not errors."],
+          "confidence": 0.72,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/WeightedClasses.lean:204,359,413,440,450; NavierStokes/LinearWaveBounds.lean:132,140,147,151; NavierStokes/LabelSumBounds.lean:372,896; NavierStokes/MeanStateRegularity.lean:166,173,177; NavierStokes/CommonBaseContext.lean:239", "ATTRIBUTION_GAP: NavierStokes/WeightedClasses.lean:107 (three fields only); support+descent in NavierStokes/MeanStateRegularity.lean:166,173,177 over GaugeMomentBalances.lean:461; (6.20) in NavierStokes/CommonBaseContext.lean:239-281 and CommonCoverClass.lean:971", "ATTRIBUTION_GAP: NavierStokes/LocalizedMeanInteraction.lean has local_cmul :42, local_mean_wave_cmul :49, local_wave_mean_cmul :58, local_along :65 and no wave-wave row; the recovery uses LocalizedWaveBounds.lean:248 and :163", "ATTRIBUTION_GAP: NavierStokes/LabelSumBounds.lean:523 (value form), NavierStokes/LocalResidualGrouping.lean:25 (germ form), NavierStokes/PhysicalWaveSum.lean:550 (x not in tsupport f implies iteratedFDeriv j f x = 0)", "CONVENTION: NavierStokes/MeanStateRegularity.lean:21 (Point = R x (Plane x Plane)); the predicate AngularIndependent (WaveInteractionBounds.lean:164) belongs to the abstract Geometry setting, where theta is a direction of D, and is proved preserved only by conjugation (:798)", "CONVENTION: NavierStokes/WeightedClasses.lean:78 (majorant = C * epsilon^alpha * growth^p * w), :50 (growth = slow * max 1 delta^{-1}), :65 (slow^b * (max 1 delta^{-1})^d <= growth^(b+d))", "Proposition 6.6 is a closure table, and the Lean repository states it as a table of separately named closure lemmas rather than as one proposition: the quantitative half in WeightedClasses and LinearWaveBounds (weight-generic, hence covering both M and W), the structural half in MovingField, TranslationOn and CoefficientsTranslation, the chart half in CommonBaseContext.pull_* and CommonCoverClass. Each clause A or B called missing is in fact derivable from a stated declaration by logic alone: the jet identity from jet_zero_off_tsupport, the pre-cutoff row from LocalClass.mul with mono_weight and the stated P <= 1. No estimate, summability or limiting fact is needed, so by the logic-alone rule the relation is different_formulation and the verdict OK, with the packaging recorded as low findings."],
           "findings": [
             {
-              "confidence": 0.8,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "The Lean bound classes (MemClass, MeanClass, WaveClass) carry only smoothness and weighted bounds on the open domain. Support, torus periodicity and (6.20) compatibility are stated separately, with their own closure lemmas, including for the (6.32) operators. No class predicate conjoining them was found."
-            },
-            {
-              "confidence": 0.9,
+              "confidence": 0.85,
               "contested": false,
               "kind": "COVERAGE",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "No single declaration states Proposition 6.6, and nothing cites it or (6.30)-(6.32). Its clauses are spread over about 20 lemmas in WeightedClasses, LabelSumBounds, MeanIncrementBounds, WaveInteractionBounds, LinearWaveBounds, HarmonicSourceSupport and LocalizedWaveBounds."
-            },
-            {
-              "confidence": 0.7,
-              "contested": true,
-              "kind": "CONTENT",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "The (∂^I w_γ)(∂^J w_γ')=0 form is not stated, but a faithful zero-order form is. supported_cross_product_zero gives u_l·v_k≡0 on the open lift of U for distinct labels, with disjointness derived from SlotSystem, not assumed."
+              "summary": "No single declaration states Proposition 6.6, and nothing in the repository cites it or (6.30)-(6.32) by number. Every clause is a named declaration, spread over roughly a dozen files; they conjoin by instantiation and conjunction."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "MemClass carries only smoothness and the weighted jet bound. The structural conjuncts of Definitions 6.4/6.5 — shell support, descent, (6.20)-compatibility — are stated elsewhere, each with its own closure lemmas for the same (6.32) operators."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The pre-cutoff row — a zero harmonic satisfying the mean bounds on its labelled rectangle, i.e. LocalWave x LocalWave -> LocalMean — has no named declaration. It follows from LocalClass.mul and LocalClass.mono_weight with the stated bounds zeta <= 1 and P <= 1."
+            },
+            {
+              "confidence": 0.8,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The distinct-label identity is stated at the level of values and germs, not as the paper's identity for every pair of derivative multi-indices I, J. The jet form follows in two lines from jet_zero_off_tsupport, which the repository does state."
+            },
+            {
+              "confidence": 0.75,
+              "contested": false,
+              "kind": "CONTENT",
+              "ledger": "CONVENTION",
+              "severity": "low",
+              "summary": "The partial_theta f = 0 conjunct of Definitions 6.4/6.5 is not a Lean hypothesis for the actual classes: the coefficient domain Point has exactly the five coordinates (R,(T,Z),(H1,H2)) and no angular coordinate, so theta-independence holds by construction."
             },
             {
               "confidence": 0.85,
-              "contested": true,
-              "kind": "COVERAGE",
-              "ledger": "REFUTED",
-              "severity": "low",
-              "summary": "The auditor claimed that the −ε∂_T and Q^{1+h}N_abs rows of (6.32) exist only as abstract instantiations. This is false: concrete operator lemmas exist, and actual chart operators discharge their hypotheses."
-            },
-            {
-              "confidence": 0.75,
               "contested": false,
               "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
+              "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The concrete (6.32) operator lemmas tied to the chart context take MeanClass only. For C=W the rows hold through general-weight lemmas, which hold for any w including √ζP, and OperatorBounds discharges their hypotheses."
-            },
-            {
-              "confidence": 0.75,
-              "contested": false,
-              "kind": "COVERAGE",
-              "ledger": "CONFIRMED_CONTENT",
-              "severity": "low",
-              "summary": "No lemma states that before the cutoff a zero harmonic satisfies the mean bounds on its labelled rectangle, i.e. LocalWave·LocalWave → LocalMean. The local class exists, contrary to the auditor's note that labels and rectangles are not modelled."
-            },
-            {
-              "confidence": 0.75,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
-              "severity": "low",
-              "summary": "The auditor's MemClass lemmas are uniform in band and point only. The paper requires constants uniform in label and rectangle copy, and that version is stated in LabelSumBounds.UniformClass and LocalClass."
+              "summary": "The paper's majorant carries two independent exponents, S_*^b and delta^{-d}; Lean's majorant carries one power p of growth = slow * max(1, delta^{-1}). The two readings are interchangeable through the repository's own separate_powers_le_growth."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "partial",
+          "relation": "different_formulation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states part of it.",
-          "verdict": "deviation"
+          "summary": "Lean states it in a different formulation.",
+          "verdict": "faithful"
         }
       ]
     }

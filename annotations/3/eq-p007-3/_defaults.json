@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 7.3",
+  "status": "formalized",
+  "location": {
+    "page": 7,
+    "rect": [0.156837, 0.503859, 0.686855, 0.022736]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.CylindricalResidual",
+      "path": "NavierStokes/CylindricalResidual.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p007-3",
+      "locator": {
+        "physical": [7],
+        "printed": [7],
+        "text": "Display 7.3, p. 7, in section 3.1"
+      },
+      "region": "eq-p007-3@p007",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: x = (r\\cos\\theta,\\ r\\sin\\theta,\\ z), \\qquad e_r = (\\cos\\theta,\\sin\\theta,0), \\qquad e_\\theta = (-\\sin\\theta,\\cos\\theta,0), \\qquad e_z = (0,0,1)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The parametrization x = (r cos θ, r sin θ, z) is the body of CylindricalResidual.chart, and e_r, e_z are stated verbatim as the coordinate derivatives dCoord 0 chart and dCoord 2 chart. e_θ is not a named constant: the Lean carries the frame as the rotation `frame θ` (whose value at the second basis vector is exactly (-sin θ, cos θ, 0)), and the ∂_θ coordinate vector dCoord 1 chart is r · e_θ, the unnormalized one. Recovering the paper's three vectors is substitution in frame_apply, or division by r in dCoord_chart_one.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

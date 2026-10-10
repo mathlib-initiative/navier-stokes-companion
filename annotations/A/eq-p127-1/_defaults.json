@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 127.1",
+  "status": "partial",
+  "location": {
+    "page": 127,
+    "rect": [0.297204, 0.194624, 0.405596, 0.042611]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.PowerMomentMatrix",
+      "path": "NavierStokes/PowerMomentMatrix.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p127-1",
+      "locator": {
+        "physical": [127],
+        "printed": [127],
+        "text": "Display 127.1, p. 127, in the proof of Lemma A.1"
+      },
+      "region": "eq-p127-1@p127",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\det B = \\int_{I_1\\times\\cdots\\times I_m} \\det[x_j^{\\alpha_i}] \\prod_j \\beta_j(x_j)\\, dx_1\\cdots dx_m \\neq 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The displayed multilinear (Andreief-type) expansion of det B as an m-fold integral over I_1×⋯×I_m of det[x_j^{α_i}] ∏_j β_j(x_j) is not in the Lean sources; neither is the paper's sign claim that det[x_j^{α_i}] has constant sign on the ordered set {0 < x_1 < ⋯ < x_m} (only its nonvanishing is stated, at powerEvaluationMatrix_det_ne_zero, PowerMomentMatrix.lean:143). The Lean reaches the display's conclusion det B ≠ 0 by a different route: bumpMomentMatrix_det_ne_zero (line 261) rewrites B as intervalMomentMatrix against the measures volume.withDensity β_j and invokes intervalMomentMatrix_det_ne_zero (line 216), which argues by vecMul-injectivity — a column combination c with Bᵗc = 0 makes ∫ powerSum a c dμ_j = 0 for each j, so an averaging/intermediate-value lemma (exists_zero_of_setIntegral_eq_zero, line 158) yields a zero x_j ∈ I_j, the x_j are strictly ordered by interval separation, and powerEvaluationMatrix_det_ne_zero plus the Rolle induction expSum_coefficients_zero (line 74) force c = 0. So the paper's formula as written was not checked; the statement it is used to establish (invertibility of B, Lemma A.1) is stated and proved. Matrix orientation matches the paper: Lean's entry i j is ∫ t^{a i} β j t, i.e. B_{ij} = ∫ x^{α_i} β_j(x) dx.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

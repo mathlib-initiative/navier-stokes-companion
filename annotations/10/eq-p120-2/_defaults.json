@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 120.2",
+  "status": "partial",
+  "location": {
+    "page": 120,
+    "rect": [0.134275, 0.358331, 0.087149, 0.022225]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p120-2",
+      "locator": {
+        "physical": [120],
+        "printed": [120],
+        "text": "Display 120.2, p. 120, in the statement of Lemma 10.3"
+      },
+      "region": "eq-p120-2@p120",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\mathcal{K} \\times [0,2]."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The paper's one support box 𝒦 × [0,2] (𝒦 is Proposition 10.1's compact set, p118: 𝒦 = supp χ_x, the same set that contains supp u(·,t) ∪ supp p(·,t)) is split in Lean across two constructions, and the spatial factor is enlarged. Time factor: the Borel/gluing extension force of CandidateFromLimits satisfies F(t,x) = 0 for t ≥ 2 (force_zero_from) and for t ≤ 0 (force_zero_nonpos), which is exactly the paper's [0,2]; but that F is spatially periodic (UnitSpatialPeriodsOn univ, CandidateFromLimits.lean:89), not supported in any compact 𝒦. Spatial factor: compact spatial support is imposed only afterwards, by the dilated cutoff outerCutoff x = spatialCutoff ((1/2)•x), supported in outerSupport = 2·supportCylinder = {x₀²+x₁² ≤ 1/4, |x₂| ≤ 1/2}, and then by a second time cutoff. The resulting R3 force satisfies tsupport ⊆ Icc (1/16) (21/16) ×ˢ K (force_tsupport_subset; Lean's SpaceTime is time-first, so the factors are in the opposite order from the paper), instantiated at ActualCandidate.lean:88 with K = outerSupport. Term by term: the time factor [1/16, 21/16] is strictly inside [0,2], so in time the Lean is tighter; the spatial factor outerSupport strictly contains supportCylinder, which is the set K that CandidateProperties uses for velocity_support and pressure_support (ProblemStatement.lean:97-100) and so plays the role of the paper's 𝒦, whereas Lemma 10.3 puts the force's support inside that same 𝒦. Searching the index (see `searched`) found no declaration bounding the force's support by the candidate's own K. Severity low rather than medium: the clause the Lean candidate actually carries is CompactPositiveTimeSupport f, and the one later use I traced, the energy bound CompactEnergy.uniform_finite_energy applied at ActualCandidate.lean:119-122, takes the velocity's compact set supportCylinder together with HasCompactSupport of the force (hsupport.1), not a common 𝒦; the paper's Lemmas 10.4 and 10.5 likewise use only smoothness and compact support of f.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

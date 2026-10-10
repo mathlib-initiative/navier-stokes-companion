@@ -1,0 +1,29 @@
+{
+  "id": "corollary-B.6/attributed/NavierStokes.BoundaryAxisJets.mixedAxisJet_pullback_holomorphic_full",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BoundaryAxisJets.mixedAxisJet_pullback_holomorphic_full",
+      "line": 857,
+      "module": "NavierStokes.BoundaryAxisJets",
+      "path": "NavierStokes/BoundaryAxisJets.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BoundaryAxisJets.lean#L857"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BoundaryAxisJets.mixedAxisJet_pullback_holomorphic_full",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: From an AxisFunction's smoothness, slicewise holomorphy and evenness, every mixed jet ∂_X^k ∂_η^m of its pullback is holomorphic in the parameter on the same open set. Instantiated at base … 4 this gives the 'same parameter neighborhood at every fixed radial derivative' half of clause (ii) for V_0/X"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 857,
+        "text": "theorem mixedAxisJet_pullback_holomorphic_full {R : ℝ} (hR : 0 < R) {U : Set ℂ}\n    (hU : IsOpen U) {F : ℝ × ℂ → B} (hF : ContDiffOn ℝ ∞ F (Ioo (-R) R ×ˢ U))\n    (hhol : ∀ r ∈ Ioo (-R) R, DifferentiableOn ℂ (fun z => F (r, z)) U)\n    (he : ∀ z ∈ U, ∀ r ∈ Ioo (-R) R, F (-r, z) = F (r, z)) (k m : ℕ)\n    {r : ℝ} (hr : r ∈ Ioo (-R) R) :\n    DifferentiableOn ℂ (fun z => mixedAxisJet F k m (r ^ 2, z)) U"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "lemma-8.2/support/NavierStokes.RadialPullback.physicalGraphDeriv_physicalCompact_global",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.RadialPullback.physicalGraphDeriv_physicalCompact_global",
+      "line": 485,
+      "module": "NavierStokes.RadialPullback",
+      "path": "NavierStokes/RadialPullback.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialPullback.lean#L485"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.RadialPullback.physicalGraphDeriv_physicalCompact_global",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 485,
+        "text": "theorem physicalGraphDeriv_physicalCompact_global [CompleteSpace V] {a b d : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) {g : ℝ × E → V}\n    (hg : ContDiff ℝ ∞ g) (hs : RadialAlias.RadiallySupported a b g)\n    (M : ℝ) (v : E) (z : ℝ × E) :\n    physicalGraphDeriv d M v (physicalCompact d a b M v g) z = g z - physicalAlias d a b M v g z"
+      }
+    }
+  }
+}

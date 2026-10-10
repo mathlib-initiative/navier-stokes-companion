@@ -17,24 +17,24 @@
       "region": "proposition-A.4@p130",
       "verdicts": [
         {
-          "confidence": 0.85,
-          "evidence": ["CONVENTION: PreparedOutgoing.PreparedProfile (PreparedOutgoing.lean:22) bundles only Specification, ScheduleBounds and ProfileCleanCone. The l<0 clause is OutgoingNegativeSlopeCone.true_from_transition (:75) / FullCleanOutgoingCone (:107), imported only by PaperAdditionalResults.lean. NominalConeAssembly.lean:1519 uses exists_prepared alone.", "CONVENTION: OutgoingDilation.radius XR y := XR * Real.exp y (OutgoingDilation.lean:295); pulseEndRadius, tailRadius, switchRadius (:324-326); ReservedPatches.leftClock/rightClock/left/right (ReservedPatches.lean:52-62). endpoint, tailStart, tailEnd, decayHold take only Parameters/TailData.", "ATTRIBUTION_GAP: PreparedOutgoing.lean:22-36 (fields amplitude_lower, height_upper, schedule); ExtendedHeatedOutgoing.ScheduleBounds :625-629 (wait_eq, lambda_small). Order kept in OutgoingCone.exists_ordered_profile_cone (:503), OutgoingNegativeSlopeCone.exists_ordered_full_profile_cone (:137), ScheduledProfileChoice.exists_scheduled_family_below (:105); amplitudeThreshold m = exp(exp m + 11) + 1 (OutgoingEntranceCone.lean:1809).", "CONVENTION: ReservedPatches.leftOffset/rightOffset (:29-39), leftClock F s := pulseStart + leftOffset s (:52), clock_inside_wait (:114): holdStart < leftClock ∧ rightClock < pulseStart, using Parameters.wait_gt (25 < wait).", "CONVENTION: OutgoingCone.RelaxedAt (:235), normalV/normalP/normalJ (:215-225); OutgoingHistories.p1/p2 (:1263-1266), Qs_dilation/Ns_dilation (:1248-1261), physicalH_eq (:1191); OutgoingEntranceCone.coneA/coneB/coneRatio (:1888-1898); TailCone.actualP2_eq (:1475); ConeAlgebra.coneBound (:17).", "I read pp. 129-131, (4.11), (4.20)-(4.21) and the cited Lean. Every clause of A.4 is stated, but across declarations: Specification and DilatedSpecification carry smoothness, E>0, (A.8) with integrability, U=M=J=0 and E=E_pow; ReservedPatches the four patches; CleanOutgoingCone the relaxed and admissible cones; true_from_transition the l<0 clause. All are universal in the profile, so assembly is routine. The bundled exists_prepared drops P_*>e^{T_d} and the h cap; the ordered theorems keep them, so the recovery must start from exists_ordered_profile_cone plus exists_scheduled_family_below, not from `prepared`. The MATHEMATICS skeptic's two refutations dispute materiality, not premises; I rule those findings conventions. Nothing was built."],
+          "confidence": 0.82,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.PreparedOutgoing.PreparedProfile, NavierStokes/PreparedOutgoing.lean:22, has fields specification, schedule, terminal, amplitude_lower, height_upper, clean and no patch field and no true_from_transition; the patch clause is ReservedPatches.clean_fields (ReservedPatches.lean:309) with windows_disjoint (:90), and the l<0 clause is OutgoingNegativeSlopeCone.full_of_clean (OutgoingNegativeSlopeCone.lean:112).", "CONVENTION: NavierStokes.OutgoingDilation.radius, NavierStokes/OutgoingDilation.lean:295, `radius (XR y : ℝ) : ℝ := XR * Real.exp y`; pulseEndRadius/tailRadius/switchRadius at :324-326 and ReservedPatches.left/right at ReservedPatches.lean:58-62 are each of this form, and switchRadius_eq (:329) is proved by rfl. No declaration was found stating the independence itself.", "ATTRIBUTION_GAP: NavierStokes.PreparedOutgoing.PreparedProfile, NavierStokes/PreparedOutgoing.lean:22, fields amplitude_lower (2 ≤ P) and height_upper (h ≤ 1/1000) only. The order is stated by OutgoingCone.exists_ordered_profile_cone (OutgoingCone.lean:503), whose nesting is m → P ≥ amplitudeThreshold m → K → lam0 → lam → h ≤ heightThreshold m lam → left ≤ 0 → XR, together with ScheduledProfileChoice.exists_scheduled_family_below (ScheduledProfileChoice.lean:105).", "Every clause of A.4 is stated in Lean, for a general profile and radius, but across declarations: Specification and preserves_specification carry smoothness, E > 0, (A.8), U = M = J = 0 after the pulse and E = E_pow after the three-unit tail; ReservedPatches gives the four disjoint patches with U = 0 and E = c·f·X^{−1/2−λ}; CleanOutgoingCone gives the strict relaxed cone from x_− with X_R chosen after x_−; full_of_clean gives the admissible cone from the instant l < 0. coneBound is literally (4.21)'s U, so the cone clauses are the paper's. The assembly uses only instantiation, modus ponens and unfolding — no unstated analytic fact — so different_formulation, OK. The stage-boundary clause is definitional, and exists_prepared's statement drops the (A.6) caps; both are low."],
           "findings": [
             {
-              "confidence": 0.85,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No single declaration states Proposition A.4; its clauses are split over exists_prepared, preserves_specification, ReservedPatches lemmas and true_from_transition. Premise correct; every lemma is universal in the profile, so assembly is routine. Encoding choice, not a content gap."
+              "summary": "No single declaration conjoins Proposition A.4. Its clauses sit in exists_prepared/Specification, preserves_specification, the four ReservedPatches lemmas, CleanOutgoingCone and full_of_clean. Each is universal in the profile and radius, so the conjunction is a few lines."
             },
             {
-              "confidence": 0.9,
-              "contested": true,
-              "kind": "CONTENT",
+              "confidence": 0.88,
+              "contested": false,
+              "kind": "COVERAGE",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "No theorem states that stage boundaries divided by X_R are independent of X_R and η. True by definition: every boundary is radius XR c = XR·exp c, with the clock c computed from F.data alone."
+              "summary": "The stage-boundary clause is encoded definitionally rather than asserted. Every boundary is radius XR c = XR * exp c with the clock c a function of F.data in which eta does not occur, so the quotient by X_R is exp c by unfolding."
             },
             {
               "confidence": 0.85,
@@ -42,23 +42,7 @@
               "kind": "CONTENT",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "exists_prepared (Nonempty PreparedProfile) drops the order (A.6): it exposes 2 ≤ P, λ ≤ 1/120, wait = 60 log(1/λ), 2h < λ, h ≤ 1/1000, but not P_* > e^{T_d} or the h cap. The ordered theorems state the order."
-            },
-            {
-              "confidence": 0.8,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Patch offsets are measured from pulseStart = holdStart + wait, so the origin is the start of the l = −λ hold. Read strictly, p. 129 puts the stage origin one unit earlier, at the transition start. Both placements satisfy A.4's patch clause."
-            },
-            {
-              "confidence": 0.85,
-              "contested": false,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "The cone is stated in log-clock coordinates with normalized histories (H = e^{y/2}E, no √2 factors), with p_{s,2} written as p_{s,1}·N_s/(E·Q_s) and an extra conjunct Q_s > 0. It implies (4.21); Lean is stronger here."
+              "summary": "exists_prepared's statement keeps only 2 ≤ P and h ≤ 1/1000, dropping (A.6)'s P_* > e^{T_d} and h ≪ min{λ, e^{−T_d}}. Those are facts about its proof term, not about Nonempty PreparedProfile, so the order must be recovered from the ordered theorems instead."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

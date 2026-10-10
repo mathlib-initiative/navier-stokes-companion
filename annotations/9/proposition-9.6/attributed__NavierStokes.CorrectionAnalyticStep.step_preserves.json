@@ -1,0 +1,31 @@
+{
+  "id": "proposition-9.6/attributed/NavierStokes.CorrectionAnalyticStep.step_preserves",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectionAnalyticStep.step_preserves",
+      "line": 632,
+      "module": "NavierStokes.CorrectionAnalyticStep",
+      "path": "NavierStokes/CorrectionAnalyticStep.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionAnalyticStep.lean#L632"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectionAnalyticStep.step_preserves",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (D : StaticData …) (H : CycleAnalyticInvariant G c primary P S σ x) (hσ : 1/5 ≤ σ) (hκsmall : κ ≤ 1/100000) (d : StepData …) : CycleAnalyticInvariant G c primary P S (σ+1/10) (CycleState.step p c x). The abstract (arbitrary ι, geometry, parameters) form of the same preservation, conditional on StepD",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 632,
+        "text": "theorem step_preserves (D : StaticData G h index axial r c κ)\n    (H : CycleAnalyticInvariant G c primary P S σ x)\n    (hσ : 1/5 ≤ σ) (hκsmall : κ ≤ 1/100000)\n    (d : StepData G h index axial particular signed r c x primary P S D H hσ) :\n    CycleAnalyticInvariant G c primary P S (σ+1/10) (CycleState.step p c x)"
+      }
+    }
+  }
+}

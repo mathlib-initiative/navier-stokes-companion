@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 141.5",
+  "status": "partial",
+  "location": {
+    "page": 141,
+    "rect": [0.237861, 0.556566, 0.5245, 0.04414]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p141-5",
+      "locator": {
+        "physical": [141],
+        "printed": [141],
+        "text": "Display 141.5, p. 141, in the proof of Lemma A.8"
+      },
+      "region": "eq-p141-5@p141",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.6,
+          "evidence": ["paper: \\int_0^\\infty r\\,p(r)\\,dr \\;=\\; -\\int_0^\\infty \\frac{u_\\theta(r')^2}{r'}\\left(\\int_0^{r'} r\\,dr\\right)dr' \\;=\\; -\\frac12\\int_0^\\infty r'\\,u_\\theta(r')^2\\,dr'."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The displayed chain is the Fubini exchange that converts the tail pressure identity into a radial moment: with p(r) = -∫_r^∞ u_θ(r')^2 dr'/r', swapping the order of the two integrals gives the inner ∫_0^{r'} r dr = r'^2/2 and hence -½∫_0^∞ r' u_θ(r')^2 dr'. The same algebraic identity (radial pressure moment = -½ times the next moment of the pressure derivative) is stated by `IntegratedMeanBalances.pressure_moment`, but over all of ℝ for a compactly supported smooth p inside the Section 8 mean-balance machinery; I found no use of it, or of any Fubini exchange, in the Lemma A.8 / terminal-stress chain. There Lean never forms ∫_0^∞ r p(r) dr at all: `TerminalStress.canonicalPressure` and `HeatedOutgoing.Pi` take the tail integral as the definition of the pressure and the argument proceeds pointwise in the similarity variable, so the exchange step as written is not reproduced. Searches for a nested `∫ x in Ioi 0, ∫ …` and for `Fubini` in these files returned nothing (Fubini appears only in the R3/Fourier files). Low: the identity is elementary and the surrounding result is reached without it.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "lemma-5.2/support/NavierStokes.GlobalSlowProfiles.profiles_inner_smooth",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_inner_smooth",
+      "line": 1839,
+      "module": "NavierStokes.GlobalSlowProfiles",
+      "path": "NavierStokes/GlobalSlowProfiles.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1839"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GlobalSlowProfiles.profiles_inner_smooth",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 1839,
+        "text": "theorem profiles_inner_smooth {S : Set ℝ} {h C rho inner : ℝ} {U : Set ℂ}\n    {base : Fin 5 → SimilarityProfile.InnerProfile} {s : Scheme S h C}\n    {A : SlowRecursion.LocalHierarchy rho U h C base}\n    (L : Localization s A inner) (B0 : BaseAgreement s A inner)\n    {n : ℕ} (hn : 0 < n) (i : Fin 4) :\n    ContDiffOn ℝ ∞ (xProfile (component (profiles s n) i)) (Ico 0 inner ×ˢ S)"
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.26)",
+  "status": "formalized",
+  "location": {
+    "page": 82,
+    "rect": [0.438039, 0.635254, 0.430138, 0.023313]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-7.26",
+      "locator": {
+        "physical": [82],
+        "printed": [82],
+        "text": "Equation (7.26), p. 82, in the statement of Proposition 7.5"
+      },
+      "region": "eq-7.26@p082",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.76,
+          "evidence": ["paper: \\mathcal{C}(W_0) = \\varepsilon\\,\\mathcal{T}_{0,*}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Lean states the identity for the cut-off wave, with the cutoff carried on the right-hand side: `C(η W_0) = ε · mask² · T_{0,*}` rather than `C(W_0) = ε T_{0,*}`. The two differ only by the factor mask², which is forced by the choice recorded under eq-7.24 (Lean's `amplitude` absorbs the cutoff into the coefficient). The recovery is routine and is already available inside the repository: C is quadratic in the wave and the mask is constant in the two averaging variables (Y, theta), so it pulls out of `doubleAverage` as mask²; equivalently `weighted_columns_reconstruct` has `mask` as a free real parameter, and taking mask = 1 gives exactly `∑_j a_j² H i j = ε T i`, which is (7.26) read columnwise, C(W_0)_i = ε · (T_{0,*})_i. The covariance functional C is `doubleAverage` of the radial component times the i-th tangential component (indices `0` and `i.succ` of a Fin 3 velocity), matching the paper's angular-then-torus average of the rθ and rz stresses; the Lean target is `PrimaryTargetBounds.actualTarget`, which is the normalized target carrying the (Q/q)^{A+1/2} factor (the companion `PartitionedCovariance.chartTarget`, line 940, states that factor explicitly with `velocityExponent h = 1/2 + h`). I did not verify that `actualTarget` and `chartTarget` agree pointwise.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

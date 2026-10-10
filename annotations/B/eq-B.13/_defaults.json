@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.13)",
+  "status": "formalized",
+  "location": {
+    "page": 147,
+    "rect": [0.31465, 0.14275, 0.554806, 0.044991]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.13",
+      "locator": {
+        "physical": [147],
+        "printed": [147],
+        "text": "Equation (B.13), p. 147, in the statement of Proposition B.2"
+      },
+      "region": "eq-B.13@p147",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\sup_{[0,4.1]\\times I}\\left| \\partial_Y^{\\,r}\\partial_\\eta^{\\,s}\\Big(\\Phi - f_0(Y\\chi),\\ \\mathfrak{u} + \\tfrac{Y Z_*}{2L}\\Big) \\right| \\ \\le\\ \\frac{C_{r,s}}{\\Lambda}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The comparison pair matches: `referenceCoefficients … .1` evaluates to `AxisSeries.profile χ Y = ∑' n (-χY/2)^n/(n!(n+1)!)`, which is the paper's f_0(Yχ) with f_0(z) = Σ_{α≥0}(-z/2)^α/(α!(α+1)!) as printed on p.146; `referencePair … .2` evaluates to -(Y·Z_*/(2L)), so the Lean difference `u - u₀` is 𝔲 + YZ_*/(2L), the paper's second entry including its sign. `NaturalAxisData.chi h j σ η = H²/(H²+σ²)` is (B.2) literally. The rewriting is in how the sup and the constant are packaged: (i) Lean states a pointwise bound for all |Y| ≤ R, for every R with 1 ≤ R < 20, over η in the fixed open window (-11/10, 11/10); R = 5 and `original_interval_interior : Icc (-1) 1 ⊆ Ioo window.left window.right` cover the paper's [0,4.1] × I, so taking the sup over that compact rectangle gives the paper's statement, and the Y-range is in fact larger. (ii) The paper's abstract 'slightly larger compact interval I' is instantiated as the one concrete window (-11/10, 11/10) rather than left general. (iii) C_{r,s} is realized as `AxisEvaluation.jetBound ε R k m * profileErrorConstant d / 2`, whose arguments do not mention Λ or C, matching the paper's 'independent of sufficiently large Λ and of C ≥ C_0(Λ)'; the 1/Λ is literal. (iv) Lean writes the derivative as `mixedDerivative k m F p = iteratedDeriv m (fun η => iteratedDeriv k (fun Y => F (Y,η)) p.1) p.2`, i.e. ∂_η^m∂_Y^k, the paper's ∂_Y^r∂_η^s with the two orders exchanged; for the jointly real-analytic profiles of `CoefficientProfile.scaled_analytic` these agree, but the Lean statement does not itself assert the exchange. (v) No single declaration was found that states (B.13) with f_0(Yχ) and -YZ_*/(2L) substituted in place of the coefficient-space reference pair: the identification needs the two evaluation lemmas cited above. The paper's unscaled corollary on p.147, 'In unscaled radial derivatives, the corresponding bound is C_{r,s}Λ^{r-1}', was not located as a separate declaration.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

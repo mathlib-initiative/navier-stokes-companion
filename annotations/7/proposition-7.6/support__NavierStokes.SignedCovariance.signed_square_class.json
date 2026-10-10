@@ -1,0 +1,26 @@
+{
+  "id": "proposition-7.6/support/NavierStokes.SignedCovariance.signed_square_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedCovariance.signed_square_class",
+      "line": 656,
+      "module": "NavierStokes.SignedCovariance",
+      "path": "NavierStokes/SignedCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L656"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedCovariance.signed_square_class",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 656,
+        "text": "theorem signed_square_class {s : StripData E} {H : ℕ → E → Mat2}\n    {T R : ℕ → E → Vec2} {β : ℝ} (i : Fin 2)\n    (hζ : ∀ x ∈ s.domain, 0 < s.zeta x)\n    (hcone : ∀ n x, x ∈ s.domain → SmoothCovariance.StrictCone (H n x) (T n x))\n    (hY : ∀ j, MeanClass s 0 (fun n x => ((H n x)⁻¹.mulVec (T n x)) j))\n    (hR : ∀ j, MeanClass s β (fun n x => ((H n x)⁻¹.mulVec (R n x)) j))\n    (hlower : ∀ j, InverseControl s (fun _ x => s.zeta x)\n      (fun n x => ((H n x)⁻¹.mulVec (T n x)) j))\n    (hH : ∀ j, UnweightedClass s 0 (fun n x => H n x i j)) :\n    MeanClass s (2 * β) (fun n x => squareColumn (H n x) (T n x) (R n x) i)"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.9/attributed/NavierStokes.TerminalCone.same_witness_full_cone",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalCone.same_witness_full_cone",
+      "line": 566,
+      "module": "NavierStokes.TerminalCone",
+      "path": "NavierStokes/TerminalCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean#L566"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalCone.same_witness_full_cone",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: The cone and margin conclusions hold for one and the same witness across the full terminal interval.",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 566,
+        "text": "theorem same_witness_full_cone (F : OutgoingProfile.Profile) {XR C y eta : ℝ}\n    (w : HeatedOutgoing.CompensationWitness F XR C)\n    (hsmall : SmallTail F.data) (hXR : radiusThreshold F ≤ XR)\n    (hy : terminalStart F.data ≤ y) (hy' : y < OutgoingTail.tailEnd F.data)\n    (heta : eta ∈ Icc (-1 : ℝ) 1) :\n    HeatedOutgoing.E F XR w.coefficients (XR * Real.exp y, eta) =\n      TerminalEdgeFactor.profileAngularVelocity (normalization F XR) F.data (shift F XR)\n        (profilePoint F y eta) ∧\n    HeatedOutgoing.U F XR (XR * Real.exp y, eta) = 0 ∧\n    2 < TerminalEdgeFactor.profileP (normalization F XR) F.data (shift F XR) (profilePoint F y eta) ∧\n    TerminalEdgeFactor.profileSpeed (normalization F XR) F.data (shift F XR) (profilePoint F y eta) <\n      ConeAlgebra.coneBound\n        (TerminalEdgeFactor.profileP (normalization F XR) F.data (shift F XR) (profilePoint F y eta))\n        (TerminalEdgeFactor.profileJ (normalization F XR) F.data (shift F XR) (profilePoint F y eta))"
+      }
+    }
+  }
+}

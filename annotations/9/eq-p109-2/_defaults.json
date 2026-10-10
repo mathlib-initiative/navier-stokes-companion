@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 109.2",
+  "status": "formalized",
+  "location": {
+    "page": 109,
+    "rect": [0.365574, 0.538104, 0.331468, 0.039386]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p109-2",
+      "locator": {
+        "physical": [109],
+        "printed": [109],
+        "text": "Display 109.2, p. 109, in the proof of Proposition 9.6"
+      },
+      "region": "eq-p109-2@p109",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\begin{array}{r|l} \\text{linear error} & B + 1/2 - 4\\kappa_s \\\\ \\text{mean interaction} & B + 0.4 - \\kappa_s \\end{array}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both rows appear, as the hypotheses of `waveStage_residual_uniform` at the signed-stage instantiation inside the proof of `waveStages_residual_gain` (CorrectionStep.lean:9618-9628), where a = beforeSignedBlock with α = 1/2 (`hbefore`, :9589), b = signedBlock with β = 1/2+σ-κ (`hsigned`), and H = 9/10 (`hmean`, :9615). Row 1, linear error B+1/2−4κ_s: this is `WaveData.signedLinear` at exponent 1+σ-4*κ, and 1+σ = B+1/2 since B = 1/2+σ_j; it is passed as `hlinear` at :9626. Row 2, mean interaction B+0.4−κ_s: this is the side condition `hγm : γ ≤ β + H - 1/2`, which at the instantiated values is γ ≤ (1/2+σ-κ) + 9/10 - 1/2 = 0.9+σ-κ = B+0.4−κ_s. So the rewriting is just substituting α, β, H: the paper tabulates the exponents, Lean states them as the upper bounds that the target exponent γ = 1/2+σ+1/10 = B+1/10 must respect, and discharges each by `linarith` from 1/5 ≤ σ and κ ≤ 1/100000. The paper's table is a list of orders; Lean never writes 'B + 0.4' literally, it writes β + H - 1/2.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

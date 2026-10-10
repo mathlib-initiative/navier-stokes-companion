@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.3)",
+  "status": "formalized",
+  "location": {
+    "page": 145,
+    "rect": [0.241882, 0.127002, 0.627578, 0.042441]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.3",
+      "locator": {
+        "physical": [145],
+        "printed": [145],
+        "text": "Equation (B.3), p. 145, in section B.1"
+      },
+      "region": "eq-B.3@p145",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\zeta_* = -\\frac{L H_*}{H_*^2 + \\sigma_*^2}, \\qquad \\xi_0 = \\Lambda \\zeta_*, \\qquad \\phi_* = \\exp\\left(\\Lambda \\int_0^{\\eta} \\zeta_*(w)\\, dw\\right)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. ζ_* is `realGradient` verbatim, -L·H_*/(H_*² + σ_*²), with `complexGradient` the same formula on the complex neighbourhood Ω (denominator H_*² + σ_*², nonvanishing there). The primitive is the straight-segment integral: `realPhase h j σ x = x·∫_0^1 ζ_*(t x) dt`, which is ∫_0^x ζ_*(w) dw by the substitution w = t x, and `axisPhase` is its holomorphic extension. Two encoding differences. (i) φ_* carries a normalization the display does not: `realAmplitude h j σ Λ C x = exp(Λ·realPhase)/C`, i.e. the paper's φ_* divided by the amplitude C that the paper fixes separately after Λ; taking C = 1 gives the display exactly. (ii) ξ_0 = Λζ_* is not a named Lean constant: it occurs as the conclusion of `AnalyticInputs.realAmplitude_logDerivative`, deriv(realAmplitude)/realAmplitude = Λ·realGradient, which is the role ξ_0 plays. The paper's restriction Λ ≥ 1 is not part of these definitions, which hold for every real Λ; the paper's 'φ_* > 0 on the real interval' is `realAmplitude_pos`.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

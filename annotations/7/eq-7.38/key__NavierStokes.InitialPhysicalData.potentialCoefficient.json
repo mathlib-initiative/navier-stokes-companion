@@ -1,0 +1,25 @@
+{
+  "id": "eq-7.38/key/NavierStokes.InitialPhysicalData.potentialCoefficient",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.InitialPhysicalData.potentialCoefficient",
+      "line": 40,
+      "module": "NavierStokes.InitialPhysicalData",
+      "path": "NavierStokes/InitialPhysicalData.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/InitialPhysicalData.lean#L40"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.InitialPhysicalData.potentialCoefficient",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "snippet": {
+        "line": 40,
+        "text": "noncomputable def potentialCoefficient (l : SignedLabel B N0) (n : ℕ) (x : Point) : ComplexVector := CurlClassBounds.inverseCarrier ((cutCoefficients l).frequency n) • CurlClassBounds.normalCoefficient ((cutCoefficients l).normal fullStrip (directions B) n x) ((cutCoefficients l).amplitude n x)  -- docstring: \"The coefficient of the genuine vector potential, before restoring its carrier.\""
+      }
+    }
+  }
+}

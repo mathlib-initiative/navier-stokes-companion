@@ -1,0 +1,32 @@
+{
+  "id": "lemma-9.2/attributed/NavierStokes.WaveInteractionBounds.same_label_curl_interaction",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WaveInteractionBounds.same_label_curl_interaction",
+      "line": 1157,
+      "module": "NavierStokes.WaveInteractionBounds",
+      "path": "NavierStokes/WaveInteractionBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean#L1157"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WaveInteractionBounds.same_label_curl_interaction",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clause (ii), one ordered product, with 'curl-generated' as the literal hypothesis. WaveVector α a, WaveVector β b, smooth phase, ν ≠ 0, BandBound s 0 (ξ/ν), both amplitudes angular-independent, vectorMode ν Φ a = cylindricalCurl … B on the domain, ζ ≤ 1, 0 ≤ P ≤ 1 ⊢ ∃ c, WaveVector s P (α + β - κ) c",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1157,
+        "text": "theorem same_label_curl_interaction {s : StripData D} {P : ℕ → D → ℝ} {α β κ : ℝ}\n    (G : Geometry s κ) (hκ : 0 ≤ κ) {Φ : ℕ → D → ℝ} {ν ξ : ℕ → ℝ}\n    {a b B : Family D} (ha : WaveVector s P α a) (hb : WaveVector s P β b)\n    (hΦ : ∀ n, ContDiffOn ℝ ∞ (Φ n) s.domain) (hν : ∀ n, ν n ≠ 0)\n    (hratio : BandBound s 0 (fun n => ξ n / ν n))\n    (haθ : AngularIndependent G a) (hbθ : AngularIndependent G b)\n    (hG : ∀ n, CurlClassBounds.CylindricalGeometry s.domain\n      (G.radius n) (G.radial n) (G.angular n) (G.axial n))\n    (hB : ∀ n, ContDiffOn ℝ ∞ (B n) s.domain)\n    (hcurl : ∀ n, EqOn (vectorMode (ν n) (Φ n) (a n))\n      (CurlClassBounds.cylindricalCurl (G.radius n) (G.radial n) (G.angular n) (G.axial n) (B n))\n      s.domain)\n    (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

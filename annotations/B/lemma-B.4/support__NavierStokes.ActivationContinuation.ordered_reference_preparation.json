@@ -1,0 +1,27 @@
+{
+  "id": "lemma-B.4/support/NavierStokes.ActivationContinuation.ordered_reference_preparation",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationContinuation.ordered_reference_preparation",
+      "line": 977,
+      "module": "NavierStokes.ActivationContinuation",
+      "path": "NavierStokes/ActivationContinuation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationContinuation.lean#L977"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationContinuation.ordered_reference_preparation",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 977,
+        "text": "theorem ordered_reference_preparation {h j σ ν : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hσ : 0 < σ) (hP0 : ContDiff ℝ ∞ P0) (hν : 0 < ν)\n    (hcut : ∀ η ∈ Icc (-1 : ℝ) 1, |NaturalAxisData.Z h j P0 η| ≤ ν →\n      99 / 100 < NaturalAxisData.chi h j σ η) :\n    ∃ B M : ℝ, 1 < B ∧ 1 ≤ M ∧\n      ∀ Λ : ℝ, ∀ hΛ : 0 < Λ, M ≤ Λ →\n        (∀ {D : RadialDomain} (P : Profiles D) (p : Point),\n          p.2 ∈ Icc (-1 : ℝ) 1 → ReferenceBounds.logSlope P p = 3 / 5 →\n          |Λ * (P.U p - NaturalAxisData.U j p.2)| ≤ B + 2 →\n          |Λ * (P.Ubar p - NaturalAxisData.U j p.2)| ≤ B + 2 →\n          |Λ * (average (parameterPartial P.U) p - 4)| ≤ B + 2 →\n          |parameterPartial P.f p / P.f p - Λ * realGradient h j σ p.2| ≤ B + 2 →\n          (5 / 4 : ℝ) < ReferenceBounds.sourceQ P h p) ∧\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

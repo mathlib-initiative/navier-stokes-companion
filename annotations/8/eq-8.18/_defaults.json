@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (8.18)",
+  "status": "formalized",
+  "location": {
+    "page": 95,
+    "rect": [0.349525, 0.127295, 0.518652, 0.047359]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-8.18",
+      "locator": {
+        "physical": [95],
+        "printed": [95],
+        "text": "Equation (8.18), p. 95, in the statement of Corollary 8.5"
+      },
+      "region": "eq-8.18@p095",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\begin{aligned} H_\\theta &= -\\mathsf{T}_2\\bigl(\\langle E_\\theta\\rangle_Y - \\sigma_\\theta\\,\\varepsilon\\partial_Z\\mathcal{J}_\\theta\\bigr),\\\\ H_z &= -\\mathsf{T}_1\\bigl(\\langle E_z\\rangle_Y - \\sigma_z\\,\\varepsilon\\partial_Z(\\mathcal{J}_z + c_\\rho\\mathcal{P})\\bigr). \\end{aligned}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The objects agree; the rewriting has two steps and one packaging choice. (i) Lean applies the primitive to the raw torus-averaged residual rather than to the paper's already-corrected bracket: `physicalBarSigma P e q f` unfolds through `sigma` to -R^{-e}·compactIntegral(cutoff P)(R^e ⟨f⟩_Y), which is the paper's -T_e⟨f⟩_Y (compactIntegral = pastIntegral − χ·totalIntegral is the paper's 𝓘_c = 𝓘 − χ_m𝒥 of (8.5)/(8.6), and `inversePower P e` equals r^{-e} on the shell, by inversePower_eq). The Lean theorem physicalSigma_eq_negative_primitive then converts this into -R^{-e}∫_0^R t^e (⟨f⟩_Y − b_e·mass_e⟨f⟩_Y) dt. The paper's H = -T_e(bracket) reaches the same expression because the bracket has zero weighted radial integral and is Y-independent, so its cutoff remainder 𝒜_e vanishes identically (last sentence of Lemma 8.2, p.90). (ii) The subtracted coefficient is written in Lean as the actual weighted moment mass_e⟨E⟩_Y, not as ε∂_Z𝒥_θ resp. ε∂_Z(𝒥_z + c_ρ𝒫); the two are identified by state_angular_moment and state_axial_moment, which are (8.16). The bump b_e = physicalDensity P e q is normalised by ∫r^e b_e = 1 exactly as σ_θ, σ_z are. The weights e = 2 for the θ row and e = 1 for the z row match T_2 and T_1. Lean's primitive carries no torus shift (compactIntegral is called with M = 0, v = 0): harmless here, since it is applied to the torus average, which no longer has a Y argument.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

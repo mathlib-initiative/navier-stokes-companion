@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.40)",
+  "status": "partial",
+  "location": {
+    "page": 157,
+    "rect": [0.211118, 0.44231, 0.657951, 0.03477]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-B.40",
+      "locator": {
+        "physical": [157],
+        "printed": [157],
+        "text": "Equation (B.40), p. 157, in the statement of Remark B.9"
+      },
+      "region": "eq-B.40@p157",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: \\begin{aligned} M_d,\\; T_d,\\; P_*,\\; \\lambda,\\; h \\;\\longrightarrow\\;& \\text{tolerance for matching moments},\\; j_0 \\;\\longrightarrow\\; \\delta_*,\\, \\sigma_*,\\, \\Lambda \\\\ \\longrightarrow\\;& (\\mathcal{B}_k),\\; T_{\\mathrm{sh}} \\;\\longrightarrow\\; \\mathsf{C},\\; X_R \\;\\longrightarrow\\; \\kappa_0,\\, t_1,\\; \\text{widths of final transitions.} \\end{aligned}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. (B.40) is not an equation but a dependency chain: a summary of the admissible order in which the parameters may be chosen (each entry may depend only on entries to its left). The Lean does not display this chain anywhere; it encodes the ordering structurally, as the nesting of ∃/∀ in several separate theorems, each covering one segment. Segment-by-segment, from the declarations read in source: (i) M_d, P_*, λ, h: `exists_ordered_profile_cone` fixes m (= M_d) first, then P ≥ amplitudeThreshold m (= P_*), then lam0 (λ), then h ≤ heightThreshold m lam (so h after M_d, P_*, λ), with X_R last (∃ XR0, ∀ XR > XR0); T_d is not a separate Lean choice because the paper fixes T_d = e^{M_d} + 10 from M_d. (ii) tolerance → j_0 → δ_*, σ_*, Λ → T_sh → C: `exists_ordered_matching_threshold` puts ∃ eps (the matching tolerance) before ∀ j, then ∀ prep : AxisPreparation F j (whose fields `delta`, `sigma` are δ_*, σ_*), then ∃ Λ0 ∀ Λ ≥ Λ0, then ∃ T (= T_sh) before ∃ C0 ∀ C ≥ C0; `exists_ordered_prepared_continuation` repeats the same nesting with ∃ rho, ∃ jcap before ∀ j and ends with ∀ J ∀ epsilon ∃ tolerance ∃ w, i.e. the finite control order and tolerance last. (iii) (B_k) → C → widths: `ordered_seed_bounds` produces B, K, BJ from Λ before ∀ C and quantifies the ramp parameters T κ w₁ w₂ after C, which is the paper's statement (p. 157 line above (B.40) and p. 156) that B_k may depend on Λ but is independent of large C, and that the widths come last. (iv) the C → X_R link: `eventually_matching_geometry` gives radiusFloor < matchingRadius F C = 110·(C·P)^10 for large C, i.e. X_R is determined by C, matching X_R = 110(C P_*)^10 in the paper. What I did not find: a single declaration stating the whole chain, and any Lean parameter identifiable as the collar shear factor κ_0 or the first-collar width t_1 of (B.26); the κ, w₁, w₂ of `ordered_seed_bounds` are the activation-ramp damping constant and ramp widths, which I did not verify are the paper's κ_0, t_1, ω_fin. The surrounding results (Remark B.9 and Corollary B.10) are about this bookkeeping only, and the ordering they need is realized in the quantifier nesting of the theorems above, so this is packaging rather than a mathematical gap.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

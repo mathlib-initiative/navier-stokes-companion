@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 90.4",
+  "status": "formalized",
+  "location": {
+    "page": 90,
+    "rect": [0.306438, 0.487806, 0.387525, 0.049861]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p090-4",
+      "locator": {
+        "physical": [90],
+        "printed": [90],
+        "text": "Display 90.4, p. 90, in section 8.2"
+      },
+      "region": "eq-p090-4@p090",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: f_* = Q^a f_{\\mathrm{phys}}, \\qquad Q^{a-1/2}\\,r^{-e}\\,\\mathcal{I}_{c,\\mathrm{phys}}(r^e f_{\\mathrm{phys}}) = R^{-e}\\,\\mathcal{I}_c(R^e f_*) = \\mathsf{T}_e f_*. \\qquad (r = \\sqrt{Q}\\,R)"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The rewriting is the substitution l = chartScale n = Q^{-1/2}, u = Q^{-a}. physicalCompact_pull states the identity for an arbitrary radial scale l, chart map C and amplitude u (so it is more general than r = √Q R, f_* = Q^a f_phys), with the transport directions tied by M • C v = (N * l^d) • w — the Lean form of the paper's M = Λ_g^{i_0}Q^{d_r/2} bookkeeping, supplied by MeanChartCompatibility.radialFrequency_shift (NavierStokes/MeanChartCompatibility.lean:713). The constant u/l is the display's Q^{a-1/2}: fieldOnPhysical encodes f_phys = Q^{-a}(f_* ∘ physicalToChart) with physicalToChart scaling the radius by Q^{-1/2}, i.e. r = √Q R and f_* = Q^a f_phys, and pressure_unit_factor is exactly Q^{-a}/Q^{-1/2} = Q^{-(a-1/2)}; physicalPressure_naturality is the instance at the paper's actual scaling degrees (a = 2A(h) + 1/2 for the source, a - 1/2 = 2A(h) for its compact primitive). The e-range caveat is the same one recorded under eq-8.6 and is not repeated in this severity: for the cutoff-compactified operator the transfer law is stated at e = 0 (physicalCompact_pull, physicalPressure_naturality) and e = 1 (streamPotential_pull), while the general-e version of the same u/l law holds for the signed-stress primitive (physicalSigma_scaled_fiber).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "proposition-4.10/support/NavierStokes.NaturalCore.coreVelocity_contDiffOn",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalCore.coreVelocity_contDiffOn",
+      "line": 301,
+      "module": "NavierStokes.NaturalCore",
+      "path": "NavierStokes/NaturalCore.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean#L301"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalCore.coreVelocity_contDiffOn",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 301,
+        "text": "theorem coreVelocity_contDiffOn {h Λ : ℝ} {f V : ℝ × ℝ → ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2)\n    (hf : ContDiffOn ℝ ∞ f (NaturalProfile.domain Λ))\n    (hV : ContDiffOn ℝ ∞ V (NaturalProfile.domain Λ)) :\n    ContDiffOn ℝ ∞ (coreVelocity h f V) (coreDomain h Λ)"
+      }
+    }
+  }
+}

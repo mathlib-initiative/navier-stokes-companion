@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.3/attributed/NavierStokesR3.ActualCandidate.localized_pressure_tsupport",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.ActualCandidate.localized_pressure_tsupport",
+      "line": 59,
+      "module": "NavierStokes.R3.ActualCandidate",
+      "path": "NavierStokes/R3/ActualCandidate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ActualCandidate.lean#L59"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.ActualCandidate.localized_pressure_tsupport",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `∀ t, tsupport (fun x => R3CompactCandidate.pressure P (t,x)) ⊆ SpatialLocalization.supportCylinder`: the same clause for p.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 59,
+        "text": "theorem localized_pressure_tsupport (P : PressureField) (t : ℝ) :\n    tsupport (fun x : Space => R3CompactCandidate.pressure P (t, x)) ⊆\n      SpatialLocalization.supportCylinder"
+      }
+    }
+  }
+}

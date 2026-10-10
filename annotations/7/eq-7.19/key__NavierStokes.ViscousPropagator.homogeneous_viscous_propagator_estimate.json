@@ -1,0 +1,25 @@
+{
+  "id": "eq-7.19/key/NavierStokes.ViscousPropagator.homogeneous_viscous_propagator_estimate",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ViscousPropagator.homogeneous_viscous_propagator_estimate",
+      "line": 389,
+      "module": "NavierStokes.ViscousPropagator",
+      "path": "NavierStokes/ViscousPropagator.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ViscousPropagator.lean#L389"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ViscousPropagator.homogeneous_viscous_propagator_estimate"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 389,
+        "text": "‖u t‖ ≤ Real.exp (((dampingError + matrixError) / S) * |t - a|) * (GaussianEnvelope.envelope rate midpoint t / GaussianEnvelope.envelope rate midpoint a) * ‖u a‖, for u solving u' = coefficient (lam t) (damping t) (E t) u"
+      }
+    }
+  }
+}

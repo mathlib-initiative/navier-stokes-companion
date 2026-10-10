@@ -1,0 +1,31 @@
+{
+  "id": "lemma-6.1/attributed/NavierStokes.SlotColoring.physical_labels_have_auxiliary_slots",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SlotColoring.physical_labels_have_auxiliary_slots",
+      "line": 446,
+      "module": "NavierStokes.SlotColoring",
+      "path": "NavierStokes/SlotColoring.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlotColoring.lean#L446"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SlotColoring.physical_labels_have_auxiliary_slots",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `(D h : ℝ) (hh : 0 ≤ h) (a b) : ∃ r > 0, ∀ L M, Adj D L M → Disjoint (liftedSupport (nativeIndex h L.1) (orientedRectangle (center (card Palette) (nativeGap h) (color L)) a b (2*r))) (…M…)`. (6.13) for the concrete physical dyadic labels; the injectivity clause is dropped here (it is kept in `SlotSy",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 446,
+        "text": "theorem physical_labels_have_auxiliary_slots (D h : ℝ) (hh : 0 ≤ h)\n    (a b : SlotGeometry.Plane) :\n    ∃ r : ℝ, 0 < r ∧ ∀ L M : Label, Adj D L M →\n      Disjoint\n        (SlotGeometry.liftedSupport (nativeIndex h L.1)\n          (SlotGeometry.orientedRectangle\n            (SlotGeometry.center (Fintype.card Palette) (nativeGap h) (color L)) a b (2 * r)))\n        (SlotGeometry.liftedSupport (nativeIndex h M.1)\n          (SlotGeometry.orientedRectangle\n            (SlotGeometry.center (Fintype.card Palette) (nativeGap h) (color M)) a b (2 * r)))"
+      }
+    }
+  }
+}

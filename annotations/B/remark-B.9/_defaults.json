@@ -17,40 +17,24 @@
       "region": "remark-B.9@p157",
       "verdicts": [
         {
-          "confidence": 0.82,
-          "evidence": ["CONVENTION: OutgoingCone.exists_ordered_profile_cone (OutgoingCone.lean:503); RepairConeBounds.exists_repair_cone (RepairConeBounds.lean:1262); MatchingConeBounds.exists_ordered_prepared_continuation (MatchingConeBounds.lean:852); ModulatedProfileAssembly.exists_of_certificate (ModulatedProfileAssembly.lean:1101); composed in NominalConeAssembly.assembly_exists (:1482) and exists_nominal_cone (:1517): '∃ F W, Certificate W'", "CONVENTION: TransitionRamp.ordered_seed_bounds (TransitionRamp.lean:2179): Λ fixed, '∃ B … ∃ K … ∃ BJ, 1 ≤ BJ ∧ ∀ C, 0 < C → …|iteratedDeriv n (R.endpointLog T κ w₁ w₂ C) η| ≤ BJ'; MatchingDebtBounds.exists_ordered_matching_threshold proof (MatchingDebtBounds.lean:692-696): 'ShapeTransition.exists_duration (2 * BJ)' before C0", "CONVENTION: exists_ordered_prepared_continuation (MatchingConeBounds.lean:852): '∃ E …, ∀ J : ℕ, ∀ epsilon : ℝ, 0 < epsilon → ∃ tolerance …, ∃ w : ContinuationWitness E hΛ hj F.axisDatum_contDiff (max N J) tolerance, … PreparedBounds c N rho delta radiusFloor'; preparedWitness_exists (:976) uses J=0, ε=1; assembly_exists uses N=1", "REFUTED: PulseCone.coneRate (PulseCone.lean:1693): 'lam + Real.sqrt lam * (1 + Real.log (1 / lam))', made small by OutgoingCone.exists_hold_threshold (OutgoingCone.lean:142); OutgoingCone.heightThreshold (:451) with OutgoingEntranceCone.heightThreshold (OutgoingEntranceCone.lean:1812): 'min (1 / 100) (min (lam / 4) (Real.exp (-(entranceTime m + 3 / 5)) / 8))', entranceTime m = exp m + 12; exists_ordered_profile_cone (:503): '∀ K, 0 < K → ∃ lam0'", "Remark B.9 is a statement about the order of parameter choices (B.40). I read p.157 and the Lean statements. The order is encoded as quantifier alternation in four ordered theorems: exists_ordered_profile_cone (M_d, T_d, P_*, C_pre, λ, h), exists_repair_cone (tolerance from outer data), exists_ordered_prepared_continuation (rho, j → δ_*, σ_*, Λ → T_sh → C, X_R → widths) and exists_of_certificate (radial frequency last). Each link matches the paper and the composition is routine, so SINGLE_SOURCE_OK and different_formulation, as all three voters said. I adopted the skeptics' better outer-data declaration in place of exists_prepared. The three auditor findings are accurate but are encoding choices; the auditor's unchecked narrative clause is confirmed in Lean."],
+          "confidence": 0.8,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation, NavierStokes/MatchingConeBounds.lean:852 nests rho, jcap, j, prep, Λ, T, C, E, J/epsilon, w; NavierStokes.HeatedOutgoing.exists_fixed_schedule, NavierStokes/HeatedOutgoing.lean:886 nests P,m, lam, h, F, X_R; NavierStokes.TransitionRamp.ordered_seed_bounds, NavierStokes/TransitionRamp.lean:2179 nests Λ, (B,K,BJ), C, ramp widths", "ATTRIBUTION_GAP: NavierStokes.ShapeTransition.radialSwitch_contDiff, NavierStokes/ShapeTransition.lean:446 gives ContDiff ℝ ∞ (radialSwitch Xi T) with no bound expressed in the width T; no AllJetBound statement for the Appendix B profile was found in decls.jsonl", "Remark B.9 asserts no new estimate: it claims the parameter choices of Appendix B and Section A are acyclic in the order (B.40), and that smallness is needed only on a prescribed finite set of eta-derivative orders. Lean renders this as the quantifier nesting of exists_ordered_prepared_continuation, whose prefix reproduces the tail of (B.40) stage for stage, with the first stage in exists_fixed_schedule and the (B_k) stage in ordered_seed_bounds. The trailing universal quantifier over the requested order J gives smallness at every finite order, which is stronger than the paper needs. The only gaps are packaging (three declarations rather than one) and the unformalized disclaimer about inverse powers of the final widths."],
           "findings": [
-            {
-              "confidence": 0.86,
-              "contested": true,
-              "kind": "COVERAGE",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "No single declaration states all of (B.40). The outer-data order, the tolerance, the Appendix B chain and the late radial-frequency choice are four separate ordered theorems, composed only inside proofs whose statements are bare existentials."
-            },
-            {
-              "confidence": 0.86,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "(B_k) is not named in the main ordered statement. Its place after Λ and before C is stated in TransitionRamp.ordered_seed_bounds; the main chain exposes only the resulting T (T_sh) between Λ and C."
-            },
-            {
-              "confidence": 0.82,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "After C the Lean fixes the entrance profile and gives, for every later order J and ε, a continuation witness at order max N J. PreparedBounds is asserted only at order N. The paper only says other orders stay finite."
-            },
             {
               "confidence": 0.85,
               "contested": false,
-              "kind": "CONTENT",
-              "ledger": "REFUTED",
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "Auditor's open note: the clause on √λ(1+log 1/λ), h ≪ λ, h ≪ e^{-T_d} with C_pre fixed was unchecked, with a suspected λ-versus-√λ mismatch. Checked: the Lean has all three, in the paper's order."
+              "summary": "No one declaration states the whole of (B.40). The chain is split: the outer data stage in exists_fixed_schedule, the (B_k) stage in ordered_seed_bounds, the rest in exists_ordered_prepared_continuation. Conjoining them is routine."
+            },
+            {
+              "confidence": 0.7,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The remark's closing clause — finite (not small) bounds at every other fixed order, radial cutoff derivatives possibly carrying inverse powers of the final widths — has no quantitative counterpart; only C^∞ smoothness of the cutoff was found."
             }
           ],
           "match_verdict": "SINGLE_SOURCE_OK",

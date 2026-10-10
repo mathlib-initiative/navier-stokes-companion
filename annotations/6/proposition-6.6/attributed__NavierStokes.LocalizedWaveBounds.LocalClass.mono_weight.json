@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/attributed/NavierStokes.LocalizedWaveBounds.LocalClass.mono_weight",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalizedWaveBounds.LocalClass.mono_weight",
+      "line": 163,
+      "module": "NavierStokes.LocalizedWaveBounds",
+      "path": "NavierStokes/LocalizedWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalizedWaveBounds.lean#L163"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalizedWaveBounds.LocalClass.mono_weight",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: LocalClass s K w \\alpha f \\to (\\forall n i x \\in s.domain, x \\in K n i \\to w n i x \\le v n i x) \\to LocalClass s K v \\alpha f: the weight comparison is required only on the cell."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 163,
+        "text": "theorem mono_weight (hf : LocalClass s K w α f)\n    (hv : ∀ n i x, x ∈ s.domain → 0 ≤ v n i x)\n    (hwv : ∀ n i x, x ∈ s.domain → x ∈ K n i → w n i x ≤ v n i x) :\n    LocalClass s K v α f"
+      }
+    }
+  }
+}

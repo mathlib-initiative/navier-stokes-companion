@@ -1,0 +1,31 @@
+{
+  "id": "definition-6.4/attributed/NavierStokes.PhysicalMeanDomain.SupportedOn",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhysicalMeanDomain.SupportedOn",
+      "line": 68,
+      "module": "NavierStokes.PhysicalMeanDomain",
+      "path": "NavierStokes/PhysicalMeanDomain.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalMeanDomain.lean#L68"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhysicalMeanDomain.SupportedOn",
+        "kind": "def"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: SupportedOn a b U f : ∀ p, p.2.1 ∈ U → f p ≠ 0 → p.1 ∈ Icc a b. With the smoothness hypothesis on slowDomain U = {p | p.2.1 ∈ U} (line 29, all radii) this is clause (ii), smooth zero extension off the shell.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 68,
+        "text": "noncomputable def SupportedOn (a b : ℝ) (U : Set S) (f : PressureStream.Lift S → V) : Prop"
+      }
+    }
+  }
+}

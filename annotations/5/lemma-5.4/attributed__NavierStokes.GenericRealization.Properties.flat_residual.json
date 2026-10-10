@@ -1,0 +1,32 @@
+{
+  "id": "lemma-5.4/attributed/NavierStokes.GenericRealization.Properties.flat_residual",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GenericRealization.Properties.flat_residual",
+      "line": 137,
+      "module": "NavierStokes.GenericRealization",
+      "path": "NavierStokes/GenericRealization.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericRealization.lean#L137"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GenericRealization.Properties.flat_residual",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The scalar counterpart of (5.36), with the same (5.32)/(5.33) hypotheses including the Λ_log factors and the flat error majorant.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 137,
+        "text": "theorem Properties.flat_residual {U : Set D} {q : D → ℝ}\n    {base : ι → D → ℝ} {A : ι → ℕ → D → ℝ} {g L : ℕ → ℝ} {a : ℕ → ℕ}\n    (H : Properties U q base A g L a) (hU : IsOpen U)\n    (hq : ∀ x ∈ U, 0 < q x ∧ q x ≤ 1)\n    (hbase : ∀ i, ContDiffOn ℝ ∞ (base i) U)\n    (hA : ∀ i j, 1 ≤ j → ContDiffOn ℝ ∞ (A i j) U)\n    (hgtop : Tendsto g atTop atTop) (P : SupportedPolynomial D ι)\n    (hconst : ContDiffOn ℝ ∞ P.constant U)\n    (hc : ∀ t ∈ P.terms, ContDiffOn ℝ ∞ t.1 U)\n    (region : ((D → ℝ) × Expression D ι Empty) → Set D) (Cc Pc Kc : ℕ → ℝ)\n    (hcoeff : ∀ t ∈ P.terms, ∀ m x, x ∈ U → x ∈ region t →\n      ‖iteratedFDeriv ℝ m t.1 x‖ ≤\n        Cc m * (1 + |Real.log (q x)|) ^ Pc m * q x ^ (-Kc m))\n    (hzero : ∀ t ∈ P.terms, ∀ x ∈ U, x ∉ region t →\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

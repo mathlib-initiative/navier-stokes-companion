@@ -1,0 +1,31 @@
+{
+  "id": "lemma-A.8/attributed/NavierStokes.TerminalEdgeFactor.physicalStress_of_nonpos",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalEdgeFactor.physicalStress_of_nonpos",
+      "line": 1631,
+      "module": "NavierStokes.TerminalEdgeFactor",
+      "path": "NavierStokes/TerminalEdgeFactor.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1631"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalEdgeFactor.physicalStress_of_nonpos",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: For the terminal/heated field, if the chart coordinate satisfies y.2 \\le 0 (i.e. log X \\ge shift + 3, i.e. X \\ge e^3 X_{tail}) then physicalStress … = (0,0); physicalStress (:1585) is the pair (angularStress, axialStress), the backward terminal stresses. This is clause (i) for the terminal field.",
+        "status": "unconfirmed",
+        "verdict": "deviation"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 1631,
+        "text": "theorem physicalStress_of_nonpos (C : ℝ) (d : TailData) (y0 : ℝ)\n    {y : EdgeParam × ℝ} (hy : y.2 ≤ 0) : physicalStress C d y0 y = 0"
+      }
+    }
+  }
+}

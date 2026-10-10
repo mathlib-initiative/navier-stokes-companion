@@ -1,0 +1,46 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.19)",
+  "status": "formalized",
+  "location": {
+    "page": 67,
+    "rect": [0.383747, 0.609844, 0.484425, 0.037179]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.TorusAverages",
+      "path": "NavierStokes/TorusAverages.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-6.19",
+      "locator": {
+        "physical": [67],
+        "printed": [67],
+        "text": "Equation (6.19), p. 67, in the proof of Lemma 6.2"
+      },
+      "region": "eq-6.19@p067",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\int_{\\mathbb{T}^2} f\\bigl(J_g^{\\Delta}H\\bigr)\\,dH \\;=\\; \\int_{\\mathbb{T}^2} f(Y_i)\\,dY_i."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same identity, with two routine adjustments. (i) J_g^Δ is torusCovering^[n], where torusCovering is the additive endomorphism of (ℝ/ℤ)² induced by [[3,1],[1,5]] (TorusAverages.lean:41-42), and dH is torusMeasure, which carries an IsProbabilityMeasure instance (TorusInverse.lean:345), i.e. normalized Haar, as the paper's dH is. (ii) The paper's right-hand side is written in the variable Y_i = J_g^{Δ_ℓ}H of (6.18); since that substitution is exactly the map being integrated against, ∫ f(Y_i) dY_i is ∫ f(Y) dY, which is the Lean right-hand side. The Lean statement adds a hypothesis the paper does not write, hf : Continuous f, automatic for the Fourier characters and band fields the paper applies it to; the hypothesis-free `torusCovering_measurePreserving` is also available. Lean's f is valued in an arbitrary real normed space, covering the paper's complex characters. The proof route differs: Lean derives Haar invariance from continuity plus surjectivity of the group homomorphism (AddMonoidHom.measurePreserving), not from the paper's character computation 'a character of frequency n pulls back to frequency (J_g^Δ)^T n'; I found no declaration stating that pullback-of-frequency identity.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

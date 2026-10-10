@@ -1,0 +1,26 @@
+{
+  "id": "proposition-4.10/support/NavierStokes.ConstructedSlowBase.Modulated.smooth_and_divergence",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ConstructedSlowBase.Modulated.smooth_and_divergence",
+      "line": 885,
+      "module": "NavierStokes.ConstructedSlowBase",
+      "path": "NavierStokes/ConstructedSlowBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConstructedSlowBase.lean#L885"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ConstructedSlowBase.Modulated.smooth_and_divergence",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 885,
+        "text": "theorem smooth_and_divergence (c : ℝ) (hc : 0 < c) (upper : ℝ) (B : ℕ) :\n    ContDiffOn ℝ ∞ (velocity v c hc upper B) BaseResidual.past ∧\n    ContDiffOn ℝ ∞ (pressure v c hc upper B) BaseResidual.past ∧\n    ∀ t < (1 : ℝ), ∀ x : ProblemStatement.Space,\n      ProblemStatement.spatialDivergence (velocity v c hc upper B) t x = 0"
+      }
+    }
+  }
+}

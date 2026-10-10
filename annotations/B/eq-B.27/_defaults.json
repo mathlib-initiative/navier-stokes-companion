@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.27)",
+  "status": "formalized",
+  "location": {
+    "page": 152,
+    "rect": [0.28351, 0.269501, 0.585559, 0.040179]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.StressActivation",
+      "path": "NavierStokes/StressActivation.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.27",
+      "locator": {
+        "physical": [152],
+        "printed": [152],
+        "text": "Equation (B.27), p. 152, in the proof of Proposition B.5"
+      },
+      "region": "eq-B.27@p152",
+      "verdicts": [
+        {
+          "confidence": 0.84,
+          "evidence": ["paper: \\partial_y\\!\\left(\\log \\phi - \\log \\phi_r\\right) = \\frac{e_a\\,p_{1,r}}{2}, \\qquad \\partial_y\\!\\left(U - U_r\\right) = \\frac{e_a X n_{s,r}}{2}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. No declaration writes the two difference derivatives in this displayed form; the content is stated in the integrated form and recovered by one differentiation. The recovery: `controlled_sub` gives controlled T κ F - F = -weightedPrimitive T κ (radialPartial F), and `weightedPrimitive_hasDerivAt` differentiates the right side to -activation T κ y · radialPartial F (y,η) = -e_a ∂_y F. Taking F = L (the log angular field, so log φ - log φ_r = controlled T κ L - L) and substituting radialPartial L = -referenceP1/2 = -p_{1,r}/2 gives ∂_y(log φ - log φ_r) = e_a p_{1,r}/2. Taking F = U and substituting radialPartial U = -(radius · referenceNs)/2 = -X n_{s,r}/2 gives ∂_y(U - U_r) = e_a X n_{s,r}/2. The same two identities also follow by subtracting `activation_angular_equation` / `activation_axial_equation` (damping = 1 - e_a) from the corresponding reference derivatives, which is literally the paper's 'subtracting its equations'. Signs, the factor 2 and the X in the second equation all match; no constant or exponent differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

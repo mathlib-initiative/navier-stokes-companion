@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 40.5",
+  "status": "formalized",
+  "location": {
+    "page": 40,
+    "rect": [0.225364, 0.596143, 0.549274, 0.113907]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p040-5",
+      "locator": {
+        "physical": [40],
+        "printed": [40],
+        "text": "Display 40.5, p. 40, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p040-5@p040",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\mathfrak{m}_0(X,\\eta)-\\mathfrak{m}_{\\mathrm{out}}(X,\\eta)=\\mathfrak{m}_0(X_h,\\eta)-\\mathfrak{m}_{\\mathrm{out}}(X_h,\\eta)\\;+\\;\\int_{X_h}^{X}\\begin{pmatrix} U_0-U_{\\mathrm{out}}\\\\ H_0-H_{\\mathrm{out}}\\\\ U_0H_0-U_{\\mathrm{out}}H_{\\mathrm{out}}\\\\ U_0^2-U_{\\mathrm{out}}^2-(E_0^2-E_{\\mathrm{out}}^2)/2\\\\ (E_0^2-E_{\\mathrm{out}}^2)/(2x)\\end{pmatrix}dx=0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean states the paper's conclusion (the two moment vectors agree for X ≥ X_h) but never writes the increment-integral display itself. Rewriting: `moments U E r eta` is defined as `fun i => ∫ x in Ioc 0 r, density … x i`, and `density` is row-for-row the integrand vector of (4.15) — (U, √(2x)E, U·√(2x)E, U²−E²/2, E²/(2x)) = (U, H, UH, U²−E²/2, E²/(2x)), using H = √(2X)E as on p.40. `moments_propagate` reaches the same place by splitting ∫_{(0,r]} = ∫_{(0,a]} + ∫_{(a,r]} inside `prefix_integral_propagate` and using pointwise equality of the two density vectors on (a,r]; that pointwise equality is exactly the paper's assertion that the displayed column vector vanishes for x ≥ X_h, and `heated_moments_at_match` is the anchor term 𝔪₀(X_h,η) − 𝔪_out(X_h,η) = 0. The join radius matches numerically: `heatJoin = c.radius * matchFraction` with `matchFraction = Real.exp (-5)` (NominalProfile.lean:143), i.e. X_h = X_R e^{−5}. Also: the task's block metadata places this display in 'the statement of Lemma 4.9'; the page image shows it in running proof text of the construction (Step 1, before 'Step 2' on p.41), and Lemma 4.9 is stated on p.36.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

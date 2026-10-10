@@ -1,7 +1,7 @@
 {
   "kind": "corollary",
   "label": "Corollary B.10",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 157,
     "rect": [0.134051, 0.679202, 0.734132, 0.103169]
@@ -17,45 +17,45 @@
       "region": "corollary-B.10@p157",
       "verdicts": [
         {
-          "confidence": 0.8,
-          "evidence": ["ATTRIBUTION_GAP: NominalConeAssembly.Certificate (NominalConeAssembly.lean:1362): fields relaxed, initial, outgoing only. Vanishing: LeadingStressWeights.nominal_activation_stress (LeadingStressWeights.lean:228) + activationStress_zero_of_nonpos (:997). (B.30): ActivationCone.natural_activation_direction (ActivationCone.lean:908), 'activatedStress … (T*u, η) = activation 1 κ u • D', 'ε ≤ (D((κ,T),(0,η))).1'.", "ATTRIBUTION_GAP: AssembledSlowBase.nominalTube (AssembledSlowBase.lean:1030), an InitialTube on radius 5/Λ; ActivationHolomorphic.InitialTube.regular (ActivationHolomorphic.lean:1028): 'Regular (Ioi (-R)) Ω' for ACT f, U, Ubar, Pi. Link to W: NominalProfile.Controls.seed_activation (NominalProfile.lean:620) + Witness.seed_agreement (:2557).", "ATTRIBUTION_GAP: MatchingConeBounds.exists_ordered_prepared_continuation (MatchingConeBounds.lean:852): '∃ rho … ∃ jcap … ∀ j … ∀ prep … ∃ Λ0 … ∀ Λ … ∃ T … ∃ C0 … ∀ C, C0 ≤ C → … ∃ E … ∀ J ε … ∃ tolerance … ∃ w'. Consumed by preparedWitness_exists (:976) in assembly_exists (NominalConeAssembly.lean:1482).", "All three voters reach DELTA/partial, and the source confirms it. B.10 (p.157) bundles continuation, exact matching, stress vanishing through X_0, an analytic admissible collar with the flat factor (B.30), the relaxed cone up to the matching point, and the order (B.40). The closest statement is exists_certificate, adopted from the PAIRING skeptic; exists_nominal_cone only quantifies the outer profile away. It gives the cone clauses. Witness lemmas give smoothness, E>0 and exact fields, pressure and moments past X_R·e^{-5}. The other clauses are separate public lemmas about the same witness, so all three findings are low attribution gaps. Definitions match (4.21), X_0=4/Λ, X_R=110(CP)^10. The witness is constructed, so nothing is vacuous."],
+          "confidence": 0.82,
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes/NominalConeAssembly.lean:1517 exists_nominal_cone gives only ∃ F W, Certificate W; smoothness, E>0, the matching and the moments come from NominalProfile.lean:2523, 2530, 2564, 2576, and the collar clauses from LeadingStressWeights.lean:228, 997, ActivationCone.lean:908, EntranceAlignedBase.lean:171.", "ATTRIBUTION_GAP: NavierStokes/MatchingConeBounds.lean:852 exists_ordered_prepared_continuation nests ρ, j, prep, ν, then Λ_0 ≤ Λ, T, C_0 ≤ C, the entrance profile, then the matching tolerance and the continuation witness — the (B.40) sequence. exists_nominal_cone (NominalConeAssembly.lean:1517) quantifies all of it away.", "ATTRIBUTION_GAP: NavierStokes/NominalProfile.lean:560 kappa_le_one : kappa ≤ 1; NominalProfile.lean:1777 (inside Controls.ofContinuation, :1766) sets it as w.parameters.kappa_lt_one.le, discarding the strict ActivationContinuation.RampParameters.kappa_lt_one (ActivationContinuation.lean:1482).", "Every clause B.10 prints is stated in Lean for an arbitrary NominalProfile.Witness, so all of them instantiate at the single W of exists_nominal_cone and conjoin by instantiation, unfolding and conjunction alone — no estimate, limit or compactness fact is needed. That makes the verdict OK and the relation different_formulation: Lean packages the corollary as one existential plus a library of lemmas about any witness. What remains is packaging (two attribution gaps) and one genuinely discarded strictness, κ ≤ 1 in Controls where the paper fixes κ_0 < 1/2, which costs B.10 nothing because its printed clauses hold for every κ."],
           "findings": [
+            {
+              "confidence": 0.9,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration bundles Corollary B.10. Its clauses are spread over exists_nominal_cone, the Certificate fields, seven Witness lemmas and the stress/analyticity lemmas, but they conjoin for the same W by logic alone."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "The (B.40) order of choices is a property of the construction. It is visible only in the quantifier nesting of exists_ordered_prepared_continuation; the bare existential exists_nominal_cone cannot express it."
+            },
             {
               "confidence": 0.8,
               "contested": false,
-              "kind": "COVERAGE",
+              "kind": "CONTENT",
               "ledger": "ATTRIBUTION_GAP",
               "severity": "low",
-              "summary": "No single declaration states B.10. Certificate has only cone clauses. Stress vanishing through X_0 and the (B.30) flat factor are separate lemmas about the same nominal witness, each a two-lemma composition."
-            },
-            {
-              "confidence": 0.75,
-              "contested": false,
-              "kind": "COVERAGE",
-              "ledger": "ATTRIBUTION_GAP",
-              "severity": "low",
-              "summary": "Analyticity in η on the inner collar is not in Certificate or Witness. It is stated separately as an InitialTube for the witness's axis profile, which is the Lean counterpart of Corollary B.6."
-            },
-            {
-              "confidence": 0.7,
-              "contested": false,
-              "kind": "COVERAGE",
-              "ledger": "ATTRIBUTION_GAP",
-              "severity": "low",
-              "summary": "The order of choices (B.40) is not expressed by the bare existentials exists_certificate and exists_nominal_cone. It is stated as the quantifier order of a separate public lemma used inside assembly_exists."
+              "summary": "Controls records only kappa_le_one : kappa ≤ 1, while the paper fixes 0 < κ_0 < 1/2. At κ = 1 the activation factor (1−κ)σ(y/T) is identically zero, so the Lean existential does not guarantee a nontrivial flat factor."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_DELTA",
+          "match_verdict": "SINGLE_SOURCE_OK",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "partial",
+          "relation": "different_formulation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states part of it.",
-          "verdict": "attribution_gap"
+          "summary": "Lean states it in a different formulation.",
+          "verdict": "faithful"
         }
       ]
     }

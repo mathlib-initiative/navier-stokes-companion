@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.51)",
+  "status": "formalized",
+  "location": {
+    "page": 142,
+    "rect": [0.319642, 0.571938, 0.549818, 0.027286]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.51",
+      "locator": {
+        "physical": [142],
+        "printed": [142],
+        "text": "Equation (A.51), p. 142, in the statement of Proposition A.10"
+      },
+      "region": "eq-A.51@p142",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.87,
+          "evidence": ["paper: |\\partial^{I}\\mathcal{T}_{0}| \\le C_{I}\\,e^{-4/\\delta^{2}}\\,\\delta^{-N_{I}}, \\qquad |\\mathcal{T}_{0}| \\ge c\\,e^{-4/\\delta^{2}}\\,\\delta^{-3}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both estimates are stated, as two declarations about the pair 𝒯_0 = profileStress. Upper bound: profileStress_jets bounds ‖iteratedFDeriv ℝ i (profileStress) (η,x)‖ — all mixed derivatives in (η,δ) of total order i — by A · edge 4 x / x^N on 0 < x ≤ b for any b > 0, with one A and one N serving every i ≤ n, which is at least as strong as the paper's per-I constants C_I, N_I. Lower bound: profileStress_lower_bound gives c · edge 4 x / x^3 ≤ ‖profileStress (η,x)‖ on a collar 0 < x < ε, uniformly for η ∈ Icc (-1) 1, i.e. the paper's |𝒯_0| ≥ c e^{-4/δ²}δ^{-3} for δ small. Two encoding points: edge 4 x = exp(-4/x²) for x > 0, and the norm on ℝ × ℝ is Mathlib's sup norm rather than the Euclidean one (the two differ by a factor in [1, √2], absorbed into A and c). On q-independence: neither statement mentions a physical scale — profileStress takes only (C, d, y0, y), TailData is OutgoingSchedule.Parameters (P, m, lam, wait) plus h, and the scale q enters elsewhere only through chartQ on an EdgeParam, which does not occur here.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

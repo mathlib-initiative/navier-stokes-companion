@@ -1,0 +1,26 @@
+{
+  "id": "lemma-7.4/support/NavierStokes.SignedCopyBounds.local_projectedPressure",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedCopyBounds.local_projectedPressure",
+      "line": 569,
+      "module": "NavierStokes.SignedCopyBounds",
+      "path": "NavierStokes/SignedCopyBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean#L569"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedCopyBounds.local_projectedPressure",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 569,
+        "text": "theorem local_projectedPressure {N Ndot u : ℕ → I → D → Space}\n    {A : ℕ → I → D → Space →L[ℝ] Space} {frequency : I → ℕ → ℝ}\n    (hN : LocalJets s (fun _ _ => 1) 0 K N)\n    (hNdot : LocalJets s (fun _ _ => 1) 0 K Ndot)\n    (hA : LocalJets s (fun _ _ => 1) 0 K A)\n    (ha : LocalJets s w α K u) (hw : ∀ n x, x ∈ s.domain → 0 ≤ w n x)\n    {b M : ℝ} (hb : 0 < b)\n    (hl : ∀ n i x, x ∈ s.domain → x ∈ K n i → b ≤ ‖N n i x‖)\n    (hu : ∀ n i x, x ∈ s.domain → x ∈ K n i → ‖N n i x‖ ≤ M)\n    (hK : UniformPrimaryWeights.UniformBandBound s (1 / 2) (fun i n => 1 / frequency i n)) :\n    LocalJets s w (α + 1 / 2) K (fun n i => ParticularWaveBounds.projectedPressure\n      (frequency i n) (N n i) (Ndot n i) (u n i) (fun x => A n i x (u n i x)) (fun _ => 0))"
+      }
+    }
+  }
+}

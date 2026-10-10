@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.28)",
+  "status": "formalized",
+  "location": {
+    "page": 152,
+    "rect": [0.327819, 0.389917, 0.54125, 0.023244]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.28",
+      "locator": {
+        "physical": [152],
+        "printed": [152],
+        "text": "Equation (B.28), p. 152, in the proof of Proposition B.5"
+      },
+      "region": "eq-B.28@p152",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: p_s - p_{s,r} = O(y e_a), \\qquad E_r/E = 1 + O(y e_a)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both clauses are stated, with the paper's O(·) written out as an explicit uniform constant. First clause: p_s = (X Q_s/L, X N_s/(L E)) by (4.11), and Lean's two stock coordinates are exactly profileStockOne = X · angularLag/L and profileStockTwo = X · axialLag/(L · E) (the docstring at ProfileHistories.lean:587 says 'The printed N_s is the regular primitive divided by X'); `log_stocks_uniform_jets` bounds the actual-minus-reference difference of both by M·y·activation T κ y = M y e_a, for every jet order n and with M independent of T (= t₁) and of κ (= κ₀) — matching the paper's 'holds for field values and parameter derivatives' and 'uniform as t₁ and κ₀ decrease'. Second clause: Lean states it in the paper's own direction, E_r/E - 1, as `inverse_relative_uniform_jets`; the rewriting is only that E = √(2X)·(angular field) on both sides (Lean's `velocity`), so the common √(2X) — and the paper's constant C in E = C^{-1}√(2X)φ — cancel from the ratio and E_r/E = referenceAngular/activatedAngular. No constant, exponent or sign differs; the Lean statement is if anything more explicit (all parameter jets, uniform constants down to κ = 0).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

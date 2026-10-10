@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.8/attributed/NavierStokes.RadialHeatProfile.scaled_radialProfile_derivative_neg",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.RadialHeatProfile.scaled_radialProfile_derivative_neg",
+      "line": 727,
+      "module": "NavierStokes.RadialHeatProfile",
+      "path": "NavierStokes/RadialHeatProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L727"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.RadialHeatProfile.scaled_radialProfile_derivative_neg",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0 < C, 1 < a, 0 < tau, 0 < r: deriv (fun r => C * radialProfile a tau r) r < 0. At C := c_infty > 0 this is the paper's K_r < 0 for K itself.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 727,
+        "text": "theorem scaled_radialProfile_derivative_neg {C a τ r : ℝ}\n    (hC : 0 < C) (ha : 1 < a) (hτ : 0 < τ) (hr : 0 < r) :\n    deriv (fun r => C * radialProfile a τ r) r < 0"
+      }
+    }
+  }
+}

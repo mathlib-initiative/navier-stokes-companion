@@ -1,17 +1,13 @@
 {
   "kind": "proposition",
   "label": "Proposition 9.3",
-  "status": "formalized",
+  "status": "partial",
   "location": {
     "page": 103,
     "rect": [0.134051, 0.557195, 0.733681, 0.325052]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration_verdict": {
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
       "item": "proposition-9.3",
       "locator": {
         "physical": [103, 104],
@@ -22,7 +18,7 @@
       "verdicts": [
         {
           "confidence": 0.72,
-          "evidence": ["CONFIRMED_CONTENT: ActualCyclePreservation.state_runInvariant (ActualCyclePreservation.lean:826) quantifies over `state B N0 j` = CycleState.iterate (fun _ => fixedParameters B N0) … (l.149) only. Mid-cycle supports are separate step lemmas, e.g. ActualCycleAssembly.cycle_refined_signed_inputSupport.", "ATTRIBUTION_GAP: MeanStateRegularity.PrimitiveData.theta (MeanStateRegularity.lean:377), .axial_reconstructed (:398), .source (:373), .pressure (:388) conclude GaugeMomentBalances.MovingField (GaugeMomentBalances.lean:461: ContDiffOn on slowDomain U.carrier = {p | p.2.1 ∈ U}, SupportedGauge a b in Icc (ℓ·a) (ℓ·b)). Inputs are the invariant fields `primitives` and `reconstructed` (CorrectionStep.lean:9408). Invariant.meanGood_eq_reduced_sub (ActualCycleResidualBounds.lean:196): meanGoodResidual = reducedMeanResidual − axisymmetricAlias on the strip.", "CONVENTION: Invariant.gaussian_field_native (ActualCycleResidualBounds.lean:833), Invariant.axis_native (:168) with alias_eq_lift (:192), baseError_native (:371) with actual_iterate_base_error (:892); sum lemma PhysicalResidualJetBounds.excluded_nativeBounds (PhysicalResidualJetBounds.lean:1027). Invariant.native_residual (:845) applies them only at gain h(1/2+σ).", "CONVENTION: Invariant.fullResidual_decomposition (ActualCycleResidualBounds.lean:310) needs z ∈ liftDomain strip.domain. PhysicalResidualBridge.context_fullResidual_physical (PhysicalResidualBridge.lean:770); Invariant.stateRealization (ActualCycleResidualBounds.lean:1089) derives StateRealization from PhysicalFields (:1015) and ActualBaseResidual.fixed_base_residual; ActualCandidateAssembly.physicalData (ActualCandidateAssembly.lean:1079) proves PhysicalData for all J.", "CONVENTION: Invariant.fullResidual_decomposition (ActualCycleResidualBounds.lean:310): hz : z ∈ liftDomain strip.domain. CycleAnalyticInvariant.meanHypotheses : MeanHypotheses G.strip.domain c x.state feeds LiftedMeanResidual.angularMean_fullResidual (LiftedMeanResidual.lean:1174). LocalSignedRequest.movingStrip_domain (LocalSignedRequest.lean:191): strip.domain = carrier ∩ {profile ∈ Ioo a b}.", "No single declaration states Prop 9.3; all three voters agree on OK/different_formulation and I confirm it from the sources. Its clauses are fields or consequences of the stage-j invariant CycleAnalyticInvariant, proved for every j by state_runInvariant: chart decomposition and label sum, band-independent finite harmonic set, support and smoothness of f, W_{1/2+σ_j} and M_{1+σ_j} bounds, all-power bounds on the three excluded errors, and the exact mean identity with (8.12) pressure. One real low difference stands: only the fixed iteration is covered. The zero-extension clause exists elsewhere (PrimitiveData.theta etc.), contrary to the auditor. Unverified here, as all voters note: refinedCarrier versus Ω_γ of (6.28) and the (8.3) formulas."],
+          "evidence": ["CONFIRMED_CONTENT: ActualCycleResidualBounds.Invariant.fullResidual_decomposition (ActualCycleResidualBounds.lean:310) has `hz : z ∈ HarmonicResidual.liftDomain ActualInitialization.geometry.strip.domain`; LiftedMeanResidual.angularMean_fullResidual (LiftedMeanResidual.lean:1174) has `hx : x ∈ U` with U = G.strip.domain supplied by the invariant's `meanHypotheses` field (CorrectionStep.lean:9444). LocalSignedRequest.movingStrip_domain (LocalSignedRequest.lean:191): strip.domain = carrier ∩ {profileMap .1 ∈ Ioo a b}, the open shell.", "CONFIRMED_CONTENT: baseError_native (ActualCycleResidualBounds.lean:371), Invariant.gaussian_field_native (:833), Invariant.axis_native (:168) with alias_eq_lift (:193); conjoined for each α by NativeBounds.to_phaseLoss and excluded_nativeBounds (PhysicalResidualJetBounds.lean:1017, :1027). NativeBounds (PhysicalResidualJetBounds.lean:375) bounds ‖D^j f‖ by A·Q n^(gain−loss m)·S n^p for N ≤ n only. The chart→physical conversion in this file, Invariant.residual_jetRate (:1158) via selected_residual_jetRate (:956), is applied to `residual u P` at the single gain h·(1/2+σ).", "CONVENTION: ActualCycleResidualBounds.lean:55, :142, :658 open with `variable {x : CycleState (Index B N0)} (H : Invariant σ x)`; CorrectionAnalyticStep.step_preserves (CorrectionAnalyticStep.lean:632) preserves the invariant across the fixed four-stage composite; the only witness is ActualCyclePreservation.state_invariant (:835) for `state B N0 j = CycleState.iterate (fun _ => fixedParameters B N0) …` (:149).", "ATTRIBUTION_GAP: ActualCyclePreservation.lean:835 and CorrectionStep.lean:9408 for the bundle; ActualCycleResidualBounds.lean:310, :59, :65, :662, :146, :248 and ActualCycleCoherence.lean:386 for (i); :371, :833, :168 with PhysicalResidualJetBounds.lean:1027 for (ii); LiftedMeanResidual.lean:1174 with CorrectionState.lean:98 and VariableGaugeMean.lean:80, :517 for (iii).", "Proposition 9.3's content is in the repository: the invariant bundle CycleAnalyticInvariant, discharged for every stage by state_invariant, carries the support, band, class, flatness, primitive and reconstruction clauses, and separate theorems give the decomposition, the harmonic form, the every-power chart bounds on the three error components and the mean equation. Both prior rulings are right about that, and A is right against B about where the C^∞ clause lives. What neither applied is the logic-alone test. Two steps need facts the repository does not state: the identities (9.4) and (9.6) hold only on the lifted open active shell, and carrying them to the edges and the exterior is a continuity argument; and (9.5) is a chart bound whose physical form needs a bridge for F alone plus an absorption estimate. Hence DELTA, lean_weaker, with every finding low because nothing I traced downstream uses the paper's global or physical form."],
           "findings": [
             {
               "confidence": 0.8,
@@ -30,52 +26,44 @@
               "kind": "CONTENT",
               "ledger": "CONFIRMED_CONTENT",
               "severity": "low",
-              "summary": "Lean proves the properties only for the stage states of the fixed cycle iteration, with concrete exponents 1/2+σ_j and 1+σ_j, not for an arbitrary finite sequence of the listed operations with abstract exponents α, μ."
+              "summary": "The identities (9.3)/(9.4) and the mean equation of (9.6) are stated only at points of the lifted OPEN active shell. No declaration asserts them on the shell edges or outside; recovery there needs a continuity argument the repository does not state."
             },
             {
-              "confidence": 0.7,
-              "contested": true,
+              "confidence": 0.75,
+              "contested": false,
               "kind": "CONTENT",
-              "ledger": "ATTRIBUTION_GAP",
+              "ledger": "CONFIRMED_CONTENT",
               "severity": "low",
-              "summary": "The zero-extension clause for mean coefficients is stated elsewhere: E_θ, E_z, g_r and the reconstructed p_m are MovingFields (smooth at all radii, vanishing outside the closed shell). The auditor missed these; only the flat alias part lacks it."
+              "summary": "(9.5) is a physical every-power bound on F. Lean states chart-native bounds on F's three components at arbitrary exponent, on the lifted strip, for bands n ≥ 4, with an extra factor S n^p = n^{2p}. No declaration converts these to a physical bound."
             },
             {
               "confidence": 0.8,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "(9.5) is not one physical-norm theorem. Lean gives chart-native bounds with arbitrary gain h·α for the base, Gaussian and alias errors separately, on the lifted open shell for bands n ≥ 4."
-            },
-            {
-              "confidence": 0.8,
-              "contested": true,
-              "kind": "CONTENT",
-              "ledger": "CONVENTION",
-              "severity": "low",
-              "summary": "Lean's R = G + F is a chart identity on the lifted strip. The physical form goes through a bridge whose realization hypotheses are discharged in the repository for every stage, not left external as the auditor said."
-            },
-            {
-              "confidence": 0.6,
               "contested": false,
               "kind": "CONTENT",
               "ledger": "CONVENTION",
               "severity": "low",
-              "summary": "The label-sum decomposition (9.4) and the mean identity (9.6) are Lean statements only on the lifted open active shell; the paper states them on the whole chart. Exterior and shell edges are handled by separate statements."
+              "summary": "The paper's hypothesis 'built by a finite sequence of the three map families' is re-encoded as 'satisfies CycleAnalyticInvariant'. The conclusions hold for any state satisfying it, but the only witnesses exhibited are the complete-cycle iterates of one fixed composite step."
+            },
+            {
+              "confidence": 0.85,
+              "contested": false,
+              "kind": "COVERAGE",
+              "ledger": "ATTRIBUTION_GAP",
+              "severity": "low",
+              "summary": "No single declaration states Proposition 9.3. Its clauses are the fields of CycleAnalyticInvariant plus roughly a dozen theorems spread over seven files; where their domains agree they conjoin by instantiation and And.intro."
             }
           ],
-          "match_verdict": "SINGLE_SOURCE_OK",
+          "match_verdict": "SINGLE_SOURCE_DELTA",
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit, judged after a skeptic dissented; not confirmed by a human"
           },
-          "relation": "different_formulation",
+          "relation": "lean_weaker",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean states it in a different formulation.",
-          "verdict": "faithful"
+          "summary": "Lean states a weaker result.",
+          "verdict": "deviation"
         }
       ]
     }

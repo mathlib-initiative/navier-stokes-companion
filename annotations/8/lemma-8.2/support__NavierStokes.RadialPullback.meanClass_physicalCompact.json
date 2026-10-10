@@ -1,0 +1,26 @@
+{
+  "id": "lemma-8.2/support/NavierStokes.RadialPullback.meanClass_physicalCompact",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.RadialPullback.meanClass_physicalCompact",
+      "line": 810,
+      "module": "NavierStokes.RadialPullback",
+      "path": "NavierStokes/RadialPullback.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialPullback.lean#L810"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.RadialPullback.meanClass_physicalCompact",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 810,
+        "text": "theorem meanClass_physicalCompact {a b d cL cR : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hS : ∀ n, 1 ≤ S n)\n    (α : ℝ) (M : ℕ → ℝ) (v : ℕ → E) (g : ℕ → ℝ × E → V)\n    (hg : ∀ n, ContDiff ℝ ∞ (g n)) (hs : ∀ n, RadialAlias.RadiallySupported a b (g n))\n    (hclass : WeightedClasses.MeanClass\n      (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α g) :\n    WeightedClasses.MeanClass (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α\n      (fun n => physicalCompact d a b (M n) (v n) (g n))"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "definition-9.4/support/NavierStokes.CycleMeanEquation.fieldSum_divergence_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CycleMeanEquation.fieldSum_divergence_zero",
+      "line": 159,
+      "module": "NavierStokes.CycleMeanEquation",
+      "path": "NavierStokes/CycleMeanEquation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CycleMeanEquation.lean#L159"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CycleMeanEquation.fieldSum_divergence_zero",
+        "kind": "theorem"
+      },
+      "declaration_verdict": null,
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 159,
+        "text": "theorem fieldSum_divergence_zero {ι : Type} {s : WeightedClasses.StripData D} {c : Context D}\n    (labels : ℕ → Finset ι) (b : ι → HarmonicBlock D)\n    (H : ∀ l, BlockData s.domain (b l)) (hz : ∀ l, ZeroMode (b l))\n    (hk : ∀ l n, (b l).angularFrequency n ≠ 0) (hs : ∀ l, ModeSolenoidal s c (b l))\n    (n : ℕ) {x : D × ℝ} (hx : x ∈ LiftedMeanResidual.cylinder s.domain) :\n    LiftedMeanResidual.realDivergence (LiftedMeanResidual.liftScalar c.operators.radius)\n      (LiftedMeanResidual.radialDirection c n) LiftedMeanResidual.angularDirection\n      (LiftedMeanResidual.axialDirection c n)\n      (LabelSumBounds.fieldSum labels (fun l => (b l).oscillation) n) x = 0"
+      }
+    }
+  }
+}

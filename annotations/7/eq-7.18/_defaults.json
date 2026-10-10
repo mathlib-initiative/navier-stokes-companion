@@ -1,0 +1,46 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.18)",
+  "status": "partial",
+  "location": {
+    "page": 79,
+    "rect": [0.300549, 0.159116, 0.568519, 0.041635]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.ViscousPropagator",
+      "path": "NavierStokes/ViscousPropagator.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-7.18",
+      "locator": {
+        "physical": [79],
+        "printed": [79],
+        "text": "Equation (7.18), p. 79, in the proof of Proposition 7.2"
+      },
+      "region": "eq-7.18@p079",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: V_m(v, w) \\;=\\; \\exp\\Bigl(-(m^2 - 1)\\int_w^v d(a)\\, da\\Bigr)\\, V_1(v, w) ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The paper's exact factorisation of the fundamental matrix is not in the repository: no declaration was found that introduces a solution operator or fundamental matrix V_m(v, w) at all, so the identity V_m = exp(-(m²-1)∫_w^v d) V_1 is not stated. The Lean reaches the conclusion the paper draws from (7.18) — that the propagator bound (7.19) holds for every harmonic m ≠ 0 with the constants of m = 1 — by an energy/Grönwall route on the solutions themselves instead: high_harmonic_damping is the scalar inequality d - δ ≤ j²D for j ≠ 0 (i.e. extra harmonics only add damping), and high_harmonic_propagator_estimate feeds it into the same growth estimate used for the single harmonic, with no factorisation of a matrix. This is a different formula and a different route, not a weaker conclusion for the use the paper makes of it; severity low because the surrounding uniform-in-m propagator bound is still obtained. I did not check whether (7.18) is used anywhere in the paper for anything beyond that uniformity.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.8/attributed/NavierStokes.NominalConeAssembly.Witness.log_pressure",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalConeAssembly.Witness.log_pressure",
+      "line": 473,
+      "module": "NavierStokes.NominalConeAssembly",
+      "path": "NavierStokes/NominalConeAssembly.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L473"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalConeAssembly.Witness.log_pressure",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For heatJoin < (chart radius p).1: `W.profiles.pressure (chart radius p) = HeatSwitchCone.logPi F radius W.heat.coefficients p`, the canonical reference pressure in log coordinates."
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 473,
+        "text": "theorem log_pressure {p : Point} (hp : W.controls.heatJoin < (chart W.controls.radius p).1)\n    (heta : p.2 ∈ HeatedOutgoing.parameterDomain) :\n    W.profiles.pressure (chart W.controls.radius p) =\n      HeatSwitchCone.logPi F W.controls.radius W.heat.coefficients p"
+      }
+    }
+  }
+}

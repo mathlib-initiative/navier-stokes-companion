@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 155.2",
+  "status": "formalized",
+  "location": {
+    "page": 155,
+    "rect": [0.367753, 0.458129, 0.264984, 0.025507]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p155-2",
+      "locator": {
+        "physical": [155],
+        "printed": [155],
+        "text": "Display 155.2, p. 155, in the statement of Lemma 4.4"
+      },
+      "region": "eq-p155-2@p155",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: X_R = X_i (C P_*)^{10}, \\qquad x = X / X_R ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. First clause identical: `resetRadius Xi C P = Xi * (C * P) ^ 10` is X_R = X_i(CP_*)^{10} term for term (same base X_i, same product C·P_*, same exponent 10); `matchingRadius` instantiates it at `Xi = 110`, the paper's X_i = 110 (p. 150, 'X_i = 110'). Second clause x = X/X_R is not a separate Lean definition: the Lean carries the normalized radius as a multiplicative change of variable, writing the physical radius as `matchingRadius F C * x` throughout NominalProfile.lean (e.g. lines 340, 344, 373, 433), and carries its logarithm as `resetClock C P y = y - 10*log(C*P)`. The rewriting: with y = log(X/X_i), resetClock C P y = log(X/X_i) - log((CP)^{10}) = log(X/(X_i(CP)^{10})) = log(X/X_R) = log x, which is exactly what `matching_clock` proves for X = X_R·x (it returns `Real.log x`). Exponentiating recovers x = X/X_R; positivity of C, P_* and X_i makes the step reversible. `ShapeTransition.resetRadius_mul_separation` (line 351) and `separation T C P = exp T/(C*P)^{10}` (line 326) use the same X_R to encode the companion display x_sep = e^{T_sh}/(CP_*)^{10} (B.38), which corroborates the reading of P as the paper's P_*.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

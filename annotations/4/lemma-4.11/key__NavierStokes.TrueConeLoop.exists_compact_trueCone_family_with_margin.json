@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.11/key/NavierStokes.TrueConeLoop.exists_compact_trueCone_family_with_margin",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TrueConeLoop.exists_compact_trueCone_family_with_margin",
+      "line": 765,
+      "module": "NavierStokes.TrueConeLoop",
+      "path": "NavierStokes/TrueConeLoop.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L765"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TrueConeLoop.exists_compact_trueCone_family_with_margin",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Same conclusion as the Paper version, with the input data assumed ContDiff ℝ ∞ globally on E instead of ContDiffOn on an open neighbourhood of K, and with the nominal-agreement clause stated for all x ∈ N (not only x ∈ K ∩ N).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "role": "key",
+      "snippet": {
+        "line": 765,
+        "text": "theorem exists_compact_trueCone_family_with_margin [FiniteDimensional ℝ E]\n    (a m p₁ p₂ : E → ℝ) {K B : Set E}\n    (hK : IsCompact K) (hB : IsCompact B) (hBK : B ⊆ K)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₁ : ContDiff ℝ ∞ p₁) (hp₂ : ContDiff ℝ ∞ p₂)\n    (haK : ∀ x ∈ K, 0 < a x)\n    (hPK : ∀ x ∈ K, 2 < p₁ x + p₂ x * m x)\n    (hrelaxed : ∀ x ∈ K, nominalSpeed (a x) (m x) <\n      coneBound (p₁ x + p₂ x * m x) (p₂ x - p₁ x * m x))\n    (htrueB : ∀ x ∈ B, 2 < nominalSpeed (a x) (m x)) :\n    ∃ ε : ℝ, ∃ U N : Set E, ∃ A C : E × ℝ → ℝ,\n      0 < ε ∧ IsOpen U ∧ K ⊆ U ∧ IsOpen N ∧ B ⊆ N ∧ N ⊆ U ∧\n      ContDiffOn ℝ ∞ A (U ×ˢ (univ : Set ℝ)) ∧\n      ContDiffOn ℝ ∞ C (U ×ˢ (univ : Set ℝ)) ∧\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

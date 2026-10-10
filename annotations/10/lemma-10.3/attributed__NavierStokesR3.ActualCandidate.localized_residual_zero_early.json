@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.3/attributed/NavierStokesR3.ActualCandidate.localized_residual_zero_early",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.ActualCandidate.localized_residual_zero_early",
+      "line": 40,
+      "module": "NavierStokes.R3.ActualCandidate",
+      "path": "NavierStokes/R3/ActualCandidate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ActualCandidate.lean#L40"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.ActualCandidate.localized_residual_zero_early",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `|t| < 3/8 → ∀ x, navierStokesResidual (R3CompactCandidate.velocity A B) (R3CompactCandidate.pressure P) t x = 0`. Covers `t = 0`, giving the endpoint of the paper's range `0 ≤ t < 1` that `navier_stokes` (on `Ioo 0 1`) omits.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "attributed",
+      "snippet": {
+        "line": 40,
+        "text": "theorem localized_residual_zero_early (A B : VelocityField) (P : PressureField)\n    {t : ℝ} (ht : |t| < 3 / 8) (x : Space) :\n    navierStokesResidual (R3CompactCandidate.velocity A B)\n      (R3CompactCandidate.pressure P) t x = 0"
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.18)",
+  "status": "partial",
+  "location": {
+    "page": 52,
+    "rect": [0.195507, 0.819749, 0.67267, 0.023032]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-5.18",
+      "locator": {
+        "physical": [52],
+        "printed": [52],
+        "text": "Equation (5.18), p. 52, in the proof of Lemma 5.2"
+      },
+      "region": "eq-5.18@p052",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.65,
+          "evidence": ["paper: E_n = U_n = F_n = V_n = 0 \\quad \\text{on the reserved mean patch } \\mathcal{I}_{\\mathrm{mean}},\\ \\text{for every } n \\ge 1"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Two of the four clauses are stated on a region containing the mean patch, two only further out. `positive_fields_zero` gives φ_n = 0 and U_n = 0 for every X ≥ ReservedPatches.right .positive and |η| ≤ 1, and `positive_before_mean` puts the mean patch strictly to the right of that, so E_n = √(2X)φ_n/C = 0 and U_n = 0 there; this is stronger than the paper's statement, which only asks for the patch. For F_n and V_n no declaration was found that asserts vanishing on the mean patch: what is stated is F_n = 0 for X ≥ s.B²/2 (`extended_axial_primitive_zero`, `aligned_mass_primitive_zero` with s.B = nominalOuterRadius W) and V_n/X = 0 for R ≥ s.B (`profiles_beta_exterior`), and that radius is strictly beyond every reserved patch: nominalOuterX W = max(radius, pulseEndRadius, right .positive) + 1 (AssembledSlowBase.lean:846), while all four patches sit at radius·exp(pulseStart + offset) with offsets in [-25,-3] (ReservedPatches.lean:29-39), hence inside pulseEndRadius = radius·exp(pulseStart + pulseLength). The paper's mean-patch versions do follow in a few lines from stated declarations, by the paper's own argument: `fluxHistory_exterior_on` instantiated at B = √(2·right .positive) — its hypotheses are U_n = 0 past that radius (`profiles_outer_axial` / `positive_fields_zero`) and the vanishing first moment ∫_{R>0} R·U_n dR = 0 (row 0 of `profiles_moments`) — gives V_n = 0 there, and its proof obtains the mass history F_n = 0 as the intermediate step `hmass` (PositiveOrderMoments.lean:747-750). No declaration found performs that instantiation at the patch radius, so the display as written was not checked; the content is.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

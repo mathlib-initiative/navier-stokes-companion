@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.18)",
+  "status": "formalized",
+  "location": {
+    "page": 113,
+    "rect": [0.144257, 0.376522, 0.723921, 0.026177]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.18",
+      "locator": {
+        "physical": [113],
+        "printed": [113],
+        "text": "Equation (9.18), p. 113, in the statement of Lemma 9.8"
+      },
+      "region": "eq-9.18@p113",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: |\\mathscr{R}(u^{[j]},p^{[j]})|_m \\le C_{j,m}\\, q^{h\\sigma_j-K_m}\\,(1+|\\log q|)^{P_{j,m}} + E_{j,m},\\qquad E_{j,m} \\le C_{j,m,N}\\, q^{N}\\ \\text{for every } N"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. The Lean bound drops two things the display allows: the logarithmic factor (1+|log q|)^{P_{j,m}} and the additive flat error E_{j,m}. It asserts ‖D^k R(u^{[J]},p^{[J]})‖ ≤ C q^{hσ_J-K_m} outright, for every k ≤ m, on the whole domain. That implies the printed display: take P_{j,m} = 0, so (1+|log q|)^{P} = 1, and E_{j,m} = 0, which satisfies E_{j,m} ≤ C_{j,m,N} q^N for every N with C = 0. Nothing in (9.18) is lost — the implication runs from the Lean statement to the paper's. The source docstrings say the same ('all flat remainders are absorbed, so its additional flat-error term can be chosen to be zero'; 'The excluded flat errors have already been estimated at the same power and included in this bound'), and that absorption is a claim about the proofs, which I did not trace. The residual operator matches the paper's R(u,p) = ∂_t u + (u·∇)u − Δu + ∇p (p. 115) term by term at viscosity one, and σ_J = 1/5 + J/10 is exactly the paper's σ_j of (9.8); K_m = paperJetLoss B N0 m carries no stage index, as 'with K_m independent of j' requires. Norm and domain encodings are as for (9.17).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}
