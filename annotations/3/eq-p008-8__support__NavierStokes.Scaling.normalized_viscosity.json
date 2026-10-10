@@ -1,0 +1,64 @@
+{
+  "id": "eq-p008-8/support/NavierStokes.Scaling.normalized_viscosity",
+  "kind": "equation",
+  "label": "Display 8.8",
+  "status": {
+    "pin": {
+      "type": "repository",
+      "commit": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "url": "https://github.com/openai/NavierStokesAndEuler"
+    },
+    "value": "not_formalized"
+  },
+  "location": {
+    "page": 8,
+    "rect": [0.345835, 0.748288, 0.310507, 0.04702]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.Scaling.normalized_viscosity",
+      "line": 50,
+      "module": "NavierStokes.Scaling",
+      "path": "NavierStokes/Scaling.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/Scaling.lean#L50"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.Scaling.normalized_viscosity",
+        "kind": "theorem"
+      },
+      "item": "eq-p008-8",
+      "locator": {
+        "physical": [8],
+        "printed": [8],
+        "text": "Display 8.8, p. 8, in section 3.1"
+      },
+      "region": "eq-p008-8@p008",
+      "relation": "uses",
+      "role": "support",
+      "snippet": {
+        "line": 50,
+        "text": "Q ^ (-(1/2 + h) - 1) / Q ^ (-2*(1/2 + h) - 1/2) = Q ^ h — the diffusive-to-inertial ratio, whose numerator exponent -A - 1 carries the same factor q^(-1) = 1/ℓ_r², but a different identity"
+      },
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\frac{|u_r^{(0)}|}{\\ell_r} = O(q^{-1}), \\qquad \\frac{q^{-A}}{\\ell_z} = \\frac{1}{\\ell_r^{2}} = q^{-1}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "absent",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "No Lean counterpart was found. No declaration stating either rate identity was found. Scaling.lean, the file that formalizes exactly this family of scale counts, defines radialLength q = q^(1/2) and axialLength q h = q^(1/2 - h) and coreVelocity q h = q^(-(1/2+h)), but states only the two Reynolds products; it contains nothing of the form q^(-A)/ℓ_z = q^(-1) or 1/ℓ_r² = q^(-1), and axialLength is used nowhere else in NavierStokes/ outside core_axial_reynolds. Both equalities are one-line rpow arithmetic from those three definitions (-(1/2+h) - (1/2-h) = -1 and -2·(1/2) = -1), so this is unstated rather than contradicted. For the first rate there is less: no declaration giving a scale for |u_r^(0)| was found, so |u_r^(0)|/ℓ_r = O(q^(-1)) has no counterpart at all. The nearest stated fact is normalized_viscosity, a different ratio.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

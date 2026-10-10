@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 37.3",
+  "status": "formalized",
+  "location": {
+    "page": 37,
+    "rect": [0.21993, 0.419002, 0.561041, 0.027369]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p037-3",
+      "locator": {
+        "physical": [37],
+        "printed": [37],
+        "text": "Display 37.3, p. 37, in the proof of Proposition 4.10"
+      },
+      "region": "eq-p037-3@p037",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.93,
+          "evidence": ["paper: H_* = D\\eta + dU_*, \\qquad Z_* = -A(1-2\\eta U_*)U_* - H_* U_*' - d\\Pi_0' + 4A\\eta\\Pi_0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Term for term the same, with D h = 1/2 - h, A h = 1/2 + h, d η = 1 - η^2, U j η = 4η + j (the paper's U_* = 4η + j_0), P = Π_0 and deriv P = Π_0'. One rewriting: the paper writes the term -H_* U_*', the Lean writes -H h j η * 4, i.e. it has already substituted U_*' = 4; that substitution is itself proved in Lean (NaturalAxisCoefficients.lean:426, deriv (fun y => 4*y+j) = 4). Separately, the paper permits 0 < j_0 ≤ .05 while NaturalAxisData.SmallParameters requires 0 < j ≤ 1/1000; that narrows the admissible choice of the parameter and does not change this formula.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

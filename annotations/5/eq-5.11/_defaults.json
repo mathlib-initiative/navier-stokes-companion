@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.11)",
+  "status": "formalized",
+  "location": {
+    "page": 49,
+    "rect": [0.327281, 0.761533, 0.541792, 0.088649]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.11",
+      "locator": {
+        "physical": [49],
+        "printed": [49],
+        "text": "Equation (5.11), p. 49, in section 5.2"
+      },
+      "region": "eq-5.11@p049",
+      "verdicts": [
+        {
+          "confidence": 0.87,
+          "evidence": ["paper: m_{n,4} = \\int_0^\\infty R^2 \\sum_{i+j=n} U_i E_j \\, dR, \\qquad m_{n,5} = \\int_0^\\infty \\left( R \\sum_{i+j=n} U_i U_j - \\tfrac{1}{2} R^2 \\partial_R \\Pi_n \\right) dR."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. m_{n,4} matches `rowDensity` row 3 symbol for symbol: R^2 * cauchy n u e R with cauchy = convolution n (fun i j => u i R * e j R) = Σ_{i+j=n} U_i E_j, and ∫_0^∞ … dR is `positiveIntegral` = ∫ R in Ioi 0. m_{n,5} matches row 4 (R * cauchy n u u R - R^2/2 * pressureGradient) except that the Lean does not carry ∂_R Π_n as an opaque quantity: it substitutes the pressure equation (5.5) and writes pressureGradient n e omega R = (Σ_{i+j=n} E_i E_j - Ω_{n-1})/R. The rewriting: (5.1) gives φ_n = C E_n/√(2X), so C^{-2} Σ φ_i φ_j = Σ E_i E_j/(2X); with X = R^2/2 and ∂_R = R ∂_X, (5.5) gives ∂_R Π_n = R·(Σ E_i E_j - Ω_{n-1})/(2X) = (Σ E_i E_j - Ω_{n-1})/R, which is `pressureGradient` verbatim. So the Lean row 4 equals the paper's integrand once (5.5) is used, and `pressureGradient_eq_X_equation` records that identification inside the file. Note a fact about the material, not a defect: the docstring at line 76 calls these \"the five densities in (23)\", a numbering that does not match this manuscript.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

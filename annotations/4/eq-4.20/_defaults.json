@@ -1,0 +1,48 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.20)",
+  "status": "formalized",
+  "location": {
+    "page": 30,
+    "rect": [0.191508, 0.842847, 0.677565, 0.03989]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.SeedConePaper",
+      "path": "NavierStokes/SeedConePaper.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-4.20",
+      "locator": {
+        "physical": [30],
+        "printed": [30],
+        "text": "Equation (4.20), p. 30, in section 4.3"
+      },
+      "region": "eq-4.20@p030",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.93,
+          "evidence": ["paper: t_s = -\\frac{b_s}{a}, \\qquad v_s = a\\,(1 + t_s^2), \\qquad P_{\\mathrm c} = p_{s,1} + t_s\\,p_{s,2}, \\qquad J_{\\mathrm c} = p_{s,2} - t_s\\,p_{s,1}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The rewriting is the substitution t_s := -b/a. The Lean names no object for t_s; it writes `-b / a` out at each occurrence, with its argument `b` standing for the paper's b_s (the paper's radial shear is (a, -b_s), so t_s = -b_s/a). Under that substitution the three remaining formulas match term for term: shearMagnitude a b = a*(1 + t_s^2) is v_s, parallelStress a b p₁ p₂ = p₁ + t_s*p₂ is P_c, transverseStress a b p₁ p₂ = p₂ - t_s*p₁ is J_c, with (p₁,p₂) the paper's p_s = (p_{s,1}, p_{s,2}). The paper's standing hypothesis a > 0 is not attached to these three definitions in Lean; it is carried as the first conjunct of `RelaxedCone` (SeedConePaper.lean:27) and as the hypothesis `ha : 0 < a` of the theorems that use them, so nothing is claimed at a = 0.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

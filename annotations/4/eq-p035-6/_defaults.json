@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 35.6",
+  "status": "formalized",
+  "location": {
+    "page": 35,
+    "rect": [0.287196, 0.618904, 0.426103, 0.02656]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p035-6",
+      "locator": {
+        "physical": [35],
+        "printed": [35],
+        "text": "Display 35.6, p. 35, in the statement of Lemma 4.8"
+      },
+      "region": "eq-p035-6@p035",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: E_{\\mathrm{o}} = c_{\\mathrm{patch}} f(\\eta) X^{-1/2-\\lambda} \\quad \\text{on } \\mathcal{I}_1, \\mathcal{I}_3, \\mathcal{I}_4, \\qquad c_{\\mathrm{patch}} > 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same exponent and same three intervals: Lean's `s ≠ .heat` is exactly I_1, I_3, I_4 (the heat slot is the paper's I_2, 'the heat compensation uses only I_2'), and −(1/2 + F.data.core.lam) is the paper's −1/2 − λ. The rewriting is one line: by `xAmplitude_shape`, xAmplitude F XR η = (xAmplitude F XR 0)·(1+η²)⁻¹, so setting c_patch := xAmplitude F XR 0 (> 0 by `xAmplitude_pos`) turns the Lean right-hand side into c_patch f(η) X^{−1/2−λ}. Two facts worth recording, neither a difference with the paper: Lean's c_patch does depend on X_R (xAmplitude contains exp((1/2+λ)(log X_R + holdStart))), which is consistent with the paper, that claims independence of X and η only; and the Lean statement is for every real η, not only |η| ≤ 1. `heated_fields` is stated for the heat-compensated field HeatedOutgoing.E; for the extended profile that Lemma 4.8 actually produces it transfers by `E_eq_physical` on η ∈ [−1,1].",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

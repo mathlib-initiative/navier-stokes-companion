@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 45.1",
+  "status": "formalized",
+  "location": {
+    "page": 45,
+    "rect": [0.334407, 0.141083, 0.331408, 0.063307]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p045-1",
+      "locator": {
+        "physical": [45],
+        "printed": [45],
+        "text": "Display 45.1, p. 45, in section 5"
+      },
+      "region": "eq-p045-1@p045",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.6,
+          "evidence": ["paper: (M, J, S)_f(\\infty) = (M, J, S)_0(\\infty) = (0,0,0), \\qquad \\int_0^\\infty (H_f - H_0)\\, dX = I_f(Y_1) - I_0(Y_1) = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every clause is stated, but as the paper's own two-step chain rather than as one display, and with the paper's X = ∞ encoded as an exterior radius. (a) The first equality (M,J,S)_f = (M,J,S)_0 is ModulatedProfileAssembly.Witness.exterior_{mass,transport,energy} for all X beyond the repair patch; the paper evaluates the same equality at X = ∞. (b) The second equality (M,J,S)_0(∞) = (0,0,0) is the mass_zero, transport_zero, energy_zero fields of the FiveMomentCertificate supplied by NominalProfile.Witness.five_moments, as integrals over Ioi 0; the integrands match term by term (M = ∫U, J = ∫U√(2x)E = ∫UH, S = ∫(U²−E²/2)). (c) For the modified (rather than modulated) layer, AssembledSlowBase.modified_mass_zero states M_f = 0 directly at the outer radius; since U_f vanishes beyond that radius, M_f is constant there and equals M_f(∞). (d) The angular half ∫_0^∞(H_f−H_0)dX = I_f(Y_1)−I_0(Y_1) = 0 appears as exterior_angular, I_f(X) = I_0(X) for X beyond the patch: I is the primitive of H, and H_f = H_0 outside the patch, so the two statements are interchangeable by the fundamental theorem of calculus. Lean states the single-profile angular moment only in the renormalized form ∫(√(2x)E − powerH) = 0 (the unrenormalized ∫H diverges), which is why the paper too writes this clause as a difference of two profiles.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

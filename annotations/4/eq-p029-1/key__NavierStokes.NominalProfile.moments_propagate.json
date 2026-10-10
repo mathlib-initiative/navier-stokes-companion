@@ -1,0 +1,25 @@
+{
+  "id": "eq-p029-1/key/NavierStokes.NominalProfile.moments_propagate",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.moments_propagate",
+      "line": 486,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L486"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.moments_propagate"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 486,
+        "text": "theorem moments_propagate {U E V G : Field} {a r eta : ℝ} (har : a ≤ r) (hU hV : integrability on Ioc 0 r) (head : moments U E a eta = moments V G a eta) (tail : ∀ x, a < x → U (x, eta) = V (x, eta) ∧ E (x, eta) = G (x, eta)) : moments U E r eta = moments V G r eta"
+      }
+    }
+  }
+}

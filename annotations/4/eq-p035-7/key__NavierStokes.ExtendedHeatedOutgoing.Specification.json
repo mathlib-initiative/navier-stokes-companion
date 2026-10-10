@@ -1,0 +1,26 @@
+{
+  "id": "eq-p035-7/key/NavierStokes.ExtendedHeatedOutgoing.Specification",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ExtendedHeatedOutgoing.Specification",
+      "line": 846,
+      "module": "NavierStokes.ExtendedHeatedOutgoing",
+      "path": "NavierStokes/ExtendedHeatedOutgoing.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ExtendedHeatedOutgoing.lean#L846"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ExtendedHeatedOutgoing.Specification",
+        "kind": "structure"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 846,
+        "text": "after_pulse : ∀ eta X, 0 < X → OutgoingDilation.pulseEndRadius F XR ≤ X → U F XR (X,eta) = 0 ∧ M F XR eta X = 0 ∧ J F XR c eta X = 0;  mass_zero : ∫ X in Ioi 0, U = 0;  angular_zero : ∫ X in Ioi 0, H * U = 0;  energy_zero : ∀ eta ∈ energyDomain F, totalS F XR c eta = 0;  renormalized_zero : ∀ eta ∈ energyDomain F, ∫ X in Ioi 0, H F XR c (X,eta) - OutgoingDilation.powerH F XR X = 0 (with the matching …_integrable fields)"
+      }
+    }
+  }
+}

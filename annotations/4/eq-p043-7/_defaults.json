@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 43.7",
+  "status": "formalized",
+  "location": {
+    "page": 43,
+    "rect": [0.208637, 0.81161, 0.58294, 0.043929]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p043-7",
+      "locator": {
+        "physical": [43],
+        "printed": [43],
+        "text": "Display 43.7, p. 43, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p043-7@p043",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.87,
+          "evidence": ["paper: \\Pi(X,\\eta) = \\Pi_0(\\eta) + C_p(X,\\eta) = C_p(X,\\eta) - C_p(\\infty,\\eta) = -\\int_X^\\infty \\frac{E(x,\\eta)^2}{2x}\\,dx."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The chain is stated in Lean in exactly the same three steps, with two routine rewritings. (i) The integrand: Lean writes the endpoint as -(1/2) ∫_{(X,∞)} E(x,η)²/x dx where the paper writes -∫_X^∞ E(x,η)²/(2x) dx; these agree pointwise and `halfKernel_eq` (NominalProfile.lean:1679) is the Lean lemma that moves the 1/2 across the integral sign. (ii) The middle equality Π_0(η) + C_p(X,η) = C_p(X,η) - C_p(∞,η) is `canonical_past_identity` with k = halfKernel E η: it says -(∫_{(0,∞)} k) + ∫_{(0,X]} k = -(∫_{(X,∞)} k), i.e. the paper's identity after substituting C_p(∞,η) = -Π_0(η), which `outgoing_axis_halfKernel` supplies. (iii) Lean's integral over Ioc 0 X versus the paper's cumulative increment C_p(X,η) = primitive (f²) differ only by the endpoint of a null set. The Lean versions carry integrability (`IntegrableOn k (Ioi 0)`) and parameter hypotheses (hη, SmallDebt, separation) that the paper leaves implicit in its standing assumptions.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

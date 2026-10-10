@@ -1,0 +1,57 @@
+{
+  "id": "eq-p032-1/key/NavierStokes.ConeAlgebra.finite_amplitude_cone",
+  "kind": "equation",
+  "label": "Display 32.1",
+  "status": "partial",
+  "location": {
+    "page": 32,
+    "rect": [0.293946, 0.126721, 0.414064, 0.046368]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ConeAlgebra.finite_amplitude_cone",
+      "line": 124,
+      "module": "NavierStokes.ConeAlgebra",
+      "path": "NavierStokes/ConeAlgebra.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConeAlgebra.lean#L124"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ConeAlgebra.finite_amplitude_cone",
+        "kind": "theorem"
+      },
+      "item": "eq-p032-1",
+      "locator": {
+        "physical": [32],
+        "printed": [32],
+        "text": "Display 32.1, p. 32, in the proof of Lemma 4.5"
+      },
+      "region": "eq-p032-1@p032",
+      "relation": "contains",
+      "role": "key",
+      "snippet": {
+        "line": 124,
+        "text": "have hid : 2 * (p * c - v) ^ 2 - (v - 2) * (p * j) ^ 2 = p * (p * (2 * c ^ 2 - (v - 2) * j ^ 2) - 4 * c * v) + 2 * v ^ 2 := by ring  (positivity then from hprod at line 122)"
+      },
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\frac{2(P_{\\mathrm c} - v)^2 - (v-2) J_{\\mathrm c}^2}{p_{s,1}^2} = G - \\frac{4cv}{p_{s,1}} + \\frac{2v^2}{p_{s,1}^2} \\ge \\frac{\\gamma_K}{2} > 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The identity half matches exactly; the quantitative lower bound does not appear. Lean's `hid` (ConeAlgebra.lean:124), multiplied out with P_c = p·c, J_c = p·j and p = p_{s,1}, is the paper's identity cleared of denominators: 2(P_c−v)² − (v−2)J_c² = p²G − 4cvp + 2v², i.e. the paper's left side equals G − 4cv/p + 2v²/p² after dividing by p² (same constants, signs and exponents; Lean keeps the p² factor rather than dividing). What Lean then establishes is only strict positivity: from the hypothesis hscale : 4cv < p·(2c² − (v−2)j²) it gets 0 < p·(p·G − 4cv) (line 122) and adds 2v² ≥ 0. It does not produce the uniform bound ≥ γ_K/2, because its threshold branch is 4cv/d < p rather than the paper's 8B_K/γ_K ≤ p (the factor 2 of eq-p031-9). The surrounding result is still proved — only positivity of this expression is needed for v < coneBound via `true_cone_iff` — so the paper's formula as written, with its γ_K/2 margin, is not what was checked; a weaker bound that suffices was.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

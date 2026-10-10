@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 8.7",
+  "status": "partial",
+  "location": {
+    "page": 8,
+    "rect": [0.284074, 0.683745, 0.431856, 0.027417]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p008-7",
+      "locator": {
+        "physical": [8],
+        "printed": [8],
+        "text": "Display 8.7, p. 8, in section 3.1"
+      },
+      "region": "eq-p008-7@p008",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathrm{Re}_\\theta = q^{-A}\\ell_r = q^{-h} \\longrightarrow \\infty, \\qquad \\mathrm{Re}_r = |u_r^{(0)}|\\,\\ell_r = O(1)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The first identity is stated exactly: core_radial_reynolds is q^(-A) · ℓ_r = q^(-h) with A = 1/2 + h and ℓ_r = q^(1/2) built into coreVelocity and radialLength. Two things of the display are missing. (i) The arrow is not part of that theorem, which is a bare equality; it follows in one step from negative_power_tendsto_atTop with A := h > 0, so this part is packaging. (ii) The second assertion, Re_r = |u_r^(0)| ℓ_r = O(1), was not found: the identifier `reynolds` occurs in the whole declaration index only inside Scaling.lean, whose only core Reynolds theorems are core_radial_reynolds and core_axial_reynolds (coreVelocity × axialLength = q^(-2h)), and the latter is a different quantity — the core velocity scale against the axial length, not the radial velocity against the radial length. No declaration giving a scale for |u_r^(0)| was found.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 44.3",
+  "status": "formalized",
+  "location": {
+    "page": 44,
+    "rect": [0.257832, 0.328236, 0.484557, 0.044461]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p044-3",
+      "locator": {
+        "physical": [44],
+        "printed": [44],
+        "text": "Display 44.3, p. 44, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p044-3@p044",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: n(X_a,\\eta) = \\frac{(1,t_s)}{\\sqrt{1+t_s^2}}, \\qquad n(X_b,\\eta) = (1,0), \\qquad t_s(X_b,\\eta) = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The inner-edge value is Lean's `unitOfTilt`, whose body ((√(1+t²))⁻¹, t/√(1+t²)) is the paper's (1,t_s)/√(1+t_s²) verbatim; the identification of the tilt with t_s takes two stated steps rather than one — `exists_natural_activation_factor_aligned` gives tilt(G.coefficient(η,0)) = referenceP2/referenceP1 and `actual_shear_coordinates_zero` identifies that quotient with actualP2/actualP1 = `shearSlope` = t_s at the edge. The outer-edge value is reached through the tilt as well: `profileStressFactor_zero` gives coefficient (b_θ, 0) at y = 0, hence tilt 0 and direction unitOfTilt 0 = (1,0). For the third clause the Lean is stronger than the display: `nominal_terminal_shears` gives shearB = 0 at the terminal edge and `modulated_terminal_speed_slope` gives slope = 0 on the whole right collar, where the paper asserts t_s = 0 only at X_b; correspondingly `terminal_strict_direction` (ActiveAnnulusWeight.lean:1201) carries the constant slope function `fun _ => 0`. Lean works in the logarithmic charts (leftChart, rightChart) with the edge variable x = 0 standing for X = X_a and X = X_b.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

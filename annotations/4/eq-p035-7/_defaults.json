@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 35.7",
+  "status": "formalized",
+  "location": {
+    "page": 35,
+    "rect": [0.260358, 0.675487, 0.480313, 0.069204]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p035-7",
+      "locator": {
+        "physical": [35],
+        "printed": [35],
+        "text": "Display 35.7, p. 35, in the statement of Lemma 4.8"
+      },
+      "region": "eq-p035-7@p035",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: U_{\\mathrm{o}} = M_{\\mathrm{o}} = J_{\\mathrm{o}} = 0 \\quad (X \\ge X_{\\mathrm{v}}), \\\\ M_{\\mathrm{o}}(\\infty) = J_{\\mathrm{o}}(\\infty) = S_{\\mathrm{o}}(\\infty) = 0, \\qquad \\int_0^{\\infty} (H_{\\mathrm{o}} - H_{\\mathrm{pow}})\\, dX = 0,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Clause by clause the statements agree; the rewriting is only between a limit at infinity and an improper integral. (a) U_o = M_o = J_o = 0 for X ≥ X_v is `after_pulse` verbatim, with X_v = OutgoingDilation.pulseEndRadius F XR = X_R·exp(endpoint); Lean states it for every real η, the paper for |η| ≤ 1. (b) M_o(∞) = J_o(∞) = 0 are `mass_zero` and `angular_zero`, written as ∫ over Ioi 0 rather than lim_{X→∞} ∫_{Ioc 0 X}; the two agree because the corresponding …_integrable fields are part of the same structure (and in fact M_o, J_o are already identically 0 beyond X_v by (a)). (c) S_o(∞) = 0 is `energy_zero`, totalS = ∫_{Ioi 0}(U² − E²/2), matching S of (4.15) in the same limit sense. (d) ∫_0^∞ (H_o − H_pow) dX = 0 is `renormalized_zero`, with H = √(2X)E and powerH = √(2X)·powerConstant·(X/X_R)^{−(1/2+h)}, i.e. c_∞ X^{−A} for A = 1/2 + h (the paper's A, text p. 7). The η-range of `energy_zero` and `renormalized_zero` is `energyDomain F`, which contains [−1,1] by the structure's own `neighborhood_contains` field (HeatedOutgoing.parameterDomain = Icc (−1) 1), so the paper's range is covered.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 34.6",
+  "status": "formalized",
+  "location": {
+    "page": 34,
+    "rect": [0.268364, 0.8738, 0.463496, 0.028719]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p034-6",
+      "locator": {
+        "physical": [34],
+        "printed": [34],
+        "text": "Display 34.6, p. 34, in the proof of Lemma 4.7"
+      },
+      "region": "eq-p034-6@p034",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\|B^{-1}(d - \\mathcal{Q}(c,c))\\|_{C^j} \\le r_j/2 + \\nu_j q_j r_j^2 \\le r_j, \\qquad 2\\nu_j q_j r_j \\le \\tfrac{1}{2}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both inequalities are present, each inside the proof of one abstract Banach-space lemma, after a routine renaming and one substitution. Renaming: β ↔ ν_j (operator norm of B^{-1} = B.symm on the norm in play), K ↔ q_j (quadratic/bilinear norm of Q), r ↔ r_j, ‖·‖ ↔ ‖·‖_{C^j}. First chain: Lean's calc gives ‖B.symm (d - Q c)‖ ≤ β(‖d‖ + K r²) ≤ r; the paper's middle term r_j/2 + ν_j q_j r_j² is this term with β‖d‖ ≤ r/2 substituted, which is exactly hd : 2β‖d‖ ≤ r (an equality in the paper, where r_j := 2ν_j‖d‖_{C^j}). Second inequality: the paper's 2ν_j q_j r_j ≤ 1/2 is Lean's hcoef β * (K * (2 * r)) ≤ 1/2, derived from hsmall : 4βKr ≤ 1, which at r = 2ν‖d‖ is the paper's hypothesis 8ν_j² q_j ‖d‖_{C^j} ≤ 1 (and is spelled out in that form by ClosedIntervalMomentRepair.Data.Small and the calc at ClosedIntervalMomentRepair.lean:195-197). Two respects in which Lean is not narrower: Q is any map obeying the quadratic bounds rather than specifically c ↦ Q(c,c) bilinear, and r is any radius with 2β‖d‖ ≤ r rather than exactly 2ν‖d‖. Two respects in which it is packaged differently: the two inequalities sit in two separate lemmas rather than one display, and Lean fixes one norm on an abstract Banach space E, so the paper's j = 0,…,k family of C^j norms is obtained by instantiating per j (as ClosedIntervalMomentRepair does) rather than being quantified inside the lemma. No constant, exponent or sign differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (3.6)",
+  "status": "formalized",
+  "location": {
+    "page": 16,
+    "rect": [0.27775, 0.150335, 0.591318, 0.035108]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-3.6",
+      "locator": {
+        "physical": [16],
+        "printed": [16],
+        "text": "Equation (3.6), p. 16, in the statement of Theorem 3.1"
+      },
+      "region": "eq-3.6@p016",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: u_{\\theta}\\bigl(\\sqrt{2X_{\\mathrm{in}}\\tau},\\, 0,\\, 0,\\, 1-\\tau\\bigr) = \\tau^{-A}\\bigl(e_0 + O(\\tau^{2h})\\bigr) \\qquad (\\tau \\downarrow 0)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean is the quantified unfolding of the paper's Landau symbol: in place of u_θ = τ^{-A}(e₀ + O(τ^{2h})) as τ ↓ 0 it asserts |τ^{A} u_θ - e₀| ≤ C τ^{2h} for all 0 < τ < δ, with explicit positive C and δ ≤ 1. Multiplying through by τ^{-A} > 0 returns the paper's form, and conversely the meaning of O(τ^{2h}) as τ ↓ 0 is precisely the existence of such C and δ. The remaining encodings match term by term: A = 1/2 + h is `CoordinateAlgebra.A h`; the left-hand point is `ray Xin τ = (√(2X_inτ), 0, 0)` with time slot 1 - τ, the paper's four cylindrical-position-and-time entries; the azimuthal component u_θ is read as the Cartesian second component `u (…) 1`, which is correct at (r, 0, 0) with r > 0 because there e_θ = (0, 1, 0); 'for some fixed X_in ∈ (0, X_a) and e₀ > 0' is the leading existential with 0 < Xin < Xa and 0 < e₀. Both powers of τ are real exponentiation.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

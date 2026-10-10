@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.15)",
+  "status": "formalized",
+  "location": {
+    "page": 51,
+    "rect": [0.299871, 0.289698, 0.569199, 0.122568]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.15",
+      "locator": {
+        "physical": [51],
+        "printed": [51],
+        "text": "Equation (5.15), p. 51, in the proof of Lemma 5.2"
+      },
+      "region": "eq-5.15@p051",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: F_n(X,\\eta) = \\int_0^X U_n(x,\\eta)\\,dx, \\qquad V_n(X,\\eta) = -\\int_0^X (Z_{-A,n}U_n)(x,\\eta)\\,dx, \\qquad \\Pi_n(X,\\eta) = \\int_0^X \\Big[\\mathsf{C}^{-2}\\sum_{i+j=n}\\phi_i\\phi_j - \\frac{\\Omega_{n-1}}{2x}\\Big](x,\\eta)\\,dx."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The rewriting throughout is the change of variable x = r²/2, dx = r dr, the Lean integrating in the radius r while the paper integrates in X. (i) F_n: `massHistory u = primitive (weightedAxial u)` is ∫_0^R r·U_n(r,η) dr, which is the paper's ∫_0^X U_n dx; the component the Lean actually carries is F_n/X = massAverage U_n (massHistory_eq_massAverage), matching the paper's P_n entry F_n/X. (ii) V_n: the Lean does not write the integral. It carries β_n = V_n/X, *defined* algebraically by betaFromU, and then proves the differential form: reconstructed_flux_derivative gives d/dR[(r²/2)β_n] = -R·radialZ h (-A(h)+λ_n) U_n, i.e. ∂_X V_n = -(Z_{-A,n}U_n), and profiles_divergenceCoefficient states ∂_X(Xβ_n) + Z_{-A+slowOrder n}(U_n) = 0 for X > 0. The paper's integral formula follows because V_n = X·β_n with β_n smooth, so V_n(0,η) = 0, and the fundamental theorem of calculus applies; the exponent matches since SlowExpansionResidual.axialExponent h = -CoordinateAlgebra.A h. (iii) Π_n: pressureFromSource_eq_primitive gives Π_n = ∫_0^R r·source(r,η) dr with source = pressureSource = C⁻²∑_{i+j=n}φ_iφ_j - (1/2)·(Ω_{n-1}/X), and profiles_pressure_eq says the constructed order-n pressure is exactly that; after x = r²/2 the integrand is the paper's [C^{-2}∑φ_iφ_j - Ω_{n-1}/(2x)]. No constant, sign or exponent differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

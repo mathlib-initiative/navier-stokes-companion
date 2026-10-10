@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.23)",
+  "status": "formalized",
+  "location": {
+    "page": 32,
+    "rect": [0.305119, 0.23295, 0.563944, 0.0236]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.23",
+      "locator": {
+        "physical": [32],
+        "printed": [32],
+        "text": "Equation (4.23), p. 32, in section 4"
+      },
+      "region": "eq-4.23@p032",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathcal{T}_{0,\\theta} + t_s \\mathcal{T}_{0,z} = F\\,(P_c - v_s), \\qquad \\mathcal{T}_{0,z} - t_s \\mathcal{T}_{0,\\theta} = F J_c."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. No declaration states (4.23) as such; the two identities are recovered in one line each from declarations I opened. Dictionary (all checked in source): P.f = F (ProfileHistories.lean:318 gives E = √(2X)·f); ModulatedCone.angularShear = 1 - 2X E_X/E = a and signedAxialShear = -(2X U_X/E) = -b_s (ModulatedCone.lean:24,28), so Lean's c = -b_s and Lean's tilt c/a = -b_s/a = t_s; ActivationStocks.profileStockOne = X Q_s/L = p_{s,1} and profileStockTwo = X N_s/(LE) = p_{s,2} (ActivationStocks.lean:37,40). Recovery: by stressVector_eq_stocks, (T_{0,θ},T_{0,z}) = F·(p₁-a, p₂-c); PrimaryRepresentatives.normalDirection g = ‖g‖⁻¹•g (PrimaryRepresentatives.lean:190) and transverseDirection g = -quarterTurn (normalDirection g) (line 191, quarterTurn w = (-w₁,w₀), MovingFrameODE.lean:317), so with F>0 the two inner products of stress_inner_normal/_transverse at τ = F read -(a T_{0,θ} + c T_{0,z})/√(a²+c²) and (a T_{0,z} - c T_{0,θ})/√(a²+c²). Cancelling the positive factor a/√(a²+c²) (a>0) against the stated right-hand sides gives T_{0,θ} + t_s T_{0,z} = F(P_c - v_s) and T_{0,z} - t_s T_{0,θ} = F J_c verbatim. The two scalar steps are also literally in those proofs: `have he : a * (p₁ + p₂ * (c/a) - a * (1 + (c/a)^2)) = a*p₁ + c*p₂ - a^2 - c^2` at line 69 and `have he : a * (p₂ - p₁ * (c/a)) = a*p₂ - c*p₁` at line 83. Constants, signs, the two combinations and the common factor F all agree; nothing is weaker.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 51.6",
+  "status": "formalized",
+  "location": {
+    "page": 51,
+    "rect": [0.3266, 0.739925, 0.347023, 0.04922]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.PositiveOrderMoments",
+      "path": "NavierStokes/PositiveOrderMoments.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p051-6",
+      "locator": {
+        "physical": [51],
+        "printed": [51],
+        "text": "Display 51.6, p. 51, in the proof of Lemma 5.2"
+      },
+      "region": "eq-p051-6@p051",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: \\partial_R \\Pi_n = \\frac{2 E_0 E_n}{R} + \\frac{1}{R} \\left( \\sum_{i=1}^{n-1} E_i E_{n-i} - \\Omega_{n-1} \\right)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Pure regrouping. Lean keeps the whole Cauchy sum and divides once: ∂_RΠ_n = (Σ_{i+j=n} E_iE_j - Ω_{n-1})/R. The paper peels off the two endpoint terms i=0 and i=n as 2E_0E_n/R and leaves Σ_{i=1}^{n-1} E_iE_{n-i} inside the bracket. The identity between the two is PositiveAxisSystem.convolution_split (PositiveAxisSystem.lean:271), convolution n F = F 0 n + F n 0 + lowerConvolution n F with lowerConvolution n F = Σ_{i=0}^{n-2} F (i+1) (n-(i+1)); together with F 0 n = F n 0 = E_0E_n for the symmetric E·E product this is the paper's 2E_0E_n. The sign of Ω_{n-1} (subtracted) and the single power of 1/R agree. The Lean statement is a HasDerivAt for the primitive pressureHistory with zero axis datum, which is how the paper obtains Π_n by forward radial integration.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

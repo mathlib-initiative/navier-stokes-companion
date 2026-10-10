@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.9)",
+  "status": "formalized",
+  "location": {
+    "page": 49,
+    "rect": [0.227761, 0.540646, 0.641312, 0.041846]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.9",
+      "locator": {
+        "physical": [49],
+        "printed": [49],
+        "text": "Equation (5.9), p. 49, in section 5.2"
+      },
+      "region": "eq-5.9@p049",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\mathcal{T}_{n,\\theta}(R) = -R^{-2}\\int_0^R \\varrho^2\\,\\mathfrak{r}_{\\theta,n}(\\varrho)\\,d\\varrho, \\qquad \\mathcal{T}_{n,z}(R) = -R^{-1}\\int_0^R \\varrho\\,\\mathfrak{r}_{z,n}(\\varrho)\\,d\\varrho."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both signs, both weights and both powers of R agree: unfolding `thetaStress` at radius R > 0 gives −(∫_0^R ϱ³/C · angularCoefficient(ϱ²/2,η) dϱ)/R² = −R^{−2}∫_0^R ϱ²𝔯_{θ,n}(ϱ)dϱ, and `zStress` gives −R^{−1}∫_0^R ϱ 𝔯_{z,n}(ϱ)dϱ. Three encoding choices: (i) Lean factors the two cases through one `stress m` with m = 2 (angular) and m = 1 (axial) and the weight carried inside the density rather than inside the integrand; (ii) `stress` is defined to be 0 for R ≤ 0, where the paper's formula is written only for R > 0; (iii) `thetaStress`/`zStress` are then transported back to the X variable by `fromRadius` (R = √(2X)). `thetaStress_identity` and `zStress_identity` confirm the intended use: these primitives cancel exactly 𝔯_{θ,n} = (R/C)·angularCoefficient and 𝔯_{z,n} = axialCoefficient.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "eq-1.1/key/NavierStokes.Comparator.NavierStokesExistenceAndSmoothness",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.Comparator.NavierStokesExistenceAndSmoothness",
+      "line": 217,
+      "module": "ComparatorChallenges.NavierStokes",
+      "path": "ComparatorChallenges/NavierStokes.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/ComparatorChallenges/NavierStokes.lean#L217"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.Comparator.NavierStokesExistenceAndSmoothness",
+        "kind": "structure"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 217,
+        "text": "navier_stokes : ∀ x, ∀ t ≥ 0, derivWithin (v x ·) (Set.Ici 0) t + fderiv ℝ (v · t) x (v x t) = nu • Δ (v · t) x - gradient (p · t) x + f x t;  div_free : ∀ x, ∀ t ≥ 0, ∇⬝ (v · t) x = 0;  initial_condition : ∀ x, v x 0 = u₀ x"
+      }
+    }
+  }
+}

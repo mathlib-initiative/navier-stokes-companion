@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.12)",
+  "status": "formalized",
+  "location": {
+    "page": 27,
+    "rect": [0.313056, 0.401531, 0.556017, 0.029469]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.12",
+      "locator": {
+        "physical": [27],
+        "printed": [27],
+        "text": "Equation (4.12), p. 27, in the proof of Lemma 4.1"
+      },
+      "region": "eq-4.12@p027",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: R_j^{(0)} = \\mathcal{R}\\!\\left(u^{(0)}, p^{(0)}\\right)\\cdot e_j + \\partial_z^2 u_j^{(0)}, \\qquad j \\in \\{\\theta, z\\}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. No declaration introduces the name R_j^{(0)}, and the two components are never packaged as one indexed family over j ∈ {θ, z}: they occur only as the two left-hand sides of the conjunction `navierStokesResidual_tangential`, which asserts that each equals the corresponding -radialDivergence of the leading stress (the content of the surrounding Proposition 4.2). The expressions themselves match: `navierStokesResidual` is ∂_t u + (u·∇)u - Δu + ∇p, i.e. the paper's ℛ at unit viscosity; `angularComponent x v = (x₀v₁ - x₁v₀)/r` is exactly v·e_θ and the j = z component is taken as the third Euclidean coordinate; `thetaAxialViscosity = r ∂_z^2(u_θ^{(0)}/r)` equals ∂_z^2 u_θ^{(0)} because r does not depend on z, and `axialAxialViscosity = ∂_z^2 u_z^{(0)}`. So the Lean left-hand sides are R_θ^{(0)} and R_z^{(0)} of (4.12), written out rather than abbreviated.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

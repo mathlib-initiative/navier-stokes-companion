@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.1)",
+  "status": "formalized",
+  "location": {
+    "page": 24,
+    "rect": [0.156359, 0.778296, 0.712702, 0.065611]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.1",
+      "locator": {
+        "physical": [24],
+        "printed": [24],
+        "text": "Equation (4.1), p. 24, in section 4.1"
+      },
+      "region": "eq-4.1@p024",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\begin{aligned}\n\\tau &= 1-t, & A &= \\tfrac12+h, & D &= \\tfrac12-h, && 0<h<\\tfrac12,\\\\\nz &= q^{D}\\eta, & \\tau &= q\\left(1-\\eta^{2}\\right), & d &= 1-\\eta^{2}, & L &= 1-2h\\eta^{2}, & s &= \\frac{r^{2}}{2}, & X &= \\frac{s}{q}.\n\\end{aligned}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every symbol of (4.1) is in the Lean, but three of them in a rewritten encoding. (i) A = 1/2+h, D = 1/2-h, d = 1-η², L = 1-2hη² and X = s/q are literal definitions (CoordinateAlgebra.A/D/d/L, SimilarityProfile.X, the latter on a PhysicalPoint p = (t,(s,z)) so that p.2.1 is s). (ii) The paper's pair \"z = q^D η, τ = q(1-η²)\" is encoded the other way round: SimilarityCoordinates defines q as the unique positive root of τ = q - z²q^a with a = 2h, and then η := z / q^{(1-a)/2}. Recovery: (1-a)/2 = (1-2h)/2 = D (SimilarityProfile.D_eq), so η = z/q^D is z = q^D η for q > 0; substituting that into τ = q - z²q^{2h} and using q^{2D}q^{2h} = q^{2D+2h} = q (as 2D+2h = 1) gives τ = q(1-η²). Both halves of that rewriting are theorems already in the repository: CoordinateAlgebra.forward_coordinate_identity and SimilarityCoordinates.tau_coordinate_identity. (iii) τ = 1-t is not a named definition: it is substituted inline, as `1 - p.1` in SimilarityProfile.q and as the first component of BaseChartJets.physicalInput. (iv) s = r²/2 likewise: the similarity/profile layer treats s as a primitive coordinate (the SimilarityProfile module header records \"The physical variables are (t,s,z), with s = r²/2\"), and the substitution s = r²/2 is made where the physical Cartesian or cylindrical point enters, by AxisymmetricFields.radialEnergy = (x₀²+x₁²)/2 and ActualBaseResidual.profilePoint_chart. (v) The range 0 < h < 1/2 is not one declaration; it is carried as the hypothesis pair (hh : 0 < h) (hh1 : h < 1/2), equivalently 0 < a < 1 for a = 2h in SimilarityCoordinates, on each theorem that needs it (SimilarityProfile.q_pos, CoordinateAlgebra.D_pos). The exponents, signs, the factor 2 in L and in s, and the h-range all match the page term for term; no constant or exponent differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

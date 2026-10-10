@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 30.3",
+  "status": "formalized",
+  "location": {
+    "page": 30,
+    "rect": [0.300874, 0.426276, 0.398474, 0.028839]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.SeedHandbackJets",
+      "path": "NavierStokes/SeedHandbackJets.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p030-3",
+      "locator": {
+        "physical": [30],
+        "printed": [30],
+        "text": "Display 30.3, p. 30, in section 4"
+      },
+      "region": "eq-p030-3@p030",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\|\\Delta(\\widehat{Q}_s, \\widehat{N}_s, \\widehat{p}_s)\\|_k \\le C_k\\bigl(\\|\\Delta(\\widehat{U}, \\widehat{E})\\|_{k+1} + \\|\\Delta\\widehat{\\mathfrak{m}}\\|_{k+1}\\bigr),"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean theorem is the unhatted inequality (4.17) stated for an arbitrary pair of profiles on an arbitrary rectangle Icc X₀ X₁ × [−1,1]; the paper's hatted display is that theorem instantiated at the rescaled profiles Û, Ê on the fixed rectangle [x₀,x₁] × [−1,1]. The instantiation is immediate because `SeedHandbackJets.Profile` is a bare pair of functions (E,U) with no axioms, and `Profile.history` is defined as ∫ over (0,X] of the same five densities, so the rescaled profile's histories are m̂ by definition — the scaling identities (4.19) are not needed for this step in the Lean encoding. Term by term: `outputDifference` has four components Q_s, N_s, p_{s,1}, p_{s,2} (the paper's Δ(Q_s,N_s,p_s)); `fieldDifference` has E, U; `historyDifference` has the five cumulative integrals; `parameterNorm k` is the paper's ‖·‖_k = max_{0≤r≤k} sup over the rectangle of |∂_η^r|, with the max over components as the paper prescribes for tuples; the field and history norms are at order k+1 and the output norm at order k, as printed. The constant C is produced before the profiles are quantified and depends only on k, h, X₀, X₁, μ (the lower bound for E), B (a common jet bound) and B₀ (the C^{k+1}-bound on the common pressure datum P₀), so at the fixed rectangle [x₀,x₁] it is independent of ρ, which is the paper's accompanying sentence.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

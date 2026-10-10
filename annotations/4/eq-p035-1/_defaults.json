@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 35.1",
+  "status": "formalized",
+  "location": {
+    "page": 35,
+    "rect": [0.251319, 0.272588, 0.497809, 0.026343]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p035-1",
+      "locator": {
+        "physical": [35],
+        "printed": [35],
+        "text": "Display 35.1, p. 35, in the statement of Lemma 4.8"
+      },
+      "region": "eq-p035-1@p035",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: T_d = e^{M_d} + 10, \\qquad P_* > e^{T_d}, \\qquad 0 < h < \\min\\{1/100,\\ \\lambda,\\ e^{-T_d}\\}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. The three conditions are not one Lean statement; they are a definition and two thresholds, and each Lean condition implies the paper's. (a) T_d is literally `Parameters.dropLength c = Real.exp c.m + 10`, identical. (b) In place of P_* > e^{T_d} the Lean imposes `amplitudeThreshold m = Real.exp (Real.exp m + 11) + 1 ≤ P`, i.e. P ≥ e^{T_d+1} + 1 > e^{T_d}; this is the value actually chosen at PreparedOutgoing.lean:39 (max 2 (amplitudeThreshold M)). (c) In place of 0 < h < min{1/100, λ, e^{-T_d}} the Lean imposes 0 < h (TailData.h_pos), 2h < λ (TailData.h_small) and h ≤ heightThreshold m λ = min(1/100, λ/4, e^{-(T_d+2+3/5)}/8); each of λ/4 < λ and e^{-(T_d+13/5)}/8 < e^{-T_d} is the tighter bound, so the paper's display holds a fortiori. Since Lemma 4.8 asserts the existence of parameters meeting these conditions, the tighter Lean conditions give the paper's display; nothing of the display is missing. Note that the lower bound on P is imposed only where the cone clauses (iii) need it: the profile construction itself (ScheduledProfileChoice.exists_scheduled_core_below, L20-28) assumes only 0 < P.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

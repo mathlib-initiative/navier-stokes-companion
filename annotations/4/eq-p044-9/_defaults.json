@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 44.9",
+  "status": "formalized",
+  "location": {
+    "page": 44,
+    "rect": [0.296386, 0.778499, 0.407452, 0.046511]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p044-9",
+      "locator": {
+        "physical": [44],
+        "printed": [44],
+        "text": "Display 44.9, p. 44, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p044-9@p044",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\begin{aligned} |\\mathcal{T}_0| \\ge c\\zeta, \\quad & |\\partial^{\\alpha}\\mathcal{T}_0| \\le C_\\alpha\\, \\zeta\\, y_a^{-m_\\alpha} \\quad \\text{on the inner collar},\\\\ |\\mathcal{T}_0| \\ge c\\zeta, \\quad & |\\partial^{\\alpha}\\mathcal{T}_0| \\le C_\\alpha\\, \\zeta\\, y_b^{-m_\\alpha} \\quad \\text{on the outer collar}. \\end{aligned}\\qquad\\text{where } y_a=\\log(X/X_a),\\; y_b=\\log(X_b/X),\\; \\zeta(X)=\\exp(-c_a/y_a^2-4/y_b^2),\\; c_a=t_1^2,\\; \\partial^\\alpha=\\partial_X^{\\alpha_1}\\partial_\\eta^{\\alpha_2}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same two collar estimates, written with the single relevant Gaussian edge factor in place of the full product weight ζ, in the logarithmic chart. Lean's weight c a b y = edge c (y-a) * edge 4 (b-y) with edge c x = exp(-c/x²) is literally ζ, with y-a = y_a, b-y = y_b, c = c_a = t₁² (LeadingStressWeights.zeta) and edgeDistance = min{1,y_a,y_b} = δ. Lower half: EdgeFactor.collar gives m·exp(-c_a/y_a²) ≤ ‖T₀‖ on an inner collar 0 < y_a ≤ d and m·exp(-4/y_b²) ≤ ‖T₀‖ on an outer collar; since ζ is the product of the two factors and each factor is ≤ 1, weight_le_left/weight_le_right turn these into the paper's |T₀| ≥ cζ, so Lean's collar lower bounds are formally stronger than the display's. Derivative half: EdgeFactor.derivative_bound gives ‖iteratedFDeriv ℝ i T₀‖ ≤ C·exp(-c_a/y_a²)/y_a^N for all i ≤ n on the inner collar (resp. C·exp(-4/y_b²)/y_b^N on the outer). Rewriting to the paper's C_α ζ y_a^{-m_α} costs the fixed factor exp(-4/(b-a-d)²)^{-1}, which is exactly the paper's sentence that on a fixed inner collar the ratio ζ/e^{-c_a/y_a²} is bounded above and below by positive constants; Lean formalises that as weight_compare_left/weight_compare_right (L163, L171) and packages it as left_bound_to_weight/right_bound_to_weight, which go one step further than the display and already replace y_a^{-n} (resp. y_b^{-n}) by δ^{-N}. Two encoding choices. (a) Lean bounds the norm of the full Fréchet tensor iteratedFDeriv ℝ i of total order i, which dominates every mixed partial ∂_X^{α₁}∂_η^{α₂} of that order, rather than quantifying over multi-indices α; that direction is stronger. (b) The collar-level derivative bounds are taken in the chart variable y = log X, not in X; the X-chart form is supplied separately and globally by exists_radial_derivative_bound (L572) and physical_jet_bound, not at collar level. Minor: Lean carries separate constants for the two collars (ml, mr and CL, CR at L430-431, L498-501) and combines them by min/sum, where the display writes one c and one C_α for both.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

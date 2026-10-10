@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 48.3",
+  "status": "formalized",
+  "location": {
+    "page": 48,
+    "rect": [0.318013, 0.507494, 0.36509, 0.022661]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.VolterraAnalyticBounds",
+      "path": "NavierStokes/VolterraAnalyticBounds.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p048-3",
+      "locator": {
+        "physical": [48],
+        "printed": [48],
+        "text": "Display 48.3, p. 48, in the proof of Lemma 5.1"
+      },
+      "region": "eq-p048-3@p048",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: A_1(\\xi)\\,D_0\\,A_1(s) = 0, \\qquad A_1(\\xi)\\,D_0\\,\\partial_\\eta A_1(s) = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean has the same block structure but states the vanishing at the level of the integral operators rather than as a matrix identity for an unspecified kernel. DerivativeShape (line 57) is the paper's sparse form of A_1 ('maps the first four coordinates into the last two and annihilates the last two'), holding at every radius and every parameter point, hence also after a parameter derivative. Recovery of the display for the intervening kernel actually in play, D_0 = G = radialInverse: A_1 D_0 A_1 F = matrixAction A₁ (radialInverse (matrixAction A₁ F)) = 0, by matrixAction_lowZero_eq_zero (92) applied to lowZero_radialInverse (81) applied to lowZero_matrixAction (64); the second identity inserts lowZero_parameterDeriv (73) in the same chain. adjacent_derivative_letters_zero (131) is the packaged consequence the paper draws in the next sentence, and its proof differentiates identically-zero components, so it covers the Leibniz term in which ∂_η falls on the adjacent coefficient. What the Lean does not state is the paper's quantification over an arbitrary diagonal kernel D_0: only radialInverse and parameterDeriv (and their composites) are covered, which are the only intervening kernels the argument uses.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

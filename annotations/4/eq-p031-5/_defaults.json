@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 31.5",
+  "status": "formalized",
+  "location": {
+    "page": 31,
+    "rect": [0.361575, 0.576859, 0.277072, 0.043985]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.ConeAlgebra",
+      "path": "NavierStokes/ConeAlgebra.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p031-5",
+      "locator": {
+        "physical": [31],
+        "printed": [31],
+        "text": "Display 31.5, p. 31, in the proof of Lemma 4.5"
+      },
+      "region": "eq-p031-5@p031",
+      "verdicts": [
+        {
+          "confidence": 0.92,
+          "evidence": ["paper: v_{\\pm} = P_{\\mathrm{c}} + \\frac{J_{\\mathrm{c}}^{2}}{4} \\pm |J_{\\mathrm{c}}|\\sqrt{\\frac{P_{\\mathrm{c}}-2}{2} + \\frac{J_{\\mathrm{c}}^{2}}{16}}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every ingredient of the display is present, but the paper's two-sided root formula is split in Lean. The minus branch is a definition body: coneBound P J = P + J^2/4 - |J|*sqrt((P-2)/2 + J^2/16) is literally v_-, term for term (same constants 4, 2, 16, the same absolute value on J, the same radicand). The plus branch is never named; it occurs only as the expression `P + J ^ 2 / 4 - v + rootTerm P J` inside the proof of true_cone_iff (ConeAlgebra.lean:83). Nor does any declaration say in words 'v_pm are the roots'; that content is carried by the completed-square identity. Recovery, in full: by rootTerm_sq (which needs 2 < P, exactly the paper's range: 'Both conditions ... imply P_c > 2') rootTerm P J ^ 2 = J^2*((P-2)/2 + J^2/16), so square_difference reads (P + J^2/4 - v)^2 - rootTerm^2 = (P-v)^2 - (v-2)*J^2/2, i.e. (v_- - v)*(v_+ - v) = (1/2)*(2*(P-v)^2 - (v-2)*J^2) with v_pm = P + J^2/4 ± rootTerm P J. Hence v_pm are precisely the roots of the paper's polynomial 2(P_c-v)^2 - (v-2)J_c^2, which is the display. I checked the paper's formula independently by solving that quadratic: v = ((4P+J^2) ± sqrt(8PJ^2 + J^4 - 16J^2))/4 = P + J^2/4 ± |J|sqrt((P-2)/2 + J^2/16).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

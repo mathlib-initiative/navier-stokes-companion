@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 29.3",
+  "status": "formalized",
+  "location": {
+    "page": 29,
+    "rect": [0.327922, 0.202145, 0.344379, 0.03721]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-p029-3",
+      "locator": {
+        "physical": [29],
+        "printed": [29],
+        "text": "Display 29.3, p. 29, in the statement of Lemma 4.4"
+      },
+      "region": "eq-p029-3@p029",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\|f\\|_j := \\max_{0 \\le r \\le j} \\ \\sup_{(X,\\eta) \\in \\mathcal{R}} |\\partial^r_\\eta f(X,\\eta)|, \\qquad j \\ge 0,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same norm, encoded as one supremum instead of a max of sups. Term by term: the paper's R = [X0,X1] x [-1,1] is Icc X₀ X₁ times J = Icc (-1) 1; the paper's max over 0 <= r <= j and sup over R is Lean's single sSup over the set of all values ‖iteratedFDerivWithin ℝ n (f i X) J η‖ with n ≤ k, X ∈ Icc X₀ X₁, η ∈ J (a sup of sups equals the sup over the union); the paper's \"maximum of the component norms for tuples\" is the extra index i : Fin m inside the same set. The eta-derivative is taken within J at fixed X, so derivatives at η = ±1 are one-sided, as the paper requires, and no radial derivative is taken. Two encoding choices: (a) Lean adjoins the element 0 to the set, which only guarantees nonemptiness and nonnegativity and does not change the value, since the paper's quantity is already a sup of absolute values over a nonempty rectangle; (b) ‖iteratedFDerivWithin ℝ n g J η‖ is the operator norm of the n-th iterated Fréchet derivative, which for a real function of one real variable equals |∂^n_η g| (standard Mathlib isometry). Lean's sSup also returns the junk value 0 for an unbounded set, where the paper's sup would be +∞; in the one place the definition is used (profile_comparison_norm) the jet-bound hypotheses make every such set bounded (jetValues_bddAbove, parameterNorm_bounds), so no vacuity arises there.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

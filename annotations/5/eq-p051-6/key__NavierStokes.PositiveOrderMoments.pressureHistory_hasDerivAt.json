@@ -1,0 +1,23 @@
+{
+  "id": "eq-p051-6/key/NavierStokes.PositiveOrderMoments.pressureHistory_hasDerivAt",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PositiveOrderMoments.pressureHistory_hasDerivAt",
+      "line": 497
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean#L497"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PositiveOrderMoments.pressureHistory_hasDerivAt",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 497,
+        "text": "(hq : ContDiff ℝ ∞ (jointPressureGradient n e omega)) (w : ℝ × ℝ) : HasDerivAt (fun R => pressureHistory n e omega (R, w.2)) (pressureGradient n (slice e w.2) (fun R => omega (R, w.2)) w.1) w.1"
+      }
+    }
+  }
+}

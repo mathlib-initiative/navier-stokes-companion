@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 50.8",
+  "status": "formalized",
+  "location": {
+    "page": 50,
+    "rect": [0.264703, 0.81132, 0.470823, 0.06547]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p050-8",
+      "locator": {
+        "physical": [50],
+        "printed": [50],
+        "text": "Display 50.8, p. 50, in the proof of Lemma 5.2"
+      },
+      "region": "eq-p050-8@p050",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: b_1^U, b_2^U, b_1^E, b_2^E, b_3^E \\in C_c^\\infty(\\mathcal{J}_{\\mathrm{pos}}), \\qquad \\int_0^\\infty b_j^U\\,dR = 1 \\;\\;(j=1,2), \\qquad \\int_0^\\infty b_j^E\\,dR = 1 \\;\\;(j=1,2,3)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean's five bumps are `LocalizedMomentRepair.bump (cellLower a b j) (cellUpper a b j)` for j : Fin 2 (U) and j : Fin 3 (E), where (a,b) is the reserved positive radial patch, i.e. J_pos. Smoothness, nonnegativity and compact support in J_pos are stated (bump_contDiff, bump_nonneg, bump_support_subset, cell_union_subset). The normalization ∫_0^∞ b_j dR = 1 is not stated: searching the index for `bump_integral`, `normalizedBump` and for a bump lemma concluding `= 1` turns up only `OutgoingPulseBounds.power_bump_integral_scale` (a scaling identity) and `EulerSpatialCutoffs.normalizedBump` (Euler, out of scope, and normalized at the origin, not in integral). The recovery is a rescaling: each bump is continuous, nonnegative and equals 1 at the cell centre (bump_at_center), so its integral is a positive finite number c_j, and replacing b_j by b_j/c_j while replacing the coefficient by c_j·α_{n,j} leaves the repair function Σ_j α_{n,j} b_j — and hence (5.14) and the moment rows — unchanged; the Lean never uses the value of ∫b_j, since its coefficients are read off the inverse of the moment matrix (B)_ij = ∫ R^{p_i} b_j dR. One further encoding note: the Lean's U-cells (a 5-fold subdivision of (a,b)) and E-cells (a 7-fold subdivision) are each internally disjoint but are not disjoint from each other, unlike the paper's five mutually disjoint supports; the rows still split, since the axial rows see only the U-correction and the angular rows only the E-correction.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

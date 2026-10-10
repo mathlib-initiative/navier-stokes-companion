@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 8.4",
+  "status": "partial",
+  "location": {
+    "page": 8,
+    "rect": [0.297819, 0.367176, 0.404585, 0.080807]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p008-4",
+      "locator": {
+        "physical": [8],
+        "printed": [8],
+        "text": "Display 8.4, p. 8, in section 3.1"
+      },
+      "region": "eq-p008-4@p008",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: \\|u_\\theta^{(0)}\\|_{L^\\infty(\\mathcal{C}_\\tau)} \\asymp \\tau^{-1/2-h}, \\qquad \\|u_z^{(0)}\\|_{L^\\infty(\\mathcal{C}_\\tau)} \\asymp \\tau^{-1/2-h}, \\qquad \\|u_r^{(0)}\\|_{L^\\infty(\\mathcal{C}_\\tau)} = O(\\tau^{-1/2}), \\qquad \\frac{\\|u_r^{(0)}\\|_{L^\\infty(\\mathcal{C}_\\tau)}}{\\|u_\\theta^{(0)}\\|_{L^\\infty(\\mathcal{C}_\\tau)}} = O(\\tau^{h})."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Of the four clauses, only the azimuthal one has a counterpart, and it is pointwise rather than an L^∞ norm. AngularGrowth, proved for the constructed field by selectedVelocity_angularGrowth, says |τ^A u_θ(1-τ, ray) - e₀| ≤ C τ^{2h} with e₀ > 0 at the single fixed similarity radius X = innerRadius (ray X τ is the circle z = 0, r = √(2Xτ)); with A = 1/2 + h that is a two-sided u_θ ≍ τ^{-1/2-h} along one ray in the core, which gives the paper's lower bound but not the supremum over C_τ. coreVelocity_norm_at_origin gives the exact axis value ‖u(t,0)‖ = (1-t)^{-A} j for the full speed, again pointwise. Scaling.coreVelocity is only the nominal scale q^{-(1/2+h)} as a definition, with no field attached. No declaration was found stating any of: a supremum over a core region, a rate for ‖u_z^{(0)}‖ or ‖u_r^{(0)}‖, or the ratio bound O(τ^h) — the repository's expansion parameter q^{2h} (slowOrder h n = 2nh) encodes the same relative smallness structurally, but that is a different statement.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

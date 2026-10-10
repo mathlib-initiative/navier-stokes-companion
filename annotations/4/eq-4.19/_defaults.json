@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.19)",
+  "status": "formalized",
+  "location": {
+    "page": 30,
+    "rect": [0.195052, 0.25851, 0.674021, 0.032869]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.19",
+      "locator": {
+        "physical": [30],
+        "printed": [30],
+        "text": "Equation (4.19), p. 30, in section 4"
+      },
+      "region": "eq-4.19@p030",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: X = \\rho x, \\qquad H = \\sqrt{\\rho}\\,\\widehat{H}, \\qquad (M, I, J, S, C_p) = \\bigl(\\rho\\widehat{M},\\ \\rho^{3/2}\\widehat{I},\\ \\rho^{3/2}\\widehat{J},\\ \\rho\\widehat{S},\\ \\widehat{C}_p\\bigr)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same scaling laws, written in the opposite orientation. The Lean hats by precomposition: `dilateField R f (X,η) = f (X/R, η)`, so taking the paper's hatted fields as the Lean's `U E` makes `dilateField ρ Û = U` and `moments_dilate` reads m(X,η) = dilationFactor ρ · m̂(X/ρ, η) with X = ρx — i.e. exactly (M,I,J,S,C_p) = (ρM̂, ρ^{3/2}Î, ρ^{3/2}Ĵ, ρŜ, Ĉ_p), since `dilationFactor R = ![R, R*√R, R*√R, R, 1]` and R*√R = ρ^{3/2}, and the fifth entry 1 is the paper's unscaled Ĉ_p. The five densities in `NominalProfile.density` are the paper's U, √(2x)E, U√(2x)E, U²−E²/2, E²/(2x), matching the integrands of (4.18). `moments_dilate` is stated for arbitrary fields U, E, as the paper's (4.19) is. The separate line H = √ρ Ĥ is stated as `OutgoingDilation.H_scaling`, but only for `F : OutgoingProfile.Profile` (the constructed outgoing-profile class); for general fields it occurs only inside `density_dilate` (the i = 1 component, via √(2(Rx)) = √R·√(2x)). Ĉ_p's scale-invariance in the general setting is the fifth `dilationFactor` entry; `canonicalKernel_integral` is the corresponding invariance for the Lean's exterior pressure integral of E²/x, which is not literally the paper's C_p = ∫_0^X E²/(2x) dx.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

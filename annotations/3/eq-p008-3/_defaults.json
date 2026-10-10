@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 8.3",
+  "status": "partial",
+  "location": {
+    "page": 8,
+    "rect": [0.333026, 0.30786, 0.33417, 0.041004]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p008-3",
+      "locator": {
+        "physical": [8],
+        "printed": [8],
+        "text": "Display 8.3, p. 8, in section 3.1"
+      },
+      "region": "eq-p008-3@p008",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\ell_r \\asymp \\tau^{1/2}, \\qquad \\ell_z \\asymp \\tau^{1/2-h}, \\qquad \\frac{\\ell_z}{\\ell_r} \\asymp \\tau^{-h}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The Lean fixes the two length scales as exact powers of q — radialLength q = q^{1/2}, axialLength q h = q^{1/2-h} — which is the paper's own later line on the same page (ℓ_r = q^{1/2}, ℓ_z = q^D, D = 1/2-h), not the comparability in τ displayed here. No declaration was found stating ℓ_r ≍ τ^{1/2}, ℓ_z ≍ τ^{1/2-h}, or the ratio ℓ_z/ℓ_r ≍ τ^{-h}; axialLength occurs in the whole repository only in Scaling.lean, in its definition and in core_axial_reynolds. The missing step is the passage from q to τ: tau_coordinate_identity gives τ = q(1-η²) exactly, so on |η| ≤ η_c one has (1-η_c²) q ≤ τ ≤ q, and raising this to the powers 1/2 and 1/2-h (both positive, since h < 1/100) gives the three displayed comparabilities with constants depending only on η_c and h. That composition is a few lines, but it is nowhere carried out, and the ratio ℓ_z/ℓ_r is never formed; core_radial_reynolds produces the same power q^{-h} from a different product (velocity × length), not from the ratio of lengths.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

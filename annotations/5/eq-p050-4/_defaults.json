@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 50.4",
+  "status": "formalized",
+  "location": {
+    "page": 50,
+    "rect": [0.269276, 0.395628, 0.461454, 0.025354]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p050-4",
+      "locator": {
+        "physical": [50],
+        "printed": [50],
+        "text": "Display 50.4, p. 50, in the statement of Lemma 5.2"
+      },
+      "region": "eq-p050-4@p050",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\operatorname{supp}_X \\mathcal{T}_1 \\subset [X_-, X_b], \\qquad \\operatorname{supp}_X \\mathcal{T}_n \\subset [X_-, X_+] \\quad (n \\ge 2),"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both clauses are stated, but as two declarations rather than one display, and with one extra conclusion. The dictionary is X_a = NominalConeAssembly.activeLeft W, X_- = zeroEnd W H lo, X_+ = nominalOuterX W, X_b = NominalConeAssembly.activeRight W = Real.exp (ConstructedSlowBase.activeRight W) (by `exp_right_eq_cone`); the paper's ordering X_a < X_- < X_+ < X_b is `window_order` (activeLeft < zeroEnd), `zeroEnd_lt_outer`, and `ConstructedSlowBase.outer_before_upper` (nominalOuterX < activeUpper = exp activeRight). First clause: `modulated_positive_radialSupport` is stated for every n ≥ 1 with the wider right endpoint X_b, so at n = 1 it is exactly supp_X 𝒯_1 ⊂ [X_-, X_b]. Second clause: `aligned_higher_support` (and `modulatedCoefficients H v` is by definition `alignedCoefficients W H v.profiles v.finiteModification …`) gives, for n ≥ 2, tsupport ⊆ Icc X_- X_+ ×ˢ Icc (-outer) outer — the paper's [X_-, X_+], and in addition it confines the η-support, where the paper only says the radial supports are uniform over |η| ≤ 1. The paper's single symbol 𝒯_n is the pair (𝒯_{n,θ}, 𝒯_{n,z}) of (5.9); the Lean carries the two components as `stressTheta n` and `stressAxial n` and states each conjunct separately. One encoding point: `radialSupport` says the field vanishes off Icc a b, whereas `aligned_higher_support` bounds the closure of the support; both give supp_X ⊆ [X_-, ·].",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

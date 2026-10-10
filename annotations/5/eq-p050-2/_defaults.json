@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 50.2",
+  "status": "formalized",
+  "location": {
+    "page": 50,
+    "rect": [0.260804, 0.205504, 0.47861, 0.023555]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p050-2",
+      "locator": {
+        "physical": [50],
+        "printed": [50],
+        "text": "Display 50.2, p. 50, in section 5.2"
+      },
+      "region": "eq-p050-2@p050",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: \\delta(X) = \\min\\{1, \\log(X/X_a), \\log(X_b/X)\\} \\qquad (X_a < X < X_b)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. `SlowFirstOrderEdge.edgeDistance a y0 X = min 1 (min (log (X/a)) (y0 + 3 - log X))` is the paper's δ with X_a = a and the outer radius named by its logarithm, X_b = exp(y0+3): log(X_b/X) = log X_b − log X = (y0+3) − log X. The other three forms are the same min in the logarithmic coordinate y = log X: `ActiveAnnulusWeight.edgeDistance a b y = min 1 (min (y−a) (b−y))` with a = log X_a, b = log X_b, and `LeadingStressWeights.distance` / `BaseResidual.activeDelta` compose it with Real.log. Second difference: the paper states the formula only for X_a < X < X_b, whereas every Lean definition is total and returns a nonpositive value outside the annulus; all uses found restrict X to the annulus beforehand (e.g. stressX_weighted_jets quantifies X ∈ Ico (exp(y0+3−b)) (exp(y0+3))), and `ActiveAnnulusWeight.edgeDistance_pos` proves positivity exactly on Ioo a b.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

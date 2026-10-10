@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.10)",
+  "status": "formalized",
+  "location": {
+    "page": 49,
+    "rect": [0.242855, 0.718025, 0.626219, 0.056759]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.10",
+      "locator": {
+        "physical": [49],
+        "printed": [49],
+        "text": "Equation (5.10), p. 49, in section 5.2"
+      },
+      "region": "eq-5.10@p049",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: m_{n,1} = \\int_0^\\infty R\\,U_n\\,dR, \\qquad m_{n,2} = \\int_0^\\infty R^2 E_n\\,dR, \\qquad m_{n,3} = \\int_0^\\infty \\partial_R \\Pi_n\\,dR,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Rows 0 and 1 of `rowDensity` are literally R·U_n and R²·E_n, and `moments` integrates each over Ioi 0, i.e. ∫_0^∞, so m_{n,1} and m_{n,2} match exactly. The third moment differs in form only: the paper's integrand is ∂_RΠ_n, while Lean's row 2 is `pressureGradient n e omega R = (Σ_{i+j=n}E_iE_j − Ω_{n−1})/R`, the right-hand side of the radial momentum equation. The rewriting is the paper's own pressure equation Π'_n = 2C^{−2}φ_0φ_n + C^{−2}Σφ_iφ_{n−i} − Ω_{n−1}/(2X) (p. 47) multiplied by dX/dR = R and written in E via φ = C·E/R; `pressureGradient_eq_X_equation` is exactly that identity in Lean, for C ≠ 0 and R ≠ 0. So the Lean moment equals the paper's ∫_0^∞ ∂_RΠ_n dR wherever Π_n solves the radial equation, which is the only setting in which (5.10) is used.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

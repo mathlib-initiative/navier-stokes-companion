@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.26)",
+  "status": "formalized",
+  "location": {
+    "page": 33,
+    "rect": [0.256997, 0.420113, 0.611181, 0.025658]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.26",
+      "locator": {
+        "physical": [33],
+        "printed": [33],
+        "text": "Equation (4.26), p. 33, in the statement of Theorem 4.6"
+      },
+      "region": "eq-4.26@p033",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.65,
+          "evidence": ["paper: n_\\theta + t_s n_z \\ge \\kappa, \\qquad (v_s - 2)\\,(n_z - t_s n_\\theta)^2 \\le (2-\\kappa)\\,(n_\\theta + t_s n_z)^2."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Term by term the two Lean expressions are the paper's two sides divided by n_θ and n_θ². Lean's shear coordinates are shearA = -2X F_X/F = a and shearB = -2X U_X/E = -b_s (ActivationContinuation.lean:144-145 with radialPartial = ∂_X, ProfileHistories.lean:50), so logSlope = shearB/shearA = -b_s/a = t_s and logSpeed = shearSize = a(1+t_s²) = v_s, exactly the paper's (4.20); tilt T₀ = T_z/T_θ = n_z/n_θ, the stress pair being ordered (rθ, rz) in both (LeadingStressWeights.stress, (4.11)). Hence directionProjection t_s (n_z/n_θ) = (n_θ + t_s n_z)/n_θ and directionGap v_s t_s (n_z/n_θ) = [2(n_θ+t_s n_z)² − (v_s−2)(n_z−t_s n_θ)²]/n_θ². Two encoding differences. (a) Margin: the paper carries one κ ∈ (0,2) in both inequalities (coefficient 2−κ on the right of the second); Lean carries an additive uniform ε > 0 against the κ = 0 coefficient 2. On the compact rectangle with n_θ > 0 (Lean's `direction`/`unitOfTilt` has positive first component and the collar theorems also assert 0 < (T p).1) the two are interchangeable: ε ≤ directionProjection and ε ≤ directionGap with n_θ bounded below give the paper's κ, and conversely n_θ + t_s n_z ≥ κ with gap ≥ κ(n_θ+t_s n_z)² ≥ κ³ gives an ε. (b) Placement: the tilt form with uniform ε is asserted for the actual stress only on the two edge collars (inner_direction_positive, outer_direction_positive); on the whole closed rectangle the Lean states the equivalent spectral form, ReferenceCone/TargetCone for a unit direction D (exists_closed_direction), and in the radial interior the cone is carried in the stock coordinates p_s by LeadingStressWeights.FullTrueCone (TrueConeLoop.InTrueCone, the (4.21)/(4.22) test). targetCone_of_tilt is the bridge in the direction tilt-inequalities ⇒ TargetCone. No declaration was found stating (4.26) verbatim, with one κ, on the whole closed annulus.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 47.1",
+  "status": "formalized",
+  "location": {
+    "page": 47,
+    "rect": [0.332268, 0.143906, 0.335687, 0.047849]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.PositiveAxisSystem",
+      "path": "NavierStokes/PositiveAxisSystem.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p047-1",
+      "locator": {
+        "physical": [47],
+        "printed": [47],
+        "text": "Display 47.1, p. 47, in section 5.1"
+      },
+      "region": "eq-p047-1@p047",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.87,
+          "evidence": ["paper: \\Pi_n' = 2\\mathsf{C}^{-2}\\phi_0\\phi_n + \\mathsf{C}^{-2}\\sum_{i=1}^{n-1}\\phi_i\\phi_{n-i} - \\frac{\\Omega_{n-1}}{2X}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The split form is exactly the Lean right-hand side Pi_n' = p.radial = pressureValue C b s phi, which unfolds to 2 * C^{-2} * (phi 0).value * (phi n).value + C^{-2} * lowerConvolution n (phi_i phi_j) - omegaQuotient/2; lowerConvolution n F = ∑_{i ∈ range(n-1)} F (i+1) (n-i-1) is the paper's ∑_{i=1}^{n-1} phi_i phi_{n-i} (empty for n = 1, as the paper notes). pressureValue_eq_convolution proves this equals the unsplit (5.5) right-hand side for 0 < n, via convolution_split (line 271: convolution n F = F 0 n + F n 0 + lowerConvolution n F), which is the paper's 'the pressure equation separates into'. The same encoding caveat as for (5.5) applies: the last term is -omegaQuotient/2 with omegaQuotient the division-free previousOmegaDivX, equal to Omega_{n-1}/X for X ≠ 0 by omega_axisFactor (AxisSourceRegularity.lean:133).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 38.3",
+  "status": "partial",
+  "location": {
+    "page": 38,
+    "rect": [0.284083, 0.285819, 0.432236, 0.040179]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p038-3",
+      "locator": {
+        "physical": [38],
+        "printed": [38],
+        "text": "Display 38.3, p. 38, in the proof of Proposition 4.10"
+      },
+      "region": "eq-p038-3@p038",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: G = Q_s - \\frac{b_s N_s}{aE} \\;\\ge\\; \\frac{6}{7}\\,Q_s \\;\\ge\\; \\frac{3Q_{\\min}}{7}, \\qquad P_{\\mathrm c} = \\frac{X_R\\,x}{L}\\,G > 2"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The identity half matches exactly; the numerical chain does not. Identity: `physical_projection` (L1144) gives P_c = c.radius · familyProjection, and familyProjection unfolds definitionally to (x/L)(Q_s − b_s N_s/(aE)) — `projection p q a b = p + q·(b/a)`, familyP1 = x Q_s/L, familyP2 = x N_s/(L E) (matching (4.11) p1, p2), and familyB = −2 D_X U/E = −b_s, so b/a = t_s = −b_s/a; with X = X_R x (chart R p = (R·e^y, η)) this is the paper's P_c = (X_R x/L) G. Inequality half: the two bounds G ≥ (6/7)Q_s ≥ 3Q_min/7 are not in the Lean. Q_min, w_*, and the tolerance bounds Q_s ≥ Q_min/2, E ≥ e_*/2, .7 ≤ a ≤ .9, |N_s/(EQ_s)| ≤ w_*, |b_s| ≤ .1/(1+w_*) that produce the factor 6/7 have no counterpart I found (no occurrence of 6/7 or of any Qmin/w_* symbol in NavierStokes/ or in decls.jsonl). In their place the Lean uses a compactness/perturbation route: `model_margins` (L755) bounds the normalized projection below by exp(−8)/2 by perturbing off the zero-control reference profile (`zero_projection_lower`, L690, which uses Q_s ≥ 1 and L ≤ 1 rather than Q_min), together with 3/5 ≤ a and v_s ≤ 1 in place of .7 ≤ a ≤ .9 and v_s < 1; `exists_repair_cone_log` then reaches 2 < P_c (L1245) from the radius floor 6/exp(−8) ≤ X_R, which is the paper's 'for every sufficiently large X_R'. Same destination (relaxed cone with P_c > 2 on e^{-8} ≤ x ≤ e^{-5} for all large X_R, the paper's part (ii) claim), a different quantitative route; the paper's constants 6/7 and 3Q_min/7 were not checked.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

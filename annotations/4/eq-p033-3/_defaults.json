@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 33.3",
+  "status": "formalized",
+  "location": {
+    "page": 33,
+    "rect": [0.179918, 0.461465, 0.115933, 0.022751]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p033-3",
+      "locator": {
+        "physical": [33],
+        "printed": [33],
+        "text": "Display 33.3, p. 33, in the statement of Theorem 4.6"
+      },
+      "region": "eq-p033-3@p033",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: b_s(X_b,\\eta) = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. First, on the block itself: this is not a display but the wrapped tail of a running-text sentence of part (iii) (“… at X = X_b, n(X_b,η) = (1,0) and / b_s(X_b,η) = 0.”); the layout scan cut it off at the line break. It is a genuine assertion, so it is audited as a claim; the companion clause n(X_b,η) = (1,0) is not part of this block. Second, the Lean statement: logShearB is the paper's b_s with the opposite sign (shearB = -2X U_X/E, the paper's b_s = 2 D_X U/E = 2X U_X/E), so logShearB = 0 and b_s = 0 are the same assertion. Lean proves it not only at the edge but on the whole outer collar: for every 0 ≤ x < outerWidth v, logShearB v.profiles (eta, rightEdge W - x) = 0, and x = 0 gives the point y = rightEdge W = log X_b, i.e. X = X_b. Hence the Lean statement implies the paper's and says more. It is stated for the final modulated profile v.profiles and for every eta ∈ [-1,1], as the paper requires.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

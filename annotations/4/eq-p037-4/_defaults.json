@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Display 37.4",
+  "status": "formalized",
+  "location": {
+    "page": 37,
+    "rect": [0.346242, 0.481541, 0.307739, 0.043982]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.NaturalAxisData",
+      "path": "NavierStokes/NaturalAxisData.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p037-4",
+      "locator": {
+        "physical": [37],
+        "printed": [37],
+        "text": "Display 37.4, p. 37, in the proof of Proposition 4.10"
+      },
+      "region": "eq-p037-4@p037",
+      "verdicts": [
+        {
+          "confidence": 0.93,
+          "evidence": ["paper: \\chi = \\frac{H_*^2}{H_*^2 + \\sigma_*^2} > .99 \\quad \\text{where } |Z_*| \\le \\delta_*."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The quantity and the threshold agree exactly: chi is defined as H^2/(H^2+σ^2) and the conclusion is the strict inequality 99/100 < chi, i.e. the paper's \"> .99\", under the same hypothesis |Z_*| ≤ δ_*. The rewriting is only in packaging: the paper's \"choose δ_* > 0, then σ_* > 0 so that ...\" is the Lean's ∃ δ σ, 0 < δ ∧ 0 < σ ∧ ...; the Lean makes explicit the range η ∈ [-1,1] that the paper leaves implicit, instantiates δ = j/10 in the proof, and adds a smoothness conjunct ContDiff ℝ ∞ (chi h j σ) that the display does not assert.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

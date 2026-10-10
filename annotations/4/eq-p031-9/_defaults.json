@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 31.9",
+  "status": "partial",
+  "location": {
+    "page": 31,
+    "rect": [0.388631, 0.846591, 0.223319, 0.041157]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p031-9",
+      "locator": {
+        "physical": [31],
+        "printed": [31],
+        "text": "Display 31.9, p. 31, in the proof of Lemma 4.5"
+      },
+      "region": "eq-p031-9@p031",
+      "relation": "contains",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: P_K = \\max\\left\\{ \\frac{B_K + 2}{c_K},\\ \\frac{8 B_K}{\\gamma_K} \\right\\}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Lean builds a different explicit threshold. The paper forms one closed expression in the three uniform constants, with two branches; Lean forms a pointwise four-branch maximum max 0 (max (2/c) (max (v/c) (4cv/d))) and then takes a finite upper bound B of its image on the compact K, setting p₀ = max 0 B (and P = p₀ + 1 in `compact_large_lag`). The branches correspond: the paper's (B_K+2)/c_K covers Lean's 2/c and v/c at once, since p ≥ (B_K+2)/c_K gives pc ≥ B_K + 2 > max{2, v} using v ≤ B_K and c ≥ c_K; the paper's 8B_K/γ_K dominates Lean's 4cv/d by a factor 2, since 8B_K/γ_K ≥ 8cv/G, the extra factor being what buys the margin γ_K/2 in eq-p032-1 rather than bare positivity. Lean's `max 0` branch has no counterpart in the paper's formula (the paper gets p > 0 from B_K ≥ 1). The surrounding assertion is still proved: `compact_large_lag` concludes the paper's statement, one P > 0 valid for every z ∈ K and every p₁ ≥ P.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

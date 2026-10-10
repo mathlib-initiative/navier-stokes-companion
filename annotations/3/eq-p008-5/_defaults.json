@@ -1,0 +1,46 @@
+{
+  "kind": "equation",
+  "label": "Display 8.5",
+  "status": "partial",
+  "location": {
+    "page": 8,
+    "rect": [0.368057, 0.484338, 0.264105, 0.02962]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.NaturalCore",
+      "path": "NavierStokes/NaturalCore.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p008-5",
+      "locator": {
+        "physical": [8],
+        "printed": [8],
+        "text": "Display 8.5, p. 8, in section 3.1"
+      },
+      "region": "eq-p008-5@p008",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: u_\\theta^{(0)} = E(X_*,0)\\,\\tau^{-1/2-h} \\longrightarrow +\\infty."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The equality is recoverable but is not stated on the paper's circle, and the divergence is obtained along a different route. coreVelocity_swirl states the azimuthal velocity at every core point as q^(-A) √(2X) f(X,η), where the Lean's f is the paper's E/√(2X) (the same page's smoothness convention); specialising it at z = 0, r = √(2X_*τ) with physicalQ_at_zero_z (q = 1 - t = τ) and physicalEta_at_zero_z (η = 0) gives exactly u_θ^(0) = E(X_*,0) τ^(-1/2-h), with A = 1/2 + h. What is not stated anywhere I found is the arrow: no declaration asserts that this azimuthal value diverges on such a circle, which would additionally need E(X_*,0) > 0, and no positivity statement for the constructed f (or for E = √(2X) f) was found. The Lean's blow-up is instead the axial component on the axis, ‖u(t,0)‖ = (1-t)^(-A) j → ∞ (coreVelocity_norm_at_origin, coreVelocity_axis_tendsto_atTop) — the paper's preceding sentence about the nonzero axis datum rather than this display.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

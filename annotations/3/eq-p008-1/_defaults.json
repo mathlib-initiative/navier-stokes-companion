@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 8.1",
+  "status": "formalized",
+  "location": {
+    "page": 8,
+    "rect": [0.297173, 0.127636, 0.405867, 0.054086]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p008-1",
+      "locator": {
+        "physical": [8],
+        "printed": [8],
+        "text": "Display 8.1, p. 8, in section 3.1"
+      },
+      "region": "eq-p008-1@p008",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\partial_r p^{(0)} = \\frac{\\bigl(u_\\theta^{(0)}\\bigr)^2}{r}, \\qquad \\Pi(X,\\eta) = -\\int_X^{\\infty} \\frac{E(x,\\eta)^2}{2x}\\,dx."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The second half is the Lean formula verbatim: HeatedOutgoing.Pi is -(1/2)∫_{(X,∞)} E(x,η)^2/x dx, which is -∫_X^∞ E(x,η)^2/(2x) dx, same sign, same constant, same lower limit, same integrand, normalised at radial infinity. The first half is stated in inner coordinates rather than in r: radialPartial_pressure gives ∂_X Π = f^2, and with E = √(2X) f (ProfileHistories.Profiles.E) this is ∂_X Π = E^2/(2X); the rewriting to the paper's line is the chain rule in X = r^2/(2q) together with the paper's own p^{(0)} = q^{-2A}Π and u_θ^{(0)} = q^{-A}E, which give ∂_r p^{(0)} = q^{-2A}(r/q)∂_XΠ and (u_θ^{(0)})^2/r = q^{-2A}(r/q)f^2 — the same identity. One encoding difference, recovered rather than lost: Profiles.pressure is built as pressure0(η) + ∫_0^X f^2, an antiderivative normalised at the axis with a free smooth function pressure0, not at X = ∞; actual_base_compatible pins pressure0 to outgoing.axisDatum = -(1/2)∫_0^∞ E^2/x dx = Π(0,η), so the two normalisations agree. pressureCoefficient_eq_zero_iff is the same balance inside the slow expansion (at n = 0 the convolution is φ_0^2 and the `previous` term is empty).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

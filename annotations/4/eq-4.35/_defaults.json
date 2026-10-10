@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.35)",
+  "status": "partial",
+  "location": {
+    "page": 38,
+    "rect": [0.293057, 0.657293, 0.575125, 0.061404]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.35",
+      "locator": {
+        "physical": [38],
+        "printed": [38],
+        "text": "Equation (4.35), p. 38, in section 4"
+      },
+      "region": "eq-4.35@p038",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: v = a + \\frac{b^2}{a}, \\qquad c = p_1 - \\frac{b}{a} p_2, \\qquad j = p_2 + \\frac{b}{a} p_1,\\\\ \\Psi(a,b,p) = \\bigl(a,\\; v-2,\\; c-v,\\; 2(c-v)^2 - (v-2) j^2\\bigr)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The first line of (4.35) is in Lean verbatim: shearMagnitude a b = a*(1+(-b/a)^2) = a + b^2/a = v, parallelStress = p₁ + (-b/a)p₂ = c, transverseStress = p₂ - (-b/a)p₁ = j (the slope is written -b/a, so the signs agree with the paper's b, not with -b). The second line has no counterpart as written: no declaration packages the four boundary gaps as a single vector-valued map Ψ (the index has no ℝ × ℝ × ℝ × ℝ-valued and no Fin 4 → ℝ-valued cone declaration), so there is no Lean object whose components can be indexed as Ψ_i. The four component expressions do all occur, but split across statements and not as gap functions: Ψ₁ = a and Ψ₂ = v-2 as the hypotheses 0 < a and 2 < shearMagnitude of admissible_iff, and Ψ₃ = c-v, Ψ₄ = 2(c-v)^2-(v-2)j^2 as the two conjuncts on the right of that iff (shearMagnitude < parallelStress, and (shearMagnitude-2)*transverseStress^2 < 2*(parallelStress-shearMagnitude)^2); the Ψ₄ polynomial alone also appears as the left side of ConeAlgebra.boundary_polynomial. Downstream, where the paper takes a common lower bound μ_L on all four Ψ_i ((4.36)), Lean measures a different quadruple: HasConeMargin bounds (A, v-2, c-2, coneBound(c,j)-v), i.e. it uses c-2 and the square-root gap U(c,j)-v in place of the paper's c-v and 2(c-v)^2-(v-2)j^2. Positivity of the two quadruples is equivalent when v > 2 by ConeAlgebra.true_cone_iff (Lemma 4.5, L69), which the paper invokes for the same step on p39, so the surrounding construction is still proved; but the two margins are different numbers, and a positive HasConeMargin ε does not literally give the paper's μ_L without a further (routine, compactness) argument that I did not find stated.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

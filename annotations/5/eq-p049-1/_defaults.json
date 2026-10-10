@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 49.1",
+  "status": "formalized",
+  "location": {
+    "page": 49,
+    "rect": [0.161461, 0.418505, 0.654118, 0.084311]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p049-1",
+      "locator": {
+        "physical": [49],
+        "printed": [49],
+        "text": "Display 49.1, p. 49, in section 5.2"
+      },
+      "region": "eq-p049-1@p049",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: \\mathfrak{r}_{\\theta,n} = \\frac{R}{\\mathsf{C}}\\Bigl[\\,T_{b,n}\\phi_n + \\sum_{i+j=n}\\bigl\\{V_i(\\phi_j' + \\phi_j/X) + U_i Z_{b,j}\\phi_j\\bigr\\} - 2\\bigl(X\\phi_n'' + 2\\phi_n'\\bigr) - Z^{[2]}_{b,n-1}\\phi_{n-1}\\Bigr],\\qquad \\mathfrak{r}_{z,n} = T_{c,n}U_n + \\sum_{i+j=n}\\bigl\\{V_i U_j' + U_i Z_{c,j}U_j\\bigr\\} + Z_{-2A,n}\\Pi_n - 2\\bigl(XU_n'' + U_n'\\bigr) - Z^{[2]}_{c,n-1}U_{n-1}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Second line matches verbatim: `axialCoefficient h f n` unfolds to `T_{c,n}U_n + Σ_{i+j=n}{V_i U'_j + U_i Z_{c,j}U_j} + Z_{-2A,n}Π_n − 2(X U''_n + U'_n) − Z^{[2]}_{c,n−1}U_{n−1}`, with α=0 killing the U_j/X term, m=1 giving the single U'_n, `axialPressureSource` giving Z_{−2A,n}Π_n (pressureExponent h = −2·A h), `convolution` the sum over i+j=n including both end pairs, and `previous` the n=0 convention under which the Z^{[2]} term is absent. First line: Lean's `angularCoefficient` is only the bracket (α=1 gives φ_j/X, m=2 gives 2φ'_n); the paper's prefactor R/C is not inside any declaration on its own. It is recovered in `thetaDensity = R³/C · angularCoefficient = R² · 𝔯_{θ,n}`, which is the only combination the paper uses (in (5.9) and in the `R²𝔯_{θ,n}` integral condition); the C⁻¹ alone also appears outside the coefficient in `angular_finite_expansion`. Lean's coefficients are functions of X; `radiusPoint w = (R²/2, η)` is the paper's R = √(2X).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

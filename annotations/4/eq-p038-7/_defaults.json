@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 38.7",
+  "status": "formalized",
+  "location": {
+    "page": 38,
+    "rect": [0.333577, 0.824425, 0.333063, 0.041775]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p038-7",
+      "locator": {
+        "physical": [38],
+        "printed": [38],
+        "text": "Display 38.7, p. 38, in the statement of Lemma 4.11"
+      },
+      "region": "eq-p038-7@p038",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\int_0^1 (a_L, -b_L)(X, \\eta, \\varphi)\\, d\\varphi = (a, -b_s)(X, \\eta)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same identity, written as two scalar means and with the shear parametrized by its tilt instead of by b_s. Put A = a_L and C = -b_L; this identification is fixed by the construction, since LoopMoments.loopA v t = v/(1+t^2) and C/A = t, which is the paper's (4.37) (a_L,-b_L) = v_l(1,t_l)/(1+t_l^2). Then exists_local_family_with_margin states (∫ φ in 0..1, A (x,φ)) = a x, which is the first component verbatim, and (∫ φ in 0..1, C (x,φ)) = a x * m x. The Lean input m is the paper's t_s of (4.20), t_s = -b_s/a; since a > 0 on K (hypothesis haK), a·m = -b_s, so the second identity is ∫_0^1 (-b_L) dφ = -b_s, the paper's second component. The literal right-hand side -b, with no tilt reparametrization, is stated for fixed scalars by SmoothLoop.exists_prescribed_mean_shear_loop. Lean's `∫ φ in (0:ℝ)..1` is the paper's ∫_0^1 (interval integral over the period), and φ ∈ ℝ/ℤ is rendered as φ : ℝ together with Function.Periodic … 1. The paper's parameter (X,η) ranges over the rectangle I × [-1,1]; Lean's x ranges over an arbitrary compact K in a finite-dimensional normed space, so this direction is more general, not weaker.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 44.1",
+  "status": "formalized",
+  "location": {
+    "page": 44,
+    "rect": [0.379131, 0.176535, 0.241957, 0.0236]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p044-1",
+      "locator": {
+        "physical": [44],
+        "printed": [44],
+        "text": "Display 44.1, p. 44, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p044-1@p044",
+      "verdicts": [
+        {
+          "confidence": 0.74,
+          "evidence": ["paper: \\mathcal{T}_{0,\\theta} + t_s \\mathcal{T}_{0,z} = F(P_c - v_s) > 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. No declaration was found stating the contraction 𝒯_{0,θ} + t_s 𝒯_{0,z} = F(P_c - v_s) itself. It is one rewriting away from a stated theorem: by `stress_eq`, 𝒯_0 = f • (p₁ - a, p₂ - b) with Lean's shearA = a and shearB = -b_s, so with t_s = b/a one has 𝒯_θ + t_s 𝒯_z = f·[(p₁ + (b/a)p₂) - (a + b·(b/a))] = f·(projection p₁ p₂ a b - shearSize a b), the last step being `field_simp; ring` under a ≠ 0 — the identity written out verbatim at LeadingStressWeights.lean:479. The strict inequality is the cone hypothesis v_s < P_c extracted from `true_cone_iff` at line 477 of the same proof, under `FullTrueCone`. What the Lean checks in place of the display is the conclusion the paper draws from it: `stress_ne_zero` proves 𝒯_0 ≠ 0 at every interior point by contradiction — assuming 𝒯_0 = 0 forces p₁ = a and p₂ = b, so projection = shearSize, contradicting v_s < P_c — rather than by forming the contraction and reading off its positivity. The paper's own hypotheses here are an interval [X_-, Y_1] and the preserved cone; the Lean's are the open interval (activeLeft W, activeRight W), η ∈ [-1,1], and f p ≠ 0.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.11)",
+  "status": "formalized",
+  "location": {
+    "page": 27,
+    "rect": [0.259848, 0.12703, 0.609225, 0.078135]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.11",
+      "locator": {
+        "physical": [27],
+        "printed": [27],
+        "text": "Equation (4.11), p. 27, in the proof of Lemma 4.1"
+      },
+      "region": "eq-4.11@p027",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathcal{T}_0 = F\\,(p_s - \\mathfrak{s}),\\qquad p_s = \\left(\\frac{X Q_s}{L},\\ \\frac{X N_s}{L E}\\right),\\qquad \\mathfrak{s} = (a, -b_s),\\qquad a = 1 - 2\\mathcal{D}_X \\log E = 2 - 2l,\\qquad b_s = \\frac{2 \\mathcal{D}_X U}{E}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every term of (4.11) is present, but 𝒯₀ is not defined by this formula in Lean: `stressVector` is defined as the pair (LeadingStress.theta, LeadingStress.axial) built from the residual algebra, and (4.11) appears as the proved equality `stressVector_eq_stocks`, with hypotheses p ∈ D.carrier, 0 < X and P.f p ≠ 0 (the paper writes the identity without these side conditions). Term by term: P.f = F; profileStockOne = X·Q_s/L and profileStockTwo = X·N_s/(L·E) are p_s; angularShear = 1 - 2X·E_X/E = 1 - 2𝒟_X log E = a and signedAxialShear = -2X·U_X/E = -b_s give 𝔰 = (a, -b_s); the scalar multiple is F. The paper's third expression a = 2 - 2l (l = 1 + X F_X/F) is not stated in this form; the equal expression -2 X f_X / f is `ActivationContinuation.shearA`, tied to `angularShear` by `modulated_shears_eq`, and one still has to use E = √(2X) f to pass between 1 - 2𝒟_X log E and -2 X f_X / f.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

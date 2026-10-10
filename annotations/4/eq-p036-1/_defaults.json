@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 36.1",
+  "status": "partial",
+  "location": {
+    "page": 36,
+    "rect": [0.247881, 0.384215, 0.504693, 0.043929]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p036-1",
+      "locator": {
+        "physical": [36],
+        "printed": [36],
+        "text": "Display 36.1, p. 36, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p036-1@p036",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: T_\\theta(r) = r^{-2}\\int_r^{\\infty} r'^2 R_\\theta^{(0)}(r')\\,dr', \\qquad T_z(r) = r^{-1}\\int_r^{\\infty} r' R_z^{(0)}(r')\\,dr',"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The angular half is literal: backwardStress R r = (∫ u in Ioi r, u^2 * R u)/r^2 is r^{-2}∫_r^∞ r'^2 R(r') dr', instantiated by terminalStress at R = leadingResidual. The axial half is the same formula after the substitution s = r'^2/2, ds = r' dr': (∫ s in Ioi (r^2/2), ∂_z P (t,(s,z)))/r = r^{-1}∫_r^∞ r' ∂_z P dr', and for the terminal field (u_z = 0) the paper's R_z is ∂_z p; the repository's own docstring records this as 'Since ds = r dr'. Two hypothesis differences make the Lean statements narrower than the display as printed. (i) Both theorems carry hfull : 1/2 < log(X / switchRadius) + 1/5, which by TerminalCone.tailTime_clock is y > tailStart + 1/2, i.e. the identity is proved only for X > e^{1/2} X_tail, whereas the paper displays it with no range qualifier. (ii) They are stated for the constructed compensated fields forwardTheta / forwardAxial attached to a CompensationWitness, not for an arbitrary leading field satisfying the paper's four hypotheses (regular at the axis, agreeing with the family for X ≥ X_tail, the four moment identities (4.28), the canonical pressure (4.25)); CompensationWitness is a hypothesis bundle over coefficient functions, so generality in the coefficients is kept, but not in the field. Severity is low because both further assertions the paper draws from this display inside Lemma 4.9 — 𝒯_0 = 0 for X ≥ X_b, and the cone on e^{1/2}X_tail ≤ X < X_b — lie inside the range the Lean covers.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 46.2",
+  "status": "formalized",
+  "location": {
+    "page": 46,
+    "rect": [0.269304, 0.448762, 0.461845, 0.02812]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "def"
+      },
+      "item": "eq-p046-2",
+      "locator": {
+        "physical": [46],
+        "printed": [46],
+        "text": "Display 46.2, p. 46, in section 5.1"
+      },
+      "region": "eq-p046-2@p046",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: T_{a,n} = T_{a+\\lambda_n},\\qquad Z_{a,n} = Z_{a+\\lambda_n},\\qquad Z^{[2]}_{a,n} = Z_{a+\\lambda_n-D}\\,Z_{a+\\lambda_n}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The third abbreviation is literal: Z2 h b f = Z h (b - D h) (Z h b f), so Z2 h (a + slowOrder h n) = Z_{a+λ_n-D} Z_{a+λ_n}, with the same order of composition (the shifted operator applied second) and D = 1/2 - h as in (4.1). The first two abbreviations have no named Lean counterpart: every use writes the shifted exponent inline, `T h (e + slowOrder h n) (f n)` and `Z h (e + slowOrder h j) (f j)`, which is definitionally the paper's T_{a,n} and Z_{a,n}; so the rewriting is a change of name only. The Lean's Z2 is parameterised by the already-shifted exponent b rather than by the pair (a, n), which is the same function composed with b ↦ a + λ_n. The paper's \"Negative field indices mean zero\" is carried by two devices: SlowExpansionResidual.previous (SlowExpansionResidual.lean:51, 0 at order 0) and the `if n = 0 then 0` branch of precedingDiffusion.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

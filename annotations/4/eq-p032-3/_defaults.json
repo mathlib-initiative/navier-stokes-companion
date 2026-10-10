@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 32.3",
+  "status": "formalized",
+  "location": {
+    "page": 32,
+    "rect": [0.333554, 0.27406, 0.333115, 0.047043]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p032-3",
+      "locator": {
+        "physical": [32],
+        "printed": [32],
+        "text": "Display 32.3, p. 32, in section 4"
+      },
+      "region": "eq-p032-3@p032",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathcal{T}_{0,\\theta} + t_s \\mathcal{T}_{0,z} > 0, \\qquad (v_s - 2)\\,(\\mathcal{T}_{0,z} - t_s \\mathcal{T}_{0,\\theta})^2 < 2\\,(\\mathcal{T}_{0,\\theta} + t_s \\mathcal{T}_{0,z})^2."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same pair of inequalities, carried by a positive rescaling. In targetCone_of_signedShear the stress is T = (T 0, T 1) = (T_{0,θ}, T_{0,z}), a = angular shear, c = -b_s, so t_s = c/a and v_s = a*(1+(c/a)^2) (Lean's shearMagnitude / shearSize); a·(T_{0,θ} + t_s T_{0,z}) = a*T 0 + c*T 1 and a·(T_{0,z} - t_s T_{0,θ}) = a*T 1 - c*T 0. Dividing hin by a > 0 gives the paper's first inequality, and dividing hquad by a^2 > 0 gives the second, both with the same constant 2, the same factor v_s - 2, the same squares and strict signs; the hypotheses a > 0 and v_s > 2 are the same side conditions the paper is under (F > 0, v_s > 2 on p. 32). Two caveats, both recorded rather than charged as defects: (i) the paper writes the condition on T_0 itself and derives it from (4.23) with F > 0, whereas the Lean takes the inequalities on an arbitrary plane vector T as hypotheses and concludes the Proposition 7.5 target cone — the Lean form is the more general one; (ii) the tilt variant targetCone_of_tilt, and the definitions directionProjection/directionGap used for the edge collars, are the same two inequalities divided by T_{0,θ}^2 with s = t_s and t = T_{0,z}/T_{0,θ}, which needs the extra hypothesis T_{0,θ} > 0 that targetCone_of_tilt states explicitly (hT : 0 < T 0) and that the paper's display does not assume. I did not find, and do not claim there is none, a declaration stating the equivalence of the paper's stress-coordinate pair with the admissible cone of Lemma 4.5 in (a, b_s, p_s) coordinates; SeedConePaper.admissible_iff (SeedConePaper.lean:37) states the (4.21) ⇔ (4.22) half of that in the p_s coordinates only.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

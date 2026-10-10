@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 34.2",
+  "status": "formalized",
+  "location": {
+    "page": 34,
+    "rect": [0.414698, 0.503969, 0.170787, 0.04414]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p034-2",
+      "locator": {
+        "physical": [34],
+        "printed": [34],
+        "text": "Display 34.2, p. 34, in the statement of Lemma 4.7"
+      },
+      "region": "eq-p034-2@p034",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: B_{ij} = \\int_0^\\infty x^{\\alpha_i}\\beta_j(x)\\,dx"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Term by term the integrand agrees: t ^ a i is Real.rpow with a real exponent (the paper's distinct real α_i), β j t is the paper's β_j(x), and the factors are in the same order. The one difference is the domain: the Lean definition body integrates over all of ℝ against Lebesgue measure, where the paper writes ∫_0^∞. The rewriting is routine and is carried out in the repository: under the standing hypotheses (β_j ≥ 0 supported in Icc (l j) (u j) with 0 < l j, which are hypotheses of bumpMomentMatrix_det_ne_zero, PowerMomentMatrix.lean:261, and fields lower_pos/bump_support of SmoothPowerMomentMatrix.Family, lines 104 and 108) the integrand vanishes off (0,∞), and Family.matrix_eq_positive_integral states exactly the paper's half-line formula. Note that the literal ∫_{Ioi 0} form appears only in the parametric Family setting (D.matrix p), not for the bare bumpMomentMatrix; Ioi 0 versus [0,∞) is a Lebesgue-null endpoint.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

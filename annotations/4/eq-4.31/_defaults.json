@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.31)",
+  "status": "formalized",
+  "location": {
+    "page": 35,
+    "rect": [0.239511, 0.390167, 0.629551, 0.04414]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.31",
+      "locator": {
+        "physical": [35],
+        "printed": [35],
+        "text": "Equation (4.31), p. 35, in the statement of Lemma 4.8"
+      },
+      "region": "eq-4.31@p035",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\Pi_0(\\eta) = -\\int_0^\\infty \\frac{E_{\\mathrm o}(X,\\eta)^2}{2X}\\,dX, \\qquad \\Pi_{\\mathrm o}(X,\\eta) = \\Pi_0(\\eta) + C_{p,\\mathrm o}(X,\\eta)"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both formulas are present, in the logarithmic radial clock rather than in X. (i) The datum: Lean's `axisPressure d η = -(1/2) ∫_ℝ E(y,η)² dy` is the paper's -∫_0^∞ E_o(X,η)²/(2X) dX under X = X_R e^y, dX/X = dy; the integrand matches because `axisDatum_eq` (OutgoingProfile.lean:194, via pressureWeight = (logE)² at L187-196) identifies the weight with the squared profile. The X-variable form is also stated directly: `pressure_canonical` at X → 0⁺ together with `axis_limit` gives F.axisDatum eta = -(1/2) ∫_{X>0} E²/X. (ii) The decomposition: the paper's C_{p,o} is the cumulative integral ∫_0^X E²/(2x) dx of (4.15) (p. 29), and `Pi_eq_past_integral` states Pi(y,η) = axisPressure η + ∫_{-∞}^{y} E(t,η)²/2 dt, which is that decomposition in the same log variable. Equivalently -(1/2)∫_X^∞ = -(1/2)∫_0^∞ + (1/2)∫_0^X, an additivity step valid because the integrands are integrable (SchedulePressure.angular_square_integrable, OutgoingHistories.E_square_integrable). No constant, sign or exponent differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

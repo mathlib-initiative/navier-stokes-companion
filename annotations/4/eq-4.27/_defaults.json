@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.27)",
+  "status": "formalized",
+  "location": {
+    "page": 33,
+    "rect": [0.367619, 0.56317, 0.500558, 0.026101]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.27",
+      "locator": {
+        "physical": [33],
+        "printed": [33],
+        "text": "Equation (4.27), p. 33, in the statement of Theorem 4.6"
+      },
+      "region": "eq-4.27@p033",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: |\\mathcal{T}_0| \\ge c\\,\\zeta, \\qquad |\\partial^{\\alpha} \\mathcal{T}_0| \\le C_{\\alpha}\\,\\zeta\\,\\delta^{-m_{\\alpha}}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both inequalities are present, with the paper's weight and the paper's distance. δ matches on the nose: distance v X = min{1, log X − log X_a, log X_b − log X} = min{1, log(X/X_a), log(X_b/X)}. Domains match: X ∈ (X_a, X_b), η ∈ [−1,1]. The lower bound carries a single c > 0 with no derivative index, as the paper's “constant c > 0, independent of α”; the jet bound produces C and the exponent N per derivative order, as the paper's C_α, m_α per multi-index. Three routine rewritings. (1) Derivative indexing: Lean bounds the full n-th Fréchet derivative ‖iteratedFDeriv ℝ n …‖ of (η,X) ↦ T₀(X,η), the paper bounds each mixed ∂^α = ∂_X^{α₁}∂_η^{α₂}; evaluating the n-linear map on the coordinate basis vectors gives |∂^α T₀| ≤ ‖iteratedFDeriv ℝ |α| T₀‖, so the Lean bound yields the paper's with C_α = C_{|α|}, m_α = N_{|α|} (and it is in that respect the stronger statement, one constant for all α of a given order). (2) Norm: `stress` lands in ℝ × ℝ, whose Mathlib norm is the max of the components, while the paper's |T₀| is the Euclidean length; the two differ by a factor at most √2, absorbed in c and C. (3) The two inequalities are two declarations rather than one display, both for the same profile v.profiles and the same zeta.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

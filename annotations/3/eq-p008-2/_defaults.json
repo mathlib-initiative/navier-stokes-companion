@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 8.2",
+  "status": "partial",
+  "location": {
+    "page": 8,
+    "rect": [0.256384, 0.264074, 0.487464, 0.023183]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p008-2",
+      "locator": {
+        "physical": [8],
+        "printed": [8],
+        "text": "Display 8.2, p. 8, in section 3.1"
+      },
+      "region": "eq-p008-2@p008",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\mathcal{C}_\\tau = \\{(r\\cos\\theta, r\\sin\\theta, z) \\;:\\; 0 \\le X(r,z,\\tau) \\le X_c,\\ |\\eta(z,\\tau)| \\le \\eta_c\\}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The Lean's core is cut out by the same two similarity coordinates, but three things differ. (i) coreDomain is a space-time set over all t < 1, not the time slice C_τ; unfolding it at fixed t gives exactly a slice of C_τ's shape, so this one is pure packaging. (ii) The radial cap is the strict Λ·X ∈ (-20,20), i.e. 0 ≤ X < X_c with X_c = 20/Λ (X = s/q ≥ 0 automatically, s = r^2/2), where the paper closes the interval at X_c; open versus closed. (iii) The η cap is |η| < 11/10, which is no restriction at all: eta_sq_lt_one gives |η| < 1 at every point with τ > 0, so the Lean's \"core\" reaches the endpoints η → ±1, whereas the paper fixes η_c < 1 precisely to stay away from them — that is the hypothesis under which q ≍ τ, and hence under which the next two displays hold. In NaturalCore the enlarged set is used only as an open domain of smoothness and of the divergence identity (coreVelocity_contDiffOn, coreVelocity_divergence, exists_natural_core), where enlarging it is harmless; no declaration was found that imposes a cap η_c < 1 on a core region.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

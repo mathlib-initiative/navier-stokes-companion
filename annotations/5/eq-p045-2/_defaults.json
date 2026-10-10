@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 45.2",
+  "status": "formalized",
+  "location": {
+    "page": 45,
+    "rect": [0.34265, 0.237541, 0.314715, 0.026717]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p045-2",
+      "locator": {
+        "physical": [45],
+        "printed": [45],
+        "text": "Display 45.2, p. 45, in section 5"
+      },
+      "region": "eq-p045-2@p045",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: q^{-A} c_\\infty X^{-A} \\mathcal{H}(2d/X) = c_\\infty s^{-A} \\mathcal{H}(2\\tau/s)"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The exponents and arguments agree term for term: HeatTailEdit.exponent h = 1/2 + h = A, RadialHeatProfile.spatialExponent (1+h) = 1/2 − (1+h) = −A, and diffusion eta = 1 − η² = d, so the Lean's hypothesis diffusion eta = τ/q is exactly the paper's τ = q d, and X = s/q is the paper's s = qX. With these, the Lean conclusion q^{-A} E(s/q, η) = c∞ · s^{-A} 𝓗(2τ/s) is the paper's right-hand equality, and E_eventual_heat (E(X,η) = c∞ X^{-A} 𝓗(2d/X)) supplies the left-hand side; composing the two gives the displayed identity. Two cosmetic departures: c∞ is written out as OutgoingDilation.carrierAmplitude F · switchRadius F XR ^ A rather than as a single constant, and the regime in which the heat formula holds is expressed by the quantitative lateness hypothesis 3 ≤ log((s/q)/switchRadius) + 1/5 instead of the paper's appeal to the exterior pair of Lemma 4.8. I did not check that the Lean lateness threshold coincides with the paper's X_b.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

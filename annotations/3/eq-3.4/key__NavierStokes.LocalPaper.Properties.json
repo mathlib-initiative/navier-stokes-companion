@@ -1,0 +1,25 @@
+{
+  "id": "eq-3.4/key/NavierStokes.LocalPaper.Properties",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalPaper.Properties",
+      "line": 53,
+      "module": "NavierStokes.LocalPaperTheorem",
+      "path": "NavierStokes/LocalPaperTheorem.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperTheorem.lean#L53"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalPaper.Properties",
+        "kind": "structure"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 53,
+        "text": "field `residual_flatness` (line 73): `∀ m : ℕ, ∀ r : ℝ, 0 ≤ r → ∀ X : ℝ, 0 ≤ X → ∃ C, 0 ≤ C ∧ ∃ δ, 0 < δ ∧ ∀ w, w.1 < 1 → PhysicalWaveSum.physicalQ h w < δ → AxisymmetricFields.radialEnergy w.2 / PhysicalWaveSum.physicalQ h w ≤ X → ‖iteratedFDeriv ℝ m (fun z => navierStokesResidual u p z.1 z.2) w‖ ≤ C * PhysicalWaveSum.physicalQ h w ^ r`"
+      }
+    }
+  }
+}

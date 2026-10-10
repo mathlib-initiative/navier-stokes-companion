@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 39.5",
+  "status": "formalized",
+  "location": {
+    "page": 39,
+    "rect": [0.272626, 0.452281, 0.454966, 0.079517]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p039-5",
+      "locator": {
+        "physical": [39],
+        "printed": [39],
+        "text": "Display 39.5, p. 39, in the proof of Lemma 4.11"
+      },
+      "region": "eq-p039-5@p039",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\int_0^{2\\pi} \\frac{d\\varphi}{d\\theta'}\\,d\\theta' = \\frac{a}{v_\\ell}\\Bigl(1 + t_s^2 + \\rho_\\ell/a\\Bigr) = 1, \\qquad \\int_0^1 (a_L, -b_L)\\,d\\varphi = \\frac{a}{2\\pi}\\int_0^{2\\pi} (1, t_\\ell)\\,d\\theta' = (a, a t_s) = (a, -b_s)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both displays are present, but split across lemmas rather than written as two chains. First display: angular_energy_moment is a⟨1+t_ℓ²⟩ = a(1+t_s²)+ρ_ℓ, which is the paper's a(1 + t_s² + ρ_ℓ/a) after multiplying the bracket out; dividing by v_ℓ is angular_rephasing_moments part 1, angularMean (phaseDensity a v ∘ t) = 1, and that integral is literally ∫_0^{2π}(dφ/dθ')dθ' because rate = phaseDensity/(2π) and angularMean divides by 2π; the same fact is phaseMap_fullTurn, phaseMap d (2π) = 1. Second display: integral_rephase supplies the change of variables ∫_0^1 f(θ'(φ))dφ = ∫_0^{2π} f·rate dθ', and density_times_loopA / density_times_loopC collapse the integrands to the constants a and a·t_ℓ, giving the paper's middle expression (a/2π)∫_0^{2π}(1,t_ℓ)dθ'; constructed_means is the resulting pair (a, a·m). The one rewriting is the last equality (a, a t_s) = (a, −b_s): the family theorems state the second mean as a·m and never as −b_s; the substitution m = t_s = −b_s/a is carried out only in exists_prescribed_mean_shear_loop (SmoothLoop.lean:562), which is the fixed-parameter loop without the cone condition. The two components are also two separate scalar integrals rather than one vector identity.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

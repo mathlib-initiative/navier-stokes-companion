@@ -1,0 +1,57 @@
+{
+  "id": "eq-p051-3/key/NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
+  "kind": "equation",
+  "label": "Display 51.3",
+  "status": "formalized",
+  "location": {
+    "page": 51,
+    "rect": [0.34944, 0.479791, 0.30134, 0.02669]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
+      "line": 1814,
+      "module": "NavierStokes.GlobalSlowProfiles",
+      "path": "NavierStokes/GlobalSlowProfiles.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1814"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
+        "kind": "theorem"
+      },
+      "item": "eq-p051-3",
+      "locator": {
+        "physical": [51],
+        "printed": [51],
+        "text": "Display 51.3, p. 51, in the proof of Lemma 5.2"
+      },
+      "region": "eq-p051-3@p051",
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 1814,
+        "text": "(L : Localization s A inner) (B0 : BaseAgreement s A inner) (hn : 0 < n) (i : Fin 4) (hX : 0 ≤ w.1) (hi : w.1 < inner) (heta : w.2 ∈ S) : xProfile (component (profiles s n) i) w = SlowRecursion.profile (A.coefficients n (localIndex i)) w, with component q = ![q.phi, q.axial, q.beta, q.pressure] and localIndex = ![0,1,4,3]"
+      },
+      "verdicts": [
+        {
+          "confidence": 0.84,
+          "evidence": ["paper: (\\phi_n, U_n, V_n, \\Pi_n) = (\\phi_n^{\\mathrm{in}}, U_n^{\\mathrm{in}}, V_n^{\\mathrm{in}}, \\Pi_n^{\\mathrm{in}})."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Two encoding choices, both routine. (i) The third slot is `beta`, which GlobalSlowProfiles.lean:216 documents as the normalized reconstruction `V = X β`, so Lean asserts V_n/X = V_n^in/X rather than V_n = V_n^in; the two are the same statement after multiplying by X, and both sides are the same normalization on each side of the equation. (ii) Lean's region is 0 ≤ X < inner (half-open) where the paper writes the closed [0, X_-]; `inner` plays X_-'s role (Localization.inner_patch gives inner < s.a^2/2, i.e. the inner region ends before the moment patch, exactly as the paper places X_- < X_keep < X_cut < a^2 ≤ inf I_pos), and the endpoint is recovered by continuity, or simply by choosing X_- < inner. The component lemmas it calls (profiles_x_inner_phi/axial/beta) are in fact proved on the closed w.1 ≤ inner; only the pressure component is proved on the strict inequality.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

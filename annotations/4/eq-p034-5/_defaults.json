@@ -1,0 +1,48 @@
+{
+  "kind": "equation",
+  "label": "Display 34.5",
+  "status": "partial",
+  "location": {
+    "page": 34,
+    "rect": [0.340291, 0.759053, 0.319417, 0.042611]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.PowerMomentMatrix",
+      "path": "NavierStokes/PowerMomentMatrix.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p034-5",
+      "locator": {
+        "physical": [34],
+        "printed": [34],
+        "text": "Display 34.5, p. 34, in the proof of Lemma 4.7"
+      },
+      "region": "eq-p034-5@p034",
+      "relation": "uses",
+      "role": "support",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\det B = \\int \\det[x_j^{\\alpha_i}] \\prod_j \\beta_j(x_j)\\, dx_1 \\cdots dx_m."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The displayed identity itself — det B written as an m-fold Lebesgue integral of det[x_j^{α_i}] against ∏_j β_j(x_j) — appears nowhere I could find in the Lean, and neither does the ensuing 'constant nonzero sign of the integrand for x_1 < … < x_m' argument. The Lean reaches the same conclusion (det B ≠ 0, bumpMomentMatrix_det_ne_zero) by a different route that avoids the multilinear expansion entirely: it shows the matrix acts injectively by vecMul, so a vanishing combination c of the columns makes ∫ powerSum a c dμ_j = 0 on each interval; a mean-value/IVT argument (exists_zero_of_setIntegral_eq_zero, line 158) then produces one zero t_j ∈ [l_j, u_j] of powerSum a c, the separation hypothesis makes the t_j strictly ordered, and the same Rolle induction the paper cites (expSum_coefficients_zero, via powerEvaluationMatrix_det_ne_zero) forces c = 0. So the Rolle ingredient is shared, but the paper's route through the expanded determinant and its sign is not what was checked. Lemma 4.7's first assertion is still proved, which is why this is rated low.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 32.5",
+  "status": "partial",
+  "location": {
+    "page": 32,
+    "rect": [0.305539, 0.6867, 0.389145, 0.029414]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p032-5",
+      "locator": {
+        "physical": [32],
+        "printed": [32],
+        "text": "Display 32.5, p. 32, in section 4.4"
+      },
+      "region": "eq-p032-5@p032",
+      "verdicts": [
+        {
+          "confidence": 0.62,
+          "evidence": ["paper: \\partial_X^{\\,j} g(X_e, \\eta) = 0 \\quad \\text{for every } j \\ge 0 \\text{ and } \\eta \\in [-1,1]."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The paper introduces a named predicate — a smooth scalar or vector g is `flat at the radial edge X_e ∈ {X_a, X_b}` iff componentwise ∂_X^j g(X_e,η) = 0 for every j ≥ 0 and every η ∈ [−1,1]. No declaration defining such a predicate was found; the repository states the property one function at a time, in two unrelated encodings. (a) For the paper's edge weight ζ — `LeadingStressWeights.zeta`, whose body is `radialWeight (activationTime^2) (leftEdge W) (rightEdge W)` — `radialWeight_flat_left/right` state `iteratedDeriv n (radialWeight c a b) (Real.exp a) = 0` and `… (Real.exp b) = 0` for every n : ℕ, at X_e = exp(leftEdge W) = X_a and exp(rightEdge W) = X_b. That is literally the paper's formula for this g: n ranges over all of ℕ so j = 0 is included (and indeed radialWeight vanishes at the edge), and the η quantifier is vacuous because radialWeight is a function of X alone. So Theorem 4.6(iv)'s use of the notion (`every radial derivative of ζ vanishes at X_a, X_b`) is supplied. (b) The η-uniform form is stated only for the model edge factor and only in the edge coordinate x = log(X/X_a) rather than in X: `weighted_iteratedFDeriv_zero` gives, for every parameter p and every n, that the full mixed derivative tensor of `weighted c j B` vanishes at (p,0) — stronger than the paper's radial-only derivatives, and for arbitrary p rather than p = η ∈ [−1,1], but about that particular function. For the other object the paper calls flat at both edges, the stress T_0, no jets-vanish statement was found: edge flatness of the stress is carried instead by the `EdgeFactor` identity T (p,x) = (FlatCutoff.edge c x / x^order) • coefficient (p,x) (ActiveAnnulusWeight.lean:257-258), used via `LeadingStressWeights.inner_direction` (line 738).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

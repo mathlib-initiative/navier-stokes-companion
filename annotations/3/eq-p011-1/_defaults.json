@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 11.1",
+  "status": "formalized",
+  "location": {
+    "page": 11,
+    "rect": [0.338121, 0.234516, 0.323759, 0.047744]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p011-1",
+      "locator": {
+        "physical": [11],
+        "printed": [11],
+        "text": "Display 11.1, p. 11, in section 3.2"
+      },
+      "region": "eq-p011-1@p011",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\mathscr{R}(u_B, p_B) = -\\left(\\partial_r + \\tfrac{2}{r}\\right)\\mathcal{T}_{\\mathrm{phys},\\theta}\\, e_\\theta - \\left(\\partial_r + \\tfrac{1}{r}\\right)\\mathcal{T}_{\\mathrm{phys},z}\\, e_z + \\mathcal{E}_B."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same decomposition, written in Cartesian components and in the s = r²/2 chart. Three rewritings. (i) The radial operator: LeadingStress.radialDivergence k S p = √(2s)∂_s S + k S/√(2s); with r = √(2s) and ∂_r = r∂_s this is exactly (∂_r + k/r)S, and the Lean uses k = 2 on the azimuthal profile and k = 1 on the axial profile, matching the paper's 2/r and 1/r. (ii) The frame: tangentialStressForce returns AxisymmetricResidual.pack (x₁a/r) (-x₀a/r) (-z), and pack α β γ is the Cartesian vector (α,β,γ) (AxisymmetricResidual.lean:18) while e_θ = (-x₁/r, x₀/r, 0) (LocalAngularScalar.angularDirection, LocalAngularScalar.lean:20), so (x₁a/r, -x₀a/r, 0) = -a·e_θ and the third slot is -z·e_z: the two leading minus signs of the paper are reproduced. (iii) ℛ is ProblemStatement.navierStokesResidual and ℰ_B is FinalSlowBase.error = BaseResidual.baseResidual. Two things worth recording rather than scoring. First, the Lean identity is definitional: baseResidual is *defined* as navierStokesResidual - baseStressForce, so baseResidual_identity (BaseResidual.lean:1490) is proved by `unfold baseResidual; abel`. The paper's display reads the same way — ℰ_B is whatever is left over — and the mathematical content sits in the adjacent sentences (𝒯_phys supported in the annulus with leading term T; ℰ_B flat), which are stated separately (e.g. the AllJetsFlat clause of exists_final_base at FinalSlowBase.lean:681). Second, because it is definitional the Lean identity holds for every z, including on the axis r = 0 where the paper's displayed operators are not defined; Lean's total division convention absorbs this. Neither point changes what the formula says.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

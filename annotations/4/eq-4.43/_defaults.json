@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.43)",
+  "status": "partial",
+  "location": {
+    "page": 43,
+    "rect": [0.218819, 0.507465, 0.650246, 0.072957]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.43",
+      "locator": {
+        "physical": [43],
+        "printed": [43],
+        "text": "Equation (4.43), p. 43, in the statement of Lemma 4.9"
+      },
+      "region": "eq-4.43@p043",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: (U_f, E_f) = (U_0, E_0) \\quad\\text{for } X \\le X_- \\text{ and } X \\ge Y_1,\\\\ \\mathfrak{m}_f(X) = \\mathfrak{m}_0(X) \\quad\\text{for } X \\ge Y_1,\\\\ (\\Pi_f, V_f, Q_{s,f}, N_{s,f}, p_f, \\mathcal{T}_{0,f}) = (\\Pi_0^{\\mathrm{prof}}, V_0, Q_{s,0}, N_{s,0}, p_0, \\mathcal{T}_{0,0}) \\quad\\text{for } X \\ge Y_1."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The Lean states this display as nine separate theorems about a modulated witness `v` and the nominal witness `W`, with X_- = `d.modulation.left` and Y_1 = `(repairPatch W).right`, and the agreement is stated on both sides of the interval (X ≤ X_- as well as X ≥ Y_1) rather than only beyond Y_1 for the last two lines. Every listed component is covered except one: no declaration was found stating V_f = V_0 for X ≥ Y_1. The paper's V is the radial-velocity profile computed from the pair, and in Lean its carrier is `Profiles.W h`, which `profile_massFlux` identifies with `massFlux h X η (M p) (parameterPartial M p)`; `rows_outside` gives M_f = M_0 for X ≥ Y_1 and every η ∈ d.parameters, and `d.parameters` is open (used as `d.parameters_open` in the proof of `stocks_outside`), so differentiating that identity in η gives ∂_η M_f = ∂_η M_0 and hence W_f = W_0 there — the same argument `ActivationStocks.profiles_stocks_congr` (ActivationStocks.lean:833) already performs for the stocks. The clause is therefore recoverable from stated declarations but is itself stated nowhere I found. Two further encoding differences: `stocks_outside` carries the extra hypothesis `W.profiles.f p ≠ 0` (the stocks divide by f), which the paper does not write; and the Lean states the agreement of the stocks p_{s,1}, p_{s,2} rather than of the raw Q_s, N_s, these being related by p_{s,1} = X Q_s / L and p_{s,2} = X N_s / (L E).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

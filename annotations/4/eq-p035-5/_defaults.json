@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 35.5",
+  "status": "formalized",
+  "location": {
+    "page": 35,
+    "rect": [0.256807, 0.564504, 0.486876, 0.02589]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p035-5",
+      "locator": {
+        "physical": [35],
+        "printed": [35],
+        "text": "Display 35.5, p. 35, in the statement of Lemma 4.8"
+      },
+      "region": "eq-p035-5@p035",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: X_R < X_{\\mathrm{good}} < \\inf \\mathcal{I}_1, \\qquad \\sup \\mathcal{I}_4 < X_{\\mathrm{v}} < X_{\\mathrm{tail}} < X_{\\mathrm{b}} = e^{3} X_{\\mathrm{tail}},"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean works in the logarithmic clock y = log(X/X_R) (OutgoingDilation.clock / radius XR y = XR·exp y) and states the chain link by link rather than as one display; `radius_strictMono` turns each clock inequality into the radius inequality, so the two orderings are the same statement. Dictionary used: X_R ↔ y = 0; X_good ↔ radius XR holdStart (the left edge of `OutgoingCone.trueWindow`, the rectangle on which the admissible/TrueAt condition is asserted, OutgoingCone.lean:389); inf I_1 / sup I_4 ↔ ReservedPatches.left F XR .modulation and .right F XR .mean, whose clocks are pulseStart − 25 and pulseStart − 3 (the file's own docstring names the four manuscript intervals (−25,−20), (−20,−15), (−14,−9), (−8,−3), so I_2 is the heat slot as the paper says); X_v ↔ OutgoingDilation.pulseEndRadius = radius XR endpoint; X_tail ↔ radius XR (tailStart) (consistent with cleanEnd = tailStart + 1/2 ↔ the paper's e^{1/2}X_tail); X_b ↔ OutgoingDilation.tailRadius = radius XR (tailStart + 3), so the paper's equality X_b = e^3 X_tail is definitional in Lean. The paper's side condition that the interval endpoints divided by X_R are fixed independently of X_R and η also holds definitionally, since left/right = XR·exp(clock) with the clock depending only on the profile parameters. No single Lean declaration states the whole chain.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}
