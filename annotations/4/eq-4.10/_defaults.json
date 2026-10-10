@@ -15,20 +15,21 @@
         "text": "Equation (4.10), p. 26, in the proof of Lemma 4.1"
       },
       "region": "eq-4.10@p026",
+      "role": "key",
       "verdicts": [
         {
-          "confidence": 0.8,
-          "evidence": ["paper: Q_s = \\frac{C_Q(\\eta) + \\int_0^X H(x,\\eta) S_q(x,\\eta)\\,dx}{X\\,H(X,\\eta)}, \\qquad N_s = \\frac{C_N(\\eta) + \\int_0^X S_n(x,\\eta)\\,dx}{X}."],
+          "confidence": 0.74,
+          "evidence": ["paper: Q_s = \\frac{C_Q(\\eta) + \\int_0^X H(x,\\eta)\\,S_q(x,\\eta)\\,dx}{X\\,H(X,\\eta)}, \\qquad N_s = \\frac{C_N(\\eta) + \\int_0^X S_n(x,\\eta)\\,dx}{X}. \\tag{4.10}"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
           "relation": "lean_weaker",
-          "role": "claim",
+          "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. Lean has exactly the C_Q = C_N = 0 branch: `angularLag` is ∫₀^X H S_q dx / (X H(X,η)) and `axialLag` is ∫₀^X S_n dx / X, with `primitive` the integral from 0 to X, i.e. the display with the constants dropped. The constant-carrying family — and with it the statement that every solution of (4.9) has this form, which is what the display asserts — was not found as a declaration. It is a short argument away: `angular_lag_primitive_iff` / `axial_lag_primitive_iff` turn each row of (4.9) into the exactness of (X H Q_s)' = H S_q and (X N_s)' = S_n, and the fundamental theorem of calculus then gives the general solution with an η-dependent constant. Rated low because the paper itself keeps only the C = 0 branch (the constants are killed in the next display by regularity at X = 0), so the branch Lean fixes is the branch the paper uses; what is missing is the uniqueness half.",
+          "summary": "Lean has a weaker form of it. The display gives the general solution of the radial equations (4.9): a one-parameter family in each row, with integration constants C_Q(η), C_N(η). The Lean has only the C_Q = C_N = 0 member. angularLag is (∫_0^X H S_q dx)/(X H(X,η)) and axialLag is (∫_0^X S_n dx)/X, where primitive is the integral from 0 to X and Profiles.angularSource is H·S_q. angularLag_equation and axialLag_equation state that this member solves (4.9) for X ≠ 0. What the Lean states follows from the display by setting the constants to zero, which is the paper's own next sentence. The converse is not stated: no declaration carries the constants, none says that every solution of (4.9) has the displayed form, and none states the paper's selection argument (a nonzero constant gives an X^-2 or X^-1 singularity). The two integrating-factor lemmas angular_lag_primitive_iff and axial_lag_primitive_iff are pointwise derivative equivalences only, and a grep shows they are used nowhere else in NavierStokes/. Passing from them to the family needs the step \"a function whose derivative is H·S_q on an interval equals a constant plus the integral\", which is a uniqueness-of-solution fact that no repository declaration states for these equations. The closest thing in the repository, NilpotentVolterra.eq_regularPrimitive_of_hasDerivAt (NavierStokes/RegularSingularIntegral.lean:27), is a uniqueness statement for a different equation (W' = g − (c/r)W with W(0) = 0, used only in PositiveAxisDifferential.lean:182) and has no free constant either. The paper never uses the C ≠ 0 members: the text right after the display sets both constants to zero, and the Lean's stress coefficients (LeadingStress.theta, LeadingStress.axial, lines 34 and 38) are built on the C = 0 lags.",
           "verdict": "deviation"
         }
       ]

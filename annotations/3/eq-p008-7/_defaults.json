@@ -17,7 +17,7 @@
       "region": "eq-p008-7@p008",
       "verdicts": [
         {
-          "confidence": 0.85,
+          "confidence": 0.72,
           "evidence": ["paper: \\mathrm{Re}_\\theta = q^{-A}\\ell_r = q^{-h} \\longrightarrow \\infty, \\qquad \\mathrm{Re}_r = |u_r^{(0)}|\\,\\ell_r = O(1)."],
           "provenance": {
             "actor": "agent",
@@ -25,10 +25,10 @@
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
           "relation": "lean_weaker",
-          "role": "proof_step",
+          "role": "heuristic",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The first identity is stated exactly: core_radial_reynolds is q^(-A) · ℓ_r = q^(-h) with A = 1/2 + h and ℓ_r = q^(1/2) built into coreVelocity and radialLength. Two things of the display are missing. (i) The arrow is not part of that theorem, which is a bare equality; it follows in one step from negative_power_tendsto_atTop with A := h > 0, so this part is packaging. (ii) The second assertion, Re_r = |u_r^(0)| ℓ_r = O(1), was not found: the identifier `reynolds` occurs in the whole declaration index only inside Scaling.lean, whose only core Reynolds theorems are core_radial_reynolds and core_axial_reynolds (coreVelocity × axialLength = q^(-2h)), and the latter is a different quantity — the core velocity scale against the axial length, not the radial velocity against the radial length. No declaration giving a scale for |u_r^(0)| was found.",
+          "summary": "Lean has a weaker form of it. The display is scale bookkeeping in the proof outline (Section 3.1, p. 8), so on its own it would be heuristic. But the repository does state a counterpart for its first half, so the not_applicable rule does not apply and the display has to be compared.\n\nFirst half, covered. Scaling.core_radial_reynolds (Scaling.lean:35) is exactly q^(-A) * l_r = q^(-h): coreVelocity q h = q^(-(1/2+h)), radialLength q = q^(1/2), and reynolds is velocity times length, documented as the Reynolds number at viscosity one. The arrow to infinity is not in that theorem, but it follows by instantiating BlowupImplication.negative_power_tendsto_atTop (BlowupImplication.lean:24) at A := h > 0 with q tending to 0 from above. That is a formal step.\n\nSecond half, not found. Re_r = |u_r^(0)| l_r = O(1) has no counterpart that I could find. The only core Reynolds theorems in the repository are core_radial_reynolds and core_axial_reynolds (Scaling.lean:42, core velocity times axial length = q^(-2h)), and neither concerns the radial velocity. Outside Scaling.lean the only uses of that file are radialLength in SimilarityHomogeneity.lean:219 and the carrier-frequency lemmas in ChartScales.lean and CurlClassBounds.lean. The repository does state the radial flux identity r u_r = V (RadialFluxResidual.radial_flux_velocity, line 196; SlowExpansionResidual.slowVelocity_radial_flux, line 879), and NaturalCore.lean gives component formulas only for the axial and azimuthal velocity (lines 323, 339, 370). Getting O(1) from the flux identity needs a uniform bound on |V_0|/sqrt(2X) over the core [0,X_c] x [-eta_c,eta_c], which is a boundedness fact about the profile that no declaration I found states. So this clause does not follow by formal steps.\n\nWhat the Lean does state follows from the display, so the relation is lean_weaker. Severity is low: Re_theta and Re_r appear in the paper only on pp. 4, 8 and in one motivating sentence on p. 81, and no later estimate uses Re_r = O(1). core_radial_reynolds itself is used nowhere else in NavierStokes/.",
           "verdict": "deviation"
         }
       ]

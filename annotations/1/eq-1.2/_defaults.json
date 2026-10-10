@@ -1,23 +1,13 @@
 {
   "kind": "equation",
   "label": "Equation (1.2)",
-  "status": {
-    "pin": {
-      "type": "repository",
-      "commit": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
-      "url": "https://github.com/openai/NavierStokesAndEuler"
-    },
-    "value": "not_formalized"
-  },
+  "status": "formalized",
   "location": {
     "page": 2,
     "rect": [0.301149, 0.143829, 0.567767, 0.023032]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "kind": "def"
-      },
       "item": "eq-1.2",
       "locator": {
         "physical": [2],
@@ -25,23 +15,21 @@
         "text": "Equation (1.2), p. 2, in section 1.1"
       },
       "region": "eq-1.2@p002",
-      "relation": "uses",
-      "role": "support",
       "verdicts": [
         {
-          "confidence": 0.86,
+          "confidence": 0.8,
           "evidence": ["paper: D_t u := \\partial_t u + (u \\cdot \\nabla) u = -\\nabla p + f, \\qquad \\nabla \\cdot u = 0. \\tag{1.2}"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "absent",
-          "role": "equation",
-          "severity": "low",
+          "relation": "lean_stronger",
+          "role": "heuristic",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "No Lean counterpart was found. (1.2) is the incompressible Euler system, introducing the notation D_t u for the material acceleration. No declaration was found in the audited NavierStokes/ tree that states it: the whole tree never mentions Euler (a grep for `Euler` over NavierStokes/ returns zero hits, EuclideanSpace is spelled otherwise), and it has no named material-derivative operator ∂_t + (u·∇) — the `material` names it does carry (NavierStokes.PhaseCalculus.signedMaterialOp, PhaseCalculus.lean:139, and the PrimaryMaterialDefect/ActualPhaseDefect families) are phase-transport operators ∂_V + σε∂_T + b∂_R + (V/R)∂_θ + εG∂_Z in slot coordinates, not this system. The pieces of (1.2) are all present as separate definitions — temporalDerivative (∂_t u, ProblemStatement.lean:55), advection ((u·∇)u, line 63), pressureGradient (∇p, line 71), spatialDivergence (∇·u, line 67) — and the Lean states only the viscous equation (1.1): `navierStokesResidual ν u p t x = f (t,x)` with residual ∂_t u + (u·∇)u − ν•Δu + ∇p, imposed in CandidateProperties.navier_stokes (R3/ProblemStatement.lean:106) together with divergence_free (line 104). Substituting ν := 0 there would reproduce (1.2) verbatim, signs included (residual = f ⟺ D_t u = −∇p + f), but no declaration performs that substitution and every statement in the development carries ν > 0 (Theorem 1.1 quantifies over ν > 0); a grep for `navierStokesResidual 0` over NavierStokes/ returns nothing. The closest formula in the repository is Euler/EulerProof.lean:10738, `momentumResidual u p z = fderiv ℝ u z (1, u z) + gradient p`, whose first term is exactly D_t u (the spacetime derivative applied to (1, u)); it is the UNFORCED residual (no f), carries no incompressibility constraint, and lies in the Euler half of the repository, which is outside this audit's scope. Severity low: (1.2) is expository — it appears in §1.1 'Historical context and previous work', the notation D_t occurs nowhere else in the 166 pages (searched the text layer for 'Dt': two hits, both on this page), and no later step of the paper uses it.",
-          "verdict": "deviation"
+          "summary": "Lean has a stronger form of it. (1.2) is the forced incompressible Euler system, given as background in §1.1 \"Historical context and previous work\". In the text layer \"(1.2)\", \"D t u\" and \"Newton\" occur only on p. 2, and \"Euler\" only on p. 2 and in the bibliography (p. 165), so nothing later in the paper relies on the display.\n\nThe in-scope tree never writes the Euler system out. A case-insensitive grep for \"euler\" over NavierStokes/ and NavierStokes.lean returns nothing, no `navierStokesResidual 0` occurs, and no declaration names the material acceleration D_t. What the tree states is the momentum equation as a family in the viscosity: `NavierStokesR3.ProblemStatement.navierStokesResidual ν u p t x = f (t, x)` with ν an unconstrained real, together with `spatialDivergence u t x = 0`. Both appear as fields of `CandidateProperties ν` and `GlobalFiniteEnergySolution ν`, with no positivity hypothesis on ν. `0 < ν` appears only in `coreBreakdownStatement` and `breakdownStatement`.\n\nFrom Lean to the display: set ν := 0 and unfold to get `temporalDerivative u t x + advection u t x - 0 • spatialLaplacian u t x + pressureGradient p t x = f (t, x)`. Then `zero_smul`, `sub_zero` and moving the gradient across give ∂_t u + (u·∇)u = −∇p + f with the paper's signs. The clause ∇·u = 0 is the `divergence_free` field verbatim. These are specialisation, unfolding and algebra, so the step is formal and needs no analytic fact.\n\nFrom the display to Lean: the stated Lean formula is the whole ν-family, and the Euler system does not give the term −ν • spatialLaplacian for general ν (that term is display (1.1)). No declaration states the ν = 0 instance on its own. So the two are not equivalent; the Lean definition is strictly more general.\n\nThe Lean fields carry time ranges (Ioo 0 1 / Ico 0 1, Ioi 0 / Ici 0) that the display, which has no ranges, does not specify. D_t u is notation only; its content `temporalDerivative u t x + advection u t x` is the leading subterm of the residual and has no name of its own in the tree.",
+          "verdict": "faithful"
         }
       ]
     }

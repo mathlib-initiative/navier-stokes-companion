@@ -19,7 +19,7 @@
       "role": "key",
       "snippet": {
         "line": 450,
-        "text": "R timeOp h (orderExponent h n) (u n) + dr (conv n v u) + R axialOp h (pressureExponent h n) (fun w => conv n u u w + p w) - dr (axialViscousFlux (u n)) - R axialOp2 h (orderExponent h (n-1)) (u (n-1))"
+        "text": "w.1 * timeOp h (orderExponent h n) (u n) w + dr (conv n v u) w + w.1 * axialOp h (pressureExponent h n) (fun p' => conv n u u p' + p p') w - dr (axialViscousFlux (u n)) w - w.1 * axialOp2 h (orderExponent h (n-1)) (u (n-1)) w"
       }
     }
   }

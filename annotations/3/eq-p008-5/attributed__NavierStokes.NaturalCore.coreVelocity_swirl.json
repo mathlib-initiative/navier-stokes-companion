@@ -3,20 +3,23 @@
   "target": {
     "pin": {
       "declaration": "NavierStokes.NaturalCore.coreVelocity_swirl",
-      "line": 370
+      "line": 370,
+      "module": "NavierStokes.NaturalCore",
+      "path": "NavierStokes/NaturalCore.lean"
     },
     "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean#L370"
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
       "declaration": {
-        "id": "NavierStokes.NaturalCore.coreVelocity_swirl"
+        "id": "NavierStokes.NaturalCore.coreVelocity_swirl",
+        "kind": "theorem"
       },
       "relation": "implies",
       "role": "attributed",
       "snippet": {
         "line": 370,
-        "text": "(x 0 * coreVelocity h f V (t,x) 1 - x 1 * coreVelocity h f V (t,x) 0) / √(2 * radialEnergy x) = physicalQ h (profilePoint t x) ^ (-NaturalAxisData.A h) * √(2 * X) * f (X, η); i.e. u_θ = q^(-A) √(2X) f(X,η), the paper's q^(-A) E with E = √(2X) f"
+        "text": "(x 0 * coreVelocity h f V (t,x) 1 - x 1 * coreVelocity h f V (t,x) 0) / √(2 * radialEnergy x) = physicalQ h (profilePoint t x) ^ (-NaturalAxisData.A h) * √(2 * X) * f (X, η), on coreDomain h Λ with 0 < radialEnergy x"
       }
     }
   }

@@ -12,13 +12,14 @@
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
       "declaration": {
-        "id": "NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold"
+        "id": "NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold",
+        "kind": "theorem"
       },
       "relation": "states",
       "role": "key",
       "snippet": {
         "line": 652,
-        "text": "∃ eps : ℝ, 0 < eps ∧ eps ≤ 1 ∧ ∀ j, |j| ≤ eps → ∀ hj, ∀ prep : NominalProfile.AxisPreparation F j, ∃ Λ0, 1 ≤ Λ0 ∧ prep.scaleBound ≤ Λ0 ∧ ∀ Λ, … Λ0 ≤ Λ → ∃ T, 0 < T ∧ ∃ C0, 1 ≤ C0 ∧ … ∀ C, … C0 ≤ C → ∀ E, ∀ c, c.shapeTime = T → SmallControl c N eps → MatchingBounds c N rho"
+        "text": "∃ eps, 0 < eps ∧ eps ≤ 1 ∧ ∀ j, |j| ≤ eps → ∀ hj, ∀ prep : AxisPreparation F j, ∃ Λ0, 1 ≤ Λ0 ∧ prep.scaleBound ≤ Λ0 ∧ ∀ Λ, … Λ0 ≤ Λ → ∃ T, 0 < T ∧ ∃ C0, 1 ≤ C0 ∧ … ∀ C, … C0 ≤ C → ∀ E, ∀ c : Controls …, c.shapeTime = T → SmallControl c N eps → MatchingBounds c N rho; proof lines 692-703 obtain B, K, BJ0 from ordered_seed_bounds, then T from ShapeTransition.exists_duration (2 * BJ), then C0"
       }
     }
   }

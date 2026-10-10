@@ -15,9 +15,11 @@
         "id": "NavierStokes.PrimaryTargetBounds.exists_constructed_bounds",
         "kind": "theorem"
       },
+      "relation": "states",
+      "role": "key",
       "snippet": {
         "line": 1014,
-        "text": "∃ a : Prepared …, ∃ detGap entryBound inverseLower, … ∀ L p, … ZeroOrderBounds (Real.sqrt (ChartScales.S (BaseChartJets.cellBand L))) detGap entryBound inverseLower (movingWeight W p) (preparedCovariance H v a vr vt L p) (fun k => actualTarget v p k)"
+        "text": "∃ a : Prepared …, ∃ detGap entryBound inverseLower, … ∀ L p, p ∈ positivePart (referenceSet W) → p ∈ (domain W a.N).carrier L → ZeroOrderBounds (√(S (cellBand L))) detGap entryBound inverseLower (movingWeight W p) (preparedCovariance H v a vr vt L p) (fun k => actualTarget v p k)"
       }
     }
   }

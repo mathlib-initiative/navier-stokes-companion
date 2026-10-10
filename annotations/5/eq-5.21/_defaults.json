@@ -1,7 +1,7 @@
 {
   "kind": "equation",
   "label": "Equation (5.21)",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 53,
     "rect": [0.159761, 0.720751, 0.709307, 0.096088]
@@ -17,19 +17,19 @@
       "region": "eq-5.21@p053",
       "verdicts": [
         {
-          "confidence": 0.78,
-          "evidence": ["paper: \\int_0^\\infty r^2\\mathscr{R}_{\\theta,n}\\,dr = \\partial_t\\int_0^\\infty r^2 u_{\\theta,n}\\,dr + \\partial_z\\int_0^\\infty r^2\\!\\!\\sum_{i+j=n}\\!\\! u_{z,i}u_{\\theta,j}\\,dr - \\partial_{zz}\\int_0^\\infty r^2 u_{\\theta,n-1}\\,dr = 0,\\\\ \\int_0^\\infty r\\,\\mathscr{R}_{z,n}\\,dr = \\partial_t\\int_0^\\infty r\\,u_{z,n}\\,dr + \\partial_z\\int_0^\\infty r\\Bigl(\\sum_{i+j=n} u_{z,i}u_{z,j} + p_n\\Bigr)dr - \\partial_{zz}\\int_0^\\infty r\\,u_{z,n-1}\\,dr = 0"],
+          "confidence": 0.62,
+          "evidence": ["paper: \\int_0^\\infty r^2\\mathscr{R}_{\\theta,n}\\,dr = \\partial_t\\int_0^\\infty r^2 u_{\\theta,n}\\,dr + \\partial_z\\int_0^\\infty r^2\\sum_{i+j=n}u_{z,i}u_{\\theta,j}\\,dr - \\partial_{zz}\\int_0^\\infty r^2 u_{\\theta,n-1}\\,dr = 0, \\qquad (5.21) \\\\ \\int_0^\\infty r\\mathscr{R}_{z,n}\\,dr = \\partial_t\\int_0^\\infty r u_{z,n}\\,dr + \\partial_z\\int_0^\\infty r\\Bigl(\\sum_{i+j=n}u_{z,i}u_{z,j}+p_n\\Bigr)dr - \\partial_{zz}\\int_0^\\infty r u_{z,n-1}\\,dr = 0. \\\\ \\text{(Here } \\mathscr{R}_{j,n}=q^{-A-1+\\lambda_n}\\mathfrak{r}_{j,n},\\ j\\in\\{\\theta,z\\}\\text{; at } n=1 \\text{ the final angular integral means the convergent integral of } u_{\\theta,0}-P \\text{ from (5.19).)}"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "different",
+          "relation": "equivalent",
           "role": "proof_step",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The Lean route is the same conservative-form argument, carried out for the general order n in the similarity variables (R, η) rather than in (r, z, t). What differs from the display: (i) the densities are `angularDensity` = R²𝔯_{θ,n} and `axialDensity` = R𝔯_{z,n} in inner variables; the physical residual 𝓡_{j,n} = q^{-A-1+λ_n}𝔯_{j,n} is never formed, and neither physical left-hand side ∫_0^∞ r²𝓡_{θ,n} dr, ∫_0^∞ r𝓡_{z,n} dr is written. (ii) Of the three physical moment terms on the right of the angular line, one is supplied in physical variables and two are reached only in inner variables. The one supplied is the ∂_zz term at n = 1, which p. 54 says is −∂_zz ∫_0^∞ r²(u_{θ,0} − P) dr: `renormalized_moment_derivative` (line 147) states exactly the differentiation under the integral the paper justifies in the paragraph after (5.19), ∂_z^n ∫_0^∞ r²(u − P) dr = ∫_0^∞ r² ∂_z^n u dr for this very weight r², and `physical_axial_viscosity_moment_zero` (line 480, conclusion at 488) concludes ∫_0^∞ r² ∂_zz u dr = 0 for the physical angular velocity, and `lowerAngularViscosityMoment_of_renormalized` (line 1485) is the glue that converts this into the inner-variable hypothesis `LowerAngularViscosityMoment` which `order_one_angular_stress_support` consumes, so for this one term the physical and the inner formulation are joined in the repository. The ∂_t term and the ∂_z flux term have no physical-variable counterpart that was found. (iii) In the inner route the time and axial derivatives are the scaled operators `timeOp`/`axialOp`, which commute with the moment only up to the explicit boundary terms B^{m+1}f(B,η) of `moment_timeOp`/`moment_axialOp`, which the paper's integral over (0,∞) does not carry; η-differentiation under the integral is `moment_de_zero` (line 143). (iv) the two balances `angular_integral_balance`/`axial_integral_balance` listed here integrate over [0,B], not (0,∞); their `exterior B S …` hypotheses make this the same number, and the repository does also state the (0,∞) form of the resulting vanishing elsewhere (see the entry for eq-p054-1). (v) the paper's three-term middle expression is nowhere displayed as such: `angular_integral_balance`/`axial_integral_balance` have already discharged the ∂_t and ∂_z moments, leaving only the axial-viscosity term on the right. Severity low: the conclusion the paper wants from (5.21) — both total moments zero — is reached by `angular_integral_zero`/`axial_integral_zero`, so the surrounding result is proved by this other route.",
-          "verdict": "deviation"
+          "summary": "Lean has an equivalent formula. The Lean states the display in the similarity variables (R, eta) with the common power of q removed, not in (r, z, t). angularDensity and axialDensity are R^2 r_{theta,n} and R r_{z,n} in conservative form, term for term with the paper's conservative forms at the top of p. 53. angular_integral_balance / axial_integral_balance state \"total moment = minus the axial-viscosity moment of order n-1\" (the time and axial-flux moments already cancelled by the hypotheses hem, hum, hflux), and angular_integral_zero / axial_integral_zero state the final \"= 0\". The uncancelled three-term middle member is not a single declaration, but it is the combination of moment_five, moment_dr_boundary, moment_timeOp and moment_axialOp used at lines 576-581 and 610-614, all stated separately. Other differences: (i) integrals are over [0, B] under explicit `exterior B S` hypotheses, bridged to (0, infinity) by moment_eq_positive; the radial boundary terms the paper drops are explicit. (ii) The physical residual R_{j,n} = q^{-A-1+lambda_n} r_{j,n} and its physical r-moment are never written. The passage back to the paper's physical form uses only stated declarations: timeOp_toRadius / axialOp_toRadius identify timeOp, axialOp with T, Z; hasDerivAt_pullback_time / hasDerivAt_pullback_z state that physical d/dt and d/dz of q^b f(inner) are q^(b-1) T and q^(b-D) Z; integral_weighted_radial_scale states the r = sqrt(q) R moment scaling for weight r^2 with arbitrary exponent b and arbitrary g. For the axial line (weight r) no scaling lemma is stated as such; it is the same lemma specialised to g(R)/R plus algebra under the integral on r > 0, which I count as formal but did not see written anywhere. (iii) n = 1 angular: the paper's renormalised last integral corresponds to LowerAngularViscosityMoment, supplied by lowerAngularViscosityMoment_of_renormalized (generic) and, for the actual profile, actual_viscosity_total_zero; the physical-variable form of that one term is physical_axial_viscosity_moment_zero. I did not check the exponent bookkeeping (orderExponent, pressureExponent against -A + lambda_n, -2A + lambda_n) beyond reading the definitions, and did not check Appendix A's P against referencePower.",
+          "verdict": "faithful"
         }
       ]
     }

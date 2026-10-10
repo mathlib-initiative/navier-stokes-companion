@@ -1,0 +1,26 @@
+{
+  "id": "eq-5.25/attributed/NavierStokes.BaseResidual.cartesian_finite_monomials_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BaseResidual.cartesian_finite_monomials_bound",
+      "line": 314,
+      "module": "NavierStokes.BaseResidual",
+      "path": "NavierStokes/BaseResidual.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean#L314"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BaseResidual.cartesian_finite_monomials_bound",
+        "kind": "theorem"
+      },
+      "relation": "implies",
+      "role": "attributed",
+      "snippet": {
+        "line": 314,
+        "text": "(hB : IsCompact B) (m : ℕ) : ∃ C, 0 < C ∧ ∀ z ∈ B, z.1 < 1 → (cartesianChart h z).1 ≤ 1 → (cartesianChart h z).2.1 ∈ Icc lo hi → (cartesianChart h z).2 ∈ K → ‖iteratedFDeriv ℝ m (fun y => ∑ i, cartesianMonomial h (b i) (f i) y) z‖ ≤ C * (cartesianChart h z).1 ^ (bmin - m)  -- set form, all q ≤ 1, no filter"
+      }
+    }
+  }
+}

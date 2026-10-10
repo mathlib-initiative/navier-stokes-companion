@@ -12,13 +12,14 @@
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
       "declaration": {
-        "id": "NavierStokes.TransitionRamp.ordered_seed_bounds"
+        "id": "NavierStokes.TransitionRamp.ordered_seed_bounds",
+        "kind": "theorem"
       },
       "relation": "states",
       "role": "key",
       "snippet": {
         "line": 2179,
-        "text": "(hΛ : 0 < Λ) … : ∃ B, 1 ≤ B ∧ ∃ K, 1 ≤ K ∧ ∃ BJ, 1 ≤ BJ ∧ ∀ C, 0 < C → ∀ E : CoefficientProfile d Λ C, ∀ δ …, ∀ T κ w₁ w₂, … → (… |iteratedDeriv n (R.physicalF T κ w₁ w₂ (X,·))| ≤ K / C ∧ |iteratedDeriv n (R.physicalU T κ w₁ (X,·))| ≤ B) ∧ (… |iteratedDeriv n (R.endpointLog T κ w₁ w₂ C)| ≤ BJ ∧ … ≤ B)"
+        "text": "(hΛ : 0 < Λ) … (hscale : stabilityScale … ≤ Λ) (N) : ∃ B, 1 ≤ B ∧ ∃ K, 1 ≤ K ∧ ∃ BJ, 1 ≤ BJ ∧ ∀ C, 0 < C → ∀ E, ∀ δ …, ∀ T κ w₁ w₂, … → (∀ X ≥ 0, ∀ η ∈ Icc (-1) 1, ∀ n ≤ N, |iteratedDeriv n (R.physicalF T κ w₁ w₂ (X,·)) η| ≤ K / C ∧ |iteratedDeriv n (R.physicalU T κ w₁ (X,·)) η| ≤ B) ∧ (∀ η, ∀ n ≤ N, |iteratedDeriv n (R.endpointLog T κ w₁ w₂ C) η| ≤ BJ ∧ |iteratedDeriv n (R.endpointU T κ w₁) η| ≤ B)"
       }
     }
   }

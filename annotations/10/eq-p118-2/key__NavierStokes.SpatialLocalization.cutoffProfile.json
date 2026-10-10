@@ -3,7 +3,9 @@
   "target": {
     "pin": {
       "declaration": "NavierStokes.SpatialLocalization.cutoffProfile",
-      "line": 41
+      "line": 41,
+      "module": "NavierStokes.SpatialLocalization",
+      "path": "NavierStokes/SpatialLocalization.lean"
     },
     "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpatialLocalization.lean#L41"
   },
@@ -14,9 +16,10 @@
         "kind": "def"
       },
       "relation": "defines",
+      "role": "key",
       "snippet": {
         "line": 41,
-        "text": "noncomputable def cutoffProfile (p : ℝ × ℝ) : ℝ := SmoothCutoffs.cutoff (16 * p.1) * SmoothCutoffs.cutoff (4 * p.2)"
+        "text": "cutoffProfile p = SmoothCutoffs.cutoff (16 * p.1) * SmoothCutoffs.cutoff (4 * p.2)"
       }
     }
   }

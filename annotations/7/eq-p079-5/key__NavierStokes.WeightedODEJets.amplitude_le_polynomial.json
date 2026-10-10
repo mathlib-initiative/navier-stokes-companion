@@ -3,7 +3,9 @@
   "target": {
     "pin": {
       "declaration": "NavierStokes.WeightedODEJets.amplitude_le_polynomial",
-      "line": 562
+      "line": 562,
+      "module": "NavierStokes.WeightedODEJets",
+      "path": "NavierStokes/WeightedODEJets.lean"
     },
     "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedODEJets.lean#L562"
   },
@@ -12,9 +14,11 @@
       "declaration": {
         "id": "NavierStokes.WeightedODEJets.amplitude_le_polynomial"
       },
+      "relation": "states",
+      "role": "key",
       "snippet": {
         "line": 562,
-        "text": "K * (w*K*S^m + L*(w*K*S^m)) * (1 + K*L*(2^N*(K*S^m)))^n ≤ w * (2^(N+1)*K^3)^(n+1) * S^((m+1)*(n+1)) for L ≤ K*S"
+        "text": "(hLS : L ≤ K * S) : K * (w*K*S^m + L*(w*K*S^m)) * (1 + K*L*(2^N*(K*S^m)))^n ≤ w * (2^(N+1) * K^3)^(n+1) * S^((m+1)*(n+1))"
       }
     }
   }

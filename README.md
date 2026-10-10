@@ -1,6 +1,6 @@
 # Navier–Stokes source/formalization companion
 
-This repository pairs the 80 numbered items of OpenAI's *Finite time blowup for Navier–Stokes* (166 pages) with the Lean declarations of [openai/NavierStokesAndEuler](https://github.com/openai/NavierStokesAndEuler) at commit `f9e8bc5b38b6e212696e8a30e3e91517af887bbd`. It has three parts:
+This repository pairs the 80 numbered items and the 762 displayed equations of OpenAI's *Finite time blowup for Navier–Stokes* (166 pages) with the Lean declarations of [openai/NavierStokesAndEuler](https://github.com/openai/NavierStokesAndEuler) at commit `f9e8bc5b38b6e212696e8a30e3e91517af887bbd`, and says for each whether the Lean states what the paper states. It has three parts:
 
 - Literature Links annotations;
 - a PDF overlay viewer;
@@ -8,7 +8,12 @@ This repository pairs the 80 numbered items of OpenAI's *Finite time blowup for 
 
 ## Status
 
-These results come from a machine audit: for each item, one auditor, a pairing skeptic and a mathematics skeptic, plus a judge where the skeptics dissented. A review pass then tried to refute every medium finding and re-audited the six least confident OK verdicts blind; it refuted none and reworded eleven. No human has confirmed any of it. A PDE expert must review the results before any public use.
+These results come from a machine audit. No human has confirmed any of it. A PDE expert must review the results before any public use.
+
+- **Items:** two independent audits, then an adjudication of the 35 items on which they differed, under one rule: an item is stated faithfully only if the paper's statement follows from stated Lean declarations by logic alone. The five medium findings that came out of that were each traced again in depth; all five were lowered to low.
+- **Equations:** one audit of every displayed equation, each block checked by a second agent. A blind second run of a quarter of the tasks agreed on 93% of blocks; the 18 it disputed were adjudicated.
+
+[`REPORT.md`](REPORT.md) gives the method, the counts and every finding.
 
 ## Viewing
 

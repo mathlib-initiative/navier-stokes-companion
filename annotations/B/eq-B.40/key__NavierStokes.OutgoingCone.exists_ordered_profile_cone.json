@@ -12,13 +12,14 @@
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
       "declaration": {
-        "id": "NavierStokes.OutgoingCone.exists_ordered_profile_cone"
+        "id": "NavierStokes.OutgoingCone.exists_ordered_profile_cone",
+        "kind": "theorem"
       },
       "relation": "states",
       "role": "key",
       "snippet": {
         "line": 503,
-        "text": "∃ M, 0 < M ∧ ∀ m ≥ M, ∀ P, OutgoingEntranceCone.amplitudeThreshold m ≤ P → ∀ K > 0, ∃ lam0 > 0, ∀ F : OutgoingProfile.Profile, F.data.core.P = P → F.data.core.m = m → … F.data.core.lam < lam0 → F.data.h ≤ heightThreshold m F.data.core.lam → ∀ left ≤ 0, ∃ XR0 > 0, ∀ XR > XR0, ProfileCleanCone F XR left"
+        "text": "∃ M, 0 < M ∧ ∀ m, M ≤ m → ∀ P, amplitudeThreshold m ≤ P → ∀ K, 0 < K → ∃ lam0, 0 < lam0 ∧ ∀ F : Profile, F.data.core.P = P → F.data.core.m = m → … F.data.core.lam < lam0 → F.data.h ≤ heightThreshold m F.data.core.lam → ∀ left ≤ 0, ∃ XR0, 0 < XR0 ∧ ∀ XR, XR0 < XR → ProfileCleanCone F XR left"
       }
     }
   }

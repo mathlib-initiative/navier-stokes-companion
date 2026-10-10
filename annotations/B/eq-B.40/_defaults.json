@@ -1,16 +1,13 @@
 {
   "kind": "equation",
   "label": "Equation (B.40)",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 157,
     "rect": [0.211118, 0.44231, 0.657951, 0.03477]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "kind": "theorem"
-      },
       "item": "eq-B.40",
       "locator": {
         "physical": [157],
@@ -20,19 +17,19 @@
       "region": "eq-B.40@p157",
       "verdicts": [
         {
-          "confidence": 0.7,
-          "evidence": ["paper: \\begin{aligned} M_d,\\; T_d,\\; P_*,\\; \\lambda,\\; h \\;\\longrightarrow\\;& \\text{tolerance for matching moments},\\; j_0 \\;\\longrightarrow\\; \\delta_*,\\, \\sigma_*,\\, \\Lambda \\\\ \\longrightarrow\\;& (\\mathcal{B}_k),\\; T_{\\mathrm{sh}} \\;\\longrightarrow\\; \\mathsf{C},\\; X_R \\;\\longrightarrow\\; \\kappa_0,\\, t_1,\\; \\text{widths of final transitions.} \\end{aligned}"],
+          "confidence": 0.8,
+          "evidence": ["paper: \\begin{aligned} M_d,\\ T_d,\\ P_*,\\ \\lambda,\\ h \\ \\longrightarrow\\ & \\text{tolerance for matching moments},\\ j_0 \\ \\longrightarrow\\ \\delta_*,\\ \\sigma_*,\\ \\Lambda \\\\ \\longrightarrow\\ & (\\mathcal{B}_k),\\ T_{\\mathrm{sh}} \\ \\longrightarrow\\ \\mathsf{C},\\ X_R \\ \\longrightarrow\\ \\kappa_0,\\ t_1,\\ \\text{widths of final transitions.} \\end{aligned} \\tag{B.40}"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "different",
+          "relation": "equivalent",
           "role": "claim",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. (B.40) is not an equation but a dependency chain: a summary of the admissible order in which the parameters may be chosen (each entry may depend only on entries to its left). The Lean does not display this chain anywhere; it encodes the ordering structurally, as the nesting of ∃/∀ in several separate theorems, each covering one segment. Segment-by-segment, from the declarations read in source: (i) M_d, P_*, λ, h: `exists_ordered_profile_cone` fixes m (= M_d) first, then P ≥ amplitudeThreshold m (= P_*), then lam0 (λ), then h ≤ heightThreshold m lam (so h after M_d, P_*, λ), with X_R last (∃ XR0, ∀ XR > XR0); T_d is not a separate Lean choice because the paper fixes T_d = e^{M_d} + 10 from M_d. (ii) tolerance → j_0 → δ_*, σ_*, Λ → T_sh → C: `exists_ordered_matching_threshold` puts ∃ eps (the matching tolerance) before ∀ j, then ∀ prep : AxisPreparation F j (whose fields `delta`, `sigma` are δ_*, σ_*), then ∃ Λ0 ∀ Λ ≥ Λ0, then ∃ T (= T_sh) before ∃ C0 ∀ C ≥ C0; `exists_ordered_prepared_continuation` repeats the same nesting with ∃ rho, ∃ jcap before ∀ j and ends with ∀ J ∀ epsilon ∃ tolerance ∃ w, i.e. the finite control order and tolerance last. (iii) (B_k) → C → widths: `ordered_seed_bounds` produces B, K, BJ from Λ before ∀ C and quantifies the ramp parameters T κ w₁ w₂ after C, which is the paper's statement (p. 157 line above (B.40) and p. 156) that B_k may depend on Λ but is independent of large C, and that the widths come last. (iv) the C → X_R link: `eventually_matching_geometry` gives radiusFloor < matchingRadius F C = 110·(C·P)^10 for large C, i.e. X_R is determined by C, matching X_R = 110(C P_*)^10 in the paper. What I did not find: a single declaration stating the whole chain, and any Lean parameter identifiable as the collar shear factor κ_0 or the first-collar width t_1 of (B.26); the κ, w₁, w₂ of `ordered_seed_bounds` are the activation-ramp damping constant and ramp widths, which I did not verify are the paper's κ_0, t_1, ω_fin. The surrounding results (Remark B.9 and Corollary B.10) are about this bookkeeping only, and the ordering they need is realized in the quantifier nesting of the theorems above, so this is packaging rather than a mathematical gap.",
-          "verdict": "deviation"
+          "summary": "Lean has an equivalent formula. (B.40) is not a formula but a statement about the order in which the finite parameters can be chosen (Remark B.9; repeated as the last sentence of Corollary B.10 and matched by the quantifier order of Proposition 4.10 on p. 36). The Lean has no single displayed chain; it states the same order as quantifier nesting, and every arrow is covered by a statement I read. (1) M_d, T_d, P_*, lambda, h first: exists_ordered_profile_cone nests m, then P, then lam0, then h; T_d is dropLength = exp m + 10, the paper's T_d = e^{M_d} + 10 (text layer, lines 1778 and 6676). (2) All of these before the tolerance and j_0: exists_ordered_prepared_continuation takes the finished profile F as an argument and then gives 'exists rho, exists jcap, forall |j| <= jcap'. (3) then delta_*, sigma_*, Lambda: 'forall prep : AxisPreparation F j' (fields delta, sigma), then 'exists Λ0, forall Λ >= Λ0'. (4) then (B_k), T_sh: 'exists T' sits after Λ and before C0 in the same statement; ordered_seed_bounds states the bounds B, K, BJ as existing given Λ and before 'forall C' and 'forall T κ w₁ w₂', which is the paper's 'independent of sufficiently large C and of smaller radial transition widths' in Lemma B.7. (5) then C, X_R: 'exists C0, forall C >= C0', with X_R not a separate choice but matchingRadius F C = 110 (C P)^10, and radius_large / eventually_matching_geometry giving that it exceeds any prescribed floor. (6) last kappa_0, t_1, widths: 'exists w : ContinuationWitness' comes after C and E; its RampParameters fields are kappa (the factor in baseSlope = -(damping T κ · stock)/2, the paper's slope -κ p_{1,r}/2), actTime (activation width, the paper's t_1), widthU and widthA (the axial shut-off and the interpolation of a to 4/5, the paper's two final widths), plus a reference cutoff width refTime. The two halves are composed in that order by exists_prepared (outer profile) followed by assembly_exists -> preparedWitness_exists. Differences that remain are packaging: the chain is spread over several theorems, the (B_k) -> T_sh dependence (T from exists_duration (2*BJ)) is visible only inside the proof of exists_ordered_matching_threshold (the display puts both in one group, so it asserts no order between them), Lean quantifies universally over delta_*, sigma_* preparations where the paper chooses them, and Lean carries one extra late parameter (refTime). Finding B's reason for 'different' was the lack of a single declaration and not finding kappa_0 / t_1; the first is allowed packaging and the second is resolved by RampParameters.",
+          "verdict": "faithful"
         }
       ]
     }

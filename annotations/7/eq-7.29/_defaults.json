@@ -1,7 +1,7 @@
 {
   "kind": "equation",
   "label": "Equation (7.29)",
-  "status": "formalized",
+  "status": "partial",
   "location": {
     "page": 83,
     "rect": [0.226279, 0.569569, 0.643181, 0.025973]
@@ -15,23 +15,21 @@
         "text": "Equation (7.29), p. 83, in the statement of Lemma 7.4"
       },
       "region": "eq-7.29@p083",
-      "relation": "states",
-      "role": "key",
       "verdicts": [
         {
-          "confidence": 0.7,
-          "evidence": ["paper: |\\det \\mathsf{H}| \\ge c/S_*, \\qquad \\|\\mathsf{H}^{-1}\\| \\le C\\sqrt{S_*}, \\qquad c\\sqrt{S_*}\\,|T| \\le y_\\sigma \\le C\\sqrt{S_*}\\,|T|."],
+          "confidence": 0.72,
+          "evidence": ["paper: |\\det \\mathsf{H}| \\ge c/S_*, \\qquad \\|\\mathsf{H}^{-1}\\| \\le C\\sqrt{S_*}, \\qquad c\\sqrt{S_*}\\,|T| \\le y_\\sigma \\le C\\sqrt{S_*}\\,|T|. \\tag{7.29}"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "equivalent",
+          "relation": "lean_weaker",
           "role": "proof_step",
-          "severity": "none",
+          "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The three clauses are packaged as one Lean structure, with R = sqrt(S_n) playing the paper's sqrt(S_*). Clause 1 is literal: `determinant` says detGap ≤ |det(normalizedMatrix R H)|, and `normalizedMatrix_det` rewrites that as detGap ≤ R^2 |det H| = S_n |det H|, i.e. |det H| ≥ detGap/S_*. The lower half of clause 3 is literal in the Lean's variables: `weights` says inverseLower*R*zeta ≤ y_j, i.e. y_sigma ≥ c sqrt(S_*) zeta, where the Lean carries the flat edge factor zeta instead of |T| (the target is FlatCovariance.scaledTarget zeta (T0 p) = zeta·T0, with T0 continuous and, by the strict cone hypothesis, nonvanishing on the compact K, so |T| ≍ zeta there). Clause 2 and the upper half of clause 3 are not stated as such, but follow in two lines from the stated `entries` and `determinant` fields by the 2x2 Cramer/adjugate identities that the file already uses: |H i j| ≤ entryBound/R and |det H| ≥ detGap/R^2 give |(H⁻¹) i j| = |adj(H) i j|/|det H| ≤ (entryBound/R)·(R^2/detGap) = C·sqrt(S_*), and y_j = cramerNumerator_j/det H gives |y_j| ≤ 2(entryBound/R)|T|·(R^2/detGap) = C sqrt(S_*) |T|.",
-          "verdict": "faithful"
+          "summary": "Lean has a weaker form of it. The display closes Step 2 of the proof of Proposition 7.5 (not the statement of Lemma 7.4, as the metadata says). The Lean packages it as ZeroOrderBounds with R = sqrt(S_n).\n\nWhere the Lean hypotheses hold, all three clauses follow by formal steps:\n- |det H| >= c/S_* is the `determinant` field after normalizedMatrix_det.\n- ||H^{-1}|| <= C sqrt(S_*) and y_sigma <= C sqrt(S_*)|T| are stated by no declaration. Both follow by 2x2 adjugate/Cramer algebra from the `entries` and `determinant` fields, since `weights` is by definition cramerNumerator / det. Finding A's objection that the upper half is missing therefore does not stand.\n- c sqrt(S_*)|T| <= y_sigma is exists_prepared_bounds at zeta = targetAmplitude v p, rewritten with actualTarget_eq_direction_all. targetAmplitude is the norm of actualTarget by definition.\n\nWhat is not covered is the display's range. The paper asserts the bounds on each enlarged slow neighbourhood \"relative to tau >= 0\" (p. 74, Prop. 7.5 on p. 82). The cone margin, hence the y clause, is asserted on the neighbourhood's intersection with the closed active annulus, which is a condition on (X, eta) only. Every Lean statement of the bounds requires p ∈ positivePart (referenceSet W) and p ∈ (domain W a.N).carrier L. Unfolded, that is the open two-mesh cell with 0 < p.2.2 (p.2.2 is T = tau/Q), normalized q in [1/2, 2] and X in [activeLeft, activeRight]. Two parts of the paper's range are unstated:\n1. **The face tau = 0**, for all three clauses. The carrier and positivePart both require strictly positive time. Reaching the face needs a limit or continuity of H and T up to tau = 0, which is not a formal step.\n2. **Points of the enlarged box with q/Q outside [1/2, 2] and X_a < X < X_b**, for the y clause only. The cone-margin inputs (Prepared.target_margin, target_unit, target_actual, prepared_model_mem, actualTarget_eq_direction_all) are all restricted to referenceSet. Extending the margin needs the continuity argument the paper invokes on p. 74, which the repository does not state there.\n\nClauses 1 and 2 are not affected by gap 2: exists_family_bounds quantifies over every p in the carrier and can be instantiated with the target direction at the representative.\n\nThe Lean also states things the display does not: the entry bound |H_ij| <= C/sqrt(S_*), which is the content of (7.28), and the lower bound in terms of the moving weight. Because part of the display's range neither is stated nor follows formally, the class is lean_weaker.\n\nNot verified: that the paper's unspecified \"one fixed factor\" enlargement equals the Lean's two-mesh cell, that the Lean covariance matrix is the paper's H, and whether the tau = 0 face is recovered elsewhere in the repository by a separate limiting argument. Nothing was compiled.",
+          "verdict": "deviation"
         }
       ]
     }

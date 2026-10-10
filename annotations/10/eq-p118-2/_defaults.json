@@ -6,12 +6,6 @@
     "page": 118,
     "rect": [0.236212, 0.229597, 0.527807, 0.023364]
   },
-  "target": {
-    "pin": {
-      "module": "NavierStokes.SpatialLocalization",
-      "path": "NavierStokes/SpatialLocalization.lean"
-    }
-  },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
       "item": "eq-p118-2",
@@ -21,10 +15,9 @@
         "text": "Display 118.2, p. 118, in the proof of Proposition 10.1"
       },
       "region": "eq-p118-2@p118",
-      "role": "key",
       "verdicts": [
         {
-          "confidence": 0.78,
+          "confidence": 0.7,
           "evidence": ["paper: \\chi_x = 1 \\quad (r \\le r_0/2,\\ |z| \\le z_0/2), \\qquad \\operatorname{supp}\\chi_x \\Subset \\{r < r_0,\\ |z| < z_0\\}."],
           "provenance": {
             "actor": "agent",
@@ -35,7 +28,7 @@
           "role": "definition",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The Lean fixes the radii absolutely instead of choosing them: r_0 = z_0 = 1/4 (supportCylinder is r² ≤ 1/16, |z| ≤ 1/4), and the plateau on which the cutoff is 1 is r² < 1/32, |z| < 1/8 — the axial plateau is exactly z_0/2 but the radial plateau r < 1/(4√2) ≈ 0.177 is larger than the paper's r_0/2 = 1/8, so the Lean plateau is not the paper's. The support statement is the weaker tsupport ⊆ the closed cylinder rather than compact containment ⋐ in the open one. Most importantly the paper's choice is constrained: it picks τ_0, z_0 with C_0(τ_0 + z_0^{1/D}) < q_*/2 so that by (10.3) the support of c lies in q < q_*/2, inside the local domain Ω_* = {τ > 0, q < q_*}; no such constraint, and no occurrence of q_* or of (10.3), appears in SpatialLocalization.lean. Smoothness in (r², z), the bounds 0 ≤ χ_x ≤ 1 and axisymmetry (spatialCutoff_rotation) do match. Rated low rather than medium because the margin the paper's constraint buys is not needed in the Lean development: the Lean local fields are built on PhysicalWaveSum.preterminal = {w | w.1 < 1}, i.e. they are defined and smooth on the whole time slab t < 1 rather than only on Ω_*, so an arbitrary fixed cylinder is admissible, and Proposition 10.1's conclusions are in fact proved (PaperLocalization.local_theorem_with_compact_candidate).",
+          "summary": "Lean uses a different formula here. The paper chooses a cutoff by two properties tied to parameters: r_0 is any fixed positive number, z_0 is chosen with C_0(τ_0 + z_0^{1/D}) < q_*/2, the cutoff is 1 on {r ≤ r_0/2, |z| ≤ z_0/2}, and its support is compactly inside the open cylinder {r < r_0, |z| < z_0}. The Lean fixes one explicit cutoff with absolute constants, cutoff(16 r²)·cutoff(4 z) with a bump of inner radius 1/2 and outer radius 1. What is stated about it: it is 1 on {r² < 1/32, |z| < 1/8} (and, by one application of cutoff_one_of_abs_le, on the closed version), and its closed support lies in the closed cylinder {r² ≤ 1/16, |z| ≤ 1/4}. Three things in the display are not supplied. (1) No single pair (r_0, z_0) makes the display follow from these statements: the plateau clause in z needs z_0 ≤ 1/4 from what is stated, while compact containment in {|z| < z_0} needs z_0 > 1/4, since cutoff_tsupport gives closed z-support reaching ±1/4. The Lean statement is containment in the closed cylinder, not compact containment in the open one. (2) The radial geometry differs: the Lean plateau radius is 1/(4√2) against support radius 1/4, not the paper's ratio 2, so the Lean plateau lemma does not follow from the display with r_0 = 1/4 either. (3) The freedom in r_0 and the smallness of z_0 relative to q_* have no counterpart: no file mentions both spatialCutoff/supportCylinder and qstar (repository grep: the two file lists are disjoint), and physical_q_bound, the counterpart of (10.3), is not applied to the cutoff. The Lean does not need the margin from q = q_*, because its local potential, direct field and pressure are stated smooth on all of {t < 1} (LocalPaper.Properties), so any fixed compact cylinder is admissible. The parts of the sentence around the display that do match are smoothness in (r², z), 0 ≤ χ_x ≤ 1, axisymmetry, compact support, and being 1 on an open neighbourhood of the origin. The conclusions of Proposition 10.1 are proved in local_theorem_with_compact_candidate with the open plateau as the neighbourhood, so the surrounding result stands. I did not verify lemma by lemma that the Lean bump is strictly below 1 outside its inner ball; point (1) only uses that no declaration states a larger z-plateau.",
           "verdict": "deviation"
         }
       ]

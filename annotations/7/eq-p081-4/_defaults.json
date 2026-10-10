@@ -17,18 +17,18 @@
       "region": "eq-p081-4@p081",
       "verdicts": [
         {
-          "confidence": 0.72,
-          "evidence": ["paper: t \\cdot \\mathcal{K} t = -2F t_r t_\\theta + (2F + R F_R) t_r t_\\theta + G_R t_r t_z = g \\cdot \\bigl( t_r (t_\\theta , t_z) \\bigr)."],
+          "confidence": 0.85,
+          "evidence": ["paper: t \\cdot \\mathcal{K} t = -2F t_r t_\\theta + (2F + R F_R)\\, t_r t_\\theta + G_R\\, t_r t_z = g \\cdot \\bigl( t_r (t_\\theta , t_z) \\bigr)."],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "equivalent",
-          "role": "proof_step",
+          "relation": "lean_stronger",
+          "role": "heuristic",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. No declaration was found that states the scalar identity itself; what Lean has is the matrix whose quadratic form it is, written in a form that already performs the display's cancellation. Coordinates in `Space = EuclideanSpace ℝ (Fin 3)` are radial, angular, axial (file header, MovingFrameODE.lean:14), `tail w = !₂[w 1, w 2] = w_tan` and `pack r w = !₂[r, w 0, w 1]`, so `baseAction F g t` has radial component -2F t_θ and tangential component t_r • ((2F) e_θ + g): this is exactly the matrix K of the paper's (7.6), rows (0,-2F,0), (2F+RF_R,0,0), (G_R,0,0), once g = (R F_R, G_R) (paper p. 74: \"set F = V/R and g = (RF_R, G_R)\"), which is `shearVector`. Sign convention agrees: `baseAction` is passed as the argument `Kt` of `TangentProjection.projectedRhs` (TangentProjection.lean:30), matching t' + K t + ... = -f in (7.5). The rewriting is one step: ⟪t, baseAction F g t⟫ = t_r(-2F t_θ) + ⟪t_tan, t_r • (2F e_θ + g)⟫ = -2F t_r t_θ + 2F t_r t_θ + t_r ⟪g, t_tan⟫ = g · (t_r(t_θ,t_z)), using `inner_pack_left` (MovingFrameODE.lean:56) and `inner_unitTheta` (line 61) — the same -2F / +2F cancellation the display exhibits. No Lean lemma performs it.",
+          "summary": "Lean has a stronger form of it. No declaration that I found states the scalar identity t·Kt = g·(t_r(t_θ,t_z)). What the repository states is the operator itself. `baseAction F g t` (MovingFrameODE.lean:106) has radial component -2F·t_θ and tangential component t_r•(2F·e_θ + g), in coordinates radial, angular, axial (file header, line 14). With g = (R F_R, G_R) (paper p. 74; `shearVector`, PhaseEstimates.lean:845) this is exactly the matrix K of (7.6) on p. 75, rows (0,-2F,0), (2F+RF_R,0,0), (G_R,0,0).\n\nThe display then follows by unfolding that definition and algebra: by `inner_pack_left` (line 56) and `inner_unitTheta` (line 61), ⟪baseAction F g t, t⟫ = (-2F t_θ) t_r + t_r(2F t_θ + ⟪g, tail t⟫) = -2F t_r t_θ + (2F + g_0) t_r t_θ + g_1 t_r t_z = t_r⟪g, tail t⟫. This is my hand computation, not compiled. No analytic fact is used.\n\nThe Lean says strictly more, because the full matrix determines the quadratic form and not conversely, so I rule lean_stronger rather than A's equivalent; both are in the clean class.\n\nThe display sits in the explanatory paragraph \"Energy transfer from the shear\" after the proof of Lemma 7.4 has ended. (7.22) is cited elsewhere only in the Figure 5 road map (text.txt line 655); I did not trace later uses of the unnumbered display beyond that. I ruled it heuristic and compared it anyway because the repository states the operator K. In Lean the shear enters the reduced equations through ⟪B 0, g⟫ and ⟪B 1, g⟫ (rhsX and rhsY, MovingFrameODE.lean:162-169), not through this quadratic form.",
           "verdict": "faithful"
         }
       ]
