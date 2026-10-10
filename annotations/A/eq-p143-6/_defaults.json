@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 143.6",
+  "status": "formalized",
+  "location": {
+    "page": 143,
+    "rect": [0.356407, 0.58661, 0.287409, 0.043263]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.TerminalEdgeFactor",
+      "path": "NavierStokes/TerminalEdgeFactor.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p143-6",
+      "locator": {
+        "physical": [143],
+        "printed": [143],
+        "text": "Display 143.6, p. 143, in the proof of Proposition A.10"
+      },
+      "region": "eq-p143-6@p143",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: q^{A+1/2} K f_r = \\frac{2 E_{\\mathrm{pow}}(X)\\,\\mathcal{H}(2d/X)}{\\sqrt{2X}}\\, f'."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Lean never writes the normalizing power q^{A+1/2}: it keeps the unnormalized physical chart and carries q inside `carrier`. The rewriting is the paper's own normalization. `carrier` is `heatAmplitude = C · s^{-A} 𝓗(2τ/s)` with s = r²/2 = qX and 2τ/s = 2d/X, i.e. carrier = q^{-A} E_pow(X) 𝓗(2d/X) with E_pow = C X^{-A} (`spatialExponent (1+h) = 1/2 - (1+h) = -A`); and `radius² = 2 q X`, so radius = √q·√(2X). Hence q^{A+1/2}·carrier·(2/radius) = 2 E_pow(X)𝓗(2d/X)/√(2X). Combining `radialTaper_deriv` (f_r = (2/r) f', with f' = (edge 4 δ/δ³)·taperSlopeFactor by `tailShapeDeriv_factorization`) with `boundaryCoefficient` gives K f_r = (edge 4 δ/δ³)·boundaryCoefficient, which is the display after multiplication by q^{A+1/2}. The profile-chart variant `profileBoundaryCoefficient` is literally 2·E_pow(X)𝓗(2d/X)/√(2X) · taperSlopeFactor, because q is normalized to 1 there. No constant, exponent or sign differs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

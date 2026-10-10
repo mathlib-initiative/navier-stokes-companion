@@ -1,0 +1,23 @@
+{
+  "id": "eq-p122-2/key/NavierStokesR3.PressureRecovery.noncanonical_average_identity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.PressureRecovery.noncanonical_average_identity",
+      "line": 129,
+      "module": "NavierStokes.R3.PressureRecovery",
+      "path": "NavierStokes/R3/PressureRecovery.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureRecovery.lean#L129"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.PressureRecovery.noncanonical_average_identity"
+      },
+      "snippet": {
+        "line": 129,
+        "text": "(∫ x, (velocityAverage T a u v k x : ℂ) * laplacianCLM (realTest ψ …) x) + (∫ x, (velocityAverage T (deriv a) u v k x : ℂ) * realTest ψ … x) + (∑ i, ∫ x, (tensorAverage T a u v k i x : ℂ) * partialCLM i (realTest ψ …) x) = ((∫ t in Icc 0 T, a t * (∫ x, spatialPartial k (fun y => (p - q) (t,y)) x * ψ x) : ℝ) : ℂ)"
+      }
+    }
+  }
+}

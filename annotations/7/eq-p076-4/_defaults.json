@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 76.4",
+  "status": "formalized",
+  "location": {
+    "page": 76,
+    "rect": [0.348693, 0.472819, 0.303193, 0.042736]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p076-4",
+      "locator": {
+        "physical": [76],
+        "printed": [76],
+        "text": "Display 76.4, p. 76, in the proof of Lemma 7.1"
+      },
+      "region": "eq-p076-4@p076",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: B^{\\ell} = M^{-1}\\begin{pmatrix} e_r^{T} \\\\ N_a^{T}\\end{pmatrix}, \\qquad \\begin{pmatrix} e_r^{T} \\\\ N_a^{T}\\end{pmatrix} U = I_2."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both identities hold in the repository with the same content, encoded by linear maps instead of the display's matrices; the rewriting is the following dictionary. (a) U is `MovingFrameODE.tangent ρ B x y = x·e_r - ρx·B 0 + y·B 1` (MovingFrameODE.lean:94), and B = U M is `FrameData.ambient z w = tangent ρ (frame z) (w₀+w₁) (h(w₀-w₁))` (PrimaryODE.lean:93), so M is the change of variables x = p+q, y = h(p-q) with h = eigenvector = c₀√(1+s²); M is never inverted as a matrix, its inverse appearing as the explicit p = (x + y/h)/2, q = (x - y/h)/2 in `FrameData.forcing` (PrimaryODE.lean:89). (b) The two rows (e_r^T; N_a^T) are 'coordinate 0' and '⟪B 1, tail ·⟫': `projectedRhs_radial` (MovingFrameODE.lean:171) and `projectedRhs_N` (183) state exactly these two rows applied to the projected ambient evolution — the same object the paper hits with B^ℓ after projecting out ik_m n_Φ π_m from (7.5) — and give rhsX, rhsY. The second display is then literally these two rows on U: `tangent_reconstructed` (785) states U∘(e_r^T; N_a^T) = id on n_Φ^⊥, and its proof contains (e_r^T; N_a^T)U = I₂ row by row, the x row at line 789 (`rfl`, i.e. (tangent ρ B x y) 0 = x) and the y row at 796-797 (⟪B 1, tail (tangent ρ B x y)⟫ = y, by frame_inner10 = 0, frame_inner11 = 1). The first display is then B^ℓ = M⁻¹(rows): `FrameData.norm_le_ambient` (PrimaryODE.lean:1065, docstring 'The inverse coordinate transformation is uniformly bounded too') computes (e_r^T; N_a^T)·B = M at lines 1069-1077, and composing with the explicit M⁻¹ of `forcing` gives B^ℓ B = I₂. (c) The remaining differences are packaging and a sign: no `Matrix (Fin 3) (Fin 2)` or `Matrix (Fin 2) (Fin 3)` occurs anywhere in NavierStokes/, so neither B^ℓ nor I₂ is ever formed as a matrix and neither display is the statement of any one declaration; and the Lean's second frame vector is B 1 = quarterTurn(B 0) = -N_a (MovingFrameODE.lean:315, 385), so its y coordinate is minus the paper's. A case-insensitive search for 'left inverse'/'leftInv' in NavierStokes/ finds only AxisResolvent.lean:147, WeightedRadialPrimitive.lean:233 and `Function.LeftInverse` at ParametricRephase.lean:50 (circle reparametrization), all three unrelated to this frame — the repository's name for this left inverse is 'inverse coordinate transformation'. The surrounding result, the scalar coordinate equations feeding (7.10), is proved along this route by `MovingFrameODE.frame_coefficients_close` (line 653) and `MovingFrameODE.modal_equations_iff` (line 686).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

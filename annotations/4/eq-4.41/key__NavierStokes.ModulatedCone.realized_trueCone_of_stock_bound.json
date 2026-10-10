@@ -1,0 +1,26 @@
+{
+  "id": "eq-4.41/key/NavierStokes.ModulatedCone.realized_trueCone_of_stock_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ModulatedCone.realized_trueCone_of_stock_bound",
+      "line": 331,
+      "module": "NavierStokes.ModulatedCone",
+      "path": "NavierStokes/ModulatedCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L331"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ModulatedCone.realized_trueCone_of_stock_bound",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 331,
+        "text": "(hstock : ∀ n : ℝ, 1 ≤ n → ∀ p ∈ K, |q₁ n p - p₁ p| ≤ Cstock/n ∧ |q₂ n p - p₂ p| ≤ Cstock/n) (hrelaxed : ∀ p ∈ K, nominalSpeed (a p) (m p) < coneBound (p₁ p + p₂ p * m p) (p₂ p - p₁ p * m p)) : ∃ N : ℕ, 0 < N ∧ ∀ n ≥ N, ∀ p ∈ K, InTrueCone (q₁ n p) (q₂ n p) (angularShear (realizedE …) p) (signedAxialShear (realizedE …) (realizedU …) p) — the declaration that plays (4.41)'s role in a single statement: O(1/n) stock and shear errors against a tolerance, concluding cone membership for all large n; its proof (lines 351-366) is exactly `realized_shears_uniform_bound` + `realized_loop_stable` + `exists_integer_frequency`"
+      }
+    }
+  }
+}

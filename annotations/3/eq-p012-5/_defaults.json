@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 12.5",
+  "status": "formalized",
+  "location": {
+    "page": 12,
+    "rect": [0.354397, 0.655632, 0.291433, 0.024133]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p012-5",
+      "locator": {
+        "physical": [12],
+        "printed": [12],
+        "text": "Display 12.5, p. 12, in section 3.3"
+      },
+      "region": "eq-p012-5@p012",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\mathcal{L}_{u_B}(w_{\\mathrm{lin}}, \\pi_{\\mathrm{lin}}) = 0, \\qquad \\nabla \\cdot w_{\\mathrm{lin}} = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "equation",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. The display is the hypothesis pair of `NavierStokes.R3CompactEnergy.energy_balance` (NavierStokes/R3CompactEnergy.lean:186), stated there in strictly more general form, so it is present in the repository and my previous `absent` was wrong. Term for term, with `D = PeriodicIntegration.spatialPartial` (line 17): `hdw : ∀ x, (∑ i, D i w x i) = 0` (line 189) is ∇·w = 0; `heq` (lines 191-192) is z = Δw − (v·∇)w − (w·∇)u − ∇p, since `fderiv ℝ w x (v x)` is Dw(x)[v(x)] = (v·∇)w, `fderiv ℝ u x (w x)` is Du(x)[w(x)] = (w·∇)u, `∑ i, D i (D i w)` is the componentwise Laplacian and `pressureGradient (fun y => p y.2) 0 x` is ∇p. Putting u := v := u_B, p := π_lin, w := w_lin and z := ∂ₜw_lin, `heq` rearranges to ∂ₜw_lin + (u_B·∇)w_lin + (w_lin·∇)u_B − Δw_lin + ∇π_lin = 0, which is L_{u_B}(w_lin, π_lin) = 0 sign for sign for the operator displayed on p. 11 at ν = 1 (the ν = 1 reading is corroborated by the −∫|∇w_lin|² of eq-p012-6). The Lean is stronger in two ways: u and v are independent, so the transport field and the sheared field need not be the same background; and z is an arbitrary field, the identification z = ∂ₜw being made by the caller. Two observations about use, not about the statement, and all I claim about use: the one caller I traced, `R3LocalEnergyEvolution.difference_energy_balance` (lines 48-76), instantiates it at u ≠ v — the difference of two solutions of the same forced equation — and not at u = v = u_B; and the explicitly written-out linearized operator `NavierStokes.HarmonicResidual.linearResidual` (NavierStokes/HarmonicResidual.lean:206, time derivative + transport(B,a) + transport(a,B) + pressure gradient − ν·vector Laplacian), together with its cylindrical form `NavierStokes.LinearWaveResidual.linearResidual` (LinearWaveResidual.lean:57), is in the repository applied to the constructed wave coefficients, where its value is nonzero and is estimated; the only `linearResidual = 0` statements I found are `PeriodizedWaveBounds.linearResidual_zero` (the value at the zero field) and the principal-symbol equations `ActualSignedStageControls.raw_principal_zero`/`actual_principal_zero`, which annihilate only the leading principal part of a specific signed wave.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

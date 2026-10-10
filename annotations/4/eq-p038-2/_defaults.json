@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 38.2",
+  "status": "partial",
+  "location": {
+    "page": 38,
+    "rect": [0.211848, 0.222393, 0.576705, 0.042241]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p038-2",
+      "locator": {
+        "physical": [38],
+        "printed": [38],
+        "text": "Display 38.2, p. 38, in the proof of Proposition 4.10"
+      },
+      "region": "eq-p038-2@p038",
+      "verdicts": [
+        {
+          "confidence": 0.74,
+          "evidence": ["paper: Q_s\\ge Q_{\\min}/2,\\qquad E\\ge e_*/2,\\qquad .7\\le a\\le .9,\\qquad \\left|\\frac{N_s}{EQ_s}\\right|\\le w_*,\\qquad |b_s|\\le \\frac{.1}{1+w_*}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Three of the paper's five inequalities are stated in Lean, but not all on the restoration/correction window, and the window itself is covered by a different package of margins. Clause by clause. (i) `.7 ≤ a ≤ .9` is stated exactly, both endpoints. `ReferenceBounds.logSlope P p = 1 + X·∂_X f/f` (ReferenceBounds.lean:31) is the paper's l of (4.11), and `logSlope_eq_shear` gives logSlope = 1 − shearA/2, i.e. shearA = 2 − 2l = a; so the window 11/20 ≤ logSlope ≤ 13/20 of `MatchingBounds.shape_slope` (MatchingDebtBounds.lean:583) and of `ShapeTransition.logarithmicSlope_bounds` is literally 7/10 ≤ a ≤ 9/10. It is transported to the actual profile and used for the paper's purpose in `actual_shape_relaxed`, whose step `hl` (MatchingConeBounds.lean:800-805) and conclusion (lines 813-818) yield `2 < ReferenceBounds.p1` — the paper's P_c > 2, since p1 h p = X·angularLag/L — and `IsRelaxed`. The caveat is the range: `profiles_shape_logSlope` carries the hypothesis `hR : X ≤ c.radius * Real.exp (-8)`, so that identification runs only up to the *left endpoint* of the restoration interval. Inside `RepairConeBounds.window = Icc (-8) (-5) ×ˢ Icc (-1) 1` itself the Lean exposes only `3/5 ≤ familyA` (`model_margins`), not .7 ≤ a ≤ .9. (ii) `Q_s ≥ Q_{min}/2` is not what Lean states. What Lean has on the window is an absolute floor at the unperturbed profile v = 0: `have hq : 1 ≤ OutgoingHistories.Qs F.reset F.amp p` (RepairConeBounds.lean:693), and `canonical_Qs_ideal` identifies that Qs at v = 0 with the *ideal* angular lag, i.e. with the paper's reference Q_{s,0}. So Lean proves Q_{s,0} ≥ 1 on the window — a lower bound on the very quantity whose minimum Q_min is — rather than the paper's halving statement Q_s ≥ Q_min/2 for the perturbed profile. The two are not comparable as written: Q_{s,0} ≥ 1 would give Q_s ≥ Q_min/2 only with Q_min ≤ 2, and the paper (p. 37, last line) fixes only Q_min = min Q_{s,0} > 0, with no upper bound that I found. For perturbed v the window statement is instead the combined `Real.exp (-8)/2 ≤ familyProjection` (`model_margins`), which is the paper's halving pattern applied to the projection rather than to Q_s and E separately. (iii) `|N_s/(EQ_s)| ≤ w_*` exists as `OutgoingEntranceCone.directionRatio` (literally N_s/(E·Q_s)) bounded by `entranceRatioBound` in `directionRatio_entrance_bound` — but at the outgoing-entrance stage (0 ≤ y ≤ holdStart), not on the restoration window, so it is a precedent for the quantity, not a counterpart for this display. (iv) `E ≥ e_*/2` I did not find stated separately on the window. (v) `|b_s| ≤ .1/(1+w_*)`: on the shape interval Lean proves the stronger 𝒟_XU = 0 exactly (`profiles_shape_radialU`, MatchingConeBounds.lean:629, used at :818); on the window it is replaced by `familyB_zero` (b = 0 at v = 0) plus the Lipschitz smallness of the whole 22-component observation vector (`model_estimate`). So the Lean reaches the same destination by another route: where the paper derives v_s = a + b_s²/a ≤ .9 + .01/.7 < 1 from this five-inequality package, Lean's `model_margins` supplies 3/5 ≤ familyA, familySpeed ≤ 1 and familyProjection ≥ e^{-8}/2 directly. The surrounding proposition is still proved; the difference is in the intermediate formula, not the conclusion. I did not find a later Lean step that needs the paper's numerals Q_min, e_*, w_* as written.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

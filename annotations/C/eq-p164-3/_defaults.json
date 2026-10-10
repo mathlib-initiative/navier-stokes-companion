@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 164.3",
+  "status": "partial",
+  "location": {
+    "page": 164,
+    "rect": [0.256997, 0.393824, 0.486231, 0.025658]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p164-3",
+      "locator": {
+        "physical": [164],
+        "printed": [164],
+        "text": "Display 164.3, p. 164, in the proof of Proposition C.3"
+      },
+      "region": "eq-p164-3@p164",
+      "verdicts": [
+        {
+          "confidence": 0.62,
+          "evidence": ["paper: n_\\theta + t_s n_z \\ge \\kappa, \\qquad (v_s - 2)(n_z - t_s n_\\theta)^2 \\le (2 - \\kappa)(n_\\theta + t_s n_z)^2."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. What differs is the UNIFORMITY of kappa over the closed annulus, not the formula: the paper's two inequalities themselves, at kappa = 0, are carried pointwise by the Lean, in the paper's own quantities, over the whole open annulus. `FullTrueCone v` asserts `TrueConeLoop.InTrueCone p_1 p_2 A C` at every p with activeLeft W < p.1 < activeRight W and p.2 ∈ Icc (-1) 1 — the paper's range X_a < X < X_b, -1 ≤ eta ≤ 1. Unfolding `InTrueCone` with A = a, C = c, t_s = C/A, so that v_s = A(1 + (C/A)^2) = a(1 + t_s^2), P_c = p_1 + p_2 t_s and J_c = p_2 - p_1 t_s exactly as in (4.20), it gives 0 < a, 2 < v_s, 2 < P_c and v_s < coneBound P_c J_c; then `true_cone_iff` with hv : 2 < v_s turns the last two into v_s < P_c ∧ (v_s - 2) J_c^2 < 2 (P_c - v_s)^2. Dividing both by |p_s - (a, -b_s)|^2 > 0 and substituting the two identities of eq-p164-2 (n_theta + t_s n_z = (P_c - v_s)/|p_s - s| and n_z - t_s n_theta = J_c/|p_s - s|) gives n_theta + t_s n_z > 0 and (v_s - 2)(n_z - t_s n_theta)^2 < 2 (n_theta + t_s n_z)^2 — the paper's display at kappa = 0, with both inequalities strict. This is a proved statement for the constructed witness: `exists_weighted_profile` produces F, W, d, v with `FullTrueCone v` as its first conjunct. What is not stated anywhere found is a single kappa > 0 that makes both bounds uniform over the whole CLOSED annulus, which is what the paper's display asserts and what its later compactness use needs. The Lean obtains uniformity by two other routes instead. (a) `inner_direction_positive` and `outer_direction_positive` give a uniform margin eps for `directionProjection` and `directionGap`, but only on the two EDGE COLLARS, not on the whole range X_a < X < X_b; and there the margin is normalised against a different quantity. Writing the Lean direction as n = unitOfTilt t = (1, t)/sqrt(1 + t^2), so that n_theta = 1/sqrt(1 + t^2) and n_z = t/sqrt(1 + t^2), one has 1 + s t = (n_theta + s n_z)/n_theta and t - s = (n_z - s n_theta)/n_theta. Hence Lean's `eps ≤ directionProjection s t` reads n_theta + s n_z ≥ eps*n_theta, and Lean's `eps ≤ directionGap v s t` reads 2(n_theta + s n_z)^2 - (v - 2)(n_z - s n_theta)^2 ≥ eps*n_theta^2, whereas the paper's two inequalities are n_theta + t_s n_z ≥ kappa and 2(n_theta + t_s n_z)^2 - (v_s - 2)(n_z - t_s n_theta)^2 ≥ kappa*(n_theta + t_s n_z)^2. So both margins are proportional, but to powers of n_theta rather than to the constant kappa and to the projection respectively; the two are interconvertible only given bounds on n_theta, which these declarations do not carry. (b) On the CLOSED annulus the cone is additionally stated spectrally: `exists_closed_direction` gives a continuous unit direction field satisfying `ReferenceCone ∧ TargetCone` everywhere on Icc (-1) 1 ×ˢ Icc (leftEdge W) (rightEdge W), with `TargetCone` packaging inwardness (⟪T, normalDirection g⟫ < 0) and a strict ratio bound rather than an explicit kappa; `closed_shear_positive` supplies the accompanying a > 0, v_s > 2 on the closed rectangle. No declaration was found that states a single kappa ∈ (0, 2) satisfying both of the paper's inequalities simultaneously over the closed rectangle in the paper's normalisation; the uniform margin re-appears downstream only in the spectral variables. Per calibration rule 2 this is a uniformity/packaging difference, not a weaker mathematical statement of the formula itself: the formula holds pointwise at kappa = 0 by (FullTrueCone, InTrueCone, true_cone_iff) and the surrounding Proposition C.3 cone clause is still proved.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

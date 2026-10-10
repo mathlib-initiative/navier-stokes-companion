@@ -1,0 +1,39 @@
+{
+  "kind": "equation",
+  "label": "Display 42.5",
+  "status": "formalized",
+  "location": {
+    "page": 42,
+    "rect": [0.219827, 0.57082, 0.560564, 0.04718]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p042-5",
+      "locator": {
+        "physical": [42],
+        "printed": [42],
+        "text": "Display 42.5, p. 42, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p042-5@p042",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: u_c = \\sum_{i=1}^{2} \\alpha_i(\\eta)\\,\\beta_i(X), \\qquad e_c = \\sum_{j=1}^{3} \\xi_j(\\eta)\\,\\gamma_j(X), \\qquad c = (\\alpha_1,\\alpha_2,\\xi_1,\\xi_2,\\xi_3)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same ansatz with two rewritings. (i) The amplitude is factored out: the paper's α_i(η) is the Lean's A(η)·(c η).1 i and the paper's ξ_j(η) is A(η)·(c η).2 j, where A(η) is the background amplitude K(η) (see `editU`/`editE` and `physicalU`/`physicalE` at FiveProfileMoments.lean:473-474); this is an invertible rescaling since A(η) > 0. (ii) The Lean fixes a particular admissible choice of the paper's free functions: the two β's live in the left half of the patch and the three γ's in the right half (`Patch.leftHalf`/`Patch.rightHalf`, lines 30-35), so β's and γ's have disjoint supports as well. The paper only requires the β's mutually disjoint and the γ's mutually disjoint, so the Lean's choice is one of the configurations the paper's 'Choose' permits — but it makes u_c·e_c ≡ 0 (`u_mul_e`, line 291), which changes the quadratic form in (4.42); see that block.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

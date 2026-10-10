@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.20)",
+  "status": "partial",
+  "location": {
+    "page": 53,
+    "rect": [0.221453, 0.525918, 0.647616, 0.088228]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.20",
+      "locator": {
+        "physical": [53],
+        "printed": [53],
+        "text": "Equation (5.20), p. 53, in the proof of Lemma 5.2"
+      },
+      "region": "eq-5.20@p053",
+      "verdicts": [
+        {
+          "confidence": 0.74,
+          "evidence": ["paper: \\int_0^\\infty r\\,u_{z,n}\\,dr = q^{1-A+\\lambda_n}\\int_0^\\infty R\\,U_n\\,dR,\\qquad \\int_0^\\infty r\\Bigl(\\sum_{i+j=n} u_{z,i}u_{z,j} + p_n\\Bigr)dr = q^{1-2A+\\lambda_n}\\int_0^\\infty R\\Bigl(\\sum_{i+j=n} U_iU_j + \\Pi_n\\Bigr)dR"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The Lean never forms the two physical-variable integrals of (5.20) and states no q^{1-A+λ_n} / q^{1-2A+λ_n} conversion. It works throughout in the inner radius R: the two inner right-hand sides are rows 0 and 4 of `PositiveOrderMoments.rowDensity` (row 4 carries −(R²/2)∂_RΠ_n, i.e. ∫RΠ_n already replaced by the integration by parts of eq-p053-5), and the conclusion the paper draws from (5.20) — that both integrals vanish — is stated directly in inner form by `repaired_moment_data`: moment B 1 (u n) = 0 and moment B 1 (conv n u u + pressureHistory) = 0, over [0,B] rather than (0,∞). The only physical↔inner radial rescaling lemma found anywhere in the repository is `RenormalizedHeatMoment.integral_weighted_radial_scale` (line 643), ∫_{r>0} r²(q^b g(r/√q)) dr = q^{b+3/2}∫_{R>0} R² g(R) dR, which carries the weight r² of the angular moment displayed above (5.19), not the weight r of (5.20); no weight-r analogue was found. Severity low: the subsequent Lean development (the integral balances and the stress support of Lemma 5.2) uses only the inner-variable vanishing, so nothing downstream needs the physical form.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

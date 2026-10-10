@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 44.7",
+  "status": "partial",
+  "location": {
+    "page": 44,
+    "rect": [0.305078, 0.617121, 0.389892, 0.04181]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p044-7",
+      "locator": {
+        "physical": [44],
+        "printed": [44],
+        "text": "Display 44.7, p. 44, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p044-7@p044",
+      "verdicts": [
+        {
+          "confidence": 0.68,
+          "evidence": ["paper: \\kappa = \\min\\Bigl\\{ 1, \\ \\min_{[X_a,X_b]\\times[-1,1]} A_n, \\ \\min_{[X_a,X_b]\\times[-1,1]} G_n \\Bigr\\} > 0 ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration was found that defines κ as this minimum, and none was found stating (4.26) — A_n ≥ κ and (v_s-2)B_n² ≤ (2-κ)A_n² — uniformly over the rectangle itself (a uniform G_n margin over an outer sub-rectangle does exist; see `full_interval_direction_margin` below). The same constant is obtained the other way round, from compactness of the whole closed set rather than from an explicit minimum. `exists_closed_direction` proves the strict cone at every point of Icc (-1) 1 ×ˢ Icc (leftEdge W) (rightEdge W) — the paper's [X_a,X_b]×[-1,1] in (η, log X) — for one continuous unit field, `TargetCone.inward` being the strict form of A_n > 0 and `ratio_lt_one` the strict form of G_n > 0 (equivalent to it pointwise, since c0² = (v_s-2)/2, which is how `targetCone_of_signedShear` derives it from (4.22)). `normalized_target_of_tilt` is the explicit bridge from directionProjection > 0 and directionGap > 0 to that cone at the normalised direction, so the passage between cleared and normalised forms is written down, not left implicit. `compact_target_choice` then converts such a pointwise strict cone on a compact set into a single η > 0 with ⟪T q, normalDirection (g q)⟫ ≤ -η and targetRatio + η ≤ slopeRatio u for every q, and `modulated_representative_bounds` packages exactly that one η — κ's role. Three differences from the display as written. (a) That uniformity is taken over the compact slow representative set `referenceSet W`, after the direction is transported to the positive-time representatives, not over the profile rectangle; over the rectangle itself only the pointwise strict cone is stated, the uniform version being `positive_uniform_margin` applied to its conclusion, which is a few lines but is stated nowhere. (b) The quantities η bounds are -⟪T, normalDirection g⟫, which equals A_n/√(1+t_s²), and the slack in targetRatio < 1; the first differs from A_n by that positive factor and the second measures the cone gap in targetRatio rather than in G_n, so the constant produced is not the paper's κ. (c) The clamp `min 1` has no counterpart, nor does the consequence κ < 2 drawn from it on this page, and Lean bundles a slope parameter u into the same existential. Two uniform margins of this kind do exist elsewhere, on sub-regions. `full_interval_direction_margin` states 3/2 ≤ profileConeGap (the t_s = 0 form of G_n, by eq-p044-6) together with 2 + h < profileSpeed ≤ 2 + 2h for every y ∈ [terminalStart F.data, tailEnd F.data] and every eta ∈ Icc (-1) 1 — an explicit-constant uniform G_n margin over a full rectangle, neither a collar nor an existential, and so closer in kind to the display than anything else found; but that rectangle is only the outer portion of the paper's, since the terminal interval begins at tailStart + 1/2 whereas the paper's rectangle starts at activeLeft W = 4/scale, and it bounds G_n alone, not A_n and not the min with 1. `profile_uniform_cone` is a uniform margin for the terminal profile near an edge, again on a collar and existential rather than a minimum. Note a false friend: `NavierStokes.LeadingStressWeights.kappa_lt_one` and `W.controls.kappa` are a control parameter of the construction, not this cone margin. The margin the proof needs is supplied; this formula is not.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

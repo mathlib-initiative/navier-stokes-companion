@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.45)",
+  "status": "formalized",
+  "location": {
+    "page": 141,
+    "rect": [0.282435, 0.311137, 0.586634, 0.04414]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-A.45",
+      "locator": {
+        "physical": [141],
+        "printed": [141],
+        "text": "Equation (A.45), p. 141, in the proof of Lemma A.8"
+      },
+      "region": "eq-A.45@p141",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\int_0^\\infty r^2(u_\\theta - K_{\\mathrm{pow}})\\,dr = q^{3/2-A}\\int_0^\\infty (H - H_{\\mathrm{pow}})\\,dX = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both equalities are stated, as a chain of four theorems rather than one. The scaling step is physical_moment_scaling: the Lean exponent is q^{1-h} where the paper writes q^{3/2-A}, and these are the same number, since A = 1/2 + h (RenormalizedHeatMoment.A h = 1/2 + h, line 191 context; StressAlgebra.velocityExponent h = 1/2 + h), so 3/2 - A = 1 - h exactly. The left-hand integrand matches: renormalizedMoment u ref z = ∫_0^∞ r²(u(z,r) - ref r) (line 109) with ref = referencePower h C r = C·(r²/2)^{-A h} (line 191), the power tail K_pow. The change of variable to X = r²/2 is profileMoment_eq_xMoment together with xMoment_eq_outgoing_reference, whose right-hand side is ∫_0^∞ (H - H_pow) dX with H = √(2X)·E (HeatedOutgoing.lean:39) and H_pow = √(2X)·powerE (OutgoingDilation.lean:67). The vanishing is CompensationWitness.renormalized_zero. Composing the four gives (A.45) verbatim; the only differences are packaging and the use of 1 - h for 3/2 - A. The Lean statement is for η in the parameter domain, whereas the paper's display suppresses η.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 12.3",
+  "status": "formalized",
+  "location": {
+    "page": 12,
+    "rect": [0.373092, 0.36296, 0.254041, 0.023245]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p012-3",
+      "locator": {
+        "physical": [12],
+        "printed": [12],
+        "text": "Display 12.3, p. 12, in section 3.3"
+      },
+      "region": "eq-p012-3@p012",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: w = \\nabla \\times \\mathcal{A}_{\\mathrm{wave}}, \\qquad \\nabla \\cdot w = 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The first clause is definitional in Lean and matches exactly: both OscillatoryCurl.wave and the constructed PhysicalSignedWave…physicalVelocity are *defined* as SpatialCurl.spatialCurl of a vector potential, and SpatialCurl.curl/curlLinear is the ordinary antisymmetric Jacobian on Euclidean ℝ³, with the physical time held fixed. The second clause is proved rather than assumed, but with hypotheses the paper leaves tacit: SpatialCurl.spatialDivergence_spatialCurl needs the potential C² on the spatial slice at the point; OscillatoryCurl.wave_divergence_free adds smoothness of the phase and amplitude on an open set and a non-vanishing phase normal there; PhysicalSignedWave…physicalVelocity_divergence (I read its full hypothesis list at PhysicalSignedWave.lean:1231-1240) adds the band's regularity and angular-periodicity data R and A, a non-zero reference frequency hK, a ChartGeometry G, hradius (every point of the strip domain has positive radius), a positive radius at the point (0 < z.2 0), membership of the graph image in the strip domain (hx), 0 < delta, and membership in a valid cylindrical chart (hchart). Those are the standing smoothness and off-axis assumptions of the construction, not extra mathematical content, so the display is recovered wherever the paper's objects are defined. A separate algebraic cylindrical version, CurlGeometry.cylindrical_div_curl, proves div(curl A) = 0 for the 1/r-corrected cylindrical operators under stated commutation and product rules.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

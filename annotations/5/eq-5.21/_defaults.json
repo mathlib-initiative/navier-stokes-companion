@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.21)",
+  "status": "partial",
+  "location": {
+    "page": 53,
+    "rect": [0.159761, 0.720751, 0.709307, 0.096088]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.21",
+      "locator": {
+        "physical": [53],
+        "printed": [53],
+        "text": "Equation (5.21), p. 53, in the proof of Lemma 5.2"
+      },
+      "region": "eq-5.21@p053",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\int_0^\\infty r^2\\mathscr{R}_{\\theta,n}\\,dr = \\partial_t\\int_0^\\infty r^2 u_{\\theta,n}\\,dr + \\partial_z\\int_0^\\infty r^2\\!\\!\\sum_{i+j=n}\\!\\! u_{z,i}u_{\\theta,j}\\,dr - \\partial_{zz}\\int_0^\\infty r^2 u_{\\theta,n-1}\\,dr = 0,\\\\ \\int_0^\\infty r\\,\\mathscr{R}_{z,n}\\,dr = \\partial_t\\int_0^\\infty r\\,u_{z,n}\\,dr + \\partial_z\\int_0^\\infty r\\Bigl(\\sum_{i+j=n} u_{z,i}u_{z,j} + p_n\\Bigr)dr - \\partial_{zz}\\int_0^\\infty r\\,u_{z,n-1}\\,dr = 0"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The Lean route is the same conservative-form argument, carried out for the general order n in the similarity variables (R, η) rather than in (r, z, t). What differs from the display: (i) the densities are `angularDensity` = R²𝔯_{θ,n} and `axialDensity` = R𝔯_{z,n} in inner variables; the physical residual 𝓡_{j,n} = q^{-A-1+λ_n}𝔯_{j,n} is never formed, and neither physical left-hand side ∫_0^∞ r²𝓡_{θ,n} dr, ∫_0^∞ r𝓡_{z,n} dr is written. (ii) Of the three physical moment terms on the right of the angular line, one is supplied in physical variables and two are reached only in inner variables. The one supplied is the ∂_zz term at n = 1, which p. 54 says is −∂_zz ∫_0^∞ r²(u_{θ,0} − P) dr: `renormalized_moment_derivative` (line 147) states exactly the differentiation under the integral the paper justifies in the paragraph after (5.19), ∂_z^n ∫_0^∞ r²(u − P) dr = ∫_0^∞ r² ∂_z^n u dr for this very weight r², and `physical_axial_viscosity_moment_zero` (line 480, conclusion at 488) concludes ∫_0^∞ r² ∂_zz u dr = 0 for the physical angular velocity, and `lowerAngularViscosityMoment_of_renormalized` (line 1485) is the glue that converts this into the inner-variable hypothesis `LowerAngularViscosityMoment` which `order_one_angular_stress_support` consumes, so for this one term the physical and the inner formulation are joined in the repository. The ∂_t term and the ∂_z flux term have no physical-variable counterpart that was found. (iii) In the inner route the time and axial derivatives are the scaled operators `timeOp`/`axialOp`, which commute with the moment only up to the explicit boundary terms B^{m+1}f(B,η) of `moment_timeOp`/`moment_axialOp`, which the paper's integral over (0,∞) does not carry; η-differentiation under the integral is `moment_de_zero` (line 143). (iv) the two balances `angular_integral_balance`/`axial_integral_balance` listed here integrate over [0,B], not (0,∞); their `exterior B S …` hypotheses make this the same number, and the repository does also state the (0,∞) form of the resulting vanishing elsewhere (see the entry for eq-p054-1). (v) the paper's three-term middle expression is nowhere displayed as such: `angular_integral_balance`/`axial_integral_balance` have already discharged the ∂_t and ∂_z moments, leaving only the axial-viscosity term on the right. Severity low: the conclusion the paper wants from (5.21) — both total moments zero — is reached by `angular_integral_zero`/`axial_integral_zero`, so the surrounding result is proved by this other route.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

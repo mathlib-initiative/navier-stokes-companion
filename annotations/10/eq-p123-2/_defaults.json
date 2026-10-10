@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 123.2",
+  "status": "formalized",
+  "location": {
+    "page": 123,
+    "rect": [0.25275, 0.25909, 0.494723, 0.027868]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p123-2",
+      "locator": {
+        "physical": [123],
+        "printed": [123],
+        "text": "Display 123.2, p. 123, in the proof of Lemma 10.5"
+      },
+      "region": "eq-p123-2@p123",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\|\\varphi_R^3 w\\|_3 \\le \\|\\varphi_R^2 w\\|_3 \\le B_R^{1/2}\\|w\\|_2^{1/2}, \\qquad \\|\\varphi_R^3 w\\|_4 \\le B_R^{3/4}\\|w\\|_2^{1/4}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both interpolation inequalities are stated verbatim, with identical exponents: B_R = ‖φ_R^4 w‖6 is comparisonLpNorm 6 (φ^4 • w), ‖w‖2 is comparisonLpNorm 2 w, and the exponent pairs (1/2, 1/2) for the L³ bound and (1/4, 3/4) for the L⁴ bound match the paper factor for factor; the Lean also adds the membership conclusion (MemLp) that the paper leaves implicit. Two gaps, both packaging. First, the Lean inequalities hold for any φ ≥ 0 that is a.e.-strongly-measurable — no upper bound of one is required, as the file docstring notes — so they are stated more generally than for φ_R. Second, the first link of the paper's chain, ‖φ_R³w‖_3 ≤ ‖φ_R²w‖_3, is not a named declaration: it is one line from cutoff_le_one (0 ≤ φ_R ≤ 1, so φ_R³ ≤ φ_R² pointwise) together with lpNorm_mono_of_norm_le. The Lean's own pressure-flux route never needs it — it reduces the cutoff power pointwise instead (PressureFluxTest.norm_r_le bounds the test by (8L)‖φ³w‖ directly), and cutoff_interpolation_three is used only at WeightedInterpolation.lean:204 inside cutoff_transport_bound, not on the pressure route.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

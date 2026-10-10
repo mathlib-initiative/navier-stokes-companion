@@ -1,0 +1,21 @@
+{
+  "id": "eq-p122-4/key/NavierStokesR3.Comparison.dissipationRoot",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.Comparison.dissipationRoot",
+      "line": 47
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ComparisonSetup.lean#L47"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.Comparison.dissipationRoot"
+      },
+      "snippet": {
+        "line": 47,
+        "text": "def dissipationRoot (phi : Space -> R) (w : VelocityField) (t : R) : R := Real.sqrt (weightedDissipation (fun x => phi x ^ 8) w t), where weightedDissipation chi w t = int x, chi x * gradientSq (fun y => w (t,y)) x and gradientSq f x = sum i : Fin 3, ‖partialD i f x‖ ^ 2"
+      }
+    }
+  }
+}

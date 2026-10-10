@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 122.2",
+  "status": "formalized",
+  "location": {
+    "page": 122,
+    "rect": [0.288763, 0.233656, 0.422694, 0.041846]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p122-2",
+      "locator": {
+        "physical": [122],
+        "printed": [122],
+        "text": "Display 122.2, p. 122, in the proof of Lemma 10.5"
+      },
+      "region": "eq-p122-2@p122",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\int_0^T a\\,\\nabla\\pi\\,dt = \\Delta \\int_0^T a w\\,dt + \\int_0^T a' w\\,dt - \\operatorname{div}\\int_0^T a g\\,dt."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean states the identity tested against a compact smooth real ψ and componentwise in k, which is the meaning of the paper's display as an identity of distributions. Term by term: ⟨Δ∫aw, ψ⟩ = ∫ (∫aw) Δψ is the first Lean term (scalarLaplacian ψ); ⟨∫a'w, ψ⟩ is the second (deriv a); ⟨-div ∫ag, ψ⟩ = +∑_i ∫ (∫a g_{ki}) ∂_i ψ is the third, so the paper's minus sign on the divergence becomes the Lean's plus sign on the integrated-by-parts term. The time integral over Icc 0 T equals the paper's ∫_0^T, and the hypotheses on a match C_c^∞(0,T) exactly (smooth, tsupport ⊆ Ioo 0 T). The sign convention w_Lean = u - v = -w, pi_Lean = -pi, g_Lean = -g applies to every term of this identity, which is homogeneous of degree one in (w, pi, g). The paper's accompanying assertion that the three right-hand terms lie in H^{-2}, L^2 and H^{-3} is not part of these statements; the corresponding quantitative control in Lean is PressureFunctionals.averagedPressureDifferenceValue_bound against the H^3 test norm, which I did not compare clause by clause.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

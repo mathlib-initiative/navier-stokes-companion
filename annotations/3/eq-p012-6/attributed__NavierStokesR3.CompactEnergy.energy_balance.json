@@ -1,0 +1,26 @@
+{
+  "id": "eq-p012-6/attributed/NavierStokesR3.CompactEnergy.energy_balance",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.CompactEnergy.energy_balance",
+      "line": 202,
+      "module": "NavierStokes.R3.CompactEnergy",
+      "path": "NavierStokes/R3/CompactEnergy.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/CompactEnergy.lean#L202"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.CompactEnergy.energy_balance",
+        "kind": "theorem"
+      },
+      "relation": "implies",
+      "role": "attributed",
+      "snippet": {
+        "line": 202,
+        "text": "theorem energy_balance (hu hp hf hcu : …) (hdiv : ∀ x, spatialDivergence u t x = 0) (hNS : ∀ x, navierStokesResidual u p t x = f (t,x)) : energyRate u t = -2 * dissipation u t + 2 * ∫ x, ⟪u (t,x), f (t,x)⟫_ℝ — a second, cutoff-free whole-space route to the same display, reached by taking f := -(u_B·∇)w - (w·∇)u_B + (w·∇)w"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "eq-p122-2/key/NavierStokesR3.PressureTemporalIdentity.pressure_time_identity",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.PressureTemporalIdentity.pressure_time_identity",
+      "line": 187,
+      "module": "NavierStokes.R3.PressureTemporalIdentity",
+      "path": "NavierStokes/R3/PressureTemporalIdentity.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureTemporalIdentity.lean#L187"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.PressureTemporalIdentity.pressure_time_identity"
+      },
+      "snippet": {
+        "line": 187,
+        "text": "(∫ t in Icc 0 T, a t * (∫ x, spatialPartial k (fun y => (p - q) (t,y)) x * ψ x)) = (∫ t in Icc 0 T, a t * (∫ x, (u - v) (t,x) k * scalarLaplacian ψ x)) + (∫ t in Icc 0 T, deriv a t * (∫ x, (u - v) (t,x) k * ψ x)) + (∫ t in Icc 0 T, a t * (∑ i : Fin 3, ∫ x, tensorDiff u v t k i x * spatialPartial i ψ x)), with ha : ContDiff ℝ ∞ a, hsupp : tsupport a ⊆ Ioo 0 T, hψ : ContDiff ℝ ∞ ψ, hcψ : HasCompactSupport ψ"
+      }
+    }
+  }
+}

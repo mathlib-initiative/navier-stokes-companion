@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 141.2",
+  "status": "partial",
+  "location": {
+    "page": 141,
+    "rect": [0.205658, 0.236521, 0.588906, 0.044338]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p141-2",
+      "locator": {
+        "physical": [141],
+        "printed": [141],
+        "text": "Display 141.2, p. 141, in the proof of Lemma A.8"
+      },
+      "region": "eq-p141-2@p141",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: \\int_{R_*}^\\infty r^2\\big(|K - K_{\\mathrm{pow}}| + |\\partial_t K|\\big)\\,dr \\le C_h(1+\\tau)\\int_{R_*}^\\infty r^{-1-2h}\\,dr = \\frac{C_h(1+\\tau)}{2h} R_*^{-2h}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The tail-integral evaluation is exact: with k = 2h, integral_decay_power gives ∫_{R_*}^∞ r^{-1-2h} dr = R_*^{-2h}/(2h), matching the paper's right-hand side including the constant 1/(2h). The first half of the integrand is covered: weighted_heat_difference_bound is exactly the pointwise majorant r²|K - K_pow| ≤ C_h r^{-1-2h} that this display integrates, and radialDifference_integrable is where that comparison is actually used (line 473) to make the moment integral converge. Two differences. (i) No declaration bounding r²|∂_t K| was found, so the display's second summand has no stated majorant; what the Lean needs of ∂_t K it gets elsewhere (see eq-A.44). (ii) The Lean has no single inequality of this shape, and in particular no τ-dependent constant C_h(1+τ): its majorant is τ-uniform. Where the paper uses this display to justify differentiating the moment under the integral sign, the Lean instead justifies it in renormalized_moment_derivative (line 147) and axial_viscosity_moment_zero (line 174) from a CommonExterior local-compact-support hypothesis, and in the axial variable rather than in time. So the estimate as written is not in the repository, but the integrability and the exact tail evaluation it is used for both are.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.40)",
+  "status": "partial",
+  "location": {
+    "page": 42,
+    "rect": [0.319833, 0.146517, 0.548344, 0.023766]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-4.40",
+      "locator": {
+        "physical": [42],
+        "printed": [42],
+        "text": "Equation (4.40), p. 42, in the statement of Lemma 4.9"
+      },
+      "region": "eq-4.40@p042",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\|p_N - p_0\\|_k \\le C_k\\left(A_{k+1} + D_{k+1}\\right)/N =: P_k/N."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. Lean states the k = 0 case only. `profile_stocks_rate` (and its localized twin) gives one constant C with |p_N - p_0| ≤ C/n in sup norm on a set S for all n above a threshold; there is no statement of the paper's ‖p_N - p_0‖_k for k ≥ 1, and no declaration was found that carries η-derivatives of the stock difference. The structural content of (4.40) — that the stock bound comes from Lemma 4.4(ii)/(4.17) applied to the profile and moment differences — is present as `profile_stocks_from_history_bounds`, but again at order 0: it consumes ‖ΔF‖_0, ‖ΔU‖_0 and ‖Δm‖_1 (value and first η-derivative of each history row) where the paper's (4.17) asks for ‖Δ(U,E)‖_{k+1} + ‖Δm‖_{k+1}, so the constant structure C_k(A_{k+1} + D_{k+1}) is not reproduced — Lean produces an unnamed constant from compactness instead. The hypothesis 0 < (P n).f p in the conclusion plays the role of the paper's \"N large enough that E_N ≥ ½ min E_0\". Rated low, not medium: the paper's later uses of P_k on pp. 42-43 are at order 0 ((4.41) uses P_0; Step 4 uses ‖p_f - p_N‖_0), so the orders that are missing are not the ones the surrounding argument consumes.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

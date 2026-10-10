@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.44)",
+  "status": "partial",
+  "location": {
+    "page": 141,
+    "rect": [0.176275, 0.176456, 0.692794, 0.026343]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.44",
+      "locator": {
+        "physical": [141],
+        "printed": [141],
+        "text": "Equation (A.44), p. 141, in the proof of Lemma A.8"
+      },
+      "region": "eq-A.44@p141",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: K - K_{\\mathrm{pow}} = O_h(\\tau r^{-3-2h}),\\qquad \\partial_t K = O_h(r^{-3-2h}),\\qquad r^2 K_r - rK = O_h(r^{-2h})."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The three estimates are supplied unevenly. First estimate: weighted_heat_difference_bound states the r²-weighted form |r²(K - K_pow)| ≤ C_h·|C|·r^{-1-2h}, i.e. |K - K_pow| ≤ C_h r^{-3-2h}, but uniformly over ν ∈ [0,1] rather than with the paper's factor τ; the proof's calc does derive the ν-linear bound before substituting ν ≤ 1, so the Lean statement is the τ-uniform weakening of the paper's τ-linear one (on τ ∈ [0,1] it is implied by, not equivalent to, (A.44)). Second estimate: no declaration was found stating it as a bound; it follows in a few lines from radialProfile_hasDerivAt_time together with profile_derivative_bound — spatialExponent (1+h) = -1/2 - h = -A, so the stated time derivative is 2·(r²/2)^{-A-1}·profileJet(1+h,1,·) = 2^{A+2} r^{-3-2h}·profileJet, and profile_derivative_bound bounds the jet by a constant depending only on h; the sign flip ∂_t = -∂_τ is immaterial to an O-bound. Third estimate: no declaration bounding r²K_r - rK was found, but the combination itself is in the repository and Lean disposes of it without any decay estimate. TerminalStress.correction K f r = (r K r - r² K_r)·f_r (TerminalStress.lean:33-34) is exactly -(r²K_r - rK) paired with the taper's derivative, and it is instantiated with the heat tail of (A.44) itself, K = heatAmplitude C (1+h) t = C·radialProfile (1+h) (1-t) (TerminalStress.lean:147). What kills it is the taper's plateau, not the tail's decay: the taper g is eventually constant in the log radius, so deriv g vanishes for all large r and the term is identically zero out there. boundary_tendsto_zero_of_plateau (TerminalStress.lean:805) concludes r²·K·g_r → 0 from the plateau alone, with K an arbitrary function and no support or decay hypothesis on it; outgoing_boundary_tendsto_zero (:827) instantiates this with the actual outgoing taper and the heat amplitude; and terminal_forcing_integrable (TerminalPressure.lean:915) obtains IntegrableOn (correction K g) (Ioi r) by the step at 957-959, which is literally `change TerminalStress.correction K g u = 0` under deriv g =ᶠ[atTop] 0. The same plateau kills timeResidual (TerminalStress.lean:636) at 964-965, so even the second estimate's ∂_t K decay is not needed on the Lean route. Hence low, not medium: what is absent is the paper's two tail estimates as written, not the conclusions they serve — the vanishing boundary term and the tail integrability are obtained from the taper's plateau instead, and (A.45) is reached by the independent route of block eq-A.45.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

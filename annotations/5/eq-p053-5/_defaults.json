@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 53.5",
+  "status": "formalized",
+  "location": {
+    "page": 53,
+    "rect": [0.360217, 0.631131, 0.279779, 0.04414]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p053-5",
+      "locator": {
+        "physical": [53],
+        "printed": [53],
+        "text": "Display 53.5, p. 53, in the proof of Lemma 5.2"
+      },
+      "region": "eq-p053-5@p053",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\int_0^\\infty R\\,\\Pi_n\\,dR = -\\tfrac12\\int_0^\\infty R^2\\,\\partial_R\\Pi_n\\,dR"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same identity, written with the derivative as the primitive datum: Lean takes the smooth source q and sets Π_n = ProfileHistories.primitive q, so ∂_RΠ_n is q by `radialPartial_primitive`; substituting Π_n ↦ primitive q and ∂_RΠ_n ↦ q turns the Lean statement into the paper's. Both integrals are over (0,∞) and the constant −1/2 and the weights R, R² agree exactly. Lean additionally carries the hypotheses that make the boundary term R²Π_n vanish, which the paper leaves implicit: q smooth, q = 0 for R ≥ B, and ∫_{R>0} q = 0 (whence Π_n = 0 for R ≥ B). `moment_dr` gives the same identity over [0,B] with the boundary term B^{m+1}f(B,η) displayed rather than assumed away.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

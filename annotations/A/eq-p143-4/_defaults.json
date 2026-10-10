@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 143.4",
+  "status": "formalized",
+  "location": {
+    "page": 143,
+    "rect": [0.249297, 0.473905, 0.501636, 0.040999]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p143-4",
+      "locator": {
+        "physical": [143],
+        "printed": [143],
+        "text": "Display 143.4, p. 143, in the proof of Proposition A.10"
+      },
+      "region": "eq-p143-4@p143",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\psi_o = e^{-4/\\delta^2} g(\\delta), \\qquad g(\\delta) = \\frac{1}{e^{-(1-\\delta/2)^{-2}} + e^{-4/\\delta^2}}, \\qquad g(0) = e,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The two formulas are present verbatim: for δ > 0, `FlatCutoff.edge 4 δ = exp(-4/δ²)` and `FlatCutoff.edge 1 (1 - δ/2) = exp(-1/(1-δ/2)²) = e^{-(1-δ/2)^{-2}}`, so `taperFactor` is the paper's g and `tailShape_deficit` is ρ_o ψ_o(y) = f(3) - f(y) at y = 3 - δ (f(3) = 1 by `tailShape_late`). Two differences, neither mathematical: (i) Lean's `edge` is extended by 0 for δ ≤ 0, where the paper only works near δ = 0+; (ii) the third clause g(0) = e is nowhere stated as a Lean lemma — I searched for `taperFactor 0`, `taperFactor_zero` and `edge 1 1` in NavierStokes/ and found nothing. It follows in two lines from `FlatCutoff.edge_zero` (edge 4 0 = 0) and `edge_of_pos` (edge 1 1 = exp(-1)), and the Lean proof never needs the value: `taperFactor_pos` supplies the positivity that is all the paper uses g(0) = e for (see eq-p143-7).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

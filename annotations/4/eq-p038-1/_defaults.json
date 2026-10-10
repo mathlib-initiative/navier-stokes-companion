@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 38.1",
+  "status": "formalized",
+  "location": {
+    "page": 38,
+    "rect": [0.345124, 0.176436, 0.308996, 0.029306]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p038-1",
+      "locator": {
+        "physical": [38],
+        "printed": [38],
+        "text": "Display 38.1, p. 38, in the proof of Proposition 4.10"
+      },
+      "region": "eq-p038-1@p038",
+      "verdicts": [
+        {
+          "confidence": 0.74,
+          "evidence": ["paper: \\|G_i-4\\eta\\|_{C^{k+1}}+\\|\\Delta\\widehat{\\mathfrak m}(e^{-6},\\cdot)\\|_{C^{k+1}}<\\varepsilon_m"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same two quantities in the same finite-jet sense, with four encoding conventions to unwind; none of them changes the content. (1) Norm: the paper's C^{k+1} norm appears in Lean as `∀ n ≤ N, |iteratedDeriv n …|` / `‖iteratedFDeriv ℝ n …‖` over η ∈ [−1,1]. (2) One tolerance versus two: the paper imposes ε_m on the *sum*, Lean carries one tolerance for each term and on opposite sides of an implication. ‖G_i − 4η‖ is the hypothesis `hdef` (MatchingDebtBounds.lean:565-566), `|iteratedDeriv n (fun e => c.initialAxial e - 4*e) eta| ≤ driftBudget q rho` — `initialAxial` being G_i; ‖Δm̂‖ is the conclusion (:567-568), `‖iteratedFDeriv ℝ n (NominalProfile.normalizedDebt F c.debt) eta‖ < rho`. (`prefixBudget … < rho/(4*q.normalizer)`, :564, is a third, separate hypothesis on the vanishing prefix, not the paper's ‖Δm̂‖ term.) Routine both ways: the paper's sum < ε_m bounds each summand, and ε_m := driftBudget q rho + rho makes the paper's inequality follow from Lean's hypothesis and conclusion together. (3) Radius. Both radii are pinned in the definition chain, and they are the paper's: `resetPatch` (NominalProfile.lean:167) is left = e^{-6}, right = e^{-5}, verbatim the paper's correction interval, with `corrected_moments` (:289) paying the debt across it; `matchFraction = Real.exp (-5)` (:143); and `c.debt = actualDebt …` (:655) with `actualDebt … eta = moments F.U F.E matchFraction eta − moments (baseU …) (baseE …) matchFraction eta` (:412). So Lean reads the five-moment discrepancy at the *exit* e^{-5} and the paper reads Δm̂ at the *entrance* e^{-6}. The two agree, and this is the recovery argument: on the open patch (e^{-6}, e^{-5}) both fields entering the difference are the same ideal pair — `baseU_ideal` (:422) and `baseE_ideal` (:429) give baseU = idealU = 4η and baseE = idealE = P·f·x^{1/10} there, and `Profile.U_ideal` / `Profile.E_ideal` (OutgoingProfile.lean:131, :125) give the same for F.U, F.E on all of (0,1] ⊇ the patch — so the two moment integrands coincide on (e^{-6}, e^{-5}) and cancel in the difference, making `actualDebt` the same vector whether the integrals are cut at e^{-6} or at e^{-5}. (`baseE_ideal` carries the hypothesis `hold`, that the incoming shape field already matches the azimuthal reference on the patch; that is the paper's (B.34) matching, assumed in the same place.) (4) Sign and normalisation: the paper's Δm̂ = m̂ − m̂₀ while Lean's debt is moments F − moments base = m̂₀ − m̂, the amount that must be added to the constructed profile, i.e. −Δm̂; norms are unaffected. The paper normalises by (4.19) with ρ = X_R, whereas Lean's fields already live in x = X/X_R and `normalizedDebt` (:208) applies a further division by powers of `idealAmplitude F eta` and `idealU eta`; the two tolerances therefore differ by η-dependent positive factors, bounded above and below on [−1,1] since P > 0 and the shape is continuous and positive there — I state that as the rewriting, not as something I traced in Lean (see `not_traced`).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

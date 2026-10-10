@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.4)",
+  "status": "partial",
+  "location": {
+    "page": 25,
+    "rect": [0.202536, 0.533724, 0.665647, 0.027797]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.4",
+      "locator": {
+        "physical": [25],
+        "printed": [25],
+        "text": "Equation (4.4), p. 25, in the proof of Lemma 4.1"
+      },
+      "region": "eq-4.4@p025",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: E = \\sqrt{2X}\\,F,\\qquad V_0 = X v_0,\\qquad F = \\phi/\\mathsf{C},\\qquad U,\\,v_0,\\,\\Pi \\in C^{\\infty}([0,X_c]\\times[-1,1])"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "hypothesis",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The three displayed identities are exact in the Lean: E = sqrt(2X) F is the body of `Profiles.E`; V_0 = X v_0 is the body of `radialFlux` (p.1 times a factor, with `radialFlux_div_radial` exhibiting v_0 for X ≠ 0); F = φ/C is the C⁻¹ factor in `coefficientBundle` and in `leadingVelocity`. The smoothness clause is imposed differently. No declaration was found that fixes an X_c or states smoothness on a closed rectangle [0,X_c]×[-1,1]: searching decls.jsonl for `X_c`, `Xc`, `rectangle`, `Icc (-1) 1` and `×ˢ Icc (-1) 1`, every `X_c` hit is an incidental substring (`omegaDivX_congr_prefix`, `partialX_const_mul`, `physicalX_contDiffAt`, …) and every closed box of the form `Icc _ _ ×ˢ Icc (-1) 1` is a compact estimate region with a general left endpoint (`SlowBorelBase.innerBox lo hi`, the cone windows of OutgoingCone.lean and BaseResidual.lean), not a smoothness hypothesis on the profiles. Instead `Profiles` assumes ContDiffOn ℝ ∞ of f and U on the carrier of an open, scale-closed `RadialDomain`, and the assembled base instead assumes ContDiff ℝ ∞ on all of ℝ² for every coefficient of the sequence (`SmoothCoefficients`). Of the paper's list {U, v_0, Π}, in `Profiles` (ProfileHistories.lean:303) only U is hypothesised smooth — alongside f and the one-variable axis pressure `pressure0` — while v_0 and Π are constructed there (radialFlux through the radial average, `Profiles.pressure` = pressure0(η) + ∫_0^X f², matching the paper's next sentence that the radial momentum balance determines Π from its axis value), so their smoothness is proved rather than hypothesised. This scoping is to `Profiles` only: on the assembled route `SmoothCoefficients` (SlowBorelBase.lean:1106) does assume ContDiff ℝ ∞ (d.pressure j) for every j, alongside axial, phi and the two stresses. The surrounding conclusion the paper draws from (4.4) — axis regularity of the Cartesian field — is proved in the Lean (`SlowBorelBase.baseVelocity_smooth`, ContDiffOn ℝ ∞ on Iio 1 ×ˢ univ, axis included), which is why this is low and not a gap in content.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

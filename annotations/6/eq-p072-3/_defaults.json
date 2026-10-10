@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 72.3",
+  "status": "formalized",
+  "location": {
+    "page": 72,
+    "rect": [0.211044, 0.443844, 0.578136, 0.026328]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p072-3",
+      "locator": {
+        "physical": [72],
+        "printed": [72],
+        "text": "Display 72.3, p. 72, in the proof of Proposition 6.6"
+      },
+      "region": "eq-p072-3@p072",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\langle a_{\\gamma,m} e^{ikm\\Phi_\\gamma}\\rangle_\\theta = 0 \\quad (m \\neq 0), \\qquad f^{\\circ} = f - \\langle f\\rangle_Y \\ \\text{for an angular mean } f."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both halves are present, but as two declarations in two files rather than as one display. (i) The vanishing ⟨a_{γ,m}e^{ikmΦ_γ}⟩_θ = 0 for m ≠ 0 is stated directly by `HarmonicResidual.angularMean_nonconstant` (HarmonicResidual.lean:545), for the coefficient family `nonconstant c = c.erase 0`, i.e. coefficients carrying only harmonics m ≠ 0 (`nonconstant_support`, :567); it is Lean-general, covering any family of nonzero harmonics at once, where the paper writes the single harmonic m. Its proof at :548-549 is the one-line specialisation of `angularMean_field`, whose right side `c 0 x` is 0 once 0 ∉ c.support; `angularMean_const_character` with j = m*kp (nonzero because kp ≠ 0 and m ≠ 0) gives the same value for a literal single harmonic. No mathematics is added in either instantiation. (ii) The notation f° = f - ⟨f⟩_Y of (3.9) is realised by `nonbarPart`, whose body subtracts the normalized unit-square (2-torus) Haar average taken at a fixed value of the slow parameter, with the companion clause ⟨f°⟩_Y = 0 of (3.9) supplied by `nonbarPart_zeroMean` (for smooth f, and in the general version for smooth periodic f; the paper states it without a regularity hypothesis). The repository has this in two places with identical bodies `f z - mean f z.1`: the `FourierAlias` instance is over one slow real coordinate (`State = ℝ × Plane`, FourierAlias.lean:426, zero-mean lemma :437), and `SmoothFamilyTorusInverse.nonbarPart` (:963) is the general-parameter version, on `Point P = P × Plane` for an arbitrary normed space P (`abbrev Point` :20, `def mean` :33, zero-mean lemma :1007), so the slow variable is not restricted to one real coordinate. Both are stated for an arbitrary f rather than specifically for an angular mean, which is a strengthening rather than a restriction.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

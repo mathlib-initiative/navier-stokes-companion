@@ -1,0 +1,39 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.35)",
+  "status": "formalized",
+  "location": {
+    "page": 85,
+    "rect": [0.361596, 0.235704, 0.507465, 0.07896]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.35",
+      "locator": {
+        "physical": [85],
+        "printed": [85],
+        "text": "Equation (7.35), p. 85, in section 7"
+      },
+      "region": "eq-7.35@p085",
+      "relation": "defines",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: W^{\\mathrm{as}}_{0,\\mathrm{phys}} = \\sum_{\\beta=(\\ell,a)} Q^{-A}\\eta_\\beta W_{0,\\beta}, \\qquad \\mathcal{L}^{\\mathrm{as}}_{\\mathrm{phys}}\\sigma = \\sum_{\\beta=(\\ell,a)} Q^{-A}\\eta_\\beta \\mathcal{L}_\\beta(Q^{2A}\\sigma)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The factors of (7.35) are present literally: physicalOuter U = Q^(-A) with A = velocityExponent h = 1/2 + h; mask D U q x is the band-and-slow-box partition factor η_β; the per-label wave amplitude carries √ε and the amplitudes a_σ of Proposition 7.5. On the index: UnsignedLabel = ℕ × SlotColoring.Grid is the paper's β = (ℓ,a), and the extra Fin 2 of the summation type UnsignedLabel × Fin 2 is the sign σ = ± of (7.24), so the Lean's single finite sum is the paper's β-sum composed with the σ-sum, not the β-sum alone. Two encoding points. (i) The repository writes the assembly in two equivalent shapes, and both are cited above: componentwise, as the radial and tangential scalars assembledRadialWith / assembledTangentWith (and signedRadial / signedTangent for L_phys^as σ), which are generic in the factor `outer`; and vector-valued, as ActualPrimaryCovariance.viewSum = fun i => ∑ l ∈ activeLabels standardRegion B N0 n, viewTangent n x l Y theta i, of type Fin 3 → ℝ, which is the first equation of (7.35) with its factors explicit — the index set is activeLabels = (unsignedLabels B N0 n).product Finset.univ (activeLabels_product, ActualPrimaryCovariance.lean:222-223), i.e. the pairs (β,σ) with σ : Fin 2; viewTangent = physicalTangentMode carries the Q^{-A} as Q (cellBand L) ^ (-CoordinateAlgebra.A h) • tangentMode (CorrectionInitialization.lean:4644-4646); and the slow cutoff η_β enters tangentMode through commonAmplitude, appearing as spatialMask in tangentMode_diagonal_covariance (CorrectionInitialization.lean:4629-4642), spatialMask being PartitionedCovariance.mask (CorrectionInitialization.lean:3996-3998). SignedWaveUpdate.nativeAssembly is the same vector-valued shape in the SignedCovariance normalisation, ∑ᶠ over UnsignedLabel × Fin 2 of the per-label oscillation, and in native_physical_cross (SignedMeanGain.lean:517-521) it is instantiated with outer = physicalOuter h N = Q^{-A} and with the amplitudes increment (P U).matrix (chartTarget …) (chartStress …), i.e. with L^as_phys σ. (ii) The paper's L_β takes the argument Q^{2A}σ whereas the Lean passes R = chartStress = Q^{2A}σ/ε and places the 1/ε of d_Σ = H^{-1}(Σ/ε) (7.31) inside chartStress instead of inside the operator, so that increment H T R = H^{-1}R/(2a) equals δa_σ; the composite Q^{-A}·L_β(Q^{2A}σ) therefore agrees term by term.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

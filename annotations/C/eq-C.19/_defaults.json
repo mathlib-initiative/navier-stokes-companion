@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (C.19)",
+  "status": "formalized",
+  "location": {
+    "page": 164,
+    "rect": [0.250247, 0.471463, 0.61793, 0.026343]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.LeadingStressWeights",
+      "path": "NavierStokes/LeadingStressWeights.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-C.19",
+      "locator": {
+        "physical": [164],
+        "printed": [164],
+        "text": "Equation (C.19), p. 164, in the proof of Proposition C.3"
+      },
+      "region": "eq-C.19@p164",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: |\\mathcal{T}_0| \\ge c\\zeta, \\qquad |\\partial^{I} \\mathcal{T}_0| \\le C_I \\zeta \\delta^{-m_I} \\qquad (X_a < X < X_b,\\; -1 \\le \\eta \\le 1)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both clauses are stated, each over exactly the paper's range — X in the open interval (X_a, X_b) and eta in the closed [-1, 1] — but as two declarations rather than one display; conjoining them is immediate. The weights match (C.18) exactly: `zeta` unfolds to radialWeight with c = t_1^2, giving exp(-t_1^2/y_a^2) * exp(-4/y_b^2) with y_a = log(X/X_a), y_b = log(X_b/X); `distance` unfolds to min 1 (min y_a y_b) = delta. Two encoding choices in the derivative bound: Lean uses `iteratedFDeriv ℝ n` (the full order-n derivative, bounding every mixed partial of that order at once) in place of the paper's per-multi-index ∂^I, which is at least as strong for each I with |I| = n; and the exponent N is produced existentially for each order n rather than named m_I, which is what 'for some m_I' means in the paper. Argument order is transposed in the Lean statement ((eta, X) with the function pre-composed by a swap), which is a renaming of variables.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

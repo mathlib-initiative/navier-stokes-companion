@@ -1,0 +1,41 @@
+{
+  "kind": "equation",
+  "label": "Display 137.3",
+  "status": "partial",
+  "location": {
+    "page": 137,
+    "rect": [0.271185, 0.260941, 0.457943, 0.084301]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p137-3",
+      "locator": {
+        "physical": [137],
+        "printed": [137],
+        "text": "Display 137.3, p. 137, in section A.5"
+      },
+      "region": "eq-p137-3@p137",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: h\\int_y^{\\infty} e^{v-y}E(v)^2\\,dv \\;\\le\\; hE(y)^2\\int_0^{\\infty} e^{-3hs/2}\\,ds \\;=\\; \\tfrac{2}{3}E(y)^2, \\qquad \\int_y^{\\infty} E(v)^2\\,dv \\;\\le\\; E(y)^2\\int_0^{\\infty} e^{-(1+3h/2)s}\\,ds \\;=\\; \\frac{E(y)^2}{1+3h/2}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. Both lines are present in weaker form. First line: the paper's bound with the constant 2/3 is exactly the proof step at NavierStokes/TailCone.lean:287-289 (including the paper's intermediate hE(y)^2∫_0^∞ e^{-3hs/2}ds, which is `integral_shift_exp` giving 1/(3h/2)), but the exported theorem `weighted_square_release_integral_le` discards it and states only h·∫_y^∞ e^{v−y}E(v)^2 dv ≤ E(y)^2, a factor 3/2 weaker. Second line: no declaration with the paper's constant 1/(1+3h/2) was found; the Lean instead bounds ∫_y^∞ E(v)^2 dv ≤ 5e^{6/5}·E(y)^2 ≈ 16.6·E(y)^2 in `future_square_integral_le`, and by a different route — a `clockWeight` envelope decaying at rate 4/5, valid from y ≥ 0 rather than only on the release interval where l ≤ −3h/4 — not by integrating the decay of eq-p137-2. Rated low rather than medium because the paper uses these two lines only to conclude the bound on N_s uniformly in h, and the Lean does prove that conclusion with its own constants: `releaseNumerator_abs_le` (TailCone.lean:309) gives |N_s| ≤ 2(1 + 5e^{6/5})·E(y,0)^2, with both constants independent of h, which is the uniformity the paper's next sentence asserts.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

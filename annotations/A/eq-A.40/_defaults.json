@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.40)",
+  "status": "formalized",
+  "location": {
+    "page": 139,
+    "rect": [0.291431, 0.52248, 0.577469, 0.044765]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.40",
+      "locator": {
+        "physical": [139],
+        "printed": [139],
+        "text": "Equation (A.40), p. 139, in the proof of Proposition A.7"
+      },
+      "region": "eq-A.40@p139",
+      "verdicts": [
+        {
+          "confidence": 0.84,
+          "evidence": ["paper: \\left|\\partial_\\eta^m \\Delta \\int_0^\\infty \\frac{E^2}{2X}\\, dX\\right| \\le C_m \\frac{e_K^2}{X_K} \\int_1^\\infty x^{-2A-2}\\, dx,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same inequality after three routine rewritings, all of which I checked term by term. (1) Factor 2: the paper's left-hand side carries E²/(2X) and the Lean's pressureDebt integrates squareChange/X, so the Lean quantity is twice the paper's; the bound is stated with an unspecified constant C_m on both sides, so the factor is absorbed. (2) Lower limit: the paper integrates over (0,∞) and the Lean over Ioi K, which agree because HeatTailEdit.switch K X vanishes for X below the switch radius, so squareChange vanishes there. (3) The paper leaves ∫_1^∞ x^{-2A-2} dx unevaluated; it equals 1/(2A+1), and this is exactly the denominator -tailDecay d true - (-1) = 2A + 1 appearing in nuConstant, with numerator tailSize d true = e_K² (= the paper's e_K²) and the K^q = K^{-1} giving the paper's 1/X_K. Derivatives: the paper's ∂_η^m is the Lean's iteratedDerivWithin n … (Icc (-1) 1) eta, taken in the same variable η on the same parameter interval, so no chain-rule reconciliation is needed at this level; the passage from ν-jets to η-jets happens inside etaDebt_jet_bound (line 692). Constants: the paper's C_m depends on m only, and etaConstant d true (-1) n depends on n and on the fixed TailData d, likewise not on K or η.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

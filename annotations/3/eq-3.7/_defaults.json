@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (3.7)",
+  "status": "formalized",
+  "location": {
+    "page": 17,
+    "rect": [0.272294, 0.347858, 0.596767, 0.076019]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-3.7",
+      "locator": {
+        "physical": [17],
+        "printed": [17],
+        "text": "Equation (3.7), p. 17, in section 3.6"
+      },
+      "region": "eq-3.7@p017",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\langle F\\rangle_\\theta(r,z,t,Y) := \\frac{1}{2\\pi}\\int_0^{2\\pi} F(r,\\vartheta,z,t,Y)\\,d\\vartheta,\\qquad \\langle F\\rangle_Y(r,\\theta,z,t) := \\int_{\\mathbb{T}^2} F(r,\\theta,z,t,Y')\\,dY',\\qquad \\int_{\\mathbb{T}^2} 1\\,dY' = 1."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both averages are defined, with the paper's constants: the angular one divides ∫_0^{2π} by 2π and holds the remaining arguments (including the auxiliary point) fixed, since in use the base point of `angularAverage` is a lifted chart point `(x.1, (x.2.1, Y))` that already carries Y; the auxiliary one is the iterated unit-square integral holding all slow arguments fixed. Rewriting: the Lean models T² = ℝ²/ℤ² by unit-periodic functions on the plane integrated over [0,1]², so the paper's normalization ∫_{T²} 1 dY' = 1 is the content of `torusMean_const` at c = 1, and `torusMean_eq_haar` identifies the unit-square integral with the integral against the normalized Haar measure `torusMeasure` on the quotient torus. The cleanest match for the second line of (3.7) is `UniformFourierAlias.parameterMean f p = torusMean (fun Y => f (p, Y))`, which holds an arbitrary slow parameter p fixed by its signature and averages over Y alone. One field type also carries all of the paper's arguments concretely and both averages act on it: with `Lift S = ℝ × (S × Plane)` (PressureStream.lean:26), `liftedTorusAverage` averages a field on `Lift P` over the Y slot of its own point with every slow coordinate fixed — the paper's second line of (3.7), in the paper's argument layout — while `angularAverage` is applied at `D = LocalSignedRequest.Point = PressureStream.Lift Plane` (LocalSignedRequest.lean:24) in `SignedMeanGain.meanBar_symmetricCovariance`, i.e. to a field of (slow, Y, θ) with Y held fixed. The only residual difference is of packaging: the two operators are declared in different namespaces and at different generality (angular average over any chart D plus an angle, torus average over ℝ × S plus the plane), so neither declaration mentions the other and they are composed at the point of use.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

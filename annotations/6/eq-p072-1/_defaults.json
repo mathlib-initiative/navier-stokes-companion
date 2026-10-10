@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 72.1",
+  "status": "formalized",
+  "location": {
+    "page": 72,
+    "rect": [0.253196, 0.142598, 0.49188, 0.046672]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p072-1",
+      "locator": {
+        "physical": [72],
+        "printed": [72],
+        "text": "Display 72.1, p. 72, in the proof of Proposition 6.6"
+      },
+      "region": "eq-p072-1@p072",
+      "relation": "contains",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: \\zeta^2 \\le \\zeta, \\qquad \\zeta^{3/2} P_v \\le \\sqrt{\\zeta}\\, P_v, \\qquad \\zeta P_v^2 \\le \\begin{cases} \\zeta, & m+m'=0,\\\\ \\sqrt{\\zeta}\\, P_v, & m+m'\\neq 0.\\end{cases}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All four inequalities of the display are present in Lean with the same constants, exponents and directions, but each as a step inside a different class-closure lemma in two files rather than as one display. Rewriting: Lean never writes a fractional power; it writes `s.zeta x * (Real.sqrt (s.zeta x) * P n x)` and `(Real.sqrt (s.zeta x) * P n x) * (Real.sqrt (s.zeta x) * P n x)` where the paper writes ζ^{3/2}P_v and ζP_v^2, equal for ζ ≥ 0 by `Real.sq_sqrt` (which `WaveClass.bilinear_mean` uses explicitly at line 426). Hypotheses: the paper's running assumption is 0 ≤ ζ ≤ 1 and 0 < P_v ≤ 1; Lean carries `s.zeta_nonneg`, an explicit `hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1` where needed, and `hP0 : 0 ≤ P n x` (not strict) with `hP1 : P n x ≤ 1`, so Lean assumes slightly less on P. The paper's case split on m+m' does not appear in the Lean inequality: both branches of the third inequality are proved unconditionally (ζP_v^2 ≤ ζ in `WaveClass.bilinear_mean`, ζP_v^2 ≤ √ζ P_v in `wave_cmul_wave`), and the harmonic condition m+m'=0 selects which conclusion is used rather than which inequality holds; note `WaveClass.bilinear_mean` needs only P ≤ 1 and not ζ ≤ 1.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.20)",
+  "status": "partial",
+  "location": {
+    "page": 149,
+    "rect": [0.338802, 0.343005, 0.530266, 0.025509]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.20",
+      "locator": {
+        "physical": [149],
+        "printed": [149],
+        "text": "Equation (B.20), p. 149, in the proof of Proposition B.3"
+      },
+      "region": "eq-B.20@p149",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: |\\mathcal{D}_X \\log \\Phi| + |H_* \\partial_\\eta \\log \\Phi| \\le C\\chi + C/\\Lambda."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration was found stating (B.20) in its own shape, i.e. a bound on |𝒟_X log Φ| + |H_* ∂_η log Φ| that shrinks like Cχ + C/Λ; no statement anywhere combines χ with √χ or with a C/Λ error of this form. Both quantities (B.20) bounds are nonetheless bounded in Lean — by fixed constants rather than by Cχ + C/Λ. `Estimates.p1_positive_upper` (NaturalExitBounds.lean:138) states 0 < p1 f (X,η) ≤ B 0, and p1 f p = -2·p.1·partialY f p / f p (NaturalEntrance.lean:31) is -2·𝒟_X log Φ once f = angularProfile a Λ Φ, the η-amplitude cancelling in a radial logarithmic derivative; `Estimates.parameter_jets` (NaturalExitBounds.lean:145-150) states |∂_η^m log φ(ΛX,·)| ≤ B m for every m, the case m = 1 being the η-log-derivative of (B.20). The constants B m are fixed before Λ (`exists_exit`, line 155, chooses B first) and do not shrink with χ or with 1/Λ, so the smallness the paper extracts from (B.20) is not what these declarations supply. The Lean reaches the same place by another route. Where the paper makes the two logarithmic derivatives quantitatively small (O(χ) + O(1/Λ)) so that they can be absorbed into ΛLχ, the Lean (i) keeps them unestimated inside the explicit remainder `sourceRemainder` (NaturalEntrance.lean:282), whose Y- and η-log-derivative slots are divided only by a profile clamped below by 1/8; (ii) proves instead that the remainder's χ-dependent pieces *vanish* at χ = 0 — `chi_zero_imp_H_zero` kills the H ∂_η log Φ term and `reference_phiY_zero` (a consequence of the exact identity `deriv_profile`, whose right-hand side carries the explicit factor χ/2) kills the Y-derivative term — and (iii) converts that vanishing into the absorption by compactness of the parameter set (`reference_source_absorption`, via `compact_absorption` at line 86) rather than by an explicit constant C. The C/Λ part of (B.20) is replaced by `sourceRemainder_uniform_limit`, which makes the whole coefficient-space correction smaller than 1/10 for Λ large. The paper reuses (B.20) in two later places and I traced both. (a) p. 150, proof of Lemma B.4 ('We use its gradient bounds (B.20) and (B.21) and source bound (B.17)'): the source half of (B.23) is `ReferenceBounds.sourceQ_uniform_threshold` (ReferenceBounds.lean:1148), whose 47/50·LΛχ + 12/5 is the paper's .94LΛχ + 2.4; its only hypothesis on the η-log-derivative is the bounded jet |parameterPartial P.f p / P.f p - Λ·realGradient h j σ p.2| ≤ B (collected by `qJets_bound`, line 635), and it is proved from the exact identity `sourceQ_model` (line 606) plus compactness (`qModel_uniform_lower`, line 460, through `compact_absorption`), with no Cχ + C/Λ bound anywhere. The hold-region analogue runs the same way (`ActivationContinuation.hold_source_identity` line 327, `holdModel_chi_zero` line 283, `holdModel_uniform_lower` line 292 via `compact_absorption`, `actual_hold_source_threshold` line 342, whose η-log-derivative hypothesis is again the bounded jet). (b) p. 155, the §B.7 shape transition: `NavierStokes/MatchingConeBounds.lean` follows the same substitute route — `shapeModel_zero_lower` (line 107) again reduces to χ = 0 (through `chi_zero_imp_H_zero` and `gradient_zero_of_chi_zero`, NaturalEntrance.lean:63 and :70), and `shapeModel_uniform_lower` (line 129) absorbs by compactness, with the η-log-derivative of the profile entering only through a bounded jet |g| ≤ B. So the surrounding results — (B.17), the source bound of (B.23), and the transition source bound — are all proved without (B.20) as written.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

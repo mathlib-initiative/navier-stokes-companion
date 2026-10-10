@@ -1,0 +1,46 @@
+{
+  "kind": "equation",
+  "label": "Display 137.2",
+  "status": "formalized",
+  "location": {
+    "page": 137,
+    "rect": [0.254484, 0.20306, 0.491523, 0.041635]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.TailCone",
+      "path": "NavierStokes/TailCone.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p137-2",
+      "locator": {
+        "physical": [137],
+        "printed": [137],
+        "text": "Display 137.2, p. 137, in section A.5"
+      },
+      "region": "eq-p137-2@p137",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: E(v)^2 \\;=\\; E(y)^2\\exp\\!\\Bigl(\\int_y^{v}\\bigl(2l(s)-1\\bigr)ds\\Bigr) \\;\\le\\; E(y)^2 e^{-(1+3h/2)(v-y)}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean states the unsquared inequality E(t) ≤ E(y)e^{−(1/2+3h/4)(t−y)}; squaring both sides of an inequality between positive quantities (finalAngular is positive, `finalAngular_pos`) gives the paper's E(v)^2 ≤ E(y)^2 e^{−(1+3h/2)(v−y)} with the exponent doubled exactly. The paper's two ingredients appear separately and in the same form: (log E)' = l − 1/2 is `releaseA_eq_derivative` combined with releaseA = 2 − 2·profileSlope, and l ≤ −3h/4 is the second conjunct of `profileSlope_bounds`. The paper's intermediate exact identity E(v)^2 = E(y)^2 exp(∫_y^v (2l(s)−1)ds) is not stated as such; the Lean obtains the bound from the derivative bound by the mean value inequality (`image_sub_le_mul_sub_of_deriv_le` applied to log E), which reaches the same conclusion. `weighted_square_release_decay` is the same statement multiplied by e^{v−y}, the form used for the first line of eq-p137-3.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 139.2",
+  "status": "partial",
+  "location": {
+    "page": 139,
+    "rect": [0.134899, 0.431326, 0.57095, 0.043221]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p139-2",
+      "locator": {
+        "physical": [139],
+        "printed": [139],
+        "text": "Display 139.2, p. 139, in the proof of Proposition A.7"
+      },
+      "region": "eq-p139-2@p139",
+      "verdicts": [
+        {
+          "confidence": 0.74,
+          "evidence": ["paper: j,m \\ge 0, \\qquad \\left|(X\\partial_X)^j \\partial_\\eta^m (E - E_{\\mathrm{cl}})\\right| \\le C_{j,m}\\, e_K X_K^{-1} x^{-A-1}, \\qquad x \\ge 1."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The decay rate, the amplitude and the power of x agree exactly: with square = false, q = 0, W = tailWeight d K false the Lean right-hand side (B * editBound) * weightedKernel K (-A) 0 X equals e_K C_n (X/K)^{-A}/X = e_K X_K^{-1} x^{-A-1} with x = X/X_K, and HeatTailEdit.exponent h = 1/2 + h is the paper's A. The paper's display is uniform in the radial jet order j and in m, and pointwise in x ≥ 1 with the profile x^{-A-1}; no single Lean statement has that shape. What the Lean states instead, in two separate pieces: (i) weightedJet_bound gives the j = 0 case for every ν-jet order n, pointwise in X with the full x^{-A-1} profile, but differentiating in the diffusion variable ν rather than in η (the chain rule ν = 1 - η², ParametricHeatTail.diffusion line 571, is applied only after integration, in etaDebt_jet_bound line 692 via norm_iteratedFDerivWithin_comp_le, not pointwise in X); (ii) actual_observations_bound gives |actualObservations i - observations F (0,p) i| ≤ B / switchRadius F XR for every i : Fin 18, and entries 1 and 2 of actualObservations are exactly deriv in the log-radial variable p.1 of logE (= E at X = XR e^{p.1}) and derivWithin in η, so i = 1 is the j = 1, m = 0 case and i = 2 the j = 0, m = 1 case, with the paper's X_K^{-1} amplitude. Three gaps remain between (ii) and the display: it is uniform over the compact OutgoingCone.trueWindow (Icc holdStart (cleanEnd d) ×ˢ Icc (-1) 1 in (log-radius, η)), where x = X/X_K runs over a fixed compact interval, so the x^{-A-1} decay profile is not visible; actualObservations carries only the value and the two pure first derivatives, so no mixed jet and no j ≥ 2 or m ≥ 2; and its left-hand side is the difference between the heated-and-compensated profile and the clean one, which contains the compensation patch as well as the heat change. Scoped negative: searching the index and NavierStokes/HeatTailEdit.lean and ParametricHeatTail.lean, no declaration bounding an X-derivative or (X∂_X)-jet of HeatTailEdit.change / multiplier / edit as such was found; the X-regularity proved for those three objects is continuity and ContDiffOn, not a decaying jet bound. Severity low rather than medium because both consumers are supplied: (A.40)-(A.42) need only the j = 0 ν-jets, through nuDebtJet_bound and etaDebt_jet_bound; and the cone clause of Proposition A.7, proved in HeatSwitchCone.preserves_true_cone through compensated_source_margins, does consume a radial jet of the heated profile (radialA = 1 - 2·X∂_X logE / logE, rewritten by radialA_eq_family line 831 via logE_radial_derivative line 590) and gets it from actual_observations_bound at i = 1. So the paper's general-j pointwise decaying jet is not what was checked; the j = 1 window-uniform case that the Lean proof actually uses is.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

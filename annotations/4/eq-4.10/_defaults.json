@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.10)",
+  "status": "partial",
+  "location": {
+    "page": 26,
+    "rect": [0.192343, 0.7058, 0.676559, 0.046194]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.10",
+      "locator": {
+        "physical": [26],
+        "printed": [26],
+        "text": "Equation (4.10), p. 26, in the proof of Lemma 4.1"
+      },
+      "region": "eq-4.10@p026",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: Q_s = \\frac{C_Q(\\eta) + \\int_0^X H(x,\\eta) S_q(x,\\eta)\\,dx}{X\\,H(X,\\eta)}, \\qquad N_s = \\frac{C_N(\\eta) + \\int_0^X S_n(x,\\eta)\\,dx}{X}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. Lean has exactly the C_Q = C_N = 0 branch: `angularLag` is ∫₀^X H S_q dx / (X H(X,η)) and `axialLag` is ∫₀^X S_n dx / X, with `primitive` the integral from 0 to X, i.e. the display with the constants dropped. The constant-carrying family — and with it the statement that every solution of (4.9) has this form, which is what the display asserts — was not found as a declaration. It is a short argument away: `angular_lag_primitive_iff` / `axial_lag_primitive_iff` turn each row of (4.9) into the exactness of (X H Q_s)' = H S_q and (X N_s)' = S_n, and the fundamental theorem of calculus then gives the general solution with an η-dependent constant. Rated low because the paper itself keeps only the C = 0 branch (the constants are killed in the next display by regularity at X = 0), so the branch Lean fixes is the branch the paper uses; what is missing is the uniqueness half.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

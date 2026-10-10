@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 41.5",
+  "status": "formalized",
+  "location": {
+    "page": 41,
+    "rect": [0.272235, 0.699056, 0.455761, 0.093739]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.ModulatedHistories",
+      "path": "NavierStokes/ModulatedHistories.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p041-5",
+      "locator": {
+        "physical": [41],
+        "printed": [41],
+        "text": "Display 41.5, p. 41, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p041-5@p041",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\Delta\\mathfrak{m}_N(X,\\eta) = \\int_{X_-}^{X} \\begin{pmatrix} u_N \\\\ \\sqrt{2x}\\,e_N \\\\ H_0 u_N + U_0\\sqrt{2x}\\,e_N + \\sqrt{2x}\\,u_N e_N \\\\ 2U_0 u_N + u_N^2 - E_0 e_N - e_N^2/2 \\\\ E_0 e_N/x + e_N^2/(2x) \\end{pmatrix} dx,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The rewriting: Lean's `density` is the five-row integrand of (4.15) written in the normalized field f = E/√(2X), and `density_eq_physical` is exactly the identification of its rows with the paper's (M, I, J, S, C_p) integrands under H = √(2X)E = 2Xf. `densityDifference` is the unexpanded difference density(F_N, U_N) - density(F_0, U_0); expanding row by row with u_N = U_N - U_0, e_N = E_N - E_0 gives precisely the paper's five entries (row 3: H_0 u_N + U_0√(2x) e_N + √(2x) u_N e_N; row 4: 2U_0 u_N + u_N² - E_0 e_N - e_N²/2; row 5: E_0 e_N/x + e_N²/(2x)), so the paper has distributed the difference over the quadratic integrands where Lean leaves it folded. The lower limit W.left is the paper's X_- (\"There is no change below X_-\"); the upper limit is W.clamp X rather than X, which is the localization — the two agree for X in the modulation window 𝒥 and freeze the history above it, which is the same convention the paper states in words.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

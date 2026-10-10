@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 105.1",
+  "status": "partial",
+  "location": {
+    "page": 105,
+    "rect": [0.334435, 0.219912, 0.331353, 0.103567]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p105-1",
+      "locator": {
+        "physical": [105],
+        "printed": [105],
+        "text": "Display 105.1, p. 105, in the proof of Proposition 9.3"
+      },
+      "region": "eq-p105-1@p105",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: |D^I (d_\\Sigma)_\\sigma| \\le C_I\\,\\varepsilon^{\\alpha-1} S_*^{b_I}\\,\\zeta\\,\\delta^{-M_I},\\quad |D^I (a_\\sigma^{-1})| \\le C_I\\,S_*^{b_I}\\,\\zeta^{-1/2}\\,\\delta^{-M_I},\\quad |D^I \\delta a_\\sigma| \\le C_I\\,\\varepsilon^{\\alpha-1} S_*^{b'_I}\\,\\sqrt{\\zeta}\\,\\delta^{-M'_I},\\quad |D^I(\\sqrt{\\varepsilon}\\,\\delta a_\\sigma b_\\sigma)| \\le C_I\\,\\varepsilon^{\\alpha-1/2} S_*^{b''_I}\\,\\sqrt{\\zeta}\\,\\delta^{-M''_I} P_v."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Lines 1, 3 and 4 are stated as declarations with the paper's weights and exponents after instantiation: weights_jets is quantified over an arbitrary weight w and exponent β, and ζ at ε^(α-1) is line 1 only once w = s.zeta, β = α-1 are substituted (ζ does appear in the application at SignedCopyBounds.lean:473-474); increment_jets already carries √ζ in its statement and gives ε^(α-1) at β = α-1; signedVector_jets already carries √ζ · W and gives ε^(α-1/2) at β = α-1, the √ε entering as the band factor ε^(1/2) in signedScalar_jets. Three systematic re-encodings: (a) the paper's two separate polynomial factors S_*^{b_I} δ^(-M_I) become the single factor s.growth n x ^ p = (s.slow n * max 1 (s.delta x)⁻¹)^p with one common exponent p — routine, since both factors are ≥ 1 so p = b_I + M_I works, and max 1 δ⁻¹ = δ⁻¹ for δ ≤ 1; (b) the bounds are cell-restricted (LocalJets over K n i) rather than stated on the whole strip; (c) the derivative order |I| is universally quantified inside the class with C and p depending on it, matching 'for every fixed coefficient multi-index I'. Line 2 is stated in general form but is not instantiated at a_σ. rescaled_rpow_jet_bound states exactly the inequality of line 2 for an arbitrary positive smooth g and real power p: the conclusion carries the weight factor w ^ p in the statement itself, so at p = -1/2, w = ζ and g the covariance entry whose square root is a_σ it reads ‖D^n (g^(-1/2))‖ ≤ ζ^(-1/2) (n! · coeffBound) B^(2n+1), with B of the form C · growth^p = S_*^{b_I} δ^(-M_I) supplied by local_input_envelope; sqrt_jet_bound (WeightedQuotients.lean:217) is the companion +1/2 case. What was not found is a declaration instantiating it at a_σ itself: the assembled Lean argument bounds the quotient r/(2√g) in one step (signed_jet_at), where this same power bound appears in normalized form (line 259) rather than applied to a_σ⁻¹ as a standalone estimate. Severity low: the bound of line 2 is stated, and lines 3 and 4 — what the surrounding argument uses — are proved.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

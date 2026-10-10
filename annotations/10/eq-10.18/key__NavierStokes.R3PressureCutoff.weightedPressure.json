@@ -1,0 +1,25 @@
+{
+  "id": "eq-10.18/key/NavierStokes.R3PressureCutoff.weightedPressure",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.R3PressureCutoff.weightedPressure",
+      "line": 184,
+      "module": "NavierStokes.R3PressureCutoff",
+      "path": "NavierStokes/R3PressureCutoff.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3PressureCutoff.lean#L184"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.R3PressureCutoff.weightedPressure",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "snippet": {
+        "line": 184,
+        "text": "def weightedPressure hphi i j g hw hg2 : Lp C 2 := pressureL2 i j (hg2.toLp (fun x => powerCutoff phi x * g x)) + commutatorLp hphi i j g hw"
+      }
+    }
+  }
+}

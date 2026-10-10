@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 4.3",
+  "status": "partial",
+  "location": {
+    "page": 4,
+    "rect": [0.281596, 0.752169, 0.436811, 0.040916]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p004-3",
+      "locator": {
+        "physical": [4],
+        "printed": [4],
+        "text": "Display 4.3, p. 4, in section 2.1"
+      },
+      "region": "eq-p004-3@p004",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\mathrm{Re}_\\theta := \\frac{|u_\\theta|\\,\\ell_r}{\\nu} \\asymp \\tau^{-h} \\longrightarrow \\infty, \\qquad \\mathrm{Re}_r := \\frac{|u_r|\\,\\ell_r}{\\nu} = O(1),"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "definition",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The Re_θ identity is present exactly: `core_radial_reynolds` gives (core velocity)·(radial length) = q^(-h), with ν normalized to 1 inside `reynolds` rather than appearing as a divisor (the paper's display keeps ν and fixes ν > 0 in the following line). Two parts of the display have no counterpart I found. (i) The divergence \"⟶ ∞\": `core_radial_reynolds` is an algebraic identity valid for every real h and every q > 0; it does not assert q^(-h) → ∞ as q ↓ 0, which needs h > 0. The general ingredient is present and is one instantiation away — `BlowupImplication.negative_power_tendsto_atTop` (BlowupImplication.lean:24) gives Tendsto (fun t => q t ^ (-A)) l atTop from 0 < A and q → 0⁺, so at A := h it yields the display's ⟶ ∞ — but I found no declaration that instantiates it at the Reynolds number. Grepping NavierStokes/ for the name gives five lines: the two concrete uses, `NaturalCore.lean:437` and `BaseResidual.lean:110`, both take A := CoordinateAlgebra.A h = 1/2 + h, the velocity exponent, not h; the other two (BlowupImplication.lean:44, 69) keep A abstract. (ii) Re_r := |u_r|ℓ_r/ν = O(1): no declaration was found. `Scaling.lean` defines no radial velocity scale q^(-1/2), and the one neighbouring theorem, `core_axial_reynolds`, pairs the core velocity with the axial length and yields q^(-2h), which is a different quantity, not Re_r. This display is not confined to Section 2's physical description. Searching the paper for \"Reynolds\"/\"Re\" returns exactly three places: here (p. 4), the proof outline on p. 8, which restates the whole display in the similarity variable — \"Re_θ = q^{-A} ℓ_r = q^{-h} ⟶ ∞, Re_r = |u_r^{(0)}| ℓ_r = O(1)\" — and p. 81, \"the base velocity and radial length give Reynolds number of order q^{-h}\". The clause that recurs in Lean-matching form is precisely the one the Lean supplies: `core_radial_reynolds` is the p. 8 identity verbatim (velocity q^{-A}, A h = 1/2 + h, times radialLength q = q^{1/2}, equals q^{-h}), and the atlas entry for `NavierStokes/Scaling.lean` places it with the §7 material at that page (\"(7.2), p.81\"). The two pieces with no counterpart found, the divergence and Re_r = O(1), recur only in that p. 8 outline restatement; I did not find either used as a formula inside a proof, and the severity is low on that basis rather than on the display being Section-2-only.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

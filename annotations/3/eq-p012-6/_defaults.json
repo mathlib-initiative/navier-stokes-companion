@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 12.6",
+  "status": "formalized",
+  "location": {
+    "page": 12,
+    "rect": [0.272417, 0.699435, 0.457344, 0.044166]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p012-6",
+      "locator": {
+        "physical": [12],
+        "printed": [12],
+        "text": "Display 12.6, p. 12, in section 3.3"
+      },
+      "region": "eq-p012-6@p012",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\frac{d}{dt}\\,\\frac{1}{2}\\int |w_{\\mathrm{lin}}|^2 = -\\sum_{i,j} \\int (w_{\\mathrm{lin}})_i (w_{\\mathrm{lin}})_j \\, \\partial_j (u_B)_i \\; - \\int |\\nabla w_{\\mathrm{lin}}|^2 ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The display is the conclusion of `NavierStokes.R3CompactEnergy.energy_balance` (NavierStokes/R3CompactEnergy.lean:186) in the case the paper is in, once the two definitions that are its right-hand terms are unfolded. Take χ smooth, compactly supported and identically 1 on a neighbourhood of the (compact) spatial support of w_lin, u := v := u_B, p := π_lin, w := w_lin and z := ∂ₜw_lin, so that the theorem's hypotheses are exactly eq-p012-5. Of the five terms on the right, `transportFlux χ w v = ∫ fderiv ℝ χ x (v x) * ‖w x‖²` (line 152-153), `diffusionFlux χ w = ∑ᵢ ∫ D i χ x * ⟪w x, D i w x⟫` (line 149-150) and `pressureFlux χ w p = ∫ fderiv ℝ χ x (w x) * p x` (line 155-156) each carry a factor that vanishes wherever ∇χ = 0 and a factor that vanishes off the support of w, so all three are zero for that χ. What is left is 2∫⟪w_lin, ∂ₜw_lin⟫ = −2·dissipation χ w_lin − 2·coupling χ w_lin u_B. By `coupling` (line 158), coupling χ w u = ∫ χ ⟪w, Du(x)[w]⟫ = ∫ ∑ᵢ wᵢ ∑ⱼ ∂ⱼuᵢ wⱼ = ∑_{i,j} ∫ wᵢ wⱼ ∂ⱼ(u_B)ᵢ, the paper's first right-hand term; by `dissipation` (line 146) the other is ∫|∇w_lin|²; and `R3LocalEnergyEvolution.energy_hasDerivAt` (R3LocalEnergyEvolution.lean:28) says the left-hand side is (d/dt) ∫ χ|w_lin|², which is (d/dt) ∫|w_lin|² for this χ. Halving gives the display as written. The one real difference, and the only one I claim: both the hypothesis `hc : HasCompactSupport χ` and the requirement ∇χ = 0 on the support of w force w_lin to have compact spatial support, where the paper assumes only 'sufficient spatial decay'; the Lean statements carry no decay-only variant that I found. A second route, which my first pass used, reaches the same display from the forced whole-space identity `NavierStokesR3.CompactEnergy.energy_balance` (NavierStokes/R3/CompactEnergy.lean:202) with f := −(u_B·∇)w − (w·∇)u_B + (w·∇)w, discarding ∫⟪w,(w·∇)w⟫ by `integral_transport_energy_zero` (line 127) and ∫⟪w,(u_B·∇)w⟫ by `integral_mul_partial` (line 77) with f := ‖w‖² (compactly supported by `compact_norm_sq`, line 41); it needs the same compact support on w and does not name the shear coupling term, so the R3CompactEnergy route is the closer counterpart. I make no survey claim about how many energy identities the repository has: the index holds ten declarations whose name contains `energy_balance` (NavierStokes/PeriodicUniqueness.lean:491, NavierStokes/R3/CompactEnergy.lean:202 and :323, NavierStokes/R3/IntegratedDissipation.lean:27, NavierStokes/R3/LocalizedDifferenceEnergy.lean:102 and :191, NavierStokes/R3/ViscousEnergyBalance.lean:22 and :56, NavierStokes/R3CompactEnergy.lean:186, NavierStokes/R3LocalEnergyEvolution.lean:48) and I opened four of them.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

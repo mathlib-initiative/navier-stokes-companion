@@ -1,0 +1,25 @@
+{
+  "id": "eq-p012-3/key/NavierStokes.PhysicalSignedWave.PrimaryData.Views.physicalVelocity_divergence",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PhysicalSignedWave.PrimaryData.Views.physicalVelocity_divergence",
+      "line": 1231,
+      "module": "NavierStokes.PhysicalSignedWave",
+      "path": "NavierStokes/PhysicalSignedWave.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalSignedWave.lean#L1231"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PhysicalSignedWave.PrimaryData.Views.physicalVelocity_divergence",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 1231,
+        "text": "theorem physicalVelocity_divergence (referenceRequest) (j : Fin 2) (R : B.Regular referenceRequest reference j) (A : B.Angular referenceRequest reference) (hK : B.base.frequency reference ≠ 0) (G : ChartGeometry …) (hradius : ∀ x ∈ B.strip.domain, 0 < x.1.1) (hz : 0 < z.2 0) (hx : (commonGraph …).map z ∈ B.strip.domain) (hdelta : 0 < delta) (chart : PolarCharts.Index) (hchart : z ∈ PhysicalCurlCovariance.validCylindrical delta chart) : spatialDivergence (V.physicalVelocity referenceRequest j delta) z.1 (CylindricalResidual.chart z.2) = 0"
+      }
+    }
+  }
+}

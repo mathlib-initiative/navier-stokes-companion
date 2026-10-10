@@ -1,0 +1,23 @@
+{
+  "id": "eq-A.20/key/NavierStokes.CorrectedPulseAmplitude.exists_corrected_amplitude",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CorrectedPulseAmplitude.exists_corrected_amplitude",
+      "line": 427
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectedPulseAmplitude.lean#L427"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CorrectedPulseAmplitude.exists_corrected_amplitude",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 427,
+        "text": "∃ lam₀ K C, … ∀ d, … d.core.lam < lam₀ → ∃ w : ResetWitness d K, ContDiff ℝ ∞ (amplitude d w.coefficients) ∧ ∀ eta, eta ^ 2 ≤ 1 → … ∧ |deriv (amplitude d w.coefficients) eta| ≤ C * d.core.lam * (1 + Real.log (1 / d.core.lam)) ∧ …, with C = 128 * combinedConstant P m K"
+      }
+    }
+  }
+}

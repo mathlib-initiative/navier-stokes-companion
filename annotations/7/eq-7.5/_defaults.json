@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.5)",
+  "status": "formalized",
+  "location": {
+    "page": 75,
+    "rect": [0.274472, 0.143081, 0.594604, 0.027158]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.5",
+      "locator": {
+        "physical": [75],
+        "printed": [75],
+        "text": "Equation (7.5), p. 75, in section 7.1"
+      },
+      "region": "eq-7.5@p075",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: t_m' + \\mathcal{K}t_m + m^2 d\\,t_m + \\mathrm{i}km\\,n_\\Phi\\pi_m = -f_m, \\qquad d = \\varepsilon k^2 |n_\\Phi|^2."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "equation",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean states the same balance over a real inner-product space and with the pressure coefficient as a real scalar: pressure_cancellation is t′ + 𝒦t + δ·t − (pressureCoefficient)·n = −f with t′ := projectedRhs, i.e. (7.5) with ikmπ_m n_Φ replaced by c·n_Φ for the real c that makes the residual normal. Recovery: 𝒦, d and n_Φ are real, so a ℂ³ solution of (7.5) is a pair of real solutions of the Lean identity, and ikmπ_m is the one complex scalar whose real and imaginary parts are the two real pressureCoefficients; complex_pressure_sign is where the i·k·m factor and its sign are checked. Two further encodings: (i) 𝒦 is an abstract vector `Kt` in TangentProjection and is instantiated as MovingFrameODE.baseAction only in ambientSolution_hasDerivAt, which is the statement that the constructed amplitude satisfies the equation; (ii) m²d is assembled as damping j z = j²·viscosity z with viscosity = viscosityScale·‖n‖² and viscosityScale = ε·k² (FamilyData.viscosity), rather than as one displayed formula — the literal ε k² j² ⟪n,n⟫ appears only inside viscous_coefficient_nonneg.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 150.4",
+  "status": "formalized",
+  "location": {
+    "page": 150,
+    "rect": [0.306456, 0.809868, 0.387089, 0.035362]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p150-4",
+      "locator": {
+        "physical": [150],
+        "printed": [150],
+        "text": "Display 150.4, p. 150, in the proof of Lemma B.4"
+      },
+      "region": "eq-p150-4@p150",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\sup_{0 < X \\le X_i} \\big\\| \\mathcal{A}_X (U_{\\mathrm{r}}) - U_* \\big\\|_{C^k_\\eta} \\;\\le\\; \\sup_{0 \\le X \\le X_i} \\big\\| U_{\\mathrm{r}} - U_* \\big\\|_{C^k_\\eta}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The paper's display says the radial average 𝒜_X is a contraction towards the constant-in-X comparison value U_*, in the C^k_η norm, uniformly for 0 < X ≤ X_i. Lean states this at k = 0 and k = 1 in one declaration: normalized_history_bounds takes sup-over-holdRegion hypotheses on U_r − U_* and on ∂_η U_r − ∂_η U_* (with U_* = NaturalAxisData.U j η, X-independent as in the paper, and ∂_η U_* = 4) and concludes the same bound for 𝒜_X U_r and for 𝒜_X(∂_η U_r), for every point of holdRegion = Icc 0 110 ×ˢ Icc (−1) 1, i.e. with the paper's sup over 0 < X ≤ X_i = 110 and over η already taken. Its engine is average_error_bound, which is the paper's inequality one scalar field at a time and pointwise in X: if |Λ(F(tX,η) − b)| ≤ B for all t ∈ [0,1] then |Λ(average F (X,η) − b)| ≤ B (Λ is a free positive scale; take Λ = 1). For k ≥ 2 the rewriting is: apply average_error_bound to F = ∂_η^k U_r and b = ∂_η^k U_*(η), move the k parameter derivatives through the average with parameterPartial_average, then take sup over X ∈ (0,X_i] and η ∈ [−1,1]; the right-hand side only grows because [0,X] ⊆ [0,X_i]. The one step Lean does not package is the iterated (k-fold) form of parameterPartial_average — only the single-order commutation is a lemma, though the analogous induction is carried out for `primitive` in ReferenceUniformJets.etaJet_primitive. Note the paper's C^k_η norm counts parameter derivatives only, which matches Lean's parameterPartial jets.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "eq-A.21/support/NavierStokes.OutgoingTail.finalAngular",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.OutgoingTail.finalAngular",
+      "line": 557,
+      "module": "NavierStokes.OutgoingTail",
+      "path": "NavierStokes/OutgoingTail.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingTail.lean#L557"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.OutgoingTail.finalAngular",
+        "kind": "def"
+      },
+      "relation": "uses",
+      "role": "support",
+      "snippet": {
+        "line": 557,
+        "text": "def finalAngular (d : TailData) (p : ℝ × ℝ) : ℝ := flattened d p * Real.exp (releaseAdjustment d (p.1 - d.releaseStart)) * (tailShape d (p.1 - tailStart d) / (1 - d.rho)) — the complete constructed angular schedule without the pressure-neutral azimuthal correction, i.e. the paper's E_id,sched; finalAngular_before (L570) with angular_ideal (OutgoingSchedule.lean L183) gives P * shape η * exp (y/10) on the ideal prefix, matching the paper's E = P_* f(η) e^{y/10}"
+      }
+    }
+  }
+}

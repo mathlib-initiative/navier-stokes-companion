@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 122.7",
+  "status": "partial",
+  "location": {
+    "page": 122,
+    "rect": [0.278987, 0.709882, 0.442249, 0.02662]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p122-7",
+      "locator": {
+        "physical": [122],
+        "printed": [122],
+        "text": "Display 122.7, p. 122, in the proof of Lemma 10.5"
+      },
+      "region": "eq-p122-7@p122",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\|\\varphi_R^4 w_i w_j\\|_{3/2} \\le B_R \\|w\\|_2,\\qquad \\|\\varphi_R^4 w_i u_j\\|_{3/2} \\le \\|w\\|_2 \\|u\\|_6."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The paper's two bounds are in the repository, as one additive statement, with the same exponent 3/2 and the same right-hand sides, but with phi^5 rather than phi^4 on the left. `R3WeightedLp.stress_weight_five` (R3WeightedLp.lean:191) states, for a stress g with ‖g x‖ <= W x ^ 2 + 2 (U x W x) — the paper's w_i w_j and w_i u_j terms, with W = |w| and U = |u| — that lpNorm (weightedNorm phi g) (3/2) <= lpNorm (fourthWeight phi W) 6 * lpNorm W 2 + 2 (lpNorm U 6 * lpNorm W 2), where `weightedNorm phi g = phi^5 ‖g‖` (R3PressureCommutator.lean:31) and `fourthWeight phi W = phi^4 W`, so lpNorm (fourthWeight phi W) 6 is exactly B_R. The first summand is the paper's B_R ‖w‖_2, linear in B_R, and the second is the paper's ‖w‖_2 ‖u‖_6 with a factor 2 from the two cross terms w_i u_j + u_i w_j; both come from the paper's own Holder step 6 + 2 -> 3/2 (`holder_six_two_three_halves`, R3WeightedLp.lean:163, applied at :222-223 through `lpNorm_mul_le`, :42). The single difference is the cutoff power on the left: phi^5 against the paper's phi^4, introduced by `fifthQuadratic_le` (:114, a^5 b^2 <= (a^4 b) b) because the pressure commutator consumes precisely the phi^5 norm (`errorBound`, R3PressureCutoff.lean:158-162, and the hypothesis hw of `commutatorLp`, :76). I checked the direction: phi takes values in [0,1] (Cutoff.range, R3PressureCommutator.lean:23), so phi^5 <= phi^4 pointwise, and therefore the Lean statement follows from the paper's two bounds plus the triangle inequality, while the paper's does not follow from the Lean's. The Lean's conclusion is the weaker of the two; it is what the Lean's own pressure chain needs, and the surrounding result is proved with it. Separately, the `NavierStokes/R3/` subtree carries an unrelated L^{6/5} family (`weighted_tensorDiff_bound`, LocalizedTensorBounds.lean:170, with phi^2 on the left and the interpolated ‖w‖_2^{3/2} B_R^{1/2}) for its dual route; that is not a counterpart of this display, and the sublinearity in B_R there is a property of that route, not of the repository's statement of this formula.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

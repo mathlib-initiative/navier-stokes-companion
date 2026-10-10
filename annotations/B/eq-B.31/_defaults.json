@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.31)",
+  "status": "formalized",
+  "location": {
+    "page": 153,
+    "rect": [0.328278, 0.169181, 0.540786, 0.027287]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.31",
+      "locator": {
+        "physical": [153],
+        "printed": [153],
+        "text": "Equation (B.31), p. 153, in the proof of Proposition B.5"
+      },
+      "region": "eq-B.31@p153",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: |\\mathcal{T}_0| \\ge c\\, e^{-t_1^2/y^2}, \\qquad |\\partial^I \\mathcal{T}_0| \\le C_I\\, e^{-t_1^2/y^2}\\, y^{-N_I}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both inequalities of (B.31) are stated together, for the actual stress, by `LeadingStressWeights.weighted_bounds` (LeadingStressWeights.lean:528): `WeightedBounds (Icc (-1) 1) (activationTime^2) (leftEdge W) (rightEdge W) (logStress …)`, whose first two conjuncts (ActiveAnnulusWeight.lean:644–648) are `m * weight c a b y ≤ ‖T(p,y)‖` and `‖iteratedFDeriv ℝ i T (p,y)‖ ≤ C * weight c a b y / edgeDistance a b y ^ N`. The only hypothesis is `hcone : FullTrueCone v`, and `exists_weighted_profile` (LeadingStressWeights.lean:1154) supplies a hypothesis-free instance. Three encoding differences. (i) The weight is two-sided, `weight c a b y = FlatCutoff.edge c (y-a) * FlatCutoff.edge 4 (b-y)` with `c = t_1^2` and `a` the inner edge; `FlatCutoff.edge c x = exp(-c/x^2)` for `x > 0` (FlatCutoff.lean:26), so on an inner collar `y - a ≤ d < b - a` the second factor is continuous and positive on a compact set, hence bounded between two positive constants, and the weight is the paper's `e^{-t_1^2/y^2}` up to those constants (the paper measures `y` from the inner edge). Likewise `edgeDistance a b y = min 1 (min (y-a) (b-y))` equals `y - a` on that collar, so the derivative denominator is the paper's `y^{-N_I}`. (ii) The derivative bound is stated per order `n`, one pair `(C,N)` serving all `i ≤ n`, with the operator norm `‖iteratedFDeriv ℝ i‖` instead of the paper's per-multi-index `C_I, N_I`; each implies the other (the operator norm dominates `|∂^I|` for `|I| = i`, and a finite max over `|I| ≤ n` gives a single constant up to a dimensional factor). (iii) `WeightedBounds` carries a third conjunct, the same derivative bound in the physical radial chart, which the paper does not state here. The generic machinery behind this is `EdgeFactor.collar` and `EdgeFactor.derivative_bound` applied to the activated stress as an edge factor with `c = T^2` (`exists_natural_activation_factor`, order 0, identity `𝒯_0(η,x) = FlatCutoff.edge (T^2) x • coefficient(η,x)`); the smoothness hypothesis `hT` of `EdgeFactor.derivative_bound` is not supplied by `exists_natural_activation_factor` but is discharged inside `exists_global_derivative_bound` (ActiveAnnulusWeight.lean:484–490, `hleftSmooth`) from the global `hT : ContDiffOn ℝ ∞ T O`, which `weighted_bounds` feeds in as `logStress_smooth` (LeadingStressWeights.lean:80) through `actual_edge_join` (ActiveAnnulusWeight.lean:1234) and `weightedBounds_of_edge_factors` (:654). Constants depend on `n`, `K` and the factor data, with no dependence on `κ` or `η` beyond `η ∈ Icc (-1) 1`.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.36)",
+  "status": "partial",
+  "location": {
+    "page": 156,
+    "rect": [0.1864, 0.259856, 0.681774, 0.042241]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.RepairConeBounds",
+      "path": "NavierStokes/RepairConeBounds.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.36",
+      "locator": {
+        "physical": [156],
+        "printed": [156],
+        "text": "Equation (B.36), p. 156, in the proof of Proposition B.8"
+      },
+      "region": "eq-B.36@p156",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: Q_s \\ge Q_{\\min}/2,\\quad E \\ge e_*/2,\\quad |a - .8| \\le .1,\\quad \\left|\\frac{N_s}{EQ_s}\\right| \\le w_*,\\quad |b_s| \\le \\frac{.1}{1+w_*}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The five inequalities are not stated as a list; the Lean fixes one uniform tolerance instead. `model_margins` takes delta from the Lipschitz estimate `model_estimate` and derives at line 770 the componentwise bound |observations(v,p) i - observations(0,p) i| ≤ m for every i : Fin 22, with m = min(1/5, e^{-8}/2) (line 760). Since e^{-8}/2 ≈ 1.68·10^{-4} < 1/5, m = e^{-8}/2, and two of the paper's five inequalities are available from that step. (i) a: the step `ha` at line 773 is |familyA F (v,p) - 4/5| ≤ m, i.e. |a - .8| ≤ 1.68·10^{-4}, which gives the paper's |a - .8| ≤ .1 about 600 times over; only the exported conclusion is the one-sided 3/5 ≤ a, obtained at line 782 through the weaker consequence hm1 : m ≤ 1/5 (line 779). (ii) b: `familyB_zero` (line 665) is b = 0 at the ideal control, so the same step at i = 19 reads |familyB F (v,p)| ≤ e^{-8}/2 — the proof instantiates only i = 18, 20, 21, but hcomp is universally quantified over i — and that gives the paper's |b_s| ≤ .1/(1+w_*) whenever 1 + w_* ≤ .2·e^8, i.e. for every w_* up to about 595; the Lean's b is the paper's -b_s (the sign convention of (4.11)) and both bounds are on absolute values, so the sign is immaterial. What is not stated is the other three: Q_s ≥ Q_min/2, E ≥ e_*/2 and |N_s/(EQ_s)| ≤ w_*. E (i=0), Q_s (i=16) and N_s (i=17) are controlled only through the same closeness-to-ideal bound, and the paper's constants Q_min, e_* and w_* = 1 + max|N_{s,0}/(E_0Q_{s,0})| have no Lean counterpart; the ratio N_s/(EQ_s) does occur in the repository (`OutgoingEntranceCone.directionRatio`, `HeatSwitchCone.familyB`) but not in the repair-stage tolerance. The paper's derived bounds v_s ≤ .9 + .01/.7 < 1 and the P_c floor appear instead as the two remaining exported margins familySpeed ≤ 1 and e^{-8}/2 ≤ familyProjection. The tolerance is fixed before the axis stage and its controls in both, and `exists_repair_cone` proves the relaxed cone on the restore/repair annulus, so the surrounding result is reached.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.34)",
+  "status": "formalized",
+  "location": {
+    "page": 37,
+    "rect": [0.193601, 0.726879, 0.675466, 0.061433]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.34",
+      "locator": {
+        "physical": [37],
+        "printed": [37],
+        "text": "Equation (4.34), p. 37, in the proof of Proposition 4.10"
+      },
+      "region": "eq-4.34@p037",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\widehat M_0(x)=4\\eta x,\\qquad \\widehat I_0(x)=\\tfrac{5\\sqrt2}{8}P_*f\\,x^{8/5},\\qquad \\widehat J_0(x)=4\\eta\\,\\widehat I_0(x),\\qquad \\widehat S_0(x)=16\\eta^2x-\\tfrac{5}{12}P_*^2f^2x^{6/5},\\qquad C_{p,0}(x)=\\tfrac52 P_*^2f^2x^{1/5}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same five rows for the same reference pair U₀ = 4η, E₀ = P∗ f x^{1/10}: `manuscriptIdealRows` is exactly the vector (M̂₀, Î₀, Ĵ₀, Ŝ₀, C_{p,0}) and `ideal_rows_moments` states that it equals the moments of that pair, with `dilationFactor = ![R, R√R, R√R, R, 1]` supplying the paper's hat normalisation. The rewriting is the evaluation of three elementary integrals: ∫₀^x √(2t) t^{1/10} dt = (5√2/8) x^{8/5} (Lean keeps this as `idealWeightI` and proves only the bound `idealWeightI_bound : |idealWeightI r| ≤ 2r`), ∫₀^x t^{1/5}/2 dt = (5/12) x^{6/5} (`idealWeightS`, again only bounded, `≤ r/2`), and ∫₀^x t^{1/5}/(2t) dt = (5/2) x^{1/5}, which Lean does evaluate in closed form in `idealWeightP_eq`, matching C_{p,0} exactly. So the paper's explicit powers for Î₀ and Ŝ₀ are not written out as a Lean equation; they follow by the same ∫ t^a computation the repository already performs for the pressure row, and their x = 1 values do appear verbatim as `OutgoingHistories.initialS` (16η² − (5/12)P²f²) and `OutgoingSchedule.angularMoment` (leading term (5/2)√2 P η f = Ĵ₀(1)). Ĵ₀ = 4η Î₀ is literal in `idealJ G A r eta = idealWeightI r * (G eta * A eta)` with G = idealU = 4η.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

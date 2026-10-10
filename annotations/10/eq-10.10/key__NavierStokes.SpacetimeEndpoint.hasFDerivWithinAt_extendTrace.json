@@ -1,0 +1,25 @@
+{
+  "id": "eq-10.10/key/NavierStokes.SpacetimeEndpoint.hasFDerivWithinAt_extendTrace",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SpacetimeEndpoint.hasFDerivWithinAt_extendTrace",
+      "line": 139,
+      "module": "NavierStokes.SpacetimeEndpoint",
+      "path": "NavierStokes/SpacetimeEndpoint.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpacetimeEndpoint.lean#L139"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SpacetimeEndpoint.hasFDerivWithinAt_extendTrace"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 139,
+        "text": "(hderiv : ∀ z, z.1 < T → HasFDerivAt f (f' z) z) (hL : Continuous L) (hL' : Continuous L') (hlim, hlim' : locally uniform limits of f and f' as t ↑ T) (hz : z ∈ closedPast T) → HasFDerivWithinAt (extendTrace T f L) (extendTrace T f' L' z) (closedPast T) z — the Lean's substitute for the paper's display; at z.1 = T it is closed by Mathlib's hasFDerivWithinAt_closure_of_tendsto_fderiv on the convex open past (line 171), with no integral"
+      }
+    }
+  }
+}

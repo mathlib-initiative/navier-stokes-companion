@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 37.8",
+  "status": "formalized",
+  "location": {
+    "page": 37,
+    "rect": [0.207542, 0.80694, 0.585402, 0.023388]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p037-8",
+      "locator": {
+        "physical": [37],
+        "printed": [37],
+        "text": "Display 37.8, p. 37, in the proof of Proposition 4.10"
+      },
+      "region": "eq-p037-8@p037",
+      "verdicts": [
+        {
+          "confidence": 0.84,
+          "evidence": ["paper: X_i=110,\\qquad G_i(\\eta)=U(X_i,\\eta),\\qquad a(X_i,\\eta)=4/5,\\qquad \\mathcal D_XU(X_i,\\eta)=0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All four clauses are present; they are split across three files rather than written as one display, and the last two are stated on a half-line X ≥ X_i rather than at the single point X_i. X_i = 110 is `NominalProfile.Xi` (:140). G_i(η) = U(X_i,η) is `Controls.seedU_held` (:642), `Xi ≤ X → c.seedU (X, eta) = c.initialAxial eta`, with `initialAxial` (:586) the Lean name for G_i: at X = X_i this is the display's second clause, and for X > X_i it is the sentence that follows the display, 'The value U = G_i is retained'. `profiles_before_restore` (MatchingConeBounds.lean:475) carries it to the constructed field, `(c.profiles hsep).U p = c.seedU p` for p.1 ≤ c.radius·e^{-8}. 𝒟_XU(X_i,η) = 0 is `profiles_shape_radialU` (MatchingConeBounds.lean:629) verbatim — `radialPartial (c.profiles hsep).U (X, eta) = 0` for X_i ≤ X ≤ c.radius·e^{-8} — under the side hypotheses η ∈ [−1,1] and `SmallDebt F c.debt eta`, which are the construction's standing assumptions and not extra content. a(X_i,η) = 4/5 is the first conjunct of `RampParameters.final_shears` (ActivationContinuation.lean:1579), `shearA r.profiles p = 4/5` for every p.1 ≥ r.holdRadius, and `hold_lt_final` (:1546) puts X = 110 in that range; its second conjunct `shearB r.profiles p = 0` is the same ramp's version of 𝒟_XU = 0 (`shearB p = -2·p.1·radialPartial U p / E p`, the negative of the paper's b_s = 2𝒟_XU/E of (4.11)), but I do not rely on it, since `profiles_shape_radialU` states 𝒟_XU = 0 directly for the nominal profile. The one gap: `final_shears` is about `RampParameters.profiles`, the activation ramp's own field bundle, and I did not trace that it is the same object as the nominal `c.profiles` / `c.seedU` (see `not_traced`); so the a = 4/5 clause is the ramp's statement of the paper's clause, while the other three are stated for the nominal construction itself.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

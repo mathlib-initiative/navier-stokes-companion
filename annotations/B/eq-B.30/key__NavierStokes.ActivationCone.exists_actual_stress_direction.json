@@ -1,0 +1,23 @@
+{
+  "id": "eq-B.30/key/NavierStokes.ActivationCone.exists_actual_stress_direction",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActivationCone.exists_actual_stress_direction",
+      "line": 489
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean#L489"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActivationCone.exists_actual_stress_direction",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "snippet": {
+        "line": 489,
+        "text": "∃ D : ActivationBounds.ScaledPoint → ℝ × ℝ, ContDiffOn ℝ ∞ D (ActivationBounds.scaledDomain J) ∧ (∀ κ T η, D ((κ,T),(0,η)) = (referenceAngular L (0,η) * referenceP1 L (0,η), referenceAngular L (0,η) * referenceP2 X0 L U (0,η))) ∧ ∀ T, 0 < T → ∀ κ u η, … → activatedStress h X0 initial L U T κ (T*u, η) = (activation 1 κ u * (D ((κ,T),(u,η))).1, activation 1 κ u * (D ((κ,T),(u,η))).2)"
+      }
+    }
+  }
+}

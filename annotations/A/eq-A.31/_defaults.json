@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.31)",
+  "status": "formalized",
+  "location": {
+    "page": 136,
+    "rect": [0.388021, 0.70734, 0.481437, 0.043929]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.31",
+      "locator": {
+        "physical": [136],
+        "printed": [136],
+        "text": "Equation (A.31), p. 136, in section A.5"
+      },
+      "region": "eq-A.31@p136",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\frac{S(X)}{X} \\;=\\; \\frac{1}{2X}\\int_X^{\\infty} E(X')^2\\,dX'."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. (A.31) is stated directly, in the paper's own radial variable, up to multiplication by X. `TerminalHistoryBridge.energyHistory_eq_square_future` (TerminalHistoryBridge.lean:104) states energyHistory … η X = (1/2)·∫_{u>X} E(u,η)^2 du, where `energyHistory … η X = ∫ u in Ioc 0 X, HeatedOutgoing.energyDensity …` (:31) and `energyDensity = U^2 − E^2/2` (HeatedOutgoing.lean:48) — that is the paper's S(X) = ∫_0^X (U^2 − E^2/2) dx of (4.18). So the Lean conclusion is X·(A.31), and dividing by X (X ≥ switchRadius > 0) gives (A.31) verbatim; no change of variables is needed. The Lean's hypotheses are the paper's two: the witness field `energy_zero` (totalS F XR c η = 0, the paper's S(∞) = 0) and, past the switch radius, `HeatedOutgoing.U_after_switch` (U = 0, the paper's \"after the pulse U = M = J = 0\"), used in the proof to replace the integrand by −E^2/2. `NavierStokes.HeatTailHistoryLimits.energyHistory_eq_square_future` (HeatTailHistoryLimits.lean:372) is a duplicate with the same statement. The log-coordinate pair is the version used downstream: `energyHistory_eq_logS` (:381) states energyHistory … (XR·e^y) = XR·logS …, and in TailCone the same identity appears as `actualS_uniform`, S(y,η) = (e^y/2)·releaseFutureEnergy d y with releaseFutureEnergy d y = ∫_{t>y} e^{t−y}E(t,0)^2 dt, which is X·(A.31) after the substitution X' = X e^{v−y}. `actualS_backward` is its unnormalized form, S(y,η) = (1/2)∫_{t>y} e^t E(t,η)^2 dt. `actualS_uniform` evaluates the integrand at η = 0; that is not a restriction, because `ReleaseMoments.corrected_eq_release` (NavierStokes/ReleaseMoments.lean:44) proves correctedAngular d c (y,η) = finalAngular d (y,0) for y ≥ releaseStart, matching the paper's η-independent exterior profile E_pow = c_∞X^{−A}.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

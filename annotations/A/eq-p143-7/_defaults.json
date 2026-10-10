@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 143.7",
+  "status": "formalized",
+  "location": {
+    "page": 143,
+    "rect": [0.321503, 0.685269, 0.357213, 0.043293]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p143-7",
+      "locator": {
+        "physical": [143],
+        "printed": [143],
+        "text": "Display 143.7, p. 143, in the proof of Proposition A.10"
+      },
+      "region": "eq-p143-7@p143",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: b_\\theta(0,\\eta) = \\frac{16\\rho_o E_{\\mathrm{pow}}(X_b)}{\\sqrt{2X_b}}\\,\\mathcal{H}(2d/X_b)\\, g(0) > 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Lean leaves the δ = 0 slope packed as `taperSlopeFactor d 0`. Unfolding it (the simp step at TerminalStress.lean:888) gives ρ_o·8·g(0), and profileCarrier C d y0 (η, 0) = E_pow(X_b)𝓗(2d/X_b), profileRadius y0 0 = √(2X_b); so the right-hand side of `profileAngularFactor_zero` is exactly 16 ρ_o E_pow(X_b) 𝓗(2d/X_b) g(0)/√(2X_b) — same constant 16, same ρ_o, same √(2X_b), same g(0). The strict inequality is `profileAngularFactor_zero_pos`, for every η in the closed band [-1, 1]; it is proved from positivity of the three factors rather than from the value g(0) = e, which is not stated (see eq-p143-4). The paper's following sentence, a uniform positive lower bound over the closed η-band, is `profile_uniform_cone` (TerminalEdgeFactor.lean:1467), which gives a single m > 0 bounding profileAngularFactor from below on a collar |x| < ε around δ = 0, not only at δ = 0; it is deduced from `profileAngularFactor_zero_pos` by compactness of Icc (-1) 1 (lines 1480-1486) and is used at TerminalEdgePaper.lean:16-20.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

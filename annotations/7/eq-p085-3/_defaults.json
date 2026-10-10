@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 85.3",
+  "status": "formalized",
+  "location": {
+    "page": 85,
+    "rect": [0.302369, 0.392302, 0.395123, 0.027974]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p085-3",
+      "locator": {
+        "physical": [85],
+        "printed": [85],
+        "text": "Display 85.3, p. 85, in section 7"
+      },
+      "region": "eq-p085-3@p085",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: W_0^{\\mathrm{as}} = Q^A W^{\\mathrm{as}}_{0,\\mathrm{phys}}, \\qquad \\mathcal{L}^{\\mathrm{as}}\\Sigma = Q^A \\mathcal{L}^{\\mathrm{as}}_{\\mathrm{phys}}(Q^{-2A}\\Sigma)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both equations of the display are in the Lean, but the exponent A appears there under two interchangeable names: PartitionedCovariance.velocityExponent h = 1/2 + h and CoordinateAlgebra.A h = 1/2 + h (identified by the `unfold PartitionedCovariance.velocityExponent CoordinateAlgebra.A; ring` at NavierStokes/PrimaryTargetBounds.lean:933-937). First equation: it is stated verbatim, at the assembled level and in the display's own direction, as tangentSum_eq_viewSum (ActualPrimaryCovariance.lean:551), tangentSum B N0 n ((x.1,(x.2.1,Y)),theta) i = ChartScales.Q n ^ CoordinateAlgebra.A h * viewSum B N0 n x Y theta i, for every chart n and every point of the strip domain, with no summation step left to the reader: tangentSum (:539) is the sum over activeLabels of the pieces' tangentVelocity, i.e. W_0^as, and viewSum (:352) is the object the eq-7.35 entry identifies as W^as_{0,phys}. The same identity per label, which is what tangentSum_eq_viewSum sums, is primary_mode_view, (ActualInitialization.tangentBlock l).oscillation n ((x.1,(x.2.1,Y)),theta) i = ChartScales.Q n ^ CoordinateAlgebra.A h * viewTangent n x l Y theta i. The two sides are the display's two objects, not a quotient: viewTangent (and its label sum viewSum) is W^as_{0,phys}, because viewTangent n x l … = physicalTangentMode l.2 l.1 … and physicalTangentMode carries the physical normalisation Q (BaseChartJets.cellBand L) ^ (-CoordinateAlgebra.A h) of (7.35) (CorrectionInitialization.lean:4644), while the oscillation of tangentBlock l at chart n is W_0^as, the chart-n representative. The factor relating them is the absolute Q n ^ A of the display — the view chart's own Q, with no reference band in it — and the Q_β^{-A} sits one level down inside viewTangent, exactly where (7.35) puts it. So the layering is the paper's. Second equation: signed_scalar_scale states that scaling both the target and the stress request by c² scales the signed wave by velocityScale, with increment_square_scale the bare algebraic form, SignedCovariance.increment H (a²•T) (a²•R) j = a * increment H T R j. Here the Lean composes the display's factor with (7.35)'s into a single one: velocityScale_eq gives velocityScale L n = ChartScales.Q n ^ CoordinateAlgebra.A h * ChartScales.Q (BaseChartJets.cellBand L) ^ (-CoordinateAlgebra.A h), i.e. this display's Q_n^{A} times (7.35)'s Q_β^{-A}, and the stress factor is c² = coefficientScale² = velocityScale² · ε_ref/ε, since coefficientScale epsilon referenceEpsilon velocityScale = velocityScale * √referenceEpsilon / √epsilon (PhysicalSignedWave.lean:63-64), the reference band and reference epsilon both being taken from BaseChartJets.cellBand l.1 (ActualSignedStageControls.lean:46-50). So the recovery for the second equation is: c² carries the paper's Q^{2A} (as the square of the composed velocityScale) together with the ε-ratio that the paper keeps inside d_Σ = H^{-1}(Σ/ε) of (7.31), rather than in the operator; reading the composed factor as the paper's two separate steps is what the identification amounts to. The same cancellation of the two normalisations is also stated in closed form in the SignedCovariance module without naming chart representatives, by physical_signed_scale: (Q^{-A})² · ε · (Q^{2A}σ/ε) = σ.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

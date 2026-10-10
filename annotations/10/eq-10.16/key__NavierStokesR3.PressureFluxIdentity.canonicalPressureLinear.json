@@ -1,0 +1,23 @@
+{
+  "id": "eq-10.16/key/NavierStokesR3.PressureFluxIdentity.canonicalPressureLinear",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokesR3.PressureFluxIdentity.canonicalPressureLinear",
+      "line": 94,
+      "module": "NavierStokes.R3.PressureFluxIdentity",
+      "path": "NavierStokes/R3/PressureFluxIdentity.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureFluxIdentity.lean#L94"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokesR3.PressureFluxIdentity.canonicalPressureLinear"
+      },
+      "snippet": {
+        "line": 94,
+        "text": "def canonicalPressureLinear (g : Fin 3 → Fin 3 → Space → ℝ) (hg : ∀ i j, Integrable (g i j)) : ComplexTest →ₗ[ℂ] ℂ := ∑ i : Fin 3, ∑ j : Fin 3, PressureFunctionals.pressurePairLinear i j (g i j) (hg i j)"
+      }
+    }
+  }
+}

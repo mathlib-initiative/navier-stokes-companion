@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 44.5",
+  "status": "formalized",
+  "location": {
+    "page": 44,
+    "rect": [0.422771, 0.477105, 0.155575, 0.041806]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p044-5",
+      "locator": {
+        "physical": [44],
+        "printed": [44],
+        "text": "Display 44.5, p. 44, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p044-5@p044",
+      "verdicts": [
+        {
+          "confidence": 0.74,
+          "evidence": ["paper: A_n = \\frac{P_{\\mathrm c} - v_s}{|p_s - \\mathfrak{s}|} > 0 ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both halves of the display are stated, in Lean's unnormalised sign convention, and the rewriting is a cancellation of one positive factor. The identity: `stress_inner_normal` says ⟪τ•!₂[p₁-a, p₂-c], normalDirection (F•!₂[-a,-c])⟫ = -(τFa/‖F•!₂[-a,-c]‖)·(p₁ + p₂(c/a) - a(1+(c/a)²)). Here (p₁-a, p₂-c) is p_s - 𝔰 (by `stress_eq`, T₀ = F·(p_s - 𝔰); p. 31 fixes 𝔰 = a(1,t_s), so Lean's c is a·t_s), c/a = t_s, p₁ + t_s p₂ = P_c and a(1+t_s²) = v_s (`shearSize_eq`); the right-hand factor is therefore exactly P_c - v_s. Taking τ = |p_s - 𝔰|⁻¹ makes the left argument the paper's n = T₀/|T₀| (F > 0), and ‖F•!₂[-a,-c]‖ = F·a·√(1+t_s²) for F, a > 0, so the identity reads ⟪n, normalDirection g⟫ = -(P_c - v_s)/(|p_s - 𝔰|·√(1+t_s²)). The same lemma's own algebra, a·(n_θ + t_s n_z) = a n_θ + c n_z (written out at ProfileSpectralCone.lean:150-153), gives ⟪n, normalDirection g⟫ = -A_n/√(1+t_s²); cancelling the common positive √(1+t_s²) is the display, A_n = (P_c - v_s)/|p_s - 𝔰|. The positivity: `TargetCone`'s field `inward` is ⟪T, normalDirection g⟫ < 0, which under the same cancellation is A_n > 0, and `exists_closed_direction` proves TargetCone omega (logShear v omega p) (D p) for every p in Icc (-1) 1 ×ˢ Icc (leftEdge W) (rightEdge W) and every omega > 0, for a continuous unit field D that equals normalDirection (planeOfPair (logStress …)) on the radial interior — the paper's rectangle in (η, log X), and the paper's n on exactly the interior where the display is asserted. `closed_shear_positive` supplies the a > 0 that dividing by a needs. The sign flip is the convention that Lean's shear vector g = omega•!₂[-a,-c] points the opposite way, which is why A_n > 0 appears as a strict negative inner product.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "eq-p012-5/key/NavierStokes.R3CompactEnergy.energy_balance",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.R3CompactEnergy.energy_balance",
+      "line": 186,
+      "module": "NavierStokes.R3CompactEnergy",
+      "path": "NavierStokes/R3CompactEnergy.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3CompactEnergy.lean#L186"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.R3CompactEnergy.energy_balance"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 186,
+        "text": "theorem energy_balance {χ p : Space → ℝ} {w u v z : Space → Space} … (hdw : ∀ x, (∑ i : Fin 3, D i w x i) = 0) (hdv : ∀ x, (∑ i : Fin 3, D i v x i) = 0) (heq : ∀ x, z x = (∑ i : Fin 3, D i (D i w) x) - fderiv ℝ w x (v x) - fderiv ℝ u x (w x) - pressureGradient (fun y => p y.2) 0 x) : … — the two hypotheses hdw (line 189) and heq (lines 191-192) are this display, for arbitrary u, v, z; `D` is `PeriodicIntegration.spatialPartial` (line 17)"
+      }
+    }
+  }
+}

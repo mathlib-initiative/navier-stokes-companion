@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.39)",
+  "status": "partial",
+  "location": {
+    "page": 41,
+    "rect": [0.240645, 0.590055, 0.628423, 0.023555]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-4.39",
+      "locator": {
+        "physical": [41],
+        "printed": [41],
+        "text": "Equation (4.39), p. 41, in the statement of Lemma 4.9"
+      },
+      "region": "eq-4.39@p041",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\|U_N - U_0,\\; E_N - E_0\\|_k \\le \\frac{A_k}{N}, \\qquad \\|a_N - a_L,\\; b_N - b_L\\|_k \\le \\frac{B_k}{N}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The first display is matched at every order: `realized_profiles_uniform_eta_jets` gives, for each fixed k and each pair of compact sets KX, Kη, constants CE, CU with |∂_η^k(E_N - E_0)| ≤ CE/n and |∂_η^k(U_N - U_0)| ≤ CU/n for all n ≥ 1 — the paper's A_k is max(CE, CU), and the paper's sup over 0 ≤ j ≤ k follows by taking the max over the finitely many k' ≤ k. The second display is matched only at order 0: `realized_shears_uniform_bound` bounds |a_N - a_L| and |b_N - b_L| (Lean's angularShear/signedAxialShear against the loop data, with Lean's signedAxialLoop = -b) by C/n in sup norm, with no η-derivatives; a search of the repository for a jet/iteratedDeriv version of the shear difference found none, so the paper's B_k for k ≥ 1 is not stated. This is rated low rather than medium because the paper's own subsequent uses of B_k on pp. 42-43 are at order 0 only ((4.41) uses B_0 and P_0; the Step-4 replacement bound is ‖a_f - a_N, b_f - b_N, p_f - p_N‖_0 ≤ C_rep/N), and the Lean cone condition `InTrueCone` is pointwise, so the sup bound is what its route consumes.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

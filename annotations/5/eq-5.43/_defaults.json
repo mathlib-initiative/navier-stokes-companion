@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (5.43)",
+  "status": "partial",
+  "location": {
+    "page": 60,
+    "rect": [0.269827, 0.505588, 0.598357, 0.026103]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-5.43",
+      "locator": {
+        "physical": [60],
+        "printed": [60],
+        "text": "Equation (5.43), p. 60, after the statement of Proposition 5.5"
+      },
+      "region": "eq-5.43@p060",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\left|\\mathcal{D}^I\\!\\left(\\hat{T}-T_0\\right)\\right| \\le C_I\\, q^{2h}\\,\\zeta\\,\\delta^{-N_I} \\le C_I\\, q^{h}\\,\\zeta\\,\\delta^{-N_I} \\qquad (0<q\\le 1)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "claim",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The Lean states only the second inequality of the displayed chain. The objects match term by term: blownJet is 𝒟^I; normalizedTensor − stressPair d 0 is T̂ − T_0 (normalizedTensor = slowSum a h (stressPair d), BaseResidual.lean:1933, stressPair d j w = (d.stressTheta j w, d.stressAxial j w), line 1885); activeWindow a b = Ioo (exp a) (exp b) ×ˢ Icc (-1) 1 is the paper's X_a < X < X_b, −1 ≤ η ≤ 1; activeZeta is ζ, activeDelta⁻¹^N is δ^{−N_I}; the range 0 < q ≤ 1 is identical; N is existentially quantified after m, matching N_I depending on I. What differs is the exponent: `WeightedStressBound` fixes q^h, whereas the paper first asserts the sharper q^{2h} and then weakens it. The q^{2h} form does exist in the sources, but only as the calc step at BaseResidual.lean:1873 inside the general weighted-sum lemma, not as the statement of any declaration and not for the final base's T̂. Severity low because the paper itself displays the q^h form as the operative one, and that is what is carried into the final-base existential.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

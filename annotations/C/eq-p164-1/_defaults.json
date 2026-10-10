@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 164.1",
+  "status": "formalized",
+  "location": {
+    "page": 164,
+    "rect": [0.358691, 0.143075, 0.282834, 0.052839]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p164-1",
+      "locator": {
+        "physical": [164],
+        "printed": [164],
+        "text": "Display 164.1, p. 164, in the proof of Proposition C.3"
+      },
+      "region": "eq-p164-1@p164",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: n = \\frac{(b_\\theta,\\; y_b^{6} b_z)}{\\sqrt{b_\\theta^{2} + y_b^{12} b_z^{2}}}, \\qquad b_\\theta(0,\\eta) > 0."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The paper normalises the limiting outer-edge stress direction to a unit vector in one display, in the outer-edge variable y_b of (C.18). The Lean splits this: `profileStress_factorization` states T_0 = (edge 4 y.2 / y.2^3) • (b_theta, y.2^6 b_z) — the Lean's y.2 playing the role of the paper's y_b — i.e. the stress is a POSITIVE scalar multiple of the paper's numerator (edge 4 y.2 > 0 and y.2^3 > 0 for y.2 > 0), and `profileAngularFactor_zero_pos` states the b_theta(0, eta) > 0 clause separately. Rewriting: dividing the factorisation by its own norm gives exactly the paper's n, because ‖(b_theta, y_b^6 b_z)‖ = sqrt(b_theta^2 + y_b^12 b_z^2); equivalently `unitOfTilt (y_b^6 b_z / b_theta)` = (b_theta, y_b^6 b_z)/sqrt(b_theta^2 + y_b^12 b_z^2) whenever b_theta > 0, since then sqrt(1 + (y_b^6 b_z/b_theta)^2) = sqrt(b_theta^2 + y_b^12 b_z^2)/b_theta. Same exponents (6 and 12), same components, same positivity clause. The two exponents also match (A.48)-(A.49), where T_{0,theta} = e^{-4/delta^2} delta^{-3} b_theta and T_{0,z} = e^{-4/delta^2} delta^{3} b_z, the ratio of the two prefactors being delta^6 as (A.50) states. The squared exponent is also exactly the Lean's: `FlatCutoff.edge c x = if x ≤ 0 then 0 else Real.exp (-c / x ^ 2)` (NavierStokes/FlatCutoff.lean:26), so the `FlatCutoff.edge 4 y.2` of the factorisation is e^{-4/y_b^2}, matching (A.48)-(A.49) and (A.51) term for term.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

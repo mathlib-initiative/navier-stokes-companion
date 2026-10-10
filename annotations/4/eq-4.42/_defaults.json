@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.42)",
+  "status": "partial",
+  "location": {
+    "page": 42,
+    "rect": [0.265435, 0.641305, 0.602743, 0.09513]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.42",
+      "locator": {
+        "physical": [42],
+        "printed": [42],
+        "text": "Equation (4.42), p. 42, in the statement of Lemma 4.9"
+      },
+      "region": "eq-4.42@p042",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\begin{pmatrix}\\int u_c\\,dX\\\\ \\int\\!\\left(H_0 u_c + \\sqrt{2X}\\,u_c e_c\\right)dX\\\\ \\int \\sqrt{2X}\\,e_c\\,dX\\\\ \\int\\!\\left(u_c^2 - E_0 e_c - e_c^2/2\\right)dX\\\\ \\int\\!\\left(E_0 e_c/X + e_c^2/(2X)\\right)dX\\end{pmatrix} = B(\\eta)\\,c + \\mathcal{Q}_\\eta(c,c) = d_N(\\eta)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The Lean states the same five-moment system — moments = B c + Q(c,c), solved against d_N(η) = −Δm_N(Y_1,η) — but for one particular admissible bump configuration, and in a permuted, amplitude-normalized row basis. Three concrete differences. (1) The J row: the Lean's `physicalDensity` row carries the paper's full nonlinear density U√(2x)E − G√(2x)(Ax^b), whose expansion contains the cross term A²√(2x)·u_c e_c, but because the Lean puts the axial bumps in the left half of the patch and the angular bumps in the right half that term is identically zero (`u_mul_e`, applied at FiveProfileMoments.lean:543). So the Lean's quadratic form Q (`quadraticBilin`, line 304) has nonzero entries only in the S row ((1/2)Σ squareMoment(0)·ξ² − Σ squareMoment(0)·α²) and the C_p row ((1/2)Σ squareMoment(−1)·ξ²); the paper's √(2X)u_c e_c term in Q_η is never exercised. The paper's choice of β's and γ's is free, so this is an instance the paper permits, not a contradiction — but (4.42) as written, with that term present, is not what was checked. (2) Row order: the Lean's `Debt` is (M, I, J, S, C_p) (`ModulatedHistories.profileRows`, line 636, and `physicalDebt`, line 486), whereas (4.42) is ordered (M, J, I, S, C_p); rows 2 and 3 are transposed. In the normalized coordinates `Coeff` the Lean's order does match the paper's. (3) Amplitude: the Lean carries the background amplitude A = K(η) and a constant axial background G explicitly (the paper has G = U_0 = 0 here), with the √2, A, A² and the minus sign of the S row factored into the invertible map `physicalDebt`/`normalizedDebt`; the paper's u_c, e_c are the Lean's A·u, A·e. Row by row the two agree: M = ∫u_c; I = ∫√(2X)e_c; J = ∫H_0 u_c with H_0 = √(2X)E_0 (p. 40) giving √2A²∫x^{b+1/2}u; S = ∫(u_c² − E_0e_c − e_c²/2) up to the overall sign absorbed in `physicalDebt` row 3; C_p = ∫(E_0e_c/X + e_c²/(2X)).",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

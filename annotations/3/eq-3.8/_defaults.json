@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (3.8)",
+  "status": "formalized",
+  "location": {
+    "page": 17,
+    "rect": [0.134051, 0.468966, 0.735011, 0.05354]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-3.8",
+      "locator": {
+        "physical": [17],
+        "printed": [17],
+        "text": "Equation (3.8), p. 17, in section 3.6"
+      },
+      "region": "eq-3.8@p017",
+      "verdicts": [
+        {
+          "confidence": 0.75,
+          "evidence": ["paper: \\langle F\\rangle := \\langle\\langle F\\rangle_\\theta\\rangle_Y = \\langle\\langle F\\rangle_Y\\rangle_\\theta = \\frac{1}{2\\pi}\\int_{\\mathbb{T}^2}\\int_0^{2\\pi} F(r,\\vartheta,z,t,Y)\\,d\\vartheta\\,dY."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. `doubleAverage` is the composite in the order ⟨⟨·⟩_θ⟩_Y and unfolds to ∫_0^1∫_0^1 [(∫_0^{2π} F(Y,θ)dθ)/(2π)] dx dy, which is the paper's displayed iterated integral (1/2π)∫_{T²}∫_0^{2π} F dϑ dY with the same constant and the same order of integration. Two reformulations: (i) `doubleAverage` takes no slow arguments — the dependence on (r,z,t) is carried by the caller, and `meanBar_symmetricCovariance` is the form with the slow point x held fixed, equating ⟨⟨·⟩_θ⟩_Y (torus average of the angular covariance) with `doubleAverage` for the symmetric-covariance integrand; (ii) the asserted equality with the reversed order ⟨⟨F⟩_Y⟩_θ is not stated as a lemma about these two operators, but follows from `torusMean_intervalIntegral` with a = 0, b = 2π applied to g(ϑ,Y) = F(r,ϑ,z,t,Y) and divided by 2π, for F continuous in (ϑ,Y) jointly; I did not find a declaration asserting that commutation for `squareAverage ∘ angularMean` directly.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

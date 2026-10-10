@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 104.4",
+  "status": "partial",
+  "location": {
+    "page": 104,
+    "rect": [0.358497, 0.791305, 0.283229, 0.077139]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p104-4",
+      "locator": {
+        "physical": [104],
+        "printed": [104],
+        "text": "Display 104.4, p. 104, in the proof of Proposition 9.3"
+      },
+      "region": "eq-p104-4@p104",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\int_0^{\\delta} s^{-M} e^{-a/s^2}\\,ds \\le C_{M,a}\\,\\delta^{3-M} e^{-a/\\delta^2}, \\qquad \\left|\\frac{d^k}{ds^k} e^{-a/s^2}\\right| \\le C_{k,a}\\, s^{-3k} e^{-a/s^2}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Both bounds are reached, but by other formulas. (i) Integral bound: the Lean states an exact factorization in place of the paper's inequality. exists_smooth_factor_original is the paper's own left-hand side, ∫_0^x e^(-c/u²) u^(-j) b(u) du, in the paper's own exponential and real-power notation, equal to e^(-c/x²) x^(3-j) F(x) with F smooth on all of ℝ and F(0) = b(0)/(2c); the witness is the explicitly constructed F = factor c j b (exists_smooth_factor), so the constant is exhibited, not a limit value. Since F is continuous it is bounded on [0,δ₀], which gives the paper's C_{M,a} δ^(3-M) e^(-a/δ²) on any bounded range of δ, and the paper states its bound for sufficiently small positive δ. The Lean exponent is a natural number j rather than the paper's real M ≥ 0, but real M is recovered in one line by absorbing the surplus power rather than discarding it: take j = ⌈M⌉ ≥ M; for 0 < s ≤ δ, s^(-M) = s^(-j) · s^(j-M) ≤ s^(-j) δ^(j-M) since j - M ≥ 0, and the integrand is positive, so ∫_0^δ s^(-M) e^(-a/s²) ds ≤ δ^(j-M) ∫_0^δ s^(-j) e^(-a/s²) ds = δ^(j-M) · e^(-a/δ²) δ^(3-j) F(δ) = F(δ) · δ^(3-M) e^(-a/δ²), with F = factor a j 1 continuous (factor_contDiff, FlatPrimitiveFactor.lean:255) hence bounded on [0, δ₀] — the same routine-boundedness step as in the integer case. No M-restriction therefore remains on the integral half of the block; the 3 - j in the conclusion is itself a real power (scale_eq_rpow). The paper's integrand is the j-th inverse power alone (b ≡ 1); the Lean carries a general smooth coefficient b, which is more general. For j = 3, b ≡ 1 the bound is an exact identity (primitive_three_one). (ii) Derivative bound: iteratedDeriv_polynomialEdge gives the exact structure d^k/ds^k e^(-a/s²) = q_k(1/s) e^(-a/s²) with q_k = jetPolynomial a 1 k, and each step of derivativePolynomial raises the inverse-power degree by 3, so the paper's sharp s^(-3k) is implicit in it; but no declaration computes natDegree (jetPolynomial c p m), and the packaged inequality polynomialEdge_jets_bound uses one uniform non-sharp exponent N = jetOrder c p n = Σ_{i≤n} natDegree (jetPolynomial c p i) (= 3n(n+1)/2 for p = 1) for all i ≤ n in place of 3k.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

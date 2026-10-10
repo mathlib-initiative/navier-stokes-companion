@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 44.4",
+  "status": "formalized",
+  "location": {
+    "page": 44,
+    "rect": [0.357201, 0.440376, 0.286713, 0.023539]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p044-4",
+      "locator": {
+        "physical": [44],
+        "printed": [44],
+        "text": "Display 44.4, p. 44, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p044-4@p044",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: A_n = n_\\theta + t_s n_z, \\qquad B_n = n_z - t_s n_\\theta ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The two bilinear forms are literally the Lean definitions: `stockProjection p q t = p + q*t` is A_n and `stockCross p q t = q - p*t` is B_n, at (p,q) = (n_θ, n_z) and t = t_s. The one encoding difference is where these two named definitions are instantiated. Every occurrence of `stockProjection`/`stockCross` in the repository is in ActivationCone.lean, and each is at a *stock* pair rather than at a unit vector: :347,349 and :413,415 (error transport, at the stock coordinates A + z·dA, B + z·dB with tilt (B/A)(1 + z·dR)) and :459,464 (`activatedProjection`/`activatedCross`, at `activatedStockOne`/`activatedStockTwo` with `shearSlope`). At that instantiation the pair is the paper's P_c and J_c of (4.20) — the same bilinear form evaluated at the stock pair p_s, not at the unit n — so the form at n is never given a name of its own. It appears only in two other guises: written out as the inner products a·A_n and a·B_n inside `targetCone_of_signedShear`, and in tilt form as `directionProjection`/`directionGap` at the unit `unitOfTilt t` (ActiveAnnulusWeight, a different namespace). The inner-product form: `targetCone_of_signedShear` has, at ProfileSpectralCone.lean:150-158, the identities ⟪T, normalDirection (F•!₂[-a,-c])⟫ = -(F/‖·‖)(a T₀ + c T₁) and ⟪T, transverseDirection (F•!₂[-a,-c])⟫ = (F/‖·‖)(a T₁ - c T₀), which at T = n and t_s = c/a are a·A_n and a·B_n. Rewriting from the tilt form: with t = n_z/n_θ, A_n = (1 + t_s t)/√(1+t²) = directionProjection t_s t / √(1+t²) and B_n = (t - t_s)/√(1+t²), valid where n_θ > 0; the tilt-form quantities are therefore the paper's A_n, B_n times the common positive factor √(1+t²), so signs and the ratio B_n/A_n are unchanged.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

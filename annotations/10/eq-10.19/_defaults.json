@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (10.19)",
+  "status": "partial",
+  "location": {
+    "page": 123,
+    "rect": [0.285984, 0.298887, 0.582194, 0.041184]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-10.19",
+      "locator": {
+        "physical": [123],
+        "printed": [123],
+        "text": "Equation (10.19), p. 123, in the proof of Lemma 10.5"
+      },
+      "region": "eq-10.19@p123",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\left|\\int \\pi\\, w \\cdot \\nabla\\chi_R\\right| \\;\\le\\; C_T R^{-1}\\left[(B_R+1)B_R^{1/2} + R^{-3/4}B_R^{3/4}\\right]."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Two declarations in the repository bound the cutoff pressure flux, and neither is the paper's expression; they differ from it, and from each other, in the Hölder split. (i) The live route. exists_uniform_actual_pressure_flux_bound gives CP * ((B^{1/2}+1)(A_R/R + R^{-2}) + R^{-7/4}B_R^{3/4}). Its second term matches the paper exactly: R^{-7/4}B_R^{3/4} is the paper's R^{-3/4}B_R^{3/4} multiplied by the R^{-1} the paper carries outside (PressureFlux.rpow_three_fourths_div, R^{-3/4}/R = R^{-7/4}), and that is the commutator contribution. Its first term is not the paper's. The paper pairs the localised tensor in L^{3/2} against the Riesz piece in L^3 and then substitutes (10.17) to turn ‖∇(φ_R^4 w)‖_2 into A_R, producing R^{-1}(B_R+1)B_R^{1/2}, in which B_R and ‖w‖_2 are the only quantities; the Lean pairs in L^{6/5} against L^6 and applies Sobolev to the Riesz test function instead (riesz_rTest_bound), producing (B^{1/2}+1)(A_R/R + R^{-2}): the dissipation root A_R appears explicitly and undivided, and a separate R^{-2} term appears where the paper has none. Using (10.17), B_R ≤ C(A_R + R^{-1}‖w‖_2), the Lean's first two summands dominate the paper's R^{-1}B_R^{3/2} up to constants; the factor (B^{1/2}+1) in the Lean and (B_R+1)B_R^{1/2} in the paper differ in the power of B_R carried. (ii) A second, structurally closer bound that the main theorem does not use. NavierStokes/R3StressPressureEstimate.lean bounds one (i,j) component of the Gaussian-regularized flux, ‖∫ fderiv ℝ (φ^8) x (w x) * regularized n i j g x‖ ≤ rawBound R L M V B, where B is lpNorm (fourthWeight φ ‖w‖) 6 = ‖φ_R^4 w‖_6 = B_R exactly, M bounds ‖w‖_2, V bounds the L², L⁶ and L^∞ norms of the comparison field, and the stress hypothesis ‖g x‖ ≤ ‖w x‖² + 2‖u x‖‖w x‖ is the paper's. rawBound_le then gives, for R ≥ 1, rawBound ≤ coefficient(L,M,V)/R * (B_R^{3/2} + B_R + 1) — an R^{-1} prefactor times a polynomial in B_R with no A_R, which is the paper's shape rather than the pressureEnvelope shape, and whose leading term R^{-1}B_R^{3/2}M^{1/2} is the paper's R^{-1}(B_R+1)B_R^{1/2} leading term. The commutator part still differs from the paper, and by a third split: rawBound's error terms are R^{-1}·R^{-1/2}·nearConstant·(B_R M + 2VM) and R^{-1}·R^{-3/2}·farConstant·(M²+2VM), i.e. R^{-3/2}B_R and R^{-5/2}, where the paper has R^{-7/4}B_R^{3/4} — the near kernel is taken in L^{6/5} and the remainder in L² (R3PressureNearKernel) rather than the single L^{4/3} commutator kernel of the p.122 display; and rawBound_le then throws the extra decay away (R^{-1/2}, R^{-3/2} ≤ 1 for R ≥ 1), so the stated conclusion R^{-1}(B_R^{3/2}+B_R+1) is, for R ≥ 1, a strictly larger majorant than the paper's bracket up to constants. It also covers the regularized flux of a single component, not ∫ π w·∇χ_R itself. I grepped NavierStokes/ for `import NavierStokes.R3StressPressureEstimate` and found no file importing it; the atlas likewise records the module as an orphan not imported by the umbrella build. Two things that look like differences are not: the Lean quantifies over R ≥ 1 in both (i) and (ii), which is also the paper's range (p. 121-122, \"For R ≥ 1, we write φ_R(x) = φ(x/R), χ_R = φ_R^8\"), and the Lean's CP, built from the uniform bounds M (energy), U (the L³ norm of the compact field) and G₀ (the L¹ norm of the tensor difference), has the dependence the paper allows its C_T (p. 121: \"may depend on T and the stated bounds for the fields, but not on the cutoff radius\"). Rated low rather than medium because the Lean's envelope is the one its own closure consumes: eq_of_pressure_flux_bound takes exactly pressureEnvelope as hypothesis and returns u = v on [0,T], and classical_uniqueness_on_Icc (WholeSpaceUniqueness.lean:60-68) feeds the one into the other, so Lemma 10.5's conclusion is proved; what is not checked is the paper's (10.19) as written.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "eq-4.41/key/NavierStokes.TrueConeLoop.HasConeMargin",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TrueConeLoop.HasConeMargin",
+      "line": 283,
+      "module": "NavierStokes.TrueConeLoop",
+      "path": "NavierStokes/TrueConeLoop.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L283"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TrueConeLoop.HasConeMargin",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "role": "key",
+      "snippet": {
+        "line": 283,
+        "text": "HasConeMargin ε p₁ p₂ A C := ε ≤ A ∧ ε ≤ A*(1+(C/A)^2) - 2 ∧ ε ≤ p₁ + p₂*(C/A) - 2 ∧ ε ≤ coneBound (p₁ + p₂*(C/A)) (p₂ - p₁*(C/A)) - A*(1+(C/A)^2) — a componentwise additive margin ε for the Lean's own four cone quantities. These four scalar functions are not the paper's Ψ_i: with a = A and b = −C (p. 41), so that p₁+p₂(C/A) = c and p₂−p₁(C/A) = j, the paper's (4.35) third and fourth components are c−v and 2(c−v)²−(v−2)j², while the Lean's third and fourth are c−2 and coneBound(c,j)−v. They cut out the same open set but a margin ε on one tuple is not a margin ε on the other"
+      }
+    }
+  }
+}

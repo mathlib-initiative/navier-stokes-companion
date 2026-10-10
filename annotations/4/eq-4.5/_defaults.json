@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.5)",
+  "status": "formalized",
+  "location": {
+    "page": 25,
+    "rect": [0.277915, 0.612476, 0.590267, 0.067861]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.5",
+      "locator": {
+        "physical": [25],
+        "printed": [25],
+        "text": "Equation (4.5), p. 25, in the proof of Lemma 4.1"
+      },
+      "region": "eq-4.5@p025",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: u_1^{(0)} = \\frac{v_0}{2q}x_1 - q^{-A-1/2}F x_2,\\qquad u_2^{(0)} = \\frac{v_0}{2q}x_2 + q^{-A-1/2}F x_1,\\\\ u_3^{(0)} = q^{-A}U,\\qquad p^{(0)} = q^{-2A}\\Pi."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Unfolding `physicalVelocity` gives exactly the four formulas, with the Lean's coordinate indices 0,1,2 for the paper's x_1,x_2,x_3. Angular coefficient: lift (swirlProfile) = q^{-A-1/2} F, and componentX/componentY put it as -x_1 * (q^{-A-1/2}F) in the first slot and +x_0 * (q^{-A-1/2}F) in the second, matching the paper's signs. Radial coefficient: B = radialB (fluxProfile) = -V_0/(2s) with s = qX and V_0 = X v_0, so -B = v_0/(2q) and -(x_i B) = (v_0/2q) x_i. Axial: lift (axialProfile) = q^{-A} U. Pressure: AxisymmetricResidual.pressure (pressureProfile) = q^{-2A} Π. The only rewriting is the elimination of s in favour of q and X in B. The repository also carries a second, equivalent encoding of the same field as a Cartesian curl of two potentials (`AxisymmetricFields.velocity`, used by `SlowBorelBase.baseVelocity`), whose component identities have the same shape; I did not verify in Lean that its two partial derivatives reduce to v_0/(2q) and -q^{-A-1/2}F.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

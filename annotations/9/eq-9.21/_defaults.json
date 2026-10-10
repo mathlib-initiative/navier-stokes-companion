@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.21)",
+  "status": "formalized",
+  "location": {
+    "page": 115,
+    "rect": [0.305188, 0.449744, 0.56388, 0.113207]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.21",
+      "locator": {
+        "physical": [115],
+        "printed": [115],
+        "text": "Equation (9.21), p. 115, in the proof of Proposition 9.9"
+      },
+      "region": "eq-9.21@p115",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: \\mathcal{A} = \\mathcal{A}_0 + \\sum_{j\\ge 1}\\chi(a_j q)A_j,\\qquad \\mathcal{B}e_\\theta = B_0 e_\\theta + \\sum_{j\\ge 1}\\chi(a_j q)B_j,\\qquad p_{\\mathrm{loc}} = p_0 + \\sum_{j\\ge 1}\\chi(a_j q)p_j,\\qquad u_{\\mathrm{loc}} = \\operatorname{curl}\\mathcal{A} + \\mathcal{B}e_\\theta."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Every piece of the display is in the Lean, in three respects differently packaged. (i) Index: the paper writes a free j = 0 block plus ∑_{j≥1} χ(a_j q)(·)_j, while potentialSum is one tsum over all j : ℕ whose j = 0 stage is the base/initialization block and is itself multiplied by χ(a_0 q). This is not a weaker statement: scaledCutoff is the bump with rIn = 1/2, so χ(a_0 q) = 1 whenever |a_0 q| < 1/2, i.e. the cut j = 0 term equals the uncut ℐ_0 near q = 0 (LocalPotentialRebundle.sum_eq_first uses exactly that hypothesis), and the paper's Step 1 explicitly permits cutting that block inside q < q_big. (ii) Grouping: the axial part of the base potential is moved out of ℐ into the direct angular field (LocalPotentialRebundle.potential / direct subtract and add removedPotential and its curl), so the Lean's A is not literally the paper's ℐ; velocity_eq_original states that curl A + D is unchanged by the move, which is what the display uses. (iii) Swirl: ℒe_θ is not a sum of vector stages B_j in the final statement but a single cylindrical scalar times e_θ (DirectAngularDiagonal.angularField b, with the stage sum selectedDirect shown equal to it by Properties.direct_angular). The last equality u_loc = curl ℐ + ℒe_θ is literally MixedPeriodicAssembly.velocity, instantiated as selectedRawVelocity and asserted for the constructed fields as Properties.decomposition. The constants a_j and the scale q are the same objects: (a j : ℝ) and PhysicalWaveSum.physicalQ ActualPrimary.h.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

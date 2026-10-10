@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.42)",
+  "status": "formalized",
+  "location": {
+    "page": 139,
+    "rect": [0.218328, 0.595218, 0.650572, 0.054449]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.42",
+      "locator": {
+        "physical": [139],
+        "printed": [139],
+        "text": "Equation (A.42), p. 139, in the proof of Proposition A.7"
+      },
+      "region": "eq-A.42@p139",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\left|\\partial_\\eta^m \\Delta \\int_0^\\infty (H - H_{\\mathrm{pow}})\\, dX\\right| \\le C_m e_K X_K^{1/2} \\int_1^\\infty x^{-A-1/2}\\, dx \\le C_{m,h}\\, e_K X_K^{1/2}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same inequality after routine rewritings, checked term by term. H_pow does not depend on the heat edit, so Δ∫(H - H_pow) dX = Δ∫ H dX = ∫ √(2X)(E - E_cl) dX, which is literally HeatTailEdit.angularDebt (HeatedOutgoing.renormalized_decomposition exhibits the same cancellation for the compensated profile); the Lean's physicalAngular is √2 times etaDebt with q = 1/2, and the explicit Real.sqrt 2 accounts for the √(2X) weight. Lower limit 0 versus K agrees because change vanishes below the switch radius. The K-power matches: K^{1/2} = Real.sqrt K is the paper's X_K^{1/2}, and tailSize d false = e_K (not squared, matching square = false) is the paper's e_K. The paper's ∫_1^∞ x^{-A-1/2} dx = 1/(A - 1/2) = 1/h is exactly nuConstant's denominator -tailDecay d false - 1/2 = A - 1/2, so the paper's second step with constant C_{m,h} depending on h as well as m corresponds to the h-dependence of etaConstant through d.h. Differentiation is in η on Icc (-1) 1 in both.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

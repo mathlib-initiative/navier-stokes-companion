@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Display 42.7",
+  "status": "formalized",
+  "location": {
+    "page": 42,
+    "rect": [0.195781, 0.763087, 0.609018, 0.068123]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.FiveProfileMoments",
+      "path": "NavierStokes/FiveProfileMoments.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p042-7",
+      "locator": {
+        "physical": [42],
+        "printed": [42],
+        "text": "Display 42.7, p. 42, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p042-7@p042",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: B_U = \\begin{pmatrix}\\int \\beta_1 & \\int \\beta_2\\\\ \\int H_0\\beta_1 & \\int H_0\\beta_2\\end{pmatrix}, \\qquad B_E = \\begin{pmatrix}\\int \\sqrt{2X}\\gamma_1 & \\int \\sqrt{2X}\\gamma_2 & \\int \\sqrt{2X}\\gamma_3\\\\ -\\int E_0\\gamma_1 & -\\int E_0\\gamma_2 & -\\int E_0\\gamma_3\\\\ \\int E_0\\gamma_1/X & \\int E_0\\gamma_2/X & \\int E_0\\gamma_3/X\\end{pmatrix}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean's two blocks are `momentMatrix P.leftHalf (axialPowers b)` and `momentMatrix P.rightHalf (angularPowers b)`, with entries ∫ x^{a_i}β_j and ∫ x^{a_i}γ_j. With b = −1/2−λ the exponent lists are ![0, b+1/2] = (0, −λ) and ![1/2, b, b−1] = (1/2, −1/2−λ, −3/2−λ) — exactly the exponents the paper names in the sentence after the display. The rewriting from the Lean's blocks to the paper's B_U, B_E is a multiplication of rows by nonzero constants, carried by the invertible map `physicalDebt`/`normalizedDebt` (`physicalEquiv`, line 512): row 2 of B_U by √2·K(η) (since H_0 = √(2X)E_0 = √2 K(η) X^{b+1/2}, p. 40), row 1 of B_E by √2, row 2 by −K(η) (the minus sign), row 3 by K(η). Two further encoding points: the Lean keeps a general constant axial background G, so block-diagonality in the physical rows holds only after that triangular change of target basis, whereas the paper gets it directly from U_0 = 0 (G = 0, in which case `physicalDebt` is exactly the diagonal rescaling above); and the Lean's `Debt` row order is (M, I, J, S, C_p) against the paper's (M, J, I, S, C_p), though the block structure in `Coeff` matches the paper's.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

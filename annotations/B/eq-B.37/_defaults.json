@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.37)",
+  "status": "partial",
+  "location": {
+    "page": 156,
+    "rect": [0.351753, 0.321856, 0.516422, 0.040179]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.37",
+      "locator": {
+        "physical": [156],
+        "printed": [156],
+        "text": "Equation (B.37), p. 156, in the proof of Proposition B.8"
+      },
+      "region": "eq-B.37@p156",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: G \\ge \\frac{6}{7}Q_s \\ge \\frac{3Q_{\\min}}{7},\\qquad P_{\\mathrm c} = \\frac{X_R x}{L}G."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The identity P_c = (X_R x/L)G is stated, as `physical_projection`: the physical projection equals c.radius · familyProjection = X_R · (x/L)(Q_s + b N_s/(aE)), and the Lean's second shear component is b = shearB = -2XU_X/E, which is the paper's -b_s (the paper writes the shear vector as s = (a, -b_s)), so Q_s + bN_s/(aE) = Q_s - b_sN_s/(aE) = G. The two inequalities are not stated. The Lean never forms G separately and never uses the constants 6/7 and 3/7: instead `model_margins` bounds the whole projection from below by e^{-8}/2, by perturbation from the ideal control v = 0, where b = 0 and the projection reduces to xQ_s/L ≥ e^{-8} (`zero_projection_lower`, line 690, using Q_s ≥ 1 at the ideal profile); the floor is then multiplied by the radius to give 2 < P_c (line 1245). So the paper's chain G ≥ (6/7)Q_s ≥ 3Q_min/7 is replaced by a direct floor on P_c/X_R, and the conclusion the paper draws from (B.37) — P_c > 2 after increasing X_R, with no tolerance shrinking with X_R — is reached.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

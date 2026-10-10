@@ -1,0 +1,22 @@
+{
+  "id": "eq-9.20/key/NavierStokes.LocalPaper.Properties",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalPaper.Properties",
+      "line": 73
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperTheorem.lean#L73"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalPaper.Properties",
+        "kind": "structure"
+      },
+      "snippet": {
+        "line": 73,
+        "text": "residual_flatness : ∀ m : ℕ, ∀ r : ℝ, 0 ≤ r → ∀ X : ℝ, 0 ≤ X → ∃ C, 0 ≤ C ∧ ∃ δ, 0 < δ ∧ ∀ w, w.1 < 1 → physicalQ h w < δ → radialEnergy w.2 / physicalQ h w ≤ X → ‖iteratedFDeriv ℝ m (fun z => navierStokesResidual u p z.1 z.2) w‖ ≤ C * physicalQ h w ^ r"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "eq-p004-2/key/NavierStokes.NaturalCore.coreVelocity_axial",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NaturalCore.coreVelocity_axial",
+      "line": 323,
+      "module": "NavierStokes.NaturalCore",
+      "path": "NavierStokes/NaturalCore.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean#L323"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NaturalCore.coreVelocity_axial",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 323,
+        "text": "theorem coreVelocity_axial … (hs : NaturalProfile.IsNaturalSolution h j Λ P0 a0 f U V Pr) (hx : (t,x) ∈ coreDomain h Λ) : coreVelocity h f V (t, x) 2 = physicalQ h (profilePoint t x) ^ (-NaturalAxisData.A h) * U (similarityPoint h (profilePoint t x))   -- NaturalAxisData.A h = 1/2 + h (NaturalAxisData.lean:28)"
+      }
+    }
+  }
+}

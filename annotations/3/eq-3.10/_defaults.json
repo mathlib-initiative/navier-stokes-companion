@@ -1,0 +1,44 @@
+{
+  "kind": "equation",
+  "label": "Equation (3.10)",
+  "status": "formalized",
+  "location": {
+    "page": 17,
+    "rect": [0.359116, 0.682579, 0.509945, 0.041846]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.ProfileHistories",
+      "path": "NavierStokes/ProfileHistories.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-3.10",
+      "locator": {
+        "physical": [17],
+        "printed": [17],
+        "text": "Equation (3.10), p. 17, in section 3.6"
+      },
+      "region": "eq-3.10@p017",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\mathcal{A}_X(f)(X,\\eta) = \\frac{1}{X}\\int_0^X f(X',\\eta)\\,dX'."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean's radial average is defined on the same variables (X, η) but by the rescaled integrand ∫_0^1 F(tX, η) dt rather than the quotient (1/X)∫_0^X F(X',η)dX'. The rewriting is the substitution X' = tX: `primitive_eq_mul_average` states X·average F (X,η) = ∫_0^X F(X',η)dX' unconditionally, and `average_eq_quotient` states the paper's displayed quotient form average F (X,η) = (∫_0^X F(X',η)dX')/X under X ≠ 0, which the paper's 1/X also requires. The Lean form is additionally defined at X = 0, where `average_at_axis` gives the value F(0,η); the paper's formula says nothing there.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

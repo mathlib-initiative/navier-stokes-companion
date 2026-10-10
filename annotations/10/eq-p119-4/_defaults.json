@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 119.4",
+  "status": "formalized",
+  "location": {
+    "page": 119,
+    "rect": [0.343949, 0.534341, 0.312333, 0.043929]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p119-4",
+      "locator": {
+        "physical": [119],
+        "printed": [119],
+        "text": "Display 119.4, p. 119, in the proof of Lemma 10.2"
+      },
+      "region": "eq-p119-4@p119",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: \\partial_\\tau^j p^{\\mathrm{loc}}(r,\\tau) \\;=\\; -\\int_r^\\infty \\partial_\\tau^j\\!\\left(\\frac{K(\\rho,\\tau)^2}{\\rho}\\right) d\\rho ."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean never writes this display in the paper's radial variables for j ≥ 1, but it proves the same statement after a routine change of variables that it also performs itself. Recovery: heatPressure_radius_integral is the display verbatim for j = 0 (A = amplitudeExponent h = 1/2 + h, K = heatAmplitude). Putting σ = ρ²/2, dρ/ρ = dσ/(2σ), and then σ = s·v with s = r²/2 turns -∫_r^∞ K(ρ,τ)²/ρ dρ into -(C²/2) s^{-2A} ∫_{v>1} v^{-2A-1} H(2ν/v)² dv with ν = τ/s — which is exactly heatPressure_formula with heatPressureFactor. At fixed r, τ = 1-t and ν = τ/s differ by the constant factor s, so ∂_τ^j = s^{-j} ∂_ν^j; and ∂_ν^j of that integral is the integral of heatPressureJet h j by iteratedDerivWithin_integral_chain, whose three hypotheses are proved for heatPressureJet in heatPressureFactor_contDiffOn. Undoing the substitution gives the display. The paper's justification (the majorant (10.8) plus dominated convergence) and the Lean's (ChainDominated by the integrable power v^{-2A-1}, with |heatJet| ≤ heatJetBound) are the same argument; the conclusion the paper draws from the display, smooth one-sided extension to τ = 0 at positive radius, is BaseExterior.heatPressure_contDiffOn_closed (:440).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

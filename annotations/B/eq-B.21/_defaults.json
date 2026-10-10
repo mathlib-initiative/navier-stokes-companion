@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.21)",
+  "status": "partial",
+  "location": {
+    "page": 149,
+    "rect": [0.245441, 0.379802, 0.623627, 0.054805]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-B.21",
+      "locator": {
+        "physical": [149],
+        "printed": [149],
+        "text": "Equation (B.21), p. 149, in the proof of Proposition B.3"
+      },
+      "region": "eq-B.21@p149",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: -H_c \\xi_0 = \\Lambda L \\chi + O_{\\sigma_*}(\\sqrt{\\chi}), \\qquad -H_c (\\log \\phi)_\\eta \\ge \\Lambda L \\chi - C\\chi - C_{\\sigma_*}\\sqrt{\\chi} - C/\\Lambda \\ge .95\\,\\Lambda L \\chi - C_{\\sigma_*}/\\Lambda."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. Neither line of (B.21) is stated in the Lean; both are replaced by exact identities, and the error terms the paper estimates are carried symbolically instead. First line: ξ₀ = Λζ_* with ζ_* = -LH_*/(H_*²+σ_*²) is `realGradient` (NaturalAxisCoefficients.lean:51), and `gradient_identity` states H_* · ζ_* = -Lχ exactly, i.e. -H_* ξ₀ = ΛLχ with no error at all; `realAmplitude_logDerivative` identifies (log φ_*)_η with ξ₀ exactly. The paper's O_{σ_*}(√χ) arises only because its H_c is the actual transport coefficient rather than H_*; in the Lean that discrepancy is written out as H_c = Hs + (1/Λ)·d·u and the resulting term appears in `source_remainder_algebra` as the exact summand -d·u·κ pushed into the remainder, never bounded by σ_*^{-1}√χ. The estimate |H_*|/(H_*²+σ_*²) ≤ σ_*^{-1}√χ quoted in the paper right after the display is not in the repository: a search for any statement pairing √ with χ returned nothing of this shape. Second line: the Lean has no inequality for -H_c(log φ)_η; the extra piece (log Φ)_η of the full log-derivative is left in the remainder (the φEta/φ slot) and absorbed later by compactness, not by increasing Λ and Young's inequality. The .95 = 19/20 allocation of the paper's last step does surface, but one level up, at the level of S_q: `source_uniform_lower` (and the `EntranceProfile.source_lower` field it populates, NaturalEntrance.lean:1099) keeps 1/20 of ΛLχ to absorb the whole remainder, which is the same bookkeeping as the paper's 'allocating a total of .05ΛLχ'. The route differs; (B.17) is still proved.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

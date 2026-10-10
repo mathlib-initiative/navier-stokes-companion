@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 122.9",
+  "status": "formalized",
+  "location": {
+    "page": 122,
+    "rect": [0.278676, 0.817047, 0.44287, 0.04414]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p122-9",
+      "locator": {
+        "physical": [122],
+        "printed": [122],
+        "text": "Display 122.9, p. 122, in the proof of Lemma 10.5"
+      },
+      "region": "eq-p122-9@p122",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\|K_R\\|_{4/3}^{4/3} \\le C\\left[R^{-4/3}\\int_0^R r^{-2/3}\\,dr + \\int_R^\\infty r^{-2}\\,dr\\right] \\le C R^{-1}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The display is internally consistent, its left side being the 4/3 power of the norm: the bracket is the radial splitting of ∫ K_R^{4/3}, since on |z| < R the min is |z|/R, so K_R^{4/3} = R^{-4/3}|z|^{-8/3} and the volume element r² dr gives R^{-4/3}∫_0^R r^{-2/3} dr, while on |z| > R the min is 1, so K_R^{4/3} = |z|^{-4} and the volume element gives ∫_R^∞ r^{-2} dr. Both pieces are a constant times R^{-1}. Two modules formalize this, and between them every member of the display — including the intermediate bracket — has a counterpart. (a) NavierStokes/R3PressureKernel.lean splits exactly as the paper does. baseMoment (:24) is K_1^{4/3} written out, ‖x‖^{-8/3} for ‖x‖ < 1 and ‖x‖^{-4} otherwise; kernel_moment (:100) carries the near-field prefactor, kernel R x^{4/3} = R^{-4} baseMoment(R⁻¹•x), which on ‖x‖ < R is R^{-4/3}‖x‖^{-8/3}, the paper's R^{-4/3}; and baseMoment_integrable (:35) reduces integrability by polar coordinates (integrable_fun_norm_addHaar at :38, radial weight r^{finrank−1} = r²) to precisely the paper's two radial integrands, hnear : IntegrableOn (fun r => r^{-2/3}) (Ioo 0 1) at :40 and hfar : IntegrableOn (fun r => r^{-2}) (Ici 1) at :43. integral_kernel_moment (:113) then states the display's right-hand member as an equality, ∫ K_R^{4/3} = R⁻¹ ∫ baseMoment, with a docstring naming it the R⁻¹ fourth-thirds moment bound; kernel_lpNorm (:133) gives the corresponding ‖K_R‖_{4/3} = R^{-3/4}(∫ baseMoment)^{3/4}. Two routine differences from the paper's bracket: the Lean splits at radius 1 after the dilation has been performed rather than at radius R before it (so the paper's R^{-4/3} prefactor and the limits 0,R and R,∞ become 1 and the limits 0,1 and 1,∞), and the two radial pieces are stated as integrability over (0,1) and [1,∞) rather than as evaluated integrals, the exact R-dependence being supplied separately by integral_kernel_moment. (b) The route the whole-space closure actually consumes, NavierStokes/R3/RadialKernelBounds.lean, reaches the same end points by a different argument: kernel_power_integral_scale (:199) proves the R-dependence as an exact dilation identity ∫ K_R^{4/3} = R^{-1}∫ K_1^{4/3}, and kernel_one_power_integrable (:102) supplies the finiteness of ∫ K_1^{4/3} by the layer-cake formula and the volume of balls (lintegral_eq_lintegral_meas_le at :111, Measure.addHaar_closedBall in ball_measure_power at :95, the t-integral split at t = 1 at :114), not by splitting the radial integral; so in that module, and only in that module, the paper's intermediate bracket has no counterpart. radialCommutatorKernel_lpNorm_le (:245) states ‖K_R‖_{4/3} ≤ C R^{-3/4} for every R > 0 with an unspecified positive C, which is the form the next page uses, and the passage from the paper's ‖K_R‖_{4/3}^{4/3} ≤ C R^{-1} to it is the routine rewriting x ≤ y ↔ x^{3/4} ≤ y^{3/4} for nonnegative reals.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

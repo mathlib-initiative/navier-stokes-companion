@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 114.2",
+  "status": "formalized",
+  "location": {
+    "page": 114,
+    "rect": [0.347449, 0.764154, 0.305096, 0.026329]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p114-2",
+      "locator": {
+        "physical": [114],
+        "printed": [114],
+        "text": "Display 114.2, p. 114, in the proof of Proposition 9.9"
+      },
+      "region": "eq-p114-2@p114",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: \\operatorname{curl}\\!\\left(\\Psi_j e_\\theta\\right) = \\left(-\\partial_z \\Psi_j,\\; 0,\\; \\left(\\partial_r + r^{-1}\\right)\\Psi_j\\right)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean states the same three components, never as this one display. Two independent encodings were opened. (a) Cartesian: AxisymmetricFields.potential H K is (rH/2) e_θ + K e_z, so the paper's Ψ is rH/2; with K = 0, velocity_zero/velocity_one give the vector (-x₀, -x₁) ∂_zH/2, which is purely radial (its e_θ component is identically 0, matching the middle entry) of radial size -(r/2)∂_zH = -∂_zΨ; velocity_two gives H + s ∂_sH with s = radialEnergy x = r²/2, and since ∂_r = r∂_s one has (∂_r + r⁻¹)(rH/2) = H + s∂_sH, the third entry. (b) Chart: meridional's body is literally the triple (-∂_zΨ, 0, ∂_rΨ + Ψ/r) written with graph derivatives (graphDz, graphDr with variable radial speed physicalSpeed) and divideRadius, and cartesianPotential_curl states that the Cartesian curl of the azimuthal potential equals its image under velocityMap/polarVelocityMap. In (b) the radius divided by is the chart radius p.1 = G.radialScale * r and graphDr carries the speed factor, so the identity is the paper's only after the chart scalings cancel; the cancellation inside velocityMap was not traced (see not_traced). No sign, derivative count or term differs in either encoding.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

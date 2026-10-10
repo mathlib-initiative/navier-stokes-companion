@@ -1,0 +1,42 @@
+{
+  "kind": "equation",
+  "label": "Display 41.6",
+  "status": "formalized",
+  "location": {
+    "page": 41,
+    "rect": [0.258987, 0.821868, 0.482257, 0.029523]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p041-6",
+      "locator": {
+        "physical": [41],
+        "printed": [41],
+        "text": "Display 41.6, p. 41, in the statement of Lemma 4.9"
+      },
+      "region": "eq-p041-6@p041",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\|\\Delta\\mathfrak{m}_N\\|_k \\le \\frac{D_k}{N}, \\qquad \\|\\Pi_N - \\Pi_0^{\\mathrm{prof}}\\|_k = \\|\\Delta C_{p,N}\\|_k \\le \\frac{D_k}{N}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The rewriting is only the unfolding of ‖·‖_k: Lean quantifies ∀ j ≤ q, ∀ i : Fin 5, ∀ X, ∀ eta ∈ S with a single constant C, which is exactly sup over the five components, over η-derivative orders 0..q and over X of |∂_η^j Δm_N| ≤ C/N — the paper's D_k with k = q. The second display is obtained from `Localized.profileHistory_difference`: with the two profile families sharing the axis value (hP0 : P.pressure0 = Q.pressure0 = Π_0(η)), the pressure row of profileHistory differs by exactly the pressure component of historyDifference, i.e. Π_N - Π_0^prof = ΔC_{p,N}, and the bound is then the i = historyIndex pressure instance of the jet bound. Lean uses one constant for all orders j ≤ q where the paper writes a constant D_k per order; taking C = D_q recovers the Lean form and conversely.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (7.7)",
+  "status": "formalized",
+  "location": {
+    "page": 75,
+    "rect": [0.266312, 0.378234, 0.602764, 0.042021]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-7.7",
+      "locator": {
+        "physical": [75],
+        "printed": [75],
+        "text": "Equation (7.7), p. 75, in section 7.1"
+      },
+      "region": "eq-7.7@p075",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: K_a = \\frac{n_{\\Phi,\\mathrm{tan}}}{|n_{\\Phi,\\mathrm{tan}}|}, \\qquad N_a = \\bigl((K_a)_z,\\,-(K_a)_\\theta\\bigr), \\qquad s_a = \\frac{n_{\\Phi,r}}{|n_{\\Phi,\\mathrm{tan}}|}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. K_a and s_a are literally normalDirection and radialSlope (tail n = (n_θ,n_z) = n_{Φ,tan}, n 0 = n_{Φ,r}, normalScale = |n_{Φ,tan}|); the denominators and the nonvanishing hypothesis (tail n ≠ 0) agree. The one difference is the orientation of the second frame vector: the Lean's frame is normalFrame n = frameOfUnit (normalDirection n), so frame 0 = K_a and frame 1 = quarterTurn K_a = (−(K_a)_z, (K_a)_θ) = −N_a, whereas (7.7) sets N_a = ((K_a)_z, −(K_a)_θ). Both are the unit tangential vector orthogonal to K_a, so (K_a, ±N_a) are the same orthonormal frame up to orientation. The orientation convention sits on K, not on N or c₀. p.74 sets N = g₀/|g₀|, K = N^⊥ = (−N_z, N_θ) = quarterTurn N; the Lean's reference transverse direction is PrimaryRepresentatives.transverseDirection g = −quarterTurn (normalDirection g) with normalDirection g = ‖g‖⁻¹•g = p.74's N, i.e. the Lean's K is minus p.74's K, and it is this vector that instantiates the FamilyData field K (PrimaryGeometryAssembly.lean:316). Accordingly quarterTurn_transverseDirection (PrimaryRepresentatives.lean:229) gives quarterTurn K = +N, so FamilyData.eigen12 (λ₀/c0 = 2F₀·(quarterTurn K)₀, BasePhaseGeometry.lean:555) reads λ₀/c0 = +2F₀N_θ and is discharged by ReferenceCone.lambda0_div_c0 (used at PrimaryGeometryAssembly.lean:346), and eigen21 (:556) reads λ₀·c0 = −(2F₀N_θ + ⟪N,g₀⟫) = −(2F₀N_θ+|g₀|), discharged by lambda0_mul_c0 (:348); their product is p.74's λ₀² = −2F₀N_θ(2F₀N_θ+|g₀|). The Lean's c0 = PrimaryRepresentatives.c0 = lambda0/coupling with coupling = 2F·N_θ is therefore p.74's c₀ = λ₀/(2F₀N_θ) verbatim, and ReferenceCone.c0_neg proves it negative, exactly as p.74 asserts. The same reversal reaches the actual frame through the wave vector: FamilyData.frequency = representativeFrequency B σ u ℓ K g = B•(K − (σu/(ℓ‖g‖²))•g) is p.74's (p̃/R₀,p_z) = B_s(K − σu_*g₀/(L_s|g₀|²)) with the Lean's K in place of the paper's, so the Lean's n_{Φ,tan} — hence its K_a — points opposite to the paper's, and its quarterTurn K_a takes the place the paper gives N_a. Effect on the ODE: the second frame vector enters only through Nθ := (B 1) 0 and gN := ⟪B 1, g⟫ in coeff12 and coeff21 (MovingFrameODE.lean:159–160); reversing it flips the sign of both, so their product — hence λ² and the growth rate λ — is unchanged.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

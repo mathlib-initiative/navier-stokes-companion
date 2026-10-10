@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 128.1",
+  "status": "partial",
+  "location": {
+    "page": 128,
+    "rect": [0.38267, 0.211399, 0.234883, 0.02742]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p128-1",
+      "locator": {
+        "physical": [128],
+        "printed": [128],
+        "text": "Display 128.1, p. 128, in section A"
+      },
+      "region": "eq-p128-1@p128",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\|\\partial_X^r \\partial_\\eta^k \\delta V\\|_\\infty \\le C_r\\, v_*\\, \\rho^{-r}\\, \\|c\\|_{C^k}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. No declaration assembles the display as written: the ρ^{-r} factor, the coefficients c_j(η) and the amplitude v_* are never brought together in one statement. The scaling factor itself — one inverse power of the width per derivative — IS in the repository, in one dimension and for exactly the base profile of the paper's β_j: SmoothCutoffs.scaledCutoff_iteratedDeriv states the all-order chain rule iteratedDeriv n (scaledCutoff a) = a^n · (iteratedDeriv n cutoff)(a·), and with cutoff_iteratedDeriv_bounded (|iteratedDeriv n cutoff| ≤ C) this gives ‖∂_X^r β(·/ρ)‖_∞ ≤ C_r ρ^{-r} on taking a = ρ⁻¹; scaledCutoff_iteratedDeriv_bound is the packaged form, |∂^{n+1} scaledCutoff a (q)| ≤ C (1/q)^{n+1}. The β_j are that same profile: LocalizedMomentRepair.bump l u t = cutoff((t-(l+u)/2)/((u-l)/4)) and FiveProfileMoments.bump P j = LocalizedMomentRepair.bump (lower P j) (upper P j), i.e. a translated dilate with ρ = (u-l)/4. (cutoff_iteratedFDeriv_le, ‖∂^n (baseCutoff(R⁻¹ x))‖ ≤ C_n / R^n, is the further R³ analogue for the localized-energy cutoff.) What the correction bounds do instead is absorb the width into the constant, because the Patch — hence ρ — is fixed before the constant is chosen: FiveProfileMoments.mixed_jet_bound has the same shape as the display (a bound, uniform in x, on the mixed jet ∂_η^m ∂_x^k of the bump combination by the m-th parameter jet of the coefficients, with the β_j independent of η exactly as in the paper) but its J = J(P,N) hides ρ; correction_derivative_bound is its parameter-free case, |∂_x^k Σ_j c_j β_j| ≤ C‖c‖ with C = C(P,k). Neither exhibits ρ^{-r}, and neither carries the amplitude v_*. For the concrete pulse corrections the Lean proves the log-coordinate analogue that the paper's next sentence anticipates: correctionJet is ∂_y^k of δV(e^y), i.e. (X∂_X)^k, bounded by C·exp(-1/(4λ))·(1+|amp η|) with C independent of λ (paper_correction_bounds) — the bumps there have fixed width in log X, so no ρ^{-r} arises — and only the first η-derivative is bounded (correctionJet_eta_bound), not all k. The amplitude enters as an additive factor (1 + |amp η|) rather than as the multiplicative v_*. Passing from the (X∂_X)^k bounds to the display's ∂_X^r ρ^{-r} form, and iterating η-derivatives past the first, is not carried out anywhere I found.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 12.4",
+  "status": "formalized",
+  "location": {
+    "page": 12,
+    "rect": [0.34749, 0.49906, 0.305237, 0.043624]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p012-4",
+      "locator": {
+        "physical": [12],
+        "printed": [12],
+        "text": "Display 12.4, p. 12, in section 3.3"
+      },
+      "region": "eq-p012-4@p012",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: \\begin{pmatrix} \\langle \\widetilde{w}_r \\widetilde{w}_\\theta \\rangle \\\\ \\langle \\widetilde{w}_r \\widetilde{w}_z \\rangle \\end{pmatrix} = T + \\text{higher-order terms.}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "claim",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The paper's display is stated in Lean, for the full curl-corrected covariance and with no hypotheses, as `ActualInitialMean.matched_fluxes`; the only encoding choice is that '+ higher-order terms' is membership in a strictly higher mean class rather than an additive remainder named in the statement. Matching of the parts, each opened in its source file: `strip = BaseContextAssembly.nativeStrip ActualPrimary.nominal ActualPrimary.standardRegion` (ActualInitialMean.lean:27-28), the same strip as in ActualPrimaryCovariance; `seed B N0 = bandSeed (ActualPrimary.activeLabels standardRegion B N0) primaryPiece (baseError B)` (line 43-44) with `primaryPiece l = ActualPrimary.piece standardRegion l.2 l.1` (line 37-38), the same primary family as `tangentCovariance B N0`; and `bandSeed_covariance` (CorrectionInitialization.lean:1114-1118) gives `(bandSeed labels pieces e).covariance i j = bilinearCovariance (fieldSum labels fun l => (pieces l).velocity) (…) i j` by `rfl` — the piece's full `velocity`, i.e. the curl corrections are inside the left-hand side, not only the tangential part. `bilinearCovariance u u i j = angularAverage (u_i u_j)` (CorrectionState.lean:73-78) is the paper's ⟨·⟩_θ and `StateMomentBalances.meanBar` (StateMomentBalances.lean:23) is its ⟨·⟩_Y, so the two left-hand sides are literally ⟨w̃_r w̃_θ⟩ and ⟨w̃_r w̃_z⟩ (index 0 = radial, 1 = θ, 2 = z, as in `chart_physical_leading` and as confirmed by `angularBase_physical`/`axialBase_physical`, BaseContextAssembly.lean:470-478). On the right, `(commonContext B).virtualTheta/.virtualAxial` are the two components of `BaseContextAssembly.virtualStress` (BaseContextAssembly.lean:467-468), the annulus-supported target stress. The version whose right-hand side is literally the paper's T is `averagedDefect_meanClass`: `averagedDefect B N0 i = meanBar (tangentCovariance B N0 0 i.succ) - leadingStress i` with `leadingStress i` the i-th component of `leadingVirtualStress` = T, and the theorem puts that difference in MeanClass β for *every* real β — the defect is supported on the finite retained band prefix and vanishes identically past band `(choice B N0).prepared.N + 1` (`averagedDefect_zero_tail`, line 748), so for the Y-averaged tangential covariance the paper's identity holds with an error smaller than any power. The curl-correction part of the higher-order terms is the second clause of `ActualInitialMean.covariance_bounds`: full minus tangential covariance in MeanClass 3/2 - κ with κ = 1/100000 (ChartScales.lean:24), strictly above the leading class 1 of `leadingStress_meanClass` (ActualPrimaryCovariance.lean:824) — the paper's 'smaller by positive powers of q'. Recovery of the display as the paper writes it (right-hand side T, not the full virtual stress): add `averagedDefect_meanClass B N0 i (3/2 - kappa)` to the Y-average of `covariance_bounds B N0 .2`, the Y-average preserving mean class by `ActualInitialMean.meanBar_mem` (line 355, via `LocalSignedRequest.meanClass_liftedTorusAverage`). The one convention worth recording, not a gap: `matched_fluxes` states the right-hand side as the full virtual stress rather than its leading term T, the two differing by the MeanClass-2 `context_higher_stress_classes` invoked inside `tangent_virtual_bar_meanClass` (line 893).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

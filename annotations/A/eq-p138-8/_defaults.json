@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 138.8",
+  "status": "formalized",
+  "location": {
+    "page": 138,
+    "rect": [0.313114, 0.694902, 0.373772, 0.043099]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p138-8",
+      "locator": {
+        "physical": [138],
+        "printed": [138],
+        "text": "Display 138.8, p. 138, in the proof of Lemma A.6"
+      },
+      "region": "eq-p138-8@p138",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.85,
+          "evidence": ["paper: 0 \\le -\\frac{Z\\mathcal{H}'}{\\mathcal{H}} < h,\\qquad \\frac{rK_r}{2K} = -A - \\frac{Z\\mathcal{H}'}{\\mathcal{H}} < -\\frac{1}{2}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both chains are stated, the second one in the terminal-edge chart rather than in (t, r). First chain: the upper bound -Z H'/H < h is profile_logSlope_lt at a = 1 + h (profile_h_logSlope_lt is the h-form), and the cleared-denominator version for all z ≥ 0 is extended_heat_slope; the lower bound 0 ≤ -Z H'/H follows (strictly, hence stronger) from profile_derivWithin_neg with profile_pos. TerminalCone.heatSlope_bounds conjoins both halves as 0 ≤ heatSlope ≤ h/4 but only for h ≤ 1/4, z ≤ 1/16, so the unrestricted pair profile_logSlope_lt + profile_derivWithin_neg is the faithful citation. Second chain: profileCarrier is K = C s^{-A} H(Z) (spatialExponent (1+h) = 1/2 - (1+h) = -A) and profileCarrierRadial is ∂_r K = C s^{-A-1}(-A H - Z H') r — the derivative identification is carried out in carrierRadial_normalizedParam, which rewrites it through radialProfile_first_derivative. profileCarrier_radial_gap states r·K_r + K < 0, and with K > 0 (profileCarrier_pos) that is precisely rK_r/(2K) < -1/2. The rewriting is the coordinate dictionary s = profileS y0 x = exp(y0+3-x), r² = 2s (profileRadius_square), Z = profileZ = 2(1-η²)/s = 2d/s = 2τ/s, extension (1+h) = profile (1+h) on z ≥ 0 (extension_eq_profile); as x ranges over ℝ, s ranges over all of (0,∞), and η² ≤ 1 gives d = 1-η² ∈ [0,1], so the chart covers the paper's parameters. The proof is the paper's own derivation: the step `hb` at TerminalEdgeFactor.lean:1409-1414 is 2(σH - Z H') + H < 0, which nlinarith gets from extended_heat_slope using 2σ + 2h + 1 = 0, i.e. exactly the paper's -A - Z H'/H < -A + h = -1/2. Remark, not a defect: in the RadialHeatProfile/TerminalStress coordinates the repository records only the sign (spatialFirst_neg, radialProfile_derivative_neg, heatAmplitude_deriv_neg conclude < 0), since that is all Lemma A.6's own statement needs.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

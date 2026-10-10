@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (6.27)",
+  "status": "formalized",
+  "location": {
+    "page": 70,
+    "rect": [0.24516, 0.323815, 0.621476, 0.047829]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-6.27",
+      "locator": {
+        "physical": [70],
+        "printed": [70],
+        "text": "Equation (6.27), p. 70, in the statement of Proposition 6.6"
+      },
+      "region": "eq-6.27@p070",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: \\Phi_\\gamma = p_\\gamma \\theta + \\phi_\\gamma(R,Z,T,H), \\qquad k = \\lceil \\varepsilon^{-1/2} \\rceil, \\qquad k p_\\gamma \\in \\mathbb{Z} \\setminus \\{0\\}, \\qquad \\mathcal{H}_j \\subset \\mathbb{Z} \\setminus \\{0\\}, \\quad |\\mathcal{H}_j| < \\infty, \\qquad 0 < P_v \\le 1 \\ (0 \\le v \\le L_s)"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "hypothesis",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. All five conjuncts are present; the only rewriting is the clearing of k in the phase split. (i) k = ⌈ε^{-1/2}⌉ is `carrierFrequency` verbatim (ℕ-ceiling of ε^{-1/2}), and it is the frequency the construction uses: `(chartCoefficients …).frequency n` reduces to `(ChartScales.carrier ActualPrimary.h n : ℝ)` = `Scaling.carrierFrequency (epsilon h n)` (ActualPhaseJetBounds.lean:632-633, ChartScales.lean:244). (ii) The phase split is stated in cleared form: `phase_split` gives k·Φ(x,θ) = k·φ(x) + m·θ with m = `angularMode` : ℤ, which is the paper's Φ = p_γ θ + φ_γ with p_γ = m/k (k > 0, so dividing by k is the whole rewriting); `AffinePhase` is the same condition in translation-integrated form. (iii) `angularMode_ne_zero` is k p_γ ∈ ℤ \\ {0}. (iv) Finiteness of ℋ_j and ℋ_j ⊂ ℤ \\ {0} are structural rather than stated as a set condition: `Coefficients` is an `AddMonoidAlgebra … ℤ`, whose elements have finite support, and the zero mode is excluded per label (`angularMode_ne_zero`) and by the `j ≠ 0` guard in `HarmonicSourceSupport.NonzeroSupportedOn`. (v) 0 < P_v ≤ 1 (0 ≤ v ≤ L_s) is stated exactly, for the construction's own envelope: `pulseEnvelope l = referenceP (lam) (u) (L)`, `referenceP_pos` gives 0 < referenceP unconditionally, and `referenceP_le_one` gives referenceP ≤ 1 under 0 < lam, u, L and t ∈ Icc 0 L — the paper's own range restriction. `envelope_le_one` discharges those four hypotheses in the actual construction (lam_pos, u_pos, L_pos, and v ∈ Icc 0 L from the clock-window core) for the copy-transported `envelope`, which equals `pulseEnvelope` on each copy cell by `envelope_copy` and is extended by zero off the cells — which is why `envelope_nonneg` (line 185) proves only 0 ≤ there. Strict positivity is also carried as the hypothesis field `envelope_pos : ∀ n v, 0 < W n v` of `CopyControl`, discharged by `referenceP_pos` (ScaledActualParticularControl.lean:198, ActualParticularControl.lean:653).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

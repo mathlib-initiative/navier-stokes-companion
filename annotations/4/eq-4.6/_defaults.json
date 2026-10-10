@@ -1,0 +1,43 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.6)",
+  "status": "formalized",
+  "location": {
+    "page": 25,
+    "rect": [0.261374, 0.799429, 0.606808, 0.041846]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.ProfileHistories",
+      "path": "NavierStokes/ProfileHistories.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.6",
+      "locator": {
+        "physical": [25],
+        "printed": [25],
+        "text": "Equation (4.6), p. 25, in the proof of Lemma 4.1"
+      },
+      "region": "eq-4.6@p025",
+      "verdicts": [
+        {
+          "confidence": 0.92,
+          "evidence": ["paper: \\mathcal{A}_X(f)(X,\\eta) = \\frac{1}{X}\\int_0^{X} f(x,\\eta)\\,dx,\\qquad \\mathcal{A}_X(f)(0,\\eta) = f(0,\\eta)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Both clauses are stated, with the two roles exchanged. The Lean takes the rescaled integral ∫_0^1 f(tX,η) dt as the definition of A_X, so the paper's second clause A_X(f)(0,η) = f(0,η) is the theorem `average_at_axis` (immediate from the definition), and the paper's first clause is the theorem `average_eq_quotient`: for X ≠ 0, average F p = primitive F p / X = (1/X)∫_0^X f(x,η) dx. The rewriting is the substitution x = tX (`primitive_eq_mul_average`, proved by intervalIntegral.smul_integral_comp_mul_right). Variables, integration limits and the η slot match.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

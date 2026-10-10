@@ -1,0 +1,40 @@
+{
+  "kind": "equation",
+  "label": "Display 164.2",
+  "status": "formalized",
+  "location": {
+    "page": 164,
+    "rect": [0.246237, 0.282006, 0.507749, 0.041806]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "kind": "theorem"
+      },
+      "item": "eq-p164-2",
+      "locator": {
+        "physical": [164],
+        "printed": [164],
+        "text": "Display 164.2, p. 164, in the proof of Proposition C.3"
+      },
+      "region": "eq-p164-2@p164",
+      "verdicts": [
+        {
+          "confidence": 0.78,
+          "evidence": ["paper: n_\\theta + t_s n_z = \\frac{P_c - v_s}{|p_s - (a, -b_s)|} > 0, \\qquad n_z - t_s n_\\theta = \\frac{J_c}{|p_s - (a, -b_s)|}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same two inner products, differently normalised. The paper resolves the UNIT stress direction n = T_0/|T_0| against the shear frame (1, t_s), so both components carry the factor 1/|p_s - (a, -b_s)| (the F cancels). The Lean lemmas resolve the UN-normalised stress τ • (p_1 - a, p_2 - c) against the unit frame built from the shear vector, so both right-hand sides carry τ*F*a/‖F • (-a, -c)‖ instead; with s = (a, -b_s), c = -b_s, t_s = c/a, ‖F • (-a,-c)‖ = F|s| and a > 0 this is τ*a/|s|. Recovery: the F in the Lean right-hand sides belongs to the SHEAR vector F • (-a, -c), not to the stress, so the stress norm is ‖τ • (p_1 - a, p_2 - c)‖ = τ|p_s - s| with no F in it. Divide both Lean identities by τ|p_s - s| to get the components of the unit stress n against the unit frame: ⟪n, N⟫ = -(a/|s|)(P_c - v_s)/|p_s - s| and ⟪n, T⟫ = (a/|s|)J_c/|p_s - s|, where N = normalDirection(F•(-a,-c)) and T = transverseDirection(F•(-a,-c)). Then multiply by |s|/a = sqrt(1 + t_s^2), which is exactly the rescaling from the unit frame to the paper's unnormalised frame (1, t_s) — the paper's n_theta + t_s n_z is sqrt(1 + t_s^2) times the projection of n on the unit vector along (1, t_s) — and absorb the one sign (below). That gives the paper's n_theta + t_s n_z = (P_c - v_s)/|p_s - s| and n_z - t_s n_theta = J_c/|p_s - s|. Term by term the bracketed factors match the paper exactly: p_1 + p_2*(c/a) - a*(1 + (c/a)^2) = P_c - v_s and p_2 - p_1*(c/a) = J_c, with (4.20)'s P_c = p_{s,1} + t_s p_{s,2}, J_c = p_{s,2} - t_s p_{s,1}, v_s = a(1 + t_s^2). The overall minus sign in `stress_inner_normal` is the sign of `normalDirection` of the shear vector F•(-a,-c), which points opposite to (a, c); after that sign is absorbed the positivity clause '> 0' of the paper is the statement that P_c > v_s, which in Lean is carried separately as the `TargetCone.inward` field rather than inside this identity.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

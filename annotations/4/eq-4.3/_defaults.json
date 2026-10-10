@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (4.3)",
+  "status": "formalized",
+  "location": {
+    "page": 25,
+    "rect": [0.157359, 0.419886, 0.710823, 0.038368]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-4.3",
+      "locator": {
+        "physical": [25],
+        "printed": [25],
+        "text": "Equation (4.3), p. 25, in the proof of Lemma 4.1"
+      },
+      "region": "eq-4.3@p025",
+      "verdicts": [
+        {
+          "confidence": 0.86,
+          "evidence": ["paper: u_\\theta^{(0)} = q^{-A}E,\\qquad u_z^{(0)} = q^{-A}U,\\qquad r u_r^{(0)} = V_0,\\qquad p^{(0)} = q^{-2A}\\Pi,\\qquad E = \\mathsf{C}^{-1}\\sqrt{2X}\\,\\phi."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The first clause is stated outright: `LeadingStress.physical_swirl_value` is sqrt(2s) * swirlProfile = pullback h (-A h) P.E, i.e. r * F_phys = u_θ = q^{-A} E, proved from `radius_mul_rpow` (sqrt(2s) * q^b = q^{b+1/2} sqrt(2X), itself `physical_radius`) and the body of `Profiles.E`; and `RenormalizedHeatMoment.uTheta h E t r z = q^{-A} E(r²/(2q), η)` is the same formula written directly in cylindrical variables (t, r, z), with `uTheta_eq_similarity_pullback` identifying it with pullback h (-A h) E. The radial clause is likewise stated as a cylindrical identity: `RadialFluxResidual.radial_flux_velocity` (RadialFluxResidual.lean:196) is x_1 u_1 + x_2 u_2 = V at every point off the axis, i.e. exactly r u_r = V, for general V F U; `physicalVelocity` (LeadingStress.lean:372) is that same `AxisymmetricResidual.velocity (radialB V) F U` with V := fluxProfile P h, so instantiating gives r u_r^{(0)} = V_0 with no hand recovery. The remaining two clauses (axial, pressure) are carried not as cylindrical identities but by the Lean's Cartesian packaging `AxisymmetricResidual.velocity B F U` (radial -rB, angular rF, axial U) and `AxisymmetricResidual.pressure`, with the q-powers of (4.3) in the pullback exponents: angular -A-1/2, axial -A, radial flux 0, pressure -2A; the axial and pressure monomials are the literal pullbacks q^{-A} U and q^{-2A} Π. The paper's amplitude normalization C sits outside the profile: the paper's F = φ/C is the Lean's `P.f`, and the explicit C⁻¹ appears in `coefficientBundle` (-C⁻¹ * primitive φ) and in `leadingVelocity` (C⁻¹ q^{-A-1/2} φ), so the paper's E = C⁻¹ sqrt(2X) φ is Profiles.E with f = φ/C. Exponents, signs and the sqrt(2X) factor match term by term.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

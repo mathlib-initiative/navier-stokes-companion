@@ -1,0 +1,26 @@
+{
+  "id": "eq-p012-6/attributed/NavierStokes.R3LocalEnergyEvolution.energy_hasDerivAt",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.R3LocalEnergyEvolution.energy_hasDerivAt",
+      "line": 28,
+      "module": "NavierStokes.R3LocalEnergyEvolution",
+      "path": "NavierStokes/R3LocalEnergyEvolution.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3LocalEnergyEvolution.lean#L28"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.R3LocalEnergyEvolution.energy_hasDerivAt",
+        "kind": "theorem"
+      },
+      "relation": "implies",
+      "role": "attributed",
+      "snippet": {
+        "line": 28,
+        "text": "theorem energy_hasDerivAt (hI : IsOpen I) (hχ : ContDiff ℝ ∞ χ) (hc : HasCompactSupport χ) (hw : ContDiffOn ℝ ∞ w (I ×ˢ univ)) (ht : t ∈ I) : HasDerivAt (fun s => localizedEnergy χ (fun x => w (s, x))) (energyRate χ w t) t, with localizedEnergy χ w = ∫ x, χ x * ‖w x‖ ^ 2 (R3LocalizedEnergyLimit.lean:68) and energyRate χ w t = 2 * ∫ x, χ x * ⟪w (t,x), temporalDerivative w t x⟫_ℝ (line 16-17) — this turns the left-hand side of energy_balance into the display's d/dt"
+      }
+    }
+  }
+}

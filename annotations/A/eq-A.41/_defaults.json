@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.41)",
+  "status": "formalized",
+  "location": {
+    "page": 139,
+    "rect": [0.339475, 0.559006, 0.529425, 0.04414]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.41",
+      "locator": {
+        "physical": [139],
+        "printed": [139],
+        "text": "Equation (A.41), p. 139, in the proof of Proposition A.7"
+      },
+      "region": "eq-A.41@p139",
+      "verdicts": [
+        {
+          "confidence": 0.82,
+          "evidence": ["paper: \\left|\\partial_\\eta^m \\Delta S(\\infty)\\right| \\le C_m e_K^2 \\int_1^\\infty x^{-2A-1}\\, dx,"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same inequality after routine rewritings, checked term by term. The paper's ΔS(∞) is -(1/2)·Δ∫_0^∞ E² dX, because energyDensity = U² - E²/2 and the heat edit multiplies E only, leaving U untouched (HeatedOutgoing.energy_decomposition makes the identity explicit); the Lean's physicalEnergy is energyDebt = ∫_K^∞ squareChange, so the two differ by the sign and the factor 1/2, absorbed in the unspecified C_m. The lower limit 0 versus K again agrees because squareChange vanishes below the switch radius. The paper's ∫_1^∞ x^{-2A-1} dx = 1/(2A) is exactly the denominator -tailDecay d true - 0 = 2A in nuConstant, and tailSize d true = e_K² is the paper's e_K²; the K-exponent q = 0 reproduces the paper's K-free right-hand side. The differentiation variable is η on Icc (-1) 1 in both.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

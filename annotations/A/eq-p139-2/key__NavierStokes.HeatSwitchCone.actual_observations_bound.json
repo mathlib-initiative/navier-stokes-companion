@@ -1,0 +1,26 @@
+{
+  "id": "eq-p139-2/key/NavierStokes.HeatSwitchCone.actual_observations_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HeatSwitchCone.actual_observations_bound",
+      "line": 903,
+      "module": "NavierStokes.HeatSwitchCone",
+      "path": "NavierStokes/HeatSwitchCone.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatSwitchCone.lean#L903"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HeatSwitchCone.actual_observations_bound",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 903,
+        "text": "∃ XR₀ B, 0 < B ∧ ∀ XR ≥ XR₀, ∀ w : CompensationWitness F XR C, ∀ p ∈ OutgoingCone.trueWindow F.data, ∀ i : Fin 18, |actualObservations F XR w.coefficients p i - observations F (0, p) i| ≤ B / OutgoingDilation.switchRadius F XR; at i = 1 this is |X∂_X E - X∂_X E_cl| ≤ B X_K^{-1}, the j = 1, m = 0 case"
+      }
+    }
+  }
+}

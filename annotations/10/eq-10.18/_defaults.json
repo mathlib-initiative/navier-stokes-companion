@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Equation (10.18)",
+  "status": "partial",
+  "location": {
+    "page": 122,
+    "rect": [0.335446, 0.645855, 0.532735, 0.040351]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-10.18",
+      "locator": {
+        "physical": [122],
+        "printed": [122],
+        "text": "Equation (10.18), p. 122, in the proof of Lemma 10.5"
+      },
+      "region": "eq-10.18@p122",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.8,
+          "evidence": ["paper: \\varphi_R^4 \\pi_* = \\sum_{i,j} R_i R_j(\\varphi_R^4 g_{ij}) + \\sum_{i,j} [\\varphi_R^4, R_i R_j]\\,g_{ij}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "different",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean uses a different formula here. The repository states (10.18) as an identity of distributions/L^2 functions, with cutoff power 6 in place of the paper's 4 and one index pair at a time. `weightedPressure_distribution` (R3PressureCutoff.lean:197) says `smulLeftCLM C (powerCutoff phi) (pressureL1 i j g) = (weightedPressure hphi i j g hw hg2 : 𝓢')`, where `powerCutoff phi = phi^6` (:19), `pressureL1 i j` is R_i R_j — the inverse Fourier transform of `rieszSymbol i j xi = -(xi_i xi_j)/‖xi‖^2` times ghat (R3PressureFourier.lean:21,84-89) — and `weightedPressure = pressureL2 i j (phi^6 • g) + commutatorLp hphi i j g hw` (:184). The second summand is the L^2 element of `R3PressureCommutator.commutator phi K g x = int z, (phi x ^ 6 - phi (x-z) ^ 6) * K z * g (x-z)` (R3PressureCommutator.lean:33-37) with K = `limitingKernel i j`, so the identity reads phi^6 R_i R_j g = R_i R_j (phi^6 g) + [phi^6, R_i R_j] g: the paper's two summands, in the paper's order. Three differences, none of them in the mathematics of the identity. (i) Cutoff power 6, not 4. The identity itself holds for any power once the commutator is defined as the difference, so this is a choice of how to split the weight chi_R = phi_R^8; what it changes is the exponent carried by the subsequent estimates (the Lean's pair with it is the phi^5 weighted L^{3/2} norm of the stress, see eq-p122-7). (ii) The Lean states it for each fixed (i,j) and does not state the sum over i,j that makes up pi_*; conjoining three-by-three index pairs is a finite sum of equalities in 𝓢'. (iii) The Lean's commutator is not abstract: it is a concrete absolutely convergent singular integral, shown to be in L^2, so on this point the Lean statement carries more information than the paper's display. Separately, the `NavierStokes/R3/` subtree reaches the same place by a dual route that the whole-space comparison closure actually consumes: `pressurePair_decomposition` (PressureFlux.lean:251) splits the pairing <R_i R_j g_ij, psi_h> as the pairing of R_i R_j against the localised tensor h*g_ij plus `commutatorPair`, for an arbitrary weight h; that lemma is general in h, and it is its instantiation h := ComparisonCutoffs.multiplier R = cutoff R ^ 2 (via `fluxTest_eq_multiplier_rTest`, PressureFlux.lean:173) that carries the power 2, not the lemma. I did not check that the two routes are formally connected.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

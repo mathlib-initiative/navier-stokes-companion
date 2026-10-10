@@ -1,0 +1,45 @@
+{
+  "kind": "equation",
+  "label": "Equation (9.20)",
+  "status": "formalized",
+  "location": {
+    "page": 115,
+    "rect": [0.320134, 0.341652, 0.548934, 0.026092]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.LocalPaperTheorem",
+      "path": "NavierStokes/LocalPaperTheorem.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-9.20",
+      "locator": {
+        "physical": [115],
+        "printed": [115],
+        "text": "Equation (9.20), p. 115, in the proof of Proposition 9.9"
+      },
+      "region": "eq-9.20@p115",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.72,
+          "evidence": ["paper: \\forall\\, m,\\,N \\qquad \\left|\\mathcal{R}(u_{\\mathrm{loc}},p_{\\mathrm{loc}})\\right|_m = O\\!\\left(q^N\\right) \\qquad (q \\downarrow 0)."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean clause is residual_flatness, a field of the structure LocalPaper.Properties (structure fields are not separate entries in the declaration index, so the containing structure is cited with the clause's line). Term by term: |·|_m is ‖iteratedFDeriv ℝ m ·‖ of the residual as a function on space-time, which covers the paper's mixed ∂^α_x ∂^b_t of Theorem 3.1(iii); O(q^N) is ∃ C ≥ 0, ∃ δ > 0 with the bound C * q^r for q < δ, with C and δ allowed to depend on (m, r, X) exactly as the paper's O allows; the Lean exponent ranges over all real r ≥ 0, which subsumes the paper's natural N. One restriction is present in the Lean and absent from the bare display: the bound is asserted only on the cone radialEnergy w.2 / q ≤ X. That is not a weakening of what the paper means — the paper's own Theorem 3.1(iii) carries the same restriction (constants C_{α,b,N,X₁} for 0 ≤ X ≤ X₁) — and the unrestricted reading is recovered in two lines: apply residual_flatness at X = Xext to get the bound on {q < δ, radialEnergy/q ≤ Xext}, and apply the exterior clause, which gives residual = 0 on {q < qstar, Xext ≤ radialEnergy/q}; with δ' = min(δ, qstar) the bound holds on the whole local domain {q < δ'}. The m = 0 case of that gluing is immediate; for m ≥ 1 the two regions are glued by the fields agreeing with the exact exterior heat field there, which the exterior clause asserts pointwise rather than as a germ — this is the one step I state as an argument rather than as something the Lean packages. The identification of u_loc, p_loc with the Lean's selectedRawVelocity / LocalPotentialRebundle.pressure is made by properties_of_schedule.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

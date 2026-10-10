@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (A.18)",
+  "status": "formalized",
+  "location": {
+    "page": 132,
+    "rect": [0.396763, 0.715844, 0.472308, 0.038961]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-A.18",
+      "locator": {
+        "physical": [132],
+        "printed": [132],
+        "text": "Equation (A.18), p. 132, in section A.3"
+      },
+      "region": "eq-A.18@p132",
+      "verdicts": [
+        {
+          "confidence": 0.88,
+          "evidence": ["paper: \\int_{\\text{release}} XE^2\\,dy \\le C\\,X_{\\mathrm{rel}}\\,e_{\\mathrm{rel}}^2"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_stronger",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has a stronger form of it. Term by term the two agree: the Lean integrand energyDensity = e^y * finalAngular^2 is XE^2 in the log radial variable, and the right-hand side releaseConstant * energyDensity d eta d.releaseStart is C X_rel e_rel^2, with e_rel genuinely the unaltered uniform value (finalAngular_uniform makes finalAngular η-independent for y ≥ flattenEnd, and releaseStart = flattenEnd + 30 log(1/lam) ≥ flattenEnd, from TailData.uniformWait together with lam < 1). The Lean is stronger in two ways: the domain of integration is all of Ioi d.releaseStart, which contains the paper's release transition, and the integrand is nonnegative, so the Lean bound implies the paper's; and C is the explicit numeral 2(e^2 + e^8), independent of h, lam and eta, where the paper writes an unquantified C. No hypothesis on h or lam is attached to the Lean statement. The Lean also follows the paper's own route rather than an alternative one: the proof of integral_energyDensity_release_le goes through integral_releaseEnvelope (TailEnergyBounds.lean:227), which yields exp 2 / 2 + h^7 * exp 8 / 2, i.e. the paper's split into the first transition and constant-slope interval (C X_rel e_rel^2) plus the remaining integral (C X_rel e_rel^2 h^8/h).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

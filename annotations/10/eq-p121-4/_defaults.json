@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Display 121.4",
+  "status": "formalized",
+  "location": {
+    "page": 121,
+    "rect": [0.221054, 0.729585, 0.558115, 0.023388]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p121-4",
+      "locator": {
+        "physical": [121],
+        "printed": [121],
+        "text": "Display 121.4, p. 121, in the proof of Lemma 10.5"
+      },
+      "region": "eq-p121-4@p121",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: w = v - u, \\qquad \\pi = P - p, \\qquad g_{ij} = v_i v_j - u_i u_j = w_i w_j + w_i u_j + u_i w_j."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The Lean uses the opposite sign convention throughout: in NavierStokesR3.WholeSpaceUniqueness.classical_uniqueness_on_Icc (WholeSpaceUniqueness.lean:30) the first field `u` is the compactly supported localized velocity and `v` the competitor, so the Lean difference `u - v` is the paper's -w, `p - q` is -pi, and `tensorDiff u v t i j = u_i u_j - v_i v_j` is -g_ij. Neither w nor pi is given a name; they appear inline as `u - v`, `p - q` (pointwise Pi.sub). The paper's second equality g_ij = w_i w_j + w_i u_j + u_i w_j is tensorDiff_eq after this sign flip: substituting w = -(u-v) and g = -tensorDiff into the paper's identity gives tensorDiff u v = u_i (u-v)_j + (u-v)_i u_j - (u-v)_i (u-v)_j, which is tensorDiff_eq verbatim (the paper expands about the localized field u, the Lean about the same field, which is its first argument).",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

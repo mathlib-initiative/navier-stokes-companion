@@ -1,0 +1,26 @@
+{
+  "id": "eq-p128-1/key/NavierStokes.FiveProfileMoments.mixed_jet_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FiveProfileMoments.mixed_jet_bound",
+      "line": 991,
+      "module": "NavierStokes.FiveProfileMoments",
+      "path": "NavierStokes/FiveProfileMoments.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L991"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FiveProfileMoments.mixed_jet_bound",
+        "kind": "theorem"
+      },
+      "relation": "states",
+      "role": "key",
+      "snippet": {
+        "line": 991,
+        "text": "theorem mixed_jet_bound (P : Patch) (N : ℕ) : ∃ J : ℝ, 0 < J ∧ ∀ k ≤ N, ∀ (m : ℕ) (v : ℝ → Coeff) (eta : ℝ), ContDiffAt ℝ ∞ v eta → ∀ x : ℝ, ‖iteratedFDeriv ℝ m (fun p => iteratedDeriv k (u P (v p)) x) eta‖ ≤ J * ‖iteratedFDeriv ℝ m v eta‖ ∧ … (same for e P)"
+      }
+    }
+  }
+}

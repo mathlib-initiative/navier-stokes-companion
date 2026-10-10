@@ -1,0 +1,37 @@
+{
+  "kind": "equation",
+  "label": "Equation (B.24)",
+  "status": "partial",
+  "location": {
+    "page": 151,
+    "rect": [0.220874, 0.143593, 0.648194, 0.045195]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-B.24",
+      "locator": {
+        "physical": [151],
+        "printed": [151],
+        "text": "Equation (B.24), p. 151, in the proof of Lemma B.4"
+      },
+      "region": "eq-B.24@p151",
+      "verdicts": [
+        {
+          "confidence": 0.7,
+          "evidence": ["paper: \\Pi_{\\mathrm{r}}(X) - \\Pi_0 \\;=\\; \\mathsf{C}^{-2} \\int_0^X \\phi_{\\mathrm{r}}(X',\\eta)^2 \\, dX', \\qquad \\sup_{X \\le X_i} \\big\\| \\Pi_{\\mathrm{r}} - \\Pi_0 \\big\\|_{C^k_\\eta} \\;\\le\\; C_k \\, \\mathsf{C}^{-2}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "lean_weaker",
+          "role": "proof_step",
+          "severity": "low",
+          "status": "unconfirmed",
+          "summary": "Lean has a weaker form of it. The identity is matched exactly, under the paper's own normalisation: Lean's profile f is the paper's φ_r / C (paper p.151 writes the scaling of E_r as √(2X) φ_r against Lean's Profiles.E = √(2X) * f), so Profiles.pressure p = Π_0(η) + ∫_0^X f(X',η)² dX' = Π_0(η) + C⁻² ∫_0^X φ_r(X',η)² dX'. What is weaker is the C^k_η estimate. Lean states the C⁻² decay only for k = 0 (pressure_increment_bound: ≤ X K²/C²) and k = 1 (pressure_parameter_increment_bound: ≤ 2 X K²/C²); with X ≤ X_i = 110 on holdRegion these are the paper's bound with C_0 = 110 K², C_1 = 220 K². For k ≥ 2 no declaration carrying a C⁻² factor was found; ReferenceUniformStocks.uniform_ref_histories bounds all higher parameter jets of the pressure uniformly over amplitudes but without any decay in C. Severity is low because the use made of (B.24) in the surrounding proof of Lemma B.4 is the pressure and its first parameter derivative, which is what pressureJets_small consumes; I did not trace whether later sections invoke (B.24) at k ≥ 2.",
+          "verdict": "deviation"
+        }
+      ]
+    }
+  }
+}

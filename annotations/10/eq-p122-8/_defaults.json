@@ -1,0 +1,38 @@
+{
+  "kind": "equation",
+  "label": "Display 122.8",
+  "status": "formalized",
+  "location": {
+    "page": 122,
+    "rect": [0.326851, 0.773141, 0.346542, 0.025976]
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p122-8",
+      "locator": {
+        "physical": [122],
+        "printed": [122],
+        "text": "Display 122.8, p. 122, in the proof of Lemma 10.5"
+      },
+      "region": "eq-p122-8@p122",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: K_R(x-y) = C\\,|x-y|^{-3}\\,\\min\\{|x-y|/R,\\;1\\}."],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "definition",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. The paper's display is stated in the repository twice, in two independent modules, and in both the agreement is term for term: the exponent -3 on |x-y| and the factor min(|x-y|/R, 1) are identical, the Lean writing the kernel in the single variable z = x - y. (a) NavierStokes/R3PressureKernel.lean defines kernel R x := R^(-3) * baseKernel (R⁻¹ • x) and then proves kernel_eq_majorant: for R > 0, kernel R x = ‖x‖^(-3) * min (‖x‖/R, 1) — the paper's display literally, as an equation, with C = 1. (b) NavierStokes/R3/RadialKernelBounds.lean takes the same formula as the definition radialCommutatorKernel R z. The only difference in either case is where the paper's absolute constant C sits: both Lean kernels are the C = 1 normalisation, and the constant is carried separately by the domination lemma. heatCommutatorKernel_bound asserts that the heat-kernel representation of the commutator is dominated pointwise in absolute value by (heatKernelTimeConstant * max (2*L) 1) * radialCommutatorKernel R (x-y), where L is the Lipschitz scale of the cutoff; so the two are the same statement after naming C = heatKernelTimeConstant * max (2*L) 1. Since the paper only ever uses K_R through a majorisation with an unspecified absolute C, the inequality direction is the one the paper needs. Both Lean forms are more informative than the paper's: (a) is an identity for the explicit two-regime kernel R^{-1}|x|^{-2} on |x|<R and |x|^{-3} on |x|>R, which is exactly the paper's min written out.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}

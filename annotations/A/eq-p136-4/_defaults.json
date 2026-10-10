@@ -1,0 +1,45 @@
+{
+  "kind": "equation",
+  "label": "Display 136.4",
+  "status": "formalized",
+  "location": {
+    "page": 136,
+    "rect": [0.245763, 0.517007, 0.508468, 0.070253]
+  },
+  "target": {
+    "pin": {
+      "module": "NavierStokes.PulseCone",
+      "path": "NavierStokes/PulseCone.lean"
+    }
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "item": "eq-p136-4",
+      "locator": {
+        "physical": [136],
+        "printed": [136],
+        "text": "Display 136.4, p. 136, in section A.5"
+      },
+      "region": "eq-p136-4@p136",
+      "relation": "states",
+      "role": "key",
+      "verdicts": [
+        {
+          "confidence": 0.9,
+          "evidence": ["paper: \\begin{aligned} b_s w &\\le \\sup_{R\\ge 0}\\bigl(-2R^2 + 2.41\\,R\\bigr) + o(1) < .74,\\\\ 2 b_s w + b_s^2/a + (a-2)w^2 &\\le \\sup_{R\\ge 0}\\bigl(-3.5\\,R^2 + 4.82\\,R\\bigr) + o(1) < 1.68. \\end{aligned}"],
+          "provenance": {
+            "actor": "agent",
+            "confirmed_by_human": false,
+            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+          },
+          "relation": "equivalent",
+          "role": "proof_step",
+          "severity": "none",
+          "status": "unconfirmed",
+          "summary": "Lean has an equivalent formula. Same two inequalities, same numerals. The Lean splits the paper's chain into exactly the paper's pieces: the sup bounds are `first_quadratic_margin` (-2R^2 + 241/100·R ≤ 73/100) and `second_quadratic_margin` (-(7/2)R^2 + 241/50·R ≤ 167/100), with 241/100 = 2.41, 241/50 = 4.82, 7/2 = 3.5; the paper's hypotheses ∂_{ξ_b}R_b ≤ 1.2 and C_d ≤ 2 + o(1) are `hZ : Z ≤ 6/5` and `hC' : C ≤ 2001/1000`, and b_s = −R_b + O(λ), w = 2R_b − C_d∂R_b + o(1) are `hb : |b + R| ≤ eps`, `hv : |v − (2R − C·Z)| ≤ eps`. Three routine recoveries: (i) the Lean quadratic bounds hold for every real R, not only R ≥ 0, so they are at least as strong as the paper's sup over R ≥ 0; (ii) the paper's o(1) is quantified as `coneErrorBudget F M eps lam ≤ 1/100`, contributing ≤ 1/200 to the first line and ≤ 1/100 to the second, which is how 73/100 → 74/100 and 167/100 → 168/100; (iii) the paper writes strict `< .74` and `< 1.68` where the Lean concludes `≤ 74/100` and `≤ 168/100` — the strictness the paper actually uses (a − b_s w > 0 and the criterion < 2) is recovered because a = 2 + 2λ with λ > 0, as `PulseConeAt.true_criterion` and `perturbed_true_cone` do. The paper's (a−2)w^2 with a = 2+2λ is written `2 * lam * v ^ 2` in `perturbed_cone_margins` and `(radialA w p - 2) * directionRatio w amp p ^ 2` in `PulseConeAt`.",
+          "verdict": "faithful"
+        }
+      ]
+    }
+  }
+}
