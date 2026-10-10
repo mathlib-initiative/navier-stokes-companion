@@ -1,0 +1,26 @@
+{
+  "id": "corollary-7.8/support/NavierStokes.ActualSignedMeanBinding.requested_cross_tail",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualSignedMeanBinding.requested_cross_tail",
+      "line": 463,
+      "module": "NavierStokes.ActualSignedMeanBinding",
+      "path": "NavierStokes/ActualSignedMeanBinding.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean#L463"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualSignedMeanBinding.requested_cross_tail",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 463,
+        "text": "theorem requested_cross_tail (B N0 : ℕ) (c : CorrectionState.Context Point)\n    (u : CorrectionState.State Point) {n : ℕ}\n    (hn : (choice B N0).prepared.N + 1 ≤ n) {x : Point}\n    (hx : x ∈ ActualInitialization.geometry.strip.domain) (i : Fin 2) :\n    StateMomentBalances.meanBar (actualCross B N0 c u 0 i.succ) n x =\n      LocalSignedRequest.requestedStress ActualInitialization.geometry.patch\n        ActualInitialization.geometry.coord c u n x i"
+      }
+    }
+  }
+}

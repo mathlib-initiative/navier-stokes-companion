@@ -1,0 +1,26 @@
+{
+  "id": "proposition-7.6/support/NavierStokes.ActualSignedMeanBinding.family_requested_cross_tail",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualSignedMeanBinding.family_requested_cross_tail",
+      "line": 655,
+      "module": "NavierStokes.ActualSignedMeanBinding",
+      "path": "NavierStokes/ActualSignedMeanBinding.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean#L655"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualSignedMeanBinding.family_requested_cross_tail",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 655,
+        "text": "theorem family_requested_cross_tail (c : Context Point) (u : State Point)\n    (f : LabelSumBounds.SignedFamily ActualInitialization.geometry.strip P α δ β η)\n    (a : SignedMeanGain.Assembly f)\n    (hprimary : f.primary = ActualInitialization.tangentBlock)\n    (htangent : f.tangent = actualSignedBlock c u)\n    (hlabels : a.labels = activeLabels standardRegion B N0) {n : ℕ}\n    (hn : (choice B N0).prepared.N + 1 ≤ n) {x : Point}\n    (hx : x ∈ ActualInitialization.geometry.strip.domain) (i : Fin 2) :\n    StateMomentBalances.meanBar (SignedMeanGain.crossTensor f a 0 i.succ) n x =\n      LocalSignedRequest.requestedStress ActualInitialization.geometry.patch\n        ActualInitialization.geometry.coord c u n x i"
+      }
+    }
+  }
+}

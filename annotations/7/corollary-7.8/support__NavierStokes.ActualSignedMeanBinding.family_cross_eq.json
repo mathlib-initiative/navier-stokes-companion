@@ -1,0 +1,26 @@
+{
+  "id": "corollary-7.8/support/NavierStokes.ActualSignedMeanBinding.family_cross_eq",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualSignedMeanBinding.family_cross_eq",
+      "line": 644,
+      "module": "NavierStokes.ActualSignedMeanBinding",
+      "path": "NavierStokes/ActualSignedMeanBinding.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean#L644"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualSignedMeanBinding.family_cross_eq",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 644,
+        "text": "theorem family_cross_eq (c : Context Point) (u : State Point)\n    (f : LabelSumBounds.SignedFamily ActualInitialization.geometry.strip P α δ β η)\n    (a : SignedMeanGain.Assembly f)\n    (hprimary : f.primary = ActualInitialization.tangentBlock)\n    (htangent : f.tangent = actualSignedBlock c u)\n    (hlabels : a.labels = activeLabels standardRegion B N0) :\n    SignedMeanGain.crossTensor f a = actualCross B N0 c u"
+      }
+    }
+  }
+}

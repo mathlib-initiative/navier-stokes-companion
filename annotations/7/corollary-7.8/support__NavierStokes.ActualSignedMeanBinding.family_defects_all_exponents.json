@@ -1,0 +1,27 @@
+{
+  "id": "corollary-7.8/support/NavierStokes.ActualSignedMeanBinding.family_defects_all_exponents",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ActualSignedMeanBinding.family_defects_all_exponents",
+      "line": 672,
+      "module": "NavierStokes.ActualSignedMeanBinding",
+      "path": "NavierStokes/ActualSignedMeanBinding.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean#L672"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ActualSignedMeanBinding.family_defects_all_exponents",
+        "kind": "theorem"
+      },
+      "relation": "supporting",
+      "role": "support",
+      "snippet": {
+        "line": 672,
+        "text": "theorem family_defects_all_exponents (c : Context Point) (u : State Point) {σ κ : ℝ}\n    (f : LabelSumBounds.SignedFamily ActualInitialization.geometry.strip P (1 / 2) (17 / 25)\n      (1 / 2 + σ - κ) (1 + σ - 2 * κ)) (a : SignedMeanGain.Assembly f)\n    (hprimary : f.primary = ActualInitialization.tangentBlock)\n    (htangent : f.tangent = actualSignedBlock c u)\n    (hlabels : a.labels = activeLabels standardRegion B N0)\n    (hS : ∀ i j, SignedMeanGain.MovingField ActualInitialization.geometry\n      (SignedMeanGain.crossTensor f a i j))\n    (H : MeanStateRegularity.PrimitiveData ActualInitialization.geometry.region\n      ActualInitialization.geometry.patch.a ActualInitialization.geometry.patch.b c u)\n    (hfixed : (VariableGaugeMean.reconstructState ActualInitialization.geometry.gauge c u).pressure = u.pressure)\n    (hθ : WeightedClasses.MeanClass ActualInitialization.geometry.strip (1 + σ - κ) (u.thetaResidual c))\n    (hz : WeightedClasses.MeanClass ActualInitialization.geometry.strip (1 + σ - κ) (u.axialResidual c)) :\n    ∀ γ : ℝ,\n  …",
+        "truncated": true
+      }
+    }
+  }
+}
