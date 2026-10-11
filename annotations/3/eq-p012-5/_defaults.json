@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 12,
-    "rect": [0.354397, 0.655632, 0.291433, 0.024133]
+    "rect": [0.35615, 0.655372, 0.286631, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "equation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. The display poses a model system (it follows \"We consider the homogeneous linearized model\"); it asserts nothing, and the text layer shows w_lin and \"linearized model\" only on p. 12, so the paper does not use it after the energy identity that follows it. The repository has the system as the hypothesis pair of R3CompactEnergy.energy_balance (NavierStokes/R3CompactEnergy.lean:186). hdw (l.189) is ∇·w = 0 written as ∑ i, D i w x i = 0 with D = PeriodicIntegration.spatialPartial. heq (ll.191-192) is z = Δw − (v·∇)w − (w·∇)u − ∇p, because fderiv ℝ w x (v x) is (v·∇)w, fderiv ℝ u x (w x) is (w·∇)u, ∑ i, D i (D i w) is the componentwise Laplacian and pressureGradient is ∑ (∂_i p) e_i (ProblemStatement.lean:71). Instantiating u := v := u_B, p := π_lin, w := w_lin, z := ∂_t w_lin and moving terms across gives ∂_t w + (u_B·∇)w + (w·∇)u_B − Δw + ∇π = 0, which is L_{u_B}(w_lin, π_lin) = 0 for the operator defined on p. 11, with viscosity one. The Lean form is more general in two ways: the transporting field v and the sheared field u are independent, and z is any field, not necessarily a time derivative. Three limits on this. First, the system appears only as a hypothesis at a fixed time; no declaration I found asserts it of any field, and the paper does not either. Second, the one caller I found, R3LocalEnergyEvolution.difference_energy_balance, instantiates it for the difference of two solutions (u ≠ v), not at u = v = u_B. Third, the operator itself is separately defined as LinearWaveResidual.cartesianLinearResidual (l.511, viscosity ε, Cartesian) and in cylindrical frame form (realComponentLinearResidual l.442), but those are never set to zero: for the constructed waves the linear residual is decomposed and estimated (ActualPrimaryDynamics.linearResidual_eq), and the only \"= 0\" statement I saw is the value at the zero field (PeriodizedWaveBounds.linearResidual_zero, l.734).",
+          "summary": "Lean has a stronger form of it.",
           "verdict": "faithful"
         }
       ]

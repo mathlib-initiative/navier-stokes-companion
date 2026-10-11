@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 69,
-    "rect": [0.353941, 0.803341, 0.513342, 0.05265]
+    "rect": [0.35508, 0.804132, 0.512022, 0.049587]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [69],
         "printed": [69],
-        "text": "Equation (6.24), p. 69, in the statement of Proposition 6.6"
+        "text": "Equation (6.24), p. 69, in the statement of Definition 6.4"
       },
       "region": "eq-6.24@p069",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Unfolding MeanClass gives, for every finite order m, a single pair (C, p) with ‖iteratedFDeriv ℝ j f x‖ ≤ C · ε^α · (S_* · max{1, δ(x)⁻¹})^p · ζ(x) for all j ≤ m and all x in the strip domain. Three encoding differences, all routine: (i) derivatives are iterated Fréchet jets of order j rather than coordinate multi-indices ∂^I (see eq-p069-4); (ii) the paper's constants C_{j,I}, b_{j,I}, d_{j,I} depend on the individual multi-index, the Lean's on the order bound m only — the two are interchangeable because for each m there are finitely many I with |I| ≤ m, so one takes the maximum of the C's and of the b's and d's; the Lean also couples the S_* and δ exponents into one exponent p, which is harmless upward since S_* ≥ 1 (StripData.one_le_slow) and max{1, δ⁻¹} ≥ 1, so (S_* · max{1,δ⁻¹})^p ≥ max over b,d ≤ p of S_*^b δ^{-d}; (iii) `max 1 (s.delta x)⁻¹` equals δ(x)⁻¹ exactly on the paper's weight because (6.23) sets δ = min{1, …} ≤ 1, so δ⁻¹ ≥ 1, and the Lean's exponent p is a natural number where the paper's d_{j,I} is unconstrained — rounding d up to an integer only weakens the bound, in the direction the class needs. The clause ∂_θ f = 0 is not a field of MeanClass: axisymmetry is encoded structurally, by the chart carrying no θ coordinate at all — the instantiation BaseContextAssembly.nativeStrip is a StripData over LocalSignedRequest.Point = PressureStream.Lift Plane = ℝ × ((ℝ×ℝ) × (ℝ×ℝ)) (PressureStream.lean:25–26), five real coordinates and no angular one, and the paper's own display is for f = f(R,Z,T,H) — so every function in the class is θ-independent by construction rather than by hypothesis. That reading is attributed to the chart, not to the atlas: the atlas does not corroborate it but says the opposite in emphasis, recording at /home/jack/ns-audit-data/atlas.md:4225 that MeanClass \"Encodes only the bound (6.24)\" and \"omits torus descent (6.20), ∂_θ f = 0, and the shell support/zero-extension conditions\".",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

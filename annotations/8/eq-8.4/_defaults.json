@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 90,
-    "rect": [0.321565, 0.115318, 0.544743, 0.093429]
+    "rect": [0.322995, 0.119835, 0.543018, 0.086777]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Three routine rewritings. (i) Endpoints: the Lean integrals run a..R and a..b, not 0..R and 0..∞; every declaration carries the standing hypothesis RadialAlias.RadiallySupported a b g (here a = ell·a, b = ell·b, the active shell), under which ∫_0^R = ∫_a^R and ∫_0^∞ = ∫_a^b, matching the paper's own remark that Ig = 0 below the shell and Ig = Jg above it. (ii) Transport factor: the Lean integrand shifts Y by (M·(s^d − R^d))•v for a free parameter M; the paper's physical (8.4) is the case M = 1, d = d_r, v = v_r. (iii) Cutoff: the paper leaves χ_m a fixed physical cutoff, the Lean pins it to TransportPrimitive.interiorCutoff (a^d) (b^d) evaluated at R^d (equivalently RadialPullback.physicalCutoff, NavierStokes/RadialPullback.lean:379), a specific smooth cutoff of the same shape and dependence on R alone. The integration measure is the plain radial dr' on both sides: physicalCompact is defined through normalizeSource so that the power-coordinate Jacobian cancels exactly (RadialPullback.normalized_radial_integral, NavierStokes/RadialPullback.lean:306).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 130,
-    "rect": [0.147309, 0.605879, 0.721753, 0.043906]
+    "rect": [0.149733, 0.608264, 0.715508, 0.038843]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Lean has no separate ψ_o; it inlines it, writing f_o directly as 1 − ρ + ρ·σ((t−1)/2). This is the paper's f_o = 1 − ρ_o(1 − σ((y−1)/2)) after one ring step, with the same σ of (A.5), the same argument (y−1)/2, the same ρ_o = c_o h, and the same log-slope l = −h + f_o′/f_o. Two further encoding points, neither a mathematical change. (i) The paper leaves c_o > 0 implicit, 'fixed small enough that 0 ≤ f_o′/f_o < h/4'; Lean fixes the explicit c_o = exp(−5)/(16(stepBound+1)) and proves that bound as `tail_taper_log_derivative`. (ii) The paper says to extend f_o constantly to the left and by 1 to the right of 0 ≤ y ≤ 3; Lean's tailShape is globally defined and already satisfies this (`tailShape_early`, t ≤ 1 ⇒ f_o = 1 − ρ, and `tailShape_late`, 3 ≤ t ⇒ f_o = 1). The slope convention agrees: with l = X∂_X log H and H = √(2X)E one has l = 1/2 + (log E)′, and `finalAngular_tail` (line 644) gives E = powerConstant·e^{−(1/2+h)y}·f_o on the terminal interval, so l = −h + f_o′/f_o there.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

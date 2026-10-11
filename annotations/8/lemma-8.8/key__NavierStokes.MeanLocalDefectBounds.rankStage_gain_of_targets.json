@@ -1,0 +1,37 @@
+{
+  "id": "lemma-8.8/key/1.NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets",
+  "location": {
+    "page": 98,
+    "rect": [0.131808, 0.733884, 0.737473, 0.107438]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets",
+      "line": 298,
+      "module": "NavierStokes.MeanLocalDefectBounds",
+      "path": "NavierStokes/MeanLocalDefectBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanLocalDefectBounds.lean#L298"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: RankGeometry g r U c u, g.length = qLength, NormalizedParameters coord A B r U with B != 0, r-patch strictly inside the gauge shell, OperatorBounds kappa, LocalBaseBounds on (fun n => tsupport (rankPotential g r c u n)), CumulativeBounds u.mean, targets: forall i, UnweightedClass H (debt c u . . i),",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "region": "lemma-8.8@p098",
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 298,
+        "text": "theorem rankStage_gain_of_targets {κ H A B : ℝ}\n    (hop : LocalRankDefect.LocalOperators U.carrier c.operators)\n    (hbc : SmoothTriple (LocalRankDefect.positiveDomain U.carrier) c.base)\n    (hmc : SmoothTriple (PhysicalMeanDomain.slowDomain U.carrier) u.mean)\n    (hms : SupportedTriple g.radial.inner g.radial.outer (qLength coord) U.carrier u.mean)\n    (hWc : ∀ i j, SmoothOn (PhysicalMeanDomain.slowDomain U.carrier) (u.covariance i j))\n    (hWs : ∀ i j, Support g.radial.inner g.radial.outer (qLength coord) U.carrier (u.covariance i j))\n    (hV : LocalRankDefect.IsSlowOn U.carrier c.base.angular)\n    (hG : LocalRankDefect.IsSlowOn U.carrier c.base.axial)\n    (ho : OperatorBounds (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR ε L hε hεone hL)\n      c.operators κ)\n    (hb : LocalBaseBounds (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR ε L hε hεone hL)\n      (fun n => tsupport (rankPotential g r c u n)) c.base)\n    (hm : MeanIncrementBounds.CumulativeBounds\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

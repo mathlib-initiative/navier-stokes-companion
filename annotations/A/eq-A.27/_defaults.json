@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 135,
-    "rect": [0.319239, 0.552231, 0.549829, 0.0867]
+    "rect": [0.320856, 0.552893, 0.546247, 0.084298]
   },
   "target": {
     "pin": {
@@ -21,7 +21,6 @@
         "text": "Equation (A.27), p. 135, in section A.5"
       },
       "region": "eq-A.27@p135",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.85,
@@ -35,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. All three lines are present, bundled in one theorem, with these recodings. (i) The variable is the local coordinate t = y - holdStart on the constant-slope interval, ranging over 0 ≤ t ≤ wait; the paper's y is the same local coordinate ('In the local logarithmic radial coordinate on the constant-slope interval'). (ii) The subtracted equilibrium is literally (λ - h + c_η)/(1-λ) with c_η = D·η·J₀' = Dη·2η/(1+η²), the paper's c_η = DηJ₀' ≍ η²; the source holdSource is the paper's λ - h + c_η - λLk̄(0)e^{-y} verbatim. (iii) O_{C¹_η} is unfolded into the two separate bounds on |Q_s - equilibrium| and on its η-derivative, both by C_pre(1+t)e^{-(1-λ)t}. (iv) The third line matches, and the derivative version without the factor |η| (the paper's following sentence, 'One η derivative obeys the same estimate without |η|') is the fifth clause. (v) Constants are explicit: c_pre = holdFloor m = min(e^{-3/5-entranceTime m}/16, 1/16), which depends only on m and not on λ, as the paper requires ('A positive lower bound for Q_s, independent of λ, persists'); C_pre = holdConstant P m. (vi) Hypotheses |η| ≤ 1, h ≤ 1/100, h ≤ λ/4 and h ≤ e^{-(holdStart+3/5)}/8 make the paper's h ≪ min{λ, e^{-T_d}} quantitative.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

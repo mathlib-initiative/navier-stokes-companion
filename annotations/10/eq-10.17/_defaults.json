@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 122,
-    "rect": [0.332734, 0.568185, 0.535448, 0.027289]
+    "rect": [0.33369, 0.569421, 0.532323, 0.022314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -33,7 +33,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The chain is the paper's, in the same two steps and with the same exponents: `lpNorm_six_le` is the first inequality (Sobolev L^6 <= C ‖grad‖_2 for phi^4 w) and `lpNorm_fderiv_cutoff_four_le` is the second (the product rule, giving 3 sqrt(int phi^8 |grad w|^2) + 4L‖w‖_2, i.e. 3 A_R plus the cutoff-derivative term), and `cutoffL6_le` composes them into B_R <= C (A_R + L ‖w‖_2). Two encoding differences, neither mathematical. (i) The Lean parametrises the cutoff by a Lipschitz bound L on grad phi instead of by the scale R; the paper's R^{-1} is recovered by instantiating L := derivativeConstant 1 / R, which is done at NavierStokes/R3/WholeSpaceComparisonClosure.lean:90-103 (`hSob : B <= weightedSobolevConstant * (A + derivativeConstant 1 * M / R)` from `cutoffL6_le` and `ComparisonCutoffs.cutoff_fderiv_le`). (ii) The Lean names its constants (sobolevConstant, weightedSobolevConstant = 4*sobolevConstant+1, and the literals 3 and 4) where the paper writes a single unspecified C; the paper's C is an unnamed absolute constant, so this is strictly more explicit. The middle quantity ‖grad(phi_R^4 w)‖_2 appears as `comparisonLpNorm 2 (fderiv R (fun x => phi x ^ 4 • w x))`, so the paper's intermediate term is present and not merely bypassed. A second, independent counterpart states the same chain in the top-level `NavierStokes/R3*.lean` family: `R3CutoffSobolev.weighted_sobolev` (R3CutoffSobolev.lean:165) bounds `lpNorm (fourthWeight phi ‖w‖) 6` — literally B_R, since `fourthWeight phi W = phi^4 * W` (R3WeightedLp.lean:68) — by `sobolevConstant * (lpNorm (weightedDerivativeNorm phi w) 2 + 4 D ‖w‖_2)` with `weightedDerivativeNorm phi w = phi^4 * ‖fderiv w‖` (R3CutoffSobolev.lean:117), whose L^2 norm is (int phi^8 |grad w|^2)^{1/2} = A_R, and D the same bound on ‖grad phi‖. Constants 1 and 4 against the paper's single C.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

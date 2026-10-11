@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 158,
-    "rect": [0.301405, 0.808989, 0.567659, 0.047135]
+    "rect": [0.303743, 0.810744, 0.563359, 0.042975]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same shape — one positive constant bounding all four cone gaps from below, uniformly over the whole compact parameter set and over the loop angle — but in a different quadruple of gap functions. Paper (4.35), p. 38: with v = a + b²/a, c = p₁ - p₂ b/a, j = p₂ + p₁ b/a, Ψ(a,b,p) = (a, v-2, c-v, 2(c-v)² - (v-2)j²). Lean's HasConeMargin ε uses (A, v-2, c-2, U(c,j)-v) with v = A(1+(C/A)²), c = p₁ + p₂(C/A), j = p₂ - p₁(C/A), U = coneBound. The variable dictionary matches exactly: Lean's C is the paper's second shear component -b_L, so b_L/a_L = -C/A and the paper's v, c, j are literally Lean's v, c, j. Components 1 and 2 agree verbatim. Components 3 and 4 differ: the paper uses the quadratic form of the admissible cone condition (the paper's (4.22)), Lean the square-root form of (4.21). Their positivity sets coincide, by true_cone_iff: given 2 < v, (2 < c ∧ v < U(c,j)) ↔ (v < c ∧ (v-2)j² < 2(c-v)²) — this is the paper's own Lemma 4.5 and the sentence after (4.35) ('positivity of all four components is exactly a > 0, v_s > 2, and (4.22)'). Converting the margin constant is a compactness step, not a rewriting: from Lean's HasConeMargin ε one gets each Ψ_j > 0 pointwise, and Ψ is continuous on {a > 0} while A, C are continuous on K × ℝ and period one in φ, so Ψ_j attains a positive minimum κ_L on the compact K × [0,1]; the converse direction runs the same way. Both the continuity and the compactness are hypotheses of the Lean theorem, so the step is routine. The paper's κ_L and the Lean's ε are therefore different numbers for the same assertion.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 8,
-    "rect": [0.368057, 0.484338, 0.264105, 0.02962]
+    "rect": [0.370053, 0.484298, 0.258824, 0.024793]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. The display has two clauses: the value of the leading azimuthal field on the circle z = 0, r = sqrt(2 X_* tau), and its divergence as tau -> 0.\n\nEquality. The Lean has the circle specialisation assembled: `ray X tau` is the point r = sqrt(2 X tau), z = 0 on the x-axis (so component 1 is the azimuthal one), `physicalQ_ray` gives q = tau and `cartesianChart_ray` gives (q, X, eta) = (tau, X, 0). `normalized_velocity_ray` is the exact identity tau^A * u_1 = normalizedSwirl(tau,(X,0)) for the constructed base velocity, and inside `normalized_swirl_estimate` (line 103) the leading term `leadingSwirl` at (X,0) is identified with `leadingAmplitude v X = sqrt(2X) f(X,0)`, which is `Profiles.E (X,0)` by definition. So the paper's u_theta^(0) = tau^(-A) E(X_*,0) is the Lean's leading term, and `normalized_velocity_ray_bound` says the actual velocity differs from it by O(tau^(2h)) after normalisation, for every 0 < X <= boxRadius and 0 < tau <= 1. Independently, `NaturalCore.coreVelocity_swirl` specialised at the ray gives the exact equality for the core field for any smooth f (B's route); that specialisation is algebra plus `physicalQ_ray`/`cartesianChart_ray`.\n\nArrow. No declaration writes `Tendsto ... atTop` for the azimuthal value along this ray (B is right about that). But both ingredients B said were missing are stated: positivity is `leadingAmplitude_pos` (BaseAngularGrowth.lean:62) and `Witness.positive_E` (ModulatedProfileAssembly.lean:996), and the limit is `BlowupImplication.finite_time_profile_tendsto_atTop` (line 125): (T - t)^(-A) * (E + error t) -> +infinity for A > 0, E > 0, error -> 0. Instantiating it with T = 1, E = leadingAmplitude v X, error = 0 gives the display's arrow for the leading field. That is instantiation of stated declarations, so the display follows by formal steps.\n\nThe Lean says more than the display: the statement is for the constructed velocity with a quantified O(tau^(2h)) error, not only for the leading field. For the actual velocity, the divergence would additionally need tau^(2h) -> 0 to feed the `error` hypothesis; that is not needed for the display, which is about u^(0).\n\nNot verified: that `FinalSlowBase.boxRadius` covers the paper's whole range 0 < X_* < X_c (irrelevant for the leading-field reading, where equality and positivity hold for every X > 0); that `v.profiles.f` is the paper's E/sqrt(2X) beyond the definitional chain above; and the final local theorem (`LocalPaper.AngularRayGrowth`) keeps only one radius Xin, which is a statement about Theorem-level packaging rather than this outline display.",
+          "summary": "Lean has a stronger form of it.",
           "verdict": "faithful"
         }
       ]

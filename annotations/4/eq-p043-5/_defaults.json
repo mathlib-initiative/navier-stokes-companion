@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 43,
-    "rect": [0.308422, 0.437556, 0.383381, 0.026388]
+    "rect": [0.309091, 0.439669, 0.379679, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [43],
         "printed": [43],
-        "text": "Display 43.5, p. 43, in the statement of Lemma 4.9"
+        "text": "Display 43.5, p. 43, in the proof of Theorem 4.6"
       },
       "region": "eq-p043-5@p043",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The conclusion — strict positivity of all four admissible-cone components for the final triple, at every sufficiently large frequency — is proved, but not by the paper's formula. The cone condition is the four-conjunct predicate InTrueCone p₁ p₂ A C, which matches the paper's (4.35) componentwise under A = a, C = -b, t = -b/a (A(1+(C/A)²) = v, p₁ + p₂(C/A) = c, p₂ - p₁(C/A) = j, and coneBound is the paper's U(c,j)), except that the paper's fourth component 2(c-v)² - (v-2)j² is replaced by the direct inequality v < coneBound(c,j) and the paper's c - v > 0 by 2 < c. In the repair chain I traced — profiles_trueCone (1309) → repaired_trueCone_of_bounds (546) → nominal_stockShear_stable (525) → compact_periodic_stockShear_stable (254) — there is no Ψ map and no margin arithmetic: instead of a Lipschitz constant C_Ψ and the margins μ_R/2 and μ_R/4, positivity after the repair comes from a compactness stability radius. compact_periodic_stockShear_stable obtains ρ > 0 from exists_cthickening_subset_open applied to the compact image of the cone data in the open cone (line 276), so four-coordinate perturbations of size ≤ ρ keep the triple in the cone; nominal_stockShear_stable is its instance, and exists_integer_frequency then chooses N with C/n ≤ ρ (ModulatedCone.lean:583, 597). The paper's explicit threshold N ≥ 4C_Ψ C_rep/μ_R, stated in the sentence just above the display, is therefore not stated: the Lean threshold N is existential, the chain of two inequalities is not verified as written, and only its endpoint Ψ_i > 0 is. The Lean does have the margin notion, just not here: HasConeMargin ε p₁ p₂ A C (TrueConeLoop.lean:283) is literally 'all four cone components exceed their thresholds by at least ε', the Lean's analogue of the paper's μ_L/μ_R, and compact_periodic_trueCone_margins (TrueConeLoop.lean:289-298) upgrades pointwise strict cone membership on a compact slow set with a periodic fast angle to one uniform positive ε. Its only consumer is exists_compact_trueCone_family_with_margin (TrueConeLoop.lean:765-798, call at line 790), which applies it to the nominal loop family (A, C) over the slow parameters K; neither name occurs in ModulatedCone.lean, so the margin is never carried onto the repaired triple (a_f, b_f, p_f), and the repaired cone membership is re-derived from the stability radius instead.",
+          "summary": "Lean uses a different formula here. Lean proves the cone condition for (a_f, b_f, p_f) at all large N from a compactness stability radius; the bounds μ_R/2 − C_Ψ C_rep/N ≥ μ_R/4 are not stated.",
           "verdict": "deviation"
         }
       ]

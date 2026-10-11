@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 133.2",
+  "label": "Display 133.1",
   "status": "formalized",
   "location": {
     "page": 133,
-    "rect": [0.376949, 0.20872, 0.246323, 0.024405]
+    "rect": [0.379679, 0.209091, 0.240642, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [133],
         "printed": [133],
-        "text": "Display 133.2, p. 133, in section A.3"
+        "text": "Display 133.1, p. 133, in section A.3"
       },
       "region": "eq-p133-2@p133",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The paper bounds one norm of one function on the rectangle [.9,1.2]×[-1,1]; the Lean bounds the same quantity coefficient by coefficient, and never forms the C^1 norm of 𝓔. The right-hand sides agree exactly: combinedScale d K = (errorConstant P m + 36K + 1) * lam * (1 + log(1/lam)) is C_pre λ(1 + log(1/λ)), with the constant depending only on the schedule parameters P, m and the reset constant K. Reading 𝓔 off the corrected (A.19) as 𝓔(A,η) = (quadraticCoefficient - pulseConstant) A² + linearTerm d.core eta * A + (constantCorrection + normalizedPrefixAxial) etaPolynomial(η)² - normalizedPrefixAngular - normalizedTail - energyShift, and writing e := combinedScale d K, the recovery on the paper's rectangle is: |𝓔| ≤ 1.44 e + 1.2·2e + 8e + e + e + e = 14.84 e, using quadratic_error together with quadraticCoefficient_ge (so 0 ≤ quadraticCoefficient - pulseConstant ≤ e), |linearTerm| ≤ 2e from linear_error and |etaPolynomial| ≤ 2, (correction_error + prefix_axial_error)·etaPolynomial² ≤ 2e·4 = 8e, prefix_angular_error, tail_error, and |energyShift| ≤ e from energyShift_bounds; |∂_A 𝓔| = |2(quadraticCoefficient - pulseConstant) A + linearTerm| ≤ 2·1.2·e + 2e = 4.4 e; |∂_η 𝓔| ≤ |deriv (linearTerm d.core) eta|·1.2 + |deriv (constantTerm d c) eta| ≤ 4.8 e + 34 e = 38.8 e by the corrected coefficient_derivative_bounds, whose hypotheses are discharged by old_error_bounds, normalizedTail_derivative_bound with oldScale_le, and the derivative half of energyShift_bounds. So ‖𝓔‖_{C^1} ≤ 38.8 combinedScale d K, i.e. the paper's bound with C_pre = 38.8 (errorConstant P m + 36K + 1). Note the corrected constant-term derivative bound is 34 e, not the 33 e of the pre-reset PulseAmplitude.coefficient_derivative_bounds: the extra e is exactly |deriv (energyShift d c) eta|. The Lean statements carry two hypotheses the display does not print, lam ≤ 1/120 and wait = 60 log(1/lam), and a positive reset constant K with a ResetWitness; the first two are the standing conventions of this section of the construction and the paper's C_pre is likewise only claimed for small λ. No declaration was found that bounds a C^1 norm of 𝓔 on the rectangle as a single statement.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

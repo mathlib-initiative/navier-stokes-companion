@@ -1,0 +1,34 @@
+{
+  "id": "proposition-8.3/key/1.NavierStokes.PressureStream.meanPressure_bar_hasDerivAt",
+  "location": {
+    "page": 92,
+    "rect": [0.131808, 0.827273, 0.739651, 0.019835]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PressureStream.meanPressure_bar_hasDerivAt",
+      "line": 697,
+      "module": "NavierStokes.PressureStream",
+      "path": "NavierStokes/PressureStream.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean#L697"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PressureStream.meanPressure_bar_hasDerivAt",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: HasDerivAt (fun R => torusAverage (meanPressure d a b M hab v f) (R, s)) (torusAverage f (r, s) - rho a b hab r * pressureMass f s) r: the auxiliary-mean part of (8.13), d/dR of <p_m> equals g_r - rho P."
+      },
+      "region": "proposition-8.3@p092",
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 697,
+        "text": "theorem meanPressure_bar_hasDerivAt {d a b M : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (v : Plane)\n    {f : Lift S → ℝ} (hf : ContDiff ℝ ∞ f) (hs : RadialAlias.RadiallySupported a b f)\n    (hp : TorusPeriodicLift f) (s : S) (r : ℝ) :\n    HasDerivAt (fun R => torusAverage (meanPressure d a b M hab v f) (R, s))\n      (torusAverage f (r, s) - rho a b hab r * pressureMass f s) r"
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 82,
-    "rect": [0.294654, 0.498188, 0.573524, 0.039451]
+    "rect": [0.295187, 0.501653, 0.571915, 0.031405]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same solve, written by Cramer's rule rather than as a matrix inverse. Lean's y is `weights H T i = cramerNumerator H T i / H.det` (SmoothCovariance.lean:44); `inverse_formula` (line 88) proves `H⁻¹.mulVec T = weights H T` whenever `H.det ≠ 0`, and `StrictCone` (line 49) — proved for the actual pulse pair by `sourcePair_strictCone` — gives both `det ≠ 0` (`StrictCone.det_ne_zero`, line 56) and `0 < y_σ` (`weights_pos_iff`, line 60), which is what makes the paper's componentwise square root legitimate; `amplitudes_are_inverse_weights` states the two readings agree. So `a_σ = √(y_σ)` is literally `amplitudes` (line 53). The paper's σ = ± is `j : Fin 2`, and ε is `ChartScales.epsilon h (cellBand L)`. Two packaging differences. (i) There is no single Lean definition named for the sum `W_0 = √ε Σ_σ a_σ b_σ`: Lean defines the per-sign summand `rawVelocity j` (CorrectionInitialization.lean:4004) as `amplitude … j • normalizedPulse …`, and the sum `∑ j : Fin 2` is taken where it is used (e.g. inside `tangentMode_pair_covariance`, line 4667). (ii) The Lean coefficient `amplitude ε mask H T j = √ε · a_j · mask` carries an extra `mask` factor (the spatial/radial cutoff, instantiated at `spatialMask L x.1 * cutoff slots.radius x.2.1`), so the Lean field is the paper's cut-off wave η_β W_0 rather than the bare W_0; `mask` is a free real parameter of the definition, and mask = 1 returns √ε a_σ exactly.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

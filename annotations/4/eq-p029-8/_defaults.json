@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 29.8",
+  "label": "Display 29.5",
   "status": "formalized",
   "location": {
     "page": 29,
-    "rect": [0.24068, 0.741616, 0.518863, 0.044009]
+    "rect": [0.241711, 0.744628, 0.514439, 0.035537]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [29],
         "printed": [29],
-        "text": "Display 29.8, p. 29, in the proof of Lemma 4.4"
+        "text": "Display 29.5, p. 29, in the proof of Lemma 4.4"
       },
       "region": "eq-p029-8@p029",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Only the third identity is stated as a difference identity. Delta Pi = Delta C_p is row 4 of profileRows_sub (ModulatedHistories.lean:651): with the shared axis datum hp : P.pressure0 = Q.pressure0, the difference of the five rows equals the difference of the bare cumulative integrals, and row 4 of densityAt is f^2 = E^2/(2X) (density_eq_physical, X > 0). The sign convention is P - Q rather than the paper's f_2 - f_1, which is immaterial. The other two identities are not stated anywhere as differences (my search of decls.jsonl for a difference of two W's, H's or pressures found only profileRows_sub and unrelated declarations). Each follows from stated Lean by subtracting two instances of a per-profile formula: Delta H = sqrt(2X) Delta E from the definitions Profiles.H = 2Xf and Profiles.E = sqrt(2X) f with sqrt(2X)^2 = 2X (or, in the SeedHandbackJets encoding, H is written inline as Real.sqrt (2*X) * p 0 η in stocks_formulas and Profile.density, so the identity is distributivity); Delta W from the W bound in the statement of stocks_formulas line 96, (X - 2 D η M - d ∂_η M)/X, or from XW_eq_histories with parameterPartial_primitive, by subtraction and division by X, plus linearity of the η-derivative under the smoothness that is a hypothesis (PairBound.smooth_left/right, Profiles.U_smooth). These steps are algebra and unfolding of stated definitions; no unstated analytic fact is needed. The Lean proof of the surrounding estimate (4.17) (stocks_comparison, profile_comparison, profile_comparison_norm) does not form these identities: it propagates difference bounds through PolynomialExpression.eval_pairBound, with the common radial factors and common P₀ entering via PairBound.same (difference coefficient 0). So the route differs, but the display itself is derivable, which is what the decision rule asks. Strictly, the Lean's per-profile formulas say more than the Delta identities; I class it equivalent because the paper has the same per-profile formulas in force in the preceding display. I did not check that the two Lean encodings (ProfileHistories.Profiles and SeedHandbackJets.Profile) are linked by a declaration.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

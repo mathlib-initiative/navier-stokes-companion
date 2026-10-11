@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 35.8",
+  "label": "Display 35.7",
   "status": "formalized",
   "location": {
     "page": 35,
-    "rect": [0.329422, 0.809136, 0.341099, 0.026716]
+    "rect": [0.331551, 0.810744, 0.336898, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [35],
         "printed": [35],
-        "text": "Display 35.8, p. 35, after the statement of Lemma 4.8"
+        "text": "Display 35.7, p. 35, in the statement of Lemma 4.8"
       },
       "region": "eq-p035-8@p035",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The E_o half is stated verbatim. Term by term: A = 1/2 + h is HeatTailEdit.exponent F.data.h (NavierStokes/HeatTailEdit.lean:22); 𝓗 of (4.29) is RadialHeatProfile.profile (1+h); 𝓗(2d/X) with d = 1-η² is HeatProfileExtension.physicalProfile (1+h) X eta, equal to profile (1+h) (2(1-η²)/X) for |η| ≤ 1 by physicalProfile_eq_profile (the Lean carries a Borel extension off [-1,1], so it is defined on a larger η-range than the paper's [-1,1]). The radius threshold agrees exactly: the Lean hypothesis 3 ≤ log(X/switchRadius F XR) + 1/5 unfolds, via switchRadius F XR = XR·exp(tailStart + 1/5) (OutgoingDilation.lean:329-330) and switchStart = tailStart + 1/5 (HeatTailEdit.lean:373), to log(X/XR) ≥ tailStart + 3, i.e. X ≥ e³·(XR·e^{tailStart}), which is the paper's X ≥ X_b = e³X_tail; the Lean names this radius tailRadius F XR (OutgoingDilation.lean:325, tailEnd = tailStart + 3, OutgoingTail.lean:542-543). The U_o = 0 half is stated with a strictly smaller threshold pulseEndRadius = XR·e^{endpoint}, and endpoint < flattenEnd < releaseStart < tailStart < tailEnd (OutgoingTail.lean:549, 545-547, 553-555 with rampEnd_pos and decayHold_pos), so it covers X ≥ X_b. V_{0,o} = 0 is the one clause with no Lean statement: no declaration defining or constraining the outgoing profile's radial flux V_{0,o} was found, and the paper's (4.7) appears in Lean only as SlowDivergence.radialFlux, for the slow base. The recovery is two lines and uses nothing beyond what is stated: (4.7) reads V_0 = L^{-1}(2ηXU_o − 2DηM_o − d ∂_η M_o), and after_pulse gives U_o(X,η) = 0 and M_o(η,X) = 0 for every η and every X ≥ pulseEndRadius, so ∂_η M_o = 0 there and V_{0,o} = 0. Hence the block as a whole is recoverable by routine rewriting, not a mathematical difference.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 26,
-    "rect": [0.314288, 0.581415, 0.554614, 0.087401]
+    "rect": [0.315508, 0.581818, 0.551594, 0.085124]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "equation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both rows are stated with the paper's right-hand sides term for term (A = velocityExponent, D = axialExponent, d = coordinateFactor, H_c written out as Dη + dU, Π = pressure). Rewritings: 𝒟_X is written as X · deriv along the radial slice rather than as a named operator; the paper's (log E)_η is Lean's ∂_η log E, and `logE_parameter_deriv` identifies it with H_η/H, which is how the source definitions carry it; the last term of S_n, 2η𝒟_XΠ, is `2 * η * (X * radialPartial pressure)`. The angular row is stated a second time in the paper's regular F-form by `ReferenceBounds.p1_equation`:261, for `p1 = X·Q_s/L` with `logSlope` = l and `sourceQ` = S_q: X∂_X(XQ_s/L) + l·(XQ_s/L) = (X/L)(𝒟_X Q_s + (1+l)Q_s), so that statement is (X/L) times the display's angular row. Logical direction is reversed: the paper poses (4.9) as the equations Q_s, N_s satisfy, while Lean defines Q_s, N_s by the primitives of (4.10) and proves these equations, with hypotheses the paper leaves implicit (p in the domain, X > 0, f ≠ 0 so H ≠ 0). The implication therefore runs Lean ⇒ paper for the specific pair; no declaration was found asserting that any solution of (4.9) is one of these.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

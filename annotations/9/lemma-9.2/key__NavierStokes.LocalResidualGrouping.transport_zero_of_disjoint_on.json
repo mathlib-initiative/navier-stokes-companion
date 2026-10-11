@@ -1,0 +1,36 @@
+{
+  "id": "lemma-9.2/key/1.NavierStokes.LocalResidualGrouping.transport_zero_of_disjoint_on",
+  "location": {
+    "page": 102,
+    "rect": [0.131808, 0.849587, 0.738562, 0.038017]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalResidualGrouping.transport_zero_of_disjoint_on",
+      "line": 33,
+      "module": "NavierStokes.LocalResidualGrouping",
+      "path": "NavierStokes/LocalResidualGrouping.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalResidualGrouping.lean#L33"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalResidualGrouping.transport_zero_of_disjoint_on",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clause (iv), the literal form: Disjoint (U ∩ tsupport u) (U ∩ tsupport v) and x ∈ U ⊢ LinearWaveResidual.transport R Vr Vθ Vz u v x = 0. The hypothesis is disjointness of the CLOSED supports inside the chart, and the conclusion kills every derivative of the right factor and the frame term.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "region": "lemma-9.2@p102",
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 33,
+        "text": "theorem transport_zero_of_disjoint_on (R : D → ℝ) (Vr Vθ Vz : D → D)\n    {U : Set D} {u v : D → ComplexVector}\n    (hd : Disjoint (U ∩ tsupport u) (U ∩ tsupport v)) {x : D} (hx : x ∈ U) :\n    LinearWaveResidual.transport R Vr Vθ Vz u v x = 0"
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 151.3",
+  "label": "Display 151.1",
   "status": "partial",
   "location": {
     "page": 151,
-    "rect": [0.341567, 0.478238, 0.318069, 0.066597]
+    "rect": [0.342246, 0.480992, 0.314439, 0.061983]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [151],
         "printed": [151],
-        "text": "Display 151.3, p. 151, in the proof of Lemma B.4"
+        "text": "Display 151.1, p. 151, in the proof of Lemma B.4"
       },
       "region": "eq-p151-3@p151",
       "verdicts": [
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. Second display: matched and slightly stronger in Lean, under extra hypotheses that the reference profile meets. p1_lower_from_initial (ReferenceBounds.lean:202–209) gives p_1(X) ≥ p_1(a)·a/X + (q/(2L))·(X − a²/X) from q ≤ S_q on [a,X] together with 0 < a ≤ X, 0 ≤ b, 0 ≤ q, 0 < P.f on [0,X] and AntitoneOn (fun s => P.f (s,η)) (Icc 0 X). The antitonicity is Lean's stand-in for the paper's l_r ≤ 1 in (B.23) (l_r = 1 + X ∂_X f / f, so l_r ≤ 1 iff ∂_X f ≤ 0), and it is discharged for the reference profile by reference_antitone (ReferenceBounds.lean:930), which is exactly how bounds_from_sources supplies it (lines 1086 and 1121, alongside positivity of f from refF_pos); so the comparison is fair. With a = X_0 = 4/Λ and q = 12/5 (the additive 2.4 of (B.23)) the coefficient is 1.2/L ≥ 1.2, since L ≤ 1 by NaturalEntrance.L_le_one, so Lean's constant is at least the paper's. First display: no counterpart was found. The Lean never solves the p_1 equation in the logarithmic variable y = log(X/X_0); there is no declaration containing the Gronwall/integrating-factor solution formula p_1(0)e^{−y} + 1.88χ(e^y − e^{−y}). Its consequence is reached by another route: lower_comparison_preserves/p1_preserves_lower show algebraically that a lower bound b at X_0 persists for all X ≥ X_0 provided b·L ≤ q·X_0, and bounds_from_sources instantiates this at b = 23/10 with q·X_0 = (94/25)·L·χ — numerically the paper's own condition, since (94/25)χ ≥ 23/10 is 1.88χ ≥ 2.3/2, i.e. exactly what the paper's exponential formula is used for (that p_{1,r} stays above 2.3 once χ ≥ .99). Severity low: the surrounding conclusions of Lemma B.4 (the cone margin p_1 ≥ 2.3 on the hold region, and 3 < p_1(100,η)) are proved, only not through the paper's exponential formula.",
+          "summary": "Lean uses a different formula here. Lean has the second bound, with a constant at least 1.2; the first (exponential in y) is not stated, and p_1 ≥ 2.3 is kept by an algebraic comparison instead.",
           "verdict": "deviation"
         }
       ]

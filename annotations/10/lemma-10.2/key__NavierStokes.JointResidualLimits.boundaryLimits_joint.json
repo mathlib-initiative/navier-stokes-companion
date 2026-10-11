@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.2/key/1.NavierStokes.JointResidualLimits.boundaryLimits_joint",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.JointResidualLimits.boundaryLimits_joint",
+      "line": 130,
+      "module": "NavierStokes.JointResidualLimits",
+      "path": "NavierStokes/JointResidualLimits.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L130"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.JointResidualLimits.boundaryLimits_joint",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Under VanishingJointJets f and AwayExtensions f: Tendsto (iteratedFDeriv ℝ n f) (𝓝[openPast 1] (1,x)) (𝓝 (boundaryLimits f hext x n)). At x = 0 this consumes VanishingJointJets; with past_filter_neBot (:162) it is the alternative route to boundaryLimits_eq_extension.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 130,
+        "text": "theorem boundaryLimits_joint {f : SpaceTime → V} (hzero : VanishingJointJets f)\n    (hext : AwayExtensions f) (n : ℕ) (x : Space) :\n    Tendsto (iteratedFDeriv ℝ n f) (𝓝[SpacetimeEndpoint.openPast 1] (1, x))\n      (𝓝 (boundaryLimits f hext x n))"
+      }
+    }
+  }
+}

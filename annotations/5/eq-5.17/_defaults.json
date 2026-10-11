@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 52,
-    "rect": [0.247137, 0.694779, 0.621039, 0.037553]
+    "rect": [0.248128, 0.695041, 0.618974, 0.035537]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. No declaration states the jet bound for the five-tuple P_n = (φ_n, U_n, V_n/X, Π_n, F_n/X) as one inequality; A and B agree on that and I found none either. What the repository states is the two ingredients and the generic compactness lemma. For the first four components (component = ![phi, axial, beta, pressure], extended to all of ℝ² by extendedCoefficient, which agrees with the profile on X ≥ 0, |η| ≤ 1 by extendedCoefficient_eq), the Lean states ContDiff ℝ ∞ (line 125) and, for n ≥ 1, HasCompactSupport (line 147). Feeding these two declarations to exists_uniform_jet_bound gives, for each n ≥ 1, i and m, a constant C with ‖iteratedFDeriv ℝ m f x‖ ≤ C at every x of ℝ². That is an instantiation of a stated declaration at stated hypotheses, and it yields the display's bound on those components (a mixed partial of order m is the m-th Fréchet derivative evaluated on unit vectors, so it is dominated by the operator norm; max over orders ≤ m is a finite max). The Lean says strictly more here: smoothness, compact support in both variables, and a bound on the whole plane rather than on X ≥ 0, |η| ≤ 1. The fifth component F_n/X is not one of the four stored coefficients. It is ProfileHistories.average of the axial coefficient; its smoothness on any open rectangle is average_smooth with RadialDomain.rectangle, compact_jet_bound then bounds its order-m jet on the compact box [0, s.B²/2] × [-1,1], and extended_axial_average_zero makes it vanish for X ≥ s.B²/2, |η| ≤ 1. Passing from 'vanishes there' to 'its derivatives vanish there' is immediate at interior points and needs continuity of the derivatives (from the stated smoothness) on the edges |η| = 1; that last assembly is not written in the repository and I did not check it against a Lean proof. The paper's later use of (5.17) is the Borel summation of §5.4 (p. 56); the Lean does not consume a P_n bound there but takes only smoothness of each coefficient and derives the jet bounds inside the summation lemma (exists_admissibleScales, line 312, via exists_template_jet_bound on a compact inner-coordinate set).",
+          "summary": "Lean has a stronger form of it.",
           "verdict": "faithful"
         }
       ]

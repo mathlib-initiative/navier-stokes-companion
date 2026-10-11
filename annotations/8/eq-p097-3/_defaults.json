@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 97.3",
+  "label": "Display 97.1",
   "status": "formalized",
   "location": {
     "page": 97,
-    "rect": [0.296426, 0.775127, 0.407373, 0.030337]
+    "rect": [0.297326, 0.776033, 0.403209, 0.033058]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [97],
         "printed": [97],
-        "text": "Display 97.3, p. 97, in the proof of Lemma 8.7"
+        "text": "Display 97.1, p. 97, in the proof of Lemma 8.7"
       },
       "region": "eq-p097-3@p097",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The repository states the scaling identity in general form, but in the outgoing-pulse files, not in the Lemma 8.7 chain. `power_bump_integral_scale` (OutgoingPulseBounds.lean:543) gives, for every real a, every k > 0 and every 0 < l < u, ∫ t^a·bump(kl,ku)(t) dt = k·k^a·∫ t^a·bump(l,u)(t) dt, and `bump_scale` (:452) says bump(kl,ku)(kx) = bump(l,u)(x). Taking η_0 = bump(l,u) and η_j = k^{-1}·bump(kl,ku) = k^{-1}η_0(·/k) with k = e^{jd}, the first clause follows by pulling the constant k^{-1} out of the integral, k^{-1}·k·k^p = k^p, and (e^{jd})^p = e^{jdp}; this covers every real p, every j and every d. Conversely the Lean lemma is the display's computation for that particular bump with a general dilation factor.\n\nThe positivity clause is the weak point. For the same radial bump, μ_p > 0 is stated only for the template on (e^{-3/20}, e^{3/20}) and only for -1 ≤ p ≤ 0 (`rowMoment_bounds` :509 with `rowFloor_pos` :504); four of the paper's five exponents (2, -2-2λ, 1, 1-2λ) lie outside that range. What does follow by pure instantiation for every real p and every 0 < l < u is μ_p ≠ 0: `LocalizedMomentRepair.matrix_det_ne_zero` (LocalizedMomentRepair.lean:91) at n = 1, where the determinant is the single entry ∫ t^p·bump(l,u)(t). The strict sign for general p then needs only that the integral of a nonnegative integrand is nonnegative (`bump_nonneg` :31 and support in (l,u) with l > 0 are stated; the integral inequality is a Mathlib order fact, not a repository declaration). I counted that as sign bookkeeping, not as an unstated analytic estimate; a stricter reading would make this clause lean_weaker with severity low. The paper only uses μ_p as a nonzero row factor (\"after dividing its rows by μ_p\", and as the common row factors of A_θ, A_z on p. 98), so nonvanishing is what the later argument needs.\n\nIndependently, in the variable y = log x both clauses are stated for every real exponent: `AngularMomentReset.weighted_translate_integral` (:542, arbitrary f, shift and exponent), `bump_moment` (:97, the two-member family with step 2) and `moment_pos` (:88, 0 < moment s for all real s). Under x = e^y with η_0(x) = T(log x)/x this is the display with s = p, but passing between the two forms is a change of variables that I did not find stated for these functions (the nearest is `OutgoingSchedule.exp_weight_substitution` :635, on a finite interval), and the log template is a different function from the radial one, so I do not combine the two families.\n\nRoute difference, as A says: the Lean proof of Lemma 8.7 (`FiveRowRank.exists_five_row_repair` :311) never forms geometrically scaled copies. Its profiles are bumps on separated mesh cells (`cellLower`/`cellUpper`, FiveRowRank.lean:27-31), their moments stay unevaluated, and invertibility comes from `PowerMomentMatrix.bumpMomentMatrix_det_ne_zero` (PowerMomentMatrix.lean:261). That affects the neighbouring Vandermonde display, not whether this identity is in the repository. A's \"absent\" rests on having missed `power_bump_integral_scale`.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 70.7",
+  "label": "Display 70.2",
   "status": "formalized",
   "location": {
     "page": 70,
-    "rect": [0.292838, 0.80554, 0.414325, 0.02684]
+    "rect": [0.294118, 0.807438, 0.409626, 0.02314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [70],
         "printed": [70],
-        "text": "Display 70.7, p. 70, in the statement of Proposition 6.6"
+        "text": "Display 70.2, p. 70, in section 6.4"
       },
       "region": "eq-p070-7@p070",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Neither finding is exactly right about what is stated, but the class is clean. No single declaration states containment in exactly Omega^cut = Omega ∩ {v ∈ supp ψ}. For the signed localized copies (A's object), phaseCell_or_localized_zero puts the closed support, inside the strip, in phaseCell = controlCell ∩ {v/L ∈ [1/10, 9/10]}. That window is wider than supp ψ (the paper's (6.16) has supp ψ inside |v − L_s/2| < L_s/3, and the Lean profile vanishes for |v/L − 1/2| ≥ 1/3), so A's reading of phaseCell as \"the Omega^cut of (6.28)\" overstates it. For the primary cutCoefficients (B's object), actual_input_cover and phaseCell_of_cut_tsupport land in the uncut clock core v ∈ [0, L_s], as B says.\n\nThe ψ-tight window follows by formal steps. The localized amplitude is cutoff • amplitude (withCutoff, read at LinearWaveBounds.lean:220 and PeriodizedWaveBounds.lean:773), cutoff is χ(ξ)·profile(nativeTime) by definition, and profile_eventually_zero gives a zero germ of profile wherever 1/3 < |t − 1/2|. Composing with the continuity of nativeTime (nativeTime_smooth) is literally the step at ActualSignedStageControls.lean:536. With localized_zero_of_cutoff (ActualSignedOutputBounds.lean:103) this gives a zero germ of the localized amplitude and pressure outside {|v/L − 1/2| ≤ 1/3}. Intersecting with signed_phaseCell_or_zero gives the display's inclusion. On the primary side the same holds at native level: cutNativeVelocity = gaussian • (...) with gaussian = profile(v/L), so profile_zero forces |v/L − 1/2| < 1/3 wherever it is nonzero. No estimate, limit or other analytic fact beyond stated declarations is needed.\n\nSmooth zero extension in v: the Lean never forms an extension. The cut-off factor is globally smooth (cutoff_smooth; cutNativeVelocity_smooth on {T > 0} with v unrestricted) and vanishes identically outside the ψ window, so the cut field is its own smooth extension by zero.\n\nNot verified here: that controlCell's remaining clauses (slow carrier, ξ ∈ Icc (−r) r, chartQ ∈ Icc (1/2) 2, near) coincide with the paper's Omega_γ, which belongs to block (6.28); the transfer of the tight window through `periodized`/`copied` for the chart-level cutCoefficients; and a smoothness statement for the uncut signed amplitude on phaseCell.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

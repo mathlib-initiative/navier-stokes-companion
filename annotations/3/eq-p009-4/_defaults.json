@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 9.4",
+  "label": "Display 9.3",
   "status": "formalized",
   "location": {
     "page": 9,
-    "rect": [0.344206, 0.783235, 0.311812, 0.04414]
+    "rect": [0.298396, 0.787603, 0.434225, 0.033058]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [9],
         "printed": [9],
-        "text": "Display 9.4, p. 9, in section 3.2"
+        "text": "Display 9.3, p. 9, in section 3.2"
       },
       "region": "eq-p009-4@p009",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Three conventional differences, no change of content. (i) Domain of integration: Lean integrates over 0..B, B the scheme's exterior radius, not 0..∞; the two agree because the densities vanish for R ≥ B (`SlowStressSupport.exterior_angularDensity`, SlowStressSupport.lean:935, and `exterior_axialDensity`, line 953, with `exterior` defined at line 28 as f(R,η)=0 for all R ≥ B). (ii) Placement of the weight: the r² and r factors are inside the density (the literal weighted residuals, see eq-p009-3), so the Lean statement is `moment B 0` of the density, i.e. ∫_0^B 1·(R² R_θ) dR, rather than `moment B 2` of a bare residual. The closest match to the paper's display is `GlobalStressSupport.thetaDensity_moment_zero` (GlobalStressSupport.lean:340) and `zDensity_moment_zero` (:350), which state `moment s.B 0 (SlowResidualMatching.thetaDensity h C (asSlowProfiles s) n) eta = 0` and the `zDensity` analogue — the literal R²-weighted angular and R-weighted axial residuals of eq-p009-3, so ∫r²R_θ = 0 and ∫rR_z = 0 verbatim; their docstring is \"Cancellation of the actual coefficient density, not an assumed moment of an abstract source.\" They are proved from the conservative-density pair `angularDensity_moment_zero`/`axialDensity_moment_zero` by rewriting the density, and carry the same 2 ≤ n, so they change neither the relation nor the severity. (iii) Logical status: the paper writes \"and impose\" these identities, then attributes them to Lemma A.8 (\"The prescribed exterior moment identities give these zero integrals\"); in Lean they are likewise theorems, `angular_integral_zero`/`axial_integral_zero` taking the prescribed second-moment identities on the profiles as hypotheses, and `GlobalStressSupport.conservative_moments_zero` (GlobalStressSupport.lean:170) supplying those hypotheses for the assembled scheme. The instantiated forms in GlobalStressSupport carry the order restriction 2 ≤ n, so they do not cover the superscript-(0) order of this page directly; the general lemmas in SlowStressSupport carry no restriction on n. The paper's reason for imposing the identities — they make the stress vanish beyond the exterior radius — is stated in Lean in general form: `SlowStressSupport.stress_exterior` (SlowStressSupport.lean:747) derives `stress m F (R,η) = 0` for every B ≤ R from `exterior B S F` together with `moment B 0 F η = 0`, for an arbitrary density F, so the implication the display is there to support is available for any density satisfying it. Whether that route (or any other) is run at the superscript-(0) order this page is about, I did not trace; see `not_traced`. The same two integral identities also appear abstractly as `IntegratedMeanBalances.moment_angular_divergence` and `moment_axial_divergence` (IntegratedMeanBalances.lean:122,134), for smooth compactly supported f, with `moment n f = ∫ r, r^n * f r` over all of ℝ and `radialDivergence c f r = deriv f r + c/r * f r`; those are the ∫_0^∞ form of the paper's display read through eq-p009-2.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

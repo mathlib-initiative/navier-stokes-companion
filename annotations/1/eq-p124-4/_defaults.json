@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 124.4",
+  "label": "Display 124.1",
   "status": "formalized",
   "location": {
     "page": 124,
-    "rect": [0.269912, 0.571172, 0.495605, 0.079599]
+    "rect": [0.270588, 0.571074, 0.457754, 0.066116]
   },
   "target": {
     "pin": {
@@ -21,7 +21,7 @@
       "locator": {
         "physical": [124],
         "printed": [124],
-        "text": "Display 124.4, p. 124, in the proof of Theorem 1.1"
+        "text": "Display 124.1, p. 124, in the proof of Theorem 1.1"
       },
       "region": "eq-p124-4@p124",
       "role": "key",
@@ -38,7 +38,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. `navierStokesResidual ν u p t x = temporalDerivative u t x + advection u t x - ν • spatialLaplacian u t x + pressureGradient p t x` is the paper's left-hand operator with advection = (u·∇)u, so rescale_residual at a = √ν, μ = 1 is exactly the first equality of the display: rescale (√ν) (√ν)⁻¹ u = u_ν, rescale ν (√ν)⁻¹ p = p_ν (since a^2 = ν), a^2μ = ν, and the right side is √ν • (viscosity-one residual of u, p) at y = x/√ν. The Lean statement is more general than the display: it holds for every a ≠ 0 and every μ, the paper's line being the instance a = √ν, μ = 1; `candidate_at_viscosity` performs that specialization via Real.sq_sqrt. Likewise rescale_divergence holds for every (a, b), and at a = √ν, b = (√ν)⁻¹ the prefactor a*b is 1, giving the display's ∇_x·u_ν(x,t) = (∇_y·u)(y,t); that prefactor is not simplified to 1 inside rescale_divergence itself. The two trailing equalities of the display (`= f_ν(x,t)` and `= 0`) are not in rescale_residual / rescale_divergence; they are discharged as the two proof steps of rescale_candidate cited above, from the hypothesis that u, p, f satisfy the viscosity-one equation and are divergence free. So the display is split across one general identity plus one specializing step in each of the two lines.",
+          "summary": "Lean has a stronger form of it.",
           "verdict": "faithful"
         }
       ]

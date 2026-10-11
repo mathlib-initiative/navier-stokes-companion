@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 44,
-    "rect": [0.291632, 0.252638, 0.416958, 0.052839]
+    "rect": [0.293048, 0.252893, 0.412834, 0.05124]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [44],
         "printed": [44],
-        "text": "Display 44.2, p. 44, in the statement of Lemma 4.9"
+        "text": "Display 44.2, p. 44, in the proof of Theorem 4.6"
       },
       "region": "eq-p044-2@p044",
       "role": "key",
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Lean normalizes through the tilt rather than the Euclidean norm: `direction v = unitOfTilt (v.2/v.1) = (1, v.2/v.1)/√(1 + (v.2/v.1)²)`, which equals v/|v| exactly when v.1 > 0 (and is the unit vector in all cases, by `unitOfTilt_normSq` at ActiveAnnulusWeight.lean:685). Positivity of the first component of the coefficient is what the collar statements establish (`exists_natural_activation_factor_aligned` at line 1039 for the inner edge, `profileAngularFactor_zero_pos` at TerminalEdgeFactor.lean:891 for the outer), so on both collars Lean's `direction` is the paper's n = 𝒯_0/|𝒯_0|. With that reading the outer formula is identical term for term: the coefficient is (profileAngularFactor, y⁶·profileAxialFactor) = (b_θ, y_b⁶ b_z) and its normalization has the paper's denominator √(b_θ² + y_b¹² b_z²). The inner formula B_a/|B_a| appears with B_a existentially quantified as `G.coefficient` rather than named. One packaging difference: the paper states the two extensions as a single display, Lean as two separate existence theorems (`inner_direction`, `outer_direction`), each delivering the equality `direction (T (p,x)) = direction (B (p,x))` as one conjunct of `HasTrueDirectionCollar` (defined at ActiveAnnulusWeight.lean:868 via `HasStrictDirectionCollar` at line 853), together with the margin bounds the paper proves separately in the κ paragraph.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 53,
-    "rect": [0.209453, 0.175579, 0.581134, 0.050132]
+    "rect": [0.210695, 0.176033, 0.57754, 0.046281]
   },
   "target": {
     "pin": {
@@ -21,7 +21,6 @@
         "text": "Display 53.1, p. 53, in the proof of Lemma 5.2"
       },
       "region": "eq-p053-1@p053",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.78,
@@ -35,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean states the same two conservative forms without the r² and r weights, and without assuming axisymmetry or incompressibility; the rewriting is a term-by-term multiplication. Set dtheta ≡ 0 (axisymmetric) and divergence w = 0, so `conservativeAngular_eq` reads conservativeAngular = residualAngular = ℛ_θ. Multiplying by r²: r²∂_t u_θ = ∂_t(r²u_θ); r²[∂_r(u_ru_θ) + (2/r)u_ru_θ] = ∂_r(r²u_ru_θ) (this is why the weight 2 appears in `radialDivergence 2`); r²∂_z(u_zu_θ) = ∂_z(r²u_zu_θ); -r²∂_zz u_θ = -∂_zz(r²u_θ); and -r²[∂_rr u_θ + ∂_r u_θ/r] + u_θ = -∂_r(r²∂_r u_θ - r u_θ), which is where Lean's Bessel term + w 1 / radius² goes. Likewise r·conservativeAxial: r[∂_r(u_ru_z) + u_ru_z/r] = ∂_r(r u_r u_z), r[∂_z(u_z²) + ∂_z p] = ∂_z(r(u_z²+p)) since r does not depend on z, and -r[∂_rr u_z + ∂_r u_z/r] = -∂_r(r∂_r u_z). Lean is more general than the paper's 'smooth axisymmetric divergence-free field': it keeps the θ-derivatives and carries the exact correction u_i·div u instead of assuming div u = 0. The r-weighted form itself is not a Lean declaration; in profile (R) coordinates the weighted densities used for the moment argument are SlowStressSupport.angularDensity / axialDensity, which I read but did not match term by term to this physical display.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

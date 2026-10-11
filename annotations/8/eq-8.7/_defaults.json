@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 90,
-    "rect": [0.424212, 0.746512, 0.442096, 0.023032]
+    "rect": [0.425668, 0.747107, 0.440345, 0.019835]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "claim",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The formula itself is stated literally, but only for two of the paper's three values of e. Lemma 8.2 fixes e ∈ {0,1,2} and (8.6) defines D_e = D_r + e/R, T_e f = R^{-e} I_c(R^e f), A_e f = R^{-e}(∂_R χ_m) J(R^e f). Lean states D_e T_e f = f − A_e f with the literal cutoff remainder at e = 0 (compactPrimitive_radial_identity, physicalGraphDeriv_physicalCompact_global, transport_compact_eq_sub_alias, and UniformFourierAlias.lean:152) and at e = 1 (streamGamma_eq_desired_sub_alias, and PhysicalMeanDomain.lean:1605). I found no declaration stating it at e = 2: a repository-wide search of NavierStokes/ for a right-hand side of the form `… - (compactAlias|physicalAlias|cutoffAlias|exactAlias) …` returns exactly those seven lines, all e = 0 or e = 1. The paper does use the e = 2 case, in Corollary 8.5 (p. 95), where (D_r + 2/R)H_θ = −⟨E_θ⟩_Y + σ_θ ε∂_Z J_θ; there the source is independent of Y and has zero weighted radial integral, so by Lemma 8.2's last sentence the cutoff remainder vanishes. That degenerate case is covered in Lean by a different operator: SignedStressPrimitive.sigma P e F = −R^{-e} I_c(R^e F) (line 164) with a bump-density correction subtracted instead of the χ_m cutoff remainder, and physical_weighted_sigma_hasDerivAt gives (D_r + e/R)σ = −(F − bump) for every e, specialized at e = 2 by physical_angular_divergence (line 821, radialDivergence 2 σ = −adjusted; IntegratedMeanBalances.radialDivergence c f r = f'(r) + (c/r)f(r)). So the shortfall is the general-A_e form of (8.7) at e = 2, which is not used by the paper; the e = 0 and e = 1 statements are term-for-term the paper's, including the R^{-e} normalization and the (∂_R χ_m)·J shape of A_e.",
+          "summary": "Lean has a weaker form of it. Lean states this identity only for e = 0 and e = 1; at e = 2 it has only a variant with a bump-density correction in place of the cutoff remainder A_e f.",
           "verdict": "deviation"
         }
       ]

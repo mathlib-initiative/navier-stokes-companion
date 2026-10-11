@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 40,
-    "rect": [0.32173, 0.756137, 0.356758, 0.04414]
+    "rect": [0.322995, 0.761157, 0.351872, 0.034711]
   },
   "target": {
     "pin": {
@@ -18,7 +18,7 @@
       "locator": {
         "physical": [40],
         "printed": [40],
-        "text": "Display 40.6, p. 40, in the statement of Lemma 4.9"
+        "text": "Display 40.6, p. 40, in the proof of Theorem 4.6"
       },
       "region": "eq-p040-6@p040",
       "verdicts": [
@@ -34,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The middle equality I₀(X_h) = I_out(X_h) is stated outright as component 1 of `heated_moments_at_match`. The first equality is in the Lean too, but with a different subtracted background: inside `heated_five_moments` the step at NominalProfile.lean:2132 is `h1 := c.heated_row_transfer w hsep hη hs 1 (OutgoingDilation.powerH F c.radius) (w.renormalized_integrable eta hη)`, i.e. ∫_{(0,∞)} (H₀ − H_pow) = ∫_{(0,∞)} (H_out − H_pow), with the power-law background H_pow = √(2X)·powerE rather than the paper's H_out. Conversion, one line: both integrands are integrable on (0,∞) (`h1.1` and the `hg` argument `w.renormalized_integrable`, ExtendedHeatedOutgoing.lean:477), so subtracting the two integrals gives the paper's ∫₀^∞ (H₀ − H_out) dX = 0; row 1 of `density` is √(2x)·E = H. The Lean then chains h1 with `w.renormalized_zero` (line 2137; ExtendedHeatedOutgoing.lean:482, ∫ (H_out − H_pow) = 0) and lands on the `angular_zero` clause of `FiveMomentCertificate`, ∫_{Ioi 0} (√(2x)E₀(x,η) − powerH x) = 0 — which is exactly what this display is written to establish, the angular identity of Lemma 4.8 for the joined pair (text.txt:1705, ∫₀^∞ (H − H_pow) dX = 0 with H_pow = √(2X) c_∞ X^{−A}; `OutgoingDilation.powerH` is √(2X)·powerE with `powerE F X = powerConstant F.data * X ^ (-(1/2 + F.data.h))`, OutgoingProfile.lean:45, and A = 1/2 + h by (4.1)). So the Lean renormalizes against the power law where the paper renormalizes against the outer pair; the two differ exactly by the outer identity ∫ (H_out − H_pow) = 0, which is the paper's own Lemma 4.8 for the outer pair (text.txt:1803). The subtracted `background` is not carried everywhere: rows 0, 2 and 3 are transferred with `background = 0` (lines 2129–2131); only row 1 needs the power-law background, and row 4 goes through `heated_pressure_data` (line 2095).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

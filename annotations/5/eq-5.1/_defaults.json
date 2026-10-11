@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 46,
-    "rect": [0.176119, 0.133762, 0.69295, 0.059515]
+    "rect": [0.17754, 0.143802, 0.689562, 0.047107]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -33,7 +33,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. All four exponents match (5.1) term for term: q^{-A+λ_n} for the axial coefficient, q^{λ_n} for the radial flux, q^{-2A+λ_n} for the pressure, q^{-A-1/2+λ_n}/C for the swirl, with λ_n = slowOrder h n = 2nh and A = 1/2+h. Two encoding choices. (i) The Lean carries the swirl as u_θ/r: slowSwirl = C⁻¹ Σ_n q^{-A-1/2+λ_n}φ_n, so the explicit factor r of u_{θ,n} = r q^{-A-1/2+λ_n}φ_n/C is absent from the definition body and is restored where the physical angular field is built (NavierStokes.BasePrefixIdentity.prefixSwirl_radial, BasePrefixIdentity.lean:111, relates slowSwirl to -∂_s of the physical swirl primitive). (ii) The intermediate name E_n and the identity E_n = √(2X)φ_n/C are not carried at general n: the Lean works throughout with φ_n and the second form. The two agree because X = r²/(2q) gives √(2X) = r q^{-1/2}, so q^{-A+λ_n}E_n = q^{-A+λ_n}·r q^{-1/2}φ_n/C = r q^{-A-1/2+λ_n}φ_n/C. The √(2X)/C factor does reappear at general n in NavierStokes.SlowResidualMatching.thetaStress_identity (SlowResidualMatching.lean:445); at order 0 the identity E = √(2X)φ/C is stated literally at ActualSlowAxis.lean:313.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 36,
-    "rect": [0.285814, 0.501923, 0.583263, 0.028462]
+    "rect": [0.204278, 0.502479, 0.663914, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Term by term the two formulas agree once two notations are unfolded. (a) FlatCutoff.edge 4 x is e^{-4/x^2} for x > 0 (FlatCutoff.edge, NavierStokes/FlatCutoff.lean:26, and edge_of_pos at line 35), and 0 for x ≤ 0, so the Lean identity also covers y_b ≤ 0 where both sides vanish. (b) the Lean point is the pair (η, x) with x = TerminalCone.edgeDistance F y = tailEnd − y = log(X_b/X) = the paper's y_b, i.e. the coordinates are in the opposite order. With those, profileAngularStress_factorization reads 𝒯_{0,θ} = e^{-4/y_b^2} y_b^{-3} b_θ and profileAxialStress_factorization reads 𝒯_{0,z} = e^{-4/y_b^2} y_b^{3} b_z, with b_θ = profileAngularFactor and b_z = profileAxialFactor; the constant 4, the exponents −3 and +3, and the signs all match. profileStress_factorization is the same pair in vector form, carrying the axial component as (edge/x^3)·(x^6 b_z), which is edge·x^3·b_z after one line of algebra for x ≠ 0. The Lean exhibits b_θ, b_z explicitly rather than existentially, and proves the surrounding sentence's side conditions separately: smoothness by profileAngularFactor_contDiff (line 866) and profileAxialFactor_contDiff (line 952), and b_θ > 0 for 0 ≤ δ, η ∈ [−1,1] by TerminalCone.profileAngularFactor_pos (NavierStokes/TerminalCone.lean:365). forward_stresses_eq_profile transfers the factorization from the profile stress to the actual forward stress on terminalStart ≤ y.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

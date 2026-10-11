@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 75,
-    "rect": [0.257526, 0.441846, 0.61155, 0.041405]
+    "rect": [0.259893, 0.442149, 0.608299, 0.038017]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Two things to separate. (1) The paper's display, as printed, is a 1×2 right factor, which cannot right-multiply the 3×2 U; the text on p.75 calls B \"The real 3 × 2 matrix B in (7.8)\", so a row of the matrix is missing in print. The only completion consistent with the paper's own (7.6) and (7.10) puts the row (1,1) underneath, i.e. the columns of B are ±u_1/(c_0√(1+s^2)) + u_2 with u_1 = e_r − s_aK_a and u_2 = N_a — equivalently the growing direction has u_2/u_1 ratio c_0√(1+s^2). I checked that ratio from the paper directly: with t = x u_1 + y N_a and 𝒜_Φ as in (7.6), the projection gives x′ = 2F(N_a)_θ y/(1+s_a^2) and y′ = −(2F(N_a)_θ + ⟪N_a,g⟫)x, hence λ² = −2FN_θ(2FN_θ+|g|)/(1+s^2) = λ_0²/(1+s^2), which is the λ(v) of (7.10), and y/x = λ(1+s^2)/(2FN_θ) = c_0√(1+s^2) using c_0 = λ_0/(2F_0N_θ) from p.74 — the reciprocal of the printed entry, so the printed entries are the u_1-row, not the u_2-row. (2) The Lean builds the same matrix with the reciprocal normalization and the K-orientation convention of eq-7.7. FrameData.ambient w = tangent ρ frame (w_0+w_1) (h(w_0−w_1)) has columns u_1 ± h·(frame 1) with u_1 = e_r − ρK_a, ρ = radialSlope = the actual slope s_a of (7.7), frame 1 = quarterTurn K_a (= −N_a as a formula in n_Φ, eq-7.7), and h = referenceProfile c0 = c0·√(1+s(v)²), whose s is the reference profile s(v) of (7.2) (PulseGrowth.slotMagnitude) and not s_a — the same split the paper prints, s_a inside U and s inside the scalar. The Lean's c0 is p.74's c_0 itself, not its negative: PrimaryRepresentatives.c0 = lambda0/coupling with coupling = 2F·N_θ and normalDirection g = g/‖g‖ = p.74's N, so c0 = λ_0/(2F_0N_θ), and ReferenceCone.c0_neg proves c0 < 0; it is instantiated into FamilyData.c0 at PrimaryGeometryAssembly.lean:319, and the two constraints eigen12/eigen21 on it are discharged at :346 and :348 by lambda0_div_c0 and lambda0_mul_c0 after rewriting quarterTurn K = N (the Lean's K being −p.74's K, eq-7.7). So h = c_0√(1+s^2) < 0 is the paper's scalar, and the Lean's two columns are u_1 ± c_0√(1+s^2)·(quarterTurn K_a): each is the corresponding paper column times the nonzero scalar ±c_0√(1+s^2), the correspondence being column-for-column once the single eq-7.7 orientation convention is applied to the paper's N_a (and with the two columns exchanged if one insists on reading the Lean's second frame vector as −N_a with the paper's K_a). A per-column nonzero scalar leaves the column directions, the plane n_Φ^⊥ they span, and the eigenvalues ±λ unchanged, and shifts B^ℓ(𝒜_ΦB − B′) only by (log|c_0√(1+s^2)|)′ = s s′/(1+s²) = O(u_*/L_s), the size of the error E allowed in (7.10). The Lean's own labelling is internally consistent and puts the growth on column 0: from coeff12/coeff21 the ray y = h x is invariant with rate 2F·(frame 1)_0·h/(1+ρ²), which at the reference values is 2F N_θ c_0√(1+s²)/(1+s²) = λ_0/√(1+s²) > 0 by eigen12, matching eigenvalue := referenceEigenvalue = λ(v) of (7.10).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 113,
-    "rect": [0.301675, 0.481433, 0.566503, 0.070479]
+    "rect": [0.302674, 0.480165, 0.564429, 0.071074]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The table is not one declaration; its four rows are spread over several, and every row is covered. Time row (1+h): native_time_power_le states Tg^i ≤ Q^(-(1+h)), the paper's T_g^{i_0} = O(Q^{-1-h} S_*^P) without the S factor; the slow part of the time derivative is the -Q^(-1) entry of chartLinear. Axial row (D = 1/2 - h): CoordinateAlgebra.D is that number and chartLinear puts Q^(-D h) on the z coordinate; nativeGraph does not depend on z. Radial row (1/2 + hκ_s): norm_scaledRadial_le gives Q^(-1/2) and native_radial_power_le gives radialCoefficient ≤ Q^(-hκ) with kappa = 1/100000 (the paper's κ_s = 10^-5, p. 63 (6.2) and p. 100); radialCoefficient is the paper's M_i = Λ^i Q^{d_r/2} of (6.6). The two are multiplied in the proof of nativeGraph_positive_jet_bound (line 95-97) into Q^(-hκ - k/2), which at k = 1 is the printed exponent and for k > 1 is slightly better than k(1/2 + hκ_s). Frame row (1/2): no declaration states a Q-power cost for the frame. It follows from stated ones: rotation x is rotationMap (liftXY x) by definition, liftXY (physicalLift h n p) = scaledRadial n p (liftXY_physicalLift), so the frame along the physical lift is rotationMap ∘ scaledRadial n, and norm_jet_comp_linear with norm_scaledRadial_le charges Q^(-1/2) per derivative against jets of rotationMap that are bounded on the annulus (the compactness bound used inside rotationMap_jets). I did not find this composite written out anywhere. Downstream the repository does not keep the rows apart: physicalLift_positive_jet_bound charges the worst row Q^(-k(1+h)) for every direction, and SharpPhysicalCarrier.derivativeCost = 1 + 3h/2 is the single cost carried forward. The paper uses (9.19) the same way, only as something its costs s_x, s_t dominate.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

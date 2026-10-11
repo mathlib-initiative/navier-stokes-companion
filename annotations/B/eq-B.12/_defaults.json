@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 146,
-    "rect": [0.181307, 0.833898, 0.687761, 0.026101]
+    "rect": [0.181818, 0.835537, 0.686374, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Three of the four clauses are literal. U = U_* + Λ⁻¹𝔲 is `affineProfile (NaturalAxisData.U j) (1/Λ) Λ u`, with `NaturalAxisData.U j η = 4*η + j` matching (B.1) U_* = 4η + j_0, and `pullback Λ F (X,η) = F (ΛX, η)` encoding Y = ΛX. Π = Π_0 + Λ⁻¹𝓘(g²Φ²) is `ProfileFamily.Pi = affineProfile P0 (1/Λ) Λ pressure` together with `IsScaledSolution.pressure_integral : P p = ∫_0^{p.1} (a p.2)²Φ(y,p.2)²` with a = g, which is exactly 𝓘(g²Φ²) in Y. g = φ_*/C is `realAmplitude = exp(Λ·realPhase h j σ)/C`, and `realPhase h j σ x = x ∫_0^1 realGradient h j σ (t x) dt` with `realGradient h j σ x = -L·H/(H²+σ²)` = ζ_* of (B.3), so realPhase = ∫_0^η ζ_*(w)dw and exp(Λ·realPhase) = φ_* of (B.3) exactly. The rewriting: the clause φ = φ_*Φ itself is not carried in Lean in that form; Lean's angular unknown is the C-normalized profile, `angularProfile (realAmplitude …) Λ phi = g·Φ = φ/C`, so the paper's φ = φ_*Φ is recovered by multiplying Lean's f by C. That this is the intended normalization is corroborated independently inside the same structure: `IsNaturalSolution.pressure_equation : partialY Pr p = (f p)^2` against the paper's (B.15) Π_X = φ²/C². The paper's 𝓘 is defined in unscaled-to-Y form on p.145; Lean integrates in the first (scaled radial) variable over [0, p.1], the same integral.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 101,
-    "rect": [0.211118, 0.475324, 0.577917, 0.042842]
+    "rect": [0.211765, 0.47686, 0.574332, 0.03719]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [101],
         "printed": [101],
-        "text": "Display 101.2, p. 101, in the statement of Proposition 9.6"
+        "text": "Display 101.2, p. 101, in section 9.1"
       },
       "region": "eq-p101-2@p101",
       "role": "key",
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The rewriting is purely notational, in three steps. (i) The Lean carries one real frequency parameter K where the paper writes the product km: phaseFactor K = K·i and carrier K Φ x = exp(K i Φ x), so carrier K Φ is the paper's e^{ikmΦ} exactly when K = km (HarmonicCalculus.lean:68,77). (ii) The amplitude of the Lean potential is inverseCarrier K • coefficient = (i/K) • (‖n_Φ‖²)⁻¹ • (n_Φ × t), which is the paper's C_m = i n_Φ × t_m /(km|n_Φ|²) term for term: same i, same cross product in the same order, same |n_Φ|² in the denominator, same single power of the frequency. NavierStokes.ActualCurrentParticularBounds.strippedPotential is that same expression as one definition body at the level of the actual construction. (iii) The Lean's realizedCoefficient a x + curlRemainder … is the paper's a_m = t_m + r_m, and it makes explicit what the paper leaves as prose (\"r_m is the curl correction\"): r_m = curl_* C_m, with no extra 1/km. In the Lean, curlRemainder is applied to `coefficient`, not to C_m: realizedCoefficient … x = a x + curlRemainder K … (coefficient …) x (CurlClassBounds.lean:603-605) and curlRemainder K … B x = (1/K) • (I • cylindricalCurl … B x) (CurlClassBounds.lean:269-271, restated as inverseCarrier K • cylindricalCurl … at :592-594); since by (ii) C_m = inverseCarrier K • coefficient = (i/K) • coefficient, curlRemainder K (coefficient) = (i/K) curl(coefficient) = curl((i/K) coefficient) = curl_* C_m. That is also what the paper forces: expanding curl_*(C_m e^{ikmΦ}) = (curl_* C_m + ikm n_Φ × C_m) e^{ikmΦ} and using ikm n_Φ × C_m = t_m (which is n_Φ × (n_Φ × t) = −|n_Φ|² t for n_Φ · t = 0, the content of normalCross_normalCoefficient, CurlClassBounds.lean:169-174) leaves exactly r_m = curl_* C_m, consistent with the paper's one-derivative gain r_m ∈ W_{α+1/2−κ_s} for t_m ∈ W_α. The Lean statement carries hypotheses the paper's display leaves implicit — K ≠ 0 (paper: m ∈ Z\\{0}), n_Φ ≠ 0 on U, smoothness of Φ and of the amplitude, and the transversality normalDot n_Φ (a x) = 0 (paper: \"For a transverse amplitude t_m\", n_Φ · t_m = 0 in the notation table). Also, the paper's curl_* acts on the full harmonic C_m e^{ikmΦ} whereas the Lean states the identity for cylindricalCurl applied to vectorPotential, which is by definition that same harmonic.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

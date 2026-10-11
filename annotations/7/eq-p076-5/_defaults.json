@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 76,
-    "rect": [0.340763, 0.574691, 0.318688, 0.047213]
+    "rect": [0.342246, 0.575207, 0.314439, 0.043802]
   },
   "target": {
     "pin": {
@@ -34,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Second line: `normal_baseAction` instantiated at β = B_s, ρ = s, F = F_0, B 0 = K, B 1 = N, g = g_0 gives B_s·((2F_0(1+s²)K_θ + ⟪K,g_0⟫)x - 2F_0 s N_θ y). The Lean keeps the extra term ⟪K, g_0⟫·x, which vanishes for the paper's reference shear because g_0 = |g_0|N ⊥ K — the orthogonality the paper itself uses on the next line ('e·(-K₀e) = sK·g₀ = 0') and which is the hypothesis `horth : ⟪B0 0, g0⟫ = 0` of `frame_coefficients_close`. With it, the Lean expression is literally 2B_sF_0{K_θ(1+s²)x - sN_θ y}. First line: no lemma states it; it is the radial entry of baseAction∘tangent, equal by unfolding both definition bodies (pack_zero, tail_pack) to -2F(-ρxK_θ + yN_θ) = 2F_0 sK_θ x - 2F_0 N_θ y, a definitional rewriting. Sign convention: in the frame actually built by `normalFrame`, B 1 = quarterTurn(B 0) = -N_a, so the y coordinate there is the negative of the paper's; `normal_baseAction` is stated for an arbitrary orthonormal Frame and so also covers the paper's (K, N).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 81,
-    "rect": [0.338969, 0.515132, 0.5301, 0.040179]
+    "rect": [0.340107, 0.514876, 0.528085, 0.034711]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (7.22), p. 81, in section 7.2"
       },
       "region": "eq-7.22@p081",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.78,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The identity (7.22) itself was not found in Lean: no declaration pairs the ambient amplitude t with its own equation to produce the exact energy balance, and in particular the shear-transfer term -g·(t_r(t_θ,t_z)) never appears as the energy derivative. The Lean route is an inequality in the diagonalized frame coordinates instead of an identity in ambient coordinates. Concretely: (i) the left side is supplied by `hasDerivWithinAt_norm_of_ne_zero`, derived from Mathlib's `HasDerivAt.norm_sq`, i.e. the same (1/2)(|t|^2)' = ⟪t,t'⟫; (ii) the right side is replaced by the upper bound ⟪w, coefficient w⟫ ≤ (λ - d_ref + error)‖w‖^2 (`FrameData.energy_bound`, built on `modal_energy_le` and `ViscousPropagator.coefficient_energy_le`, ViscousPropagator.lean:300), in which the shear enters only through the eigenvalue λ and through the frame coefficients ⟪B 0, g⟫ and ⟪B 1, g⟫ of `errorA`/`errorC` (PrimaryODE.lean:50, 57; `coeff11`, `coeff21`, MovingFrameODE.lean:158-160), not as g·(t_r t_tan); (iii) the bound is then integrated by Grönwall against the envelope (`norm_le_envelope_mul_integral_on`, used at PrimaryODE.lean:521 inside `solution_forward_bound`), while the two-sided growth of Lemma 7.4's pulse is obtained from `GrowingMode.scaled_growing_mode_bounds` (invoked at PrimaryODE.lean:465 inside `primary_bounds`), again without (7.22). The viscous term of (7.22) does appear as a formula, in `viscous_coefficient_nonneg`, which writes the paper's d = εk^2|n_Φ|^2 with the harmonic factor j^2 of (7.5), but only its sign is asserted there; the corresponding statement about the energy is the inequality `damping_dissipative`, not the equality -εk^2|n_Φ|^2|t|^2. Severity low: (7.22) is explanatory in the paper (it is referred to only in the Figure 5 summary on p. 7, \"Background shear amplifies the waves; viscous dissipation makes them decay\", and in no later proof), and the conclusions it motivates are proved in Lean along the inequality route above.",
+          "summary": "Lean uses a different formula here. Lean does not state this energy identity; it has an upper bound on the energy derivative in frame coordinates, where the shear enters through the eigenvalue λ, integrated by Grönwall.",
           "verdict": "deviation"
         }
       ]

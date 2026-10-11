@@ -1,0 +1,34 @@
+{
+  "id": "proposition-8.3/key/1.NavierStokes.PressureStream.streamGamma_eq_desired_sub_alias_global",
+  "location": {
+    "page": 92,
+    "rect": [0.131808, 0.827273, 0.739651, 0.019835]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PressureStream.streamGamma_eq_desired_sub_alias_global",
+      "line": 759,
+      "module": "NavierStokes.PressureStream",
+      "path": "NavierStokes/PressureStream.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean#L759"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PressureStream.streamGamma_eq_desired_sub_alias_global",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: streamGamma ... (streamPotential ... gd) p = gd p - physicalAlias ... (weightedSource gd) p / p.1: the identity Delta gamma = gamma_d - A_1 gamma_d of (8.14), at every point."
+      },
+      "region": "proposition-8.3@p092",
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 759,
+        "text": "theorem streamGamma_eq_desired_sub_alias_global {d a b M : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (v : E)\n    {γd : ℝ × E → ℝ} (hγ : ContDiff ℝ ∞ γd) (hs : RadialAlias.RadiallySupported a b γd)\n    (p : ℝ × E) :\n    streamGamma (physicalSpeed d M) v (streamPotential d a b M v γd) p =\n      γd p - RadialPullback.physicalAlias d a b M v (weightedSource γd) p / p.1"
+      }
+    }
+  }
+}

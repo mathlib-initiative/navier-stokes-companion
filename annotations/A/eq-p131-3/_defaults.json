@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 131.3",
+  "label": "Display 131.1",
   "status": "formalized",
   "location": {
     "page": 131,
-    "rect": [0.425315, 0.829628, 0.149418, 0.02723]
+    "rect": [0.426738, 0.831405, 0.144385, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,10 +12,9 @@
       "locator": {
         "physical": [131],
         "printed": [131],
-        "text": "Display 131.3, p. 131, in section A.3"
+        "text": "Display 131.1, p. 131, in section A.3"
       },
       "region": "eq-p131-3@p131",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.75,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. No declaration was found stating the paper's display in the variable r_I = I/(XH); the Lean carries the same first-order ODE in the shifted unknown q = (1-h)·r_I - 1 (the paper's Q_s). Two routine recoveries, both one line. (i) Directly: `I_hasDerivAt` gives I' = XH and X = exp y, so (XH)'/(XH) = 1 + (log H)' = 1 + l; the quotient rule on r_I = I/(XH) gives r_I' = I'/(XH) - r_I·(XH)'/(XH) = 1 - (1+l) r_I, which is the display. `releaseWeight_hasDerivAt` is the stated form of (XH)' = (1+l)·XH on the release interval, with l = profileSlope. (ii) Through the Lean's own unknown: with q as in `normalizedLag`, r_I = (1+q)/(1-h), and `momentCandidate_hasDerivAt` says that q' = -l - h - (1+l)q is equivalent to I' = XH for I = (1+q)XH/(1-h); substituting, r_I' + (1+l)r_I = [q' + (1+l)(1+q)]/(1-h) = [-l-h+1+l]/(1-h) = 1. Caveat: `releaseWeight` is built from the uncorrected profile `finalAngular d (y, 0)`, so the stated (XH)' identity is for that profile on y ≥ releaseStart; recovery (i) from `I_hasDerivAt` needs no such restriction.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

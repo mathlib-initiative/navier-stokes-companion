@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 4,
-    "rect": [0.31635, 0.588285, 0.36752, 0.02962]
+    "rect": [0.318717, 0.58843, 0.361497, 0.024793]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The axial clause is stated, two-sided and in the paper's own variable. `NaturalCore.coreVelocity_norm_at_origin` (NaturalCore.lean:420) states ‖coreVelocity h f V (t, 0)‖ = (1 - t)^(-A h) · j with A h = 1/2 + h and hypothesis 0 < j, i.e. |u^{(0)}| = j · τ^{-1/2-h} on the axis; by `coreVelocity_at_origin` (line 403) the vector there is ((1-t)^(-A h) · j) • coordinateVector 2, purely axial, so u_r = u_θ = 0 at that point and the norm is |u_z^{(0)}|. This is an exact identity with an explicit positive constant — an equality, hence a fortiori ≍ — stated in τ, not in q, and needing no profile bound: it is the Lean form of the paper's \"The axial lower bound follows from the nonzero axis datum\" (p. 8). `coreVelocity_axis_tendsto_atTop` (430) and `coreVelocity_speedUnbounded` (456) draw the divergence from it. The pointwise component identities are also stated for the whole core: `coreVelocity_axial` (323) gives u_z = q^(-A h) · U(X,η) and `coreVelocity_swirl` (370) gives u_θ = q^(-A h) · √(2X) f(X,η) on coreDomain, the paper's p. 7 display; the same exponent is carried as nominal data by `Scaling.coreVelocity q h = q^(-(1/2+h))` and by `axialExponent h = -A h`, `angularExponent h = -A h - 1/2` (the swirl u_θ/r, which times r ≍ q^(1/2) is q^(-1/2-h)). Three things are not supplied. (i) No core-wide uniform comparability: the paper's p. 8 restatement is in L^∞(C_τ) norms over the core region C_τ, ‖u_θ^{(0)}‖_{L^∞(C_τ)} ≍ ‖u_z^{(0)}‖_{L^∞(C_τ)} ≍ τ^{-1/2-h}, and I found no declaration bounding a sup over the core above and below; the Lean gives the exact power times an unestimated profile pointwise, plus the exact axis value. (ii) No azimuthal magnitude: nothing turns u_θ = q^(-A h)√(2X) f into ≍ τ^{-1/2-h}, which would need f bounded above and below on the relevant X-range (the paper's own p. 8 route is the circle r = √(2X_*)τ^{1/2}, z = 0, where q = τ, η = 0 and u_θ^{(0)} = E(X_*,0)τ^{-1/2-h}); the axis identity does not cover it, since u_θ vanishes there. (iii) No radial clause: |u_r^{(0)}| = O(τ^{-1/2}) has no counterpart declaration that I found. NaturalCore states no radial-component identity (the radial part enters only through `meridionalPotential`), and the slow expansion encodes the radial component as a flux at exponent 0 (`slowFlux = finiteProfile N h 0 f.flux`, with u_r recovered as flux/r in `slowVelocity_components` — matching the paper's p. 7 form r u_r^{(0)} = V_0), from which q^{-1/2} follows only after a bound on the flux profile, which I did not locate. The block is `different` rather than `equivalent` on (iii) alone — it is the one clause of the display with no Lean statement found behind it — and `low` because the use the paper makes of this display, the divergence of the speed, is exactly what `coreVelocity_speedUnbounded` proves.",
+          "summary": "Lean uses a different formula here. Lean gives the exact axis value |u_z| = j·τ^{-1/2-h}; the size of u_θ, the bound |u_r| = O(τ^{-1/2}) and comparability over the whole core are not stated.",
           "verdict": "deviation"
         }
       ]

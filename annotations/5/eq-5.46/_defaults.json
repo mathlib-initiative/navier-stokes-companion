@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 61,
-    "rect": [0.295518, 0.512187, 0.573558, 0.035833]
+    "rect": [0.212834, 0.512397, 0.655357, 0.033058]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (5.46), p. 61, in the proof of Proposition 5.5"
       },
       "region": "eq-5.46@p061",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.78,
@@ -29,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The quantity bounded is the same object — slowStage is literally χ(a_j q)·q^{2hj}·f_j (coefficientWeight spells the weight out) — with the same prefactor 2^{-j} and the same exponent q^{jh}, i.e. half of the 2jh weight is spent and half survives, exactly as in (5.46). Differences in encoding: (i) the paper's family 𝒟 = {q∂_q, ∂_X, ∂_η} with multi-index I is replaced by the full m-th Fréchet jet of the blown-up map F ∘ scaleMap q, which realises q∂_q in the q slot and plain ∂ in the inner slots; the rewriting between |𝒟^I| with |I| = m and ‖blownJet m‖ is the usual equivalence of a norm on the m-linear jet with the max over the m directional derivatives, up to the Stirling combinations relating (q∂_q)^k and q^k∂_q^k, and is bounded both ways by dimensional constants. (ii) Lean's index range 1 ≤ j, m ≤ j + 2 contains the paper's n ≥ max{2,|I|}: for m ≤ j + 2 Lean asks for more (also the two jets above the paper's threshold) and the paper's constraint n ≥ 2 is not imposed because the j = 0 stage is defined to be 0. (iii) Lean restricts to 0 < q ≤ 1 and w in a compact inner set K, where the paper states it for the stage on its support. (iv) The generic companion CutStageBounds, used by the diagonal machinery, keeps a loss q^{-L m} in the exponent (L = CutStageEstimates.cutLoss) and so is weaker than (5.46); it is the blown form in AdmissibleScales that reproduces (5.46) without loss.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

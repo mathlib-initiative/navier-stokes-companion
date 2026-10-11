@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 149,
-    "rect": [0.245441, 0.379802, 0.623627, 0.054805]
+    "rect": [0.248128, 0.390083, 0.618974, 0.042149]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -33,7 +33,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. Neither line of (B.21) is stated in the Lean; both are replaced by exact identities, and the error terms the paper estimates are carried symbolically instead. First line: ξ₀ = Λζ_* with ζ_* = -LH_*/(H_*²+σ_*²) is `realGradient` (NaturalAxisCoefficients.lean:51), and `gradient_identity` states H_* · ζ_* = -Lχ exactly, i.e. -H_* ξ₀ = ΛLχ with no error at all; `realAmplitude_logDerivative` identifies (log φ_*)_η with ξ₀ exactly. The paper's O_{σ_*}(√χ) arises only because its H_c is the actual transport coefficient rather than H_*; in the Lean that discrepancy is written out as H_c = Hs + (1/Λ)·d·u and the resulting term appears in `source_remainder_algebra` as the exact summand -d·u·κ pushed into the remainder, never bounded by σ_*^{-1}√χ. The estimate |H_*|/(H_*²+σ_*²) ≤ σ_*^{-1}√χ quoted in the paper right after the display is not in the repository: a search for any statement pairing √ with χ returned nothing of this shape. Second line: the Lean has no inequality for -H_c(log φ)_η; the extra piece (log Φ)_η of the full log-derivative is left in the remainder (the φEta/φ slot) and absorbed later by compactness, not by increasing Λ and Young's inequality. The .95 = 19/20 allocation of the paper's last step does surface, but one level up, at the level of S_q: `source_uniform_lower` (and the `EntranceProfile.source_lower` field it populates, NaturalEntrance.lean:1099) keeps 1/20 of ΛLχ to absorb the whole remainder, which is the same bookkeeping as the paper's 'allocating a total of .05ΛLχ'. The route differs; (B.17) is still proved.",
+          "summary": "Lean uses a different formula here. Lean states neither line: it has the exact identity -H_* ξ₀ = ΛLχ, keeps the term from H_c - H_* in a remainder, and absorbs (log Φ)_η later by compactness.",
           "verdict": "deviation"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 113.7",
+  "label": "Display 113.3",
   "status": "partial",
   "location": {
     "page": 113,
-    "rect": [0.387101, 0.755116, 0.22602, 0.027859]
+    "rect": [0.388235, 0.755372, 0.22139, 0.02314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [113],
         "printed": [113],
-        "text": "Display 113.7, p. 113, in the proof of Lemma 9.8"
+        "text": "Display 113.3, p. 113, in the proof of Lemma 9.8"
       },
       "region": "eq-p113-7@p113",
       "role": "key",
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. s_t is in the repository verbatim: `derivativeCost h = 1 + 3*h/2`, whose docstring calls it \"the manuscript's common Cartesian derivative cost for an oscillatory factor\". It is assembled from the same two pieces as in the paper — the (1+h) phase/graph cost and the h/2 from the carrier size — as the `hqpow` step of `carrier_geometric_bound` shows (Q^g * (Q^(-h/2))^m * (Q^(-(1+h)))^m = Q^(g - m*derivativeCost h)); the carrier bound k ≤ 2 Q^(-h/2) that the paper cites one line earlier is `carrier_upper`. s_x = 1/2 + h/2 has no counterpart: the repository defines one common cost and charges `derivativeCost h` for spatial Cartesian derivatives too. I searched the declaration index for a second cost definition and for the literal exponent and found none (see `searched`); `NavierStokes.SharpPhysicalCarrier.derivativeCost` is the only `derivativeCost` in the NavierStokes namespace.",
+          "summary": "Lean uses a different formula here. Lean defines only s_t = 1 + 3h/2 and charges it for spatial derivatives too; s_x = 1/2 + h/2 is not stated.",
           "verdict": "deviation"
         }
       ]

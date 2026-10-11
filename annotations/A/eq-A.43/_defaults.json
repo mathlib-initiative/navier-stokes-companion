@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 139,
-    "rect": [0.398513, 0.828647, 0.470387, 0.025896]
+    "rect": [0.39893, 0.828099, 0.469261, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The three normalizing scales are present, with the same powers of X_* and e_*, but with explicit extra constants. Instantiating physicalMoments_eq at R = patchRadius F XR = X_* and a = shapedPatchAmplitude F eta = e_* f(eta) (the instantiation used by HeatedOutgoing.patchRow) the Lean's row scales are 2 e_*^2 f^2, 2 X_* e_*^2 f^2 and R * sqrt(2R) * a = sqrt 2 * X_*^{3/2} e_* f, against the paper's e_*^2, X_* e_*^2, X_*^{3/2} e_*. The three discrepancy factors are: (i) the 2's in the first two rows, because the Lean rows integrate (A^2 - B^2)/X and A^2 - B^2 whereas the paper's corresponding quantities are the halved ones, Δ∫E^2/(2X) dX in (A.40) and the E^2/2 part of S(∞); (ii) the sqrt 2 in the third row, which the paper carries instead in its third derivative weight sqrt(2) x_*^{1/2} (next display) rather than in the normalizer; (iii) the powers of f(eta) = (1+eta^2)⁻¹, because the Lean's patch amplitude a includes the angular shape while the paper keeps f in the profile and normalizes by e_*^2 and e_* alone — the same convention difference as in eq-p139-6. All three factors are nonzero (f ∈ [1/2, 1] on eta ∈ [-1,1]), so the two normalizations differ by an invertible diagonal rescaling of the three rows; the Lean uses its own factors consistently, their exact reciprocals being normalizationFactors R a, which is what physicalMoments_cancel (line 571) divides by to cancel the heat debt.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

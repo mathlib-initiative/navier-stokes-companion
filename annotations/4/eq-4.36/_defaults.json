@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 39,
-    "rect": [0.269036, 0.141508, 0.599145, 0.025709]
+    "rect": [0.269519, 0.143802, 0.597584, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The same statement — one positive margin in four scalar cone inequalities, uniform over the parameter rectangle and the loop angle — but Lean encodes the last two components in the square-root form where the paper uses the quadratic form. Dictionary: with A = a_L, C = -b_L and t = C/A = -b_L/a_L, the paper's (4.35) quantities at (a_L, b_L, p_s) are v = A(1 + t^2) = TrueConeLoop.nominalSpeed, c = p_{s,1} - (b_L/a_L) p_{s,2} = p₁ + p₂ t, j = p_{s,2} + (b_L/a_L) p_{s,1} = p₂ - p₁ t, i.e. exactly Lean's nominalSpeed, P and J, matching the paper's (4.20). So the paper asserts (a_L, v-2, c-v, 2(c-v)^2 - (v-2)j^2) ≥ μ_L componentwise, while HasConeMargin ε asserts (A, v-2, c-2, coneBound(c,j) - v) ≥ ε. Components 1 and 2 are the same expression. Components 3 and 4 differ, and the two constants μ_L and ε are not the same number; the existential statements are nevertheless equivalent, by the equivalence the paper itself records as (4.22)/Lemma 4.5. Recovery, on the compact set K × ℝ/ℤ on which A, C, p₁, p₂ are continuous and A, C are 1-periodic in φ. Lean ⟹ paper: ε ≤ c - 2 gives 2 < c, so coneBound_le_parameter gives coneBound(c,j) ≤ c and hence c - v ≥ coneBound(c,j) - v ≥ ε, which is Ψ_3 ≥ ε; and ε ≤ v - 2 gives 2 < v, so true_cone_iff applied to 2 < c and v < coneBound(c,j) gives (v-2)j^2 < 2(c-v)^2, i.e. Ψ_4 > 0 pointwise, and Ψ_4 is continuous on the compact K × [0,1] so it has a positive minimum; take μ_L the least of ε and that minimum. Paper ⟹ Lean: Ψ_1 and Ψ_2 are already the first two Lean components; c - 2 = (c-v) + (v-2) ≥ 2μ_L; and v > 2 with Ψ_3, Ψ_4 > 0 gives v < coneBound(c,j) by the other direction of true_cone_iff, made uniform in (x,φ) by the same compactness argument that compact_periodic_trueCone_margins carries out. Ranges: Lean quantifies over all real φ with period 1 (the paper's φ ∈ ℝ/ℤ) and over x in an arbitrary compact K of a finite-dimensional normed space, in place of the paper's I × [-1,1], so the parameter range is more general. Like μ_L, Lean's ε is produced by the existential and so may depend on all the fixed input data.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

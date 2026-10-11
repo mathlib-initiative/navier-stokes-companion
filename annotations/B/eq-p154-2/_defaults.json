@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 154.2",
+  "label": "Display 154.1",
   "status": "partial",
   "location": {
     "page": 154,
-    "rect": [0.269647, 0.526324, 0.460929, 0.028895]
+    "rect": [0.272727, 0.527273, 0.454545, 0.02562]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [154],
         "printed": [154],
-        "text": "Display 154.2, p. 154, in the proof of Lemma B.7"
+        "text": "Display 154.1, p. 154, in the proof of Lemma B.7"
       },
       "region": "eq-p154-2@p154",
       "verdicts": [
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The Lean proves this step in increment form and with a larger constant. `logarithmic_error_from_stock` (ReferenceEndpointRate.lean:199-204) states |∂_η^n(log φ(X_i) − log φ(X_0))| ≤ (M+1)·R.finalTime, where R.finalTime = log(110/R.radius0) and R.radius0 = 4/Λ. Those are the paper's own values, not a specialization: p.150 reads \"Let X0 = 4/Λ, Xb = 100, and Xi = 110\" (text.txt:7827), so R.finalTime is exactly the paper's L_0 = log(X_i/X_0) and the two agree here. M bounds the η-jets of R.angularStock (= profileStockOne ∘ chart = X·angularLag/L, the paper's p_{1,r}), and `exists_reference_angularStock_bound` (ReferenceEndpointRate.lean:174-178) produces such an M uniformly in the amplitude choice q : Choice d Λ — the role p.154 gives M_k, \"the amplitude-independent bounds for p1,r, ns,r from Lemma B.4\" (text.txt:8032), Lemma B.4 being the parameter-norm bound for p_{1,r} on [X_0, X_i] independent of large C and of 0 < t1 ≤ t̄ (text.txt:7842-7843). DIRECTION OF THE COMPARISON. The printed display bounds a norm, ‖log φ(X_i)‖ ≤ ‖log φ_* + log Φ(4,·)‖ + ½(M_k+.8)L_0, and a bound on a norm never yields a bound on a difference, which is what ReferenceEndpointRate.lean:203-204 states; so the display as printed neither implies nor is implied by the Lean statement. The paper's step in the increment form it is derived from is ‖log φ(X_i) − log φ_* − log Φ(4,·)‖_{C^k_η} ≤ (½M_k + .4)L_0, and that implies the Lean's (M+1)L_0 increment bound (with M = M_k, since ½M_k + .4 ≤ M_k + 1 for M_k ≥ 0), not conversely. The Lean constant is therefore strictly larger than the paper's for every M ≥ 0, and the Lean statement is the weaker one. Two slacknesses account for the gap: `controlled_product_bound` (TransitionRamp.lean:604-605) proves |a·(−(d·z)/2)| ≤ d·M instead of the sharp d·M/2, so the ½ in front of M_k is dropped; and inside `logarithmic_error_from_stock` the post-interpolation slope term is bounded by |if n=0 then (2/5)·step else 0| ≤ 1 (lines 216-220) instead of by 2/5 = .4. The nearest thing in the repository to the paper's κ-damped slope is `logField_positive_jet_error_bound` (TransitionRamp.lean:628-634), which for n ≠ 0 gives the sharper M·(T + κ·y); it is still weaker than ½M_k·L_0, and it is not the lemma `exists_endpointLog_bound` calls, so it does not change the relation. The display's printed shape, with ‖log φ_* + log Φ(4,·)‖ on the right, is reached only after `jet_transfer` against L = log q.C + R.initialLog inside `exists_endpointLog_bound` (ReferenceEndpointRate.lean:253-271); that is why the first declaration is tagged `implies` rather than `states`. One encoding point, not counted as the defect: the Lean replaces the C^k_η norm by the per-order per-point family `∀ n ≤ N, ∀ η ∈ J, |iteratedDeriv n … η| ≤ …`. Severity low because Lemma B.7's conclusion (B.32) asserts only ‖ℓ_i‖_{C^k_η} ≤ B_k for some amplitude-independent B_k, and `exists_endpointLog_bound` supplies exactly such a B_k, namely B + (|log 220 / 2| + (M+1)|Y|); the larger constant enlarges B_k but the surrounding result is still proved.",
+          "summary": "Lean has a weaker form of it. Lean bounds the η-derivatives of log φ(X_i) − log φ(X_0) by (M+1)·L_0, a larger constant than the paper's (½M_k + .4)·L_0; the surrounding result is still proved.",
           "verdict": "deviation"
         }
       ]

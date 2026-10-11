@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 119,
-    "rect": [0.275181, 0.177119, 0.449644, 0.040249]
+    "rect": [0.275936, 0.17686, 0.445989, 0.03719]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The paper's display is a mean-value inequality for one mixed component, in the time direction only, with the right side equal to |t'-t| times the supremum of the single next time derivative over K_0 x [t,t']. The repository has no declaration stating it. The nearest counterpart is a step inside a proof: hLip at GenericEndpointExtension.lean:461, a Lipschitz bound for the whole n-th joint derivative tensor on an open convex set s, with constant max C 0 where C is any bound for the norm of the (n+1)-st tensor on all of s. The enclosing theorem's statement is only uniform continuity of the n-th tensor on s; it carries no constant and no increment. The two formulas do not follow from one another by formal steps. From hLip, taking two points with the same space coordinate and extracting a component gives the paper's left side bounded by |t'-t| times the larger quantity sup over s of the full (n+1)-tensor norm, not by the paper's right side. In the other direction the paper's time-only, single-component inequality does not give a Lipschitz bound in all space-time directions. Obtaining the display as written needs the mean-value inequality itself, which the repository uses from Mathlib inside proofs but does not state in this form. What the paper does with the display is proved: the next sentences only use that the right side is bounded independently of t, t', so each derivative is uniformly Cauchy as t increases to 1; the Lean gets this from actualJet_uniformContinuousOn through exists_limit_of_uniformContinuousOn (lines 481-482, 488-489), and OffplaneJetExtensions.extension_of_local_jets (line 113, using the extension at line 122) turns it into one-sided extensions that ActualEndpointInputs.endpointInputs_of_representations consumes for the potential, direct and pressure stage fields. In the Lean the step is applied to a bump-localized field on the strip (-1,1) x Space, not to G on K_0. I did not open rawStage_extension or extension_of_eqOn_sublevel, nor the slow-base path B mentions.",
+          "summary": "Lean uses a different formula here. Lean does not state this mean-value inequality; it proves uniform continuity of the full n-th derivative of a localized field, which gives the convergence as t → 1 the paper draws from the display.",
           "verdict": "deviation"
         }
       ]

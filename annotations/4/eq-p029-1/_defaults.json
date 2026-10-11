@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 29,
-    "rect": [0.225993, 0.125154, 0.548239, 0.025876]
+    "rect": [0.227807, 0.127273, 0.543316, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. NominalProfile.moments_propagate carries exactly this hypothesis pair, with four presentational differences, none of them a strengthening of the hypothesis. (i) The tail is `∀ x, a < x → U (x,eta) = V (x,eta) ∧ E (x,eta) = G (x,eta)`: a strict inequality where the paper writes X ≥ X_h, so Lean assumes agreement on one point fewer — a weaker hypothesis, and the integrals are unchanged by a single point. (ii) The pairing: the paper's (U_1,E_1) = (U_2,E_2) is split into the two conjuncts U = V and E = G, which is the same statement. (iii) Δ𝔪(X_h,η) = 0 appears as the equality of 5-tuples `moments U E a eta = moments V G a eta` in Debt = Fin 5 → ℝ, i.e. ΔM = ΔI = ΔJ = ΔS = ΔC_p = 0 at the joining radius, matching (4.15) component for component via NominalProfile.density. (iv) eta is a free variable rather than quantified over [-1,1], and no X_h > 0 is required; universally quantifying eta over Icc (-1) 1 recovers the paper's clause verbatim. The integral is Lebesgue over Ioc 0 r rather than ∫₀^X, which agrees for r > 0. Lean adds integrability hypotheses on Ioc 0 r, which Lemma 4.4's standing assumption that the five integrals of (4.15) define smooth functions supplies.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

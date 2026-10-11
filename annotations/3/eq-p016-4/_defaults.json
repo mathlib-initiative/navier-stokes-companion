@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 16.4",
+  "label": "Display 16.2",
   "status": "formalized",
   "location": {
     "page": 16,
-    "rect": [0.276683, 0.654431, 0.449174, 0.028853]
+    "rect": [0.274866, 0.657851, 0.448128, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [16],
         "printed": [16],
-        "text": "Display 16.4, p. 16, in section 3.5"
+        "text": "Display 16.2, p. 16, in section 3.5"
       },
       "region": "eq-p016-4@p016",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The force class is the paper's: ContDiff ℝ ∞ f, HasCompactSupport f and tsupport f ⊆ Ioi 0 ×ˢ univ is the zero extension of an element of C_c^∞(ℝ³ × (0,∞); ℝ³). The residual at ν = 1 is the paper's ℛ. The one visible difference is the left endpoint: CandidateProperties.navier_stokes is on Ioo 0 1, while the paper writes 0 ≤ t < 1. The t = 0 case is stated for the candidate's own fields in two pieces. localized_residual_zero_early (R3/ActualCandidate.lean:40) gives navierStokesResidual (R3CompactCandidate.velocity A B) (R3CompactCandidate.pressure P) t x = 0 for |t| < 3/8, hence at t = 0. CompactPositiveTimeSupport.eq_zero_of_nonpos (R3/ProblemStatement.lean:173) gives f (0, x) = 0. Instantiating both at t = 0 and rewriting with residual_at_viscosity_one gives ℛ(u,p) = f at t = 0, so the display follows from stated declarations by instantiation and logic, and the Lean clauses follow from the display by restriction. zeroBefore_residual (R3/ParabolicCalculus.lean:71) also states the identity for every t < 1, for the zero-extended fields, and it is the form the repository uses downstream (R3/ParabolicScaling.lean:138). No single declaration states the identity on Ico 0 1 for u, p; this is packaging across declarations. Not compared, because the display does not assert it: Lemma 10.3's support K × [0,2] (Lean has tsupport ⊆ Icc (1/16) (21/16) ×ˢ K' in PositiveTimeForce.force_tsupport_subset) and the way f is continued past t = 1 (Lean multiplies a globally smooth forcing by a time cutoff; the paper uses the series (10.11)).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

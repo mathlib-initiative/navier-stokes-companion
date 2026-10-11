@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 90.4",
+  "label": "Display 90.1",
   "status": "formalized",
   "location": {
     "page": 90,
-    "rect": [0.306438, 0.487806, 0.387525, 0.049861]
+    "rect": [0.308021, 0.490083, 0.382888, 0.045455]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [90],
         "printed": [90],
-        "text": "Display 90.4, p. 90, in section 8.2"
+        "text": "Display 90.1, p. 90, in section 8.2"
       },
       "region": "eq-p090-4@p090",
       "role": "key",
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean states the display as a scaling law for the compactified shifted primitive, and the display is its specialisation l = sqrt Q, u = Q^a (the repository's own instance runs the other way, l = Q^{-1/2}, u = Q^{-a}, via fieldOnPhysical; the two directions are the same identity). At e = 0 physicalCompact_pull (MeanChartCompatibility.lean:148) is the display: I_c(f_*)(z) = (u/l) I_{c,phys}(f_phys)(l z.1, C z.2), u/l = Q^{a-1/2}, with the phase multipliers tied by M • C v = (N l^d) • w, which radialFrequency_shift (:713) discharges for the actual cover map with radialFrequency = M Λ^i Q^{d/2}. At e = 1 streamPotential_pull (:189) is the display. For e = 2 with the phase there is no named declaration, but the display follows by formal steps only: R^e·(u f(lR, C·)) = (u/l^e)·(r^e f)(lR, C·) is algebra (the pattern of weightedSource_pull :179, and of the `he` step at :1214-1220 for general m), then physicalCompact_pull instantiated at the source r^e f and amplitude u/l^e (its two hypotheses, smoothness and radial support of r^e f, come from PressureStream.weightedSource_contDiff/_supported applied e times), then R^{-e} = l^e r^{-e}; the prefactor is u/l for every e. Separately, for the unshifted (M = 0) primitive the identity is stated for every e : ℕ and every real A (a = 2A + 1/2) by tensor_units_identity (SignedStressPrimitive.lean:910) and physicalSigma_scaled_fiber (LocalSignedRequest.lean:686). The Lean form is marginally more general than the display (arbitrary l > 0, real u, linear chart map C, exponent d). Not checked: that the plateau locations of the paper's χ_m(QR²/(2q)) agree numerically with interiorCutoff (a^d) (b^d); I checked only that the Lean cutoff is scale-covariant (interiorCutoff_power_scale is used in the proof at :166), which is what the display needs. The trailing \"= T_e f_*\" is the definition (8.6), not a new assertion; the repository has no single e-indexed, phase-carrying T_e object, only its e = 0 (physicalCompact / meanPressure), e = 1 (streamPotential) and unshifted general-e (sigma) forms.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

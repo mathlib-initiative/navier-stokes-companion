@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 159,
-    "rect": [0.332511, 0.808908, 0.536554, 0.023244]
+    "rect": [0.33262, 0.809091, 0.534482, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same inequality with the same U: coneBound P J = P + J²/4 − |J|√((P−2)/2 + J²/16) is exactly the smaller root in v of 2(P−v)² = (v−2)J² (checked: the roots are P + J²/4 ± |J|√((P−2)/2+J²/16)), and it is applied at P = p₁ + p₂·t, J = p₂ − p₁·t, i.e. the paper's P_c(t), J_c(t). Two rewritings. (i) Non-strict \"2 + ε ≤\" instead of \"> 2 + δ_L\": the margin is produced existentially with ε > 0, so 2 + ε ≤ U gives U > 2 + ε/2 and conversely. (ii) The compact family is indexed by the variance root r ∈ [0,R] rather than by the tilt amplitude μ ∈ [0,μ_max]: solvedTilt m d p r = extendedExpTilt m d (solveScale d p r) p, and μ ↦ scaledRoot d p μ is a strictly increasing bijection of [0,∞) with inverse solveScale (scaledRoot_strictMono, solveScale_spec, solveScale_unique), so the two index sets match after substitution, and R in uniform_tilt_cone_margin is universally quantified, so it may be taken large enough to cover [0,μ_max]. In the instantiation actually used (FamilyChoices, radius = √(3/aMin)) the range is the sub-family r ≤ √(3/aMin), which under the same substitution is a proper subset of μ ∈ [0,μ_max] because (C.7) is encoded as 3/aMin < tiltVariance d (p₂ x) maxAmplitude; it still contains the amplitude actually used (varianceRoot_bound).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

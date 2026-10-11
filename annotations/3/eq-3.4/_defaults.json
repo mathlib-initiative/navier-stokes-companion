@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 15,
-    "rect": [0.289863, 0.736677, 0.579038, 0.027183]
+    "rect": [0.291979, 0.736364, 0.576213, 0.023967]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (3.4), p. 15, in the statement of Theorem 3.1"
       },
       "region": "eq-3.4@p015",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.85,
@@ -29,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. Term by term the two agree, with the Lean asserting more in two places. (a) Derivatives: the paper bounds one mixed Cartesian partial ∂_x^α ∂_t^b at a time; the Lean bounds the operator norm of the full m-th iterated Fréchet derivative. Since the coordinate directions of SpaceTime = ℝ × Space are unit vectors, ‖iteratedFDeriv ℝ m f w‖ dominates |∂_x^α ∂_t^b f(w)| for every α, b with |α| + b = m, so the Lean clause gives the paper's for each m = |α| + b. (b) Exponent: the paper quantifies over integers N; the Lean quantifies over every real r ≥ 0 (the power is rpow), which includes the integers. The remaining items match: C depends on (m, r, X) only, exactly the paper's C_{α,b,N,X₁}; 'q ↓ 0' is the Lean's ∃ δ > 0 with the bound for all q < δ; '0 ≤ X ≤ X₁' is `radialEnergy w.2 / physicalQ h w ≤ X`, the lower bound being automatic because radialEnergy ≥ 0. In the converse direction the paper's bound returns the Lean's only up to a dimensional constant, so the two are equivalent up to constants and the Lean side is the stronger literal statement.",
+          "summary": "Lean has a stronger form of it.",
           "verdict": "faithful"
         }
       ]

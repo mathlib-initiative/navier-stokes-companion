@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 120,
-    "rect": [0.323472, 0.497845, 0.545602, 0.046449]
+    "rect": [0.326203, 0.499174, 0.541989, 0.039669]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (10.12), p. 120, in the proof of Lemma 10.3"
       },
       "region": "eq-10.12@p120",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.8,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The shape agrees — a power of b_j times a constant depending on j and the derivative order — but three things differ. (i) Lean's power is b^k / b^j, where k is the TOTAL order of the joint (t,x) derivative tensor; for |α| > 0 that is b_j^{|α|+m-j}, not the paper's b_j^{m-j}, and since b_j ≥ 1 it is a larger right-hand side than the paper writes. The paper's exponent is recovered exactly in the pure-time case α = 0, by BorelExtension.norm_iteratedDeriv_term_le with k = m. (ii) The paper's constant factors as C_{j,m} times ‖F_j‖_{C^{|α|}}; Lean's templateBound ha m j k is one unfactored sup, obtained from compact support by Classical.choose, with no exhibited dependence on any norm of a j. (iii) Lean's left-hand side is the localized term, carrying an extra spatial bump spatialCutoff m (equal to 1 on ‖x‖ < m+1), which is what makes the sup finite with no global bound on the jets; the paper gets finiteness instead from supp F_j ⊂ 𝒦. I did not check an implication in either direction between C_{j,m}‖F_j‖_{C^{|α|}} and templateBound ha m j k. Severity low rather than medium because the only use the paper makes of (10.12) — the 2^{-j} tail after the choice of b_j — is proved in Lean from this bound (localized_derivative_tail_bound, line 236).",
+          "summary": "Lean uses a different formula here. Lean's bound has an extra spatial cutoff on the left, an unfactored constant with no ‖F_j‖_{C^{|α|}}, and b_j^{|α|+m-j} (total derivative order) where the display has b_j^{m-j}.",
           "verdict": "deviation"
         }
       ]

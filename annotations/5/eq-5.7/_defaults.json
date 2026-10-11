@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 47,
-    "rect": [0.203982, 0.849607, 0.665478, 0.049455]
+    "rect": [0.205348, 0.850413, 0.662844, 0.046281]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "equation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Every piece of (5.7) is present, with two routine re-encodings. (i) The singular system is literal: `JetSystem` is ∂_ξ W + diag(0,0,2,0,3,1)·W/ξ = A₀W + A₁(∂_η W) + f with `diagonal = ![0,0,2,0,3,1]`, and `IsPositiveOrderSolution.equation` restates it for the actual solution field with `exponent` in place of `diagonal` (`diagonal_eq_exponent` proves the two agree). `equationRHS` is exactly f + A₀W + A₁∂_ηW. The axis condition W_n(0)=0 is `IsRegularSolution.axis_zero` (W 0 z = 0) and `IsPositiveOrderSolution.profiles_zero`. (ii) Components 5 and 6 of the Lean vector are `2*r*phi.radial` and `2*r*u.radial`, i.e. 2ξ∂_X φ_n and 2ξ∂_X U_n; with X = ξ² these are ∂_ξ φ_n and ∂_ξ U_n, the paper's entries. (iii) The paper's algebraic definition K_n = 𝒜_X(U_n) − U_n is carried in Lean by the differentiated average row X(∂_X U_n + ∂_X K_n) + K_n = 0 inside `ExpandedEquations`/`JetSystem` (row 3), together with `averageDefect u = average u − u`; `averageDefect_radial` shows the defect satisfies that row and `averageDefect_unique` shows the row plus smoothness forces k = averageDefect u, so the two formulations coincide. (iv) The last two entries of the Lean parameter vector are free variables q₄,q₅ rather than ∂_η of the last two components of W; `A1_high_parameters_irrelevant` shows A₁ annihilates them, so the product A₁∂_ηW_n is unaffected. The Lean differential form is stated only for r ≠ 0; the behaviour at the axis is carried by the equivalent integral equation, which is also how the paper uses it.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

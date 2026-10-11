@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 31.9",
+  "label": "Display 31.7",
   "status": "partial",
   "location": {
     "page": 31,
-    "rect": [0.388631, 0.846591, 0.223319, 0.041157]
+    "rect": [0.389305, 0.847934, 0.219251, 0.036364]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [31],
         "printed": [31],
-        "text": "Display 31.9, p. 31, in the proof of Lemma 4.5"
+        "text": "Display 31.7, p. 31, in the proof of Lemma 4.5"
       },
       "region": "eq-p031-9@p031",
       "relation": "contains",
@@ -33,7 +33,7 @@
           "role": "definition",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. Lean builds a different explicit threshold. The paper forms one closed expression in the three uniform constants, with two branches; Lean forms a pointwise four-branch maximum max 0 (max (2/c) (max (v/c) (4cv/d))) and then takes a finite upper bound B of its image on the compact K, setting p₀ = max 0 B (and P = p₀ + 1 in `compact_large_lag`). The branches correspond: the paper's (B_K+2)/c_K covers Lean's 2/c and v/c at once, since p ≥ (B_K+2)/c_K gives pc ≥ B_K + 2 > max{2, v} using v ≤ B_K and c ≥ c_K; the paper's 8B_K/γ_K dominates Lean's 4cv/d by a factor 2, since 8B_K/γ_K ≥ 8cv/G, the extra factor being what buys the margin γ_K/2 in eq-p032-1 rather than bare positivity. Lean's `max 0` branch has no counterpart in the paper's formula (the paper gets p > 0 from B_K ≥ 1). The surrounding assertion is still proved: `compact_large_lag` concludes the paper's statement, one P > 0 valid for every z ∈ K and every p₁ ≥ P.",
+          "summary": "Lean uses a different formula here. Lean builds a different threshold, an upper bound over K of a pointwise four-branch maximum, in place of this two-branch formula in B_K, c_K, γ_K; one P valid on all of K is still proved.",
           "verdict": "deviation"
         }
       ]

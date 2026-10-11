@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 130,
-    "rect": [0.258984, 0.465494, 0.610078, 0.040518]
+    "rect": [0.259893, 0.465289, 0.608299, 0.038843]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (A.11), p. 130, in section A.2"
       },
       "region": "eq-A.11@p130",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.88,
@@ -29,7 +28,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both clauses are stated, in the logarithmic radial coordinate rather than in the symbols I, X, H. Clause 1: by (4.15) I(X) = ∫_0^X H dx with H = √(2x)E (p24 symbol table, p28 display); substituting x = e^t, dx = e^t dt turns I(X_end) into ∫_{t≤Y} e^t √(2 e^t) E(t,η) dt and XH/(1−λ) into e^Y √(2 e^Y) E(Y,η)/(1−λ), which is exactly `physical_integral_endpoint` (its own docstring states the dictionary 'X = exp y and H = sqrt (2*X) * E'). The improper lower limit is handled by `history_from_ideal_prefix` (line 1284), which uses the (A.7) ideal prefix E = P f(η) e^{y/10} and contributes (5/8)·P·shape η. Clause 2: Lean integrates (E² − E_unedited²) over all of ℝ (`pressure_neutral`) or over 0..releaseStart (`pressure_interval_neutral`) instead of over 'the two bumps'; these agree with the paper's integral because the integrand vanishes off Ioo (releaseStart − 4, releaseStart) (`correctedAngular_unchanged`, line 1072, via `relative_support` ⊆ Icc (−3/20) (43/20)), which is the window holding the two width-.3 bumps centred three and one units before releaseStart. The 'end' is `d.releaseStart = d.flattenEnd + 30 log(1/λ)`, matching the paper's 30 log(1/λ) interval.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,0 +1,29 @@
+{
+  "id": "proposition-A.10/key/1.NavierStokes.TerminalEdgeFactor.profileTilt_contDiffAt",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalEdgeFactor.profileTilt_contDiffAt",
+      "line": 1336,
+      "module": "NavierStokes.TerminalEdgeFactor",
+      "path": "NavierStokes/TerminalEdgeFactor.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1336"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalEdgeFactor.profileTilt_contDiffAt",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ContDiffAt \\mathbb R \\infty (profileTilt C d y0) (\\eta, 0) for \\eta \\in [-1,1]: the ratio T_z/T_\\theta extends smoothly to the outer endpoint \\delta = 0."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1336,
+        "text": "theorem profileTilt_contDiffAt {C : ℝ} (hC : 0 < C) (d : TailData) (y0 : ℝ)\n    {η : ℝ} (hη : η ∈ Icc (-1 : ℝ) 1) : ContDiffAt ℝ ∞ (profileTilt C d y0) (η, 0)"
+      }
+    }
+  }
+}

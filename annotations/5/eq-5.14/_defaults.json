@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 51,
-    "rect": [0.27873, 0.145758, 0.590339, 0.094507]
+    "rect": [0.281283, 0.146281, 0.585819, 0.091736]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean states the same two decompositions with the bump sum packaged inside `repair`: unfolding `repairU`/`repairE` through `LocalizedMomentRepair.repair`, the corrections are literally ∑_{j : Fin 2} α_j(η)·b_j^U(R) and ∑_{j : Fin 3} β_j(η)·b_j^E(R), the coefficients being (B_U)⁻¹ and (B_E)⁻¹ applied to the η-dependent debt vector and smooth in η (ContDiffOn ℝ ∞ du (univ ×ˢ S)). Two encoding steps are needed. (i) In GlobalSlowProfiles the corrections are symmetrized in R to stay even: un = u n + evenCorrection du with (evenCorrection du)(R,η) = du(R,η) + du(-R,η), and for R ≥ 0 this equals du(R,η) because supp du ⊂ (a,b) with a > 0 (evenCorrection_nonneg); so on the paper's range R ≥ 0 the two agree. (ii) The paper takes E_n as the unknown and defines φ_n = (C/R)E_n; the Lean takes φ_n as the unknown, sets E := angularField C φ = (R/C)φ, and adds the correction to φ through `phiCorrection`, which is exactly the quotient C·(correction)/R and is proved to reproduce the prescribed E-correction for R ≥ 0 (phiCorrection_angular_nonneg). The paper's remark that at R = 0 the quotient is the smooth extension and φ_n = φ̃_n there is the content of phiCorrection's smoothness proof at w.1 = 0 and of exists_repaired_order's clause `|R| ≤ a → phin = phi n`.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

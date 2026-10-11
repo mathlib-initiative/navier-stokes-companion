@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 142,
-    "rect": [0.34852, 0.73342, 0.52094, 0.041565]
+    "rect": [0.348663, 0.734711, 0.518439, 0.038017]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (A.53), p. 142, in the proof of Proposition A.10"
       },
       "region": "eq-A.53@p142",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.8,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same formula after the substitution y' = log(s/q): Lean integrates in the physical variable s over Ioi s0 with measure ds/s, which is exactly dy'; the prefactor 2η/(q^D L) is packaged as logScaleDerivative h p (unfolding qAxial gives 2ηq/(q^D L) divided by q). Two encoding choices: (i) Lean's upper limit is +∞ where the paper writes 3 — the two agree because f' vanishes beyond the plateau y'=3, but the Lean statement does not itself record that truncation, so the identity with the paper's finite integral needs that vanishing; (ii) Lean writes the heat factor as physicalHeat C (1+h) rather than K(y'), the same quantity in the physical variable.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

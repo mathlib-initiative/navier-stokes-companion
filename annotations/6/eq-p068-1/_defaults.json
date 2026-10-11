@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 68,
-    "rect": [0.364038, 0.264786, 0.272081, 0.037342]
+    "rect": [0.365775, 0.266942, 0.26738, 0.033058]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [68],
         "printed": [68],
-        "text": "Display 68.1, p. 68, in section 6.3"
+        "text": "Display 68.1, p. 68, in the statement of Lemma 6.3"
       },
       "region": "eq-p068-1@p068",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Recovery: 'sup over (r,z,t) ≤ C' is encoded as '∃ C > 0, ∀ q x, ncard ≤ C', with C chosen before q and x, so the constant is independent of the point exactly as the paper demands ('a constant C, independent of the band and point'); the Lean additionally conjoins Finiteness of the counted set, which the paper's '#' presupposes. The paper's Γ is dropped in pointwise_count (counting all labels, hence at least as strong) and restored verbatim in number_of_relevant_labels_restrict, where restrict_count shows the intersection can only shrink the count. K_γ is encoded two ways: as pointwiseLabels (closed dyadic band support times the A-enlarged slow box, for every fixed enlargement A, covering the paper's 'fixed-factor enlargements' clause), and as the literal closed mask supports PhysicalWaveSum.labelRegion in labelRegion_card_le, which gives the explicit C = 2250; labelRegion_subset_pointwiseLabels shows the first contains the second for A ≥ 1. Lean also quantifies q and x independently rather than imposing q = q(z,t), which is more general, not less.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 121.3",
+  "label": "Display 121.1",
   "status": "formalized",
   "location": {
     "page": 121,
-    "rect": [0.270556, 0.446861, 0.459112, 0.041846]
+    "rect": [0.273797, 0.447934, 0.452406, 0.036364]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [121],
         "printed": [121],
-        "text": "Display 121.3, p. 121, in the proof of Lemma 10.4"
+        "text": "Display 121.1, p. 121, in the proof of Lemma 10.4"
       },
       "region": "eq-p121-3@p121",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean states the two ends of the paper's chain as one inequality (candidate_energy_dissipation_le): l2Sq u T + 2ν ∫_0^T dissipation ≤ (cumulativeForceNorm f T)^2, with cumulativeForceNorm f T = ∫_0^T ‖f(s)‖_2 ds = ℱ(T) and ν free, which is the paper's line at ν = 1. The middle member 2∫_0^t ℱ'(s)ℱ(s) ds is a separate lemma, integral_l2Norm_cumulative_eq_sq (∫_0^T 2·l2Norm f·cumulativeForceNorm f = (cumulativeForceNorm f T)^2), with ℱ' = ‖f(·)‖_2 justified by cumulativeForceNorm_hasDerivAt; candidate_energy_dissipation_le rewrites by that identity at IntegratedDissipation.lean:224, so the full chain, middle term included, does occur as written inside the proof. Two hypothesis-side differences I checked: the Lean restricts T to Ico 0 1 (the paper's 0 ≤ t < 1, the same range), and the bundle CandidateProperties carries energy_bounded (a uniform kinetic-energy bound), which the paper's Lemma 10.4 does not assume but instead concludes — the field is not used in this derivation (traced IntegratedDissipation.lean:148-179 and 209-244, where only smoothness, support, zero datum, divergence-freeness, the PDE and the force bound are used), so the sharp bound is not circular. Context, not a statement difference: candidate_energy_dissipation_le reaches only candidate_energy_estimates, which is used once, at NavierStokes/R3/Theorem.lean:79 (theorem_1_1_with_dissipation); nothing in the repository uses theorem_1_1_with_dissipation, so this display is proved but off the main theorem's path, which instead uses the Gronwall bound CompactEnergy.uniform_finite_energy.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

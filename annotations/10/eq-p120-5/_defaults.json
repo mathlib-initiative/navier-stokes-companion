@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 120.5",
+  "label": "Display 120.1",
   "status": "partial",
   "location": {
     "page": 120,
-    "rect": [0.240559, 0.603029, 0.519105, 0.063142]
+    "rect": [0.241711, 0.603306, 0.515508, 0.063636]
   },
   "target": {
     "pin": {
@@ -18,7 +18,7 @@
       "locator": {
         "physical": [120],
         "printed": [120],
-        "text": "Display 120.5, p. 120, in the proof of Lemma 10.3"
+        "text": "Display 120.1, p. 120, in the proof of Lemma 10.3"
       },
       "region": "eq-p120-5@p120",
       "role": "key",
@@ -35,7 +35,7 @@
           "role": "definition",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. Same device, a different formula. Lean takes no minimum over a constraint set: localScale j is an arbitrary natural above 2^j · boundSum j, produced by Classical.choose from the Archimedean property (exists_nat_gt), and boundSum j = Σ_{m<j} Σ_{k<j} templateBound m j k SUMS the template constants instead of maximizing C_{j,m} b^{m-j}‖F_j‖_{C^a}; the paper's b^{m-j} factor is not inside Lean's defining inequality at all, it is used afterwards through power_ratio_le (b^k/b^j ≤ 1/b for k < j). The paper's requirement b_j > b_{j-1} is then imposed separately by scale = DiagonalScale.doublingEnvelope localScale, which is strictly monotone and in addition at least doubles at each step (2 * scale j ≤ scale (j+1)) — a condition the paper does not ask for. The conclusion the paper draws from its choice, that the quantity bounded in (10.12) is at most 2^{-j}, is localized_derivative_tail_bound, but over the index range m < j and k < j (spatial window index and total joint derivative order) rather than the paper's a + m ≤ ⌊j/2⌋; both ranges exhaust every fixed order as j grows, which is all the tail argument needs. Lean also has no b_0 = 1 normalization: doublingEnvelope at 0 is max 1 (localScale 0).",
+          "summary": "Lean uses a different formula here. Lean takes any natural number above 2^j times a sum of the constants, not the minimum in the display, then forces the sequence to increase and at least double at each step.",
           "verdict": "deviation"
         }
       ]

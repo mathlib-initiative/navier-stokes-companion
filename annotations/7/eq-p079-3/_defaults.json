@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 79.3",
+  "label": "Display 79.1",
   "status": "partial",
   "location": {
     "page": 79,
-    "rect": [0.228327, 0.350665, 0.543569, 0.041847]
+    "rect": [0.228877, 0.352893, 0.540107, 0.034711]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [79],
         "printed": [79],
-        "text": "Display 79.3, p. 79, in the proof of Proposition 7.2"
+        "text": "Display 79.1, p. 79, in the proof of Proposition 7.2"
       },
       "region": "eq-p079-3@p079",
       "verdicts": [
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The block has two parts and the Lean supplies only the second. (i) The Duhamel representation z_m(v) = ∫_0^v V_m(v,w) g_m(w) dw is stated nowhere: grep of NavierStokes/ finds no occurrence of 'Duhamel' and no propagator/fundamental-matrix object for the pulse ODE, so there is no variation-of-constants identity. The Lean solution is instead characterised by the Volterra integral equation solution_integralEquation (u = x₀ + ∫ (Au + f)), and the bound is obtained from an integrating-factor energy estimate (ViscousPropagator.norm_le_envelope_mul_integral_on), not from a representation. (ii) The bound is stated, in the abstract form ‖z(v)‖ ≤ exp(((D+4C)/S)(v−a))·P(v)·K·(v−a): with K the source constant of |g_m| ≤ K·P and (v−a) ≤ L_s = O(S_*) this is exactly the paper's enlargement of b_0 to b_0+1 ('integration contributes L_s = O(S_*)'). The factors ε^α, √ζ and δ^{−a_0} are not in this statement; they sit in the source hypothesis K and are encoded downstream as WeightedClasses.majorant = C·ε^α·growth^p·w (WeightedClasses.lean:78), where StripData.growth n x = slow n * max 1 (delta x)⁻¹ (WeightedClasses.lean:50) — the product of the slow scale with the clipped inverse edge distance, not the maximum of the two — so that S_*^{b} δ^{-a} is absorbed into the single power growth^{b+a} by StripData.separate_powers_le_growth (WeightedClasses.lean:65: slow^p * (max 1 δ⁻¹)^q ≤ growth^(p+q)), and w = √ζ·P for a WaveClass. Severity low: what the paper's Step 2 uses afterwards is the bound and the differentiated ODE (7.20), not the integral representation.",
+          "summary": "Lean uses a different formula here. Lean does not state the integral formula for z_m; it states the bound in an abstract form, with the factors ε^α, √ζ and δ^{-a_0} carried by the source constant rather than written out.",
           "verdict": "deviation"
         }
       ]

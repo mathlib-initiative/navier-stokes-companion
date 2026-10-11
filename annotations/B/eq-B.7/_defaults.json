@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 145,
-    "rect": [0.333809, 0.702089, 0.535651, 0.049544]
+    "rect": [0.334759, 0.704959, 0.532343, 0.042149]
   },
   "target": {
     "pin": {
@@ -34,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. Same inequality, better constant. Dividing the Lean statement by squareDecay N = 1/(N+1)^2 and writing the antidiagonal of N as i + (N-i) turns it into ∑_{i=0}^{N} (N+1)^2/((i+1)^2(N-i+1)^2) ≤ 8, term for term the paper's left side. The paper's right side is C_sq = 8∑_{i≥1} i^{-2} = 8ζ(2) ≈ 13.16, so 8 ≤ C_sq and the Lean bound implies (B.7); the constant C_sq itself is never introduced in the repository (no match for Csq/C_sq anywhere under NavierStokes/), and the downstream algebra constant is correspondingly 64 = 8^2 (productWeightSum_le, line 298) in place of the paper's C_sq^2. The route also differs: the paper splits the sum at N/2, the Lean uses the pointwise bound squareDecay i * squareDecay j ≤ 2 squareDecay (i+j) (squareDecay i + squareDecay j) (squareDecay_product_le, line 108) together with the telescoping sum_squareDecay_le_two rather than the value of ζ(2). Both are statements about every N : ℕ.",
+          "summary": "Lean has a stronger form of it.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 1,
-    "rect": [0.249002, 0.69785, 0.619899, 0.023032]
+    "rect": [0.250267, 0.698347, 0.616835, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (1.1), p. 1, in the statement of Theorem 1.1"
       },
       "region": "eq-1.1@p001",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.88,
@@ -29,7 +28,7 @@
           "role": "equation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Term by term the two agree: ∂_t u is `temporalDerivative` (fderiv in the time slot applied to 1), (u·∇)u is `advection` (the spatial Fréchet derivative applied to u itself), Δu is the componentwise Euclidean Laplacian ∑ᵢ∂ᵢ∂ᵢu, ∇p is ∑ᵢ(∂ᵢp)eᵢ, ∇·u is ∑ᵢ∂ᵢuᵢ; the signs are the paper's (+ advection, − ν Δu, + ∇p = f) and ν multiplies only the Laplacian. One encoding choice: the paper says u, p are smooth on ℝ³ × [0,1) and satisfy (1.1) there, so the momentum equation is asserted at t = 0 with a one-sided ∂_t; `CandidateProperties.navier_stokes` imposes it only for t ∈ Ioo 0 1, because `temporalDerivative` is the two-sided `fderiv`, which at t = 0 would differentiate an arbitrary extension of a field whose smoothness (`velocity_smooth : ContDiffOn ℝ ∞ u (Ico 0 1 ×ˢ univ)`) is only one-sided. The missing slice is recovered by continuity: on the paper's reading the t = 0 instance of (1.1) is the limit as t ↓ 0 of the instances on (0,1), both sides being continuous on [0,1) × ℝ³ by the same smoothness hypothesis. The incompressibility and initial-value clauses are imposed on the paper's full range (divergence_free on Ico 0 1; zero_initial_velocity at t = 0). The Clay-form reference encoding in ComparatorChallenges/NavierStokes.lean writes the identical system as ∂_t v + (v·∇)v = νΔv − ∇p + f with a one-sided `derivWithin … (Ici 0)`, but it constrains the hypothetical global competitor, not the constructed fields.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

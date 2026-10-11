@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 29,
-    "rect": [0.300874, 0.260007, 0.568201, 0.026086]
+    "rect": [0.303743, 0.261983, 0.564448, 0.021488]
   },
   "target": {
     "pin": {
@@ -34,7 +34,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean inequality is (4.17) once parameterNorm is read as the paper's ‖·‖ (see eq-p029-3); the remaining differences are encoding. Checked term by term: left side, outputDifference has exactly the four components Q_s, N_s, p_{s,1}, p_{s,2}, and stocks_formulas shows these are (4.16) for Q_s, N_s and p_s = (XQ_s/L, XN_s/(LE)) of (4.11), with W = (X - 2DηM - d·M_η)/X as on p. 29; order k on the left, k+1 on both right-hand norms, as in the paper. Right side, fieldDifference is (ΔE, ΔU) = Δ(U,E) and historyDifference is the five-component Δm, with history the literal cumulative integrals of (4.15) and H = √(2x)E. The constant: Lean's ∃ C ≥ 0 is quantified before P, Q, P₀ and after k, h, X₀, X₁, μ, B, B₀, which is exactly the paper's \"C_k depends only on k, h, X0, X1, e_min, the C^{k+1}-norm of Π_ax, and a common bound for ‖(U_i,E_i,m_i)‖_{k+1}\" (μ = e_min via μ ≤ E on the band, B₀ = Bound (k+1) P₀ B₀, B = JetBound (k+1) on both profiles); the paper's a priori bound appears in Lean as an explicit hypothesis rather than only in the constant's dependence list, which is the same content. Both pressures use one P₀ = Π_ax, matching Π_i = Π_ax + C_{p,i}. h ∈ (0,1/2) matches 0 < h, h < 1/2. Smoothness: the paper assumes (U_i,E_i) smooth on (0,∞)×[-1,1] with the five integrals smooth, while Lean's SmoothOnBand asks only for η-smoothness of E, U and the five histories at each X in [X₀,X₁] — a weaker hypothesis, consistent with the paper's closing remark that no radial derivative of a difference occurs. No vacuity: under these hypotheses both sides are suprema of bounded sets, so Lean's sSup junk value is not in play.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

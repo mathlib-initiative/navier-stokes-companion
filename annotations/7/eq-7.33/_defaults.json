@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 84,
-    "rect": [0.383534, 0.679665, 0.485532, 0.029921]
+    "rect": [0.386096, 0.681818, 0.481006, 0.024793]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -33,7 +33,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same bound, written in the repository's class encoding. `WaveClass s P β f` unfolds (NavierStokes/WeightedClasses.lean:118,107,78) to: for every jet order m there are C ≥ 0 and p ∈ ℕ with ‖D^j f_n(x)‖ ≤ C · ε_n^β · growth_n(x)^p · (√(ζ x) · P n x) for all n, all x in the strip domain and all j ≤ m, where growth_n x = S_n · max(1, δ(x)⁻¹). Matching term by term with (7.33): C ↔ C_I; ε_n^β ↔ ε^{α−1} — the ε exponent is the parameter β, which `increment_wave_class` takes from its hypothesis `hR : MeanClass s β ((H⁻¹ R) j)`, i.e. exactly the paper's preceding display |D^I(d_Σ)_σ| ≤ C_I ε^{α−1} S_*^{b_I} ζ δ^{−a_I} (ζ-weight, exponent α−1), so β = α−1 at the instance the paper uses; the half-weight √ζ · 1 ↔ the paper's √ζ (the ζ of the numerator bound is replaced by √ζ, which is the whole point of the step); growth^p = S_n^p · max(1,δ⁻¹)^p ↔ S_*^{b'_I} δ^{−a'_I}. Two encoding gaps, both routine: (i) Lean carries one polynomial degree p where the paper carries separate b'_I and a'_I — `NavierStokes.WeightedClasses.MemClass.of_separate_bounds` (NavierStokes/WeightedClasses.lean:147) converts separate degrees p, q into the single degree p + q; (ii) Lean uses max(1, δ(x)⁻¹)^p where the paper writes δ^{−a'_I}, which agrees when δ ≤ 1 and is otherwise a larger majorant, so the Lean bound implies the paper's only on {δ ≤ 1}. `increment` is the paper's δa_σ: `increment H T R j = (H⁻¹.mulVec R) j / (2 * amplitudes H T j)` = (d_Σ)_σ/(2a_σ) of (7.31), with `increment_eq_inverse` (line 31) giving the amplitudes as √((H⁻¹T)_j). `increment_jets` is the same estimate uniform over the label index and localized to the carriers K n i, using the same `majorant`.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

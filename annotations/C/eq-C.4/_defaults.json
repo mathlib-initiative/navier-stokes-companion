@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 159,
-    "rect": [0.296451, 0.320729, 0.572614, 0.028125]
+    "rect": [0.297326, 0.322314, 0.569776, 0.02314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean tilts by cos θ where the paper tilts by sin θ'; the docstring of `expNormalizer` says so explicitly (\"using cosine instead of sine (a translation of the angular origin)\"). Recovery: put θ' = θ + π/2, so sin θ' = cos θ; the average is over one full period of a 2π-periodic function, which is invariant under translation of the origin (Mathlib `Function.Periodic.intervalIntegral_add_eq`, used in this same file at `normalizer_even`, NavierStokes/LoopVariance.lean:214). Nothing downstream uses the phase of the tilt, only its full-period averages, and the loop is reparametrized in φ later. The normalization (2π)^{-1}∫_0^{2π} and the domain of z (all of ℝ) agree exactly. I found no declaration anywhere in `SmoothLoop.lean` or `LoopVariance.lean` that uses `Real.sin` in the exponential family, and no formal lemma asserting the translation invariance of `angularMean`, so the sin→cos identification is a convention recovered outside the formal text.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

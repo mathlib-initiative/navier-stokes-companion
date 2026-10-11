@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 43,
-    "rect": [0.218819, 0.507465, 0.650246, 0.072957]
+    "rect": [0.134759, 0.509091, 0.733432, 0.065289]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [43],
         "printed": [43],
-        "text": "Equation (4.43), p. 43, in the statement of Lemma 4.9"
+        "text": "Equation (4.43), p. 43, in the proof of Theorem 4.6"
       },
       "region": "eq-4.43@p043",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The Lean states this display as nine separate theorems about a modulated witness `v` and the nominal witness `W`, with X_- = `d.modulation.left` and Y_1 = `(repairPatch W).right`, and the agreement is stated on both sides of the interval (X ≤ X_- as well as X ≥ Y_1) rather than only beyond Y_1 for the last two lines. Every listed component is covered except one: no declaration was found stating V_f = V_0 for X ≥ Y_1. The paper's V is the radial-velocity profile computed from the pair, and in Lean its carrier is `Profiles.W h`, which `profile_massFlux` identifies with `massFlux h X η (M p) (parameterPartial M p)`; `rows_outside` gives M_f = M_0 for X ≥ Y_1 and every η ∈ d.parameters, and `d.parameters` is open (used as `d.parameters_open` in the proof of `stocks_outside`), so differentiating that identity in η gives ∂_η M_f = ∂_η M_0 and hence W_f = W_0 there — the same argument `ActivationStocks.profiles_stocks_congr` (ActivationStocks.lean:833) already performs for the stocks. The clause is therefore recoverable from stated declarations but is itself stated nowhere I found. Two further encoding differences: `stocks_outside` carries the extra hypothesis `W.profiles.f p ≠ 0` (the stocks divide by f), which the paper does not write; and the Lean states the agreement of the stocks p_{s,1}, p_{s,2} rather than of the raw Q_s, N_s, these being related by p_{s,1} = X Q_s / L and p_{s,2} = X N_s / (L E).",
+          "summary": "Lean has a weaker form of it. Lean states every listed equality except V_f = V_0 for X ≥ Y_1, and has the stocks p_{s,1}, p_{s,2} (assuming f ≠ 0) in place of Q_s, N_s.",
           "verdict": "deviation"
         }
       ]

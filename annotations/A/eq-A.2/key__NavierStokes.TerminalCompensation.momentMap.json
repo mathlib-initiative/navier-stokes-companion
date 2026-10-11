@@ -1,0 +1,25 @@
+{
+  "id": "eq-A.2/key/04.NavierStokes.TerminalCompensation.momentMap",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalCompensation.momentMap",
+      "line": 319,
+      "module": "NavierStokes.TerminalCompensation",
+      "path": "NavierStokes/TerminalCompensation.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCompensation.lean#L319"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalCompensation.momentMap",
+        "kind": "def"
+      },
+      "relation": "defines",
+      "snippet": {
+        "line": 319,
+        "text": "noncomputable def momentMap (P : Patch) (lam : ℝ) (c : Coeff) : Coeff := ![∫ x, weightedChange P lam c (-1) x, ∫ x, weightedChange P lam c 0 x, ∫ x, x ^ (1/2 : ℝ) * correction P c x], with Coeff := Fin 3 → ℝ (line 21)"
+      }
+    }
+  }
+}

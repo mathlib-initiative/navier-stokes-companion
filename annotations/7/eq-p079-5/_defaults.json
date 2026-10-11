@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 79.5",
+  "label": "Display 79.2",
   "status": "partial",
   "location": {
     "page": 79,
-    "rect": [0.377525, 0.549863, 0.244732, 0.033446]
+    "rect": [0.379679, 0.552066, 0.238503, 0.028099]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [79],
         "printed": [79],
-        "text": "Display 79.5, p. 79, in the proof of Proposition 7.2"
+        "text": "Display 79.2, p. 79, in the proof of Proposition 7.2"
       },
       "region": "eq-p079-5@p079",
       "verdicts": [
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The display is the degree recursion of the Step 2 induction: with source jets of S_*-degree b_I and coefficient jets of degree c_J (order-dependent), the I-th solution jet has degree at most b'_I = 1 + max{b_I, max_{0<J≤I}(c_J + b'_{I-J})}. The Lean states only the case where one exponent m bounds every input jet of order ≤ N (K·S^m for the coefficient, w·K·S^m·W for the source) and concludes with exponent (m+1)(n+1) at order n. On that case the two agree exactly: b_I = c_J = m gives b'_0 = 1+m and b'_I = 1 + m + b'_{I-1} = (m+1)(I+1), so the Lean statement follows from the display by specialisation. The converse fails when the degrees vary with the order. Taking m to be the maximum of the input degrees (B's reduction) gives a larger exponent than the paper's, and since S ≥ 1 that is a weaker bound, so it does not give the display's \"at most\". Example I checked by hand: b ≡ 0, c_1 = 0, c_2 = 10 gives b'_2 = 12 from the display; norm_jet_solution_le_polynomial with m = 10, N = 2 gives 33, and the unresolved product form norm_jet_solution_le with N = 2, M = K·S^10 gives degree 1 + 2·11 = 23. Recovering the order-by-order recursion would need a Leibniz bound that tracks each order separately, and the only cross-term bound stated, norm_crossJet_le, takes one constant M for all coefficient orders and one B for all lower solution orders. So the order-dependent case of the display is not stated and does not follow by instantiating stated declarations. The surrounding result is unaffected: (7.14)-(7.15) assert only that some finite degrees b'_I exist (\"Constants and degrees may depend on M, I, and the prescribed source bounds\", p. 78), and the later mentions I found in the text layer (pp. 79-80 region, \"changes constants and polynomial degrees\") likewise need only finiteness, which the Lean exponent supplies. I did not trace every consumer of the Lean jet bound; the one I opened (ParticularWaveBounds.lean:139) supplies a single uniform exponent m+1.",
+          "summary": "Lean has a weaker form of it. Lean states only the case where one exponent m bounds every input degree, giving (m+1)(n+1) at order n; the recursion with degrees that vary with the order is not stated.",
           "verdict": "deviation"
         }
       ]

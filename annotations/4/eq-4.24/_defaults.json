@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 32,
-    "rect": [0.382185, 0.556675, 0.486879, 0.046232]
+    "rect": [0.382888, 0.557025, 0.484215, 0.042149]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The display only introduces notation for two closed rectangles. The Lean has no named set C_a(ε), C_b(ε); it writes the same rectangles inline, in the logarithmic edge-distance chart. In HasStrictDirectionCollar (ActiveAnnulusWeight.lean:853-864, used with K = Icc (-1) 1) the collar is `K ×ˢ Icc (0:ℝ) d`, with points (η, x). The functions evaluated on it are `leftChart (leftEdge W) (logStress …)` and `rightChart (rightEdge W) (logStress …)`. Unfolding leftChart, logStress = stress ∘ logPoint, logPoint (η,y) = (exp y, η) and leftEdge = log(activeLeft W) gives the point (X_a·e^x, η); the right chart gives (X_b·e^{-x}, η). So x ∈ [0,d] is X ∈ [X_a, X_a e^d], respectively X ∈ [X_b e^{-d}, X_b], i.e. C_a(d) and C_b(d) with the factors in the order (η, x) instead of (X, η). The repository carries out this rewriting itself (LeadingStressWeights.lean:284-285 via Real.exp_add, Real.exp_log; right_chart_eq at 377), and the paper states the same reformulation in the sentence after the display (0 ≤ log(X/X_a) ≤ ε, 0 ≤ log(X_b/X) ≤ ε). Both clauses (inner and outer) and the closedness of the collar (Icc 0 d, including x = 0) are covered. In (X, η) coordinates the outer collar also appears as BaseResidual.outerWindow (Ico, i.e. the collar intersected with X < X_b, which the paper also allows: 'we intersect the collar with {X_a < X < X_b}'). Remaining differences are notational: no ε-indexed named family (widths are existential d, or concrete innerWidth/outerWidth), and the side condition ε < log(X_b/X_a) is not a standing hypothesis. I did not verify that the Lean widths satisfy that side condition, and I took X_a = activeLeft W, X_b = activeRight W from the Lean's own use (physical_jet_bound on Ioo activeLeft activeRight), not from a separate check.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

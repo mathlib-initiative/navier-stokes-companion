@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 71,
-    "rect": [0.273789, 0.430106, 0.594393, 0.047178]
+    "rect": [0.274866, 0.429752, 0.592236, 0.047107]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "claim",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. Both branches exist, but as class lemmas with no harmonic side condition and no cutoff hypothesis, and the harmonic bookkeeping sits in a different place. `wave_cmul_wave` gives W_α·W_β ⊂ W_{α+β} and `WaveClass.bilinear_mean` (scalar form `wave_cmul_mean`) gives W_α·W_β ⊂ M_{α+β}, each from 0 ≤ P ≤ 1 and ζ ≤ 1 — the first without 'm+m' ≠ 0', the second without 'm+m' = 0' and without any temporal-cutoff hypothesis, because Lean's `MeanClass` is the ζ-weighted derivative bound alone and contains no ∂_θ = 0 or support clause, so the M-branch is proved for every wave product rather than only for the zero-harmonic one. The clause 'with harmonic m+m'' is encoded instead by the grading: `field_mul` makes a product of harmonic fields the convolution product in AddMonoidAlgebra (α → ℂ) ℤ, so harmonics add, and `carrier_add` adds the phase coefficients. The genuinely zero-harmonic statement of the second branch is `angularProduct_mem`: the angular mean (zero harmonic) of a product of two finite harmonic fields with W_α and W_β coefficients lies in M_{α+β}. Exponents α+β agree in every case; the weight improvement from √ζ·P to ζ matches the paper's ζ^{3/2}P_v ≤ √ζ P_v and ζP_v² ≤ ζ on p. 72.",
+          "summary": "Lean uses a different formula here. Lean proves both branches as class lemmas for any product of W_α and W_β, with no condition on m+m' and no temporal cutoff; the harmonic m+m' is tracked by the grading of the product instead.",
           "verdict": "deviation"
         }
       ]

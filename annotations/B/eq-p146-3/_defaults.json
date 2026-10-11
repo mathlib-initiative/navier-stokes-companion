@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 146.3",
+  "label": "Display 146.1",
   "status": "formalized",
   "location": {
     "page": 146,
-    "rect": [0.230275, 0.317372, 0.541404, 0.046794]
+    "rect": [0.231016, 0.314876, 0.537968, 0.044628]
   },
   "target": {
     "pin": {
@@ -18,10 +18,9 @@
       "locator": {
         "physical": [146],
         "printed": [146],
-        "text": "Display 146.3, p. 146, in the proof of Lemma B.1"
+        "text": "Display 146.1, p. 146, in the proof of Lemma B.1"
       },
       "region": "eq-p146-3@p146",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.82,
@@ -35,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Every factor of the display has a named Lean counterpart, but the display itself — the normalized double sum, after dividing by 𝔞_{Nβ} and after dropping the binomials by (B.8) — is nowhere formed as a single expression. The recovery: the Lean's mixedWeightSum ε ν α β is the un-normalized version of the same double sum, with ij = (i, α-i) and kl = (k, β-k), coefficient (β.choose k)·J₁ / radialDivisor ν α and radialDivisor ν α = (α+1)(α+ν) = N(α+ν), matching the paper's divisor exactly. The missing I₁ = i+1 of the paper's first fraction enters through weight_parameter_radial_shift, whose factor (i+1) is precisely I₁, and mixed_weight_term_le then bounds I₁J₁ / (N(α+ν)) by 1 using mixed_factors_le_divisor — the paper's 'the first fraction is at most one' — inside the same step rather than after displaying the whole quotient, and it pulls out 80/ε = 80/ρ. Dividing what remains by weight ε (α+1) β and using weight_eq_core_decay plus coreWeight_product_le (which absorbs the binomial, i.e. (B.8)) leaves exactly the paper's two decay quotients, with I₁+1 = i+2 and J₁+1 = α-i+1; shiftedProductWeightSum_le then bounds the radial sum by its (B.7) convolution at N = α+1 (dropping one nonnegative term) and the β-sum likewise, so the Lean's 64 replaces the paper's C_sq^2 and its total constant is 5120/ε against the paper's C_ρ. Differences from the paper as written: the normalized display is never written, the first fraction is bounded by 1 one step earlier, and the Lean constant is smaller. Lean's hypothesis is 1 ≤ r for r : ℕ, which covers the paper's ν = 1, 2 and more.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

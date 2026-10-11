@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 42,
-    "rect": [0.319833, 0.146517, 0.548344, 0.023766]
+    "rect": [0.322995, 0.146281, 0.544108, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [42],
         "printed": [42],
-        "text": "Equation (4.40), p. 42, in the statement of Lemma 4.9"
+        "text": "Equation (4.40), p. 42, in the proof of Theorem 4.6"
       },
       "region": "eq-4.40@p042",
       "verdicts": [
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The paper asserts, for every fixed k, an order-k η-jet bound on the stock difference p_N - p_0 of the modulated pair. For that pair the repository states only the k = 0 case: Localized.profile_stocks_rate (and the general adapter ModulatedStockBounds.profile_stocks_rate it applies) gives a sup bound C/n on both stock components over a compact set, for n above a threshold, together with 0 < (P n).f p. I found no declaration bounding an η-derivative of profileStockOne/profileStockTwo differences. The inputs for higher orders are stated for every order (field jets: localized_profile_eta_rates; history jets: actual_axisHistory_jets), and the abstract Lemma 4.4(ii) is stated for every k as SeedHandbackJets.profile_comparison_norm, but that lemma lives on its own Profile structure, is referenced by no file other than an import line in PaperAdditionalResults.lean, and is never instantiated at the modulated family. Instantiating it for k ≥ 1 would need a frequency-uniform (k+1)-jet bound B on the base and modulated curves over the closed rectangle and a uniform positive lower bound μ on the angular field, both compactness facts I found no declaration for in that format, plus an identification of its histories/outputs with ProfileHistories rows and ActivationStocks stocks that no declaration states. What Lean does state (k = 0) follows from the display. The k = 0 Lean proof also goes by a different route (Lipschitz constant of the stock map by compactness) rather than through the (4.17) shape. Severity low: the paper uses (4.40) only through P_0 in (4.41) on p. 42; the Step 3 bound on p. 43 is an order-0 fresh application of Lemma 4.4(ii).",
+          "summary": "Lean has a weaker form of it. Lean states only the k = 0 case, a sup bound C/N on p_N − p_0 for N large; the η-derivative bounds for k ≥ 1 are not stated.",
           "verdict": "deviation"
         }
       ]

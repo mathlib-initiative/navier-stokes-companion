@@ -1,0 +1,31 @@
+{
+  "id": "lemma-A.1/key/1.NavierStokes.ExponentialMomentMatrix.expBumpMomentMatrix_det_ne_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ExponentialMomentMatrix.expBumpMomentMatrix_det_ne_zero",
+      "line": 72,
+      "module": "NavierStokes.ExponentialMomentMatrix",
+      "path": "NavierStokes/ExponentialMomentMatrix.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ExponentialMomentMatrix.lean#L72"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ExponentialMomentMatrix.expBumpMomentMatrix_det_ne_zero",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The same hypotheses with `hl` dropped (intervals anywhere in ℝ): (expBumpMomentMatrix a β).det ≠ 0. Clause (ii), stated directly in the logarithmic coordinate rather than obtained by substitution.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 72,
+        "text": "theorem expBumpMomentMatrix_det_ne_zero {n : ℕ} (a l u : Fin n → ℝ)\n    (β : Fin n → ℝ → ℝ) (ha : Function.Injective a)\n    (hsep : ∀ i j, i < j → u i < l j)\n    (hcont : ∀ j, Continuous (β j)) (hnonneg : ∀ j t, 0 ≤ β j t)\n    (hnonzero : ∀ j, ∃ t, β j t ≠ 0)\n    (hsupp : ∀ j, Function.support (β j) ⊆ Set.Icc (l j) (u j)) :\n    (expBumpMomentMatrix a β).det ≠ 0"
+      }
+    }
+  }
+}

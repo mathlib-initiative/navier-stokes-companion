@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 40,
-    "rect": [0.399025, 0.55322, 0.201946, 0.02275]
+    "rect": [0.4, 0.552893, 0.197861, 0.020661]
   },
   "target": {
     "pin": {
@@ -18,10 +18,9 @@
       "locator": {
         "physical": [40],
         "printed": [40],
-        "text": "Display 40.4, p. 40, in the statement of Lemma 4.9"
+        "text": "Display 40.4, p. 40, in the proof of Theorem 4.6"
       },
       "region": "eq-p040-4@p040",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.72,
@@ -35,7 +34,7 @@
           "role": "claim",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The equality of the five moments at the join is stated and proved, but for a different profile than the paper's. The paper asserts it for (U_0, E_0) as defined by the plain splice of eq-p040-3, deriving it from 'The five equalities in Proposition 4.10(iii)'. Lean states it for joinedU/joinedE (line 443), which are the plain splice baseU/baseE plus a correction: actualDebt (line 412) is defined as the literal discrepancy of the five moments at matchFraction between F and the plain splice, and correctedU/correctedE add a local repair supported on the patch resetPatch = (e^{-6}, e^{-5}) that cancels it. So the Lean route does not assert that the splice already matches; it measures the mismatch and repairs it, under a hypothesis SmallDebt that the mismatch is small. The conclusion reached is the same equality of moments at the join radius, for the object that is then used downstream. Not checked: whether actualDebt is ever shown to vanish, and where joined_moments_at_match is used.",
+          "summary": "Lean uses a different formula here. Lean proves the five-moment equality at the join for the splice plus a local repair cancelling the mismatch (assumed small), not for the plain splice (U_0, E_0) itself.",
           "verdict": "deviation"
         }
       ]

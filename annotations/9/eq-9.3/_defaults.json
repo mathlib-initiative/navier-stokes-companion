@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 103,
-    "rect": [0.398848, 0.641224, 0.470216, 0.025482]
+    "rect": [0.362567, 0.640496, 0.504536, 0.022314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -33,7 +33,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean states the decomposition in three summands rather than two, and in the starred (common-chart) normalisation. `physicalResidual_decomposition` reads Q^(2A+1/2)·frame·(navierStokesResidual u P) = (Σ over labels of the wave sources) + meanGoodResidual + errors.total; `navierStokesResidual` (NavierStokes/ProblemStatement.lean:82) is ∂_t u + (u·∇)u − Δu + ∇p at viscosity one, i.e. the paper's ℛ of (3.1). The rewriting to (9.3) is: group the first two summands as 𝒢_*, call the third ℱ_*, and divide by Q^(2A+1/2) — exactly the scaling the paper introduces two lines below (9.3). The bare two-term identity also exists as `fullResidual_eq_good_add_excluded`, but there 𝒢 is defined as R − F (`fullGoodResidual`, CorrectionStep.lean:402), so that form is definitional, and its R is `fullResidual` (CorrectionStep.lean:396), which adds the negative virtual-stress divergence and the stored base error to the nonlinear residual instead of being ℛ itself. `Invariant.fullResidual_decomposition` is the same three-term identity instantiated at the actual cycle state (its proof opens with `change CorrectionStep.fullResidual … = _`, so the two `fullResidual`s are the same field).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

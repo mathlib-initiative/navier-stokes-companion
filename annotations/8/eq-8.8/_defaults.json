@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 90,
-    "rect": [0.362806, 0.790691, 0.503502, 0.028623]
+    "rect": [0.365775, 0.790909, 0.500238, 0.026446]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -33,7 +33,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The rewriting is β := α + p κ_s. Lean states the conclusion as membership in every class — `∀ β : ℝ, MeanClass … β (A f)` — rather than as the explicit rate ε^{α+pκ_s}; unfolding MeanClass (see eq-p090-5) at β = α + p κ_s gives exactly |∂^I A_e f| ≤ C ε^{α+pκ_s} S_*^{B} ζ δ^{-B} with one constant and one degree per finite derivative order, i.e. the paper's display with C_{j,I,p}, B_{j,I,p}. Conversely the paper's family over all integers p ≥ 1 gives every real β, because ε ≤ 1 makes the classes decrease in the exponent (MemClass.mono_exponent, WeightedClasses.lean:191) and α + p κ_s → ∞. The constants match: ChartScales.kappa = 1/100000 (ChartScales.lean:24) is the paper's κ_s = 10^{-5}; ε = ChartScales.epsilon h n = Q n ^ h (line 29) is the paper's ε = Q^h; the frequency is M = radialCoefficient h n = Λ^{i_0} Q^{d_r/2} (line 33) with radialExponent h = 2((1+h)ρ − hκ) (line 25), the paper's d_r = 2((1+h)ρ_g − hκ_s), and the one gain ε^{κ_s} per integration by parts enters through actual_inverse_frequency_bound (|M|⁻¹ ≤ B ε^{κ_s} S^q, GaugeAliasDecay.lean:429). The hypothesis matches too: PressureStream.pressureMass f s = ∫ r, torusAverage f (r,s) (PressureStream.lean:121) is ∫ R^0 ⟨f⟩_Y dR, the paper's condition at e = 0; the e = 1 case is meanClass_dividedAlias_superflat applied to PressureStream.weightedSource f = R·f, whose zero mass is ∫ R ⟨f⟩_Y dR = 0. Lean adds hypotheses the paper carries implicitly from §6 (periodicity in Y, support in the active shell, and nativeIndex h n ≤ index n + D, a lower bound on the common torus index i_0). As with (8.7) no e = 2 instance was found, which is harmless here: the only place the paper applies (8.7)–(8.8) at e = 2, Corollary 8.5, has a Y-independent source whose remainder A_2 is identically zero rather than merely flat.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

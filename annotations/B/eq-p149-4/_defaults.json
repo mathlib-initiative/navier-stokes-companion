@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 149.4",
+  "label": "Display 149.1",
   "status": "partial",
   "location": {
     "page": 149,
-    "rect": [0.316596, 0.532174, 0.367029, 0.033117]
+    "rect": [0.317647, 0.542975, 0.362567, 0.019835]
   },
   "target": {
     "pin": {
@@ -21,7 +21,7 @@
       "locator": {
         "physical": [149],
         "printed": [149],
-        "text": "Display 149.4, p. 149, in the proof of Proposition B.3"
+        "text": "Display 149.1, p. 149, in the proof of Proposition B.3"
       },
       "region": "eq-p149-4@p149",
       "relation": "states",
@@ -39,7 +39,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The display is an intermediate lower bound for S_q with the error terms exhibited (-Cχ - C_{σ_*}√χ - C/Λ) and the axis contribution split as -W_* - 10h. No declaration was found stating it: searching the index for any lower bound on `Sq h …` returned only the two 19/20-type bounds (`source_uniform_lower`, and the `source_lower` fields of `EntranceProfile` at NaturalEntrance.lean:1099 and of `Estimates` at NaturalExitBounds.lean:133), which are (B.17), the display's consequence, not the display. In place of the inequality the Lean proves the exact identity `Sq_coefficient_identity` / `Sq_reconstruction` (line 516): S_q = LΛχ + remainder, with every error the paper bounds left inside `sourceRemainder` and then controlled by compactness plus the uniform coefficient-space limit. The axis part differs in packaging and is slightly stronger in Lean: the paper bounds -W_* > 2.8 and |h(1-2ηU)| ≤ 10h ≤ .1 separately, giving -W_* - 10h > 2.7, whereas `base_source_lower` states the combined quantity -W - h(1-2ηU) > 2.9 on all of [-1,1]. The paper's parenthetical 'no division by χ is used near a zero of H_*' is matched in spirit by the Lean remainder, in which the clamp max(1/8, φ) and not χ sits in every denominator. Surrounding result (B.17) is proved, so this is a route difference, not a gap in the conclusion.",
+          "summary": "Lean uses a different formula here. Lean has no such inequality: it proves the exact identity S_q = LΛχ + remainder, controls the remainder by compactness and a uniform limit, and bounds the axis part as -W - h(1-2ηU) > 2.9.",
           "verdict": "deviation"
         }
       ]

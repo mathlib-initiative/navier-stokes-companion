@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 11,
-    "rect": [0.336588, 0.794852, 0.327049, 0.02377]
+    "rect": [0.337968, 0.795041, 0.322995, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The display's first clause is stated as a vector cosine wave by PrimaryFieldAssembly.real_vectorMode: (vectorMode κ Φ a x i).re = a x i · cos(κ·Φ(x)), i.e. w = a cos(phase) componentwise, with κ·Φ(x) in place of ξ·x + φ and a a real vector amplitude; that declaration carries no transversality clause, and the Lean nowhere freezes Φ to be affine, so the display is not written with a literal ξ·x + φ. The transversality clause is supplied elsewhere. OscillatoryCurl.wave_eq proves, under exactly the display's transversality clause (the hypothesis `htangent : ⟪phaseNormal Φ z, a z⟫_ℝ = 0`, i.e. a·ξ = 0 for ξ = k·∇ₓΦ), that the realized curl equals cos(k·Φ(z))•a(z) minus (sin(kΦ)/k)•curl(coefficient Φ a)(z). Recovery: freeze as the paper does — take Φ affine in x with k·Φ(x) = ξ·x + φ and a a constant vector. Then phaseNormal Φ is the constant ξ/k and `coefficient Φ a = normalCoefficient (phaseNormal Φ) a` is constant in x, so its spatial curl vanishes and wave_eq reduces to w = a cos(ξ·x + φ), the display. Conversely the display is wave_eq's leading term. The transversality clause also appears as a conclusion in CurlGeometry.curl_symbol_transverse (any amplitude realized as a curl is orthogonal to ξ) and as the hypothesis `dot n a = 0` of CurlGeometry.principal_symbol_realizes. PartitionedCovariance.wave is a related real-cosine formula used downstream, but it is not the display: its phase argument is mode·θ + phase(Y) rather than a three-dimensional ξ·x + φ, and its amplitude is a scalar profile rather than a vector a with a·ξ = 0.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

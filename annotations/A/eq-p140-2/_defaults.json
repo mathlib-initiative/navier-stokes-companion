@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 140,
-    "rect": [0.158229, 0.791221, 0.639007, 0.08073]
+    "rect": [0.159358, 0.793388, 0.634225, 0.073554]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. All four formulas are stated, in two pieces and in two coordinate conventions. (i) The I-line is the conjunction of two theorems: angularHistory_eq_power_sub_future gives I(X) = powerHistory(X) - ∫_X^∞ (H - H_pow), and powerHistory_identity gives (1-h)·powerHistory(X) = X·H_pow(X); dividing the second by 1-h > 0 and substituting yields the paper's I(X) = X H_pow(X)/(1-h) - ∫_X^∞ (H - H_pow) in one line. (ii) The S-line is energyHistory_eq_square_future verbatim. (iii) The Q_s and N_s lines are stated verbatim in the OutgoingHistories strand, in the log coordinate y with X = exp y (OutgoingHistories.X, line 102) and H = exp(y/2)·E (line 115): the Lean denominator exp(3y/2)·E is exactly X·H, axialExponent h = 1/2 - h is the paper's D, velocityExponent h = 1/2 + h is A, and coordinateFactor η = 1 - η² is d, so every constant, sign and derivative count matches. The two Q_s/N_s theorems carry the hypothesis that the point lies past the reset endpoint (where U = M = J = 0 and W = 1, lines 612-639), which is the exterior region the paper's proof is working in; I did not verify that the two regions are literally the same set (see not_traced). The I- and S-lines are in the HeatedOutgoing/radial-X strand, the Q_s/N_s lines in the OutgoingHistories/log-y strand. One normalization worth stating: in the OutgoingHistories strand both I and H omit a common factor √2 relative to the physical ones (docstring, OutgoingHistories.lean:15-17: 'I and J omit the common physical factor sqrt 2', the physical factors being XR for M,S and XR·√(2·XR) for I,J, and OutgoingHistories.H = exp(y/2)·E = √X·E against HeatedOutgoing.H = √(2X)·E at HeatedOutgoing.lean:39-40). The factor is common to the numerator and the denominator of Q_s's quotient ((1-h)I - DηI_η)/(XH) — I and I_η are both linear in I — so it cancels and the paper's Q_s is reproduced exactly; the docstring makes the same claim ('These factors cancel from both normalized lags').",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

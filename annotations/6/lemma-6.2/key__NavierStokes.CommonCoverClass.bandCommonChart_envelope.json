@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/key/1.NavierStokes.CommonCoverClass.bandCommonChart_envelope",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CommonCoverClass.bandCommonChart_envelope",
+      "line": 959,
+      "module": "NavierStokes.CommonCoverClass",
+      "path": "NavierStokes/CommonCoverClass.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverClass.lean#L959"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CommonCoverClass.bandCommonChart_envelope",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For |n - m| <= 4 and gap <= gapBound, EnvelopeJets r f e implies EnvelopeJets r (f o bandCommonChart D n m forward gap) (e o chart * commonChartCost D gapBound ^ r): clause (a) propagated to every derivative order r, with the cost built from coveringBound gapBound (norm_bandCommonChart_le, line 933)"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 959,
+        "text": "theorem bandCommonChart_envelope {V : Type} [NormedAddCommGroup V] [NormedSpace ℝ V]\n    (D : ℝ) {n m gap gapBound r : ℕ} (hnm : n ≤ m + 4) (hmn : m ≤ n + 4)\n    (forward : Bool) (hgap : gap ≤ gapBound) {f : SlowPoint × Plane → V}\n    (hf : ContDiff ℝ ∞ f) {e : SlowPoint × Plane → ℝ} (he : EnvelopeJets r f e) :\n    EnvelopeJets r (fun x => f (bandCommonChart D n m forward gap x))\n      (fun x => e (bandCommonChart D n m forward gap x) * commonChartCost D gapBound ^ r)"
+      }
+    }
+  }
+}

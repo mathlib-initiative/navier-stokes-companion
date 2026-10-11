@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 160.3",
+  "label": "Display 160.1",
   "status": "formalized",
   "location": {
     "page": 160,
-    "rect": [0.385595, 0.298543, 0.427295, 0.036167]
+    "rect": [0.388235, 0.299174, 0.223529, 0.02314]
   },
   "target": {
     "pin": {
@@ -18,7 +18,7 @@
       "locator": {
         "physical": [160],
         "printed": [160],
-        "text": "Display 160.3, p. 160, in the proof of Lemma C.1"
+        "text": "Display 160.1, p. 160, in the proof of Lemma C.1"
       },
       "region": "eq-p160-3@p160",
       "role": "key",
@@ -35,7 +35,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Lean replaces the asymptotic expansion by the exact factorization V = d²μ²·Q(μp) with Q := quadraticFactor, Q(0) = 1/2, Q analytic and even. The paper's display follows in two lines: V − ½d₀²μ² = d²μ²(Q(μp) − 1/2), and Q analytic at 0 with Q'(0) = 0 (by quadraticFactor_even) gives Q(s) − 1/2 = O(s²) locally uniformly, hence the remainder is d²μ²·O(μ²p²) = O(μ⁴p²), uniformly for bounded p as the paper asserts. No declaration stating a Big-O (Asymptotics.IsBigO) remainder bound for this variance was found; the Lean needs none, because the use the paper makes of the expansion — smoothness of the signed square root of V through μ = 0 with derivative d₀/√2 — is obtained instead from the analytic objects signedRoot s = s√(Q(s)) and scaledRoot d p μ = dμ√(Q(μp)) (signedRoot_contDiff, signedRoot_hasDerivAt_zero : HasDerivAt signedRoot √(1/2) 0, scaledRoot_hasDerivAt), and from the analytic inverse solveScale (solveScale_joint_contDiff).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

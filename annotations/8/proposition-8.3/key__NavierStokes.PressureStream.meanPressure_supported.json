@@ -1,0 +1,34 @@
+{
+  "id": "proposition-8.3/key/1.NavierStokes.PressureStream.meanPressure_supported",
+  "location": {
+    "page": 92,
+    "rect": [0.131808, 0.827273, 0.739651, 0.019835]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.PressureStream.meanPressure_supported",
+      "line": 398,
+      "module": "NavierStokes.PressureStream",
+      "path": "NavierStokes/PressureStream.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean#L398"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.PressureStream.meanPressure_supported",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: p_m vanishes outside the radial shell: the shell-support clause for the mean pressure (streamPotential_supported, line 451, is the same for Psi)."
+      },
+      "region": "proposition-8.3@p092",
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 398,
+        "text": "theorem meanPressure_supported {d a b M : ℝ} (ha : 0 < a) (hab : a < b) (hd : 0 < d)\n    (v : Plane) {f : Lift S → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hs : RadialAlias.RadiallySupported a b f) :\n    RadialAlias.RadiallySupported a b (meanPressure d a b M hab v f)"
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 98,
-    "rect": [0.348708, 0.279348, 0.302808, 0.14374]
+    "rect": [0.349733, 0.280165, 0.299465, 0.140496]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. A and B agree on every fact; they differ only on whether the change of profile family counts against this display. The Lean follows the display's template clause by clause. (1) Coefficients: `coefficients = (matrix a l u)⁻¹.mulVec d` with powers angularPowers = ![2, -2-2λ, -2λ] and axialPowers = ![1, 1-2λ]. The paper's row factors (1, 2a, -a) and (1, a) are moved into the right-hand side: angularDebt C d = (0, -P/(2C), J_z/C) and axialDebt C d = (0, -J_θ/C). That repackaging is matrix algebra, given C ≠ 0. (2) The sums over j = 0,1,2 and j = 0,1 are `repair` over Fin 3 and Fin 2. (3) The prefactor q^{-A} and argument r/√q are `scaleField ell U` at ell = √q, U = q^{-A} (MeanRankUpdate.lean:1159-1162, and modelLength/modelVelocity at :544-545). (4) The q-normalised targets are `normalizeDebt (√q) (q^{-A}) d` = (q^{2A} P, q^{2A-3/2} J_θ, q^{2A-1} J_z), which are the powers of (8.17) as read from the p. 94 image.\n\nWhat differs is the object being combined. The paper's η_j are the dilates a_j^{-1} η_0(x/a_j), a_j = e^{jd}, and A_θ, A_z are the explicit matrices with entries μ_p e^{jdp} written just above the display. Lean's profiles are `bump (cellLower a b j) (cellUpper a b j)`: translates of one cutoff on equally spaced mesh cells, all of the same width and all with peak value 1 (bump_at_center, :37). No d > 0 makes these a dilated family, so the Lean family is not an instance of the paper's. The matrix Lean inverts has unevaluated integral entries and is not the paper's A_θ or A_z. Hence the u_j, s_j and the functions Δv_phys, γ_{d,phys} are different functions from the paper's, and neither formula follows from the other by formal steps.\n\nSeverity is low. Lemma 8.7 is existential in the profiles, and its defining property (the five rows in physical variables) is proved for the Lean construction (physical_rows_on_patch :194, physical_rows_on_shaped_patch :1153); linearity in the targets is deltaVLinearMap (FiveRowRank.lean:348). On p. 98 the later text (Step 3 and Lemma 8.8) uses the lemma's properties, not the explicit coefficients; a text-layer search of pp. 90-110 found Δv_phys and γ_{d,phys} only on p. 98 (γ_{d,phys} also earlier, on p. 93). I did not read p. 99 onward as images. Lean also leaves the amplitude constant B free where the paper fixes 2^{1/2+λ} c_patch; that belongs to (8.24), not this display.",
+          "summary": "Lean uses a different formula here. Lean follows the same formulas, but its profiles are translates of one bump on equal cells, not the dilates η_j, so its u_j, s_j, Δv_phys and γ_{d,phys} are different functions.",
           "verdict": "deviation"
         }
       ]

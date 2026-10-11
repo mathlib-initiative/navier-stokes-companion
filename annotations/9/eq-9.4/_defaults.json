@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 103,
-    "rect": [0.356428, 0.718191, 0.512636, 0.064147]
+    "rect": [0.280214, 0.718182, 0.586888, 0.059504]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -33,7 +33,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. No single declaration carries the double sum; it is the composition of two identities. The outer sum over γ ∈ Γ is `fullGoodWaveResidual_grouped`, whose left-hand side `fullGoodWaveResidual` is literally 𝒢 minus its angular average. The inner sum over m is `block_expansion`, applied with J = modes x.coefficients.residualBand, which is legitimate by `source_support`; the two conjoin by rewriting under the Finset sum. Three encoding differences, all routine: (a) the Lean takes the real part of the complex harmonic sum, the coefficients being the realified `waveResidualCoefficients` of `HarmonicResidual.residualBlock` (HarmonicResidual.lean:1438, via `ofBlock`'s `realCoefficients`); (b) the exponent is m·(k_γ Φ_γ(x) + k_{p,γ}·θ), i.e. the Lean carries the integer angular frequency as a separate field and the paper's Φ_γ must be read as the full phase including the angular variable; (c) there is no Q^(2A+1/2) factor — the identity is homogeneous in 𝒢, so multiplying through gives the starred form. The two side conditions are stated: |ℋ_j| < ∞ holds twice over (coefficients are an `AddMonoidAlgebra … ℤ`, so finitely supported by construction, and `source_support` bounds the support inside Icc(−M, M) with M = x.coefficients.residualBand, a field of the coefficient data and so independent of both the label and the band n, matching \"ℋ_j depends on the finite construction but not on the band\"); 0 ∉ ℋ_j is `source_zero`.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 132,
-    "rect": [0.323564, 0.35819, 0.545507, 0.043906]
+    "rect": [0.325134, 0.360331, 0.541969, 0.038843]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The paper's formula occurs in Lean with the inner integrating factor already evaluated. Dictionary: tailShape = f_o, tailShapeDeriv = f_o', tailLogSlope = l (= -h + f_o'/f_o), tailRate = 1 + l, and the terminal interval is normalized to tail coordinate [0,3] (`normalizedLag_tail` shifts by tailStart, which is why the paper's upper limit 3 appears literally). At the lower limit y = 0 the Lean statement is the paper's formula verbatim: `tailDebt_source_formula` is tailDebt d = ∫_0^3 exp(∫_0^v (1+l)) · (f_o'/f_o) dv, and `tailLag_initial` identifies that with tailLag d 0. For general y, `tail_integrating_factor` gives exp(∫_y^v (1+l)) = exp((1-h)(v-y))·f_o(v)/f_o(y), so the paper's integral equals exp(-(1-h)y)·(∫_y^3 exp((1-h)v) f_o'(v) dv)/f_o(y), which is literally the body of `tailLag`. `tailLag_equation` and `tailLag_terminal` are the ODE Q_s' + (1+l)Q_s = -l - h (the paper's source, cf. \"The subsequent source -l - h\") and the terminal condition Q_s(3) = 0 (\"It vanishes at the endpoint and remains zero afterward\"); the integral representation above is exactly the backward solution of that initial value problem, which is why the paper's integrand carries +f_o'/f_o while the Lean ODE source is -l - h = -f_o'/f_o.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

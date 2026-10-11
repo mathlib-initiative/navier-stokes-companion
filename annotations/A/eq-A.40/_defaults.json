@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 139,
-    "rect": [0.291431, 0.52248, 0.577469, 0.044765]
+    "rect": [0.294118, 0.523967, 0.574074, 0.038843]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same inequality after three routine rewritings, all of which I checked term by term. (1) Factor 2: the paper's left-hand side carries E²/(2X) and the Lean's pressureDebt integrates squareChange/X, so the Lean quantity is twice the paper's; the bound is stated with an unspecified constant C_m on both sides, so the factor is absorbed. (2) Lower limit: the paper integrates over (0,∞) and the Lean over Ioi K, which agree because HeatTailEdit.switch K X vanishes for X below the switch radius, so squareChange vanishes there. (3) The paper leaves ∫_1^∞ x^{-2A-2} dx unevaluated; it equals 1/(2A+1), and this is exactly the denominator -tailDecay d true - (-1) = 2A + 1 appearing in nuConstant, with numerator tailSize d true = e_K² (= the paper's e_K²) and the K^q = K^{-1} giving the paper's 1/X_K. Derivatives: the paper's ∂_η^m is the Lean's iteratedDerivWithin n … (Icc (-1) 1) eta, taken in the same variable η on the same parameter interval, so no chain-rule reconciliation is needed at this level; the passage from ν-jets to η-jets happens inside etaDebt_jet_bound (line 692). Constants: the paper's C_m depends on m only, and etaConstant d true (-1) n depends on n and on the fixed TailData d, likewise not on K or η.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

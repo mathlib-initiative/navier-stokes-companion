@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 26,
-    "rect": [0.192343, 0.7058, 0.676559, 0.046194]
+    "rect": [0.193583, 0.706612, 0.67352, 0.043802]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The display gives the general solution of the radial equations (4.9): a one-parameter family in each row, with integration constants C_Q(η), C_N(η). The Lean has only the C_Q = C_N = 0 member. angularLag is (∫_0^X H S_q dx)/(X H(X,η)) and axialLag is (∫_0^X S_n dx)/X, where primitive is the integral from 0 to X and Profiles.angularSource is H·S_q. angularLag_equation and axialLag_equation state that this member solves (4.9) for X ≠ 0. What the Lean states follows from the display by setting the constants to zero, which is the paper's own next sentence. The converse is not stated: no declaration carries the constants, none says that every solution of (4.9) has the displayed form, and none states the paper's selection argument (a nonzero constant gives an X^-2 or X^-1 singularity). The two integrating-factor lemmas angular_lag_primitive_iff and axial_lag_primitive_iff are pointwise derivative equivalences only, and a grep shows they are used nowhere else in NavierStokes/. Passing from them to the family needs the step \"a function whose derivative is H·S_q on an interval equals a constant plus the integral\", which is a uniqueness-of-solution fact that no repository declaration states for these equations. The closest thing in the repository, NilpotentVolterra.eq_regularPrimitive_of_hasDerivAt (NavierStokes/RegularSingularIntegral.lean:27), is a uniqueness statement for a different equation (W' = g − (c/r)W with W(0) = 0, used only in PositiveAxisDifferential.lean:182) and has no free constant either. The paper never uses the C ≠ 0 members: the text right after the display sets both constants to zero, and the Lean's stress coefficients (LeadingStress.theta, LeadingStress.axial, lines 34 and 38) are built on the C = 0 lags.",
+          "summary": "Lean has a weaker form of it. Lean has only the member with zero integration constants; the general family with C_Q(η), C_N(η) is not stated.",
           "verdict": "deviation"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 71,
-    "rect": [0.4191, 0.142263, 0.162023, 0.039307]
+    "rect": [0.420321, 0.144628, 0.157219, 0.032231]
   },
   "target": {
     "pin": {
@@ -21,7 +21,7 @@
       "locator": {
         "physical": [71],
         "printed": [71],
-        "text": "Display 71.1, p. 71, after the statement of Proposition 6.6"
+        "text": "Display 71.1, p. 71, in section 6.4"
       },
       "region": "eq-p071-1@p071",
       "verdicts": [
@@ -37,7 +37,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same superposition, with the index convention flipped. The paper sums over an arbitrary finite-or-locally-finite family ν carrying maps ν ↦ γ_ν ∈ Γ and ν ↦ m_ν ∈ H_j; `WaveFamily` carries one amplitude per label–harmonic pair, `amplitude : WaveIndex H → LiftPoint → ℂ` with `WaveIndex H = BandLabel × Harmonic H`, so `WaveFamily.sum` is the sum already indexed by the pairs (γ, m). The rewriting is the paper's own next display: set A_{γ,m} := Σ_{ν in the fibre over (γ,m)} a_ν (a finite sum, by local finiteness) and the two sums agree by Finset.sum_fiberwise; no Lean declaration performs that collection (see eq-p071-2). Term by term the summand matches: a_ν ↦ `f.amplitude I` evaluated at the common-cover lift `commonLift h n d w`, k_{γ_ν} ↦ `ChartScales.carrier h n : ℕ` (a natural number, as the paper's k is an integer, and depending only on the band n of the label), m_ν ↦ `I.2.val : ℤ`, Φ_{γ_ν} ↦ `(f.carrier I.1).phase` at the physical lift, and `character κ t = exp(i κ t)`, so the summand is amp · e^{i k_n m Φ}. Two encoding choices: (i) `∑ᶠ` is a finite sum that is only locally the paper's locally finite sum — `masked_finsum_eventually` (PhysicalWaveSum.lean:489) shows it agrees near each point of `preterminal` with a finite sum over the labels active there, which is what the paper means; (ii) the Lean sum is ℂ-valued and reality (`representing a real wave`) is imposed not by conjugate symmetry of the family but by taking the real part in `vectorSum`, rather than being a condition on the a_ν. The harmonic index runs over the symmetric window `Finset.Icc (-H) H` instead of the paper's unspecified finite band-independent set H_j.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

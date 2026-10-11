@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 17,
-    "rect": [0.378002, 0.600394, 0.49106, 0.026107]
+    "rect": [0.376471, 0.603306, 0.491721, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The subtraction is literally the paper's: `nonbarPart f z = f z - mean f z.1`, with the slow point z.1 held fixed, and `mean_eq_integral` identifies `mean` (defined as the zeroth Fourier coefficient of the torus slice) with the unit-square integral ⟨f⟩_Y. The real-valued form of (3.9) is in the repository outright: `UniformFourierAlias.realCentered f z = f z - parameterMean f z.1` for ℝ-valued f on P × Plane, with every slow parameter held fixed, and `realCentered_zeroMean` states ∀ p, parameterMean (realCentered f) p = 0; `realCentered_eq_re_nonbar` (UniformFourierAlias.lean:499) is the bridge to the ℂ-valued `nonbarPart`. The only residual difference is that the vanishing-mean half carries a regularity hypothesis where the paper's ⟨f°⟩_Y = 0 is formal: `realCentered_zeroMean` assumes `ContDiff ℝ ∞ f` and `ParameterPeriodic f`, and `SmoothFamilyTorusInverse.nonbarPart_zeroMean` assumes `ContDiff` plus `Periodic`, while the single-slow-coordinate `FourierAlias.nonbarPart_zeroMean` (FourierAlias.lean:437) needs only `ContDiff ℝ ∞ f`, proved directly from `torusMean_sub` and `torusMean_const`. Those hypotheses hold for every field the Lean applies this to.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

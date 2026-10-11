@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/key/1.NavierStokes.EntranceAlignedBase.window_order",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.EntranceAlignedBase.window_order",
+      "line": 66,
+      "module": "NavierStokes.EntranceAlignedBase",
+      "path": "NavierStokes/EntranceAlignedBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L66"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.EntranceAlignedBase.window_order",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: activeLeft W < zeroEnd W H lo < cutoffInner < cutoffStop < windowCap: with X_a = activeLeft, X_- = zeroEnd this is X_a < X_-, and the radii are fields of W, H, lo, independent of n.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 66,
+        "text": "theorem window_order {lo : ℝ} (hlo : NominalConeAssembly.activeLeft W < lo) :\n    NominalConeAssembly.activeLeft W < zeroEnd W H lo ∧\n    zeroEnd W H lo < cutoffInner W H lo ∧\n    cutoffInner W H lo < cutoffStop W H lo ∧ cutoffStop W H lo < windowCap W H lo"
+      }
+    }
+  }
+}

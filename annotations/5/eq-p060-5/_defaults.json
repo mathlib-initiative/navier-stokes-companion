@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 60.5",
+  "label": "Display 60.1",
   "status": "formalized",
   "location": {
     "page": 60,
-    "rect": [0.290056, 0.804024, 0.420055, 0.070447]
+    "rect": [0.290909, 0.804959, 0.416043, 0.067769]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [60],
         "printed": [60],
-        "text": "Display 60.5, p. 60, in the proof of Proposition 5.5"
+        "text": "Display 60.1, p. 60, in the proof of Proposition 5.5"
       },
       "region": "eq-p060-5@p060",
       "role": "key",
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same content, written with the plain derivative instead of the Euler operator. The paper's first identity is the scale invariance of (q∂_q)^j under q ↦ c_n q; Lean states the equivalent chain rule ∂_q^n(χ(a·)) (q) = a^n (∂^n χ)(aq) (scaledCutoff_iteratedDeriv). The paper's uniform-in-n bound C_j is Lean's existential C in scaledCutoff_iteratedDeriv_bound / cutoff_jet_bound: the constant is quantified before the scale a, so it is independent of a (hence of n), which is exactly 'sup over n ≥ 1, q > 0'. The rewriting between the two forms: (q∂_q)^j = Σ_{k≤j} S(j,k) q^k ∂_q^k with Stirling numbers S(j,k), so |(q∂_q)^j χ(c_n q)| ≤ Σ_k S(j,k) q^k · c_n^k |χ^{(k)}(c_n q)|, and Lean's q^{-k} bound on ∂_q^k times q^k gives a finite a-independent constant; conversely Lean's q^{-m} form follows from the paper's C_j by q^m ∂_q^m = Σ_k s(m,k)(q∂_q)^k. Lean also quantifies over every real scale a ≥ 0 rather than the sequence c_n, which is a strictly larger supremum, and states the bound for q > 0 on a set S (cutoff_jet_bound) rather than all q > 0.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

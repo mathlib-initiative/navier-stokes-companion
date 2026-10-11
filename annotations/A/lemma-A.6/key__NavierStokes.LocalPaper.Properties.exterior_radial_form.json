@@ -1,0 +1,29 @@
+{
+  "id": "lemma-A.6/key/1.NavierStokes.LocalPaper.Properties.exterior_radial_form",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalPaper.Properties.exterior_radial_form",
+      "line": 51,
+      "module": "NavierStokes.LocalPaperHeat",
+      "path": "NavierStokes/LocalPaperHeat.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperHeat.lean#L51"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalPaper.Properties.exterior_radial_form",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: In the exterior, D w = (amplitude C h (1-w.1) r / r) • BaseResidual.angularVector w with r = √(2·radialEnergy w.2) and radialEnergy x = (x₀²+x₁²)/2: the field depends on t and (x₀,x₁) only. Clause (iii), axial independence as used downstream."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 51,
+        "text": "theorem Properties.exterior_radial_form\n    (hp : Properties h qstar Xa Xext C A D u p) {w : SpaceTime}\n    (ht : w.1 < 1) (hq : PhysicalWaveSum.physicalQ h w < qstar)\n    (hX : Xext ≤ AxisymmetricFields.radialEnergy w.2 / PhysicalWaveSum.physicalQ h w) :\n    let r"
+      }
+    }
+  }
+}

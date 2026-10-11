@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 127,
-    "rect": [0.259567, 0.380302, 0.609503, 0.044105]
+    "rect": [0.260963, 0.383471, 0.607229, 0.038017]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (A.1), p. 127, in section A.1"
       },
       "region": "eq-A.1@p127",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.85,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both halves of (A.1) are in the repository in full generality, but as two separate identities, never assembled into the matrix B. Translation half: weighted_translate_integral states ∫ e^{sy} f(y - y₀) dy = e^{s y₀} ∫ e^{sy} f(y) dy for an arbitrary profile f, an arbitrary shift y₀ and an arbitrary s, with no integrability hypothesis — with f = β, y₀ = c_j, s = s_i this is exactly the paper's entry (i,j) = e^{s_i c_j} b(s_i), and dividing row i by e^{s_i c_1} gives (b(s_i), e^{s_iΔ} b(s_i)) for a general β and a general Δ = c_2 - c_1. It is applied in that generality at AngularMomentReset.lean:574 inside pressure_integral_formula; bump_moment is its fixed-bump, Δ = 2 specialization. Determinant half: twoPointMatrix_det gives det !![w₁, w₂; x₁w₁, x₂w₂] = w₁w₂(x₂ - x₁) for arbitrary reals; the paper's B is the transpose of this with w_i = b(s_i) and x_i = e^{s_iΔ}, and det Bᵀ = det B, so the substitution reproduces b(s₁)b(s₂)(e^{s₂Δ} - e^{s₁Δ}) exactly, sign and order of the difference included. What is absent is only the assembly: no declaration writes the normalized 2×2 matrix B for a general β. The assembled object exists only at the two configurations the manuscript actually uses, both with Δ = 2 and a fixed bump profile — normalizedMatrix / normalizedMatrix_entry (row i of the moment matrix divided by exp(beta c i * center c 0), the paper's 'dividing row i by e^{s_i c_1}', giving entries rowMoment(α_i)·(1, e^{2·beta c i}) with beta c 0 - beta c 1 = λ) and AngularMomentReset.linearMatrix. The general un-normalized matrix is defined, as ExponentialMomentMatrix.expBumpMomentMatrix (fun i j => ∫ e^{a i t} β j t), but only its invertibility, not its 2×2 entries or determinant, is proved there. AngularMomentReset.linearMatrix_det is the paper's determinant with Δ = 2 and an extra overall factor 2, which comes from the second row being twice the moment, not from a different formula.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

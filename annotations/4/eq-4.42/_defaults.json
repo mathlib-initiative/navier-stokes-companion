@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 42,
-    "rect": [0.265435, 0.641305, 0.602743, 0.09513]
+    "rect": [0.270588, 0.642149, 0.596514, 0.090909]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [42],
         "printed": [42],
-        "text": "Equation (4.42), p. 42, in the statement of Lemma 4.9"
+        "text": "Equation (4.42), p. 42, in the proof of Theorem 4.6"
       },
       "region": "eq-4.42@p042",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. All three clauses of (4.42) are stated in Lean, up to a swap of rows 2 and 3 and a rescaling of the unknowns.\n\n**Left-hand column.** `physicalDensity` (FiveProfileMoments.lean:476) is written for U_f = G + A·u and E_f = A(x^b + e). I expanded each row at G = 0 with u_c = A·u, e_c = A·e, E_0 = A x^b, H_0 = √(2X)E_0:\n- Row 0 is u_c.\n- Row 1 is √(2X)e_c, the paper's row 3.\n- Row 2 is H_0u_c + √(2X)u_ce_c, the paper's row 2, with the bilinear term present in the formula.\n- Row 3 is u_c² − E_0e_c − e_c²/2.\n- Row 4 is E_0e_c/X + e_c²/(2X).\n\n`axisHistory_repair_sub` (ModulatedHistories.lean:941) states that the change of the five cumulative integrals at any X ≥ patch.right is exactly `physicalMoments`. That is the paper's \"the exact changes at Y_1 are\".\n\n**Middle term.** `physicalMoments_eq` (L638) and `normalizedMap_identity` (L356) give physicalMoments = physicalDebt(linearEquiv c + Q(c,c)). `physicalDebt` is linear (`physicalEquiv`, L512), so this is B(η)c + 𝒬_η(c,c) after the scaling α = A·c.1, ξ = A·c.2.\n\n**Right-hand term.** `actual_repair_family` (ModulatedHistories.lean:751) gives a coefficient curve with physicalMoments = `repairDebt` = −historyDifference at W.right, with jets O(1/N).\n\n**Instantiation.** `exists_witness` (ModulatedProfileAssembly.lean:488-516) calls this with G = 0, b = −1/2 − λ and A = xAmplitude, discharging the patch hypotheses by `nominal_patch_fields` (L207).\n\n**Differences, none in the formula.**\n- Row order: Lean uses (M, I, J, S, C_p), which is the order of the Δ𝔪_N display on p. 41; (4.42) itself swaps rows 2 and 3.\n- Bump placement: Lean puts the two u-bumps in the left half of the patch and the three e-bumps in the right half. This is one choice among those the paper's \"Choose…\" allows. For it the √(2X)u_ce_c integrand vanishes (`u_mul_e`, used at L543), so Lean's Q has entries only in the S and C_p rows.\n- Generality: Lean keeps a general constant background G and a general good exponent b; the display is the G = 0 case.\n\n**Not verified.** That `LocalizedMomentRepair.bump` is nonnegative and nonzero; that xAmplitude equals c_patch(1+η²)^{-1}; that `historyDifference` matches the paper's Δ𝔪_N entry by entry.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

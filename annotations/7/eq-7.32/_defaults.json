@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 84,
-    "rect": [0.257131, 0.521599, 0.611936, 0.026091]
+    "rect": [0.258824, 0.523967, 0.608279, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. All three assertions of (7.32) are stated in Lean, but as three separate theorems and in the Lean's own exponent bookkeeping rather than as one conjunction; no declaration was found that states the three together. The rewriting: the Lean `increment H T R j = (H⁻¹ R)_j / (2 · amplitudes H T j)` (SignedCovariance.lean:28-33, with amplitudes = √((H⁻¹T)_j)) is the paper's δa_σ = (d_Σ)_σ/(2 a_σ) with the Lean argument R playing the role of Σ/ε, so the paper's Σ ∈ M_α corresponds to R ∈ MeanClass β with β = α−1 — exactly the step proved by normalizedRequest_class. (i) signedVector_class then gives WaveClass s P (β+1/2) = W_{α−1/2} for √ε·δa_σ·mask·v, i.e. η_β 𝓛Σ, with `mask` the UnweightedClass-0 slow cutoff and P the pulse envelope; MeanClass/WaveClass in WeightedClasses.lean:115-120 carry the weights ζ and √ζ·P of the paper's M_α and W_α on p. 73 (ll. 914-916). (ii) physical_signed_cross_covariance gives 𝓑(W_0, 𝓛Σ) = Σ exactly (doubleAverage is the paper's ⟨⟨·⟩_θ⟩_Y of (7.23), and the symmetrized radial×tangent combination is the paper's 𝓑), with the extra standing hypotheses 0 < q ≤ Q N and SmoothCovariance.StrictCone on every active label — the Lean form of the paper's positive-coefficient representation from Proposition 7.5. (iii) masked_signed_square_class at B = α, κ = 1/2 takes hR at exponent B − 1/2 − κ = α − 1 and concludes MeanClass (2B − 2κ) = M_{2α−1} for mask²·ε·squareColumn, and assembled_signed_square identifies that quantity with the double average 𝓒(η_β 𝓛Σ); squareColumn H T R = H·(δa⊙δa), matching the paper's ε H(δa²). Both α and the Lean's β, B are arbitrary reals, so no generality is lost. Two packaging points: the Lean states (i) and (iii) per sign index j : Fin 2 and sums over σ elsewhere (the classes are closed under finite sums, used in signed_square_class), and (ii) is proved for the assembled slot system while (i) and (iii) are proved in the abstract CovarianceControl setting, so the three are not literally about one Lean object in one statement.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 26,
-    "rect": [0.278779, 0.440826, 0.590123, 0.079051]
+    "rect": [0.280214, 0.444628, 0.586888, 0.059504]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same five quantities, reached from the other end. The paper takes E as given and defines F = E/√(2X), H = √(2X)E; Lean takes `f` (the paper's F) as the profile's primitive field and defines E = √(2X)·f, H = 2X·f. Hence H = √(2X)E and F = E/√(2X) hold, for X ≥ 0 via `E_sq` (and at X = 0 Lean's forms stay defined where the paper's quotient does not). `l` has a named definition whose body is the paper's own regular form of it, the p.26 line `l = 1 + XF_X/F`: `ReferenceBounds.logSlope P p = 1 + p.1 * radialPartial P.f p / P.f p` (ReferenceBounds.lean:31). With Lean `f` = paper `F` and `H = 2Xf` (ProfileHistories.lean:317) this is 𝒟_X log H term for term: X·∂_X(2Xf)/(2Xf) = (f + X f_X)/f = 1 + X f_X/f. Unfolded, `l` also occurs in the ProfileHistories equations as `X · ∂_X log H`, equal to `X · radialPartial H / H` by `logH_radial_deriv` where H ≠ 0; what has no name of its own is the operator 𝒟_X = X∂_X, not `l`. W matches term for term with D = axialExponent, d = coordinateFactor, 𝒜_X(U) = Ubar, 𝒜_X(∂_η U) = average (parameterPartial U). H_c = Dη + dU is not given a name of its own: no declaration defining it was found; it occurs verbatim inline in `StressAlgebra.angularSource` / `axialSource` and in the ProfileHistories equations.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

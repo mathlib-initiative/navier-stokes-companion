@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 123.4",
+  "label": "Display 123.3",
   "status": "formalized",
   "location": {
     "page": 123,
-    "rect": [0.305345, 0.389932, 0.390288, 0.074699]
+    "rect": [0.305882, 0.390909, 0.387166, 0.068595]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,10 +12,9 @@
       "locator": {
         "physical": [123],
         "printed": [123],
-        "text": "Display 123.4, p. 123, in the proof of Lemma 10.5"
+        "text": "Display 123.3, p. 123, in the proof of Lemma 10.5"
       },
       "region": "eq-p123-4@p123",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.92,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Term for term identical: coefficient 1 on A_R^2, coefficient 1/2 on E_R', 1/2 on both the Laplacian and the transport term, 1 on the pressure term, and the transport field in the third term is v (the second solution), as in the paper. Two routine rewritings. (i) Sign convention: the paper sets w = v - u and π = P - p, the Lean uses w_L = u - v and π_L = p - q, so w_L = -w and π_L = -π; every term of the identity is jointly even in (w, π) — the first three are quadratic in w, and the fourth is bilinear in (π, w) — so the identity is unchanged. (ii) The Lean states it for an arbitrary smooth compactly supported scalar χ rather than only for χ_R = φ_R^8; instantiating χ := ComparisonCutoffs.weight R (verified to be cutoff R ^ 8 with cutoff R x = φ(x/R)) gives the paper's display. Lean's weightedEnergyRate is shown to be the derivative of weightedEnergy by weightedEnergy_hasDerivAt (line 74), so (1/2)*weightedEnergyRate is the paper's (1/2)E_R'.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

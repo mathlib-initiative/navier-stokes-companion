@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 87,
-    "rect": [0.277123, 0.623189, 0.591951, 0.025482]
+    "rect": [0.278075, 0.62562, 0.590117, 0.019835]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [87],
         "printed": [87],
-        "text": "Equation (7.41), p. 87, after the statement of Corollary 7.8"
+        "text": "Equation (7.41), p. 87, in the statement of Corollary 7.8"
       },
       "region": "eq-7.41@p087",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. For the constructed fields the Lean states the display in pieces, on the same domain as the paper.\n\nAlgebraic part. incrementTensor_split (NavierStokes/SignedMeanGain.lean:419, via covariance_increment_split :154) gives C(U+V) - C(U) = B(P,T) + signedRemainder. signedRemainder_exact (NavierStokes/LabelSumBounds.lean:802) rewrites the remainder as B(U-P,T) + B(U,K) + C(T+K), which is B(E, L^as Sigma) + B(U,R) + C(V) under P = W_0^as, E = U - P, T = L^as Sigma, K = R, V = T + K. These need only a SignedFamily and Assembly (angular continuity), no NativeData. This is the identity used on the actual path in CrossBasedMeanComposition.signed_mean_gain_of_cross_defects (NavierStokes/CrossBasedMeanComposition.lean:140, lines 167-183).\n\nSigma substitution B(W_0^as, L^as Sigma) = Sigma.\n- family_cross_eq (NavierStokes/ActualSignedMeanBinding.lean:644) identifies crossTensor with actualCross.\n- requested_cross_factor (:442) proves, on every band n and every x in the actual strip domain, meanBar(actualCross 0 i.succ) n x = partitionFactor * requestedStress.\n- partitionFactor_eq_one (NavierStokes/ActualPrimaryCovariance.lean:508) gives partitionFactor = 1 whenever physicalScale n x <= Q N, N = (choice B N0).prepared.N. It has no band hypothesis.\n- requested_cross_tail (:463) and family_requested_cross_tail (:655) package this for n >= N+1 via physicalScale_tail (ActualPrimaryCovariance.lean:527).\n\nWhy this is the paper's domain. p. 64: labels are l >= l0 (6.8), and the active part of each band has 0 < q < q_big <= 2^(-l0). chi_l is supported in q/Q in [1/2,2], so the paper's truncated squared partition sums to one exactly for q < 2^(-l0). The Lean labels likewise have band >= N (BaseChartJets.CellIndex, NavierStokes/BaseChartJets.lean:825), Q n = 2^(-n), physicalScale n x = Q n * coordinateQ (CorrectionInitialization.ActualPrimary.physicalScale, NavierStokes/CorrectionInitialization.lean:5176), and dyadicMask m is supported on (Q m / 2, 2 Q m) (SquaredPartition.dyadicMask_support, NavierStokes/SquaredPartition.lean:458). Under N = l0 and physicalScale = q, the hypothesis physicalScale <= Q N is the paper's q <= 2^(-l0). So (7.41) follows on the paper's domain by combining the declarations above with linearity of meanBar.\n\nWhat the Lean adds. The Lean strip runs over all bands n in N, so physical scale goes up to 2, beyond the paper's q_big. There the partition over labels of band >= N is incomplete, and the Lean states requested_cross_defect (:475): the difference is -missingWeight N (physicalScale n x) * requestedStress. The defect is kept as CrossBasedMeanComposition.crossDefect (:26) and shown to lie in every MeanClass exponent because it vanishes for n >= tailStart = N + 1 (SignedCrossDefectClass.residual_defects_all_exponents_of_primitive, called at CorrectionAnalyticStep.lean:582; cross_tail supplied at ActualCyclePreservation.lean:599). Those points have physicalScale > Q N: for n <= N-1 this holds because coordinateQ > 1/2 on the strip, and on band N it is the part with coordinateQ > 1. They lie outside the paper's domain, so this is extra Lean content, not a missing part of the display.\n\nEncoding points, unchanged:\n- Lean's bilinearCovariance is the theta-average alone, and the Sigma identity is stated after meanBar.\n- The Lean algebraic identity is for the full 3x3 tensor; the Sigma identity is for entries (0,1), (0,2).\n- The Lean Sigma is requestedStress / physicalSigma built from the state's theta and axial residuals, for arbitrary context and state, not an arbitrary Sigma in M_alpha.\n- The Lean algebraic identity needs no class hypotheses.\n\nOn the earlier pairing: SignedMeanGain.native_family_cross (SignedMeanGain.lean:1284) takes B : SignedMeanGain.NativeData G, which no_legacy_nativeData (ActualSignedMeanBinding.lean:69) proves empty for ActualInitialization.geometry, so it must not be cited as stating the Sigma substitution. The BandReindexedSignedMeanGain and CorrectionStep native theorems take the same structure. ActualWaveRegularity.NativeData (:47) is unrelated.\n\nNot verified: that N = l0, physicalScale = q and Lean band n = paper band l beyond the definitions cited; the chain above ActualCyclePreservation.stepResult_of_particular to the main theorems; that the Lean classes match W_alpha, M_alpha.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

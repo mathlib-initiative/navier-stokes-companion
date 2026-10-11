@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 16.3",
+  "label": "Display 16.1",
   "status": "formalized",
   "location": {
     "page": 16,
-    "rect": [0.355417, 0.31309, 0.289389, 0.044438]
+    "rect": [0.357219, 0.313223, 0.285561, 0.039669]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [16],
         "printed": [16],
-        "text": "Display 16.3, p. 16, in section 3.5"
+        "text": "Display 16.1, p. 16, in section 3.5"
       },
       "region": "eq-p016-3@p016",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same content after two routine rewritings. (a) The paper's single cutoff c = χ_x χ_t is carried in Lean as two factors: spatialCutoff x (SpatialLocalization.spatialCutoff, a smooth axisymmetric function of x0²+x1² and x2, supported in the cylinder radialSquare ≤ 1/16, |x2| ≤ 1/4) and timeSwitch t (zero for |t| ≤ 3/8, one for t ≥ 3/4). `velocity A B` is timeSwitch • (curl(spatialCutoff • A) + spatialCutoff • B), and timeSwitch is constant in x, so timeSwitch • curl(χ_x A) = curl(χ_t χ_x A) = curl(cA); the same commutation is proved for the periodized fields (without the B term) in localizedVelocity_eq_curl. The paper's azimuthal term cB e_θ is the Lean's cutPotential B with B the directly-prescribed azimuthal field (instantiated as `directSum a` in LocalScheduleWitness.selected_compact_candidate); pressure is literally c p_loc. (b) For the second line, cutVelocity_product_rule gives curl(cA) = c·curl A + curlLinear((dc)⊗A), and curlLinear((dc)⊗A) has components (∂₁c)A₂−(∂₂c)A₁ etc. by SpatialCurl.curlLinear_apply_zero/one/two, i.e. exactly ∇c × A with the paper's sign; adding c B e_θ to both sides turns c·curl A into c u_loc and gives u = c u_loc + ∇c × A. The Lean identity carries a differentiability hypothesis on A at the point, which the paper supplies by smoothness of the chosen representatives. The paper's 'extend by zero outside the cutoff support' is automatic in Lean, where the cut fields are globally defined and shown to vanish off the support cylinder (R3CompactCandidate.velocity_supported).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

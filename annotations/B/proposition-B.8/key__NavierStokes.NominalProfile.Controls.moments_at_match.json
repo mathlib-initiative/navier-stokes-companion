@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.8/key/1.NavierStokes.NominalProfile.Controls.moments_at_match",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.Controls.moments_at_match",
+      "line": 1023,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L1023"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.Controls.moments_at_match",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Under separation <= exp(-8), for eta in the parameter interval with SmallDebt: `moments c.normalizedU c.normalizedE matchFraction eta = moments F.U F.E matchFraction eta`, i.e. all five cumulative radial moments of the constructed profile at x = e^{-5} equal those of the reference profile F. This is"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1023,
+        "text": "theorem moments_at_match\n    (hsep : ShapeTransition.separation c.shapeTime A.normalization F.data.core.P ≤ Real.exp (-8))\n    {eta : ℝ} (hη : eta ∈ ReferencePath.parameterInterval) (hs : SmallDebt F c.debt eta) :\n    moments c.normalizedU c.normalizedE matchFraction eta = moments F.U F.E matchFraction eta"
+      }
+    }
+  }
+}

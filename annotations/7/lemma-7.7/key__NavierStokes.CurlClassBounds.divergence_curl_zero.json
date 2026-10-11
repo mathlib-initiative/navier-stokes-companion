@@ -1,0 +1,29 @@
+{
+  "id": "lemma-7.7/key/1.NavierStokes.CurlClassBounds.divergence_curl_zero",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CurlClassBounds.divergence_curl_zero",
+      "line": 461,
+      "module": "NavierStokes.CurlClassBounds",
+      "path": "NavierStokes/CurlClassBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L461"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CurlClassBounds.divergence_curl_zero",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For a CylindricalGeometry G (commuting graph directions, R smooth and nonzero, D_r R = 1, D_z R = 0) and B smooth on U: cylindricalDivergence R Vr Vθ Vz (cylindricalCurl R Vr Vθ Vz B) x = 0 — div_* curl_* = 0 including the R^{-1} frame term, exactly as in the displayed computation on p.86."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 461,
+        "text": "theorem divergence_curl_zero {U : Set D} {R : D → ℝ} {Vr Vθ Vz : D → D}\n    (G : CylindricalGeometry U R Vr Vθ Vz) {B : D → ComplexVector}\n    (hB : ContDiffOn ℝ ∞ B U) {x : D} (hx : x ∈ U) :\n    HarmonicCalculus.cylindricalDivergence R Vr Vθ Vz (cylindricalCurl R Vr Vθ Vz B) x = 0"
+      }
+    }
+  }
+}

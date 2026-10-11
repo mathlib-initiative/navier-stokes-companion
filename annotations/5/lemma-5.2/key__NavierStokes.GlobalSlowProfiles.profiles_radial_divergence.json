@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/key/1.NavierStokes.GlobalSlowProfiles.profiles_radial_divergence",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_radial_divergence",
+      "line": 1965,
+      "module": "NavierStokes.GlobalSlowProfiles",
+      "path": "NavierStokes/GlobalSlowProfiles.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1965"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GlobalSlowProfiles.profiles_radial_divergence",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: HasDerivAt (fun r => r^2/2 * beta (r,eta)) (-R * radialZ h (-a + slowOrder h n) axial (R,eta)) R: the first equation of (5.2), d_X V_n = -Z_{-A,n} U_n, globally in X.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1965,
+        "text": "theorem profiles_radial_divergence {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    {n : ℕ} (hn : 0 < n) {R eta : ℝ} (heta : eta ∈ S) :\n    HasDerivAt (fun r => r ^ 2 / 2 * (profiles s n).beta (r, eta))\n      (-R * PositiveOrderMoments.radialZ h (-PositiveAxisSystem.a h + AxisSourceRegularity.slowOrder h n)\n        (profiles s n).axial (R, eta)) R"
+      }
+    }
+  }
+}

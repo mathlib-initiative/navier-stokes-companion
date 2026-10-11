@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 47,
-    "rect": [0.332268, 0.143906, 0.335687, 0.047849]
+    "rect": [0.33369, 0.145455, 0.331551, 0.042149]
   },
   "target": {
     "pin": {
@@ -21,7 +21,6 @@
         "text": "Display 47.1, p. 47, in section 5.1"
       },
       "region": "eq-p047-1@p047",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.87,
@@ -35,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The split form is exactly the Lean right-hand side Pi_n' = p.radial = pressureValue C b s phi, which unfolds to 2 * C^{-2} * (phi 0).value * (phi n).value + C^{-2} * lowerConvolution n (phi_i phi_j) - omegaQuotient/2; lowerConvolution n F = ∑_{i ∈ range(n-1)} F (i+1) (n-i-1) is the paper's ∑_{i=1}^{n-1} phi_i phi_{n-i} (empty for n = 1, as the paper notes). pressureValue_eq_convolution proves this equals the unsplit (5.5) right-hand side for 0 < n, via convolution_split (line 271: convolution n F = F 0 n + F n 0 + lowerConvolution n F), which is the paper's 'the pressure equation separates into'. The same encoding caveat as for (5.5) applies: the last term is -omegaQuotient/2 with omegaQuotient the division-free previousOmegaDivX, equal to Omega_{n-1}/X for X ≠ 0 by omega_axisFactor (AxisSourceRegularity.lean:133).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

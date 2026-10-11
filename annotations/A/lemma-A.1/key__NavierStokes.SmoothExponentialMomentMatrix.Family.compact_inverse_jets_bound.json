@@ -1,0 +1,31 @@
+{
+  "id": "lemma-A.1/key/1.NavierStokes.SmoothExponentialMomentMatrix.Family.compact_inverse_jets_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SmoothExponentialMomentMatrix.Family.compact_inverse_jets_bound",
+      "line": 98,
+      "module": "NavierStokes.SmoothExponentialMomentMatrix",
+      "path": "NavierStokes/SmoothExponentialMomentMatrix.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothExponentialMomentMatrix.lean#L98"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SmoothExponentialMomentMatrix.Family.compact_inverse_jets_bound",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The identical statement with D.matrix p = expBumpMomentMatrix (D.exponent p) (D.bump p): clause (iii) in the logarithmic coordinate, again only for an open-domain `Family`.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 98,
+        "text": "theorem compact_inverse_jets_bound [ProperSpace E] (hU : IsOpen U)\n    (K : Set E) (hK : IsCompact K) (hKU : K ⊆ U) (m : ℕ) :\n    ∃ C ≥ 0, ∀ k ≤ m, ∀ p ∈ K,\n      ‖iteratedFDeriv ℝ k (fun q => (D.matrix q)⁻¹) p‖ ≤ C"
+      }
+    }
+  }
+}

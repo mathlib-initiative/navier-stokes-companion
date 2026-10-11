@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 77,
-    "rect": [0.415822, 0.186993, 0.168576, 0.026565]
+    "rect": [0.417112, 0.18843, 0.163636, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The paper gives, as an example (\"For example, we can require\"), one smallness condition on the sum, S_*^2(ε + ε² + 1/k) ≤ 1, and says it holds for all sufficiently large band indices. The Lean never writes the sum. It requires the three summands separately, each at most 1: S²ε² ≤ 1, S²/k ≤ 1, εS² ≤ 1 (fields epsilon_square, carrier, epsilon of LargeBand; the same triple is proved for all large n in eventually_band_conditions and packaged in exists_large_band). Paper to Lean: with ε > 0, k > 0 the three products are nonnegative summands of the paper's left side, so the paper's inequality gives the Lean triple by algebra. Lean to paper: at a fixed n the triple only gives the sum ≤ 3, but the repository states the limit facts for general exponents and thresholds: eventually_slow_power_epsilon_lt (any a, any b > 0, any δ > 0) and slow_power_div_carrier_tendsto_zero (any a). Instantiating them with a = 2, b = 1 and b = 2, δ = 1/3, and taking the 1/3-neighbourhood in the carrier limit, gives S²ε < 1/3, S²ε² < 1/3, S²/k < 1/3 eventually, hence the paper's summed inequality for all large band indices; this is instantiation of stated declarations plus addition (the rpow-to-pow rewriting is the same Real.rpow_two step done at PhaseEstimates.lean:1049-1051). So the paper's display, in the form the paper asserts it (a requirement met by all large bands), follows from stated Lean, and the Lean's requirement follows from the paper's. The purpose also matches: phaseError_le_four_div turns the triple into phaseError S ε k ≤ 4/S, the paper's bound of the errors by C/S_*. I did not find the summed inequality written anywhere in NavierStokes/.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 84,
-    "rect": [0.342015, 0.792849, 0.527052, 0.026388]
+    "rect": [0.343316, 0.795041, 0.523787, 0.019835]
   },
   "target": {
     "pin": {
@@ -39,7 +39,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Every link of the paper's chain is stated, split over four declarations rather than one display, and in the chart-normalized form the repository uses. (a) Middle link εH(2a ⊙ δa) = εH d_Σ: `cross_reconstruct` states H.mulVec (fun j => 2 * a_j * δa_j) = R with a = SmoothCovariance.amplitudes H T and δa = increment H T R, i.e. H(2a ⊙ δa) = d_Σ with d_Σ = H⁻¹R; the componentwise ⊙ is the `fun j => ... j` pointwise product and the factor 2 is literally present, matching the paper's remark that this factor 2 explains the denominator 2a_σ in (7.31). `cross_reconstruct_component` (line 312) is the same identity per component and is what the assembly uses. (b) First link B(W_0, LΣ) = εH(2a ⊙ δa): `assembled_cross_covariance` computes the symmetric bilinear double average of the primary/signed pair — the two cross terms primary·signed + signed·primary, which is where the paper's factor 2 comes from — and reduces it, via `cross_reconstruct_component`, to ∑ᶠ_U outer_U² ε_U mask_U² R_U. The paper's single factor ε appears here as ε_U = physicalViscosity, arising as √ε · √ε from the two wave amplitudes (`radialWith`/`tangentWith`, lines 136–144, each carry Real.sqrt ε * a j). (c) Last link εH d_Σ = Σ: `physical_signed_scale` is the chart rescaling outer² · ε · chartStress = σ with chartStress h N σ U = Q^{2A} σ / ε, i.e. the paper's d_Σ = H⁻¹(Σ/ε) composed with the chart factor Q^{2A} that the paper's (7.30) has already absorbed. (d) Endpoints B(W_0, LΣ) = Σ: `physical_signed_cross_covariance` states exactly that, with the sum over labels collapsing because the squared masks sum to one (`physical_mask_tail_sum_sq`). Differences from the display as written: the Lean works with a label-indexed assembly and a squared-mask partition of unity where the paper writes one slow box, and the chart factor Q^{2A} is carried explicitly in chartStress/physicalOuter instead of being suppressed; recovering the paper's three-term chain is rewriting R = Σ/ε in `cross_reconstruct` and reading `assembled_cross_covariance` at a single active label.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,6 +1,6 @@
 # Navier–Stokes source/formalization companion
 
-This repository pairs the 80 numbered items and the 762 displayed equations of OpenAI's *Finite time blowup for Navier–Stokes* (166 pages) with the Lean declarations of [openai/NavierStokesAndEuler](https://github.com/openai/NavierStokesAndEuler) at commit `f9e8bc5b38b6e212696e8a30e3e91517af887bbd`, and says for each whether the Lean states what the paper states. It has three parts:
+This repository pairs the 80 numbered items and the 761 displayed equations of OpenAI's *Finite time blowup for Navier–Stokes* (166 pages) with the Lean declarations of [openai/NavierStokesAndEuler](https://github.com/openai/NavierStokesAndEuler) at commit `f9e8bc5b38b6e212696e8a30e3e91517af887bbd`, and says for each whether the Lean states what the paper states. It has three parts:
 
 - Literature Links annotations;
 - a PDF overlay viewer;
@@ -12,6 +12,7 @@ These results come from a machine audit. No human has confirmed any of it. A PDE
 
 - **Items:** two independent audits, then an adjudication of the 35 items on which they differed, under one rule: an item is stated faithfully only if the paper's statement follows from stated Lean declarations by logic alone. The five medium findings that came out of that were each traced again in depth; all five were lowered to low. The 22 items ruled faithful by the adjudication or by that re-check were then attacked clause by clause; none changed.
 - **Equations:** every displayed equation was audited twice, blind, each time by a worker and a reviewer. The two runs agreed on whether the Lean has the formula for 723 of 773 blocks; the 50 they disputed were adjudicated.
+- **The boxes:** the overlay was then proofread page by page against the PDF, in several rounds, and its boxes rebuilt from the fonts and the ink of the pages. Seven blocks that were not displays were dropped and six displays that had been missed were added (and audited once).
 
 [`REPORT.md`](REPORT.md) gives the method, the counts and every finding.
 

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 39.6",
+  "label": "Display 39.4",
   "status": "formalized",
   "location": {
     "page": 39,
-    "rect": [0.263892, 0.827819, 0.472216, 0.042645]
+    "rect": [0.265241, 0.827273, 0.46738, 0.040496]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [39],
         "printed": [39],
-        "text": "Display 39.6, p. 39, in the statement of Lemma 4.9"
+        "text": "Display 39.4, p. 39, in the proof of Theorem 4.6"
       },
       "region": "eq-p039-6@p039",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The right-hand equation X_R = 110(C P_*)^{10} is literally the Lean definition: matchingRadius F C = resetRadius Xi C P = Xi * (C*P)^10 with Xi = 110 (NominalProfile.lean:140-141, ShapeTransition.lean:324). The left-hand threshold is encoded differently: instead of the explicit bound C ≥ max{C_0, (R_*/110)^{1/10}/P_*}, Lean states the two consequences the paper wants (C above an arbitrary floor normFloor, and matchingRadius F C above an arbitrary radiusFloor) as a filter statement ∀ᶠ C in atTop (eventually_matching_geometry, line 159). Recovery: the paper's max{·,·} is exactly the explicit witness for that atTop filter, since C ↦ 110(C P_*)^{10} is increasing on C > 0, so 110(C P_*)^{10} ≥ R_* iff C ≥ (R_*/110)^{1/10}/P_*; conversely the atTop statement instantiated at radiusFloor = R_* and normFloor = C_0 gives some C with both properties, which is all the proof uses. Lean carries one extra conjunct in the same filter statement (separation T C P < exp(-8)) that the paper's display does not mention. Noted separately: this block sits in §4.6, Step 1 of the proof of Theorem 4.6, not in the statement of Lemma 4.9 as the task's context field says.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 149.5",
+  "label": "Display 149.2",
   "status": "formalized",
   "location": {
     "page": 149,
-    "rect": [0.331773, 0.619595, 0.336857, 0.047213]
+    "rect": [0.33369, 0.620661, 0.331551, 0.043802]
   },
   "target": {
     "pin": {
@@ -18,7 +18,7 @@
       "locator": {
         "physical": [149],
         "printed": [149],
-        "text": "Display 149.5, p. 149, in the proof of Proposition B.3"
+        "text": "Display 149.2, p. 149, in the proof of Proposition B.3"
       },
       "region": "eq-p149-5@p149",
       "verdicts": [
@@ -34,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same quotient, written with a factor 2 that cancels and in the unrescaled radial variable. Lean's integrand is (2x·f(x,η))·S_q(x,η) and its denominator is X·(2X·f(X,η)) = 2X²f(X,η); the 2's cancel, leaving ∫₀^X x f(x,η) S_q(x,η) dx / (X² f(X,η)). Lean's f is the angular field in the X variable: by `angularProfile_radial_log_derivative` (line 479) and `angularField` (line 556), f(x,η) = a(η)·Φ(Λx,η) with a = realAmplitude, so the amplitude a(η) — constant in the integration variable x — also cancels between numerator and denominator, giving exactly ∫₀^X X'Φ(ΛX',η)S_q(X',η)dX' / (X²Φ(ΛX,η)). Lean's `Sq` (line 27) is the paper's S_q = -Wl - h(1-2ηU) - H_c(log E)_η with l = 1 + 𝒟_X log Φ. One thing the display's sentence claims that the Lean definition does not: the paper says Q_s 'extends smoothly to X = 0', whereas the Lean definition divides by X·(2Xf), which is 0 at X = 0, so the definition is junk-valued there and `regularAngularLag_eq` carries the hypothesis X ≠ 0; the Lean never needs the extension, because p₁ is defined directly as -2X ∂_Y f / f (line 31) and only identified with X Q_s / L away from the axis. That is a statement about the surrounding sentence, not about the formula, which matches.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 121,
-    "rect": [0.280144, 0.789562, 0.588925, 0.025482]
+    "rect": [0.281283, 0.791736, 0.585819, 0.019835]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same equation under the sign convention w_Lean = u - v = -w_paper, pi_Lean = p - q = -pi_paper; every term of (10.15) is homogeneous of degree one in (w, pi), so the whole identity flips sign consistently. Two further encodings. (i) difference_equation splits the advection as -spatialDerivative u [w] - spatialDerivative w [v] = -(w·∇)u - (v·∇)w, which is literally the paper's (v·∇)w + (w·∇)u moved to the right side (spatialDerivative f t x h = (h·∇)f, as advection u t x = spatialDerivative u t x (u (t,x)) shows). Its docstring calls this \"the favorable transport decomposition Du(w) + Dw(v)\". (ii) conservative_difference_equation replaces the advection by div g, i.e. ∑_i ∂_i g_{ki}, which tensorDiff_divergence proves equal to it using div u = div v = 0; the paper itself appeals to this \"conservative form of (10.15)\" on p. 122. The viscosity is one in both (the Lean residual used here is NavierStokes.ProblemStatement.navierStokesResidual, and the docstring says \"viscosity-one residual\"), and the Laplacian coefficient and the sign of ∇pi match. The clause `div w = 0` is not part of either theorem's statement: it is the one-line consequence spatialDivergence_sub of the hypotheses div u = div v = 0, and is derived that way inside ConservativeDifference.weak_pressure_poisson (ConservativeDifference.lean:447-450).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

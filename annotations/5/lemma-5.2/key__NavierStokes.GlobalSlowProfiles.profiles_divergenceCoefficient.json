@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/key/1.NavierStokes.GlobalSlowProfiles.profiles_divergenceCoefficient",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_divergenceCoefficient",
+      "line": 1769,
+      "module": "NavierStokes.GlobalSlowProfiles",
+      "path": "NavierStokes/GlobalSlowProfiles.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1769"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GlobalSlowProfiles.profiles_divergenceCoefficient",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The globalized order-n coefficient satisfies the divergence relation of (5.2) as an identity of coefficients.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1769,
+        "text": "theorem profiles_divergenceCoefficient {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    {n : ℕ} (hn : 0 < n) {w : ℝ × ℝ} (hX : 0 < w.1) (heta : w.2 ∈ S) :\n    SlowExpansionResidual.divergenceCoefficient h (asSlowProfiles s) n w = 0"
+      }
+    }
+  }
+}

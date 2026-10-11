@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 43,
-    "rect": [0.237118, 0.351454, 0.526263, 0.034384]
+    "rect": [0.238503, 0.352066, 0.521925, 0.030579]
   },
   "target": {
     "pin": {
@@ -21,7 +21,7 @@
       "locator": {
         "physical": [43],
         "printed": [43],
-        "text": "Display 43.4, p. 43, in the statement of Lemma 4.9"
+        "text": "Display 43.4, p. 43, in the proof of Theorem 4.6"
       },
       "region": "eq-p043-4@p043",
       "role": "key",
@@ -38,7 +38,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The second display is stated, but the p-part is not stated in the paper's increment. The a- and b-parts match: compact_shear_perturbation bounds |angularShear F p - angularShear E p| ≤ C·ε and |signedAxialShear F V p - signedAxialShear E U p| ≤ C·ε, and profiles_trueCone feeds it at line 1374 with ε = (Ce·Cc)/n from field_C1_bound, so C·ε = C_rep/N with C_rep independent of n; the comparison there is against the nominal E, U rather than the modulated E_N, U_N, which is legitimate because on S the modulated profile already agrees with the nominal — Localized.physical_after_window_agreement (line 947), applied at line 1379, gives P.E =ᶠ E and P.U =ᶠ U wherever W.right ≤ p.1, the Lean form of the paper's 'the shear is unchanged' off the modulation window (p. 41). The p-part is a different increment. profile_stocks_rate bounds |profileStockOne (P n) h p - profileStockOne Q h p| ≤ C/n and the same for profileStockTwo, but in its own statement (lines 1257-1260) (P n).f = applyRepairF … (localizedF W r f n) while Q.f = f, Q.U = U, and in its one application (profiles_trueCone, lines 1358-1360, with hstock₁ : p₁ p = profileStockOne Q h p at line 1330) Q is the nominal profile. So the Lean bounds p_f - p_0, which lumps together the paper's (4.40) ‖p_N - p_0‖_k ≤ P_k/N (p. 42) and this display's ‖p_f - p_N‖0 ≤ C_rep/N. profile_data_bound (lines 1182-1196) makes the split visible additively as C₁/n + C₂·ε, its docstring naming the two contributions 'the modulation error and the coefficient size of this same physical repair', but it too states only the combined difference against Q.f = f, Q.U = U, and the stock bound it feeds is the combined one. Recovery of the display: from the Lean bound one gets ‖p_f - p_N‖0 ≤ ‖p_f - p_0‖0 + ‖p_N - p_0‖0 ≤ (C + P_0)/N by the triangle inequality, i.e. the display with a larger constant, but only after supplying a modulation-only bound on p_N - p_0 — the paper's (4.40), which the Lean states only inside the combined C₁/n + C₂·ε. Conversely the Lean bound follows from the display together with (4.40). The ‖·‖0 norm matches: all these bounds are pointwise over a compact parameter set. The first display differs separately: no declaration was found that states E_f ≥ ½ min E_0 with that constant. profile_stocks_rate gives only 0 < (P n).f p, and compact_shear_perturbation gives δ ≤ F p for an existentially quantified δ > 0; the value δ = e/2, with e a uniform positive lower bound for E on the compact set from UniformCone.positive_uniform_margin, is fixed inside that proof (ModulatedCone.lean:473 `let δ := e / 2`, used at lines 482-487), and e need not be min E_0, so the statement is formally weaker in the constant. What the surrounding argument needs — a fixed positive lower bound for the repaired field at every large frequency — is supplied.",
+          "summary": "Lean uses a different formula here. Lean bounds p_f − p_0 rather than p_f − p_N, and gives E_f ≥ δ for some δ > 0 rather than ½ min E_0; the a and b bounds match.",
           "verdict": "deviation"
         }
       ]

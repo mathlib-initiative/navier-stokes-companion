@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/key/1.NavierStokes.TemporalMeanUpdate.periodic_coverMap",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TemporalMeanUpdate.periodic_coverMap",
+      "line": 197,
+      "module": "NavierStokes.TemporalMeanUpdate",
+      "path": "NavierStokes/TemporalMeanUpdate.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L197"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TemporalMeanUpdate.periodic_coverMap",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If f is unit-periodic then z |-> f (coverMap n z) is unit-periodic, because coverMap n maps Z^2 into Z^2 (coverMap_lattice, line 187): a band field written in the common variable H still descends to the common torus. pullbackCover_periodic (line 626) is the same for the (r, slow, Y) lift."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 197,
+        "text": "theorem periodic_coverMap {f : Plane → ℂ} (hp : SmoothFourierData.UnitPeriodic f) (n : ℕ) :\n    SmoothFourierData.UnitPeriodic (fun z => f (coverMap n z))"
+      }
+    }
+  }
+}

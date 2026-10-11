@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 90.5",
+  "label": "Display 90.2",
   "status": "formalized",
   "location": {
     "page": 90,
-    "rect": [0.401975, 0.680636, 0.196272, 0.028622]
+    "rect": [0.404278, 0.680992, 0.190374, 0.026446]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [90],
         "printed": [90],
-        "text": "Display 90.5, p. 90, in the statement of Lemma 8.2"
+        "text": "Display 90.2, p. 90, in the statement of Lemma 8.2"
       },
       "region": "eq-p090-5@p090",
       "role": "key",
@@ -29,7 +29,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same bound, encoded as membership in `MeanClass`. Term by term: C_{j,I} ↔ the constant C that `MemClass.bounds` produces for each finite derivative order m (one constant per prefix j ≤ m rather than per multi-index I; a finite max over the multi-indices of order ≤ m converts either way); ε^α ↔ s.epsilon n ^ α; S_*^{B_{j,I}} ζ δ^{-B_{j,I}} ↔ s.growth n x ^ p * s.zeta x = (s.slow n * max 1 (s.delta x)⁻¹)^p * s.zeta x, so Lean uses one common degree p for the slow scale and the inverse edge distance, exactly as the paper's display does (it writes B_{j,I} in both exponents, although Definition 6.4 (6.24) on p. 70 allows the two separate degrees b_{j,I}, d_{j,I}). Two encoding choices: (i) `max 1 (s.delta x)⁻¹` in place of δ^{-1}; the paper's δ(X) = min{1, log(X/X_a), log(X_b/X)} of (6.23) is ≤ 1, and the Lean instance used here has the same form (`WeightedRadialPrimitive.delta L x = min 1 (min x (L-x))` in the logarithmic coordinate, with `delta_le_one` at line 40), so the two agree on the nose; (ii) ‖iteratedFDeriv ℝ j (f n) x‖, the full Fréchet jet norm of order j, in place of the individual partial ∂^I = ∂_R^{I1}∂_Z^{I2}∂_T^{I3}∂_{H1}^{I4}∂_{H2}^{I5}: each partial of order j is bounded by the jet norm and the jet norm by a dimensional constant times the sum of the partials, so the two families of estimates differ only by constants, which the paper's C_{j,I} absorbs. `movingStrip_majorant_eq` exhibits the Lean majorant on the very strip the Lemma 8.2 counterparts use as (C ε_n^α L_n^k) · ζ(X) δ(X)^{-k}, i.e. literally the paper's right-hand side with S_* = L_n.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

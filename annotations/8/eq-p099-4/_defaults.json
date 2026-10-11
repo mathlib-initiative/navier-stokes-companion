@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 99.4",
+  "label": "Display 99.2",
   "status": "partial",
   "location": {
     "page": 99,
-    "rect": [0.376471, 0.544154, 0.247281, 0.122512]
+    "rect": [0.368984, 0.542975, 0.260963, 0.121488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [99],
         "printed": [99],
-        "text": "Display 99.4, p. 99, in the proof of Lemma 8.8"
+        "text": "Display 99.2, p. 99, in the proof of Lemma 8.8"
       },
       "region": "eq-p099-4@p099",
       "role": "key",
@@ -32,7 +32,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The block is a two-column table (header 'term | class') listing six class memberships for the terms of R_g in (8.26); the Lean counterpart is the five-step proof of radialRemainder_mem, whose subject radialRemainder (MeanIncrementBounds.lean:368) is term-for-term the right-hand side of (8.26) under the dictionary h.radial=Δβ, h.angular=Δv, h.axial=Δγ, b.radial=b, b.angular=V, b.axial=G, m=(β,v,γ), radialDiv 1 = D_r+1/R, viscosity 1 = ε(Δ₀-R⁻²), and IncrementBounds gives Δβ ∈ M_{H+1}, Δv,Δγ ∈ M_H with H=α. Five of the six rows agree exactly: row 2 at (H+2)-κ, row 3 at H+2, row 4 at 9/10+H, row 5 at H+H=M_{2α} (MeanIncrementBounds.lean:462, before it is weakened to H+9/10), row 6 at (H+1)+1-2κ; for rows 2 and 3 the Lean bounds the whole bracket, including the transport products the paper's table defers to the following sentence, so there it is at least as strong. Row 1 differs: the paper puts -t_*Δβ in M_{α+2}, justified by the preceding sentence 'All three increments are independent of the auxiliary variable. In particular, t_*Δβ = -ε∂_TΔβ'. The Lean step uses OperatorBounds.time (MeanIncrementBounds.lean:279), where time = slowTime + fastTime: slowTime gains +1, giving H+2, but fastTime gains 0, so the conjunction is only MeanClass s (H+1) — the paper's exponent for this row is not proved. The Lean assumes no auxiliary-independence of the increment here and keeps the fast-time derivative deliberately (docstring at MeanIncrementBounds.lean:473-474: 'This includes fast time on the radial stream'); no gr-side variant that subtracts the fast-time term exists, unlike thetaResidual_change_sub_fast_mem and axialResidual_change_sub_fast_mem for the other two components. The weaker row still suffices for the target exponent of the lemma, since H + 9/10 - 2κ ≤ H + 1 whenever κ ≥ 0 (the mono_exponent at MeanLocalDefectBounds.lean:82 is exactly this), so radialRemainder_mem and hence the gain of Lemma 8.8 are proved; only this row's stated class is weaker than the manuscript's.",
+          "summary": "Lean has a weaker form of it. Lean proves five of the six rows as stated, but puts −t_*Δβ only in M_{α+1}, not M_{α+2}, because it keeps the fast-time derivative.",
           "verdict": "deviation"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 75,
-    "rect": [0.157794, 0.609897, 0.711282, 0.028109]
+    "rect": [0.160428, 0.610744, 0.707764, 0.022314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (7.9), p. 75, in the statement of Lemma 7.1"
       },
       "region": "eq-7.9@p075",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.82,
@@ -29,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same two estimates, repackaged. (i) First estimate: `phase_estimates` compares `a.phase.normal` (which is (7.4): (D_rΦ, R⁻¹∂_θΦ, D_zΦ), see PhaseCalculus.phaseNormal_formula) with `pack (B_s * s(v)) (B_s • K)`, where `a.B i = referenceScale (lam) (ε k²) u = sqrt(λ₀/(εk²(1+u*²)^{3/2}))` is exactly B_s of (7.2), `a.slope i (q,v) = signedSlot σ u L v = σ(u/2 + uv/L_s)` is exactly s(v) of (7.2), and `a.K i` is the frozen unit tangential vector with ⟪K, g₀⟫ = 0 of p. 74. Lean bounds the two terms separately by phaseConstant M / D.scale i instead of bounding their sum; the paper's sum is at most twice the Lean bound and conversely each term is at most the sum, so the two forms differ only by a factor 2 in C. Lean proves it for v ∈ Ioo(−L_s, 2L_s), which contains the paper's 0 ≤ v ≤ L_s, and D.scale i = ChartScales.S (band i) = ℓ² = S_*. (ii) Second estimate: Lean never writes `E_ik = O(εS_*^C)` as an inequality. `backwardMaterialOp_phase` computes the operator (t_* + bD_r + F∂_θ + GD_z)Φ exactly — with t_* = ∂_v − ε∂_T (the signedMaterialOp σ = −1 convention), D_r = ∂_R, F∂_θ = (baseV F/R)∂_θ, D_z = ε∂_Z — and the value is the paper's own proof identity b·n_{Φ,r} + εv((H_Φ)_T − G(H_Φ)_Z) rearranged. The bound is then supplied structurally: `nativeExpression_reduced` extracts the factor ε and `native_reduced_polynomial` gives, for every fixed jet order, a bound C·S_*^m on the remaining factor — which is precisely O(εS_*^C) in every fixed coefficient derivative, as the sentence after (7.9) requires.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

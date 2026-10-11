@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 48,
-    "rect": [0.326168, 0.650461, 0.543292, 0.042511]
+    "rect": [0.329412, 0.650413, 0.537691, 0.040496]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. Same shape, strictly larger right-hand side. Term by term: p_k matches exactly (halfLength k = (k+1)/2 = ⌈k/2⌉); the Cauchy budget is split among the derivative letters only, as in the paper (word_radialBound, line 331); the radial/simplex factor is r^k/k! with r ≤ T = a, and the coefficient factor is M^k with M the row-sum bound on A₀ and A₁. Three differences. (i) The factorial is k!, not (k+1)!: the Lean counts only the k letters of the word and carries the final G inside the constant B bounding the input field F = G f_n (RadialBound … B 0), where the paper counts k+1 integrations and gets a^{k+1}/(k+1)!. (ii) The factor 2^k counting the compositions is left explicit instead of being absorbed into C_n^{k+1} as the paper does. (iii) The Cauchy factor is (max{1,Δ⁻¹} · max{1,p_k})^{p_k} rather than (max{1,p_k/Δ})^{p_k}; the two agree when Δ ≤ 1, and the Lean's is larger when Δ > 1. Each of (i)–(iii) is absorbable into a constant of the paper's own form C_n^{k+1} (since (k+1)·2^k ≤ 4^k), and none affects what the paper uses (5.8) for: summability is proved in summable_wordLayers (524) and used for convergence of the series. Also, the norm: the paper's S_{ρ'} = {η : dist(η,[−1,1]) < ρ'} is a neighborhood of the segment, whereas the Lean estimate is a sup over a closed parameter disk closedBall c ρ (with closedBall c σ inside the domain) and over the whole radial interval; applying it at each center c ∈ [−1,1] with σ = ρ_paper, ρ = ρ' covers S_{ρ'} with the same gap Δ.",
+          "summary": "Lean has a weaker form of it. Lean's bound has a larger right side: k! in place of (k+1)!, an explicit factor 2^k, and (max{1,Δ⁻¹}·max{1,p_k})^{p_k} in place of (max{1,p_k/Δ})^{p_k}.",
           "verdict": "deviation"
         }
       ]

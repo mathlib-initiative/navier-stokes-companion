@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 87,
-    "rect": [0.273185, 0.142406, 0.595889, 0.029056]
+    "rect": [0.274866, 0.143802, 0.593325, 0.022314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same identity, written with the paper's two sides rearranged and with the harmonic index m absorbed into one frequency scalar. (a) LHS: `WaveCoefficients.principal` unfolds (LinearWaveResidual.principal, line 105) to `along Vf a` (the paper's t'_m, the fast/material derivative), `shear R F G Vr a` (the paper's matrix K of (7.6), the three entries -2F a_1, (2F + R·∂_r F) a_0, (∂_r G) a_0), `εκ²‖n_Φ‖² a` and `phaseFactor κ · n_Φ · p` with `phaseFactor c = c*I` (PhysicalGraphBounds.lean:634). The paper writes the viscous term as m²d with d = εk²|n_Φ|² from (7.5) and the pressure term as i k m n_Φ π_m; Lean carries the single scalar `a.frequency n : ℝ` in place of the paper's product km, so εκ²‖n_Φ‖² is m²d and phaseFactor κ is ikm under κ = km. (b) The hatted coefficients: `withCutoff` (line 220) multiplies amplitude and pressure by ψ, i.e. the paper's t̂_m = ψ t_m, π̂_m = ψ π_m. (c) The paper's hypothesis, that (t_m,π_m) solves (7.5), is the Lean hypothesis `hsolve : a.principal s d n x = -source n x` (source = f_m). (d) RHS: `excludedSlotError` (line 740) is `Dfast ψ • a + (1-ψ) • source`, i.e. ψ' t_m + (1-ψ) f_m, with ψ' taken along the same fast direction as t'. (e) Packaging: the paper puts +f_m on the left of the equals sign, Lean writes `… + source n x = …`; identical. The ungated form `principal_cutoff` (line 744) is the same product rule without `hsolve`, and specialises to (7.40) by substituting hsolve.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

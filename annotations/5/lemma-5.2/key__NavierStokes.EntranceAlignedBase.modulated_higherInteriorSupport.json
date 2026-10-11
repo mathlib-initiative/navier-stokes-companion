@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/key/1.NavierStokes.EntranceAlignedBase.modulated_higherInteriorSupport",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.EntranceAlignedBase.modulated_higherInteriorSupport",
+      "line": 838,
+      "module": "NavierStokes.EntranceAlignedBase",
+      "path": "NavierStokes/EntranceAlignedBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L838"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.EntranceAlignedBase.modulated_higherInteriorSupport",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: HigherInteriorSupport for the modulated coefficients: the n >= 2 stresses are supported in a compact subinterval of the open log window, the hypothesis from which the N = 0 form of (5.13) is obtained.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 838,
+        "text": "theorem modulated_higherInteriorSupport :\n    BaseResidual.HigherInteriorSupport (modulatedCoefficients H v)\n      (Real.log (NominalConeAssembly.activeLeft W)) (ConstructedSlowBase.activeRight W)"
+      }
+    }
+  }
+}

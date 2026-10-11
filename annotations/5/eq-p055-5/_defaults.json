@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 55.5",
+  "label": "Display 55.2",
   "status": "formalized",
   "location": {
     "page": 55,
-    "rect": [0.28934, 0.654849, 0.421543, 0.023539]
+    "rect": [0.291979, 0.655372, 0.416043, 0.019835]
   },
   "target": {
     "pin": {
@@ -21,7 +21,7 @@
       "locator": {
         "physical": [55],
         "printed": [55],
-        "text": "Display 55.5, p. 55, in the proof of Proposition 5.3"
+        "text": "Display 55.2, p. 55, in the proof of Proposition 5.3"
       },
       "region": "eq-p055-5@p055",
       "relation": "states",
@@ -39,7 +39,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean writes the same two identities in the profile variable X instead of the radius R, using the paper's own substitution R = √(2X) (p. 50). Since R = √(2X) gives ∂_R = R·∂_X, the Lean left-hand side √(2X)·partialX T + 2T/√(2X) is literally (∂_R + 2/R)𝒯_{n,θ}, and √(2X)·partialX T + T/√(2X) is (∂_R + 1/R)𝒯_{n,z}: that is the whole rewriting. The primitives match (5.9) on p. 49: thetaStress = fromRadius (SlowStressSupport.stress 2 (thetaDensity)) with stress m F = -R^{-m}∫_0^R F (SlowStressSupport.lean:726) and thetaDensity = R³/C·angularCoefficient, i.e. -R^{-2}∫_0^R ϱ²·(ϱ/C)·angularCoefficient; likewise zStress = stress 1 (R·axialCoefficient) = -R^{-1}∫_0^R ϱ·axialCoefficient. The right-hand sides agree because the paper's 𝔯_{θ,n} carries an explicit R/C prefactor in its definition on p. 49 (with φ_n = (C/R)E_n, p. 51), which the Lean writes out as √(2X)/C · angularCoefficient, while 𝔯_{z,n} has no such prefactor and the Lean right-hand side is the bare -axialCoefficient. The Lean adds hypotheses the paper leaves implicit: 0 < X (so R > 0, where the primitive is differentiable), η in an open set S, and smoothness of the density on S.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

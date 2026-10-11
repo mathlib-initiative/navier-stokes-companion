@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/key/1.NavierStokes.CommonBaseContext.coverLift_norm_le",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CommonBaseContext.coverLift_norm_le",
+      "line": 373,
+      "module": "NavierStokes.CommonBaseContext",
+      "path": "NavierStokes/CommonBaseContext.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonBaseContext.lean#L373"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CommonBaseContext.coverLift_norm_le",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: k <= K implies ||(coverLift k : Point ->L[R] Point)|| <= 1 + coveringBound K: clause (a) for the full lift on (r, slow, Y), which acts as coverPower k in the torus slot and as the identity on r and the slow point."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 373,
+        "text": "theorem coverLift_norm_le {k K : ℕ} (hk : k ≤ K) :\n    ‖(coverLift k : Point →L[ℝ] Point)‖ ≤ 1 + CommonCoverSolve.coveringBound K"
+      }
+    }
+  }
+}

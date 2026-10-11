@@ -1,0 +1,29 @@
+{
+  "id": "proposition-6.6/key/1.NavierStokes.WaveInteractionBounds.stageHarmonics_bound",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.WaveInteractionBounds.stageHarmonics_bound",
+      "line": 1128,
+      "module": "NavierStokes.WaveInteractionBounds",
+      "path": "NavierStokes/WaveInteractionBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean#L1128"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.WaveInteractionBounds.stageHarmonics_bound",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (hM : 0 \\le M) \\to (\\forall j \\in initial, |(j:\\mathbb R)| \\le M) \\to \\forall stage, j \\in stageHarmonics initial stage \\to |(j:\\mathbb R)| \\le 2 ^ stage * M. The bound is on the size of the harmonics, in terms of the stage and the initial set only; finiteness of the set is carried by the Finset typ"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1128,
+        "text": "theorem stageHarmonics_bound {initial : Finset ℤ} {M : ℝ} (hM : 0 ≤ M)\n    (hinitial : ∀ j ∈ initial, |(j : ℝ)| ≤ M) (stage : ℕ) {j : ℤ}\n    (hj : j ∈ stageHarmonics initial stage) : |(j : ℝ)| ≤ 2 ^ stage * M"
+      }
+    }
+  }
+}

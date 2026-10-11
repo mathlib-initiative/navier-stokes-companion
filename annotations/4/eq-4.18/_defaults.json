@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 29,
-    "rect": [0.339641, 0.34903, 0.529435, 0.189679]
+    "rect": [0.341176, 0.349587, 0.527015, 0.184298]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The five integrands are the paper's in both Lean encodings. In the regular-axis encoding (ProfileHistories.Profiles, ModulatedHistories.density) they are U, 2Xf, U·2Xf, U²−Xf², f² with E = √(2X)f, and density_eq_physical states that these equal U, H, UH, U²−E²/2, E²/(2X) for X > 0. In SeedHandbackJets.Profile.density they are written directly in E. What differs is the form of Δ: no Lean declaration states, for two general profiles, each Δ as one integral of the difference of integrands. Lean keeps Δ as the difference of the two integrals (SeedHandbackJets.historyDifference; profileRows_sub, which also gives ΔΠ = ΔC_p under equal axis pressure). Passing between the two forms is linearity of the interval integral, which needs interval-integrability of each density on [0,X]. For ProfileHistories.Profiles that integrability is stated: radial_slice_intervalIntegrable applied to U_smooth, H_smooth, transportDensity_smooth, energyDensity_smooth and f_smooth.pow 2, for a point of the domain. The single-integral form is also written out as a proof step for the concrete profile pairs of the construction, at ModulatedHistories.lean:443, 959 and 1330 (`rw [← intervalIntegral.integral_sub ...]`). Caveat: SeedHandbackJets.Profile has bare fields E, U with no integrability hypothesis, so in that encoding the single-integral form is not derivable. That encoding serves only Lemma 4.4(ii), where the paper uses Δm = m₂ − m₁ as a norm input and not (4.18). The paper's one use of (4.18), in part (i) (integrands vanish beyond X_h, so Δm(X) = Δm(X_h)), is reached in Lean by integral_equal_after, which splits the integral at B instead of forming the integrand difference; its ContinuousOn hypotheses are the ones that would give the integrability.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

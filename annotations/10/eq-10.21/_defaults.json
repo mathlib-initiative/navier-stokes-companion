@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 124,
-    "rect": [0.325802, 0.254571, 0.541857, 0.026328]
+    "rect": [0.327273, 0.255372, 0.53874, 0.02314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Term by term the asymptotic matches: the exponent is CoordinateAlgebra.A h = 1/2 + h, the paper's A = 1/2 + h; the relative-error exponent is 2h in both; the evaluation point is (1-τ, ray Xin τ) = (x_τ, 1-τ); the component taken is Cartesian index 1, which at the point (√(2Xinτ), 0, 0) on the x₁-axis is the azimuthal direction e_θ, so it is the paper's u_θ; e₀ = leadingAmplitude v Xin = √(2Xin) f(Xin,0) > 0. Two routine rewritings: (i) Lean writes O(τ^{2h}) in explicit ε-form, |τ^A u_θ - e₀| ≤ Cτ^{2h} for 0 < τ < δ, which is exactly the meaning of the paper's O(·) as τ ↓ 0; (ii) the trailing ⟶ +∞ is not attached to AngularGrowth in Lean. It follows from it in a few lines — τ^{-A}(e₀ - Cτ^{2h}) → +∞ with e₀ > 0 — and BlowupImplication.positive_profile_tendsto_atTop is precisely that implication, stated abstractly. Separately (and this is a fact about the repository, not a gap in this block): the `speed_unbounded` field of CandidateProperties is not obtained from AngularGrowth; every route I found to SpeedUnboundedAtOne (NaturalCore.speedUnbounded_of_axis_tendsto, NaturalCore.coreVelocity_norm_at_origin giving ‖u(t,0)‖ = (1-t)^{-A(h)} · j exactly, MixedPeriodicAssembly.periodicVelocity_speed_unbounded, BaseResidual.baseVelocity_speedUnbounded) runs through the fixed origin x = 0 and the axial component, with no error term, rather than along x_τ through u_θ.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

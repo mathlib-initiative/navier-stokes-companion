@@ -1,0 +1,36 @@
+{
+  "id": "lemma-8.8/key/1.NavierStokes.DefectIncrementBounds.actualRadialError_eq_formula",
+  "location": {
+    "page": 98,
+    "rect": [0.131808, 0.733884, 0.737473, 0.107438]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.DefectIncrementBounds.actualRadialError_eq_formula",
+      "line": 401,
+      "module": "NavierStokes.DefectIncrementBounds",
+      "path": "NavierStokes/DefectIncrementBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DefectIncrementBounds.lean#L401"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.DefectIncrementBounds.actualRadialError_eq_formula",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: U open, o.radialProfile and base, m, h, W smooth on U: Agree U (actualRadialError o base m h W) (radialRemainder o base m h). Clause (i): R_g equals the (8.26) right-hand side pointwise on U, for any increment h.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "region": "lemma-8.8@p098",
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 401,
+        "text": "theorem actualRadialError_eq_formula {U : Set (Point P)} (hU : IsOpen U)\n    (o : Operators (Point P)) (ha : ContDiffOn ℝ ∞ o.radialProfile U)\n    {base m h : Triple (Point P)} (hb : SmoothTriple U base)\n    (hm : SmoothTriple U m) (hh : SmoothTriple U h)\n    (W : Fin 3 → Fin 3 → ScalarField (Point P)) (hW : ∀ i j, SmoothOn U (W i j)) :\n    Agree U (actualRadialError o base m h W) (radialRemainder o base m h)"
+      }
+    }
+  }
+}

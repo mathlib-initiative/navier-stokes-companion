@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 128,
-    "rect": [0.344853, 0.386182, 0.524049, 0.034765]
+    "rect": [0.347594, 0.396694, 0.519509, 0.02314]
   },
   "target": {
     "pin": {
@@ -34,7 +34,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Term by term the weights agree exactly, with the Lean dilation parameter XR playing the role of rho and the change of variable X = XR * x the role of X = rho x; the rewriting is only in packaging and notation. (i) The paper's single 5-vector is five separate Lean statements, one per moment of (4.15): M_scaling gives XR, I_scaling and J_scaling give XR * Real.sqrt XR (= rho^{3/2} for XR > 0, by Real.sqrt XR = XR^{1/2} and XR^1 * XR^{1/2} = XR^{3/2}), S_scaling gives XR, and the pressure entry gives 1. Each holds for an arbitrary Profile F and an arbitrary XR > 0, so the five conjoin in a line. (ii) Lean's Profile structure has no field named I and no cumulative S, so I_scaling and S_scaling write the right-hand side as the explicit integral ∫ u in Ioc 0 (X/XR) of F.H resp. F.energyDensity rather than naming F.I, F.S; F.energyDensity eta X = F.U(X,eta)^2 - F.E(X,eta)^2/2 is the paper's S integrand. (iii) The fifth entry, C_p = ∫_0^X E^2/(2x) dx with factor 1, is stated in Lean for the tail integral ∫ u in Ioi X of canonicalKernel = E^2/x (canonicalKernel_integral) and definitionally for the full pressure Pi; no declaration was found stating the factor-1 law for the cumulative ∫ over Ioc 0 X in the paper's form, but canonicalKernel_scaling (pointwise factor XR⁻¹) together with integral_dilate_Ioc (factor XR) gives it in two lines, and the paper's own Pi = Pi(0,eta) + C_p makes the Pi version the same statement once the axis value is held fixed. (iv) The paper's H = rho^{1/2} sqrt(2x) E is H_scaling verbatim: the dilated H at radius X equals Real.sqrt XR times F.H at x = X/XR, and F.H(x,eta) = sqrt(2x) F.E(x,eta); Lean's defining form H = sqrt(2X) * E(X/XR, eta) is the same identity written in the dilated variable. No constant, exponent, sign or domain differs; the Lean hypotheses are 0 < XR, which the paper's rho (a radial support scale) also carries implicitly.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

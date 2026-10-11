@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 42.2",
+  "label": "Display 42.1",
   "status": "partial",
   "location": {
     "page": 42,
-    "rect": [0.173292, 0.254588, 0.653635, 0.034848]
+    "rect": [0.174332, 0.257025, 0.649198, 0.028926]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [42],
         "printed": [42],
-        "text": "Display 42.2, p. 42, in the statement of Lemma 4.9"
+        "text": "Display 42.1, p. 42, in the proof of Theorem 4.6"
       },
       "region": "eq-p042-2@p042",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. No declaration was found that takes a minimum of the components of Ψ over ℐ×[−1,1]×𝕋 or over [X₊,Y₁]×[−1,1], and the margin the surrounding argument actually uses is the `HasConeMargin` quadruple, not Ψ. The paper's Ψ₄ itself does occur in the repository: `ActivationCone.cone_gap_factorization` has as its left-hand side exactly 2(c−v)² − (v−2)j² in the activation parameterization c = r + y·e·dP, v = (1−e)r + y·e·dv, j = y·e·dJ (so c − v = e(r + y(dP − dv))), factored as e²·`normalizedConeGap`; that file does not form the minimum, and it is not what the margins of this step are built from. The paper's two margins are reached by a different device: a compactness lemma that produces a single ε > 0 such that a quadruple of additive gaps is ≥ ε everywhere on the relevant set. μ_L corresponds to `compact_periodic_trueCone_margins`, and to the packaged form `exists_compact_trueCone_family_with_margin`, which for the constructed loop (A, C) with ∫₀¹A = a and ∫₀¹C = a·m gives one ε > 0 with `HasConeMargin ε (p₁ x) (p₂ x) (A (x,φ)) (C (x,φ))` for every x in the compact slow set K and every fast angle φ — a positive uniform margin for the loop over compact slow set × fast circle, which is the content of μ_L > 0 (`TrueConeLoopPaper.exists_local_family_with_margin` is the same statement under local regularity). μ_R corresponds to `UniformCone.compact_trueCone_margins` (compact set, no periodic variable; its three gaps v−2, P−2, coneBound(P,J)−v are supplemented by `UniformCone.positive_uniform_margin` for the a > 0 component). The gap quadruple itself differs from Ψ: Lean's components are (A, v−2, c−2, coneBound(c,j)−v) with v = A(1+(C/A)²) and coneBound P J = P + J²/4 − |J|√((P−2)/2 + J²/16), whereas Ψ = (a, v−2, c−v, 2(c−v)² − (v−2)j²); the shear sign convention also differs (Lean's signedAxialLoop = −b). The two quadruples cut out the same open true cone via the ConeAlgebra square-root/quadratic equivalence, but they are not the same functions, so a positive minimum of one is not literally a positive minimum of the other, and the downstream bookkeeping differs too: where the paper propagates μ through a Lipschitz constant C_Ψ in (4.41), `ModulatedCone.realized_loop_stable` carries a metric thickening tolerance ρ > 0 in the data coordinates instead. Rated low: the surrounding result (the cone condition survives the modulation for N large) is proved, by this other route.",
+          "summary": "Lean uses a different formula here. Lean does not take minima of Ψ; by compactness it gets a uniform ε > 0 on each set for its own four cone gaps, which cut out the same open cone as Ψ > 0 but are different functions.",
           "verdict": "deviation"
         }
       ]

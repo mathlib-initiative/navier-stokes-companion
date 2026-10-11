@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 121,
-    "rect": [0.345232, 0.355878, 0.523836, 0.040179]
+    "rect": [0.345455, 0.356198, 0.521648, 0.033884]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (10.14), p. 121, in the proof of Lemma 10.4"
       },
       "region": "eq-10.14@p121",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.92,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean states the identity for the energy itself rather than for half its time derivative: d/dt l2Sq u = -2 dissipation u t + 2 ∫⟪u,f⟩. Dividing by two and moving the dissipation term to the left gives the paper's line verbatim, since l2Sq u t = ‖u(t)‖_2^2, dissipation u t = ∑_{i<3} ∫‖∂_i u(t,·)‖^2 = ‖∇u(t)‖_2^2, and ∫⟪u(t,x),f(t,x)⟩dx = ⟨f(t),u(t)⟩ (real inner product, symmetric). CompactEnergy.lean:323 is at viscosity one, matching the paper's convention here; ViscousEnergyBalance.lean:56 is the same identity with ν free and specialises to it at ν = 1. The Lean form HasDerivAt also asserts the differentiability in t that the paper's d/dt presupposes, and its hypotheses (joint smoothness on a slab, one fixed compact spatial support on [a,b], divergence-free, the PDE on the open interval) are the paper's \"smooth with fixed compact spatial support on [0,T]\".",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

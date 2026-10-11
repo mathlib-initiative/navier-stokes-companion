@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.8/key/1.NavierStokes.ReservedPatches.canonical_margins",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ReservedPatches.canonical_margins",
+      "line": 137,
+      "module": "NavierStokes.ReservedPatches",
+      "path": "NavierStokes/ReservedPatches.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReservedPatches.lean#L137"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ReservedPatches.canonical_margins",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: holdStart + 29 < leftClock F s and rightClock F s <= pulseStart - 3 for each of the four slots; with windows_disjoint (same file:90) and window_nonempty (87) this gives four nonempty ordered disjoint intervals strictly between X_good = XR exp(holdStart) and the pulse, each endpoint XR times a fixed ",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 137,
+        "text": "theorem canonical_margins (F : Profile)\n    (hw : F.data.core.wait = 60 * Real.log (1 / F.data.core.lam)) (s : Slot) :\n    F.data.core.holdStart + 29 < leftClock F s ∧\n      rightClock F s ≤ F.data.core.pulseStart - 3"
+      }
+    }
+  }
+}

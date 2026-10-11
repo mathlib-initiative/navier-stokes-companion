@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 12,
-    "rect": [0.256727, 0.204256, 0.486771, 0.042461]
+    "rect": [0.258824, 0.204959, 0.481283, 0.036364]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The first clause is matched exactly: SmoothLoop.angularMean f = (∫_0^{2π} f)/(2π) is the display's ⟨F⟩_θ character for character, and CorrectionState.angularAverage is the same formula for a field. The second and third clauses are matched in the unit-square encoding rather than written as an integral over 𝕋² with a normalized measure: squareAverage f = ∫_0^1∫_0^1 f(x,y), over the fundamental square of 𝕋² = ℝ²/ℤ² (the quotient is TorusAverages.quotientPoint, with UnitAddCircle factors, matching the paper's 'mod ℤ²' in (6.3)). Recovery: for a continuous function on the torus (squareAverage_torusLift is stated for f : C(Torus, ℂ), so continuity and not merely unit-periodicity is what it assumes), squareAverage_torusLift identifies squareAverage (torusLift f) with ∫ f ∂torusMeasure over 𝕋², so the two readings agree on the continuous unit-periodic functions — which covers the smooth integrands the paper averages, though the Lean lemma does not state the merely-measurable case. The paper's ⟨F⟩_Y(r,θ,z,t), an average over Y alone with the slow variables carried along, is matched more closely still by PressureStream.torusAverage (PressureStream.lean:70, docstring: 'The bar averages only the auxiliary torus, preserving every slow parameter'), which integrates the two auxiliary coordinates over [0,1]² while keeping a parameter p : ℝ × S fixed; TorusAverages.squareAverage is the same integral with no slow parameter. The third clause, ∫_{𝕋²} 1 dY = 1, is stated outright in the measure encoding: torusMeasure is the product of two copies of AddCircle.haarAddCircle on UnitAddCircle (TorusInverse.lean:342) and the instance at TorusInverse.lean:345 declares it an IsProbabilityMeasure, i.e. its total mass is 1; with squareAverage_torusLift that is the paper's normalization directly, not a consequence one has to derive. On the square side the same fact is true by the definition body (taking F ≡ 1 gives ∫_0^1∫_0^1 1 = 1), but I found no standalone lemma asserting squareAverage (fun _ => 1) = 1 — the nearest declaration I found by searching TorusAverages.lean is squareAverage_const_mul (line 642). The composition ⟨F⟩ = ⟨⟨F⟩_θ⟩_Y of the following sentence is PartitionedCovariance.doubleAverage, in the same order.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

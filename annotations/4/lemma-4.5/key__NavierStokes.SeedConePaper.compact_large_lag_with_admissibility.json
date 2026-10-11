@@ -1,0 +1,31 @@
+{
+  "id": "lemma-4.5/key/1.NavierStokes.SeedConePaper.compact_large_lag_with_admissibility",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SeedConePaper.compact_large_lag_with_admissibility",
+      "line": 78,
+      "module": "NavierStokes.SeedConePaper",
+      "path": "NavierStokes/SeedConePaper.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedConePaper.lean#L78"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SeedConePaper.compact_large_lag_with_admissibility",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation equivalent; the auditor's reading: Assertion (ii): for `K : Set (ℝ×ℝ×ℝ)` compact with `0 < z.1`, `0 < z.1 - z.2.1*z.2.2` and `2*z.2.1*z.2.2 + z.2.1^2/z.1 + (z.1-2)*z.2.2^2 < 2` on K, `∃ P, 0 < P ∧ ∀ z ∈ K, ∀ p₁, P ≤ p₁ → RelaxedCone z.1 z.2.1 p₁ (z.2.2*p₁) ∧ (2 < shearMagnitude z.1 z.2.1 → AdmissibleCone z.1 z.2.1 p₁ (z.2.2*p₁))`. Sa",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 78,
+        "text": "theorem compact_large_lag_with_admissibility {K : Set (ℝ × ℝ × ℝ)}\n    (hK : IsCompact K) (ha : ∀ z ∈ K, 0 < z.1)\n    (hfirst : ∀ z ∈ K, 0 < z.1 - z.2.1 * z.2.2)\n    (hsecond : ∀ z ∈ K,\n      2 * z.2.1 * z.2.2 + z.2.1 ^ 2 / z.1 + (z.1 - 2) * z.2.2 ^ 2 < 2) :\n    ∃ P : ℝ, 0 < P ∧ ∀ z ∈ K, ∀ p₁ : ℝ, P ≤ p₁ →\n      RelaxedCone z.1 z.2.1 p₁ (z.2.2 * p₁) ∧\n        (2 < shearMagnitude z.1 z.2.1 →\n          AdmissibleCone z.1 z.2.1 p₁ (z.2.2 * p₁))"
+      }
+    }
+  }
+}

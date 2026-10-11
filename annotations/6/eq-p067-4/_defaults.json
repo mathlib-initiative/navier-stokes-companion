@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 67.4",
+  "label": "Display 67.2",
   "status": "formalized",
   "location": {
     "page": 67,
-    "rect": [0.219154, 0.508007, 0.561915, 0.070526]
+    "rect": [0.220321, 0.507438, 0.558289, 0.069421]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [67],
         "printed": [67],
-        "text": "Display 67.4, p. 67, in the proof of Lemma 6.2"
+        "text": "Display 67.2, p. 67, in the proof of Lemma 6.2"
       },
       "region": "eq-p067-4@p067",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Every piece of the display is stated, but as three declarations rather than one. (a) The set equality: `preimage_nativeRectangle_sheets` gives (torusCovering^[g.gap])⁻¹' nativeRectangle g r = ⋃_{i : Sheet g.gap} sheetRectangle g r i; unfolding sheetRectangle/liftedRectangle/Geometry.point turns the i = [k] member into quotientPoint ((coverPower g.gap).symm (g.center + latticePoint k + g.basis z)), which is the paper's J_g^{-Δ}(c_γ + k + ξ v_r + η v_t) (mod Z²) once g.basis = slotChart v_r v_t (slotChart_apply z = z.1 • v_r + z.2 • v_t, TorusAverages.lean:488). The index type Sheet g.gap = Frequency ⧸ (coverHom g.gap).range is literally Z²/J_g^Δ Z². The parameter domain is Metric.ball (0 : Plane) r₀, and the product norm on Plane is the max norm, so the ball is exactly {|ξ|,|η| < r₀} (stated in the docstring at TorusAverages.lean:169-170). Lean leaves g.basis an arbitrary Plane ≃L[ℝ] Plane, so it is more general than the paper's fixed radial/temporal pair. (b) The paper writes ⊔ (disjoint union); Lean's equality uses ⋃ and disjointness is the separate `pairwise_disjoint_sheetRectangles_of_injOn`, conditional on InjOn quotientPoint over the chart — the hypothesis the paper leaves implicit in its choice of small r₀ (`pairwise_disjoint_sheetRectangles`, line 247, discharges it from ‖g.basis‖ * r < 1/2). (c) The count: `card_sheet` states #(Z²/J_g^Δ Z²) = 14^Δ. The paper's middle expression |det J_g|^Δ is not stated anywhere I found: Lean reaches 14 through the surjective residue homomorphism Frequency →+ ZMod 14 (TorusCoverLattice.lean:28-63), never through a determinant of J_g, so the identity |det J_g| = 14 for [[3,1],[1,5]] is not a Lean statement. That is a route difference in an arithmetic identity whose value, 14, Lean does state.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 29.6",
+  "label": "Display 29.3",
   "status": "formalized",
   "location": {
     "page": 29,
-    "rect": [0.288067, 0.582182, 0.424097, 0.025876]
+    "rect": [0.28877, 0.584298, 0.420321, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [29],
         "printed": [29],
-        "text": "Display 29.6, p. 29, in the proof of Lemma 4.4"
+        "text": "Display 29.3, p. 29, in the proof of Lemma 4.4"
       },
       "region": "eq-p029-6@p029",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Neither finding cited the declaration that states this display in one piece: NominalProfile.moments_propagate (NominalProfile.lean:486). Its `moments U E r eta` is the 5-vector of integrals over (0,r] of the densities (U, sqrt(2x)E, U sqrt(2x)E, U^2 - E^2/2, E^2/(2x)) (density, line 240), which are the paper's five integrands for (M,I,J,S,C_p) with H = sqrt(2x)E. Its `head` hypothesis is Delta m(X_h,eta)=0 written as an equality of the two moment vectors at a, its `tail` hypothesis is agreement of (U,E) for x > a (weaker than the paper's X >= X_h), and its conclusion is equality of the two moment vectors at every r >= a, i.e. Delta m(X,eta)=0 for X >= X_h. Differences are packaging only: (1) Lean writes m_1 = m_2 rather than Delta m = 0 and does not write the middle term \"= Delta m(X_h,eta)\", which is immediate since both sides are zero; (2) eta is a fixed argument, so the range -1 <= eta <= 1 is obtained by instantiating at each eta; (3) Lean carries explicit IntegrableOn hypotheses for the five densities on (0,r] for both profiles, which is the Lean form of the paper's standing assumption in Lemma 4.4 that the five integrals in (4.15) are defined; these hypotheses are discharged in the construction where the lemma is applied (joined_moments at NominalProfile.lean:530 and heated_moments at :2017). The scalar lemmas A and B cited (integral_equal_after, with continuity on [0,X] including the axis; history_equal_after; pressure_equal_after) are single-row versions of the same propagation in the (f,U) encoding and are not needed to cover the display once moments_propagate is taken into account. Witness.rows_outside is only an instance of the five-row conclusion for one constructed witness, obtained from the structure field `restored`, not the general propagation. I did not check that the (U,E)-encoded `NominalProfile.moments` and the (f,U)-encoded `ProfileHistories.Profiles` rows are linked by a stated declaration beyond seeing NominalConeAssembly.Witness.history_after / moments_eq_profile_moments use both.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

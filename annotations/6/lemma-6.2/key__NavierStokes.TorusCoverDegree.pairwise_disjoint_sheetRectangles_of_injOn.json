@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/key/1.NavierStokes.TorusCoverDegree.pairwise_disjoint_sheetRectangles_of_injOn",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TorusCoverDegree.pairwise_disjoint_sheetRectangles_of_injOn",
+      "line": 234,
+      "module": "NavierStokes.TorusCoverDegree",
+      "path": "NavierStokes/TorusCoverDegree.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusCoverDegree.lean#L234"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TorusCoverDegree.pairwise_disjoint_sheetRectangles_of_injOn",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If quotientPoint is injective on (g.center + g.basis '' ball 0 r) then the sheetRectangles are pairwise disjoint: the 'disjoint' of clause (b). The corollary at line 247 replaces the hypothesis by ||g.basis|| * r < 1/2."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 234,
+        "text": "theorem pairwise_disjoint_sheetRectangles_of_injOn (g : Geometry) (r : ℝ)\n    (hr : InjOn quotientPoint\n      ((fun z => g.center + g.basis z) '' Metric.ball (0 : Plane) r)) :\n    Pairwise (fun i j : Sheet g.gap => Disjoint (sheetRectangle g r i)\n      (sheetRectangle g r j))"
+      }
+    }
+  }
+}

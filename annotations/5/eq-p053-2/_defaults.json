@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 53,
-    "rect": [0.279873, 0.257021, 0.440469, 0.082224]
+    "rect": [0.281283, 0.261983, 0.436364, 0.075207]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both displayed lines are instances of one stated Lean identity. `integral_weighted_radial_scale` is the r = √q·R change of variables with an arbitrary power b and an arbitrary radial profile g, over the same range Ioi 0 and with the same r² weight; the 3/2 in the exponent is the r² dr Jacobian, exactly as in the paper. Line 1 is b = -A + λ_n, g = E_n, using u_{θ,n} = q^{-A+λ_n}E_n(r/√q) from (5.1) (the order-0 instance of that substitution is `uTheta_eq_similarity_pullback`, with the general exponent available as the argument of SimilarityProfile.pullback). Line 2 is b = -2A + λ_n, g = Σ_{i+j=n} U_iE_j: each product u_{z,i}u_{θ,j} carries q^{-2A+λ_i+λ_j}, and the power is independent of the split because Lean's order exponent slowOrder h k = 2kh is additive, λ_i + λ_j = λ_{i+j}; pulling the finite sum through the integral then needs only linearity (integrability of each term not checked). No declaration was found that writes the order-n convolution form itself: a search of the index for q-exponents of the shape 3/2 turned up only this file and unrelated R³ analysis, and the slow-profile moment argument is carried out in R coordinates (SlowStressSupport / GlobalStressSupport) rather than by rescaling physical integrals.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

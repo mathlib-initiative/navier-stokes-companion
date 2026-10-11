@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 112,
-    "rect": [0.347157, 0.68631, 0.521913, 0.122995]
+    "rect": [0.347594, 0.68843, 0.519509, 0.119008]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same objects; Lean states them as definitions rather than as one display, and indexes stages from 0. Rewriting: (i) Δu_j = curl A_j + B_j is `stageVelocity` verbatim; (ii) the finite sum is a prefix sum — `GenericRealizationBounds.stage base A J = base + Σ_{j ∈ range(J+1)} positiveStages A j` with `CutStageEstimates.positiveStages A 0 = 0` (CutStageEstimates.lean:433), which is literally U_0 + Σ_{j=1}^{J} p_j, and `positiveStage u0 A B J` is the same for u^{[J]} with the curl-and-direct split; (iii) the paper's second equality Δu_j = u^{[j]} − u^{[j−1]} is the telescoping of that prefix sum (uncutPrefix_succ / Finset.sum_range_succ), together with `uncutVelocity_eq_stagePrefix`, which gives curl(Σ_j A_j) + Σ_j B_j = Σ_j (curl A_j + B_j); in the concrete stage-9 instance (WholeDomainStageBounds.finiteVelocity / finitePressure) the base sits as stage 0 of the prefix instead of as a separate summand; (iv) A_j = A_j^w + Ψ_j e_θ is `positivePotential = particularPotential + signedPotential + streamMeanStages (j+1)`, the last being `meanAngularField`, i.e. a scalar • angular unit vector; (v) B_j = b_j e_θ is `angularMeanStages = meanAngularField … (angularNativeStages …)`, with `angularNativeStages` the consecutive difference; (vi) Z_j = (A_j, B_j, p_j) is `representatives` on `Bool ⊕ κ`, the paper's 'optional stress entry omitted' being κ taken as a singleton. No declaration was found that displays all five assignments in one statement.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 83.6",
+  "label": "Display 83.4",
   "status": "partial",
   "location": {
     "page": 83,
-    "rect": [0.322119, 0.657543, 0.35634, 0.060671]
+    "rect": [0.324064, 0.657851, 0.350802, 0.057851]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [83],
         "printed": [83],
-        "text": "Display 83.6, p. 83, in the statement of Lemma 7.4"
+        "text": "Display 83.4, p. 83, in the proof of Proposition 7.5"
       },
       "region": "eq-p083-6@p083",
       "relation": "states",
@@ -33,7 +33,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The explicit Faa di Bruno expansion of the display — the sum over compositions I_1+...+I_n = I with coefficients c_{I_1,...,I_n} and the factor y_sigma^{1/2-n} — occurs nowhere in the Lean; no declaration forms it, and the repository contains no Faa di Bruno / OrderedFinpartition machinery at all. The Lean reaches the same destination (the derivative bound of the next display) by two norm-level routes instead. Route one: `comp_jet_bound` wraps Mathlib's norm_iteratedFDerivWithin_comp_le, which is the quantitative shadow of the same combinatorics, and feeds it the one-dimensional outer-derivative identity `iteratedDeriv_rpow` (d^n/dt^n t^p = rpowCoeff p n * t^{p-n}); at p = 1/2 that supplies exactly the paper's y^{1/2-n} factor, but only inside a norm estimate, with the composition combinatorics collapsed into the factor n.factorial. Route two: `sqrt_class` avoids the composition entirely, writing sqrt(g) = 2 * (g / (2 sqrt g)) and invoking a signed-quotient class lemma. The paper uses the display only to derive the next bound, which both routes prove, so the surrounding result is not affected.",
+          "summary": "Lean uses a different formula here. Lean never forms this expansion; it proves the next display's bound by two other routes: a norm estimate for compositions, and writing √g as a quotient.",
           "verdict": "deviation"
         }
       ]

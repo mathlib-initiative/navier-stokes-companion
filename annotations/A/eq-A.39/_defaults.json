@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 139,
-    "rect": [0.34692, 0.233595, 0.52198, 0.024722]
+    "rect": [0.348663, 0.233058, 0.519529, 0.022314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same formula, written in the radius variable X rather than the paper's logarithmic variable y, and with one particular admissible step function substituted for the paper's free choice. The dictionary, each half of it checked in the sources: E_cl is OutgoingDilation.E F XR (the dilated reference profile, OutgoingDilation.lean:61, E F XR p = F.E (p.1/XR, p.2)); ℋ is RadialHeatProfile.profile (1 + h), whose kernel exp(-v)·v^{a-1}(1+zv)^{1-a} with a = 1 + h and the Γ(a)⁻¹ normalization is (A.32) term for term; d is ParametricHeatTail.diffusion eta = 1 - eta^2, which is the paper's d = 1 - η² (text p. 139 line 'd = 1 − η²', and p. 138 'the composition with Z = 2(1 − η²)/X'), so the argument 2*ν/X with ν := diffusion eta is exactly 2d/X; χ_K(y) is HeatTailEdit.switch K X = sigma(log(X/K)/(3/10)) with K = switchRadius F XR = XR·exp(tailStart + 1/5). Since the Lean clock is log(X/XR) and X_tail = radius XR (tailStart), that K is e^{0.2}·X_tail, the paper's X_K = e^{.2}X_tail, and y = log(X/X_tail) = log(X/K) + 1/5; hence switch = sigma((y − .2)/.3), which is zero for y ≤ .2 (OutgoingSchedule.sigma_zero, used in switch_zero) and one for y ≥ .5 (sigma_one, used in switch_one), i.e. one admissible instance of the paper's 'choose a smooth step 0 ≤ χ_K(y) ≤ 1'. Under this dictionary heatE = E_cl·[1 + χ_K(y)(ℋ(2d/X) − 1)] symbol for symbol. The paper's displayed map is the bracket multiplication alone; the Lean splits it into multiplier (the bracket), edit (the map E ↦ E·multiplier) and heatE (the map applied to E_cl), and the compensating bumps of the Proposition are added separately in HeatedOutgoing.E = heatE + patchIncrement, matching the paper's 'three additive E-bumps'.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

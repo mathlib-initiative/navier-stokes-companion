@@ -1,5 +1,5 @@
 {
-  "id": "eq-4.27/key/NavierStokes.LeadingStressWeights.physical_jet_bound",
+  "id": "eq-4.27/key/02.NavierStokes.LeadingStressWeights.physical_jet_bound",
   "target": {
     "pin": {
       "declaration": "NavierStokes.LeadingStressWeights.physical_jet_bound",
@@ -16,6 +16,7 @@
         "kind": "theorem"
       },
       "relation": "states",
+      "role": "key",
       "snippet": {
         "line": 1137,
         "text": "theorem physical_jet_bound (hcone : FullTrueCone v) (n : ℕ) : ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ eta ∈ Icc (-1) 1, ∀ X ∈ Ioo (activeLeft W) (activeRight W), ‖iteratedFDeriv ℝ n (fun p => stress v.profiles F.data.h (p.2, p.1)) (eta, X)‖ ≤ C * zeta v X / distance v X ^ N"

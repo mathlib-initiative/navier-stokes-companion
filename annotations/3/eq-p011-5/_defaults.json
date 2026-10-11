@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 11,
-    "rect": [0.314737, 0.695547, 0.371639, 0.045702]
+    "rect": [0.315508, 0.695868, 0.367914, 0.043802]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Every exponent in the display is stated in Lean, but spread over two modules and reached by one line of rpow arithmetic in each case; nothing in the display is weaker or absent. (i) A_wave^2 ~ q^{-1-h} is the square of Scaling.wave_amplitude_power: (Q^{-1/2-h/2})^2 = Q^{-1-h} by Real.rpow_add. No declaration states the squared amplitude itself. (ii) A_wave^2 ~ |u_theta^{(0)}|/q^{1/2} is coreVelocity q h / radialLength q = q^{-(1/2+h)} / q^{1/2} = q^{-1-h}, again one rpow_add step; the identification |u_theta^{(0)}| ~ q^{-(1/2+h)} is forced inside the display itself (its first two relations give it) and matches CoordinateAlgebra.A h = 1/2 + h, the growth exponent used throughout the Lean. The same exponent appears independently as the weight of the physical angular radial stress, pullback h (-A h - 1/2), in LeadingStress.physicalStressTheta: -A h - 1/2 = -1 - h. (iii) A_wave^2 / q^{1/2} ~ q^{-3/2-h} is not stated as such by any declaration found; the display's own arithmetic is one rpow step from Scaling.wave_amplitude_power, dividing Q^{-1-h} by Q^{1/2}. The exponent -3/2-h does occur in the Lean independently, as the weight of the angular radial stress divergence: radialDivergence_physicalStressTheta gives the radial divergence of physicalStressTheta as q ^ (-A h - 1) times a profile factor, with -A h - 1 = -3/2 - h. That is a statement about a different object whose weight carries the same exponent, and the profile factor is not shown to be two-sided (see not_traced), so it corroborates the exponent rather than asserting the display. The sentence the paper attaches to this display (that this is the scale of the averaged radial stress divergence, matching the leading time derivative, transport and radial viscosity in the tangential momentum equations) corresponds to theta_transport_stress, which equates the transport residual plus the axial-viscosity term to minus that radial stress divergence; note that the viscosity term carried there is thetaAxialViscosity (the d_Z d_Z term, of relative size q^{2h}), not the radial viscosity the paper's sentence names.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

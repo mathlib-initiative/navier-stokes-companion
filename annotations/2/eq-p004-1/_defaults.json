@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 4,
-    "rect": [0.31191, 0.489862, 0.376403, 0.025821]
+    "rect": [0.313369, 0.490083, 0.372193, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both exponents match verbatim: the Lean names the two scales `radialLength q = q^(1/2)` and `axialLength q h = q^(1/2-h)`, and `chartToPhysical h Q p = (1 - Q·(…), (Q·R²/2, Q^(D h)·η))` with `CoordinateAlgebra.D h = 1/2 - h` uses exactly these as the chart's radial and axial scales. The rewriting is the paper's own change of variable: the Lean works in the similarity variable q, the paper's display in τ, and τ = q(1-η²) (`tau_coordinate_identity`, the paper's (3.2)), so q ≍ τ on compact η-sets away from η = ±1 — the paper states this itself on p. 7, where (3.2) stands and the text reads \"On a fixed compact set of similarity coordinates away from η = ±1, we have q ≍ τ\". Two textual divergences: (i) the Lean definitions are exact powers of q, not two-sided (≍) comparabilities with the constructed flow's core widths — `Scaling.lean`'s own module docstring says \"These are scalar scaling facts; they do not supply a Navier--Stokes solution or analytic estimates for its profiles\"; (ii) the h-range is encoded non-strictly, `h_le : h ≤ 1 / 100` in `NaturalAxisRange.Parameters`, where the paper writes 0 < h < 1/100, so the Lean admits the one extra value h = 1/100. The admitted range is wider, not narrower.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 123.7",
+  "label": "Display 123.6",
   "status": "partial",
   "location": {
     "page": 123,
-    "rect": [0.29443, 0.663848, 0.411631, 0.043691]
+    "rect": [0.296257, 0.666116, 0.406417, 0.038843]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [123],
         "printed": [123],
-        "text": "Display 123.7, p. 123, in the proof of Lemma 10.5"
+        "text": "Display 123.6, p. 123, in the proof of Lemma 10.5"
       },
       "region": "eq-p123-7@p123",
       "role": "key",
@@ -32,7 +32,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The second inequality of the paper's chain, E_R(t) ≤ C_T'/R, is stated with an explicit constant: le_div_radius_of_deriv_le gives E(t) ≤ (C·T·exp(K·T))/R, which with K = 2G and C = D is the paper's C_T'/R, and eq_zero_of_weighted_rate_bound applies it to E_R = weightedEnergy (weight R) (u-v). The first, middle expression is not formed: the Lean's Gronwall uses the constant integrating factor exp(-K t) with a time-uniform K, not the paper's time-dependent factor exp(2∫_s^t ‖∇u(a)‖_∞ da), and so never produces (2C_T/R)∫_0^t exp(2∫_s^t ‖∇u(a)‖_∞ da) ds. The nearest Lean form is E(t) ≤ ε·t·exp(K·t) (le_exp_mul_of_deriv_le), which is the paper's middle integral bounded above by its own constant-coefficient majorant once ‖∇u(a)‖_∞ ≤ K/2; the paper's factors of 2 are consistent, since its display eq-p123-6 divided by 1/2 gives E_R' ≤ 2‖∇u‖_∞E_R + 2C_T/R. I searched decls.jsonl case-insensitively for `gronwall` (44 hits, all inspected by file) and for a signature containing `exp (∫`: every Gronwall-type declaration in the repository (ComparisonGronwall, ScalarEnergyBound.forced_gronwall*, PeriodicUniqueness.gronwall_zero, R3LocalizedEnergyLimit.gronwall_error) takes a constant coefficient K, so no declaration states the Duhamel form. Severity low: the conclusion the paper draws from the display — E_R(t) ≤ C_T'/R uniformly in R, hence w = 0 after R → ∞ — is proved (WholeSpaceEnergyLimit.eq_zero_of_radius_bound, line 53).",
+          "summary": "Lean uses a different formula here. Lean proves the final bound E_R(t) ≤ C_T'/R with an explicit constant; the middle integral with exp(2∫_s^t ‖∇u(a)‖_∞ da) is never formed, because Lean's Gronwall step uses a constant rate.",
           "verdict": "deviation"
         }
       ]

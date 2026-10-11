@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 78,
-    "rect": [0.248425, 0.142308, 0.620646, 0.069837]
+    "rect": [0.250267, 0.143802, 0.616835, 0.064463]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (7.13), p. 78, in the statement of Proposition 7.2"
       },
       "region": "eq-7.13@p078",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.85,
@@ -29,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Term by term the two agree. Expanding A_Phi = -K + n_Phi (n_Phi^T K - (n'_Phi)^T) / |n_Phi|^2 from (7.6), the paper's first line reads -K t_m + ((n_Phi . K t_m - n'_Phi . t_m) / |n_Phi|^2) n_Phi - m^2 d t_m - proj onto n_Phi-perp of f_m, which is projectedRhs n n' t Kt f d symbol for symbol, with the Lean damping argument standing for m^2 d; NativePrincipalEquations.complexCopyCoefficients_principal_at (line 107) supplies that argument as s.epsilon n * frequency ^ 2 * ‖normal‖ ^ 2 with frequency = km, i.e. m^2 * eps * k^2 * |n_Phi|^2 = m^2 d. The second line is LinearWaveResidual.projectedPressure literally, with kappa = km and normalDot the bilinear (unconjugated) dot product, which is the paper's n_Phi . (-) on complex vectors. Two encoding choices, neither changing the content. (a) The paper's complex three-component system is solved in Lean as two real solves (ParticularWaveBounds.realData and imagData) recombined by complexCopyVelocity and complexCopyPressure; this is legitimate because K, n_Phi, the damping and m^2 are real and the projection is R-linear. (b) The pressure is produced first as the real scalar pressureCoefficient and then multiplied by i / km, which is the Lean form of the displayed quotient. The anchoring t_m(0) = 0 is anchoredSolve_initial, and existence and uniqueness of the tangent solve are TangentODE.exists_unique_tangent_solution.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 144,
-    "rect": [0.346242, 0.769537, 0.52321, 0.043982]
+    "rect": [0.346524, 0.770248, 0.520578, 0.038843]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The formula is verbatim: chi is H_*^2/(H_*^2+sigma^2), and exists_sigma / exists_cutoff_parameters / ideal_prefix_cutoff_parameters produce delta_* (= j/10) and then sigma_* (= sqrt(m)/20) with 99/100 < chi wherever |Z_*| <= delta_*, in the paper's order of choice; the schedule-pressure instance is stated in SchedulePressure.natural_profileFamily. The only gap is the range of eta. The sentence right after the display says these choices are made on a slightly larger compact interval I containing [-1,1]; every Lean statement of the cut that I found (all hits of `99 / 100 < ... chi`) quantifies eta over Icc (-1) 1. The repository has an enlarged interval (window = [-11/10, 11/10]) for the analytic coefficient space, but no declaration asserts the cut on it or on any interval larger than [-1,1]; ProfileFamily.slope is stated on the open window only conditionally on chi >= 99/100. Extending the cut beyond [-1,1] is not a formal step: the Lean proof takes the compact minimum of H^2 over Icc (-1) 1 intersected with {|Z| <= j/10}, root uniqueness is stated only on Icc (-1) 1, and PressureData gives the pressure sign conditions only on Icc (-1) 1. (By my own hand computation, not checked in Lean, the cubic H has further real zeros near eta = +-1.06, inside the Lean window, so the cut on that window would need a separate lower bound on |Z| there.) What the Lean states follows from the display by restricting eta to [-1,1]. Later use in the paper: the two regions of (B.2) are used in the proof of Proposition B.3 (pp. 149-150, endpoint inequality (B.19), on the rectangle [0,4.1] x [-1,1]) and in Lemma B.4 (p. 151, on [X0,Xi] x [-1,1]); the Section 4 restatement on p. 37 does not mention I. I found no place where the paper uses chi > .99 at an eta outside [-1,1]; the interval I is used for the coefficient norm (B.4) and the approximation (B.13), which involve chi as a function, not the cut. Hence low severity.",
+          "summary": "Lean has a weaker form of it. Lean states χ > .99 where |Z_*| ≤ δ_* only for η in [-1,1], not on the slightly larger interval I ⊃ [-1,1] on which the paper says the choices are made.",
           "verdict": "deviation"
         }
       ]

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/key/1.NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
+      "line": 1814,
+      "module": "NavierStokes.GlobalSlowProfiles",
+      "path": "NavierStokes/GlobalSlowProfiles.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1814"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Given Localization L and BaseAgreement B0: for 0 <= X < inner and each component i, xProfile (component (profiles s n) i) w = SlowRecursion.profile (A.coefficients n (localIndex i)) w. This is 'agreeing with the inner solution on [0, X_-]', with inner = cutoffInner > zeroEnd = X_-.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1814,
+        "text": "theorem profiles_inner_eq {S : Set ℝ} {h C rho inner : ℝ} {U : Set ℂ}\n    {base : Fin 5 → SimilarityProfile.InnerProfile} {s : Scheme S h C}\n    {A : SlowRecursion.LocalHierarchy rho U h C base}\n    (L : Localization s A inner) (B0 : BaseAgreement s A inner)\n    {n : ℕ} (hn : 0 < n) (i : Fin 4) {w : ℝ × ℝ}\n    (hX : 0 ≤ w.1) (hi : w.1 < inner) (heta : w.2 ∈ S) :\n    xProfile (component (profiles s n) i) w = SlowRecursion.profile (A.coefficients n (localIndex i)) w"
+      }
+    }
+  }
+}

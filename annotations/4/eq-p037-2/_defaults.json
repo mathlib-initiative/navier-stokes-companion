@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 37.2",
+  "label": "Display 37.1",
   "status": "formalized",
   "location": {
     "page": 37,
-    "rect": [0.319533, 0.245246, 0.361157, 0.02851]
+    "rect": [0.321925, 0.245455, 0.35508, 0.026446]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [37],
         "printed": [37],
-        "text": "Display 37.2, p. 37, in the statement of Proposition 4.10"
+        "text": "Display 37.1, p. 37, in the statement of Proposition 4.10"
       },
       "region": "eq-p037-2@p037",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both inequalities are stated for the actual leading stress, in the physical variables. Lower bound: `stress_lower_bound` gives c * zeta v X ≤ ‖stress v.profiles F.data.h (X,η)‖ for X strictly between the two attachment radii and η ∈ [-1,1]. Upper bound: `physical_jet_bound` gives ‖iteratedFDeriv ℝ n (fun p => stress … (p.2,p.1)) (η,X)‖ ≤ C * zeta v X / distance v X ^ N on the same range — derivatives in the physical (η,X) coordinates, the paper's ∂^α_{X,η}, the log→X conversion being supplied generically by `exists_radial_derivative_bound` (docstring: \"The same weight controls genuine derivatives in `X`, not just in `log X`\"). Unwinding the two weights: zeta v X = radialWeight (t_1^2) (log X_a) (log X_b) X = edge (t_1^2) y_a · edge 4 y_b and distance v X = min 1 (min y_a y_b), where y_a = log X − log X_a = log(X/X_a) and y_b = log X_b − log X. So the rewriting needed is the restriction of these two-sided quantities to the paper's first collar X_a < X ≤ X_an: there y_a ≤ min(1, y_b), hence distance v X = y_a exactly, and y_b lies in a compact subinterval of (0, log(X_b/X_a)) so that edge 4 y_b ∈ [m_b, 1] for a positive constant m_b (lower bound by continuity and positivity of `FlatCutoff.edge 4` away from 0, upper bound by `edge_le_one`). Substituting: c·zeta ≥ (c·m_b)·e^{-t_1^2/y_a^2}, which is the paper's |𝒯_0| ≥ c e^{-t_1^2/y_a^2}; and C·zeta/distance^N ≤ C·e^{-t_1^2/y_a^2}·y_a^{-N}, which is the paper's |∂^α 𝒯_0| ≤ C_α e^{-t_1^2/y_a^2} y_a^{-N_α}. Two packaging points. (a) The paper fixes a multi-index α and produces C_α, N_α; Lean fixes an order n and produces one C and one N for the whole n-jet, which is at least as strong for each α of order n, and the `iteratedFDeriv` norm dominates the individual partials ∂^α. (b) `EdgeFactor.collar` and `EdgeFactor.derivative_bound` state the same two inequalities in the chart variable for an *arbitrary* EdgeFactor K c T; they are the generic lemmas behind the two instantiated statements above and say nothing about 𝒯_0 on their own — the instance for the leading stress is the one supplied by `inner_direction_positive`, and the two instantiated statements reach it through `weighted_bounds` (invoked at :1125 and :1142), which I did not open. One scope point, recorded rather than charged as a defect: the Lean bounds are stated on the whole open annulus (X_a, X_b) with the two-sided weight, where the paper asserts them on the first collar (X_a, X_an] with X_an fixed back in part (i); the restriction above is the passage between the two, and I did not check that the Lean's package fixes X_an in the same place the paper does.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

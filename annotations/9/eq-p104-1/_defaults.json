@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 104,
-    "rect": [0.178608, 0.122572, 0.437141, 0.039554]
+    "rect": [0.302674, 0.135537, 0.392513, 0.022314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Equivalent up to instantiation of the exponents and up to packaging. The paper asserts two class memberships with abstract exponents α, μ (\"furnished by\" the earlier propositions); the Lean states them with the exponents the induction actually carries: the wave membership f_{γ,m} ∈ W_α is `source_localBounds` with α = 1/2+σ, stated for every component i and every nonzero harmonic j (the paper's wave class is likewise the nonzero-harmonic part), and ⟨G_*⟩_θ ∈ M_μ is `mean_component_class` with μ = 1+σ; `state_invariant` fixes σ = ActualIterationLedger.sigma j at stage j. The class definitions agree with the paper's up to one encoding of the weights. Page 18 prints the defining bounds as |∂^I f| ≤ C_{j,I} ε^α S_*^{b_{j,I}} ζ δ^{−d_{j,I}} for f ∈ M_α and |∂^I a| ≤ C_{j,I} ε^α S_*^{b_{j,I}} √ζ · δ^{−d_{j,I}} · P_v (0 ≤ v ≤ L_s) for a ∈ W_α, so ζ and δ are two separate radial-edge weights of (6.23) and the slow factor S_*^b is a third. `WeightedClasses.MemClass` (WeightedClasses.lean:107) bounds ‖∂^j f_n(x)‖ by `majorant s w α C p n x = C · ε_n^α · growth_n(x)^p · w(n,x)` with `growth n x = slow n * max 1 (delta x)⁻¹` (WeightedClasses.lean:50), i.e. it absorbs S_*^{b} and δ^{−d} into the single power growth^p, and keeps only the remaining weight w: w = √ζ·P for `WaveClass` (:118) and w = ζ for `MeanClass` (:115). That is the paper's pair of weights exactly; the absorption is the repository's own `WeightedClasses.MemClass.of_separate_bounds` (:147, docstring: \"accepts the manuscript's separate logarithmic and inverse-edge polynomial degrees\"), which converts a bound of the paper's shape C·ε^α·slow^p·(max 1 δ⁻¹)^q·w into a `MemClass` with growth^(p+q), using `StripData.separate_powers_le_growth` (:65). It is a weakening in the separate exponents (one exponent p+q in place of b and d) and no weakening in the α that the display is about. The identification of ⟨G_*⟩_θ with `meanGoodResidual` is not an extra assumption: `fullResidual_decomposition` splits the residual into source oscillations + meanGoodResidual + errors.total, and `angularMean_fullResidual` gives ⟨fullResidual⟩_θ = meanResidual, so the oscillation part has vanishing angular mean and the angular mean of the non-flat part is exactly `meanGoodResidual`. The starred normalization G_* = Q^{2A+1/2} G is implicit in the Lean, which works throughout in normalized chart variables (see the eq-9.6 entry).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

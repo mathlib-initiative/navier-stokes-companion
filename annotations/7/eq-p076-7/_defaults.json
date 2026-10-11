@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 76,
-    "rect": [0.17526, 0.688753, 0.649709, 0.023539]
+    "rect": [0.175401, 0.68843, 0.645989, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean never writes the three bare inner products; it writes them already divided by the squared lengths ‖e‖² = 1+s² and ‖N‖² = 1, i.e. as the coordinate coefficients coeff11, coeff12, coeff21. Rewriting (reference case rot = 0, ρ' = 0, ρ = s, F = F_0, g = g_0): (1+s²)·coeff11 s 0 ⟪K,g₀⟫ = s⟪K,g₀⟫ = sK·g₀, the paper's first quantity; (1+s²)·coeff12 F₀ N_θ s 0 = 2F₀N_θ = e·(-𝒦_0 N); coeff21 F₀ N_θ ⟪N,g₀⟫ s 0 = -(2F₀N_θ + ⟪N,g₀⟫) = N·(-𝒦_0 e). The vanishing sK·g₀ = 0 is the Lean hypothesis `horth : ⟪B0 0, g0⟫_ℝ = 0` of frame_coefficients_close, and it is discharged for the actual construction by transverseDirection_inner_shear together with construction_transverse (the reference K is the transverse direction of the shear). The paper's |g_0| is ⟪N, g₀⟫ in frame_coefficients_close, which is the more general form; the two agree because g₀ = |g₀|N (norm_smul_normalDirection). Constants, signs, the factor 2 and the subscript θ agree term for term.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

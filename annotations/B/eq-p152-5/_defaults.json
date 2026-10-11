@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 152.5",
+  "label": "Display 152.1",
   "status": "formalized",
   "location": {
     "page": 152,
-    "rect": [0.327405, 0.557322, 0.345409, 0.0267]
+    "rect": [0.329412, 0.557851, 0.340107, 0.022314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [152],
         "printed": [152],
-        "text": "Display 152.5, p. 152, in the proof of Proposition B.5"
+        "text": "Display 152.1, p. 152, in the proof of Proposition B.5"
       },
       "region": "eq-p152-5@p152",
       "verdicts": [
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean writes the quadratic test without the positive part: `(v - 2) * J ^ 2 < 2 * (P - v) ^ 2` where the paper writes `(v_s - 2)_+ J_c^2`. The two are equivalent here because the same conclusion supplies `0 < activation T κ y ≤ P - v`, hence `P ≠ v`: when `v > 2` the forms are literally identical, and when `v ≤ 2` the left side of the Lean form is ≤ 0 while the positive-part form has left side 0, so both reduce to `0 < 2(P-v)^2`, which `P ≠ v` gives. The Lean inequality therefore implies the paper's and conversely. Domain: the paper's `0 < y ≤ t_1` is Lean's `y ∈ Ioc 0 T` with `T ∈ Ioc 0 Tstar` (the paper's \"taking t_1 sufficiently small\"), with the extra uniformity `η ∈ Icc (-1) 1` and `κ ∈ Ioo 0 1`. `ConeAlgebra.true_cone_iff` is the Lean form of the paper's Lemma 4.5 quadratic test, and `natural_initial_activation` also carries the `v < coneBound P J` conclusion the paper obtains from it, including the `v ≤ 2` branch.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

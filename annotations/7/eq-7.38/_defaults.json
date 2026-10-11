@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 86,
-    "rect": [0.230721, 0.13458, 0.638353, 0.042841]
+    "rect": [0.145455, 0.138017, 0.721648, 0.033884]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same three formulas, assembled differently. (i) C_m: in the generic layer of CurlClassBounds there is no declaration named for C_m — there it occurs inline as the composite `inverseCarrier K • coefficient R Vr Vθ Vz Φ a x` (CurlClassBounds.lean:601, 634) = (i/K) · (n_Φ × t_m)/‖n_Φ‖², with K the carrier ↔ the paper's km, phaseNormal = n_Φ = (D_rΦ, R^{-1}∂_θΦ, D_zΦ) (HarmonicCalculus.lean:189), and normalCross = the ordinary cross product in the same orientation; so the prefactor i/(km), the order n_Φ × t_m and the weight |n_Φ|^{-2} all agree. For the concrete constructions C_m *is* a named definition: `InitialPhysicalData.potentialCoefficient` (InitialPhysicalData.lean:40) and `ActualCurrentParticularBounds.strippedPotential` (ActualCurrentParticularBounds.lean:67) are both `inverseCarrier (frequency n) • normalCoefficient (normal … n x) (amplitude n x)`, and `WaveCoefficients.normal` unfolds to `phaseNormal` (LinearWaveBounds.lean:189–191), so each is literally C_m for its data; the generic `vectorPotential` remains the counterpart for (7.38) as stated in general. (ii) A_m: `vectorMode K Φ` multiplies by carrier K Φ x = exp(i K Φ) (HarmonicCalculus.lean:77,315), so vectorPotential = C_m e^{ikmΦ} on the nose. (iii) The curl identity is a theorem in Lean rather than a definition of r_m: Lean defines r_m first (curlRemainder of the coefficient, line 269) and then proves curl_*(A_m) = (t_m + r_m)e^{ikmΦ}, under K ≠ 0, smoothness of Φ and t_m on the open set U, n_Φ ≠ 0, and n_Φ · t_m = 0 — the paper's standing hypotheses in this subsection (m a nonzero integer, n_Φ · t_m = 0, smooth amplitude). Lean states it for an arbitrary nonzero real carrier K, which is instantiated downstream (e.g. LinearWaveBounds.curlPotential_realizes, line 665, with K = a.frequency n).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 161,
-    "rect": [0.320825, 0.465835, 0.548244, 0.02825]
+    "rect": [0.291979, 0.466942, 0.575124, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The first identity is literal: `primitive_derivatives` gives ∂_θ𝒜 = -(a_L - a)/2 with a_L = r.angularLoop and a = the prescribed mean of the loop (TrueConeRealization.loop_periods_means: ∫_0^1 angularLoop(p,·) = a p), which is the paper's a. The second needs one sign rewriting: Lean carries the second loop coordinate as `signedAxialLoop`, documented at ParametricModulation.lean:326 as -b_L, and its prescribed mean is a·m, so b_s = ∫_0^1 b_L = -a·m. Substituting, E·(-signedAxialLoop + a·m)/2 = E·(b_L - b_s)/2 = ½E(b_L - b_s). The sign convention is consistent with (4.11) (𝔰 = (a, -b_s), b_s = 2𝒟_XU/E) and with the hypothesis hbNom of realized_shears_exact, which pins -a·m = 2X∂_XU/E = b_s. Two further encoding choices: the Lean 𝒜, ℬ are functions of ((X,η),θ) and the identity is a genuine HasDerivAt in θ rather than a formal ∂_φ; and the identity is asserted for p ∈ K (the compact cutoff χ equals 1 there, extendedPrimitive_hasDerivAt), which is the Lean form of the paper's 'vanish on the boundary neighborhoods of ℐ, extend by zero radially'.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

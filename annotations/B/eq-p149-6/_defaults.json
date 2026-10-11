@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 149.6",
+  "label": "Display 149.3",
   "status": "formalized",
   "location": {
     "page": 149,
-    "rect": [0.349492, 0.71353, 0.302219, 0.023465]
+    "rect": [0.349733, 0.71405, 0.298396, 0.019835]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [149],
         "printed": [149],
-        "text": "Display 149.6, p. 149, in the proof of Proposition B.3"
+        "text": "Display 149.3, p. 149, in the proof of Proposition B.3"
       },
       "region": "eq-p149-6@p149",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same two identities, written in the other of the paper's two radial variables and with the direction of the equality reversed. The Lean takes p₁ := -2X ∂_X f/f and n_s := -2 ∂_X U as the definitions and proves (regularAngularLag_eq + p1_eq_scaled_regularAngularLag, regularAxialLag_eq + ns_eq_scaled_regularAxialLag) that these equal X·Q_s/L and N_s/L, the source-integral quantities the paper calls p₁ and n_s; the paper derives the displayed equalities in that same pair, left to right. The rescaling is routine and is itself proved in the Lean: for f = φ = φ_*Φ(ΛX,η) the quantity X ∂_X f/f = YΦ_Y/Φ is scale invariant (angularProfile_log_slope_at_four states this at Y = 4, where the paper's bound is used), and for U = U_*(η) + Λ⁻¹𝔲(ΛX,η) affineProfile_partialY with c = 1/Λ gives ∂_X U = 𝔲_Y, so -2∂_X U = -2𝔲_Y. The paper's middle term `a` (the Section A shear exponent, a = κ p_{1,r} at (B.26), a = 2 + 2h + 2ZH'/H - 2f'/f at (A.56)) is in Lean ActivationContinuation.shearA = -2 X ∂_X f/f, the same expression as p1 in a different profile framework; theta_eq_lag_minus_slope shows p₁ - a is the leading angular stress divided by f, so `p₁ = a` is exactly the display's hypothesis of vanishing leading residual stress. I found no single declaration asserting `p1 = shearA` for the natural axis profile.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

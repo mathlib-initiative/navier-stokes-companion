@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 53,
-    "rect": [0.159761, 0.720751, 0.709307, 0.096088]
+    "rect": [0.160428, 0.72562, 0.706675, 0.089256]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean states the display in the similarity variables (R, eta) with the common power of q removed, not in (r, z, t). angularDensity and axialDensity are R^2 r_{theta,n} and R r_{z,n} in conservative form, term for term with the paper's conservative forms at the top of p. 53. angular_integral_balance / axial_integral_balance state \"total moment = minus the axial-viscosity moment of order n-1\" (the time and axial-flux moments already cancelled by the hypotheses hem, hum, hflux), and angular_integral_zero / axial_integral_zero state the final \"= 0\". The uncancelled three-term middle member is not a single declaration, but it is the combination of moment_five, moment_dr_boundary, moment_timeOp and moment_axialOp used at lines 576-581 and 610-614, all stated separately. Other differences: (i) integrals are over [0, B] under explicit `exterior B S` hypotheses, bridged to (0, infinity) by moment_eq_positive; the radial boundary terms the paper drops are explicit. (ii) The physical residual R_{j,n} = q^{-A-1+lambda_n} r_{j,n} and its physical r-moment are never written. The passage back to the paper's physical form uses only stated declarations: timeOp_toRadius / axialOp_toRadius identify timeOp, axialOp with T, Z; hasDerivAt_pullback_time / hasDerivAt_pullback_z state that physical d/dt and d/dz of q^b f(inner) are q^(b-1) T and q^(b-D) Z; integral_weighted_radial_scale states the r = sqrt(q) R moment scaling for weight r^2 with arbitrary exponent b and arbitrary g. For the axial line (weight r) no scaling lemma is stated as such; it is the same lemma specialised to g(R)/R plus algebra under the integral on r > 0, which I count as formal but did not see written anywhere. (iii) n = 1 angular: the paper's renormalised last integral corresponds to LowerAngularViscosityMoment, supplied by lowerAngularViscosityMoment_of_renormalized (generic) and, for the actual profile, actual_viscosity_total_zero; the physical-variable form of that one term is physical_axial_viscosity_moment_zero. I did not check the exponent bookkeeping (orderExponent, pressureExponent against -A + lambda_n, -2A + lambda_n) beyond reading the definitions, and did not check Appendix A's P against referencePower.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

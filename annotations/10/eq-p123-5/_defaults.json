@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 123.5",
+  "label": "Display 123.4",
   "status": "formalized",
   "location": {
     "page": 123,
-    "rect": [0.37785, 0.497735, 0.244451, 0.03234]
+    "rect": [0.37861, 0.498347, 0.240642, 0.033058]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,10 +12,9 @@
       "locator": {
         "physical": [123],
         "printed": [123],
-        "text": "Display 123.5, p. 123, in the proof of Lemma 10.5"
+        "text": "Display 123.4, p. 123, in the proof of Lemma 10.5"
       },
       "region": "eq-p123-5@p123",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.88,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Hölder step itself is stated verbatim in cutoff_transport_bound: ∫ φ^6‖w‖^3 ≤ ‖w‖_2^{3/2} ‖φ^4 w‖_6^{3/2}, exactly the paper's exponents (6 on the cutoff, 3 on |w|, 3/2 on B_R). Two routine rewritings. (i) The Lean keeps the factor ‖w(t)‖_2^{3/2} explicit where the paper absorbs it into C_T; the paper licenses this on p. 121 (‖w(t)‖_2 ≤ C_T on [0,T]), and WholeSpaceComparisonClosure does the same absorption at line 123–133 using hM : ‖(u-v)(t)‖_2 ≤ M. (ii) The prefactor CR^{-1} appears in the Lean as 8L with L a Lipschitz bound for φ; for φ_R(x) = φ(x/R) the Lean supplies L = derivativeConstant 1 / R (ComparisonCutoffs.cutoff_fderiv_le, used at WholeSpaceComparisonClosure.lean:121), so 8L = C/R. The Lean's φ^6 arises from bounding φ^7 ≤ φ^6 in norm_fderiv_cutoff_eight_apply_le (line 66), which is the paper's |∇χ_R| ≤ CR^{-1}φ_R^7 ≤ CR^{-1}φ_R^6 chain; the paper's 'v = w on supp ∇χ_R' is the Lean's hvanish hypothesis.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

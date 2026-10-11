@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 60,
-    "rect": [0.229111, 0.620622, 0.639073, 0.02656]
+    "rect": [0.231016, 0.621488, 0.636086, 0.023967]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [60],
         "printed": [60],
-        "text": "Equation (5.44), p. 60, after the statement of Proposition 5.5"
+        "text": "Equation (5.44), p. 60, in the statement of Proposition 5.5"
       },
       "region": "eq-5.44@p060",
       "verdicts": [
@@ -31,7 +31,7 @@
           "role": "claim",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The second and third clauses are stated exactly. In `normalized_mean_fields`, normalizedSwirl is q^A u_{θ,B} and slowSum axial is q^A u_{z,B} (the translations are proved at BaseRankPatch.lean:269 and 280, angularSlice_physical / axialSlice_physical, both giving Q^{A h} * FinalSlowBase.velocity …); the right-hand side xAmplitude F XR p.2 * p.1^{-(1/2+lam)} is c_patch(1+η²)^{-1}X^{-1/2-λ} once xAmplitude_shape is applied; the hypotheses p.1 ∈ window .mean and |p.2| ≤ 1 are the paper's X ∈ I_mean, −1 ≤ η ≤ 1, and the identity holds for every q, matching the paper's unqualified assertion. What was not found is the first clause as a vector identity on I_mean: no declaration was found stating u_B = u^{(0)} there, and in particular nothing was found for the radial component. `actual_leading_eq` is the vector identity but on the exterior cartesianExterior region, a different set. The underlying `positive_fields_zero` (BaseRankPatch.lean:192) kills the positive coefficients pointwise past the repair patch, but the radial velocity is built from a Z-derivative of a stream factor whose profile history is a radial average over [0,X] (ProfileHistories.lean:158, average F p = ∫ t in (0:ℝ)..1, F (t*p.1, p.2)), so pointwise vanishing on the mean window does not by itself give the radial component. Severity low because the paper's later use of (5.44), at the five-row mean inverse, invokes only the two clauses that are stated — the Lean route goes through `rank_fields` and `five_rows`, which need exactly G_q = 0 and V_q = a(η)x^{-1-2λ}.",
+          "summary": "Lean has a weaker form of it. Lean states u_{z,B} = 0 and the formula for q^A u_{θ,B}; no statement of u_B = u^{(0)} on the mean window was found, in particular nothing for the radial component.",
           "verdict": "deviation"
         }
       ]

@@ -1,0 +1,31 @@
+{
+  "id": "lemma-8.2/key/1.NavierStokes.GaugeAliasDecay.compactAlias_finiteJets_local",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GaugeAliasDecay.compactAlias_finiteJets_local",
+      "line": 283,
+      "module": "NavierStokes.GaugeAliasDecay",
+      "path": "NavierStokes/GaugeAliasDecay.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeAliasDecay.lean#L283"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GaugeAliasDecay.compactAlias_finiteJets_local",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For each (m,p) there is K \\ge 0, chosen before f, M and z, such that for zero-pressureMass, periodic, gauge-supported f, a bound A on all jets of order \\le m+6p+4 of f on the single slow fibre over z.2.1 gives \\|D^j compactAlias ... f z\\| \\le K A |M|^{-p} for all j \\le m. This is the lemma's 'only f",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 283,
+        "text": "theorem compactAlias_finiteJets_local {coord a b d : ℝ} (U : SlowRegion coord)\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (direction : Direction) (m p : ℕ) :\n    ∃ K : ℝ, 0 ≤ K ∧ ∀ (f : Point Plane → ℝ),\n      ContDiffOn ℝ ∞ f (PhysicalMeanDomain.slowDomain U.carrier) →\n      SupportedGauge a b (qLength coord) U.carrier f → PhysicalMeanDomain.PeriodicOn U.carrier f →\n      (∀ s ∈ U.carrier, PressureStream.pressureMass f s = 0) →\n      ∀ A : ℝ, 0 ≤ A → ∀ M : ℝ, M ≠ 0 → ∀ z : Point Plane, z.2.1 ∈ U.carrier →\n      (∀ j ≤ m + 6 * p + 4, ∀ R : ℝ, ∀ Y : Plane,\n        ‖iteratedFDeriv ℝ j f (R, (z.2.1, Y))‖ ≤ A) → ∀ j ≤ m,\n        ‖iteratedFDeriv ℝ j (compactAlias d a b M (qLength coord) (vector direction) f) z‖ ≤\n          K * A * (|M|⁻¹) ^ p"
+      }
+    }
+  }
+}

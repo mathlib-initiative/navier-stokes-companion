@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 138,
-    "rect": [0.274389, 0.827501, 0.59379, 0.041215]
+    "rect": [0.274866, 0.826446, 0.591147, 0.040496]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. Both equalities are stated. The first is heated_exterior (E_heat = (power amplitude)·X^{-A}·H(2(1-η²)/X)), in product rather than quotient form, with d = 1-η² as fixed on p. 137; heatFactor_eq_profile states the ratio factor itself. The undifferentiated expansion is stated more strongly than the paper writes it: small_argument_remainder gives the explicit remainder constant h(1+h)²(2+h)z², so at z = 2d/X the remainder is ≤ 4h(1+h)²(2+h)d²/X² rather than an unspecified O_h(X^{-2}), with matching leading coefficient 2h(1+h)d/X. What is weaker is the subscript j,m: the paper asserts the same expansion with an X^{-2} remainder after every fixed application of ((X∂_X)^j ∂_η^m), and no declaration was found that states a differentiated expansion at remainder order X^{-2}. The derivative-level statements found instead bound jets at order X^{-1} (ExtendedHeatDebts.editJet_bound, ParametricHeatTail.editJet_bound, HeatProfileExtension.scaledProfile_derivative_bound, HeatTailEdit.multiplier_sub_one_bound with the sharp constant 2νh(1+h)), i.e. the repository replaces the differentiated expansion by a sharp first-order jet bound. The ingredients for a differentiated version are present (first_jet_remainder for one derivative, second_jet_bound and derivative_bound_rising for all orders), so this is a gap in assembly rather than a missing estimate; I did not verify that the general (j,m) case assembles in a few lines.",
+          "summary": "Lean has a weaker form of it. Lean states both equalities for the undifferentiated ratio; after applying (X∂_X)^j ∂_η^m it has only bounds of order X^{-1}, not the expansion with an X^{-2} remainder.",
           "verdict": "deviation"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 141.4",
+  "label": "Display 141.2",
   "status": "partial",
   "location": {
     "page": 141,
-    "rect": [0.301943, 0.496425, 0.396332, 0.04414]
+    "rect": [0.302674, 0.500826, 0.392513, 0.035537]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [141],
         "printed": [141],
-        "text": "Display 141.4, p. 141, in the proof of Lemma A.8"
+        "text": "Display 141.2, p. 141, in the proof of Lemma A.8"
       },
       "region": "eq-p141-4@p141",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The right-hand equality ∫_0^∞ (U^2 - E^2/2) dX = 0 is stated verbatim: `totalS`/`energyDensity` are exactly that integrand and integral over `Ioi 0`, and `energy_zero` asserts it vanishes. The left-hand equality — the physical radial moment ∫_0^∞ r (u_z^2 + p) dr and its conversion to the similarity integral by the factor q^{1-2A} — was not found as a declaration or as a step: searching the index and the Lemma A.8 chain turned up no integral of a physical pressure or axial velocity over the physical radius in this file group. Lean instead keeps the q-powers pointwise (`physicalPressure_eq_terminal` gives p = q^{-2A}Π, and the same bridge carries u_z = q^{-A}U) and obtains the vanishing it needs for the stress limits from `HeatTailHistoryLimits.energyHistory_tendsto_zero` (S(∞) = 0) together with X·Π → 0, used in `TerminalHistoryBridge.axialWeight_tendsto_zero`. So the same conclusion is reached by a route that never forms the physical moment; the prefactor q^{1-2A} as written is not checked anywhere I found. The surrounding result is still proved, hence low.",
+          "summary": "Lean uses a different formula here. Lean states only ∫_0^∞ (U^2 - E^2/2) dX = 0; the physical moment ∫_0^∞ r(u_z^2 + p) dr and its conversion by the factor q^{1-2A} are not stated.",
           "verdict": "deviation"
         }
       ]

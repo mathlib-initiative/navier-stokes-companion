@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 122,
-    "rect": [0.335446, 0.645855, 0.532735, 0.040351]
+    "rect": [0.335829, 0.64876, 0.530184, 0.035537]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The display is the add-and-subtract identity a·T g = T(a g) + [a,T]g with a = φ_R^4 and T = R_iR_j, summed over i,j; with the paper's definition [a,T]g = a(Tg) − T(ag) (sentence before the display) it carries no analytic content. The repository states this identity twice. (1) pressurePair_decomposition (R3/PressureFlux.lean:251) states it in tested form for an arbitrary real multiplier h: ⟨R_iR_j g, ψh⟩ = ⟨h g, R_iR_j ψ⟩ + commutatorPair, where commutatorPair (line 235) is defined as the difference ∫ g (R_iR_j ψh − h R_iR_j ψ). Here pressurePair (ComparisonFourierSetup.lean:24) is by definition the pairing of g with rieszTest, i.e. R_iR_j acts on g by duality, so no self-adjointness lemma is needed. Specialising h := φ_R^4 and ψh := φ_R^4·ψ gives (10.18) tested against ψ; the sum over i,j is canonicalCutoffFlux_eq_sum (line 198). The lemma carries the side hypotheses Integrable g and h·g ∈ L^{6/5}. The lemma is general in h (and does not even tie ψh to h·ψ), so it says slightly more than the single instance in the display; since the paper's commutator notation is also for a general scalar a, I rate this equivalent rather than lean_stronger. (2) pressure_cutoff_identity (R3PressureCutoff.lean:143) states it as an equality of tempered distributions with the cutoff power 6 instead of 4, one index pair at a time, and with the commutator given as a concrete kernel integral in L² rather than as a formal difference; it needs hw : φ^5‖g‖ ∈ L^{3/2}. What I did not find: any declaration that instantiates the identity at the paper's power 4. The R3/ route that the flux bound uses takes h = cutoff R ^ 2 (ComparisonCutoffs.multiplier, line 38; fluxTest_eq_multiplier_rTest, line 173; applied at PressureFlux.lean:376), and the top-level family uses φ^6. So the paper's φ^4·φ^3 split of ∇χ_R and the L^{3/2}/L^{4/3} estimates that follow the display are replaced by a different split and different exponents; that concerns the neighbouring estimate blocks, not this identity. I found no user of pressure_cutoff_identity outside its own file other than weightedPressure_distribution.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

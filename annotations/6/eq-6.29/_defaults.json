@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 70,
-    "rect": [0.309627, 0.692417, 0.557009, 0.05265]
+    "rect": [0.312299, 0.693388, 0.554803, 0.049587]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [70],
         "printed": [70],
-        "text": "Equation (6.29), p. 70, in the statement of Proposition 6.6"
+        "text": "Equation (6.29), p. 70, in the statement of Definition 6.5"
       },
       "region": "eq-6.29@p070",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same bound after three routine rewritings, all of them in the repository. (i) Separate degrees versus one: Lean's majorant is C ε^α (S_* · max 1 δ⁻¹)^p √ζ P in place of the paper's C ε^α S_*^{b} δ^{-d} √ζ P. Forward: (6.29) implies the Lean bound with p = b + d, which is exactly `separate_powers_le_growth`. Backward: growth^p = S_*^p (max 1 δ⁻¹)^p is of the paper's shape with b = d = p. The two forms could diverge only where δ > 1, since there max 1 δ⁻¹ = 1 > δ^{-d}; that regime does not occur in the instantiated strips, because `WeightedRadialPrimitive.delta` is min 1 (min x (L - x)) and `delta_le_one` gives δ ≤ 1, so max 1 δ⁻¹ = δ⁻¹ identically along the chain logStripData → localStripData → movingStripData → nativeStrip. The repository says as much in the `growth` docstring (\"agreeing with delta⁻¹ when delta ≤ 1\") and supplies `MemClass.of_separate_bounds` for the forward direction. (ii) Multi-indices versus operator norms: ∂^I over I ∈ ℕ_0^5 becomes ‖iteratedFDeriv ℝ j f x‖ for j ≤ m, equivalent up to a factor depending only on the dimension and the order, absorbed into C. (iii) Quantifier order: the paper allows C_{j,I}, b_{j,I}, d_{j,I} to depend on the multi-index, Lean takes one C and one p per order bound m — which is the stronger reading for each fixed m and, m being arbitrary, gives back the paper's per-index form. The factors ε^α, √ζ and P_v match `WaveClass` term for term. (iv) The side condition 0 ≤ v ≤ L_s: the Lean has no v-restriction at all. `MemClass.bounds` quantifies over every `x ∈ s.domain`, and for the strip in use the domain imposes nothing on the v-coordinate — `nativeStrip_mem` restricts only the slow factor (x.2.1 ∈ U.carrier and profileRadius ∈ Ioo (leftRadius W) (rightRadius W)). That cuts in the direction of strength: the bound is asserted at more points than the paper's, not fewer. It is not vacuous outside the paper's range either, because the weight P is the construction's `envelope`, which is extended by zero off the clock cells (`envelope_nonneg`, `envelope_copy`), so for v outside the slot the Lean's majorant is 0 and the bound asserts that the field and its derivatives vanish there — true of these fields, and strictly more than (6.29) says.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

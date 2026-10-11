@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 85.3",
+  "label": "Display 85.2",
   "status": "formalized",
   "location": {
     "page": 85,
-    "rect": [0.302369, 0.392302, 0.395123, 0.027974]
+    "rect": [0.304813, 0.393388, 0.389305, 0.024793]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [85],
         "printed": [85],
-        "text": "Display 85.3, p. 85, in section 7.3"
+        "text": "Display 85.2, p. 85, in section 7.3"
       },
       "region": "eq-p085-3@p085",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. First equation: stated as written. tangentSum_eq_viewSum (ActualPrimaryCovariance.lean:551) says the chart-n sum of the tangent pieces equals Q_n^A times viewSum, and viewSum is the label sum of physicalTangentMode = Q_beta^{-A} • tangentMode (CorrectionInitialization.lean:4644), i.e. the first line of (7.35). The per-label form is primary_mode_view, and piece_tangent_representation gives tangentVelocity n x = Q_n^A • absoluteTangent with no domain hypothesis. The factor is the view chart's own Q_n with no reference band in it, as in the display.\n\nSecond equation: not stated as one declaration and no object named L^as_phys appears in the actual pipeline; it is packaged. signed_scalar_scale (PhysicalSignedWave.lean:103) gives, for arbitrary R, sqrt(eps_n)·increment(H, c²T, c²R)·mask = velocityScale·(sqrt(eps_beta)·increment(H,T,R)·mask), and velocityScale_eq gives velocityScale = Q_n^A·Q_beta^{-A}. Instantiating R = Q_beta^{2A}(Q_n^{-2A}Σ)/eps_beta, coefficientScale_square gives c²R = Σ/eps_n, which is the Lean's chart-n request (fullRequest = eps_n^{-1}·requestedStress). So the chart-n signed coefficient is Q_n^A times the (7.35) summand Q_beta^{-A} η_beta L_beta(Q_beta^{2A}σ) with σ = Q_n^{-2A}Σ; summing over the finite activeLabels gives the display. The actual pipeline carries the same fact in factored form: actualSignedBlock_fiber (signed block = signedRatio × primary block) with primary_mode_view (primary block = Q_n^A × viewTangent), and chart-to-chart as signedVector_of_request with bandVelocityScale = (Q_n/Q_m)^A. The Lean folds the 1/ε of (7.31) into the request rather than the operator.\n\nNot verified: that tangentMode's amplitude literally contains the slow cutoff η_beta (inferred from tangentMode_diagonal_covariance, where spatialMask² appears); that Lean's signedScalar·fundamental is the paper's L_beta of (7.32)-(7.34) beyond the shape increment = (H^{-1}R)_j/(2a_j); no proofs were checked beyond reading the short ones cited.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 79,
-    "rect": [0.300549, 0.159116, 0.568519, 0.041635]
+    "rect": [0.302674, 0.160331, 0.565518, 0.038017]
   },
   "target": {
     "pin": {
@@ -37,7 +37,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The paper's exact factorisation of the fundamental matrix is not in the repository: no declaration was found that introduces a solution operator or fundamental matrix V_m(v, w) at all, so the identity V_m = exp(-(m²-1)∫_w^v d) V_1 is not stated. The Lean reaches the conclusion the paper draws from (7.18) — that the propagator bound (7.19) holds for every harmonic m ≠ 0 with the constants of m = 1 — by an energy/Grönwall route on the solutions themselves instead: high_harmonic_damping is the scalar inequality d - δ ≤ j²D for j ≠ 0 (i.e. extra harmonics only add damping), and high_harmonic_propagator_estimate feeds it into the same growth estimate used for the single harmonic, with no factorisation of a matrix. This is a different formula and a different route, not a weaker conclusion for the use the paper makes of it; severity low because the surrounding uniform-in-m propagator bound is still obtained. I did not check whether (7.18) is used anywhere in the paper for anything beyond that uniformity.",
+          "summary": "Lean uses a different formula here. Lean has no fundamental matrix V_m and does not state this factorisation; it gets the bound (7.19) for every m ≠ 0 by an energy/Grönwall estimate on the solutions instead.",
           "verdict": "deviation"
         }
       ]

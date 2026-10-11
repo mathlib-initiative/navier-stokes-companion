@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 129,
-    "rect": [0.217675, 0.353445, 0.651235, 0.026343]
+    "rect": [0.218182, 0.353719, 0.65001, 0.022314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (A.6), p. 129, in section A.2"
       },
       "region": "eq-A.6@p129",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.85,
@@ -29,7 +28,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Routine rewriting: the Lean instantiates each of the paper's five entries with an explicit threshold, in the paper's own order of choice, and every threshold is at least as restrictive as the inequality the paper displays. The rewriting, entry by entry, with the paper's M_d the field `m` and T_d = `Parameters.dropLength = Real.exp c.m + 10` (an identity, not an inequality): (i) M_d is chosen first — `exists_ordered_clean_cone` opens `∃ M, 0 < M ∧ ∀ m, M ≤ m`; the paper's display carries no inequality on M_d, but Definition 3.3 (p. 18) says 'small reciprocals specify large parameters' and p. 129 uses e_d = 4‖σ'‖_∞/M_d, so M_d large is the paper's convention made explicit. (ii) P_* > e^{T_d} is `amplitudeThreshold m ≤ P` with `amplitudeThreshold m = Real.exp (Real.exp m + 11) + 1`; since dropLength + 1 = exp m + 11, this is P ≥ e^{T_d+1} + 1, which implies P > e^{T_d}. (iii) 0 < λ ≪ 1 is `d.core.lam < lam0` with `lam0 = min (lambdaThreshold P m) (min holdLam (min pulseLam tailLam))` (OutgoingCone.lean:475) and `lambdaThreshold P m = min (1/20) (1/(4*(entranceRatioBound P m ^ 2 + 1)))`, a bound formed after P and m are fixed — exactly the paper's 'choose λ sufficiently small after fixing M_d, T_d, P_*'; `Parameters.lam_lt` additionally fixes lam < 1/10 in the data structure. (iv) 0 < h ≪ min{λ, e^{-T_d}} is `d.h ≤ OutgoingCone.heightThreshold m d.core.lam = min (OutgoingEntranceCone.heightThreshold m lam) (lam/100000)`, and `OutgoingEntranceCone.heightThreshold m lam = min (1/100) (min (lam/4) (Real.exp (-(entranceTime m + 3/5)) / 8))` with `entranceTime m = Real.exp m + 12 = holdStart = T_d + 2` (`holdStart_eq_entranceTime`, OutgoingEntranceCone.lean:1228); so h is capped both by λ/4 (and λ/100000) and by e^{-(T_d + 2.6)}/8, i.e. by a fixed constant times e^{-T_d}. `chosen_parameters_bounds` discharges these three hypotheses into the forms the entrance-cone proofs consume: e^{T_d+1} ≤ P², λ·entranceRatioBound² ≤ 1/4, h ≤ 1/100 and h ≤ e^{-(holdStart + 3/5)}/8. Only difference worth recording, and it is not a weakening of the regime: the consequence `Real.exp (v.core.dropLength + 1) ≤ v.core.P ^ 2` that the proofs actually use is weaker than P > e^{T_d} (it asks only P ≥ e^{(T_d+1)/2}), while the hypothesis imposed on P is stronger than the paper's. The generic data structures `Parameters` and `TailData` carry only `0 < P` and `2*h < core.lam`; the full (A.6) regime is imposed as hypotheses at the theorem level rather than built into the structures.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

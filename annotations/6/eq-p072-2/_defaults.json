@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 72,
-    "rect": [0.297051, 0.375261, 0.404171, 0.045865]
+    "rect": [0.299465, 0.375207, 0.39893, 0.047107]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same mathematics, written in Lean's harmonic encoding rather than the paper's exponential. (i) Phase: the paper has Φ_γ = p_γθ + φ_γ with kp_γ ∈ ℤ\\{0}; Lean's `field c k Φ kp (x,θ)` fixes the slow phase k*Φ(x) and the integer angular frequency kp separately, so Lean's `Φ` is the paper's φ_γ and Lean's `kp` is the paper's kp_γ, with the paper's hypothesis 'kp_γ is a nonzero integer' appearing as `hkp : kp ≠ 0` with `kp : ℤ`. (ii) Packaging: Lean states the identity summed over a harmonic family (`∑ j ∈ c.support, c j x * d (-j) x`) rather than for a single pair (m, m'); the paper's two-case display is the instance with single-harmonic coefficients c = Finsupp.single m a_{γ,m}, d = Finsupp.single m' a_{γ,m'}, for which the sum has the one term c m x * d (-m) x, equal to a_{γ,m}a_{γ,m'} when m' = -m and to 0 otherwise. (iii) Alternatively `angularMean_const_character` gives the paper's two cases verbatim with A = a_{γ,m}a_{γ,m'} * character (m+m') (kφ_γ(x)) and j = (m+m')*kp: j = 0 iff m+m' = 0 because kp ≠ 0, and in that case character 0 = 1 removes the exponential, leaving a_{γ,m}a_{γ,m'}. Lean's `angularMean` is the normalized integral over [0, 2π], matching ⟨·⟩_θ of (3.7); it is ℂ-valued, the paper's ⟨·⟩_θ is taken componentwise in the cylindrical basis.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

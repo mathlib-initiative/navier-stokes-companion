@@ -1,0 +1,29 @@
+{
+  "id": "lemma-A.6/key/1.NavierStokes.BaseExterior.heatCoefficient_partialZ",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.BaseExterior.heatCoefficient_partialZ",
+      "line": 80,
+      "module": "NavierStokes.BaseExterior",
+      "path": "NavierStokes/BaseExterior.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseExterior.lean#L80"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.BaseExterior.heatCoefficient_partialZ",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: (hh : 0 < h) (ht : p.1 < 1) (hs : 0 < p.2.1) → partialZ (heatCoefficient C h) p = 0, where partialZ F p = fderiv ℝ F p (0,(0,1)) (SimilarityProfile.lean:50). Clause (iii) as the derivative identity ∂_z(K/r) = 0."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 80,
+        "text": "theorem heatCoefficient_partialZ (C : ℝ) {h : ℝ} (hh : 0 < h)\n    {p : PhysicalPoint} (ht : p.1 < 1) (hs : 0 < p.2.1) :\n    partialZ (heatCoefficient C h) p = 0"
+      }
+    }
+  }
+}

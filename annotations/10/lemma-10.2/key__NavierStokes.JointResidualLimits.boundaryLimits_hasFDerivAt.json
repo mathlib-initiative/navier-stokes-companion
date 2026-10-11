@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.2/key/1.NavierStokes.JointResidualLimits.boundaryLimits_hasFDerivAt",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.JointResidualLimits.boundaryLimits_hasFDerivAt",
+      "line": 240,
+      "module": "NavierStokes.JointResidualLimits",
+      "path": "NavierStokes/JointResidualLimits.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L240"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.JointResidualLimits.boundaryLimits_hasFDerivAt",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: HasFDerivAt (fun y => boundaryLimits f hext y n) ((boundaryLimits f hext x (n+1)).curryLeft.comp (ContinuousLinearMap.inr ℝ ℝ Space)) x: the spatial derivative of the n-jet is the spatial slice of the (n+1)-jet. The paper's compatibility under spatial and time differentiation.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 240,
+        "text": "theorem boundaryLimits_hasFDerivAt {f : SpaceTime → V}\n    (hf : ContDiffOn ℝ ∞ f (SpacetimeEndpoint.openPast 1))\n    (hzero : VanishingJointJets f) (hext : AwayExtensions f) (n : ℕ) (x : Space) :\n    HasFDerivAt (fun y => boundaryLimits f hext y n)\n      ((boundaryLimits f hext x (n + 1)).curryLeft.comp (ContinuousLinearMap.inr ℝ ℝ Space)) x"
+      }
+    }
+  }
+}

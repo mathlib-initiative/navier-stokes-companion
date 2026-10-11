@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 142,
-    "rect": [0.287353, 0.19884, 0.425882, 0.046034]
+    "rect": [0.28877, 0.202479, 0.42139, 0.038017]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Term by term the integrand is the paper's, after one routine rewriting: Lean carries the manuscript's explicit 1/2 inside the kernel rather than in front of (A.47). Lean's `factor c j b (p,δ) = ∫_{t>0} (1/2) e^{-ct} (√(1+δ²t)^j / √(1+δ²t)^3) b(p, δ/√(1+δ²t)) dt`, and the paper's B is recovered as `2 * factor`, which is exactly the witness `let B := fun x => 2 * ParametricFlatFactor.factor c j b' x` at FlatPrimitivePaper.lean:88; pulling the constant 2 through the integral (`integral_const_mul`) turns that into the displayed formula. Matching the remaining symbols: `denominator y.2 t = √(1+δ²t)` and `denominator^j / denominator^3 = (1+δ²t)^{(j-3)/2}` exactly, since j : ℕ and the denominator is positive (FlatPrimitiveFactor.denominator_pos); `coordinate y.2 t = δ/√(1+δ²t)` is the paper's first argument of b; the exponential is e^{-ct} with the same c; the domain of integration is Ioi 0, i.e. v ∈ (0,∞). Two notational differences with no mathematical content: Lean puts the parameter in b's FIRST slot, b(p, u), where the paper writes b(u,η); and the parameter p ranges over an arbitrary finite-dimensional real normed space E rather than a compact interval K, which is the generalization the paper's own closing sentence on p. 142 allows. Consistency of the 1/2 convention is corroborated downstream: Lean's `integral_original_factorization` states (A.47) WITHOUT the 1/2 in terms of `factor`, while `exists_factor_on_rectangle` states it WITH the 1/2 in terms of B = 2*factor; and `factor_at_zero` gives b(p,0)/(2c) against the paper's B(0,η) = b(0,η)/c. Both pairs differ by exactly the same factor of 2, so the conventions line up.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

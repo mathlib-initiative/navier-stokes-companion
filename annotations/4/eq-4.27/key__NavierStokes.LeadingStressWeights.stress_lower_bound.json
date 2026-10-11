@@ -1,5 +1,5 @@
 {
-  "id": "eq-4.27/key/NavierStokes.LeadingStressWeights.stress_lower_bound",
+  "id": "eq-4.27/key/01.NavierStokes.LeadingStressWeights.stress_lower_bound",
   "target": {
     "pin": {
       "declaration": "NavierStokes.LeadingStressWeights.stress_lower_bound",
@@ -16,6 +16,7 @@
         "kind": "theorem"
       },
       "relation": "states",
+      "role": "key",
       "snippet": {
         "line": 1121,
         "text": "theorem stress_lower_bound (hcone : FullTrueCone v) : ∃ c : ℝ, 0 < c ∧ ∀ p : Point, p.1 ∈ Ioo (activeLeft W) (activeRight W) → p.2 ∈ Icc (-1) 1 → c * zeta v p.1 ≤ ‖stress v.profiles F.data.h p‖"

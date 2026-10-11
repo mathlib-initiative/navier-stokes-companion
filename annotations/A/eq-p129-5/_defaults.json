@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 129.5",
+  "label": "Display 129.1",
   "status": "formalized",
   "location": {
     "page": 129,
-    "rect": [0.196418, 0.662609, 0.607386, 0.024504]
+    "rect": [0.197861, 0.66281, 0.603209, 0.022314]
   },
   "target": {
     "pin": {
@@ -18,7 +18,7 @@
       "locator": {
         "physical": [129],
         "printed": [129],
-        "text": "Display 129.5, p. 129, in section A.2"
+        "text": "Display 129.1, p. 129, in section A.2"
       },
       "region": "eq-p129-5@p129",
       "role": "key",
@@ -35,7 +35,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Change of clock only. The paper measures y from the start of each stage (p.129: a local coordinate with 'origin at the start of the stage'); the Lean file uses one global log-radius clock whose first ramp starts at 0 (module doc), so this stage is 1 ≤ y_glob ≤ 1 + dropLength and y_glob = 1 + y_loc. Then Real.log y_glob = log(1 + y_loc), so dropCoefficient c.m y_glob = 4[1 - σ(log(1+y_loc)/M_d)] = k(y_loc) with m = M_d; dropCoefficient_eq proves the `if y ≤ 1 then 4` branch is that same formula for all y > 0, i.e. a flat extension to the left of the stage. dropLength = exp m + 10 is literally the paper's T_d of (A.6), so the stage length matches and k vanishes on the last eleven units of it (dropCoefficient_late, line 236, gives 0 for y_glob ≥ e^m, i.e. y_loc ≥ e^{M_d} - 1). l = 0 on the stage is slope_drop and U = k(y)η is initialAxial / axial_before_pulse. One packaging point: the Lean's dropCoefficient is a total function of y, so the restriction 0 ≤ y ≤ T_d appears only through the interval hypotheses of slope_drop and of the lemmas that use it, not as a domain of k.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

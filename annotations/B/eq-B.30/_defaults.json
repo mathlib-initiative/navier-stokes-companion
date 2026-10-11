@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 152,
-    "rect": [0.226644, 0.845047, 0.642425, 0.027797]
+    "rect": [0.227807, 0.849587, 0.639295, 0.020661]
   },
   "target": {
     "pin": {
@@ -21,7 +21,6 @@
         "text": "Equation (B.30), p. 152, in the proof of Proposition B.5"
       },
       "region": "eq-B.30@p152",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.78,
@@ -35,7 +34,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Three encoding differences, none mathematical. (i) The Lean factorizes in the rescaled clock `u = y/T`: `activatedStress … (T*u,η) = activation 1 κ u • D ((κ,T),(u,η))`, and `activation 1 κ u = activation T κ y` (the rescaling identity used at ActiveAnnulusWeight.lean:1007–1009), so this is the paper's `𝒯_0 = e_a B_0`; `B_0` is `D`, which also carries `(κ,T)` as parameters, a strengthening of the paper's statement (one smooth family for all activation parameters). (ii) `B_0 ∈ C^∞` is `ContDiffOn ℝ ∞ D (ActivationBounds.scaledDomain J)`, smoothness up to and across the inner edge `u = 0` on the rescaled domain. (iii) The edge value: the Lean gives `D ((κ,T),(0,η)) = (F·p_1, F·p_2)` with `F = referenceAngular L` and `(p_1,p_2) = (referenceP1 L, referenceP2 X0 L U)` evaluated at `(0,η)`, i.e. at `y = 0`, which is the paper's `X = X_0` (`radius X0 y = X0 * exp y`); so this is componentwise `B_0(0,η) = F(X_0,η) p_{s,r}(X_0,η)`. The paper's `≠ 0` is strengthened in `natural_activation_direction` to a uniform positive lower bound `ε` on the first component.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

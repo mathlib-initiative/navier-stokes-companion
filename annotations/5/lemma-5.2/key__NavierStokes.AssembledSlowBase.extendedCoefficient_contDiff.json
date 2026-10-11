@@ -1,0 +1,31 @@
+{
+  "id": "lemma-5.2/key/1.NavierStokes.AssembledSlowBase.extendedCoefficient_contDiff",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.AssembledSlowBase.extendedCoefficient_contDiff",
+      "line": 125,
+      "module": "NavierStokes.AssembledSlowBase",
+      "path": "NavierStokes/AssembledSlowBase.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean#L125"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.AssembledSlowBase.extendedCoefficient_contDiff",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ContDiff R infinity (extendedCoefficient s hI n i): the globalized order-n components, evenly extended off the window, are globally smooth on all of R x R, in particular on X >= 0, |eta| <= 1.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 125,
+        "text": "theorem extendedCoefficient_contDiff {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    (hI : Icc (-1 : ℝ) 1 ⊆ S) (n : ℕ) (i : Fin 4) :\n    ContDiff ℝ ∞ (extendedCoefficient s hI n i)"
+      }
+    }
+  }
+}

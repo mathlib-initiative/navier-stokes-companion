@@ -1,5 +1,5 @@
 {
-  "id": "eq-3.4/key/NavierStokes.LocalPaper.Properties",
+  "id": "eq-3.4/key/01.NavierStokes.LocalPaper.Properties",
   "target": {
     "pin": {
       "declaration": "NavierStokes.LocalPaper.Properties",
@@ -16,6 +16,7 @@
         "kind": "structure"
       },
       "relation": "states",
+      "role": "key",
       "snippet": {
         "line": 53,
         "text": "field `residual_flatness` (line 73): `∀ m : ℕ, ∀ r : ℝ, 0 ≤ r → ∀ X : ℝ, 0 ≤ X → ∃ C, 0 ≤ C ∧ ∃ δ, 0 < δ ∧ ∀ w, w.1 < 1 → PhysicalWaveSum.physicalQ h w < δ → AxisymmetricFields.radialEnergy w.2 / PhysicalWaveSum.physicalQ h w ≤ X → ‖iteratedFDeriv ℝ m (fun z => navierStokesResidual u p z.1 z.2) w‖ ≤ C * PhysicalWaveSum.physicalQ h w ^ r`"

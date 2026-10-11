@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 123,
-    "rect": [0.243775, 0.203416, 0.512673, 0.030136]
+    "rect": [0.225668, 0.204132, 0.612834, 0.030579]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The same identity, with π_* encoded by duality instead of as a named function. The paper first defines π_* = Σ_{i,j} R_i R_j g_{ij} (10.16) and then asserts the two integrals agree. The Lean never forms π_* pointwise: it moves the (self-adjoint) double Riesz transform onto the test function, so the right-hand side is Σ_{i,j} pressurePair i j (tensorDiff u v t i j) (realTest (w·∇χ)), with pressurePair i j g ψ = ∫ g · rieszTest i j ψ and rieszSymbol i j ξ = -(ξ_i ξ_j)/‖ξ‖², which is the multiplier of R_i R_j. Taking the real part is the passage from the complex Fourier-side pairing back to the real integral. The scalar input is the recovery identity gradient_recovery (PressureRecovery.lean:407), which puts the derivative on the pressure difference and carries a minus sign: ∫ ∂_k(p-q)(t,·) ψ = -(Σ_{i,j} pressurePair i j (tensorDiff u v t i j) (∂_k ψ)).re; pressure_flux_eq_canonical (ActualPressureFlux.lean:58) hands exactly this to pressure_flux_eq_of_gradient_identification, where an integration by parts in the cutoff absorbs the derivative and the sign. pressure_gradient_recovery (:419) is the same statement with the Hypotheses bundle unfolded; it is not the variant used on this route. Two sign conventions cancel: under the wiring of classical_uniqueness_on_Icc (WholeSpaceUniqueness.lean:30) Lean's u is the compactly supported field (the paper's u) and v the finite-energy competitor (the paper's v), so Lean's (u - v) = -w and (p - q) = -π, and tensorDiff u v = -g; the product (p-q)·Dχ[(u-v)] is therefore literally π ∇χ_R·w and the right-hand side flips sign in the same way. χ_R is ComparisonCutoffs.weight R = cutoff R ^ 8, matching φ_R^8. One strengthening: the Lean identity holds for every t ∈ (0,T), not merely almost every t, and pressure_flux_eq_canonical holds for every smooth compactly supported χ, not only χ_R.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

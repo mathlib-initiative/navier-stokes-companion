@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 137,
-    "rect": [0.316639, 0.122243, 0.367565, 0.04393]
+    "rect": [0.317647, 0.127273, 0.363636, 0.03719]
   },
   "target": {
     "pin": {
@@ -21,7 +21,6 @@
         "text": "Display 137.1, p. 137, in section A.5"
       },
       "region": "eq-p137-1@p137",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.85,
@@ -35,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same formula, with the single integral split into its two convergent pieces and A substituted: the Lean's `releaseNumerator` is 2η(h·∫_y^∞ e^{v−y}E(v)^2 dv − (1/2 + h)·∫_y^∞ E(v)^2 dv), which is the paper's 2η∫_y^∞(he^{v−y} − A)E(v)^2 dv with the paper's own A = 1/2 + h (printed on p. 137 after the next-but-one display, \"With A = 1/2 + h and |η| ≤ 1, these estimates give the stated bound\", and again at the start of §A.6). `actualNs_eq_releaseNumerator` states that the actual N_s equals it past releaseStart. The paper's `= O(E(y)^2)` is made explicit by `releaseNumerator_abs_le`: |N_s| ≤ numeratorConstant · E(y,0)^2 with numeratorConstant = 2(1 + 5e^{6/5}), an absolute constant independent of h, which is the uniformity in h the paper claims. As for (A.31), the integrands are evaluated at η = 0, which is the η-independence of the exterior profile there (`ReleaseMoments.corrected_eq_release`), and the 2η prefactor is carried at the general η.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

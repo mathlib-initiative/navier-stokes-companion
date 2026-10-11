@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 15,
-    "rect": [0.149729, 0.780927, 0.719172, 0.043929]
+    "rect": [0.150802, 0.782645, 0.714439, 0.039669]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (3.5), p. 15, in the statement of Theorem 3.1"
       },
       "region": "eq-3.5@p015",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.88,
@@ -29,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The four assertions of (3.5) are distributed over three declarations about the same fields and the same region {w.1 < 1, q < q_*, X_ext ≤ X}: 𝒜 = 0 (and the vanishing of the exterior residual, the sentence preceding the display) is the `exterior` field of `Properties`; ℬ = K(r,τ) and p = -∫_r^∞ K(ρ,τ)²/ρ dρ are `exterior_radial_form`; K(r,τ) = r^{-1-2h}ℋ_ext(τ/r²) is `exterior_amplitude_formula`, with ℋ_ext the Lean's `exteriorProfile C h`. Recovery is by reading off three encodings. (i) ℬ: the Lean writes the azimuthal field as D w = (K/r)•angularVector w rather than ℬ = K with ℬ a scalar; since ‖angularVector w‖ = r this is K e_θ, so the scalar is K. (ii) The radius is `r := √(2·radialEnergy w.2)` = √(x₁²+x₂²), the cylindrical radius. (iii) The improper integral ∫_r^∞ is `∫ ρ in Ioi r`, and the Lean additionally asserts `IntegrableOn` on (r,∞), which the paper leaves implicit — a strengthening, not a gap. (iv) Backward time is explicit: the τ-slot of `amplitude` is filled with 1 - w.1. The paper's following sentence, that ℋ_ext is smooth on [0,∞) with each fixed derivative bounded, is `Properties.exterior_profile_smooth` and `Properties.exterior_profile_derivatives_bounded` in the same file.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

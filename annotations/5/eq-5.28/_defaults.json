@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 57,
-    "rect": [0.296144, 0.159183, 0.572931, 0.027158]
+    "rect": [0.298396, 0.159504, 0.569796, 0.02314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. The display is a hypothesis of the generic summation Lemma 5.4. The Lean lemma (exists_realization, and exists_angular_realization which adds q = Q(t, x_3)) assumes instead the isotropic jet bound ‖D^k q‖ ≤ Bq_k · q^{1-k} for the full space-time Fréchet derivative of order k, on the set where 0 < q ≤ 1. The exponent D does not occur in the Lean hypothesis. The paper's (5.28) implies the Lean hypothesis by formal steps: q = q(z,t) kills the x_1, x_2 partials; the norm of the k-th derivative is bounded by a combinatorial constant times the largest mixed partial ∂_z^a ∂_t^b q with a+b = k; and for 0 < q ≤ 1 and 0 < D < 1 one has 1-aD-b ≥ 1-a-b, so q^{1-aD-b} ≤ q^{1-k}. The converse fails (the Lean bound is the excluded endpoint D = 1 and does not give the D-discount for a ≥ 1). Since the display is assumed, not asserted, the Lean lemma assumes strictly less and so covers every q the paper's lemma covers and more. The paper's conclusion does not record D: Step 1 on p. 58 derives |∂_z^{a'}∂_t^{b'}χ(aq)| ≤ C q^{-a'D-b'} but the statement only says the loss ℓ'_m is independent of J, and (5.36) is infinite-order vanishing; the Lean counterpart of Step 1 is cutoff_jet_bound with loss q^{-m}. Two things I note but which do not change the ruling for this block: (i) no Lean declaration states the D-weighted bound for the actual similarity coordinate (the paper's p. 114 remark that the similarity identities give (5.28)); Lean proves only the one-power-per-derivative bound physicalQ_jet_bound, which is exactly what its own lemma needs. (ii) I found no caller of exists_angular_realization or exists_realization outside GenericSummationRealization.lean; the physical construction uses the CutStageEstimates route built on physicalQ_jet_bound (lines 572, 597, 620, 707). CoordinateAlgebra.qAxial_rpow, which A cites as stating the a=1 case, is an algebraic identity about the rate expression qAxial, not a derivative bound on q, so I do not cite it.",
+          "summary": "Lean has a stronger form of it.",
           "verdict": "faithful"
         }
       ]

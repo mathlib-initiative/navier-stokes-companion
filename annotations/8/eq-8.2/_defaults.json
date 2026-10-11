@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 88,
-    "rect": [0.27552, 0.849358, 0.593396, 0.04414]
+    "rect": [0.275936, 0.853719, 0.591167, 0.035537]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The two constraints, the weights R^2 and R, the components used (u.mean.angular = v, u.mean.axial = γ, both components of the mean correction and not of the slow base, since `State.mean` is the triple added to `Context.base` in `State.totalVelocity`), and the inner average all match. ⟨·⟩_Y is `PressureStream.torusAverage`, the iterated unit-period integral ∫_0^1∫_0^1 over `Plane = ℝ × ℝ`, i.e. normalized Haar measure on the 2-torus; the paper introduces Y ∈ 𝕋² = ℝ²/ℤ² on p. 62, so the dimension and the normalization agree. One routine rewriting is needed: `pressureMass` integrates over all of ℝ (∫ r, …), not over [0,∞) as the paper's convention on p. 88 prescribes (\"Unspecified radial integrals run from zero to infinity\"). The two agree because the correction components are supported inside the active shell: `PressureStream.pressureMass_eq_interval` turns `pressureMass f s` into `∫ r in a..b, torusAverage f (r,s)` for any `RadialAlias.RadiallySupported a b` smooth f, and the paper's shell has 0 < a, so ∫_ℝ = ∫_a^b = ∫_0^∞ on these integrands. The second, cosmetic point: the Lean gives no separate names M_θ and M_z; the moments appear only inline as `radialMoment 2 u.mean.angular` and `radialMoment 1 u.mean.axial`. (These are not `CorrectionState.thetaDefect` / `axialDefect`, which carry the extra base and covariance terms and correspond to the defects 𝒥_θ, 𝒥_z of (8.12)/(8.15).) `ZeroMasses` is a global statement (equality of `ScalarField S`, so for every stage index n and every slow point); `ZeroMassesOn` is its restriction to a slow set, and `ZeroMassesOn.of_global` derives the latter from the former.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

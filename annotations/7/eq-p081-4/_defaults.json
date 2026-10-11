@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 81,
-    "rect": [0.262938, 0.469482, 0.474347, 0.02449]
+    "rect": [0.264171, 0.470248, 0.469519, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "heuristic",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. No declaration that I found states the scalar identity t·Kt = g·(t_r(t_θ,t_z)). What the repository states is the operator itself. `baseAction F g t` (MovingFrameODE.lean:106) has radial component -2F·t_θ and tangential component t_r•(2F·e_θ + g), in coordinates radial, angular, axial (file header, line 14). With g = (R F_R, G_R) (paper p. 74; `shearVector`, PhaseEstimates.lean:845) this is exactly the matrix K of (7.6) on p. 75, rows (0,-2F,0), (2F+RF_R,0,0), (G_R,0,0).\n\nThe display then follows by unfolding that definition and algebra: by `inner_pack_left` (line 56) and `inner_unitTheta` (line 61), ⟪baseAction F g t, t⟫ = (-2F t_θ) t_r + t_r(2F t_θ + ⟪g, tail t⟫) = -2F t_r t_θ + (2F + g_0) t_r t_θ + g_1 t_r t_z = t_r⟪g, tail t⟫. This is my hand computation, not compiled. No analytic fact is used.\n\nThe Lean says strictly more, because the full matrix determines the quadratic form and not conversely, so I rule lean_stronger rather than A's equivalent; both are in the clean class.\n\nThe display sits in the explanatory paragraph \"Energy transfer from the shear\" after the proof of Lemma 7.4 has ended. (7.22) is cited elsewhere only in the Figure 5 road map (text.txt line 655); I did not trace later uses of the unnumbered display beyond that. I ruled it heuristic and compared it anyway because the repository states the operator K. In Lean the shear enters the reduced equations through ⟪B 0, g⟫ and ⟪B 1, g⟫ (rhsX and rhsY, MovingFrameODE.lean:162-169), not through this quadratic form.",
+          "summary": "Lean has a stronger form of it.",
           "verdict": "faithful"
         }
       ]

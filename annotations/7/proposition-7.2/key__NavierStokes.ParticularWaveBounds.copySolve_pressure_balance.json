@@ -1,0 +1,34 @@
+{
+  "id": "proposition-7.2/key/1.NavierStokes.ParticularWaveBounds.copySolve_pressure_balance",
+  "location": {
+    "page": 77,
+    "rect": [0.131808, 0.727273, 0.738562, 0.143802]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ParticularWaveBounds.copySolve_pressure_balance",
+      "line": 674,
+      "module": "NavierStokes.ParticularWaveBounds",
+      "path": "NavierStokes/ParticularWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularWaveBounds.lean#L674"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ParticularWaveBounds.copySolve_pressure_balance",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For the constructed copy solve, slot-derivative + action + damping•solve - copyPressureReal•normal = -source at interior pulse times: the pair (t_m, π_m) satisfies (7.5)."
+      },
+      "region": "proposition-7.2@p077",
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 674,
+        "text": "theorem copySolve_pressure_balance (t : TangentData P H) (g : Geometry)\n    {a b : ℝ} (hab : a ≤ b) {U : Set P} (hU : IsOpen U) (k : Frequency)\n    (hA : ContDiffOn ℝ ∞ t.linearData.coefficient (U ×ˢ univ))\n    (hB : ContDiffOn ℝ ∞ t.linearData.forcingMap (U ×ˢ univ))\n    (hf : ContDiffOn ℝ ∞ t.source (U ×ˢ univ))\n    {p : P} (hp : p ∈ U) (Y : Plane) (heta : (g.coordinates k Y).2 ∈ Ioo a b) :\n    HarmonicCalculus.along (fun _ => ((0 : P), slotDirection g))\n        (t.linearData.copySolve g hab k) (p, Y) +\n      t.action (p, g.coordinates k Y) (t.linearData.copySolve g hab k (p, Y)) +\n      t.damping (p, g.coordinates k Y) • t.linearData.copySolve g hab k (p, Y) -\n      copyPressureReal t g hab k (p, Y) • t.normal (p, g.coordinates k Y) = -t.source (p, Y)"
+      }
+    }
+  }
+}

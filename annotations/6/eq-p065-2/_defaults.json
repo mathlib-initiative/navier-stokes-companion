@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 65.2",
+  "label": "Display 65.1",
   "status": "formalized",
   "location": {
     "page": 65,
-    "rect": [0.311768, 0.215535, 0.376691, 0.041273]
+    "rect": [0.313369, 0.219008, 0.372193, 0.033884]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,10 +12,9 @@
       "locator": {
         "physical": [65],
         "printed": [65],
-        "text": "Display 65.2, p. 65, in section 6.2"
+        "text": "Display 65.1, p. 65, in section 6.2"
       },
       "region": "eq-p065-2@p065",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.82,
@@ -29,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both halves are stated, in a rescaled encoding. (i) The sign-independence η_{(ℓ,a,+)} = η_{(ℓ,a,−)} is `physicalMask_signedLabel`, and it holds by `rfl`: `physicalMask` reads only `L.1` (the band ℓ) and `L.2.1` (the grid cell a) and never the sign slot `L.2.2`, so the Lean mask is literally a function of the unsigned label. (ii) The squared partition of unity is `physical_mask_tail_sum_sq`: the finsum of `mask D (tailLabel N U) q x ^ 2` over all `U : ℕ × Grid` equals 1. The rewriting: Lean's single finsum over the product type ℕ × Grid is the paper's iterated ∑_ℓ ∑_a (the iterated form is `SquaredPartition.labelMask_tail_sum_sq`); the paper's `∘ 𝒞_ℓ` (precomposition with the band-ℓ chart) is carried inside `physicalSlowMask`, which is `slowMask` precomposed with `slowCoordinates D n`, i.e. coordinatewise division by Q_n^{axisExponent}; the paper's restriction a ∈ I_ℓ has no Lean counterpart because Lean sums over the whole grid, which is at least as strong provided the terms outside I_ℓ vanish; the paper's implicit restriction to the active shell is carried by the hypotheses `0 < q` and `q ≤ ChartScales.Q N` together with `tailLabel N` (bands shifted to start at N).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

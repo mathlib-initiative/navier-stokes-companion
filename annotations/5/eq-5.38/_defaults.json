@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 59,
-    "rect": [0.379194, 0.179452, 0.489874, 0.02656]
+    "rect": [0.381818, 0.179339, 0.486374, 0.024793]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Two encodings, neither one the printed formula verbatim. (i) In the generic pipeline that carries Lemma 5.4 (GenericRealizationBounds.stage_growth), the logarithm is already absorbed: the conclusion is a JetRate, ∃C ≥ 0 with ‖D^m U^{[J]}‖ ≤ C q^{-K_m}, K_m = max (L m + 1) (Lbase m) — the paper's K_m ≥ 0 independent of J (the `+1` is precisely the log absorption performed by jetRate_of_log_bound, line 47). The constant is existentially quantified after J and m, so it is the paper's C_{J,m}. The rewriting both ways: Λ_log(q)^{P_{J,m}} q ≤ C_{P} on (0,1], so the paper's display gives the Lean rate with exponent -(K_m+1); conversely the Lean rate is the P = 0 case. (ii) The literal log form, with the Λ_log(q)^{P} factor retained and an exponent independent of the prefix length, is stated by WholeDomainStageBounds.prefix_log_bound, but for the physical sublevel of `physicalQ` rather than for the generic domain Ω of Lemma 5.4. Scope: the JetRate in (i) is along the filter `scaleApproach U q = comap q 𝓝[>]0 ⊓ 𝓟 U`, which by uniform_bound_of_rate (GenericRealization.lean:38) means a bound on U ∩ {0 < q < δ} for some δ > 0, not on all of Ω as the paper states it; this is the form the paper's own proof then uses (\"After shrinking the q-neighborhood … the constants and logarithms in (5.38) are absorbed by q^{-1}\").",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,0 +1,34 @@
+{
+  "id": "proposition-7.2/key/1.NavierStokes.ParticularWaveBounds.complexCopyCoefficients_principal",
+  "location": {
+    "page": 77,
+    "rect": [0.131808, 0.727273, 0.738562, 0.143802]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ParticularWaveBounds.complexCopyCoefficients_principal",
+      "line": 1847,
+      "module": "NavierStokes.ParticularWaveBounds",
+      "path": "NavierStokes/ParticularWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularWaveBounds.lean#L1847"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ParticularWaveBounds.complexCopyCoefficients_principal",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (complexCopyCoefficients base t source g copy L hL).principal s dirs n x = -source n x on s.domain, given the geometry match (normal, damping ε·frequency²·‖n‖², shear action) and frequency ≠ 0: (7.5) for the complex coefficient."
+      },
+      "region": "proposition-7.2@p077",
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1847,
+        "text": "theorem complexCopyCoefficients_principal\n    {s : StripData (P × Plane)} {dirs : GraphDirections (P × Plane)}\n    (base : WaveCoefficients (P × Plane))\n    (t : ℕ → TangentData P ProblemStatement.Space) (source : ℕ → P × Plane → ComplexVector)\n    (g : ℕ → Geometry) (copy : ℕ → Frequency) (L : ℕ → ℝ) (hL : ∀ n, 0 < L n)\n    {U : Set P} (hU : IsOpen U) (hdom : ∀ p ∈ s.domain, p.1 ∈ U)\n    (hA : ∀ n, ContDiffOn ℝ ∞ (t n).linearData.coefficient (U ×ˢ univ))\n    (hB : ∀ n, ContDiffOn ℝ ∞ (t n).linearData.forcingMap (U ×ˢ univ))\n    (hf : ∀ n, ContDiffOn ℝ ∞ (source n) (U ×ˢ univ))\n    (hslot : ∀ n p, p ∈ s.domain → ((g n).coordinates (copy n) p.2).2 ∈ Ioo 0 (L n))\n    (hgeometry : CopyGeometryMatch s dirs base t g copy)\n    (hfrequency : ∀ n, base.frequency n ≠ 0) :\n    ∀ n x, x ∈ s.domain →\n      (complexCopyCoefficients base t source g copy L hL).principal s dirs n x = -source n x"
+      }
+    }
+  }
+}

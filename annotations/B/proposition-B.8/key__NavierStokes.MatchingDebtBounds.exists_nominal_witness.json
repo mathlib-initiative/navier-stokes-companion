@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.8/key/1.NavierStokes.MatchingDebtBounds.exists_nominal_witness",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.MatchingDebtBounds.exists_nominal_witness",
+      "line": 887,
+      "module": "NavierStokes.MatchingDebtBounds",
+      "path": "NavierStokes/MatchingDebtBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingDebtBounds.lean#L887"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.MatchingDebtBounds.exists_nominal_witness",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Existence of a nominal witness whose matching debt is small enough for the normalized inverse-function-theorem solve, i.e. the five-row repair system of the proof is solvable; this is what makes the exact five-moment match of `moments_at_match` non-vacuous."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 887,
+        "text": "theorem exists_nominal_witness {F : OutgoingProfile.Profile} {D : ℝ}\n    (hF : OutgoingProfile.Specification F D) (hP : 2 ≤ F.data.core.P)\n    (hh : F.data.h ≤ 1 / 1000) (N : ℕ) {rho : ℝ}\n    (hrho : 0 < rho) (hradius : rho ≤ NominalProfile.resetSolver.radius) :\n    ∃ W : NominalProfile.Witness F, MatchingBounds W.controls N rho"
+      }
+    }
+  }
+}

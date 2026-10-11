@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 83,
-    "rect": [0.226279, 0.569569, 0.643181, 0.025973]
+    "rect": [0.228877, 0.570248, 0.638225, 0.02314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [83],
         "printed": [83],
-        "text": "Equation (7.29), p. 83, in the statement of Lemma 7.4"
+        "text": "Equation (7.29), p. 83, in the proof of Proposition 7.5"
       },
       "region": "eq-7.29@p083",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The display closes Step 2 of the proof of Proposition 7.5 (not the statement of Lemma 7.4, as the metadata says). The Lean packages it as ZeroOrderBounds with R = sqrt(S_n).\n\nWhere the Lean hypotheses hold, all three clauses follow by formal steps:\n- |det H| >= c/S_* is the `determinant` field after normalizedMatrix_det.\n- ||H^{-1}|| <= C sqrt(S_*) and y_sigma <= C sqrt(S_*)|T| are stated by no declaration. Both follow by 2x2 adjugate/Cramer algebra from the `entries` and `determinant` fields, since `weights` is by definition cramerNumerator / det. Finding A's objection that the upper half is missing therefore does not stand.\n- c sqrt(S_*)|T| <= y_sigma is exists_prepared_bounds at zeta = targetAmplitude v p, rewritten with actualTarget_eq_direction_all. targetAmplitude is the norm of actualTarget by definition.\n\nWhat is not covered is the display's range. The paper asserts the bounds on each enlarged slow neighbourhood \"relative to tau >= 0\" (p. 74, Prop. 7.5 on p. 82). The cone margin, hence the y clause, is asserted on the neighbourhood's intersection with the closed active annulus, which is a condition on (X, eta) only. Every Lean statement of the bounds requires p ∈ positivePart (referenceSet W) and p ∈ (domain W a.N).carrier L. Unfolded, that is the open two-mesh cell with 0 < p.2.2 (p.2.2 is T = tau/Q), normalized q in [1/2, 2] and X in [activeLeft, activeRight]. Two parts of the paper's range are unstated:\n1. **The face tau = 0**, for all three clauses. The carrier and positivePart both require strictly positive time. Reaching the face needs a limit or continuity of H and T up to tau = 0, which is not a formal step.\n2. **Points of the enlarged box with q/Q outside [1/2, 2] and X_a < X < X_b**, for the y clause only. The cone-margin inputs (Prepared.target_margin, target_unit, target_actual, prepared_model_mem, actualTarget_eq_direction_all) are all restricted to referenceSet. Extending the margin needs the continuity argument the paper invokes on p. 74, which the repository does not state there.\n\nClauses 1 and 2 are not affected by gap 2: exists_family_bounds quantifies over every p in the carrier and can be instantiated with the target direction at the representative.\n\nThe Lean also states things the display does not: the entry bound |H_ij| <= C/sqrt(S_*), which is the content of (7.28), and the lower bound in terms of the moving weight. Because part of the display's range neither is stated nor follows formally, the class is lean_weaker.\n\nNot verified: that the paper's unspecified \"one fixed factor\" enlargement equals the Lean's two-mesh cell, that the Lean covariance matrix is the paper's H, and whether the tau = 0 face is recovered elsewhere in the repository by a separate limiting argument. Nothing was compiled.",
+          "summary": "Lean has a weaker form of it. Lean covers only τ > 0, and for the y_σ bounds only q/Q in [1/2, 2]; the ‖H^{-1}‖ and upper y_σ bounds are not stated directly but follow from its entry and determinant bounds.",
           "verdict": "deviation"
         }
       ]

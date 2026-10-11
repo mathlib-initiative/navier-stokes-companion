@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 138.7",
+  "label": "Display 138.1",
   "status": "formalized",
   "location": {
     "page": 138,
-    "rect": [0.18477, 0.591763, 0.585033, 0.050377]
+    "rect": [0.187166, 0.593388, 0.579679, 0.046281]
   },
   "target": {
     "pin": {
@@ -21,7 +21,7 @@
       "locator": {
         "physical": [138],
         "printed": [138],
-        "text": "Display 138.7, p. 138, in the proof of Lemma A.6"
+        "text": "Display 138.1, p. 138, in the proof of Lemma A.6"
       },
       "region": "eq-p138-7@p138",
       "role": "key",
@@ -38,7 +38,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Three routine rewritings. (i) Time direction: the paper differentiates in t, Lean in the backward time τ = 1 - t (fixed on p. 137), so Lean's +2 s^{-A-1} H' for ∂_τ is the paper's -2 c_∞ s^{-A-1} H' for ∂_t; the chain-rule step with τ = 1-t is literally performed at RadialHeatProfile.lean:640. (ii) Coefficients: Lean carries a = 1 + h where the paper carries A = 1/2 + h, and 2a = 2A+1, a(a-1) = h(1+h) = A^2 - 1/4, spatialExponent a = 1/2 - a = -A, so Lean's bracket (2τ/s)^2 H'' + 2a(2τ/s)H' + a(a-1)H with prefactor 2 s^{-A}/s is the paper's 2 s^{-A-1}[Z^2 H'' + (2A+1)Z H' + (A^2-1/4)H] with Z = 2τ/s. (iii) The normalization c_∞ is absent from radialProfile and is restored by TerminalStress.heatAmplitude C a t r = C * radialProfile a (1-t) r. The paper's left-hand side (∂_rr + r^{-1}∂_r - r^{-2})K is Lean's 2s·spatialSecond + 2·spatialFirst - spatialProfile/(2s): with s = r²/2 one has ∂_r = r∂_s, ∂_rr = 2s∂_ss + ∂_s, r^{-2} = 1/(2s). The second display is not a standalone declaration; it is the `have hres` step of spatial_heat_identity, whose own statement equates the two displays (that is the heat equation of (A.33)).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

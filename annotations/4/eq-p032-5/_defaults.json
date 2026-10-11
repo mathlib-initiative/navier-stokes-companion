@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 32.5",
+  "label": "Display 32.3",
   "status": "formalized",
   "location": {
     "page": 32,
-    "rect": [0.305539, 0.6867, 0.389145, 0.029414]
+    "rect": [0.306952, 0.686777, 0.385027, 0.024793]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [32],
         "printed": [32],
-        "text": "Display 32.5, p. 32, in section 4.4"
+        "text": "Display 32.3, p. 32, in section 4.4"
       },
       "region": "eq-p032-5@p032",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The display is the definiens of a named property (\"g is flat at the radial edge X_e\"). The repository has no predicate with that name or shape; it writes the defining formula out wherever it needs it. For the edge weight ζ, the only object for which a numbered result of the paper asserts the property (Theorem 4.6(iv), which itself spells it out as \"every radial derivative of ζ vanishes at X_a, X_b\"), the Lean formula is the display verbatim: iteratedDeriv n (radialWeight c a b) (exp a) = 0 and ... (exp b) = 0 for every n : ℕ, with LeadingStressWeights.zeta defined as radialWeight (activationTime^2) (leftEdge W) (rightEdge W) and leftEdge/rightEdge the logs of activeLeft/activeRight; n = 0 is included and the η quantifier is vacuous because ζ depends on X only. The η-dependent form of the formula is also stated, in (X, η) coordinates and for every η, for the first-order terminal stress model at the outer edge: stressX_edge_jets gives vanishing of every full Fréchet jet at (exp(y0+3), η), which is more than the pure X-derivatives the paper asks for (profileStress_edge_jets is the same in the edge chart). What I did not find is a jets-vanish statement for the actual leading stress `stress v.profiles F.data.h` at the inner edge X_a; there the repository carries stress_zero_before plus the EdgeFactor identity on 0 < x < width. That concerns the paper's following sentence (\"The stress will be flat at both edges\") and Theorem 4.6(ii),(iv), not this defining display. NativeDyadicRegularity.FlatAt, which finding B pairs with the display, is a pointwise all-jets predicate used only in NativeDyadicRegularity.lean and InitialDyadicSource.lean for the dyadic faces; I found no use of it at X_a or X_b, so I do not count it as the counterpart, and B's argument recovering mixed jets from pure X-jets is not a step the repository states and is not needed.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

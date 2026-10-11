@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 81,
-    "rect": [0.283894, 0.214608, 0.434392, 0.043377]
+    "rect": [0.285561, 0.214876, 0.429947, 0.038843]
   },
   "target": {
     "pin": {
@@ -37,7 +37,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The two endpoints of the paper's chain are stated exactly: the expression whose sign is asserted is, term for term, ±(E₂₁ + (-2λ + E₂₂ - E₁₁)r - E₁₂r²) at r = ±K_b/S_*, with c_λ = lamMin, |E_{ab}| ≤ eps = C/S_*, and K_b/S_* = coneConstant lamMin C / S_*. The paper's \"sufficiently large fixed K_b and all sufficiently large S_*\" is made explicit: K_b = 4(C+1)/c_λ (coneConstant, GrowingMode.lean:208) and S_* ≥ 2K_b (hlarge). What differs is the middle member of the chain, which the Lean never displays: it is used only inside the proof of upper_edge_factor_negative (hlin, hquad, hrate at lines 77-83), and there the bound reached is eps(1+r)² - 2 lamMin r = (C(1 + 2K_b/S_* + K_b²/S_*²) - 2c_λ K_b)/S_*, with coefficient 2 on the middle term where the paper writes 1. The rewriting is the paper's own generic-constant convention — bounding |E₂₂ - E₁₁| ≤ 2C/S_* gives the 2, and replacing C by 2C turns the paper's expression into the Lean's, with the same conclusion < 0 for large K_b. Nothing weaker is proved.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

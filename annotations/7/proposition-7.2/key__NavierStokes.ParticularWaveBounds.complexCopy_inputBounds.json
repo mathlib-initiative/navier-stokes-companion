@@ -1,0 +1,35 @@
+{
+  "id": "proposition-7.2/key/1.NavierStokes.ParticularWaveBounds.complexCopy_inputBounds",
+  "location": {
+    "page": 77,
+    "rect": [0.131808, 0.727273, 0.738562, 0.143802]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.ParticularWaveBounds.complexCopy_inputBounds",
+      "line": 1778,
+      "module": "NavierStokes.ParticularWaveBounds",
+      "path": "NavierStokes/ParticularWaveBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularWaveBounds.lean#L1778"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.ParticularWaveBounds.complexCopy_inputBounds",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: From CopyControl for the real and imaginary solves with an arbitrary positive envelope W, hf : WaveClass s (W∘slot) α source, and the normal/frequency inputs: InputBounds s (W∘slot) α κ dirs (complexCopyCoefficients …), whose fields are amplitude ∈ WaveClass α and pressure ∈ WaveClass (α+1/2). These"
+      },
+      "region": "proposition-7.2@p077",
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1778,
+        "text": "theorem complexCopy_inputBounds\n    {s : StripData (P × Plane)} {α κ : ℝ} {dirs : GraphDirections (P × Plane)}\n    (base : WaveCoefficients (P × Plane))\n    (t : ℕ → TangentData P ProblemStatement.Space) (source : ℕ → P × Plane → ComplexVector)\n    (g : ℕ → Geometry) (copy : ℕ → Frequency) (L : ℕ → ℝ) (hL : ∀ n, 0 < L n)\n    (W : ℕ → ℝ → ℝ)\n    (hr : CopyControl s α (fun n => (realData (t n) (source n)).linearData) g copy L W)\n    (hi : CopyControl s α (fun n => (imagData (t n) (source n)).linearData) g copy L W)\n    (hb : InputBounds s (fun n p => W n ((g n).coordinates (copy n) p.2).2) α κ dirs (zeroAmplitudes base))\n    (hN : PhaseJetBounds.PolynomialJets (CurlClassBounds.phaseDomain s)\n      (fun n p => (t n).normal (nativePoint (g n) (copy n) p)))\n    (hNdot : UnweightedClass s 0 (fun n p => (t n).normalDot (nativePoint (g n) (copy n) p)))\n    (hA : UnweightedClass s 0 (fun n p => (t n).action (nativePoint (g n) (copy n) p)))\n    (hf : WaveClass s (fun n p => W n ((g n).coordinates (copy n) p.2).2) α source)\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 75,
-    "rect": [0.233908, 0.254988, 0.635168, 0.056839]
+    "rect": [0.235294, 0.254545, 0.632898, 0.055372]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both halves are present, neither as a displayed matrix. (a) 𝒦 is the linear map `baseAction F g`: its radial output is −2F·t_θ and its tangential output is t_r·(2F e_θ + g); with g = shearVector = (R F_R, G_R) (the instantiation used by the assembled family) the three rows are the paper's (0,−2F,0), (2F+RF_R,0,0), (G_R,0,0) entry for entry, with the coordinate order (r,θ,z) given by `pack r w = !₂[r, w 0, w 1]`. (b) 𝒜_Φ is `TangentODE.projectedOperator n n' K δ` (TangentODE.lean:217), a standalone definition of 𝒜_Φ − δ·Id: −K is the −𝒦, and the rank-one summand ((innerSL n).comp K − innerSL n').smulRight ((⟪n,n⟫)⁻¹ • n) is the paper's n_Φ(n_Φ^T𝒦 − (n'_Φ)^T)/|n_Φ|² written out, so the only addition to (7.6) is the scalar damping −δ·Id, which in the paper is the separate m²d term of (7.5). projectedOperator_apply (:221) ties it to the pointwise form: projectedOperator n n' K δ x − tangentProj n f = projectedRhs n n' x (Kx) f δ, i.e. 𝒜_Φ also appears unbundled as the first two summands of projectedRhs; the operator form is used in CommonCoverSolve, NormalScaling, ActualCopySliceRegularity, PrimaryCopyBridge, WaveStageContinuation, ParticularWaveBounds and ScaledTangentTransport. Both TangentODE and TangentProjection are stated for an arbitrary real inner-product space and an arbitrary K, so the identification of 𝒦 with baseAction happens one level up (ambientSolution_hasDerivAt).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

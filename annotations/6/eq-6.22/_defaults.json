@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 68,
-    "rect": [0.315399, 0.84465, 0.553669, 0.04819]
+    "rect": [0.316578, 0.847934, 0.551614, 0.040496]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. No declaration writes either identity in the paper's form: I found no statement `pathLinear = id - v_t ⊗ λ_t`, and none of the form `(coordinateLinear Y).2 = (T_g^Δ/c_i) * etaCoordinate Y`. What the repository states is: (i) the path is affine in H with linear part pathLinear = pointLinear ∘ horizontal ∘ coordinateLinear (path_eq_affine, l.795; definition l.781), and equivalently the shift form (6.21) with the actual c_i and v_t (native_band_path, l.1291); (ii) the coordinates are affine with linear part coordinateLinear (coordinates_eq_affine, l.784), and coordinateLinear is evaluated on the eigenbasis: v_r ↦ (Λ^gap, 0) for every gap (slot_coordinate_radial), v_t ↦ (0, 1/c_i) at gap 0 (slot_coordinate_temporal) and v_t ↦ (0, Q^{-(1+h)}) = (0, T_g^Δ/c_i) at gap = nativeIndex (geometry_temporal); (iii) the O(S_*) as an explicit operator-norm bound argumentCost ≤ C(B,D)·S n (bandGeometry_argumentCost_le; on the constructed slot geometry slotGeometry_common_cost, in the reference band's S), with S n = n² = the paper's S_* = ℓ².\n\nThe rewriting is finite-dimensional linear algebra only. Unfold coordinateLinear = basis.symm ∘ coverPower gap; by slotGeometry_basis, basis.symm v_r = (1,0) and basis.symm v_t = (0, 1/c_i); by coverPower_radial / coverPower_temporal (any gap) coordinateLinear v_r = (Λ^Δ, 0) and coordinateLinear v_t = (0, T_g^Δ/c_i). Since v_r, v_t are a basis (vectors_det) and etaCoordinate is 0 on v_r and 1 on v_t, the second slot of coordinateLinear is (T_g^Δ/c_i)·λ_t: the paper's second identity. Then id − pathLinear = pointLinear ∘ (0, snd) ∘ coordinateLinear = (T_g^Δ/c_i)λ_t(·) · c_i · J_g^{-Δ} v_t = λ_t(·) v_t, the first identity. The temporal value for a general gap is not a stated theorem (only gap 0 and gap = nativeIndex are); it follows from coverPower_temporal and slotGeometry_basis by the same two-line computation as the proof of geometry_temporal. The O(S_*) clause follows from the stated bound because ‖coordinateLinear‖ ≤ argumentCost by the definition of argumentCost. Conversely, what Lean states (affineness, the composite linear part, the norm bound with a constant fixed before the band) follows from (6.21)–(6.22). The identification of TorusInverse.vector .radial/.temporal with PhysicalGraphBounds.radialDirection/timeDirection is by definitional unfolding (it is used that way in the proof of coverPower_temporal, CommonBaseContext.lean:194), not by a named lemma.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

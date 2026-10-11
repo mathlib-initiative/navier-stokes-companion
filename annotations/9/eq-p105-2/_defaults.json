@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 105,
-    "rect": [0.280351, 0.584533, 0.439299, 0.045909]
+    "rect": [0.281283, 0.586777, 0.435294, 0.041322]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Recovery: the Lean states the increment form ℛ(u+w, p+π) - ℛ(u,p) = … rather than the sum form, and splits the base velocity as u = B + a (background plus correction) with w = b, π = q. Unfolding linearResidual ε … B b q = ∂_t b + transport(B,b) + transport(b,B) + ∇q - ε Δb and adding the three explicit transports transport(a,b) + transport(b,a) + transport(b,b) gives ∂_t w + ∇π - εΔw + transport(B+a, w) + transport(w, B+a) + transport(w,w), i.e. ∂_t w - Δw + ∇π + (u·∇)w + (w·∇)u + (w·∇)w at ε = 1, using bilinearity of transport in each slot (transport_add_left at CorrectionStep.lean:237, transport_add_right at :245). Two encoding differences, both carried by the Lean as generalizations: the Lean keeps a viscosity parameter ε in front of the Laplacian where the paper's ℛ of (3.1) fixes viscosity one, and it works in the cylindrical moving frame (Vr, Vθ, Vz, Vt) with complex-valued components, so (u·∇)v is the frame transport with its angular generator and 1/R factor rather than the Cartesian directional derivative.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

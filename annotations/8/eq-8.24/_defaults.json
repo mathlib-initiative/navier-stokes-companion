@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 97,
-    "rect": [0.297894, 0.192969, 0.57118, 0.026103]
+    "rect": [0.299465, 0.194215, 0.567637, 0.022314]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The two velocity clauses are stated literally. In the paper's own normalized radial variable x = r/√q, ReservedPatches.radial_heated_fields gives, on the mean radial window, U = 0 (the axial field, the paper's G_q) and E = FiveRowRank.background λ (radialAmplitude F XR η) x = a(η)·x^(-1-2λ) (the angular field, the paper's V_q); the exponent -1-2λ, the sign and the η-dependence of the amplitude agree term by term. The paper's a(η) = 2^(1/2+λ) c_patch (1+η²)^(-1), stated just after (8.24), is exactly radialAmplitude F XR η = xAmplitude F XR η · 2^(1/2+λ) with radialAmplitude_shape giving the (1+η²)^(-1) shape and c_patch = xAmplitude F XR 0. For the full summed base (what (8.24) actually asserts, the paper pointing to (5.44)), BaseRankPatch.rank_fields states the same pair in unnormalized physical units: angularSlice = MeanRankUpdate.background λ a(η) ℓ U = U·a(η)·(r/ℓ)^(-1-2λ) and axialSlice = 0, with ℓ = √q (rankLength) and U = q^(-A) (rankVelocity); dividing by U and substituting x = r/ℓ is the paper's 'velocity normalization at q' and returns (8.24) verbatim. BaseRankPatch.normalized_mean_fields states the same thing in the inner variable X = x²/2 with exponent -(1/2+λ); MeanRankUpdate.square_half_power (MeanRankUpdate.lean:1130) is the repository's own conversion (X^(-(1/2+λ)) = 2^(1/2+λ) x^(-1-2λ)) between the two conventions. The third clause is the one difference in form: no declaration found names a uniform constant a₀ or asserts |a(η)| ≥ a₀. What Lean has is the strictly stronger pointwise fact 0 < a(η) (rankCoefficient_pos, and radialAmplitude_pos behind it) together with the explicit shape; the uniform bound is recovered in one line, since radialAmplitude_shape gives a(η) = a(0)/(1+η²) and SimilarityCoordinates.coordinateEta_abs_lt_one (SimilarityCoordinates.lean:368) gives |η| < 1 on the region in question, so a(η) > a(0)/2 =: a₀ > 0. The Lean five-row lemmas that consume (8.24) (FiveRowRank.five_rows_on_patch, MeanRankUpdate.physical_rows_on_patch) assume only C ≠ 0, a weaker hypothesis than the paper's |a(η)| ≥ a₀ > 0, so on that use they are stronger than the paper's statement rather than weaker.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 50,
-    "rect": [0.252211, 0.439643, 0.616858, 0.026343]
+    "rect": [0.254545, 0.441322, 0.612557, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The inequality is the body of PolynomialEdgeJets with the paper's ingredients: activeDelta a b w = min 1 (min (log X - a) (b - log X)) is δ(X) with a = log X_a, b = log X_b; activeWindow a b = Ioo (exp a) (exp b) × Icc (-1) 1 is the paper's range; activeZeta is a two-edge flat weight in log X; stressPair d n = (stressTheta n, stressAxial n) are the two components of (5.9). The Lean bounds the whole order-m derivative tensor with C, N existential per order m, which is the paper's \"C_{n,I}, N_{n,I} may depend on the order and derivative\" up to the finite-dimensional norm. No single declaration states the bound for all n ≥ 1; it is split as the paper itself splits it. n = 1: modulated_first_edgeJets states it on the outer collar for the constructed coefficients, and edgeJets_of_outer_collar (with the zero germ from modulated_positive_stress_zero) extends it to the whole window; that combination is carried out inside modulated_weighted_on_actual_scales rather than recorded as a separate theorem. n ≥ 2: no theorem concludes PolynomialEdgeJets for stressPair d n, but SlowStressSupport.interior_weighted_jets is stated for an arbitrary continuous positive weight on Ioo l r, and instantiating it with zeta := radialWeight c left right, S := univ, K := Icc (-1) 1, f := stressTheta n / stressAxial n, with support hypotheses from modulated_higherInteriorSupport and smoothness from modulated_smooth, gives |∂^k T_n| ≤ C ζ(X) on the window, i.e. (5.13) with N = 0, exactly the paper's closing remark. I did not find that instantiation written out anywhere; the repository instead consumes the n ≥ 2 case as smoothness of T_n/ζ (modulated_quotients_smooth). Finding B's route for n ≥ 2 through logarithmic_weighted_jets is not the right one (its weight logFlatWeight is in log R and needs an unrecorded rescaling of the edge constants); the generic interior_weighted_jets needs no such step. Not verified: that activeZeta c a b (left constant c > 0 arbitrary, right constant 4) is literally the weight ζ of Theorem 4.6(iv); I matched only its two-edge flat form.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

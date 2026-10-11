@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 69,
-    "rect": [0.139673, 0.487175, 0.72761, 0.04841]
+    "rect": [0.13369, 0.487603, 0.733413, 0.059504]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [69],
         "printed": [69],
-        "text": "Equation (6.23), p. 69, in the statement of Proposition 6.6"
+        "text": "Equation (6.23), p. 69, in section 6.4"
       },
       "region": "eq-6.23@p069",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The most literal counterpart is logWeight_formula (WeightedRadialPrimitive.lean:404), which states in the variable X itself, for X ∈ (a,b), that logWeight cL cR a b m X = exp(−cL/log²(X/a) − cR/log²(b/X)) / (min{1, log(X/a), log(b/X)})^m: that numerator is the paper's ζ(X) with a_a = cL, a_b = cR, and that denominator base is the paper's δ(X) verbatim. It states the pair only in the combination ζ δ^{−m} that (6.24) uses, with m a natural number, rather than as the two separate definitions the display gives; the separate ones are zeta and delta, built in the logarithmic coordinate x = logPosition a X = log(X/X_a) on the interval [0, L], L = logLength a b = log(X_b/X_a), where log_remaining supplies L − x = log(X_b/X), so delta L x = min{1, log(X/X_a), log(X_b/X)} and zeta cL cR L x = edge cL (log(X/X_a)) * edge cR (log(X_b/X)) = exp(−cL/log²(X/X_a)) · exp(−cR/log²(X_b/X)) = exp(−cL/log²(X/X_a) − cR/log²(X_b/X)). FlatCutoff.edge's `if x ≤ 0 then 0` clause is exactly the paper's extension of ζ by zero outside the shell X_a < X < X_b, which the paper states in the surrounding prose rather than in the display. Note that a second, less general encoding exists at NavierStokes/ActiveAnnulusWeight.lean:23 (`weight c a b y = edge c (y-a) * edge 4 (b-y)`), which hard-codes the right-edge constant to 4; the WeightedRadialPrimitive version cited here keeps both constants free and is the one reached from the main context (BaseContextAssembly.nativeStrip → movingStrip → movingStripData → localStripData → logStripData).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

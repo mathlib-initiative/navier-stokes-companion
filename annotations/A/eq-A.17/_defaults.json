@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 132,
-    "rect": [0.340257, 0.587021, 0.528814, 0.043976]
+    "rect": [0.257754, 0.589256, 0.609348, 0.036364]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Neither ratio is stated as a ratio, and the exponent 6 occurs nowhere in NavierStokes/ (a grep of `\\.h \\^ [0-9]+` over the directory returns only 3, 4, 7, 8). Both equalities are nevertheless a two-line rewriting of stated declarations. The hold is the plateau of `releaseSlope` (= -1 on [1, d.secondRampStart], with d.secondRampStart = 1 + d.longHold and d.longHold = 4 log(1/h)), so hold start = d.releaseStart + 1 and hold end = d.releaseStart + d.secondRampStart. Throughout the hold y - tailStart d ≤ -1 - decayHold d < 1 (tailStart d = d.releaseStart + d.rampEnd + decayHold d, d.rampEnd = d.secondRampStart + 1, decayHold_pos), so tailShape_early makes the tailShape factor in both formulas exactly 1 - d.rho and it cancels from the ratio. First equality: energyDensity_release_eq gives (XE^2)(hold end)/(XE^2)(hold start) = exp(2 (releasePrimitive(secondRampStart) - releasePrimitive(1))) = exp(-2 longHold) by the increment step contained at TailEnergyBounds.lean:82, = h^8 by plateau_suppression. Second equality: finalAngular_release_formula carries the extra similarity factor exp(-(y - releaseStart)/2), so E(hold end)/E(hold start) = exp(-longHold) * exp(-longHold/2) = h^4 * h^2 = h^6 by plateau_amplitude_suppression. Recorded as a fact and not a defect: downstream the repository does not use the exact h^6 ratio but the inequality finalAngular_suppressed, ≤ 2 E(releaseStart) h^4, measured from the release start rather than from the hold start; that is what TerminalCone.release_small and TerminalCone.profileAxialStress_le_angular consume.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

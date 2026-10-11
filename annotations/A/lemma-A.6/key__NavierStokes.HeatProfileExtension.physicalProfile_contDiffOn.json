@@ -1,0 +1,29 @@
+{
+  "id": "lemma-A.6/key/1.NavierStokes.HeatProfileExtension.physicalProfile_contDiffOn",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.HeatProfileExtension.physicalProfile_contDiffOn",
+      "line": 242,
+      "module": "NavierStokes.HeatProfileExtension",
+      "path": "NavierStokes/HeatProfileExtension.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatProfileExtension.lean#L242"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.HeatProfileExtension.physicalProfile_contDiffOn",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: (ha : 1 < a) → ContDiffOn ℝ ∞ (fun p : ℝ × ℝ => physicalProfile a p.1 p.2) (Ioi 0 ×ˢ univ): C^∞ jointly in (X, η) on a set open in η, hence smooth across η = ±1. Clause (vi), stronger than one-sided extension."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 242,
+        "text": "theorem physicalProfile_contDiffOn {a : ℝ} (ha : 1 < a) :\n    ContDiffOn ℝ ∞ (fun p : ℝ × ℝ => physicalProfile a p.1 p.2)\n      (Ioi 0 ×ˢ (univ : Set ℝ))"
+      }
+    }
+  }
+}

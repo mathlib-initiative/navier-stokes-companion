@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 50,
-    "rect": [0.310018, 0.351475, 0.559051, 0.025354]
+    "rect": [0.31123, 0.35124, 0.555872, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both clauses are stated, each by its own declaration, after three routine identifications. (i) The five-vector: the Lean's `moments n u e omega : Fin 5 → ℝ` is `∫ R in Ioi 0` of `rowDensity`, whose five entries are `R*U_n`, `R^2*E_n`, `pressureGradient`, `R^2*Σ_{i+j=n}U_iE_j`, `R*Σ_{i+j=n}U_iU_j - (R^2/2)*pressureGradient`, matching m_{n,1}..m_{n,5} of (5.10)–(5.11) entry by entry; the paper's `∂_R Π_n` appears in rows 3 and 5 in its equation-substituted form `pressureGradient n e omega R = (cauchy n e e R - omega R)/R` (Ω the fixed order-(n-1) source), i.e. the R-pressure equation has already been used. The angular field is recovered from φ by `angularField C phi w = w.1/C * phi w`, inverting the paper's φ = C E / R. (ii) The parameter range: `profiles_moments` holds for every `eta ∈ S`, and S contains Icc (-1) 1 at every instantiation used (`hI : Icc (-1) 1 ⊆ S`), so it is at least as general as |η| ≤ 1. (iii) The support clause: the paper's P_n is a 5-tuple (φ_n, U_n, V_n/X, Π_n, F_n/X); the Lean's `Coefficient` carries four fields (phi, axial, beta=V_n/X, pressure) and `extendedCoefficient_zero_exterior` kills all four at once for X_+ ≤ X, with X_+ = s.B^2/2 (= nominalOuterX for the nominal scheme, by `nominalOuterRadius_square`); the fifth component F_n/X is the axial average and is killed separately by `extended_axial_average_zero`. The companion statements in the radial coordinate, `profiles_{phi,axial,beta,pressure}_exterior`, use `Exterior B S f := ∀ eta ∈ S, ∀ R, B ≤ R → f (R, eta) = 0` with B = √(2X_+).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

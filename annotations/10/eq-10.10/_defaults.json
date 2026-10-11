@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 120,
-    "rect": [0.328417, 0.176218, 0.540657, 0.041564]
+    "rect": [0.329412, 0.17686, 0.53878, 0.036364]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. No declaration was found stating this fundamental-theorem-of-calculus representation: the modules that carry the Lemma-10.2 route contain no integral at all (grep for '∫' in SpacetimeEndpoint.lean, JointResidualLimits.lean and EndpointLimits.lean returns nothing), and the interval integrals present elsewhere in NavierStokes/ are pressure and history primitives, unrelated to this step. The Lean reaches the conclusion (10.10) is invoked for — compatibility of the boundary limits F_j under spatial and time differentiation — by a limit-of-the-derivative argument instead of an integral remainder. The route is: exists_smooth_compatible_limits (JointResidualLimits.lean:308) → boundaryLimits_hasFDerivAt (:240) → extendedJets_compatible (:227) → SpacetimeEndpoint.extendedJets_hasFDerivWithinAt (:198) → SpacetimeEndpoint.hasFDerivWithinAt_extendTrace (:139), which at the boundary point closes with Mathlib's hasFDerivWithinAt_closure_of_tendsto_fderiv on the convex open past (line 171), a mean-value argument. SpacetimeEndpoint.lean imports only Mathlib and NavierStokes.ProblemStatement, so NavierStokes/EndpointLimits.lean — which carries the same device in one variable (hasDerivWithinAt_leftExtension_endpoint :64, iteratedDerivWithin_leftExtension :95) — is not on this path. Severity low: the paper's formula is a device for passing to the limit, and the limit statement it is used for is proved; but the display as written, and with it the quantitative control of the remainder by |1-t| · sup|∂_t^{j+1} f|, is not what was checked.",
+          "summary": "Lean uses a different formula here. Lean has no integral formula here; it gets the compatibility of the limits F_j by a limit-of-the-derivative argument, without the remainder bound |1-t|·sup|∂_t^{j+1} f|.",
           "verdict": "deviation"
         }
       ]

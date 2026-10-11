@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 141.5",
+  "label": "Display 141.3",
   "status": "partial",
   "location": {
     "page": 141,
-    "rect": [0.237861, 0.556566, 0.5245, 0.04414]
+    "rect": [0.238503, 0.558678, 0.520856, 0.039669]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,10 +12,9 @@
       "locator": {
         "physical": [141],
         "printed": [141],
-        "text": "Display 141.5, p. 141, in the proof of Lemma A.8"
+        "text": "Display 141.3, p. 141, in the proof of Lemma A.8"
       },
       "region": "eq-p141-5@p141",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.6,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The displayed chain is the Fubini exchange that converts the tail pressure identity into a radial moment: with p(r) = -∫_r^∞ u_θ(r')^2 dr'/r', swapping the order of the two integrals gives the inner ∫_0^{r'} r dr = r'^2/2 and hence -½∫_0^∞ r' u_θ(r')^2 dr'. The same algebraic identity (radial pressure moment = -½ times the next moment of the pressure derivative) is stated by `IntegratedMeanBalances.pressure_moment`, but over all of ℝ for a compactly supported smooth p inside the Section 8 mean-balance machinery; I found no use of it, or of any Fubini exchange, in the Lemma A.8 / terminal-stress chain. There Lean never forms ∫_0^∞ r p(r) dr at all: `TerminalStress.canonicalPressure` and `HeatedOutgoing.Pi` take the tail integral as the definition of the pressure and the argument proceeds pointwise in the similarity variable, so the exchange step as written is not reproduced. Searches for a nested `∫ x in Ioi 0, ∫ …` and for `Fubini` in these files returned nothing (Fubini appears only in the R3/Fourier files). Low: the identity is elementary and the surrounding result is reached without it.",
+          "summary": "Lean uses a different formula here. Lean does not form ∫_0^∞ r p(r) dr here: the pressure is defined by its tail integral and the argument runs pointwise, so this exchange of integrals is not reproduced.",
           "verdict": "deviation"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 119.4",
+  "label": "Display 119.2",
   "status": "formalized",
   "location": {
     "page": 119,
-    "rect": [0.343949, 0.534341, 0.312333, 0.043929]
+    "rect": [0.344385, 0.536364, 0.309091, 0.040496]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [119],
         "printed": [119],
-        "text": "Display 119.4, p. 119, in the proof of Lemma 10.2"
+        "text": "Display 119.2, p. 119, in the proof of Lemma 10.2"
       },
       "region": "eq-p119-4@p119",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. No single Lean declaration writes the display for j ≥ 1 in the paper's variables (r, τ); on that point A is right. What the repository does state covers every clause after a rescaling. The j = 0 identity is stated verbatim (heatPressure_radius_integral, pressure_radius_integral), for every t including t = 1. heatPressure_formula rewrites the same pressure as -(C²/2) s^{-2A} · heatPressureFactor h (τ/s) with s = r²/2, where heatPressureFactor h ν = ∫_{v>1} heatPressureJet h 0 ν v. The analytic content of the display, differentiating under the integral to all orders by a dominating integrable majorant, one-sided down to the parameter value 0, is the stated lemma iteratedDerivWithin_integral_chain, and its three hypotheses are stated for heatPressureJet as named theorems (heatPressureJet_hasDerivWithinAt, heatPressureJet_measurable, heatPressureJet_dominated). Instantiating gives ∂_ν^j heatPressureFactor h ν = ∫_{v>1} heatPressureJet h j ν v for ν ≥ 0. I did not find this instance written out anywhere in the repository (the only instantiation of the chain lemma is for weightedJet at ParametricHeatTail.lean:473; heatPressureFactor_contDiffOn uses the sibling contDiffOn_integral_chain). Passing between that and the paper's display uses only the constant rescaling τ = s·ν at fixed r (∂_τ^j = s^{-j} ∂_ν^j) and the substitution ρ²/2 = s·v inside the integral, the same substitutions the repository performs for j = 0 in canonicalPressure_radius_integral and heatPressure_formula. I checked the exponent bookkeeping (K²/ρ dρ ↦ v^{-2A-1} dv = pressureWeight, profile argument 2ν/v = 2τ/s) but not the numerical prefactor, and not the Leibniz bookkeeping inside jetProduct beyond the stated HasDerivWithinAt chain. The Lean majorant is the rescaled constant·v^{-2A-1} rather than the paper's C_j ρ^{-3-4h-2j}; that concerns (10.8), not this display.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

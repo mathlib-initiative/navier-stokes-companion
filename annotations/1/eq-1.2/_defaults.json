@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 2,
-    "rect": [0.301149, 0.143829, 0.567767, 0.023032]
+    "rect": [0.302674, 0.143802, 0.565518, 0.019835]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "heuristic",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. (1.2) is the forced incompressible Euler system, given as background in §1.1 \"Historical context and previous work\". In the text layer \"(1.2)\", \"D t u\" and \"Newton\" occur only on p. 2, and \"Euler\" only on p. 2 and in the bibliography (p. 165), so nothing later in the paper relies on the display.\n\nThe in-scope tree never writes the Euler system out. A case-insensitive grep for \"euler\" over NavierStokes/ and NavierStokes.lean returns nothing, no `navierStokesResidual 0` occurs, and no declaration names the material acceleration D_t. What the tree states is the momentum equation as a family in the viscosity: `NavierStokesR3.ProblemStatement.navierStokesResidual ν u p t x = f (t, x)` with ν an unconstrained real, together with `spatialDivergence u t x = 0`. Both appear as fields of `CandidateProperties ν` and `GlobalFiniteEnergySolution ν`, with no positivity hypothesis on ν. `0 < ν` appears only in `coreBreakdownStatement` and `breakdownStatement`.\n\nFrom Lean to the display: set ν := 0 and unfold to get `temporalDerivative u t x + advection u t x - 0 • spatialLaplacian u t x + pressureGradient p t x = f (t, x)`. Then `zero_smul`, `sub_zero` and moving the gradient across give ∂_t u + (u·∇)u = −∇p + f with the paper's signs. The clause ∇·u = 0 is the `divergence_free` field verbatim. These are specialisation, unfolding and algebra, so the step is formal and needs no analytic fact.\n\nFrom the display to Lean: the stated Lean formula is the whole ν-family, and the Euler system does not give the term −ν • spatialLaplacian for general ν (that term is display (1.1)). No declaration states the ν = 0 instance on its own. So the two are not equivalent; the Lean definition is strictly more general.\n\nThe Lean fields carry time ranges (Ioo 0 1 / Ico 0 1, Ioi 0 / Ici 0) that the display, which has no ranges, does not specify. D_t u is notation only; its content `temporalDerivative u t x + advection u t x` is the leading subterm of the residual and has no name of its own in the tree.",
+          "summary": "Lean has a stronger form of it.",
           "verdict": "faithful"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 1.2",
+  "label": "Display 1.1",
   "status": "formalized",
   "location": {
     "page": 1,
-    "rect": [0.283923, 0.739682, 0.432158, 0.036959]
+    "rect": [0.284492, 0.742149, 0.428877, 0.031405]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,10 +12,9 @@
       "locator": {
         "physical": [1],
         "printed": [1],
-        "text": "Display 1.2, p. 1, in the statement of Theorem 1.1"
+        "text": "Display 1.1, p. 1, in the statement of Theorem 1.1"
       },
       "region": "eq-p001-2@p001",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.87,
@@ -29,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both clauses are stated, each for the same constructed u, but in two rewritten forms. (i) L² clause: the Lean asserts one finite bound E on the kinetic energy ½∫‖u(t,x)‖²dx over all t ∈ [0,1), plus explicit square-integrability at each such t (needed because Mathlib's Bochner integral is totalized and would otherwise read 0 on a non-integrable slice). This is the paper's sup over the same half-open time range: sup_{0≤t<1}‖u(t)‖_{L²} ≤ √(2E) in one direction, E := ½(sup‖u(t)‖_{L²})² in the other. `CandidateProperties.uniform_l2_sq_bound` already carries out the halving and states ∃ C ≥ 0, ∀ t ∈ Ico 0 1, ∫‖u(t,x)‖² ≤ C. (ii) L^∞ clause: no declaration in NavierStokes/ uses `limsup` at all; `SpeedUnboundedAtOne` encodes it pointwise as ∀ M > 0, ∀ δ > 0, ∃ t ∈ (0,1) with 1−δ < t and ∃ x with ‖u(t,x)‖ > M. For each fixed t this says sup_x‖u(t,x)‖ > M, and the unrestricted quantification over M and δ is exactly limsup_{t↑1} sup_x‖u(t,x)‖ = ∞. The pointwise supremum equals the essential supremum here because `velocity_smooth : ContDiffOn ℝ ∞ u (Ico 0 1 ×ˢ univ)` makes x ↦ u(t,x) continuous for every t ∈ [0,1), so {x : ‖u(t,x)‖ > M} is open and, when nonempty, of positive Lebesgue measure.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

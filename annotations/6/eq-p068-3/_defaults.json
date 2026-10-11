@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 68,
-    "rect": [0.253521, 0.504831, 0.493178, 0.022963]
+    "rect": [0.255615, 0.504959, 0.487701, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both clauses of the display are covered, spread over several declarations, and the name L(z,t) itself is not introduced. Clause 1 (the band set at a point): the Lean carries the scale q as a real coordinate, and the band condition is `q ∈ tsupport (dyadicMask ℓ)`, the second conjunct of LabelCounting.pointwiseLabels and the first factor of PhysicalWaveSum.labelRegion. The repository instantiates it at the actual scale through physicalParams h w = (physicalQ h w, physicalPosition w), e.g. in physical_active_neighborhood (`I ∈ s ↔ physicalParams h w ∈ labelRegion (D h) I.1.val`). So the paper's set is {ℓ | physicalQ h w ∈ tsupport (dyadicMask ℓ)}, obtained by instantiating and projecting a label to its band; the Lean sets are sets of full labels (band, grid cell, sign) with a slow-box condition added, which comes from other displays. Clause 2 (q does not depend on r): stated three times by rfl, as PhysicalMeanJetBounds.physicalQ_eq (physicalQ h w = coordinateQ (2h) (1 − t, z)), LocalAngularDiagonal.slowQ_physical, and BaseExterior.q_radial. Rewriting the band condition with physicalQ_eq shows it depends on (t, z) only, which is the paper's 'the possible bands are fixed during radial integration'; I found no declaration that states that constancy as a sentence of its own. One nuance belongs to (6.17) rather than this block: the paper's D_ℓ is the closure of {χ_ℓ(q(z,t)) ≠ 0} in (z,t), while the Lean uses the preimage of the closed band [Q_ℓ/2, 2Q_ℓ]; the first is contained in the second and they agree if q is an open map, which I did not find stated. The notation L(z,t) occurs only on p. 68 of the paper.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

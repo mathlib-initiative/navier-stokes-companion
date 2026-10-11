@@ -1,0 +1,31 @@
+{
+  "id": "lemma-8.2/key/1.NavierStokes.VariableGaugeMean.meanClass_compactPrimitive",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.VariableGaugeMean.meanClass_compactPrimitive",
+      "line": 1692,
+      "module": "NavierStokes.VariableGaugeMean",
+      "path": "NavierStokes/VariableGaugeMean.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean#L1692"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.VariableGaugeMean.meanClass_compactPrimitive",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: f n smooth on slowDomain, SupportedGauge a b (qLength coord) U.carrier (f n), MeanClass (movingStripData U a b cL cR \\varepsilon L) \\alpha f, arbitrary sequences M n and v n \\vdash MeanClass ... \\alpha (fun n => compactPrimitive d a b (M n) (qLength coord) (v n) (f n)). The clause T_e f \\in M_\\alpha",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1692,
+        "text": "theorem meanClass_compactPrimitive (hab : a < b) (hd : 0 < d)\n    {α : ℝ} {f : ℕ → Point → ℝ}\n    (hf : ∀ n, ContDiffOn ℝ ∞ (f n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hs : ∀ n, SupportedGauge a b (qLength coord) U.carrier (f n))\n    (hclass : MeanClass (movingStripData U a b cL cR ha hcL hcR ε L hε hεone hL) α f)\n    (M : ℕ → ℝ) (v : ℕ → PressureStream.Plane) :\n    MeanClass (movingStripData U a b cL cR ha hcL hcR ε L hε hεone hL) α\n      (fun n => compactPrimitive d a b (M n) (qLength coord) (v n) (f n))"
+      }
+    }
+  }
+}

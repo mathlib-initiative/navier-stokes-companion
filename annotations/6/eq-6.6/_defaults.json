@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 63,
-    "rect": [0.255721, 0.675123, 0.612456, 0.077376]
+    "rect": [0.256684, 0.675207, 0.610418, 0.073554]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Every coefficient and every operator of (6.6) is present with the paper's formula, but the display is encoded as direction fields plus push-forward identities rather than as four operator equations, so three routine rewritings are needed. (i) The paper's 'D_r = √Q 𝔯' is the Lean's map_radial read backwards: pushing the physical ∂_r through commonGraph.map gives radialScale • radial = Q^{-1/2} • (∂_R + M_i d_r R^{d_r-1} L_i), and likewise map_axial gives Q^{-1/2} • (ε ∂_Z) for ∂_z, i.e. √Q ∂_z = ε ∂_Z. (ii) map_temporal produces the factor velocityScale * radialScale = Q^{-A-1/2}, which is Q^{-(1+h)} only after substituting CoordinateAlgebra.A h = 1/2 + h; commonGraph_fastTimeScale carries out exactly that exponent identity. (iii) D_θ = R^{-1}∂_θ is not a named operator: map_angular pushes ∂_θ forward unscaled and the factor R^{-1} appears where the angular derivative is used, e.g. '(R x)⁻¹ * along Vθ p x' in graphResidual (PhysicalResidualBridge.lean:32); since PullbackData.radius gives R = radialScale · r, this is the paper's D_θ. The two '≍' comparisons are stated separately, in ChartScales, for the floor index i(ℓ) and the dyadic Q = 2^{-ℓ}, S_* = ℓ²; commonGraph itself leaves the band index i unconstrained, so for commonGraph the comparisons are not asserted, only the formulas for c_i and M_i.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

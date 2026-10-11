@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 119,
-    "rect": [0.359993, 0.796513, 0.509077, 0.029613]
+    "rect": [0.362567, 0.797521, 0.505625, 0.024793]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean states this bound in the similarity scale q, and separately states the conversion (10.3) that turns q into the paper's majorant; composing the two is a routine rewriting. Recovery. AllResidualJetRates is (10.9) in q: for every order m and every r ≥ 0 there is C ≥ 0 with ‖iteratedFDeriv ℝ m f w‖ ≤ C · q(w)^r for all w in some neighbourhood of (1,0) intersected with the open past — the paper's 'fixed neighborhood of (0,1)', approached from t < 1. physical_q_bound (the instance of coordinateQ_le_upperScale at a = 2h, p = (1-t,z); physicalQ h w = SimilarityProfile.q h (profilePoint w.1 w.2), PhysicalWaveSum.lean:391, profilePoint t x = (t,(r²/2, x 2)), AxisymmetricFields.lean:29) states q ≤ 2τ + (2z²)^{1/(1-2h)} = 2τ + 2^{1/(1-2h)}|z|^{1/D} for t < 1, with D = (1-2h)/2 = 1/2 - h: that is (10.3) with C₀ = max(2, 2^{1/(1-2h)}). Taking r = N and chaining, ‖∂^m f(w)‖ ≤ C q^N ≤ C·C₀^N (τ + |z|^{1/D})^N, which is the display. Two encoding points. The Lean bounds the full joint jet norm ‖iteratedFDeriv ℝ m f‖, which dominates every mixed partial |∂_x^α ∂_t^j f| with |α| + j = m, so one Lean index m carries the paper's pair (α,j); and the constant C is produced by the JetRate for that (m,r), so it does depend on (α,j,N) as C_{α,j,N} does. No restriction on the similarity radius X enters this route: AllResidualJetRates is stated on a filter, not on a bounded-X region. jetRate_uniform_small_scale is a different repackaging of the same bound, uniform over {radialEnergy/q ≤ X̄}; its X̄ is a feature of that repackaging and not a gap in (10.9).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

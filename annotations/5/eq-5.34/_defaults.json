@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 57,
-    "rect": [0.2616, 0.841095, 0.607475, 0.040563]
+    "rect": [0.264171, 0.844628, 0.604021, 0.034711]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Three routine rewritings. (i) The curl sits outside the sum in Lean (velocitySum a q A = spatialCurl (potentialSum a q A), i.e. curl ∑_j χ(a_j q)A_j) where the paper writes ∑_j curl(χ(a_j q)A_j); the two agree because Result.locallyFinite_representatives (GenericTupleRealization.lean:56) makes the series a finite sum on a neighbourhood of each point of U and spatialCurl is linear and local — I found no Lean lemma literally commuting the curl with the tsum. (ii) The tuple is indexed by Fin 3 ⊕ κ, the velocity entered by its three scalar components and the pressure/stress entries by a Fintype κ, instead of the paper's 4-slot tuple (u, p, T); the paper itself says T_0 and T_j may be omitted, matching the arbitrary finite κ. (iii) The sum over j ≥ 1 is encoded as a tsum over all j ∈ ℕ of CutStageEstimates.positiveStages A, whose 0th term is zero, and the schedule a is produced in ℕ rather than ℝ (an existence claim, so an integer witness gives the paper's real one); exists_angular_realization delivers 2a_j ≤ a_{j+1} and 1/a_j < q_0 for every j, the paper only a_{j+1} ≥ 2a_j and a_1^{-1} < q_0. The cutoff matches exactly: a single fixed bump, 1 on |x| ≤ 1/2 and 0 on |x| ≥ 1, composed with q ↦ a_j q.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

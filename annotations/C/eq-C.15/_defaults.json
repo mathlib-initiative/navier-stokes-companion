@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 162,
-    "rect": [0.277609, 0.175604, 0.591459, 0.04725]
+    "rect": [0.278075, 0.177686, 0.590117, 0.042975]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Three routine rewritings, each checked. (i) Norm: the paper sums the η-derivative orders, Σ_{j=0}^m |∂_η^j ·|; Lean's JetBounds.FiniteJetBound m f S C (JetBounds.lean:31) is the per-order bound ∀ n ≤ m, ∀ x ∈ S, ‖iteratedFDeriv ℝ n f x‖ ≤ C, and it is applied to the whole 5-vector at once, so the paper's sum is at most (m+1)·5·C/N and conversely each order is at most the sum — the two differ only by a factor depending on m, which the paper's C_m absorbs. (ii) Packaging of the two summands: Lean's profileRows is the 5-vector (M, I, J, S, pressure) and the pressure row carries Π = Π₀ + C_p with Π₀ common to the modulated and nominal profiles, so the paper's second summand |∂_η^j(Π_N - Π)| is exactly the fifth component of the single Lean difference and the first summand is the other four — one Lean bound covers both. (iii) Range of X: Lean quantifies over all X ≥ 0 (actual_axisHistory_jets) or all X ≥ 0 (repaired_profiles_eta_rates, second conjunct), at least as wide as the paper's sup_X. Two declarations are listed because the paper uses (C.15) both before the moment repair (actual_axisHistory_jets / repaired_axisHistory_jets, the C₁/N + C₂ε form with the repair amplitude ε) and after it (repaired_profiles_eta_rates, the clean C/N form).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

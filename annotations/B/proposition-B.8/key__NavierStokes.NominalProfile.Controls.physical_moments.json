@@ -1,0 +1,29 @@
+{
+  "id": "proposition-B.8/key/1.NavierStokes.NominalProfile.Controls.physical_moments",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.NominalProfile.Controls.physical_moments",
+      "line": 1352,
+      "module": "NavierStokes.NominalProfile",
+      "path": "NavierStokes/NominalProfile.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L1352"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.NominalProfile.Controls.physical_moments",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For `c.radius * matchFraction <= X` (separation <= exp(-8), eta in band, SmallDebt): `moments c.U c.E X eta = moments (OutgoingDilation.U F c.radius) (OutgoingDilation.E F c.radius) X eta`. The five moment functions continue to coincide with the reference outer profile's beyond the match."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1352,
+        "text": "theorem physical_moments\n    (hsep : ShapeTransition.separation c.shapeTime A.normalization F.data.core.P ≤ Real.exp (-8))\n    {X eta : ℝ} (hX : c.radius * matchFraction ≤ X) (hη : eta ∈ ReferencePath.parameterInterval)\n    (hs : SmallDebt F c.debt eta) :\n    moments c.U c.E X eta = moments (OutgoingDilation.U F c.radius) (OutgoingDilation.E F c.radius) X eta"
+      }
+    }
+  }
+}

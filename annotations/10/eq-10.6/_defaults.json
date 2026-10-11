@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 118,
-    "rect": [0.331092, 0.781717, 0.537976, 0.034859]
+    "rect": [0.33262, 0.784298, 0.534482, 0.029752]
   },
   "target": {
     "pin": {
@@ -34,7 +34,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Encoding of the terminal jets, not of the content. The paper indexes the limits by a spatial multi-index α and a time order j, so the limit objects are a family of functions F_j on ℝ³; Lean packages them as one map x ↦ L x = boundaryLimits f hext x into FormalMultilinearSeries ℝ SpaceTime V, whose degree-n term is the limit of the full Fréchet derivative iteratedFDeriv ℝ n f. The rewriting: set F_j(x) := (L x j) applied to j copies of the time direction (1,0); then boundaryLimits_hasFDerivAt, iterated |α| times, gives ∂_x^α F_j(x) = (L x (j+|α|)) applied to the α spatial directions together with those j time directions, and boundaryLimits_joint, composed with evaluation of a continuous multilinear map at fixed directions (continuous, hence limit-preserving) plus the standard identification of iteratedFDeriv at coordinate directions with the mixed partial ∂_x^α ∂_t^j, gives the paper's first equation. The second equation is boundaryLimits_zero at order j+|α|: the whole tensor L 0 n vanishes, so every ∂_x^α F_j(0) = 0 — this is at least as strong as the paper's clause. The Lean limit is also taken along 𝓝[openPast 1] (1,x) = (𝓝[<] 1) ×ˢ 𝓝 x, a joint limit in (t,x), which is stronger than the paper's lim_{t↑1} at fixed x; the paper's accompanying uniformity claim is matched by boundaryLimits_locallyUniform / boundaryLimits_uniformOn_compact (locally uniform / uniform on compacts, not literally uniform on ℝ³). The Lean lemmas are stated for a general f under the hypotheses VanishingJointJets f and AwayExtensions f, which correspond to the two inputs the paper cites for this lemma (flatness of the local residual at the origin, and the exterior smoothness away from the origin); they are hypotheses there rather than conclusions about the specific f of (10.5).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

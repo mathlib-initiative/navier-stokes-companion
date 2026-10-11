@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 61.3",
+  "label": "Display 61.1",
   "status": "formalized",
   "location": {
     "page": 61,
-    "rect": [0.289425, 0.831807, 0.421318, 0.040151]
+    "rect": [0.290909, 0.833884, 0.417112, 0.035537]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,7 @@
       "locator": {
         "physical": [61],
         "printed": [61],
-        "text": "Display 61.3, p. 61, in the proof of Proposition 5.5"
+        "text": "Display 61.1, p. 61, in the proof of Proposition 5.5"
       },
       "region": "eq-p061-3@p061",
       "relation": "states",
@@ -33,7 +33,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same two inequalities, reindexed and generalised. Take Lean's monotone gain g(j) = 2jh and loss L = 0, so g(j)/2 - L = jh; then weighted_tail_bound reads ∑_{n ≥ J_Lean+1} 2^{-n} q^{nh} ≤ 2^{-J_Lean} q^{(J_Lean+1)h}, which is the paper's first inequality with J_paper = J_Lean + 1 (2^{-J_Lean} = 2^{1-J_paper}). The second inequality is the step hpower inside exists_uniform_tail_order (line 252), q^{g(J+1)/2 - L} ≤ q^N for 0 < q ≤ 1 once the exponent exceeds N — the paper's q^{Jh} ≤ q^{2h(N+1)}, valid because its J = max{2N+2, m+1} gives Jh ≥ 2h(N+1) and q ≤ 1; exists_uniform_tail_order likewise chooses J above both the jet order m and the power threshold, matching the paper's max of the two. Lean is stated for an arbitrary monotone gain g, an arbitrary real loss L and an arbitrary target power N rather than the specific 2h(N+1), and it also asserts summability, which the paper leaves implicit. blown_tail_bound is the slow-base instance of the same estimate applied to the jet of the uncut tail.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

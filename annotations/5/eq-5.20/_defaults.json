@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 53,
-    "rect": [0.221453, 0.525918, 0.647616, 0.088228]
+    "rect": [0.22246, 0.530579, 0.644643, 0.081818]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The Lean never forms the two physical-variable integrals of (5.20) and states no q^{1-A+λ_n} / q^{1-2A+λ_n} conversion. It works throughout in the inner radius R: the two inner right-hand sides are rows 0 and 4 of `PositiveOrderMoments.rowDensity` (row 4 carries −(R²/2)∂_RΠ_n, i.e. ∫RΠ_n already replaced by the integration by parts of eq-p053-5), and the conclusion the paper draws from (5.20) — that both integrals vanish — is stated directly in inner form by `repaired_moment_data`: moment B 1 (u n) = 0 and moment B 1 (conv n u u + pressureHistory) = 0, over [0,B] rather than (0,∞). The only physical↔inner radial rescaling lemma found anywhere in the repository is `RenormalizedHeatMoment.integral_weighted_radial_scale` (line 643), ∫_{r>0} r²(q^b g(r/√q)) dr = q^{b+3/2}∫_{R>0} R² g(R) dR, which carries the weight r² of the angular moment displayed above (5.19), not the weight r of (5.20); no weight-r analogue was found. Severity low: the subsequent Lean development (the integral balances and the stress support of Lemma 5.2) uses only the inner-variable vanishing, so nothing downstream needs the physical form.",
+          "summary": "Lean uses a different formula here. Lean never forms the physical-variable integrals or the q-power conversion; it states directly, in the inner radius R over [0,B], that the two inner integrals vanish.",
           "verdict": "deviation"
         }
       ]

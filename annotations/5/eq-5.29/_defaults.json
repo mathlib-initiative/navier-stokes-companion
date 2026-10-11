@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 57,
-    "rect": [0.220167, 0.240697, 0.648908, 0.022736]
+    "rect": [0.22139, 0.239669, 0.646801, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same three objects, repackaged. (i) Z_j: Lean's `representatives` indexes the tuple entries by `Entry κ = Bool ⊕ κ` — `.inl false ↦ A j`, `.inl true ↦ B j`, `.inr k ↦ R k j` — i.e. the paper's two scalar slots (p_j, T_j) are replaced by an arbitrary `[Fintype κ]`-indexed family of scalars; take κ a two-element type (or a singleton, which is the paper's own 'T_j may be omitted'). (ii) B_j: `angularField b w = (-x_2/r)·b(cylPoint w)·e_1 + (x_1/r)·b(cylPoint w)·e_2`, and e_θ = (-x_2/r, x_1/r, 0), so this is literally b(cylPoint w)·e_θ; `cylPoint w = (t, (r, z))` with r = radius w and z = w.2 2, so Lean's coefficient takes (t,r,z) where the paper writes b_j(r,z,t) — the same three arguments in another order. `exists_angular_realization` imposes exactly `B j = angularField (b j)` for j ≥ 1. (iii) U_j: `incrementComponents A B R j` is componentwise ((curl A_j + B_j)^i, R_k j), with `positiveStages` zeroing index j = 0, which is the paper's U_j for j ≥ 1. Lean also never needs U_j in isolation elsewhere: the partial sums U^{[J]} are built directly by `positiveStage`/`stageComponents` with the curl pulled outside the finite sum, which agrees by linearity of `spatialCurl`.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

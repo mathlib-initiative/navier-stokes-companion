@@ -1,0 +1,31 @@
+{
+  "id": "lemma-10.2/key/1.NavierStokes.JointResidualLimits.boundaryLimits_locallyUniform",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.JointResidualLimits.boundaryLimits_locallyUniform",
+      "line": 148,
+      "module": "NavierStokes.JointResidualLimits",
+      "path": "NavierStokes/JointResidualLimits.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L148"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.JointResidualLimits.boundaryLimits_locallyUniform",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Under VanishingJointJets f and AwayExtensions f: TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n f (t,x)) (fun x => boundaryLimits f hext x n) (𝓝[<] (1:ℝ)), for every n. The convergence clause of (10.6).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 148,
+        "text": "theorem boundaryLimits_locallyUniform {f : SpaceTime → V} (hzero : VanishingJointJets f)\n    (hext : AwayExtensions f) (n : ℕ) :\n    TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n f (t, x))\n      (fun x => boundaryLimits f hext x n) (𝓝[<] (1 : ℝ))"
+      }
+    }
+  }
+}

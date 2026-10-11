@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 133,
-    "rect": [0.17693, 0.142185, 0.691243, 0.04756]
+    "rect": [0.17754, 0.143802, 0.689562, 0.041322]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (A.19), p. 133, in section A.3"
       },
       "region": "eq-A.19@p133",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.82,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. A regrouping of the same identity, at the right layer of the construction. The paper fixes the angular moment first ('The angular moment is now fixed independently of the pulse amplitude. The remaining scalar condition is S(∞) = 0', p.132), so the S(∞) of (A.19) is computed with the moment-correction bumps already in place; the counterpart is therefore the corrected normalisation, not PulseAmplitude.totalEnergy_normalized, whose totalEnergy uses the pre-reset OutgoingTail.finalAngular. CorrectedPulseAmplitude.totalEnergy uses correctedAngular, i.e. E(1 + c₀bump₀ + c₁bump₁), the relative change the paper describes on p.132, and resetDensity_support puts its support in [releaseStart - 4, releaseStart], at the exterior-transition start. Left-hand sides then match term for term: lam * totalEnergy d c A eta / (normalization d.core * shape eta ^ 2) is λS(∞)/(X_p e_b² f²), with normalization = e^{pulseStart} pulseAmplitude² = X_p e_b² and shape eta = (1 + η²)⁻¹ = f(η). On the right the Lean writes an explicit quadratic in A rather than the paper's K_b A² - (1 - e^{-26})/4 + 𝓔. The identification is: quadraticCoefficient = pulseConstant + (a λ-small repair integral) by quadraticCoefficient_eq, where pulseConstant is literally ∫_0^13 e^{-2z} mainPulse(z)² dz = K_b (mainPulse is the Lean name for the paper's R_0, and the Lean bounds pulseConstant_upper ≤ 1/4, pulseConstant_lower > 1/5 match the paper's ≤ 1/4 and > .20); the corrected constantTerm is PulseAmplitude.constantTerm - energyShift, and PulseAmplitude.constantTerm contains the literal summand -RadialSchedule.pulseEnergyDebt = -(1 - e^{-26})/4; and the paper's error term is the remainder, 𝓔(A,η) = (quadraticCoefficient - pulseConstant) A² + linearTerm d.core eta * A + (constantTerm d c eta + pulseEnergyDebt), the last bracket being (constantCorrection + normalizedPrefixAxial) etaPolynomial² - normalizedPrefixAngular - normalizedTail - energyShift. The -energyShift summand is the normalised reset energy, λ·resetEnergy/(2 X_p e_b² f²), which is exactly the paper's remark that 'the exponentially small affine end bumps account for its remaining dependence'. With that reading the two displays are the same equation; the Lean never names 𝓔 and instead keeps its pieces separate, which is what lets the next display be stated coefficient by coefficient.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

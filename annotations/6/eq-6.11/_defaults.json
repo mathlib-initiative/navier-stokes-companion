@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 65,
-    "rect": [0.307498, 0.548613, 0.56157, 0.062452]
+    "rect": [0.309091, 0.54876, 0.558011, 0.057851]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Every piece is present; the composition is split over four declarations and one of the two changes of variable is folded into the chart. Line 1, Y_i − c_γ − k_copy = ξ_g v_r + η_g v_t, is `Geometry.coordinates k Y = g.basis.symm (coverPower g.gap Y − g.center − latticePoint k)`: `coverPower g.gap` is the band lift Y ↦ Y_i, `g.center` is c_γ, `latticePoint k` is k_copy, and `basis.symm` is inversion of z ↦ z.1•v_r + z.2•v_t, so the output pair is (ξ_g, η_g). Line 2, v = (η_g + r_0)/c_i, is not applied afterwards but absorbed into the basis: for the slot geometry, `slotGeometry_basis` gives basis z = z.1•v_r + (c_i z.2)•v_t with c_i = `ChartScales.timeCoefficient h l.1`, and the centre is `slotCenter h l − sys.radius • vt` = c_γ − r_0 v_t, so the second component of `coordinates` is exactly (η_g + r_0)/c_i, i.e. the paper's v. The same substitution acting on functions is `TorusAverages.transverseStretch ci r0 f z = f (z.1, (z.2 + r0)/ci)`, whose docstring records η = c_i v − r_0. Line 3, L_s = 2r_0/c_i, is `ChartScales.slotLength r0 h n = 2 * r0 / timeCoefficient h n` verbatim, and the paper's `≍ S_*` is `slotLength_bounds`: 2r_0·S n ≤ L_s ≤ 2r_0·T_g·S n for n ≥ 4, i.e. two-sided comparability with an explicit constant T_g rather than an unspecified one, and only above the band index 4. The range |ξ_g|,|η_g| < r_0 appears as the window Icc(−r_0, r_0) × Icc(0, L_s) in the (ξ_g, v) coordinates, which is `clockWindow`'s core, again with closed rather than open intervals.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

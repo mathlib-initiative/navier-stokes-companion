@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 64,
-    "rect": [0.315461, 0.827946, 0.55085, 0.047103]
+    "rect": [0.315508, 0.828926, 0.550505, 0.042975]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. All three clauses are stated, as dependent types rather than as sets. `ActiveLabel K` is literally {a : B_{ℓ,a} ∩ A ≠ ∅} — a subtype of ℕ × Grid, so it bundles the band index ℓ with the grid index a rather than indexing a family I_ℓ, and `tsupport (nativeMask L.1 L.2)` is B_{ℓ,a}, with K the active set. `representative` is x⁰_{ℓ,a}, chosen by `Classical.choose` from the nonemptiness witness, and `representative_mem` / `representative_mem_tsupport` are exactly x⁰_{ℓ,a} ∈ A and x⁰_{ℓ,a} ∈ B_{ℓ,a}. Γ is `ActualCarrierTransportBase.Index = CellIndex h lo hi N × Fin 2`: `CellIndex` adds the paper's ℓ ≥ ℓ₀ as `N ≤ L.val.1` (N obtained existentially from compactness in `exists_actual_positive_charts`, not from q_big), and `Fin 2` is σ ∈ {+,-} (`signedLabel` turns it into the Bool of `SlotColoring.Label`). One instantiation difference: `CellIndex` uses `PositiveRepresentatives.ActiveLabel K = PrimaryRepresentatives.ActiveLabel (K ∩ positiveTime)` with `positiveTime = {p | 0 < p.2.2}`, so the active set is intersected with the strictly positive-time half-space, whereas the paper's A_ℓ has τ ≥ 0 and `activeReference` includes the face T = 0. A label whose closed box meets A_ℓ only in {T = 0} would be dropped by the Lean index; the generic `PrimaryRepresentatives.ActiveLabel (referenceCompact …)` is the literal (6.8).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

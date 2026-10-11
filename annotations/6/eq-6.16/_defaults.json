@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 66,
-    "rect": [0.228131, 0.721204, 0.640938, 0.023032]
+    "rect": [0.229947, 0.721488, 0.637156, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The constants, centre and scaling agree exactly: ψ = slotCutoff L with L = slotLength = 2r₀/c_i = L_s, built from a fixed ContDiffBump centred at 1/2 with rIn = 1/5 and rOut = 1/3 and rescaled by v ↦ v/L, which is the paper's 'rescaled from a fixed function'. The plateau clause is slotCutoff_one verbatim (|v − L/2| ≤ L/5 ⟹ ψ(v) = 1). The support clause is stated contrapositively as slotCutoff_zero (L/3 ≤ |v − L/2| ⟹ ψ(v) = 0), which is exactly supp ψ = {ψ ≠ 0} ⊆ {|v − L_s/2| < L_s/3}; the rewriting is the contrapositive and nothing else. One encoding point: if the paper's 'supp' is read as the closure of {ψ ≠ 0}, the Lean bump's tsupport is the closed ball {|v − L/2| ≤ L/3}, so the strict inclusion would hold only for the open support, a two-point boundary difference that nothing downstream uses. Lean adds the hypothesis 0 < L, which the paper leaves implicit in L_s ≍ S_* > 0.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 31.8",
+  "label": "Display 31.6",
   "status": "partial",
   "location": {
     "page": 31,
-    "rect": [0.286402, 0.811516, 0.427418, 0.023188]
+    "rect": [0.287701, 0.812397, 0.42246, 0.019008]
   },
   "target": {
     "pin": {
@@ -21,7 +21,7 @@
       "locator": {
         "physical": [31],
         "printed": [31],
-        "text": "Display 31.8, p. 31, in the proof of Lemma 4.5"
+        "text": "Display 31.6, p. 31, in the proof of Lemma 4.5"
       },
       "region": "eq-p031-8@p031",
       "verdicts": [
@@ -37,7 +37,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The two lower bounds are stated, the two upper bounds are not. Lean's `compact_normalized_cone` conclusion gives one constant ε > 0 with ε ≤ c x and ε ≤ 2 * c x ^ 2 - (v x - 2) * j x ^ 2 on K; with the paper's G := 2c² − (v−2)j² and ε = min(c_K, γ_K) that is exactly `c ≥ c_K` and `G ≥ γ_K` (merging two constants into one is a routine weakening in the direction the proof uses). The paper's upper bounds `v ≤ B_K`, `cv ≤ B_K` and the normalization `B_K ≥ 1` were not found as a statement or a proof step anywhere I searched: in their place UniformCone.lean:86 takes `B` to be an upper bound of the image under the explicit threshold function x ↦ max 0 (max (2/c x) (max (v x / c x) (4 * c x * v x / d x))), so the upper bounds on v and cv are never formed separately. Both devices are the same appeal to compactness and both deliver one threshold valid on all of K (`compact_large_lag`, SeedConePaper.lean:48, which is the paper's second assertion).",
+          "summary": "Lean uses a different formula here. Lean states the lower bounds c ≥ c_K and G ≥ γ_K with one shared constant; the upper bounds v ≤ B_K, cv ≤ B_K are not stated, and Lean bounds a single threshold function on K instead.",
           "verdict": "deviation"
         }
       ]

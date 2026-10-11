@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 71,
-    "rect": [0.286007, 0.21449, 0.42821, 0.042028]
+    "rect": [0.286631, 0.216529, 0.424599, 0.03719]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [71],
         "printed": [71],
-        "text": "Display 71.2, p. 71, after the statement of Proposition 6.6"
+        "text": "Display 71.2, p. 71, in section 6.4"
       },
       "region": "eq-p071-2@p071",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The first equation is what the Lean takes as primitive; the second has no declaration. `WaveFamily.sum` is ∑ᶠ over the product index `WaveIndex H = BandLabel × Harmonic H`, which is the paper's ∑_γ ∑_{m ∈ H_j} after the routine unfolding of a sum over a product into an iterated sum (Finset.sum_product / finsum over a product); the summand is A_{γ,m} e^{i k_γ m Φ_γ} as checked for eq-p071-1, with A_{γ,m} = `f.amplitude (γ, m)`. For one fixed label the inner sum over harmonics is `HarmonicFields.wave` (∑_j c_j x · e^{i k j Φ x}) and, with the real part taken as the paper's real wave, `PhysicalResidualJetBounds.block_expansion`. What is absent is the second equation: `amplitude` is a primitive field of the `WaveFamily`/`CopyFamily` structures, never defined as the fibre sum Σ_{ν : (γ_ν,m_ν)=(γ,m)} a_ν, so the collection step is not formalized — under the pair indexing there is nothing to collect, and it is vacuous rather than missing content. The nearest Lean sum over a fixed pair is `PhysicalCopyBounds.CopyFamily.periodized` (PhysicalCopyBounds.lean:84), ∑' k, f.term a h r0 I k w, but its summands carry per-copy carriers and hence distinct phases (`carrier : K → BandLabel → CarrierData`), so it is a lattice periodization, not the paper's A_{γ,m}. If one did start from a ν-indexed family, membership of the collected amplitude in the class would follow from `WeightedClasses.MemClass.sum` (closure under finite sums at a fixed exponent). The harmonic range is `Finset.Icc (-H) H` rather than a general finite set H_j, and the sentence following the display (every A_{γ,m} in W_α with constants uniform in the label) is `LabelSumBounds.UniformClass`, whose constants are chosen before the label.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,0 +1,31 @@
+{
+  "id": "proposition-5.3/key/1.NavierStokes.GlobalSlowProfiles.sequence",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.GlobalSlowProfiles.sequence",
+      "line": 901,
+      "module": "NavierStokes.GlobalSlowProfiles",
+      "path": "NavierStokes/GlobalSlowProfiles.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L901"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.GlobalSlowProfiles.sequence",
+        "kind": "def"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: sequence s n : Admissible s n by well-founded recursion through recursionStep (line 884): order 0 is s.base, order n+1 is step (line 875) applied to all finalized lower orders. With step_spec (line 879) this is clause (i).",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 901,
+        "text": "noncomputable def sequence {S : Set ℝ} {h C : ℝ} (s : Scheme S h C) (n : ℕ) :\n    Admissible s n"
+      }
+    }
+  }
+}

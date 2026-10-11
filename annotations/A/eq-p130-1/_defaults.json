@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 130,
-    "rect": [0.20677, 0.178964, 0.587569, 0.058087]
+    "rect": [0.207487, 0.176033, 0.583957, 0.057851]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The first two equalities are literal: σ(v/.02) = σ(50 v), so pulseRamp = φ_b (pulseRamp_zero is the extension by zero to ξ_b < 0), and mainPulse = φ_b(·)[1 - σ(· - 10)] = R_0. The third is the same formula written in the radius x rather than in ξ_b: radialPulse is evaluated at x = exp(y - pulseStart) (axial_pulse, line 685), and mainPulse (c.lam * Real.log x) = R_0(λ y) with ξ_b = λ y, y the log radius from pulse start; `correction` is LocalizedMomentRepair.repair, which unfolds to ∑_{j<2} c_j · bump(lower j, upper j), i.e. c₁β₁ + c₂β₂, the coefficients being the entries of (moment matrix)⁻¹·debt, so they are exactly the two numbers that make the end-of-pulse moments vanish (correction_exact, pulse_closes_prefix). Two details of the bumps differ from the paper's description: (i) the Lean windows are exp(L-3.15)..exp(L-2.85) and exp(L-1.15)..exp(L-0.85) with L = pulseLength = 13/λ, i.e. in the log coordinate centred at 13/λ-3 and 13/λ-1 of width .3 as the paper says, but each bump is supported only in the middle half of its window (LocalizedMomentRepair.bump, line 25, with bump_support_subset, line 41); (ii) because the bumps are built as cutoffs in x and the two windows have different widths in x, the two are not translates of one another, whereas the paper says they are 'identical translates of width .3'. Nothing in the Lean construction needs them to be translates: what is used is smoothness, the disjoint localisation, and the nonsingularity of their 2×2 generalized-power moment matrix (LocalizedMomentRepair.matrix_det_ne_zero, line 91, whose hypotheses are supplied by Parameters.exponents_injective, lower_pos, lower_lt_upper, intervals_separated).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

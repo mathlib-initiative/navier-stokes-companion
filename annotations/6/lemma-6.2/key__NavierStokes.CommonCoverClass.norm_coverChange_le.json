@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/key/1.NavierStokes.CommonCoverClass.norm_coverChange_le",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.CommonCoverClass.norm_coverChange_le",
+      "line": 912,
+      "module": "NavierStokes.CommonCoverClass",
+      "path": "NavierStokes/CommonCoverClass.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverClass.lean#L912"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.CommonCoverClass.norm_coverChange_le",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For either direction (forward : Bool) and d <= D, ||coverChange forward d|| <= coveringBound D, where coverChange true d = coverPower d and coverChange false d = (coverPower d).symm. Clause (a), both directions of H <-> Y_i, with a constant depending only on Delta_max."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 912,
+        "text": "theorem norm_coverChange_le (forward : Bool) {d D : ℕ} (hd : d ≤ D) :\n    ‖coverChange forward d‖ ≤ CommonCoverSolve.coveringBound D"
+      }
+    }
+  }
+}

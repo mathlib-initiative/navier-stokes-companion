@@ -1,0 +1,32 @@
+{
+  "id": "proposition-7.6/key/1.NavierStokes.SignedCopyBounds.uniform_coefficients_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedCopyBounds.uniform_coefficients_jets",
+      "line": 767,
+      "module": "NavierStokes.SignedCopyBounds",
+      "path": "NavierStokes/SignedCopyBounds.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean#L767"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedCopyBounds.uniform_coefficients_jets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The same amplitude bound simultaneously in all labels, bands and lattice copies: amplitude of SignedWaveUpdate.coefficients ∈ UniformLocalJets with weight √ζ·W at exponent β + 1/2, and the projected pressure at β + 1.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 767,
+        "text": "theorem uniform_coefficients_jets (h : UniformNativeCovariance s K H T)\n    (hR : ∀ q, UniformLocalJets s (fun _ _ x => s.zeta x) β K (fun l n i x => R l i n x q))\n    (hm : UniformLocalJets s (fun _ _ _ => 1) 0 K (fun l n i => mask l i n))\n    (hv : UniformLocalJets s W 0 K (fun l n i => v l i n))\n    (hW : ∀ l n x, x ∈ s.domain → 0 ≤ W l n x)\n    (hN : UniformLocalJets s (fun _ _ _ => 1) 0 K (fun l n i => (a l i).normal s (d l i) n))\n    (hNdot : UniformLocalJets s (fun _ _ _ => 1) 0 K (fun l n i => Ndot l i n))\n    (hA : UniformLocalJets s (fun _ _ _ => 1) 0 K (fun l n i => A l i n))\n    {b M : ℝ} (hb : 0 < b)\n    (hl : ∀ l n i x, x ∈ s.domain → x ∈ K l n i → b ≤ ‖(a l i).normal s (d l i) n x‖)\n    (hu : ∀ l n i x, x ∈ s.domain → x ∈ K l n i → ‖(a l i).normal s (d l i) n x‖ ≤ M)\n    (hK : UniformPrimaryWeights.UniformBandBound s (1 / 2)\n      (fun li : L × I => fun n => 1 / (a li.1 li.2).frequency n)) (j : Fin 2) :\n    UniformLocalJets s (fun l n x => Real.sqrt (s.zeta x) * W l n x) (β + 1 / 2) K\n  …",
+        "truncated": true
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 18.2",
+  "label": "Display 18.1",
   "status": "formalized",
   "location": {
     "page": 18,
-    "rect": [0.251377, 0.36276, 0.49799, 0.083601]
+    "rect": [0.251337, 0.36281, 0.495187, 0.080992]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [18],
         "printed": [18],
-        "text": "Display 18.2, p. 18, in section 3.6"
+        "text": "Display 18.1, p. 18, in section 3.6"
       },
       "region": "eq-p018-2@p018",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Each of the three rows is present, with the same ε^α factor and the same weights (ζ for the mean class, √ζ·P for the wave class, 1 for the moment class), but the right-hand side is packaged differently in four respects. (i) Separate exponents: the paper carries b_{j,I} on S_* and d_{j,I} on δ^{-1}; the Lean majorant carries one exponent p on growth = slow · max(1, δ⁻¹). The two directions are both available — of_separate_bounds (line 147) turns the paper's separate-degree bound into MemClass, and conversely a MemClass bound is of the paper's form with b = d = p — the latter direction only where δ ≤ 1, so that max(1, δ⁻¹) = δ⁻¹, the caveat of clause (ii). (ii) Edge weight: Lean writes max(1, δ⁻¹) where the paper writes δ^{-d}; these agree when δ ≤ 1, and where δ > 1 the Lean bound is the larger one, so the Lean class is then the wider one (the file's own comment at lines 47-49 records this choice). (iii) Derivatives: the paper bounds a single multi-index ∂^I (and ∂^I_{Z,T} for moments); Lean bounds ‖iteratedFDeriv ℝ j‖, the full j-th derivative, with one constant C and degree p per order bound m instead of a constant C_{j,I} per index — equivalent up to taking the maximum over the finitely many indices of order ≤ m. The restriction of the moment row to (Z,T) derivatives is encoded by instantiating the strip over a two-dimensional slow plane (e.g. SignedMeanGain.Geometry.slowStrip : StripData Plane) rather than by restricting directions. (iv) Domains: the paper's 'X_a < X < X_b' and the wave class's labelled rectangle are both s.domain in Lean, and the pulse envelope's variable range 0 ≤ v ≤ L_s is likewise carried by the domain, P being a pointwise weight. Constants are uniform in band (n) and point (x) in MemClass; uniformity in the label is the separate UniformClass/UniformWaveClass of LabelSumBounds.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

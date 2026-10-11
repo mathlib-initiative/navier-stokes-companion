@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 78,
-    "rect": [0.323699, 0.752043, 0.545372, 0.026199]
+    "rect": [0.324064, 0.752893, 0.543038, 0.02314]
   },
   "target": {
     "pin": {
@@ -21,7 +21,6 @@
         "text": "Equation (7.16), p. 78, in the proof of Proposition 7.2"
       },
       "region": "eq-7.16@p078",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.85,
@@ -35,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean's envelope (referenceRate lam u ell) (ell/2) v = exp(∫_{ell/2}^{v} a_net) is the paper's P(v), and reference_uniform_gaussian_bounds states exactly the two outer inequalities with the paper's normalisation (v - L_s/2)^2 / L_s and constants uniform in L_s. The rewriting is only in the last link of the paper's chain: the trailing ≤ 1 is not part of that theorem's conclusion. It follows in one line from the stated upper bound, since -c(v-L_s/2)^2/L_s ≤ 0 and exp is monotone; the repository also states it separately (envelope_lt_one_away_from_midpoint, strict for v ≠ L_s/2, with envelope_at_midpoint giving equality at v = L_s/2). The Lean restricts v to Icc 0 ell, which is the paper's slot.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

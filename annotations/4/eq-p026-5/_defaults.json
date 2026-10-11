@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 26.5",
+  "label": "Display 26.1",
   "status": "partial",
   "location": {
     "page": 26,
-    "rect": [0.238918, 0.806163, 0.522561, 0.041775]
+    "rect": [0.240642, 0.806612, 0.517647, 0.038843]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [26],
         "printed": [26],
-        "text": "Display 26.5, p. 26, in section 4.1"
+        "text": "Display 26.1, p. 26, in section 4.1"
       },
       "region": "eq-p026-5@p026",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The axial row is supplied exactly: N_s = axialLag = primitive(S_n)/X equals ∫₀¹ S_n(sX,η) ds by `average_eq_quotient` (X ≠ 0), and `average` is literally the display's integral. The axis value and the smoothness across the axis belong to that object, `average (P.axialSource h)` — the display's right-hand side — and not to Lean's named N_s: `average_at_axis`:169 gives `average (P.axialSource h) (0,η) = S_n(0,η)`, the paper's smooth extension N_s(0,η) = S_n(0,η), and `average_smooth`:182 gives its smoothness with the axis included, whereas `Profiles.axialLag`:588 is `primitive (P.axialSource h) p / p.1`, whose value at X = 0 is 0 by Lean's division-by-zero convention and whose only regularity statement, `axialLag_smoothAt`:614, assumes X ≠ 0. The two objects agree exactly where `average_eq_quotient` applies, X ≠ 0, so the display's extension is available in Lean but is carried by `average (P.axialSource h)` rather than by `axialLag`. For the angular row, no declaration was found stating it for the §4 `Profiles`: `Profiles.angularLag` is kept in the quotient form of (4.10), and its own regularity statement `angularLag_smoothAt` assumes X ≠ 0 and H ≠ 0. The display's shape does, however, occur elsewhere, for a different object: `OutgoingHistories.Qs_eq_source_integral`:1068 states Q_s = (∫_{t ≤ y} e^{3t/2} E S_q dt)/(e^{3y/2} E), and since `angularWeight_eq`:151 gives e^{3y/2}E = X·H with X p = exp p.1 (:102) and H = e^{p.1/2}E (:115), the substitution x = e^t (dt = dx/x) turns the numerator into ∫₀^X H(x,η) S_q(x,η) dx, i.e. the angular row of (4.10) with C_Q = 0; and since H = 2XF, a further x = sX gives exactly this display's F(X,η)⁻¹∫₀¹ s F(sX,η) S_q(sX,η) ds. It is still not the counterpart of the p.26 display, for two reasons I checked: it is about the ResetWitness fields `Qs`/`Sq`/`E` of the later outgoing-histories section (OutgoingHistories.lean:312, 295, 113), not the §4 `Profiles` of (4.8)–(4.10); and its radial variable is logarithmic, X p = exp p.1 > 0 (:102–104), so the axis X = 0 sits at y = −∞ and is never attained. The display's point on p.26 is precisely that the rescaled form extends to the axis — it gives Q_s(0,η) = S_q(0,η)/2, since the s-integral at X = 0 is F(0,η)S_q(0,η)∫₀¹ s ds / F(0,η) — and that does not follow from the logarithmic-coordinate statement. Two other weighted ∫₀¹ t·… averages exist in NavierStokes/, neither F-normalised and neither this formula: `GlobalSlowProfiles.massAverage`:169 (2∫₀¹ t f(tX,η) dt, an unweighted mass average — its own docstring says \"There is no division by the radius\") and `MeanRankUpdate.scaledPrimitive`:1464 (r∫₀¹ t f(rt) dt, a one-variable scaled primitive, = r⁻¹∫₀^r s f(s) ds by `scaledPrimitive_eq_integral`:1466). The role the display plays in the paper — carrying the angular stress through the axis — is nevertheless discharged, by another route: `ZerothStressIdentity.weightedTheta` is `primitive (angularSource) (R²/2,η)/L + R⁴ ∂_X f`, an axis-regular formula with no division by X or H (module docstring: \"The weighted stresses have regular primitives through the axis\"); `weightedTheta_zero`:80, `weightedTheta_hasDerivAt`:91 and `weightedTheta_continuous`:178 hold at R = 0 with no X ≠ 0 hypothesis, `weightedTheta_eq`:125 identifies it with R²·`LeadingStress.theta` for R > 0, and `scheme_zero_densities_eq`:253 treats R = 0 as its own case (line 262). `weightedAxial` (76, 83, 108, 185) is the axial counterpart. The paper's reason for the axis regularity of the sources — the sentence after this display, 'The sources are smooth at X = 0, since l = 1 + XF_X/F and (log E)_η = F_η/F' — is itself encoded: `ReferenceBounds.sourceQ`:34 is S_q written in exactly that regular F-form (`logSlope` for l, `parameterPartial P.f / P.f` for (log E)_η), and `angularSource_eq`:57 states `angularSource = H · sourceQ`, i.e. that the singular factor in the Lean integrand is the explicit H and not the source. This supports the low rating rather than weakening it. So Lean works with the R²-weighted stress rather than with the paper's rescaled integral for Q_s itself; rated low because the surrounding result is still proved by that route.",
+          "summary": "Lean has a weaker form of it. Lean has the N_s row for X ≠ 0 but keeps Q_s in the quotient form of (4.10); the rescaled Q_s integral is not stated, and the axis is reached by an R²-weighted stress instead.",
           "verdict": "deviation"
         }
       ]

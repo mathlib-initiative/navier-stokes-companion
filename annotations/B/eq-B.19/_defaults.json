@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 149,
-    "rect": [0.425054, 0.126625, 0.444014, 0.043913]
+    "rect": [0.425668, 0.127273, 0.441434, 0.039669]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Equation (B.19), p. 149, in the statement of Proposition B.3"
       },
       "region": "eq-B.19@p149",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.9,
@@ -29,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. The paper asserts the existence of a fixed c_ex > 0 with p₁ + p₂²/p₁ > 2 + c_ex at X₀ = 4/Λ; the Lean exhibits the constant, stating `9/4 < coneSize … (4/Λ, η)` for every η ∈ [-1,1], i.e. c_ex = 1/4, which is larger than the value .2 the paper offers on p. 150, so the paper's existential follows at once. The evaluation point `(4/Λ, η)` is the paper's X₀ = 4/Λ. The two components match: `p1 f p = -2 * p.1 * partialY f p / f p` equals X·Q_s/L by `p1_eq_scaled_regularAngularLag` (NaturalEntrance.lean:1271), and `p2 f U p = p.1 * ns U p / angularVelocity f p` with `angularVelocity f p = √(2 p.1) * f p`; since the Lean's `f` is `realAmplitude h j σ Λ C η * phi` and `realAmplitude = exp(Λ·realPhase)/C` is the paper's φ_*/C (NaturalAxisCoefficients.lean:508), `angularVelocity` is exactly the paper's E = √(2X)φ/C, so Lean's p₂ is the paper's p₂ = XN_s/(LE) — as `regular_cone_at_four` states directly. Not a difference in the statement, but worth recording: the Lean proof reaches 9/4 in the second branch by AM-GM from |p₂| > 6/5, where the paper argues p₂²/p₁ > 2.3.",
+          "summary": "Lean has a stronger form of it.",
           "verdict": "faithful"
         }
       ]

@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/key/1.NavierStokes.FourierAlias.totalIntegral_periodic",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.FourierAlias.totalIntegral_periodic",
+      "line": 165,
+      "module": "NavierStokes.FourierAlias",
+      "path": "NavierStokes/FourierAlias.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FourierAlias.lean#L165"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.FourierAlias.totalIntegral_periodic",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If every slice Y |-> f (U,Y) is TorusPeriodic then so is Y |-> totalIntegral M v f (U,Y), the integral in the radial slot s of f (s, Y + (M (s-U)) . v): clause (d), radial integration preserves descent."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 165,
+        "text": "theorem totalIntegral_periodic {M : ℝ} {v : Plane} {f : State → F}\n    (hp : ∀ U, TorusPeriodic (fun Y => f (U, Y))) :\n    ∀ U, TorusPeriodic (fun Y => TransportPrimitive.totalIntegral M v f (U, Y))"
+      }
+    }
+  }
+}

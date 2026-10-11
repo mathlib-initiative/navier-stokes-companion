@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 67,
-    "rect": [0.338525, 0.835768, 0.529647, 0.027175]
+    "rect": [0.336898, 0.835537, 0.530204, 0.02562]
   },
   "target": {
     "pin": {
@@ -34,7 +34,7 @@
           "role": "claim",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The Lean reaches the same well-definedness by a different identity. The paper's display is a cover-shift identity at ONE fixed normalized band chart: 'fix the same normalized band chart', so (R,Z,T) is literally the same on both sides and the two sides differ only in the cover power J_g^{i_0(U)} against J_g^{i_0(V)}, with i_0(·) = min_{ℓ∈L(·)} i(ℓ) from (6.17) attached to the two neighborhoods U, V. The Lean has no instance of that form. Atlas.values_eq (ActualMeanPhysicalData.lean:116) is band-to-band: for two bands n, m valid at the same physical point z, Q_n^{-d} · f_n (A.chart n z) = Q_m^{-d} · f_m (A.chart m z). Since A.chart n = physicalToChartTZ h n (A.index n), which by physicalToChartTZ_apply (PhysicalMeanJetBounds.lean:40, rfl) sends z to (chartScale n · z.1, ((Q_n^{-1} z.2.1.1, Q_n^{-D h} z.2.1.2), coverMap (A.index n) z.2.2)), the two sides are evaluated at DIFFERENT points: each band's own rescaled (R,Z,T) as well as its own cover power. Setting degree = 0 removes only the Q^{-degree} prefactors; the arguments still differ (bandChart_chart:70-87 transports the radial component Q_n^{-1/2} z.1 to Q_m^{-1/2} z.1 through bandScale, and GaugeStateCoherence.bandChartEquiv_apply:361 shows bandChartEquiv carries bandScale and bandSlowEquiv alongside coverMap k). Within one band the index A.index n is fixed, so no two distinct cover powers ever meet at one chart. What the Lean checks in place of the display is the paper's following sentence, 'Both sides equal the original field in that chart': Atlas.physical_eq (:133) states A.physical U degree f z = Q_n^{-degree} · f_n (A.chart n z) for EVERY band n valid at z, so the physical field is independent of the representative; this is derived from the OverlapLaw hypothesis (:90), the band-overlap law with bandChartEquiv, not from the paper's fixed-chart cover shift. Two further encoding points: the Lean has a single open set U, not a pair U, V, the role of 'over U ∩ V' being played by the two hypotheses A.Valid U z n and A.Valid U z m; and Atlas.Valid (:96) is N ≤ n ∧ 0 < z.2.1.1 ∧ (A.chart n z).2.1 ∈ U, where z.2.1.1 is the first SLOW coordinate (the radius is z.1) — it equals 1 - w.1 under physicalPoint (PhysicalMeanJetBounds.lean:24), i.e. strictly before the terminal time, and CoherentFamily.field_eq (:314-318) discharges it with sub_pos.mpr hw for w ∈ PhysicalWaveSum.preterminal = {w | w.1 < 1}. Severity low: the conclusion the display is used for — that the common-torus representation is well defined on overlaps — is proved, by Atlas.physical_eq and Atlas.family (:144), so the surrounding result stands; what is not checked is the paper's formula as written.",
+          "summary": "Lean uses a different formula here. Lean has no cover-shift identity at one fixed chart; it proves that the physical field is the same from every valid band, each band using its own rescaled (R,Z,T) and cover power.",
           "verdict": "deviation"
         }
       ]

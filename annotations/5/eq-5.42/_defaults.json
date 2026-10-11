@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 60,
-    "rect": [0.241258, 0.414918, 0.626926, 0.050268]
+    "rect": [0.242781, 0.414876, 0.624322, 0.047934]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [60],
         "printed": [60],
-        "text": "Equation (5.42), p. 60, after the statement of Proposition 5.5"
+        "text": "Equation (5.42), p. 60, in the statement of Proposition 5.5"
       },
       "region": "eq-5.42@p060",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. Estimates 1, 2 and 4 are stated faithfully. For 1 and 2, `normalized_tangential_bounds` is literally the paper's chart statement: blownJet m is the paper's 𝒟^I (blownJet m F y = iteratedFDeriv ℝ m (F ∘ scaleMap y.1) (1, y.2), SlowBorelBase.lean:138), normalizedSwirl = q^A u_{θ,B} and leadingSwirl C d w = √(2w.1)/C·d.phi 0 w = E_0 (using E = √(2X)f), slowSum axial = q^A u_{z,B} with d.axial 0 = U_0, and innerBox lo hi = Icc lo hi ×ˢ Icc (-1) 1 is the paper's X-range × {−1 ≤ η ≤ 1}; the rate q^{2h} and the range 0 < q ≤ 1 agree. Estimate 4 is `final_radial_envelope` at rate Q^h, same exponent, same q^A u_{r,B}. Estimate 3 (that q^{1/2}u_{r,B} converges to V_0/√(2X) at rate q^{2h}) was not found: the declarations found about q^{1/2}u_{r,B} give only bounded jets, namely `reducedRadial_polynomial` (BaseRadialJets.lean:239) and `radial_quotient_polynomial` (BaseRadialJets.lean:294, `PolynomialJets (unitScale D) (fun i p => radial a h C d (Q i) p / Q i ^ h)`, the same quantity by `radial_eq` at line 149 and `radial_eq_stream` at line 177) — both are O(1) jets, at no q^{2h} rate and with no leading radial profile subtracted. A q^{2h} envelope for the underlying slow-sum error does exist, but only as the proof step at BaseRadialJets.lean:204, and it is immediately weakened to O(1) at line 218 before the radial component is formed. Estimate 4 is additionally reformulated: `final_radial_envelope` is an `EnvelopeJets` over `unitScale D` with `D : Domain ι Slow`, and `EnvelopeJets` (PrimaryPulseBounds.lean:270-276) bounds ‖iteratedFDeriv ℝ j (f i) x‖, so its jets are taken in the slow band variables (R, Z, T) of `bandPoint` (Slow = ℝ × (ℝ × ℝ), PhaseCalculus.lean:29-35; bandPoint h Q p = (1 − Q p.2.2, (√Q p.1, 0, Q^{D h} p.2.1)), BaseChartJets.lean:660), whereas the paper's 𝒟^I is a composition of q∂_q, ∂_X, ∂_η (text p. 60, line 3156, the sentence immediately above (5.42)) — unlike estimates 1 and 2, where `blownJet` is literally the paper's operator. The two coordinate systems are related by `normalizedCoordinates` (BaseChartJets.lean:212), whose jets are polynomial in the chart data (`normalizedCoordinates_polynomial` line 303, `geometry_factors_polynomial` line 381, `leading_fields_polynomial` line 412), so the exponent q^h is not affected by the change of variables, which I did not carry out term by term.",
+          "summary": "Lean has a weaker form of it. Lean states estimates 1, 2 and 4 (the last with derivatives in other variables); for the third it only bounds derivatives of q^{1/2}u_{r,B}, with no q^{2h} rate and no V_0/√(2X) subtracted.",
           "verdict": "deviation"
         }
       ]

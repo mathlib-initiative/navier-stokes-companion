@@ -1,0 +1,31 @@
+{
+  "id": "proposition-7.6/key/1.NavierStokes.SignedCovariance.native_signed_square_class",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SignedCovariance.native_signed_square_class",
+      "line": 676,
+      "module": "NavierStokes.SignedCovariance",
+      "path": "NavierStokes/SignedCovariance.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L676"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SignedCovariance.native_signed_square_class",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If (H⁻¹R)_j ∈ MeanClass s (B − 1/2 − loss) for both j (plus cone, (H⁻¹T)_j ∈ MeanClass 0, InverseControl, bounded H entries), then ε · squareColumn H T R i ∈ MeanClass s (2B − 2·loss). With loss = 0 and B = α − 1/2 this is clause 3 of (7.32): C(η_β LΣ) ∈ M_{2α−1}.",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 676,
+        "text": "theorem native_signed_square_class {s : StripData E} {H : ℕ → E → Mat2}\n    {T R : ℕ → E → Vec2} (B loss : ℝ) (i : Fin 2)\n    (hζ : ∀ x ∈ s.domain, 0 < s.zeta x)\n    (hcone : ∀ n x, x ∈ s.domain → SmoothCovariance.StrictCone (H n x) (T n x))\n    (hY : ∀ j, MeanClass s 0 (fun n x => ((H n x)⁻¹.mulVec (T n x)) j))\n    (hR : ∀ j, MeanClass s (B - 1 / 2 - loss) (fun n x => ((H n x)⁻¹.mulVec (R n x)) j))\n    (hlower : ∀ j, InverseControl s (fun _ x => s.zeta x)\n      (fun n x => ((H n x)⁻¹.mulVec (T n x)) j))\n    (hH : ∀ j, UnweightedClass s 0 (fun n x => H n x i j)) :\n    MeanClass s (2 * B - 2 * loss)\n      (fun n x => s.epsilon n * squareColumn (H n x) (T n x) (R n x) i)"
+      }
+    }
+  }
+}

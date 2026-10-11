@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 115,
-    "rect": [0.306964, 0.142269, 0.386292, 0.025482]
+    "rect": [0.308021, 0.144628, 0.382888, 0.019835]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The four terms match one for one and in sign: temporalDerivative is ∂_t u (fderiv in t applied to 1), advection is spatialDerivative u t x (u (t,x)) = (u·∇)u, spatialLaplacian is ∑ i, second derivative in direction eᵢ = Δu, pressureGradient is ∑ i, (∂_i p) eᵢ = ∇p, and the docstring says \"at viscosity exactly one\", matching the paper's unit coefficient on Δu. What is not matched is the left half of the display. The abstract ℱ does exist in the repository — GenericDifferentialPolynomial.SupportedPolynomial is \"a finite differential polynomial in normal form\" with eval, and GenericTupleRealization.Result.flat_residual is the generic Lemma 5.4 for an arbitrary such P, taking the paper's (5.33) jet hypothesis to the paper's (5.36) flatness conclusion (likewise Result.flat_residual_of_factor_support and Result.flat_residual_of_support_local_raw_bounds) — but the display's instantiation ℱ := ℛ is never made: SupportedPolynomial occurs only in the eight Generic*.lean files, that chain is imported only by the aggregator PaperAdditionalResults.lean (lines 22-23), and neither it nor any other file applies a flat_residual lemma to ProblemStatement.navierStokesResidual. The flatness actually used downstream (LocalPaper.Properties.residual_flatness, block eq-9.20) is therefore reached without the generic ℱ; which declarations discharge it was not traced (see not_traced). The rewriting is the identity on the right-hand equality, which is where the display's mathematical content sits.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

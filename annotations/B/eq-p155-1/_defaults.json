@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 155,
-    "rect": [0.298433, 0.118108, 0.403354, 0.071081]
+    "rect": [0.300535, 0.127273, 0.39893, 0.060331]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -15,7 +15,6 @@
         "text": "Display 155.1, p. 155, in section B.7"
       },
       "region": "eq-p155-1@p155",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.75,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The Lean reaches the same conclusion (S_q > 1 through the transition) by an exact identity plus a compactness absorption, not by the paper's explicit error expansion; neither displayed inequality appears in the Lean with the paper's right-hand side. (i) First line: instead of -H_cℓ_i′ ≥ LΛχ - Cχ - C_{σ_*}√χ - C/Λ - o(1), the Lean has the exact identity H·realGradient = -L·χ (gradient_identity), so the leading term is ΛLχ with no error at all, and the whole discrepancy between the actual old gradient and Λ·realGradient is carried as a single additive term g with |g| ≤ B (actual_shape_source_threshold hypotheses, ReferenceJetBounds.lean:153, ActivationContinuation.lean:349). The paper's separate Cχ, C_{σ_*}√χ, C/Λ and o(1) terms have no counterpart: a grep of NavierStokes/ for Real.sqrt applied to chi returns nothing, and the 1/Λ dependence enters only as the evaluation point t = 1/Λ of shapeRemainder, absorbed qualitatively by shapeModel_uniform_lower (MatchingConeBounds.lean:129) via compact absorption and a small-perturbation argument rather than by a named constant. (ii) Second line: the equality -H_c(log f)′ = 2ηH_c/(1+η²) is exact in Lean (logShape_hasDerivAt together with shapeGradient). The lower bound is not -Cj_0² - C/Λ - o(1) but the explicit constant -1/500, and it is proved for H_* = H h j η (the axis data), not for the actual H_c: the Lean does not complete the square, it uses η·shapeGradient η = 2η²/(1+η²) ≥ 0 and bounds the cross term by |d·j·shapeGradient| ≤ 2j ≤ 1/500 from j ≤ 1/1000, which is linear in j rather than quadratic, hence a weaker but sufficient intermediate bound. The 1/Λ correction to H_c (shapeRemainder's Hc = H + t·d·v 1, line 85) is again handled by the compactness perturbation. The surrounding result is nevertheless proved: actual_shape_source (MatchingConeBounds.lean:732) gives 1 < 5/4 < sourceQ on the transition, and actual_shape_relaxed (line 776) carries it through to the relaxed cone.",
+          "summary": "Lean uses a different formula here. Lean has neither bound with the paper's right-hand side: the first is an exact leading term ΛLχ plus one bounded error, the second is the constant −1/500, proved for the axis data rather than H_c.",
           "verdict": "deviation"
         }
       ]

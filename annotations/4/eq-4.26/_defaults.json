@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 33,
-    "rect": [0.256997, 0.420113, 0.611181, 0.025658]
+    "rect": [0.258824, 0.420661, 0.608279, 0.021488]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "claim",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Dictionary (checked in source): shearA = -2X ∂_X f / f = a and shearB = -2X ∂_X U / E = -b_s (ActivationContinuation.lean:144-145 against (4.11) on p. 27), so c/a = t_s and shearSize a c = a(1+(c/a)^2) = v_s; the stress pair is ordered (θ, z) on both sides; Lean works in (η, y = log X) on Icc (-1) 1 ×ˢ Icc (leftEdge W) (rightEdge W). Unfolding TargetCone ω (ω • (-a,-c)) D with c0² = (v_s-2)/2 gives exactly a·D₀ + c·D₁ > 0 and (v_s-2)(a·D₁ - c·D₀)² < 2(a·D₀ + c·D₁)², i.e. (4.26) with κ = 0 after dividing by a² > 0.\n\nNo declaration states (4.26) verbatim with one κ on the whole closed rectangle. What is stated: (1) the pointwise strict (κ = 0) cone at every point of the closed rectangle for a continuous unit direction D that equals the normalised stress in the interior (exists_closed_direction); (2) an additive uniform ε margin in tilt form on the two edge collars only (inner_/outer_direction_positive); (3) a uniform margin in the spectral encoding over the compact slow-parameter set, which is the paper's later use (modulated_representative_bounds).\n\nPaper ⇒ Lean (1) is algebra (targetCone_of_signedShear). Lean ⇒ paper needs one step that is not carried out in the repository: passing from the pointwise strict cone to a single κ. That step is the specialisation of the repository's own compactness lemma UniformCone.compact_normalized_cone (or positive_uniform_margin) to K = the closed rectangle with c = D₀ + t_s D₁, j = D₁ - t_s D₀, v = v_s; its hypotheses are met by stated declarations (continuity of D from exists_closed_direction; continuity of a, c from shears_smoothAt composed with logPoint_smooth; a > 0 and v_s > 2 from closed_shear_positive; the strict inequalities from (1)). Turning the additive ε into the factor (2-κ) needs an upper bound for (n_θ + t_s n_z)² ≤ 1 + t_s² on the same compact set, again a specialisation of positive_uniform_margin (to a/v_s), then κ = min of the constants. I did not find this chain written anywhere in the Lean; compact_normalized_cone is used only inside UniformCone.lean. I count it as formal because every analytic input is a stated declaration and the rest is instantiation and algebra; a reader who does not count specialising a generic compactness lemma as formal would call this lean_weaker (uniformity of κ) with low severity, since the later use on p. 74 is supplied by modulated_representative_bounds. Not checked: that activeLeft W / activeRight W are the paper's X_a, X_b in every respect.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

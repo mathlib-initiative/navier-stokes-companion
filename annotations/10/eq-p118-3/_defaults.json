@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 118.3",
+  "label": "Display 118.2",
   "status": "partial",
   "location": {
     "page": 118,
-    "rect": [0.163412, 0.273749, 0.673401, 0.023313]
+    "rect": [0.163636, 0.273554, 0.669519, 0.019835]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [118],
         "printed": [118],
-        "text": "Display 118.3, p. 118, in the proof of Proposition 10.1"
+        "text": "Display 118.2, p. 118, in the proof of Proposition 10.1"
       },
       "region": "eq-p118-3@p118",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. No τ_0 makes the Lean switch an instance of the paper's χ_t: timeSwitch vanishes on |t| ≤ 3/8, i.e. for 1 - t ≥ 5/8, which needs τ_0 ≥ 5/8, while it is known to equal 1 only for t ≥ 3/4, i.e. 1 - t ≤ 1/4, which needs τ_0/2 ≥ 1/4, so τ_0 ≤ 1/2 — and the paper additionally demands τ_0 < 1/2. The Lean switch is also only shown to vanish on a two-sided neighbourhood of 0 (|t| ≤ 3/8) rather than on all of 1 - t ≥ τ_0, i.e. nothing here rules out t < -3/8. The product c(x,t) = χ_x(x)χ_t(t) is never formed as a single function in Lean: the two cutoffs are applied in sequence (TimeLocalization.activatedVelocity applied to the spatially cut field), which is the same product pointwise. Rated low because both consequences the paper's proof draws from χ_t are stated for the Lean switch — the fields vanish near t = 0 (used for the initial-rest clause) and the switch is 1 on the late interval where the paper's and Lean's fields must agree (t ∈ [3/4, 1), as in PaperLocalization.local_theorem_with_compact_candidate) — and the numeric gap between 5/8 and 1/2 is a different admissible choice of constants, not a weaker statement, since the Lean never needs the support of c to sit inside the paper's Ω_*.",
+          "summary": "Lean uses a different formula here. Lean's time switch is shown to be 0 for |t| ≤ 3/8 and 1 for t ≥ 3/4, which fits no τ_0; c = χ_x χ_t is not formed as one function, the two cutoffs being applied in sequence.",
           "verdict": "deviation"
         }
       ]

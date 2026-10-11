@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 37,
-    "rect": [0.193601, 0.726879, 0.675466, 0.061433]
+    "rect": [0.194652, 0.734711, 0.673539, 0.04876]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Three of the five rows are stated in closed form for every r ≥ 0 in the paper's own variable and normalisation: M̂0 = 4ηx (idealM at idealU, definitional), Ĵ0 = 4η Î0 (idealJ and idealI share idealWeightI, definitional), C_{p,0} = (5/2)P²f²x^{1/5} (idealWeightP_eq with idealP); ideal_rows_moments states that these five rows are the integrals from 0 of the reference pair. The other two closed forms, Î0(x) = (5√2/8)P f x^{8/5} and the term (5/12)P²f²x^{6/5} of Ŝ0, are not written as a Lean equation at general x: ShapeTransition keeps idealWeightI and idealWeightS as unevaluated integrals and proves only crude bounds on them. They do follow from stated declarations. For x = e^y ≤ 1, I_eq_integral gives I as the integral over Iic y of exp(3t/2)·E, angularWeight_ideal gives that integrand as P·shape·exp(8t/5), and instantiating the repository's own exponential_integral_left at a = P·shape η, b = 8/5 gives I = (5/8)·P·shape·exp(8y/5). For S the same lemma is instantiated twice (a = 16η², b = 1 and a = P²shape²/2, b = 6/5, the second from weighted_square_ideal) after S_eq_integral, with linearity of the integral; the integrability of the two pieces is the first conjunct of exponential_past. Two things I accepted as notation: OutgoingHistories works in y = log x, and its H is exp(y/2)·E where the paper has √(2X)·E, so its I and J are the paper's divided by √2 (hence 5/8 against the paper's 5√2/8; the √2 appears explicitly in J_eq_angularMoment and in ideal_angular_prefix_integral). I found no declaration that equates OutgoingHistories.I with row 1 of NominalProfile.moments. In the paper's own normalisation the same two closed forms are the power rule applied to the definitions of idealWeightI and idealWeightS (Mathlib's integral_rpow, used in the proof of idealWeightP_eq at line 914, not a repository declaration); the repository states that evaluation only at x = 1 (angular_past, energy_past, ideal_angular_prefix_integral). The closed forms via the log-variable route cover x ≤ 1 only; the paper uses m̂0 only for x ≤ e^{-5} (profiles live on [0, X_h], X_h = X_R e^{-5}).",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

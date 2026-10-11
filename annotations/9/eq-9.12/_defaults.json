@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 108,
-    "rect": [0.33232, 0.739372, 0.536595, 0.03112]
+    "rect": [0.33369, 0.739669, 0.533413, 0.033058]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same weights and same two residual components: `radialMoment 2 (u.thetaResidual c)` is ∫ R^2 ⟨E_θ⟩_Y dR and `radialMoment 1 (u.axialResidual c)` is ∫ R ⟨E_z⟩_Y dR (both taken on the auxiliary-torus mean, `pressureMass` of R^k times the field). One declaration bundles the whole display: `SignedMeanGain.Geometry.removed_bumps_mem` (SignedMeanGain.lean:778) takes exactly the paper's standing hypotheses — the preserved angular-momentum and axial-flux constraints, `radialMoment 2 u.mean.angular = 0` and `radialMoment 1 u.mean.axial = 0` on the slow region — together with `hD : ∀ i : Fin 3, UnweightedClass G.slowStrip α (debt c u · i)`, which is verbatim the conclusion of eq-p108-6, and concludes `MeanClass G.strip (α+1) (removedBump G 2 (u.thetaResidual c)) ∧ MeanClass G.strip (α+1) (removedBump G 1 (u.axialResidual c))`: both components, both weights (e = 2 angular, e = 1 axial), the one-order gain α → α+1 = C_*+1−κ_s, on the actual cycle Geometry and in physical coordinates. It routes through `GaugeMomentBalances.state_angular_bump_improvedClass` (:816) and `state_axial_bump_improvedClass` (:869), each of which rests on the exact integrated identity — the moment equals ε_n times one slow derivative of the corresponding defect, `thetaDefect` for the angular one and `axialDebtPotential = axialDefect + c_ρ · pressureDefect` for the axial one, which is the paper's remark on the same page that 'the axial identity includes c_ρ P inside its axial derivative' — and on `bump_improvedClass_of_moment_identity`, whose proof converts the identity into the order gain in two steps on the same data, `hclass.directional ((0,v))` (SignedStressPrimitive.lean:519) and `band_smul` with the ε^1 band bound (:524). One encoding difference remains: Lean carries the α+1 conclusion on `physicalBump P e q (torusAverage F)` = b_e·M_e rather than on M_e alone, because the bump is what the construction subtracts; `momentDensity_meanClass` (:457) puts b_e at class exactly 0, so no order is lost or gained, and the paper itself uses the display in the b_e M_e form two lines later on p. 109.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

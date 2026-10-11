@@ -1,6 +1,6 @@
 {
   "kind": "equation",
-  "label": "Display 118.7",
+  "label": "Display 118.4",
   "status": {
     "pin": {
       "type": "repository",
@@ -11,7 +11,7 @@
   },
   "location": {
     "page": 118,
-    "rect": [0.378224, 0.54394, 0.243783, 0.04718]
+    "rect": [0.380749, 0.544628, 0.238503, 0.043802]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -22,7 +22,7 @@
       "locator": {
         "physical": [118],
         "printed": [118],
-        "text": "Display 118.7, p. 118, in section 10.1"
+        "text": "Display 118.4, p. 118, in section 10.1"
       },
       "region": "eq-p118-7@p118",
       "relation": "uses",
@@ -40,7 +40,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "No Lean counterpart was found. No declaration was found that states this Poisson equation with a force-divergence term on the right. The closest asset, and a structural analogue of this very display, is `NavierStokes.R3WeakPressure.momentumGradient_divergence` (NavierStokes/R3WeakPressure.lean:120-126): with `momentumGradient U V G i = Δ(U i) - ∂_t (U i) + V i - ∑_j ∂_j (G i j)` (same file, :88-91), V occupying the force slot and G the velocity stress, it concludes `divergence (momentumGradient U V G) = -(∑_i ∑_j ∂_i ∂_j (G i j))` — the paper's identity with `div f` dropped, because it assumes `hV : divergence V = 0` (:124). That hypothesis is exactly what the paper's following sentence flags as possibly failing (\"the force may have nonzero divergence\"). In the downstream statements I opened, the force slot is filled by the literal zero function: `R3DifferenceStress.momentum_equation` (NavierStokes/R3DifferenceStress.lean:110) and `R3LocalizedPressure.localized_pressure_gradient` (NavierStokes/R3LocalizedPressure.lean:126) both write `functionMomentum U (fun _ _ => 0) G`, and `smooth_pressure_gradient` (NavierStokes/R3SmoothPressure.lean:124-142) carries the same `dV : functionDivergence V = 0` through to `pressure_gradient_unique` (:161), which is the only consumer of `momentumGradient_divergence` that I found. The force-free pressure identity itself is `R3PressureFourier.stressPressure_poisson` (NavierStokes/R3PressureFourier.lean:363): `Δ (stressPressure g) = -∑_i ∑_j ∂_i ∂_j (g i j)`, again with no force term. `NavierStokesR3.ConservativeDifference.weak_pressure_poisson` (NavierStokes/R3/ConservativeDifference.lean:431) is a third, further-off relative: a weak identity tested against ψ ∈ C_c^∞ rather than the pointwise display, written for the difference w = u - v of two fields whose residuals are equal, so the two forces cancel and no `- div f` appears; it belongs to the comparison argument of Lemma 10.5 (paper p.122, display Δπ_* = -∑ ∂_i ∂_j g_ij), not to the §10.1 localization. So the picture is not that the repository never writes a pressure Poisson equation, but that every version of it I found assumes the force (or the difference of forces) is divergence free, which is the one feature the p.118 display exists to record. My searches (listed in `searched`) over the index and over the `NavierStokes/` tree found no declaration taking the spatial divergence of `navierStokesResidual`, and no identity retaining a divergence-of-the-force term; I did not read all 815 files. The paper's own derivation is three lines from (10.5) plus div u = 0 (div ∂_t u = 0, div Δu = Δ div u = 0, div((u·∇)u) = ∑ ∂_i ∂_j (u_i u_j), div ∇p = Δp), but that derivation is not carried out in Lean for these fields. Severity low: the display is terminal in the paper — it carries no equation number, and \"Poisson\" occurs exactly once in the whole text layer, in the sentence immediately after it — and I found no later step of §10 or of the Lean development that uses it, so Proposition 10.1 and Lemma 10.2 are unaffected.",
+          "summary": "No Lean counterpart was found. Lean's pressure Poisson equations assume a zero or divergence-free force, or two forces that cancel; the − div f term is not stated.",
           "verdict": "deviation"
         }
       ]

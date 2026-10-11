@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 42,
-    "rect": [0.258722, 0.372853, 0.609455, 0.048041]
+    "rect": [0.258824, 0.375207, 0.608279, 0.042149]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [42],
         "printed": [42],
-        "text": "Equation (4.41), p. 42, in the statement of Lemma 4.9"
+        "text": "Equation (4.41), p. 42, in the proof of Theorem 4.6"
       },
       "region": "eq-4.41@p042",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The Lean reaches the same conclusion by a different route. The paper bounds each cone component from below quantitatively: a Lipschitz constant C_Ψ for Ψ on a fixed compact neighbourhood turns the O(1/N) perturbations (4.39)–(4.40) into Ψ_i ≥ μ − C_Ψ·(const)/N, and then ≥ μ/2 for N large, with two separate margins μ_L on I and μ_R on [X_+,Y_1]. A margin in the paper's sense is stated, though not for the paper's tuple: `TrueConeLoop.HasConeMargin` (TrueConeLoop.lean:283) is a componentwise additive lower bound ε on the Lean's own four cone quantities (A, A(1+(C/A)²)−2, c−2, coneBound(c,j)−A(1+(C/A)²)). Those cut out the same open set as the paper's Ψ > 0 — coneBound(c,j) = c + j²/4 − |j|√((c−2)/2+j²/16) ≤ c for c ≥ 2 (ConeAlgebra.lean:17-18), so the Lean's fourth component forces c > v, and `ConeAlgebra.square_difference` (line 38) squares v < coneBound(c,j) into (4.22)'s (v−2)j² < 2(c−v)² — but they are different scalar functions from the paper's (a, v−2, c−v, 2(c−v)²−(v−2)j²) of (4.35), so a margin ε on one tuple is not a margin ε on the other, and the paper's fourth component is cubic in the data. `TrueConeLoop.compact_periodic_trueCone_margins` (line 289) produces a uniform ε > 0 from compactness of K plus periodicity in the fast angle, which plays the role of the paper's μ_L (and, applied to the other region, μ_R) without being equal to it; it is carried on by `exists_compact_trueCone_family_with_margin` (line 765) and `TrueConeLoopPaper.exists_local_family_with_margin` (TrueConeLoopPaper.lean:21). What no declaration I found does is combine that margin with the O(1/N) perturbation: `HasConeMargin` occurs at only four places in `NavierStokes/` (TrueConeLoop.lean:283, 298, 784 and TrueConeLoopPaper.lean:39) and is consumed by no perturbation lemma, so the inequality chain Ψ_i ≥ μ − C_Ψ·(B_0+P_0)/N ≥ μ/2 of (4.41) — in particular the constant C_Ψ and the halving — is nowhere stated. The route actually taken to the same conclusion is qualitative, and it is packaged in one declaration: `ModulatedCone.realized_trueCone_of_stock_bound` (ModulatedCone.lean:331) takes the O(1/n) stock hypothesis `hstock : |q₁ n p − p₁ p| ≤ C_stock/n ∧ |q₂ n p − p₂ p| ≤ C_stock/n` and concludes `InTrueCone` for all n ≥ N. Its proof is the paper's three ingredients with the quantitative step replaced by an open condition: a single uniform tolerance ρ > 0 from compactness of K plus openness of the true cone (`realized_loop_stable`, line 295, built on the cthickening tolerance of `compact_periodic_stockShear_stable` at line 254), the shear rate `realized_shears_uniform_bound`, and N chosen with max(C_stock, C_shear)/n ≤ ρ (`exists_integer_frequency`, line 317). The two-region structure of (4.41) is present as the two hypotheses of `Repaired.profiles_trueCone`: `hrelaxed` on K (the paper's I, margin μ_L) and `hScone` on S with W.right ≤ p.1 (the paper's [X_+, Y_1], margin μ_R). Since the paper uses (4.41) only to assert the four positivities ('These four positive quantities assert a_N > 0, v_N > 2, and (4.22)'), the open-condition version carries the same weight here.",
+          "summary": "Lean uses a different formula here. Lean gets the cone condition for all large N from compactness and openness of the cone; the chain Ψ_i ≥ μ − C_Ψ(·)/N ≥ μ/2, with the constant C_Ψ and the halving, is not stated.",
           "verdict": "deviation"
         }
       ]

@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 152.6",
+  "label": "Display 152.2",
   "status": "formalized",
   "location": {
     "page": 152,
-    "rect": [0.302283, 0.703493, 0.39761, 0.042316]
+    "rect": [0.302674, 0.705785, 0.393583, 0.038017]
   },
   "target": {
     "pin": {
@@ -18,10 +18,9 @@
       "locator": {
         "physical": [152],
         "printed": [152],
-        "text": "Display 152.6, p. 152, in the proof of Proposition B.5"
+        "text": "Display 152.2, p. 152, in the proof of Proposition B.5"
       },
       "region": "eq-p152-6@p152",
-      "role": "key",
       "verdicts": [
         {
           "confidence": 0.82,
@@ -35,7 +34,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The Lean states the same factorization in the form `∫_0^y e_a b = y · e_a(y) · primitiveFactor(y,η)` rather than dividing by `e_a` and exhibiting `y^3`. Dividing (legitimate: `activation T κ y > 0` for `0 < y < T`, and `primitiveFactor T B (0,η) = 0`) gives `(1/e_a)∫_0^y e_a b = y · primitiveFactor(y,η)`, and `primitiveFactor` carries an explicit `p.1 ^ 2`, so the right-hand side is `y^3 · [stepDenominator T y · ParametricFlatFactor.factor (T^2) 0 (flatCoefficient T B) (η,y)]`; the bracket is the paper's `B(y,η)` and is smooth (`stepDenominator_smooth` and the `flatFactor_local` factor smoothness that `primitiveFactor_smooth` composes, StressActivation.lean:233–238). The paper's `e_a = e^{-t_1^2/y^2} g_a(y)` with `g_a` smooth positive is exactly `activation_flat_form` with `g_a = (1-κ)/stepDenominator T` and `FlatCutoff.edge (T^2) y = exp(-T^2/y^2)` at `T = t_1`. The paper's `1/2` from Lemma A.9/(A.47) is absorbed into `ParametricFlatFactor.factor`, so no constant is visible in the Lean form.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

@@ -1,5 +1,5 @@
 {
-  "id": "eq-p141-5/key/NavierStokes.IntegratedMeanBalances.pressure_moment",
+  "id": "eq-p141-5/key/01.NavierStokes.IntegratedMeanBalances.pressure_moment",
   "target": {
     "pin": {
       "declaration": "NavierStokes.IntegratedMeanBalances.pressure_moment",
@@ -16,6 +16,7 @@
         "kind": "theorem"
       },
       "relation": "states",
+      "role": "key",
       "snippet": {
         "line": 146,
         "text": "theorem pressure_moment (hp : ContDiff ℝ ∞ p) (hs : HasCompactSupport p) (hd : ∀ r, deriv p r = g r) : moment 1 p = -(1 / 2 : ℝ) * moment 2 g, with moment n f = ∫ r, r ^ n * f r"

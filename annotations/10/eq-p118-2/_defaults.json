@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 118.2",
+  "label": "Display 118.1",
   "status": "partial",
   "location": {
     "page": 118,
-    "rect": [0.236212, 0.229597, 0.527807, 0.023364]
+    "rect": [0.236364, 0.229752, 0.524064, 0.020661]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [118],
         "printed": [118],
-        "text": "Display 118.2, p. 118, in the proof of Proposition 10.1"
+        "text": "Display 118.1, p. 118, in the proof of Proposition 10.1"
       },
       "region": "eq-p118-2@p118",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "definition",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The paper chooses a cutoff by two properties tied to parameters: r_0 is any fixed positive number, z_0 is chosen with C_0(τ_0 + z_0^{1/D}) < q_*/2, the cutoff is 1 on {r ≤ r_0/2, |z| ≤ z_0/2}, and its support is compactly inside the open cylinder {r < r_0, |z| < z_0}. The Lean fixes one explicit cutoff with absolute constants, cutoff(16 r²)·cutoff(4 z) with a bump of inner radius 1/2 and outer radius 1. What is stated about it: it is 1 on {r² < 1/32, |z| < 1/8} (and, by one application of cutoff_one_of_abs_le, on the closed version), and its closed support lies in the closed cylinder {r² ≤ 1/16, |z| ≤ 1/4}. Three things in the display are not supplied. (1) No single pair (r_0, z_0) makes the display follow from these statements: the plateau clause in z needs z_0 ≤ 1/4 from what is stated, while compact containment in {|z| < z_0} needs z_0 > 1/4, since cutoff_tsupport gives closed z-support reaching ±1/4. The Lean statement is containment in the closed cylinder, not compact containment in the open one. (2) The radial geometry differs: the Lean plateau radius is 1/(4√2) against support radius 1/4, not the paper's ratio 2, so the Lean plateau lemma does not follow from the display with r_0 = 1/4 either. (3) The freedom in r_0 and the smallness of z_0 relative to q_* have no counterpart: no file mentions both spatialCutoff/supportCylinder and qstar (repository grep: the two file lists are disjoint), and physical_q_bound, the counterpart of (10.3), is not applied to the cutoff. The Lean does not need the margin from q = q_*, because its local potential, direct field and pressure are stated smooth on all of {t < 1} (LocalPaper.Properties), so any fixed compact cylinder is admissible. The parts of the sentence around the display that do match are smoothness in (r², z), 0 ≤ χ_x ≤ 1, axisymmetry, compact support, and being 1 on an open neighbourhood of the origin. The conclusions of Proposition 10.1 are proved in local_theorem_with_compact_candidate with the open plateau as the neighbourhood, so the surrounding result stands. I did not verify lemma by lemma that the Lean bump is strictly below 1 outside its inner ball; point (1) only uses that no declaration states a larger z-plateau.",
+          "summary": "Lean uses a different formula here. Lean fixes one explicit cutoff, equal to 1 on {r² < 1/32, |z| < 1/8} with support in the closed cylinder {r² ≤ 1/16, |z| ≤ 1/4}; no pair (r_0, z_0) makes the display follow.",
           "verdict": "deviation"
         }
       ]

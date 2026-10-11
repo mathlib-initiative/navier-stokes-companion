@@ -1,5 +1,5 @@
 {
-  "id": "eq-5.26/key/NavierStokes.BaseResidual.cartesian_monomial_bound",
+  "id": "eq-5.26/key/01.NavierStokes.BaseResidual.cartesian_monomial_bound",
   "target": {
     "pin": {
       "declaration": "NavierStokes.BaseResidual.cartesian_monomial_bound",
@@ -16,6 +16,7 @@
         "kind": "theorem"
       },
       "relation": "states",
+      "role": "key",
       "snippet": {
         "line": 250,
         "text": "theorem cartesian_monomial_bound {h : ℝ} (hh : 0 < h) (hh1 : h < 1/2) {f : Inner → ℝ} (hf : ContDiff ℝ ∞ f) (b lo hi : ℝ) {K : Set SpaceTime} (hK : IsCompact K) (m : ℕ) : ∃ C, 0 < C ∧ ∀ z ∈ K, z.1 < 1 → (cartesianChart h z).1 ≤ 1 → (cartesianChart h z).2.1 ∈ Icc lo hi → ‖iteratedFDeriv ℝ m (cartesianMonomial h b f) z‖ ≤ C * (cartesianChart h z).1 ^ (b - m)"

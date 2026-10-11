@@ -1,0 +1,29 @@
+{
+  "id": "proposition-A.10/key/1.NavierStokes.TerminalEdgeFactor.profileStress_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TerminalEdgeFactor.profileStress_jets",
+      "line": 1288,
+      "module": "NavierStokes.TerminalEdgeFactor",
+      "path": "NavierStokes/TerminalEdgeFactor.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1288"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TerminalEdgeFactor.profileStress_jets",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For every n and every b > 0 there are A > 0 and N with \\|iteratedFDeriv^i (profileStress C d y0) (\\eta,x)\\| \\le A * FlatCutoff.edge 4 x / x^N for all i \\le n, \\eta \\in [-1,1], 0 < x \\le b: the first estimate of (A.51), uniformly over all orders i \\le n."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 1288,
+        "text": "theorem profileStress_jets (C : ℝ) (d : TailData) (y0 : ℝ) (n : ℕ) {b : ℝ} (hb : 0 < b) :\n    ∃ A : ℝ, 0 < A ∧ ∃ N : ℕ, ∀ i ≤ n, ∀ η ∈ Icc (-1 : ℝ) 1,\n      ∀ x : ℝ, 0 < x → x ≤ b →\n      ‖iteratedFDeriv ℝ i (profileStress C d y0) (η, x)‖ ≤ A * FlatCutoff.edge 4 x / x ^ N"
+      }
+    }
+  }
+}

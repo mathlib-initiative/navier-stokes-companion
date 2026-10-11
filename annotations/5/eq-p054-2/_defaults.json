@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 54,
-    "rect": [0.279944, 0.197709, 0.44034, 0.080774]
+    "rect": [0.281283, 0.200826, 0.436364, 0.072727]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The first member of each line (the forward primitive) is in Lean verbatim: SlowStressSupport.stress m F = -(weighted radial primitive)/R^m, with m = 2 for angularStress and m = 1 for axialStress, matching R^{-2}∫_0^R ρ^2 and R^{-1}∫_0^R ρ respectively. The second member (the backward representation, ∫_R^∞) is stated only at weight 2 and only in a separate file: TerminalStress.backwardStress together with forward_eq_backward_iff, which proves the two are equal exactly when the total weighted integral vanishes — the paper's reason for the identity. No declaration was found that states the weight-1 backward representation R^{-1}∫_R^∞ ρ 𝔯_{z,n}, and no declaration was found connecting TerminalStress.forwardStress/backwardStress to SlowStressSupport.angularStress or axialStress, so the display as a whole (both weights, both equalities, for the residual densities of Lemma 5.2) is not stated in one place. The use the paper makes of it — that 𝒯_n is supported where the residual is — is proved in Lean by another route, stress_radialSupport, generically in m and from the vanishing zeroth moment rather than from a pointwise backward formula, so the surrounding result is still proved.",
+          "summary": "Lean uses a different formula here. Lean states the ∫_0^R form of both; the ∫_R^∞ form appears only at weight 2 in a separate statement not linked to 𝒯_{n,θ}, and not at all for 𝒯_{n,z}.",
           "verdict": "deviation"
         }
       ]

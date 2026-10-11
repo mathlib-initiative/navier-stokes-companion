@@ -1,0 +1,29 @@
+{
+  "id": "lemma-6.2/key/1.NavierStokes.TorusCoverDegree.card_liftedRectangles_le",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.TorusCoverDegree.card_liftedRectangles_le",
+      "line": 302,
+      "module": "NavierStokes.TorusCoverDegree",
+      "path": "NavierStokes/TorusCoverDegree.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusCoverDegree.lean#L302"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.TorusCoverDegree.card_liftedRectangles_le",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0 < r, ||g.basis|| * r < 1/2 and g.gap <= maximumGap, Nat.card (Set.range (sheetRectangle g r)) <= 14 ^ maximumGap: the bound 14^{Delta_max} of clause (b)."
+      },
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 302,
+        "text": "theorem card_liftedRectangles_le (g : Geometry) {r : ℝ} (hr : 0 < r)\n    (hsmall : ‖(g.basis : Plane →L[ℝ] Plane)‖ * r < 1 / 2)\n    {maximumGap : ℕ} (hgap : g.gap ≤ maximumGap) :\n    Nat.card (Set.range (sheetRectangle g r)) ≤ 14 ^ maximumGap"
+      }
+    }
+  }
+}

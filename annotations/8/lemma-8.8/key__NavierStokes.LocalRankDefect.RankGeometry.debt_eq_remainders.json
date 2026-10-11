@@ -1,0 +1,36 @@
+{
+  "id": "lemma-8.8/key/1.NavierStokes.LocalRankDefect.RankGeometry.debt_eq_remainders",
+  "location": {
+    "page": 98,
+    "rect": [0.131808, 0.733884, 0.737473, 0.107438]
+  },
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LocalRankDefect.RankGeometry.debt_eq_remainders",
+      "line": 811,
+      "module": "NavierStokes.LocalRankDefect",
+      "path": "NavierStokes/LocalRankDefect.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalRankDefect.lean#L811"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LocalRankDefect.RankGeometry.debt_eq_remainders",
+        "kind": "theorem"
+      },
+      "declaration_verdict": {
+        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Under RankGeometry, LocalOperators, smooth base, LocalTriple of u.mean, LocalShell of each covariance entry, IsSlowOn of base.angular and base.axial: debt c (rankStageState g r axial c u) n x = remainders c.operators c.base u.mean (rankIncrementState g r axial c u) u.covariance n x for x in U. Claus",
+        "status": "unconfirmed",
+        "verdict": "faithful"
+      },
+      "region": "lemma-8.8@p098",
+      "relation": "part",
+      "role": "key",
+      "snippet": {
+        "line": 811,
+        "text": "theorem debt_eq_remainders {a b : ℝ} (ha : 0 < a) (hab : a < b) (hU : IsOpen U)\n    (hleft : ∀ n x, x ∈ U → a ≤ r.length n x * r.inner)\n    (hright : ∀ n x, x ∈ U → r.length n x * r.outer ≤ b)\n    (axial : P × PressureStream.Plane) (hop : LocalOperators U c.operators)\n    (hb : SmoothTriple (positiveDomain U) c.base) (hm : LocalTriple a b U u.mean)\n    (hW : ∀ i j, LocalShell a b U (u.covariance i j))\n    (hV : IsSlowOn U c.base.angular) (hG : IsSlowOn U c.base.axial)\n    (n : ℕ) {x : P} (hx : x ∈ U) :\n    CorrectionState.debt c (VariableGaugeMean.rankStageState g r axial c u) n x =\n      remainders c.operators c.base u.mean (VariableGaugeMean.rankIncrementState g r axial c u) u.covariance n x"
+      }
+    }
+  }
+}

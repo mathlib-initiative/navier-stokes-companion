@@ -1,10 +1,10 @@
 {
   "kind": "equation",
-  "label": "Display 29.7",
+  "label": "Display 29.4",
   "status": "formalized",
   "location": {
     "page": 29,
-    "rect": [0.235618, 0.687633, 0.529664, 0.044007]
+    "rect": [0.236364, 0.690909, 0.526203, 0.035537]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -12,7 +12,7 @@
       "locator": {
         "physical": [29],
         "printed": [29],
-        "text": "Display 29.7, p. 29, in the proof of Lemma 4.4"
+        "text": "Display 29.4, p. 29, in the proof of Lemma 4.4"
       },
       "region": "eq-p029-7@p029",
       "verdicts": [
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. All three formulas are present, each after one rewriting. (i) W: Lean's `Profiles.W` is 1 − 2·axialExponent h·η·Ubar − coordinateFactor η·average(∂_ηU), with axialExponent h = 1/2 − h = D, coordinateFactor η = 1 − η² = d, Ubar = average U and average F p = ∫_0^1 F(t·X,η)dt. By `average_eq_quotient` (hypothesis X ≠ 0), average F p = (primitive F p)/X, so Ubar = M/X directly. The second rewriting, average(∂_ηU) = (∂_ηM)/X, needs one more step than the averaging identity alone: M = primitive U, and ∂_η(primitive U) = primitive(∂_ηU) is `parameterPartial_primitive` (differentiation under the integral, hypotheses ContDiffOn ℝ ∞ U D.carrier and p ∈ D.carrier), after which `average_eq_quotient` applies. With those two, Lean's W is literally the paper's 1 − (2DηM + d∂_ηM)/X; `XW_eq_histories` states the cleared form X·W = X − 2DηM − d·∂_ηM, and `SeedHandbackJets.stocks_formulas` carries the paper's divided form itself in its statement at line 96, `W := (X − 2DηM − d(η)∂_ηM)/X`, which is 1 − (2DηM + d∂_ηM)/X. The averaged form is a deliberate convention: it is regular at X = 0 where M/X is not. The same formula appears as `ActivationStocks.massFlux h X η M Mη = X − 2DηM − d(η)Mη` with `profile_massFlux : X·W = massFlux`. (ii) H = √(2X)E: `ProfileHistories` takes the regular swirl f as primitive and defines H := 2Xf and E := √(2X)f separately, so H = √(2X)E holds only after unfolding both; `ModulatedHistories.density_eq_physical` states the angular density row in exactly the form √(2X)·(√(2X)f) = √(2X)·E. In `SeedHandbackJets.Profile.density` the angular integrand is written √(2x)·E directly. (iii) Π = Π_ax + C_p: `Profiles.pressure` is pressure0 η + ∫_0^X f², and ∫_0^X f² dx = ∫_0^X E²/(2x) dx = C_p since E² = 2xf²; `SeedHandbackJets.packet` entry 10 is the same, η ↦ P₀ η + (C_p-curve) η, with P₀ the common axis datum.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]

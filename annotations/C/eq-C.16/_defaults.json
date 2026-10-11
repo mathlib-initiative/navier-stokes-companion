@@ -4,7 +4,7 @@
   "status": "partial",
   "location": {
     "page": 162,
-    "rect": [0.36701, 0.276109, 0.502059, 0.04725]
+    "rect": [0.367914, 0.278512, 0.500277, 0.042975]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -28,7 +28,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The paper bounds all η-derivative orders of the stress-vector difference, Σ_{j=0}^m |∂_η^j(p_{s,N} - p_s)| ≤ C_m/N, for every m. What I found in Lean is the order-0 statement only: both profile_stocks_rate declarations bound |profileStockOne (P n) - profileStockOne Q| and |profileStockTwo (P n) - profileStockTwo Q| pointwise on the compact parameter set S, with no η-derivative of the difference bounded. (Lean's two stocks are the two components of the paper's p_s: profileStockOne = X·angularLag/L and profileStockTwo = X·axialLag/(L·E).) The Lean input is one η-derivative deeper than its output — profileData carries the row values together with their first parameterPartial, and profileHistory_first_jet_bound (ModulatedStockBounds.lean:283) feeds it a FiniteJetBound 1 — which matches the paper's own remark that order m of the stocks consumes order m+1 of the histories, at m = 0 only. Severity low rather than medium because I traced the paper's two uses of (C.16) in the proof of Proposition C.2 — preserving the cone inequality between the interval 𝒥 and the first correction interval, and preserving it inside the correction interval — and both are inequalities between stock values at a point, needing only j = 0. I did not find a higher-order η-jet rate for the stocks anywhere in the modulation files; the nearest higher-order statement, ActivationStocks.log_stocks_uniform_jets (:711), is about the activation ramp parameters (T, κ), not about the N-modulation, so it is not a counterpart.",
+          "summary": "Lean has a weaker form of it. Lean has only the j = 0 case: it bounds p_{s,N} − p_s itself, and no η-derivative of the difference is bounded.",
           "verdict": "deviation"
         }
       ]

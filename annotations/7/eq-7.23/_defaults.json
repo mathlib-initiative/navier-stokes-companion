@@ -4,7 +4,7 @@
   "status": "formalized",
   "location": {
     "page": 82,
-    "rect": [0.265075, 0.143829, 0.603102, 0.023539]
+    "rect": [0.265241, 0.143802, 0.601862, 0.019835]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
@@ -29,7 +29,7 @@
           "role": "definition",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. No single Lean definition is named C or B; the two averages and the two bilinear forms are separate operators and the Lean forms carry all 3x3 components instead of the paper's (r, tan) pair. The rewriting: the paper's ⟨·⟩_θ = (1/2π)∫_0^{2π} is SmoothLoop.angularMean, used inside CorrectionState.angularAverage; the paper's ⟨·⟩_Y = ∫_{T²} with ∫1 dY = 1 is TorusAverages.squareAverage = ∫_0^1∫_0^1, used by StateMomentBalances.meanBar (via PressureStream.torusAverage, which fixes every slow parameter, matching 'at fixed slow variables, before evaluation at the physical phase map'). Hence C(w)_i = meanBar (bilinearCovariance w w 0 i.succ) and B(w,v)_i = meanBar (symmetricCovariance w v 0 i.succ) for i = 1,2 (component 0 = radial, 1 = θ, 2 = z), and these two compositions are definitionally PartitionedCovariance.doubleAverage of the same products — the composition is carried out verbatim in mean_tangentCovariance_factor (ActualPrimaryCovariance.lean:601), whose `change` step rewrites meanBar (bilinearCovariance ...) as doubleAverage (fun Y θ => w_r · w_tan). The sentence after (7.23), 'Expansion of the product gives DC(w)[v] = B(w,v)', is covariance_increment_exact in the finite-increment form C(u+v) − C(u) = B(u,v) + C(v), from which the stated derivative follows. Lean also carries an extra band index n on every field, which plays no role here.",
+          "summary": "Lean has an equivalent formula.",
           "verdict": "faithful"
         }
       ]
