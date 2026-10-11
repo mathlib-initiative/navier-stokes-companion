@@ -758,9 +758,9 @@ Declarations shown are those that state the item (else its parts and definitions
 
 ## Displayed equations
 
-Every displayed equation block of the paper was located from the PDF (761 blocks, 362 of them numbered) and checked on its own: what it is, which Lean declaration states, defines or contains it, and whether the Lean formula is the paper's. 761 of 761 blocks have a merged result.
+Every displayed equation block of the paper was located from the PDF (762 blocks, 362 of them numbered) and checked on its own: what it is, which Lean declaration states, defines or contains it, and whether the Lean formula is the paper's. 762 of 762 blocks have a merged result.
 
-The overlay was then proofread page by page against the PDF, twice. That removed 7 blocks that are not displays (the last line of a paragraph standing alone, a row of the notation table), which had been audited as if they were, and added 6 displays the layout analysis had missed (on the pages with the flowcharts, and one table). Those were audited afterwards by one worker and one reviewer each, not twice like the rest.
+The overlay was then proofread page by page against the PDF, in several rounds, and checked mechanically against the PDF's fonts and the page images (no box edge through ink, every printed equation number in the box that carries it, no centred line of mathematics outside every box). That removed 7 blocks that are not displays (the last line of a paragraph standing alone, a row of the notation table), which had been audited as if they were, and added 7 displays the layout analysis had missed (on the pages with the flowcharts, one table, and one formula followed by a phrase). Those were audited afterwards by one worker and one reviewer each, not twice like the rest.
 
 | Section | same | equivalent | lean stronger | lean weaker | different | absent | not applicable | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -776,8 +776,8 @@ The overlay was then proofread page by page against the PDF, twice. That removed
 | 10 | 7 | 33 | 2 | 1 | 14 | 1 | 0 | 58 |
 | A | 26 | 51 | 3 | 3 | 6 | 0 | 0 | 89 |
 | B | 10 | 40 | 4 | 3 | 7 | 0 | 0 | 64 |
-| C | 4 | 21 | 2 | 1 | 1 | 0 | 0 | 29 |
-| **all** | 119 | 494 | 36 | 31 | 74 | 1 | 6 | 761 |
+| C | 4 | 22 | 2 | 1 | 1 | 0 | 0 | 30 |
+| **all** | 119 | 495 | 36 | 31 | 74 | 1 | 6 | 762 |
 
 Of the 362 numbered equations with a result: 68 same, 227 equivalent, 25 lean stronger, 18 lean weaker, 24 different.
 
