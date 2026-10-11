@@ -1,7 +1,7 @@
 {
   "kind": "equation",
   "label": "Equation (B.2)",
-  "status": "formalized",
+  "status": "partial",
   "location": {
     "page": 144,
     "rect": [0.346242, 0.769537, 0.52321, 0.043982]
@@ -15,22 +15,21 @@
         "text": "Equation (B.2), p. 144, in section B.1"
       },
       "region": "eq-B.2@p144",
-      "role": "key",
       "verdicts": [
         {
-          "confidence": 0.82,
-          "evidence": ["paper: \\chi = \\frac{H_*^2}{H_*^2 + \\sigma_*^2} > .99 \\quad \\text{where } |Z_*| \\le \\delta_*."],
+          "confidence": 0.66,
+          "evidence": ["paper: \\chi = \\frac{H_*^2}{H_*^2 + \\sigma_*^2} > .99 \\quad \\text{where } |Z_*| \\le \\delta_*. \\tag{B.2}  % preceded by: \"one can first choose \\delta_*>0 so that \\{|Z_*|\\le\\delta_*\\} avoids a neighborhood of \\eta_0, and then choose \\sigma_*>0 so small that\"; followed by: \"These choices are made on a slightly larger compact interval I \\supset [-1,1].\""],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "equivalent",
+          "relation": "lean_weaker",
           "role": "definition",
-          "severity": "none",
+          "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The quotient is defined verbatim and the implication |Z_*| ≤ δ_* ⇒ χ > .99 is the conclusion of `ideal_prefix_cutoff_parameters`, with .99 as 99/100 and δ_*, σ_* existentially produced exactly as the paper chooses them (the proof instantiates δ = j/10 and σ = √m/20, where m is the compact minimum of H_*² on {|Z_*| ≤ δ}); the paper's intermediate step 'choose δ_* so that {|Z_*| ≤ δ_*} avoids a neighborhood of η₀' is internal to the Lean proof (`low_Z_has_H_margin`) rather than a separate statement. One domain difference, from the sentence following the display: the paper makes these choices on a slightly larger compact interval I ⊃ [-1,1], whereas every Lean statement of the χ > .99 cutoff I found quantifies η over Icc (-1) 1. The holomorphic companion `NaturalAxisCoefficients.complexChi` and the enlarged window [-11/10, 11/10] exist, but I found no declaration asserting the cutoff on that window.",
-          "verdict": "faithful"
+          "summary": "Lean has a weaker form of it. The formula is verbatim: chi is H_*^2/(H_*^2+sigma^2), and exists_sigma / exists_cutoff_parameters / ideal_prefix_cutoff_parameters produce delta_* (= j/10) and then sigma_* (= sqrt(m)/20) with 99/100 < chi wherever |Z_*| <= delta_*, in the paper's order of choice; the schedule-pressure instance is stated in SchedulePressure.natural_profileFamily. The only gap is the range of eta. The sentence right after the display says these choices are made on a slightly larger compact interval I containing [-1,1]; every Lean statement of the cut that I found (all hits of `99 / 100 < ... chi`) quantifies eta over Icc (-1) 1. The repository has an enlarged interval (window = [-11/10, 11/10]) for the analytic coefficient space, but no declaration asserts the cut on it or on any interval larger than [-1,1]; ProfileFamily.slope is stated on the open window only conditionally on chi >= 99/100. Extending the cut beyond [-1,1] is not a formal step: the Lean proof takes the compact minimum of H^2 over Icc (-1) 1 intersected with {|Z| <= j/10}, root uniqueness is stated only on Icc (-1) 1, and PressureData gives the pressure sign conditions only on Icc (-1) 1. (By my own hand computation, not checked in Lean, the cubic H has further real zeros near eta = +-1.06, inside the Lean window, so the cut on that window would need a separate lower bound on |Z| there.) What the Lean states follows from the display by restricting eta to [-1,1]. Later use in the paper: the two regions of (B.2) are used in the proof of Proposition B.3 (pp. 149-150, endpoint inequality (B.19), on the rectangle [0,4.1] x [-1,1]) and in Lemma B.4 (p. 151, on [X0,Xi] x [-1,1]); the Section 4 restatement on p. 37 does not mention I. I found no place where the paper uses chi > .99 at an eta outside [-1,1]; the interval I is used for the coefficient norm (B.4) and the approximation (B.13), which involve chi as a function, not the cut. Hence low severity.",
+          "verdict": "deviation"
         }
       ]
     }

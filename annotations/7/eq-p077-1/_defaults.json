@@ -6,12 +6,6 @@
     "page": 77,
     "rect": [0.415822, 0.186993, 0.168576, 0.026565]
   },
-  "target": {
-    "pin": {
-      "module": "NavierStokes.PhaseEstimates",
-      "path": "NavierStokes/PhaseEstimates.lean"
-    }
-  },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
       "item": "eq-p077-1",
@@ -21,11 +15,10 @@
         "text": "Display 77.1, p. 77, in the proof of Lemma 7.1"
       },
       "region": "eq-p077-1@p077",
-      "role": "key",
       "verdicts": [
         {
-          "confidence": 0.86,
-          "evidence": ["paper: S_*^2(\\varepsilon + \\varepsilon^2 + k^{-1}) \\le 1"],
+          "confidence": 0.82,
+          "evidence": ["paper: S_*^2\\left(\\varepsilon + \\varepsilon^2 + k^{-1}\\right) \\le 1"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
@@ -35,7 +28,7 @@
           "role": "hypothesis",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The paper imposes one inequality on the sum; the Lean imposes the same three products separately, as the three hypotheses hε1 : ε·S² ≤ 1, hε2 : S²ε² ≤ 1, hk2 : S²/k ≤ 1 of phaseError_le_four_div. Rewriting: ε ≥ 0 and k > 0 in context, so each of S²ε, S²ε², S²k⁻¹ is a nonnegative summand of S²(ε+ε²+k⁻¹) and the paper's inequality implies all three Lean hypotheses; conversely the three Lean hypotheses give S²(ε+ε²+k⁻¹) ≤ 3, so the two conditions agree up to the constant 3, which is immaterial since both are only used in the regime where they hold for all large band indices (eventually_band_conditions proves exactly the Lean triple there, matching the paper's next sentence \"this holds for all sufficiently large band indices\"). The purpose also matches: the conclusion phaseError S ε k ≤ 4/S is the paper's \"bound the errors multiplied by v = O(S_*) by C/S_*\", phaseError being 1/S + Sε² + S/k + εS.",
+          "summary": "Lean has an equivalent formula. The paper gives, as an example (\"For example, we can require\"), one smallness condition on the sum, S_*^2(ε + ε² + 1/k) ≤ 1, and says it holds for all sufficiently large band indices. The Lean never writes the sum. It requires the three summands separately, each at most 1: S²ε² ≤ 1, S²/k ≤ 1, εS² ≤ 1 (fields epsilon_square, carrier, epsilon of LargeBand; the same triple is proved for all large n in eventually_band_conditions and packaged in exists_large_band). Paper to Lean: with ε > 0, k > 0 the three products are nonnegative summands of the paper's left side, so the paper's inequality gives the Lean triple by algebra. Lean to paper: at a fixed n the triple only gives the sum ≤ 3, but the repository states the limit facts for general exponents and thresholds: eventually_slow_power_epsilon_lt (any a, any b > 0, any δ > 0) and slow_power_div_carrier_tendsto_zero (any a). Instantiating them with a = 2, b = 1 and b = 2, δ = 1/3, and taking the 1/3-neighbourhood in the carrier limit, gives S²ε < 1/3, S²ε² < 1/3, S²/k < 1/3 eventually, hence the paper's summed inequality for all large band indices; this is instantiation of stated declarations plus addition (the rpow-to-pow rewriting is the same Real.rpow_two step done at PhaseEstimates.lean:1049-1051). So the paper's display, in the form the paper asserts it (a requirement met by all large bands), follows from stated Lean, and the Lean's requirement follows from the paper's. The purpose also matches: phaseError_le_four_div turns the triple into phaseError S ε k ≤ 4/S, the paper's bound of the errors by C/S_*. I did not find the summed inequality written anywhere in NavierStokes/.",
           "verdict": "faithful"
         }
       ]

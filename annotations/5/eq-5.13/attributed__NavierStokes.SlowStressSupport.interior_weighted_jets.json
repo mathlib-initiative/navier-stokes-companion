@@ -1,0 +1,26 @@
+{
+  "id": "eq-5.13/attributed/NavierStokes.SlowStressSupport.interior_weighted_jets",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.SlowStressSupport.interior_weighted_jets",
+      "line": 845,
+      "module": "NavierStokes.SlowStressSupport",
+      "path": "NavierStokes/SlowStressSupport.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L845"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.SlowStressSupport.interior_weighted_jets",
+        "kind": "theorem"
+      },
+      "relation": "implies",
+      "role": "attributed",
+      "snippet": {
+        "line": 845,
+        "text": "(hS : IsOpen S) (hK : IsCompact K) (hKS : K ⊆ S) (hf : Smooth S f) (hs : radialSupport S a b f) (hab : Icc a b ⊆ Ioo l r) (hz : ContinuousOn zeta (Ioo l r)) (hz0 : ∀ R ∈ Ioo l r, 0 < zeta R) (k : ℕ) : ∃ C, 0 ≤ C ∧ ∀ R ∈ Ioo l r, ∀ eta ∈ K, ‖iteratedFDeriv ℝ k f (R, eta)‖ ≤ C * zeta R   -- arbitrary positive continuous weight; the N = 0 bound"
+      }
+    }
+  }
+}

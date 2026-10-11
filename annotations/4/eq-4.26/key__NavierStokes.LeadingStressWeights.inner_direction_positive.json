@@ -16,9 +16,10 @@
         "kind": "theorem"
       },
       "relation": "states",
+      "role": "key",
       "snippet": {
         "line": 946,
-        "text": "∃ G …, HasTrueDirectionCollar (Icc (-1) 1) (leftChart (leftEdge W) (logStress …)) G.coefficient (leftChart (leftEdge W) (logSpeed v.profiles)) (leftChart (leftEdge W) (logSlope v.profiles)) G.width, i.e. ∃ ε > 0 with ε ≤ directionProjection (t_s) (tilt T₀) and ε ≤ directionGap (v_s) (t_s) (tilt T₀) on the inner collar (ActiveAnnulusWeight.lean:853-875)"
+        "text": "∃ G : EdgeFactor …, (∀ eta ∈ Icc (-1) 1, 0 < (G.coefficient (eta,0)).1) ∧ HasTrueDirectionCollar (Icc (-1) 1) (leftChart (leftEdge W) (logStress …)) G.coefficient (leftChart … (logSpeed v.profiles)) (leftChart … (logSlope v.profiles)) G.width   -- uniform ε ≤ directionProjection, ε ≤ directionGap on the inner collar only"
       }
     }
   }

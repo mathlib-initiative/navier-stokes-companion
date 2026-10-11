@@ -1,0 +1,26 @@
+{
+  "id": "eq-p036-1/support/NavierStokes.LeadingStressWeights.nominal_terminal_stress",
+  "target": {
+    "pin": {
+      "declaration": "NavierStokes.LeadingStressWeights.nominal_terminal_stress",
+      "line": 321,
+      "module": "NavierStokes.LeadingStressWeights",
+      "path": "NavierStokes/LeadingStressWeights.lean"
+    },
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L321"
+  },
+  "extensions": {
+    "org.mathlib-initiative.formal-companion.overlay": {
+      "declaration": {
+        "id": "NavierStokes.LeadingStressWeights.nominal_terminal_stress",
+        "kind": "theorem"
+      },
+      "relation": "uses",
+      "role": "support",
+      "snippet": {
+        "line": 321,
+        "text": "(hy : terminalStart F.data ≤ y) (hη : eta ∈ Icc (-1) 1) : stress W.profiles F.data.h (chart W.controls.radius (y, eta)) = TerminalEdgeFactor.profileStress (normalization F W.controls.radius) F.data (shift F W.controls.radius) (eta, tailEnd F.data - y)   -- the constructed joined profile, same range only"
+      }
+    }
+  }
+}

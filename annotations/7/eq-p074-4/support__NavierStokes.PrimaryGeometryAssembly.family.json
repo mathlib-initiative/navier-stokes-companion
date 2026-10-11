@@ -12,13 +12,14 @@
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
       "declaration": {
-        "id": "NavierStokes.PrimaryGeometryAssembly.family"
+        "id": "NavierStokes.PrimaryGeometryAssembly.family",
+        "kind": "def"
       },
       "relation": "uses",
       "role": "support",
       "snippet": {
         "line": 302,
-        "text": "K := fun L => PrimaryRepresentatives.transverseDirection (shear H v (representative W L)); sigma := fun _ => phaseSign c, phaseSign c = if c = 0 then 1 else -1"
+        "text": "family a (c : Fin 2) : FamilyData …; K := fun L => transverseDirection (shear H v (representative W L)); sigma := fun _ => phaseSign c"
       }
     }
   }

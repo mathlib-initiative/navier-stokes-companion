@@ -20,8 +20,8 @@
       "region": "eq-4.40@p042",
       "verdicts": [
         {
-          "confidence": 0.75,
-          "evidence": ["paper: \\|p_N - p_0\\|_k \\le C_k\\left(A_{k+1} + D_{k+1}\\right)/N =: P_k/N."],
+          "confidence": 0.72,
+          "evidence": ["paper: \\|p_N - p_0\\|_k \\le C_k\\,(A_{k+1} + D_{k+1})/N =: P_k/N. \\tag{4.40}"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
@@ -31,7 +31,7 @@
           "role": "proof_step",
           "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. Lean states the k = 0 case only. `profile_stocks_rate` (and its localized twin) gives one constant C with |p_N - p_0| ≤ C/n in sup norm on a set S for all n above a threshold; there is no statement of the paper's ‖p_N - p_0‖_k for k ≥ 1, and no declaration was found that carries η-derivatives of the stock difference. The structural content of (4.40) — that the stock bound comes from Lemma 4.4(ii)/(4.17) applied to the profile and moment differences — is present as `profile_stocks_from_history_bounds`, but again at order 0: it consumes ‖ΔF‖_0, ‖ΔU‖_0 and ‖Δm‖_1 (value and first η-derivative of each history row) where the paper's (4.17) asks for ‖Δ(U,E)‖_{k+1} + ‖Δm‖_{k+1}, so the constant structure C_k(A_{k+1} + D_{k+1}) is not reproduced — Lean produces an unnamed constant from compactness instead. The hypothesis 0 < (P n).f p in the conclusion plays the role of the paper's \"N large enough that E_N ≥ ½ min E_0\". Rated low, not medium: the paper's later uses of P_k on pp. 42-43 are at order 0 ((4.41) uses P_0; Step 4 uses ‖p_f - p_N‖_0), so the orders that are missing are not the ones the surrounding argument consumes.",
+          "summary": "Lean has a weaker form of it. The paper asserts, for every fixed k, an order-k η-jet bound on the stock difference p_N - p_0 of the modulated pair. For that pair the repository states only the k = 0 case: Localized.profile_stocks_rate (and the general adapter ModulatedStockBounds.profile_stocks_rate it applies) gives a sup bound C/n on both stock components over a compact set, for n above a threshold, together with 0 < (P n).f p. I found no declaration bounding an η-derivative of profileStockOne/profileStockTwo differences. The inputs for higher orders are stated for every order (field jets: localized_profile_eta_rates; history jets: actual_axisHistory_jets), and the abstract Lemma 4.4(ii) is stated for every k as SeedHandbackJets.profile_comparison_norm, but that lemma lives on its own Profile structure, is referenced by no file other than an import line in PaperAdditionalResults.lean, and is never instantiated at the modulated family. Instantiating it for k ≥ 1 would need a frequency-uniform (k+1)-jet bound B on the base and modulated curves over the closed rectangle and a uniform positive lower bound μ on the angular field, both compactness facts I found no declaration for in that format, plus an identification of its histories/outputs with ProfileHistories rows and ActivationStocks stocks that no declaration states. What Lean does state (k = 0) follows from the display. The k = 0 Lean proof also goes by a different route (Lipschitz constant of the stock map by compactness) rather than through the (4.17) shape. Severity low: the paper uses (4.40) only through P_0 in (4.41) on p. 42; the Step 3 bound on p. 43 is an order-0 fresh application of Lemma 4.4(ii).",
           "verdict": "deviation"
         }
       ]

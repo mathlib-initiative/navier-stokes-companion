@@ -1,7 +1,7 @@
 {
   "kind": "equation",
   "label": "Display 105.1",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 105,
     "rect": [0.334435, 0.219912, 0.331353, 0.103567]
@@ -17,19 +17,19 @@
       "region": "eq-p105-1@p105",
       "verdicts": [
         {
-          "confidence": 0.75,
-          "evidence": ["paper: |D^I (d_\\Sigma)_\\sigma| \\le C_I\\,\\varepsilon^{\\alpha-1} S_*^{b_I}\\,\\zeta\\,\\delta^{-M_I},\\quad |D^I (a_\\sigma^{-1})| \\le C_I\\,S_*^{b_I}\\,\\zeta^{-1/2}\\,\\delta^{-M_I},\\quad |D^I \\delta a_\\sigma| \\le C_I\\,\\varepsilon^{\\alpha-1} S_*^{b'_I}\\,\\sqrt{\\zeta}\\,\\delta^{-M'_I},\\quad |D^I(\\sqrt{\\varepsilon}\\,\\delta a_\\sigma b_\\sigma)| \\le C_I\\,\\varepsilon^{\\alpha-1/2} S_*^{b''_I}\\,\\sqrt{\\zeta}\\,\\delta^{-M''_I} P_v."],
+          "confidence": 0.7,
+          "evidence": ["paper: |D^I (d_\\Sigma)_\\sigma| \\le C_I \\varepsilon^{\\alpha-1} S_*^{b_I} \\zeta\\, \\delta^{-M_I}, \\qquad |D^I (a_\\sigma^{-1})| \\le C_I S_*^{b_I} \\zeta^{-1/2} \\delta^{-M_I}, \\qquad |D^I \\delta a_\\sigma| \\le C_I \\varepsilon^{\\alpha-1} S_*^{b'_I} \\sqrt{\\zeta}\\, \\delta^{-M'_I}, \\qquad |D^I(\\sqrt{\\varepsilon}\\, \\delta a_\\sigma b_\\sigma)| \\le C_I \\varepsilon^{\\alpha-1/2} S_*^{b''_I} \\sqrt{\\zeta}\\, \\delta^{-M''_I} P_v. \\quad\\text{(four aligned lines, unnumbered; preceded by ``for every fixed coefficient multi-index } I\\text{'', with } d_\\Sigma = \\mathsf{H}^{-1}(\\Sigma/\\varepsilon),\\ \\delta a_\\sigma = (d_\\Sigma)_\\sigma/(2a_\\sigma)\\text{)}"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "different",
+          "relation": "equivalent",
           "role": "proof_step",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. Lines 1, 3 and 4 are stated as declarations with the paper's weights and exponents after instantiation: weights_jets is quantified over an arbitrary weight w and exponent β, and ζ at ε^(α-1) is line 1 only once w = s.zeta, β = α-1 are substituted (ζ does appear in the application at SignedCopyBounds.lean:473-474); increment_jets already carries √ζ in its statement and gives ε^(α-1) at β = α-1; signedVector_jets already carries √ζ · W and gives ε^(α-1/2) at β = α-1, the √ε entering as the band factor ε^(1/2) in signedScalar_jets. Three systematic re-encodings: (a) the paper's two separate polynomial factors S_*^{b_I} δ^(-M_I) become the single factor s.growth n x ^ p = (s.slow n * max 1 (s.delta x)⁻¹)^p with one common exponent p — routine, since both factors are ≥ 1 so p = b_I + M_I works, and max 1 δ⁻¹ = δ⁻¹ for δ ≤ 1; (b) the bounds are cell-restricted (LocalJets over K n i) rather than stated on the whole strip; (c) the derivative order |I| is universally quantified inside the class with C and p depending on it, matching 'for every fixed coefficient multi-index I'. Line 2 is stated in general form but is not instantiated at a_σ. rescaled_rpow_jet_bound states exactly the inequality of line 2 for an arbitrary positive smooth g and real power p: the conclusion carries the weight factor w ^ p in the statement itself, so at p = -1/2, w = ζ and g the covariance entry whose square root is a_σ it reads ‖D^n (g^(-1/2))‖ ≤ ζ^(-1/2) (n! · coeffBound) B^(2n+1), with B of the form C · growth^p = S_*^{b_I} δ^(-M_I) supplied by local_input_envelope; sqrt_jet_bound (WeightedQuotients.lean:217) is the companion +1/2 case. What was not found is a declaration instantiating it at a_σ itself: the assembled Lean argument bounds the quotient r/(2√g) in one step (signed_jet_at), where this same power bound appears in normalized form (line 259) rather than applied to a_σ⁻¹ as a standalone estimate. Severity low: the bound of line 2 is stated, and lines 3 and 4 — what the surrounding argument uses — are proved.",
-          "verdict": "deviation"
+          "summary": "Lean has an equivalent formula. Lines 1, 3 and 4 are stated as declarations up to the repository's class encoding. A class bound (MemClass / LocalJets, WeightedClasses.lean:89-110) says: for every order m there are C and p with ‖D^j f_n(x)‖ ≤ C ε_n^β (S_n · max 1 δ(x)⁻¹)^p · w for all j ≤ m, uniformly in band and point. The paper's two exponents S_*^{b_I} δ^{-M_I} become one common power of growth (separate_powers_le_growth, WeightedClasses.lean:65, records the conversion); the weight is ζ for line 1 (weights_jets / inverse_class, with weights = H⁻¹R by SmoothCovariance.inverse_formula), √ζ for line 3 (increment_jets / signed_quotient_class), √ζ·W for line 4 (signedVector_jets / signedVector_class), and β = α-1 gives ε^{α-1}, ε^{α-1}, ε^{α-1/2}. The NativeCovariance hypotheses are met by the construction (ActualSignedStageControls.nativeCovariance :816, covariance_at_label :1185), and the actual-chart line 4 is actual_raw_coefficients_jets (:1159) at exponent α-1/2 with the request at α-1.\n\nLine 2 (the a_σ⁻¹ bound) is not stated as its own declaration at a_σ: rescaled_rpow_jet_bound is used in the repository only at p = 1/2 (sqrt_jet_bound, WeightedQuotients.lean:227), and the Lean bounds the quotient r/(2√g) in one step. It does follow from stated declarations by instantiation: a_σ = √(weights H T j) (SmoothCovariance.amplitudes, PartitionedCovariance.amplitudes_are_inverse_weights), so a_σ⁻¹ = g^(-1/2) with g = weights; local_input_envelope (or SignedCovariance.class_input_envelope) gives B = C·growth^p with ζ/B ≤ g and ‖D^j g‖ ≤ ζ·B from the stated jets and the stated lower bound c·ζ ≤ g; normalized_bounds and neg_half_power_bound give the two zeroth-order hypotheses; rescaled_rpow_jet_bound at p = -1/2, w = ζ(x) then reads ‖D^n(g^(-1/2))‖ ≤ ζ^(-1/2)·(n!·coeffBound)·(C·growth^p)^(2n+1), which is line 2. The same bound in normalized form is the proof step hPj at SignedCopyBounds.lean:259 (and WeightedQuotients.lean:324). I did not find this instantiation written out anywhere; it is my own combination of the declarations named. On the cell-level (LocalJets) path smoothness is only ContDiffAt, so the instantiation goes through rpow_comp_jets_at (SignedCopyBounds.lean:192) plus the constant rescaling rather than rescaled_rpow_jet_bound literally; on the strip-level (MemClass) path rescaled_rpow_jet_bound applies directly. I did not check that a CovarianceControl instance exists for the actual construction; the NativeCovariance one does.",
+          "verdict": "faithful"
         }
       ]
     }

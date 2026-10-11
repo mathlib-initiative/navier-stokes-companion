@@ -11,7 +11,7 @@ This repository pairs the 80 numbered items and the 762 displayed equations of O
 These results come from a machine audit. No human has confirmed any of it. A PDE expert must review the results before any public use.
 
 - **Items:** two independent audits, then an adjudication of the 35 items on which they differed, under one rule: an item is stated faithfully only if the paper's statement follows from stated Lean declarations by logic alone. The five medium findings that came out of that were each traced again in depth; all five were lowered to low. The 22 items ruled faithful by the adjudication or by that re-check were then attacked clause by clause; none changed.
-- **Equations:** one audit of every displayed equation, each block checked by a second agent. A blind second run of a quarter of the tasks agreed on 93% of blocks; the 18 it disputed were adjudicated.
+- **Equations:** every displayed equation was audited twice, blind, each time by a worker and a reviewer. The two runs agreed on whether the Lean has the formula for 723 of 773 blocks; the 50 they disputed were adjudicated.
 
 [`REPORT.md`](REPORT.md) gives the method, the counts and every finding.
 

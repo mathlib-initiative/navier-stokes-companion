@@ -12,13 +12,14 @@
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
       "declaration": {
-        "id": "NavierStokes.R3CompactEnergy.energy_balance"
+        "id": "NavierStokes.R3CompactEnergy.energy_balance",
+        "kind": "theorem"
       },
       "relation": "states",
       "role": "key",
       "snippet": {
         "line": 186,
-        "text": "theorem energy_balance {χ p : Space → ℝ} {w u v z : Space → Space} … (hdw : ∀ x, (∑ i : Fin 3, D i w x i) = 0) (hdv : ∀ x, (∑ i : Fin 3, D i v x i) = 0) (heq : ∀ x, z x = (∑ i : Fin 3, D i (D i w) x) - fderiv ℝ w x (v x) - fderiv ℝ u x (w x) - pressureGradient (fun y => p y.2) 0 x) : … — the two hypotheses hdw (line 189) and heq (lines 191-192) are this display, for arbitrary u, v, z; `D` is `PeriodicIntegration.spatialPartial` (line 17)"
+        "text": "theorem energy_balance {χ p : Space → ℝ} {w u v z : Space → Space} … (hdw : ∀ x, (∑ i : Fin 3, D i w x i) = 0) (hdv : ∀ x, (∑ i : Fin 3, D i v x i) = 0) (heq : ∀ x, z x = (∑ i : Fin 3, D i (D i w) x) - fderiv ℝ w x (v x) - fderiv ℝ u x (w x) - pressureGradient (fun y => p y.2) 0 x) : 2 * ∫ χ ⟪w, z⟫ = … — hypotheses hdw (l.189) and heq (ll.191-192) are the display's system at a fixed time, for independent u, v and arbitrary z"
       }
     }
   }

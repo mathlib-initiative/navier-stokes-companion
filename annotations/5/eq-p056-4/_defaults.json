@@ -1,7 +1,7 @@
 {
   "kind": "equation",
   "label": "Display 56.4",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 56,
     "rect": [0.209704, 0.798901, 0.581705, 0.026328]
@@ -17,19 +17,19 @@
       "region": "eq-p056-4@p056",
       "verdicts": [
         {
-          "confidence": 0.65,
-          "evidence": ["paper: A_n = \\mathcal{A}_n, \\qquad B_n = u_{\\theta,n}\\,e_\\theta, \\qquad p_n = q^{-2A+\\lambda_n}\\,\\Pi_n, \\qquad T_n = q^{-A-1/2+\\lambda_n}\\,\\mathcal{T}_n."],
+          "confidence": 0.75,
+          "evidence": ["paper: A_n = \\mathcal{A}_n, \\qquad B_n = u_{\\theta,n}e_\\theta, \\qquad p_n = q^{-2A+\\lambda_n}\\Pi_n, \\qquad T_n = q^{-A-1/2+\\lambda_n}\\mathcal{T}_n."],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "different",
+          "relation": "equivalent",
           "role": "definition",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. Three of the four entries match with the paper's exponents exactly: p_n with -2A + λ_n (basePressure), and the stress pair T = (T_θ, T_z) with -A - 1/2 + λ_n (baseStressTheta, baseStressAxial); A_n is streamFactor/summedPotential as in (5.27). The fourth differs in form: the Lean slow base has no separate entry B_n = u_{θ,n} e_θ. The azimuthal part is carried as the axial component K = swirlPotential (exponent 1/2 - A + λ_n on -C⁻¹∫_0^X φ_n) of the same vector potential, and is produced by the same curl; by velocity_zero/velocity_one the K-part of the curl is (-r ∂_s K) e_θ, an azimuthal field of the paper's shape, so the route differs but reaches an azimuthal field. The paper instead keeps B_n as a field and cuts it directly, relying on azimuthal fields with θ-independent amplitude being divergence-free (the Lean generic lemma, exists_realization, does provide that route through its B argument with hdivB/htan, but the slow base does not use it). Lean's divergence-freeness is then automatic, being a curl.",
-          "verdict": "deviation"
+          "summary": "Lean has an equivalent formula. Three entries are Lean definition bodies with the paper's exponents: A_n is slot 0 of the bundle (the radial average of the axial coefficient) with q-exponent -A, i.e. H = S_n/s, in streamFactor; p_n is slot 2 with exponent -2A in basePressure; the stress pair T_n = (T_theta, T_z) is slots 3 and 4 with exponent -A-1/2 in baseStressTheta and baseStressAxial. The order factor q^{lambda_n} = q^{2hn} comes from positiveCoefficient/powerCoefficient inside slowSum (SlowBorelBase.lean:61, 245, 254). The fourth entry is packaged differently: Lean has no velocity-level entry B_n = u_{theta,n} e_theta; the swirl is the axial component K = swirlPotential of the same vector potential, with exponent 1/2 - A on -C^{-1} times the radial primitive of phi_n. The paper's entry is recovered by stated declarations: partialS_swirlPotential gives d_s K = -C^{-1} q^{-A-1/2} Sum chi q^{lambda_n} phi_n, and baseVelocity_angularMoment gives x_0 u_1 - x_1 u_0 = r^2 C^{-1} q^{-A-1/2} Sum chi q^{lambda_n} phi_n, which is r times the cut sum of the paper's u_{theta,n} = r q^{-A-1/2+lambda_n} phi_n / C from (5.1). The uncut finite version is also stated (prefixSwirl_radial, prefixVelocity_eq_profiles). velocity_zero/one/two show the K part of the curl is purely azimuthal. The Lean states this for the summed and prefix fields, not as a per-order tuple entry, and the slow base is not fed through the generic tuple lemma (GenericTupleRealization is referenced only inside the Generic* files). I did not check that the concrete Coefficients instances (FinalSlowBase.coefficients etc.) are the paper's Pi_n and T_n as functions; only the slots and exponents were matched.",
+          "verdict": "faithful"
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "kind": "equation",
   "label": "Display 68.3",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 68,
     "rect": [0.253521, 0.504831, 0.493178, 0.022963]
@@ -17,19 +17,19 @@
       "region": "eq-p068-3@p068",
       "verdicts": [
         {
-          "confidence": 0.6,
+          "confidence": 0.72,
           "evidence": ["paper: \\mathcal{L}(z,t) = \\{\\ell : (z,t) \\in \\mathcal{D}_\\ell\\}, \\qquad q = q(z,t) \\text{ is independent of } r."],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "different",
+          "relation": "equivalent",
           "role": "definition",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. Both clauses are present, but as different objects, and the notation ℒ(z,t) is nowhere introduced. (i) No declaration was found defining a band set {ℓ : (z,t) ∈ 𝒟_ℓ}, nor 𝒟_ℓ as a set of (z,t) (the paper's (6.17) defines it as supp_{(z,t)} χ_ℓ(q(z,t))). The Lean works with full labels L = (band, grid cell, sign): LabelCounting.pointwiseLabels takes q as a free real argument and imposes q ∈ tsupport (dyadicMask L.1) ∧ slowCoordinates D L.1 x ∈ normalizedBox A L, whose first conjunct is the paper's (z,t) ∈ 𝒟_ℓ once q = q(z,t) is substituted; PhysicalWaveSum.labelRegion is the same pair of closed supports as a product set. LabelCountingFinite.bandCandidates is only a five-element superset of the bands meeting a point, used for counting. (ii) The r-independence is a separate definitional lemma, LocalAngularDiagonal.slowQ_physical: physicalQ h w factors through slowPoint w = (t, z), so q sees neither radius nor angle. The purpose the paper puts the display to — that the band set is fixed during radial integration, so Lemma 6.3 bounds the labels met by the integral — is carried in the Lean by LabelCounting.number_of_relevant_labels applied to pointwiseLabels; I did not find a declaration asserting that the set of relevant bands is constant along a radial line.",
-          "verdict": "deviation"
+          "summary": "Lean has an equivalent formula. Both clauses of the display are covered, spread over several declarations, and the name L(z,t) itself is not introduced. Clause 1 (the band set at a point): the Lean carries the scale q as a real coordinate, and the band condition is `q ∈ tsupport (dyadicMask ℓ)`, the second conjunct of LabelCounting.pointwiseLabels and the first factor of PhysicalWaveSum.labelRegion. The repository instantiates it at the actual scale through physicalParams h w = (physicalQ h w, physicalPosition w), e.g. in physical_active_neighborhood (`I ∈ s ↔ physicalParams h w ∈ labelRegion (D h) I.1.val`). So the paper's set is {ℓ | physicalQ h w ∈ tsupport (dyadicMask ℓ)}, obtained by instantiating and projecting a label to its band; the Lean sets are sets of full labels (band, grid cell, sign) with a slow-box condition added, which comes from other displays. Clause 2 (q does not depend on r): stated three times by rfl, as PhysicalMeanJetBounds.physicalQ_eq (physicalQ h w = coordinateQ (2h) (1 − t, z)), LocalAngularDiagonal.slowQ_physical, and BaseExterior.q_radial. Rewriting the band condition with physicalQ_eq shows it depends on (t, z) only, which is the paper's 'the possible bands are fixed during radial integration'; I found no declaration that states that constancy as a sentence of its own. One nuance belongs to (6.17) rather than this block: the paper's D_ℓ is the closure of {χ_ℓ(q(z,t)) ≠ 0} in (z,t), while the Lean uses the preimage of the closed band [Q_ℓ/2, 2Q_ℓ]; the first is contained in the second and they agree if q is an open map, which I did not find stated. The notation L(z,t) occurs only on p. 68 of the paper.",
+          "verdict": "faithful"
         }
       ]
     }

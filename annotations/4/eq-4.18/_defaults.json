@@ -15,11 +15,10 @@
         "text": "Equation (4.18), p. 29, in the proof of Lemma 4.4"
       },
       "region": "eq-4.18@p029",
-      "role": "key",
       "verdicts": [
         {
-          "confidence": 0.85,
-          "evidence": ["paper: \\Delta M = \\int_0^X (U_2 - U_1)\\,dx,\\qquad \\Delta I = \\int_0^X (H_2 - H_1)\\,dx,\\qquad \\Delta J = \\int_0^X (U_2H_2 - U_1H_1)\\,dx,\\qquad \\Delta S = \\int_0^X \\bigl(U_2^2 - U_1^2 - (E_2^2 - E_1^2)/2\\bigr)\\,dx,\\qquad \\Delta C_p = \\int_0^X \\frac{E_2^2 - E_1^2}{2x}\\,dx."],
+          "confidence": 0.74,
+          "evidence": ["paper: \\begin{aligned}\\Delta M &= \\int_0^X (U_2-U_1)\\,dx,\\\\ \\Delta I &= \\int_0^X (H_2-H_1)\\,dx,\\\\ \\Delta J &= \\int_0^X (U_2H_2-U_1H_1)\\,dx,\\\\ \\Delta S &= \\int_0^X \\bigl(U_2^2-U_1^2-(E_2^2-E_1^2)/2\\bigr)\\,dx,\\\\ \\Delta C_p &= \\int_0^X \\frac{E_2^2-E_1^2}{2x}\\,dx. \\end{aligned}\\tag{4.18}"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. The five integrands agree term by term with the paper: Lean's `density` rows are U, √(2x)·E (= H), U·(√(2x)·E) (= UH), U²−E²/2 and E²/(2x), each evaluated at the running radius x while the history is a function of (X,η) — exactly the paper's 'left side at (X,η), each integrand at (x,η)'. The rewriting is in how Δ is formed: the paper writes each Δ as one integral of the difference of the two integrands, whereas Lean's `historyDifference` is the difference of the two integrals, Q.history i X η − P.history i X η. The two agree by linearity of the interval integral whenever both integrands are interval-integrable on [0,X], which holds under the paper's hypothesis that the five integrals define smooth functions; no Lean declaration was found that states the single-integral form. A second encoding of the same five rows (over the regular swirl f with E = √(2x)·f) is `ModulatedHistories.densityAt` together with `density_eq_physical`, which states the physical form H = √(2X)·E, UH, U²−E²/2, E²/(2X) explicitly.",
+          "summary": "Lean has an equivalent formula. The five integrands are the paper's in both Lean encodings. In the regular-axis encoding (ProfileHistories.Profiles, ModulatedHistories.density) they are U, 2Xf, U·2Xf, U²−Xf², f² with E = √(2X)f, and density_eq_physical states that these equal U, H, UH, U²−E²/2, E²/(2X) for X > 0. In SeedHandbackJets.Profile.density they are written directly in E. What differs is the form of Δ: no Lean declaration states, for two general profiles, each Δ as one integral of the difference of integrands. Lean keeps Δ as the difference of the two integrals (SeedHandbackJets.historyDifference; profileRows_sub, which also gives ΔΠ = ΔC_p under equal axis pressure). Passing between the two forms is linearity of the interval integral, which needs interval-integrability of each density on [0,X]. For ProfileHistories.Profiles that integrability is stated: radial_slice_intervalIntegrable applied to U_smooth, H_smooth, transportDensity_smooth, energyDensity_smooth and f_smooth.pow 2, for a point of the domain. The single-integral form is also written out as a proof step for the concrete profile pairs of the construction, at ModulatedHistories.lean:443, 959 and 1330 (`rw [← intervalIntegral.integral_sub ...]`). Caveat: SeedHandbackJets.Profile has bare fields E, U with no integrability hypothesis, so in that encoding the single-integral form is not derivable. That encoding serves only Lemma 4.4(ii), where the paper uses Δm = m₂ − m₁ as a norm input and not (4.18). The paper's one use of (4.18), in part (i) (integrands vanish beyond X_h, so Δm(X) = Δm(X_h)), is reached in Lean by integral_equal_after, which splits the integral at B instead of forming the integrand difference; its ContinuousOn hypotheses are the ones that would give the integrability.",
           "verdict": "faithful"
         }
       ]

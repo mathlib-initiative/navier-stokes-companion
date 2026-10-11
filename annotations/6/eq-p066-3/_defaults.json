@@ -1,7 +1,7 @@
 {
   "kind": "equation",
   "label": "Display 66.3",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 66,
     "rect": [0.226806, 0.624657, 0.546606, 0.027309]
@@ -17,19 +17,19 @@
       "region": "eq-p066-3@p066",
       "verdicts": [
         {
-          "confidence": 0.78,
-          "evidence": ["paper: \\bigl[\\,\\operatorname{supp} F_\\gamma \\subset K_\\gamma \\times \\mathcal{R}^{\\mathrm{abs},+}_\\gamma \\ \\text{ for all } \\gamma \\in \\Gamma\\,\\bigr] \\quad \\Longrightarrow \\quad F_\\gamma F_{\\gamma'} = 0 \\quad (\\gamma \\neq \\gamma')"],
+          "confidence": 0.85,
+          "evidence": ["paper: \\bigl[\\,\\operatorname{supp} F_\\gamma \\subset K_\\gamma \\times \\mathcal{R}^{\\mathrm{abs},+}_\\gamma \\ \\text{ for all } \\gamma \\in \\Gamma\\,\\bigr] \\quad\\Longrightarrow\\quad F_\\gamma F_{\\gamma'} = 0 \\quad (\\gamma \\neq \\gamma').  [preceded by: \"for a family (F_\\gamma)_{\\gamma\\in\\Gamma}, with supports taken in (r,z,t,Y) uniformly in \\theta,\"]"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "lean_weaker",
+          "relation": "lean_stronger",
           "role": "proof_step",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The Lean proves the display only for fields of the separated form F_γ(x,Y) = physicalMask D L q x · covered (nativeIndex h L.1) f Y, i.e. a slow mask supported in K_γ times a periodized fast field with support f ⊆ R⁺_γ; the paper assumes only the joint condition supp F_γ ⊂ K_γ × 𝓡^{abs,+}_γ on an otherwise arbitrary family, which is strictly more general (an arbitrary function supported in a product set need not factor). The Lean also carries hypotheses the display does not print: 1 ≤ L.1, 1 ≤ M.1 (band index at least one, the paper's ℓ ≥ ℓ₀) and 0 < q, and it works on (q, x, Y) with no θ variable, so the paper's qualifier 'supports taken in (r,z,t,Y) uniformly in θ' has no counterpart in this statement. The general implication is nevertheless three lines from the same stated ingredients: at a point where both factors are nonzero, masks_force_adjacency gives SlotColoring.Adj D L M from the two slow supports meeting, SlotSystem.disjoint then makes the two lifted slots disjoint, and covered_support places the fast factors in them — so the mathematics of the display is present and only the generality of the quantifier over F_γ is narrowed. I searched for a declaration stating the implication for an arbitrary family (grep of decls.jsonl for cross_product/cross_term/mul_eq_zero and for *_disjoint in the NavierStokes namespace, and the Lemma 6.1 candidate list) and found none.",
-          "verdict": "deviation"
+          "summary": "Lean has a stronger form of it. The repository states the display for an arbitrary family, not only for product-form fields. supported_cross_product_zero (LabelSumBounds.lean:523) takes two arbitrary families u, v of oscillations satisfying the predicate SupportedOscillations (:513): wherever a component is nonzero at (x, θ), the slow coordinate χ n x lies in closedWindow d (label) and Y n x lies in liftedSupport (nativeIndex …) (slotSet …). It concludes u l n (x,θ) i * v k n (x,θ) j = 0 for distinct labels, every θ and every pair of components. That is the display's implication with the hypothesis sets enlarged: closedWindow (:252) is a closed two-level, two-mesh-box window that contains the slow support (physicalMask_tsupport_closedWindow :308 states tsupport of the label mask lies in it), and slotSet is the closed rectangle of half-width 2r (orientedRectangle uses ≤), which contains the paper's open R^+_γ; liftedSupport is its preimage under cover^level. So the paper's hypothesis implies the Lean hypothesis by a stated inclusion and by unfolding definitions, and the paper's conclusion is the Lean conclusion with u = v. The Lean says more: the support sets in the hypothesis are larger, the two factors may come from different families, and the condition is pointwise non-vanishing rather than closed support. The window condition is on x alone for all θ, matching 'uniformly in θ'. Lean side conditions not printed in the display: band level ≥ 1 for both labels, x in an ambient set U, and 0 < q when passing from the mask support to the window. cross_product_zero (PartitionedCovariance.lean:323) and wave_cross_zero (:563) are product-form special cases proved separately; finding A saw only those, which is why it called the Lean weaker. Not verified term by term: that SlotColoring.Label, nativeIndex and cover are the paper's Γ, i(ℓ) and J_g, and that physicalMask's support is exactly K_γ of (6.9); I read their definitions and docstrings only.",
+          "verdict": "faithful"
         }
       ]
     }

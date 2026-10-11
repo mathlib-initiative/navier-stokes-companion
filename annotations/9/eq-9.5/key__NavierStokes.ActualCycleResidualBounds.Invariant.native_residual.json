@@ -3,22 +3,23 @@
   "target": {
     "pin": {
       "declaration": "NavierStokes.ActualCycleResidualBounds.Invariant.native_residual",
-      "line": 845,
+      "line": 861,
       "module": "NavierStokes.ActualCycleResidualBounds",
       "path": "NavierStokes/ActualCycleResidualBounds.lean"
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean#L845"
+    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean#L861"
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
       "declaration": {
-        "id": "NavierStokes.ActualCycleResidualBounds.Invariant.native_residual"
+        "id": "NavierStokes.ActualCycleResidualBounds.Invariant.native_residual",
+        "kind": "theorem"
       },
-      "relation": "states",
+      "relation": "contains",
       "role": "key",
       "snippet": {
-        "line": 845,
-        "text": "(hN) (hbase : x.state.errors.base = ActualInitialization.baseError B) : NativeBounds 4 (liftDomain strip.domain) (ActualPrimary.h * (1/2 + σ)) (fun m => (2 * ActualPrimary.h) * m) (fun (_ : Unit) => LiftedMeanResidual.fullResidual (commonContext B) x.state) — the common-gain, common-loss, common-domain bound the three flat bounds are weakened into at lines 861-872"
+        "line": 861,
+        "text": "declared at line 845; lines 861-872 weaken baseError_native, native_lift (axis_native) and gaussian_field_native, each at α = 1/2+σ, to loss 2·h·m and feed them to excluded_nativeBounds; the flat part is then added into the full residual at gain h·(1/2+σ)"
       }
     }
   }

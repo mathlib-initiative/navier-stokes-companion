@@ -12,13 +12,14 @@
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
       "declaration": {
-        "id": "NavierStokes.R3LocalEnergyEvolution.difference_energy_balance"
+        "id": "NavierStokes.R3LocalEnergyEvolution.difference_energy_balance",
+        "kind": "theorem"
       },
       "relation": "uses",
       "role": "support",
       "snippet": {
         "line": 48,
-        "text": "theorem difference_energy_balance … (heq : ∀ x, navierStokesResidual u p t x = navierStokesResidual v q t x) : energyRate χ (u - v) t = … — the repository's one instantiation of `R3CompactEnergy.energy_balance` (applied at line 65), with w := u - v, the transport field v and the sheared field u distinct, and z := temporalDerivative (u - v) t supplied at lines 72-74"
+        "text": "applies R3CompactEnergy.energy_balance (l.65) with w := u - v, transport field v, sheared field u, z := temporalDerivative (u - v) t (ll.72-74); hypothesis heq is equality of two Navier–Stokes residuals, so this is the difference equation with u ≠ v, not the linearization about one background"
       }
     }
   }

@@ -3,7 +3,9 @@
   "target": {
     "pin": {
       "declaration": "NavierStokes.PhaseEstimates.eventually_band_conditions",
-      "line": 1038
+      "line": 1038,
+      "module": "NavierStokes.PhaseEstimates",
+      "path": "NavierStokes/PhaseEstimates.lean"
     },
     "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseEstimates.lean#L1038"
   },
@@ -14,9 +16,10 @@
         "kind": "theorem"
       },
       "relation": "states",
+      "role": "key",
       "snippet": {
         "line": 1038,
-        "text": "∀ᶠ n : ℕ in atTop, 1 ≤ ChartScales.S n ∧ ChartScales.S n ^ 2 * ChartScales.epsilon h n ^ 2 ≤ 1 ∧ ChartScales.S n ^ 2 / (ChartScales.carrier h n : ℝ) ≤ 1 ∧ ChartScales.epsilon h n * ChartScales.S n ^ 2 ≤ 1"
+        "text": "(hh : 0 < h) : ∀ᶠ n in atTop, 1 ≤ S n ∧ S n ^ 2 * epsilon h n ^ 2 ≤ 1 ∧ S n ^ 2 / (carrier h n : ℝ) ≤ 1 ∧ epsilon h n * S n ^ 2 ≤ 1"
       }
     }
   }

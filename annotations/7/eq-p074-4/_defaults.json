@@ -1,16 +1,13 @@
 {
   "kind": "equation",
   "label": "Display 74.4",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 74,
     "rect": [0.369208, 0.742994, 0.261808, 0.041977]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "kind": "def"
-      },
       "item": "eq-p074-4",
       "locator": {
         "physical": [74],
@@ -20,19 +17,19 @@
       "region": "eq-p074-4@p074",
       "verdicts": [
         {
-          "confidence": 0.8,
-          "evidence": ["paper: (\\tilde{p}/R_0,\\ p_z) = B_s\\left( K - \\frac{\\sigma u_* g_0}{L_s |g_0|^2} \\right)."],
+          "confidence": 0.74,
+          "evidence": ["paper: (\\tilde p/R_0,\\ p_z) = B_s\\left(K - \\frac{\\sigma u_* g_0}{L_s\\,|g_0|^2}\\right)."],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "different",
+          "relation": "equivalent",
           "role": "definition",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The expression is matched term for term — representativeFrequency B σ u L K g = B•(K − (σu/(L‖g‖²))•g) has the same B_s, the same σ, the same u_*, the same L_s and the same g₀ = shearVector F₀ G₀ q₀ = (R∂_R F, ∂_R G), and the two components are read off as the paper does (target = R₀·(frequency)₀ is p̃, (frequency)₁ is p_z) — but the vector K it is applied to is the opposite of the paper's. The repository's K is transverseDirection g = −quarterTurn(normalDirection g) = (N_z, −Nθ), while the paper's sentence 'We use the quarter turn K = (−N_z, Nθ)' makes K = quarterTurn N. Writing K_p for the paper's and c = σu_*/(L_s|g₀|²), the Lean vector is B_s(−K_p − c g₀) = −B_s(K_p − (−σ)u_*g₀/(L_s|g₀|²)), i.e. minus the paper's wave vector for the opposite sign σ. Both signs are constructed (PrimaryGeometryAssembly.family is indexed by c : Fin 2 with phaseSign c = ±1), and the repository's own frame relation quarterTurn K = N keeps every later formula consistent with its choice (FamilyData.eigen12/eigen21, PhaseEstimates.transverseDirection_close with n ≈ pack (B·s) (B•K)), so the two conventions produce the same unordered pair of phase gradients up to an overall sign. I verified that algebraic identity and the two definitions; I did not trace the downstream real wave field to confirm that the overall sign is absorbed there.",
-          "verdict": "deviation"
+          "summary": "Lean has an equivalent formula. As a formula in the symbols B, σ, u, L, K, g the Lean definition is the display verbatim: representativeFrequency B σ u L K g = B • (K − (σu/(L‖g‖²)) • g), with g = shearVector F0 G0 q0 = (R·F_R, G_R) in the paper's (θ, z) order, and FamilyData.frequency_identity states the left-hand side as the paper writes it, (target/R0, pz) = frequency, where target = R0·(frequency)_0 is the paper's p̃ and pz = (frequency)_1. The one difference is the value fed in for K. The construction (PrimaryGeometryAssembly.family, also BasePhaseGeometry.Representatives.family) sets K := transverseDirection g = −quarterTurn(N) = (N_z, −N_θ), while the paper says K = (−N_z, N_θ) = quarterTurn(N). So K_lean = −K_paper, and by algebra the Lean vector at sign σ is minus the paper's vector at sign −σ: B(−K_p − (σu/(L|g|²))g) = −B(K_p − ((−σ)u/(L|g|²))g). Both signs are constructed (family is indexed by c : Fin 2 with phaseSign c = ±1), so each formula is obtained from the other by unfolding transverseDirection, substituting σ ↦ −σ and negating; no analytic fact is involved. The convention is used consistently in the repository: Lean's frame relation is quarterTurn K = N (quarterTurn_transverseDirection, FamilyData.eigen12/eigen21), whereas the paper's (7.7) has N_a = ((K_a)_z, −(K_a)_θ) = −quarterTurn K_a; under n ↦ −n, σ ↦ −σ these agree, and the radial component B·s(v) and the slope ⟪frequency, g⟫ = −σBu/L (representative_slope) have the paper's values for the same σ. Not verified here: that the downstream wave sum is invariant under Φ ↦ −Φ (the paper sums e^{ikmΦ} over m ∈ ℤ∖{0}, which suggests it, but I did not trace the Lean wave field), and that nothing else in the label depends on σ in a way that breaks the relabelling. The rounding of k·p̃ (Lean: floor with 0 replaced by 1; paper: nearest nonzero integer) is the prose after the display and is not part of this block.",
+          "verdict": "faithful"
         }
       ]
     }

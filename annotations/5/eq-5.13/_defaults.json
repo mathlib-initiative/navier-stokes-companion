@@ -1,7 +1,7 @@
 {
   "kind": "equation",
   "label": "Equation (5.13)",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 50,
     "rect": [0.252211, 0.439643, 0.616858, 0.026343]
@@ -18,18 +18,18 @@
       "verdicts": [
         {
           "confidence": 0.8,
-          "evidence": ["paper: |\\partial^I \\mathcal{T}_n(X,\\eta)| \\le C_{n,I}\\, \\zeta(X)\\, \\delta(X)^{-N_{n,I}} \\qquad (X_a < X < X_b,\\ |\\eta| \\le 1)."],
+          "evidence": ["paper: |\\partial^I \\mathcal{T}_n(X,\\eta)| \\le C_{n,I}\\,\\zeta(X)\\,\\delta(X)^{-N_{n,I}} \\qquad (X_a < X < X_b,\\ |\\eta|\\le 1). \\tag{5.13}  % followed by: \"Here C_{n,I}, N_{n,I} may depend on the order and derivative; for n \\ge 2 one may take N_{n,I}=0.\"  \\delta(X)=\\min\\{1,\\log(X/X_a),\\log(X_b/X)\\}, \\zeta the flat weight of Theorem 4.6(iv), \\mathcal{T}_n=(\\mathcal{T}_{n,\\theta},\\mathcal{T}_{n,z}) from (5.9)."],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "different",
+          "relation": "equivalent",
           "role": "claim",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean uses a different formula here. The weight, the edge distance and the domain match the paper exactly: `activeZeta c a b w = weight c a b (log X)` is the two-edge flat weight ζ(X); `activeDelta a b w = min 1 (min (log X - a) (b - log X))`, which with a = log X_a and b = log X_b is literally δ(X) = min{1, log(X/X_a), log(X_b/X)}; and `activeWindow a b = Ioo (exp a) (exp b) ×ˢ Icc (-1) 1` is {X_a < X < X_b, |η| ≤ 1}. `PolynomialEdgeJets` is then the paper's bound C ζ δ^{-N}, with two encoding choices in the Lean's favour: it bounds the whole derivative tensor ‖iteratedFDeriv ℝ m f w‖ at each order m (its docstring says 'including mixed derivatives') rather than each ∂^I separately, so one constant serves all multi-indices of a given order; and the constants C, N are existentially quantified per order m, matching 'C_{n,I}, N_{n,I} may depend on the order and derivative'. What differs is the range of n. The Lean states this bound for the stress only at order n = 1 (`firstStress_edgeJets` on the whole active annulus, `modulated_first_edgeJets` on the outer collar for the concrete modulated coefficients). For n ≥ 2 no per-order weighted jet bound was found; the repository reaches the same place by another route: `HigherInteriorSupport` (the n ≥ 2 stresses are supported in a compact sub-annulus, see `modulated_higherInteriorSupport`) gives `higherStressQuotient_smooth_of_support`, i.e. 𝒯_n/ζ is globally C^∞ for n ≥ 2, and that smoothness — not a ζδ^{-N} jet bound per order — is what is fed into `normalizedTensor_weighted_bound`, together with `activeZeta_edgeJets` for the weight itself and `compact_weighted_jet_bound` on compacta, to produce the all-order conclusion `ConstructedSlowBase.WeightedStressBound`, which carries the paper's ζ(X)δ(X)^{-N} shape for the assembled cut tensor. So the formula as the paper writes it, with n ≥ 2, is not a Lean statement; what is stated instead is strictly the factorization 𝒯_n = ζ · (smooth) plus compact support, from which (5.13) for n ≥ 2 follows by Leibniz on ζ · (𝒯_n/ζ) with `activeZeta_edgeJets` and boundedness of the quotient's derivatives on the compact closure of the window. I did not carry that derivation out in Lean, and I did not verify the paper's closing remark that one may take N_{n,I} = 0 for n ≥ 2 against anything stated in the repository.",
-          "verdict": "deviation"
+          "summary": "Lean has an equivalent formula. The inequality is the body of PolynomialEdgeJets with the paper's ingredients: activeDelta a b w = min 1 (min (log X - a) (b - log X)) is δ(X) with a = log X_a, b = log X_b; activeWindow a b = Ioo (exp a) (exp b) × Icc (-1) 1 is the paper's range; activeZeta is a two-edge flat weight in log X; stressPair d n = (stressTheta n, stressAxial n) are the two components of (5.9). The Lean bounds the whole order-m derivative tensor with C, N existential per order m, which is the paper's \"C_{n,I}, N_{n,I} may depend on the order and derivative\" up to the finite-dimensional norm. No single declaration states the bound for all n ≥ 1; it is split as the paper itself splits it. n = 1: modulated_first_edgeJets states it on the outer collar for the constructed coefficients, and edgeJets_of_outer_collar (with the zero germ from modulated_positive_stress_zero) extends it to the whole window; that combination is carried out inside modulated_weighted_on_actual_scales rather than recorded as a separate theorem. n ≥ 2: no theorem concludes PolynomialEdgeJets for stressPair d n, but SlowStressSupport.interior_weighted_jets is stated for an arbitrary continuous positive weight on Ioo l r, and instantiating it with zeta := radialWeight c left right, S := univ, K := Icc (-1) 1, f := stressTheta n / stressAxial n, with support hypotheses from modulated_higherInteriorSupport and smoothness from modulated_smooth, gives |∂^k T_n| ≤ C ζ(X) on the window, i.e. (5.13) with N = 0, exactly the paper's closing remark. I did not find that instantiation written out anywhere; the repository instead consumes the n ≥ 2 case as smoothness of T_n/ζ (modulated_quotients_smooth). Finding B's route for n ≥ 2 through logarithmic_weighted_jets is not the right one (its weight logFlatWeight is in log R and needs an unrecorded rescaling of the edge constants); the generic interior_weighted_jets needs no such step. Not verified: that activeZeta c a b (left constant c > 0 arbitrary, right constant 4) is literally the weight ζ of Theorem 4.6(iv); I matched only its two-edge flat form.",
+          "verdict": "faithful"
         }
       ]
     }

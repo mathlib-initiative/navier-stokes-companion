@@ -1,16 +1,13 @@
 {
   "kind": "equation",
   "label": "Display 64.4",
-  "status": "formalized",
+  "status": "partial",
   "location": {
     "page": 64,
     "rect": [0.262776, 0.758843, 0.47467, 0.048855]
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "kind": "def"
-      },
       "item": "eq-p064-4",
       "locator": {
         "physical": [64],
@@ -20,19 +17,19 @@
       "region": "eq-p064-4@p064",
       "verdicts": [
         {
-          "confidence": 0.78,
-          "evidence": ["paper: \\mathcal{A}_\\ell = \\left\\{ \\mathcal{C}_\\ell(r,z,t) \\ :\\ \\begin{matrix} 0 < q < q_{\\mathrm{big}},\\quad \\tfrac{1}{2} \\le q/Q \\le 2,\\quad \\tau \\ge 0, \\\\ X_a \\le r^2/(2q) \\le X_b \\end{matrix} \\right\\}."],
+          "confidence": 0.8,
+          "evidence": ["paper: \\mathcal{A}_\\ell = \\left\\{ \\mathcal{C}_\\ell(r,z,t) \\;:\\; \\begin{matrix} 0 < q < q_{\\mathrm{big}},\\quad \\tfrac12 \\le q/Q \\le 2,\\quad \\tau \\ge 0, \\\\ X_a \\le r^2/(2q) \\le X_b \\end{matrix} \\right\\}."],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "equivalent",
+          "relation": "lean_weaker",
           "role": "definition",
-          "severity": "none",
+          "severity": "low",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Lean writes the set directly in the slow coordinates (R,Z,T) that the paper obtains as the image under C_ℓ, rather than as `{C_ℓ(r,z,t) : …}`, and names the band ratio q/Q as its own existential variable q ∈ [1/2,2]. Clause by clause, with R = r/√Q, Z = z/Q^D, T = τ/Q and q̂ = q/Q: `0 ≤ p.2.2` is τ ≥ 0; `∃ q ∈ Icc (1/2) 2` is 1/2 ≤ q/Q ≤ 2 (and gives q > 0); `forwardScalar (2h) Z q̂ = T`, i.e. T = q̂ - Z² q̂^{2h}, is the paper's τ = q - z²q^{2h} ((3.2) on p. 7) divided by Q, using 2D + 2h = 1 so that z²q^{2h}/Q = Z²q̂^{2h}; `p.1 ^ 2 / (2 * q) ∈ Icc a b` is X_a ≤ R²/(2q̂) = r²/(2q) ≤ X_b, with a, b instantiated downstream as `NominalConeAssembly.activeLeft/activeRight`. `referenceCompact = closure (activeReference …)` supplies \"the closed active part\". Two differences that do not change the set of slow points used: Lean adds `0 ≤ p.1` (automatic for a radial coordinate), and Lean's set has no `0 < q < q_big` clause — since q/Q ∈ [1/2,2], q < q_big is a constraint on the band index rather than on the slow point (it holds for every point of the band as soon as 2Q ≤ q_big), and Lean carries it instead as the lower band index N in `BaseChartJets.CellIndex`.",
-          "verdict": "faithful"
+          "summary": "Lean has a weaker form of it. The Lean active set is the paper's A_ℓ with the clause 0 < q < q_big removed. activeReference (PrimaryRepresentatives.lean:412) is written directly in the slow coordinates (R,Z,T) and names the ratio q/Q as its bound variable: `∃ q ∈ Icc (1/2) 2` is 1/2 ≤ q/Q ≤ 2, `0 ≤ p.2.2` is τ ≥ 0, `forwardScalar (2h) Z q̂ = T` is the paper's q − z²q^{2h} = τ (p. 7, after (3.2)) divided by Q using 2D + 2h = 1, and `p.1^2/(2*q) ∈ Icc a b` is X_a ≤ r²/(2q) ≤ X_b; referenceCompact (:420) is its closure. physicalMask_normalized_mem (:502) proves that a physical point satisfying these clauses and lying in band L maps under the chart (normalizedSlow_coordinates, :495) into referenceCompact, so every point of the paper's A_ℓ lies in the Lean set. The converse fails for the bands at the cut-off. No clause of activeReference or hypothesis of physicalMask_normalized_mem bounds q by q_big, and the clause is not scale-invariant, so the single band-independent Lean set cannot carry it. With Q_ℓ = 2^{-ℓ} (SlotColoring.dyadicQ) and q_big ≤ 2^{-ℓ_0}, the paper's A_{ℓ_0} keeps only q < q_big ≤ Q_{ℓ_0}, whereas the Lean set keeps the whole range q/Q ∈ [1/2,2]; the two agree only for bands with 2Q_ℓ < q_big, where the clause is vacuous by arithmetic. The Lean does have a q_big (ActualCandidateConstruction.qbig = Q(firstBand), :155) and the arithmetic fact that bands from firstBand+1 on with q/Q < 2 lie below it (nativeScale_lt_qbig, :180), and it restricts labels by a lower band index (BaseChartJets.CellIndex, :825), but none of these is a clause of the set used to select labels, so the Lean label family is a superset of the paper's near the lowest bands. I did not trace how the index threshold in PrimaryGeometryAssembly.Index relates to firstBand, nor that the a, b arguments (NominalConeAssembly.activeLeft/activeRight) equal the paper's X_a, X_b. Minor further differences: Lean adds 0 ≤ R, and the labels are actually selected against referenceCompact ∩ {T > 0} (PositiveRepresentatives.positivePart), which concerns (6.8) rather than this display.",
+          "verdict": "deviation"
         }
       ]
     }

@@ -19,7 +19,7 @@
       "role": "key",
       "snippet": {
         "line": 35,
-        "text": "heatPressureJet h n ν v = pressureWeight h v * jetProduct (heatJet h · ν v) (heatJet h · ν v) n — the n-th parameter derivative of the pressure integrand v^{-2A-1} H(2ν/v)²; its chain, domination and measurability hypotheses are discharged in heatPressureFactor_contDiffOn (TerminalPressure.lean:135-145)"
+        "text": "heatPressureJet h n ν v := pressureWeight h v * ParametricHeatTail.jetProduct (fun i => heatJet h i ν v) (fun i => heatJet h i ν v) n; heatPressureJet_zero (:129) identifies n = 0 with the integrand of heatPressureFactor"
       }
     }
   }

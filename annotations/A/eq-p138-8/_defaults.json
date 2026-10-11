@@ -15,11 +15,10 @@
         "text": "Display 138.8, p. 138, in the proof of Lemma A.6"
       },
       "region": "eq-p138-8@p138",
-      "role": "key",
       "verdicts": [
         {
-          "confidence": 0.85,
-          "evidence": ["paper: 0 \\le -\\frac{Z\\mathcal{H}'}{\\mathcal{H}} < h,\\qquad \\frac{rK_r}{2K} = -A - \\frac{Z\\mathcal{H}'}{\\mathcal{H}} < -\\frac{1}{2}."],
+          "confidence": 0.9,
+          "evidence": ["paper: 0 \\le -\\frac{Z\\mathcal{H}'}{\\mathcal{H}} < h, \\qquad \\frac{rK_r}{2K} = -A - \\frac{Z\\mathcal{H}'}{\\mathcal{H}} < -\\frac{1}{2}."],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Both chains are stated, the second one in the terminal-edge chart rather than in (t, r). First chain: the upper bound -Z H'/H < h is profile_logSlope_lt at a = 1 + h (profile_h_logSlope_lt is the h-form), and the cleared-denominator version for all z ≥ 0 is extended_heat_slope; the lower bound 0 ≤ -Z H'/H follows (strictly, hence stronger) from profile_derivWithin_neg with profile_pos. TerminalCone.heatSlope_bounds conjoins both halves as 0 ≤ heatSlope ≤ h/4 but only for h ≤ 1/4, z ≤ 1/16, so the unrestricted pair profile_logSlope_lt + profile_derivWithin_neg is the faithful citation. Second chain: profileCarrier is K = C s^{-A} H(Z) (spatialExponent (1+h) = 1/2 - (1+h) = -A) and profileCarrierRadial is ∂_r K = C s^{-A-1}(-A H - Z H') r — the derivative identification is carried out in carrierRadial_normalizedParam, which rewrites it through radialProfile_first_derivative. profileCarrier_radial_gap states r·K_r + K < 0, and with K > 0 (profileCarrier_pos) that is precisely rK_r/(2K) < -1/2. The rewriting is the coordinate dictionary s = profileS y0 x = exp(y0+3-x), r² = 2s (profileRadius_square), Z = profileZ = 2(1-η²)/s = 2d/s = 2τ/s, extension (1+h) = profile (1+h) on z ≥ 0 (extension_eq_profile); as x ranges over ℝ, s ranges over all of (0,∞), and η² ≤ 1 gives d = 1-η² ∈ [0,1], so the chart covers the paper's parameters. The proof is the paper's own derivation: the step `hb` at TerminalEdgeFactor.lean:1409-1414 is 2(σH - Z H') + H < 0, which nlinarith gets from extended_heat_slope using 2σ + 2h + 1 = 0, i.e. exactly the paper's -A - Z H'/H < -A + h = -1/2. Remark, not a defect: in the RadialHeatProfile/TerminalStress coordinates the repository records only the sign (spatialFirst_neg, radialProfile_derivative_neg, heatAmplitude_deriv_neg conclude < 0), since that is all Lemma A.6's own statement needs.",
+          "summary": "Lean has an equivalent formula. Every clause of the display is covered, split across declarations. Upper bound of the first chain: profile_logSlopeWithin_lt (all z ≥ 0, a = 1 + h) and profile_h_logSlope_lt (z > 0) state -Z H'/H < h; extended_heat_slope states it with the denominator cleared for the extended profile. Lower bound 0 ≤ -Z H'/H is not stated as such without restriction (heatSlope_bounds states it only for h ≤ 1/4, z ≤ 1/16) but follows by sign algebra from profile_derivWithin_neg (H' < 0), profile_pos (H > 0) and Z ≥ 0. Second chain: the identity rK_r/(2K) = -A - Z H'/H is not written as a ratio; it is the stated radialProfile_first_derivative (K_r = s^{σ-1}(σH - Z H') r with σ = spatialExponent (1+h) = 1/2 - (1+h) = -A) divided by 2K = 2 s^σ H using r² = 2s, which is algebra. The bound < -1/2 is stated in multiplied-out form in the terminal chart by profileCarrier_radial_gap (r K_r + K < 0 for all η² ≤ 1 and all x, so Z = 2(1-η²)/s covers [0, ∞) and s covers (0, ∞)); dividing by 2K > 0 (profileCarrier_pos) gives the paper's form, and profileSpeed_zero_gt_two line 1429 writes the divided form rK_r/K < -1 at x = 0. The identification of profileCarrier/profileCarrierRadial with K and K_r of heatAmplitude is carrier_normalizedParam / carrierRadial_normalizedParam (η² < 1). Independently of the chart, the bound also follows in (τ, r) coordinates from radialProfile_first_derivative plus profile_h_logSlope_lt by the arithmetic -A + h = -1/2. Lean's first lower bound is strict for Z > 0, a negligible strengthening. I did not build anything; statements were read from source.",
           "verdict": "faithful"
         }
       ]

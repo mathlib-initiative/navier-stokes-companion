@@ -16,9 +16,10 @@
         "kind": "theorem"
       },
       "relation": "states",
+      "role": "key",
       "snippet": {
         "line": 1216,
-        "text": "q h (radiusPoint t r z) ^ (-amplitudeExponent h - 1/2) * forwardTheta F XR w.coefficients (logPoint …) = TerminalStress.terminalStress (normalization F XR) F.data.h (outgoingTaper …) t z r, where terminalStress = backwardStress (fun u => leadingResidual … t u z) r"
+        "text": "(w : CompensationWitness F XR C) (ht : t < 1) (hr : 0 < r) (hfull : 1/2 < log (X F.data.h (radiusPoint t r z) / switchRadius F XR) + 1/5) : q^(-amplitudeExponent h - 1/2) * forwardTheta F XR w.coefficients (logPoint XR (inner h (radiusPoint t r z))) = TerminalStress.terminalStress (normalization F XR) F.data.h (outgoingTaper F.data (shift F XR)) t z r"
       }
     }
   }

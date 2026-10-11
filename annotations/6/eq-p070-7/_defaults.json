@@ -1,7 +1,7 @@
 {
   "kind": "equation",
   "label": "Display 70.7",
-  "status": "partial",
+  "status": "formalized",
   "location": {
     "page": 70,
     "rect": [0.292838, 0.80554, 0.414325, 0.02684]
@@ -15,22 +15,21 @@
         "text": "Display 70.7, p. 70, in the statement of Proposition 6.6"
       },
       "region": "eq-p070-7@p070",
-      "role": "key",
       "verdicts": [
         {
-          "confidence": 0.6,
-          "evidence": ["paper: \\operatorname{supp} a^{\\mathrm{cut}}_{\\gamma,m} \\subset \\Omega^{\\mathrm{cut}}_\\gamma \\quad \\text{and smooth zero extension in } v"],
+          "confidence": 0.7,
+          "evidence": ["paper: \\operatorname{supp} a^{\\mathrm{cut}}_{\\gamma,m} \\subset \\Omega^{\\mathrm{cut}}_\\gamma \\quad\\text{and smooth zero extension in } v."],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
             "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
           },
-          "relation": "lean_weaker",
+          "relation": "equivalent",
           "role": "hypothesis",
-          "severity": "low",
+          "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a weaker form of it. The second conjunct holds; the first is stated for the uncut window, not for Ω_γ^cut. Support. The object is right: `cutCoefficients l` is literally `chartCoefficients … |>.withCutoff (chartCutoff …)`, i.e. a^cut, and `phaseCell_of_cut_tsupport` states that on the strip its tsupport lies in ⋃_k phaseCell n (l,k). But `phaseCell`'s plane conjunct is `(fullCopy …).2 ∈ (clockWindow l.2).core`, and `clockWindow` has lower = (-radius, 0), upper = (radius, slotLength …), so by `ClockWindow.core` that set is Icc (-r) r ×ˢ Icc 0 L_s: its first factor is the ξ_g(H) ∈ supp χ_g clause (ξ is the Plane's first coordinate) and its second factor is the paper's *uncut* 0 ≤ v ≤ L_s, not {v(H) ∈ supp ψ}. The slow conjunct ((fullCopy …).1 ∈ carrier) is the x_* ∈ K^*_γ clause. The containing set is therefore the analogue of Ω_γ, and the conclusion is strictly weaker than supp a^cut ⊂ Ω_γ^cut: supp ψ is strictly smaller than Icc 0 L_s, being v/L ∈ (1/6, 5/6) by `profile_zero`, and `sourceCell_subset_clock` (ActualCarrierGeometry.lean:72) proves the inclusion is in that direction. The repository is deliberate about this — the `phaseCell` docstring says it \"also allows the larger geometric source window\" — and `cut_native_velocity_support`, which is about the same object via `cut_amplitude_eq`, likewise lands in `clockWindow.core`: its proof routes through `attachedRawVelocity_core` and never uses the ψ factor. No declaration was found stating the ψ-tight containment for a^cut. It is recoverable in three definitional steps that are each in the repository but are nowhere conjoined: a^cut = ψ • a by `WaveCoefficients.withCutoff`, ψ = `chartCutoff` = `periodicGaussian` = profile(periodicClock/L), and `profile_zero`. The one ψ-tight support statement found, `gaussianCoefficient_support` into `labelCarrier` (built on `actualSourceCore` = actualSlowCore ×ˢ sourceCell, whose v-factor Icc (L/6) (5L/6) is supp ψ), is about `chartGaussian`, the excluded-slot-error term (D_fast ψ)·a, not about a^cut; the same holds for `nativeGaussian_source_support`. Two further encoding shifts, both harmless: tsupport in place of supp, and the shell/ambient restriction X_a ≤ X ≤ X_b carried as the hypothesis x ∈ fullStrip.domain rather than as a clause; `phaseCell` also asserts `near l n`, a scale-admissibility condition with no paper counterpart, which only shrinks the containing set. Smooth zero extension in v. This half is delivered: the Lean never forms a zero extension because `cutNativeVelocity l = gaussian l.2 • complexify (attachedRawVelocity …)` is already a product with a globally smooth cut-off — `gaussian_smooth` gives ContDiff ℝ ∞, `profile_zero` makes the profile vanish identically outside |v/L - 1/2| < 1/3, and `cutNativeVelocity_smooth` gives ContDiffOn ℝ ∞ on `nativeSlowDomain` = {x | 0 < x.1.2.2}, which restricts the slow time only and leaves v unrestricted, so the field is its own smooth zero extension past the v cut. Low, not medium: the paper's use of the cut support is to make that zero extension legitimate, and the Lean obtains the extension directly from the smooth bump factor rather than from a support statement, so the surrounding results are proved by another route; what is not available as written is supp a^cut ⊂ Ω_γ^cut.",
-          "verdict": "deviation"
+          "summary": "Lean has an equivalent formula. Neither finding is exactly right about what is stated, but the class is clean. No single declaration states containment in exactly Omega^cut = Omega ∩ {v ∈ supp ψ}. For the signed localized copies (A's object), phaseCell_or_localized_zero puts the closed support, inside the strip, in phaseCell = controlCell ∩ {v/L ∈ [1/10, 9/10]}. That window is wider than supp ψ (the paper's (6.16) has supp ψ inside |v − L_s/2| < L_s/3, and the Lean profile vanishes for |v/L − 1/2| ≥ 1/3), so A's reading of phaseCell as \"the Omega^cut of (6.28)\" overstates it. For the primary cutCoefficients (B's object), actual_input_cover and phaseCell_of_cut_tsupport land in the uncut clock core v ∈ [0, L_s], as B says.\n\nThe ψ-tight window follows by formal steps. The localized amplitude is cutoff • amplitude (withCutoff, read at LinearWaveBounds.lean:220 and PeriodizedWaveBounds.lean:773), cutoff is χ(ξ)·profile(nativeTime) by definition, and profile_eventually_zero gives a zero germ of profile wherever 1/3 < |t − 1/2|. Composing with the continuity of nativeTime (nativeTime_smooth) is literally the step at ActualSignedStageControls.lean:536. With localized_zero_of_cutoff (ActualSignedOutputBounds.lean:103) this gives a zero germ of the localized amplitude and pressure outside {|v/L − 1/2| ≤ 1/3}. Intersecting with signed_phaseCell_or_zero gives the display's inclusion. On the primary side the same holds at native level: cutNativeVelocity = gaussian • (...) with gaussian = profile(v/L), so profile_zero forces |v/L − 1/2| < 1/3 wherever it is nonzero. No estimate, limit or other analytic fact beyond stated declarations is needed.\n\nSmooth zero extension in v: the Lean never forms an extension. The cut-off factor is globally smooth (cutoff_smooth; cutNativeVelocity_smooth on {T > 0} with v unrestricted) and vanishes identically outside the ψ window, so the cut field is its own smooth extension by zero.\n\nNot verified here: that controlCell's remaining clauses (slow carrier, ξ ∈ Icc (−r) r, chartQ ∈ Icc (1/2) 2, near) coincide with the paper's Omega_γ, which belongs to block (6.28); the transfer of the tight window through `periodized`/`copied` for the chart-level cutCoefficients; and a smoothness statement for the uncut signed amplitude on phaseCell.",
+          "verdict": "faithful"
         }
       ]
     }

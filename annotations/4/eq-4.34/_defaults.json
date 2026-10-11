@@ -15,11 +15,10 @@
         "text": "Equation (4.34), p. 37, in the proof of Proposition 4.10"
       },
       "region": "eq-4.34@p037",
-      "role": "key",
       "verdicts": [
         {
-          "confidence": 0.82,
-          "evidence": ["paper: \\widehat M_0(x)=4\\eta x,\\qquad \\widehat I_0(x)=\\tfrac{5\\sqrt2}{8}P_*f\\,x^{8/5},\\qquad \\widehat J_0(x)=4\\eta\\,\\widehat I_0(x),\\qquad \\widehat S_0(x)=16\\eta^2x-\\tfrac{5}{12}P_*^2f^2x^{6/5},\\qquad C_{p,0}(x)=\\tfrac52 P_*^2f^2x^{1/5}."],
+          "confidence": 0.7,
+          "evidence": ["paper: \\widehat M_0(x)=4\\eta x,\\qquad \\widehat I_0(x)=\\tfrac{5\\sqrt2}{8}P_*f\\,x^{8/5},\\qquad \\widehat J_0(x)=4\\eta\\,\\widehat I_0(x),\\\\ \\widehat S_0(x)=16\\eta^2x-\\tfrac{5}{12}P_*^2f^2x^{6/5},\\qquad C_{p,0}(x)=\\tfrac52P_*^2f^2x^{1/5}. \\tag{4.34}"],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
@@ -29,7 +28,7 @@
           "role": "proof_step",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has an equivalent formula. Same five rows for the same reference pair U₀ = 4η, E₀ = P∗ f x^{1/10}: `manuscriptIdealRows` is exactly the vector (M̂₀, Î₀, Ĵ₀, Ŝ₀, C_{p,0}) and `ideal_rows_moments` states that it equals the moments of that pair, with `dilationFactor = ![R, R√R, R√R, R, 1]` supplying the paper's hat normalisation. The rewriting is the evaluation of three elementary integrals: ∫₀^x √(2t) t^{1/10} dt = (5√2/8) x^{8/5} (Lean keeps this as `idealWeightI` and proves only the bound `idealWeightI_bound : |idealWeightI r| ≤ 2r`), ∫₀^x t^{1/5}/2 dt = (5/12) x^{6/5} (`idealWeightS`, again only bounded, `≤ r/2`), and ∫₀^x t^{1/5}/(2t) dt = (5/2) x^{1/5}, which Lean does evaluate in closed form in `idealWeightP_eq`, matching C_{p,0} exactly. So the paper's explicit powers for Î₀ and Ŝ₀ are not written out as a Lean equation; they follow by the same ∫ t^a computation the repository already performs for the pressure row, and their x = 1 values do appear verbatim as `OutgoingHistories.initialS` (16η² − (5/12)P²f²) and `OutgoingSchedule.angularMoment` (leading term (5/2)√2 P η f = Ĵ₀(1)). Ĵ₀ = 4η Î₀ is literal in `idealJ G A r eta = idealWeightI r * (G eta * A eta)` with G = idealU = 4η.",
+          "summary": "Lean has an equivalent formula. Three of the five rows are stated in closed form for every r ≥ 0 in the paper's own variable and normalisation: M̂0 = 4ηx (idealM at idealU, definitional), Ĵ0 = 4η Î0 (idealJ and idealI share idealWeightI, definitional), C_{p,0} = (5/2)P²f²x^{1/5} (idealWeightP_eq with idealP); ideal_rows_moments states that these five rows are the integrals from 0 of the reference pair. The other two closed forms, Î0(x) = (5√2/8)P f x^{8/5} and the term (5/12)P²f²x^{6/5} of Ŝ0, are not written as a Lean equation at general x: ShapeTransition keeps idealWeightI and idealWeightS as unevaluated integrals and proves only crude bounds on them. They do follow from stated declarations. For x = e^y ≤ 1, I_eq_integral gives I as the integral over Iic y of exp(3t/2)·E, angularWeight_ideal gives that integrand as P·shape·exp(8t/5), and instantiating the repository's own exponential_integral_left at a = P·shape η, b = 8/5 gives I = (5/8)·P·shape·exp(8y/5). For S the same lemma is instantiated twice (a = 16η², b = 1 and a = P²shape²/2, b = 6/5, the second from weighted_square_ideal) after S_eq_integral, with linearity of the integral; the integrability of the two pieces is the first conjunct of exponential_past. Two things I accepted as notation: OutgoingHistories works in y = log x, and its H is exp(y/2)·E where the paper has √(2X)·E, so its I and J are the paper's divided by √2 (hence 5/8 against the paper's 5√2/8; the √2 appears explicitly in J_eq_angularMoment and in ideal_angular_prefix_integral). I found no declaration that equates OutgoingHistories.I with row 1 of NominalProfile.moments. In the paper's own normalisation the same two closed forms are the power rule applied to the definitions of idealWeightI and idealWeightS (Mathlib's integral_rpow, used in the proof of idealWeightP_eq at line 914, not a repository declaration); the repository states that evaluation only at x = 1 (angular_past, energy_past, ideal_angular_prefix_integral). The closed forms via the log-variable route cover x ≤ 1 only; the paper uses m̂0 only for x ≤ e^{-5} (profiles live on [0, X_h], X_h = X_R e^{-5}).",
           "verdict": "faithful"
         }
       ]

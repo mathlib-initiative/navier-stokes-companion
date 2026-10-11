@@ -8,9 +8,6 @@
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "kind": "theorem"
-      },
       "item": "eq-p012-5",
       "locator": {
         "physical": [12],
@@ -20,8 +17,8 @@
       "region": "eq-p012-5@p012",
       "verdicts": [
         {
-          "confidence": 0.85,
-          "evidence": ["paper: \\mathcal{L}_{u_B}(w_{\\mathrm{lin}}, \\pi_{\\mathrm{lin}}) = 0, \\qquad \\nabla \\cdot w_{\\mathrm{lin}} = 0."],
+          "confidence": 0.78,
+          "evidence": ["paper: \\mathcal{L}_{u_B}(w_{\\mathrm{lin}}, \\pi_{\\mathrm{lin}}) = 0, \\qquad \\nabla\\cdot w_{\\mathrm{lin}} = 0."],
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
@@ -31,7 +28,7 @@
           "role": "equation",
           "severity": "none",
           "status": "unconfirmed",
-          "summary": "Lean has a stronger form of it. The display is the hypothesis pair of `NavierStokes.R3CompactEnergy.energy_balance` (NavierStokes/R3CompactEnergy.lean:186), stated there in strictly more general form, so it is present in the repository and my previous `absent` was wrong. Term for term, with `D = PeriodicIntegration.spatialPartial` (line 17): `hdw : ∀ x, (∑ i, D i w x i) = 0` (line 189) is ∇·w = 0; `heq` (lines 191-192) is z = Δw − (v·∇)w − (w·∇)u − ∇p, since `fderiv ℝ w x (v x)` is Dw(x)[v(x)] = (v·∇)w, `fderiv ℝ u x (w x)` is Du(x)[w(x)] = (w·∇)u, `∑ i, D i (D i w)` is the componentwise Laplacian and `pressureGradient (fun y => p y.2) 0 x` is ∇p. Putting u := v := u_B, p := π_lin, w := w_lin and z := ∂ₜw_lin, `heq` rearranges to ∂ₜw_lin + (u_B·∇)w_lin + (w_lin·∇)u_B − Δw_lin + ∇π_lin = 0, which is L_{u_B}(w_lin, π_lin) = 0 sign for sign for the operator displayed on p. 11 at ν = 1 (the ν = 1 reading is corroborated by the −∫|∇w_lin|² of eq-p012-6). The Lean is stronger in two ways: u and v are independent, so the transport field and the sheared field need not be the same background; and z is an arbitrary field, the identification z = ∂ₜw being made by the caller. Two observations about use, not about the statement, and all I claim about use: the one caller I traced, `R3LocalEnergyEvolution.difference_energy_balance` (lines 48-76), instantiates it at u ≠ v — the difference of two solutions of the same forced equation — and not at u = v = u_B; and the explicitly written-out linearized operator `NavierStokes.HarmonicResidual.linearResidual` (NavierStokes/HarmonicResidual.lean:206, time derivative + transport(B,a) + transport(a,B) + pressure gradient − ν·vector Laplacian), together with its cylindrical form `NavierStokes.LinearWaveResidual.linearResidual` (LinearWaveResidual.lean:57), is in the repository applied to the constructed wave coefficients, where its value is nonzero and is estimated; the only `linearResidual = 0` statements I found are `PeriodizedWaveBounds.linearResidual_zero` (the value at the zero field) and the principal-symbol equations `ActualSignedStageControls.raw_principal_zero`/`actual_principal_zero`, which annihilate only the leading principal part of a specific signed wave.",
+          "summary": "Lean has a stronger form of it. The display poses a model system (it follows \"We consider the homogeneous linearized model\"); it asserts nothing, and the text layer shows w_lin and \"linearized model\" only on p. 12, so the paper does not use it after the energy identity that follows it. The repository has the system as the hypothesis pair of R3CompactEnergy.energy_balance (NavierStokes/R3CompactEnergy.lean:186). hdw (l.189) is ∇·w = 0 written as ∑ i, D i w x i = 0 with D = PeriodicIntegration.spatialPartial. heq (ll.191-192) is z = Δw − (v·∇)w − (w·∇)u − ∇p, because fderiv ℝ w x (v x) is (v·∇)w, fderiv ℝ u x (w x) is (w·∇)u, ∑ i, D i (D i w) is the componentwise Laplacian and pressureGradient is ∑ (∂_i p) e_i (ProblemStatement.lean:71). Instantiating u := v := u_B, p := π_lin, w := w_lin, z := ∂_t w_lin and moving terms across gives ∂_t w + (u_B·∇)w + (w·∇)u_B − Δw + ∇π = 0, which is L_{u_B}(w_lin, π_lin) = 0 for the operator defined on p. 11, with viscosity one. The Lean form is more general in two ways: the transporting field v and the sheared field u are independent, and z is any field, not necessarily a time derivative. Three limits on this. First, the system appears only as a hypothesis at a fixed time; no declaration I found asserts it of any field, and the paper does not either. Second, the one caller I found, R3LocalEnergyEvolution.difference_energy_balance, instantiates it for the difference of two solutions (u ≠ v), not at u = v = u_B. Third, the operator itself is separately defined as LinearWaveResidual.cartesianLinearResidual (l.511, viscosity ε, Cartesian) and in cylindrical frame form (realComponentLinearResidual l.442), but those are never set to zero: for the constructed waves the linear residual is decomposed and estimated (ActualPrimaryDynamics.linearResidual_eq), and the only \"= 0\" statement I saw is the value at the zero field (PeriodizedWaveBounds.linearResidual_zero, l.734).",
           "verdict": "faithful"
         }
       ]
