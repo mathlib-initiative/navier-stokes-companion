@@ -12,7 +12,7 @@
 - Re-check of the medium findings: the adjudication of the displayed equations contradicted the reason given for one medium finding, so each of the 5 medium findings was traced again: one trace tried to derive the missing clause from stated declarations, one tried to break that derivation, one read the paper for the later use of the clause, and a judge ruled. Lemma 4.4: lowered to low; Lemma 5.2: lowered to low; Lemma A.1: lowered to low; Proposition 5.3: lowered to low; Proposition 5.5: lowered to low. The findings carry a Review line.
 - Attack on the OK verdicts: the re-check above could only lower findings, so the 22 items ruled OK by the adjudication or by the re-check were then attacked clause by clause (every conclusion, range, quantifier and constant of the printed statement: stated, a formal consequence, or a gap). 20 came through with no gap claimed; for 2 a gap was claimed, a second agent tried to close it and a judge ruled: no verdict changed, and 3 low notes were added (Corollary 7.8, Lemma A.1). The items on which the two audits agreed from the start were not attacked.
 - Declarations repaired: `SignedMeanGain.NativeData` has no instance on the geometry the construction uses (`ActualSignedMeanBinding.no_legacy_nativeData`), so a theorem that takes one says nothing about the constructed fields. The entries that cited such theorems were replaced by the statements for the actual chart: Corollary 7.8 (13 added, 2 removed); Proposition 7.6 (5 added, 1 removed), and the displayed equations paired with them were re-paired (marked below).
-- Generated 2026-10-10 from `audit-result.json`.
+- Generated 2026-10-12 from `audit-result.json`.
 
 ## Summary
 
