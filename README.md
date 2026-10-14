@@ -39,4 +39,4 @@ On the first run `serve.py` downloads the PDF from its [official URL](https://cd
 
 Names `eq-<number>` are numbered equations. In `eq-p<page>-<k>`, k counts every block found on the page, so it can differ from the k of the label "Display <page>.<k>".
 
-`annotations/` and `REPORT.md` are generated from the agents' recorded rulings and the page layout by scripts that are not in this repository; the same scripts write `site/index.html` and `pdf-overlay/overlay.config.json`. The rest of `pdf-overlay/` is written by formal-companion's `cf overlay sync`; `pdf-overlay/GENERATED.json` names the formal-companion commit and the Literature Links release it used. Only this README is written by hand.
+`annotations/` and `REPORT.md` are generated from the agents' recorded rulings and the page layout by scripts that are not in this repository; the same scripts write `site/index.html` and `pdf-overlay/overlay.config.json`. The rest of `pdf-overlay/` is written by formal-companion's `cf overlay sync`; `pdf-overlay/GENERATED.json` names the formal-companion commit and the Literature Links commit it used. Only this README is written by hand.
