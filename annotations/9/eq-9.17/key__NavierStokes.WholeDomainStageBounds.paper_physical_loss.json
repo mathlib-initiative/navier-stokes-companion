@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.17/key/01.NavierStokes.WholeDomainStageBounds.paper_physical_loss",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WholeDomainStageBounds.paper_physical_loss",
-      "line": 243,
-      "module": "NavierStokes.WholeDomainPhysicalStageTheorem",
-      "path": "NavierStokes/WholeDomainPhysicalStageTheorem.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WholeDomainPhysicalStageTheorem.lean#L243"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WholeDomainStageBounds.paper_physical_loss",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WholeDomainStageBounds.paper_physical_loss",
+        "module": "NavierStokes.WholeDomainPhysicalStageTheorem"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 243,
-        "text": "second conjunct: ∀ j m, ∃ C ≥ 0, ∃ P, ∀ k ≤ m, ∀ w ∈ CutStageEstimates.physicalSublevel h (commonQ B N0), ‖iteratedFDeriv ℝ k (potentialStages … (j+1)) w‖ + ‖iteratedFDeriv ℝ k (directStages … (j+1)) w‖ + ‖iteratedFDeriv ℝ k (pressureStages … (j+1)) w‖ + ‖iteratedFDeriv ℝ k (MixedFiniteBackground.stageVelocity … (j+1)) w‖ ≤ C * physicalQ h w ^ (ActualIterationLedger.gain h (j+1) - SharpPhysicalCarrier.physicalLoss h m) * (1+|Real.log (physicalQ h w)|)^P"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.WholeDomainStageBounds.paper_physical_loss",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L243",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WholeDomainPhysicalStageTheorem.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 243,
+            "text": "theorem paper_physical_loss (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) :\n    0 < commonQ B N0 ∧\n    (∀ j m, ∃ C : ℝ, 0 ≤ C ∧ ∃ P : ℕ, ∀ k ≤ m,\n      ∀ w ∈ CutStageEstimates.physicalSublevel h (commonQ B N0),\n      ‖iteratedFDeriv ℝ k (potentialStages B N0 hN (j+1)) w‖ +\n        ‖iteratedFDeriv ℝ k (directStages B N0 hN (j+1)) w‖ +\n        ‖iteratedFDeriv ℝ k (pressureStages B N0 hN (j+1)) w‖ +\n        ‖iteratedFDeriv ℝ k (MixedFiniteBackground.stageVelocity\n          (potentialStages B N0 hN) (directStages B N0 hN) (j+1)) w‖ ≤\n      C * physicalQ h w ^ (ActualIterationLedger.gain h (j+1)-SharpPhysicalCarrier.physicalLoss h m) *\n        (1+|Real.log (physicalQ h w)|)^P) ∧\n    (∀ J m, ∃ C : ℝ, 0 ≤ C ∧ ∃ P : ℕ, ∀ k ≤ m,\n      ∀ w ∈ CutStageEstimates.physicalSublevel h (commonQ B N0),\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-5.13/support/15.NavierStokes.EntranceAlignedBase.modulated_weighted_on_actual_scales",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.EntranceAlignedBase.modulated_weighted_on_actual_scales",
-      "line": 984,
-      "module": "NavierStokes.EntranceAlignedBase",
-      "path": "NavierStokes/EntranceAlignedBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L984"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.EntranceAlignedBase.modulated_weighted_on_actual_scales",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.EntranceAlignedBase.modulated_weighted_on_actual_scales",
+        "module": "NavierStokes.EntranceAlignedBase"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 984,
-        "text": "… : ConstructedSlowBase.WeightedStressBound a F.data.h (modulatedCoefficients H v) c (log (activeLeft W)) (activeRight W)   -- downstream consumer; its proof (via weighted_on_actual_scales, ConstructedSlowBase.lean:462) performs the n = 1 collar-to-window step"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "15.NavierStokes.EntranceAlignedBase.modulated_weighted_on_actual_scales",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L984",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 984,
+            "text": "theorem modulated_weighted_on_actual_scales {a : ℕ → ℕ} {c : ℝ} (hc : 0 < c)\n    {K : Set SlowBorelBase.Inner} (hK : IsCompact K)\n    (hWK : BaseResidual.activeWindow (Real.log (NominalConeAssembly.activeLeft W))\n      (ConstructedSlowBase.activeRight W) ⊆ K)\n    (ha : SlowBorelBase.AdmissibleScales F.data.h\n      (BaseResidual.weightedBundle W.axis.normalization (modulatedCoefficients H v)\n        (BaseResidual.activeZeta c (Real.log (NominalConeAssembly.activeLeft W))\n          (ConstructedSlowBase.activeRight W))) K a) :\n    ConstructedSlowBase.WeightedStressBound a F.data.h (modulatedCoefficients H v)\n      c (Real.log (NominalConeAssembly.activeLeft W)) (ConstructedSlowBase.activeRight W)"
+          }
+        }
       }
     }
-  }
+  ]
 }

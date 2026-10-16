@@ -1,24 +1,27 @@
 {
-  "id": "eq-p111-2/key/08.NavierStokes.ExponentLedger.all_stage_arithmetic",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ExponentLedger.all_stage_arithmetic",
-      "line": 304
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ExponentLedger.lean#L304"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ExponentLedger.all_stage_arithmetic",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ExponentLedger.all_stage_arithmetic",
+        "module": "NavierStokes.ExponentLedger"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 304,
-        "text": "(hκ : κ ≤ 1/100000) : the conjunction of all five margins at stageParameter n — the display read as \"the cycle closes\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.ExponentLedger.all_stage_arithmetic",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L304"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 304,
+            "text": "theorem all_stage_arithmetic (n : ℕ) {κ : ℝ} (hκ : κ ≤ 1 / 100000) :\n    waveExponent (stageParameter (n + 1)) <\n        waveExponent (stageParameter n) + particularGain (stageParameter n) κ ∧\n    waveExponent (stageParameter (n + 1)) <\n        waveExponent (stageParameter n) + signedGain (stageParameter n) κ ∧\n    waveExponent (stageParameter (n + 1)) < meanUpdateExponent (stageParameter n) κ ∧\n    meanExponent (stageParameter (n + 1)) <\n        meanExponent (stageParameter n) + min (17 / 100) (1 - 4 * κ) ∧\n    meanExponent (stageParameter (n + 1)) <\n        meanExponent (stageParameter n) + 9 / 10 - 4 * κ"
+          }
+        }
       }
     }
-  }
+  ]
 }

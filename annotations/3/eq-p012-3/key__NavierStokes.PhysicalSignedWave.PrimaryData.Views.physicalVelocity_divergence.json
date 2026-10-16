@@ -1,25 +1,27 @@
 {
-  "id": "eq-p012-3/key/02.NavierStokes.PhysicalSignedWave.PrimaryData.Views.physicalVelocity_divergence",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalSignedWave.PrimaryData.Views.physicalVelocity_divergence",
-      "line": 1231,
-      "module": "NavierStokes.PhysicalSignedWave",
-      "path": "NavierStokes/PhysicalSignedWave.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalSignedWave.lean#L1231"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalSignedWave.PrimaryData.Views.physicalVelocity_divergence",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalSignedWave.PrimaryData.Views.physicalVelocity_divergence",
+        "module": "NavierStokes.PhysicalSignedWave"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 1231,
-        "text": "theorem physicalVelocity_divergence (referenceRequest) (j : Fin 2) (R : B.Regular referenceRequest reference j) (A : B.Angular referenceRequest reference) (hK : B.base.frequency reference ≠ 0) (G : ChartGeometry …) (hradius : ∀ x ∈ B.strip.domain, 0 < x.1.1) (hz : 0 < z.2 0) (hx : (commonGraph …).map z ∈ B.strip.domain) (hdelta : 0 < delta) (chart : PolarCharts.Index) (hchart : z ∈ PhysicalCurlCovariance.validCylindrical delta chart) : spatialDivergence (V.physicalVelocity referenceRequest j delta) z.1 (CylindricalResidual.chart z.2) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PhysicalSignedWave.PrimaryData.Views.physicalVelocity_divergence",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1231",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalSignedWave.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1231,
+            "text": "theorem physicalVelocity_divergence (referenceRequest : ℕ → Cylinder → Vec2)\n    (j : Fin 2) (R : B.Regular referenceRequest reference j)\n    (A : B.Angular referenceRequest reference) (hK : B.base.frequency reference ≠ 0)\n    (G : ChartGeometry B.base B.strip B.directions reference V.exponent V.referenceScale V.referenceCover)\n    (hradius : ∀ x ∈ B.strip.domain, 0 < x.1.1)\n    {z : SpaceTime} (hz : 0 < z.2 0)\n    (hx : (PhysicalResidualBridge.commonGraph V.referenceScale V.exponent V.referenceCover).map z ∈ B.strip.domain)\n    {delta : ℝ} (hdelta : 0 < delta) (chart : PolarCharts.Index)\n    (hchart : z ∈ PhysicalCurlCovariance.validCylindrical delta chart) :\n    spatialDivergence (V.physicalVelocity referenceRequest j delta) z.1 (CylindricalResidual.chart z.2) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

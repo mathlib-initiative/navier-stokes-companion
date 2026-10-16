@@ -1,34 +1,55 @@
 {
-  "id": "lemma-8.6/attributed/1.NavierStokes.GaugeMassPreservation.temporalStage_preserve_masses_on",
-  "location": {
-    "page": 95,
-    "rect": [0.12854, 0.703306, 0.745098, 0.152893]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaugeMassPreservation.temporalStage_preserve_masses_on",
-      "line": 256,
-      "module": "NavierStokes.GaugeMassPreservation",
-      "path": "NavierStokes/GaugeMassPreservation.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 95,
+        "rect": [0.12854, 0.703306, 0.745098, 0.152893]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p095"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMassPreservation.lean#L256"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaugeMassPreservation.temporalStage_preserve_masses_on",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 96,
+        "rect": [0.12854, 0.103306, 0.745098, 0.231405]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: s ∈ U.carrier → radialMoment 2 (temporalStageState …).mean.angular n s = radialMoment 2 u.mean.angular n s ∧ radialMoment 1 (new axial) = radialMoment 1 (old): adding the increment preserves both integral constraints of (8.2), on the valid slow region."
-      },
-      "region": "lemma-8.6@p095",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 256,
-        "text": "theorem temporalStage_preserve_masses_on\n    (hmθ : ∀ n, ContinuousOn (u.mean.angular n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hmz : ∀ n, ContinuousOn (u.mean.axial n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hθ : ∀ n, ContDiffOn ℝ ∞ (u.thetaResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hz : ∀ n, ContDiffOn ℝ ∞ (u.axialResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hpθ : ∀ n, PhysicalMeanDomain.PeriodicOn U.carrier (u.thetaResidual c n))\n    (hpz : ∀ n, PhysicalMeanDomain.PeriodicOn U.carrier (u.axialResidual c n))\n    (hsz : ∀ n, SupportedGauge g.radial.inner g.radial.outer (qLength coord) U.carrier (u.axialResidual c n))\n    (n : ℕ) {s : Plane} (hs : s ∈ U.carrier) :\n    CorrectionState.radialMoment 2 (temporalStageState g h index axial c u).mean.angular n s =\n        CorrectionState.radialMoment 2 u.mean.angular n s ∧\n      CorrectionState.radialMoment 1 (temporalStageState g h index axial c u).mean.axial n s =\n        CorrectionState.radialMoment 1 u.mean.axial n s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p096"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaugeMassPreservation.temporalStage_preserve_masses_on",
+        "module": "NavierStokes.GaugeMassPreservation"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.GaugeMassPreservation.temporalStage_preserve_masses_on",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: s ∈ U.carrier → radialMoment 2 (temporalStageState …).mean.angular n s = radialMoment 2 u.mean.angular n s ∧ radialMoment 1 (new axial) = radialMoment 1 (old): adding the increment preserves both integral constraints of (8.2), on the valid slow region."
+          },
+          "destination": {
+            "fragment": "L256",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMassPreservation.lean"
+          },
+          "snippet": {
+            "line": 256,
+            "text": "theorem temporalStage_preserve_masses_on\n    (hmθ : ∀ n, ContinuousOn (u.mean.angular n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hmz : ∀ n, ContinuousOn (u.mean.axial n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hθ : ∀ n, ContDiffOn ℝ ∞ (u.thetaResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hz : ∀ n, ContDiffOn ℝ ∞ (u.axialResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hpθ : ∀ n, PhysicalMeanDomain.PeriodicOn U.carrier (u.thetaResidual c n))\n    (hpz : ∀ n, PhysicalMeanDomain.PeriodicOn U.carrier (u.axialResidual c n))\n    (hsz : ∀ n, SupportedGauge g.radial.inner g.radial.outer (qLength coord) U.carrier (u.axialResidual c n))\n    (n : ℕ) {s : Plane} (hs : s ∈ U.carrier) :\n    CorrectionState.radialMoment 2 (temporalStageState g h index axial c u).mean.angular n s =\n        CorrectionState.radialMoment 2 u.mean.angular n s ∧\n      CorrectionState.radialMoment 1 (temporalStageState g h index axial c u).mean.axial n s =\n        CorrectionState.radialMoment 1 u.mean.axial n s"
+          }
+        }
+      }
+    }
+  ]
 }

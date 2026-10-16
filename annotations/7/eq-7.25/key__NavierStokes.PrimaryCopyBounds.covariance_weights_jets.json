@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.25/key/02.NavierStokes.PrimaryCopyBounds.covariance_weights_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryCopyBounds.covariance_weights_jets",
-      "line": 252,
-      "module": "NavierStokes.PrimaryCopyBounds",
-      "path": "NavierStokes/PrimaryCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCopyBounds.lean#L252"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryCopyBounds.covariance_weights_jets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryCopyBounds.covariance_weights_jets",
+        "module": "NavierStokes.PrimaryCopyBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 252,
-        "text": "NativeJets V w (fun i x => SmoothCovariance.weights (H i x) (T i x) j)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PrimaryCopyBounds.covariance_weights_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L252",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCopyBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 252,
+            "text": "theorem covariance_weights_jets\n    (hr : PolynomialJets V.toDomain (fun i _ => r i)) (hrne : ∀ i, r i ≠ 0)\n    (hH : ∀ k l, PolynomialJets V.toDomain (fun i x => H i x k l))\n    (hT : ∀ k, NativeJets V w (fun i x => T i x k))\n    {b M : ℝ} (hb : 0 < b) (hM : 1 ≤ M)\n    (hdet : ∀ i x, x ∈ V.carrier i → b ≤ |(normalizedMatrix (r i) (H i x)).det|)\n    (hentry : ∀ i x, x ∈ V.carrier i → ∀ k l, |r i * H i x k l| ≤ M)\n    (j : Fin 2) : NativeJets V w (fun i x => SmoothCovariance.weights (H i x) (T i x) j)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-5.43/key/02.NavierStokes.BaseResidual.weighted_slowSum_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseResidual.weighted_slowSum_bound",
-      "line": 1873,
-      "module": "NavierStokes.BaseResidual",
-      "path": "NavierStokes/BaseResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean#L1873"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseResidual.weighted_slowSum_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseResidual.weighted_slowSum_bound",
+        "lines": [1873, 1873],
+        "module": "NavierStokes.BaseResidual"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 1873,
-        "text": "calc … _ = B * q ^ (2 * h) * zeta w * D := by dsimp [B]; ring; _ ≤ (B + 1) * q ^ h * zeta w * D := … (using hpow : q ^ (2*h) ≤ q ^ h) — the q^{2h} half appears here only as an intermediate step; the theorem's conclusion at line 1801 is the q^h bound"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.BaseResidual.weighted_slowSum_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1873",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 1801,
+            "text": "theorem weighted_slowSum_bound {a : ℕ → ℕ} {h : ℝ} (hh : 0 < h)\n    {f g : ℕ → Inner → V} (hf : ∀ j, ContDiff ℝ ∞ (f j))\n    (hg : ∀ j, ContDiff ℝ ∞ (g j)) {K W O : Set Inner}\n    (hK : IsCompact K) (hWK : W ⊆ K) (hO : IsOpen O) (hWO : W ⊆ O)\n    {zeta delta : Inner → ℝ} (hzs : ContDiff ℝ ∞ zeta)\n    (hz : ∀ w ∈ W, 0 ≤ zeta w) (hd : ∀ w ∈ W, 0 < delta w ∧ delta w ≤ 1)\n    (hfirst : PolynomialEdgeJets W zeta delta (f 1))\n    (hweight : PolynomialEdgeJets W zeta delta zeta)\n    (hg0 : g 0 = 0) (hg1 : g 1 = 0)\n    (hfg : ∀ j, 2 ≤ j → ∀ w ∈ O, f j w = zeta w • g j w)\n    (ha : AdmissibleScales h g K a) (m : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ q : ℝ, 0 < q → q ≤ 1 → ∀ w ∈ W,\n      ‖blownJet m (fun y => slowSum a h f y - f 0 y.2) (q, w)‖ ≤\n        C * q ^ h * zeta w * (delta w)⁻¹ ^ N"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-p043-5/support/07.NavierStokes.ModulatedCone.compact_shear_perturbation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.compact_shear_perturbation",
-      "line": 453,
-      "module": "NavierStokes.ModulatedCone",
-      "path": "NavierStokes/ModulatedCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L453"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.compact_shear_perturbation",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.compact_shear_perturbation",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 453,
-        "text": "supplies the shear perturbation |angularShear F p - angularShear E p| ≤ C * ε consumed at ModulatedCone.lean:609-621"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.ModulatedCone.compact_shear_perturbation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L453",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 453,
+            "text": "theorem compact_shear_perturbation\n    (E U : RadialParameter → ℝ) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    {S : Set RadialParameter} (hS : IsCompact S) (hpos : ∀ p ∈ S, 0 < E p) :\n    ∃ δ C : ℝ, 0 < δ ∧ 0 ≤ C ∧ ∀ (F V : RadialParameter → ℝ) (ε : ℝ),\n      0 ≤ ε → ε ≤ δ →\n      (∀ p ∈ S, |F p - E p| ≤ ε ∧\n        |radialDerivative F p - radialDerivative E p| ≤ ε ∧\n        |radialDerivative V p - radialDerivative U p| ≤ ε) →\n      ∀ p ∈ S, δ ≤ F p ∧\n        |angularShear F p - angularShear E p| ≤ C * ε ∧\n        |signedAxialShear F V p - signedAxialShear E U p| ≤ C * ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

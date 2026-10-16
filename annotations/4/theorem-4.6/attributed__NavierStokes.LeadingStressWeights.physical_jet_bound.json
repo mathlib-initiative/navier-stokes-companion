@@ -1,34 +1,66 @@
 {
-  "id": "theorem-4.6/attributed/1.NavierStokes.LeadingStressWeights.physical_jet_bound",
-  "location": {
-    "page": 32,
-    "rect": [0.12854, 0.768595, 0.745098, 0.090909]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.physical_jet_bound",
-      "line": 1137,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 32,
+        "rect": [0.12854, 0.768595, 0.745098, 0.090909]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-4.6@p032"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L1137"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.physical_jet_bound",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 33,
+        "rect": [0.12854, 0.102479, 0.745098, 0.760331]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: |∂^α T_0| ≤ C_α · ζ · δ^{-m_α} for v.profiles, with δ = distance (:1092): the second half of (4.27)."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-4.6@p033"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 34,
+        "rect": [0.12854, 0.100826, 0.745098, 0.158678]
       },
-      "region": "theorem-4.6@p032",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 1137,
-        "text": "theorem physical_jet_bound (hcone : FullTrueCone v) (n : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ eta ∈ Icc (-1 : ℝ) 1,\n      ∀ X ∈ Ioo (NominalConeAssembly.activeLeft W) (NominalConeAssembly.activeRight W),\n        ‖iteratedFDeriv ℝ n (fun p : ℝ × ℝ => stress v.profiles F.data.h (p.2, p.1)) (eta, X)‖ ≤\n          C * zeta v X / distance v X ^ N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-4.6@p034"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.physical_jet_bound",
+        "module": "NavierStokes.LeadingStressWeights"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LeadingStressWeights.physical_jet_bound",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: |∂^α T_0| ≤ C_α · ζ · δ^{-m_α} for v.profiles, with δ = distance (:1092): the second half of (4.27)."
+          },
+          "destination": {
+            "fragment": "L1137",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "snippet": {
+            "line": 1137,
+            "text": "theorem physical_jet_bound (hcone : FullTrueCone v) (n : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ eta ∈ Icc (-1 : ℝ) 1,\n      ∀ X ∈ Ioo (NominalConeAssembly.activeLeft W) (NominalConeAssembly.activeRight W),\n        ‖iteratedFDeriv ℝ n (fun p : ℝ × ℝ => stress v.profiles F.data.h (p.2, p.1)) (eta, X)‖ ≤\n          C * zeta v X / distance v X ^ N"
+          }
+        }
+      }
+    }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "lemma-10.2/support/3.NavierStokes.MixedPeriodicAssembly.boundaryLimits_locallyUniform",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MixedPeriodicAssembly.boundaryLimits_locallyUniform",
-      "line": 310,
-      "module": "NavierStokes.MixedPeriodicAssembly",
-      "path": "NavierStokes/MixedPeriodicAssembly.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MixedPeriodicAssembly.lean#L310"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MixedPeriodicAssembly.boundaryLimits_locallyUniform",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MixedPeriodicAssembly.boundaryLimits_locallyUniform",
+        "module": "NavierStokes.MixedPeriodicAssembly"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 310,
-        "text": "theorem boundaryLimits_locallyUniform {A v : VelocityField} {p : PressureField}\n    (hz : JointResidualLimits.VanishingJointJets (originalResidual A v p))\n    (eA : JointResidualLimits.AwayExtensions A)\n    (ev : JointResidualLimits.AwayExtensions v)\n    (ep : JointResidualLimits.AwayExtensions p) (n : ℕ) :\n    TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n (periodicResidual A v p) (t, x))\n      (fun x => boundaryLimits A v p eA ev ep x n) (𝓝[<] (1 : ℝ))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.MixedPeriodicAssembly.boundaryLimits_locallyUniform",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L310",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MixedPeriodicAssembly.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 310,
+            "text": "theorem boundaryLimits_locallyUniform {A v : VelocityField} {p : PressureField}\n    (hz : JointResidualLimits.VanishingJointJets (originalResidual A v p))\n    (eA : JointResidualLimits.AwayExtensions A)\n    (ev : JointResidualLimits.AwayExtensions v)\n    (ep : JointResidualLimits.AwayExtensions p) (n : ℕ) :\n    TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n (periodicResidual A v p) (t, x))\n      (fun x => boundaryLimits A v p eA ev ep x n) (𝓝[<] (1 : ℝ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

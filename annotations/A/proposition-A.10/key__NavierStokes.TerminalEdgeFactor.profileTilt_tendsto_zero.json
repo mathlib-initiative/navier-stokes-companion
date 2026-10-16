@@ -1,29 +1,31 @@
 {
-  "id": "proposition-A.10/key/1.NavierStokes.TerminalEdgeFactor.profileTilt_tendsto_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgeFactor.profileTilt_tendsto_zero",
-      "line": 1342,
-      "module": "NavierStokes.TerminalEdgeFactor",
-      "path": "NavierStokes/TerminalEdgeFactor.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1342"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgeFactor.profileTilt_tendsto_zero",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgeFactor.profileTilt_tendsto_zero",
+        "module": "NavierStokes.TerminalEdgeFactor"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: profileTilt C d y0 \\to 0 at (\\eta, 0) for \\eta \\in [-1,1]: the limit of (A.50)."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 1342,
-        "text": "theorem profileTilt_tendsto_zero {C : ℝ} (hC : 0 < C) (d : TailData) (y0 : ℝ)\n    {η : ℝ} (hη : η ∈ Icc (-1 : ℝ) 1) :\n    Tendsto (profileTilt C d y0) (𝓝 (η, 0)) (𝓝 0)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TerminalEdgeFactor.profileTilt_tendsto_zero",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: profileTilt C d y0 \\to 0 at (\\eta, 0) for \\eta \\in [-1,1]: the limit of (A.50)."
+          },
+          "destination": {
+            "fragment": "L1342",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean"
+          },
+          "snippet": {
+            "line": 1342,
+            "text": "theorem profileTilt_tendsto_zero {C : ℝ} (hC : 0 < C) (d : TailData) (y0 : ℝ)\n    {η : ℝ} (hη : η ∈ Icc (-1 : ℝ) 1) :\n    Tendsto (profileTilt C d y0) (𝓝 (η, 0)) (𝓝 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

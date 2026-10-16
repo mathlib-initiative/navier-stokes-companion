@@ -1,25 +1,28 @@
 {
-  "id": "eq-p151-3/key/03.NavierStokes.ReferenceBounds.bounds_from_sources",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceBounds.bounds_from_sources",
-      "line": 1078,
-      "module": "NavierStokes.ReferenceBounds",
-      "path": "NavierStokes/ReferenceBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean#L1078"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceBounds.bounds_from_sources"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceBounds.bounds_from_sources",
+        "lines": [1078, 1078],
+        "module": "NavierStokes.ReferenceBounds"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 1078,
-        "text": "have hqa : (23/10) * L h p.2 ≤ q * (4 / Λ) := by have he : q * (4/Λ) = (94/25) * L h p.2 * chi h j σ p.2 … (q = (47/50) * L * Λ * chi, a = X_0 = 4/Λ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ReferenceBounds.bounds_from_sources"
+          },
+          "destination": {
+            "fragment": "L1078",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 1031,
+            "text": "theorem bounds_from_sources (hsmall : NaturalAxisData.SmallParameters h j) (hσ : 0 < σ)\n    {K ν : ℝ} (hK : 0 < K) (hν : 0 < ν) (hC : 0 < C)\n    (hcut : ∀ η ∈ Icc (-1 : ℝ) 1, |NaturalAxisData.Z h j P0 η| ≤ ν →\n      99 / 100 < NaturalAxisData.chi h j σ η)\n    (hCbig : 18 * K / ((4 / Λ) * (ν / 2)) < C)\n    (hq : ∀ p ∈ holdRegion,\n      (47 / 50 : ℝ) * NaturalAxisData.L h p.2 * Λ * NaturalAxisData.chi h j σ p.2 + 12 / 5 <\n        sourceQ (referenceProfiles E.profile hΛ hδ hδT hP0) h p)\n    (hn : ∀ p ∈ holdRegion,\n      |(referenceProfiles E.profile hΛ hδ hδT hP0).axialSource h p - NaturalAxisData.Z h j P0 p.2| < ν / 2)\n    (hfbound : ∀ p ∈ holdRegion, |(referenceProfiles E.profile hΛ hδ hδT hP0).f p| ≤ K / C) :\n    ReferenceBoundsOnHold E.profile hΛ hδ hδT hP0"
+          }
+        }
       }
     }
-  }
+  ]
 }

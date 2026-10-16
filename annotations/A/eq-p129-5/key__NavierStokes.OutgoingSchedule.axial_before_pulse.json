@@ -1,23 +1,26 @@
 {
-  "id": "eq-p129-5/key/02.NavierStokes.OutgoingSchedule.axial_before_pulse",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingSchedule.axial_before_pulse",
-      "line": 507
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean#L507"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingSchedule.axial_before_pulse",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingSchedule.axial_before_pulse",
+        "module": "NavierStokes.OutgoingSchedule"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 507,
-        "text": "axial c amp (y, eta) = dropCoefficient c.m y * eta  (for y ≤ c.pulseStart)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.OutgoingSchedule.axial_before_pulse",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L507"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 507,
+            "text": "theorem axial_before_pulse (c : Parameters) (amp : ℝ → ℝ) (eta : ℝ) {y : ℝ}\n    (hy : y ≤ c.pulseStart) : axial c amp (y, eta) = dropCoefficient c.m y * eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

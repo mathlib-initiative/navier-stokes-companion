@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.13/key/04.NavierStokes.EntranceAlignedBase.modulated_quotients_smooth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.EntranceAlignedBase.modulated_quotients_smooth",
-      "line": 975,
-      "module": "NavierStokes.EntranceAlignedBase",
-      "path": "NavierStokes/EntranceAlignedBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L975"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.EntranceAlignedBase.modulated_quotients_smooth",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.EntranceAlignedBase.modulated_quotients_smooth",
+        "module": "NavierStokes.EntranceAlignedBase"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 975,
-        "text": "(hc : 0 < c) (n : ℕ) : ContDiff ℝ ∞ (higherStressQuotient (modulatedCoefficients H v) (activeZeta c (log (activeLeft W)) (activeRight W)) n)   -- T_n/ζ smooth for n ≥ 2 (the form the Lean actually consumes)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.EntranceAlignedBase.modulated_quotients_smooth",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L975",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 975,
+            "text": "theorem modulated_quotients_smooth {c : ℝ} (hc : 0 < c) (n : ℕ) :\n    ContDiff ℝ ∞ (BaseResidual.higherStressQuotient (modulatedCoefficients H v)\n      (BaseResidual.activeZeta c (Real.log (NominalConeAssembly.activeLeft W))\n        (ConstructedSlowBase.activeRight W)) n)"
+          }
+        }
       }
     }
-  }
+  ]
 }

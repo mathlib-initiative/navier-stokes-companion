@@ -1,25 +1,27 @@
 {
-  "id": "eq-p044-2/key/05.NavierStokes.TerminalEdgeFactor.profileStress_factorization",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgeFactor.profileStress_factorization",
-      "line": 1256,
-      "module": "NavierStokes.TerminalEdgeFactor",
-      "path": "NavierStokes/TerminalEdgeFactor.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1256"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgeFactor.profileStress_factorization",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgeFactor.profileStress_factorization",
+        "module": "NavierStokes.TerminalEdgeFactor"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 1256,
-        "text": "profileStress C d y0 y = (FlatCutoff.edge 4 y.2 / y.2 ^ 3) • profileStressFactor C d y0 y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.TerminalEdgeFactor.profileStress_factorization",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1256",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1256,
+            "text": "theorem profileStress_factorization (C : ℝ) (d : TailData) (y0 : ℝ) (y : ℝ × ℝ) :\n    profileStress C d y0 y =\n      (FlatCutoff.edge 4 y.2 / y.2 ^ 3) • profileStressFactor C d y0 y"
+          }
+        }
       }
     }
-  }
+  ]
 }

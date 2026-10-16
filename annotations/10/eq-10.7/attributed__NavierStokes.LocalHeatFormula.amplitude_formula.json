@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.7/attributed/04.NavierStokes.LocalHeatFormula.amplitude_formula",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalHeatFormula.amplitude_formula",
-      "line": 69,
-      "module": "NavierStokes.LocalHeatFormula",
-      "path": "NavierStokes/LocalHeatFormula.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalHeatFormula.lean#L69"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalHeatFormula.amplitude_formula",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalHeatFormula.amplitude_formula",
+        "module": "NavierStokes.LocalHeatFormula"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 69,
-        "text": "amplitude C h τ r = r ^ (-1 - 2 * h) * exteriorProfile C h (τ / r ^ 2) — this states the paper's *next* sentence rather than (10.7) itself, and follows from (10.7) by the two rewritings in its own proof, with exteriorProfile C h y = C * 2 ^ (1/2 + h) * profile (1 + h) (4 * y) (LocalHeatFormula.lean:19) — the paper's very next sentence, H_ext(Z) = 2^A c_∞ H(4Z)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LocalHeatFormula.amplitude_formula",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L69",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalHeatFormula.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 69,
+            "text": "theorem amplitude_formula (C h τ : ℝ) {r : ℝ} (hr : 0 < r) :\n    amplitude C h τ r = r ^ (-1 - 2 * h) * exteriorProfile C h (τ / r ^ 2)"
+          }
+        }
       }
     }
-  }
+  ]
 }

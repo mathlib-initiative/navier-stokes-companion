@@ -1,26 +1,29 @@
 {
-  "id": "eq-4.41/key/02.NavierStokes.ModulatedCone.Localized.profiles_trueCone",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.Localized.profiles_trueCone",
-      "line": 856,
-      "module": "NavierStokes.ModulatedCone",
-      "path": "NavierStokes/ModulatedCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L856"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.Localized.profiles_trueCone",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.Localized.profiles_trueCone",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 856,
-        "text": "the same conclusion before the moment repair: ∃ N, ∀ n ≥ N, ∀ p ∈ K, 0 < (P n).f p ∧ TrueConeLoop.InTrueCone … for the localized modulated profiles"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ModulatedCone.Localized.profiles_trueCone",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L856",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 856,
+            "text": "theorem profiles_trueCone {D D' : RadialDomain}\n    (W : ModulatedHistories.Window) (r : TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (hK : IsCompact K) (hKW : ∀ p ∈ K, p.1 ∈ Icc W.left W.right)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₁ : ContDiff ℝ ∞ p₁) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (haK : ∀ p ∈ K, 0 < a p)\n    (haNom : ∀ p ∈ K, a p = angularShear E p)\n    (hbNom : ∀ p ∈ K, a p * m p = signedAxialShear E U p)\n    (hrelaxed : ∀ p ∈ K, TrueConeLoop.nominalSpeed (a p) (m p) <\n      ConeAlgebra.coneBound (p₁ p + p₂ p * m p) (p₂ p - p₁ p * m p))\n    (P : ℝ → Profiles D) (Q : Profiles D')\n    (hPf : ∀ n, (P n).f = ModulatedHistories.localizedF W r f n)\n    (hPU : ∀ n, (P n).U = ModulatedHistories.localizedU W r E U n)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

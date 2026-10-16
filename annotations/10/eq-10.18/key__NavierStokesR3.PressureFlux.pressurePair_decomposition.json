@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.18/key/01.NavierStokesR3.PressureFlux.pressurePair_decomposition",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.PressureFlux.pressurePair_decomposition",
-      "line": 251,
-      "module": "NavierStokes.R3.PressureFlux",
-      "path": "NavierStokes/R3/PressureFlux.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureFlux.lean#L251"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.PressureFlux.pressurePair_decomposition",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.PressureFlux.pressurePair_decomposition",
+        "module": "NavierStokes.R3.PressureFlux"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 251,
-        "text": "(hg : Integrable g) (hhg : MemLp (fun x => h x * g x) (6/5)) (ψ ψh : ComplexTest) : pressurePair i j g ψh = (∫ x, (h x * g x : ℝ) * rieszTest i j ψ x) + commutatorPair i j h g ψ ψh  -- arbitrary multiplier h"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokesR3.PressureFlux.pressurePair_decomposition",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L251",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureFlux.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 251,
+            "text": "theorem pressurePair_decomposition (i j : Fin 3) {h g : Space → ℝ}\n    (hg : Integrable g volume) (hhg : MemLp (fun x => h x * g x) (6 / 5) volume)\n    (ψ ψh : ComplexTest) :\n    pressurePair i j g ψh =\n      (∫ x, (h x * g x : ℝ) * rieszTest i j ψ x) + commutatorPair i j h g ψ ψh"
+          }
+        }
       }
     }
-  }
+  ]
 }

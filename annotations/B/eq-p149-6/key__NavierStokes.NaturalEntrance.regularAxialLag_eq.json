@@ -1,26 +1,28 @@
 {
-  "id": "eq-p149-6/key/03.NavierStokes.NaturalEntrance.regularAxialLag_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalEntrance.regularAxialLag_eq",
-      "line": 1322,
-      "module": "NavierStokes.NaturalEntrance",
-      "path": "NavierStokes/NaturalEntrance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L1322"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalEntrance.regularAxialLag_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalEntrance.regularAxialLag_eq",
+        "module": "NavierStokes.NaturalEntrance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1322,
-        "text": "regularAxialLag h U V Pr p = -2 * NaturalAxisData.L h p.2 * partialY U p  (i.e. N_s = -2L U_X)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.NaturalEntrance.regularAxialLag_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1322",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1322,
+            "text": "theorem regularAxialLag_eq {h j Λ : ℝ} {P0 a : ℝ → ℝ}\n    {f U V Pr : ℝ × ℝ → ℝ} (hs : IsNaturalSolution h j Λ P0 a f U V Pr)\n    (hΛ : 0 < Λ) {p : ℝ × ℝ} (hp : p ∈ domain Λ) (hX : p.1 ≠ 0) :\n    regularAxialLag h U V Pr p = -2 * NaturalAxisData.L h p.2 * partialY U p"
+          }
+        }
       }
     }
-  }
+  ]
 }

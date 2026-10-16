@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.38/key/01.NavierStokes.GenericRealizationBounds.stage_growth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericRealizationBounds.stage_growth",
-      "line": 85,
-      "module": "NavierStokes.GenericRealizationBounds",
-      "path": "NavierStokes/GenericRealizationBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericRealizationBounds.lean#L85"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericRealizationBounds.stage_growth"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericRealizationBounds.stage_growth",
+        "module": "NavierStokes.GenericRealizationBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 85,
-        "text": "theorem stage_growth … (hraw : RawStageBounds q A g L C P U) (hbg : ∀ m, JetRate l q base m (-Lbase m)) (J m : ℕ) : JetRate l q (stage base A J) m (-max (L m + 1) (Lbase m)) — i.e. ∃ C ≥ 0, eventually ‖D^m U^{[J]}‖ ≤ C * q ^ (-K_m) with K_m = max (L m + 1) (Lbase m) independent of J"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GenericRealizationBounds.stage_growth"
+          },
+          "destination": {
+            "fragment": "L85",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericRealizationBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 85,
+            "text": "theorem stage_growth {l : Filter E} {q : E → ℝ} {base : E → V}\n    {A : ℕ → E → V} {g L Lbase : ℕ → ℝ} {C P : ℕ → ℕ → ℝ} {U : Set E}\n    (hU : IsOpen U) (hlU : ∀ᶠ x in l, x ∈ U)\n    (hq : ∀ᶠ x in l, 0 < q x ∧ q x ≤ 1) (hqzero : Tendsto q l (𝓝 0))\n    (hbase : ContDiffOn ℝ ∞ base U)\n    (hA : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (A j) U)\n    (hraw : CutStageEstimates.RawStageBounds q A g L C P U)\n    (hg : ∀ j, 1 ≤ j → 0 ≤ g j)\n    (hbg : ∀ m, JetRate l q base m (-Lbase m)) (J m : ℕ) :\n    JetRate l q (stage base A J) m (-max (L m + 1) (Lbase m))"
+          }
+        }
       }
     }
-  }
+  ]
 }

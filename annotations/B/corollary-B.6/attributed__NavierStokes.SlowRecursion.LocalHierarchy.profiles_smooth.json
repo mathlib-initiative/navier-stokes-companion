@@ -1,29 +1,31 @@
 {
-  "id": "corollary-B.6/attributed/1.NavierStokes.SlowRecursion.LocalHierarchy.profiles_smooth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowRecursion.LocalHierarchy.profiles_smooth",
-      "line": 1289,
-      "module": "NavierStokes.SlowRecursion",
-      "path": "NavierStokes/SlowRecursion.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowRecursion.lean#L1289"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowRecursion.LocalHierarchy.profiles_smooth",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowRecursion.LocalHierarchy.profiles_smooth",
+        "module": "NavierStokes.SlowRecursion"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: (n : ℕ) (i : Fin 5) : ContDiffOn ℝ ∞ (profile (A.coefficients n i)) (Ico (0:ℝ) (R^2) ×ˢ realParameterDomain U). Quantified over all i : Fin 5, so it covers the fifth (V_0/X) coefficient as well: smoothness in (X,η) up to and including X = 0."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1289,
-        "text": "theorem LocalHierarchy.profiles_smooth {R : ℝ} {U : Set ℂ} {h C : ℝ}\n    {base : Fin 5 → SimilarityProfile.InnerProfile} (A : LocalHierarchy R U h C base)\n    (hR : 0 < R) (hU : IsOpen U) (n : ℕ) (i : Fin 5) :\n    ContDiffOn ℝ ∞ (profile (A.coefficients n i))\n      (Ico (0 : ℝ) (R ^ 2) ×ˢ PositiveAxisExistence.realParameterDomain U)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SlowRecursion.LocalHierarchy.profiles_smooth",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: (n : ℕ) (i : Fin 5) : ContDiffOn ℝ ∞ (profile (A.coefficients n i)) (Ico (0:ℝ) (R^2) ×ˢ realParameterDomain U). Quantified over all i : Fin 5, so it covers the fifth (V_0/X) coefficient as well: smoothness in (X,η) up to and including X = 0."
+          },
+          "destination": {
+            "fragment": "L1289",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowRecursion.lean"
+          },
+          "snippet": {
+            "line": 1289,
+            "text": "theorem LocalHierarchy.profiles_smooth {R : ℝ} {U : Set ℂ} {h C : ℝ}\n    {base : Fin 5 → SimilarityProfile.InnerProfile} (A : LocalHierarchy R U h C base)\n    (hR : 0 < R) (hU : IsOpen U) (n : ℕ) (i : Fin 5) :\n    ContDiffOn ℝ ∞ (profile (A.coefficients n i))\n      (Ico (0 : ℝ) (R ^ 2) ×ˢ PositiveAxisExistence.realParameterDomain U)"
+          }
+        }
       }
     }
-  }
+  ]
 }

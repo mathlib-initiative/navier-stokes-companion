@@ -1,24 +1,27 @@
 {
-  "id": "eq-p053-1/key/01.NavierStokes.MeanResidual.conservativeAngular_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanResidual.conservativeAngular_eq",
-      "line": 434
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanResidual.lean#L434"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanResidual.conservativeAngular_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanResidual.conservativeAngular_eq",
+        "module": "NavierStokes.MeanResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 434,
-        "text": "(hw : ∀ i, ContDiff ℝ ∞ (w i)) : conservativeAngular w p q = residualAngular w p q + w 1 q * divergence w q"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.MeanResidual.conservativeAngular_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L434"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 434,
+            "text": "theorem conservativeAngular_eq {w : Components} (hw : ∀ i, ContDiff ℝ ∞ (w i))\n    (p : Scalar) (q : SpaceTime) :\n    conservativeAngular w p q = residualAngular w p q + w 1 q * divergence w q"
+          }
+        }
       }
     }
-  }
+  ]
 }

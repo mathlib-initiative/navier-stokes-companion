@@ -1,26 +1,29 @@
 {
-  "id": "corollary-7.8/support/3.NavierStokes.ActualSignedMeanBinding.pair_signed_reconstruction",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSignedMeanBinding.pair_signed_reconstruction",
-      "line": 410,
-      "module": "NavierStokes.ActualSignedMeanBinding",
-      "path": "NavierStokes/ActualSignedMeanBinding.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean#L410"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSignedMeanBinding.pair_signed_reconstruction",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSignedMeanBinding.pair_signed_reconstruction",
+        "module": "NavierStokes.ActualSignedMeanBinding"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 410,
-        "text": "theorem pair_signed_reconstruction (request : ℕ → FullPoint → Vec2)\n    (L : Label B N0) (n : ℕ) {x : Point}\n    (hx : x ∈ ActualInitialization.geometry.strip.domain) (i : Fin 2) :\n    ∑ j : Fin 2,\n      (2 * signedRatio request L n x j) *\n        ((PartitionedCovariance.amplitude (ChartScales.epsilon h n)\n          (spatialMask L (nativePoint n x L)) (commonMatrix L n x) (commonTarget L n x) j) ^ 2 *\n          commonMatrix L n x i j) =\n      ChartScales.epsilon h n * spatialMask L (nativePoint n x L) ^ 2 * request n (x, 0) i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ActualSignedMeanBinding.pair_signed_reconstruction",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L410",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 410,
+            "text": "theorem pair_signed_reconstruction (request : ℕ → FullPoint → Vec2)\n    (L : Label B N0) (n : ℕ) {x : Point}\n    (hx : x ∈ ActualInitialization.geometry.strip.domain) (i : Fin 2) :\n    ∑ j : Fin 2,\n      (2 * signedRatio request L n x j) *\n        ((PartitionedCovariance.amplitude (ChartScales.epsilon h n)\n          (spatialMask L (nativePoint n x L)) (commonMatrix L n x) (commonTarget L n x) j) ^ 2 *\n          commonMatrix L n x i j) =\n      ChartScales.epsilon h n * spatialMask L (nativePoint n x L) ^ 2 * request n (x, 0) i"
+          }
+        }
       }
     }
-  }
+  ]
 }

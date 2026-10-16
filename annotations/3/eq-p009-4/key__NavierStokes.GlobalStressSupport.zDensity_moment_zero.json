@@ -1,26 +1,28 @@
 {
-  "id": "eq-p009-4/key/06.NavierStokes.GlobalStressSupport.zDensity_moment_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalStressSupport.zDensity_moment_zero",
-      "line": 350,
-      "module": "NavierStokes.GlobalStressSupport",
-      "path": "NavierStokes/GlobalStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalStressSupport.lean#L350"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalStressSupport.zDensity_moment_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalStressSupport.zDensity_moment_zero",
+        "module": "NavierStokes.GlobalStressSupport"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 350,
-        "text": "… SlowStressSupport.moment s.B 0 (SlowResidualMatching.zDensity h (asSlowProfiles s) n) eta = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.GlobalStressSupport.zDensity_moment_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L350",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalStressSupport.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 350,
+            "text": "theorem zDensity_moment_zero {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    (hbase : s.base.beta = betaFromU s.domain 0 s.base.axial) {n : ℕ} (hn : 2 ≤ n)\n    {eta : ℝ} (heta : eta ∈ S) :\n    SlowStressSupport.moment s.B 0 (SlowResidualMatching.zDensity h (asSlowProfiles s) n) eta = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

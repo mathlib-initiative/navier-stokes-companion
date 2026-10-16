@@ -1,26 +1,29 @@
 {
-  "id": "eq-5.42/support/06.NavierStokes.BaseRadialJets.reducedRadial_polynomial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseRadialJets.reducedRadial_polynomial",
-      "line": 239,
-      "module": "NavierStokes.BaseRadialJets",
-      "path": "NavierStokes/BaseRadialJets.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseRadialJets.lean#L239"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseRadialJets.reducedRadial_polynomial",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseRadialJets.reducedRadial_polynomial",
+        "module": "NavierStokes.BaseRadialJets"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 239,
-        "text": "PolynomialJets (unitScale D) (fun i => reducedRadial a h d (Q i)) — reducedRadial = Q^{1/2}u_r by radial_eq (line 149); bounded jets only, no Q^{2h} rate and no subtraction of a leading radial profile"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.BaseRadialJets.reducedRadial_polynomial",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L239",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseRadialJets.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 239,
+            "text": "theorem reducedRadial_polynomial {ι : Type*} {D : Domain ι Slow}\n    {a : ℕ → ℕ} {h C r M qlo qhi lo hi : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (hr : 0 < r) (hM : 1 ≤ M)\n    (hqlo : 0 < qlo) (hqhi : 0 < qhi) (hlo : 0 < lo)\n    (H : GeometryBounds D h r M qlo qhi lo hi)\n    {d : SlowBorelBase.Coefficients} (hd : SlowBorelBase.SmoothCoefficients d)\n    (ha : SlowBorelBase.AdmissibleScales h (SlowBorelBase.coefficientBundle C d)\n      (SlowBorelBase.innerBox lo hi) a)\n    (Q : ι → ℝ) (hQ : ∀ i, 0 < Q i) (hQ1 : ∀ i, Q i ≤ 1)\n    (hsmall : ∀ i, Q i * qhi ≤ 1) :\n    PolynomialJets (unitScale D) (fun i => reducedRadial a h d (Q i))"
+          }
+        }
       }
     }
-  }
+  ]
 }

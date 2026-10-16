@@ -1,26 +1,28 @@
 {
-  "id": "eq-p044-3/key/02.NavierStokes.ActiveAnnulusWeight.actual_shear_coordinates_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.actual_shear_coordinates_zero",
-      "line": 917,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L917"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.actual_shear_coordinates_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.actual_shear_coordinates_zero",
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 917,
-        "text": "(hη : η ∈ J) : actualP1 T κ L (0,η) = referenceP1 L (0,η) ∧ actualP2 T κ X0 L U (0,η) = referenceP2 X0 L U (0,η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ActiveAnnulusWeight.actual_shear_coordinates_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L917",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 917,
+            "text": "theorem actual_shear_coordinates_zero {T : ℝ} (hT : 0 < T) (κ : ℝ)\n    {X0 : ℝ} (hX0 : 0 < X0) {J : Set ℝ} (hJ : IsOpen J) {L U : Field}\n    (hL : ContDiffOn ℝ ∞ L (logDomain J hJ).carrier)\n    (hU : ContDiffOn ℝ ∞ U (logDomain J hJ).carrier) {η : ℝ} (hη : η ∈ J) :\n    actualP1 T κ L (0,η) = referenceP1 L (0,η) ∧\n    actualP2 T κ X0 L U (0,η) = referenceP2 X0 L U (0,η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

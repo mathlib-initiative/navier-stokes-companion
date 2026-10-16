@@ -1,23 +1,26 @@
 {
-  "id": "eq-p148-2/key/01.NavierStokes.AxisContraction.uniform_natural_fixedPoint",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisContraction.uniform_natural_fixedPoint",
-      "line": 587
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisContraction.lean#L587"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisContraction.uniform_natural_fixedPoint",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisContraction.uniform_natural_fixedPoint",
+        "module": "NavierStokes.AxisContraction"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 587,
-        "text": "∃ Λ₀ > 0, ∀ Λ ≥ Λ₀, ∀ a, ‖a‖ ≤ M → ∃ x, ‖x - referencePair O d S‖ ≤ 1 ∧ referencePair O d S + (1 / (2 * Λ)) • naturalRemainder O d S (1 / Λ) a x = x ∧ …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.AxisContraction.uniform_natural_fixedPoint",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L587"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 587,
+            "text": "theorem uniform_natural_fixedPoint [CompleteSpace V]\n    (O : NaturalOperators V) (d : AxisData V) (S : V →L[ℝ] V)\n    (M : ℝ) (hM : 0 ≤ M) :\n    ∃ Λ₀ : ℝ, 0 < Λ₀ ∧ ∀ Λ : ℝ, Λ₀ ≤ Λ → ∀ a : V, ‖a‖ ≤ M →\n      ∃ x : V × V,\n        ‖x - referencePair O d S‖ ≤ 1 ∧\n        referencePair O d S +\n          (1 / (2 * Λ)) • naturalRemainder O d S (1 / Λ) a x = x ∧\n        ‖x - referencePair O d S‖ ≤\n          remainderBound O d S (‖referencePair O d S‖ + 1) M ("
+          }
+        }
       }
     }
-  }
+  ]
 }

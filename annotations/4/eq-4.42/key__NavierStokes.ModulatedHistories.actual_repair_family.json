@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.42/key/04.NavierStokes.ModulatedHistories.actual_repair_family",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedHistories.actual_repair_family",
-      "line": 751,
-      "module": "NavierStokes.ModulatedHistories",
-      "path": "NavierStokes/ModulatedHistories.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean#L751"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedHistories.actual_repair_family",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedHistories.actual_repair_family",
+        "module": "NavierStokes.ModulatedHistories"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 751,
-        "text": "∃ N0 C, ∀ N ≥ N0, ∃ c V, ContDiff c ∧ S ⊆ V ∧ (∀ eta ∈ V, physicalMoments P b (A eta) (G eta) (c eta) = repairDebt W r f E U N eta ∧ ∀ X > 0, 0 < physicalE ...) ∧ FiniteJetBound q c S (C/N)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ModulatedHistories.actual_repair_family",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L751",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 751,
+            "text": "theorem actual_repair_family (W : Window)\n    (r : ParametricModulation.TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (P : FiveProfileMoments.Patch) (b : ℝ) (hb : FiveProfileMoments.GoodExponent b)\n    (S : Set ℝ) (hS : IsCompact S) (A G : ℝ → ℝ)\n    (hA : ContDiff ℝ ∞ A) (hG : ContDiff ℝ ∞ G) (hApos : ∀ eta, 0 < A eta) (q : ℕ) :\n    ∃ N0 C : ℝ, 1 ≤ N0 ∧ 0 < C ∧ ∀ N : ℝ, N0 ≤ N →\n      ∃ (c : ℝ → Coeff) (V : Set ℝ), ContDiff ℝ ∞ c ∧ IsOpen V ∧ S ⊆ V ∧\n        (∀ eta ∈ V, FiveProfileMoments.physicalMoments P b (A eta) (G eta) (c eta) =\n            repairDebt W r f E U N eta ∧\n          ∀ X : ℝ, 0 < X → 0 < FiveProfileMoments.physicalE P b (A eta) (c eta) X) ∧\n        JetBounds.FiniteJetBound q c S (C / N)"
+          }
+        }
       }
     }
-  }
+  ]
 }

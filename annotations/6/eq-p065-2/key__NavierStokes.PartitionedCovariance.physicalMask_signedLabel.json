@@ -1,26 +1,28 @@
 {
-  "id": "eq-p065-2/key/01.NavierStokes.PartitionedCovariance.physicalMask_signedLabel",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.physicalMask_signedLabel",
-      "line": 592,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L592"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.physicalMask_signedLabel",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.physicalMask_signedLabel",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 592,
-        "text": "theorem physicalMask_signedLabel (D) (U : UnsignedLabel) (j : Fin 2) (q) (x) : physicalMask D (signedLabel U j) q x = mask D U q x := rfl"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PartitionedCovariance.physicalMask_signedLabel",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L592",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 592,
+            "text": "theorem physicalMask_signedLabel (D : ℝ) (U : UnsignedLabel) (j : Fin 2) (q : ℝ)\n    (x : SlotColoring.Position) : physicalMask D (signedLabel U j) q x = mask D U q x"
+          }
+        }
       }
     }
-  }
+  ]
 }

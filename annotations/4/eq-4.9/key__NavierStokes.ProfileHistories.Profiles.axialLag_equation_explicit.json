@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.9/key/02.NavierStokes.ProfileHistories.Profiles.axialLag_equation_explicit",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProfileHistories.Profiles.axialLag_equation_explicit",
-      "line": 692,
-      "module": "NavierStokes.ProfileHistories",
-      "path": "NavierStokes/ProfileHistories.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileHistories.lean#L692"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProfileHistories.Profiles.axialLag_equation_explicit",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProfileHistories.Profiles.axialLag_equation_explicit",
+        "module": "NavierStokes.ProfileHistories"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 692,
-        "text": "(hX : 0 < p.1) : X * deriv (N_s slice) X + N_s = -W * (X * ∂_X U) - velocityExponent h * (1 - 2ηU) * U - (axialExponent h * η + coordinateFactor η * U) * ∂_η U - coordinateFactor η * ∂_η Π + 4 * velocityExponent h * η * Π + 2 * η * (X * ∂_X Π)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ProfileHistories.Profiles.axialLag_equation_explicit",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L692",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileHistories.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 692,
+            "text": "theorem axialLag_equation_explicit (h : ℝ) {p : Point} (hp : p ∈ D.carrier) (hX : 0 < p.1) :\n    p.1 * deriv (fun x => P.axialLag h (x, p.2)) p.1 + P.axialLag h p =\n      -P.W h p * (p.1 * radialPartial P.U p) -\n        velocityExponent h * (1 - 2 * p.2 * P.U p) * P.U p -\n          (axialExponent h * p.2 + coordinateFactor p.2 * P.U p) * parameterPartial P.U p -\n            coordinateFactor p.2 * parameterPartial P.pressure p +\n              4 * velocityExponent h * p.2 * P.pressure p +\n                2 * p.2 * (p.1 * radialPartial P.pressure p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

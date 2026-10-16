@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.9/key/03.NavierStokes.StressAlgebra.angular_source_logarithmic_form",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressAlgebra.angular_source_logarithmic_form",
-      "line": 272,
-      "module": "NavierStokes.StressAlgebra",
-      "path": "NavierStokes/StressAlgebra.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressAlgebra.lean#L272"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressAlgebra.angular_source_logarithmic_form",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressAlgebra.angular_source_logarithmic_form",
+        "module": "NavierStokes.StressAlgebra"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 272,
-        "text": "H * (-W * (x * Hx / H) - h * (1 - 2ηU) - (D η + d U) * (Hη / H)) = angularSource …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.StressAlgebra.angular_source_logarithmic_form",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L272",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressAlgebra.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 272,
+            "text": "theorem angular_source_logarithmic_form\n    (h η x W U H Hx Hη : ℝ) (hH : H ≠ 0) :\n    H * (-W * (x * Hx / H) - h * (1 - 2 * η * U) -\n      (axialExponent h * η + coordinateFactor η * U) * (Hη / H)) =\n      angularSource h η x W U H Hx Hη"
+          }
+        }
       }
     }
-  }
+  ]
 }

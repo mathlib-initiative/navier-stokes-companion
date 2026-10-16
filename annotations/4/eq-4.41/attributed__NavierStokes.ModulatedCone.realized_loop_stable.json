@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.41/attributed/07.NavierStokes.ModulatedCone.realized_loop_stable",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.realized_loop_stable",
-      "line": 295,
-      "module": "NavierStokes.ModulatedCone",
-      "path": "NavierStokes/ModulatedCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L295"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.realized_loop_stable",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.realized_loop_stable",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 295,
-        "text": "∃ ρ : ℝ, 0 < ρ ∧ ∀ p ∈ K, ∀ θ q₁ q₂ A' C', |q₁ - p₁ p| ≤ ρ → |q₂ - p₂ p| ≤ ρ → |A' - r.angularLoop (p,θ)| ≤ ρ → |C' - r.signedAxialLoop (p,θ)| ≤ ρ → InTrueCone q₁ q₂ A' C' — one uniform tolerance in the four cone coordinates"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.ModulatedCone.realized_loop_stable",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L295",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 295,
+            "text": "theorem realized_loop_stable\n    (r : TrueConeRealization a m p₁ p₂ K B) (hK : IsCompact K)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₁ : ContDiff ℝ ∞ p₁) (hp₂ : ContDiff ℝ ∞ p₂)\n    (haK : ∀ p ∈ K, 0 < a p)\n    (hrelaxed : ∀ p ∈ K, TrueConeLoop.nominalSpeed (a p) (m p) <\n      ConeAlgebra.coneBound (p₁ p + p₂ p * m p) (p₂ p - p₁ p * m p)) :\n    ∃ ρ : ℝ, 0 < ρ ∧ ∀ p ∈ K, ∀ θ q₁ q₂ A' C' : ℝ,\n      |q₁ - p₁ p| ≤ ρ → |q₂ - p₂ p| ≤ ρ →\n      |A' - r.angularLoop (p, θ)| ≤ ρ →\n      |C' - r.signedAxialLoop (p, θ)| ≤ ρ →\n      TrueConeLoop.InTrueCone q₁ q₂ A' C'"
+          }
+        }
       }
     }
-  }
+  ]
 }

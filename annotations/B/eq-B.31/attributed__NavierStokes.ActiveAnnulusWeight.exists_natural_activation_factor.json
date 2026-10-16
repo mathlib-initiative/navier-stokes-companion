@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.31/attributed/07.NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor",
-      "line": 1014,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L1014"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor",
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 1014,
-        "text": "(hT : 0 < T) (hκ : κ < 1) : Nonempty (EdgeFactor (Icc (-1:ℝ) 1) (T^2) (fun q => activatedStress h N.endpoint I L U T κ (q.2,q.1)))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1014",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 1014,
+            "text": "theorem exists_natural_activation_factor {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    (hP0 : ContDiff ℝ ∞ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2*δ < ReferencePath.rampLimit)\n    {T κ : ℝ} (hT : 0 < T) (hκ : κ < 1) :\n    let N"
+          }
+        }
       }
     }
-  }
+  ]
 }

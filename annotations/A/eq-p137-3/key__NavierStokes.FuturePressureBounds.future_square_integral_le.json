@@ -1,24 +1,26 @@
 {
-  "id": "eq-p137-3/key/01.NavierStokes.FuturePressureBounds.future_square_integral_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FuturePressureBounds.future_square_integral_le",
-      "line": 198,
-      "module": "NavierStokes.FuturePressureBounds",
-      "path": "NavierStokes/FuturePressureBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FuturePressureBounds.lean#L198"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FuturePressureBounds.future_square_integral_le"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FuturePressureBounds.future_square_integral_le",
+        "module": "NavierStokes.FuturePressureBounds"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 198,
-        "text": "(hy : 0 ≤ y) (heta : |eta| ≤ 1) : (∫ t in Ioi y, finalAngular d (t, eta) ^ 2) ≤ envelopeConstant * finalAngular d (y, eta) ^ 2, envelopeConstant = 5 * Real.exp (6 / 5)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.FuturePressureBounds.future_square_integral_le"
+          },
+          "destination": {
+            "fragment": "L198",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FuturePressureBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 198,
+            "text": "theorem future_square_integral_le (d : TailData) {y eta : ℝ}\n    (hy : 0 ≤ y) (heta : |eta| ≤ 1) :\n    (∫ t in Ioi y, finalAngular d (t, eta) ^ 2) ≤\n      envelopeConstant * finalAngular d (y, eta) ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

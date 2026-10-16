@@ -1,26 +1,28 @@
 {
-  "id": "eq-p086-2/key/01.NavierStokes.CurlClassBounds.curlRemainder",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CurlClassBounds.curlRemainder",
-      "line": 269,
-      "module": "NavierStokes.CurlClassBounds",
-      "path": "NavierStokes/CurlClassBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L269"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CurlClassBounds.curlRemainder",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CurlClassBounds.curlRemainder",
+        "module": "NavierStokes.CurlClassBounds"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 269,
-        "text": "noncomputable def curlRemainder (K : ℝ) (R : D → ℝ) (Vr Vθ Vz : D → D) (B : D → ComplexVector) (x : D) : ComplexVector := (1 / K) • (Complex.I • cylindricalCurl R Vr Vθ Vz B x)  -- applied to B = coefficient, i.e. r_m = (i/K) curl_*((km/i)·C_m) = curl_* C_m"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CurlClassBounds.curlRemainder",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L269",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 269,
+            "text": "noncomputable def curlRemainder {D : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D]\n    (K : ℝ) (R : D → ℝ) (Vr Vθ Vz : D → D) (B : D → ComplexVector) (x : D) : ComplexVector"
+          }
+        }
       }
     }
-  }
+  ]
 }

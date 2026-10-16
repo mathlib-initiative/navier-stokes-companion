@@ -1,26 +1,28 @@
 {
-  "id": "eq-p126-2/attributed/05.NavierStokes.NaturalCore.coreVelocity_at_origin",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalCore.coreVelocity_at_origin",
-      "line": 403,
-      "module": "NavierStokes.NaturalCore",
-      "path": "NavierStokes/NaturalCore.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean#L403"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalCore.coreVelocity_at_origin",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalCore.coreVelocity_at_origin",
+        "module": "NavierStokes.NaturalCore"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 403,
-        "text": "coreVelocity h f V (t, 0) = ((1 - t) ^ (-NaturalAxisData.A h) * j) • coordinateVector 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.NaturalCore.coreVelocity_at_origin",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L403",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 403,
+            "text": "theorem coreVelocity_at_origin {h j Λ : ℝ} {P0 a0 : ℝ → ℝ}\n    {f U V Pr : ℝ × ℝ → ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    (hs : NaturalProfile.IsNaturalSolution h j Λ P0 a0 f U V Pr)\n    {t : ℝ} (ht : t < 1) :\n    coreVelocity h f V (t, 0) = ((1 - t) ^ (-NaturalAxisData.A h) * j) • coordinateVector 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

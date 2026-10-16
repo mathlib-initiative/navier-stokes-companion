@@ -1,26 +1,29 @@
 {
-  "id": "eq-p012-5/support/05.NavierStokes.ActualPrimaryDynamics.linearResidual_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPrimaryDynamics.linearResidual_eq",
-      "line": 1121,
-      "module": "NavierStokes.ActualPrimaryDynamics",
-      "path": "NavierStokes/ActualPrimaryDynamics.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryDynamics.lean#L1121"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPrimaryDynamics.linearResidual_eq",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPrimaryDynamics.linearResidual_eq",
+        "module": "NavierStokes.ActualPrimaryDynamics"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 1121,
-        "text": "(piece U j L).linearResidual n x i = (piece U j L).linearGoodField n x i + (piece U j L).excluded n x i — for the constructed pieces the linear residual is decomposed, not set to zero"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ActualPrimaryDynamics.linearResidual_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1121",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryDynamics.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 1121,
+            "text": "theorem linearResidual_eq (U : LocalSignedRequest.SlowRegion (2*h))\n    (j : Fin 2) (L : Label B N0) (n : ℕ) {x : FullPoint}\n    (hx : x ∈ ActualPrimaryCoherence.positiveRadialChart) (i : Fin 3) :\n    (piece U j L).linearResidual n x i =\n      (piece U j L).linearGoodField n x i + (piece U j L).excluded n x i"
+          }
+        }
       }
     }
-  }
+  ]
 }

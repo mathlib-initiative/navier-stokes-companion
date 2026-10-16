@@ -1,24 +1,28 @@
 {
-  "id": "eq-A.27/key/01.NavierStokes.ShapedWaitBounds.canonical_hold_estimates",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ShapedWaitBounds.canonical_hold_estimates",
-      "line": 1219
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ShapedWaitBounds.lean#L1219"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ShapedWaitBounds.canonical_hold_estimates",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ShapedWaitBounds.canonical_hold_estimates",
+        "module": "NavierStokes.ShapedWaitBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1219,
-        "text": "holdFloor m * (η^2 + lam + exp (-(1-lam)*t)) ≤ Qs (holdStart+t, η) ∧ |Qs - equilibrium| ≤ holdConstant P m * (1+t) * exp (-(1-lam)*t) ∧ |deriv_η (Qs - equilibrium)| ≤ same ∧ |Ns/E| ≤ holdConstant P m * |η| * (1+t) * exp (-(1/2-lam)*t) ∧ |deriv_η (Ns/E)| ≤ holdConstant P m * (1+t) * exp (-(1/2-lam)*t)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ShapedWaitBounds.canonical_hold_estimates",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1219"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1219,
+            "text": "theorem canonical_hold_estimates {v : TailData} {K : ℝ}\n    (w : UniformAngularReset.ResetWitness v K) {Amp : ℝ → ℝ} (ha : ContDiff ℝ ∞ Amp)\n    {η t : ℝ} (hh1 : v.h ≤ 1 / 100) (hhlam : v.h ≤ v.core.lam / 4)\n    (hhT : v.h ≤ Real.exp (-(v.core.holdStart + 3 / 5)) / 8)\n    (hη : |η| ≤ 1) (ht : 0 ≤ t) (htw : t ≤ v.core.wait) :\n    holdFloor v.core.m * (η ^ 2 + v.core.lam + Real.exp (-(1 - v.core.lam) * t)) ≤\n        OutgoingHistories.Qs w Amp (v.core.holdStart + t, η) ∧\n      |OutgoingHistories.Qs w Amp (v.core.holdStart + t, η) - equilibrium v.core v.h η| ≤\n        holdConstant v.core.P v.core.m * (1 + t) * Real.exp (-(1 - v.core.lam) * t) ∧\n      |deriv (fun θ => OutgoingHistories.Qs w Amp (v.core.holdStart + t, θ) - equilibrium v.core v.h θ) η| ≤\n        holdConstant v.core.P v.core.m * (1 + t) * Real.exp (-(1 - v.core.lam) * t) ∧\n      |OutgoingHistories.Ns w Amp (v.core.holdStart + t, η) / OutgoingHistories.E w (v.core.holdStart + t, η)| ≤\n        holdConstant v.core.P v.core.m * |η| * (1 + t) * Real.exp (-(1 / 2 - v.core.lam) * t) ∧\n      |deriv (fun θ => OutgoingHistories.Ns w Amp (v.core.holdStart + t, θ) /\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

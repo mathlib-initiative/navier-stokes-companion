@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.14/key/01.NavierStokes.VariableGaugeMean.streamBeta_smul_direction",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.VariableGaugeMean.streamBeta_smul_direction",
-      "line": 2768,
-      "module": "NavierStokes.VariableGaugeMean",
-      "path": "NavierStokes/VariableGaugeMean.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean#L2768"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.VariableGaugeMean.streamBeta_smul_direction",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.VariableGaugeMean.streamBeta_smul_direction",
+        "module": "NavierStokes.VariableGaugeMean"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 2768,
-        "text": "PressureStream.streamBeta (r • w) f = fun z => r • PressureStream.streamBeta w f z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.VariableGaugeMean.streamBeta_smul_direction",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L2768",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 2768,
+            "text": "theorem streamBeta_smul_direction {E : Type} [NormedAddCommGroup E] [NormedSpace ℝ E]\n    (r : ℝ) (w : E) (f : ℝ × E → ℝ) :\n    PressureStream.streamBeta (r • w) f = fun z => r • PressureStream.streamBeta w f z"
+          }
+        }
       }
     }
-  }
+  ]
 }

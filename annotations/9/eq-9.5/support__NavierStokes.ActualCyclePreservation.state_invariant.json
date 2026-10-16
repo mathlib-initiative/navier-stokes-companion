@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.5/support/17.NavierStokes.ActualCyclePreservation.state_invariant",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCyclePreservation.state_invariant",
-      "line": 835,
-      "module": "NavierStokes.ActualCyclePreservation",
-      "path": "NavierStokes/ActualCyclePreservation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean#L835"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCyclePreservation.state_invariant",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCyclePreservation.state_invariant",
+        "module": "NavierStokes.ActualCyclePreservation"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 835,
-        "text": "(hN : geometricThreshold ≤ N0) (j : ℕ) : Invariant (ActualIterationLedger.sigma j) (state B N0 j) — the invariant hypothesis of the three flat bounds is met at every stage"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "17.NavierStokes.ActualCyclePreservation.state_invariant",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L835",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 835,
+            "text": "theorem state_invariant (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (j : ℕ) :\n    Invariant (ActualIterationLedger.sigma j) (state B N0 j)"
+          }
+        }
       }
     }
-  }
+  ]
 }

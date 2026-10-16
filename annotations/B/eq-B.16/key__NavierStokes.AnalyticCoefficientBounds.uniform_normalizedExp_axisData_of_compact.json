@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.16/key/01.NavierStokes.AnalyticCoefficientBounds.uniform_normalizedExp_axisData_of_compact",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AnalyticCoefficientBounds.uniform_normalizedExp_axisData_of_compact",
-      "line": 340,
-      "module": "NavierStokes.AnalyticCoefficientBounds",
-      "path": "NavierStokes/AnalyticCoefficientBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AnalyticCoefficientBounds.lean#L340"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AnalyticCoefficientBounds.uniform_normalizedExp_axisData_of_compact",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AnalyticCoefficientBounds.uniform_normalizedExp_axisData_of_compact",
+        "module": "NavierStokes.AnalyticCoefficientBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 340,
-        "text": "∀ Λ : ℝ, 0 ≤ Λ → ∀ C : ℝ, Real.exp (Λ * realPartSup F K) ≤ C → ∃ a : AxisSpace I ε, ‖a‖ ≤ radiusLoss (ε / ρ) ∧ (coefficient … a 0 x = Real.exp (Λ * (F x).re) / C) ∧ …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.AnalyticCoefficientBounds.uniform_normalizedExp_axisData_of_compact",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L340",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AnalyticCoefficientBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 340,
+            "text": "theorem uniform_normalizedExp_axisData_of_compact\n    {I : Window} {ε ρ : ℝ} {F : ℂ → ℂ} {K : Set ℂ}\n    (hε : 0 < ε) (hερ : ε < ρ)\n    (hK : IsCompact K) (hF : AnalyticOnNhd ℂ F K)\n    (hcover : ∀ x ∈ I.interval, closedBall (x : ℂ) ρ ⊆ K)\n    (hreal : ∀ x ∈ I.interval, (F (x : ℂ)).im = 0) :\n    ∀ Λ : ℝ, 0 ≤ Λ → ∀ C : ℝ, Real.exp (Λ * realPartSup F K) ≤ C →\n      ∃ a : AxisSpace I ε,\n        ‖a‖ ≤ radiusLoss (ε / ρ) ∧\n        (∀ x ∈ I.interval, coefficient I (AxisWeightEstimates.weight ε) a 0 x =\n          Real.exp (Λ * (F (x : ℂ)).re) / C) ∧\n        (∀ n : ℕ, n ≠ 0 → ∀ x ∈ I.interval,\n          coefficient I (AxisWeightEstimates.weight ε) a n x = 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

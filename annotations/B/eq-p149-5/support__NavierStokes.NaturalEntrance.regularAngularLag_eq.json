@@ -1,24 +1,28 @@
 {
-  "id": "eq-p149-5/support/03.NavierStokes.NaturalEntrance.regularAngularLag_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalEntrance.regularAngularLag_eq",
-      "line": 1260
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L1260"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalEntrance.regularAngularLag_eq",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalEntrance.regularAngularLag_eq",
+        "module": "NavierStokes.NaturalEntrance"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 1260,
-        "text": "for X ≠ 0, regularAngularLag h f U V p = -2 * L h p.2 * partialY f p / f p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.NaturalEntrance.regularAngularLag_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1260"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 1260,
+            "text": "theorem regularAngularLag_eq {h j Λ : ℝ} {P0 a : ℝ → ℝ}\n    {f U V Pr : ℝ × ℝ → ℝ} (hs : IsNaturalSolution h j Λ P0 a f U V Pr)\n    (hΛ : 0 < Λ) {p : ℝ × ℝ} (hp : p ∈ domain Λ) (hX : p.1 ≠ 0)\n    (hf : ∀ x ∈ uIcc (0 : ℝ) p.1, f (x, p.2) ≠ 0) :\n    regularAngularLag h f U V p = -2 * NaturalAxisData.L h p.2 * partialY f p / f p"
+          }
+        }
       }
     }
-  }
+  ]
 }

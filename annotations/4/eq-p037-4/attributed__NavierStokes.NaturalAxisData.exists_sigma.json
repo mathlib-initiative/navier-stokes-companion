@@ -1,24 +1,27 @@
 {
-  "id": "eq-p037-4/attributed/03.NavierStokes.NaturalAxisData.exists_sigma",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalAxisData.exists_sigma",
-      "line": 295
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisData.lean#L295"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalAxisData.exists_sigma",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalAxisData.exists_sigma",
+        "module": "NavierStokes.NaturalAxisData"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 295,
-        "text": "∃ σ, 0 < σ ∧ ∀ η ∈ Icc (-1) 1, |Z h j P η| ≤ j/10 → 99/100 < chi h j σ η; the proof takes σ = sqrt m / 20"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.NaturalAxisData.exists_sigma",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L295"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 295,
+            "text": "theorem exists_sigma {h j : ℝ} {P : ℝ → ℝ}\n    (p : SmallParameters h j) (pP : PressureData P) :\n    ∃ σ : ℝ, 0 < σ ∧ ∀ η ∈ Icc (-1 : ℝ) 1,\n      |Z h j P η| ≤ j / 10 → 99 / 100 < chi h j σ η"
+          }
+        }
       }
     }
-  }
+  ]
 }

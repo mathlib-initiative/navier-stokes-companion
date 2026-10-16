@@ -1,23 +1,25 @@
 {
-  "id": "eq-p039-5/key/02.NavierStokes.SmoothLoop.angular_rephasing_moments",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothLoop.angular_rephasing_moments",
-      "line": 194,
-      "module": "NavierStokes.SmoothLoop",
-      "path": "NavierStokes/SmoothLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean#L194"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothLoop.angular_rephasing_moments"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SmoothLoop.angular_rephasing_moments",
+        "module": "NavierStokes.SmoothLoop"
       },
-      "snippet": {
-        "line": 194,
-        "text": "angularMean (fun θ => phaseDensity a v (t θ)) = 1 ∧ angularMean (fun θ => phaseDensity a v (t θ) * loopA v (t θ)) = a ∧ angularMean (fun θ => phaseDensity a v (t θ) * loopC v (t θ)) = a * m"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SmoothLoop.angular_rephasing_moments"
+          },
+          "destination": {
+            "fragment": "L194",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean"
+          },
+          "snippet": {
+            "line": 194,
+            "text": "theorem angular_rephasing_moments (t : ℝ → ℝ) (a m ρ v : ℝ)\n    (ha : a ≠ 0) (hv : v ≠ 0) (ht : Continuous t) (hmean : angularMean t = m)\n    (hvar : angularMean (fun θ => (t θ - m) ^ 2) = ρ / a)\n    (hspeed : v = a * (1 + m ^ 2) + ρ) :\n    angularMean (fun θ => phaseDensity a v (t θ)) = 1 ∧\n      angularMean (fun θ => phaseDensity a v (t θ) * loopA v (t θ)) = a ∧\n      angularMean (fun θ => phaseDensity a v (t θ) * loopC v (t θ)) = a * m"
+          }
+        }
       }
     }
-  }
+  ]
 }

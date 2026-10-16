@@ -1,26 +1,29 @@
 {
-  "id": "eq-p052-4/key/03.NavierStokes.PositiveOrderMoments.fluxHistory_exterior",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveOrderMoments.fluxHistory_exterior",
-      "line": 584,
-      "module": "NavierStokes.PositiveOrderMoments",
-      "path": "NavierStokes/PositiveOrderMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean#L584"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveOrderMoments.fluxHistory_exterior",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveOrderMoments.fluxHistory_exterior",
+        "lines": [584, 584],
+        "module": "NavierStokes.PositiveOrderMoments"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 584,
-        "text": "have hmass : ∀ z, massHistory u (R, z) = 0, proved at lines 584-590 from hs (u vanishes for R ≥ B) and hm (positiveIntegral (fun R => R * u (R, eta)) = 0)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.PositiveOrderMoments.fluxHistory_exterior",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L584",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 580,
+            "text": "theorem fluxHistory_exterior (h lam : ℝ) {u : JointProfile} (hu : ContDiff ℝ ∞ u) {B : ℝ}\n    (hB : 0 ≤ B) (hs : ∀ eta R, B ≤ R → u (R, eta) = 0)\n    (hm : ∀ eta, positiveIntegral (fun R => R * u (R, eta)) = 0)\n    {R eta : ℝ} (hR : B ≤ R) : fluxHistory h lam u (R, eta) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

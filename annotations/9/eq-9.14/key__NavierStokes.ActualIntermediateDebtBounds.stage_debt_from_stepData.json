@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.14/key/04.NavierStokes.ActualIntermediateDebtBounds.stage_debt_from_stepData",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualIntermediateDebtBounds.stage_debt_from_stepData",
-      "line": 139,
-      "module": "NavierStokes.ActualIntermediateDebtBounds",
-      "path": "NavierStokes/ActualIntermediateDebtBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualIntermediateDebtBounds.lean#L139"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualIntermediateDebtBounds.stage_debt_from_stepData",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualIntermediateDebtBounds.stage_debt_from_stepData",
+        "module": "NavierStokes.ActualIntermediateDebtBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 139,
-        "text": "on the actual geometry, given StaticData, CycleAnalyticInvariant, 1/5 <= sigma, ActualParticularMeanGain.Inputs and CorrectionAnalyticStep.StepData: (forall i : Fin 3, UnweightedClass ActualInitialization.slowStrip (1+sigma-2*ChartScales.kappa) (fun n z => debt (commonContext B) (postSigned x) n z i)) /\\ (same for postTemporal x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ActualIntermediateDebtBounds.stage_debt_from_stepData",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L139",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualIntermediateDebtBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 139,
+            "text": "theorem stage_debt_from_stepData :\n    (∀ i : Fin 3, UnweightedClass ActualInitialization.slowStrip (1+σ-2*ChartScales.kappa)\n      (fun n z => debt (ActualPrimary.commonContext B) (postSigned x) n z i)) ∧\n    (∀ i : Fin 3, UnweightedClass ActualInitialization.slowStrip (1+σ-2*ChartScales.kappa)\n      (fun n z => debt (ActualPrimary.commonContext B) (postTemporal x) n z i))"
+          }
+        }
       }
     }
-  }
+  ]
 }

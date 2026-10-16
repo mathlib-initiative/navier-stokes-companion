@@ -1,26 +1,28 @@
 {
-  "id": "eq-p108-4/attributed/05.NavierStokes.UniformHarmonicInteraction.square_uniform",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.UniformHarmonicInteraction.square_uniform",
-      "line": 329,
-      "module": "NavierStokes.UniformHarmonicInteraction",
-      "path": "NavierStokes/UniformHarmonicInteraction.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformHarmonicInteraction.lean#L329"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.UniformHarmonicInteraction.square_uniform",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.UniformHarmonicInteraction.square_uniform",
+        "module": "NavierStokes.UniformHarmonicInteraction"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 329,
-        "text": "UniformVelocity s P β b → … → UniformWaveClass s P (2*β-κ) (blockTransport c a b b)  -- row 3 at β = B"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.UniformHarmonicInteraction.square_uniform",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L329",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformHarmonicInteraction.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 329,
+            "text": "theorem square_uniform\n    (c : CorrectionState.Context D) (ho : MeanIncrementBounds.OperatorBounds s c.operators κ)\n    (hR : ∀ x ∈ s.domain, 0 < c.operators.radius x)\n    (a : ι → CorrectionState.HarmonicBlock D) {b : ι → CorrectionState.HarmonicBlock D} {N : ℕ}\n    (hb : UniformVelocity s P β b) (hb0 : ∀ l, ZeroMode (b l)) (hN : ∀ l, (b l).BandLimited N)\n    (hΦ : ∀ l n, ContDiffOn ℝ ∞ ((a l).phase n) s.domain)\n    (hk : ∀ l n, (a l).frequency n ≠ 0)\n    (hdb : ∀ l, ModeSolenoidal s c (withCarrier (a l) (b l)))\n    (hP0 : ∀ l n x, x ∈ s.domain → 0 ≤ P l n x)\n    (hP1 : ∀ l n x, x ∈ s.domain → P l n x ≤ 1) (m : ℤ) (i : Fin 3) :\n    UniformWaveClass s P (2*β-κ)\n      (fun l n x => blockTransport c (a l) (b l) (b l) n i m x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

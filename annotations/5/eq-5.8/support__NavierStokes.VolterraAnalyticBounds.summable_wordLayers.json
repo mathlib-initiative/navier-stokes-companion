@@ -1,26 +1,29 @@
 {
-  "id": "eq-5.8/support/06.NavierStokes.VolterraAnalyticBounds.summable_wordLayers",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.VolterraAnalyticBounds.summable_wordLayers",
-      "line": 524,
-      "module": "NavierStokes.VolterraAnalyticBounds",
-      "path": "NavierStokes/VolterraAnalyticBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VolterraAnalyticBounds.lean#L524"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.VolterraAnalyticBounds.summable_wordLayers",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.VolterraAnalyticBounds.summable_wordLayers",
+        "module": "NavierStokes.VolterraAnalyticBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 524,
-        "text": "Summable (fun k => B * 2^k * wordMajorant a b k) for all a,b ≥ 0 — the conclusion the paper draws from (5.8) (Picard series converges for every finite a, regardless of C_n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.VolterraAnalyticBounds.summable_wordLayers",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L524",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VolterraAnalyticBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 524,
+            "text": "theorem summable_wordLayers {a b B : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) :\n    Summable (fun k : ℕ => B * (2 : ℝ) ^ k * wordMajorant a b k)"
+          }
+        }
       }
     }
-  }
+  ]
 }

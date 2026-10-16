@@ -1,31 +1,33 @@
 {
-  "id": "lemma-B.1/attributed/1.NavierStokes.AxisInverseFactors.norm_mixed_extra_factors",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisInverseFactors.norm_mixed_extra_factors",
-      "line": 210,
-      "module": "NavierStokes.AxisInverseFactors",
-      "path": "NavierStokes/AxisInverseFactors.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisInverseFactors.lean#L210"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisInverseFactors.norm_mixed_extra_factors",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisInverseFactors.norm_mixed_extra_factors",
+        "module": "NavierStokes.AxisInverseFactors"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: ‖insertFactors I hε r hr (inverseMixed I hε r hr F G) Bs‖ ≤ 64^Bs.length * (5120/ε · ‖F‖ · ‖G‖) * (Bs.map norm).prod: one algebra constant per inserted undifferentiated factor, for any finite list.",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 210,
-        "text": "theorem norm_mixed_extra_factors (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r)\n    (F G : AxisSpace I ε) (Bs : List (AxisSpace I ε)) :\n    ‖insertFactors I hε r hr (inverseMixed I hε r hr F G) Bs‖ ≤\n      64 ^ Bs.length * (5120 / ε * ‖F‖ * ‖G‖) * (Bs.map norm).prod"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.AxisInverseFactors.norm_mixed_extra_factors",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: ‖insertFactors I hε r hr (inverseMixed I hε r hr F G) Bs‖ ≤ 64^Bs.length * (5120/ε · ‖F‖ · ‖G‖) * (Bs.map norm).prod: one algebra constant per inserted undifferentiated factor, for any finite list.",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L210",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisInverseFactors.lean"
+          },
+          "snippet": {
+            "line": 210,
+            "text": "theorem norm_mixed_extra_factors (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r)\n    (F G : AxisSpace I ε) (Bs : List (AxisSpace I ε)) :\n    ‖insertFactors I hε r hr (inverseMixed I hε r hr F G) Bs‖ ≤\n      64 ^ Bs.length * (5120 / ε * ‖F‖ * ‖G‖) * (Bs.map norm).prod"
+          }
+        }
       }
     }
-  }
+  ]
 }

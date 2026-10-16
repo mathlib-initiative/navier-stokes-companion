@@ -1,25 +1,27 @@
 {
-  "id": "eq-6.17/key/04.NavierStokes.PhysicalWaveSum.commonLift_formula",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalWaveSum.commonLift_formula",
-      "line": 90,
-      "module": "NavierStokes.PhysicalWaveSum",
-      "path": "NavierStokes/PhysicalWaveSum.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalWaveSum.lean#L90"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalWaveSum.commonLift_formula",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalWaveSum.commonLift_formula",
+        "module": "NavierStokes.PhysicalWaveSum"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 90,
-        "text": "d ≤ nativeIndex h n → commonLift h n d w = (physicalChart h n w, (SlotGeometry.cover ^ (nativeIndex h n - d)) (radialProfile … + w.1 • timeDirection))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PhysicalWaveSum.commonLift_formula",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L90",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalWaveSum.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 90,
+            "text": "theorem commonLift_formula (h : ℝ) (n d : ℕ) (hd : d ≤ ChartScales.nativeIndex h n)\n    (w : SpaceTime) :\n    commonLift h n d w =\n      (PhysicalGraphBounds.physicalChart h n w,\n        (SlotGeometry.cover ^ (ChartScales.nativeIndex h n - d))\n          (PhysicalGraphBounds.radialProfile (ChartScales.radialExponent h) (PhysicalGraphBounds.radialProjection w) +\n            w.1 • PhysicalGraphBounds.timeDirection))"
+          }
+        }
       }
     }
-  }
+  ]
 }

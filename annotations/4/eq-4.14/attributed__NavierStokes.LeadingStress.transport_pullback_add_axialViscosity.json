@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.14/attributed/05.NavierStokes.LeadingStress.transport_pullback_add_axialViscosity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStress.transport_pullback_add_axialViscosity",
-      "line": 230,
-      "module": "NavierStokes.LeadingStress",
-      "path": "NavierStokes/LeadingStress.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean#L230"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStress.transport_pullback_add_axialViscosity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStress.transport_pullback_add_axialViscosity",
+        "module": "NavierStokes.LeadingStress"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 230,
-        "text": "transportResidual α m (pullback h 0 v) (pullback h (-A h) u) (pullback h e f) (pullback h (e-1) source) p + ∂_z∂_z (pullback h e f) p = q h p ^ (e-1) * (T h e f + v*(∂_X f + α*f/X) + u * Z h e f - 2*(X*∂_X∂_X f + m*∂_X f) + source) (inner h p)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.LeadingStress.transport_pullback_add_axialViscosity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L230",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 230,
+            "text": "theorem transport_pullback_add_axialViscosity {h e : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    (α m : ℝ) (v u f source : Field) {p : SimilarityProfile.PhysicalPoint}\n    (hp : p.1 < 1) (hs : 0 < p.2.1) (hf : ContDiffAt ℝ 2 f (inner h p)) :\n    SlowExpansionResidual.transportResidual α m (pullback h 0 v) (pullback h (-A h) u)\n        (pullback h e f) (pullback h (e - 1) source) p +\n        SimilarityProfile.partialZ (SimilarityProfile.partialZ (pullback h e f)) p =\n      SimilarityProfile.q h p ^ (e - 1) *\n        (SimilarityProfile.T h e f (inner h p) +\n          v (inner h p) * (partialX f (inner h p) + α * f (inner h p) / (inner h p).1) +\n          u (inner h p) * SimilarityProfile.Z h e f (inner h p) -\n          2 * ((inner h p).1 * partialX (partialX f) (inner h p) + m * partialX f (inner h p)) +\n          source (inner h p))"
+          }
+        }
       }
     }
-  }
+  ]
 }

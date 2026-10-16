@@ -1,26 +1,29 @@
 {
-  "id": "eq-p108-4/attributed/06.NavierStokes.LocalizedMeanInteraction.uniform_realMeanCross_class",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalizedMeanInteraction.uniform_realMeanCross_class",
-      "line": 326,
-      "module": "NavierStokes.LocalizedMeanInteraction",
-      "path": "NavierStokes/LocalizedMeanInteraction.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalizedMeanInteraction.lean#L326"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalizedMeanInteraction.uniform_realMeanCross_class",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalizedMeanInteraction.uniform_realMeanCross_class",
+        "module": "NavierStokes.LocalizedMeanInteraction"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 326,
-        "text": "IncrementBounds s H h → (b in class α) → … → UniformClass s (√ζ · P) (α + H - 1/2) (realCoefficients (meanCross c h (b l) n i) j)  -- row 4 at α = B, H = 9/10"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.LocalizedMeanInteraction.uniform_realMeanCross_class",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L326",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalizedMeanInteraction.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 326,
+            "text": "theorem uniform_realMeanCross_class {s : StripData D} {C : ℕ → I → Set D}\n    {P : ℕ → I → D → ℝ} {α H κ : ℝ}\n    (c : CorrectionState.Context D) (ho : MeanIncrementBounds.OperatorBounds s c.operators κ)\n    (hκ : κ ≤ 1 / 2) (hR : ∀ x ∈ s.domain, 0 < c.operators.radius x)\n    {h : MeanIncrementBounds.Triple D} (hh : MeanIncrementBounds.IncrementBounds s H h)\n    {b : I → CorrectionState.HarmonicBlock D}\n    (hb : ∀ i j, j ≠ 0 → LabelSumBounds.UniformClass s\n      (fun l n x => Real.sqrt (s.zeta x) * P n l x) α (fun l n x => (b l).velocity n i j x))\n    (hN : ∀ i, LocalUnweighted s C 0 (fun n l x => slowNormal c ho hR (b l).phase n x i))\n    (hk : LocalUnweighted s C (-(1 / 2)) (fun n l _ => (b l).frequency n))\n    (hkp : LocalUnweighted s C (-(1 / 2)) (fun n l _ => ((b l).angularFrequency n : ℝ)))\n    (hz : ∀ n l x, x ∈ s.domain → x ∉ C n l →\n      ∀ i j, j ≠ 0 → (b l).velocity n i j =ᶠ[𝓝 x] fun _ => 0)\n    {j : ℤ} (hj : j ≠ 0) (i : Fin 3) :\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

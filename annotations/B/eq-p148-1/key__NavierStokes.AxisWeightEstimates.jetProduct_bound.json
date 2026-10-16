@@ -1,26 +1,28 @@
 {
-  "id": "eq-p148-1/key/03.NavierStokes.AxisWeightEstimates.jetProduct_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisWeightEstimates.jetProduct_bound",
-      "line": 364,
-      "module": "NavierStokes.AxisWeightEstimates",
-      "path": "NavierStokes/AxisWeightEstimates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisWeightEstimates.lean#L364"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisWeightEstimates.jetProduct_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisWeightEstimates.jetProduct_bound",
+        "module": "NavierStokes.AxisWeightEstimates"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 364,
-        "text": "|jetProduct f g n m| ≤ 64 * F * G * weight ε n m  (the algebra bound that fixes M_χ = 64‖χ‖)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.AxisWeightEstimates.jetProduct_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L364",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisWeightEstimates.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 364,
+            "text": "theorem jetProduct_bound {ε F G : ℝ} (hε : 0 < ε) (hF : 0 ≤ F) (hG : 0 ≤ G)\n    (f g : ℕ → ℕ → ℝ)\n    (hf : ∀ n m, |f n m| ≤ F * weight ε n m)\n    (hg : ∀ n m, |g n m| ≤ G * weight ε n m) (n m : ℕ) :\n    |jetProduct f g n m| ≤ 64 * F * G * weight ε n m"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,33 @@
 {
-  "id": "proposition-C.3/attributed/1.NavierStokes.ReservedPatches.heated_fields",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReservedPatches.heated_fields",
-      "line": 333,
-      "module": "NavierStokes.ReservedPatches",
-      "path": "NavierStokes/ReservedPatches.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReservedPatches.lean#L333"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReservedPatches.heated_fields",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReservedPatches.heated_fields",
+        "module": "NavierStokes.ReservedPatches"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: s ≠ .heat → X ∈ window F XR s → HeatedOutgoing.U F XR (X,eta) = 0 ∧ HeatedOutgoing.E F XR c (X,eta) = xAmplitude F XR eta * X ^ (-(1/2 + lam)). Opened at :332-340: the nominal form of (4.30), the input to modulated_mean_fields and modified_positive_patch.",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 333,
-        "text": "theorem heated_fields (F : Profile) (XR : ℝ) (hXR : 0 < XR)\n    (c : ℝ → HeatedOutgoing.Coeff) {s : Slot} (hs : s ≠ .heat)\n    (eta : ℝ) {X : ℝ} (hX : X ∈ window F XR s) :\n    HeatedOutgoing.U F XR (X, eta) = 0 ∧\n      HeatedOutgoing.E F XR c (X, eta) =\n        xAmplitude F XR eta * X ^ (-(1 / 2 + F.data.core.lam))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ReservedPatches.heated_fields",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: s ≠ .heat → X ∈ window F XR s → HeatedOutgoing.U F XR (X,eta) = 0 ∧ HeatedOutgoing.E F XR c (X,eta) = xAmplitude F XR eta * X ^ (-(1/2 + lam)). Opened at :332-340: the nominal form of (4.30), the input to modulated_mean_fields and modified_positive_patch.",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L333",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReservedPatches.lean"
+          },
+          "snippet": {
+            "line": 333,
+            "text": "theorem heated_fields (F : Profile) (XR : ℝ) (hXR : 0 < XR)\n    (c : ℝ → HeatedOutgoing.Coeff) {s : Slot} (hs : s ≠ .heat)\n    (eta : ℝ) {X : ℝ} (hX : X ∈ window F XR s) :\n    HeatedOutgoing.U F XR (X, eta) = 0 ∧\n      HeatedOutgoing.E F XR c (X, eta) =\n        xAmplitude F XR eta * X ^ (-(1 / 2 + F.data.core.lam))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p094-4/attributed/06.NavierStokes.IntegratedMeanBalances.moment_deriv_succ",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.IntegratedMeanBalances.moment_deriv_succ",
-      "line": 66,
-      "module": "NavierStokes.IntegratedMeanBalances",
-      "path": "NavierStokes/IntegratedMeanBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/IntegratedMeanBalances.lean#L66"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.IntegratedMeanBalances.moment_deriv_succ",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.IntegratedMeanBalances.moment_deriv_succ",
+        "module": "NavierStokes.IntegratedMeanBalances"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 66,
-        "text": "moment 2 (deriv p) = -2 * moment 1 p, i.e. ∫ R p = -(1/2) ∫ R² ∂_R p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.IntegratedMeanBalances.moment_deriv_succ",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L66",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/IntegratedMeanBalances.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 66,
+            "text": "theorem moment_deriv_succ {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hs : HasCompactSupport f) (n : ℕ) :\n    moment (n + 1) (deriv f) = -((n + 1 : ℕ) : ℝ) * moment n f"
+          }
+        }
       }
     }
-  }
+  ]
 }

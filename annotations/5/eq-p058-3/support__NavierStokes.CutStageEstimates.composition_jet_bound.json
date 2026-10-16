@@ -1,25 +1,28 @@
 {
-  "id": "eq-p058-3/support/03.NavierStokes.CutStageEstimates.composition_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CutStageEstimates.composition_jet_bound",
-      "line": 79,
-      "module": "NavierStokes.CutStageEstimates",
-      "path": "NavierStokes/CutStageEstimates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CutStageEstimates.lean#L79"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CutStageEstimates.composition_jet_bound"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CutStageEstimates.composition_jet_bound",
+        "module": "NavierStokes.CutStageEstimates"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 79,
-        "text": "‖iteratedFDeriv ℝ m (g ∘ f) x‖ ≤ m.factorial * C * D ^ m, given ‖iteratedFDeriv ℝ k g (f x)‖ ≤ C and ‖iteratedFDeriv ℝ k f x‖ ≤ D ^ k"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CutStageEstimates.composition_jet_bound"
+          },
+          "destination": {
+            "fragment": "L79",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CutStageEstimates.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 79,
+            "text": "theorem composition_jet_bound {f : E → ℝ} {g : ℝ → V} {U : Set E}\n    (hU : IsOpen U) (hf : ContDiffOn ℝ ∞ f U) (hg : ContDiff ℝ ∞ g)\n    {x : E} (hx : x ∈ U) (m : ℕ) {C D : ℝ}\n    (hC : ∀ k ≤ m, ‖iteratedFDeriv ℝ k g (f x)‖ ≤ C)\n    (hD : ∀ k, 1 ≤ k → k ≤ m → ‖iteratedFDeriv ℝ k f x‖ ≤ D ^ k) :\n    ‖iteratedFDeriv ℝ m (g ∘ f) x‖ ≤ m.factorial * C * D ^ m"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,27 @@
 {
-  "id": "eq-p160-5/attributed/10.NavierStokes.TrueConeLoop.speedCutoff_one",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.speedCutoff_one",
-      "line": 39
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L39"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.speedCutoff_one",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.speedCutoff_one",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 39,
-        "text": "speedCutoff δ v = 1 for v ≤ lowSpeed δ = 2 + δ/8; with correction_formula this gives correctedSpeed δ v = targetSpeed δ, the first regime"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.TrueConeLoop.speedCutoff_one",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L39"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 39,
+            "text": "theorem speedCutoff_one (δ v : ℝ) (hδ : 0 < δ) (hv : v ≤ lowSpeed δ) : speedCutoff δ v = 1"
+          }
+        }
       }
     }
-  }
+  ]
 }

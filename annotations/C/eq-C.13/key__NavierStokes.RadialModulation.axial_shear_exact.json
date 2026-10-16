@@ -1,23 +1,25 @@
 {
-  "id": "eq-C.13/key/02.NavierStokes.RadialModulation.axial_shear_exact",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialModulation.axial_shear_exact",
-      "line": 152,
-      "module": "NavierStokes.RadialModulation",
-      "path": "NavierStokes/RadialModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialModulation.lean#L152"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialModulation.axial_shear_exact"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialModulation.axial_shear_exact",
+        "module": "NavierStokes.RadialModulation"
       },
-      "snippet": {
-        "line": 152,
-        "text": "2*X*deriv (fun r => modulatedU n U B r η) X / modulatedE n E A X η = (bL + 2*X*partialX B (phasePoint n X η) / (n * E X η)) / Real.exp (A (phasePoint n X η) / n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.RadialModulation.axial_shear_exact"
+          },
+          "destination": {
+            "fragment": "L152",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialModulation.lean"
+          },
+          "snippet": {
+            "line": 152,
+            "text": "theorem axial_shear_exact\n    (E U : BaseProfile) (A B : PrimitiveProfile) (n X η bL : ℝ)\n    (hn : n ≠ 0) (hX : X ≠ 0) (hE0 : E X η ≠ 0)\n    (hU : DifferentiableAt ℝ (fun r => U r η) X)\n    (hB : DifferentiableAt ℝ B (phasePoint n X η))\n    (hprescribed : partialTheta B (phasePoint n X η) =\n      E X η * (bL - 2 * X * deriv (fun r => U r η) X / E X η) / 2) :\n    2 * X * deriv (fun r => modulatedU n U B r η) X / modulatedE n E A X η =\n      (bL + 2 * X * partialX B (phasePoint n X η) / (n * E X η)) /\n        Real.exp (A (phasePoint n X η) / n)"
+          }
+        }
       }
     }
-  }
+  ]
 }

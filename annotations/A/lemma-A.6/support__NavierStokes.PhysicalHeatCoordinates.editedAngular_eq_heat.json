@@ -1,27 +1,33 @@
 {
-  "id": "lemma-A.6/support/3.NavierStokes.PhysicalHeatCoordinates.editedAngular_eq_heat",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalHeatCoordinates.editedAngular_eq_heat",
-      "line": 54,
-      "module": "NavierStokes.PhysicalHeatCoordinates",
-      "path": "NavierStokes/PhysicalHeatCoordinates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalHeatCoordinates.lean#L54"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalHeatCoordinates.editedAngular_eq_heat",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "type": "lean",
+      "uri": "https://github.com/openai/NavierStokesAndEuler",
+      "version": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "location": {
+        "declaration": "NavierStokes.PhysicalHeatCoordinates.editedAngular_eq_heat",
+        "module": "NavierStokes.PhysicalHeatCoordinates"
       },
-      "declaration_verdict": null,
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 54,
-        "text": "theorem editedAngular_eq_heat (d : OutgoingTail.TailData) {K : ℝ}\n    (hK : 0 < K) (hh1 : d.h < 1 / 2) {p : PhysicalPoint}\n    (ht : p.1 < 1) (hs : 0 < p.2.1)\n    (hfull : 1 / 2 ≤ Real.log (X d.h p / K) + 1 / 5) :\n    editedAngular d K p =\n      TerminalStress.physicalHeat (normalization d K) (1 + d.h) p *\n        TerminalStress.flattening d.h (shape d K) p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.PhysicalHeatCoordinates.editedAngular_eq_heat",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L54",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalHeatCoordinates.lean",
+            "resolution": "exact"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 54,
+            "text": "theorem editedAngular_eq_heat (d : OutgoingTail.TailData) {K : ℝ}\n    (hK : 0 < K) (hh1 : d.h < 1 / 2) {p : PhysicalPoint}\n    (ht : p.1 < 1) (hs : 0 < p.2.1)\n    (hfull : 1 / 2 ≤ Real.log (X d.h p / K) + 1 / 5) :\n    editedAngular d K p =\n      TerminalStress.physicalHeat (normalization d K) (1 + d.h) p *\n        TerminalStress.flattening d.h (shape d K) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

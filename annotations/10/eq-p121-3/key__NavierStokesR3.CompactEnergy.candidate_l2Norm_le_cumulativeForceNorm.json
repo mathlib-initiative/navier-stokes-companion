@@ -1,26 +1,28 @@
 {
-  "id": "eq-p121-3/key/05.NavierStokesR3.CompactEnergy.candidate_l2Norm_le_cumulativeForceNorm",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.CompactEnergy.candidate_l2Norm_le_cumulativeForceNorm",
-      "line": 143,
-      "module": "NavierStokes.R3.IntegratedDissipation",
-      "path": "NavierStokes/R3/IntegratedDissipation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/IntegratedDissipation.lean#L143"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.CompactEnergy.candidate_l2Norm_le_cumulativeForceNorm",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.CompactEnergy.candidate_l2Norm_le_cumulativeForceNorm",
+        "module": "NavierStokes.R3.IntegratedDissipation"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 143,
-        "text": "l2Norm u T ≤ cumulativeForceNorm f T, the paper's ‖u(t)‖_2 ≤ F(t); proved through SharpEnergyBound.sqrt_energy_le_integral, the ε-regularised square root matching the paper's division by (‖u‖_2^2+δ^2)^{1/2}; invoked at IntegratedDissipation.lean:241"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokesR3.CompactEnergy.candidate_l2Norm_le_cumulativeForceNorm",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L143",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/IntegratedDissipation.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 143,
+            "text": "theorem candidate_l2Norm_le_cumulativeForceNorm {ν : ℝ} (hν : 0 < ν)\n    {u f : VelocityField} {p : PressureField} {K : Set Space}\n    (hc : ProblemStatement.CandidateProperties ν u p f K)\n    {T : ℝ} (hT : T ∈ Ico (0 : ℝ) 1) :\n    l2Norm u T ≤ cumulativeForceNorm f T"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.29/key/04.NavierStokes.ExtendedHeatedOutgoing.E_eventual_heat",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ExtendedHeatedOutgoing.E_eventual_heat",
-      "line": 766,
-      "module": "NavierStokes.ExtendedHeatedOutgoing",
-      "path": "NavierStokes/ExtendedHeatedOutgoing.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ExtendedHeatedOutgoing.lean#L766"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ExtendedHeatedOutgoing.E_eventual_heat",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ExtendedHeatedOutgoing.E_eventual_heat",
+        "module": "NavierStokes.ExtendedHeatedOutgoing"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 766,
-        "text": "theorem E_eventual_heat (F) (XR) (c) (eta X) (hXR : 0 < XR) (hX : 0 < X) (heta : eta ∈ HeatedOutgoing.parameterDomain) (hlate : 3 ≤ Real.log (X / switchRadius F XR) + 1 / 5) : E F XR c (X, eta) = (OutgoingDilation.carrierAmplitude F * (switchRadius F XR) ^ HeatTailEdit.exponent F.data.h) * RadialHeatProfile.spatialProfile (1 + F.data.h) (ParametricHeatTail.diffusion eta) X"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ExtendedHeatedOutgoing.E_eventual_heat",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L766",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ExtendedHeatedOutgoing.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 766,
+            "text": "theorem E_eventual_heat (F : Profile) (XR : ℝ) (c : ℝ → Coeff) (eta X : ℝ)\n    (hXR : 0 < XR) (hX : 0 < X) (heta : eta ∈ HeatedOutgoing.parameterDomain)\n    (hlate : 3 ≤ Real.log (X / switchRadius F XR) + 1 / 5) :\n    E F XR c (X, eta) =\n      (OutgoingDilation.carrierAmplitude F * (switchRadius F XR) ^ HeatTailEdit.exponent F.data.h) *\n        RadialHeatProfile.spatialProfile (1 + F.data.h) (ParametricHeatTail.diffusion eta) X"
+          }
+        }
       }
     }
-  }
+  ]
 }

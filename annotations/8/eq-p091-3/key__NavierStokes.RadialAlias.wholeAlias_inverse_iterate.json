@@ -1,26 +1,28 @@
 {
-  "id": "eq-p091-3/key/03.NavierStokes.RadialAlias.wholeAlias_inverse_iterate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialAlias.wholeAlias_inverse_iterate",
-      "line": 215,
-      "module": "NavierStokes.RadialAlias",
-      "path": "NavierStokes/RadialAlias.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialAlias.lean#L215"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialAlias.wholeAlias_inverse_iterate",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialAlias.wholeAlias_inverse_iterate",
+        "module": "NavierStokes.RadialAlias"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 215,
-        "text": "wholeAlias M v Y f = (-M⁻¹)^p • wholeAlias M v Y (slowDeriv^[p] (J^[p] f)), wholeAlias M v Y h = ∫ u : ℝ, h (u, Y + (M*u) • v)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.RadialAlias.wholeAlias_inverse_iterate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L215",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialAlias.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 215,
+            "text": "theorem wholeAlias_inverse_iterate [CompleteSpace F] {a b M : ℝ} {v Y : E}\n    (J : (ℝ × E → F) → (ℝ × E → F)) (f : ℝ × E → F) (p : ℕ) (hM : M ≠ 0)\n    (hcomm : Function.Commute slowDeriv J)\n    (hJ : ∀ n < p, ContDiff ℝ 1 (J (sourceJet J f n)))\n    (hs : ∀ n < p, RadiallySupported a b (J (sourceJet J f n)))\n    (hr : ∀ n < p, directionalDeriv v (J (sourceJet J f n)) = sourceJet J f n) :\n    wholeAlias M v Y f = (-M⁻¹) ^ p •\n      wholeAlias M v Y (slowDeriv^[p] (J^[p] f))"
+          }
+        }
       }
     }
-  }
+  ]
 }

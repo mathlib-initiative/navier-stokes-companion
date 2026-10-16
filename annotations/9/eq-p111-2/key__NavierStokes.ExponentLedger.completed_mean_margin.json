@@ -1,24 +1,27 @@
 {
-  "id": "eq-p111-2/key/06.NavierStokes.ExponentLedger.completed_mean_margin",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ExponentLedger.completed_mean_margin",
-      "line": 208
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ExponentLedger.lean#L208"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ExponentLedger.completed_mean_margin",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ExponentLedger.completed_mean_margin",
+        "module": "NavierStokes.ExponentLedger"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 208,
-        "text": "meanExponent (σ + 1/10) < meanExponent σ + min (17/100) (1 - 4*κ) — the fourth line's > 0.1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.ExponentLedger.completed_mean_margin",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L208"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 208,
+            "text": "theorem completed_mean_margin {σ κ : ℝ} (hκ : κ ≤ 1 / 100000) :\n    meanExponent (σ + 1 / 10) <\n      meanExponent σ + min (17 / 100) (1 - 4 * κ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

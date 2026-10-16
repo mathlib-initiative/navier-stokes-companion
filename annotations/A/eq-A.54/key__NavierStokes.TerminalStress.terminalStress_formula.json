@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.54/key/01.NavierStokes.TerminalStress.terminalStress_formula",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalStress.terminalStress_formula",
-      "line": 725
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalStress.lean#L725"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalStress.terminalStress_formula",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalStress.terminalStress_formula",
+        "module": "NavierStokes.TerminalStress"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 725,
-        "text": "terminalStress C h f t z r = heatAmplitude C (1+h) t r * deriv (radialSlice (flattening h f) t z) r + ((∫ u in Ioi r, u ^ 2 * timeResidual C h f t z u) + ∫ u in Ioi r, correction (heatAmplitude C (1+h) t) (radialSlice (flattening h f) t z) u) / r ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TerminalStress.terminalStress_formula",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L725"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 725,
+            "text": "theorem terminalStress_formula (C : ℝ) {h t r z : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (ht : t < 1) (hr : 0 < r)\n    {f : ℝ → ℝ} (hf : ContDiff ℝ 2 f)\n    (hv : IntegrableOn (fun u => u ^ 2 * viscousResidual (heatAmplitude C (1 + h) t)\n      (radialSlice (flattening h f) t z) u) (Ioi r))\n    (hc : IntegrableOn (correction (heatAmplitude C (1 + h) t)\n      (radialSlice (flattening h f) t z)) (Ioi r))\n    (hT : IntegrableOn (fun u => u ^ 2 * timeResidual C h f t z u) (Ioi r))\n    (hb : Tendsto (boundary (heatAmplitude C (1 + h) t)\n      (radialSlice (flattening h f) t z)) atTop (𝓝 0)) :\n    terminalStress C h f t z r =\n      heatAmplitude C (1 + h) t r * deriv (radialSlice (flattening h f) t z) r +\n        ((∫ u in Ioi r, u ^ 2 * timeResidual C h f t z u) +\n          ∫ u in Ioi r, correction (heatAmplitude C (1 + h) t)\n            (radialSlice (flattening h f) t z) u) / r ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

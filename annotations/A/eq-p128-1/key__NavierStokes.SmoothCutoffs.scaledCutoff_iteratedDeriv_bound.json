@@ -1,26 +1,28 @@
 {
-  "id": "eq-p128-1/key/05.NavierStokes.SmoothCutoffs.scaledCutoff_iteratedDeriv_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothCutoffs.scaledCutoff_iteratedDeriv_bound",
-      "line": 230,
-      "module": "NavierStokes.SmoothCutoffs",
-      "path": "NavierStokes/SmoothCutoffs.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothCutoffs.lean#L230"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothCutoffs.scaledCutoff_iteratedDeriv_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SmoothCutoffs.scaledCutoff_iteratedDeriv_bound",
+        "module": "NavierStokes.SmoothCutoffs"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 230,
-        "text": "∃ C, 0 ≤ C ∧ ∀ a q, 0 ≤ a → 0 < q → |iteratedDeriv (n+1) (scaledCutoff a) q| ≤ C * (1/q)^(n+1) — the scale power traded for the inverse coordinate on the derivative support"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.SmoothCutoffs.scaledCutoff_iteratedDeriv_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L230",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothCutoffs.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 230,
+            "text": "theorem scaledCutoff_iteratedDeriv_bound (n : ℕ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ a q : ℝ, 0 ≤ a → 0 < q →\n      |iteratedDeriv (n + 1) (scaledCutoff a) q| ≤ C * (1 / q) ^ (n + 1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

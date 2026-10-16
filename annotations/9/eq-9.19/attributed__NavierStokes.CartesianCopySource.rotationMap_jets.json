@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.19/attributed/11.NavierStokes.CartesianCopySource.rotationMap_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CartesianCopySource.rotationMap_jets",
-      "line": 128,
-      "module": "NavierStokes.CartesianCopySource",
-      "path": "NavierStokes/CartesianCopySource.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CartesianCopySource.lean#L128"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CartesianCopySource.rotationMap_jets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CartesianCopySource.rotationMap_jets",
+        "module": "NavierStokes.CartesianCopySource"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 128,
-        "text": "∃ C, 1 ≤ C ∧ ∀ x ∈ cylindricalDomain a b, ∀ j ≤ m, ‖iteratedFDeriv ℝ j (fun y => rotationMap (liftXY y)) x‖ ≤ C"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "11.NavierStokes.CartesianCopySource.rotationMap_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L128",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CartesianCopySource.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 128,
+            "text": "theorem rotationMap_jets {a b : ℝ} (ha : 0 < a) (m : ℕ) :\n    ∃ C : ℝ, 1 ≤ C ∧ ∀ x ∈ cylindricalDomain a b, ∀ j ≤ m,\n      ‖iteratedFDeriv ℝ j (fun y => rotationMap (PhysicalGraphBounds.liftXY y)) x‖ ≤ C"
+          }
+        }
       }
     }
-  }
+  ]
 }

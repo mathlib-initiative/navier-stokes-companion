@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.2/key/02.NavierStokes.NaturalAxisRange.ideal_prefix_cutoff_parameters",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalAxisRange.ideal_prefix_cutoff_parameters",
-      "line": 220,
-      "module": "NavierStokes.NaturalAxisRange",
-      "path": "NavierStokes/NaturalAxisRange.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisRange.lean#L220"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalAxisRange.ideal_prefix_cutoff_parameters",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalAxisRange.ideal_prefix_cutoff_parameters",
+        "module": "NavierStokes.NaturalAxisRange"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 220,
-        "text": "same conclusion for P = PressureDatum.pressure g a under Admissible g a cap, 2 ≤ B, ideal prefix g y = B^2 exp(y/5), a y = 1 for y ≤ 0; η still ranges over Icc (-1) 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.NaturalAxisRange.ideal_prefix_cutoff_parameters",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L220",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisRange.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 220,
+            "text": "theorem ideal_prefix_cutoff_parameters {h j : ℝ} (p : Parameters h j)\n    {g a : ℝ → ℝ} {cap B : ℝ}\n    (hp : PressureDatum.Admissible g a cap) (hB : 2 ≤ B)\n    (hg : ∀ y ≤ 0, g y = B ^ 2 * Real.exp ((1 / 5 : ℝ) * y))\n    (ha : ∀ y ≤ 0, a y = 1) :\n    ∃ δ σ : ℝ, 0 < δ ∧ 0 < σ ∧\n      (∀ η ∈ Icc (-1 : ℝ) 1,\n        |Z h j (PressureDatum.pressure g a) η| ≤ δ → 99 / 100 < chi h j σ η) ∧\n      ContDiff ℝ ∞ (chi h j σ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

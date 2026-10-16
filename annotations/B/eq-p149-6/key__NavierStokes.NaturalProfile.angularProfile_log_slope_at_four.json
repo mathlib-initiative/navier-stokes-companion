@@ -1,26 +1,28 @@
 {
-  "id": "eq-p149-6/key/06.NavierStokes.NaturalProfile.angularProfile_log_slope_at_four",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalProfile.angularProfile_log_slope_at_four",
-      "line": 535,
-      "module": "NavierStokes.NaturalProfile",
-      "path": "NavierStokes/NaturalProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalProfile.lean#L535"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalProfile.angularProfile_log_slope_at_four",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalProfile.angularProfile_log_slope_at_four",
+        "module": "NavierStokes.NaturalProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 535,
-        "text": "-2 * (4/Λ) * partialY (angularProfile a Λ Φ) (4/Λ, η) / angularProfile a Λ Φ (4/Λ, η) = -8 * partialY Φ (4, η) / Φ (4, η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.NaturalProfile.angularProfile_log_slope_at_four",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L535",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalProfile.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 535,
+            "text": "theorem angularProfile_log_slope_at_four {Λ : ℝ} (hΛ : 0 < Λ)\n    {a : ℝ → ℝ} {Φ : ℝ × ℝ → ℝ}\n    (hΦ : ContDiffOn ℝ ∞ Φ (AxisEvaluation.strip window 20))\n    {η : ℝ} (hη : η ∈ Ioo window.left window.right)\n    (ha : 0 < a η) (hval : 0 < Φ (4, η)) :\n    -2 * (4 / Λ) * partialY (angularProfile a Λ Φ) (4 / Λ, η) /\n        angularProfile a Λ Φ (4 / Λ, η) =\n      -8 * partialY Φ (4, η) / Φ (4, η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

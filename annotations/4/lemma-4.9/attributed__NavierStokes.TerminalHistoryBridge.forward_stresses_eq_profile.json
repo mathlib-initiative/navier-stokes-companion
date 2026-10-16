@@ -1,31 +1,33 @@
 {
-  "id": "lemma-4.9/attributed/1.NavierStokes.TerminalHistoryBridge.forward_stresses_eq_profile",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalHistoryBridge.forward_stresses_eq_profile",
-      "line": 1401,
-      "module": "NavierStokes.TerminalHistoryBridge",
-      "path": "NavierStokes/TerminalHistoryBridge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean#L1401"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalHistoryBridge.forward_stresses_eq_profile",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalHistoryBridge.forward_stresses_eq_profile",
+        "module": "NavierStokes.TerminalHistoryBridge"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: Identifies the physical forward stresses of the compensation witness with the profile-coordinate stresses used by TerminalCone/TerminalEdgeFactor.",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1401,
-        "text": "theorem forward_stresses_eq_profile (F : Profile) {XR C B y η : ℝ}\n    (hF : OutgoingProfile.Specification F B) (w : CompensationWitness F XR C)\n    (hy : TerminalCone.terminalStart F.data ≤ y) (hη : η ∈ HeatedOutgoing.parameterDomain) :\n    forwardTheta F XR w.coefficients (y,η) =\n      TerminalEdgeFactor.profileAngularStress (normalization F XR) F.data (shift F XR) (TerminalCone.profilePoint F y η) ∧\n    forwardAxial F XR w.coefficients (y,η) =\n      TerminalEdgeFactor.profileAxialStress (normalization F XR) F.data (shift F XR) (TerminalCone.profilePoint F y η) ∧\n    HeatSwitchCone.radialA F XR w.coefficients (y,η) =\n      TerminalEdgeFactor.profileSpeed (normalization F XR) F.data (shift F XR) (TerminalCone.profilePoint F y η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TerminalHistoryBridge.forward_stresses_eq_profile",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: Identifies the physical forward stresses of the compensation witness with the profile-coordinate stresses used by TerminalCone/TerminalEdgeFactor.",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L1401",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean"
+          },
+          "snippet": {
+            "line": 1401,
+            "text": "theorem forward_stresses_eq_profile (F : Profile) {XR C B y η : ℝ}\n    (hF : OutgoingProfile.Specification F B) (w : CompensationWitness F XR C)\n    (hy : TerminalCone.terminalStart F.data ≤ y) (hη : η ∈ HeatedOutgoing.parameterDomain) :\n    forwardTheta F XR w.coefficients (y,η) =\n      TerminalEdgeFactor.profileAngularStress (normalization F XR) F.data (shift F XR) (TerminalCone.profilePoint F y η) ∧\n    forwardAxial F XR w.coefficients (y,η) =\n      TerminalEdgeFactor.profileAxialStress (normalization F XR) F.data (shift F XR) (TerminalCone.profilePoint F y η) ∧\n    HeatSwitchCone.radialA F XR w.coefficients (y,η) =\n      TerminalEdgeFactor.profileSpeed (normalization F XR) F.data (shift F XR) (TerminalCone.profilePoint F y η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,28 @@
 {
-  "id": "eq-p117-2/support/04.NavierStokes.AxisymmetricFields.contDiffOn_potential",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisymmetricFields.contDiffOn_potential",
-      "line": 169
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean#L169"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisymmetricFields.contDiffOn_potential",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisymmetricFields.contDiffOn_potential",
+        "module": "NavierStokes.AxisymmetricFields"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 169,
-        "text": "smoothness of potential H K on a prescribed set of times, from smoothness of the profiles H, K in (t, s, z)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.AxisymmetricFields.contDiffOn_potential",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L169"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 169,
+            "text": "theorem contDiffOn_potential {H K : Profile} {times : Set ℝ} {n : WithTop ℕ∞}\n    (hH : ContDiffOn ℝ n H (times ×ˢ (univ : Set (ℝ × ℝ))))\n    (hK : ContDiffOn ℝ n K (times ×ˢ (univ : Set (ℝ × ℝ)))) :\n    ContDiffOn ℝ n (potential H K) (times ×ˢ (univ : Set Space))"
+          }
+        }
       }
     }
-  }
+  ]
 }

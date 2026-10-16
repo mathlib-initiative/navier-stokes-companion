@@ -1,26 +1,28 @@
 {
-  "id": "eq-p108-2/attributed/04.NavierStokes.PressureStream.meanPressure_radial_residual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PressureStream.meanPressure_radial_residual",
-      "line": 406,
-      "module": "NavierStokes.PressureStream",
-      "path": "NavierStokes/PressureStream.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean#L406"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PressureStream.meanPressure_radial_residual",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PressureStream.meanPressure_radial_residual",
+        "module": "NavierStokes.PressureStream"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 406,
-        "text": "the radial graph derivative of `meanPressure … f` minus f equals -(rho · pressureMass f) - pressureAlias … : the defining property of T_0 applied to g_r - ρ𝒫"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PressureStream.meanPressure_radial_residual",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L406",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 406,
+            "text": "theorem meanPressure_radial_residual {d a b M : ℝ} (ha : 0 < a) (hab : a < b)\n    (hd : 0 < d) (v : Plane) {f : Lift S → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hs : RadialAlias.RadiallySupported a b f) (p : Lift S) (hp : a ≤ p.1) :\n    graphDr (physicalSpeed d M) (0, v) (meanPressure d a b M hab v f) p - f p =\n      -rho a b hab p.1 * pressureMass f p.2.1 - pressureAlias d a b M hab v f p"
+          }
+        }
       }
     }
-  }
+  ]
 }

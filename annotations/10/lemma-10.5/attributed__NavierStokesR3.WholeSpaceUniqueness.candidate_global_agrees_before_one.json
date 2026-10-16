@@ -1,31 +1,33 @@
 {
-  "id": "lemma-10.5/attributed/1.NavierStokesR3.WholeSpaceUniqueness.candidate_global_agrees_before_one",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.WholeSpaceUniqueness.candidate_global_agrees_before_one",
-      "line": 104,
-      "module": "NavierStokes.R3.WholeSpaceUniqueness",
-      "path": "NavierStokes/R3/WholeSpaceUniqueness.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/WholeSpaceUniqueness.lean#L104"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.WholeSpaceUniqueness.candidate_global_agrees_before_one",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.WholeSpaceUniqueness.candidate_global_agrees_before_one",
+        "module": "NavierStokes.R3.WholeSpaceUniqueness"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation equivalent; the auditor's reading: For `h : CandidateProperties 1 u p f K` and `v : GlobalFiniteEnergySolution 1 f`, `∀ t ∈ Ico 0 1, ∀ x, u (t,x) = v.velocity (t,x)`: the union over `T < 1` of the lemma, for the particular competitor class used in Theorem 1.1.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 104,
-        "text": "theorem candidate_global_agrees_before_one {u : VelocityField} {p : PressureField}\n    {f : VelocityField} {K : Set Space} (h : CandidateProperties 1 u p f K)\n    (v : GlobalFiniteEnergySolution 1 f) :\n    ∀ t ∈ Ico (0 : ℝ) 1, ∀ x, u (t, x) = v.velocity (t, x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokesR3.WholeSpaceUniqueness.candidate_global_agrees_before_one",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation equivalent; the auditor's reading: For `h : CandidateProperties 1 u p f K` and `v : GlobalFiniteEnergySolution 1 f`, `∀ t ∈ Ico 0 1, ∀ x, u (t,x) = v.velocity (t,x)`: the union over `T < 1` of the lemma, for the particular competitor class used in Theorem 1.1.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L104",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/WholeSpaceUniqueness.lean"
+          },
+          "snippet": {
+            "line": 104,
+            "text": "theorem candidate_global_agrees_before_one {u : VelocityField} {p : PressureField}\n    {f : VelocityField} {K : Set Space} (h : CandidateProperties 1 u p f K)\n    (v : GlobalFiniteEnergySolution 1 f) :\n    ∀ t ∈ Ico (0 : ℝ) 1, ∀ x, u (t, x) = v.velocity (t, x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

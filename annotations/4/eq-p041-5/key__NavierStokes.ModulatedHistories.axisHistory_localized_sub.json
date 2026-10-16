@@ -1,24 +1,27 @@
 {
-  "id": "eq-p041-5/key/01.NavierStokes.ModulatedHistories.axisHistory_localized_sub",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedHistories.axisHistory_localized_sub",
-      "line": 421
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean#L421"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedHistories.axisHistory_localized_sub",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedHistories.axisHistory_localized_sub",
+        "module": "NavierStokes.ModulatedHistories"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 421,
-        "text": "axisHistory (localizedF W r f N) (localizedU W r E U N) (X, eta) - axisHistory f U (X, eta) = historyDifference W r f E U N X eta"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ModulatedHistories.axisHistory_localized_sub",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L421"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 421,
+            "text": "theorem axisHistory_localized_sub (W : Window)\n    (r : ParametricModulation.TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (N X eta : ℝ) (hX : 0 ≤ X) :\n    axisHistory (localizedF W r f N) (localizedU W r E U N) (X, eta) -\n      axisHistory f U (X, eta) = historyDifference W r f E U N X eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

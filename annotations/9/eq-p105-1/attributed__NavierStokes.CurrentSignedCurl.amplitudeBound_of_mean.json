@@ -1,26 +1,28 @@
 {
-  "id": "eq-p105-1/attributed/11.NavierStokes.CurrentSignedCurl.amplitudeBound_of_mean",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CurrentSignedCurl.amplitudeBound_of_mean",
-      "line": 36,
-      "module": "NavierStokes.CurrentSignedCurl",
-      "path": "NavierStokes/CurrentSignedCurl.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurrentSignedCurl.lean#L36"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CurrentSignedCurl.amplitudeBound_of_mean",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CurrentSignedCurl.amplitudeBound_of_mean",
+        "module": "NavierStokes.CurrentSignedCurl"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 36,
-        "text": "MeanClass … α thetaResidual → MeanClass … α axialResidual → AmplitudeBound l u (α - 1/2), AmplitudeBound = MemClass fullStrip (√ζ * envelope l) · (copies l u).common.amplitude"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "11.NavierStokes.CurrentSignedCurl.amplitudeBound_of_mean",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L36",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurrentSignedCurl.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 36,
+            "text": "theorem amplitudeBound_of_mean (l : SignedLabel B N0) (u : CorrectionState.State Point)\n    (α : ℝ)\n    (H : MeanStateRegularity.PrimitiveData ActualInitialization.geometry.region\n      ActualInitialization.geometry.patch.a ActualInitialization.geometry.patch.b (commonContext B) u)\n    (hfixed : VariableGaugeMean.reconstructState ActualInitialization.geometry.gauge (commonContext B) u = u)\n    (hθ : MeanClass ActualInitialization.geometry.strip α (u.thetaResidual (commonContext B)))\n    (hz : MeanClass ActualInitialization.geometry.strip α (u.axialResidual (commonContext B))) :\n    AmplitudeBound l u (α - 1 / 2)"
+          }
+        }
       }
     }
-  }
+  ]
 }

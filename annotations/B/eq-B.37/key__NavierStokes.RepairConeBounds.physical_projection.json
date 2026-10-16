@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.37/key/01.NavierStokes.RepairConeBounds.physical_projection",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RepairConeBounds.physical_projection",
-      "line": 1144,
-      "module": "NavierStokes.RepairConeBounds",
-      "path": "NavierStokes/RepairConeBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RepairConeBounds.lean#L1144"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RepairConeBounds.physical_projection",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RepairConeBounds.physical_projection",
+        "module": "NavierStokes.RepairConeBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1144,
-        "text": "ActivationContinuation.projection (ReferenceBounds.p1 …) (ReferenceBounds.p2 …) (shearA …) (shearB …) (at chart c.radius p) = c.radius * familyProjection F (controls c p.2, p)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.RepairConeBounds.physical_projection",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1144",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RepairConeBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1144,
+            "text": "theorem physical_projection {F : Profile} {A : NominalProfile.AxisStage F}\n    (c : NominalProfile.Controls A) (hsep : c.separation ≤ Real.exp (-8))\n    {p : Point} (hy : p.1 ∈ Icc (-8) (-5)) (heta : p.2 ∈ ReferencePath.parameterInterval)\n    (hs : NominalProfile.SmallDebt F c.debt p.2) :\n    ActivationContinuation.projection\n        (ReferenceBounds.p1 (c.profiles hsep) F.data.h (chart c.radius p))\n        (ReferenceBounds.p2 (c.profiles hsep) F.data.h (chart c.radius p))\n        (ActivationContinuation.shearA (c.profiles hsep) (chart c.radius p))\n        (ActivationContinuation.shearB (c.profiles hsep) (chart c.radius p)) =\n      c.radius * familyProjection F (controls c p.2, p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

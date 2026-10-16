@@ -1,29 +1,31 @@
 {
-  "id": "definition-3.2/key/1.NavierStokes.NaturalCore.coreVelocity_contDiffOn",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalCore.coreVelocity_contDiffOn",
-      "line": 301,
-      "module": "NavierStokes.NaturalCore",
-      "path": "NavierStokes/NaturalCore.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean#L301"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalCore.coreVelocity_contDiffOn",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalCore.coreVelocity_contDiffOn",
+        "module": "NavierStokes.NaturalCore"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ContDiffOn ℝ ∞ (coreVelocity h f V) (coreDomain h Λ) for f, V smooth on NaturalProfile.domain Λ. coreVelocity is the curl of the meridional potential q^{-A}V(X,\\eta) and the swirl potential -q^{-h}\\int_0^X f; coreDomain (NaturalCore.lean:43) is contained in {t < 1} and contains the whole axis (core_"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 301,
-        "text": "theorem coreVelocity_contDiffOn {h Λ : ℝ} {f V : ℝ × ℝ → ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2)\n    (hf : ContDiffOn ℝ ∞ f (NaturalProfile.domain Λ))\n    (hV : ContDiffOn ℝ ∞ V (NaturalProfile.domain Λ)) :\n    ContDiffOn ℝ ∞ (coreVelocity h f V) (coreDomain h Λ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.NaturalCore.coreVelocity_contDiffOn",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: ContDiffOn ℝ ∞ (coreVelocity h f V) (coreDomain h Λ) for f, V smooth on NaturalProfile.domain Λ. coreVelocity is the curl of the meridional potential q^{-A}V(X,\\eta) and the swirl potential -q^{-h}\\int_0^X f; coreDomain (NaturalCore.lean:43) is contained in {t < 1} and contains the whole axis (core_"
+          },
+          "destination": {
+            "fragment": "L301",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean"
+          },
+          "snippet": {
+            "line": 301,
+            "text": "theorem coreVelocity_contDiffOn {h Λ : ℝ} {f V : ℝ × ℝ → ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2)\n    (hf : ContDiffOn ℝ ∞ f (NaturalProfile.domain Λ))\n    (hV : ContDiffOn ℝ ∞ V (NaturalProfile.domain Λ)) :\n    ContDiffOn ℝ ∞ (coreVelocity h f V) (coreDomain h Λ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

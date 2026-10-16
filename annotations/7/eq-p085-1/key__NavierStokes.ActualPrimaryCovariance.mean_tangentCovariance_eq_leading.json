@@ -1,26 +1,28 @@
 {
-  "id": "eq-p085-1/key/09.NavierStokes.ActualPrimaryCovariance.mean_tangentCovariance_eq_leading",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPrimaryCovariance.mean_tangentCovariance_eq_leading",
-      "line": 614,
-      "module": "NavierStokes.ActualPrimaryCovariance",
-      "path": "NavierStokes/ActualPrimaryCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryCovariance.lean#L614"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPrimaryCovariance.mean_tangentCovariance_eq_leading",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPrimaryCovariance.mean_tangentCovariance_eq_leading",
+        "module": "NavierStokes.ActualPrimaryCovariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 614,
-        "text": "StateMomentBalances.meanBar (tangentCovariance B N0 0 i.succ) n x = leadingStress i n x, for (choice B N0).prepared.N + 1 ≤ n and x in the native strip"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.ActualPrimaryCovariance.mean_tangentCovariance_eq_leading",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L614",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 614,
+            "text": "theorem mean_tangentCovariance_eq_leading (B N0 : ℕ) {n : ℕ}\n    (hn : (choice B N0).prepared.N + 1 ≤ n) {x : Point}\n    (hx : x ∈ (BaseContextAssembly.nativeStrip nominal standardRegion).domain) (i : Fin 2) :\n    StateMomentBalances.meanBar (tangentCovariance B N0 0 i.succ) n x = leadingStress i n x"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,26 @@
 {
-  "id": "eq-p042-7/key/06.NavierStokes.FiveProfileMoments.momentMatrix",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveProfileMoments.momentMatrix",
-      "line": 199
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L199"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveProfileMoments.momentMatrix",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveProfileMoments.momentMatrix",
+        "module": "NavierStokes.FiveProfileMoments"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 199,
-        "text": "noncomputable def momentMatrix (P : Patch) (a : Fin n → ℝ) := LocalizedMomentRepair.matrix a (lower P) (upper P); its action is `matrixEquiv_apply` (line 221): matrixEquiv P a ha c i = ∫ x, x ^ a i * correction P c x, i.e. the entries are ∫ x^{a i} β_j"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.FiveProfileMoments.momentMatrix",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L199"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 199,
+            "text": "noncomputable def momentMatrix (P : Patch) (a : Fin n → ℝ) : Matrix (Fin n) (Fin n) ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

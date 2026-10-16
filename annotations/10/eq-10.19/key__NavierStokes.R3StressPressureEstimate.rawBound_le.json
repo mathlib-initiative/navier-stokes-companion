@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.19/key/03.NavierStokes.R3StressPressureEstimate.rawBound_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.R3StressPressureEstimate.rawBound_le",
-      "line": 92,
-      "module": "NavierStokes.R3StressPressureEstimate",
-      "path": "NavierStokes/R3StressPressureEstimate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3StressPressureEstimate.lean#L92"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.R3StressPressureEstimate.rawBound_le",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.R3StressPressureEstimate.rawBound_le",
+        "module": "NavierStokes.R3StressPressureEstimate"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 92,
-        "text": "(hR : 1 ≤ R) … : rawBound R L M V B ≤ coefficient L M V / R * (B ^ (3 / 2 : ℝ) + B + 1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.R3StressPressureEstimate.rawBound_le",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L92",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3StressPressureEstimate.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 92,
+            "text": "theorem rawBound_le {R L M V B : ℝ} (hR : 1 ≤ R) (hL : 0 ≤ L)\n    (hM : 0 ≤ M) (hV : 0 ≤ V) (hB : 0 ≤ B) :\n    rawBound R L M V B ≤ coefficient L M V / R * (B ^ (3 / 2 : ℝ) + B + 1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

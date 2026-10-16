@@ -1,26 +1,29 @@
 {
-  "id": "proposition-5.3/support/3.NavierStokes.BaseResidual.cartesian_finite_monomials_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseResidual.cartesian_finite_monomials_bound",
-      "line": 314,
-      "module": "NavierStokes.BaseResidual",
-      "path": "NavierStokes/BaseResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean#L314"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseResidual.cartesian_finite_monomials_bound",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseResidual.cartesian_finite_monomials_bound",
+        "module": "NavierStokes.BaseResidual"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 314,
-        "text": "theorem cartesian_finite_monomials_bound {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {U K : Set Inner} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)\n    {ι : Type*} [Fintype ι] (f : ι → Inner → ℝ) (hf : ∀ i, ContDiffOn ℝ ∞ (f i) U)\n    (b : ι → ℝ) (bmin lo hi : ℝ) (hmin : ∀ i, bmin ≤ b i)\n    {B : Set SpaceTime} (hB : IsCompact B) (m : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ z ∈ B, z.1 < 1 → (cartesianChart h z).1 ≤ 1 →\n      (cartesianChart h z).2.1 ∈ Icc lo hi → (cartesianChart h z).2 ∈ K →\n      ‖iteratedFDeriv ℝ m (fun y => ∑ i, cartesianMonomial h (b i) (f i) y) z‖ ≤\n        C * (cartesianChart h z).1 ^ (bmin - m)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.BaseResidual.cartesian_finite_monomials_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L314",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 314,
+            "text": "theorem cartesian_finite_monomials_bound {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {U K : Set Inner} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)\n    {ι : Type*} [Fintype ι] (f : ι → Inner → ℝ) (hf : ∀ i, ContDiffOn ℝ ∞ (f i) U)\n    (b : ι → ℝ) (bmin lo hi : ℝ) (hmin : ∀ i, bmin ≤ b i)\n    {B : Set SpaceTime} (hB : IsCompact B) (m : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ z ∈ B, z.1 < 1 → (cartesianChart h z).1 ≤ 1 →\n      (cartesianChart h z).2.1 ∈ Icc lo hi → (cartesianChart h z).2 ∈ K →\n      ‖iteratedFDeriv ℝ m (fun y => ∑ i, cartesianMonomial h (b i) (f i) y) z‖ ≤\n        C * (cartesianChart h z).1 ^ (bmin - m)"
+          }
+        }
       }
     }
-  }
+  ]
 }

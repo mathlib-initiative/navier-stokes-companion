@@ -1,24 +1,27 @@
 {
-  "id": "eq-p053-1/attributed/03.NavierStokes.MeanResidual.conservativeAngular",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanResidual.conservativeAngular",
-      "line": 415
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanResidual.lean#L415"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanResidual.conservativeAngular",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanResidual.conservativeAngular",
+        "module": "NavierStokes.MeanResidual"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 415,
-        "text": "dt (w 1) q + radialDivergence 2 (fun y => w 0 y * w 1 y) q + dtheta (w 1 * w 1) q / radius q + dz (w 2 * w 1) q - laplacian (w 1) q + w 1 q / radius q ^ 2 - 2 * dtheta (w 0) q / radius q ^ 2 + dtheta p q / radius q"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.MeanResidual.conservativeAngular",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L415"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 415,
+            "text": "noncomputable def conservativeAngular (w : Components) (p : Scalar) (q : SpaceTime) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

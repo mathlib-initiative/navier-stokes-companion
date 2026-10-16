@@ -1,24 +1,27 @@
 {
-  "id": "eq-p048-1/key/02.NavierStokes.PositiveAxisSystem.A1",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveAxisSystem.A1",
-      "line": 135
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisSystem.lean#L135"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveAxisSystem.A1",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveAxisSystem.A1",
+        "module": "NavierStokes.PositiveAxisSystem"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 135,
-        "text": "let H := dScale h * eta + edge eta * b.axial.value; let Gphi := r^2 * b.phi.radial + b.phi.value; let Gu := r^2 * b.axial.radial; !![0,…;…; 2*H/ell h eta, -2*edge eta*Gphi/ell h eta, -2*edge eta*Gphi/ell h eta, 0,0,0; 0, 2*(H - edge eta*Gu)/ell h eta, -2*edge eta*Gu/ell h eta, 2*edge eta/ell h eta, 0, 0]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PositiveAxisSystem.A1",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L135"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 135,
+            "text": "noncomputable def A1 (h r eta : K) (b : BaseJet K) : Matrix (Fin 6) (Fin 6) K"
+          }
+        }
       }
     }
-  }
+  ]
 }

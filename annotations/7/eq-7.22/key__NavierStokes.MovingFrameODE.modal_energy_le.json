@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.22/key/02.NavierStokes.MovingFrameODE.modal_energy_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MovingFrameODE.modal_energy_le",
-      "line": 840,
-      "module": "NavierStokes.MovingFrameODE",
-      "path": "NavierStokes/MovingFrameODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean#L840"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MovingFrameODE.modal_energy_le",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MovingFrameODE.modal_energy_le",
+        "module": "NavierStokes.MovingFrameODE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 840,
-        "text": "⟪z, GrowingMode.modalOperator lam damping e11 e12 e21 e22 z⟫_ℝ ≤ (lam - damping + 4 * ε) * ‖z‖ ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.MovingFrameODE.modal_energy_le",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L840",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 840,
+            "text": "theorem modal_energy_le {lam e11 e12 e21 e22 ε : ℝ} (hlam : 0 ≤ lam) (damping : ℝ)\n    (he11 : |e11| ≤ ε) (he12 : |e12| ≤ ε) (he21 : |e21| ≤ ε) (he22 : |e22| ≤ ε)\n    (z : Plane) :\n    ⟪z, GrowingMode.modalOperator lam damping e11 e12 e21 e22 z⟫_ℝ ≤\n      (lam - damping + 4 * ε) * ‖z‖ ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

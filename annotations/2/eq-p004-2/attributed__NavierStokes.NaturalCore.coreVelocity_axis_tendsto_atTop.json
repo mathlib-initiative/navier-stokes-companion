@@ -1,26 +1,28 @@
 {
-  "id": "eq-p004-2/attributed/10.NavierStokes.NaturalCore.coreVelocity_axis_tendsto_atTop",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalCore.coreVelocity_axis_tendsto_atTop",
-      "line": 430,
-      "module": "NavierStokes.NaturalCore",
-      "path": "NavierStokes/NaturalCore.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean#L430"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalCore.coreVelocity_axis_tendsto_atTop",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalCore.coreVelocity_axis_tendsto_atTop",
+        "module": "NavierStokes.NaturalCore"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 430,
-        "text": "Tendsto (fun t : ℝ => ‖coreVelocity h f V (t, 0)‖) (𝓝[<] 1) atTop   -- the divergence of the axial speed as τ ↓ 0, proved from coreVelocity_norm_at_origin"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.NaturalCore.coreVelocity_axis_tendsto_atTop",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L430",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 430,
+            "text": "theorem coreVelocity_axis_tendsto_atTop {h j Λ : ℝ} {P0 a0 : ℝ → ℝ}\n    {f U V Pr : ℝ × ℝ → ℝ} (hh : 0 < h) (hh1 : h < 1 / 2) (hj : 0 < j)\n    (hs : NaturalProfile.IsNaturalSolution h j Λ P0 a0 f U V Pr) :\n    Tendsto (fun t : ℝ => ‖coreVelocity h f V (t, 0)‖) (𝓝[<] 1) atTop"
+          }
+        }
       }
     }
-  }
+  ]
 }

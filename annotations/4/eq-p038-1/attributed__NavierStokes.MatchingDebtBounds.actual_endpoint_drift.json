@@ -1,26 +1,28 @@
 {
-  "id": "eq-p038-1/attributed/08.NavierStokes.MatchingDebtBounds.actual_endpoint_drift",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MatchingDebtBounds.actual_endpoint_drift",
-      "line": 529,
-      "module": "NavierStokes.MatchingDebtBounds",
-      "path": "NavierStokes/MatchingDebtBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingDebtBounds.lean#L529"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MatchingDebtBounds.actual_endpoint_drift",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MatchingDebtBounds.actual_endpoint_drift",
+        "module": "NavierStokes.MatchingDebtBounds"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 529,
-        "text": "bounds the realised endpoint drift of the axial datum from 4η, feeding the `hdef` hypothesis above"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.MatchingDebtBounds.actual_endpoint_drift",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L529",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingDebtBounds.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 529,
+            "text": "theorem actual_endpoint_drift {F : OutgoingProfile.Profile} {A : NominalProfile.AxisStage F}\n    (c : NominalProfile.Controls A) {N : ℕ} {eps : ℝ} (hc : SmallControl c N eps)\n    {eta : ℝ} (hη : eta ∈ Icc (-1 : ℝ) 1) {n : ℕ} (hn : n ≤ N) :\n    |iteratedDeriv n (fun e => c.initialAxial e - 4 * e) eta| ≤\n      ReferenceJetBounds.jetConstant A.preparation.inputs.coefficients 0 n / A.scale + eps + |A.j|"
+          }
+        }
       }
     }
-  }
+  ]
 }

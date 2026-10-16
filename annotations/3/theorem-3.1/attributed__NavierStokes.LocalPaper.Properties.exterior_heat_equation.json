@@ -1,36 +1,57 @@
 {
-  "id": "theorem-3.1/attributed/1.NavierStokes.LocalPaper.Properties.exterior_heat_equation",
-  "location": {
-    "page": 15,
-    "rect": [0.12854, 0.516529, 0.746187, 0.371074]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalPaper.Properties.exterior_heat_equation",
-      "line": 40,
-      "module": "NavierStokes.LocalPaperHeat",
-      "path": "NavierStokes/LocalPaperHeat.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 15,
+        "rect": [0.12854, 0.516529, 0.746187, 0.371074]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-3.1@p015"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperHeat.lean#L40"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalPaper.Properties.exterior_heat_equation",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 16,
+        "rect": [0.12854, 0.102479, 0.746187, 0.104132]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: For τ>0, r>0: -∂_τ amplitude = iteratedDeriv 2 (amplitude) r + ∂_r amplitude / r - amplitude / r^2 — the radial swirl heat equation.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "theorem-3.1@p015",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 40,
-        "text": "theorem Properties.exterior_heat_equation\n    (hp : Properties h qstar Xa Xext C A D u p) {τ r : ℝ}\n    (hτ : 0 < τ) (hr : 0 < r) :\n    -deriv (fun τ => LocalHeatFormula.amplitude C h τ r) τ =\n      iteratedDeriv 2 (LocalHeatFormula.amplitude C h τ) r +\n        deriv (LocalHeatFormula.amplitude C h τ) r / r -\n        LocalHeatFormula.amplitude C h τ r / r ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-3.1@p016"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalPaper.Properties.exterior_heat_equation",
+        "module": "NavierStokes.LocalPaperHeat"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LocalPaper.Properties.exterior_heat_equation",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: For τ>0, r>0: -∂_τ amplitude = iteratedDeriv 2 (amplitude) r + ∂_r amplitude / r - amplitude / r^2 — the radial swirl heat equation.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L40",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperHeat.lean"
+          },
+          "snippet": {
+            "line": 40,
+            "text": "theorem Properties.exterior_heat_equation\n    (hp : Properties h qstar Xa Xext C A D u p) {τ r : ℝ}\n    (hτ : 0 < τ) (hr : 0 < r) :\n    -deriv (fun τ => LocalHeatFormula.amplitude C h τ r) τ =\n      iteratedDeriv 2 (LocalHeatFormula.amplitude C h τ) r +\n        deriv (LocalHeatFormula.amplitude C h τ) r / r -\n        LocalHeatFormula.amplitude C h τ r / r ^ 2"
+          }
+        }
+      }
+    }
+  ]
 }

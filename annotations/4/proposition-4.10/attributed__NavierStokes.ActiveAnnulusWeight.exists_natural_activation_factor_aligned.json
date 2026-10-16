@@ -1,36 +1,57 @@
 {
-  "id": "proposition-4.10/attributed/1.NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor_aligned",
-  "location": {
-    "page": 36,
-    "rect": [0.12854, 0.677686, 0.746187, 0.221488]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor_aligned",
-      "line": 1039,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 36,
+        "rect": [0.12854, 0.677686, 0.746187, 0.221488]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p036"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L1039"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor_aligned",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 37,
+        "rect": [0.12854, 0.102479, 0.746187, 0.26281]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: exists G : EdgeFactor (Icc (-1) 1) (T^2) (activatedStress ..) with 0 < (G.coefficient (eta,0)).1 for all eta in Icc (-1) 1 and tilt (G.coefficient (eta,0)) = referenceP2 (0,eta) / referenceP1 (0,eta). Positivity (g_a(0) > 0) and the direction of B_a(0,eta) are pinned; the magnitude and G.order are h",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "proposition-4.10@p036",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 1039,
-        "text": "theorem exists_natural_activation_factor_aligned {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    (hP0 : ContDiff ℝ ∞ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2*δ < ReferencePath.rampLimit)\n    {T κ : ℝ} (hT : 0 < T) (hκ : κ < 1) :\n    let N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p037"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor_aligned",
+        "module": "NavierStokes.ActiveAnnulusWeight"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActiveAnnulusWeight.exists_natural_activation_factor_aligned",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: exists G : EdgeFactor (Icc (-1) 1) (T^2) (activatedStress ..) with 0 < (G.coefficient (eta,0)).1 for all eta in Icc (-1) 1 and tilt (G.coefficient (eta,0)) = referenceP2 (0,eta) / referenceP1 (0,eta). Positivity (g_a(0) > 0) and the direction of B_a(0,eta) are pinned; the magnitude and G.order are h",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1039",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "snippet": {
+            "line": 1039,
+            "text": "theorem exists_natural_activation_factor_aligned {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    (hP0 : ContDiff ℝ ∞ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2*δ < ReferencePath.rampLimit)\n    {T κ : ℝ} (hT : 0 < T) (hκ : κ < 1) :\n    let N"
+          }
+        }
+      }
+    }
+  ]
 }

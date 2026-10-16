@@ -1,26 +1,30 @@
 {
-  "id": "eq-p054-1/key/08.NavierStokes.SlowStressSupport.order_one_angular_stress_support",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.order_one_angular_stress_support",
-      "line": 1081,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L1081"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.order_one_angular_stress_support",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.order_one_angular_stress_support",
+        "lines": [1081, 1081],
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 1081,
-        "text": "line 1081: `have htotal : ∀ eta ∈ S, moment B 0 (angularDensity h 1 v u e) eta = 0` — the n = 1 angular case, obtained from `LowerAngularViscosityMoment S B h (e 0)` (line 1060), the order-zero axial-viscosity moment that the paper supplies by differentiating (5.19)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.SlowStressSupport.order_one_angular_stress_support",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1081",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 1063,
+            "text": "theorem order_one_angular_stress_support {S : Set ℝ} (hS : IsOpen S)\n    {v u e : History} (hv : ∀ j, j ≤ 1 → Smooth S (v j))\n    (hu : ∀ j, j ≤ 1 → Smooth S (u j)) (he : ∀ j, j ≤ 1 → Smooth S (e j))\n    (h a B : ℝ) (ha : 0 < a) (hB : 0 ≤ B)\n    (hell : ∀ eta ∈ S, PositiveAxisSystem.ell h eta ≠ 0)\n    (hV : ∀ j, j ≤ 1 → exterior B S (v j)) (hU : ∀ j, j ≤ 1 → exterior B S (u j))\n    (hE : exterior B S (e 1))\n    (hem : ∀ eta ∈ S, moment B 2 (e 1) eta = 0)\n    (hum : ∀ eta ∈ S, moment B 2 (conv 1 u e) eta = 0)\n    (hvisc : LowerAngularViscosityMoment S B h (e 0))\n    (hviscExterior : exterior B S (axialOp2 h (orderExponent h 0) (e 0)))\n    (hdiv : ∀ w : ℝ × ℝ, w.2 ∈ S → ∀ j, j ≤ 1 →\n      dr (v j) w = -w.1 * axialOp h (orderExponent h j) (u j) w)\n    (hinner : ∀ eta ∈ S, ∀ R ∈ Icc 0 a, angularWeighted h 1 v u e (R, eta) = 0) :\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

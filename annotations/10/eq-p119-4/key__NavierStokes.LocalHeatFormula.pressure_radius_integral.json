@@ -1,26 +1,28 @@
 {
-  "id": "eq-p119-4/key/02.NavierStokes.LocalHeatFormula.pressure_radius_integral",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalHeatFormula.pressure_radius_integral",
-      "line": 128,
-      "module": "NavierStokes.LocalHeatFormula",
-      "path": "NavierStokes/LocalHeatFormula.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalHeatFormula.lean#L128"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalHeatFormula.pressure_radius_integral",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalHeatFormula.pressure_radius_integral",
+        "module": "NavierStokes.LocalHeatFormula"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 128,
-        "text": "(hr : 0 < r) : BaseExterior.heatPressure C h (TerminalStress.radiusPoint (1 - τ) r z) = -(∫ ρ in Ioi r, amplitude C h τ ρ ^ 2 / ρ)  -- same j = 0 identity in the backward time τ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.LocalHeatFormula.pressure_radius_integral",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L128",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalHeatFormula.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 128,
+            "text": "theorem pressure_radius_integral (C h τ z : ℝ) {r : ℝ} (hr : 0 < r) :\n    BaseExterior.heatPressure C h (TerminalStress.radiusPoint (1 - τ) r z) =\n      -(∫ ρ in Ioi r, amplitude C h τ ρ ^ 2 / ρ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

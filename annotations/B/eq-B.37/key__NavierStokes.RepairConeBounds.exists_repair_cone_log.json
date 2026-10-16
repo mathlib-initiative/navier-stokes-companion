@@ -1,26 +1,29 @@
 {
-  "id": "eq-B.37/key/02.NavierStokes.RepairConeBounds.exists_repair_cone_log",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RepairConeBounds.exists_repair_cone_log",
-      "line": 1245,
-      "module": "NavierStokes.RepairConeBounds",
-      "path": "NavierStokes/RepairConeBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RepairConeBounds.lean#L1245"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RepairConeBounds.exists_repair_cone_log",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RepairConeBounds.exists_repair_cone_log",
+        "lines": [1245, 1245],
+        "module": "NavierStokes.RepairConeBounds"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 1245,
-        "text": "hproj : 2 < projection (p1 …) (p2 …) (shearA …) (shearB …), obtained from c.radius * familyProjection with the radius floor 6/exp(-8) ≤ c.radius — the paper's \"P_c > 2 follows by increasing X_R\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.RepairConeBounds.exists_repair_cone_log",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1245",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RepairConeBounds.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 1223,
+            "text": "theorem exists_repair_cone_log (F : Profile) :\n    ∃ delta R0 : ℝ, 0 < delta ∧ 0 < R0 ∧\n      ∀ (A : NominalProfile.AxisStage F) (c : NominalProfile.Controls A)\n        (hsep : c.separation ≤ Real.exp (-8)),\n        JetBounds.FiniteJetBound 1 (endpointError c) (Icc (-1) 1) delta →\n        JetBounds.FiniteJetBound 1 (NominalProfile.resetCoefficients F c.debt) (Icc (-1) 1) delta →\n        R0 ≤ c.radius → ∀ p ∈ window, NominalProfile.SmallDebt F c.debt p.2 →\n          ActivationContinuation.IsRelaxed (c.profiles hsep) F.data.h (chart c.radius p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

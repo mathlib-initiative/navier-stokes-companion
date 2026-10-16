@@ -1,30 +1,32 @@
 {
-  "id": "proposition-7.5/attributed/1.NavierStokes.WaveEdgeExtension.primaryVelocity_native_regular",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WaveEdgeExtension.primaryVelocity_native_regular",
-      "line": 662,
-      "module": "NavierStokes.WaveEdgeExtension",
-      "path": "NavierStokes/WaveEdgeExtension.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveEdgeExtension.lean#L662"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WaveEdgeExtension.primaryVelocity_native_regular",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WaveEdgeExtension.primaryVelocity_native_regular",
+        "module": "NavierStokes.WaveEdgeExtension"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: The same conclusion for the assembled primary velocity field: smooth zero extension at the shell edges."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 662,
-        "text": "theorem primaryVelocity_native_regular {F₀ : OutgoingProfile.Profile} (W : NominalProfile.Witness F₀)\n    {ι : Type*} {U : PhaseJetBounds.Domain ι PhaseCalculus.Slow}\n    (F : Fin 2 → PrimaryPulseBounds.PhaseConstruction U)\n    (pref : Fin 2 → ι → ℝ) (χ : ι → NativePoint → PhaseCalculus.Slow × ℝ)\n    (ε : ι → ℝ) (T : ι → NativePoint → SmoothCovariance.Vec2) (mask : ι → NativePoint → ℝ)\n    {V : JetDomain ι NativePoint} (j : Fin 2)\n    (hf : NativeJets V (fun i x => Real.sqrt (ε i) *\n      (Real.sqrt (PrimaryTargetBounds.movingWeight W x.1) * pulseEnvelope F χ j i x))\n      (primaryVelocity F pref χ ε T mask j))\n    {S : ι → ℝ} (hS : ∀ i, 1 ≤ S i)\n    (hχ : ∀ i, ContinuousOn (fun x => (χ i x).2) nativeSlowDomain)\n    (hdom : ∀ i, windowDomain nativeSlowDomain (nativeRadius F₀.data.h)\n      (PrimaryTargetBounds.leftRadius W) (PrimaryTargetBounds.rightRadius W) ⊆ V.carrier i)\n    (q : ℕ) (hG : ∀ i x, x ∈ windowDomain nativeSlowDomain (nativeRadius F₀.data.h)\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.WaveEdgeExtension.primaryVelocity_native_regular",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: The same conclusion for the assembled primary velocity field: smooth zero extension at the shell edges."
+          },
+          "destination": {
+            "fragment": "L662",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveEdgeExtension.lean"
+          },
+          "snippet": {
+            "line": 662,
+            "text": "theorem primaryVelocity_native_regular {F₀ : OutgoingProfile.Profile} (W : NominalProfile.Witness F₀)\n    {ι : Type*} {U : PhaseJetBounds.Domain ι PhaseCalculus.Slow}\n    (F : Fin 2 → PrimaryPulseBounds.PhaseConstruction U)\n    (pref : Fin 2 → ι → ℝ) (χ : ι → NativePoint → PhaseCalculus.Slow × ℝ)\n    (ε : ι → ℝ) (T : ι → NativePoint → SmoothCovariance.Vec2) (mask : ι → NativePoint → ℝ)\n    {V : JetDomain ι NativePoint} (j : Fin 2)\n    (hf : NativeJets V (fun i x => Real.sqrt (ε i) *\n      (Real.sqrt (PrimaryTargetBounds.movingWeight W x.1) * pulseEnvelope F χ j i x))\n      (primaryVelocity F pref χ ε T mask j))\n    {S : ι → ℝ} (hS : ∀ i, 1 ≤ S i)\n    (hχ : ∀ i, ContinuousOn (fun x => (χ i x).2) nativeSlowDomain)\n    (hdom : ∀ i, windowDomain nativeSlowDomain (nativeRadius F₀.data.h)\n      (PrimaryTargetBounds.leftRadius W) (PrimaryTargetBounds.rightRadius W) ⊆ V.carrier i)\n    (q : ℕ) (hG : ∀ i x, x ∈ windowDomain nativeSlowDomain (nativeRadius F₀.data.h)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

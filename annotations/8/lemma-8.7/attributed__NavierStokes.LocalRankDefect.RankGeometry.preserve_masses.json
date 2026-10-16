@@ -1,29 +1,31 @@
 {
-  "id": "lemma-8.7/attributed/1.NavierStokes.LocalRankDefect.RankGeometry.preserve_masses",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalRankDefect.RankGeometry.preserve_masses",
-      "line": 788,
-      "module": "NavierStokes.LocalRankDefect",
-      "path": "NavierStokes/LocalRankDefect.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalRankDefect.lean#L788"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalRankDefect.RankGeometry.preserve_masses",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalRankDefect.RankGeometry.preserve_masses",
+        "module": "NavierStokes.LocalRankDefect"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The two integral (mass) constraints — the first two rows of (8.25) — are preserved exactly by the realized increment."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 788,
-        "text": "theorem preserve_masses {a b : ℝ} (ha : 0 < a) (hab : a < b) (hU : IsOpen U)\n    (hleft : ∀ n x, x ∈ U → a ≤ r.length n x * r.inner)\n    (hright : ∀ n x, x ∈ U → r.length n x * r.outer ≤ b)\n    (axial : P × PressureStream.Plane) (hm : LocalTriple a b U u.mean)\n    (n : ℕ) {x : P} (hx : x ∈ U) :\n    CorrectionState.radialMoment 2 (VariableGaugeMean.rankStageState g r axial c u).mean.angular n x =\n        CorrectionState.radialMoment 2 u.mean.angular n x ∧\n      CorrectionState.radialMoment 1 (VariableGaugeMean.rankStageState g r axial c u).mean.axial n x =\n        CorrectionState.radialMoment 1 u.mean.axial n x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LocalRankDefect.RankGeometry.preserve_masses",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: The two integral (mass) constraints — the first two rows of (8.25) — are preserved exactly by the realized increment."
+          },
+          "destination": {
+            "fragment": "L788",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalRankDefect.lean"
+          },
+          "snippet": {
+            "line": 788,
+            "text": "theorem preserve_masses {a b : ℝ} (ha : 0 < a) (hab : a < b) (hU : IsOpen U)\n    (hleft : ∀ n x, x ∈ U → a ≤ r.length n x * r.inner)\n    (hright : ∀ n x, x ∈ U → r.length n x * r.outer ≤ b)\n    (axial : P × PressureStream.Plane) (hm : LocalTriple a b U u.mean)\n    (n : ℕ) {x : P} (hx : x ∈ U) :\n    CorrectionState.radialMoment 2 (VariableGaugeMean.rankStageState g r axial c u).mean.angular n x =\n        CorrectionState.radialMoment 2 u.mean.angular n x ∧\n      CorrectionState.radialMoment 1 (VariableGaugeMean.rankStageState g r axial c u).mean.axial n x =\n        CorrectionState.radialMoment 1 u.mean.axial n x"
+          }
+        }
       }
     }
-  }
+  ]
 }

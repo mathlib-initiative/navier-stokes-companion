@@ -1,26 +1,28 @@
 {
-  "id": "eq-p007-1/key/01.NavierStokesR3.ViscosityScaling.rescale",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ViscosityScaling.rescale",
-      "line": 24,
-      "module": "NavierStokes.R3.ViscosityScaling",
-      "path": "NavierStokes/R3/ViscosityScaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean#L24"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ViscosityScaling.rescale",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ViscosityScaling.rescale",
+        "module": "NavierStokes.R3.ViscosityScaling"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 24,
-        "text": "def rescale (a b : ℝ) (g : SpaceTime → V) : SpaceTime → V := fun z => a • g (z.1, b • z.2)  -- amplitude a, spatial dilation b, time untouched"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokesR3.ViscosityScaling.rescale",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L24",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 24,
+            "text": "def rescale {V : Type*} [SMul ℝ V] (a b : ℝ) (g : SpaceTime → V) : SpaceTime → V"
+          }
+        }
       }
     }
-  }
+  ]
 }

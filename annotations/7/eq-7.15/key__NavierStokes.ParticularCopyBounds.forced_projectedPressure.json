@@ -1,24 +1,26 @@
 {
-  "id": "eq-7.15/key/01.NavierStokes.ParticularCopyBounds.forced_projectedPressure",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParticularCopyBounds.forced_projectedPressure",
-      "line": 208,
-      "module": "NavierStokes.ParticularCopyBounds",
-      "path": "NavierStokes/ParticularCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularCopyBounds.lean#L208"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParticularCopyBounds.forced_projectedPressure",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParticularCopyBounds.forced_projectedPressure",
+        "module": "NavierStokes.ParticularCopyBounds"
       },
-      "snippet": {
-        "line": 208,
-        "text": "LocalJets s w (alpha + 1/2) cells (fun n k => projectedPressure (frequency n) ...), from hu, hf : LocalJets s w alpha ... and hfrequency : BandBound s (1/2) (fun n => 1 / frequency n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ParticularCopyBounds.forced_projectedPressure",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L208",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularCopyBounds.lean"
+          },
+          "snippet": {
+            "line": 208,
+            "text": "theorem forced_projectedPressure\n    (hN : LocalJets s (fun _ _ => 1) 0 cells normal)\n    (hNd : LocalJets s (fun _ _ => 1) 0 cells normalDot)\n    (hA : LocalJets s (fun _ _ => 1) 0 cells action)\n    (hu : LocalJets s w α cells velocity) (hf : LocalJets s w α cells forcing)\n    (hw : ∀ n x, x ∈ s.domain → 0 ≤ w n x)\n    {b M : ℝ} (hb : 0 < b)\n    (hl : ∀ n k x, x ∈ s.domain → x ∈ cells n k → b ≤ ‖normal n k x‖)\n    (hh : ∀ n k x, x ∈ s.domain → x ∈ cells n k → ‖normal n k x‖ ≤ M)\n    {frequency : ℕ → ℝ} (hfrequency : BandBound s (1/2) (fun n => 1 / frequency n)) :\n    LocalJets s w (α+1/2) cells (fun n k => projectedPressure (frequency n)\n      (normal n k) (normalDot n k) (velocity n k) (fun x => action n k x (velocity n k x))\n      (forcing n k))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p139-2/key/01.NavierStokes.ParametricHeatTail.weightedJet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricHeatTail.weightedJet_bound",
-      "line": 418,
-      "module": "NavierStokes.ParametricHeatTail",
-      "path": "NavierStokes/ParametricHeatTail.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricHeatTail.lean#L418"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricHeatTail.weightedJet_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricHeatTail.weightedJet_bound",
+        "module": "NavierStokes.ParametricHeatTail"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 418,
-        "text": "‖weightedJet W square h K q n ν X‖ ≤ (B * editBound square h L n) * weightedKernel K p q X, under hweight : ∀ X ∈ Ioi K, |W X| ≤ B * (X / K) ^ p; with square = false, q = 0, W = tailWeight d K false (so B = tailSize = e_K, p = tailDecay = -A) and weightedKernel K p 0 X = (X/K)^(-A)/X this reads |E_cl(X) · ∂_ν^n(M-1)(X)| ≤ e_K C_n K^{-1} x^{-A-1}"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ParametricHeatTail.weightedJet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L418",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricHeatTail.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 418,
+            "text": "theorem weightedJet_bound (square : Bool) (n : ℕ) {L ν X : ℝ}\n    (hν : ν ∈ Icc (0 : ℝ) L) (hX : X ∈ Ioi K) :\n    ‖weightedJet W square h K q n ν X‖ ≤\n      (B * editBound square h L n) * weightedKernel K p q X"
+          }
+        }
       }
     }
-  }
+  ]
 }

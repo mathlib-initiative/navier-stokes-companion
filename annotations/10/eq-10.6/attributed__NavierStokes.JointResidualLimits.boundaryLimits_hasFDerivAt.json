@@ -1,24 +1,27 @@
 {
-  "id": "eq-10.6/attributed/05.NavierStokes.JointResidualLimits.boundaryLimits_hasFDerivAt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.JointResidualLimits.boundaryLimits_hasFDerivAt",
-      "line": 240
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L240"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.JointResidualLimits.boundaryLimits_hasFDerivAt",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.JointResidualLimits.boundaryLimits_hasFDerivAt",
+        "module": "NavierStokes.JointResidualLimits"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 240,
-        "text": "HasFDerivAt (fun y => boundaryLimits f hext y n) ((boundaryLimits f hext x (n+1)).curryLeft.comp (ContinuousLinearMap.inr ℝ ℝ Space)) x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.JointResidualLimits.boundaryLimits_hasFDerivAt",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L240"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 240,
+            "text": "theorem boundaryLimits_hasFDerivAt {f : SpaceTime → V}\n    (hf : ContDiffOn ℝ ∞ f (SpacetimeEndpoint.openPast 1))\n    (hzero : VanishingJointJets f) (hext : AwayExtensions f) (n : ℕ) (x : Space) :\n    HasFDerivAt (fun y => boundaryLimits f hext y n)\n      ((boundaryLimits f hext x (n + 1)).curryLeft.comp (ContinuousLinearMap.inr ℝ ℝ Space)) x"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,28 @@
 {
-  "id": "eq-8.10/support/05.NavierStokes.UniformFourierAlias.totalIntegral_finiteJets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.UniformFourierAlias.totalIntegral_finiteJets",
-      "line": 846,
-      "module": "NavierStokes.UniformFourierAlias",
-      "path": "NavierStokes/UniformFourierAlias.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformFourierAlias.lean#L846"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.UniformFourierAlias.totalIntegral_finiteJets"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.UniformFourierAlias.totalIntegral_finiteJets",
+        "module": "NavierStokes.UniformFourierAlias"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 846,
-        "text": "FiniteJetBound (m + 6*p) f … → ∀ j ≤ m, ‖iteratedFDeriv ℝ j (totalIntegral M (0, vector d) f) z‖ ≤ K*C*(|M|⁻¹)^p: five orders per torus inverse plus one radial derivative per integration by parts"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.UniformFourierAlias.totalIntegral_finiteJets"
+          },
+          "destination": {
+            "fragment": "L846",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformFourierAlias.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 846,
+            "text": "theorem totalIntegral_finiteJets (d : Direction) {a b : ℝ} (hab : a ≤ b) (m p : ℕ) :\n    ∃ K : ℝ, 0 ≤ K ∧ ∀ (f : ℝ × (S × Plane) → ℂ), Admissible a b f →\n      ∀ C : ℝ, 0 ≤ C → FiniteJetBound (m + 6 * p) f (Prod.fst ⁻¹' Icc a b) C →\n      ∀ M : ℝ, M ≠ 0 → ∀ j ≤ m, ∀ z : ℝ × (S × Plane),\n        ‖iteratedFDeriv ℝ j (TransportPrimitive.totalIntegral M ((0 : S), vector d) f) z‖ ≤\n          K * C * (|M|⁻¹) ^ p"
+          }
+        }
       }
     }
-  }
+  ]
 }

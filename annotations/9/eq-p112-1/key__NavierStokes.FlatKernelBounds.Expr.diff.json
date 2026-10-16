@@ -1,26 +1,28 @@
 {
-  "id": "eq-p112-1/key/11.NavierStokes.FlatKernelBounds.Expr.diff",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FlatKernelBounds.Expr.diff",
-      "line": 106,
-      "module": "NavierStokes.FlatKernelBounds",
-      "path": "NavierStokes/FlatKernelBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatKernelBounds.lean#L106"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FlatKernelBounds.Expr.diff",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FlatKernelBounds.Expr.diff",
+        "module": "NavierStokes.FlatKernelBounds"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 106,
-        "text": "def Expr.diff : Expr → Expr | .jet k => .mul (.jet (k + 1)) (Expr.invRoot.pow 3) | .add e f => .add e.diff f.diff | .mul e f => .add (.mul e.diff f) (.mul e f.diff) | …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "11.NavierStokes.FlatKernelBounds.Expr.diff",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L106",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatKernelBounds.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 106,
+            "text": "def Expr.diff : Expr → Expr\n  | .const _ => .const 0\n  | .x => .const 1\n  | .t => .const 0\n  | .root => .mul (.mul .x .t) .invRoot\n  | .invRoot => .mul (.const (-1)) (.mul (.mul .x .t) (Expr.invRoot.pow 3))\n  | .jet k => .mul (.jet (k + 1)) (Expr.invRoot.pow 3)\n  | .add e f => .add e.diff f.diff\n  | .mul e f => .add (.mul e.diff f) (.mul e f.diff)"
+          }
+        }
       }
     }
-  }
+  ]
 }

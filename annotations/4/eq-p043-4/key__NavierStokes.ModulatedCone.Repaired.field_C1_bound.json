@@ -1,22 +1,25 @@
 {
-  "id": "eq-p043-4/key/03.NavierStokes.ModulatedCone.Repaired.field_C1_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.Repaired.field_C1_bound",
-      "line": 1132
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L1132"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.Repaired.field_C1_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.Repaired.field_C1_bound",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 1132,
-        "text": "∃ C > 0, ∀ c, ∀ ε ≥ 0, FiniteJetBound 1 c J ε → … |P.E p - E p| ≤ C * ε ∧ |radialDerivative P.E p - radialDerivative E p| ≤ C * ε ∧ |radialDerivative P.U p - radialDerivative U p| ≤ C * ε"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ModulatedCone.Repaired.field_C1_bound"
+          },
+          "destination": {
+            "fragment": "L1132"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1132,
+            "text": "theorem field_C1_bound (patch : FiveProfileMoments.Patch) (J : Set ℝ) (hJ : IsCompact J)\n    (A : ℝ → ℝ) (hA : ContDiff ℝ ∞ A) :\n    ∃ C : ℝ, 0 < C ∧ ∀ c : ℝ → ModulatedHistories.Coeff, ContDiff ℝ ∞ c →\n      ∀ ε : ℝ, 0 ≤ ε → JetBounds.FiniteJetBound 1 c J ε →\n      ∀ {D D' : RadialDomain} (P : Profiles D) (Q : Profiles D'),\n      P.f = ModulatedHistories.applyRepairF patch A c Q.f →\n      P.U = ModulatedHistories.applyRepairU patch A c Q.U →\n      ∀ E U : Field, ContDiff ℝ ∞ E → ContDiff ℝ ∞ U → ∀ p : Point,\n      0 < p.1 → p.2 ∈ J → Q.E =ᶠ[𝓝 p] E → Q.U =ᶠ[𝓝 p] U →\n      |P.E p - E p| ≤ C * ε ∧\n        |radialDerivative P.E p - radialDerivative E p| ≤ C * ε ∧\n        |radialDerivative P.U p - radialDerivative U p| ≤ C * ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

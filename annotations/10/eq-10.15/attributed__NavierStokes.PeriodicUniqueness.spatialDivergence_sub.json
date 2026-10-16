@@ -1,25 +1,27 @@
 {
-  "id": "eq-10.15/attributed/04.NavierStokes.PeriodicUniqueness.spatialDivergence_sub",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicUniqueness.spatialDivergence_sub",
-      "line": 55,
-      "module": "NavierStokes.PeriodicUniqueness",
-      "path": "NavierStokes/PeriodicUniqueness.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicUniqueness.lean#L55"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicUniqueness.spatialDivergence_sub"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicUniqueness.spatialDivergence_sub",
+        "module": "NavierStokes.PeriodicUniqueness"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 55,
-        "text": "spatialDivergence (u - v) t x = spatialDivergence u t x - spatialDivergence v t x; with the two div-free hypotheses this is the clause `div w = 0`"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PeriodicUniqueness.spatialDivergence_sub"
+          },
+          "destination": {
+            "fragment": "L55",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicUniqueness.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 55,
+            "text": "theorem spatialDivergence_sub {u v : VelocityField} {t : ℝ}\n    (hu : ContDiff ℝ ∞ (fun x : Space => u (t, x)))\n    (hv : ContDiff ℝ ∞ (fun x : Space => v (t, x))) (x : Space) :\n    spatialDivergence (u - v) t x = spatialDivergence u t x - spatialDivergence v t x"
+          }
+        }
       }
     }
-  }
+  ]
 }

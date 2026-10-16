@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.18/key/04.NavierStokes.R3PressureCutoff.weightedPressure_distribution",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.R3PressureCutoff.weightedPressure_distribution",
-      "line": 197,
-      "module": "NavierStokes.R3PressureCutoff",
-      "path": "NavierStokes/R3PressureCutoff.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3PressureCutoff.lean#L197"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.R3PressureCutoff.weightedPressure_distribution",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.R3PressureCutoff.weightedPressure_distribution",
+        "module": "NavierStokes.R3PressureCutoff"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 197,
-        "text": "smulLeftCLM ℂ (powerCutoff φ) (pressureL1 i j g) = (weightedPressure hφ i j g hw hg₂ : 𝓢'(Space, ℂ)), weightedPressure = pressureL2 i j (φ^6 g) + commutatorLp  -- sixth-power form, L² packaging"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.R3PressureCutoff.weightedPressure_distribution",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L197",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3PressureCutoff.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 197,
+            "text": "theorem weightedPressure_distribution {R L : ℝ} {φ : Space → ℝ} (hφ : Cutoff R L φ)\n    (hφg : φ.HasTemperateGrowth) (i j : Fin 3) (g : Lp ℂ 1 (volume : Measure Space))\n    (hw : MemLp (weightedNorm φ g) (3 / 2)) (hg₂ : MemLp (fun x => powerCutoff φ x * g x) 2) :\n    smulLeftCLM ℂ (powerCutoff φ) (pressureL1 i j g) =\n      (weightedPressure hφ i j g hw hg₂ : 𝓢'(Space, ℂ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

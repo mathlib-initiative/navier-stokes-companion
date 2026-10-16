@@ -1,25 +1,27 @@
 {
-  "id": "eq-p090-4/key/03.NavierStokes.MeanChartCompatibility.streamPotential_pull",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.streamPotential_pull",
-      "line": 189,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L189"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.streamPotential_pull",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.streamPotential_pull",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 189,
-        "text": "streamPotential d a b M v (pull l C u f) = pull l C (u / l) (streamPotential d (l*a) (l*b) N w f) -- the e = 1 case, same prefactor u/l"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.MeanChartCompatibility.streamPotential_pull",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L189",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 189,
+            "text": "theorem streamPotential_pull {l a b d : ℝ} (hl : 0 < l) (ha : 0 < a)\n    (hab : a < b) (hd : 0 < d) (C : E →L[ℝ] F) (M N u : ℝ) (v : E) (w : F)\n    (hshift : M • C v = (N * l ^ d) • w) {f : ℝ × F → ℝ}\n    (hf : ContDiff ℝ ∞ f) (hs : RadialAlias.RadiallySupported (l * a) (l * b) f) :\n    PressureStream.streamPotential d a b M v (pull l C u f) =\n      pull l C (u / l) (PressureStream.streamPotential d (l * a) (l * b) N w f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

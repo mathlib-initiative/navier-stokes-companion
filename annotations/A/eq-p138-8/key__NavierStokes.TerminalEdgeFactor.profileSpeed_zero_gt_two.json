@@ -1,26 +1,28 @@
 {
-  "id": "eq-p138-8/key/07.NavierStokes.TerminalEdgeFactor.profileSpeed_zero_gt_two",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgeFactor.profileSpeed_zero_gt_two",
-      "line": 1425,
-      "module": "NavierStokes.TerminalEdgeFactor",
-      "path": "NavierStokes/TerminalEdgeFactor.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1425"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgeFactor.profileSpeed_zero_gt_two",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgeFactor.profileSpeed_zero_gt_two",
+        "module": "NavierStokes.TerminalEdgeFactor"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 1425,
-        "text": "line 1429-1430: profileRadius y0 0 * profileCarrierRadial C d y0 (η, 0) / profileCarrier C d y0 (η, 0) < -1, i.e. rK_r/K < -1 in the paper's divided form (at x = 0)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.TerminalEdgeFactor.profileSpeed_zero_gt_two",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1425",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 1425,
+            "text": "theorem profileSpeed_zero_gt_two {C : ℝ} (hC : 0 < C) (d : TailData) (y0 : ℝ)\n    {η : ℝ} (hη : η ∈ Icc (-1 : ℝ) 1) : 2 < profileSpeed C d y0 (η, 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p038-2/key/03.NavierStokes.ShapeTransition.logarithmicSlope_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ShapeTransition.logarithmicSlope_bounds",
-      "line": 179,
-      "module": "NavierStokes.ShapeTransition",
-      "path": "NavierStokes/ShapeTransition.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ShapeTransition.lean#L179"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ShapeTransition.logarithmicSlope_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ShapeTransition.logarithmicSlope_bounds",
+        "module": "NavierStokes.ShapeTransition"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 179,
-        "text": "theorem logarithmicSlope_bounds … : 11/20 ≤ logarithmicSlope T li (y, eta) ∧ logarithmicSlope T li (y, eta) ≤ 13/20"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ShapeTransition.logarithmicSlope_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L179",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ShapeTransition.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 179,
+            "text": "theorem logarithmicSlope_bounds {T K B : ℝ} {li : ℝ → ℝ}\n    (hT : 0 < T) (hK : 0 ≤ K) (_ : 0 ≤ B)\n    (hSigma : ∀ x, |deriv OutgoingSchedule.sigma x| ≤ K)\n    (hDuration : 20 * K * B ≤ T) {y eta : ℝ}\n    (hData : |logShape eta - li eta| ≤ B) :\n    11 / 20 ≤ logarithmicSlope T li (y, eta) ∧\n      logarithmicSlope T li (y, eta) ≤ 13 / 20"
+          }
+        }
       }
     }
-  }
+  ]
 }

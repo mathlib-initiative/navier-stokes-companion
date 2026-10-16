@@ -1,26 +1,28 @@
 {
-  "id": "eq-p070-5/key/02.NavierStokes.ActualInitialExcluded.periodizedGaussian_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualInitialExcluded.periodizedGaussian_eq",
-      "line": 919,
-      "module": "NavierStokes.ActualInitialExcluded",
-      "path": "NavierStokes/ActualInitialExcluded.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialExcluded.lean#L919"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualInitialExcluded.periodizedGaussian_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualInitialExcluded.periodizedGaussian_eq",
+        "module": "NavierStokes.ActualInitialExcluded"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 919,
-        "text": "periodized (2 * A h + 1 / 2) nativeGaussian l n x = chartGaussian l n (meanEquiv x, θ), for x ∈ nativeStrip.domain and every θ — the θ-free side is the left-hand side, so the right-hand side does not depend on θ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ActualInitialExcluded.periodizedGaussian_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L919",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialExcluded.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 919,
+            "text": "theorem periodizedGaussian_eq (l : SignedLabel B N0) (n : ℕ) {x : Native}\n    (hx : x ∈ nativeStrip.domain) (θ : ℝ) :\n    periodized (2 * CoordinateAlgebra.A ActualPrimary.h + 1 / 2) nativeGaussian l n x =\n      chartGaussian l n (ActualSignedGeometry.meanEquiv x, θ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

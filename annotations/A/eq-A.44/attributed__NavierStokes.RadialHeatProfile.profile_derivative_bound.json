@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.44/attributed/05.NavierStokes.RadialHeatProfile.profile_derivative_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialHeatProfile.profile_derivative_bound",
-      "line": 234,
-      "module": "NavierStokes.RadialHeatProfile",
-      "path": "NavierStokes/RadialHeatProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L234"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialHeatProfile.profile_derivative_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialHeatProfile.profile_derivative_bound",
+        "module": "NavierStokes.RadialHeatProfile"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 234,
-        "text": "|iteratedDerivWithin n (profile a) (Ici 0) z| ≤ |(Real.Gamma a)⁻¹ * derivativeCoeff a n| * Real.Gamma (a + n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.RadialHeatProfile.profile_derivative_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L234",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 234,
+            "text": "theorem profile_derivative_bound {a : ℝ} (ha : 1 < a) (n : ℕ) {z : ℝ} (hz : 0 ≤ z) :\n    |iteratedDerivWithin n (profile a) (Ici 0) z| ≤\n      |(Real.Gamma a)⁻¹ * derivativeCoeff a n| * Real.Gamma (a + (n : ℝ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

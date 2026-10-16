@@ -1,26 +1,29 @@
 {
-  "id": "lemma-B.7/support/3.NavierStokes.ReferenceEndpointRate.exists_linear_jet_constant",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceEndpointRate.exists_linear_jet_constant",
-      "line": 123,
-      "module": "NavierStokes.ReferenceEndpointRate",
-      "path": "NavierStokes/ReferenceEndpointRate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean#L123"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceEndpointRate.exists_linear_jet_constant",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceEndpointRate.exists_linear_jet_constant",
+        "module": "NavierStokes.ReferenceEndpointRate"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 123,
-        "text": "theorem exists_linear_jet_constant (hΛ1 : 1 ≤ Λ) (hσ : 0 < σ)\n    (hscale : AxisReference.stabilityScale d.coefficients.epsilon (profileErrorConstant d) ≤ Λ)\n    (N : ℕ) : ∃ Cjoin, 0 ≤ Cjoin ∧ ∀ q : Choice d Λ,\n      ∀ T, 0 < T → ∀ κ ∈ Icc (0:ℝ) 1, ∀ w₁, 0 ≤ w₁ → ∀ w₂, 0 ≤ w₂ →\n      ∀ n ≤ N, ∀ η ∈ J,\n      |iteratedDeriv n (fun ξ => (reference d hΛ hP0 hs q).endpointU T κ w₁ ξ-\n        NaturalAxisData.U j ξ) η| ≤ ReferenceJetBounds.jetConstant d.coefficients 0 n/Λ +\n          Cjoin*(T+κ+w₁+w₂)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ReferenceEndpointRate.exists_linear_jet_constant",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L123",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 123,
+            "text": "theorem exists_linear_jet_constant (hΛ1 : 1 ≤ Λ) (hσ : 0 < σ)\n    (hscale : AxisReference.stabilityScale d.coefficients.epsilon (profileErrorConstant d) ≤ Λ)\n    (N : ℕ) : ∃ Cjoin, 0 ≤ Cjoin ∧ ∀ q : Choice d Λ,\n      ∀ T, 0 < T → ∀ κ ∈ Icc (0:ℝ) 1, ∀ w₁, 0 ≤ w₁ → ∀ w₂, 0 ≤ w₂ →\n      ∀ n ≤ N, ∀ η ∈ J,\n      |iteratedDeriv n (fun ξ => (reference d hΛ hP0 hs q).endpointU T κ w₁ ξ-\n        NaturalAxisData.U j ξ) η| ≤ ReferenceJetBounds.jetConstant d.coefficients 0 n/Λ +\n          Cjoin*(T+κ+w₁+w₂)"
+          }
+        }
       }
     }
-  }
+  ]
 }

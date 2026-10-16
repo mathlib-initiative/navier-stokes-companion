@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.5/support/09.NavierStokes.ActualCycleResidualBounds.actual_selectedGeometry",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCycleResidualBounds.actual_selectedGeometry",
-      "line": 1128,
-      "module": "NavierStokes.ActualCycleResidualBounds",
-      "path": "NavierStokes/ActualCycleResidualBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean#L1128"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCycleResidualBounds.actual_selectedGeometry",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCycleResidualBounds.actual_selectedGeometry",
+        "module": "NavierStokes.ActualCycleResidualBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 1128,
-        "text": "SelectedGeometry inner outer h N (gap) actualGap ActualPolarCoverage.nativeDomain (liftDomain geometry.strip.domain) active — in_domain puts the chart point in nativeDomain, in_closure puts it in closure (lifted strip); never in the open lifted strip"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.ActualCycleResidualBounds.actual_selectedGeometry",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1128",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 1128,
+            "text": "theorem actual_selectedGeometry (N : ℕ) :\n    SelectedGeometry ActualPolarCoverage.inner ActualPolarCoverage.outer ActualPrimary.h N\n      (CommonWindow.gap ActualPrimary.h) actualGap ActualPolarCoverage.nativeDomain\n      (HarmonicResidual.liftDomain ActualInitialization.geometry.strip.domain) active"
+          }
+        }
       }
     }
-  }
+  ]
 }

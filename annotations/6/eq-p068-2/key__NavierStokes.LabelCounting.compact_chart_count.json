@@ -1,24 +1,27 @@
 {
-  "id": "eq-p068-2/key/01.NavierStokes.LabelCounting.compact_chart_count",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LabelCounting.compact_chart_count",
-      "line": 164
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelCounting.lean#L164"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LabelCounting.compact_chart_count",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LabelCounting.compact_chart_count",
+        "module": "NavierStokes.LabelCounting"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 164,
-        "text": "theorem compact_chart_count (A : ℝ) (hB : IsCompact B) : ∃ C > 0, ∀ n : ℕ, 1 ≤ n → (relevantLabels n A B).Finite ∧ ((relevantLabels n A B).ncard : ℝ) ≤ C * ChartScales.S n ^ 9"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.LabelCounting.compact_chart_count",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L164"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 164,
+            "text": "theorem compact_chart_count (A : ℝ) {B : Set Position} (hB : IsCompact B) :\n    ∃ C > 0, ∀ n : ℕ, 1 ≤ n →\n      (relevantLabels n A B).Finite ∧\n        ((relevantLabels n A B).ncard : ℝ) ≤ C * ChartScales.S n ^ 9"
+          }
+        }
       }
     }
-  }
+  ]
 }

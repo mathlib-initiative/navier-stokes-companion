@@ -1,26 +1,28 @@
 {
-  "id": "eq-p044-3/key/05.NavierStokes.LeadingStressWeights.modulated_terminal_speed_slope",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.modulated_terminal_speed_slope",
-      "line": 680,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L680"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.modulated_terminal_speed_slope",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.modulated_terminal_speed_slope",
+        "module": "NavierStokes.LeadingStressWeights"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 680,
-        "text": "rightChart (rightEdge W) (logSlope v.profiles) (eta, x) = 0 — the slope vanishes on the whole outer collar, not only at X_b"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.LeadingStressWeights.modulated_terminal_speed_slope",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L680",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 680,
+            "text": "theorem modulated_terminal_speed_slope {x eta : ℝ} (hx : x < outerWidth v)\n    (hη : eta ∈ Icc (-1 : ℝ) 1) :\n    ActiveAnnulusWeight.rightChart (rightEdge W) (logSpeed v.profiles) (eta, x) =\n      TerminalEdgeFactor.profileSpeed (TerminalHistoryBridge.normalization F W.controls.radius)\n        F.data (TerminalHistoryBridge.shift F W.controls.radius) (eta, x) ∧\n    ActiveAnnulusWeight.rightChart (rightEdge W) (logSlope v.profiles) (eta, x) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

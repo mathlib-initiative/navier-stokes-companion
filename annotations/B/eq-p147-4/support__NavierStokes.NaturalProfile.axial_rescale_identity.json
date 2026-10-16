@@ -1,27 +1,30 @@
 {
-  "id": "eq-p147-4/support/04.NavierStokes.NaturalProfile.axial_rescale_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalProfile.axial_rescale_identity",
-      "line": 341,
-      "module": "NavierStokes.NaturalProfile",
-      "path": "NavierStokes/NaturalProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalProfile.lean#L341"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalProfile.axial_rescale_identity",
-        "kind": "theorem",
-        "private": true
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalProfile.axial_rescale_identity",
+        "module": "NavierStokes.NaturalProfile"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 341,
-        "text": "hypothesis heq : 2 * R = -L⁻¹ * (-A*(1-2η U_*)*U_* - H_*·U_{*η} - d·P0_η + 4AηP0) + (1/Λ)*L⁻¹*(...) — the scalar form of the second equation, with the bracket equal to Z_* of (B.1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.NaturalProfile.axial_rescale_identity",
+            "kind": "theorem",
+            "private": true
+          },
+          "destination": {
+            "fragment": "L341",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalProfile.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 341,
+            "text": "private theorem axial_rescale_identity\n    {Λ L X η A d Us UsEta Hs W u uY uEta P0 P0Eta P PY PEta R : ℝ}\n    (hΛ : Λ ≠ 0) (hL : L ≠ 0)\n    (heq : 2 * R = -L⁻¹ *\n      (-A * (1 - 2 * η * Us) * Us - Hs * UsEta - d * P0Eta + 4 * A * η * P0) +\n      (1 / Λ) * L⁻¹ *\n        (A * (1 - 4 * η * Us) * u - 2 * A * η * (1 / Λ) * u ^ 2 +\n          W * (Λ * X * uY) + Hs * uEta + d * UsEta * u +\n          (1 / Λ) * d * u * uEta - 4 * A * η * P + d * PEta - 2 * η * (Λ * X * PY))) :\n    2 * L * R = W * (X * uY) +\n      A * (1 - 2 * η * (Us + (1 / Λ) * u)) * (Us + (1 / Λ) * u) +\n      (Hs + (1 / Λ) * d * u) * (UsEta + (1 / Λ) * uEta) +\n      d * (P0Eta + (1 / Λ) * PEta) - 4 * A * η * (P0 + (1 / Λ) * P) -\n      2 * η * X * PY"
+          }
+        }
       }
     }
-  }
+  ]
 }

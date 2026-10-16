@@ -1,32 +1,57 @@
 {
-  "id": "lemma-8.6/support/3.NavierStokes.SmoothFamilyTorusInverse.applyMultiplier_finiteJets",
-  "location": {
-    "page": 95,
-    "rect": [0.12854, 0.703306, 0.745098, 0.152893]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothFamilyTorusInverse.applyMultiplier_finiteJets",
-      "line": 847,
-      "module": "NavierStokes.SmoothFamilyTorusInverse",
-      "path": "NavierStokes/SmoothFamilyTorusInverse.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothFamilyTorusInverse.lean#L847"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothFamilyTorusInverse.applyMultiplier_finiteJets",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 95,
+        "rect": [0.12854, 0.703306, 0.745098, 0.152893]
       },
-      "declaration_verdict": null,
-      "region": "lemma-8.6@p095",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 847,
-        "text": "theorem applyMultiplier_finiteJets (n l : ℕ) :\n    ∃ K : ℝ, 0 ≤ K ∧ ∀ (m : Frequency → ℂ) (B : ℝ), 0 ≤ B →\n      (∀ k, ‖m k‖ ≤ B * weight k ^ l) →\n      ∀ (f : Source P) (S : Set P) (C : ℝ), ContDiff ℝ ∞ f → Periodic f → 0 ≤ C →\n        JetBound f S (n + l + 4) C → JetBound (applyMultiplier m f) S n (K * B * C)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p095"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 96,
+        "rect": [0.12854, 0.103306, 0.745098, 0.231405]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p096"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "type": "lean",
+      "uri": "https://github.com/openai/NavierStokesAndEuler",
+      "version": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "location": {
+        "declaration": "NavierStokes.SmoothFamilyTorusInverse.applyMultiplier_finiteJets",
+        "module": "NavierStokes.SmoothFamilyTorusInverse"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.SmoothFamilyTorusInverse.applyMultiplier_finiteJets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L847",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothFamilyTorusInverse.lean",
+            "resolution": "exact"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 847,
+            "text": "theorem applyMultiplier_finiteJets (n l : ℕ) :\n    ∃ K : ℝ, 0 ≤ K ∧ ∀ (m : Frequency → ℂ) (B : ℝ), 0 ≤ B →\n      (∀ k, ‖m k‖ ≤ B * weight k ^ l) →\n      ∀ (f : Source P) (S : Set P) (C : ℝ), ContDiff ℝ ∞ f → Periodic f → 0 ≤ C →\n        JetBound f S (n + l + 4) C → JetBound (applyMultiplier m f) S n (K * B * C)"
+          }
+        }
+      }
+    }
+  ]
 }

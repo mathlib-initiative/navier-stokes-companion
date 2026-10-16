@@ -1,24 +1,27 @@
 {
-  "id": "eq-p137-1/key/01.NavierStokes.TailCone.actualNs_eq_releaseNumerator",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TailCone.actualNs_eq_releaseNumerator",
-      "line": 719
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TailCone.lean#L719"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TailCone.actualNs_eq_releaseNumerator",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TailCone.actualNs_eq_releaseNumerator",
+        "module": "NavierStokes.TailCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 719,
-        "text": "(hy : d.releaseStart ≤ y) (hz : ∀ᶠ q in 𝓝 eta, totalEnergy … q = 0) : OutgoingHistories.Ns w Amp (y, eta) = releaseNumerator d eta y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TailCone.actualNs_eq_releaseNumerator",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L719"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 719,
+            "text": "theorem actualNs_eq_releaseNumerator {d : TailData} {K : ℝ} (w : ResetWitness d K)\n    {Amp : ℝ → ℝ} (ha : ContDiff ℝ ∞ Amp) (eta : ℝ) {y : ℝ}\n    (hy : d.releaseStart ≤ y)\n    (hz : ∀ᶠ q in 𝓝 eta, CorrectedPulseAmplitude.totalEnergy d w.coefficients (Amp q) q = 0) :\n    OutgoingHistories.Ns w Amp (y, eta) = releaseNumerator d eta y"
+          }
+        }
       }
     }
-  }
+  ]
 }

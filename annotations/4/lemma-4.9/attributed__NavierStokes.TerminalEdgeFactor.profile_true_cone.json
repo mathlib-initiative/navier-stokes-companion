@@ -1,31 +1,33 @@
 {
-  "id": "lemma-4.9/attributed/1.NavierStokes.TerminalEdgeFactor.profile_true_cone",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgeFactor.profile_true_cone",
-      "line": 1659,
-      "module": "NavierStokes.TerminalEdgeFactor",
-      "path": "NavierStokes/TerminalEdgeFactor.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1659"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgeFactor.profile_true_cone",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgeFactor.profile_true_cone",
+        "module": "NavierStokes.TerminalEdgeFactor"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: The admissible cone holds for the edge-factorized profile stress near X_b.",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1659,
-        "text": "theorem profile_true_cone {C : ℝ} (hC : 0 < C) (d : TailData) (y0 : ℝ) :\n    ∃ ε : ℝ, 0 < ε ∧ ∀ η ∈ Icc (-1 : ℝ) 1, ∀ x : ℝ, 0 < x → x < ε →\n      2 < profileP C d y0 (η, x) ∧ profileSpeed C d y0 (η, x) <\n        ConeAlgebra.coneBound (profileP C d y0 (η, x)) (profileJ C d y0 (η, x))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TerminalEdgeFactor.profile_true_cone",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: The admissible cone holds for the edge-factorized profile stress near X_b.",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L1659",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean"
+          },
+          "snippet": {
+            "line": 1659,
+            "text": "theorem profile_true_cone {C : ℝ} (hC : 0 < C) (d : TailData) (y0 : ℝ) :\n    ∃ ε : ℝ, 0 < ε ∧ ∀ η ∈ Icc (-1 : ℝ) 1, ∀ x : ℝ, 0 < x → x < ε →\n      2 < profileP C d y0 (η, x) ∧ profileSpeed C d y0 (η, x) <\n        ConeAlgebra.coneBound (profileP C d y0 (η, x)) (profileJ C d y0 (η, x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

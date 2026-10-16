@@ -1,25 +1,27 @@
 {
-  "id": "eq-p072-2/key/01.NavierStokes.HarmonicFields.angularMean_product",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicFields.angularMean_product",
-      "line": 241,
-      "module": "NavierStokes.HarmonicFields",
-      "path": "NavierStokes/HarmonicFields.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicFields.lean#L241"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicFields.angularMean_product"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicFields.angularMean_product",
+        "module": "NavierStokes.HarmonicFields"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 241,
-        "text": "`(hkp : kp ≠ 0) : angularMean (fun θ => field c k Φ kp (x, θ) * field d k Φ kp (x, θ)) = ∑ j ∈ c.support, c j x * d (-j) x`"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.HarmonicFields.angularMean_product"
+          },
+          "destination": {
+            "fragment": "L241",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicFields.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 241,
+            "text": "theorem angularMean_product {α : Type*} (c d : Coefficients α) (k : ℝ) (Φ : α → ℝ)\n    {kp : ℤ} (hkp : kp ≠ 0) (x : α) :\n    angularMean (fun θ => field c k Φ kp (x, θ) * field d k Φ kp (x, θ)) =\n      ∑ j ∈ c.support, c j x * d (-j) x"
+          }
+        }
       }
     }
-  }
+  ]
 }

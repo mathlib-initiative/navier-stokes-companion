@@ -1,23 +1,25 @@
 {
-  "id": "eq-p035-4/key/04.NavierStokes.PressureDatum.pressure_le_of_ideal_prefix",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PressureDatum.pressure_le_of_ideal_prefix",
-      "line": 425,
-      "module": "NavierStokes.PressureDatum",
-      "path": "NavierStokes/PressureDatum.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureDatum.lean#L425"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PressureDatum.pressure_le_of_ideal_prefix"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PressureDatum.pressure_le_of_ideal_prefix",
+        "module": "NavierStokes.PressureDatum"
       },
-      "snippet": {
-        "line": 425,
-        "text": "theorem pressure_le_of_ideal_prefix ... : pressure g a η ≤ -(5 / 2 : ℝ) * P ^ 2 * ((1 + η ^ 2)⁻¹) ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PressureDatum.pressure_le_of_ideal_prefix"
+          },
+          "destination": {
+            "fragment": "L425",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureDatum.lean"
+          },
+          "snippet": {
+            "line": 425,
+            "text": "theorem pressure_le_of_ideal_prefix {g a : ℝ → ℝ} {A P : ℝ}\n    (h : Admissible g a A)\n    (hg : ∀ y ≤ 0, g y = P ^ 2 * Real.exp ((1 / 5 : ℝ) * y))\n    (ha : ∀ y ≤ 0, a y = 1) (η : ℝ) :\n    pressure g a η ≤ -(5 / 2 : ℝ) * P ^ 2 * ((1 + η ^ 2)⁻¹) ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

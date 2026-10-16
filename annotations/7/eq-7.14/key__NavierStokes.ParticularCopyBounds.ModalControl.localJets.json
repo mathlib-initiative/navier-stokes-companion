@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.14/key/01.NavierStokes.ParticularCopyBounds.ModalControl.localJets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParticularCopyBounds.ModalControl.localJets",
-      "line": 92,
-      "module": "NavierStokes.ParticularCopyBounds",
-      "path": "NavierStokes/ParticularCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularCopyBounds.lean#L92"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParticularCopyBounds.ModalControl.localJets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParticularCopyBounds.ModalControl.localJets",
+        "module": "NavierStokes.ParticularCopyBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 92,
-        "text": "LocalJets s (fun n x => Real.sqrt (s.zeta x) * W n x) alpha cells (fun n k => (t n).linearData.copySolve (g n) (hL n).le k) — the solve lies in the same class, same alpha, same sqrt-zeta times W weight"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ParticularCopyBounds.ModalControl.localJets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L92",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularCopyBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 92,
+            "text": "theorem localJets (hL : ∀ n, 0 < L n) (W : ℕ → P × Plane → ℝ)\n    (hW : ∀ n k x, x ∈ s.domain → x ∈ cells n k → envelope n ((g n).coordinates k x.2).2 ≤ W n x) :\n    LocalJets s (fun n x => Real.sqrt (s.zeta x) * W n x) α cells\n      (fun n k => (t n).linearData.copySolve (g n) (hL n).le k)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.34/attributed/13.NavierStokes.OutgoingHistories.exponential_integral_left",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingHistories.exponential_integral_left",
-      "line": 921,
-      "module": "NavierStokes.OutgoingHistories",
-      "path": "NavierStokes/OutgoingHistories.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingHistories.lean#L921"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingHistories.exponential_integral_left",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingHistories.exponential_integral_left",
+        "module": "NavierStokes.OutgoingHistories"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 921,
-        "text": "(hb : 0 < b) (he : ∀ t ≤ 0, f t = a * Real.exp (b * t)) (hy : y ≤ 0) : (∫ t in Iic y, f t) = (a / b) * Real.exp (b * y)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "13.NavierStokes.OutgoingHistories.exponential_integral_left",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L921",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingHistories.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 921,
+            "text": "theorem exponential_integral_left {f : ℝ → ℝ} (a b : ℝ) (hb : 0 < b)\n    (he : ∀ t ≤ 0, f t = a * Real.exp (b * t)) {y : ℝ} (hy : y ≤ 0) :\n    (∫ t in Iic y, f t) = (a / b) * Real.exp (b * y)"
+          }
+        }
       }
     }
-  }
+  ]
 }

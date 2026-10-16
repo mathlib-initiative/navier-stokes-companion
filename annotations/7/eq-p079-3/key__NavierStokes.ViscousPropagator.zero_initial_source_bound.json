@@ -1,25 +1,27 @@
 {
-  "id": "eq-p079-3/key/02.NavierStokes.ViscousPropagator.zero_initial_source_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ViscousPropagator.zero_initial_source_bound",
-      "line": 203,
-      "module": "NavierStokes.ViscousPropagator",
-      "path": "NavierStokes/ViscousPropagator.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ViscousPropagator.lean#L203"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ViscousPropagator.zero_initial_source_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ViscousPropagator.zero_initial_source_bound",
+        "module": "NavierStokes.ViscousPropagator"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 203,
-        "text": "(hinit : u a = 0) (hsource : ∀ t ∈ Icc a b, ‖f t‖ ≤ K * P t) → ‖u t‖ ≤ Real.exp (μ * (t - a)) * P t * (K * (t - a))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ViscousPropagator.zero_initial_source_bound"
+          },
+          "destination": {
+            "fragment": "L203",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ViscousPropagator.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 203,
+            "text": "theorem zero_initial_source_bound\n    {a b K : ℝ} {u f : ℝ → H} (A : ℝ → H →L[ℝ] H)\n    (rate P : ℝ → ℝ) {μ : ℝ} (hμ : 0 ≤ μ)\n    (hPpos : ∀ t, 0 < P t) (hP : ∀ t, HasDerivAt P (rate t * P t) t)\n    (hu : ContinuousOn u (Icc a b)) (hf : ContinuousOn f (Icc a b))\n    (hode : ∀ t ∈ Ico a b,\n      HasDerivWithinAt u (A t (u t) + f t) (Ici t) t)\n    (hA : ∀ t ∈ Ico a b, ∀ x : H,\n      ⟪x, A t x⟫_ℝ ≤ (rate t + μ) * ‖x‖ ^ 2)\n    (hinit : u a = 0) (hsource : ∀ t ∈ Icc a b, ‖f t‖ ≤ K * P t) :\n    ∀ t ∈ Icc a b,\n      ‖u t‖ ≤ Real.exp (μ * (t - a)) * P t * (K * (t - a))"
+          }
+        }
       }
     }
-  }
+  ]
 }

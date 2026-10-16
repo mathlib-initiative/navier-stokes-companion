@@ -1,26 +1,28 @@
 {
-  "id": "eq-p138-8/key/05.NavierStokes.TerminalEdgeFactor.profileCarrier_radial_gap",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgeFactor.profileCarrier_radial_gap",
-      "line": 1404,
-      "module": "NavierStokes.TerminalEdgeFactor",
-      "path": "NavierStokes/TerminalEdgeFactor.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1404"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgeFactor.profileCarrier_radial_gap",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgeFactor.profileCarrier_radial_gap",
+        "module": "NavierStokes.TerminalEdgeFactor"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1404,
-        "text": "(hC : 0 < C) (hη : y.1 ^ 2 ≤ 1) : profileRadius y0 y.2 * profileCarrierRadial C d y0 y + profileCarrier C d y0 y < 0  -- r K_r + K < 0, i.e. rK_r/(2K) < -1/2 after dividing by 2K > 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.TerminalEdgeFactor.profileCarrier_radial_gap",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1404",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1404,
+            "text": "theorem profileCarrier_radial_gap {C : ℝ} (hC : 0 < C) (d : TailData) (y0 : ℝ)\n    {y : ℝ × ℝ} (hη : y.1 ^ 2 ≤ 1) :\n    profileRadius y0 y.2 * profileCarrierRadial C d y0 y + profileCarrier C d y0 y < 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

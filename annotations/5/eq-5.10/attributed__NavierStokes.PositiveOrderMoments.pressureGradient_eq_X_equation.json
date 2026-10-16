@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.10/attributed/05.NavierStokes.PositiveOrderMoments.pressureGradient_eq_X_equation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveOrderMoments.pressureGradient_eq_X_equation",
-      "line": 68,
-      "module": "NavierStokes.PositiveOrderMoments",
-      "path": "NavierStokes/PositiveOrderMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean#L68"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveOrderMoments.pressureGradient_eq_X_equation",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveOrderMoments.pressureGradient_eq_X_equation",
+        "module": "NavierStokes.PositiveOrderMoments"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 68,
-        "text": "pressureGradient n e omega R = R * ((C^2)⁻¹ * cauchy n (phiHistory C e) (phiHistory C e) R - omega R / (2 * (R^2/2)))  (for C ≠ 0, R ≠ 0)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.PositiveOrderMoments.pressureGradient_eq_X_equation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L68",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 68,
+            "text": "theorem pressureGradient_eq_X_equation (n : ℕ) (C : ℝ) (e : History) (omega : Profile)\n    {R : ℝ} (hC : C ≠ 0) (hR : R ≠ 0) :\n    pressureGradient n e omega R = R * ((C ^ 2)⁻¹ *\n      cauchy n (phiHistory C e) (phiHistory C e) R - omega R / (2 * (R ^ 2 / 2)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p056-4/key/03.NavierStokes.BasePrefixIdentity.prefixSwirl_radial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BasePrefixIdentity.prefixSwirl_radial",
-      "line": 111,
-      "module": "NavierStokes.BasePrefixIdentity",
-      "path": "NavierStokes/BasePrefixIdentity.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePrefixIdentity.lean#L111"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BasePrefixIdentity.prefixSwirl_radial",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BasePrefixIdentity.prefixSwirl_radial",
+        "module": "NavierStokes.BasePrefixIdentity"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 111,
-        "text": "-partialS (BaseResidual.prefixSwirl J h C d) p = SlowExpansionResidual.slowSwirl J h C (profiles h d) p  (= C⁻¹ Σ_{n≤J} q^{-A-1/2+2nh} φ_n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.BasePrefixIdentity.prefixSwirl_radial",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L111",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePrefixIdentity.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 111,
+            "text": "theorem prefixSwirl_radial {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {d : Coefficients} (hd : SmoothCoefficients d) (J : ℕ) (C : ℝ)\n    {p : Chart} (hp : p.1 < 1) :\n    -AxisymmetricFields.partialS (BaseResidual.prefixSwirl J h C d) p =\n      SlowExpansionResidual.slowSwirl J h C (profiles h d) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

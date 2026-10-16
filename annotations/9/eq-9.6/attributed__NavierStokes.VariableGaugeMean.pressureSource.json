@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.6/attributed/05.NavierStokes.VariableGaugeMean.pressureSource",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.VariableGaugeMean.pressureSource",
-      "line": 76,
-      "module": "NavierStokes.VariableGaugeMean",
-      "path": "NavierStokes/VariableGaugeMean.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean#L76"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.VariableGaugeMean.pressureSource",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.VariableGaugeMean.pressureSource",
+        "module": "NavierStokes.VariableGaugeMean"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 76,
-        "text": "pressureSource f z = f z - density … * PressureStream.pressureMass f z.2.1, i.e. g_r − ρ P"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.VariableGaugeMean.pressureSource",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L76",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 76,
+            "text": "noncomputable def pressureSource (a b : ℝ) (hab : a < b) (ell : S → ℝ)\n    (f : PressureStream.Lift S → ℝ) (z : PressureStream.Lift S) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

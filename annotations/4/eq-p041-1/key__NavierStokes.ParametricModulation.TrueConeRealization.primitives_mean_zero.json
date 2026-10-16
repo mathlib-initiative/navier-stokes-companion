@@ -1,25 +1,27 @@
 {
-  "id": "eq-p041-1/key/02.NavierStokes.ParametricModulation.TrueConeRealization.primitives_mean_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricModulation.TrueConeRealization.primitives_mean_zero",
-      "line": 387,
-      "module": "NavierStokes.ParametricModulation",
-      "path": "NavierStokes/ParametricModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean#L387"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricModulation.TrueConeRealization.primitives_mean_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricModulation.TrueConeRealization.primitives_mean_zero",
+        "module": "NavierStokes.ParametricModulation"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 387,
-        "text": "∫ θ in 0..1, r.angularPrimitive (p,θ) = 0 ∧ ∫ θ in 0..1, r.axialPrimitive E (p,θ) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ParametricModulation.TrueConeRealization.primitives_mean_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L387",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 387,
+            "text": "theorem primitives_mean_zero (r : TrueConeRealization a m p₁ p₂ K B)\n    (E : P → ℝ) (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₂ : ContDiff ℝ ∞ p₂) (p : P) :\n    intervalIntegral (fun θ => r.angularPrimitive (p, θ)) 0 1 volume = 0 ∧\n      intervalIntegral (fun θ => r.axialPrimitive E (p, θ)) 0 1 volume = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

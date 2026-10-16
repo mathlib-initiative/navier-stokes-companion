@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.17/key/06.NavierStokes.GaugeMomentBalances.rho_second_moment_scale",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaugeMomentBalances.rho_second_moment_scale",
-      "line": 52,
-      "module": "NavierStokes.GaugeMomentBalances",
-      "path": "NavierStokes/GaugeMomentBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean#L52"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaugeMomentBalances.rho_second_moment_scale",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaugeMomentBalances.rho_second_moment_scale",
+        "module": "NavierStokes.GaugeMomentBalances"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 52,
-        "text": "moment 2 (PressureStream.rho (l*a) (l*b) _) = l ^ 2 * moment 2 (PressureStream.rho a b hab)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.GaugeMomentBalances.rho_second_moment_scale",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L52",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 52,
+            "text": "theorem rho_second_moment_scale {l a b : ℝ} (hl : 0 < l) (hab : a < b) :\n    IntegratedMeanBalances.moment 2\n      (PressureStream.rho (l * a) (l * b) (mul_lt_mul_of_pos_left hab hl)) =\n      l ^ 2 * IntegratedMeanBalances.moment 2 (PressureStream.rho a b hab)"
+          }
+        }
       }
     }
-  }
+  ]
 }

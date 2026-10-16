@@ -1,26 +1,29 @@
 {
-  "id": "corollary-A.3/support/3.NavierStokes.OutgoingSchedule.angular_integrand_pulse",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingSchedule.angular_integrand_pulse",
-      "line": 715,
-      "module": "NavierStokes.OutgoingSchedule",
-      "path": "NavierStokes/OutgoingSchedule.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean#L715"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingSchedule.angular_integrand_pulse",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingSchedule.angular_integrand_pulse",
+        "module": "NavierStokes.OutgoingSchedule"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 715,
-        "text": "theorem angular_integrand_pulse (c : Parameters) (amp : ℝ → ℝ) (eta : ℝ) {y : ℝ}\n    (hy : c.pulseStart ≤ y) :\n    Real.sqrt 2 * Real.exp (3 * y / 2) * angular c.P c.dropLength c.lam (y, eta) *\n        axial c amp (y, eta) =\n      (momentScale c 1 * (shape eta)^2) *\n        (Real.exp ((c.exponents 1 + 1) * (y - c.pulseStart)) *\n          radialPulse c amp eta (Real.exp (y - c.pulseStart)))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.OutgoingSchedule.angular_integrand_pulse",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L715",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 715,
+            "text": "theorem angular_integrand_pulse (c : Parameters) (amp : ℝ → ℝ) (eta : ℝ) {y : ℝ}\n    (hy : c.pulseStart ≤ y) :\n    Real.sqrt 2 * Real.exp (3 * y / 2) * angular c.P c.dropLength c.lam (y, eta) *\n        axial c amp (y, eta) =\n      (momentScale c 1 * (shape eta)^2) *\n        (Real.exp ((c.exponents 1 + 1) * (y - c.pulseStart)) *\n          radialPulse c amp eta (Real.exp (y - c.pulseStart)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

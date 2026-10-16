@@ -1,26 +1,28 @@
 {
-  "id": "eq-p080-2/attributed/04.NavierStokes.CommonCoverSolve.TangentData.anchoredSolve_projected_equation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CommonCoverSolve.TangentData.anchoredSolve_projected_equation",
-      "line": 970,
-      "module": "NavierStokes.CommonCoverSolve",
-      "path": "NavierStokes/CommonCoverSolve.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean#L970"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CommonCoverSolve.TangentData.anchoredSolve_projected_equation",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CommonCoverSolve.TangentData.anchoredSolve_projected_equation",
+        "module": "NavierStokes.CommonCoverSolve"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 970,
-        "text": "HasDerivAt (t.linearData.anchoredSolve g hab k (p, Y)) (TangentProjection.projectedRhs …) s — supplies t'_m = projectedRhs, turning projected_balance into the displayed identity"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.CommonCoverSolve.TangentData.anchoredSolve_projected_equation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L970",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 970,
+            "text": "theorem anchoredSolve_projected_equation {U : Set P} (k : Frequency)\n    (hA : ContinuousOn t.linearData.coefficient (U ×ˢ univ))\n    (hB : ContinuousOn t.linearData.forcingMap (U ×ˢ univ))\n    (hf : ContinuousOn t.source (U ×ˢ univ)) {p : P} (hp : p ∈ U)\n    (Y : Plane) (s : Icc a b) :\n    let z"
+          }
+        }
       }
     }
-  }
+  ]
 }

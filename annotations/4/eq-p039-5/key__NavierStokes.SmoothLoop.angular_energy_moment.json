@@ -1,23 +1,25 @@
 {
-  "id": "eq-p039-5/key/01.NavierStokes.SmoothLoop.angular_energy_moment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothLoop.angular_energy_moment",
-      "line": 184,
-      "module": "NavierStokes.SmoothLoop",
-      "path": "NavierStokes/SmoothLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean#L184"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothLoop.angular_energy_moment"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SmoothLoop.angular_energy_moment",
+        "module": "NavierStokes.SmoothLoop"
       },
-      "snippet": {
-        "line": 184,
-        "text": "a * angularMean (fun θ => 1 + t θ ^ 2) = a * (1 + m ^ 2) + ρ   -- a⟨1+t_ℓ²⟩ = a(1 + t_s² + ρ_ℓ/a) = v_ℓ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SmoothLoop.angular_energy_moment"
+          },
+          "destination": {
+            "fragment": "L184",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean"
+          },
+          "snippet": {
+            "line": 184,
+            "text": "theorem angular_energy_moment (t : ℝ → ℝ) (a m ρ : ℝ) (ha : a ≠ 0)\n    (ht : Continuous t) (hmean : angularMean t = m)\n    (hvar : angularMean (fun θ => (t θ - m) ^ 2) = ρ / a) :\n    a * angularMean (fun θ => 1 + t θ ^ 2) = a * (1 + m ^ 2) + ρ"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-p048-2/key/07.NavierStokes.VolterraAnalyticBounds.word",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.VolterraAnalyticBounds.word",
-      "line": 52,
-      "module": "NavierStokes.VolterraAnalyticBounds",
-      "path": "NavierStokes/VolterraAnalyticBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VolterraAnalyticBounds.lean#L52"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.VolterraAnalyticBounds.word",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.VolterraAnalyticBounds.word",
+        "module": "NavierStokes.VolterraAnalyticBounds"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 52,
-        "text": "word A₀ A₁ [] F = F;  word A₀ A₁ (b :: w) F = letter A₀ A₁ b (word A₀ A₁ w F)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.VolterraAnalyticBounds.word",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L52",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VolterraAnalyticBounds.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 52,
+            "text": "noncomputable def word (A₀ A₁ : Coeff) : List Bool → Field → Field\n  | [], F => F\n  | b :: w, F => letter A₀ A₁ b (word A₀ A₁ w F)"
+          }
+        }
       }
     }
-  }
+  ]
 }

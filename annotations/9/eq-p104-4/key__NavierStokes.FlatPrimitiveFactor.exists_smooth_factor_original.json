@@ -1,26 +1,28 @@
 {
-  "id": "eq-p104-4/key/01.NavierStokes.FlatPrimitiveFactor.exists_smooth_factor_original",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FlatPrimitiveFactor.exists_smooth_factor_original",
-      "line": 304,
-      "module": "NavierStokes.FlatPrimitiveFactor",
-      "path": "NavierStokes/FlatPrimitiveFactor.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatPrimitiveFactor.lean#L304"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FlatPrimitiveFactor.exists_smooth_factor_original",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FlatPrimitiveFactor.exists_smooth_factor_original",
+        "module": "NavierStokes.FlatPrimitiveFactor"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 304,
-        "text": "0 < c → ContDiff ℝ ∞ b → ∃ F, ContDiff ℝ ∞ F ∧ F 0 = b 0 / (2 * c) ∧ ∀ x > 0, (∫ u in (0:ℝ)..x, (Real.exp (-c / u ^ 2) / u ^ j) * b u) = Real.exp (-c / x ^ 2) * x ^ (3 - (j : ℝ)) * F x — the paper's integral in the paper's own notation, with 3 - j a real power"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.FlatPrimitiveFactor.exists_smooth_factor_original",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L304",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatPrimitiveFactor.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 304,
+            "text": "theorem exists_smooth_factor_original {c : ℝ} (hc : 0 < c) (j : ℕ) {b : ℝ → ℝ}\n    (hb : ContDiff ℝ ∞ b) :\n    ∃ F : ℝ → ℝ, ContDiff ℝ ∞ F ∧ F 0 = b 0 / (2 * c) ∧\n      ∀ x : ℝ, 0 < x →\n        (∫ u in (0 : ℝ)..x, (Real.exp (-c / u ^ 2) / u ^ j) * b u) =\n          Real.exp (-c / x ^ 2) * x ^ (3 - (j : ℝ)) * F x"
+          }
+        }
       }
     }
-  }
+  ]
 }

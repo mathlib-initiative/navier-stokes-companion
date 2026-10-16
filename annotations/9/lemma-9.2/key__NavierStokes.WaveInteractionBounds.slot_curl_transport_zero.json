@@ -1,37 +1,58 @@
 {
-  "id": "lemma-9.2/key/1.NavierStokes.WaveInteractionBounds.slot_curl_transport_zero",
-  "location": {
-    "page": 102,
-    "rect": [0.12854, 0.846281, 0.745098, 0.044628]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WaveInteractionBounds.slot_curl_transport_zero",
-      "line": 1012,
-      "module": "NavierStokes.WaveInteractionBounds",
-      "path": "NavierStokes/WaveInteractionBounds.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 102,
+        "rect": [0.12854, 0.846281, 0.745098, 0.044628]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p102"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean#L1012"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WaveInteractionBounds.slot_curl_transport_zero",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 103,
+        "rect": [0.12854, 0.102479, 0.745098, 0.057851]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clause (iv) with the separation derived, not assumed: for labels L ≠ M of level ≥ 1 whose profiles are supported in their own slots of a SlotSystem, transport(curl (slotField … L …), curl (slotField … M …)) = 0 at every x ∈ U.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-9.2@p102",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 1012,
-        "text": "theorem slot_curl_transport_zero {U : Set D}\n    {R : D → ℝ} {Vr Vθ Vz : D → D}\n    (G : CurlClassBounds.CylindricalGeometry U R Vr Vθ Vz)\n    {d h : ℝ} {vr vt : PartitionedCovariance.Plane}\n    (sys : PartitionedCovariance.SlotSystem d h vr vt)\n    {L M : SlotColoring.Label} (hL : 1 ≤ L.1) (hM : 1 ≤ M.1) (hne : L ≠ M)\n    (q : D → ℝ) (X : D → SlotColoring.Position) (Y : D → PartitionedCovariance.Plane)\n    (hq : ∀ y ∈ U, 0 < q y)\n    (f g : Fin 3 → PartitionedCovariance.Plane → ℝ) (a b : D → ComplexVector)\n    (hf : ∀ i, Function.support (f i) ⊆ PartitionedCovariance.slotSet h sys.radius vr vt L)\n    (hg : ∀ i, Function.support (g i) ⊆ PartitionedCovariance.slotSet h sys.radius vr vt M)\n    (ha : ContDiffOn ℝ ∞ (slotField d h L q X Y f a) U)\n    (hb : ContDiffOn ℝ ∞ (slotField d h M q X Y g b) U)\n    {x : D} (hx : x ∈ U) :\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p103"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WaveInteractionBounds.slot_curl_transport_zero",
+        "module": "NavierStokes.WaveInteractionBounds"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.WaveInteractionBounds.slot_curl_transport_zero",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Clause (iv) with the separation derived, not assumed: for labels L ≠ M of level ≥ 1 whose profiles are supported in their own slots of a SlotSystem, transport(curl (slotField … L …), curl (slotField … M …)) = 0 at every x ∈ U.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1012",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean"
+          },
+          "snippet": {
+            "line": 1012,
+            "text": "theorem slot_curl_transport_zero {U : Set D}\n    {R : D → ℝ} {Vr Vθ Vz : D → D}\n    (G : CurlClassBounds.CylindricalGeometry U R Vr Vθ Vz)\n    {d h : ℝ} {vr vt : PartitionedCovariance.Plane}\n    (sys : PartitionedCovariance.SlotSystem d h vr vt)\n    {L M : SlotColoring.Label} (hL : 1 ≤ L.1) (hM : 1 ≤ M.1) (hne : L ≠ M)\n    (q : D → ℝ) (X : D → SlotColoring.Position) (Y : D → PartitionedCovariance.Plane)\n    (hq : ∀ y ∈ U, 0 < q y)\n    (f g : Fin 3 → PartitionedCovariance.Plane → ℝ) (a b : D → ComplexVector)\n    (hf : ∀ i, Function.support (f i) ⊆ PartitionedCovariance.slotSet h sys.radius vr vt L)\n    (hg : ∀ i, Function.support (g i) ⊆ PartitionedCovariance.slotSet h sys.radius vr vt M)\n    (ha : ContDiffOn ℝ ∞ (slotField d h L q X Y f a) U)\n    (hb : ContDiffOn ℝ ∞ (slotField d h M q X Y g b) U)\n    {x : D} (hx : x ∈ U) :\n  …",
+            "truncated": true
+          }
+        }
+      }
+    }
+  ]
 }

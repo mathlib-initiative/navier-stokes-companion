@@ -1,29 +1,31 @@
 {
-  "id": "lemma-6.2/key/1.NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
-      "line": 372,
-      "module": "NavierStokes.CommonCoverSolve",
-      "path": "NavierStokes/CommonCoverSolve.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean#L372"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
+        "module": "NavierStokes.CommonCoverSolve"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If the source vanishes at every slow point outside U, then copySolve g hab k (p,Y) = 0 for p not in U; commonSolve_preserves_slow_support (line 561) is the same for the cutoff-weighted copy sum. The Lean form of p. 105's 'zero data along an entire such path give zero solution'."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 372,
-        "text": "theorem copySolve_preserves_slow_support {U : Set P}\n    (hf : ∀ p ∉ U, ∀ Y, d.source (p, Y) = 0) (k : Frequency) {p : P} (hp : p ∉ U)\n    (Y : Plane) : d.copySolve g hab k (p, Y) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_slow_support",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: If the source vanishes at every slow point outside U, then copySolve g hab k (p,Y) = 0 for p not in U; commonSolve_preserves_slow_support (line 561) is the same for the cutoff-weighted copy sum. The Lean form of p. 105's 'zero data along an entire such path give zero solution'."
+          },
+          "destination": {
+            "fragment": "L372",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean"
+          },
+          "snippet": {
+            "line": 372,
+            "text": "theorem copySolve_preserves_slow_support {U : Set P}\n    (hf : ∀ p ∉ U, ∀ Y, d.source (p, Y) = 0) (k : Frequency) {p : P} (hp : p ∉ U)\n    (Y : Plane) : d.copySolve g hab k (p, Y) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

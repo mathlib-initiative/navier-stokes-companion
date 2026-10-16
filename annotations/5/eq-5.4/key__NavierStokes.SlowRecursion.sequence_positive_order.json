@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.4/key/01.NavierStokes.SlowRecursion.sequence_positive_order",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowRecursion.sequence_positive_order",
-      "line": 1090,
-      "module": "NavierStokes.SlowRecursion",
-      "path": "NavierStokes/SlowRecursion.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowRecursion.lean#L1090"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowRecursion.sequence_positive_order",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowRecursion.sequence_positive_order",
+        "module": "NavierStokes.SlowRecursion"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1090,
-        "text": "PositiveAxisSystem.PositiveOrderEquations h C eta X n (fun j => actualJet (profile (A j 0)) (X,eta)) (fun j => actualJet (profile (A j 1)) (X,eta)) (fun j => profile (A j 4) (X,eta)) … (PositiveAxisSystem.precedingDiffusion h (axialPower h) (fun j => profile (A j 1)) n (X,eta)) (AxisSourceRegularity.previousOmegaDivX h … n (X,eta))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SlowRecursion.sequence_positive_order",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1090",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowRecursion.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1090,
+            "text": "theorem sequence_positive_order {core buffer : ℝ} {U : Set ℂ} {h : ℝ}\n    (c : Domain (radius core buffer 0) U h) (hcore : 0 < core) (hbuffer : 0 < buffer)\n    (C : ℝ) (base : Coefficient (radius core buffer 0) U) {n : ℕ} (hn : 0 < n)\n    {X eta : ℝ} (hX : X ∈ Ioo (0 : ℝ) (core ^ 2)) (heta : (eta : ℂ) ∈ U) :\n    let A"
+          }
+        }
       }
     }
-  }
+  ]
 }

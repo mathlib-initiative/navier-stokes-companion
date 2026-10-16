@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.4/key/04.NavierStokes.AssembledSlowBase.extendedCoefficient_contDiff",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AssembledSlowBase.extendedCoefficient_contDiff",
-      "line": 125,
-      "module": "NavierStokes.AssembledSlowBase",
-      "path": "NavierStokes/AssembledSlowBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean#L125"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AssembledSlowBase.extendedCoefficient_contDiff",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AssembledSlowBase.extendedCoefficient_contDiff",
+        "module": "NavierStokes.AssembledSlowBase"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 125,
-        "text": "ContDiff ℝ ∞ (extendedCoefficient s hI n i)   -- all four components, all n, on all of ℝ²"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.AssembledSlowBase.extendedCoefficient_contDiff",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L125",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 125,
+            "text": "theorem extendedCoefficient_contDiff {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    (hI : Icc (-1 : ℝ) 1 ⊆ S) (n : ℕ) (i : Fin 4) :\n    ContDiff ℝ ∞ (extendedCoefficient s hI n i)"
+          }
+        }
       }
     }
-  }
+  ]
 }

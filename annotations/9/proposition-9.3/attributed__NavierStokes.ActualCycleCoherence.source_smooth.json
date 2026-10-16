@@ -1,36 +1,57 @@
 {
-  "id": "proposition-9.3/attributed/1.NavierStokes.ActualCycleCoherence.source_smooth",
-  "location": {
-    "page": 103,
-    "rect": [0.12854, 0.555372, 0.745098, 0.328926]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCycleCoherence.source_smooth",
-      "line": 386,
-      "module": "NavierStokes.ActualCycleCoherence",
-      "path": "NavierStokes/ActualCycleCoherence.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 103,
+        "rect": [0.12854, 0.555372, 0.745098, 0.328926]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-9.3@p103"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleCoherence.lean#L386"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCycleCoherence.source_smooth",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 104,
+        "rect": [0.12854, 0.103306, 0.745098, 0.283471]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: (H : CycleAnalyticInvariant G c tangentBlock envelope S σ x) (hS : ∀ l n, IsClosed (S l n)) (hpos : ∀ l n z, z ∈ G.domain → z ∈ S l n → 0 < z.1) : ContDiffOn ℝ ∞ (ParticularWaveAssembly.residualSource c x.state (blocks l) (gaussian l) (aliasCoefficients l) j n) ActualInitialization.geometry.domain. ",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "region": "proposition-9.3@p103",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 386,
-        "text": "theorem source_smooth (hS : ∀ l n, IsClosed (S l n))\n    (hpos : ∀ l n z, z ∈ ActualInitialization.geometry.domain → z ∈ S l n → 0 < z.1)\n    (l : Index B N0) (j : ℤ) (n : ℕ) :\n    ContDiffOn ℝ ∞ (ParticularWaveAssembly.residualSource (commonContext B) x.state\n      (x.coefficients.blocks l) (x.coefficients.gaussian l) (x.coefficients.aliasCoefficients l) j n)\n      ActualInitialization.geometry.domain"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-9.3@p104"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCycleCoherence.source_smooth",
+        "module": "NavierStokes.ActualCycleCoherence"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActualCycleCoherence.source_smooth",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: (H : CycleAnalyticInvariant G c tangentBlock envelope S σ x) (hS : ∀ l n, IsClosed (S l n)) (hpos : ∀ l n z, z ∈ G.domain → z ∈ S l n → 0 < z.1) : ContDiffOn ℝ ∞ (ParticularWaveAssembly.residualSource c x.state (blocks l) (gaussian l) (aliasCoefficients l) j n) ActualInitialization.geometry.domain. ",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L386",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleCoherence.lean"
+          },
+          "snippet": {
+            "line": 386,
+            "text": "theorem source_smooth (hS : ∀ l n, IsClosed (S l n))\n    (hpos : ∀ l n z, z ∈ ActualInitialization.geometry.domain → z ∈ S l n → 0 < z.1)\n    (l : Index B N0) (j : ℤ) (n : ℕ) :\n    ContDiffOn ℝ ∞ (ParticularWaveAssembly.residualSource (commonContext B) x.state\n      (x.coefficients.blocks l) (x.coefficients.gaussian l) (x.coefficients.aliasCoefficients l) j n)\n      ActualInitialization.geometry.domain"
+          }
+        }
+      }
+    }
+  ]
 }

@@ -1,32 +1,34 @@
 {
-  "id": "lemma-7.4/attributed/1.NavierStokes.SignedCopyBounds.coefficients_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedCopyBounds.coefficients_jets",
-      "line": 603,
-      "module": "NavierStokes.SignedCopyBounds",
-      "path": "NavierStokes/SignedCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean#L603"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedCopyBounds.coefficients_jets",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedCopyBounds.coefficients_jets",
+        "module": "NavierStokes.SignedCopyBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For each sign j : Fin 2, the homogeneous amplitude has LocalJets exponent β + 1/2 and its pressure has exponent β + 1: the homogeneous pressure carries exactly one extra ε^{1/2} relative to the amplitude.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 603,
-        "text": "theorem coefficients_jets (h : NativeCovariance s K H T)\n    (hR : ∀ q, LocalJets s (fun _ x => s.zeta x) β K (fun n i x => R i n x q))\n    (hm : LocalJets s (fun _ _ => 1) 0 K (fun n i => mask i n))\n    (hv : LocalJets s W 0 K (fun n i => v i n))\n    (hW : ∀ n x, x ∈ s.domain → 0 ≤ W n x)\n    (hN : LocalJets s (fun _ _ => 1) 0 K (fun n i => (a i).normal s (d i) n))\n    (hNdot : LocalJets s (fun _ _ => 1) 0 K (fun n i => Ndot i n))\n    (hA : LocalJets s (fun _ _ => 1) 0 K (fun n i => A i n))\n    {b M : ℝ} (hb : 0 < b)\n    (hl : ∀ n i x, x ∈ s.domain → x ∈ K n i → b ≤ ‖(a i).normal s (d i) n x‖)\n    (hu : ∀ n i x, x ∈ s.domain → x ∈ K n i → ‖(a i).normal s (d i) n x‖ ≤ M)\n    (hK : UniformPrimaryWeights.UniformBandBound s (1 / 2) (fun i n => 1 / (a i).frequency n))\n    (j : Fin 2) :\n    LocalJets s (fun n x => Real.sqrt (s.zeta x) * W n x) (β + 1 / 2) K\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SignedCopyBounds.coefficients_jets",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For each sign j : Fin 2, the homogeneous amplitude has LocalJets exponent β + 1/2 and its pressure has exponent β + 1: the homogeneous pressure carries exactly one extra ε^{1/2} relative to the amplitude.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L603",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean"
+          },
+          "snippet": {
+            "line": 603,
+            "text": "theorem coefficients_jets (h : NativeCovariance s K H T)\n    (hR : ∀ q, LocalJets s (fun _ x => s.zeta x) β K (fun n i x => R i n x q))\n    (hm : LocalJets s (fun _ _ => 1) 0 K (fun n i => mask i n))\n    (hv : LocalJets s W 0 K (fun n i => v i n))\n    (hW : ∀ n x, x ∈ s.domain → 0 ≤ W n x)\n    (hN : LocalJets s (fun _ _ => 1) 0 K (fun n i => (a i).normal s (d i) n))\n    (hNdot : LocalJets s (fun _ _ => 1) 0 K (fun n i => Ndot i n))\n    (hA : LocalJets s (fun _ _ => 1) 0 K (fun n i => A i n))\n    {b M : ℝ} (hb : 0 < b)\n    (hl : ∀ n i x, x ∈ s.domain → x ∈ K n i → b ≤ ‖(a i).normal s (d i) n x‖)\n    (hu : ∀ n i x, x ∈ s.domain → x ∈ K n i → ‖(a i).normal s (d i) n x‖ ≤ M)\n    (hK : UniformPrimaryWeights.UniformBandBound s (1 / 2) (fun i n => 1 / (a i).frequency n))\n    (j : Fin 2) :\n    LocalJets s (fun n x => Real.sqrt (s.zeta x) * W n x) (β + 1 / 2) K\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

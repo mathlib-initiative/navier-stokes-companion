@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.29/key/03.NavierStokes.BaseExterior.nominal_angular_pure_heat",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseExterior.nominal_angular_pure_heat",
-      "line": 528,
-      "module": "NavierStokes.BaseExterior",
-      "path": "NavierStokes/BaseExterior.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseExterior.lean#L528"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseExterior.nominal_angular_pure_heat",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseExterior.nominal_angular_pure_heat",
+        "module": "NavierStokes.BaseExterior"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 528,
-        "text": "leadingAngular F.data.h W.axis.normalization (nominalCoefficients W) p = heatCoefficient (nominalHeatNormalization W) F.data.h p on exteriorDomain F.data.h (nominalExteriorRadius W) — the profile-chart swirl equals the pure heat coefficient"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.BaseExterior.nominal_angular_pure_heat",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L528",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseExterior.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 528,
+            "text": "theorem nominal_angular_pure_heat {p : PhysicalPoint}\n    (hp : p ∈ exteriorDomain F.data.h (nominalExteriorRadius W)) :\n    leadingAngular F.data.h W.axis.normalization (nominalCoefficients W) p =\n      heatCoefficient (nominalHeatNormalization W) F.data.h p"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.29/attributed/04.NavierStokes.PulseCone.Qs_pulse_equilibrium_error",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseCone.Qs_pulse_equilibrium_error",
-      "line": 546,
-      "module": "NavierStokes.PulseCone",
-      "path": "NavierStokes/PulseCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseCone.lean#L546"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseCone.Qs_pulse_equilibrium_error",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseCone.Qs_pulse_equilibrium_error",
+        "module": "NavierStokes.PulseCone"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 546,
-        "text": "|Qs w amp (pulseStart + y, eta) - (lam - h + (1/2 - h)*eta*shapeGradient eta)/(1 - lam)| ≤ |Qs at pulseStart - same| * exp(-(1-lam)*y) + sourceConstant P m * lam^30/(1-lam); combined with ShapedWaitBounds.canonical_Qs_pulseStart_power_error (n = 28) this is how actual_Qs_pulse_error is proved"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PulseCone.Qs_pulse_equilibrium_error",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L546",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseCone.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 546,
+            "text": "theorem Qs_pulse_equilibrium_error (w : ResetWitness d K)\n    (hwait : d.core.wait = 60 * Real.log (1 / d.core.lam)) (hsmall : d.core.lam ≤ 1 / 120)\n    {amp : ℝ → ℝ} (ha : ContDiff ℝ ∞ amp) {eta y : ℝ}\n    (heta : |eta| ≤ 1) (hamp : |amp eta| ≤ 6 / 5) (hamp' : |deriv amp eta| ≤ 1)\n    (hy : 0 ≤ y) (hy' : y ≤ d.core.pulseLength) :\n    |Qs w amp (d.core.pulseStart + y, eta) -\n      (d.core.lam - d.h + (1 / 2 - d.h) * eta * shapeGradient eta) / (1 - d.core.lam)| ≤\n      |Qs w amp (d.core.pulseStart, eta) -\n        (d.core.lam - d.h + (1 / 2 - d.h) * eta * shapeGradient eta) / (1 - d.core.lam)| *\n          Real.exp (-(1 - d.core.lam) * y) +\n        sourceConstant d.core.P d.core.m * d.core.lam ^ 30 / (1 - d.core.lam)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p105-2/key/02.NavierStokes.HarmonicResidual.Actual.nonlinearResidual_add_sub",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicResidual.Actual.nonlinearResidual_add_sub",
-      "line": 690,
-      "module": "NavierStokes.HarmonicResidual",
-      "path": "NavierStokes/HarmonicResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicResidual.lean#L690"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicResidual.Actual.nonlinearResidual_add_sub",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicResidual.Actual.nonlinearResidual_add_sub",
+        "module": "NavierStokes.HarmonicResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 690,
-        "text": "the same increment identity, stated again with LinearWaveResidual.-qualified operators"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.HarmonicResidual.Actual.nonlinearResidual_add_sub",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L690",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 690,
+            "text": "theorem nonlinearResidual_add_sub {U : Set D} (hU : IsOpen U) (ε : ℝ) (R : D → ℝ)\n    {Vr Vθ Vz : D → D} (Vt : D → D) (hr : ContDiffOn ℝ ∞ Vr U)\n    (hθ : ContDiffOn ℝ ∞ Vθ U) (hz : ContDiffOn ℝ ∞ Vz U)\n    (B a b : D → ComplexVector) (p q : D → ℂ)\n    (ha : ∀ i, ContDiffOn ℝ ∞ (fun y => a y i) U)\n    (hb : ∀ i, ContDiffOn ℝ ∞ (fun y => b y i) U)\n    (hp : ContDiffOn ℝ ∞ p U) (hq : ContDiffOn ℝ ∞ q U)\n    {x : D} (hx : x ∈ U) :\n    nonlinearResidual ε R Vr Vθ Vz Vt B (a + b) (p + q) x -\n        nonlinearResidual ε R Vr Vθ Vz Vt B a p x =\n      LinearWaveResidual.linearResidual ε R Vr Vθ Vz Vt B b q x + LinearWaveResidual.transport R Vr Vθ Vz a b x +\n        LinearWaveResidual.transport R Vr Vθ Vz b a x + LinearWaveResidual.transport R Vr Vθ Vz b b x"
+          }
+        }
       }
     }
-  }
+  ]
 }

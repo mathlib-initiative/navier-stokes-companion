@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.3/key/03.NavierStokes.RadialFluxResidual.radial_flux_velocity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialFluxResidual.radial_flux_velocity",
-      "line": 196,
-      "module": "NavierStokes.RadialFluxResidual",
-      "path": "NavierStokes/RadialFluxResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialFluxResidual.lean#L196"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialFluxResidual.radial_flux_velocity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialFluxResidual.radial_flux_velocity",
+        "module": "NavierStokes.RadialFluxResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 196,
-        "text": "x 0 * velocity (radialB V) F U (t,x) 0 + x 1 * velocity (radialB V) F U (t,x) 1 = V (profilePoint t x), for all V F U, under 0 < radialEnergy x; docstring: \"The substitution has exactly the intended physical radial flux.\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.RadialFluxResidual.radial_flux_velocity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L196",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialFluxResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 196,
+            "text": "theorem radial_flux_velocity (V F U : Profile) (t : ℝ) (x : Space)\n    (hs : 0 < radialEnergy x) :\n    x 0 * AxisymmetricResidual.velocity (radialB V) F U (t, x) 0 +\n      x 1 * AxisymmetricResidual.velocity (radialB V) F U (t, x) 1 =\n        V (profilePoint t x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-A.14/key/03.NavierStokes.PulseAmplitude.totalEnergy_normalized",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseAmplitude.totalEnergy_normalized",
-      "line": 649,
-      "module": "NavierStokes.PulseAmplitude",
-      "path": "NavierStokes/PulseAmplitude.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseAmplitude.lean#L649"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseAmplitude.totalEnergy_normalized",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseAmplitude.totalEnergy_normalized",
+        "lines": [649, 649],
+        "module": "NavierStokes.PulseAmplitude"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 649,
-        "text": "step `hpre` inside theorem totalEnergy_normalized (declared at line 641): c.lam * prefixEnergy c eta / (normalization c * shape eta ^ 2) = normalizedPrefixAxial c * etaPolynomial eta ^ 2 - normalizedPrefixAngular c"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.PulseAmplitude.totalEnergy_normalized",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L649",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseAmplitude.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 641,
+            "text": "theorem totalEnergy_normalized (d : OutgoingTail.TailData) (A eta : ℝ) :\n    d.core.lam * totalEnergy d A eta / (normalization d.core * shape eta ^ 2) =\n      energyPolynomial d A eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

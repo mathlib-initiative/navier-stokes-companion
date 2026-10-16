@@ -1,23 +1,25 @@
 {
-  "id": "eq-p061-3/key/02.NavierStokes.DiagonalScale.exists_uniform_tail_order",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.DiagonalScale.exists_uniform_tail_order",
-      "line": 241,
-      "module": "NavierStokes.DiagonalScale",
-      "path": "NavierStokes/DiagonalScale.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiagonalScale.lean#L241"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.DiagonalScale.exists_uniform_tail_order"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.DiagonalScale.exists_uniform_tail_order",
+        "module": "NavierStokes.DiagonalScale"
       },
-      "snippet": {
-        "line": 241,
-        "text": "∃ J, m ≤ J ∧ ∀ q, 0 < q → q ≤ 1 → (∑' n, (1/2)^(J+1+n) * q ^ (g (J+1+n)/2 - L)) ≤ (1/2)^J * q ^ N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.DiagonalScale.exists_uniform_tail_order"
+          },
+          "destination": {
+            "fragment": "L241",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiagonalScale.lean"
+          },
+          "snippet": {
+            "line": 241,
+            "text": "theorem exists_uniform_tail_order (g : ℕ → ℝ) (hg : Monotone g)\n    (hgtop : Tendsto g atTop atTop) (L N : ℝ) (m : ℕ) :\n    ∃ J : ℕ, m ≤ J ∧ ∀ q : ℝ, 0 < q → q ≤ 1 →\n      (∑' n : ℕ, (1 / 2 : ℝ) ^ (J + 1 + n) * q ^ (g (J + 1 + n) / 2 - L)) ≤\n        (1 / 2 : ℝ) ^ J * q ^ N"
+          }
+        }
       }
     }
-  }
+  ]
 }

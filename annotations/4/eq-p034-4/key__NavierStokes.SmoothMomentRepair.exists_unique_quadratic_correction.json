@@ -1,23 +1,25 @@
 {
-  "id": "eq-p034-4/key/03.NavierStokes.SmoothMomentRepair.exists_unique_quadratic_correction",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothMomentRepair.exists_unique_quadratic_correction",
-      "line": 255,
-      "module": "NavierStokes.SmoothMomentRepair",
-      "path": "NavierStokes/SmoothMomentRepair.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothMomentRepair.lean#L255"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothMomentRepair.exists_unique_quadratic_correction"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SmoothMomentRepair.exists_unique_quadratic_correction",
+        "module": "NavierStokes.SmoothMomentRepair"
       },
-      "snippet": {
-        "line": 255,
-        "text": "∃! c : E, ‖c‖ ≤ r ∧ B c + A c c = d  (B : E ≃L[ℝ] E, A : E →L[ℝ] E →L[ℝ] E, hypotheses 4‖B.symm‖‖A‖r ≤ 1 and 2‖B.symm‖‖d‖ ≤ r)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SmoothMomentRepair.exists_unique_quadratic_correction"
+          },
+          "destination": {
+            "fragment": "L255",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothMomentRepair.lean"
+          },
+          "snippet": {
+            "line": 255,
+            "text": "theorem exists_unique_quadratic_correction [CompleteSpace E]\n    (B : E ≃L[ℝ] E) (A : E →L[ℝ] E →L[ℝ] E) (d : E) (r : ℝ) (hr : 0 ≤ r)\n    (hsmall : 4 * ‖B.symm.toContinuousLinearMap‖ * ‖A‖ * r ≤ 1)\n    (hd : 2 * ‖B.symm.toContinuousLinearMap‖ * ‖d‖ ≤ r) :\n    ∃! c : E, ‖c‖ ≤ r ∧ B c + A c c = d"
+          }
+        }
       }
     }
-  }
+  ]
 }

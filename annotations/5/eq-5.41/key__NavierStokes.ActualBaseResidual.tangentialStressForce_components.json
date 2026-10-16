@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.41/key/04.NavierStokes.ActualBaseResidual.tangentialStressForce_components",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualBaseResidual.tangentialStressForce_components",
-      "line": 421,
-      "module": "NavierStokes.ActualBaseResidual",
-      "path": "NavierStokes/ActualBaseResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualBaseResidual.lean#L421"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualBaseResidual.tangentialStressForce_components",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualBaseResidual.tangentialStressForce_components",
+        "module": "NavierStokes.ActualBaseResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 421,
-        "text": "(hr : 0 < q 0) : CylindricalResidual.frame (-(q 1)) (SlowResidualMatching.tangentialStressForce theta axial t (CylindricalResidual.chart q)) = AxisymmetricResidual.pack 0 (-LeadingStress.radialDivergence 2 theta (t, ((q 0)^2 / 2, q 2))) (-LeadingStress.radialDivergence 1 axial (t, ((q 0)^2 / 2, q 2)))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ActualBaseResidual.tangentialStressForce_components",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L421",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualBaseResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 421,
+            "text": "theorem tangentialStressForce_components (theta axial : AxisymmetricFields.Profile)\n    (t : ℝ) (q : Space) (hr : 0 < q 0) :\n    CylindricalResidual.frame (-(q 1))\n      (SlowResidualMatching.tangentialStressForce theta axial t (CylindricalResidual.chart q)) =\n      AxisymmetricResidual.pack 0\n        (-LeadingStress.radialDivergence 2 theta (t, ((q 0)^2 / 2, q 2)))\n        (-LeadingStress.radialDivergence 1 axial (t, ((q 0)^2 / 2, q 2)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

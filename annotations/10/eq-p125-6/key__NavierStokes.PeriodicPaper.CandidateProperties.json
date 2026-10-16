@@ -1,26 +1,28 @@
 {
-  "id": "eq-p125-6/key/05.NavierStokes.PeriodicPaper.CandidateProperties",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicPaper.CandidateProperties",
-      "line": 26,
-      "module": "NavierStokes.PeriodicPaperTheorem",
-      "path": "NavierStokes/PeriodicPaperTheorem.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicPaperTheorem.lean#L26"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicPaper.CandidateProperties",
-        "kind": "structure"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicPaper.CandidateProperties",
+        "module": "NavierStokes.PeriodicPaperTheorem"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 26,
-        "text": "navier_stokes : ∀ t ∈ Ioo 0 1, ∀ x, navierStokesResidual ν u p t x = f (t,x); divergence_free : ∀ t ∈ Ico 0 1, ∀ x, spatialDivergence u t x = 0; zero_initial_velocity : ∀ x, u (0,x) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.PeriodicPaper.CandidateProperties",
+            "kind": "structure"
+          },
+          "destination": {
+            "fragment": "L26",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicPaperTheorem.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 26,
+            "text": "structure CandidateProperties (ν : ℝ) (u : VelocityField) (p : PressureField)\n    (f : VelocityField) (K : Set Space) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

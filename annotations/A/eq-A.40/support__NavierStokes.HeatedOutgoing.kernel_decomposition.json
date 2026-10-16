@@ -1,26 +1,29 @@
 {
-  "id": "eq-A.40/support/07.NavierStokes.HeatedOutgoing.kernel_decomposition",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HeatedOutgoing.kernel_decomposition",
-      "line": 390,
-      "module": "NavierStokes.HeatedOutgoing",
-      "path": "NavierStokes/HeatedOutgoing.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean#L390"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HeatedOutgoing.kernel_decomposition",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HeatedOutgoing.kernel_decomposition",
+        "module": "NavierStokes.HeatedOutgoing"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 390,
-        "text": "canonicalKernel F XR c eta X = OutgoingDilation.canonicalKernel F XR eta X + changeRow F XR c eta 0 X, where changeRow row 0 (line 181) is (E F XR c (X,eta)² - OutgoingDilation.E F XR (X,eta)²)/X for the compensated profile; for the pure heat edit heat_differences (line 186) identifies that numerator with HeatTailEdit.squareChange, so the paper's Δ(E²/X) is the row-0 change integrand (the paper's 1/2 is not carried by canonicalKernel, which is E²/X)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.HeatedOutgoing.kernel_decomposition",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L390",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 390,
+            "text": "theorem kernel_decomposition (F : Profile) (XR : ℝ) (c : ℝ → Coeff) (eta X : ℝ) :\n    canonicalKernel F XR c eta X = OutgoingDilation.canonicalKernel F XR eta X + changeRow F XR c eta 0 X"
+          }
+        }
       }
     }
-  }
+  ]
 }

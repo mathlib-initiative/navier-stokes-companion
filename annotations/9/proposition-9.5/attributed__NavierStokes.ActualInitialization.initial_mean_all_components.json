@@ -1,29 +1,31 @@
 {
-  "id": "proposition-9.5/attributed/1.NavierStokes.ActualInitialization.initial_mean_all_components",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualInitialization.initial_mean_all_components",
-      "line": 1471,
-      "module": "NavierStokes.ActualInitialization",
-      "path": "NavierStokes/ActualInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialization.lean#L1471"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualInitialization.initial_mean_all_components",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualInitialization.initial_mean_all_components",
+        "module": "NavierStokes.ActualInitialization"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: ∀ i : Fin 3, MeanClass strip (6/5) (fun n x => (initialState B N0).meanGoodResidual (commonContext B) n x i): all three good-mean residual components of the stage-0 state have the paper's numeral C₀* = 1.2 (the paper's (9.8) asks only for i = 1, 2, i.e. E_θ, E_z)."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1471,
-        "text": "theorem initial_mean_all_components (B N0 : ℕ) (i : Fin 3) :\n    MeanClass strip (6/5) (fun n x =>\n      (initialState B N0).meanGoodResidual (ActualPrimary.commonContext B) n x i)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActualInitialization.initial_mean_all_components",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: ∀ i : Fin 3, MeanClass strip (6/5) (fun n x => (initialState B N0).meanGoodResidual (commonContext B) n x i): all three good-mean residual components of the stage-0 state have the paper's numeral C₀* = 1.2 (the paper's (9.8) asks only for i = 1, 2, i.e. E_θ, E_z)."
+          },
+          "destination": {
+            "fragment": "L1471",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialization.lean"
+          },
+          "snippet": {
+            "line": 1471,
+            "text": "theorem initial_mean_all_components (B N0 : ℕ) (i : Fin 3) :\n    MeanClass strip (6/5) (fun n x =>\n      (initialState B N0).meanGoodResidual (ActualPrimary.commonContext B) n x i)"
+          }
+        }
       }
     }
-  }
+  ]
 }

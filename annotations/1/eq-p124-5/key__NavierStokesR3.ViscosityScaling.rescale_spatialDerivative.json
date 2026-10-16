@@ -1,25 +1,27 @@
 {
-  "id": "eq-p124-5/key/02.NavierStokesR3.ViscosityScaling.rescale_spatialDerivative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ViscosityScaling.rescale_spatialDerivative",
-      "line": 44,
-      "module": "NavierStokes.R3.ViscosityScaling",
-      "path": "NavierStokes/R3/ViscosityScaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean#L44"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ViscosityScaling.rescale_spatialDerivative"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ViscosityScaling.rescale_spatialDerivative",
+        "module": "NavierStokes.R3.ViscosityScaling"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 44,
-        "text": "spatialDerivative (rescale a b u) t x = (a * b) • spatialDerivative u t (b • x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.ViscosityScaling.rescale_spatialDerivative"
+          },
+          "destination": {
+            "fragment": "L44",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 44,
+            "text": "theorem rescale_spatialDerivative (a b : ℝ) (u : VelocityField) (t : ℝ) (x : Space) :\n    spatialDerivative (rescale a b u) t x = (a * b) • spatialDerivative u t (b • x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

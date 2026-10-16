@@ -1,26 +1,28 @@
 {
-  "id": "eq-p059-4/key/01.NavierStokes.ResidualStability.residual_add_sub_on",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ResidualStability.residual_add_sub_on",
-      "line": 355,
-      "module": "NavierStokes.ResidualStability",
-      "path": "NavierStokes/ResidualStability.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ResidualStability.lean#L355"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ResidualStability.residual_add_sub_on",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ResidualStability.residual_add_sub_on",
+        "module": "NavierStokes.ResidualStability"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 355,
-        "text": "theorem residual_add_sub_on (hU : IsOpen U) (hu hw hp hr : ContDiffOn ℝ ∞ · U) (hz : z ∈ U) : navierStokesResidual (fun y => u y + w y) (fun y => p y + r y) z.1 z.2 - navierStokesResidual u p z.1 z.2 = temporalDerivative w z.1 z.2 - spatialLaplacian w z.1 z.2 + pressureGradient r z.1 z.2 + spatialDerivative u z.1 z.2 (w z) + spatialDerivative w z.1 z.2 (u z) + spatialDerivative w z.1 z.2 (w z)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ResidualStability.residual_add_sub_on",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L355",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ResidualStability.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 355,
+            "text": "theorem residual_add_sub_on {u w : VelocityField} {p r : PressureField}\n    (hU : IsOpen U) (hu : ContDiffOn ℝ ∞ u U) (hw : ContDiffOn ℝ ∞ w U)\n    (hp : ContDiffOn ℝ ∞ p U) (hr : ContDiffOn ℝ ∞ r U)\n    {z : SpaceTime} (hz : z ∈ U) :\n    navierStokesResidual (fun y => u y + w y) (fun y => p y + r y) z.1 z.2 -\n      navierStokesResidual u p z.1 z.2 =\n        temporalDerivative w z.1 z.2 - spatialLaplacian w z.1 z.2 + pressureGradient r z.1 z.2 +\n          spatialDerivative u z.1 z.2 (w z) + spatialDerivative w z.1 z.2 (u z) +\n          spatialDerivative w z.1 z.2 (w z)"
+          }
+        }
       }
     }
-  }
+  ]
 }

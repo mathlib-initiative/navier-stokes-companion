@@ -1,25 +1,27 @@
 {
-  "id": "eq-p012-4/attributed/03.NavierStokes.ActualInitialMean.covariance_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualInitialMean.covariance_bounds",
-      "line": 554,
-      "module": "NavierStokes.ActualInitialMean",
-      "path": "NavierStokes/ActualInitialMean.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialMean.lean#L554"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualInitialMean.covariance_bounds"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualInitialMean.covariance_bounds",
+        "module": "NavierStokes.ActualInitialMean"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 554,
-        "text": "theorem covariance_bounds (B N0 : ℕ) : (∀ i j, MeanClass strip 1 ((seed B N0).covariance i j)) ∧ (∀ i j, MeanClass strip (3/2 - ChartScales.kappa) ((seed B N0).covariance i j - ActualPrimaryCovariance.tangentCovariance B N0 i j)) — no hypotheses; its second clause is the curl-correction half, and matched_fluxes is literally `matched_fluxes_of_covariance B N0 (seed_covariance_smooth B N0) (tangent_covariance_smooth B N0) (covariance_bounds B N0).2` (line 590)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ActualInitialMean.covariance_bounds"
+          },
+          "destination": {
+            "fragment": "L554",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialMean.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 554,
+            "text": "theorem covariance_bounds (B N0 : ℕ) :\n    (∀ i j, MeanClass strip 1 ((seed B N0).covariance i j)) ∧\n      (∀ i j, MeanClass strip (3 / 2 - ChartScales.kappa)\n        ((seed B N0).covariance i j - ActualPrimaryCovariance.tangentCovariance B N0 i j))"
+          }
+        }
       }
     }
-  }
+  ]
 }

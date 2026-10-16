@@ -1,36 +1,57 @@
 {
-  "id": "proposition-A.4/key/1.NavierStokes.ScheduledProfileChoice.exists_scheduled_family_below",
-  "location": {
-    "page": 130,
-    "rect": [0.12854, 0.799174, 0.746187, 0.092562]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ScheduledProfileChoice.exists_scheduled_family_below",
-      "line": 105,
-      "module": "NavierStokes.ScheduledProfileChoice",
-      "path": "NavierStokes/ScheduledProfileChoice.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 130,
+        "rect": [0.12854, 0.799174, 0.746187, 0.092562]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-A.4@p130"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ScheduledProfileChoice.lean#L105"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ScheduledProfileChoice.exists_scheduled_family_below",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 131,
+        "rect": [0.12854, 0.102479, 0.746187, 0.107438]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Given P, m > 0, `cap : ℝ → ℝ` positive and `extraHeight` positive: `∃ K B H core`, `core.P = P`, `core.m = m`, `core.wait = 60 log(1/core.lam)`, `core.lam < cap K`, `core.lam < 1/120`, `2H < core.lam`, `H ≤ extraHeight core`, `H ≤ 1/1000`, and `∀ h ∈ (0,H], ∃ F, F.data.core = core ∧ F.data.h = h ∧ F",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "proposition-A.4@p130",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 105,
-        "text": "theorem exists_scheduled_family_below (P m : ℝ) (hP : 0 < P) (hm : 0 < m)\n    (cap : ℝ → ℝ) (hcap : ∀ K : ℝ, 0 < K → 0 < cap K)\n    (extraHeight : OutgoingSchedule.Parameters → ℝ)\n    (hextra : ∀ core : OutgoingSchedule.Parameters, 0 < extraHeight core) :\n    ∃ (K B H : ℝ) (core : OutgoingSchedule.Parameters),\n      0 < K ∧ 0 < B ∧ 0 < H ∧ core.P = P ∧ core.m = m ∧\n      core.wait = 60 * Real.log (1 / core.lam) ∧\n      core.lam < cap K ∧ core.lam < 1 / 120 ∧\n      2 * H < core.lam ∧ H ≤ extraHeight core ∧ H ≤ 1 / 1000 ∧\n      ∀ h : ℝ, 0 < h → h ≤ H →\n        ∃ F : Profile, F.data.core = core ∧ F.data.h = h ∧ F.coefficientBound = K ∧\n          ScheduleBounds F ∧ OutgoingProfile.Specification F B ∧ TerminalCone.SmallTail F.data"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-A.4@p131"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ScheduledProfileChoice.exists_scheduled_family_below",
+        "module": "NavierStokes.ScheduledProfileChoice"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ScheduledProfileChoice.exists_scheduled_family_below",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Given P, m > 0, `cap : ℝ → ℝ` positive and `extraHeight` positive: `∃ K B H core`, `core.P = P`, `core.m = m`, `core.wait = 60 log(1/core.lam)`, `core.lam < cap K`, `core.lam < 1/120`, `2H < core.lam`, `H ≤ extraHeight core`, `H ≤ 1/1000`, and `∀ h ∈ (0,H], ∃ F, F.data.core = core ∧ F.data.h = h ∧ F",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L105",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ScheduledProfileChoice.lean"
+          },
+          "snippet": {
+            "line": 105,
+            "text": "theorem exists_scheduled_family_below (P m : ℝ) (hP : 0 < P) (hm : 0 < m)\n    (cap : ℝ → ℝ) (hcap : ∀ K : ℝ, 0 < K → 0 < cap K)\n    (extraHeight : OutgoingSchedule.Parameters → ℝ)\n    (hextra : ∀ core : OutgoingSchedule.Parameters, 0 < extraHeight core) :\n    ∃ (K B H : ℝ) (core : OutgoingSchedule.Parameters),\n      0 < K ∧ 0 < B ∧ 0 < H ∧ core.P = P ∧ core.m = m ∧\n      core.wait = 60 * Real.log (1 / core.lam) ∧\n      core.lam < cap K ∧ core.lam < 1 / 120 ∧\n      2 * H < core.lam ∧ H ≤ extraHeight core ∧ H ≤ 1 / 1000 ∧\n      ∀ h : ℝ, 0 < h → h ≤ H →\n        ∃ F : Profile, F.data.core = core ∧ F.data.h = h ∧ F.coefficientBound = K ∧\n          ScheduleBounds F ∧ OutgoingProfile.Specification F B ∧ TerminalCone.SmallTail F.data"
+          }
+        }
+      }
+    }
+  ]
 }

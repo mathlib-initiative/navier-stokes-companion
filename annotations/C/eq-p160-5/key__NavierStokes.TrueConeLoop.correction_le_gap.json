@@ -1,24 +1,27 @@
 {
-  "id": "eq-p160-5/key/02.NavierStokes.TrueConeLoop.correction_le_gap",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.correction_le_gap",
-      "line": 90
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L90"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.correction_le_gap",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.correction_le_gap",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 90,
-        "text": "(hv : v ≤ highSpeed δ) : correction δ v ≤ targetSpeed δ - v, i.e. v_s ≤ 2 + δ/4 ⟹ corrected speed ≤ v_* (middle regime, right inequality)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TrueConeLoop.correction_le_gap",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L90"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 90,
+            "text": "theorem correction_le_gap (δ v : ℝ) (hδ : 0 < δ) (hv : v ≤ highSpeed δ) :\n    correction δ v ≤ targetSpeed δ - v"
+          }
+        }
       }
     }
-  }
+  ]
 }

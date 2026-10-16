@@ -1,26 +1,29 @@
 {
-  "id": "eq-p126-4/support/04.NavierStokes.PowerMomentMatrix.bumpMomentMatrix_det_ne_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PowerMomentMatrix.bumpMomentMatrix_det_ne_zero",
-      "line": 261,
-      "module": "NavierStokes.PowerMomentMatrix",
-      "path": "NavierStokes/PowerMomentMatrix.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PowerMomentMatrix.lean#L261"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PowerMomentMatrix.bumpMomentMatrix_det_ne_zero",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PowerMomentMatrix.bumpMomentMatrix_det_ne_zero",
+        "module": "NavierStokes.PowerMomentMatrix"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 261,
-        "text": "theorem bumpMomentMatrix_det_ne_zero (a l u : Fin n → ℝ) (β : Fin n → ℝ → ℝ) (ha : Function.Injective a) (hl : ∀ j, 0 < l j) (hsep : ∀ i j, i < j → u i < l j) … : (bumpMomentMatrix a β).det ≠ 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PowerMomentMatrix.bumpMomentMatrix_det_ne_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L261",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PowerMomentMatrix.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 261,
+            "text": "theorem bumpMomentMatrix_det_ne_zero {n : ℕ} (a l u : Fin n → ℝ)\n    (β : Fin n → ℝ → ℝ) (ha : Function.Injective a)\n    (hl : ∀ j, 0 < l j) (hsep : ∀ i j, i < j → u i < l j)\n    (hcont : ∀ j, Continuous (β j)) (hnonneg : ∀ j t, 0 ≤ β j t)\n    (hnonzero : ∀ j, ∃ t, β j t ≠ 0)\n    (hsupp : ∀ j, Function.support (β j) ⊆ Set.Icc (l j) (u j)) :\n    (bumpMomentMatrix a β).det ≠ 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

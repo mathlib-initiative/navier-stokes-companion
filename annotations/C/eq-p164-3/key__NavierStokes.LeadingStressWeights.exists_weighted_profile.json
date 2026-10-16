@@ -1,26 +1,29 @@
 {
-  "id": "eq-p164-3/key/04.NavierStokes.LeadingStressWeights.exists_weighted_profile",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.exists_weighted_profile",
-      "line": 1154,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L1154"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.exists_weighted_profile",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.exists_weighted_profile",
+        "module": "NavierStokes.LeadingStressWeights"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1154,
-        "text": "∃ F W d v, FullTrueCone v ∧ WeightedBounds … ∧ (∃ G : EdgeFactor …, … HasTrueDirectionCollar …) ∧ …  (the constructed witness for which the full-annulus cone is proved)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LeadingStressWeights.exists_weighted_profile",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1154",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1154,
+            "text": "theorem exists_weighted_profile :\n    ∃ (F : OutgoingProfile.Profile) (W : NominalProfile.Witness F)\n      (d : ModulatedProfileAssembly.LoopData W) (v : ModulatedProfileAssembly.Witness d),\n      FullTrueCone v ∧\n      WeightedBounds (Icc (-1 : ℝ) 1) (W.controls.activationTime ^ 2)\n        (leftEdge W) (rightEdge W) (logStress v.profiles F.data.h) ∧\n      (∃ G : EdgeFactor (Icc (-1 : ℝ) 1) (W.controls.activationTime ^ 2)\n          (leftChart (leftEdge W) (logStress v.profiles F.data.h)),\n        (∀ eta ∈ Icc (-1 : ℝ) 1, 0 < (G.coefficient (eta, 0)).1) ∧\n        HasTrueDirectionCollar (Icc (-1 : ℝ) 1)\n          (leftChart (leftEdge W) (logStress v.profiles F.data.h)) G.coefficient\n          (leftChart (leftEdge W) (logSpeed v.profiles))\n          (leftChart (leftEdge W) (logSlope v.profiles)) G.width) ∧\n      (∃ G : EdgeFactor (Icc (-1 : ℝ) 1) 4\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

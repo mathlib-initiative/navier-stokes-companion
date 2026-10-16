@@ -1,23 +1,25 @@
 {
-  "id": "eq-p061-3/key/01.NavierStokes.DiagonalScale.weighted_tail_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.DiagonalScale.weighted_tail_bound",
-      "line": 209,
-      "module": "NavierStokes.DiagonalScale",
-      "path": "NavierStokes/DiagonalScale.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiagonalScale.lean#L209"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.DiagonalScale.weighted_tail_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.DiagonalScale.weighted_tail_bound",
+        "module": "NavierStokes.DiagonalScale"
       },
-      "snippet": {
-        "line": 209,
-        "text": "Summable … ∧ (∑' n, (1/2)^(J+1+n) * q ^ (g (J+1+n)/2 - L)) ≤ (1/2)^J * q ^ (g (J+1)/2 - L), for Monotone g, 0 < q ≤ 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.DiagonalScale.weighted_tail_bound"
+          },
+          "destination": {
+            "fragment": "L209",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiagonalScale.lean"
+          },
+          "snippet": {
+            "line": 209,
+            "text": "theorem weighted_tail_bound (g : ℕ → ℝ) (hg : Monotone g) (L q : ℝ)\n    (hq : 0 < q) (hq1 : q ≤ 1) (J : ℕ) :\n    Summable (fun n : ℕ =>\n      (1 / 2 : ℝ) ^ (J + 1 + n) * q ^ (g (J + 1 + n) / 2 - L)) ∧\n    (∑' n : ℕ, (1 / 2 : ℝ) ^ (J + 1 + n) * q ^ (g (J + 1 + n) / 2 - L)) ≤\n      (1 / 2 : ℝ) ^ J * q ^ (g (J + 1) / 2 - L)"
+          }
+        }
       }
     }
-  }
+  ]
 }

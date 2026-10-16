@@ -1,30 +1,32 @@
 {
-  "id": "proposition-8.1/key/0.NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
-      "line": 1174,
-      "module": "NavierStokes.LiftedMeanResidual",
-      "path": "NavierStokes/LiftedMeanResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LiftedMeanResidual.lean#L1174"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Under `MeanHypotheses U c u` (base and mean triples angle-independent and smooth; oscillation `w` angularly periodic with zero angular mean; oscillatory pressure likewise; base and total velocity divergence-free in the cylindrical frame; base/excluded errors angularly continuous), for every band `n`",
-        "status": "unconfirmed",
-        "verdict": "faithful"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
+        "module": "NavierStokes.LiftedMeanResidual"
       },
       "role": "key",
-      "snippet": {
-        "line": 1174,
-        "text": "theorem angularMean_fullResidual {U : Set D} {c : CorrectionState.Context D} {u : CorrectionState.State D}\n    (H : MeanHypotheses U c u) (n : ℕ) {x : D} (hx : x ∈ U) (i : Fin 3) :\n    angularMeanVector (fullResidual c u) n x i = u.meanResidual c n x i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Under `MeanHypotheses U c u` (base and mean triples angle-independent and smooth; oscillation `w` angularly periodic with zero angular mean; oscillatory pressure likewise; base and total velocity divergence-free in the cylindrical frame; base/excluded errors angularly continuous), for every band `n`",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1174",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LiftedMeanResidual.lean"
+          },
+          "snippet": {
+            "line": 1174,
+            "text": "theorem angularMean_fullResidual {U : Set D} {c : CorrectionState.Context D} {u : CorrectionState.State D}\n    (H : MeanHypotheses U c u) (n : ℕ) {x : D} (hx : x ∈ U) (i : Fin 3) :\n    angularMeanVector (fullResidual c u) n x i = u.meanResidual c n x i"
+          }
+        }
       }
     }
-  }
+  ]
 }

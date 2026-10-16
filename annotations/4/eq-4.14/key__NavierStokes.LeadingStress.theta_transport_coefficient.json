@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.14/key/01.NavierStokes.LeadingStress.theta_transport_coefficient",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStress.theta_transport_coefficient",
-      "line": 193,
-      "module": "NavierStokes.LeadingStress",
-      "path": "NavierStokes/LeadingStress.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean#L193"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStress.theta_transport_coefficient",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStress.theta_transport_coefficient",
+        "module": "NavierStokes.LeadingStress"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 193,
-        "text": "SimilarityProfile.T h (-A h - 1/2) P.f w + SlowDivergence.radialFlux h 0 P.U w * (partialX P.f w + P.f w / w.1) + P.U w * SimilarityProfile.Z h (-A h - 1/2) P.f w = -P.f w * sourceTheta P h w / L h w.2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.LeadingStress.theta_transport_coefficient",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L193",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 193,
+            "text": "theorem theta_transport_coefficient (h : ℝ) {w : Point} (hw : w ∈ Ω.carrier)\n    (hX : w.1 ≠ 0) (hf : P.f w ≠ 0) (hL : L h w.2 ≠ 0) :\n    SimilarityProfile.T h (-A h - 1 / 2) P.f w +\n        SlowDivergence.radialFlux h 0 P.U w * (partialX P.f w + P.f w / w.1) +\n        P.U w * SimilarityProfile.Z h (-A h - 1 / 2) P.f w =\n      -P.f w * sourceTheta P h w / L h w.2"
+          }
+        }
       }
     }
-  }
+  ]
 }

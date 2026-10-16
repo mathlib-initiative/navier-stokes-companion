@@ -1,26 +1,28 @@
 {
-  "id": "eq-p094-4/key/04.NavierStokes.GaugeMomentBalances.moving_pressure_moment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaugeMomentBalances.moving_pressure_moment",
-      "line": 92,
-      "module": "NavierStokes.GaugeMomentBalances",
-      "path": "NavierStokes/GaugeMomentBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean#L92"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaugeMomentBalances.moving_pressure_moment",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaugeMomentBalances.moving_pressure_moment",
+        "module": "NavierStokes.GaugeMomentBalances"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 92,
-        "text": "moment 1 (torusAverage (meanPressure … ell v f) (·, s)) = -(1/2) * moment 2 (torusAverage f (·, s)) + (basePressureCoefficient a b hab * ell s ^ 2) * pressureMass f s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.GaugeMomentBalances.moving_pressure_moment",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L92",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 92,
+            "text": "theorem moving_pressure_moment {a b d M : ℝ} (ha : 0 < a) (hab : a < b) (hd : 0 < d)\n    (ell : S → ℝ) (v : Plane) {U : Set S} (hU : IsOpen U)\n    {f : PressureStream.Lift S → ℝ}\n    (hf : ContDiffOn ℝ ∞ f (PhysicalMeanDomain.slowDomain U))\n    (hs : VariableGaugeMean.SupportedGauge a b ell U f)\n    (hp : PhysicalMeanDomain.PeriodicOn U f) {s : S} (hsm : s ∈ U) (hl : 0 < ell s) :\n    IntegratedMeanBalances.moment 1 (fun R => PressureStream.torusAverage\n      (VariableGaugeMean.meanPressure d a b M hab ell v f) (R, s)) =\n      -(1 / 2 : ℝ) * IntegratedMeanBalances.moment 2\n        (fun R => PressureStream.torusAverage f (R, s)) +\n      (basePressureCoefficient a b hab * ell s ^ 2) * PressureStream.pressureMass f s"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p038-1/attributed/10.NavierStokes.NominalProfile.baseE_ideal",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalProfile.baseE_ideal",
-      "line": 429,
-      "module": "NavierStokes.NominalProfile",
-      "path": "NavierStokes/NominalProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L429"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalProfile.baseE_ideal",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalProfile.baseE_ideal",
+        "module": "NavierStokes.NominalProfile"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 429,
-        "text": "theorem baseE_ideal (F) (hC) (hT) (hsep) (li) (oldf) (eta) (hold : …) : ∀ x ∈ Ioo resetPatch.left resetPatch.right, baseE F C T li oldf (x, eta) = idealE F (x, eta)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.NominalProfile.baseE_ideal",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L429",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 429,
+            "text": "theorem baseE_ideal (F : Profile) {C T : ℝ} (hC : 0 < C) (hT : 0 < T)\n    (hsep : ShapeTransition.separation T C F.data.core.P ≤ Real.exp (-8))\n    (li : ℝ → ℝ) (oldf : Field) (eta : ℝ)\n    (hold : ∀ x ∈ Ioo resetPatch.left resetPatch.right,\n      oldf (matchingRadius F C * x, eta) =\n        C⁻¹ * Real.exp (Real.log (matchingRadius F C * x / Xi) / 10 + li eta) /\n          Real.sqrt (2 * (matchingRadius F C * x))) :\n    ∀ x ∈ Ioo resetPatch.left resetPatch.right,\n      baseE F C T li oldf (x, eta) = idealE F (x, eta)"
+          }
+        }
       }
     }
-  }
+  ]
 }

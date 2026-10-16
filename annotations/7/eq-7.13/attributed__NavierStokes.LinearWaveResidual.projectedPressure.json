@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.13/attributed/06.NavierStokes.LinearWaveResidual.projectedPressure",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveResidual.projectedPressure",
-      "line": 316,
-      "module": "NavierStokes.LinearWaveResidual",
-      "path": "NavierStokes/LinearWaveResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean#L316"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveResidual.projectedPressure",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveResidual.projectedPressure",
+        "module": "NavierStokes.LinearWaveResidual"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 316,
-        "text": "projectedPressure κ Vf n a Ka f x = (Complex.I / κ) * (normalDot (n x) (Ka x) - normalDot (along Vf n x) (a x) + normalDot (n x) (f x)) / Complex.ofReal (‖n x‖ ^ 2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.LinearWaveResidual.projectedPressure",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L316",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 316,
+            "text": "noncomputable def projectedPressure (κ : ℝ) (Vf : E → E)\n    (n : E → EuclideanSpace ℝ (Fin 3)) (a Ka f : E → ComplexVector) (x : E) : ℂ"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-A.38/key/03.NavierStokes.AppendixHeatResults.small_argument_remainder",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AppendixHeatResults.small_argument_remainder",
-      "line": 143,
-      "module": "NavierStokes.AppendixHeatResults",
-      "path": "NavierStokes/AppendixHeatResults.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AppendixHeatResults.lean#L143"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AppendixHeatResults.small_argument_remainder"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AppendixHeatResults.small_argument_remainder",
+        "module": "NavierStokes.AppendixHeatResults"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 143,
-        "text": "|profile (1+h) z - 1 + h*(1+h)*z| ≤ h*(1+h)^2*(2+h) * z^2 for 0 ≤ z; at z = 2d/X this is H(2d/X) = 1 - 2h(1+h)d/X + R with |R| ≤ 4h(1+h)^2(2+h)d^2/X^2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.AppendixHeatResults.small_argument_remainder"
+          },
+          "destination": {
+            "fragment": "L143",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AppendixHeatResults.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 143,
+            "text": "theorem small_argument_remainder {h z : ℝ} (hh : 0 < h) (hz : 0 ≤ z) :\n    |profile (1 + h) z - 1 + h * (1 + h) * z| ≤\n      h * (1 + h) ^ 2 * (2 + h) * z ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

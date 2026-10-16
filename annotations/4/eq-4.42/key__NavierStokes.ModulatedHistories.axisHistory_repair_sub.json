@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.42/key/01.NavierStokes.ModulatedHistories.axisHistory_repair_sub",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedHistories.axisHistory_repair_sub",
-      "line": 941,
-      "module": "NavierStokes.ModulatedHistories",
-      "path": "NavierStokes/ModulatedHistories.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean#L941"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedHistories.axisHistory_repair_sub",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedHistories.axisHistory_repair_sub",
+        "module": "NavierStokes.ModulatedHistories"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 941,
-        "text": "(hX : P.right ≤ X) (hU : U = G eta on patch) (hE : sqrt(2x)*f = A eta * x^b on patch) : axisHistory (applyRepairF P A c f) (applyRepairU P A c U) (X, eta) - axisHistory f U (X, eta) = physicalMoments P b (A eta) (G eta) (c eta)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ModulatedHistories.axisHistory_repair_sub",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L941",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 941,
+            "text": "theorem axisHistory_repair_sub (P : FiveProfileMoments.Patch) (b : ℝ) (A G : ℝ → ℝ)\n    (c : ℝ → Coeff) (f U : Field) (eta X : ℝ) (hX : P.right ≤ X) (hA : A eta ≠ 0)\n    (hU : ∀ x ∈ Ioo P.left P.right, U (x, eta) = G eta)\n    (hE : ∀ x ∈ Ioo P.left P.right, Real.sqrt (2 * x) * f (x, eta) = A eta * x ^ b)\n    (hi : ∀ i : Fin 5, IntervalIntegrable (fun x => density f U (x, eta) i) volume 0 X) :\n    axisHistory (applyRepairF P A c f) (applyRepairU P A c U) (X, eta) -\n      axisHistory f U (X, eta) = FiveProfileMoments.physicalMoments P b (A eta) (G eta) (c eta)"
+          }
+        }
       }
     }
-  }
+  ]
 }

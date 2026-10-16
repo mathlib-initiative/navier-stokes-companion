@@ -1,26 +1,28 @@
 {
-  "id": "eq-p144-1/key/02.NavierStokes.PressureDatum.deriv_pressure_pos",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PressureDatum.deriv_pressure_pos",
-      "line": 348,
-      "module": "NavierStokes.PressureDatum",
-      "path": "NavierStokes/PressureDatum.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureDatum.lean#L348"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PressureDatum.deriv_pressure_pos",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PressureDatum.deriv_pressure_pos",
+        "module": "NavierStokes.PressureDatum"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 348,
-        "text": "(hmass : 0 < ∫ y, g y * a y) → 0 < η → 0 < deriv (pressure g a) η"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PressureDatum.deriv_pressure_pos",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L348",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureDatum.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 348,
+            "text": "theorem deriv_pressure_pos {g a : ℝ → ℝ} {A : ℝ}\n    (h : Admissible g a A) (hmass : 0 < ∫ y, g y * a y)\n    {η : ℝ} (hη : 0 < η) : 0 < deriv (pressure g a) η"
+          }
+        }
       }
     }
-  }
+  ]
 }

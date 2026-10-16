@@ -1,24 +1,27 @@
 {
-  "id": "eq-p047-1/key/01.NavierStokes.PositiveAxisSystem.pressureValue_eq_convolution",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveAxisSystem.pressureValue_eq_convolution",
-      "line": 366
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisSystem.lean#L366"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveAxisSystem.pressureValue_eq_convolution",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveAxisSystem.pressureValue_eq_convolution",
+        "module": "NavierStokes.PositiveAxisSystem"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 366,
-        "text": "pressureValue C (baseAtOrderZero phi u beta) (lowerSource h eta X n phi u beta … omegaQuotient) (phi n) = inverseSquare C * convolution n (fun i j => (phi i).value * (phi j).value) - omegaQuotient / 2  (hypothesis 0 < n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PositiveAxisSystem.pressureValue_eq_convolution",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L366"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 366,
+            "text": "theorem pressureValue_eq_convolution (h C eta X : K) {n : ℕ} (hn : 0 < n)\n    (phi u : ℕ → Jet K) (beta : ℕ → K)\n    (previousAngularDiffusion previousAxialDiffusion omegaQuotient : K) :\n    pressureValue C (baseAtOrderZero phi u beta)\n      (lowerSource h eta X n phi u beta previousAngularDiffusion previousAxialDiffusion omegaQuotient)\n      (phi n) =\n    inverseSquare C * convolution n (fun i j => (phi i).value * (phi j).value) - omegaQuotient / 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

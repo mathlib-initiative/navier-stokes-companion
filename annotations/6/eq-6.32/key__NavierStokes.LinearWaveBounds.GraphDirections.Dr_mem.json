@@ -1,23 +1,25 @@
 {
-  "id": "eq-6.32/key/03.NavierStokes.LinearWaveBounds.GraphDirections.Dr_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveBounds.GraphDirections.Dr_mem",
-      "line": 132,
-      "module": "NavierStokes.LinearWaveBounds",
-      "path": "NavierStokes/LinearWaveBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L132"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveBounds.GraphDirections.Dr_mem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveBounds.GraphDirections.Dr_mem",
+        "module": "NavierStokes.LinearWaveBounds"
       },
-      "snippet": {
-        "line": 132,
-        "text": "(hf : MemClass s w α f) (hρ : UnweightedClass s 0 radialProfile) (hM : BandBound s (−κ) d.radialScale) (hκ : 0 ≤ κ) : MemClass s w (α − κ) (d.Dr f) — row 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.LinearWaveBounds.GraphDirections.Dr_mem"
+          },
+          "destination": {
+            "fragment": "L132",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean"
+          },
+          "snippet": {
+            "line": 132,
+            "text": "theorem Dr_mem {s : StripData D} {w : ℕ → D → ℝ} {α κ : ℝ}\n    (d : GraphDirections D) {f : ℕ → D → E} (hf : MemClass s w α f)\n    (hρ : UnweightedClass s 0 (fun _ => d.radialProfile))\n    (hM : BandBound s (-κ) d.radialScale) (hκ : 0 ≤ κ) :\n    MemClass s w (α - κ) (d.Dr f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

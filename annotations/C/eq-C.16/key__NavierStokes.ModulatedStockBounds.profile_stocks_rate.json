@@ -1,26 +1,29 @@
 {
-  "id": "eq-C.16/key/02.NavierStokes.ModulatedStockBounds.profile_stocks_rate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedStockBounds.profile_stocks_rate",
-      "line": 303,
-      "module": "NavierStokes.ModulatedStockBounds",
-      "path": "NavierStokes/ModulatedStockBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedStockBounds.lean#L303"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedStockBounds.profile_stocks_rate",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedStockBounds.profile_stocks_rate",
+        "module": "NavierStokes.ModulatedStockBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 303,
-        "text": "∃ N C, … ∀ n ≥ (N:ℝ), ∀ p ∈ S, 0 < (P n).f p ∧ |profileStockOne (P n) h p - profileStockOne Q h p| ≤ C / n ∧ |profileStockTwo (P n) h p - profileStockTwo Q h p| ≤ C / n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ModulatedStockBounds.profile_stocks_rate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L303",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedStockBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 303,
+            "text": "theorem profile_stocks_rate {D D' : RadialDomain} (Q : Profiles D) (h : ℝ)\n    (P : ℝ → Profiles D') {S : Set Point} (hS : IsCompact S)\n    (hSD : S ⊆ D.carrier) (hSD' : S ⊆ D'.carrier)\n    (hX : ∀ p ∈ S, 0 < p.1) (hL : ∀ p ∈ S, NaturalAxisData.L h p.2 ≠ 0)\n    (hpos : ∀ p ∈ S, 0 < Q.f p)\n    (n₀ Cdata : ℝ) (hCdata : 0 ≤ Cdata)\n    (hdata : ∀ n : ℝ, n₀ ≤ n → 1 ≤ n → ∀ p ∈ S,\n      |(P n).f p - Q.f p| ≤ Cdata / n ∧ |(P n).U p - Q.U p| ≤ Cdata / n ∧\n      ∀ r : StressActivation.HistoryRow,\n        |StressActivation.profileHistory (P n) r p - StressActivation.profileHistory Q r p| ≤ Cdata / n ∧\n        |parameterPartial (StressActivation.profileHistory (P n) r) p -\n          parameterPartial (StressActivation.profileHistory Q r) p| ≤ Cdata / n) :\n    ∃ N : ℕ, ∃ C : ℝ, 0 < N ∧ 0 ≤ C ∧ ∀ n : ℝ, (N : ℝ) ≤ n → ∀ p ∈ S,\n      0 < (P n).f p ∧\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,33 @@
 {
-  "id": "lemma-6.1/attributed/1.NavierStokes.SlotGeometry.centers_avoid_covering",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlotGeometry.centers_avoid_covering",
-      "line": 187,
-      "module": "NavierStokes.SlotGeometry",
-      "path": "NavierStokes/SlotGeometry.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlotGeometry.lean#L187"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlotGeometry.centers_avoid_covering",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlotGeometry.centers_avoid_covering",
+        "module": "NavierStokes.SlotGeometry"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `(m D : ℕ) (i j : Fin m) (n ≤ D) (0 < n ∨ i ≠ j) : ¬ torusEq ((cover^n) (center m D i)) (center m D j)`. This is the paper's constraint (6.15) `c_μ ≠ J_g^Δ c_ν (mod ℤ²)` for `0 ≤ Δ ≤ Δ_max` unless `(Δ,ν,μ)=(0,ν,ν)`, for the explicit rational centers.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 187,
-        "text": "theorem centers_avoid_covering (m D : ℕ) (i j : Fin m) (n : ℕ) (hn : n ≤ D)\n    (hij : 0 < n ∨ i ≠ j) : ¬ torusEq ((cover ^ n) (center m D i)) (center m D j)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SlotGeometry.centers_avoid_covering",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: `(m D : ℕ) (i j : Fin m) (n ≤ D) (0 < n ∨ i ≠ j) : ¬ torusEq ((cover^n) (center m D i)) (center m D j)`. This is the paper's constraint (6.15) `c_μ ≠ J_g^Δ c_ν (mod ℤ²)` for `0 ≤ Δ ≤ Δ_max` unless `(Δ,ν,μ)=(0,ν,ν)`, for the explicit rational centers.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L187",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlotGeometry.lean"
+          },
+          "snippet": {
+            "line": 187,
+            "text": "theorem centers_avoid_covering (m D : ℕ) (i j : Fin m) (n : ℕ) (hn : n ≤ D)\n    (hij : 0 < n ∨ i ≠ j) : ¬ torusEq ((cover ^ n) (center m D i)) (center m D j)"
+          }
+        }
       }
     }
-  }
+  ]
 }

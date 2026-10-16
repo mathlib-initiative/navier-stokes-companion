@@ -1,26 +1,28 @@
 {
-  "id": "eq-p044-9/key/04.NavierStokes.ActiveAnnulusWeight.right_bound_to_weight",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.right_bound_to_weight",
-      "line": 207,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L207"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.right_bound_to_weight",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.right_bound_to_weight",
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 207,
-        "text": "(hc : 0 ≤ c) (hyr : b-d ≤ y) (hn : n ≤ N) : C * FlatCutoff.edge 4 (b-y) / (b-y)^n ≤ (C / FlatCutoff.edge c (b-a-d)) * weight c a b y / edgeDistance a b y ^ N  — the outer-collar ratio comparison"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ActiveAnnulusWeight.right_bound_to_weight",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L207",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 207,
+            "text": "theorem right_bound_to_weight {c a b d y C : ℝ} (hc : 0 ≤ c) (hC : 0 ≤ C)\n    (hd : 0 < b-a-d) (hy : y ∈ Ioo a b) (hyr : b-d ≤ y)\n    {n N : ℕ} (hn : n ≤ N) :\n    C * FlatCutoff.edge 4 (b-y) / (b-y)^n ≤\n      (C / FlatCutoff.edge c (b-a-d)) * weight c a b y / edgeDistance a b y ^ N"
+          }
+        }
       }
     }
-  }
+  ]
 }

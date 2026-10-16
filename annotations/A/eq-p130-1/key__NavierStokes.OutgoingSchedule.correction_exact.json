@@ -1,26 +1,28 @@
 {
-  "id": "eq-p130-1/key/02.NavierStokes.OutgoingSchedule.correction_exact",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingSchedule.correction_exact",
-      "line": 425,
-      "module": "NavierStokes.OutgoingSchedule",
-      "path": "NavierStokes/OutgoingSchedule.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean#L425"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingSchedule.correction_exact",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingSchedule.correction_exact",
+        "module": "NavierStokes.OutgoingSchedule"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 425,
-        "text": "(∫ x, x ^ c.exponents i * correction c amp eta x) = debt c amp eta i   -- the two conditions that fix c₁, c₂"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.OutgoingSchedule.correction_exact",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L425",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 425,
+            "text": "theorem correction_exact (c : Parameters) (amp : ℝ → ℝ) (eta : ℝ) (i : Fin 2) :\n    (∫ x, x ^ c.exponents i * correction c amp eta x) = debt c amp eta i"
+          }
+        }
       }
     }
-  }
+  ]
 }

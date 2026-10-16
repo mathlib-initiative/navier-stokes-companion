@@ -1,26 +1,28 @@
 {
-  "id": "eq-p011-5/key/02.NavierStokes.LeadingStress.theta_transport_stress",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStress.theta_transport_stress",
-      "line": 458,
-      "module": "NavierStokes.LeadingStress",
-      "path": "NavierStokes/LeadingStress.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean#L458"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStress.theta_transport_stress",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStress.theta_transport_stress",
+        "module": "NavierStokes.LeadingStress"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 458,
-        "text": "sqrt (2 * p.2.1) * transportResidual 1 2 (fluxProfile) (axialProfile) (swirlProfile) 0 p + thetaAxialViscosity P h p = -radialDivergence 2 (physicalStressTheta P h) p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.LeadingStress.theta_transport_stress",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L458",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 458,
+            "text": "theorem theta_transport_stress {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {p : SimilarityProfile.PhysicalPoint} (hp : p.1 < 1) (hs : 0 < p.2.1)\n    (hw : inner h p ∈ Ω.carrier) (hf : P.f (inner h p) ≠ 0) :\n    Real.sqrt (2 * p.2.1) * SlowExpansionResidual.transportResidual 1 2\n        (fluxProfile P h) (axialProfile P h) (swirlProfile P h) (fun _ => 0) p +\n        thetaAxialViscosity P h p = -radialDivergence 2 (physicalStressTheta P h) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

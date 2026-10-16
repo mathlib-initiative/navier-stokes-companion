@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.21/key/04.NavierStokes.TemporalMeanUpdate.meanClass_scaledRadialUpdate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TemporalMeanUpdate.meanClass_scaledRadialUpdate",
-      "line": 1097,
-      "module": "NavierStokes.TemporalMeanUpdate",
-      "path": "NavierStokes/TemporalMeanUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L1097"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TemporalMeanUpdate.meanClass_scaledRadialUpdate",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TemporalMeanUpdate.meanClass_scaledRadialUpdate",
+        "module": "NavierStokes.TemporalMeanUpdate"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1097,
-        "text": "MeanClass (logStripData …) (α + 1) (fun n => radialUpdate d a b (M n) (v n) (ε n • w) h n (f n)) — Δβ ∈ M_{α+1}"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.TemporalMeanUpdate.meanClass_scaledRadialUpdate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1097",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1097,
+            "text": "theorem meanClass_scaledRadialUpdate {a b d cL cR h : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (hcL : 0 < cL) (hcR : 0 < cR) (hh : 0 ≤ h)\n    (ε R : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hR : ∀ n, 1 ≤ R n)\n    (hscale : ∀ n, ChartScales.S n ≤ R n) (M : ℕ → ℝ) (v : ℕ → Plane) (w : S × Plane)\n    {α : ℝ} {f : ℕ → PressureStream.Lift S → ℝ}\n    (hf : WeightedClasses.MeanClass\n      (WeightedRadialPrimitive.logStripData a b cL cR ha hcL hcR ε R hε hεone hR) α f)\n    (hfc : ∀ n, ContDiff ℝ ∞ (f n)) (hp : ∀ n, PressureStream.TorusPeriodicLift (f n))\n    (hs : ∀ n, RadialAlias.RadiallySupported a b (f n)) :\n    WeightedClasses.MeanClass\n      (WeightedRadialPrimitive.logStripData a b cL cR ha hcL hcR ε R hε hεone hR) (α + 1)\n      (fun n => radialUpdate d a b (M n) (v n) (ε n • w) h n (f n))"
+          }
+        }
       }
     }
-  }
+  ]
 }

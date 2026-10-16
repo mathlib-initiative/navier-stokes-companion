@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.9/attributed/02.NavierStokes.LocalResidualFlatness.allResidualJetRates_of_cutBounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalResidualFlatness.allResidualJetRates_of_cutBounds",
-      "line": 29,
-      "module": "NavierStokes.LocalResidualFlatness",
-      "path": "NavierStokes/LocalResidualFlatness.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalResidualFlatness.lean#L29"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalResidualFlatness.allResidualJetRates_of_cutBounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalResidualFlatness.allResidualJetRates_of_cutBounds",
+        "module": "NavierStokes.LocalResidualFlatness"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 29,
-        "text": "(E : StageEstimates h qbig A B P) … (hb : MixedDiagonalSchedule.ThreeCutBounds …) → AllResidualJetRates h A B P a — the predicate above is proved for the assembled schedule from the three cut bounds, with the existential choice outside both the derivative-order and the decay-order quantifier"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.LocalResidualFlatness.allResidualJetRates_of_cutBounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L29",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalResidualFlatness.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 29,
+            "text": "theorem allResidualJetRates_of_cutBounds {h qbig : ℝ}\n    {A B : ℕ → VelocityField} {P : ℕ → PressureField}\n    (E : StageEstimates h qbig A B P) (hh : 0 < h) (hh1 : h < 1 / 2)\n    (hqbig : 0 < qbig) {a : ℕ → ℕ} (ha : Tendsto (fun j => (a j : ℝ)) atTop atTop)\n    (hb : MixedDiagonalSchedule.ThreeCutBounds a h A B P (fun j => E.gain j / 2)\n      (MixedDiagonalSchedule.commonLoss E.potentialLoss E.directLoss E.pressureLoss)\n      PhysicalWaveSum.preterminal) : AllResidualJetRates h A B P a"
+          }
+        }
       }
     }
-  }
+  ]
 }

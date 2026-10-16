@@ -1,29 +1,31 @@
 {
-  "id": "corollary-8.5/attributed/1.NavierStokes.SignedStressPrimitive.momentDensity_moment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedStressPrimitive.momentDensity_moment",
-      "line": 136,
-      "module": "NavierStokes.SignedStressPrimitive",
-      "path": "NavierStokes/SignedStressPrimitive.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L136"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedStressPrimitive.momentDensity_moment",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedStressPrimitive.momentDensity_moment",
+        "module": "NavierStokes.SignedStressPrimitive"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: integral of r^e * momentDensity P e r = 1, with momentDensity supported in [P.left,P.right] contained in (P.a,P.b) and nonnegative: the paper's normalizations of sigma_theta (e=2) and sigma_z (e=1) with supports in the interior patch."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 136,
-        "text": "theorem momentDensity_moment (P : Patch) (e : ℕ) : (∫ r, r ^ e * momentDensity P e r) = 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SignedStressPrimitive.momentDensity_moment",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: integral of r^e * momentDensity P e r = 1, with momentDensity supported in [P.left,P.right] contained in (P.a,P.b) and nonnegative: the paper's normalizations of sigma_theta (e=2) and sigma_z (e=1) with supports in the interior patch."
+          },
+          "destination": {
+            "fragment": "L136",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean"
+          },
+          "snippet": {
+            "line": 136,
+            "text": "theorem momentDensity_moment (P : Patch) (e : ℕ) : (∫ r, r ^ e * momentDensity P e r) = 1"
+          }
+        }
       }
     }
-  }
+  ]
 }

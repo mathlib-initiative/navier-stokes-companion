@@ -1,25 +1,28 @@
 {
-  "id": "eq-p151-3/support/05.NavierStokes.AppendixJoiningResults.reference_first_gt_three",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AppendixJoiningResults.reference_first_gt_three",
-      "line": 67,
-      "module": "NavierStokes.AppendixJoiningResults",
-      "path": "NavierStokes/AppendixJoiningResults.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AppendixJoiningResults.lean#L67"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AppendixJoiningResults.reference_first_gt_three"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AppendixJoiningResults.reference_first_gt_three",
+        "module": "NavierStokes.AppendixJoiningResults"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 67,
-        "text": "3 < p1 (referenceProfiles …) h (X, η) for X ∈ Icc 100 110, obtained from p1_lower_from_source with q = 12/5 and 3 < (12/5) * X / (2 * L)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.AppendixJoiningResults.reference_first_gt_three"
+          },
+          "destination": {
+            "fragment": "L67",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AppendixJoiningResults.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 67,
+            "text": "theorem reference_first_gt_three {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (E : NaturalEntrance.EntranceProfile d Λ C)\n    (hΛ : 0 < Λ) (hsmall : NaturalAxisData.SmallParameters h j) (hσ : 0 < σ)\n    {δ : ℝ} (hδ : 0 < δ) (hδT : 2 * δ < ReferencePath.rampLimit)\n    (hP0 : ContDiff ℝ ∞ P0)\n    (hb : ReferenceBoundsOnHold E.profile hΛ hδ hδT hP0)\n    {X η : ℝ} (hX : X ∈ Icc (100 : ℝ) 110) (hη : η ∈ Icc (-1 : ℝ) 1) :\n    3 < p1 (referenceProfiles E.profile hΛ hδ hδT hP0) h (X, η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p043-5/attributed/05.NavierStokes.ModulatedCone.nominal_stockShear_stable",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.nominal_stockShear_stable",
-      "line": 525,
-      "module": "NavierStokes.ModulatedCone",
-      "path": "NavierStokes/ModulatedCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L525"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.nominal_stockShear_stable",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.nominal_stockShear_stable",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 525,
-        "text": "∃ ρ > 0, ∀ p ∈ S, ∀ q₁ q₂ A' C', |q₁ - p₁ p| ≤ ρ → |q₂ - p₂ p| ≤ ρ → |A' - a p| ≤ ρ → |C' - a p * m p| ≤ ρ → TrueConeLoop.InTrueCone q₁ q₂ A' C'"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ModulatedCone.nominal_stockShear_stable",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L525",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 525,
+            "text": "theorem nominal_stockShear_stable\n    (a m p₁ p₂ : RadialParameter → ℝ) {S : Set RadialParameter} (hS : IsCompact S)\n    (ha : ContinuousOn a S) (hm : ContinuousOn m S)\n    (hp₁ : ContinuousOn p₁ S) (hp₂ : ContinuousOn p₂ S)\n    (hcone : ∀ p ∈ S, TrueConeLoop.InTrueCone (p₁ p) (p₂ p) (a p) (a p * m p)) :\n    ∃ ρ : ℝ, 0 < ρ ∧ ∀ p ∈ S, ∀ q₁ q₂ A' C' : ℝ,\n      |q₁ - p₁ p| ≤ ρ → |q₂ - p₂ p| ≤ ρ → |A' - a p| ≤ ρ → |C' - a p * m p| ≤ ρ →\n      TrueConeLoop.InTrueCone q₁ q₂ A' C'"
+          }
+        }
       }
     }
-  }
+  ]
 }

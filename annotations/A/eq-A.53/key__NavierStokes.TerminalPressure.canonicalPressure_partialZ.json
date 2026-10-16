@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.53/key/01.NavierStokes.TerminalPressure.canonicalPressure_partialZ",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalPressure.canonicalPressure_partialZ",
-      "line": 627,
-      "module": "NavierStokes.TerminalPressure",
-      "path": "NavierStokes/TerminalPressure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean#L627"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalPressure.canonicalPressure_partialZ",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalPressure.canonicalPressure_partialZ",
+        "module": "NavierStokes.TerminalPressure"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 627,
-        "text": "partialZ (canonicalPressure (swirlCoefficient C h f)) p = logScaleDerivative h p * axialPressureIntegral C h f p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TerminalPressure.canonicalPressure_partialZ",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L627",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 627,
+            "text": "theorem canonicalPressure_partialZ (C : ℝ) {h Y : ℝ} {f : ℝ → ℝ}\n    {p : SimilarityProfile.PhysicalPoint} (hh : 0 < h) (hh1 : h < 1 / 2)\n    (ht : p.1 < 1) (hs : 0 < p.2.1) (hf : ContDiff ℝ ∞ f)\n    (hb : ∀ y, 0 ≤ f y ∧ f y ≤ 1) (hplateau : ∀ y, Y ≤ y → f y = 1) :\n    SimilarityProfile.partialZ (TerminalStress.canonicalPressure\n      (TerminalStress.swirlCoefficient C h f)) p =\n      logScaleDerivative h p * axialPressureIntegral C h f p"
+          }
+        }
       }
     }
-  }
+  ]
 }

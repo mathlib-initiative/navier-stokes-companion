@@ -1,29 +1,31 @@
 {
-  "id": "lemma-7.1/attributed/1.NavierStokes.MovingFrameODE.tangent_reconstructed",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MovingFrameODE.tangent_reconstructed",
-      "line": 785,
-      "module": "NavierStokes.MovingFrameODE",
-      "path": "NavierStokes/MovingFrameODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean#L785"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MovingFrameODE.tangent_reconstructed",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MovingFrameODE.tangent_reconstructed",
+        "module": "NavierStokes.MovingFrameODE"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For β ≠ 0 and any t with ⟪normal β ρ B, t⟫ = 0, t = tangent ρ B (t 0) ⟪B 1, tail t⟫. Together with `normal_tangent` (⟪normal, tangent ρ B x y⟫ = 0) this says the two columns of the paper's U = [e_r - sK_a, N_a] span exactly n_Φ^⊥, with the explicit left inverse t ↦ (t·e_r, t·N_a) of the paper's B^ℓ "
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 785,
-        "text": "theorem tangent_reconstructed {β ρ : ℝ} (hβ : β ≠ 0) (B : Frame) (t : Space)\n    (ht : ⟪normal β ρ B, t⟫_ℝ = 0) :\n    tangent ρ B (t 0) ⟪B 1, tail t⟫_ℝ = t"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.MovingFrameODE.tangent_reconstructed",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For β ≠ 0 and any t with ⟪normal β ρ B, t⟫ = 0, t = tangent ρ B (t 0) ⟪B 1, tail t⟫. Together with `normal_tangent` (⟪normal, tangent ρ B x y⟫ = 0) this says the two columns of the paper's U = [e_r - sK_a, N_a] span exactly n_Φ^⊥, with the explicit left inverse t ↦ (t·e_r, t·N_a) of the paper's B^ℓ "
+          },
+          "destination": {
+            "fragment": "L785",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean"
+          },
+          "snippet": {
+            "line": 785,
+            "text": "theorem tangent_reconstructed {β ρ : ℝ} (hβ : β ≠ 0) (B : Frame) (t : Space)\n    (ht : ⟪normal β ρ B, t⟫_ℝ = 0) :\n    tangent ρ B (t 0) ⟪B 1, tail t⟫_ℝ = t"
+          }
+        }
       }
     }
-  }
+  ]
 }

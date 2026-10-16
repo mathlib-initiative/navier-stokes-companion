@@ -1,22 +1,26 @@
 {
-  "id": "eq-p043-4/key/01.NavierStokes.ModulatedCone.Repaired.profile_stocks_rate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.Repaired.profile_stocks_rate",
-      "line": 1248
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L1248"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.Repaired.profile_stocks_rate"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.Repaired.profile_stocks_rate",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 1248,
-        "text": "∃ N C, ∀ n ≥ N, ∀ p ∈ T, 0 < (P n).f p ∧ |ActivationStocks.profileStockOne (P n) h p - ActivationStocks.profileStockOne Q h p| ≤ C / n ∧ (same for profileStockTwo)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ModulatedCone.Repaired.profile_stocks_rate"
+          },
+          "destination": {
+            "fragment": "L1248"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1248,
+            "text": "theorem profile_stocks_rate {D D' : RadialDomain}\n    (W : ModulatedHistories.Window) (r : TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (patch : FiveProfileMoments.Patch) (hgap : W.right < patch.left)\n    (A : ℝ → ℝ) (hA : ContDiff ℝ ∞ A) (J : Set ℝ) (hJ : IsCompact J)\n    (c : ℝ → ℝ → ModulatedHistories.Coeff) (hc : ∀ n, ContDiff ℝ ∞ (c n))\n    (n₀ Cc : ℝ) (hCc : 0 ≤ Cc)\n    (hcoeff : ∀ n : ℝ, n₀ ≤ n → 1 ≤ n → JetBounds.FiniteJetBound 1 (c n) J (Cc / n))\n    (P : ℝ → Profiles D) (Q : Profiles D')\n    (hPf : ∀ n, (P n).f = ModulatedHistories.applyRepairF patch A (c n) (ModulatedHistories.localizedF W r f n))\n    (hPU : ∀ n, (P n).U = ModulatedHistories.applyRepairU patch A (c n) (ModulatedHistories.localizedU W r E U n))\n    (hQf : Q.f = f) (hQU : Q.U = U) (hP0 : ∀ n, (P n).pressure0 = Q.pressure0)\n    (T : Set Point) (hT : IsCompact T) (hTJ : ∀ p ∈ T, p.2 ∈ J)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

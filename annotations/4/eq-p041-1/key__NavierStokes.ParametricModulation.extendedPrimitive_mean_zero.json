@@ -1,25 +1,27 @@
 {
-  "id": "eq-p041-1/key/04.NavierStokes.ParametricModulation.extendedPrimitive_mean_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricModulation.extendedPrimitive_mean_zero",
-      "line": 253,
-      "module": "NavierStokes.ParametricModulation",
-      "path": "NavierStokes/ParametricModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean#L253"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricModulation.extendedPrimitive_mean_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricModulation.extendedPrimitive_mean_zero",
+        "module": "NavierStokes.ParametricModulation"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 253,
-        "text": "intervalIntegral (fun θ => extendedPrimitive χ f m c (p,θ)) 0 1 volume = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ParametricModulation.extendedPrimitive_mean_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L253",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 253,
+            "text": "theorem extendedPrimitive_mean_zero\n    {K U : Set P} (χ : CompactCutoff K U)\n    (f : P × ℝ → ℝ) (m c : P → ℝ)\n    (hf : ∀ p ∈ U, Continuous (fun θ => f (p, θ))) (p : P) :\n    intervalIntegral (fun θ => extendedPrimitive χ f m c (p, θ)) 0 1 volume = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

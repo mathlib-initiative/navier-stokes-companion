@@ -1,31 +1,33 @@
 {
-  "id": "proposition-9.1/attributed/1.NavierStokes.GaussianTailFlat.SlotFamily.error_all_gains",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaussianTailFlat.SlotFamily.error_all_gains",
-      "line": 638,
-      "module": "NavierStokes.GaussianTailFlat",
-      "path": "NavierStokes/GaussianTailFlat.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaussianTailFlat.lean#L638"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaussianTailFlat.SlotFamily.error_all_gains",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaussianTailFlat.SlotFamily.error_all_gains",
+        "module": "NavierStokes.GaussianTailFlat"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `UnweightedClass s N (g.error u f)` for every real `N`, where `g.error u f = L⁻¹ψ'(θ)u + (1-ψ(θ))f` is exactly (7.40), under the Gaussian weight bound `P ≤ exp(-c(θ-1/2)²L)` ((7.16)) plus `FlatEdges` and `BandScaleControl`.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 638,
-        "text": "theorem error_all_gains {s : StripData D} (g : SlotFamily s)\n    (edges : FlatEdges s) (scales : BandScaleControl s)\n    {P : ℕ → D → ℝ} {α c : ℝ} {u f : ℕ → D → E}\n    (hu : WaveClass s P α u) (hf : WaveClass s P α f) (hc : 0 < c)\n    (hP : ∀ n x, x ∈ s.domain →\n      P n x ≤ Real.exp (-c * (g.coordinate n x - 1 / 2) ^ 2 * g.length n))\n    (N : ℝ) : UnweightedClass s N (g.error u f)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.GaussianTailFlat.SlotFamily.error_all_gains",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: `UnweightedClass s N (g.error u f)` for every real `N`, where `g.error u f = L⁻¹ψ'(θ)u + (1-ψ(θ))f` is exactly (7.40), under the Gaussian weight bound `P ≤ exp(-c(θ-1/2)²L)` ((7.16)) plus `FlatEdges` and `BandScaleControl`.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L638",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaussianTailFlat.lean"
+          },
+          "snippet": {
+            "line": 638,
+            "text": "theorem error_all_gains {s : StripData D} (g : SlotFamily s)\n    (edges : FlatEdges s) (scales : BandScaleControl s)\n    {P : ℕ → D → ℝ} {α c : ℝ} {u f : ℕ → D → E}\n    (hu : WaveClass s P α u) (hf : WaveClass s P α f) (hc : 0 < c)\n    (hP : ∀ n x, x ∈ s.domain →\n      P n x ≤ Real.exp (-c * (g.coordinate n x - 1 / 2) ^ 2 * g.length n))\n    (N : ℝ) : UnweightedClass s N (g.error u f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

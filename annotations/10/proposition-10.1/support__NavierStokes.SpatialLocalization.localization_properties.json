@@ -1,27 +1,30 @@
 {
-  "id": "proposition-10.1/support/3.NavierStokes.SpatialLocalization.localization_properties",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SpatialLocalization.localization_properties",
-      "line": 561,
-      "module": "NavierStokes.SpatialLocalization",
-      "path": "NavierStokes/SpatialLocalization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpatialLocalization.lean#L561"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SpatialLocalization.localization_properties",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SpatialLocalization.localization_properties",
+        "module": "NavierStokes.SpatialLocalization"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 561,
-        "text": "theorem localization_properties (A : VelocityField) (p : PressureField)\n    (hA : ContDiffOn ℝ ∞ A (Iio (1 : ℝ) ×ˢ (univ : Set Space)))\n    (hp : ContDiffOn ℝ ∞ p (Iio (1 : ℝ) ×ˢ (univ : Set Space)))\n    (haxis : Tendsto (fun t : ℝ => ‖SpatialCurl.spatialCurl A (t, 0)‖) (𝓝[<] 1) atTop) :\n    ContDiffOn ℝ ∞ (localizedVelocity A) preSingularDomain ∧\n      ContDiffOn ℝ ∞ (localizedPressure p) preSingularDomain ∧\n      UnitSpatialPeriodsOn (Ico (0 : ℝ) 1) (localizedVelocity A) ∧\n      UnitSpatialPeriodsOn (Ico (0 : ℝ) 1) (localizedPressure p) ∧\n      (∀ x : Space, localizedVelocity A (0, x) = 0) ∧\n      (∀ t ∈ Ico (0 : ℝ) 1, ∀ x : Space,\n        spatialDivergence (localizedVelocity A) t x = 0) ∧\n      SpeedUnboundedAtOne (localizedVelocity A) ∧\n      (∀ z : SpaceTime, 3 / 4 < z.1 → z.2 ∈ plateau →\n        localizedVelocity A z = SpatialCurl.spatialCurl A z ∧\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.SpatialLocalization.localization_properties",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L561",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpatialLocalization.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 561,
+            "text": "theorem localization_properties (A : VelocityField) (p : PressureField)\n    (hA : ContDiffOn ℝ ∞ A (Iio (1 : ℝ) ×ˢ (univ : Set Space)))\n    (hp : ContDiffOn ℝ ∞ p (Iio (1 : ℝ) ×ˢ (univ : Set Space)))\n    (haxis : Tendsto (fun t : ℝ => ‖SpatialCurl.spatialCurl A (t, 0)‖) (𝓝[<] 1) atTop) :\n    ContDiffOn ℝ ∞ (localizedVelocity A) preSingularDomain ∧\n      ContDiffOn ℝ ∞ (localizedPressure p) preSingularDomain ∧\n      UnitSpatialPeriodsOn (Ico (0 : ℝ) 1) (localizedVelocity A) ∧\n      UnitSpatialPeriodsOn (Ico (0 : ℝ) 1) (localizedPressure p) ∧\n      (∀ x : Space, localizedVelocity A (0, x) = 0) ∧\n      (∀ t ∈ Ico (0 : ℝ) 1, ∀ x : Space,\n        spatialDivergence (localizedVelocity A) t x = 0) ∧\n      SpeedUnboundedAtOne (localizedVelocity A) ∧\n      (∀ z : SpaceTime, 3 / 4 < z.1 → z.2 ∈ plateau →\n        localizedVelocity A z = SpatialCurl.spatialCurl A z ∧\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

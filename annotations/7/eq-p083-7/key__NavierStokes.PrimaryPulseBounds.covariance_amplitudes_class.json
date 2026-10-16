@@ -1,23 +1,26 @@
 {
-  "id": "eq-p083-7/key/01.NavierStokes.PrimaryPulseBounds.covariance_amplitudes_class",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryPulseBounds.covariance_amplitudes_class",
-      "line": 899,
-      "module": "NavierStokes.PrimaryPulseBounds",
-      "path": "NavierStokes/PrimaryPulseBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryPulseBounds.lean#L899"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryPulseBounds.covariance_amplitudes_class"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryPulseBounds.covariance_amplitudes_class",
+        "module": "NavierStokes.PrimaryPulseBounds"
       },
-      "snippet": {
-        "line": 899,
-        "text": "MemClass s (fun n x => Real.sqrt (w n x)) 0 (fun n x => SmoothCovariance.amplitudes (H n x) (T n x) j), given the determinant gap hdet, the entry bound hentry, and the lower bound hlower : c * w n x ≤ weights (H n x) (T n x) j"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PrimaryPulseBounds.covariance_amplitudes_class"
+          },
+          "destination": {
+            "fragment": "L899",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryPulseBounds.lean"
+          },
+          "snippet": {
+            "line": 899,
+            "text": "theorem covariance_amplitudes_class\n    {r : ℕ → ℝ} {H : ℕ → E → SmoothCovariance.Mat2}\n    {T : ℕ → E → SmoothCovariance.Vec2} {w : ℕ → E → ℝ}\n    (hr : PhaseJetBounds.PolynomialJets (phaseDomain s) (fun n _ => r n))\n    (hrne : ∀ n, r n ≠ 0)\n    (hH : ∀ i j, PhaseJetBounds.PolynomialJets (phaseDomain s) (fun n x => H n x i j))\n    (hT : ∀ i, MemClass s w 0 (fun n x => T n x i))\n    {b M c : ℝ} (hb : 0 < b) (hM : 1 ≤ M) (hc : 0 < c)\n    (hdet : ∀ n x, x ∈ s.domain → b ≤ |(normalizedMatrix (r n) (H n x)).det|)\n    (hentry : ∀ n x, x ∈ s.domain → ∀ i j, |r n * H n x i j| ≤ M)\n    (hw : ∀ n x, x ∈ s.domain → 0 < w n x)\n    (hlower : ∀ n x, x ∈ s.domain → ∀ j,\n      c * w n x ≤ SmoothCovariance.weights (H n x) (T n x) j)\n    (j : Fin 2) :\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

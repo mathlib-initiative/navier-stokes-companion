@@ -1,26 +1,29 @@
 {
-  "id": "corollary-10.6/support/3.NavierStokesR3.ParabolicScaling.compressedCandidate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ParabolicScaling.compressedCandidate",
-      "line": 95,
-      "module": "NavierStokes.R3.ParabolicScaling",
-      "path": "NavierStokes/R3/ParabolicScaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ParabolicScaling.lean#L95"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ParabolicScaling.compressedCandidate",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ParabolicScaling.compressedCandidate",
+        "module": "NavierStokes.R3.ParabolicScaling"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 95,
-        "text": "theorem compressedCandidate {ν : ℝ} {u f : VelocityField} {p : PressureField} {K : Set Space}\n    (hc : ProblemStatement.CandidateProperties ν u p f K)\n    (hrest : ∀ t : ℝ, |t| ≤ 3 / 8 → ∀ x : Space, u (t, x) = 0 ∧ p (t, x) = 0)\n    {l : ℝ} (hl : 1 < l) :\n    ProblemStatement.CandidateProperties ν (velocity l u) (pressure l p) (force l f)\n      ((fun x : Space => l⁻¹ • x) '' K)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokesR3.ParabolicScaling.compressedCandidate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L95",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ParabolicScaling.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 95,
+            "text": "theorem compressedCandidate {ν : ℝ} {u f : VelocityField} {p : PressureField} {K : Set Space}\n    (hc : ProblemStatement.CandidateProperties ν u p f K)\n    (hrest : ∀ t : ℝ, |t| ≤ 3 / 8 → ∀ x : Space, u (t, x) = 0 ∧ p (t, x) = 0)\n    {l : ℝ} (hl : 1 < l) :\n    ProblemStatement.CandidateProperties ν (velocity l u) (pressure l p) (force l f)\n      ((fun x : Space => l⁻¹ • x) '' K)"
+          }
+        }
       }
     }
-  }
+  ]
 }

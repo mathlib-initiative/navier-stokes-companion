@@ -1,26 +1,29 @@
 {
-  "id": "eq-4.26/support/10.NavierStokes.LeadingStressWeights.closed_shear_positive",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.closed_shear_positive",
-      "line": 826,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L826"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.closed_shear_positive",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.closed_shear_positive",
+        "module": "NavierStokes.LeadingStressWeights"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 826,
-        "text": "FullTrueCone v → eta ∈ Icc (-1) 1 → y ∈ Icc (leftEdge W) (rightEdge W) → 0 < logShearA v.profiles (eta, y) ∧ 2 < logSpeed v.profiles (eta, y)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.LeadingStressWeights.closed_shear_positive",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L826",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 826,
+            "text": "theorem closed_shear_positive (hcone : FullTrueCone v) {eta y : ℝ}\n    (hη : eta ∈ Icc (-1 : ℝ) 1) (hy : y ∈ Icc (leftEdge W) (rightEdge W)) :\n    0 < logShearA v.profiles (eta, y) ∧ 2 < logSpeed v.profiles (eta, y)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-p012-4/key/02.NavierStokes.ActualPrimaryCovariance.averagedDefect_meanClass",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPrimaryCovariance.averagedDefect_meanClass",
-      "line": 847,
-      "module": "NavierStokes.ActualPrimaryCovariance",
-      "path": "NavierStokes/ActualPrimaryCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryCovariance.lean#L847"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPrimaryCovariance.averagedDefect_meanClass"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPrimaryCovariance.averagedDefect_meanClass",
+        "module": "NavierStokes.ActualPrimaryCovariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 847,
-        "text": "theorem averagedDefect_meanClass (B N0 : ℕ) (i : Fin 2) (beta : ℝ) : MeanClass (nativeStrip nominal standardRegion) beta (averagedDefect B N0 i), where averagedDefect B N0 i = StateMomentBalances.meanBar (tangentCovariance B N0 0 i.succ) - leadingStress i (def at line 737) and leadingStress i = the i-th component of BaseContextAssembly.leadingVirtualStress (lines 547-549)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ActualPrimaryCovariance.averagedDefect_meanClass"
+          },
+          "destination": {
+            "fragment": "L847",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 847,
+            "text": "theorem averagedDefect_meanClass (B N0 : ℕ) (i : Fin 2) (beta : ℝ) :\n    MeanClass (BaseContextAssembly.nativeStrip nominal standardRegion) beta (averagedDefect B N0 i)"
+          }
+        }
       }
     }
-  }
+  ]
 }

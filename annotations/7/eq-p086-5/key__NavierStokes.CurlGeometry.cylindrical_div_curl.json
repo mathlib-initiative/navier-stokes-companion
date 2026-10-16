@@ -1,26 +1,28 @@
 {
-  "id": "eq-p086-5/key/02.NavierStokes.CurlGeometry.cylindrical_div_curl",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CurlGeometry.cylindrical_div_curl",
-      "line": 157,
-      "module": "NavierStokes.CurlGeometry",
-      "path": "NavierStokes/CurlGeometry.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlGeometry.lean#L157"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CurlGeometry.cylindrical_div_curl",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CurlGeometry.cylindrical_div_curl",
+        "module": "NavierStokes.CurlGeometry"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 157,
-        "text": "(hrr : ∀ f, Dr (q * f) = q * Dr f - q ^ 2 * f) (hzq : ∀ f, Dz (q * f) = q * Dz f) (hrθ, hrz, hθz : pairwise commutation) : cylindricalDiv Dr Dθ Dz q (cylindricalCurl Dr Dθ Dz q A) = 0 — the same cancellation as pure algebra, q = 1/R"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.CurlGeometry.cylindrical_div_curl",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L157",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlGeometry.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 157,
+            "text": "theorem cylindrical_div_curl {F : Type*} [CommRing F]\n    (Dr Dθ Dz : F →+ F) (q : F)\n    (hrr : ∀ f, Dr (q * f) = q * Dr f - q ^ 2 * f)\n    (hzq : ∀ f, Dz (q * f) = q * Dz f)\n    (hrθ : ∀ f, Dr (Dθ f) = Dθ (Dr f))\n    (hrz : ∀ f, Dr (Dz f) = Dz (Dr f))\n    (hθz : ∀ f, Dθ (Dz f) = Dz (Dθ f))\n    (A : Vec3 F) : cylindricalDiv Dr Dθ Dz q (cylindricalCurl Dr Dθ Dz q A) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

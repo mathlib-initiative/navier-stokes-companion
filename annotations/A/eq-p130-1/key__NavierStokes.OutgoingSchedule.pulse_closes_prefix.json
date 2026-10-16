@@ -1,26 +1,28 @@
 {
-  "id": "eq-p130-1/key/03.NavierStokes.OutgoingSchedule.pulse_closes_prefix",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingSchedule.pulse_closes_prefix",
-      "line": 619,
-      "module": "NavierStokes.OutgoingSchedule",
-      "path": "NavierStokes/OutgoingSchedule.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean#L619"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingSchedule.pulse_closes_prefix",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingSchedule.pulse_closes_prefix",
+        "module": "NavierStokes.OutgoingSchedule"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 619,
-        "text": "prefixM c * eta + momentScale c 0 * shape eta * ∫ … = 0 ∧ prefixJ c * eta * shape eta + … = 0   -- the paper's M = J = 0 at the end"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.OutgoingSchedule.pulse_closes_prefix",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L619",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 619,
+            "text": "theorem pulse_closes_prefix (c : Parameters) (amp : ℝ → ℝ) (eta : ℝ) :\n    prefixM c * eta + momentScale c 0 * shape eta *\n      (∫ x in (1 : ℝ)..Real.exp c.pulseLength,\n        x ^ c.exponents 0 * radialPulse c amp eta x) = 0 ∧\n    prefixJ c * eta * shape eta + momentScale c 1 * (shape eta)^2 *\n      (∫ x in (1 : ℝ)..Real.exp c.pulseLength,\n        x ^ c.exponents 1 * radialPulse c amp eta x) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

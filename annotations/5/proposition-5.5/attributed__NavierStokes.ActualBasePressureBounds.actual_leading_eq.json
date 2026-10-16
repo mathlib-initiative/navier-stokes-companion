@@ -1,29 +1,31 @@
 {
-  "id": "proposition-5.5/attributed/1.NavierStokes.ActualBasePressureBounds.actual_leading_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualBasePressureBounds.actual_leading_eq",
-      "line": 63,
-      "module": "NavierStokes.ActualBasePressureBounds",
-      "path": "NavierStokes/ActualBasePressureBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualBasePressureBounds.lean#L63"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualBasePressureBounds.actual_leading_eq",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualBasePressureBounds.actual_leading_eq",
+        "module": "NavierStokes.ActualBasePressureBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: The pressure analogue: EqOn (FinalSlowBase.pressure ...) (leadingPressure ...) on the same cartesian exterior of nominalOuterX W."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 63,
-        "text": "theorem actual_leading_eq (upper : ℝ) (B : ℕ) :\n    EqOn (FinalSlowBase.pressure H v upper B)\n      (cartesianMonomial F.data.h (-2 * CoordinateAlgebra.A F.data.h)\n        ((FinalSlowBase.coefficients H v).pressure 0))\n      (BaseExterior.cartesianExterior F.data.h (AssembledSlowBase.nominalOuterX W))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActualBasePressureBounds.actual_leading_eq",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: The pressure analogue: EqOn (FinalSlowBase.pressure ...) (leadingPressure ...) on the same cartesian exterior of nominalOuterX W."
+          },
+          "destination": {
+            "fragment": "L63",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualBasePressureBounds.lean"
+          },
+          "snippet": {
+            "line": 63,
+            "text": "theorem actual_leading_eq (upper : ℝ) (B : ℕ) :\n    EqOn (FinalSlowBase.pressure H v upper B)\n      (cartesianMonomial F.data.h (-2 * CoordinateAlgebra.A F.data.h)\n        ((FinalSlowBase.coefficients H v).pressure 0))\n      (BaseExterior.cartesianExterior F.data.h (AssembledSlowBase.nominalOuterX W))"
+          }
+        }
       }
     }
-  }
+  ]
 }

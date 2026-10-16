@@ -1,25 +1,27 @@
 {
-  "id": "eq-p013-1/key/05.NavierStokes.CorrectionStep.CycleState.iterate_succ",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.CycleState.iterate_succ",
-      "line": 6960,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L6960"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.CycleState.iterate_succ",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.CycleState.iterate_succ",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 6960,
-        "text": "iterate p c seed (n+1) = (iterate p c seed n).step (p n) c   (with step.state := p.next u.coefficients c u.state)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.CorrectionStep.CycleState.iterate_succ",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L6960",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 6960,
+            "text": "theorem iterate_succ (p : ℕ → CycleParameters ι) (c : Context CyclePoint) (seed : CycleState ι) (n : ℕ) :\n    iterate p c seed (n+1) = (iterate p c seed n).step (p n) c"
+          }
+        }
       }
     }
-  }
+  ]
 }

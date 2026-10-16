@@ -1,25 +1,27 @@
 {
-  "id": "eq-p053-5/key/01.NavierStokes.PositiveOrderMoments.pressure_weighted_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveOrderMoments.pressure_weighted_identity",
-      "line": 615,
-      "module": "NavierStokes.PositiveOrderMoments",
-      "path": "NavierStokes/PositiveOrderMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean#L615"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveOrderMoments.pressure_weighted_identity"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveOrderMoments.pressure_weighted_identity",
+        "module": "NavierStokes.PositiveOrderMoments"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 615,
-        "text": "positiveIntegral (fun R => R * ProfileHistories.primitive q (R, eta)) = -(1 / 2 : ℝ) * positiveIntegral (fun R => R ^ 2 * q (R, eta)), with positiveIntegral f = ∫ R in Ioi (0:ℝ), f R, under hq : ContDiff ℝ ∞ q, hs : q (R, eta) = 0 for B ≤ R, hm : positiveIntegral (q (·, eta)) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PositiveOrderMoments.pressure_weighted_identity"
+          },
+          "destination": {
+            "fragment": "L615",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 615,
+            "text": "theorem pressure_weighted_identity {q : JointProfile} (hq : ContDiff ℝ ∞ q) {B : ℝ}\n    (hB : 0 ≤ B) (hs : ∀ eta R, B ≤ R → q (R, eta) = 0)\n    (hm : ∀ eta, positiveIntegral (fun R => q (R, eta)) = 0) (eta : ℝ) :\n    positiveIntegral (fun R => R * ProfileHistories.primitive q (R, eta)) =\n      -(1 / 2 : ℝ) * positiveIntegral (fun R => R ^ 2 * q (R, eta))"
+          }
+        }
       }
     }
-  }
+  ]
 }

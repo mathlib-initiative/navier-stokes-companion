@@ -1,26 +1,28 @@
 {
-  "id": "eq-p094-4/key/01.NavierStokes.IntegratedMeanBalances.pressure_moment_reconstructed",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.IntegratedMeanBalances.pressure_moment_reconstructed",
-      "line": 154,
-      "module": "NavierStokes.IntegratedMeanBalances",
-      "path": "NavierStokes/IntegratedMeanBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/IntegratedMeanBalances.lean#L154"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.IntegratedMeanBalances.pressure_moment_reconstructed",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.IntegratedMeanBalances.pressure_moment_reconstructed",
+        "module": "NavierStokes.IntegratedMeanBalances"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 154,
-        "text": "theorem pressure_moment_reconstructed (P : ℝ) … (hd : ∀ r, deriv p r = g r - ρ r * P) : moment 1 p = -(1 / 2 : ℝ) * moment 2 g + (moment 2 ρ / 2) * P"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.IntegratedMeanBalances.pressure_moment_reconstructed",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L154",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/IntegratedMeanBalances.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 154,
+            "text": "theorem pressure_moment_reconstructed {p g ρ : ℝ → ℝ} (P : ℝ)\n    (hp : ContDiff ℝ ∞ p) (hsp : HasCompactSupport p)\n    (hg : Continuous g) (hsg : HasCompactSupport g)\n    (hρ : Continuous ρ) (hsρ : HasCompactSupport ρ)\n    (hd : ∀ r, deriv p r = g r - ρ r * P) :\n    moment 1 p = -(1 / 2 : ℝ) * moment 2 g + (moment 2 ρ / 2) * P"
+          }
+        }
       }
     }
-  }
+  ]
 }

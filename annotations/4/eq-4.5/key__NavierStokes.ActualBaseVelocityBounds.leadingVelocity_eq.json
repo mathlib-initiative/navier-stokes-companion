@@ -1,25 +1,27 @@
 {
-  "id": "eq-4.5/key/01.NavierStokes.ActualBaseVelocityBounds.leadingVelocity_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualBaseVelocityBounds.leadingVelocity_eq",
-      "line": 362,
-      "module": "NavierStokes.ActualBaseVelocityBounds",
-      "path": "NavierStokes/ActualBaseVelocityBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualBaseVelocityBounds.lean#L362"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualBaseVelocityBounds.leadingVelocity_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualBaseVelocityBounds.leadingVelocity_eq",
+        "module": "NavierStokes.ActualBaseVelocityBounds"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 362,
-        "text": "leadingVelocity h C d z = AxisymmetricResidual.velocity (fun _ => 0) (BaseExterior.leadingAngular h C d) (fun _ => 0) z  (the C⁻¹ q^{-A-1/2} φ swirl part of (4.5) as a Cartesian field)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ActualBaseVelocityBounds.leadingVelocity_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L362",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualBaseVelocityBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 362,
+            "text": "theorem leadingVelocity_eq (h C : ℝ) (d : Coefficients) (z : SpaceTime) :\n    leadingVelocity h C d z =\n      AxisymmetricResidual.velocity (fun _ => 0) (BaseExterior.leadingAngular h C d)\n        (fun _ => 0) z"
+          }
+        }
       }
     }
-  }
+  ]
 }

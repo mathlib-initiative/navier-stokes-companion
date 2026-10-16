@@ -1,25 +1,27 @@
 {
-  "id": "eq-p043-2/key/01.NavierStokes.ModulatedHistories.physical_mixed_edits_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedHistories.physical_mixed_edits_bound",
-      "line": 869,
-      "module": "NavierStokes.ModulatedHistories",
-      "path": "NavierStokes/ModulatedHistories.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean#L869"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedHistories.physical_mixed_edits_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedHistories.physical_mixed_edits_bound",
+        "module": "NavierStokes.ModulatedHistories"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 869,
-        "text": "∃ K > 0, ∀ c, ∀ eps ≥ 0, FiniteJetBound q c S eps → ∀ eta ∈ S, ∀ k ≤ q, ∀ j ≤ q, ∀ X, ‖iteratedFDeriv ℝ j (fun e => iteratedDeriv k (fun x => editU P A c (x, e)) X) eta‖ ≤ K * eps ∧ (same for editE)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ModulatedHistories.physical_mixed_edits_bound"
+          },
+          "destination": {
+            "fragment": "L869",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 869,
+            "text": "theorem physical_mixed_edits_bound (P : FiveProfileMoments.Patch) (S : Set ℝ)\n    (hS : IsCompact S) (A : ℝ → ℝ) (hA : ContDiff ℝ ∞ A) (q : ℕ) :\n    ∃ K : ℝ, 0 < K ∧ ∀ c : ℝ → Coeff, ContDiff ℝ ∞ c → ∀ eps : ℝ, 0 ≤ eps →\n      JetBounds.FiniteJetBound q c S eps → ∀ eta ∈ S, ∀ k ≤ q, ∀ j ≤ q, ∀ X : ℝ,\n        ‖iteratedFDeriv ℝ j (fun e => iteratedDeriv k (fun x => editU P A c (x, e)) X) eta‖ ≤ K * eps ∧\n        ‖iteratedFDeriv ℝ j (fun e => iteratedDeriv k (fun x => editE P A c (x, e)) X) eta‖ ≤ K * eps"
+          }
+        }
       }
     }
-  }
+  ]
 }

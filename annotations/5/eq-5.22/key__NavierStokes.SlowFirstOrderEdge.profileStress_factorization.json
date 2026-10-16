@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.22/key/01.NavierStokes.SlowFirstOrderEdge.profileStress_factorization",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowFirstOrderEdge.profileStress_factorization",
-      "line": 211,
-      "module": "NavierStokes.SlowFirstOrderEdge",
-      "path": "NavierStokes/SlowFirstOrderEdge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowFirstOrderEdge.lean#L211"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowFirstOrderEdge.profileStress_factorization",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowFirstOrderEdge.profileStress_factorization",
+        "module": "NavierStokes.SlowFirstOrderEdge"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 211,
-        "text": "profileStress C d y0 y = (FlatCutoff.edge 4 y.2 / y.2 ^ 3) * stressFactor C d y0 y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SlowFirstOrderEdge.profileStress_factorization",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L211",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowFirstOrderEdge.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 211,
+            "text": "theorem profileStress_factorization (C : ℝ) (d : TailData) (y0 : ℝ) (y : ℝ × ℝ) :\n    profileStress C d y0 y = (FlatCutoff.edge 4 y.2 / y.2 ^ 3) * stressFactor C d y0 y"
+          }
+        }
       }
     }
-  }
+  ]
 }

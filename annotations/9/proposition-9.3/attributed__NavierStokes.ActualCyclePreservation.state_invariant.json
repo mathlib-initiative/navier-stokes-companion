@@ -1,36 +1,57 @@
 {
-  "id": "proposition-9.3/attributed/1.NavierStokes.ActualCyclePreservation.state_invariant",
-  "location": {
-    "page": 103,
-    "rect": [0.12854, 0.555372, 0.745098, 0.328926]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCyclePreservation.state_invariant",
-      "line": 835,
-      "module": "NavierStokes.ActualCyclePreservation",
-      "path": "NavierStokes/ActualCyclePreservation.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 103,
+        "rect": [0.12854, 0.555372, 0.745098, 0.328926]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-9.3@p103"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean#L835"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCyclePreservation.state_invariant",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 104,
+        "rect": [0.12854, 0.103306, 0.745098, 0.283471]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: theorem state_invariant (B N0 : ℕ) (hN : geometricThreshold ≤ N0) (j : ℕ) : Invariant (ActualIterationLedger.sigma j) (state B N0 j). `state B N0 j` is `CycleState.iterate (fun _ => fixedParameters B N0) …` (:149). Supplies, for the stage-j state, the invariant bundle: inputSupport, sourceBand, resi",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "region": "proposition-9.3@p103",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 835,
-        "text": "theorem state_invariant (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (j : ℕ) :\n    Invariant (ActualIterationLedger.sigma j) (state B N0 j)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-9.3@p104"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCyclePreservation.state_invariant",
+        "module": "NavierStokes.ActualCyclePreservation"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActualCyclePreservation.state_invariant",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: theorem state_invariant (B N0 : ℕ) (hN : geometricThreshold ≤ N0) (j : ℕ) : Invariant (ActualIterationLedger.sigma j) (state B N0 j). `state B N0 j` is `CycleState.iterate (fun _ => fixedParameters B N0) …` (:149). Supplies, for the stage-j state, the invariant bundle: inputSupport, sourceBand, resi",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L835",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean"
+          },
+          "snippet": {
+            "line": 835,
+            "text": "theorem state_invariant (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (j : ℕ) :\n    Invariant (ActualIterationLedger.sigma j) (state B N0 j)"
+          }
+        }
+      }
+    }
+  ]
 }

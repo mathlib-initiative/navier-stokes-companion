@@ -1,26 +1,29 @@
 {
-  "id": "eq-5.42/key/04.NavierStokes.BaseRadialJets.scaled_sum_polynomial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseRadialJets.scaled_sum_polynomial",
-      "line": 204,
-      "module": "NavierStokes.BaseRadialJets",
-      "path": "NavierStokes/BaseRadialJets.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseRadialJets.lean#L204"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseRadialJets.scaled_sum_polynomial",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseRadialJets.scaled_sum_polynomial",
+        "lines": [204, 204],
+        "module": "NavierStokes.BaseRadialJets"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 204,
-        "text": "have he := normalized_error_envelope hh hqlo hqhi hlo Q hQ hsmall err hs … with err y = slowSum a h f y - f 0 y.2 — a Q^{2h} envelope for the slow-sum error, weakened at line 218 by hec.to_polynomial to the O(1) conclusion"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.BaseRadialJets.scaled_sum_polynomial",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L204",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseRadialJets.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 189,
+            "text": "theorem scaled_sum_polynomial {ι : Type*} {D : Domain ι Slow}\n    {a : ℕ → ℕ} {h r M qlo qhi lo hi : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (hqlo : 0 < qlo) (hqhi : 0 < qhi) (hlo : 0 < lo)\n    (H : GeometryBounds D h r M qlo qhi lo hi)\n    {f : ℕ → Inner → ℝ} (hf : ∀ j, ContDiff ℝ ∞ (f j))\n    (ha : SlowBorelBase.AdmissibleScales h f (SlowBorelBase.innerBox lo hi) a)\n    (Q : ι → ℝ) (hQ : ∀ i, 0 < Q i) (hQ1 : ∀ i, Q i ≤ 1)\n    (hsmall : ∀ i, Q i * qhi ≤ 1) :\n    PolynomialJets (unitScale D) (fun i p =>\n      SlowBorelBase.slowSum a h f (SlowBorelBase.scaleMap (Q i) (normalizedCoordinates h p)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

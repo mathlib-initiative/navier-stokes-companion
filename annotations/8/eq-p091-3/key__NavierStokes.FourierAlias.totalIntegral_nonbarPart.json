@@ -1,26 +1,28 @@
 {
-  "id": "eq-p091-3/key/05.NavierStokes.FourierAlias.totalIntegral_nonbarPart",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FourierAlias.totalIntegral_nonbarPart",
-      "line": 462,
-      "module": "NavierStokes.FourierAlias",
-      "path": "NavierStokes/FourierAlias.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FourierAlias.lean#L462"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FourierAlias.totalIntegral_nonbarPart",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FourierAlias.totalIntegral_nonbarPart",
+        "module": "NavierStokes.FourierAlias"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 462,
-        "text": "totalIntegral M v (nonbarPart f) z = totalIntegral M v f z when ∫ U in a..b, sliceMean f U = 0: the replacement of F by its zero-average part F^∘"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.FourierAlias.totalIntegral_nonbarPart",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L462",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FourierAlias.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 462,
+            "text": "theorem totalIntegral_nonbarPart {a b M : ℝ} {v : Plane} {f : State → ℂ}\n    (hf : ContDiff ℝ ∞ f) (hs : RadialAlias.RadiallySupported a b f)\n    (hm : (∫ U in a..b, sliceMean f U) = 0) (z : State) :\n    TransportPrimitive.totalIntegral M v (nonbarPart f) z =\n      TransportPrimitive.totalIntegral M v f z"
+          }
+        }
       }
     }
-  }
+  ]
 }

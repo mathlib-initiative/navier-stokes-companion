@@ -1,26 +1,28 @@
 {
-  "id": "eq-p084-2/key/01.NavierStokes.PartitionedCovariance.physical_scale_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.physical_scale_identity",
-      "line": 791,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L791"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.physical_scale_identity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.physical_scale_identity",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 791,
-        "text": "(Q ^ (-velocityExponent h)) ^ 2 * Q ^ h * (Q / q) ^ (velocityExponent h + 1 / 2) = q ^ (-velocityExponent h - 1 / 2), for 0 < Q, 0 < q"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PartitionedCovariance.physical_scale_identity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L791",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 791,
+            "text": "theorem physical_scale_identity {Q q : ℝ} (hQ : 0 < Q) (hq : 0 < q) (h : ℝ) :\n    (Q ^ (-velocityExponent h)) ^ 2 * Q ^ h *\n      (Q / q) ^ (velocityExponent h + 1 / 2) = q ^ (-velocityExponent h - 1 / 2)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p077-1/key/02.NavierStokes.PhaseEstimates.eventually_band_conditions",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhaseEstimates.eventually_band_conditions",
-      "line": 1038,
-      "module": "NavierStokes.PhaseEstimates",
-      "path": "NavierStokes/PhaseEstimates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseEstimates.lean#L1038"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhaseEstimates.eventually_band_conditions",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhaseEstimates.eventually_band_conditions",
+        "module": "NavierStokes.PhaseEstimates"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1038,
-        "text": "(hh : 0 < h) : ∀ᶠ n in atTop, 1 ≤ S n ∧ S n ^ 2 * epsilon h n ^ 2 ≤ 1 ∧ S n ^ 2 / (carrier h n : ℝ) ≤ 1 ∧ epsilon h n * S n ^ 2 ≤ 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PhaseEstimates.eventually_band_conditions",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1038",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseEstimates.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1038,
+            "text": "theorem eventually_band_conditions (h : ℝ) (hh : 0 < h) :\n    ∀ᶠ n : ℕ in atTop,\n      1 ≤ ChartScales.S n ∧\n      ChartScales.S n ^ 2 * ChartScales.epsilon h n ^ 2 ≤ 1 ∧\n      ChartScales.S n ^ 2 / (ChartScales.carrier h n : ℝ) ≤ 1 ∧\n      ChartScales.epsilon h n * ChartScales.S n ^ 2 ≤ 1"
+          }
+        }
       }
     }
-  }
+  ]
 }

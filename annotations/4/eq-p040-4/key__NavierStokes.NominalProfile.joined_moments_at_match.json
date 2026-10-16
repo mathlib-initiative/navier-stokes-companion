@@ -1,24 +1,27 @@
 {
-  "id": "eq-p040-4/key/01.NavierStokes.NominalProfile.joined_moments_at_match",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalProfile.joined_moments_at_match",
-      "line": 443
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L443"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalProfile.joined_moments_at_match",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalProfile.joined_moments_at_match",
+        "module": "NavierStokes.NominalProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 443,
-        "text": "theorem joined_moments_at_match (F : Profile) {C T : ℝ} (hC : 0 < C) (hT : 0 < T) (hsep …) (li oldf oldU) (eta) (hs : SmallDebt …) (hold …) (hint …) : moments (joinedU F C T li oldf oldU) (joinedE F C T li oldf oldU) matchFraction eta = moments F.U F.E matchFraction eta"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.NominalProfile.joined_moments_at_match",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L443"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 443,
+            "text": "theorem joined_moments_at_match (F : Profile) {C T : ℝ} (hC : 0 < C) (hT : 0 < T)\n    (hsep : ShapeTransition.separation T C F.data.core.P ≤ Real.exp (-8))\n    (li : ℝ → ℝ) (oldf oldU : Field) (eta : ℝ)\n    (hs : SmallDebt F (actualDebt F C T li oldf oldU) eta)\n    (hold : ∀ x ∈ Ioo resetPatch.left resetPatch.right,\n      oldf (matchingRadius F C * x, eta) =\n        C⁻¹ * Real.exp (Real.log (matchingRadius F C * x / Xi) / 10 + li eta) /\n          Real.sqrt (2 * (matchingRadius F C * x)))\n    (hint : ∀ i : Fin 5, IntegrableOn (fun x => density\n      (fun t => baseU F C oldU (t, eta)) (fun t => baseE F C T li oldf (t, eta)) x i)\n        (Ioc 0 matchFraction)) :\n    moments (joinedU F C T li oldf oldU) (joinedE F C T li oldf oldU) matchFraction eta =\n      moments F.U F.E matchFraction eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,26 @@
 {
-  "id": "eq-p042-7/key/01.NavierStokes.FiveProfileMoments.momentMatrix_det_ne_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveProfileMoments.momentMatrix_det_ne_zero",
-      "line": 202
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L202"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveProfileMoments.momentMatrix_det_ne_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveProfileMoments.momentMatrix_det_ne_zero",
+        "module": "NavierStokes.FiveProfileMoments"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 202,
-        "text": "(momentMatrix P a).det ≠ 0 given Injective a — the paper's 'They are distinct since λ > 0. By Lemma 4.7, both blocks are invertible'"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.FiveProfileMoments.momentMatrix_det_ne_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L202"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 202,
+            "text": "theorem momentMatrix_det_ne_zero (P : Patch) (a : Fin n → ℝ) (ha : Injective a) :\n    (momentMatrix P a).det ≠ 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

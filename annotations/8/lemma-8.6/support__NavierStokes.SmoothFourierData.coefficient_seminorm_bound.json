@@ -1,32 +1,57 @@
 {
-  "id": "lemma-8.6/support/3.NavierStokes.SmoothFourierData.coefficient_seminorm_bound",
-  "location": {
-    "page": 95,
-    "rect": [0.12854, 0.703306, 0.745098, 0.152893]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothFourierData.coefficient_seminorm_bound",
-      "line": 368,
-      "module": "NavierStokes.SmoothFourierData",
-      "path": "NavierStokes/SmoothFourierData.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothFourierData.lean#L368"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothFourierData.coefficient_seminorm_bound",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 95,
+        "rect": [0.12854, 0.703306, 0.745098, 0.152893]
       },
-      "declaration_verdict": null,
-      "region": "lemma-8.6@p095",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 368,
-        "text": "theorem coefficient_seminorm_bound {f : Plane → ℂ} (hf : ContDiff ℝ ∞ f)\n    (hp : UnitPeriodic f) (p : ℕ) {C : ℝ}\n    (hzero : ∀ x ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) 1, ‖f (x, y)‖ ≤ C)\n    (hfirst : ∀ x ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) 1,\n      ‖xJet (p + 4) f (x, y)‖ ≤ C)\n    (hsecond : ∀ x ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) 1,\n      ‖xJet (p + 4) (swapFunction f) (x, y)‖ ≤ C) :\n    coeffSeminorm p (coefficient f) ≤\n      (3 ^ (p + 4) * C) * ∑' k : Frequency, (weight k ^ 4)⁻¹"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p095"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 96,
+        "rect": [0.12854, 0.103306, 0.745098, 0.231405]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p096"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "type": "lean",
+      "uri": "https://github.com/openai/NavierStokesAndEuler",
+      "version": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "location": {
+        "declaration": "NavierStokes.SmoothFourierData.coefficient_seminorm_bound",
+        "module": "NavierStokes.SmoothFourierData"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.SmoothFourierData.coefficient_seminorm_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L368",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothFourierData.lean",
+            "resolution": "exact"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 368,
+            "text": "theorem coefficient_seminorm_bound {f : Plane → ℂ} (hf : ContDiff ℝ ∞ f)\n    (hp : UnitPeriodic f) (p : ℕ) {C : ℝ}\n    (hzero : ∀ x ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) 1, ‖f (x, y)‖ ≤ C)\n    (hfirst : ∀ x ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) 1,\n      ‖xJet (p + 4) f (x, y)‖ ≤ C)\n    (hsecond : ∀ x ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) 1,\n      ‖xJet (p + 4) (swapFunction f) (x, y)‖ ≤ C) :\n    coeffSeminorm p (coefficient f) ≤\n      (3 ^ (p + 4) * C) * ∑' k : Frequency, (weight k ^ 4)⁻¹"
+          }
+        }
+      }
+    }
+  ]
 }

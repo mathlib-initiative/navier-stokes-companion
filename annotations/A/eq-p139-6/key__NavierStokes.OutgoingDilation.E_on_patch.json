@@ -1,25 +1,27 @@
 {
-  "id": "eq-p139-6/key/01.NavierStokes.OutgoingDilation.E_on_patch",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingDilation.E_on_patch",
-      "line": 504,
-      "module": "NavierStokes.OutgoingDilation",
-      "path": "NavierStokes/OutgoingDilation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean#L504"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingDilation.E_on_patch",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingDilation.E_on_patch",
+        "module": "NavierStokes.OutgoingDilation"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 504,
-        "text": "E F XR (patchRadius F XR * x, eta) = shapedPatchAmplitude F eta * x ^ (-(1 / 2 + F.data.core.lam)) — the unmodified profile on the patch"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.OutgoingDilation.E_on_patch",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L504",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 504,
+            "text": "theorem E_on_patch (F : Profile) (XR eta x : ℝ) (hXR : 0 < XR)\n    (hx : x ∈ Icc compensationPatch.left compensationPatch.right) :\n    E F XR (patchRadius F XR * x, eta) =\n      shapedPatchAmplitude F eta * x ^ (-(1 / 2 + F.data.core.lam))"
+          }
+        }
       }
     }
-  }
+  ]
 }

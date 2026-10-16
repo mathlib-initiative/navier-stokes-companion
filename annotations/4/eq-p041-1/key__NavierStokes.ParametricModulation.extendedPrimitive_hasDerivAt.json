@@ -1,25 +1,27 @@
 {
-  "id": "eq-p041-1/key/03.NavierStokes.ParametricModulation.extendedPrimitive_hasDerivAt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricModulation.extendedPrimitive_hasDerivAt",
-      "line": 271,
-      "module": "NavierStokes.ParametricModulation",
-      "path": "NavierStokes/ParametricModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean#L271"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricModulation.extendedPrimitive_hasDerivAt",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricModulation.extendedPrimitive_hasDerivAt",
+        "module": "NavierStokes.ParametricModulation"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 271,
-        "text": "(hp : p ∈ K) : HasDerivAt (fun s => extendedPrimitive χ f m c (p,s)) (c p * (f (p,θ) - m p)) θ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ParametricModulation.extendedPrimitive_hasDerivAt",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L271",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 271,
+            "text": "theorem extendedPrimitive_hasDerivAt\n    {K U : Set P} (χ : CompactCutoff K U)\n    (f : P × ℝ → ℝ) (m c : P → ℝ)\n    (hf : ∀ p ∈ U, Continuous (fun θ => f (p, θ)))\n    (p : P) (hp : p ∈ K) (θ : ℝ) :\n    HasDerivAt (fun s => extendedPrimitive χ f m c (p, s))\n      (c p * (f (p, θ) - m p)) θ"
+          }
+        }
       }
     }
-  }
+  ]
 }

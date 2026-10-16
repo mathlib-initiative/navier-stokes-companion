@@ -1,25 +1,28 @@
 {
-  "id": "eq-p081-3/key/02.NavierStokes.GrowingMode.scaled_growing_mode_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GrowingMode.scaled_growing_mode_bounds",
-      "line": 365,
-      "module": "NavierStokes.GrowingMode",
-      "path": "NavierStokes/GrowingMode.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GrowingMode.lean#L365"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GrowingMode.scaled_growing_mode_bounds"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GrowingMode.scaled_growing_mode_bounds",
+        "module": "NavierStokes.GrowingMode"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 365,
-        "text": "(hslot : b - a ≤ L * S) (hP : ∀ t ∈ Icc a b, HasDerivAt P ((lam t - referenceDamping t) * P t) t) … : ∀ t ∈ Icc a b, … Real.exp (-(D + 2*C) * L) * (z a 0 / P a) * P t ≤ z t 0 ∧ z t 0 ≤ Real.exp ((D + 2*C) * L) * (z a 0 / P a) * P t; the step hexponent at line 409, ((D + 2*C)/S) * (t - a) ≤ (D + 2*C) * L, is the paper's Cv/S_* ≤ C L_s/S_* ≤ C"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GrowingMode.scaled_growing_mode_bounds"
+          },
+          "destination": {
+            "fragment": "L365",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GrowingMode.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 365,
+            "text": "theorem scaled_growing_mode_bounds\n    {a b S C D L lamMin : ℝ} (hab : a ≤ b)\n    (hlamMin : 0 < lamMin) (hC : 0 ≤ C) (hD : 0 ≤ D) (hS : 0 < S)\n    (hlarge : 2 * coneConstant lamMin C ≤ S) (hslot : b - a ≤ L * S)\n    (lam damping referenceDamping e11 e12 e21 e22 P : ℝ → ℝ) {z : ℝ → State}\n    (hA : ContinuousOn (fun t =>\n      modalOperator (lam t) (damping t) (e11 t) (e12 t) (e21 t) (e22 t)) (Icc a b))\n    (hode : ∀ t ∈ Icc a b, HasDerivAt z\n      (modalOperator (lam t) (damping t) (e11 t) (e12 t) (e21 t) (e22 t) (z t)) t)\n    (hlam : ∀ t ∈ Icc a b, lamMin ≤ lam t)\n    (herr : ∀ t ∈ Icc a b,\n      |e11 t| ≤ C / S ∧ |e12 t| ≤ C / S ∧ |e21 t| ≤ C / S ∧ |e22 t| ≤ C / S)\n    (hdamping : ∀ t ∈ Icc a b, |damping t - referenceDamping t| ≤ D / S)\n    (hPpos : ∀ t ∈ Icc a b, 0 < P t)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

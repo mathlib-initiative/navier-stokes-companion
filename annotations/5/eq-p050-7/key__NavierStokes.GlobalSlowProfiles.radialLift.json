@@ -1,23 +1,26 @@
 {
-  "id": "eq-p050-7/key/04.NavierStokes.GlobalSlowProfiles.radialLift",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.radialLift",
-      "line": 337
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L337"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.radialLift",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.radialLift",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 337,
-        "text": "radialLift f w := (f (w.1 / Real.sqrt 2, (w.2 : ℂ))).re — the inner axis function at ξ = R/√2, i.e. at X = ξ² = R²/2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.GlobalSlowProfiles.radialLift",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L337"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 337,
+            "text": "noncomputable def radialLift {rho : ℝ} {U : Set ℂ} (f : SlowRecursion.AxisFunction rho U)\n    (w : ℝ × ℝ) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

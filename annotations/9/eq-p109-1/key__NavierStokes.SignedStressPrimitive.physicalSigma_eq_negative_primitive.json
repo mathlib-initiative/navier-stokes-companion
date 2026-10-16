@@ -1,25 +1,27 @@
 {
-  "id": "eq-p109-1/key/03.NavierStokes.SignedStressPrimitive.physicalSigma_eq_negative_primitive",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedStressPrimitive.physicalSigma_eq_negative_primitive",
-      "line": 719,
-      "module": "NavierStokes.SignedStressPrimitive",
-      "path": "NavierStokes/SignedStressPrimitive.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L719"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedStressPrimitive.physicalSigma_eq_negative_primitive",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedStressPrimitive.physicalSigma_eq_negative_primitive",
+        "module": "NavierStokes.SignedStressPrimitive"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 719,
-        "text": "(hs : PhysicalSupport P q F) : physicalSigma P e q F z = -(∫ r in (0:ℝ)..z.1, r ^ e * physicalAdjusted P e q F (r, z.2)) / z.1 ^ e"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SignedStressPrimitive.physicalSigma_eq_negative_primitive",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L719",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 719,
+            "text": "theorem physicalSigma_eq_negative_primitive (P : Patch) (e : ℕ) {q : E → ℝ}\n    (hq : ContDiff ℝ ∞ q) (hpos : ∀ p, 0 < q p) {F : ℝ × E → ℝ}\n    (hF : ContDiff ℝ ∞ F) (hs : PhysicalSupport P q F) (z : ℝ × E) :\n    physicalSigma P e q F z =\n      -(∫ r in (0 : ℝ)..z.1, r ^ e * physicalAdjusted P e q F (r, z.2)) / z.1 ^ e"
+          }
+        }
       }
     }
-  }
+  ]
 }

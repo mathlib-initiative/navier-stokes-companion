@@ -1,26 +1,29 @@
 {
-  "id": "eq-p029-9/key/01.NavierStokes.ClosedIntervalJetAlgebra.PairBound.inverse",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ClosedIntervalJetAlgebra.PairBound.inverse",
-      "line": 195,
-      "module": "NavierStokes.ClosedIntervalJetAlgebra",
-      "path": "NavierStokes/ClosedIntervalJetAlgebra.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ClosedIntervalJetAlgebra.lean#L195"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ClosedIntervalJetAlgebra.PairBound.inverse",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ClosedIntervalJetAlgebra.PairBound.inverse",
+        "lines": [195, 195],
+        "module": "NavierStokes.ClosedIntervalJetAlgebra"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 195,
-        "text": "have hd' : Bound k (fun η => -((g η-f η)*(g η)⁻¹*(f η)⁻¹)) …  — discharged at line 200 by `hd'.congr (fun η hη => by field_simp …)`, i.e. g⁻¹ - f⁻¹ = -(g-f)·g⁻¹·f⁻¹"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ClosedIntervalJetAlgebra.PairBound.inverse",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L195",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ClosedIntervalJetAlgebra.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 180,
+            "text": "theorem inverse (h : PairBound k f g A C ε) {μ T : ℝ} (hμ : 0 < μ)\n    (hf : ∀ η ∈ J, μ ≤ f η) (hg : ∀ η ∈ J, μ ≤ g η)\n    (hb : ∀ z : ℝ → ℝ, ContDiffOn ℝ ∞ z J →\n      (∀ η ∈ J, μ ≤ z η) → Bound k z A → Bound k (fun η => (z η)⁻¹) T) :\n    PairBound k (fun η => (f η)⁻¹) (fun η => (g η)⁻¹) T\n      ((2 : ℝ)^k*((2 : ℝ)^k*C*T)*T) ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

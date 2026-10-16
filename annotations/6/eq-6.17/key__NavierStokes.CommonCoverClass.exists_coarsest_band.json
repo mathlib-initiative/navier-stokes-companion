@@ -1,25 +1,27 @@
 {
-  "id": "eq-6.17/key/03.NavierStokes.CommonCoverClass.exists_coarsest_band",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CommonCoverClass.exists_coarsest_band",
-      "line": 1302,
-      "module": "NavierStokes.CommonCoverClass",
-      "path": "NavierStokes/CommonCoverClass.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverClass.lean#L1302"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CommonCoverClass.exists_coarsest_band",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CommonCoverClass.exists_coarsest_band",
+        "module": "NavierStokes.CommonCoverClass"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 1302,
-        "text": "(levels : Finset ℕ) nonempty, 1 ≤ n, n ≤ m + 4 → ∃ c ∈ levels, ∀ n ∈ levels, nativeIndex h c ≤ nativeIndex h n ∧ nativeIndex h n - nativeIndex h c ≤ SlotColoring.nativeGap h"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CommonCoverClass.exists_coarsest_band",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1302",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverClass.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1302,
+            "text": "theorem exists_coarsest_band (h : ℝ) (hh : 0 ≤ h) (levels : Finset ℕ)\n    (hne : levels.Nonempty) (hpos : ∀ n ∈ levels, 1 ≤ n)\n    (hspan : ∀ n ∈ levels, ∀ m ∈ levels, n ≤ m + 4) :\n    ∃ c ∈ levels, ∀ n ∈ levels,\n      ChartScales.nativeIndex h c ≤ ChartScales.nativeIndex h n ∧\n        ChartScales.nativeIndex h n - ChartScales.nativeIndex h c ≤ SlotColoring.nativeGap h"
+          }
+        }
       }
     }
-  }
+  ]
 }

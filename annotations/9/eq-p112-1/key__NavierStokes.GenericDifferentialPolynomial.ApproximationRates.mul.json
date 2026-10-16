@@ -1,26 +1,28 @@
 {
-  "id": "eq-p112-1/key/06.NavierStokes.GenericDifferentialPolynomial.ApproximationRates.mul",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates.mul",
-      "line": 108,
-      "module": "NavierStokes.GenericDifferentialPolynomial",
-      "path": "NavierStokes/GenericDifferentialPolynomial.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean#L108"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates.mul",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates.mul",
+        "module": "NavierStokes.GenericDifferentialPolynomial"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 108,
-        "text": "ApproximationRates … (fun x => f x * g x) … where threshold m := max (maxThreshold a.threshold m) (maxThreshold b.threshold m)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.GenericDifferentialPolynomial.ApproximationRates.mul",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L108",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 108,
+            "text": "def ApproximationRates.mul\n    (a : ApproximationRates l q gain f fs) (b : ApproximationRates l q gain g gs)\n    (hU : IsOpen U) (hlU : ∀ᶠ x in l, x ∈ U)\n    (hq : ∀ᶠ x in l, 0 < q x ∧ q x ≤ 1)\n    (hf : ContDiffOn ℝ ∞ f U) (hg : ContDiffOn ℝ ∞ g U)\n    (hfs : ∀ J, ContDiffOn ℝ ∞ (fs J) U)\n    (hgs : ∀ J, ContDiffOn ℝ ∞ (gs J) U)\n    (hgain : Tendsto gain atTop atTop) :\n    ApproximationRates l q gain (fun x => f x * g x)\n      (fun J x => fs J x * gs J x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

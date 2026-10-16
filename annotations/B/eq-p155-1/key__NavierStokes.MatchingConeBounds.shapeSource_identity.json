@@ -1,26 +1,28 @@
 {
-  "id": "eq-p155-1/key/03.NavierStokes.MatchingConeBounds.shapeSource_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MatchingConeBounds.shapeSource_identity",
-      "line": 166,
-      "module": "NavierStokes.MatchingConeBounds",
-      "path": "NavierStokes/MatchingConeBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean#L166"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MatchingConeBounds.shapeSource_identity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MatchingConeBounds.shapeSource_identity",
+        "module": "NavierStokes.MatchingConeBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 166,
-        "text": "sourceQ P h p = Λ * ((1 - theta) * L h p.2 * chi h j sigma p.2) + shapeRemainder h j sigma p.2 theta ell (shapeJet P h j Λ g p) (1 / Λ), under hg : parameterPartial P.f p / P.f p = (1-theta)*(Λ*realGradient h j sigma p.2 + g) - theta*shapeGradient p.2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.MatchingConeBounds.shapeSource_identity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L166",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 166,
+            "text": "theorem shapeSource_identity {D : RadialDomain} (P : Profiles D)\n    (h j sigma Λ theta ell g : ℝ) (hΛ : Λ ≠ 0) (p : Point)\n    (hl : ReferenceBounds.logSlope P p = ell)\n    (hg : parameterPartial P.f p / P.f p =\n      (1 - theta) * (Λ * NaturalAxisCoefficients.realGradient h j sigma p.2 + g) -\n        theta * OutgoingEntranceCone.shapeGradient p.2) :\n    ReferenceBounds.sourceQ P h p =\n      Λ * ((1 - theta) * L h p.2 * chi h j sigma p.2) +\n        shapeRemainder h j sigma p.2 theta ell (shapeJet P h j Λ g p) (1 / Λ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

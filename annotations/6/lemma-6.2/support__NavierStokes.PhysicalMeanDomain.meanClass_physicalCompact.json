@@ -1,27 +1,33 @@
 {
-  "id": "lemma-6.2/support/3.NavierStokes.PhysicalMeanDomain.meanClass_physicalCompact",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalMeanDomain.meanClass_physicalCompact",
-      "line": 618,
-      "module": "NavierStokes.PhysicalMeanDomain",
-      "path": "NavierStokes/PhysicalMeanDomain.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalMeanDomain.lean#L618"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalMeanDomain.meanClass_physicalCompact",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "type": "lean",
+      "uri": "https://github.com/openai/NavierStokesAndEuler",
+      "version": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "location": {
+        "declaration": "NavierStokes.PhysicalMeanDomain.meanClass_physicalCompact",
+        "module": "NavierStokes.PhysicalMeanDomain"
       },
-      "declaration_verdict": null,
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 618,
-        "text": "theorem meanClass_physicalCompact {a b d cL cR : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n)\n    (U : Set S) (hU : IsOpen U) (α : ℝ) (M : ℕ → ℝ) (v : ℕ → PressureStream.Plane)\n    (f : ℕ → PressureStream.Lift S → V)\n    (hf : ∀ n, ContDiffOn ℝ ∞ (f n) (slowDomain U))\n    (hs : ∀ n, SupportedOn a b U (f n))\n    (hclass : MeanClass (localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) α f) :\n    MeanClass (localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) α\n      (fun n => physicalCompact d a b (M n) ((0 : S), v n) (f n))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.PhysicalMeanDomain.meanClass_physicalCompact",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L618",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalMeanDomain.lean",
+            "resolution": "exact"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 618,
+            "text": "theorem meanClass_physicalCompact {a b d cL cR : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n)\n    (U : Set S) (hU : IsOpen U) (α : ℝ) (M : ℕ → ℝ) (v : ℕ → PressureStream.Plane)\n    (f : ℕ → PressureStream.Lift S → V)\n    (hf : ∀ n, ContDiffOn ℝ ∞ (f n) (slowDomain U))\n    (hs : ∀ n, SupportedOn a b U (f n))\n    (hclass : MeanClass (localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) α f) :\n    MeanClass (localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) α\n      (fun n => physicalCompact d a b (M n) ((0 : S), v n) (f n))"
+          }
+        }
       }
     }
-  }
+  ]
 }

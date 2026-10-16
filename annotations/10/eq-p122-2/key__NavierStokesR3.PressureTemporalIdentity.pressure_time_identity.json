@@ -1,23 +1,26 @@
 {
-  "id": "eq-p122-2/key/01.NavierStokesR3.PressureTemporalIdentity.pressure_time_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.PressureTemporalIdentity.pressure_time_identity",
-      "line": 187,
-      "module": "NavierStokes.R3.PressureTemporalIdentity",
-      "path": "NavierStokes/R3/PressureTemporalIdentity.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureTemporalIdentity.lean#L187"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.PressureTemporalIdentity.pressure_time_identity"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.PressureTemporalIdentity.pressure_time_identity",
+        "module": "NavierStokes.R3.PressureTemporalIdentity"
       },
-      "snippet": {
-        "line": 187,
-        "text": "(∫ t in Icc 0 T, a t * (∫ x, spatialPartial k (fun y => (p - q) (t,y)) x * ψ x)) = (∫ t in Icc 0 T, a t * (∫ x, (u - v) (t,x) k * scalarLaplacian ψ x)) + (∫ t in Icc 0 T, deriv a t * (∫ x, (u - v) (t,x) k * ψ x)) + (∫ t in Icc 0 T, a t * (∑ i : Fin 3, ∫ x, tensorDiff u v t k i x * spatialPartial i ψ x)), with ha : ContDiff ℝ ∞ a, hsupp : tsupport a ⊆ Ioo 0 T, hψ : ContDiff ℝ ∞ ψ, hcψ : HasCompactSupport ψ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokesR3.PressureTemporalIdentity.pressure_time_identity"
+          },
+          "destination": {
+            "fragment": "L187",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureTemporalIdentity.lean"
+          },
+          "snippet": {
+            "line": 187,
+            "text": "theorem pressure_time_identity {T : ℝ} {u v : VelocityField}\n    {p q : PressureField} {a : ℝ → ℝ} {ψ : Space → ℝ}\n    (hT : 0 < T)\n    (hu : ContDiffOn ℝ ∞ u (Comparison.slab 0 T))\n    (hv : ContDiffOn ℝ ∞ v (Comparison.slab 0 T))\n    (hp : ContDiffOn ℝ ∞ p (Comparison.slab 0 T))\n    (hq : ContDiffOn ℝ ∞ q (Comparison.slab 0 T))\n    (hdivu : ∀ t ∈ Ioo 0 T, ∀ x, spatialDivergence u t x = 0)\n    (hdivv : ∀ t ∈ Ioo 0 T, ∀ x, spatialDivergence v t x = 0)\n    (hNS : ∀ t ∈ Ioo 0 T, ∀ x,\n      navierStokesResidual u p t x = navierStokesResidual v q t x)\n    (ha : ContDiff ℝ ∞ a) (hsupp : tsupport a ⊆ Ioo 0 T)\n    (hψ : ContDiff ℝ ∞ ψ) (hcψ : HasCompactSupport ψ) (k : Fin 3) :\n    (∫ t in Icc (0 : ℝ) T, a t *\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

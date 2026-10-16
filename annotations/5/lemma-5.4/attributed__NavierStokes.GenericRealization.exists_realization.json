@@ -1,37 +1,58 @@
 {
-  "id": "lemma-5.4/attributed/1.NavierStokes.GenericRealization.exists_realization",
-  "location": {
-    "page": 57,
-    "rect": [0.12854, 0.802479, 0.746187, 0.080165]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericRealization.exists_realization",
-      "line": 78,
-      "module": "NavierStokes.GenericRealization",
-      "path": "NavierStokes/GenericRealization.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 57,
+        "rect": [0.12854, 0.802479, 0.746187, 0.080165]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-5.4@p057"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericRealization.lean#L78"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericRealization.exists_realization",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 58,
+        "rect": [0.12854, 0.103306, 0.746187, 0.161157]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Scalar-component-only version: same schedule and tail statement for a Fintype-indexed family of scalar fields, with the base bound taken in the literal logarithmic form Cb m (1+|log q|)^{Pb m} q^{-Kb m}. No curl, no B_j, no divergence clause.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-5.4@p057",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 78,
-        "text": "theorem exists_realization [Fintype ι] {U : Set D} (hU : IsOpen U) {q : D → ℝ}\n    (hq : ContDiffOn ℝ ∞ q U) (hpos : ∀ x ∈ U, 0 < q x ∧ q x ≤ 1)\n    (Bq : ℕ → ℝ)\n    (hBq : ∀ k x, x ∈ U → q x ≤ 1 →\n      ‖iteratedFDeriv ℝ k q x‖ ≤ Bq k * q x ^ (1 - (k : ℝ)))\n    {base : ι → D → ℝ} (hbase : ∀ i, ContDiffOn ℝ ∞ (base i) U)\n    (Cb Pb Kb : ℕ → ℝ)\n    (hbaseBound : ∀ i m x, x ∈ U → ‖iteratedFDeriv ℝ m (base i) x‖ ≤\n      Cb m * (1 + |Real.log (q x)|) ^ Pb m * q x ^ (-Kb m))\n    {A : ι → ℕ → D → ℝ} (hA : ∀ i j, 1 ≤ j → ContDiffOn ℝ ∞ (A i j) U)\n    (g L : ℕ → ℝ) (C P : ι → ℕ → ℕ → ℝ)\n    (hraw : ∀ i, CutStageEstimates.RawStageBounds q (A i) g L (C i) (P i) U)\n    (hgpos : ∀ j, 1 ≤ j → 0 < g j) (hgmono : Monotone g)\n    (lower : ℕ) {κ : Type*} (tests : ℕ → Finset κ) (B Pt γ : ℕ → κ → ℝ)\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-5.4@p058"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericRealization.exists_realization",
+        "module": "NavierStokes.GenericRealization"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.GenericRealization.exists_realization",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Scalar-component-only version: same schedule and tail statement for a Fintype-indexed family of scalar fields, with the base bound taken in the literal logarithmic form Cb m (1+|log q|)^{Pb m} q^{-Kb m}. No curl, no B_j, no divergence clause.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L78",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericRealization.lean"
+          },
+          "snippet": {
+            "line": 78,
+            "text": "theorem exists_realization [Fintype ι] {U : Set D} (hU : IsOpen U) {q : D → ℝ}\n    (hq : ContDiffOn ℝ ∞ q U) (hpos : ∀ x ∈ U, 0 < q x ∧ q x ≤ 1)\n    (Bq : ℕ → ℝ)\n    (hBq : ∀ k x, x ∈ U → q x ≤ 1 →\n      ‖iteratedFDeriv ℝ k q x‖ ≤ Bq k * q x ^ (1 - (k : ℝ)))\n    {base : ι → D → ℝ} (hbase : ∀ i, ContDiffOn ℝ ∞ (base i) U)\n    (Cb Pb Kb : ℕ → ℝ)\n    (hbaseBound : ∀ i m x, x ∈ U → ‖iteratedFDeriv ℝ m (base i) x‖ ≤\n      Cb m * (1 + |Real.log (q x)|) ^ Pb m * q x ^ (-Kb m))\n    {A : ι → ℕ → D → ℝ} (hA : ∀ i j, 1 ≤ j → ContDiffOn ℝ ∞ (A i j) U)\n    (g L : ℕ → ℝ) (C P : ι → ℕ → ℕ → ℝ)\n    (hraw : ∀ i, CutStageEstimates.RawStageBounds q (A i) g L (C i) (P i) U)\n    (hgpos : ∀ j, 1 ≤ j → 0 < g j) (hgmono : Monotone g)\n    (lower : ℕ) {κ : Type*} (tests : ℕ → Finset κ) (B Pt γ : ℕ → κ → ℝ)\n  …",
+            "truncated": true
+          }
+        }
+      }
+    }
+  ]
 }

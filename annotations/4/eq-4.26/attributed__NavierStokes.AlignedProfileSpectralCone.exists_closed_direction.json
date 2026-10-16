@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.26/attributed/06.NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
-      "line": 433,
-      "module": "NavierStokes.AlignedProfileSpectralCone",
-      "path": "NavierStokes/AlignedProfileSpectralCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AlignedProfileSpectralCone.lean#L433"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
+        "module": "NavierStokes.AlignedProfileSpectralCone"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 433,
-        "text": "(hcone : FullTrueCone v) → ∃ D, ContinuousOn D (Icc (-1) 1 ×ˢ Icc (leftEdge W) (rightEdge W)) ∧ (∀ p ∈ rect, ‖D p‖ = 1) ∧ (∀ p ∈ Icc (-1) 1 ×ˢ Ioo .., D p = normalDirection (planeOfPair (logStress v.profiles h p))) ∧ ∀ p ∈ rect, ∀ omega > 0, ReferenceCone omega (logShear v omega p) ∧ TargetCone omega (logShear v omega p) (D p)   -- pointwise strict (kappa = 0) form of (4.26) on the whole closed rectangle, for a continuous unit direction"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L433",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AlignedProfileSpectralCone.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 433,
+            "text": "theorem exists_closed_direction (hcone : LeadingStressWeights.FullTrueCone v) :\n    ∃ D : (ℝ × ℝ) → Plane,\n      ContinuousOn D (Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W)) ∧\n      (∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W), ‖D p‖ = 1) ∧\n      (∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Ioo (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W),\n        D p = PrimaryRepresentatives.normalDirection\n          (planeOfPair (LeadingStressWeights.logStress v.profiles F.data.h p))) ∧\n      ∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W),\n        ∀ omega : ℝ, 0 < omega → PrimaryRepresentatives.ReferenceCone omega (logShear v omega p) ∧\n          PrimaryRepresentatives.TargetCone omega (logShear v omega p) (D p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

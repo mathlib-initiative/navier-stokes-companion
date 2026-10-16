@@ -1,26 +1,28 @@
 {
-  "id": "eq-p105-1/attributed/10.NavierStokes.WeightedQuotients.rescaled_rpow_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedQuotients.rescaled_rpow_jet_bound",
-      "line": 200,
-      "module": "NavierStokes.WeightedQuotients",
-      "path": "NavierStokes/WeightedQuotients.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedQuotients.lean#L200"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedQuotients.rescaled_rpow_jet_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedQuotients.rescaled_rpow_jet_bound",
+        "module": "NavierStokes.WeightedQuotients"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 200,
-        "text": "(normalizeAt w g x)^p ≤ B → (normalizeAt w g x)⁻¹ ≤ B → (∀ i ≤ n, ‖iteratedFDeriv ℝ i g x‖ ≤ w * B) → ‖iteratedFDeriv ℝ n (fun y => g y ^ p) x‖ ≤ w ^ p * (n! * coeffBound p n) * B ^ (2*n+1)  -- line 2 at p = -1/2, w = ζ, g = a_σ²"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.WeightedQuotients.rescaled_rpow_jet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L200",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedQuotients.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 200,
+            "text": "theorem rescaled_rpow_jet_bound {g : E → ℝ} {s : Set E} (hs : IsOpen s)\n    (hg : ContDiffOn ℝ ∞ g s) (hpos : ∀ x ∈ s, 0 < g x) {x : E} (hx : x ∈ s)\n    {w B : ℝ} (hw : 0 < w) (hB : 1 ≤ B) (p : ℝ) (n : ℕ)\n    (hpow : (normalizeAt w g x) ^ p ≤ B) (hinv : (normalizeAt w g x)⁻¹ ≤ B)\n    (hjet : ∀ i ≤ n, ‖iteratedFDeriv ℝ i g x‖ ≤ w * B) :\n    ‖iteratedFDeriv ℝ n (fun y => g y ^ p) x‖ ≤\n      w ^ p * (n.factorial * coeffBound p n) * B ^ (2 * n + 1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

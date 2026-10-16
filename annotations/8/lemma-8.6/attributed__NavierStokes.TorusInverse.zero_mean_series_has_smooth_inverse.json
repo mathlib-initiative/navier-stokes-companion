@@ -1,34 +1,55 @@
 {
-  "id": "lemma-8.6/attributed/1.NavierStokes.TorusInverse.zero_mean_series_has_smooth_inverse",
-  "location": {
-    "page": 95,
-    "rect": [0.12854, 0.703306, 0.745098, 0.152893]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TorusInverse.zero_mean_series_has_smooth_inverse",
-      "line": 586,
-      "module": "NavierStokes.TorusInverse",
-      "path": "NavierStokes/TorusInverse.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 95,
+        "rect": [0.12854, 0.703306, 0.745098, 0.152893]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p095"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusInverse.lean#L586"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TorusInverse.zero_mean_series_has_smooth_inverse",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 96,
+        "rect": [0.12854, 0.103306, 0.745098, 0.231405]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: For Rapid a with zero torus mean, ∃ u on the torus, continuous, of zero mean, with smooth lift, solving fderiv (lift u) x (vector d) = series a x. Existence, smoothness and zero mean in one statement, but no uniqueness and no norm bound."
-      },
-      "region": "lemma-8.6@p095",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 586,
-        "text": "theorem zero_mean_series_has_smooth_inverse (d : Direction) {a : Frequency → ℂ}\n    (ha : Rapid a) (hmean : (∫ z, torusSeries a z ∂torusMeasure) = 0) :\n    ∃ u : Torus → ℂ, Continuous u ∧ (∫ z, u z ∂torusMeasure) = 0 ∧\n      ContDiff ℝ ∞ (fun x : Plane => u ((x.1 : UnitAddCircle), (x.2 : UnitAddCircle))) ∧\n      ∀ x : Plane,\n        fderiv ℝ (fun y : Plane => u ((y.1 : UnitAddCircle), (y.2 : UnitAddCircle)))\n          x (vector d) = series a x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p096"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TorusInverse.zero_mean_series_has_smooth_inverse",
+        "module": "NavierStokes.TorusInverse"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TorusInverse.zero_mean_series_has_smooth_inverse",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: For Rapid a with zero torus mean, ∃ u on the torus, continuous, of zero mean, with smooth lift, solving fderiv (lift u) x (vector d) = series a x. Existence, smoothness and zero mean in one statement, but no uniqueness and no norm bound."
+          },
+          "destination": {
+            "fragment": "L586",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusInverse.lean"
+          },
+          "snippet": {
+            "line": 586,
+            "text": "theorem zero_mean_series_has_smooth_inverse (d : Direction) {a : Frequency → ℂ}\n    (ha : Rapid a) (hmean : (∫ z, torusSeries a z ∂torusMeasure) = 0) :\n    ∃ u : Torus → ℂ, Continuous u ∧ (∫ z, u z ∂torusMeasure) = 0 ∧\n      ContDiff ℝ ∞ (fun x : Plane => u ((x.1 : UnitAddCircle), (x.2 : UnitAddCircle))) ∧\n      ∀ x : Plane,\n        fderiv ℝ (fun y : Plane => u ((y.1 : UnitAddCircle), (y.2 : UnitAddCircle)))\n          x (vector d) = series a x"
+          }
+        }
+      }
+    }
+  ]
 }

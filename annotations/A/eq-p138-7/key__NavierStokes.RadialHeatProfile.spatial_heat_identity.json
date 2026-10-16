@@ -1,22 +1,26 @@
 {
-  "id": "eq-p138-7/key/04.NavierStokes.RadialHeatProfile.spatial_heat_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialHeatProfile.spatial_heat_identity",
-      "line": 554
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L554"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialHeatProfile.spatial_heat_identity"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialHeatProfile.spatial_heat_identity",
+        "lines": [554, 554],
+        "module": "NavierStokes.RadialHeatProfile"
       },
-      "relation": "contains",
-      "snippet": {
-        "line": 554,
-        "text": "have hres : 2*s*spatialSecond + 2*spatialFirst - spatialProfile/(2*s) = 2 * s ^ spatialExponent a / s * ((2τ/s)^2 * profileJet a 2 (2τ/s) + (2*a*(2τ/s)) * profileJet a 1 (2τ/s) + a*(a-1) * profile a (2τ/s))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.RadialHeatProfile.spatial_heat_identity"
+          },
+          "destination": {
+            "fragment": "L554"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 543,
+            "text": "theorem spatial_heat_identity {a τ s : ℝ} (ha : 1 < a) (hτ : 0 < τ) (hs : 0 < s) :\n    -(2 * s ^ (spatialExponent a - 1) * profileJet a 1 (2 * τ / s)) =\n      2 * s * spatialSecond a τ s + 2 * spatialFirst a τ s - spatialProfile a τ s / (2 * s)"
+          }
+        }
       }
     }
-  }
+  ]
 }

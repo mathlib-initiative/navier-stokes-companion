@@ -1,26 +1,29 @@
 {
-  "id": "lemma-5.2/support/3.NavierStokes.SlowStressSupport.logarithmic_weighted_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.logarithmic_weighted_jets",
-      "line": 1130,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L1130"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.logarithmic_weighted_jets",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.logarithmic_weighted_jets",
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 1130,
-        "text": "theorem logarithmic_weighted_jets {S K : Set ℝ} (hS : IsOpen S) (hK : IsCompact K) (hKS : K ⊆ S)\n    {f : Field} (hf : Smooth S f) {a b l r cL cR : ℝ}\n    (hs : radialSupport S a b f) (hab : Icc a b ⊆ Ioo l r)\n    (hl : 0 < l) (hcL : 0 < cL) (hcR : 0 < cR) :\n    Smooth S (fun w => f w / logFlatWeight l r cL cR w.1) ∧\n      ∀ k : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∀ R ∈ Ioo l r, ∀ eta ∈ K,\n        ‖iteratedFDeriv ℝ k f (R, eta)‖ ≤ C * logFlatWeight l r cL cR R"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.SlowStressSupport.logarithmic_weighted_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1130",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 1130,
+            "text": "theorem logarithmic_weighted_jets {S K : Set ℝ} (hS : IsOpen S) (hK : IsCompact K) (hKS : K ⊆ S)\n    {f : Field} (hf : Smooth S f) {a b l r cL cR : ℝ}\n    (hs : radialSupport S a b f) (hab : Icc a b ⊆ Ioo l r)\n    (hl : 0 < l) (hcL : 0 < cL) (hcR : 0 < cR) :\n    Smooth S (fun w => f w / logFlatWeight l r cL cR w.1) ∧\n      ∀ k : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∀ R ∈ Ioo l r, ∀ eta ∈ K,\n        ‖iteratedFDeriv ℝ k f (R, eta)‖ ≤ C * logFlatWeight l r cL cR R"
+          }
+        }
       }
     }
-  }
+  ]
 }

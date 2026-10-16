@@ -1,25 +1,27 @@
 {
-  "id": "eq-p058-5/key/01.NavierStokes.OscillatoryCurl.curl_smul",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OscillatoryCurl.curl_smul",
-      "line": 101,
-      "module": "NavierStokes.OscillatoryCurl",
-      "path": "NavierStokes/OscillatoryCurl.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OscillatoryCurl.lean#L101"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OscillatoryCurl.curl_smul"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OscillatoryCurl.curl_smul",
+        "module": "NavierStokes.OscillatoryCurl"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 101,
-        "text": "SpatialCurl.curl (fun y => f y • B y) x = cross (gradientLinear (fderiv ℝ f x)) (B x) + f x • SpatialCurl.curl B x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.OscillatoryCurl.curl_smul"
+          },
+          "destination": {
+            "fragment": "L101",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OscillatoryCurl.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 101,
+            "text": "theorem curl_smul {f : Space → ℝ} {B : Space → Space} {x : Space}\n    (hf : DifferentiableAt ℝ f x) (hB : DifferentiableAt ℝ B x) :\n    SpatialCurl.curl (fun y => f y • B y) x =\n      cross (gradientLinear (fderiv ℝ f x)) (B x) + f x • SpatialCurl.curl B x"
+          }
+        }
       }
     }
-  }
+  ]
 }

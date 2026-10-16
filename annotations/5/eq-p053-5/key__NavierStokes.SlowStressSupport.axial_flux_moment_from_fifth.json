@@ -1,25 +1,28 @@
 {
-  "id": "eq-p053-5/key/02.NavierStokes.SlowStressSupport.axial_flux_moment_from_fifth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.axial_flux_moment_from_fifth",
-      "line": 626,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L626"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.axial_flux_moment_from_fifth"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.axial_flux_moment_from_fifth",
+        "lines": [626, 626],
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 626,
-        "text": "lines 626-628: `have hibp := moment_dr hS hp B 1 heta; rw [hpB eta heta] at hibp; norm_num at hibp` — the finite-interval form of the same integration by parts, used to turn the fifth repaired row into moment B 1 (conv n u u + p) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SlowStressSupport.axial_flux_moment_from_fifth"
+          },
+          "destination": {
+            "fragment": "L626",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 620,
+            "text": "theorem axial_flux_moment_from_fifth {S : Set ℝ} (hS : IsOpen S) {n : ℕ}\n    {u : History} {p : Field} (hu : ∀ j, j ≤ n → Smooth S (u j)) (hp : Smooth S p)\n    (B : ℝ) (hpB : ∀ eta ∈ S, p (B, eta) = 0)\n    (hrow : ∀ eta ∈ S, moment B 1 (conv n u u) eta - (1 / 2 : ℝ) * moment B 2 (dr p) eta = 0)\n    {eta : ℝ} (heta : eta ∈ S) :\n    moment B 1 (fun w => conv n u u w + p w) eta = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

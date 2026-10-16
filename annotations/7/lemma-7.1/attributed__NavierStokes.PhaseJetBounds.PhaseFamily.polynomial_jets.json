@@ -1,29 +1,31 @@
 {
-  "id": "lemma-7.1/attributed/1.NavierStokes.PhaseJetBounds.PhaseFamily.polynomial_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhaseJetBounds.PhaseFamily.polynomial_jets",
-      "line": 554,
-      "module": "NavierStokes.PhaseJetBounds",
-      "path": "NavierStokes/PhaseJetBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseJetBounds.lean#L554"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhaseJetBounds.PhaseFamily.polynomial_jets",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhaseJetBounds.PhaseFamily.polynomial_jets",
+        "module": "NavierStokes.PhaseJetBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Given polynomial jets of the base fields F, G and uniform bounds on ε, p, pz, x0, the radius and the slot, the phase normal a.normal, its pulse derivative a.velocity and the shear a.shear all have PolynomialJets on the enlarged slot domain: each is C^∞ there and, for each order N, ‖iteratedFDeriv‖ ≤"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 554,
-        "text": "theorem PhaseFamily.polynomial_jets (a : PhaseFamily ι) (D : Domain ι Slow)\n    (V : ι → Set ℝ) (hV : ∀ i, IsOpen (V i))\n    (hF : PolynomialJets D a.F) (hG : PolynomialJets D a.G)\n    {r M : ℝ} (hr : 0 < r) (hM : 1 ≤ M)\n    (hconstant : ∀ i, |a.epsilon i| ≤ M ∧ |a.p i| ≤ M ∧ |a.pz i| ≤ M ∧ |a.x0 i| ≤ M)\n    (heps : ∀ i, a.epsilon i ≠ 0)\n    (hR : ∀ i, ∀ q ∈ D.carrier i, r ≤ |q.1| ∧ |q.1| ≤ M)\n    (hslot : ∀ i, ∀ v ∈ V i, |v| ≤ M * D.scale i) :\n    PolynomialJets (D.slot V hV) a.normal ∧\n      PolynomialJets (D.slot V hV) a.velocity ∧\n      PolynomialJets (D.slot V hV) a.shear"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PhaseJetBounds.PhaseFamily.polynomial_jets",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Given polynomial jets of the base fields F, G and uniform bounds on ε, p, pz, x0, the radius and the slot, the phase normal a.normal, its pulse derivative a.velocity and the shear a.shear all have PolynomialJets on the enlarged slot domain: each is C^∞ there and, for each order N, ‖iteratedFDeriv‖ ≤"
+          },
+          "destination": {
+            "fragment": "L554",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseJetBounds.lean"
+          },
+          "snippet": {
+            "line": 554,
+            "text": "theorem PhaseFamily.polynomial_jets (a : PhaseFamily ι) (D : Domain ι Slow)\n    (V : ι → Set ℝ) (hV : ∀ i, IsOpen (V i))\n    (hF : PolynomialJets D a.F) (hG : PolynomialJets D a.G)\n    {r M : ℝ} (hr : 0 < r) (hM : 1 ≤ M)\n    (hconstant : ∀ i, |a.epsilon i| ≤ M ∧ |a.p i| ≤ M ∧ |a.pz i| ≤ M ∧ |a.x0 i| ≤ M)\n    (heps : ∀ i, a.epsilon i ≠ 0)\n    (hR : ∀ i, ∀ q ∈ D.carrier i, r ≤ |q.1| ∧ |q.1| ≤ M)\n    (hslot : ∀ i, ∀ v ∈ V i, |v| ≤ M * D.scale i) :\n    PolynomialJets (D.slot V hV) a.normal ∧\n      PolynomialJets (D.slot V hV) a.velocity ∧\n      PolynomialJets (D.slot V hV) a.shear"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.5/attributed/03.NavierStokes.AxisSourceRegularity.previousOmegaDivX",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisSourceRegularity.previousOmegaDivX",
-      "line": 518,
-      "module": "NavierStokes.AxisSourceRegularity",
-      "path": "NavierStokes/AxisSourceRegularity.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisSourceRegularity.lean#L518"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisSourceRegularity.previousOmegaDivX",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisSourceRegularity.previousOmegaDivX",
+        "module": "NavierStokes.AxisSourceRegularity"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 518,
-        "text": "previousOmegaDivX h U v | 0 => fun _ => 0 | k + 1 => omegaDivX h U v k"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.AxisSourceRegularity.previousOmegaDivX",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L518",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisSourceRegularity.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 518,
+            "text": "noncomputable def previousOmegaDivX (h : ℝ) (U v : ℕ → InnerProfile) : ℕ → InnerProfile\n  | 0 => fun _ => 0\n  | k + 1 => omegaDivX h U v k"
+          }
+        }
       }
     }
-  }
+  ]
 }

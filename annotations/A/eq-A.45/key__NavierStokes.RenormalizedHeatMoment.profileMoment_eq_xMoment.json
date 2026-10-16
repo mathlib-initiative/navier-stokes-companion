@@ -1,23 +1,25 @@
 {
-  "id": "eq-A.45/key/02.NavierStokes.RenormalizedHeatMoment.profileMoment_eq_xMoment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RenormalizedHeatMoment.profileMoment_eq_xMoment",
-      "line": 539,
-      "module": "NavierStokes.RenormalizedHeatMoment",
-      "path": "NavierStokes/RenormalizedHeatMoment.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RenormalizedHeatMoment.lean#L539"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RenormalizedHeatMoment.profileMoment_eq_xMoment"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RenormalizedHeatMoment.profileMoment_eq_xMoment",
+        "module": "NavierStokes.RenormalizedHeatMoment"
       },
-      "snippet": {
-        "line": 539,
-        "text": "profileMoment h C F eta = xMoment h C F eta"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.RenormalizedHeatMoment.profileMoment_eq_xMoment"
+          },
+          "destination": {
+            "fragment": "L539",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RenormalizedHeatMoment.lean"
+          },
+          "snippet": {
+            "line": 539,
+            "text": "theorem profileMoment_eq_xMoment (h C : ℝ) {F E : ℝ × ℝ → ℝ}\n    (hFE : ∀ R : ℝ, 0 < R → ∀ eta ∈ Ioo (-1 : ℝ) 1,\n      F (R, eta) = E (R ^ 2 / 2, eta)) {eta : ℝ} (hη : eta ∈ Ioo (-1 : ℝ) 1) :\n    profileMoment h C F eta = xMoment h C E eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

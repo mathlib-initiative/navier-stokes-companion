@@ -1,32 +1,34 @@
 {
-  "id": "proposition-C.2/attributed/1.NavierStokes.ModulatedProfileJetRates.exists_with_moment_repair_all_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedProfileJetRates.exists_with_moment_repair_all_jets",
-      "line": 347,
-      "module": "NavierStokes.ModulatedProfileJetRates",
-      "path": "NavierStokes/ModulatedProfileJetRates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileJetRates.lean#L347"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedProfileJetRates.exists_with_moment_repair_all_jets",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedProfileJetRates.exists_with_moment_repair_all_jets",
+        "module": "NavierStokes.ModulatedProfileJetRates"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: Generic modulation data, hypothesis list argument for argument the same as ModulatedCone.Repaired.exists_with_moment_repair: ∃ H : SmoothRepairFamily …, ∃ N : ℕ, 0 < N ∧ (∀ n ≥ N, for R := profileRepair (P n) patch A (H.coefficients n): the true cone on Icc W.left patch.right ×ˢ J, rows restored for",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 347,
-        "text": "theorem exists_with_moment_repair_all_jets {D D' : RadialDomain}\n    (W : ModulatedHistories.Window) (r : TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (hK : IsCompact K) (hKW : ∀ p ∈ K, p.1 ∈ Icc W.left W.right)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₁ : ContDiff ℝ ∞ p₁) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (haK : ∀ p ∈ K, 0 < a p)\n    (S : Set Point) (hS : IsCompact S) (hSW : ∀ p ∈ S, W.right ≤ p.1)\n    (haNom : ∀ p ∈ K ∪ S, a p = angularShear E p)\n    (hbNom : ∀ p ∈ K ∪ S, a p * m p = signedAxialShear E U p)\n    (hrelaxed : ∀ p ∈ K, TrueConeLoop.nominalSpeed (a p) (m p) <\n      ConeAlgebra.coneBound (p₁ p + p₂ p * m p) (p₂ p - p₁ p * m p))\n    (hScone : ∀ p ∈ S, TrueConeLoop.InTrueCone (p₁ p) (p₂ p) (a p) (a p * m p))\n    (P : ℝ → Profiles D) (Q : Profiles D')\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ModulatedProfileJetRates.exists_with_moment_repair_all_jets",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: Generic modulation data, hypothesis list argument for argument the same as ModulatedCone.Repaired.exists_with_moment_repair: ∃ H : SmoothRepairFamily …, ∃ N : ℕ, 0 < N ∧ (∀ n ≥ N, for R := profileRepair (P n) patch A (H.coefficients n): the true cone on Icc W.left patch.right ×ˢ J, rows restored for",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L347",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileJetRates.lean"
+          },
+          "snippet": {
+            "line": 347,
+            "text": "theorem exists_with_moment_repair_all_jets {D D' : RadialDomain}\n    (W : ModulatedHistories.Window) (r : TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (hK : IsCompact K) (hKW : ∀ p ∈ K, p.1 ∈ Icc W.left W.right)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₁ : ContDiff ℝ ∞ p₁) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (haK : ∀ p ∈ K, 0 < a p)\n    (S : Set Point) (hS : IsCompact S) (hSW : ∀ p ∈ S, W.right ≤ p.1)\n    (haNom : ∀ p ∈ K ∪ S, a p = angularShear E p)\n    (hbNom : ∀ p ∈ K ∪ S, a p * m p = signedAxialShear E U p)\n    (hrelaxed : ∀ p ∈ K, TrueConeLoop.nominalSpeed (a p) (m p) <\n      ConeAlgebra.coneBound (p₁ p + p₂ p * m p) (p₂ p - p₁ p * m p))\n    (hScone : ∀ p ∈ S, TrueConeLoop.InTrueCone (p₁ p) (p₂ p) (a p) (a p * m p))\n    (P : ℝ → Profiles D) (Q : Profiles D')\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

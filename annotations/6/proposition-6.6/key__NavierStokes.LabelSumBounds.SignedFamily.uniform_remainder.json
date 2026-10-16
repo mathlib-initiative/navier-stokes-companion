@@ -1,29 +1,31 @@
 {
-  "id": "proposition-6.6/key/1.NavierStokes.LabelSumBounds.SignedFamily.uniform_remainder",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LabelSumBounds.SignedFamily.uniform_remainder",
-      "line": 896,
-      "module": "NavierStokes.LabelSumBounds",
-      "path": "NavierStokes/LabelSumBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean#L896"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LabelSumBounds.SignedFamily.uniform_remainder",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LabelSumBounds.SignedFamily.uniform_remainder",
+        "module": "NavierStokes.LabelSumBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: from UniformWaveClass bounds at exponents \\alpha,\\delta,\\beta,\\eta and \\gamma \\le 2\\beta etc., UniformMeanClass s \\gamma for the signed remainder: the W\\cdot W \\to M row with label-uniform constants."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 896,
-        "text": "theorem SignedFamily.uniform_remainder {s : StripData D} {P : ι → ℕ → D → ℝ} {α δ β η γ : ℝ}\n    (f : SignedFamily s P α δ β η) (hβη : β ≤ η)\n    (hγd : γ ≤ δ + β) (hγc : γ ≤ α + η) (hγs : γ ≤ 2 * β) (i j : Fin 3) :\n    UniformMeanClass s γ (fun l => signedRemainder (f.primary l).oscillation\n      (f.old l).oscillation (f.tangent l).oscillation (f.curl l).oscillation i j)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LabelSumBounds.SignedFamily.uniform_remainder",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: from UniformWaveClass bounds at exponents \\alpha,\\delta,\\beta,\\eta and \\gamma \\le 2\\beta etc., UniformMeanClass s \\gamma for the signed remainder: the W\\cdot W \\to M row with label-uniform constants."
+          },
+          "destination": {
+            "fragment": "L896",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean"
+          },
+          "snippet": {
+            "line": 896,
+            "text": "theorem SignedFamily.uniform_remainder {s : StripData D} {P : ι → ℕ → D → ℝ} {α δ β η γ : ℝ}\n    (f : SignedFamily s P α δ β η) (hβη : β ≤ η)\n    (hγd : γ ≤ δ + β) (hγc : γ ≤ α + η) (hγs : γ ≤ 2 * β) (i j : Fin 3) :\n    UniformMeanClass s γ (fun l => signedRemainder (f.primary l).oscillation\n      (f.old l).oscillation (f.tangent l).oscillation (f.curl l).oscillation i j)"
+          }
+        }
       }
     }
-  }
+  ]
 }

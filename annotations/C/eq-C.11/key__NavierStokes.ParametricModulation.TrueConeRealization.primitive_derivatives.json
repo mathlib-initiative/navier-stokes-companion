@@ -1,25 +1,27 @@
 {
-  "id": "eq-C.11/key/01.NavierStokes.ParametricModulation.TrueConeRealization.primitive_derivatives",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricModulation.TrueConeRealization.primitive_derivatives",
-      "line": 398,
-      "module": "NavierStokes.ParametricModulation",
-      "path": "NavierStokes/ParametricModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean#L398"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricModulation.TrueConeRealization.primitive_derivatives"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricModulation.TrueConeRealization.primitive_derivatives",
+        "module": "NavierStokes.ParametricModulation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 398,
-        "text": "HasDerivAt (fun s => r.angularPrimitive (p, s)) (-(r.angularLoop (p, θ) - a p) / 2) θ ∧ HasDerivAt (fun s => r.axialPrimitive E (p, s)) (E p * (-r.signedAxialLoop (p, θ) + a p * m p) / 2) θ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ParametricModulation.TrueConeRealization.primitive_derivatives"
+          },
+          "destination": {
+            "fragment": "L398",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 398,
+            "text": "theorem primitive_derivatives (r : TrueConeRealization a m p₁ p₂ K B)\n    (E : P → ℝ) (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₂ : ContDiff ℝ ∞ p₂) (p : P) (hp : p ∈ K) (θ : ℝ) :\n    HasDerivAt (fun s => r.angularPrimitive (p, s))\n        (-(r.angularLoop (p, θ) - a p) / 2) θ ∧\n      HasDerivAt (fun s => r.axialPrimitive E (p, s))\n        (E p * (-r.signedAxialLoop (p, θ) + a p * m p) / 2) θ"
+          }
+        }
       }
     }
-  }
+  ]
 }

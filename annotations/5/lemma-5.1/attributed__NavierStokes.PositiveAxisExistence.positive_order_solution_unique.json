@@ -1,31 +1,33 @@
 {
-  "id": "lemma-5.1/attributed/1.NavierStokes.PositiveAxisExistence.positive_order_solution_unique",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveAxisExistence.positive_order_solution_unique",
-      "line": 890,
-      "module": "NavierStokes.PositiveAxisExistence",
-      "path": "NavierStokes/PositiveAxisExistence.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisExistence.lean#L890"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveAxisExistence.positive_order_solution_unique",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveAxisExistence.positive_order_solution_unique",
+        "module": "NavierStokes.PositiveAxisExistence"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The same uniqueness in the holomorphic continuous-path class (SidePathSolution): any pair of side paths holomorphic on U solving the Volterra integral equation lifts to the constructed positiveSolution.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 890,
-        "text": "theorem positive_order_solution_unique {R T : ℝ} (hR : 0 ≤ R) (hRT : R < T)\n    {U : Set ℂ} (hU : IsOpen U) (h C : ℝ) (n : ℕ)\n    {F : CoefficientData} (hF : LowerInputRegularity T U (h : ℂ) F)\n    {V : Bool → ℂ → NilpotentVolterra.Path R}\n    (hV : SidePathSolution hR U\n      (coefficient0 (h : ℂ) ((slowPower h n : ℝ) : ℂ) (C : ℂ) F)\n      (coefficient1 (h : ℂ) F) (sourceField (h : ℂ) (C : ℂ) F) V)\n    (r : ℝ) {z : ℂ} (hz : z ∈ U) :\n    candidateLift hR\n      (coefficient0 (h : ℂ) ((slowPower h n : ℝ) : ℂ) (C : ℂ) F)\n      (coefficient1 (h : ℂ) F) (sourceField (h : ℂ) (C : ℂ) F) V r z =\n      positiveSolution hR (h : ℂ) ((slowPower h n : ℝ) : ℂ) (C : ℂ) F r z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PositiveAxisExistence.positive_order_solution_unique",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: The same uniqueness in the holomorphic continuous-path class (SidePathSolution): any pair of side paths holomorphic on U solving the Volterra integral equation lifts to the constructed positiveSolution.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L890",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisExistence.lean"
+          },
+          "snippet": {
+            "line": 890,
+            "text": "theorem positive_order_solution_unique {R T : ℝ} (hR : 0 ≤ R) (hRT : R < T)\n    {U : Set ℂ} (hU : IsOpen U) (h C : ℝ) (n : ℕ)\n    {F : CoefficientData} (hF : LowerInputRegularity T U (h : ℂ) F)\n    {V : Bool → ℂ → NilpotentVolterra.Path R}\n    (hV : SidePathSolution hR U\n      (coefficient0 (h : ℂ) ((slowPower h n : ℝ) : ℂ) (C : ℂ) F)\n      (coefficient1 (h : ℂ) F) (sourceField (h : ℂ) (C : ℂ) F) V)\n    (r : ℝ) {z : ℂ} (hz : z ∈ U) :\n    candidateLift hR\n      (coefficient0 (h : ℂ) ((slowPower h n : ℝ) : ℂ) (C : ℂ) F)\n      (coefficient1 (h : ℂ) F) (sourceField (h : ℂ) (C : ℂ) F) V r z =\n      positiveSolution hR (h : ℂ) ((slowPower h n : ℝ) : ℂ) (C : ℂ) F r z"
+          }
+        }
       }
     }
-  }
+  ]
 }

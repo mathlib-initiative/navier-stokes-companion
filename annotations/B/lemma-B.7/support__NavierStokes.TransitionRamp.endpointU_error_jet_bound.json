@@ -1,26 +1,29 @@
 {
-  "id": "lemma-B.7/support/3.NavierStokes.TransitionRamp.endpointU_error_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TransitionRamp.endpointU_error_jet_bound",
-      "line": 2123,
-      "module": "NavierStokes.TransitionRamp",
-      "path": "NavierStokes/TransitionRamp.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TransitionRamp.lean#L2123"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TransitionRamp.endpointU_error_jet_bound",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TransitionRamp.endpointU_error_jet_bound",
+        "module": "NavierStokes.TransitionRamp"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 2123,
-        "text": "theorem endpointU_error_jet_bound (hΛ : 0 < Λ) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hP0 : ContDiff ℝ ∞ P0) {C : ℝ} (E : NaturalEntrance.CoefficientProfile d Λ C)\n    {δ : ℝ} (hδ : 0 < δ) (hδT : 2 * δ < rampLimit)\n    {N : ℕ} {ε T κ w₁ w₂ : ℝ}\n    (hb : 0 ≤ (ofNatural E.family hΛ hsmall hδ hδT hP0).bigTime)\n    (hc : (ofNatural E.family hΛ hsmall hδ hδT hP0).SmallLogControl (Icc (-1 : ℝ) 1) N ε T κ w₁ w₂)\n    {n : ℕ} (hn : n ≤ N) {η : ℝ} (hη : η ∈ Icc (-1 : ℝ) 1) :\n    |iteratedDeriv n (fun ξ => (ofNatural E.family hΛ hsmall hδ hδT hP0).endpointU T κ w₁ ξ -\n      NaturalAxisData.U j ξ) η| ≤ ReferenceJetBounds.jetConstant d.coefficients 0 n / Λ + ε"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.TransitionRamp.endpointU_error_jet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L2123",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TransitionRamp.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 2123,
+            "text": "theorem endpointU_error_jet_bound (hΛ : 0 < Λ) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hP0 : ContDiff ℝ ∞ P0) {C : ℝ} (E : NaturalEntrance.CoefficientProfile d Λ C)\n    {δ : ℝ} (hδ : 0 < δ) (hδT : 2 * δ < rampLimit)\n    {N : ℕ} {ε T κ w₁ w₂ : ℝ}\n    (hb : 0 ≤ (ofNatural E.family hΛ hsmall hδ hδT hP0).bigTime)\n    (hc : (ofNatural E.family hΛ hsmall hδ hδT hP0).SmallLogControl (Icc (-1 : ℝ) 1) N ε T κ w₁ w₂)\n    {n : ℕ} (hn : n ≤ N) {η : ℝ} (hη : η ∈ Icc (-1 : ℝ) 1) :\n    |iteratedDeriv n (fun ξ => (ofNatural E.family hΛ hsmall hδ hδT hP0).endpointU T κ w₁ ξ -\n      NaturalAxisData.U j ξ) η| ≤ ReferenceJetBounds.jetConstant d.coefficients 0 n / Λ + ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

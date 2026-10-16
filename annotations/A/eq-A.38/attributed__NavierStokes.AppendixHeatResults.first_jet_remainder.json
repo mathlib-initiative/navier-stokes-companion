@@ -1,25 +1,27 @@
 {
-  "id": "eq-A.38/attributed/04.NavierStokes.AppendixHeatResults.first_jet_remainder",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AppendixHeatResults.first_jet_remainder",
-      "line": 129,
-      "module": "NavierStokes.AppendixHeatResults",
-      "path": "NavierStokes/AppendixHeatResults.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AppendixHeatResults.lean#L129"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AppendixHeatResults.first_jet_remainder"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AppendixHeatResults.first_jet_remainder",
+        "module": "NavierStokes.AppendixHeatResults"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 129,
-        "text": "|profileJet (1+h) 1 z + h*(1+h)| ≤ h*(1+h)^2*(2+h) * z — the once-differentiated form of the same expansion"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.AppendixHeatResults.first_jet_remainder"
+          },
+          "destination": {
+            "fragment": "L129",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AppendixHeatResults.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 129,
+            "text": "theorem first_jet_remainder {h z : ℝ} (hh : 0 < h) (hz : 0 ≤ z) :\n    |profileJet (1 + h) 1 z + h * (1 + h)| ≤\n      h * (1 + h) ^ 2 * (2 + h) * z"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,53 @@
 {
-  "id": "proposition-9.6/support/3.NavierStokes.CycleMeanEquation.iterate_divergence_zero",
-  "location": {
-    "page": 107,
-    "rect": [0.12854, 0.803306, 0.746187, 0.097521]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CycleMeanEquation.iterate_divergence_zero",
-      "line": 562,
-      "module": "NavierStokes.CycleMeanEquation",
-      "path": "NavierStokes/CycleMeanEquation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CycleMeanEquation.lean#L562"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CycleMeanEquation.iterate_divergence_zero",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 107,
+        "rect": [0.12854, 0.803306, 0.746187, 0.097521]
       },
-      "region": "proposition-9.6@p107",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 562,
-        "text": "theorem iterate_divergence_zero {ι : Type} {coord : ℝ}\n    (U : LocalSignedRequest.SlowRegion coord) (p : ℕ → CycleParameters ι)\n    (c : Context Point) (seed : CycleState ι) (V : Set Point)\n    (hV : ∀ j, (p j).strip.domain = V)\n    (H₀ : LiftedMeanResidual.MeanHypotheses V c seed.state)\n    (H : ∀ j, StepData U (p j) (CycleState.iterate p c seed j).coefficients c\n      (CycleState.iterate p c seed j).state)\n    (j n : ℕ) {x : Point × ℝ} (hx : x ∈ LiftedMeanResidual.cylinder V) :\n    fullDivergence c (CycleState.iterate p c seed j).state n x = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-9.6@p107"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 108,
+        "rect": [0.12854, 0.103306, 0.746187, 0.12562]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-9.6@p108"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CycleMeanEquation.iterate_divergence_zero",
+        "module": "NavierStokes.CycleMeanEquation"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.CycleMeanEquation.iterate_divergence_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L562",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CycleMeanEquation.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 562,
+            "text": "theorem iterate_divergence_zero {ι : Type} {coord : ℝ}\n    (U : LocalSignedRequest.SlowRegion coord) (p : ℕ → CycleParameters ι)\n    (c : Context Point) (seed : CycleState ι) (V : Set Point)\n    (hV : ∀ j, (p j).strip.domain = V)\n    (H₀ : LiftedMeanResidual.MeanHypotheses V c seed.state)\n    (H : ∀ j, StepData U (p j) (CycleState.iterate p c seed j).coefficients c\n      (CycleState.iterate p c seed j).state)\n    (j n : ℕ) {x : Point × ℝ} (hx : x ∈ LiftedMeanResidual.cylinder V) :\n    fullDivergence c (CycleState.iterate p c seed j).state n x = 0"
+          }
+        }
+      }
+    }
+  ]
 }

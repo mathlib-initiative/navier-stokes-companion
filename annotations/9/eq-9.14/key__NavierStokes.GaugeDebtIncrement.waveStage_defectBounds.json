@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.14/key/03.NavierStokes.GaugeDebtIncrement.waveStage_defectBounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaugeDebtIncrement.waveStage_defectBounds",
-      "line": 625,
-      "module": "NavierStokes.GaugeDebtIncrement",
-      "path": "NavierStokes/GaugeDebtIncrement.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeDebtIncrement.lean#L625"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaugeDebtIncrement.waveStage_defectBounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaugeDebtIncrement.waveStage_defectBounds",
+        "module": "NavierStokes.GaugeDebtIncrement"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 625,
-        "text": "(hs : tau <= sigma) (ht : 1 + tau <= alpha - kappa) (hold : DefectBounds (localSlowStripData ...) sigma c u) -> DefectBounds (localSlowStripData ...) tau c (SignedMeanGain.waveStage g c u w q gaussian); no NativeData. Applied inside bandSignedStage_mean_debt_of_cross_defects with alpha = 1+sigma-kappa (class of the covariance increment), old exponent sigma-kappa, tau = sigma-2*kappa"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.GaugeDebtIncrement.waveStage_defectBounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L625",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeDebtIncrement.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 625,
+            "text": "theorem waveStage_defectBounds {σ τ : ℝ} (hσ : τ ≤ σ) (hτ : 1 + τ ≤ α - κ)\n    (hold : DefectBounds (PhysicalMeanDomain.localSlowStripData U.carrier U.isOpen\n      ε L hε hεone hL) σ c u) :\n    DefectBounds (PhysicalMeanDomain.localSlowStripData U.carrier U.isOpen\n      ε L hε hεone hL) τ c (SignedMeanGain.waveStage g c u w q gaussian)"
+          }
+        }
       }
     }
-  }
+  ]
 }

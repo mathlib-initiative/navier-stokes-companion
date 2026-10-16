@@ -1,26 +1,28 @@
 {
-  "id": "eq-p080-1/key/02.NavierStokes.TangentProjection.tangency_defect_derivative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TangentProjection.tangency_defect_derivative",
-      "line": 93,
-      "module": "NavierStokes.TangentProjection",
-      "path": "NavierStokes/TangentProjection.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TangentProjection.lean#L93"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TangentProjection.tangency_defect_derivative",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TangentProjection.tangency_defect_derivative",
+        "module": "NavierStokes.TangentProjection"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 93,
-        "text": "theorem tangency_defect_derivative (hn0 : n x ≠ 0) (hn : HasDerivAt n n' x) (ht : HasDerivAt t (projectedRhs (n x) n' (t x) Kt f δ) x) : HasDerivAt (fun y => ⟪n y, t y⟫_ℝ) (-δ * ⟪n x, t x⟫_ℝ) x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TangentProjection.tangency_defect_derivative",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L93",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TangentProjection.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 93,
+            "text": "theorem tangency_defect_derivative {n t : ℝ → E} {n' : E} {x : ℝ}\n    {Kt f : E} {δ : ℝ} (hn0 : n x ≠ 0)\n    (hn : HasDerivAt n n' x)\n    (ht : HasDerivAt t (projectedRhs (n x) n' (t x) Kt f δ) x) :\n    HasDerivAt (fun y => ⟪n y, t y⟫_ℝ) (-δ * ⟪n x, t x⟫_ℝ) x"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,27 @@
 {
-  "id": "eq-p102-2/key/04.NavierStokes.LinearWaveBounds.InputBounds.phaseDefect_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveBounds.InputBounds.phaseDefect_mem",
-      "line": 353
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L353"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveBounds.InputBounds.phaseDefect_mem",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveBounds.InputBounds.phaseDefect_mem",
+        "lines": [353, 353],
+        "module": "NavierStokes.LinearWaveBounds"
       },
-      "relation": "contains",
-      "snippet": {
-        "line": 353,
-        "text": "row 2, gain 1/2: `have hh' := hh.mono_exponent (show α + 1/2 - 3*κ ≤ (1 + α) - 1/2 …)`, i.e. the sharp class of ikm·E_ik·a is α + 1/2 — defect ∈ UnweightedClass 1 times amplitude ∈ α, then frequency_mul costs 1/2 since a.frequency is BandBound s (−1/2) (k ≍ ε^{−1/2})"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LinearWaveBounds.InputBounds.phaseDefect_mem",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L353"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 348,
+            "text": "theorem phaseDefect_mem (h : InputBounds s P α κ d a) (i : Fin 3) :\n    WaveClass s P (α + 1 / 2 - 3 * κ) (fun n x =>\n      phaseFactor (a.frequency n) * Complex.ofReal (a.defect s d n x) * a.amplitude n x i)"
+          }
+        }
       }
     }
-  }
+  ]
 }

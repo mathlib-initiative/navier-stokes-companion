@@ -1,23 +1,26 @@
 {
-  "id": "eq-p148-2/key/02.NavierStokes.AxisContraction.natural_axis_profiles",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisContraction.natural_axis_profiles",
-      "line": 753
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisContraction.lean#L753"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisContraction.natural_axis_profiles",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisContraction.natural_axis_profiles",
+        "module": "NavierStokes.AxisContraction"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 753,
-        "text": "with S := AxisResolvent.naturalResolvent I hε χ and Q := AxisResolvent.naturalOperator I hε χ: ∃ x, … ∧ x.1 + Q x.1 = d.one + (1/(2*Λ)) • (naturalRemainder O d id (1/Λ) a x).1 ∧ x.2 = -(1/2) • O.j1 (O.product d.inverseL d.zStar) + (1/(2*Λ)) • (…).2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.AxisContraction.natural_axis_profiles",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L753"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 753,
+            "text": "theorem natural_axis_profiles\n    (I : AxisCoefficientSpace.Window) {ε : ℝ} (hε : 0 < ε)\n    (χ : AxisCoefficientSpace.AxisSpace I ε)\n    (d : AxisData (AxisCoefficientSpace.AxisSpace I ε))\n    (M : ℝ) (hM : 0 ≤ M) :\n    let O"
+          }
+        }
       }
     }
-  }
+  ]
 }

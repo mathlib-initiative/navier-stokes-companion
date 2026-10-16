@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.22/key/04.NavierStokes.TemporalMeanUpdate.axialUpdate_eq_desired_sub_alias",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TemporalMeanUpdate.axialUpdate_eq_desired_sub_alias",
-      "line": 775,
-      "module": "NavierStokes.TemporalMeanUpdate",
-      "path": "NavierStokes/TemporalMeanUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L775"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TemporalMeanUpdate.axialUpdate_eq_desired_sub_alias",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TemporalMeanUpdate.axialUpdate_eq_desired_sub_alias",
+        "module": "NavierStokes.TemporalMeanUpdate"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 775,
-        "text": "axialUpdate … = fun z => desiredIncrement h n f z - axialAlias … z, which identifies the paper's a = −𝒜_1γ_d with −axialAlias"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.TemporalMeanUpdate.axialUpdate_eq_desired_sub_alias",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L775",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 775,
+            "text": "theorem axialUpdate_eq_desired_sub_alias {d a b M : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (v : Plane) (h : ℝ) (n : ℕ)\n    {f : PressureStream.Lift S → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hp : PressureStream.TorusPeriodicLift f) (hs : RadialAlias.RadiallySupported a b f) :\n    axialUpdate d a b M v h n f = fun z => desiredIncrement h n f z - axialAlias d a b M v h n f z"
+          }
+        }
       }
     }
-  }
+  ]
 }

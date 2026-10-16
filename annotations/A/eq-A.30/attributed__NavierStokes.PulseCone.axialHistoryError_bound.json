@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.30/attributed/03.NavierStokes.PulseCone.axialHistoryError_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseCone.axialHistoryError_bound",
-      "line": 1256
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseCone.lean#L1256"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseCone.axialHistoryError_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseCone.axialHistoryError_bound",
+        "module": "NavierStokes.PulseCone"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 1256,
-        "text": "|axialHistoryError w amp eta y| ≤ axialErrorConstant d.core.P d.core.m * d.core.lam ^ 29, under wait = 60*log(1/lam), lam ≤ 1/120, |eta| ≤ 1, |amp eta| ≤ 6/5, |deriv amp eta| ≤ 1, 0 ≤ y ≤ pulseLength"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.PulseCone.axialHistoryError_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1256"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 1256,
+            "text": "theorem axialHistoryError_bound (w : ResetWitness d K)\n    (hwait : d.core.wait = 60 * Real.log (1 / d.core.lam)) (hsmall : d.core.lam ≤ 1 / 120)\n    {amp : ℝ → ℝ} (ha : ContDiff ℝ ∞ amp) {eta y : ℝ}\n    (heta : |eta| ≤ 1) (hamp : |amp eta| ≤ 6 / 5) (hamp' : |deriv amp eta| ≤ 1)\n    (hy : 0 ≤ y) (hy' : y ≤ d.core.pulseLength) :\n    |axialHistoryError w amp eta y| ≤ axialErrorConstant d.core.P d.core.m * d.core.lam ^ 29"
+          }
+        }
       }
     }
-  }
+  ]
 }

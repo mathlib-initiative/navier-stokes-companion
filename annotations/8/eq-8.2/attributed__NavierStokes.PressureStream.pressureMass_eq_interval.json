@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.2/attributed/06.NavierStokes.PressureStream.pressureMass_eq_interval",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PressureStream.pressureMass_eq_interval",
-      "line": 132,
-      "module": "NavierStokes.PressureStream",
-      "path": "NavierStokes/PressureStream.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean#L132"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PressureStream.pressureMass_eq_interval",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PressureStream.pressureMass_eq_interval",
+        "module": "NavierStokes.PressureStream"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 132,
-        "text": "(hf : ContDiff ℝ ∞ f) (hs : RadialAlias.RadiallySupported a b f) : pressureMass f s = ∫ r in a..b, torusAverage f (r, s)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.PressureStream.pressureMass_eq_interval",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L132",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 132,
+            "text": "theorem pressureMass_eq_interval {a b : ℝ} {f : Lift S → ℝ}\n    (hf : ContDiff ℝ ∞ f) (hs : RadialAlias.RadiallySupported a b f) (s : S) :\n    pressureMass f s = ∫ r in a..b, torusAverage f (r, s)"
+          }
+        }
       }
     }
-  }
+  ]
 }

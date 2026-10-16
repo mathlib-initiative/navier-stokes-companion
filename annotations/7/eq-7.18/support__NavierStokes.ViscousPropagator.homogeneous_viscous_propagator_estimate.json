@@ -1,23 +1,28 @@
 {
-  "id": "eq-7.18/support/03.NavierStokes.ViscousPropagator.homogeneous_viscous_propagator_estimate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ViscousPropagator.homogeneous_viscous_propagator_estimate",
-      "line": 389
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ViscousPropagator.lean#L389"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ViscousPropagator.homogeneous_viscous_propagator_estimate"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ViscousPropagator.homogeneous_viscous_propagator_estimate",
+        "module": "NavierStokes.ViscousPropagator"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 389,
-        "text": "the homogeneous version of the same growth estimate, from which the harmonic case is deduced"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ViscousPropagator.homogeneous_viscous_propagator_estimate"
+          },
+          "destination": {
+            "fragment": "L389"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 389,
+            "text": "theorem homogeneous_viscous_propagator_estimate\n    {a b midpoint S dampingError matrixError : ℝ}\n    (hS : 0 < S) (hdampingError : 0 ≤ dampingError) (hmatrixError : 0 ≤ matrixError)\n    (lam damping referenceDamping rate : ℝ → ℝ)\n    (E : ℝ → Plane →L[ℝ] Plane) {u : ℝ → Plane}\n    (hrate : Continuous rate)\n    (hreference : ∀ t ∈ Ico a b, rate t = lam t - referenceDamping t)\n    (hlam : ∀ t ∈ Ico a b, 0 ≤ lam t)\n    (hdamping : ∀ t ∈ Ico a b, referenceDamping t - dampingError / S ≤ damping t)\n    (hE : ∀ t ∈ Ico a b, ‖E t‖ ≤ matrixError / S)\n    (hu : ContinuousOn u (Icc a b))\n    (hode : ∀ t ∈ Ico a b, HasDerivWithinAt u\n      (coefficient (lam t) (damping t) (E t) (u t)) (Ici t) t) :\n    ∀ t ∈ Icc a b,\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

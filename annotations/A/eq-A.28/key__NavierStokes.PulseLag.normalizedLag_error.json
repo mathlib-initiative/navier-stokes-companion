@@ -1,21 +1,24 @@
 {
-  "id": "eq-A.28/key/02.NavierStokes.PulseLag.normalizedLag_error",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseLag.normalizedLag_error",
-      "line": 425
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseLag.lean#L425"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseLag.normalizedLag_error"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseLag.normalizedLag_error",
+        "module": "NavierStokes.PulseLag"
       },
-      "snippet": {
-        "line": 425,
-        "text": "|normalizedLag c amp eta y - (pulseRatio c amp (y,eta)/decay c - deriv (fun t => pulseRatio c amp (t,eta)) y / decay c ^ 2 + (prefixCoefficient c 0 * parameterPolynomial eta) * Real.exp (-decay c * y))| ≤ lagBound c.P c.m * (2 + |amp eta|) * c.lam ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PulseLag.normalizedLag_error"
+          },
+          "destination": {
+            "fragment": "L425"
+          },
+          "snippet": {
+            "line": 425,
+            "text": "theorem normalizedLag_error (c : Parameters) (hsmall : c.lam ≤ 1 / 120)\n    (amp : ℝ → ℝ) {eta : ℝ} (heta : |eta| ≤ 1) {y : ℝ} (hy : 0 ≤ y) :\n    |normalizedLag c amp eta y - (pulseRatio c amp (y, eta) / decay c -\n      deriv (fun t => pulseRatio c amp (t, eta)) y / decay c ^ 2 +\n        (prefixCoefficient c 0 * parameterPolynomial eta) * Real.exp (-decay c * y))| ≤\n      lagBound c.P c.m * (2 + |amp eta|) * c.lam ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

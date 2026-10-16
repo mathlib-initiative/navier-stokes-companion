@@ -1,26 +1,29 @@
 {
-  "id": "corollary-10.6/support/3.NavierStokes.PeriodicPaper.of_compact_candidate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicPaper.of_compact_candidate",
-      "line": 92,
-      "module": "NavierStokes.PeriodicPaperTheorem",
-      "path": "NavierStokes/PeriodicPaperTheorem.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicPaperTheorem.lean#L92"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicPaper.of_compact_candidate",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicPaper.of_compact_candidate",
+        "module": "NavierStokes.PeriodicPaperTheorem"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 92,
-        "text": "theorem of_compact_candidate {ν : ℝ} {u f : VelocityField} {p : PressureField}\n    {K : Set Space} (h : NavierStokesR3.ProblemStatement.CandidateProperties ν u p f K)\n    (hK : K ⊆ fundamentalInterior)\n    (hu : ∀ t < (1 : ℝ), ∀ x : Space, u (t, x) ≠ 0 → ∀ i, |x i| ≤ 1 / 4)\n    (hp : ∀ t < (1 : ℝ), ∀ x : Space, p (t, x) ≠ 0 → ∀ i, |x i| ≤ 1 / 4)\n    (hf : SupportedInCube (1 / 4) f) :\n    CandidateProperties ν (periodize (beforeOne u)) (periodize (beforeOne p))\n      (periodize f) K"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.PeriodicPaper.of_compact_candidate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L92",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicPaperTheorem.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 92,
+            "text": "theorem of_compact_candidate {ν : ℝ} {u f : VelocityField} {p : PressureField}\n    {K : Set Space} (h : NavierStokesR3.ProblemStatement.CandidateProperties ν u p f K)\n    (hK : K ⊆ fundamentalInterior)\n    (hu : ∀ t < (1 : ℝ), ∀ x : Space, u (t, x) ≠ 0 → ∀ i, |x i| ≤ 1 / 4)\n    (hp : ∀ t < (1 : ℝ), ∀ x : Space, p (t, x) ≠ 0 → ∀ i, |x i| ≤ 1 / 4)\n    (hf : SupportedInCube (1 / 4) f) :\n    CandidateProperties ν (periodize (beforeOne u)) (periodize (beforeOne p))\n      (periodize f) K"
+          }
+        }
       }
     }
-  }
+  ]
 }

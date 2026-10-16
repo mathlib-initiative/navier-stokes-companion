@@ -1,26 +1,29 @@
 {
-  "id": "lemma-5.2/support/3.NavierStokes.ConstructedSlowBase.weighted_on_actual_scales",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ConstructedSlowBase.weighted_on_actual_scales",
-      "line": 446,
-      "module": "NavierStokes.ConstructedSlowBase",
-      "path": "NavierStokes/ConstructedSlowBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConstructedSlowBase.lean#L446"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ConstructedSlowBase.weighted_on_actual_scales",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ConstructedSlowBase.weighted_on_actual_scales",
+        "module": "NavierStokes.ConstructedSlowBase"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 446,
-        "text": "theorem weighted_on_actual_scales {a : ℕ → ℕ} {h C : ℝ} (hh : 0 < h)\n    {d : Coefficients} (hd : SmoothCoefficients d) {c left right inner cut : ℝ}\n    (hc : 0 < c) (hl : Real.exp left < inner) (hi : inner ≤ cut) (hr : cut < Real.exp right)\n    (hs : HigherInteriorSupport d left right)\n    (hz : ∀ w : Inner, w.1 < inner → stressPair d 1 w = 0)\n    (ho : PolynomialEdgeJets (outerWindow cut right) (activeZeta c left right)\n      (activeDelta left right) (stressPair d 1))\n    {K : Set Inner} (hK : IsCompact K) (hWK : activeWindow left right ⊆ K)\n    (ha : AdmissibleScales h (weightedBundle C d (activeZeta c left right)) K a) :\n    WeightedStressBound a h d c left right"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ConstructedSlowBase.weighted_on_actual_scales",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L446",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConstructedSlowBase.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 446,
+            "text": "theorem weighted_on_actual_scales {a : ℕ → ℕ} {h C : ℝ} (hh : 0 < h)\n    {d : Coefficients} (hd : SmoothCoefficients d) {c left right inner cut : ℝ}\n    (hc : 0 < c) (hl : Real.exp left < inner) (hi : inner ≤ cut) (hr : cut < Real.exp right)\n    (hs : HigherInteriorSupport d left right)\n    (hz : ∀ w : Inner, w.1 < inner → stressPair d 1 w = 0)\n    (ho : PolynomialEdgeJets (outerWindow cut right) (activeZeta c left right)\n      (activeDelta left right) (stressPair d 1))\n    {K : Set Inner} (hK : IsCompact K) (hWK : activeWindow left right ⊆ K)\n    (ha : AdmissibleScales h (weightedBundle C d (activeZeta c left right)) K a) :\n    WeightedStressBound a h d c left right"
+          }
+        }
       }
     }
-  }
+  ]
 }

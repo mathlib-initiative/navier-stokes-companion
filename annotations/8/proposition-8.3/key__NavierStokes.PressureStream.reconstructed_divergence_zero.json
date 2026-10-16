@@ -1,34 +1,55 @@
 {
-  "id": "proposition-8.3/key/1.NavierStokes.PressureStream.reconstructed_divergence_zero",
-  "location": {
-    "page": 92,
-    "rect": [0.12854, 0.824793, 0.746187, 0.02562]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PressureStream.reconstructed_divergence_zero",
-      "line": 740,
-      "module": "NavierStokes.PressureStream",
-      "path": "NavierStokes/PressureStream.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 92,
+        "rect": [0.12854, 0.824793, 0.746187, 0.02562]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-8.3@p092"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean#L740"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PressureStream.reconstructed_divergence_zero",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 93,
+        "rect": [0.12854, 0.102479, 0.746187, 0.31405]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: graphDivergence k v w (streamBeta w (streamPotential ...)) (streamGamma k v (streamPotential ...)) p = 0 for every p: (Delta beta, 0, Delta gamma) is divergence free."
-      },
-      "region": "proposition-8.3@p092",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 740,
-        "text": "theorem reconstructed_divergence_zero {d a b M : ℝ} (ha : 0 < a) (hab : a < b)\n    (hd : 0 < d) (v w : E) {γd : ℝ × E → ℝ} (hγ : ContDiff ℝ ∞ γd)\n    (hs : RadialAlias.RadiallySupported a b γd) (p : ℝ × E) :\n    graphDivergence (physicalSpeed d M) v w\n      (streamBeta w (streamPotential d a b M v γd))\n      (streamGamma (physicalSpeed d M) v (streamPotential d a b M v γd)) p = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-8.3@p093"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PressureStream.reconstructed_divergence_zero",
+        "module": "NavierStokes.PressureStream"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PressureStream.reconstructed_divergence_zero",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: graphDivergence k v w (streamBeta w (streamPotential ...)) (streamGamma k v (streamPotential ...)) p = 0 for every p: (Delta beta, 0, Delta gamma) is divergence free."
+          },
+          "destination": {
+            "fragment": "L740",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean"
+          },
+          "snippet": {
+            "line": 740,
+            "text": "theorem reconstructed_divergence_zero {d a b M : ℝ} (ha : 0 < a) (hab : a < b)\n    (hd : 0 < d) (v w : E) {γd : ℝ × E → ℝ} (hγ : ContDiff ℝ ∞ γd)\n    (hs : RadialAlias.RadiallySupported a b γd) (p : ℝ × E) :\n    graphDivergence (physicalSpeed d M) v w\n      (streamBeta w (streamPotential d a b M v γd))\n      (streamGamma (physicalSpeed d M) v (streamPotential d a b M v γd)) p = 0"
+          }
+        }
+      }
+    }
+  ]
 }

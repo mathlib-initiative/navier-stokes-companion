@@ -1,24 +1,27 @@
 {
-  "id": "eq-6.20/key/01.NavierStokes.ActualMeanPhysicalData.Atlas.values_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualMeanPhysicalData.Atlas.values_eq",
-      "line": 116
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualMeanPhysicalData.lean#L116"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualMeanPhysicalData.Atlas.values_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualMeanPhysicalData.Atlas.values_eq",
+        "module": "NavierStokes.ActualMeanPhysicalData"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 116,
-        "text": "theorem Atlas.values_eq (A : Atlas h N Δ) (H : A.OverlapLaw U degree f) (hn : A.Valid U z n) (hm : A.Valid U z m) : ChartScales.Q n ^ (-degree) * f n (A.chart n z) = ChartScales.Q m ^ (-degree) * f m (A.chart m z)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ActualMeanPhysicalData.Atlas.values_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L116"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 116,
+            "text": "theorem Atlas.values_eq {h degree : ℝ} {N Δ : ℕ} (A : Atlas h N Δ)\n    {U : Set Plane} {f : Scalar} (H : A.OverlapLaw U degree f)\n    {z : Point} {n m : ℕ} (hn : A.Valid U z n) (hm : A.Valid U z m) :\n    ChartScales.Q n ^ (-degree) * f n (A.chart n z) =\n      ChartScales.Q m ^ (-degree) * f m (A.chart m z)"
+          }
+        }
       }
     }
-  }
+  ]
 }

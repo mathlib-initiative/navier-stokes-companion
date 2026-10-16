@@ -1,36 +1,57 @@
 {
-  "id": "lemma-9.2/key/1.NavierStokes.HarmonicSourceSupport.supported_transport_zero",
-  "location": {
-    "page": 102,
-    "rect": [0.12854, 0.846281, 0.745098, 0.044628]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicSourceSupport.supported_transport_zero",
-      "line": 567,
-      "module": "NavierStokes.HarmonicSourceSupport",
-      "path": "NavierStokes/HarmonicSourceSupport.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 102,
+        "rect": [0.12854, 0.846281, 0.745098, 0.044628]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p102"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicSourceSupport.lean#L567"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicSourceSupport.supported_transport_zero",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 103,
+        "rect": [0.12854, 0.102479, 0.745098, 0.057851]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clause (iv) for the construction's actual oscillations: SupportedOscillations u and v, distinct labels at level ≥ 1, x.1 ∈ U, u continuous at x ⊢ transport R Vr Vθ Vz (realLift (u l n)) (realLift (v k n)) x = 0.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-9.2@p102",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 567,
-        "text": "theorem supported_transport_zero (hU : IsOpen U)\n    (hu : SupportedOscillations sys label χ Y U u)\n    (hv : SupportedOscillations sys label χ Y U v)\n    {l k : ι} {n : ℕ} (hl : 1 ≤ (label n l).1) (hk : 1 ≤ (label n k).1)\n    (hne : label n l ≠ label n k) {x : D × ℝ} (hx : x.1 ∈ U)\n    (hc : ∀ i, ContinuousAt (fun y => u l n y i) x)\n    (R : D × ℝ → ℝ) (Vr Vθ Vz : D × ℝ → D × ℝ) :\n    LinearWaveResidual.transport R Vr Vθ Vz (LinearWaveResidual.realLift (u l n))\n      (LinearWaveResidual.realLift (v k n)) x = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p103"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicSourceSupport.supported_transport_zero",
+        "module": "NavierStokes.HarmonicSourceSupport"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.HarmonicSourceSupport.supported_transport_zero",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Clause (iv) for the construction's actual oscillations: SupportedOscillations u and v, distinct labels at level ≥ 1, x.1 ∈ U, u continuous at x ⊢ transport R Vr Vθ Vz (realLift (u l n)) (realLift (v k n)) x = 0.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L567",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicSourceSupport.lean"
+          },
+          "snippet": {
+            "line": 567,
+            "text": "theorem supported_transport_zero (hU : IsOpen U)\n    (hu : SupportedOscillations sys label χ Y U u)\n    (hv : SupportedOscillations sys label χ Y U v)\n    {l k : ι} {n : ℕ} (hl : 1 ≤ (label n l).1) (hk : 1 ≤ (label n k).1)\n    (hne : label n l ≠ label n k) {x : D × ℝ} (hx : x.1 ∈ U)\n    (hc : ∀ i, ContinuousAt (fun y => u l n y i) x)\n    (R : D × ℝ → ℝ) (Vr Vθ Vz : D × ℝ → D × ℝ) :\n    LinearWaveResidual.transport R Vr Vθ Vz (LinearWaveResidual.realLift (u l n))\n      (LinearWaveResidual.realLift (v k n)) x = 0"
+          }
+        }
+      }
+    }
+  ]
 }

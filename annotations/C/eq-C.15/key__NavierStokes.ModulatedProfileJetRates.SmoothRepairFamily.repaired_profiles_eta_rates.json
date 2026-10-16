@@ -1,26 +1,29 @@
 {
-  "id": "eq-C.15/key/02.NavierStokes.ModulatedProfileJetRates.SmoothRepairFamily.repaired_profiles_eta_rates",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedProfileJetRates.SmoothRepairFamily.repaired_profiles_eta_rates",
-      "line": 283,
-      "module": "NavierStokes.ModulatedProfileJetRates",
-      "path": "NavierStokes/ModulatedProfileJetRates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileJetRates.lean#L283"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedProfileJetRates.SmoothRepairFamily.repaired_profiles_eta_rates",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedProfileJetRates.SmoothRepairFamily.repaired_profiles_eta_rates",
+        "module": "NavierStokes.ModulatedProfileJetRates"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 283,
-        "text": "∃ Nq C, … ∀ N ≥ Nq, (∀ X eta, X ≤ Xmax → eta ∈ S → |iteratedDeriv q (fun e => (R N).E (X,e)) eta - iteratedDeriv q (fun e => Q.E (X,e)) eta| ≤ C / N ∧ … U …) ∧ (∀ X ≥ 0, FiniteJetBound q (fun eta => profileRows (R N) (X,eta) - profileRows Q (X,eta)) S (C / N))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ModulatedProfileJetRates.SmoothRepairFamily.repaired_profiles_eta_rates",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L283",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileJetRates.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 283,
+            "text": "theorem SmoothRepairFamily.repaired_profiles_eta_rates\n    (W : Window) (r : ParametricModulation.TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    {patch : FiveProfileMoments.Patch} (hgap : W.right < patch.left)\n    {b : ℝ} {A G : ℝ → ℝ} {d : ℝ → ℝ → Debt} {S : Set ℝ}\n    (H : SmoothRepairFamily patch b A G d S) (hS : IsCompact S) (hA : ContDiff ℝ ∞ A)\n    {D D' : ProfileHistories.RadialDomain}\n    (R : ℝ → ProfileHistories.Profiles D) (Q : ProfileHistories.Profiles D')\n    (hRf : ∀ N, (R N).f = applyRepairF patch A (H.coefficients N) (localizedF W r f N))\n    (hRU : ∀ N, (R N).U = applyRepairU patch A (H.coefficients N) (localizedU W r E U N))\n    (hQf : Q.f = f) (hQU : Q.U = U) (hP0 : ∀ N, (R N).pressure0 = Q.pressure0)\n    (Xmax : ℝ) (q : ℕ) :\n    ∃ Nq C : ℝ, 1 ≤ Nq ∧ 0 < C ∧ ∀ N : ℝ, Nq ≤ N →\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,28 @@
 {
-  "id": "eq-p124-5/support/04.NavierStokesR3.ViscosityScaling.rescale_smooth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ViscosityScaling.rescale_smooth",
-      "line": 33,
-      "module": "NavierStokes.R3.ViscosityScaling",
-      "path": "NavierStokes/R3/ViscosityScaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean#L33"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ViscosityScaling.rescale_smooth"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ViscosityScaling.rescale_smooth",
+        "module": "NavierStokes.R3.ViscosityScaling"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 33,
-        "text": "ContDiff ℝ ∞ g → ContDiff ℝ ∞ (rescale a b g)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokesR3.ViscosityScaling.rescale_smooth"
+          },
+          "destination": {
+            "fragment": "L33",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 33,
+            "text": "theorem rescale_smooth {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]\n    {g : SpaceTime → V} (hg : ContDiff ℝ ∞ g) (a b : ℝ) :\n    ContDiff ℝ ∞ (rescale a b g)"
+          }
+        }
       }
     }
-  }
+  ]
 }

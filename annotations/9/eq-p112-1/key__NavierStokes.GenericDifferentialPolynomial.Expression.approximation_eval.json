@@ -1,26 +1,28 @@
 {
-  "id": "eq-p112-1/key/09.NavierStokes.GenericDifferentialPolynomial.Expression.approximation_eval",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericDifferentialPolynomial.Expression.approximation_eval",
-      "line": 217,
-      "module": "NavierStokes.GenericDifferentialPolynomial",
-      "path": "NavierStokes/GenericDifferentialPolynomial.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean#L217"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericDifferentialPolynomial.Expression.approximation_eval",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericDifferentialPolynomial.Expression.approximation_eval",
+        "module": "NavierStokes.GenericDifferentialPolynomial"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 217,
-        "text": "induction e with | input i => happrox i | coeff i => ApproximationRates.fixed (hcg i) | add a b ha hb => ha.add hb … | mul a b ha hb => ha.mul hb … | directional v a ha => ha.directional … v — the recursion run over the expression"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.GenericDifferentialPolynomial.Expression.approximation_eval",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L217",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 217,
+            "text": "def approximation_eval (e : Expression D ι κ)\n    {c : κ → D → ℝ} {u : ι → D → ℝ} {us : ℕ → ι → D → ℝ}\n    (hU : IsOpen U) (hlU : ∀ᶠ x in l, x ∈ U)\n    (hq : ∀ᶠ x in l, 0 < q x ∧ q x ≤ 1)\n    (hc : ∀ i, ContDiffOn ℝ ∞ (c i) U)\n    (hu : ∀ i, ContDiffOn ℝ ∞ (u i) U)\n    (hus : ∀ J i, ContDiffOn ℝ ∞ (us J i) U)\n    (hgain : Tendsto gain atTop atTop)\n    (Lc : κ → ℕ → ℝ) (hcg : ∀ i m, JetRate l q (c i) m (-Lc i m))\n    (happrox : ∀ i, ApproximationRates l q gain (u i) (fun J => us J i)) :\n    ApproximationRates l q gain (eval c u e) (fun J => eval c (us J) e)"
+          }
+        }
       }
     }
-  }
+  ]
 }

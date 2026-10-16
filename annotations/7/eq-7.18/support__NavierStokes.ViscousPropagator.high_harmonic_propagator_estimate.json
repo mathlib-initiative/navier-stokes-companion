@@ -1,23 +1,28 @@
 {
-  "id": "eq-7.18/support/02.NavierStokes.ViscousPropagator.high_harmonic_propagator_estimate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ViscousPropagator.high_harmonic_propagator_estimate",
-      "line": 362
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ViscousPropagator.lean#L362"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ViscousPropagator.high_harmonic_propagator_estimate"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ViscousPropagator.high_harmonic_propagator_estimate",
+        "module": "NavierStokes.ViscousPropagator"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 362,
-        "text": "the propagator bound for a solution of the ODE with coefficient (lam t) ((j : ℝ) ^ 2 * fundamentalDamping t) (E t), j ≠ 0, with the same constants as the j = 1 case"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ViscousPropagator.high_harmonic_propagator_estimate"
+          },
+          "destination": {
+            "fragment": "L362"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 362,
+            "text": "theorem high_harmonic_propagator_estimate\n    {a b midpoint S dampingError matrixError : ℝ}\n    (hS : 0 < S) (hdampingError : 0 ≤ dampingError) (hmatrixError : 0 ≤ matrixError)\n    (lam fundamentalDamping referenceDamping rate : ℝ → ℝ)\n    (E : ℝ → Plane →L[ℝ] Plane) {u f : ℝ → Plane} {j : ℤ} (hj : j ≠ 0)\n    (hrate : Continuous rate)\n    (hreference : ∀ t ∈ Ico a b, rate t = lam t - referenceDamping t)\n    (hlam : ∀ t ∈ Ico a b, 0 ≤ lam t)\n    (hD : ∀ t ∈ Ico a b, 0 ≤ fundamentalDamping t)\n    (hdamping : ∀ t ∈ Ico a b,\n      referenceDamping t - dampingError / S ≤ fundamentalDamping t)\n    (hE : ∀ t ∈ Ico a b, ‖E t‖ ≤ matrixError / S)\n    (hu : ContinuousOn u (Icc a b)) (hf : ContinuousOn f (Icc a b))\n    (hode : ∀ t ∈ Ico a b, HasDerivWithinAt u\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

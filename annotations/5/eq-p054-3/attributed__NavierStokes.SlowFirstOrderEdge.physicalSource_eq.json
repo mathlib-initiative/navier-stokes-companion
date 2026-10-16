@@ -1,26 +1,28 @@
 {
-  "id": "eq-p054-3/attributed/04.NavierStokes.SlowFirstOrderEdge.physicalSource_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowFirstOrderEdge.physicalSource_eq",
-      "line": 526,
-      "module": "NavierStokes.SlowFirstOrderEdge",
-      "path": "NavierStokes/SlowFirstOrderEdge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowFirstOrderEdge.lean#L526"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowFirstOrderEdge.physicalSource_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowFirstOrderEdge.physicalSource_eq",
+        "module": "NavierStokes.SlowFirstOrderEdge"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 526,
-        "text": "physicalSource C d y0 p = -physicalHeat C (1 + d.h) p * deriv (deriv (fun z => physicalTaper d y0 (p.1, (p.2.1, z)))) p.2.2 — restores the z-independent factor K"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.SlowFirstOrderEdge.physicalSource_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L526",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowFirstOrderEdge.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 526,
+            "text": "theorem physicalSource_eq (C : ℝ) (d : TailData) (y0 : ℝ) {p : PhysicalPoint}\n    :\n    physicalSource C d y0 p =\n      -physicalHeat C (1 + d.h) p *\n        deriv (deriv (fun z => physicalTaper d y0 (p.1, (p.2.1, z)))) p.2.2"
+          }
+        }
       }
     }
-  }
+  ]
 }

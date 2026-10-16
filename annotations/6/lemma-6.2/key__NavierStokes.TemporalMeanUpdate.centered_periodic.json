@@ -1,29 +1,31 @@
 {
-  "id": "lemma-6.2/key/1.NavierStokes.TemporalMeanUpdate.centered_periodic",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TemporalMeanUpdate.centered_periodic",
-      "line": 372,
-      "module": "NavierStokes.TemporalMeanUpdate",
-      "path": "NavierStokes/TemporalMeanUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L372"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TemporalMeanUpdate.centered_periodic",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TemporalMeanUpdate.centered_periodic",
+        "module": "NavierStokes.TemporalMeanUpdate"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: TorusPeriodicLift f implies TorusPeriodicLift (centered f), where centered f z = f z - torusAverage f (z.1,z.2.1) (line 358, 'Remove exactly the auxiliary torus average, retaining every slow parameter'): clause (d), subtracting the torus average preserves descent."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 372,
-        "text": "theorem centered_periodic {f : PressureStream.Lift S → ℝ}\n    (hp : PressureStream.TorusPeriodicLift f) : PressureStream.TorusPeriodicLift (centered f)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TemporalMeanUpdate.centered_periodic",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: TorusPeriodicLift f implies TorusPeriodicLift (centered f), where centered f z = f z - torusAverage f (z.1,z.2.1) (line 358, 'Remove exactly the auxiliary torus average, retaining every slow parameter'): clause (d), subtracting the torus average preserves descent."
+          },
+          "destination": {
+            "fragment": "L372",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean"
+          },
+          "snippet": {
+            "line": 372,
+            "text": "theorem centered_periodic {f : PressureStream.Lift S → ℝ}\n    (hp : PressureStream.TorusPeriodicLift f) : PressureStream.TorusPeriodicLift (centered f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

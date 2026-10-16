@@ -1,24 +1,27 @@
 {
-  "id": "eq-p094-3/key/02.NavierStokes.IntegratedMeanBalances.moment_axial_viscosity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.IntegratedMeanBalances.moment_axial_viscosity",
-      "line": 211
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/IntegratedMeanBalances.lean#L211"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.IntegratedMeanBalances.moment_axial_viscosity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.IntegratedMeanBalances.moment_axial_viscosity",
+        "module": "NavierStokes.IntegratedMeanBalances"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 211,
-        "text": "theorem moment_axial_viscosity (hf : ContDiff ℝ ∞ f) (hs : HasCompactSupport f) : moment 1 (axialRadialViscosity f) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.IntegratedMeanBalances.moment_axial_viscosity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L211"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 211,
+            "text": "theorem moment_axial_viscosity {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hs : HasCompactSupport f) : moment 1 (axialRadialViscosity f) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

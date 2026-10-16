@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.39/key/02.NavierStokes.CurlClassBounds.longitudinal_class",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CurlClassBounds.longitudinal_class",
-      "line": 706,
-      "module": "NavierStokes.CurlClassBounds",
-      "path": "NavierStokes/CurlClassBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L706"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CurlClassBounds.longitudinal_class",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CurlClassBounds.longitudinal_class",
+        "module": "NavierStokes.CurlClassBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 706,
-        "text": "(ha : MemClass s w α a) (hκ : 0 ≤ κ) (hr : UnweightedClass s (-κ) Vr) (hz : UnweightedClass s 1 Vz) (hR : UnweightedClass s 0 (fun _ x => (R x)⁻¹)) (hK : ∀ n, K n ≠ 0) (hfreq : BandBound s (1/2) (fun n => 1 / K n)) (hθ …) (hdiv …) : MemClass s w (α + 1/2 - κ) (fun n x => normalDot (phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n) x) (a n x))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.CurlClassBounds.longitudinal_class",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L706",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 706,
+            "text": "theorem longitudinal_class (ha : MemClass s w α a) (hκ : 0 ≤ κ)\n    (hr : UnweightedClass s (-κ) Vr) (hz : UnweightedClass s 1 Vz)\n    (hR : UnweightedClass s 0 (fun _ x => (R x)⁻¹))\n    (hK : ∀ n, K n ≠ 0) (hfreq : BandBound s (1 / 2) (fun n => 1 / K n))\n    (hΦ : ∀ n, DifferentiableOn ℝ (Φ n) s.domain)\n    (hθ : ∀ n x, x ∈ s.domain → HarmonicCalculus.along (Vθ n) (fun y => a n y 1) x = 0)\n    (hdiv : ∀ n x, x ∈ s.domain → HarmonicCalculus.cylindricalDivergence R\n      (Vr n) (Vθ n) (Vz n) (HarmonicCalculus.vectorMode (K n) (Φ n) (a n)) x = 0) :\n    MemClass s w (α + 1 / 2 - κ) (fun n x => HarmonicCalculus.normalDot\n      (HarmonicCalculus.phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n) x) (a n x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

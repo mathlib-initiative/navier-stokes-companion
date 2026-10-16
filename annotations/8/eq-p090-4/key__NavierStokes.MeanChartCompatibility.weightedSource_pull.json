@@ -1,25 +1,27 @@
 {
-  "id": "eq-p090-4/key/02.NavierStokes.MeanChartCompatibility.weightedSource_pull",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.weightedSource_pull",
-      "line": 179,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L179"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.weightedSource_pull",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.weightedSource_pull",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 179,
-        "text": "PressureStream.weightedSource (pull l C u f) = pull l C (u / l) (PressureStream.weightedSource f) -- the weight R^e becomes r^e at the cost of l^{-e}"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.MeanChartCompatibility.weightedSource_pull",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L179",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 179,
+            "text": "theorem weightedSource_pull {l : ℝ} (hl : l ≠ 0) (C : E →L[ℝ] F)\n    (u : ℝ) (f : ℝ × F → ℝ) :\n    PressureStream.weightedSource (pull l C u f) =\n      pull l C (u / l) (PressureStream.weightedSource f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

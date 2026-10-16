@@ -1,26 +1,29 @@
 {
-  "id": "eq-p014-1/support/09.NavierStokes.WholeDomainStageBounds.actual_finite_residual_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WholeDomainStageBounds.actual_finite_residual_bound",
-      "line": 37,
-      "module": "NavierStokes.WholeDomainActualStageBounds",
-      "path": "NavierStokes/WholeDomainActualStageBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WholeDomainActualStageBounds.lean#L37"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WholeDomainStageBounds.actual_finite_residual_bound",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WholeDomainStageBounds.actual_finite_residual_bound",
+        "module": "NavierStokes.WholeDomainActualStageBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 37,
-        "text": "∃ C, 0 ≤ C ∧ ∀ w ∈ physicalSublevel h (commonQ B N0), ‖iteratedFDeriv ℝ m (residual of finite prefix J) w‖ ≤ C * physicalQ h w ^ (h * ActualIterationLedger.sigma J - ActualCycleResidualBounds.fixedLoss m)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.WholeDomainStageBounds.actual_finite_residual_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L37",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WholeDomainActualStageBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 37,
+            "text": "theorem actual_finite_residual_bound (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (J m : ℕ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ w ∈ CutStageEstimates.physicalSublevel h (commonQ B N0),\n      ‖iteratedFDeriv ℝ m (fun z => navierStokesResidual\n        (finiteVelocity B N0 hN J) (finitePressure B N0 hN J) z.1 z.2) w‖ ≤\n      C * physicalQ h w ^ (h * ActualIterationLedger.sigma J - ActualCycleResidualBounds.fixedLoss m)"
+          }
+        }
       }
     }
-  }
+  ]
 }

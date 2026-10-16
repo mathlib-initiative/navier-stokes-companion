@@ -1,23 +1,25 @@
 {
-  "id": "eq-7.26/key/02.NavierStokes.PartitionedCovariance.weighted_columns_reconstruct",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.weighted_columns_reconstruct",
-      "line": 444,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L444"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.weighted_columns_reconstruct"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.weighted_columns_reconstruct",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "snippet": {
-        "line": 444,
-        "text": "(∑ j : Fin 2, amplitude ε mask H T j ^ 2 * H i j) = ε * mask ^ 2 * T i, for 0 ≤ ε and StrictCone H T"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PartitionedCovariance.weighted_columns_reconstruct"
+          },
+          "destination": {
+            "fragment": "L444",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "snippet": {
+            "line": 444,
+            "text": "theorem weighted_columns_reconstruct (ε mask : ℝ) (hε : 0 ≤ ε) {H : Mat2} {T : Vec2}\n    (hcone : SmoothCovariance.StrictCone H T) (i : Fin 2) :\n    (∑ j : Fin 2, amplitude ε mask H T j ^ 2 * H i j) = ε * mask ^ 2 * T i"
+          }
+        }
       }
     }
-  }
+  ]
 }

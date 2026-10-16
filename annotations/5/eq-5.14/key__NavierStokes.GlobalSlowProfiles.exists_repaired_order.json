@@ -1,25 +1,28 @@
 {
-  "id": "eq-5.14/key/02.NavierStokes.GlobalSlowProfiles.exists_repaired_order",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.exists_repaired_order",
-      "line": 600,
-      "module": "NavierStokes.GlobalSlowProfiles",
-      "path": "NavierStokes/GlobalSlowProfiles.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L600"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.exists_repaired_order",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.exists_repaired_order",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 600,
-        "text": "∃ un phin, (|R| ≤ a → un = u n) ∧ … ∧ moments n (update u n un) (angularField C ∘ update phi n phin) … = 0; un := u n + evenCorrection du, phin := phi n + phiCorrection … de"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GlobalSlowProfiles.exists_repaired_order",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L600",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 600,
+            "text": "theorem exists_repaired_order {S : Set ℝ} (hS : IsOpen S) {C lam a b B : ℝ}\n    (hC : C ≠ 0) (hlam : 0 < lam) (ha : 0 < a) (hab : a < b) (hbB : b ≤ B)\n    {n : ℕ} (hn : 0 < n) (u phi : ℕ → EvenProfile S) (omega : EvenProfile S)\n    (A : ℝ → ℝ) (hA : ContDiffOn ℝ ∞ A S) (hAn : ∀ eta ∈ S, A eta ≠ 0)\n    (hu0 : ∀ eta ∈ S, ∀ R ∈ Ioo a b, u 0 (R, eta) = 0)\n    (he0 : ∀ eta ∈ S, ∀ R ∈ Ioo a b,\n      angularField C (phi 0) (R, eta) = FiveRowRank.background lam (A eta) R)\n    (huB : ∀ j ≤ n, Exterior B S (u j))\n    (hpB : ∀ j, 0 < j → j ≤ n → Exterior B S (phi j))\n    (hoB : Exterior B S omega) :\n    ∃ un phin : EvenProfile S,\n      (∀ eta R, |R| ≤ a → un (R, eta) = u n (R, eta)) ∧\n      (∀ eta R, |R| ≤ a → phin (R, eta) = phi n (R, eta)) ∧\n      Exterior B S un ∧ Exterior B S phin ∧\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,26 @@
 {
-  "id": "eq-6.4/key/02.NavierStokes.GraphCalculus.radialOp_expanded",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GraphCalculus.radialOp_expanded",
-      "line": 220
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GraphCalculus.lean#L220"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GraphCalculus.radialOp_expanded",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GraphCalculus.radialOp_expanded",
+        "module": "NavierStokes.GraphCalculus"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 220,
-        "text": "radialOp d vr F p = fderiv ℝ F p ((1,0),(0,0)) + radialSpeed d p.1.1 * (vr.1 * fderiv ℝ F p ((0,0),(1,0)) + vr.2 * fderiv ℝ F p ((0,0),(0,1))); docstring \"This is exactly ∂r + d r^(d-1) (vr · ∂Y)\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GraphCalculus.radialOp_expanded",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L220"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 220,
+            "text": "theorem radialOp_expanded (d : ℝ) (vr : Plane) (F : Lift → ℝ) (p : Lift) :\n    radialOp d vr F p = fderiv ℝ F p ((1, 0), (0, 0)) +\n      radialSpeed d p.1.1 *\n        (vr.1 * fderiv ℝ F p ((0, 0), (1, 0)) +\n          vr.2 * fderiv ℝ F p ((0, 0), (0, 1)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

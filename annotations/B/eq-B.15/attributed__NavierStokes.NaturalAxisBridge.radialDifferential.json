@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.15/attributed/06.NavierStokes.NaturalAxisBridge.radialDifferential",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalAxisBridge.radialDifferential",
-      "line": 40,
-      "module": "NavierStokes.NaturalAxisBridge",
-      "path": "NavierStokes/NaturalAxisBridge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisBridge.lean#L40"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalAxisBridge.radialDifferential",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalAxisBridge.radialDifferential",
+        "module": "NavierStokes.NaturalAxisBridge"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 40,
-        "text": "radialDifferential r F p = p.1 * iteratedDeriv 2 (fun Y => F (Y, p.2)) p.1 + r * partialY F p, i.e. X F_XX + r F_X"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.NaturalAxisBridge.radialDifferential",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L40",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisBridge.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 40,
+            "text": "def radialDifferential (r : ℕ) (F : ℝ × ℝ → ℝ) (p : ℝ × ℝ) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

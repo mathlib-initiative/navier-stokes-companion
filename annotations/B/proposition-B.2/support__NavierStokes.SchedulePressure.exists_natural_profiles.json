@@ -1,32 +1,57 @@
 {
-  "id": "proposition-B.2/support/3.NavierStokes.SchedulePressure.exists_natural_profiles",
-  "location": {
-    "page": 146,
-    "rect": [0.12854, 0.777686, 0.746187, 0.082645]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SchedulePressure.exists_natural_profiles",
-      "line": 267,
-      "module": "NavierStokes.SchedulePressure",
-      "path": "NavierStokes/SchedulePressure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SchedulePressure.lean#L267"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SchedulePressure.exists_natural_profiles",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 146,
+        "rect": [0.12854, 0.777686, 0.746187, 0.082645]
       },
-      "declaration_verdict": null,
-      "region": "proposition-B.2@p146",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 267,
-        "text": "theorem exists_natural_profiles (d : TailData) {j : ℝ}\n    (hsmall : NaturalAxisData.SmallParameters d.h j) (hP : 2 ≤ d.core.P) :\n    ∃ δ σ Λ C : ℝ, 0 < δ ∧ 0 < σ ∧ 0 < Λ ∧ 0 < C ∧\n      ∃ f U V Pr : ℝ × ℝ → ℝ,\n        NaturalProfile.IsNaturalSolution d.h j Λ (axisPressure d)\n          (NaturalAxisCoefficients.realAmplitude d.h j σ Λ C) f U V Pr ∧\n        (∀ p ∈ NaturalProfile.domain Λ, 0 ≤ Λ * p.1 → Λ * p.1 ≤ 41 / 10 → 0 < f p) ∧\n        (∀ η ∈ Icc (-1 : ℝ) 1,\n          |NaturalAxisData.Z d.h j (axisPressure d) η| ≤ δ →\n            23 / 10 < -2 * (4 / Λ) * NaturalAxisBridge.partialY f (4 / Λ, η) / f (4 / Λ, η))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-B.2@p146"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 147,
+        "rect": [0.12854, 0.102479, 0.746187, 0.124793]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-B.2@p147"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "type": "lean",
+      "uri": "https://github.com/openai/NavierStokesAndEuler",
+      "version": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "location": {
+        "declaration": "NavierStokes.SchedulePressure.exists_natural_profiles",
+        "module": "NavierStokes.SchedulePressure"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.SchedulePressure.exists_natural_profiles",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L267",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SchedulePressure.lean",
+            "resolution": "exact"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 267,
+            "text": "theorem exists_natural_profiles (d : TailData) {j : ℝ}\n    (hsmall : NaturalAxisData.SmallParameters d.h j) (hP : 2 ≤ d.core.P) :\n    ∃ δ σ Λ C : ℝ, 0 < δ ∧ 0 < σ ∧ 0 < Λ ∧ 0 < C ∧\n      ∃ f U V Pr : ℝ × ℝ → ℝ,\n        NaturalProfile.IsNaturalSolution d.h j Λ (axisPressure d)\n          (NaturalAxisCoefficients.realAmplitude d.h j σ Λ C) f U V Pr ∧\n        (∀ p ∈ NaturalProfile.domain Λ, 0 ≤ Λ * p.1 → Λ * p.1 ≤ 41 / 10 → 0 < f p) ∧\n        (∀ η ∈ Icc (-1 : ℝ) 1,\n          |NaturalAxisData.Z d.h j (axisPressure d) η| ≤ δ →\n            23 / 10 < -2 * (4 / Λ) * NaturalAxisBridge.partialY f (4 / Λ, η) / f (4 / Λ, η))"
+          }
+        }
+      }
+    }
+  ]
 }

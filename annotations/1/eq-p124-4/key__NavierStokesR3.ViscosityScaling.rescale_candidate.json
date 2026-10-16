@@ -1,22 +1,26 @@
 {
-  "id": "eq-p124-4/key/03.NavierStokesR3.ViscosityScaling.rescale_candidate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ViscosityScaling.rescale_candidate",
-      "line": 136
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean#L136"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ViscosityScaling.rescale_candidate"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ViscosityScaling.rescale_candidate",
+        "lines": [136, 136],
+        "module": "NavierStokes.R3.ViscosityScaling"
       },
-      "relation": "contains",
-      "snippet": {
-        "line": 136,
-        "text": "step at line 136: `rw [rescale_residual μ a ha.ne', h.navier_stokes t ht]` — closing the chain with `= f_ν(x,t)` for the rescaled force"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokesR3.ViscosityScaling.rescale_candidate"
+          },
+          "destination": {
+            "fragment": "L136"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 103,
+            "text": "theorem rescale_candidate {μ : ℝ} {u f : VelocityField} {p : PressureField}\n    {K : Set Space} (h : ProblemStatement.CandidateProperties μ u p f K)\n    {a : ℝ} (ha : 0 < a) :\n    ProblemStatement.CandidateProperties (a ^ 2 * μ)\n      (rescale a a⁻¹ u) (rescale (a ^ 2) a⁻¹ p) (rescale a a⁻¹ f)\n      ((fun x : Space => a • x) '' K)"
+          }
+        }
       }
     }
-  }
+  ]
 }

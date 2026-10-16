@@ -1,21 +1,24 @@
 {
-  "id": "eq-p034-5/support/03.NavierStokes.PowerMomentMatrix.expSum_coefficients_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PowerMomentMatrix.expSum_coefficients_zero",
-      "line": 74
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PowerMomentMatrix.lean#L74"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PowerMomentMatrix.expSum_coefficients_zero"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PowerMomentMatrix.expSum_coefficients_zero",
+        "module": "NavierStokes.PowerMomentMatrix"
       },
-      "snippet": {
-        "line": 74,
-        "text": "theorem expSum_coefficients_zero : ∀ n a c x, Function.Injective a → StrictMono x → (∀ j, expSum a c (x j) = 0) → c = 0 — the Rolle induction the paper invokes in the sentence after the display, here applied to the one node per interval rather than to the sign of det[x_j^{α_i}]."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.PowerMomentMatrix.expSum_coefficients_zero"
+          },
+          "destination": {
+            "fragment": "L74"
+          },
+          "snippet": {
+            "line": 74,
+            "text": "theorem expSum_coefficients_zero :\n    ∀ (n : ℕ) (a c x : Fin n → ℝ), Function.Injective a → StrictMono x →\n      (∀ j, expSum a c (x j) = 0) → c = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

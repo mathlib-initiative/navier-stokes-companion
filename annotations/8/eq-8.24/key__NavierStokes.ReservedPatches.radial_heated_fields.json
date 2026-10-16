@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.24/key/01.NavierStokes.ReservedPatches.radial_heated_fields",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReservedPatches.radial_heated_fields",
-      "line": 546,
-      "module": "NavierStokes.ReservedPatches",
-      "path": "NavierStokes/ReservedPatches.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReservedPatches.lean#L546"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReservedPatches.radial_heated_fields",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReservedPatches.radial_heated_fields",
+        "module": "NavierStokes.ReservedPatches"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 546,
-        "text": "R ∈ radialWindow F XR s → HeatedOutgoing.U F XR (R ^ 2 / 2, eta) = 0 ∧ HeatedOutgoing.E F XR c (R ^ 2 / 2, eta) = FiveRowRank.background F.data.core.lam (radialAmplitude F XR eta) R"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ReservedPatches.radial_heated_fields",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L546",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReservedPatches.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 546,
+            "text": "theorem radial_heated_fields (F : Profile) (XR : ℝ) (hXR : 0 < XR)\n    (c : ℝ → HeatedOutgoing.Coeff) {s : Slot} (hs : s ≠ .heat)\n    (eta : ℝ) {R : ℝ} (hR : R ∈ radialWindow F XR s) :\n    HeatedOutgoing.U F XR (R ^ 2 / 2, eta) = 0 ∧\n      HeatedOutgoing.E F XR c (R ^ 2 / 2, eta) =\n        FiveRowRank.background F.data.core.lam (radialAmplitude F XR eta) R"
+          }
+        }
       }
     }
-  }
+  ]
 }

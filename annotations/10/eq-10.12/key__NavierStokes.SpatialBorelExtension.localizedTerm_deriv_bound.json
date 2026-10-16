@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.12/key/01.NavierStokes.SpatialBorelExtension.localizedTerm_deriv_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SpatialBorelExtension.localizedTerm_deriv_bound",
-      "line": 146,
-      "module": "NavierStokes.SpatialBorelExtension",
-      "path": "NavierStokes/SpatialBorelExtension.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpatialBorelExtension.lean#L146"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SpatialBorelExtension.localizedTerm_deriv_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SpatialBorelExtension.localizedTerm_deriv_bound",
+        "module": "NavierStokes.SpatialBorelExtension"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 146,
-        "text": "(hb : 1 ≤ b) → ‖iteratedFDeriv ℝ k (localizedTerm m b j a) z‖ ≤ (b ^ k / b ^ j) * templateBound ha m j k"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SpatialBorelExtension.localizedTerm_deriv_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L146",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpatialBorelExtension.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 146,
+            "text": "theorem localizedTerm_deriv_bound {a : X → V} (ha : ContDiff ℝ ∞ a)\n    {b : ℝ} (hb : 1 ≤ b) (m j k : ℕ) (z : ℝ × X) :\n    ‖iteratedFDeriv ℝ k (localizedTerm m b j a) z‖ ≤\n      (b ^ k / b ^ j) * templateBound ha m j k"
+          }
+        }
       }
     }
-  }
+  ]
 }

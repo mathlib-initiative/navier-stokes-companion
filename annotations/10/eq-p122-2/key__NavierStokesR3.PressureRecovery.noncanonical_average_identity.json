@@ -1,23 +1,25 @@
 {
-  "id": "eq-p122-2/key/02.NavierStokesR3.PressureRecovery.noncanonical_average_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.PressureRecovery.noncanonical_average_identity",
-      "line": 129,
-      "module": "NavierStokes.R3.PressureRecovery",
-      "path": "NavierStokes/R3/PressureRecovery.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureRecovery.lean#L129"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.PressureRecovery.noncanonical_average_identity"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.PressureRecovery.noncanonical_average_identity",
+        "module": "NavierStokes.R3.PressureRecovery"
       },
-      "snippet": {
-        "line": 129,
-        "text": "(∫ x, (velocityAverage T a u v k x : ℂ) * laplacianCLM (realTest ψ …) x) + (∫ x, (velocityAverage T (deriv a) u v k x : ℂ) * realTest ψ … x) + (∑ i, ∫ x, (tensorAverage T a u v k i x : ℂ) * partialCLM i (realTest ψ …) x) = ((∫ t in Icc 0 T, a t * (∫ x, spatialPartial k (fun y => (p - q) (t,y)) x * ψ x) : ℝ) : ℂ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.PressureRecovery.noncanonical_average_identity"
+          },
+          "destination": {
+            "fragment": "L129",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureRecovery.lean"
+          },
+          "snippet": {
+            "line": 129,
+            "text": "theorem noncanonical_average_identity {T : ℝ} {u v : VelocityField} {p q : PressureField}\n    (H : Hypotheses T u v p q) {a : ℝ → ℝ}\n    (ha : ContDiff ℝ ∞ a) (hsupp : tsupport a ⊆ Ioo 0 T)\n    {ψ : Space → ℝ} (hψ : ContDiff ℝ ∞ ψ) (hcψ : HasCompactSupport ψ) (k : Fin 3) :\n    (∫ x, (velocityAverage T a u v k x : ℂ) * laplacianCLM (realTest ψ hψ hcψ) x) +\n      (∫ x, (velocityAverage T (deriv a) u v k x : ℂ) * realTest ψ hψ hcψ x) +\n      (∑ i : Fin 3, ∫ x, (tensorAverage T a u v k i x : ℂ) *\n        partialCLM i (realTest ψ hψ hcψ) x) =\n      ((∫ t in Icc 0 T, a t *\n        (∫ x, spatialPartial k (fun y => (p - q) (t, y)) x * ψ x) : ℝ) : ℂ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

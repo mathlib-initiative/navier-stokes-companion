@@ -1,26 +1,29 @@
 {
-  "id": "eq-p083-1/support/04.NavierStokes.PrimaryCovarianceBounds.chart_column_mass_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryCovarianceBounds.chart_column_mass_bounds",
-      "line": 245,
-      "module": "NavierStokes.PrimaryCovarianceBounds",
-      "path": "NavierStokes/PrimaryCovarianceBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCovarianceBounds.lean#L245"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryCovarianceBounds.chart_column_mass_bounds",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryCovarianceBounds.chart_column_mass_bounds",
+        "module": "NavierStokes.PrimaryCovarianceBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 245,
-        "text": "scalarLower kappa r0 a B ≤ √(S n) * (kappa * timeCoefficient h n * mass psi x) ≤ scalarUpper kappa r0 A b — the same product kappa·c_i·mass, giving h_σ ≍ S_*^{-1/2}"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PrimaryCovarianceBounds.chart_column_mass_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L245",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCovarianceBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 245,
+            "text": "theorem chart_column_mass_bounds {r0 h kappa a A b B : ℝ}\n    (hr0 : 0 < r0) (hh : 0 ≤ h) (hkappa : 0 < kappa) {n : ℕ} (hn : 4 ≤ n)\n    {psi x : ℝ → ℝ} (hp : PulseCovariance.PulseBounds (slotRadius r0 h n) a A b B psi x) :\n    scalarLower kappa r0 a B ≤ Real.sqrt (ChartScales.S n) *\n      (kappa * ChartScales.timeCoefficient h n * PulseCovariance.mass psi x) ∧\n    Real.sqrt (ChartScales.S n) *\n      (kappa * ChartScales.timeCoefficient h n * PulseCovariance.mass psi x) ≤\n      scalarUpper kappa r0 A b"
+          }
+        }
       }
     }
-  }
+  ]
 }

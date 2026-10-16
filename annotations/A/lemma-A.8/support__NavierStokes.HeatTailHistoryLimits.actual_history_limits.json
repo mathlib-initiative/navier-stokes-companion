@@ -1,26 +1,29 @@
 {
-  "id": "lemma-A.8/support/3.NavierStokes.HeatTailHistoryLimits.actual_history_limits",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HeatTailHistoryLimits.actual_history_limits",
-      "line": 709,
-      "module": "NavierStokes.HeatTailHistoryLimits",
-      "path": "NavierStokes/HeatTailHistoryLimits.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatTailHistoryLimits.lean#L709"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HeatTailHistoryLimits.actual_history_limits",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HeatTailHistoryLimits.actual_history_limits",
+        "module": "NavierStokes.HeatTailHistoryLimits"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 709,
-        "text": "theorem actual_history_limits {F : Profile} {XR C B : ℝ}\n    (hF : OutgoingProfile.Specification F B) (w : CompensationWitness F XR C)\n    {η : ℝ} (hη : η ∈ Ioo (-1 : ℝ) 1) :\n    Tendsto (fun X => angularHistory F XR w.coefficients η X - powerHistory F XR X) atTop (𝓝 0) ∧\n    Tendsto (fun X => deriv (fun t => angularHistory F XR w.coefficients t X) η) atTop (𝓝 0) ∧\n    Tendsto (fun X => HeatedOutgoing.H F XR w.coefficients (X,η)) atTop (𝓝 0) ∧\n    Tendsto (fun X => X * deriv (fun u => HeatedOutgoing.H F XR w.coefficients (u,η)) X) atTop (𝓝 0) ∧\n    Tendsto (fun X => energyHistory F XR w.coefficients η X) atTop (𝓝 0) ∧\n    Tendsto (fun X => deriv (fun t => energyHistory F XR w.coefficients t X) η) atTop (𝓝 0) ∧\n    Tendsto (fun X => X * HeatedOutgoing.Pi F XR w.coefficients (X,η)) atTop (𝓝 0) ∧\n    Tendsto (fun X => X * deriv (fun t => HeatedOutgoing.Pi F XR w.coefficients (X,t)) η) atTop (𝓝 0) ∧\n    Tendsto (fun X => X * (HeatedOutgoing.H F XR w.coefficients (X,η) -\n      OutgoingDilation.powerH F XR X)) atTop (𝓝 0)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.HeatTailHistoryLimits.actual_history_limits",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L709",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatTailHistoryLimits.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 709,
+            "text": "theorem actual_history_limits {F : Profile} {XR C B : ℝ}\n    (hF : OutgoingProfile.Specification F B) (w : CompensationWitness F XR C)\n    {η : ℝ} (hη : η ∈ Ioo (-1 : ℝ) 1) :\n    Tendsto (fun X => angularHistory F XR w.coefficients η X - powerHistory F XR X) atTop (𝓝 0) ∧\n    Tendsto (fun X => deriv (fun t => angularHistory F XR w.coefficients t X) η) atTop (𝓝 0) ∧\n    Tendsto (fun X => HeatedOutgoing.H F XR w.coefficients (X,η)) atTop (𝓝 0) ∧\n    Tendsto (fun X => X * deriv (fun u => HeatedOutgoing.H F XR w.coefficients (u,η)) X) atTop (𝓝 0) ∧\n    Tendsto (fun X => energyHistory F XR w.coefficients η X) atTop (𝓝 0) ∧\n    Tendsto (fun X => deriv (fun t => energyHistory F XR w.coefficients t X) η) atTop (𝓝 0) ∧\n    Tendsto (fun X => X * HeatedOutgoing.Pi F XR w.coefficients (X,η)) atTop (𝓝 0) ∧\n    Tendsto (fun X => X * deriv (fun t => HeatedOutgoing.Pi F XR w.coefficients (X,t)) η) atTop (𝓝 0) ∧\n    Tendsto (fun X => X * (HeatedOutgoing.H F XR w.coefficients (X,η) -\n      OutgoingDilation.powerH F XR X)) atTop (𝓝 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

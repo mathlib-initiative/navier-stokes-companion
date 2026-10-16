@@ -1,25 +1,27 @@
 {
-  "id": "eq-p108-3/key/01.NavierStokes.CurlClassBounds.cylindricalCurl_vectorPotential",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CurlClassBounds.cylindricalCurl_vectorPotential",
-      "line": 620,
-      "module": "NavierStokes.CurlClassBounds",
-      "path": "NavierStokes/CurlClassBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L620"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CurlClassBounds.cylindricalCurl_vectorPotential",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CurlClassBounds.cylindricalCurl_vectorPotential",
+        "module": "NavierStokes.CurlClassBounds"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 620,
-        "text": "cylindricalCurl R Vr Vθ Vz (vectorPotential K R Vr Vθ Vz Φ a) x = HarmonicCalculus.vectorMode K Φ (realizedCoefficient K R Vr Vθ Vz Φ a) x, under n_Φ ≠ 0 and the tangency normalDot n_Φ (a x) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CurlClassBounds.cylindricalCurl_vectorPotential",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L620",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 620,
+            "text": "theorem cylindricalCurl_vectorPotential {U : Set D} {R : D → ℝ} {Vr Vθ Vz : D → D}\n    (G : CylindricalGeometry U R Vr Vθ Vz) {K : ℝ} (hK : K ≠ 0)\n    {Φ : D → ℝ} {a : D → ComplexVector} (hΦ : ContDiffOn ℝ ∞ Φ U) (ha : ContDiffOn ℝ ∞ a U)\n    (hn : ∀ x ∈ U, HarmonicCalculus.phaseNormal R Vr Vθ Vz Φ x ≠ 0)\n    (ht : ∀ x ∈ U, HarmonicCalculus.normalDot (HarmonicCalculus.phaseNormal R Vr Vθ Vz Φ x) (a x) = 0)\n    {x : D} (hx : x ∈ U) :\n    cylindricalCurl R Vr Vθ Vz (vectorPotential K R Vr Vθ Vz Φ a) x =\n      HarmonicCalculus.vectorMode K Φ (realizedCoefficient K R Vr Vθ Vz Φ a) x"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,28 @@
 {
-  "id": "eq-5.28/support/05.NavierStokes.CutStageEstimates.physicalQ_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CutStageEstimates.physicalQ_jet_bound",
-      "line": 532,
-      "module": "NavierStokes.CutStageEstimates",
-      "path": "NavierStokes/CutStageEstimates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CutStageEstimates.lean#L532"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CutStageEstimates.physicalQ_jet_bound"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CutStageEstimates.physicalQ_jet_bound",
+        "module": "NavierStokes.CutStageEstimates"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 532,
-        "text": "∃ C > 0, ∀ w ∈ PhysicalWaveSum.preterminal, physicalQ h w ≤ 1 → ‖iteratedFDeriv ℝ m (physicalQ h) w‖ ≤ C * physicalQ h w ^ (1 - (m : ℝ)) — the Lean hypothesis is met by the actual similarity coordinate"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.CutStageEstimates.physicalQ_jet_bound"
+          },
+          "destination": {
+            "fragment": "L532",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CutStageEstimates.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 532,
+            "text": "theorem physicalQ_jet_bound {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2) (m : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ w ∈ PhysicalWaveSum.preterminal,\n      PhysicalWaveSum.physicalQ h w ≤ 1 →\n      ‖iteratedFDeriv ℝ m (PhysicalWaveSum.physicalQ h) w‖ ≤\n        C * PhysicalWaveSum.physicalQ h w ^ (1 - (m : ℝ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

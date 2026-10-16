@@ -1,29 +1,31 @@
 {
-  "id": "corollary-8.5/attributed/1.NavierStokes.SignedStressPrimitive.physicalDensity_moment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedStressPrimitive.physicalDensity_moment",
-      "line": 656,
-      "module": "NavierStokes.SignedStressPrimitive",
-      "path": "NavierStokes/SignedStressPrimitive.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L656"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedStressPrimitive.physicalDensity_moment",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedStressPrimitive.physicalDensity_moment",
+        "module": "NavierStokes.SignedStressPrimitive"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If q is pointwise positive then the integral of r^e * physicalDensity P e q (r,p) = 1; coordinateQ is positive everywhere, so the physical bumps carry the same normalization."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 656,
-        "text": "theorem physicalDensity_moment (P : Patch) (e : ℕ) {q : E → ℝ} (hq : ∀ p, 0 < q p) (p : E) :\n    (∫ r, r ^ e * physicalDensity P e q (r, p)) = 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SignedStressPrimitive.physicalDensity_moment",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: If q is pointwise positive then the integral of r^e * physicalDensity P e q (r,p) = 1; coordinateQ is positive everywhere, so the physical bumps carry the same normalization."
+          },
+          "destination": {
+            "fragment": "L656",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean"
+          },
+          "snippet": {
+            "line": 656,
+            "text": "theorem physicalDensity_moment (P : Patch) (e : ℕ) {q : E → ℝ} (hq : ∀ p, 0 < q p) (p : E) :\n    (∫ r, r ^ e * physicalDensity P e q (r, p)) = 1"
+          }
+        }
       }
     }
-  }
+  ]
 }

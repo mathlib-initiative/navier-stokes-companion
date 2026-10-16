@@ -1,26 +1,29 @@
 {
-  "id": "eq-p122-7/support/04.NavierStokesR3.LocalizedTensorBounds.weighted_tensorDiff_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.LocalizedTensorBounds.weighted_tensorDiff_bound",
-      "line": 170,
-      "module": "NavierStokes.R3.LocalizedTensorBounds",
-      "path": "NavierStokes/R3/LocalizedTensorBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/LocalizedTensorBounds.lean#L170"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.LocalizedTensorBounds.weighted_tensorDiff_bound",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.LocalizedTensorBounds.weighted_tensorDiff_bound",
+        "module": "NavierStokes.R3.LocalizedTensorBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 170,
-        "text": "comparisonLpNorm (6/5) (fun x => phi x ^ 2 * tensorDiff u v t i j x) <= comparisonLpNorm 2 (u-v)(t,·) ^ (3/2) * cutoffL6 phi (u-v) t ^ (1/2) + 2 * comparisonLpNorm 2 (u-v)(t,·) * comparisonLpNorm 3 (u (t,·))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokesR3.LocalizedTensorBounds.weighted_tensorDiff_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L170",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/LocalizedTensorBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 170,
+            "text": "theorem weighted_tensorDiff_bound {φ : Space → ℝ} {u v : VelocityField} {t : ℝ}\n    (hφ : Continuous φ) (hs : HasCompactSupport φ)\n    (hu : Continuous (fun x => u (t, x))) (hv : Continuous (fun x => v (t, x)))\n    (hw2 : MemLp (fun x => (u - v) (t, x)) 2 volume)\n    (hu3 : MemLp (fun x => u (t, x)) 3 volume)\n    (hφ0 : ∀ x, 0 ≤ φ x) (hφ1 : ∀ x, φ x ≤ 1) (i j : Fin 3) :\n    MemLp (fun x => φ x ^ 2 * tensorDiff u v t i j x) (6 / 5) volume ∧\n      comparisonLpNorm (6 / 5) (fun x => φ x ^ 2 * tensorDiff u v t i j x) ≤\n        comparisonLpNorm 2 (fun x => (u - v) (t, x)) ^ (3 / 2 : ℝ) *\n          cutoffL6 φ (u - v) t ^ (1 / 2 : ℝ) +\n        2 * comparisonLpNorm 2 (fun x => (u - v) (t, x)) * comparisonLpNorm 3 (fun x => u (t, x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

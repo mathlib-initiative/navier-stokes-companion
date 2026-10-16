@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.5/support/11.NavierStokes.ActualPolarCoverage.selected_polar_closure",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPolarCoverage.selected_polar_closure",
-      "line": 247,
-      "module": "NavierStokes.ActualPolarCoverage",
-      "path": "NavierStokes/ActualPolarCoverage.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPolarCoverage.lean#L247"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPolarCoverage.selected_polar_closure",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPolarCoverage.selected_polar_closure",
+        "module": "NavierStokes.ActualPolarCoverage"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 247,
-        "text": "polarGraph inner h j n d w ∈ closure (liftDomain geometry.strip.domain), from profile radius ∈ Icc leftRadius rightRadius (mem_closure_strip uses closure_Ioo)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "11.NavierStokes.ActualPolarCoverage.selected_polar_closure",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L247",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPolarCoverage.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 247,
+            "text": "theorem selected_polar_closure (j : PolarCharts.Index) (n d : ℕ)\n    {w : SpaceTime} (hw : w ∈ preterminal) (hactive : w ∈ active)\n    (hqQ : physicalQ ActualPrimary.h w ≤ ChartScales.Q n)\n    (hQq : ChartScales.Q n < 2 * physicalQ ActualPrimary.h w)\n    (hj : scaledRadial n w ∈ PolarCharts.chartDomain inner j) :\n    PhysicalResidualJetBounds.polarGraph inner ActualPrimary.h j n d w ∈\n      closure (HarmonicResidual.liftDomain ActualInitialization.geometry.strip.domain)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,39 +1,53 @@
 {
-  "id": "eq-p051-3/key/01.NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
+  "id": "eq-p051-3",
   "kind": "equation",
-  "label": "Display 51.1",
   "status": "formalized",
-  "location": {
-    "page": 51,
-    "rect": [0.351872, 0.480992, 0.295187, 0.021488]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
-      "line": 1814,
-      "module": "NavierStokes.GlobalSlowProfiles",
-      "path": "NavierStokes/GlobalSlowProfiles.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1814"
-  },
+  "subject": [
+    {
+      "location": {
+        "page": 51,
+        "rect": [0.351872, 0.480992, 0.295187, 0.021488]
+      },
+      "title": "Display 51.1",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "eq-p051-3@p051"
+        }
+      }
+    }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
+        "module": "NavierStokes.GlobalSlowProfiles"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1814",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1814,
+            "text": "theorem profiles_inner_eq {S : Set ℝ} {h C rho inner : ℝ} {U : Set ℂ}\n    {base : Fin 5 → SimilarityProfile.InnerProfile} {s : Scheme S h C}\n    {A : SlowRecursion.LocalHierarchy rho U h C base}\n    (L : Localization s A inner) (B0 : BaseAgreement s A inner)\n    {n : ℕ} (hn : 0 < n) (i : Fin 4) {w : ℝ × ℝ}\n    (hX : 0 ≤ w.1) (hi : w.1 < inner) (heta : w.2 ∈ S) :\n    xProfile (component (profiles s n) i) w = SlowRecursion.profile (A.coefficients n (localIndex i)) w"
+          }
+        }
+      }
+    }
+  ],
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.profiles_inner_eq",
-        "kind": "theorem"
-      },
-      "item": "eq-p051-3",
       "locator": {
         "physical": [51],
         "printed": [51],
         "text": "Display 51.1, p. 51, in the proof of Lemma 5.2"
-      },
-      "region": "eq-p051-3@p051",
-      "relation": "states",
-      "role": "key",
-      "snippet": {
-        "line": 1814,
-        "text": "(L : Localization s A inner) (B0 : BaseAgreement s A inner) (hn : 0 < n) (i : Fin 4) (hX : 0 ≤ w.1) (hi : w.1 < inner) (heta : w.2 ∈ S) : xProfile (component (profiles s n) i) w = SlowRecursion.profile (A.coefficients n (localIndex i)) w, with component q = ![q.phi, q.axial, q.beta, q.pressure] and localIndex = ![0,1,4,3]"
       },
       "verdicts": [
         {
@@ -42,7 +56,7 @@
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+            "note": "machine audit, checked by a second agent; not confirmed by a human"
           },
           "relation": "equivalent",
           "role": "proof_step",

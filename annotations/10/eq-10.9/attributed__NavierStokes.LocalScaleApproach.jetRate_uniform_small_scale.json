@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.9/attributed/05.NavierStokes.LocalScaleApproach.jetRate_uniform_small_scale",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalScaleApproach.jetRate_uniform_small_scale",
-      "line": 92,
-      "module": "NavierStokes.LocalScaleApproach",
-      "path": "NavierStokes/LocalScaleApproach.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalScaleApproach.lean#L92"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalScaleApproach.jetRate_uniform_small_scale",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalScaleApproach.jetRate_uniform_small_scale",
+        "module": "NavierStokes.LocalScaleApproach"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 92,
-        "text": "from the same JetRate hypothesis: ∀ X ≥ 0, ∃ C ≥ 0, ∃ δ > 0, ∀ w, w.1 < 1 → physicalQ h w < δ → radialEnergy w.2 / physicalQ h w ≤ X → ‖iteratedFDeriv ℝ m f w‖ ≤ C * physicalQ h w ^ r — a second, uniform-over-{X ≤ X̄} repackaging of the same bound in q"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.LocalScaleApproach.jetRate_uniform_small_scale",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L92",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalScaleApproach.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 92,
+            "text": "theorem jetRate_uniform_small_scale {V : Type*} [NormedAddCommGroup V]\n    [NormedSpace ℝ V] {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {f : SpaceTime → V} {m : ℕ} {r : ℝ}\n    (hrate : DiagonalResidual.JetRate\n      (𝓝[SpacetimeEndpoint.openPast 1] ((1 : ℝ), (0 : Space)))\n      (PhysicalWaveSum.physicalQ h) f m r) :\n    ∀ X : ℝ, 0 ≤ X → ∃ C : ℝ, 0 ≤ C ∧ ∃ δ : ℝ, 0 < δ ∧\n      ∀ w : SpaceTime, w.1 < 1 → PhysicalWaveSum.physicalQ h w < δ →\n        AxisymmetricFields.radialEnergy w.2 / PhysicalWaveSum.physicalQ h w ≤ X →\n        ‖iteratedFDeriv ℝ m f w‖ ≤ C * PhysicalWaveSum.physicalQ h w ^ r"
+          }
+        }
       }
     }
-  }
+  ]
 }

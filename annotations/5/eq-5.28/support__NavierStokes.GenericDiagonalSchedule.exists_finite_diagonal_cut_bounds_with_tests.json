@@ -1,25 +1,29 @@
 {
-  "id": "eq-5.28/support/03.NavierStokes.GenericDiagonalSchedule.exists_finite_diagonal_cut_bounds_with_tests",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericDiagonalSchedule.exists_finite_diagonal_cut_bounds_with_tests",
-      "line": 85,
-      "module": "NavierStokes.GenericDiagonalSchedule",
-      "path": "NavierStokes/GenericDiagonalSchedule.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDiagonalSchedule.lean#L85"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericDiagonalSchedule.exists_finite_diagonal_cut_bounds_with_tests"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericDiagonalSchedule.exists_finite_diagonal_cut_bounds_with_tests",
+        "module": "NavierStokes.GenericDiagonalSchedule"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 85,
-        "text": "hBq : ∀ k x, x ∈ S → q x ≤ 1 → ‖iteratedFDeriv ℝ k q x‖ ≤ Bq k * q x ^ (1 - (k : ℝ)) — where exists_realization consumes the jet hypothesis (GenericTupleRealization.lean:114-115)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.GenericDiagonalSchedule.exists_finite_diagonal_cut_bounds_with_tests"
+          },
+          "destination": {
+            "fragment": "L85",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDiagonalSchedule.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 85,
+            "text": "theorem exists_finite_diagonal_cut_bounds_with_tests {U S : Set E}\n    (hU : IsOpen U) (hSU : S ⊆ U) {q : E → ℝ}\n    (hq : ContDiffOn ℝ ∞ q U) (hpos : ∀ x ∈ S, 0 < q x)\n    (Bq : ℕ → ℝ)\n    (hBq : ∀ k x, x ∈ S → q x ≤ 1 →\n      ‖iteratedFDeriv ℝ k q x‖ ≤ Bq k * q x ^ (1 - (k : ℝ)))\n    {A : ∀ i, ℕ → E → W i} (hA : ∀ i j, 1 ≤ j → ContDiffOn ℝ ∞ (A i j) U)\n    (g L : ℕ → ℝ) (C p : ι → ℕ → ℕ → ℝ)\n    (hraw : ∀ i, CutStageEstimates.RawStageBounds q (A i) g L (C i) (p i) S)\n    (hg : ∀ j, 1 ≤ j → 0 < g j) (lower : ℕ)\n    {κ : Type*} (tests : ℕ → Finset κ) (B P γ : ℕ → κ → ℝ)\n    (hγ : ∀ j k, k ∈ tests j → 0 < γ j k) {q0 : ℝ} (hq0 : 0 < q0) :\n    ∃ a : ℕ → ℕ, lower ≤ a 0 ∧ (∀ j, 0 < a j) ∧\n      (∀ j, 2 * a j ≤ a (j + 1)) ∧ StrictMono a ∧\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

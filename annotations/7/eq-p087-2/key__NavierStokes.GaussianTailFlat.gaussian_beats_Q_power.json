@@ -1,23 +1,26 @@
 {
-  "id": "eq-p087-2/key/01.NavierStokes.GaussianTailFlat.gaussian_beats_Q_power",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaussianTailFlat.gaussian_beats_Q_power",
-      "line": 230
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaussianTailFlat.lean#L230"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaussianTailFlat.gaussian_beats_Q_power"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaussianTailFlat.gaussian_beats_Q_power",
+        "module": "NavierStokes.GaussianTailFlat"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 230,
-        "text": "(hc : 0 < c) (p : ℕ) (N : ℝ) : ∃ C, 0 < C ∧ ∀ n, (1 + ChartScales.S n)^p * Real.exp (-c * ChartScales.S n) ≤ C * ChartScales.Q n ^ N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GaussianTailFlat.gaussian_beats_Q_power"
+          },
+          "destination": {
+            "fragment": "L230"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 230,
+            "text": "theorem gaussian_beats_Q_power {c : ℝ} (hc : 0 < c) (p : ℕ) (N : ℝ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ,\n      (1 + ChartScales.S n) ^ p * Real.exp (-c * ChartScales.S n) ≤\n        C * ChartScales.Q n ^ N"
+          }
+        }
       }
     }
-  }
+  ]
 }

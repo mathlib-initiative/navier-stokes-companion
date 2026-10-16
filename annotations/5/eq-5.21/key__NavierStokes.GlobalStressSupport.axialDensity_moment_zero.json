@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.21/key/06.NavierStokes.GlobalStressSupport.axialDensity_moment_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalStressSupport.axialDensity_moment_zero",
-      "line": 212,
-      "module": "NavierStokes.GlobalStressSupport",
-      "path": "NavierStokes/GlobalStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalStressSupport.lean#L212"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalStressSupport.axialDensity_moment_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalStressSupport.axialDensity_moment_zero",
+        "module": "NavierStokes.GlobalStressSupport"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 212,
-        "text": "(s : Scheme S h C) (hn : 2 ≤ n) : SlowStressSupport.moment s.B 0 (axialDensity h n (fluxHistory s) (axialHistory s) (pressureField s n)) eta = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.GlobalStressSupport.axialDensity_moment_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L212",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalStressSupport.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 212,
+            "text": "theorem axialDensity_moment_zero {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    {n : ℕ} (hn : 2 ≤ n) {eta : ℝ} (heta : eta ∈ S) :\n    SlowStressSupport.moment s.B 0\n      (SlowStressSupport.axialDensity h n (fluxHistory s) (axialHistory s) (pressureField s n)) eta = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,29 +1,31 @@
 {
-  "id": "proposition-6.6/key/1.NavierStokes.CommonBaseContext.pull_dr",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CommonBaseContext.pull_dr",
-      "line": 239,
-      "module": "NavierStokes.CommonBaseContext",
-      "path": "NavierStokes/CommonBaseContext.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonBaseContext.lean#L239"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CommonBaseContext.pull_dr",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CommonBaseContext.pull_dr",
+        "module": "NavierStokes.CommonBaseContext"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: for h a b : \\mathbb R, hab : a < b, index gap : \\mathbb N \\to \\mathbb N, f : \\mathbb N \\to Point \\to \\mathbb R: (operators h index a b hab).dr (pull gap f) = pull gap ((operators h (fun n => index n + gap n) a b hab).dr f). A global identity of functions (proved by funext n x), not a statement on an"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 239,
-        "text": "theorem pull_dr (h a b : ℝ) (hab : a < b) (index gap : ℕ → ℕ) (f : ℕ → Point → ℝ) :\n    (operators h index a b hab).dr (pull gap f) =\n      pull gap ((operators h (fun n => index n + gap n) a b hab).dr f)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CommonBaseContext.pull_dr",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: for h a b : \\mathbb R, hab : a < b, index gap : \\mathbb N \\to \\mathbb N, f : \\mathbb N \\to Point \\to \\mathbb R: (operators h index a b hab).dr (pull gap f) = pull gap ((operators h (fun n => index n + gap n) a b hab).dr f). A global identity of functions (proved by funext n x), not a statement on an"
+          },
+          "destination": {
+            "fragment": "L239",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonBaseContext.lean"
+          },
+          "snippet": {
+            "line": 239,
+            "text": "theorem pull_dr (h a b : ℝ) (hab : a < b) (index gap : ℕ → ℕ) (f : ℕ → Point → ℝ) :\n    (operators h index a b hab).dr (pull gap f) =\n      pull gap ((operators h (fun n => index n + gap n) a b hab).dr f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

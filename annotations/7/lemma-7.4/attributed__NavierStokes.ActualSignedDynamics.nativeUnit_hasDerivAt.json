@@ -1,31 +1,33 @@
 {
-  "id": "lemma-7.4/attributed/1.NavierStokes.ActualSignedDynamics.nativeUnit_hasDerivAt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSignedDynamics.nativeUnit_hasDerivAt",
-      "line": 75,
-      "module": "NavierStokes.ActualSignedDynamics",
-      "path": "NavierStokes/ActualSignedDynamics.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedDynamics.lean#L75"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSignedDynamics.nativeUnit_hasDerivAt",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSignedDynamics.nativeUnit_hasDerivAt",
+        "module": "NavierStokes.ActualSignedDynamics"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: At the actual geometry, for each sign j : Fin 2, HasDerivAt of the native unit pulse equals TangentProjection.projectedRhs applied to it with source 0: the homogeneous equation (t^h)' = A_Φ t^h - d t^h of the lemma, instantiated.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 75,
-        "text": "theorem nativeUnit_hasDerivAt (j : Fin 2) (L : Label B N0) {x : Native}\n    (hp : x.1 ∈ (PrimaryGeometryAssembly.domain nominal (choice B N0).prepared.N).carrier L)\n    (ht : x.2.2 / (phases B N0 j).L L ∈ Ioo (0 : ℝ) 1) :\n    HasDerivAt (fun t => nativeUnit j L (x.1, (x.2.1,t)))\n      (TangentProjection.projectedRhs\n        ((phases B N0 j).phase.normal L (phasePoint L x))\n        ((phases B N0 j).phase.velocity L (phasePoint L x))\n        (nativeUnit j L x)\n        (PrimaryCopyBridge.baseOperator ((phases B N0 j).phase.F L x.1)\n          ((phases B N0 j).phase.shear L (phasePoint L x)) (nativeUnit j L x))\n        0 (((phases B N0 j).frame L).viscosity (phasePoint L x))) x.2.2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActualSignedDynamics.nativeUnit_hasDerivAt",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: At the actual geometry, for each sign j : Fin 2, HasDerivAt of the native unit pulse equals TangentProjection.projectedRhs applied to it with source 0: the homogeneous equation (t^h)' = A_Φ t^h - d t^h of the lemma, instantiated.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L75",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedDynamics.lean"
+          },
+          "snippet": {
+            "line": 75,
+            "text": "theorem nativeUnit_hasDerivAt (j : Fin 2) (L : Label B N0) {x : Native}\n    (hp : x.1 ∈ (PrimaryGeometryAssembly.domain nominal (choice B N0).prepared.N).carrier L)\n    (ht : x.2.2 / (phases B N0 j).L L ∈ Ioo (0 : ℝ) 1) :\n    HasDerivAt (fun t => nativeUnit j L (x.1, (x.2.1,t)))\n      (TangentProjection.projectedRhs\n        ((phases B N0 j).phase.normal L (phasePoint L x))\n        ((phases B N0 j).phase.velocity L (phasePoint L x))\n        (nativeUnit j L x)\n        (PrimaryCopyBridge.baseOperator ((phases B N0 j).phase.F L x.1)\n          ((phases B N0 j).phase.shear L (phasePoint L x)) (nativeUnit j L x))\n        0 (((phases B N0 j).frame L).viscosity (phasePoint L x))) x.2.2"
+          }
+        }
       }
     }
-  }
+  ]
 }

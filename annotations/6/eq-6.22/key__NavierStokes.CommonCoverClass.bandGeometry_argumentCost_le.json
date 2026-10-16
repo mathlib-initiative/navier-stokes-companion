@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.22/key/08.NavierStokes.CommonCoverClass.bandGeometry_argumentCost_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CommonCoverClass.bandGeometry_argumentCost_le",
-      "line": 354,
-      "module": "NavierStokes.CommonCoverClass",
-      "path": "NavierStokes/CommonCoverClass.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverClass.lean#L354"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CommonCoverClass.bandGeometry_argumentCost_le",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CommonCoverClass.bandGeometry_argumentCost_le",
+        "module": "NavierStokes.CommonCoverClass"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 354,
-        "text": "0 ≤ h → 4 ≤ n → gap ≤ D → argumentCost (bandGeometry B h n gap center) ≤ bandArgumentCost B D * ChartScales.S n, with argumentCost g = 1 + ‖coordinateLinear‖ + ‖pointLinear‖ * (1 + ‖coordinateLinear‖)  -- the O(S_*)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.CommonCoverClass.bandGeometry_argumentCost_le",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L354",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverClass.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 354,
+            "text": "theorem bandGeometry_argumentCost_le (B : Plane ≃L[ℝ] Plane) {h : ℝ} (hh : 0 ≤ h)\n    {n gap D : ℕ} (hn : 4 ≤ n) (hd : gap ≤ D) (center : Plane) :\n    argumentCost (bandGeometry B h n gap center) ≤ bandArgumentCost B D * ChartScales.S n"
+          }
+        }
       }
     }
-  }
+  ]
 }

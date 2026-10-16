@@ -1,31 +1,53 @@
 {
-  "id": "lemma-C.1/support/3.NavierStokes.SmoothLoop.exists_prescribed_mean_shear_loop",
-  "location": {
-    "page": 158,
-    "rect": [0.12854, 0.661157, 0.745098, 0.195868]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothLoop.exists_prescribed_mean_shear_loop",
-      "line": 562,
-      "module": "NavierStokes.SmoothLoop",
-      "path": "NavierStokes/SmoothLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean#L562"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothLoop.exists_prescribed_mean_shear_loop",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 158,
+        "rect": [0.12854, 0.661157, 0.745098, 0.195868]
       },
-      "region": "lemma-C.1@p158",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 562,
-        "text": "theorem exists_prescribed_mean_shear_loop (a b ρ : ℝ) (ha : 0 < a) (hρ : 0 ≤ ρ) :\n    ∃ A C : ℝ → ℝ,\n      ContDiff ℝ (∞ : WithTop ℕ∞) A ∧ ContDiff ℝ (∞ : WithTop ℕ∞) C ∧\n      Function.Periodic A 1 ∧ Function.Periodic C 1 ∧\n      (∫ φ in (0 : ℝ)..1, A φ) = a ∧ (∫ φ in (0 : ℝ)..1, C φ) = -b ∧\n      ∀ φ, 0 < A φ ∧\n        A φ * (1 + (C φ / A φ) ^ 2) = a * (1 + (-b / a) ^ 2) + ρ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-C.1@p158"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 159,
+        "rect": [0.12854, 0.103306, 0.745098, 0.090083]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-C.1@p159"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SmoothLoop.exists_prescribed_mean_shear_loop",
+        "module": "NavierStokes.SmoothLoop"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.SmoothLoop.exists_prescribed_mean_shear_loop",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L562",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 562,
+            "text": "theorem exists_prescribed_mean_shear_loop (a b ρ : ℝ) (ha : 0 < a) (hρ : 0 ≤ ρ) :\n    ∃ A C : ℝ → ℝ,\n      ContDiff ℝ (∞ : WithTop ℕ∞) A ∧ ContDiff ℝ (∞ : WithTop ℕ∞) C ∧\n      Function.Periodic A 1 ∧ Function.Periodic C 1 ∧\n      (∫ φ in (0 : ℝ)..1, A φ) = a ∧ (∫ φ in (0 : ℝ)..1, C φ) = -b ∧\n      ∀ φ, 0 < A φ ∧\n        A φ * (1 + (C φ / A φ) ^ 2) = a * (1 + (-b / a) ^ 2) + ρ"
+          }
+        }
+      }
+    }
+  ]
 }

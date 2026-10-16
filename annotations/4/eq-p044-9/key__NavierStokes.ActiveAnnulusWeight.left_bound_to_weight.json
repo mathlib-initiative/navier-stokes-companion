@@ -1,26 +1,28 @@
 {
-  "id": "eq-p044-9/key/03.NavierStokes.ActiveAnnulusWeight.left_bound_to_weight",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.left_bound_to_weight",
-      "line": 192,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L192"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.left_bound_to_weight",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.left_bound_to_weight",
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 192,
-        "text": "(hd : 0 < b-a-d) (hy : y ∈ Ioo a b) (hyl : y ≤ a+d) (hn : n ≤ N) : C * FlatCutoff.edge c (y-a) / (y-a)^n ≤ (C / FlatCutoff.edge 4 (b-a-d)) * weight c a b y / edgeDistance a b y ^ N  — the paper's 'on a fixed inner collar the ratio ζ/e^{-c_a/y_a²} is bounded above and below by positive constants'"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ActiveAnnulusWeight.left_bound_to_weight",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L192",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 192,
+            "text": "theorem left_bound_to_weight {c a b d y C : ℝ} (hC : 0 ≤ C)\n    (hd : 0 < b-a-d) (hy : y ∈ Ioo a b) (hyl : y ≤ a+d)\n    {n N : ℕ} (hn : n ≤ N) :\n    C * FlatCutoff.edge c (y-a) / (y-a)^n ≤\n      (C / FlatCutoff.edge 4 (b-a-d)) * weight c a b y / edgeDistance a b y ^ N"
+          }
+        }
       }
     }
-  }
+  ]
 }

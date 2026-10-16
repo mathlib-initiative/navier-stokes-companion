@@ -1,26 +1,28 @@
 {
-  "id": "eq-p103-3/key/02.NavierStokes.ActualCycleResidualBounds.Invariant.source_zero_germ",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCycleResidualBounds.Invariant.source_zero_germ",
-      "line": 77,
-      "module": "NavierStokes.ActualCycleResidualBounds",
-      "path": "NavierStokes/ActualCycleResidualBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean#L77"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCycleResidualBounds.Invariant.source_zero_germ",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCycleResidualBounds.Invariant.source_zero_germ",
+        "module": "NavierStokes.ActualCycleResidualBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 77,
-        "text": "z ∈ ActualInitialization.geometry.domain → z ∉ labelCarrier l n → (fun y i => (source x l).velocity n i j y) =ᶠ[𝓝 z] fun _ => 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ActualCycleResidualBounds.Invariant.source_zero_germ",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L77",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 77,
+            "text": "theorem source_zero_germ (l : Index B N0) (j : ℤ) (n : ℕ) {z : Point}\n    (hz : z ∈ ActualInitialization.geometry.domain) (hout : z ∉ labelCarrier l n) :\n    (fun y => fun i => (source x l).velocity n i j y) =ᶠ[𝓝 z] fun _ => 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

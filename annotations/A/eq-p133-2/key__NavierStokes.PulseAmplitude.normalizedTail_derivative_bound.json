@@ -1,26 +1,28 @@
 {
-  "id": "eq-p133-2/key/05.NavierStokes.PulseAmplitude.normalizedTail_derivative_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseAmplitude.normalizedTail_derivative_bound",
-      "line": 1196,
-      "module": "NavierStokes.PulseAmplitude",
-      "path": "NavierStokes/PulseAmplitude.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseAmplitude.lean#L1196"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseAmplitude.normalizedTail_derivative_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseAmplitude.normalizedTail_derivative_bound",
+        "module": "NavierStokes.PulseAmplitude"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1196,
-        "text": "|deriv (normalizedTail d) eta| ≤ errorScale d.core  (≤ combinedScale d K by oldScale_le, CorrectedPulseAmplitude.lean:145; the hypothesis coefficient_derivative_bounds needs)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.PulseAmplitude.normalizedTail_derivative_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1196",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseAmplitude.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1196,
+            "text": "theorem normalizedTail_derivative_bound (d : OutgoingTail.TailData) (eta : ℝ)\n    (heta : eta ^ 2 ≤ 1) : |deriv (normalizedTail d) eta| ≤ errorScale d.core"
+          }
+        }
       }
     }
-  }
+  ]
 }

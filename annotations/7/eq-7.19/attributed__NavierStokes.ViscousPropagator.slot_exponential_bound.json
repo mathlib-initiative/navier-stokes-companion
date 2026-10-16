@@ -1,25 +1,27 @@
 {
-  "id": "eq-7.19/attributed/03.NavierStokes.ViscousPropagator.slot_exponential_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ViscousPropagator.slot_exponential_bound",
-      "line": 473,
-      "module": "NavierStokes.ViscousPropagator",
-      "path": "NavierStokes/ViscousPropagator.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ViscousPropagator.lean#L473"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ViscousPropagator.slot_exponential_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ViscousPropagator.slot_exponential_bound",
+        "module": "NavierStokes.ViscousPropagator"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 473,
-        "text": "Real.exp ((C / S) * (t - a)) ≤ Real.exp (C * L) when t - a ≤ L * S — turns the explicit error exponential into the manuscript's constant C"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ViscousPropagator.slot_exponential_bound"
+          },
+          "destination": {
+            "fragment": "L473",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ViscousPropagator.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 473,
+            "text": "theorem slot_exponential_bound {C S L a t : ℝ}\n    (hC : 0 ≤ C) (hS : 0 < S) (hslot : t - a ≤ L * S) :\n    Real.exp ((C / S) * (t - a)) ≤ Real.exp (C * L)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,27 @@
 {
-  "id": "eq-p110-5/key/04.NavierStokes.MeanIncrementBounds.OperatorBounds.viscosity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanIncrementBounds.OperatorBounds.viscosity",
-      "line": 292
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanIncrementBounds.lean#L292"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanIncrementBounds.OperatorBounds.viscosity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanIncrementBounds.OperatorBounds.viscosity",
+        "module": "NavierStokes.MeanIncrementBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 292,
-        "text": "hf : MeanClass s α f → MeanClass s (α + 1 - 2*κ) (o.viscosity c f)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.MeanIncrementBounds.OperatorBounds.viscosity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L292"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 292,
+            "text": "theorem viscosity (ho : OperatorBounds s o κ) {f : Field D} (hf : MeanClass s α f) (c : ℝ) :\n    MeanClass s (α + 1 - 2 * κ) (o.viscosity c f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

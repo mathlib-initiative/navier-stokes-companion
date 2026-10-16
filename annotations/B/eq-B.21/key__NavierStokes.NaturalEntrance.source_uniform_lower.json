@@ -1,23 +1,25 @@
 {
-  "id": "eq-B.21/key/04.NavierStokes.NaturalEntrance.source_uniform_lower",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalEntrance.source_uniform_lower",
-      "line": 462,
-      "module": "NavierStokes.NaturalEntrance",
-      "path": "NavierStokes/NaturalEntrance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L462"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalEntrance.source_uniform_lower"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalEntrance.source_uniform_lower",
+        "module": "NavierStokes.NaturalEntrance"
       },
-      "snippet": {
-        "line": 462,
-        "text": "∃ M > 0, ∀ Λ ≥ M, … (19/20) * L h p.2 * Λ * chi h j σ p.2 + 5/2 < L h p.2 * Λ * chi h j σ p.2 + sourceRemainder h j σ p (1/Λ) (sourceJets … x p)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.NaturalEntrance.source_uniform_lower"
+          },
+          "destination": {
+            "fragment": "L462",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean"
+          },
+          "snippet": {
+            "line": 462,
+            "text": "theorem source_uniform_lower {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (v : CoefficientFamily h j σ P0) (hsmall : NaturalAxisRange.Parameters h j)\n    (hσ : 0 < σ) {K : ℝ} (hK : 0 ≤ K) :\n    ∃ M : ℝ, 0 < M ∧ ∀ Λ : ℝ, M ≤ Λ → ∀ x : CoefficientPair v.epsilon,\n      ‖x - referencePair v‖ ≤ K / (2 * Λ) → ∀ p : entranceSet,\n        (19 / 20 : ℝ) * NaturalAxisData.L h p.val.2 * Λ *\n            NaturalAxisData.chi h j σ p.val.2 + 5 / 2 <\n          NaturalAxisData.L h p.val.2 * Λ * NaturalAxisData.chi h j σ p.val.2 +\n            sourceRemainder h j σ p (1 / Λ) (sourceJets v.epsilon_pos x p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,27 @@
 {
-  "id": "eq-p041-5/key/02.NavierStokes.ModulatedHistories.density_eq_physical",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedHistories.density_eq_physical",
-      "line": 54
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean#L54"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedHistories.density_eq_physical",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedHistories.density_eq_physical",
+        "module": "NavierStokes.ModulatedHistories"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 54,
-        "text": "densityAt X f U = ![U, √(2X) * (√(2X) * f), U * √(2X) * (√(2X) * f), U^2 - (√(2X)*f)^2/2, (√(2X)*f)^2/(2X)]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ModulatedHistories.density_eq_physical",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L54"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 54,
+            "text": "theorem density_eq_physical (X f U : ℝ) (hX : 0 < X) :\n    densityAt X f U =\n      ![U, Real.sqrt (2 * X) * (Real.sqrt (2 * X) * f),\n        U * Real.sqrt (2 * X) * (Real.sqrt (2 * X) * f),\n        U ^ 2 - (Real.sqrt (2 * X) * f) ^ 2 / 2,\n        (Real.sqrt (2 * X) * f) ^ 2 / (2 * X)]"
+          }
+        }
       }
     }
-  }
+  ]
 }

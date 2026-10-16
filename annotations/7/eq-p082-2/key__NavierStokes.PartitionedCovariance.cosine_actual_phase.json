@@ -1,25 +1,27 @@
 {
-  "id": "eq-p082-2/key/01.NavierStokes.PartitionedCovariance.cosine_actual_phase",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.cosine_actual_phase",
-      "line": 161,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L161"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.cosine_actual_phase",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.cosine_actual_phase",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 161,
-        "text": "Real.cos (k * PhaseCalculus.phase ε p pz x0 F G (s, θ, v Y)) = Real.cos ((mode : ℝ) * θ + k * ((pz/ε) * s.2.1 + x0 * s.1 - v Y * (p * F s + pz * G s))) when k * p = (mode : ℤ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PartitionedCovariance.cosine_actual_phase",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L161",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 161,
+            "text": "theorem cosine_actual_phase (k ε p pz x0 : ℝ) (F G : PhaseCalculus.Slow → ℝ)\n    (s : PhaseCalculus.Slow) (v : Plane → ℝ) (mode : ℤ) (hmode : k * p = (mode : ℝ))\n    (Y : Plane) (θ : ℝ) :\n    Real.cos (k * PhaseCalculus.phase ε p pz x0 F G (s, θ, v Y)) =\n      Real.cos ((mode : ℝ) * θ + k * ((pz / ε) * s.2.1 + x0 * s.1 -\n        v Y * (p * F s + pz * G s)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

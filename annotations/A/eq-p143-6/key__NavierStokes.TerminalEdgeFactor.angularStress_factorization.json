@@ -1,24 +1,28 @@
 {
-  "id": "eq-p143-6/key/02.NavierStokes.TerminalEdgeFactor.angularStress_factorization",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgeFactor.angularStress_factorization",
-      "line": 492
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L492"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgeFactor.angularStress_factorization",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgeFactor.angularStress_factorization",
+        "lines": [492, 492],
+        "module": "NavierStokes.TerminalEdgeFactor"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 492,
-        "text": "`rw [hform, radialTaper_deriv d y0 y.1 (radius_pos d y0 y), edgeCoordinate_radius, …]`, which turns the boundary term `heatAmplitude … * deriv (radialTaper d y0 y.1) (radius d y0 y)` of the stress formula into `(edge 4 δ / δ³) * boundaryCoefficient C d y0 y` (unfolded at line 496)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TerminalEdgeFactor.angularStress_factorization",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L492"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 475,
+            "text": "theorem angularStress_factorization (C : ℝ) (d : TailData) (y0 : ℝ) (y : EdgeParam × ℝ) :\n    angularStress C d y0 y = (FlatCutoff.edge 4 y.2 / y.2 ^ 3) * angularFactor C d y0 y"
+          }
+        }
       }
     }
-  }
+  ]
 }

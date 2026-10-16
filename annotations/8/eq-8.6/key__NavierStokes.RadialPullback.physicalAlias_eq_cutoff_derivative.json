@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.6/key/01.NavierStokes.RadialPullback.physicalAlias_eq_cutoff_derivative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialPullback.physicalAlias_eq_cutoff_derivative",
-      "line": 394,
-      "module": "NavierStokes.RadialPullback",
-      "path": "NavierStokes/RadialPullback.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialPullback.lean#L394"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialPullback.physicalAlias_eq_cutoff_derivative",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialPullback.physicalAlias_eq_cutoff_derivative",
+        "module": "NavierStokes.RadialPullback"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 394,
-        "text": "physicalAlias d a b M v g z = deriv (physicalCutoff d a b) z.1 • TransportPrimitive.totalIntegral M v (normalizeSource d a g) (liftChart (powerChart d a) z) — i.e. 𝒜_0 f = (∂_R χ_m) 𝓙 f"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.RadialPullback.physicalAlias_eq_cutoff_derivative",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L394",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialPullback.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 394,
+            "text": "theorem physicalAlias_eq_cutoff_derivative {a d b M : ℝ} (ha : 0 < a)\n    (v : E) (g : ℝ × E → V) (z : ℝ × E) (hz : a / 2 < z.1) :\n    physicalAlias d a b M v g z = deriv (physicalCutoff d a b) z.1 •\n      TransportPrimitive.totalIntegral M v (normalizeSource d a g) (liftChart (powerChart d a) z)"
+          }
+        }
       }
     }
-  }
+  ]
 }

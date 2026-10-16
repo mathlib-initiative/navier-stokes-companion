@@ -1,26 +1,28 @@
 {
-  "id": "eq-p110-3/key/01.NavierStokes.MeanChartCompatibility.commonTemporalFields_fast_cancellation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.commonTemporalFields_fast_cancellation",
-      "line": 1025,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L1025"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.commonTemporalFields_fast_cancellation",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.commonTemporalFields_fast_cancellation",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1025,
-        "text": "fastAtIndex ... (angular n) z + centered (ftheta n) z = 0 /\\ fastAtIndex ... (axial n) z + centered (fz n) z = -fastAtIndex ... (commonTemporalAlias r h index fz n) z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.MeanChartCompatibility.commonTemporalFields_fast_cancellation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1025",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1025,
+            "text": "theorem commonTemporalFields_fast_cancellation (r : ℕ → CorrectionState.ReconstructionData)\n    (h : ℝ) (index : ℕ → ℕ) (epsilon : ℕ → ℝ) (axial : S × Plane)\n    (fθ fz : ℕ → PressureStream.Lift S → ℝ) (n : ℕ)\n    (ha : 0 < (r n).inner) (hd : 0 < (r n).exponent)\n    (hθ : ContDiff ℝ ∞ (fθ n)) (hz : ContDiff ℝ ∞ (fz n))\n    (hpθ : PressureStream.TorusPeriodicLift (fθ n)) (hpz : PressureStream.TorusPeriodicLift (fz n))\n    (hsz : RadialAlias.RadiallySupported (r n).inner (r n).outer (fz n))\n    (z : PressureStream.Lift S) :\n    fastAtIndex h n (index n) ((commonTemporalFields r h index epsilon axial fθ fz).angular n) z +\n        TemporalMeanUpdate.centered (fθ n) z = 0 ∧\n    fastAtIndex h n (index n) ((commonTemporalFields r h index epsilon axial fθ fz).axial n) z +\n        TemporalMeanUpdate.centered (fz n) z =\n      -fastAtIndex h n (index n) (commonTemporalAlias r h index fz n) z"
+          }
+        }
       }
     }
-  }
+  ]
 }

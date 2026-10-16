@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.38/key/02.NavierStokes.WholeDomainStageBounds.prefix_log_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WholeDomainStageBounds.prefix_log_bound",
-      "line": 19,
-      "module": "NavierStokes.WholeDomainPrefixBounds",
-      "path": "NavierStokes/WholeDomainPrefixBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WholeDomainPrefixBounds.lean#L19"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WholeDomainStageBounds.prefix_log_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WholeDomainStageBounds.prefix_log_bound",
+        "module": "NavierStokes.WholeDomainPrefixBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 19,
-        "text": "LogBound h qbig (DiagonalJetBounds.uncutPrefix F (J+1)) m (-prefixLoss initial positive m), where LogBound … r = ∃ C ≥ 0, ∃ N, ∀ w in the sublevel with q w ≤ 1, ‖D^m F‖ ≤ C * q^r * (1 + |log q|)^N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.WholeDomainStageBounds.prefix_log_bound"
+          },
+          "destination": {
+            "fragment": "L19",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WholeDomainPrefixBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 19,
+            "text": "theorem prefix_log_bound (hh : 0 < h) (hh1 : h < 1/2)\n    (hs : ∀ j, ContDiffOn ℝ ∞ (F j) (CutStageEstimates.physicalSublevel h qbig))\n    (hgain : ∀ j, 0 ≤ gain j)\n    (hzero : ∀ m, LogBound h qbig (F 0) m (-initial m))\n    (hpos : ∀ j m, LogBound h qbig (F (j+1)) m (gain (j+1)-positive m))\n    (J m : ℕ) :\n    LogBound h qbig (DiagonalJetBounds.uncutPrefix F (J+1)) m (-prefixLoss initial positive m)"
+          }
+        }
       }
     }
-  }
+  ]
 }

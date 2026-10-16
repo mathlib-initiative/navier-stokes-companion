@@ -1,26 +1,28 @@
 {
-  "id": "eq-p148-1/key/01.NavierStokes.AxisResolvent.regularInverseJet_bound_on_order",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisResolvent.regularInverseJet_bound_on_order",
-      "line": 104,
-      "module": "NavierStokes.AxisResolvent",
-      "path": "NavierStokes/AxisResolvent.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisResolvent.lean#L104"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisResolvent.regularInverseJet_bound_on_order",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisResolvent.regularInverseJet_bound_on_order",
+        "module": "NavierStokes.AxisResolvent"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 104,
-        "text": "(hz : JetVanishesBelow f k) (hf : ∀ n m, |f n m| ≤ F * weight ε n m) → |regularInverseJet 2 f n m| ≤ (80 / radialDivisor 2 k) * F * weight ε n m, where radialDivisor 2 k = (k+1)(k+2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.AxisResolvent.regularInverseJet_bound_on_order",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L104",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisResolvent.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 104,
+            "text": "theorem regularInverseJet_bound_on_order {ε F : ℝ} (hε : 0 < ε) (hF : 0 ≤ F)\n    (f : ℕ → ℕ → ℝ) (k : ℕ) (hz : JetVanishesBelow f k)\n    (hf : ∀ n m, |f n m| ≤ F * weight ε n m) (n m : ℕ) :\n    |regularInverseJet 2 f n m| ≤\n      (80 / radialDivisor 2 k) * F * weight ε n m"
+          }
+        }
       }
     }
-  }
+  ]
 }

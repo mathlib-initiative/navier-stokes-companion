@@ -1,26 +1,29 @@
 {
-  "id": "eq-p044-9/key/05.NavierStokes.ActiveAnnulusWeight.exists_global_lower_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.exists_global_lower_bound",
-      "line": 451,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L451"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.exists_global_lower_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.exists_global_lower_bound",
+        "lines": [451, 451],
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 451,
-        "text": "step at L450-455 `by_cases hleft : y-a ≤ d` / `have hh := hl p hp (y-a) …` then `(weight_le_left c a b y) … .trans hh`: the inner-collar case of |T₀| ≥ mζ; L456-461 is the outer-collar case via weight_le_right; L462-464 the compact middle"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ActiveAnnulusWeight.exists_global_lower_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L451",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 424,
+            "text": "theorem exists_global_lower_bound {K : Set E} (hK : IsCompact K)\n    {a b c : ℝ} (hab : a < b) (hc : 0 < c) {T : E × ℝ → V}\n    (hT : ContinuousOn T (K ×ˢ Icc a b))\n    (hinterior : ∀ p ∈ K, ∀ y ∈ Ioo a b, T (p,y) ≠ 0)\n    (FL : EdgeFactor K c (leftChart a T)) (FR : EdgeFactor K 4 (rightChart b T)) :\n    ∃ m : ℝ, 0 < m ∧ ∀ p ∈ K, ∀ y ∈ Ioo a b, m * weight c a b y ≤ ‖T (p,y)‖"
+          }
+        }
       }
     }
-  }
+  ]
 }

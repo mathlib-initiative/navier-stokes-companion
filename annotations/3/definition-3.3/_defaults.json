@@ -1,31 +1,30 @@
 {
+  "id": "definition-3.3",
   "kind": "definition",
-  "label": "Definition 3.3",
-  "status": {
-    "pin": {
-      "type": "repository",
-      "commit": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
-      "url": "https://github.com/openai/NavierStokesAndEuler"
+  "status": "not_formalized",
+  "subject": {
+    "location": {
+      "page": 18,
+      "rect": [0.12854, 0.608264, 0.745098, 0.08843]
     },
-    "value": "not_formalized"
-  },
-  "location": {
-    "page": 18,
-    "rect": [0.12854, 0.608264, 0.745098, 0.08843]
+    "title": "Definition 3.3",
+    "extensions": {
+      "org.mathlib-initiative.formal-companion.overlay": {
+        "region": "definition-3.3@p018"
+      }
+    }
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "item": "definition-3.3",
       "locator": {
         "physical": [18, 19],
         "printed": [18, 19],
         "text": "Section 3, Definition 3.3, p. 18"
       },
-      "region": "definition-3.3@p018",
       "verdicts": [
         {
           "confidence": 0.85,
-          "evidence": ["CONVENTION: No match for `≪`, `MuchLess` or a smallness relation in decls.jsonl or in NavierStokes/*.lean. The convention appears only operationally: NavierStokes/ScheduledProfileChoice.lean:105 `exists_scheduled_family_below` (∃ K B H core, … 2*H < core.lam … ∀ h, 0 < h → h ≤ H → …), NavierStokes/HeatedOutgoing.lean:886 `exists_fixed_schedule` (docstring at line 884: 'The order of choices is `P,m`, one positive `lam`, permitted `h`, …'), NavierStokes/NaturalAxisData.lean:41 `SmallParameters` (h ≤ 1/1000, j ≤ 1/1000).", "Definition 3.3 fixes the meaning of ≪ and the right-to-left order of parameter choices. It is a convention about reading hypotheses, with no assertion to prove, and the Lean development states nothing corresponding: no ≪ notation, no smallness predicate, no module documenting the convention anywhere in the 815 NavierStokes files. The relation is therefore `absent`. It is nonetheless `low` and `CONVENTION` rather than a real gap: Lean carries the same information structurally, in binder order plus explicit numeric thresholds, as ScheduledProfileChoice.exists_scheduled_family_below and HeatedOutgoing.exists_fixed_schedule show, and the recovery argument above converts between the two readings. The substantive question, whether each use has the paper's ordering, belongs to the items that use it."],
+          "evidence": ["CONVENTION: No match for `≪`, `MuchLess` or a smallness relation in the declaration index or in NavierStokes/*.lean. The convention appears only operationally: NavierStokes/ScheduledProfileChoice.lean:105 `exists_scheduled_family_below` (∃ K B H core, … 2*H < core.lam … ∀ h, 0 < h → h ≤ H → …), NavierStokes/HeatedOutgoing.lean:886 `exists_fixed_schedule` (docstring at line 884: 'The order of choices is `P,m`, one positive `lam`, permitted `h`, …'), NavierStokes/NaturalAxisData.lean:41 `SmallParameters` (h ≤ 1/1000, j ≤ 1/1000).", "Definition 3.3 fixes the meaning of ≪ and the right-to-left order of parameter choices. It is a convention about reading hypotheses, with no assertion to prove, and the Lean development states nothing corresponding: no ≪ notation, no smallness predicate, no module documenting the convention anywhere in the 815 NavierStokes files. The relation is therefore `absent`. It is nonetheless `low` and `CONVENTION` rather than a real gap: Lean carries the same information structurally, in binder order plus explicit numeric thresholds, as ScheduledProfileChoice.exists_scheduled_family_below and HeatedOutgoing.exists_fixed_schedule show, and the recovery argument above converts between the two readings. The substantive question, whether each use has the paper's ordering, belongs to the items that use it."],
           "findings": [
             {
               "confidence": 0.85,

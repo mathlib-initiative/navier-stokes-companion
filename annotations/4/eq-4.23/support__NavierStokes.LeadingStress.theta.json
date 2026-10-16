@@ -1,26 +1,29 @@
 {
-  "id": "eq-4.23/support/04.NavierStokes.LeadingStress.theta",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStress.theta",
-      "line": 34,
-      "module": "NavierStokes.LeadingStress",
-      "path": "NavierStokes/LeadingStress.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean#L34"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStress.theta",
-        "kind": "def"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStress.theta",
+        "module": "NavierStokes.LeadingStress"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 34,
-        "text": "theta P h w = P.f w * w.1 * P.angularLag h w / L h w.2 + 2 * w.1 * partialX P.f w — the Lean name for T_{0,θ}; equals F·(p_{s,1} - a) by theta_eq_lag_minus_slope (line 44)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LeadingStress.theta",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L34",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 34,
+            "text": "noncomputable def theta (h : ℝ) (w : Point) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

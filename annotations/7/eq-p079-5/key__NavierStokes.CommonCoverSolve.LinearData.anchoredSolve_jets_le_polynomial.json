@@ -1,25 +1,28 @@
 {
-  "id": "eq-p079-5/key/04.NavierStokes.CommonCoverSolve.LinearData.anchoredSolve_jets_le_polynomial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CommonCoverSolve.LinearData.anchoredSolve_jets_le_polynomial",
-      "line": 892,
-      "module": "NavierStokes.CommonCoverSolve",
-      "path": "NavierStokes/CommonCoverSolve.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean#L892"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CommonCoverSolve.LinearData.anchoredSolve_jets_le_polynomial"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CommonCoverSolve.LinearData.anchoredSolve_jets_le_polynomial",
+        "module": "NavierStokes.CommonCoverSolve"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 892,
-        "text": "(hAj : ∀ j ≤ N, ∀ t, ‖iteratedFDeriv ℝ j (coefficientAlong ..) p‖ ≤ K * S^m) (hfj : ∀ j ≤ N, ∀ t, ‖iteratedFDeriv ℝ j (forcingAlong ..) p‖ ≤ w*K*S^m*W t) → ‖iteratedFDeriv ℝ n (anchoredSolve ..) p‖ ≤ w * (2^(N+1)*K^3)^(n+1) * S^((m+1)*(n+1)) * W t"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.CommonCoverSolve.LinearData.anchoredSolve_jets_le_polynomial"
+          },
+          "destination": {
+            "fragment": "L892",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 892,
+            "text": "theorem LinearData.anchoredSolve_jets_le_polynomial\n    {P V E : Type} [NormedAddCommGroup P] [NormedSpace ℝ P]\n    [NormedAddCommGroup V] [NormedSpace ℝ V]\n    [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]\n    {a b : ℝ} (d : LinearData P V E) (g : Geometry) (hab : a ≤ b)\n    {U : Set P} (hU : IsOpen U) (k : Frequency)\n    (hA : ContDiffOn ℝ ∞ d.coefficient (U ×ˢ univ))\n    (hB : ContDiffOn ℝ ∞ d.forcingMap (U ×ˢ univ))\n    (hf : ContDiffOn ℝ ∞ d.source (U ×ˢ univ))\n    {p : P × Plane} (hp : p.1 ∈ U)\n    (rate W : ℝ → ℝ) {μ S K w : ℝ} (hμ : 0 ≤ μ)\n    (hW : ∀ t, 0 < W t) (hdW : ∀ t, HasDerivAt W (rate t * W t) t)\n    (henergy : ∀ t : Icc a b, ∀ x : E,\n      ⟪x, d.coefficientAlong g k (p, t) x⟫_ℝ ≤ (rate t + μ) * ‖x‖ ^ 2)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

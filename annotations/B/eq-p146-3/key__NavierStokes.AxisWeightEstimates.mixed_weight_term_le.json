@@ -1,24 +1,27 @@
 {
-  "id": "eq-p146-3/key/02.NavierStokes.AxisWeightEstimates.mixed_weight_term_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisWeightEstimates.mixed_weight_term_le",
-      "line": 421
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisWeightEstimates.lean#L421"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisWeightEstimates.mixed_weight_term_le",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisWeightEstimates.mixed_weight_term_le",
+        "module": "NavierStokes.AxisWeightEstimates"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 421,
-        "text": "theorem mixed_weight_term_le (hij : i + j = n) : (((m.choose k : ℝ) * j) / radialDivisor r n) * weight ε i (k+1) * weight ε j l ≤ (80/ε) * ((m.choose k : ℝ) * weight ε (i+1) k * weight ε j l)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.AxisWeightEstimates.mixed_weight_term_le",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L421"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 421,
+            "text": "theorem mixed_weight_term_le {ε : ℝ} (hε : 0 < ε) {r n i j : ℕ}\n    (hr : 1 ≤ r) (hij : i + j = n) (m k l : ℕ) :\n    (((m.choose k : ℝ) * j) / radialDivisor r n) * weight ε i (k + 1) * weight ε j l ≤\n      (80 / ε) * ((m.choose k : ℝ) * weight ε (i + 1) k * weight ε j l)"
+          }
+        }
       }
     }
-  }
+  ]
 }

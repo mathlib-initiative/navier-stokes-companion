@@ -1,23 +1,26 @@
 {
-  "id": "eq-p071-1/key/03.NavierStokes.PhysicalWaveSum.commonWave",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalWaveSum.commonWave",
-      "line": 166
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalWaveSum.lean#L166"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalWaveSum.commonWave"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalWaveSum.commonWave",
+        "module": "NavierStokes.PhysicalWaveSum"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 166,
-        "text": "commonWave a h n d r0 c amp j w = amp (commonLift h n d w) * PhysicalGraphBounds.character ((ChartScales.carrier h n : ℝ) * (j : ℝ)) (c.phase a h n r0 (physicalLift h n w)); character c t = Complex.exp ((c : ℂ) * Complex.I * t)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.PhysicalWaveSum.commonWave"
+          },
+          "destination": {
+            "fragment": "L166"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 166,
+            "text": "noncomputable def commonWave (a h : ℝ) (n d : ℕ) (r0 : ℝ) (c : CarrierData)\n    (amp : LiftPoint → ℂ) (j : ℤ) (w : SpaceTime) : ℂ"
+          }
+        }
       }
     }
-  }
+  ]
 }

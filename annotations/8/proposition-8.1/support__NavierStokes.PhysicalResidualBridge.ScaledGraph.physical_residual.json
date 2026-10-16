@@ -1,27 +1,30 @@
 {
-  "id": "proposition-8.1/support/3.NavierStokes.PhysicalResidualBridge.ScaledGraph.physical_residual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalResidualBridge.ScaledGraph.physical_residual",
-      "line": 381,
-      "module": "NavierStokes.PhysicalResidualBridge",
-      "path": "NavierStokes/PhysicalResidualBridge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualBridge.lean#L381"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalResidualBridge.ScaledGraph.physical_residual",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalResidualBridge.ScaledGraph.physical_residual",
+        "module": "NavierStokes.PhysicalResidualBridge"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 381,
-        "text": "theorem physical_residual (G : ScaledGraph) (hl : 0 < G.radialScale)\n    (hε : G.radialScale = G.velocityScale * G.epsilon)\n    {U : Set Cylinder} (hU : IsOpen U) (hR : ∀ x ∈ U, x.1.1 ≠ 0)\n    {a : Cylinder → Fin 3 → ℝ} {p : Cylinder → ℝ}\n    (ha : ∀ i, ContDiffOn ℝ ∞ (fun y => a y i) U)\n    (hp : ContDiffOn ℝ ∞ p U) {t : ℝ} {q : Space} (hz : (t, q) ∈ G.source U)\n    {u : VelocityField} {P : PressureField}\n    (hu : ContDiffAt ℝ 2 u (t, CylindricalResidual.chart q))\n    (hP : DifferentiableAt ℝ P (t, CylindricalResidual.chart q))\n    (hrep : (fun z : SpaceTime => u (z.1, CylindricalResidual.chart z.2)) =ᶠ[𝓝 (t, q)]\n      (fun z => CylindricalResidual.frame (z.2 1) (G.velocity a z)))\n    (hpRep : CylindricalResidual.pressurePullback P =ᶠ[𝓝 (t, q)] G.pressure p)\n    (i : Fin 3) :\n    CylindricalResidual.frame (-(q 1))\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.PhysicalResidualBridge.ScaledGraph.physical_residual",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L381",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualBridge.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 381,
+            "text": "theorem physical_residual (G : ScaledGraph) (hl : 0 < G.radialScale)\n    (hε : G.radialScale = G.velocityScale * G.epsilon)\n    {U : Set Cylinder} (hU : IsOpen U) (hR : ∀ x ∈ U, x.1.1 ≠ 0)\n    {a : Cylinder → Fin 3 → ℝ} {p : Cylinder → ℝ}\n    (ha : ∀ i, ContDiffOn ℝ ∞ (fun y => a y i) U)\n    (hp : ContDiffOn ℝ ∞ p U) {t : ℝ} {q : Space} (hz : (t, q) ∈ G.source U)\n    {u : VelocityField} {P : PressureField}\n    (hu : ContDiffAt ℝ 2 u (t, CylindricalResidual.chart q))\n    (hP : DifferentiableAt ℝ P (t, CylindricalResidual.chart q))\n    (hrep : (fun z : SpaceTime => u (z.1, CylindricalResidual.chart z.2)) =ᶠ[𝓝 (t, q)]\n      (fun z => CylindricalResidual.frame (z.2 1) (G.velocity a z)))\n    (hpRep : CylindricalResidual.pressurePullback P =ᶠ[𝓝 (t, q)] G.pressure p)\n    (i : Fin 3) :\n    CylindricalResidual.frame (-(q 1))\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

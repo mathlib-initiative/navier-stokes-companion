@@ -1,23 +1,25 @@
 {
-  "id": "eq-p041-6/key/02.NavierStokes.ModulatedCone.Localized.profileHistory_difference",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.Localized.profileHistory_difference",
-      "line": 671,
-      "module": "NavierStokes.ModulatedCone",
-      "path": "NavierStokes/ModulatedCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L671"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.Localized.profileHistory_difference"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.Localized.profileHistory_difference",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "snippet": {
-        "line": 671,
-        "text": "(hP0 : P.pressure0 = Q.pressure0) : profileHistory P row p - profileHistory Q row p = ModulatedHistories.historyDifference W r f E U n p.1 p.2 (historyIndex row)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ModulatedCone.Localized.profileHistory_difference"
+          },
+          "destination": {
+            "fragment": "L671",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean"
+          },
+          "snippet": {
+            "line": 671,
+            "text": "theorem profileHistory_difference {D D' : RadialDomain}\n    (W : ModulatedHistories.Window) (r : TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (n : ℝ) (P : Profiles D) (Q : Profiles D')\n    (hPf : P.f = ModulatedHistories.localizedF W r f n)\n    (hPU : P.U = ModulatedHistories.localizedU W r E U n)\n    (hQf : Q.f = f) (hQU : Q.U = U) (hP0 : P.pressure0 = Q.pressure0)\n    (row : HistoryRow) (p : Point) (hX : 0 ≤ p.1) :\n    profileHistory P row p - profileHistory Q row p =\n      ModulatedHistories.historyDifference W r f E U n p.1 p.2 (historyIndex row)"
+          }
+        }
       }
     }
-  }
+  ]
 }

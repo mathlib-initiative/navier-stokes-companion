@@ -1,26 +1,28 @@
 {
-  "id": "eq-p085-1/key/01.NavierStokes.PrimaryFieldAssembly.physical_source_plus_remainder",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryFieldAssembly.physical_source_plus_remainder",
-      "line": 936,
-      "module": "NavierStokes.PrimaryFieldAssembly",
-      "path": "NavierStokes/PrimaryFieldAssembly.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryFieldAssembly.lean#L936"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryFieldAssembly.physical_source_plus_remainder",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryFieldAssembly.physical_source_plus_remainder",
+        "module": "NavierStokes.PrimaryFieldAssembly"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 936,
-        "text": "let V := sourceField A hdet (physicalOuter h N) (physicalViscosity h N) (chartTarget h q N T0) q x; doubleAverage (fun Y θ => (V Y θ + R Y θ) 0 * (V Y θ + R Y θ) i.succ) = q ^ (-velocityExponent h - 1 / 2) * T0 i + doubleAverage (covarianceError V R i)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PrimaryFieldAssembly.physical_source_plus_remainder",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L936",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryFieldAssembly.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 936,
+            "text": "theorem physical_source_plus_remainder {Q : Type} [NormedAddCommGroup Q]\n    (sys : SlotSystem D h vr vt) (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0)\n    (N : ℕ) (hN : 1 ≤ N) (A : (U : UnsignedLabel) → SourcePair Q sys (tailLabel N U))\n    {q : ℝ} (hq : 0 < q) (hqN : q ≤ ChartScales.Q N) (x : SlotColoring.Position) (T0 : Vec2)\n    (hcone : ∀ U, mask D (tailLabel N U) q x ≠ 0 →\n      SmoothCovariance.StrictCone (A U).sourceMatrix (chartTarget h q N T0 U))\n    (hphase : ∀ U j, Continuous ((A U).phase j))\n    (R : Plane → ℝ → Vector) (hR : Continuous R.uncurry) (i : Fin 2) :\n    let V"
+          }
+        }
       }
     }
-  }
+  ]
 }

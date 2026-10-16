@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.46/attributed/05.NavierStokes.DiagonalJetBounds.CutStageBounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.DiagonalJetBounds.CutStageBounds",
-      "line": 196,
-      "module": "NavierStokes.DiagonalJetBounds",
-      "path": "NavierStokes/DiagonalJetBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiagonalJetBounds.lean#L196"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.DiagonalJetBounds.CutStageBounds",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.DiagonalJetBounds.CutStageBounds",
+        "module": "NavierStokes.DiagonalJetBounds"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 196,
-        "text": "CutStageBounds a q A g L U := ∀ j, 1 ≤ j → ∀ m, m ≤ j+2 → ∀ x ∈ U, ‖iteratedFDeriv ℝ m (cutStage a q A j) x‖ ≤ (1/2)^j * q x ^ (g j - L m)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.DiagonalJetBounds.CutStageBounds",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L196",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiagonalJetBounds.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 196,
+            "text": "def CutStageBounds (a : ℕ → ℝ) (q : E → ℝ) (A : ℕ → E → V)\n    (g L : ℕ → ℝ) (U : Set E) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

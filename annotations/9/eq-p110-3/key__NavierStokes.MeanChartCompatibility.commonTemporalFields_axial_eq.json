@@ -1,26 +1,28 @@
 {
-  "id": "eq-p110-3/key/02.NavierStokes.MeanChartCompatibility.commonTemporalFields_axial_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.commonTemporalFields_axial_eq",
-      "line": 1013,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L1013"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.commonTemporalFields_axial_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.commonTemporalFields_axial_eq",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1013,
-        "text": "(...).axial n = fun z => temporalAtIndex h n (index n) (fz n) z - commonTemporalAlias r h index fz n z  (i.e. Delta gamma = gamma_d - alias)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.MeanChartCompatibility.commonTemporalFields_axial_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1013",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1013,
+            "text": "theorem commonTemporalFields_axial_eq (r : ℕ → CorrectionState.ReconstructionData)\n    (h : ℝ) (index : ℕ → ℕ) (epsilon : ℕ → ℝ) (axial : S × Plane)\n    (fθ fz : ℕ → PressureStream.Lift S → ℝ) (n : ℕ)\n    (ha : 0 < (r n).inner) (hd : 0 < (r n).exponent)\n    (hf : ContDiff ℝ ∞ (fz n)) (hp : PressureStream.TorusPeriodicLift (fz n))\n    (hs : RadialAlias.RadiallySupported (r n).inner (r n).outer (fz n)) :\n    (commonTemporalFields r h index epsilon axial fθ fz).axial n =\n      fun z => temporalAtIndex h n (index n) (fz n) z - commonTemporalAlias r h index fz n z"
+          }
+        }
       }
     }
-  }
+  ]
 }

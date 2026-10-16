@@ -1,25 +1,27 @@
 {
-  "id": "eq-8.3/key/07.NavierStokes.MeanIncrementBounds.Operators.time",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanIncrementBounds.Operators.time",
-      "line": 62,
-      "module": "NavierStokes.MeanIncrementBounds",
-      "path": "NavierStokes/MeanIncrementBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanIncrementBounds.lean#L62"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanIncrementBounds.Operators.time",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanIncrementBounds.Operators.time",
+        "module": "NavierStokes.MeanIncrementBounds"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 62,
-        "text": "time f = o.slowTime f + o.fastTime f = (fun n x => -(o.epsilon n * fderiv ℝ (f n) x o.eT)) + (fun n x => o.fastCoefficient n * fderiv ℝ (f n) x o.vT); i.e. 𝔱_* = -ε∂_T + c N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.MeanIncrementBounds.Operators.time",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L62",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanIncrementBounds.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 62,
+            "text": "noncomputable def time (o : Operators D) (f : Field D) : Field D"
+          }
+        }
       }
     }
-  }
+  ]
 }

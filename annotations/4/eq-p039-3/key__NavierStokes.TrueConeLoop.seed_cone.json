@@ -1,26 +1,28 @@
 {
-  "id": "eq-p039-3/key/01.NavierStokes.TrueConeLoop.seed_cone",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.seed_cone",
-      "line": 236,
-      "module": "NavierStokes.TrueConeLoop",
-      "path": "NavierStokes/TrueConeLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L236"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.seed_cone",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.seed_cone",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 236,
-        "text": "∀ θ, 2 < p₁ + p₂ * seedTilt a m d p₂ δ θ ∧ seedSpeed a m δ < coneBound (p₁ + p₂ * seedTilt a m d p₂ δ θ) (p₂ - p₁ * seedTilt a m d p₂ δ θ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TrueConeLoop.seed_cone",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L236",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 236,
+            "text": "theorem seed_cone (a m p₁ p₂ d δ R : ℝ) (ha : 0 < a) (hd : 0 < d)\n    (hδ : 0 < δ) (hδ₁ : δ ≤ 1) (hR : Real.sqrt (3 / a) ≤ R)\n    (hmargin : 2 ≤ p₁ + p₂ * m - d)\n    (hrelaxed : nominalSpeed a m < coneBound (p₁ + p₂ * m) (p₂ - p₁ * m))\n    (hU : ∀ r ∈ Icc (0 : ℝ) R, ∀ θ,\n      2 + δ ≤ coneBound (p₁ + p₂ * solvedTilt m d p₂ r θ)\n        (p₂ - p₁ * solvedTilt m d p₂ r θ)) :\n    ∀ θ, 2 < p₁ + p₂ * seedTilt a m d p₂ δ θ ∧\n      seedSpeed a m δ < coneBound (p₁ + p₂ * seedTilt a m d p₂ δ θ)\n        (p₂ - p₁ * seedTilt a m d p₂ δ θ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

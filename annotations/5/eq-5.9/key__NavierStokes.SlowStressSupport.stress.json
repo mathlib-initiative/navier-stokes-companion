@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.9/key/03.NavierStokes.SlowStressSupport.stress",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.stress",
-      "line": 726,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L726"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.stress",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.stress",
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 726,
-        "text": "stress m F w := if 0 < w.1 then -ProfileHistories.primitive F w / w.1 ^ m else 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SlowStressSupport.stress",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L726",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 726,
+            "text": "noncomputable def stress (m : ℕ) (F : Field) (w : ℝ × ℝ) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

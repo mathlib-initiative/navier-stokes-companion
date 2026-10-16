@@ -1,26 +1,28 @@
 {
-  "id": "eq-p049-1/attributed/11.NavierStokes.SlowExpansionResidual.axial_finite_expansion",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowExpansionResidual.axial_finite_expansion",
-      "line": 597,
-      "module": "NavierStokes.SlowExpansionResidual",
-      "path": "NavierStokes/SlowExpansionResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowExpansionResidual.lean#L597"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowExpansionResidual.axial_finite_expansion",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowExpansionResidual.axial_finite_expansion",
+        "module": "NavierStokes.SlowExpansionResidual"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 597,
-        "text": "transportResidual 0 1 (slowFlux ..) (slowAxial ..) (slowAxial ..) (partialZ (slowPressure ..)) p = finiteSeries N q h (axialExponent h - 1) (fun n => axialCoefficient h f n (inner h p)) + transportTail .."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "11.NavierStokes.SlowExpansionResidual.axial_finite_expansion",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L597",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowExpansionResidual.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 597,
+            "text": "theorem axial_finite_expansion {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    (N : ℕ) (f : SlowProfiles) {p : ProfilePoint} (hp : p.1 < 1) (hs : 0 < p.2.1)\n    (hf : ∀ n ≤ N, ContDiffAt ℝ 2 (f.axial n) (SimilarityProfile.inner h p))\n    (hπ : ∀ n ≤ N, DifferentiableAt ℝ (f.pressure n) (SimilarityProfile.inner h p)) :\n    transportResidual 0 1 (slowFlux N h f) (slowAxial N h f) (slowAxial N h f)\n      (partialZ (slowPressure N h f)) p =\n    finiteSeries N (SimilarityProfile.q h p) h (axialExponent h - 1)\n      (fun n => axialCoefficient h f n (SimilarityProfile.inner h p)) +\n      transportTail N (SimilarityProfile.q h p) h (axialExponent h) 0\n        f.flux f.axial f.axial (SimilarityProfile.inner h p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

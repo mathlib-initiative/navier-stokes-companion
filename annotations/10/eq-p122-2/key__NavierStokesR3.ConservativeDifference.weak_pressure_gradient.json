@@ -1,23 +1,26 @@
 {
-  "id": "eq-p122-2/key/03.NavierStokesR3.ConservativeDifference.weak_pressure_gradient",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ConservativeDifference.weak_pressure_gradient",
-      "line": 223,
-      "module": "NavierStokes.R3.ConservativeDifference",
-      "path": "NavierStokes/R3/ConservativeDifference.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ConservativeDifference.lean#L223"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ConservativeDifference.weak_pressure_gradient"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ConservativeDifference.weak_pressure_gradient",
+        "module": "NavierStokes.R3.ConservativeDifference"
       },
-      "snippet": {
-        "line": 223,
-        "text": "the fixed-time version: (∫ x, spatialPartial k (fun y => (p-q)(t,y)) x * ψ x) = (∫ x, (u-v)(t,x) k * scalarLaplacian ψ x) - (∫ x, temporalDerivative (u-v) t x k * ψ x) + ∑ i, ∫ x, tensorDiff u v t k i x * spatialPartial i ψ x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokesR3.ConservativeDifference.weak_pressure_gradient"
+          },
+          "destination": {
+            "fragment": "L223",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ConservativeDifference.lean"
+          },
+          "snippet": {
+            "line": 223,
+            "text": "theorem weak_pressure_gradient {u v : VelocityField} {p q : PressureField}\n    {t : ℝ} {ψ : Space → ℝ}\n    (hu : ContDiff ℝ ∞ (fun x : Space => u (t, x)))\n    (hv : ContDiff ℝ ∞ (fun x : Space => v (t, x)))\n    (hp : ContDiff ℝ ∞ (fun x : Space => p (t, x)))\n    (hq : ContDiff ℝ ∞ (fun x : Space => q (t, x)))\n    (htu : ∀ x, DifferentiableAt ℝ (fun s : ℝ => u (s, x)) t)\n    (htv : ∀ x, DifferentiableAt ℝ (fun s : ℝ => v (s, x)) t)\n    (hdivu : ∀ x, spatialDivergence u t x = 0)\n    (hdivv : ∀ x, spatialDivergence v t x = 0)\n    (hNS : ∀ x, navierStokesResidual u p t x = navierStokesResidual v q t x)\n    (hψ : ContDiff ℝ ∞ ψ) (hcψ : HasCompactSupport ψ) (k : Fin 3) :\n    (∫ x, spatialPartial k (fun y => (p - q) (t, y)) x * ψ x) =\n      (∫ x, (u - v) (t, x) k * scalarLaplacian ψ x) -\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

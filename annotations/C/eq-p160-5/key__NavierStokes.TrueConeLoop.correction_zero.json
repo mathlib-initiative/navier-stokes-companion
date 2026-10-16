@@ -1,24 +1,27 @@
 {
-  "id": "eq-p160-5/key/04.NavierStokes.TrueConeLoop.correction_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.correction_zero",
-      "line": 87
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L87"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.correction_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.correction_zero",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 87,
-        "text": "(hv : highSpeed δ ≤ v) : correction δ v = 0, i.e. v_s ≥ 2 + δ/4 ⟹ v = v_s (third regime)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.TrueConeLoop.correction_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L87"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 87,
+            "text": "theorem correction_zero (δ v : ℝ) (hδ : 0 < δ) (hv : highSpeed δ ≤ v) : correction δ v = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

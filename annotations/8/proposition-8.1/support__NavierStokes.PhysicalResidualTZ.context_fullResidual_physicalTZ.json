@@ -1,27 +1,30 @@
 {
-  "id": "proposition-8.1/support/3.NavierStokes.PhysicalResidualTZ.context_fullResidual_physicalTZ",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalResidualTZ.context_fullResidual_physicalTZ",
-      "line": 466,
-      "module": "NavierStokes.PhysicalResidualTZ",
-      "path": "NavierStokes/PhysicalResidualTZ.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualTZ.lean#L466"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalResidualTZ.context_fullResidual_physicalTZ",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalResidualTZ.context_fullResidual_physicalTZ",
+        "module": "NavierStokes.PhysicalResidualTZ"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 466,
-        "text": "theorem context_fullResidual_physicalTZ {Q : ℝ} (hQ : 0 < Q) (h : ℝ) (k n : ℕ)\n    (c : CorrectionState.Context Lift) (s : CorrectionState.State Lift)\n    (H : MatchesAtTZ c.operators (PhysicalResidualBridge.commonGraph Q h k) n)\n    {U : Set Cylinder} (hU : IsOpen U) (hR : ∀ x ∈ U, x.1.1 ≠ 0)\n    {p₀ : Cylinder → ℝ}\n    (hB : ∀ i, ContDiffOn ℝ ∞ (fun x => PhysicalResidualBridge.baseComponents c n x i) U)\n    (ha : ∀ i, ContDiffOn ℝ ∞ (fun x => PhysicalResidualBridge.incrementComponents s n x i) U)\n    (hp₀ : ContDiffOn ℝ ∞ p₀ U) (hp : ContDiffOn ℝ ∞ (s.totalPressureIncrement n) U)\n    {t : ℝ} {q : ProblemStatement.Space}\n    (hz : (t, q) ∈ graphSourceTZ (PhysicalResidualBridge.commonGraph Q h k) U)\n    (hbase : ∀ i, PhysicalResidualBridge.graphResidual (Q ^ h)\n      PhysicalResidualBridge.ScaledGraph.radius\n      (graphRadialTZ (PhysicalResidualBridge.commonGraph Q h k)) graphAngularTZ\n      (graphAxialTZ (PhysicalResidualBridge.commonGraph Q h k))\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.PhysicalResidualTZ.context_fullResidual_physicalTZ",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L466",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualTZ.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 466,
+            "text": "theorem context_fullResidual_physicalTZ {Q : ℝ} (hQ : 0 < Q) (h : ℝ) (k n : ℕ)\n    (c : CorrectionState.Context Lift) (s : CorrectionState.State Lift)\n    (H : MatchesAtTZ c.operators (PhysicalResidualBridge.commonGraph Q h k) n)\n    {U : Set Cylinder} (hU : IsOpen U) (hR : ∀ x ∈ U, x.1.1 ≠ 0)\n    {p₀ : Cylinder → ℝ}\n    (hB : ∀ i, ContDiffOn ℝ ∞ (fun x => PhysicalResidualBridge.baseComponents c n x i) U)\n    (ha : ∀ i, ContDiffOn ℝ ∞ (fun x => PhysicalResidualBridge.incrementComponents s n x i) U)\n    (hp₀ : ContDiffOn ℝ ∞ p₀ U) (hp : ContDiffOn ℝ ∞ (s.totalPressureIncrement n) U)\n    {t : ℝ} {q : ProblemStatement.Space}\n    (hz : (t, q) ∈ graphSourceTZ (PhysicalResidualBridge.commonGraph Q h k) U)\n    (hbase : ∀ i, PhysicalResidualBridge.graphResidual (Q ^ h)\n      PhysicalResidualBridge.ScaledGraph.radius\n      (graphRadialTZ (PhysicalResidualBridge.commonGraph Q h k)) graphAngularTZ\n      (graphAxialTZ (PhysicalResidualBridge.commonGraph Q h k))\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

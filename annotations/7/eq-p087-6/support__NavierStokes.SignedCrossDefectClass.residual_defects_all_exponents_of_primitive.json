@@ -1,26 +1,30 @@
 {
-  "id": "eq-p087-6/support/19.NavierStokes.SignedCrossDefectClass.residual_defects_all_exponents_of_primitive",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedCrossDefectClass.residual_defects_all_exponents_of_primitive",
-      "line": 173,
-      "module": "NavierStokes.SignedCrossDefectClass",
-      "path": "NavierStokes/SignedCrossDefectClass.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCrossDefectClass.lean#L173"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedCrossDefectClass.residual_defects_all_exponents_of_primitive",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedCrossDefectClass.residual_defects_all_exponents_of_primitive",
+        "module": "NavierStokes.SignedCrossDefectClass"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 173,
-        "text": "(htail : ∀ n, N ≤ n → ∀ x ∈ G.strip.domain, ∀ i, meanBar (crossTensor f a 0 i.succ) n x = requestedStress G.patch G.coord c u n x i) : ∀ γ, MeanClass G.strip γ (meanBar (crossTensor f a 0 1) - physicalSigma G 2 (u.thetaResidual c)) ∧ MeanClass G.strip γ (meanBar (crossTensor f a 0 2) - physicalSigma G 1 (u.axialResidual c))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "19.NavierStokes.SignedCrossDefectClass.residual_defects_all_exponents_of_primitive",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L173",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCrossDefectClass.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 173,
+            "text": "theorem residual_defects_all_exponents_of_primitive\n    (G : Geometry) (c : Context Point) (u : State Point)\n    {ι : Type} {P : ι → ℕ → Point → ℝ} {σ κ : ℝ}\n    (f : SignedFamily G.strip P (1 / 2) (17 / 25)\n      (1 / 2 + σ - κ) (1 + σ - 2 * κ)) (a : Assembly f)\n    (hS : ∀ i j, MovingField G (crossTensor f a i j))\n    (H : MeanStateRegularity.PrimitiveData G.region G.patch.a G.patch.b c u)\n    (hfixed : (VariableGaugeMean.reconstructState G.gauge c u).pressure = u.pressure)\n    (hθ : MeanClass G.strip (1 + σ - κ) (u.thetaResidual c))\n    (hz : MeanClass G.strip (1 + σ - κ) (u.axialResidual c)) (N : ℕ)\n    (htail : ∀ n, N ≤ n → ∀ x ∈ G.strip.domain, ∀ i : Fin 2,\n      StateMomentBalances.meanBar (crossTensor f a 0 i.succ) n x =\n        LocalSignedRequest.requestedStress G.patch G.coord c u n x i) :\n    ∀ γ : ℝ,\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

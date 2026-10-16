@@ -1,34 +1,55 @@
 {
-  "id": "proposition-7.2/key/1.NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_transverse_support",
-  "location": {
-    "page": 77,
-    "rect": [0.12854, 0.72562, 0.745098, 0.14876]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_transverse_support",
-      "line": 377,
-      "module": "NavierStokes.CommonCoverSolve",
-      "path": "NavierStokes/CommonCoverSolve.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 77,
+        "rect": [0.12854, 0.72562, 0.745098, 0.14876]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-7.2@p077"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean#L377"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_transverse_support",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 78,
+        "rect": [0.12854, 0.103306, 0.745098, 0.320661]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If the source vanishes along the whole pulse for transverse coordinates outside S, copySolve vanishes at such points: the transverse support clause."
-      },
-      "region": "proposition-7.2@p077",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 377,
-        "text": "theorem copySolve_preserves_transverse_support (k : Frequency) {S : Set ℝ} (p : P)\n    (hf : ∀ xi ∉ S, ∀ eta ∈ Icc a b, d.source (p, g.point k (xi, eta)) = 0)\n    (Y : Plane) (hY : (g.coordinates k Y).1 ∉ S) : d.copySolve g hab k (p, Y) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-7.2@p078"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_transverse_support",
+        "module": "NavierStokes.CommonCoverSolve"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CommonCoverSolve.LinearData.copySolve_preserves_transverse_support",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: If the source vanishes along the whole pulse for transverse coordinates outside S, copySolve vanishes at such points: the transverse support clause."
+          },
+          "destination": {
+            "fragment": "L377",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean"
+          },
+          "snippet": {
+            "line": 377,
+            "text": "theorem copySolve_preserves_transverse_support (k : Frequency) {S : Set ℝ} (p : P)\n    (hf : ∀ xi ∉ S, ∀ eta ∈ Icc a b, d.source (p, g.point k (xi, eta)) = 0)\n    (Y : Plane) (hY : (g.coordinates k Y).1 ∉ S) : d.copySolve g hab k (p, Y) = 0"
+          }
+        }
+      }
+    }
+  ]
 }

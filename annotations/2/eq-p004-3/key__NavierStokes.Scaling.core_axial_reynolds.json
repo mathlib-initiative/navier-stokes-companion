@@ -1,26 +1,28 @@
 {
-  "id": "eq-p004-3/key/02.NavierStokes.Scaling.core_axial_reynolds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.Scaling.core_axial_reynolds",
-      "line": 42,
-      "module": "NavierStokes.Scaling",
-      "path": "NavierStokes/Scaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/Scaling.lean#L42"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.Scaling.core_axial_reynolds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.Scaling.core_axial_reynolds",
+        "module": "NavierStokes.Scaling"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 42,
-        "text": "reynolds (coreVelocity q h) (axialLength q h) = q ^ (-2 * h)   -- a different pairing: core velocity against the axial, not the radial, length"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.Scaling.core_axial_reynolds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L42",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/Scaling.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 42,
+            "text": "theorem core_axial_reynolds {q : ℝ} (hq : 0 < q) (h : ℝ) :\n    reynolds (coreVelocity q h) (axialLength q h) = q ^ (-2 * h)"
+          }
+        }
       }
     }
-  }
+  ]
 }

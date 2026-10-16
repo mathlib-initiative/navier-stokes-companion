@@ -1,31 +1,33 @@
 {
-  "id": "remark-B.9/attributed/1.NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold",
-      "line": 652,
-      "module": "NavierStokes.MatchingDebtBounds",
-      "path": "NavierStokes/MatchingDebtBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingDebtBounds.lean#L652"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold",
+        "module": "NavierStokes.MatchingDebtBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∃ eps ∈ (0,1], ∀ j with |j| ≤ eps, ∀ prep, ∃ Λ0 ≥ max(1, prep.scaleBound), ∀ Λ ≥ Λ0, ∃ T > 0, ∃ C0 ≥ entranceNormalization, ∀ C ≥ C0, ∀ E, ∀ Controls c with c.shapeTime = T and SmallControl c N eps, MatchingBounds c N rho. rho (the matching-moment tolerance) is a hypothesis fixed before eps, hence b",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 652,
-        "text": "theorem exists_ordered_matching_threshold (F : OutgoingProfile.Profile) (N : ℕ)\n    {rho : ℝ} (hrho : 0 < rho) :\n    ∃ eps : ℝ, 0 < eps ∧ eps ≤ 1 ∧\n      ∀ j : ℝ, |j| ≤ eps → ∀ hj : NaturalAxisData.SmallParameters F.data.h j,\n      ∀ prep : NominalProfile.AxisPreparation F j,\n      ∃ Λ0 : ℝ, 1 ≤ Λ0 ∧ prep.scaleBound ≤ Λ0 ∧\n        ∀ Λ : ℝ, ∀ hΛlarge : prep.scaleBound ≤ Λ, Λ0 ≤ Λ →\n        ∃ T : ℝ, 0 < T ∧ ∃ C0 : ℝ, 1 ≤ C0 ∧\n          NaturalEntrance.entranceNormalization prep.inputs Λ prep.delta ≤ C0 ∧\n          ∀ C : ℝ, ∀ hClarge : NaturalEntrance.entranceNormalization prep.inputs Λ prep.delta ≤ C,\n          C0 ≤ C → ∀ E : NaturalEntrance.EntranceProfile prep.inputs Λ C,\n          ∀ c : NominalProfile.Controls (NominalProfile.AxisStage.ofEntrance hj prep Λ C hΛlarge hClarge E),\n          c.shapeTime = T → SmallControl c N eps → MatchingBounds c N rho"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: ∃ eps ∈ (0,1], ∀ j with |j| ≤ eps, ∀ prep, ∃ Λ0 ≥ max(1, prep.scaleBound), ∀ Λ ≥ Λ0, ∃ T > 0, ∃ C0 ≥ entranceNormalization, ∀ C ≥ C0, ∀ E, ∀ Controls c with c.shapeTime = T and SmallControl c N eps, MatchingBounds c N rho. rho (the matching-moment tolerance) is a hypothesis fixed before eps, hence b",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L652",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingDebtBounds.lean"
+          },
+          "snippet": {
+            "line": 652,
+            "text": "theorem exists_ordered_matching_threshold (F : OutgoingProfile.Profile) (N : ℕ)\n    {rho : ℝ} (hrho : 0 < rho) :\n    ∃ eps : ℝ, 0 < eps ∧ eps ≤ 1 ∧\n      ∀ j : ℝ, |j| ≤ eps → ∀ hj : NaturalAxisData.SmallParameters F.data.h j,\n      ∀ prep : NominalProfile.AxisPreparation F j,\n      ∃ Λ0 : ℝ, 1 ≤ Λ0 ∧ prep.scaleBound ≤ Λ0 ∧\n        ∀ Λ : ℝ, ∀ hΛlarge : prep.scaleBound ≤ Λ, Λ0 ≤ Λ →\n        ∃ T : ℝ, 0 < T ∧ ∃ C0 : ℝ, 1 ≤ C0 ∧\n          NaturalEntrance.entranceNormalization prep.inputs Λ prep.delta ≤ C0 ∧\n          ∀ C : ℝ, ∀ hClarge : NaturalEntrance.entranceNormalization prep.inputs Λ prep.delta ≤ C,\n          C0 ≤ C → ∀ E : NaturalEntrance.EntranceProfile prep.inputs Λ C,\n          ∀ c : NominalProfile.Controls (NominalProfile.AxisStage.ofEntrance hj prep Λ C hΛlarge hClarge E),\n          c.shapeTime = T → SmallControl c N eps → MatchingBounds c N rho"
+          }
+        }
       }
     }
-  }
+  ]
 }

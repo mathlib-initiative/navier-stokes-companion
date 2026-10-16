@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.26/key/01.NavierStokes.BaseResidual.cartesian_monomial_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseResidual.cartesian_monomial_bound",
-      "line": 250,
-      "module": "NavierStokes.BaseResidual",
-      "path": "NavierStokes/BaseResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean#L250"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseResidual.cartesian_monomial_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseResidual.cartesian_monomial_bound",
+        "module": "NavierStokes.BaseResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 250,
-        "text": "theorem cartesian_monomial_bound {h : ℝ} (hh : 0 < h) (hh1 : h < 1/2) {f : Inner → ℝ} (hf : ContDiff ℝ ∞ f) (b lo hi : ℝ) {K : Set SpaceTime} (hK : IsCompact K) (m : ℕ) : ∃ C, 0 < C ∧ ∀ z ∈ K, z.1 < 1 → (cartesianChart h z).1 ≤ 1 → (cartesianChart h z).2.1 ∈ Icc lo hi → ‖iteratedFDeriv ℝ m (cartesianMonomial h b f) z‖ ≤ C * (cartesianChart h z).1 ^ (b - m)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.BaseResidual.cartesian_monomial_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L250",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 250,
+            "text": "theorem cartesian_monomial_bound {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {f : Inner → ℝ} (hf : ContDiff ℝ ∞ f) (b lo hi : ℝ)\n    {K : Set SpaceTime} (hK : IsCompact K) (m : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ z ∈ K, z.1 < 1 → (cartesianChart h z).1 ≤ 1 →\n      (cartesianChart h z).2.1 ∈ Icc lo hi →\n      ‖iteratedFDeriv ℝ m (cartesianMonomial h b f) z‖ ≤\n        C * (cartesianChart h z).1 ^ (b - m)"
+          }
+        }
       }
     }
-  }
+  ]
 }

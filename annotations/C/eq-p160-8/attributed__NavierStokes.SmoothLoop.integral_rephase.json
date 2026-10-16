@@ -1,25 +1,27 @@
 {
-  "id": "eq-p160-8/attributed/05.NavierStokes.SmoothLoop.integral_rephase",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothLoop.integral_rephase",
-      "line": 468,
-      "module": "NavierStokes.SmoothLoop",
-      "path": "NavierStokes/SmoothLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean#L468"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothLoop.integral_rephase"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SmoothLoop.integral_rephase",
+        "module": "NavierStokes.SmoothLoop"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 468,
-        "text": "(∫ φ in (0:ℝ)..1, rephase d f φ) = ∫ θ in (0:ℝ)..(2*Real.pi), f θ * d.rate θ  -- the paper's 'changing variables'"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.SmoothLoop.integral_rephase"
+          },
+          "destination": {
+            "fragment": "L468",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 468,
+            "text": "theorem integral_rephase (d : CircleDensity) (f : ℝ → ℝ) (hf : Continuous f) :\n    (∫ φ in (0 : ℝ)..1, rephase d f φ) =\n      ∫ θ in (0 : ℝ)..(2 * Real.pi), f θ * d.rate θ"
+          }
+        }
       }
     }
-  }
+  ]
 }

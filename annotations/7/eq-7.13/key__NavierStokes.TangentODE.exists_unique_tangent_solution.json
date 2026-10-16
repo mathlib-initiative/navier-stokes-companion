@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.13/key/03.NavierStokes.TangentODE.exists_unique_tangent_solution",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TangentODE.exists_unique_tangent_solution",
-      "line": 324,
-      "module": "NavierStokes.TangentODE",
-      "path": "NavierStokes/TangentODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TangentODE.lean#L324"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TangentODE.exists_unique_tangent_solution",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TangentODE.exists_unique_tangent_solution",
+        "module": "NavierStokes.TangentODE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 324,
-        "text": "∃ u, u a = x₀ ∧ (∀ t ∈ Icc a b, HasDerivAt u (TangentProjection.projectedRhs (n t) (n' t) (u t) (K t (u t)) (f t) (δ t)) t) ∧ (∀ t ∈ Icc a b, ⟪n t, u t⟫_ℝ = 0) ∧ uniqueness on Icc a b"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.TangentODE.exists_unique_tangent_solution",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L324",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TangentODE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 324,
+            "text": "theorem exists_unique_tangent_solution {a b : ℝ} (hab : a ≤ b)\n    (n n' f : ℝ → H) (K : ℝ → H →L[ℝ] H) (δ : ℝ → ℝ)\n    (hn : ∀ t ∈ Icc a b, HasDerivAt n (n' t) t)\n    (hn' : ContinuousOn n' (Icc a b)) (hf : ContinuousOn f (Icc a b))\n    (hK : ContinuousOn K (Icc a b)) (hδ : ContinuousOn δ (Icc a b))\n    (hn0 : ∀ t ∈ Icc a b, n t ≠ 0) (x₀ : H) (hx₀ : ⟪n a, x₀⟫_ℝ = 0) :\n    ∃ u : ℝ → H, u a = x₀ ∧\n      (∀ t ∈ Icc a b, HasDerivAt u\n        (TangentProjection.projectedRhs (n t) (n' t) (u t) (K t (u t)) (f t) (δ t)) t) ∧\n      (∀ t ∈ Icc a b, ⟪n t, u t⟫_ℝ = 0) ∧\n      ∀ w : ℝ → H, w a = x₀ →\n        (∀ t ∈ Icc a b, HasDerivAt w\n          (TangentProjection.projectedRhs (n t) (n' t) (w t) (K t (w t)) (f t) (δ t)) t) →\n        EqOn w u (Icc a b)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,27 @@
 {
-  "id": "eq-p148-3/key/01.NavierStokes.AxisHolomorphic.choose_geometric_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisHolomorphic.choose_geometric_le",
-      "line": 52
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisHolomorphic.lean#L52"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisHolomorphic.choose_geometric_le"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisHolomorphic.choose_geometric_le",
+        "lines": [52, 52],
+        "module": "NavierStokes.AxisHolomorphic"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 52,
-        "text": "have hsum := hasSum_choose_mul_geometric_of_norm_lt_one m hn; rw [← hsum.tsum_eq] — i.e. ∑' n, ((n+m).choose m) * s ^ n = 1 / (1 - s) ^ (m+1), used to prove ((n+m).choose m) * s^n ≤ 1/(1-s)^(m+1) for 0 < s < 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.AxisHolomorphic.choose_geometric_le"
+          },
+          "destination": {
+            "fragment": "L52"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 49,
+            "text": "theorem choose_geometric_le {s : ℝ} (hs : 0 < s) (hs1 : s < 1) (n m : ℕ) :\n    ((n + m).choose m : ℝ) * s ^ n ≤ 1 / (1 - s) ^ (m + 1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-p076-4/key/04.NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
-      "line": 1073,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L1073"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
+        "lines": [1073, 1073],
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 1073,
-        "text": "declaration at line 1065, docstring 'The inverse coordinate transformation is uniformly bounded too', states ‖w‖ ≤ (1+H)‖d.ambient z w‖ for |1/eigenvector| ≤ H — the paper's uniform bound on the left inverse; its proof computes the readout of B = U M: (ambient z w) 0 = w 0 + w 1 (lines 1069-1071) and ⟪frame z 1, tail (ambient z w)⟫ = eigenvector*(w 0 - w 1) (step at line 1073), i.e. (e_r^T; N_a^T)·B = M"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1073",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 1065,
+            "text": "theorem FrameData.norm_le_ambient {Q : Type} (d : FrameData Q) (z : Q × ℝ) (w : State)\n    {H : ℝ} (hne : d.eigenvector z ≠ 0) (hh : |1 / d.eigenvector z| ≤ H) :\n    ‖w‖ ≤ (1 + H) * ‖d.ambient z w‖"
+          }
+        }
       }
     }
-  }
+  ]
 }

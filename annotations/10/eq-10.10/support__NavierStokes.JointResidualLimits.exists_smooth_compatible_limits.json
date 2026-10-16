@@ -1,25 +1,28 @@
 {
-  "id": "eq-10.10/support/04.NavierStokes.JointResidualLimits.exists_smooth_compatible_limits",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.JointResidualLimits.exists_smooth_compatible_limits",
-      "line": 308,
-      "module": "NavierStokes.JointResidualLimits",
-      "path": "NavierStokes/JointResidualLimits.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L308"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.JointResidualLimits.exists_smooth_compatible_limits"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.JointResidualLimits.exists_smooth_compatible_limits",
+        "module": "NavierStokes.JointResidualLimits"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 308,
-        "text": "∃ L, (∀ n, L 0 n = 0) ∧ (∀ n, TendstoLocallyUniformly … (𝓝[<] 1)) ∧ (∀ n, ContDiff ℝ ∞ (fun x => L x n)) ∧ (∀ n x, HasFDerivAt (fun y => L y n) …) — the Lean's Lemma 10.2; its fourth component is boundaryLimits_hasFDerivAt, the compatibility (10.10) is used for"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.JointResidualLimits.exists_smooth_compatible_limits"
+          },
+          "destination": {
+            "fragment": "L308",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 308,
+            "text": "theorem exists_smooth_compatible_limits {f : SpaceTime → V}\n    (hf : ContDiffOn ℝ ∞ f (SpacetimeEndpoint.openPast 1))\n    (hzero : VanishingJointJets f) (hext : AwayExtensions f) :\n    ∃ L : Space → FormalMultilinearSeries ℝ SpaceTime V,\n      (∀ n : ℕ, L 0 n = 0) ∧\n      (∀ n : ℕ, TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n f (t, x))\n        (fun x => L x n) (𝓝[<] (1 : ℝ))) ∧\n      (∀ n : ℕ, ContDiff ℝ ∞ (fun x => L x n)) ∧\n      (∀ n : ℕ, ∀ x : Space, HasFDerivAt (fun y => L y n)\n        ((L x (n + 1)).curryLeft.comp (ContinuousLinearMap.inr ℝ ℝ Space)) x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

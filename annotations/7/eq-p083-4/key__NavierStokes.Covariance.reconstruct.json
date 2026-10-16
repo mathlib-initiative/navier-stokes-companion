@@ -1,26 +1,28 @@
 {
-  "id": "eq-p083-4/key/01.NavierStokes.Covariance.reconstruct",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.Covariance.reconstruct",
-      "line": 62,
-      "module": "NavierStokes.Covariance",
-      "path": "NavierStokes/Covariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/Covariance.lean#L62"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.Covariance.reconstruct",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.Covariance.reconstruct",
+        "module": "NavierStokes.Covariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 62,
-        "text": "(signedMatrix a b scaleMinus scalePlus).mulVec (coefficients a b scaleMinus scalePlus m t) = target m t, where signedMatrix = !![-a*scaleMinus, -a*scalePlus; -b*scaleMinus, b*scalePlus] and target m t = ![-m, t]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.Covariance.reconstruct",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L62",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/Covariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 62,
+            "text": "theorem reconstruct {a b scaleMinus scalePlus : ℝ} (m t : ℝ)\n    (ha : a ≠ 0) (hb : b ≠ 0)\n    (hMinus : scaleMinus ≠ 0) (hPlus : scalePlus ≠ 0) :\n    (signedMatrix a b scaleMinus scalePlus).mulVec\n      (coefficients a b scaleMinus scalePlus m t) = target m t"
+          }
+        }
       }
     }
-  }
+  ]
 }

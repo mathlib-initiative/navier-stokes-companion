@@ -1,26 +1,28 @@
 {
-  "id": "eq-p112-1/key/05.NavierStokes.GenericDifferentialPolynomial.ApproximationRates.add",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates.add",
-      "line": 84,
-      "module": "NavierStokes.GenericDifferentialPolynomial",
-      "path": "NavierStokes/GenericDifferentialPolynomial.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean#L84"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates.add",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates.add",
+        "module": "NavierStokes.GenericDifferentialPolynomial"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 84,
-        "text": "ApproximationRates … (fun x => f x + g x) … where threshold m := max (a.threshold m) (b.threshold m)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.GenericDifferentialPolynomial.ApproximationRates.add",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L84",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 84,
+            "text": "def ApproximationRates.add\n    (a : ApproximationRates l q gain f fs) (b : ApproximationRates l q gain g gs)\n    (hU : IsOpen U) (hlU : ∀ᶠ x in l, x ∈ U)\n    (hq : ∀ᶠ x in l, 0 < q x ∧ q x ≤ 1)\n    (hf : ContDiffOn ℝ ∞ f U) (hg : ContDiffOn ℝ ∞ g U)\n    (hfs : ∀ J, ContDiffOn ℝ ∞ (fs J) U)\n    (hgs : ∀ J, ContDiffOn ℝ ∞ (gs J) U) :\n    ApproximationRates l q gain (fun x => f x + g x)\n      (fun J x => fs J x + gs J x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,29 +1,31 @@
 {
-  "id": "proposition-6.6/key/1.NavierStokes.LabelSumBounds.window_sum_memClass",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LabelSumBounds.window_sum_memClass",
-      "line": 372,
-      "module": "NavierStokes.LabelSumBounds",
-      "path": "NavierStokes/LabelSumBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean#L372"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LabelSumBounds.window_sum_memClass",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LabelSumBounds.window_sum_memClass",
+        "module": "NavierStokes.LabelSumBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: a UniformClass family whose nonvanishing labels lie in disjoint windows sums over labels n to MemClass s w \\alpha at the same exponent \\alpha — the label-uniform form of the finite-sum clause."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 372,
-        "text": "theorem window_sum_memClass {s : StripData D} {w : ℕ → D → ℝ} {α : ℝ}\n    (labels : ℕ → Finset ι) (label : ℕ → ι → SlotColoring.Label)\n    (hinj : ∀ n, Set.InjOn (label n) (labels n : Set ι))\n    (hlevel : ∀ n l, l ∈ labels n → 1 ≤ (label n l).1)\n    (d : ℝ) (χ : ℕ → D → WindowPoint) (hχ : ∀ n, ContinuousOn (χ n) s.domain)\n    {f : ι → ℕ → D → E} (hf : UniformClass s (fun _ => w) α f)\n    (hw : ∀ n x, x ∈ s.domain → 0 ≤ w n x)\n    (hs : ∀ n l, l ∈ labels n → ∀ x ∈ s.domain,\n      f l n x ≠ 0 → χ n x ∈ closedWindow d (label n l)) :\n    MemClass s w α (fun n x => ∑ l ∈ labels n, f l n x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LabelSumBounds.window_sum_memClass",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: a UniformClass family whose nonvanishing labels lie in disjoint windows sums over labels n to MemClass s w \\alpha at the same exponent \\alpha — the label-uniform form of the finite-sum clause."
+          },
+          "destination": {
+            "fragment": "L372",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean"
+          },
+          "snippet": {
+            "line": 372,
+            "text": "theorem window_sum_memClass {s : StripData D} {w : ℕ → D → ℝ} {α : ℝ}\n    (labels : ℕ → Finset ι) (label : ℕ → ι → SlotColoring.Label)\n    (hinj : ∀ n, Set.InjOn (label n) (labels n : Set ι))\n    (hlevel : ∀ n l, l ∈ labels n → 1 ≤ (label n l).1)\n    (d : ℝ) (χ : ℕ → D → WindowPoint) (hχ : ∀ n, ContinuousOn (χ n) s.domain)\n    {f : ι → ℕ → D → E} (hf : UniformClass s (fun _ => w) α f)\n    (hw : ∀ n x, x ∈ s.domain → 0 ≤ w n x)\n    (hs : ∀ n l, l ∈ labels n → ∀ x ∈ s.domain,\n      f l n x ≠ 0 → χ n x ∈ closedWindow d (label n l)) :\n    MemClass s w α (fun n x => ∑ l ∈ labels n, f l n x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

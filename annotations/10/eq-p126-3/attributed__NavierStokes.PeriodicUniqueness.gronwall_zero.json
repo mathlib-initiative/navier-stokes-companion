@@ -1,26 +1,28 @@
 {
-  "id": "eq-p126-3/attributed/05.NavierStokes.PeriodicUniqueness.gronwall_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicUniqueness.gronwall_zero",
-      "line": 154,
-      "module": "NavierStokes.PeriodicUniqueness",
-      "path": "NavierStokes/PeriodicUniqueness.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicUniqueness.lean#L154"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicUniqueness.gronwall_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicUniqueness.gronwall_zero",
+        "module": "NavierStokes.PeriodicUniqueness"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 154,
-        "text": "E a = 0 → (∀ t ∈ Ioo a b, E' t ≤ K * E t) → ∀ t ∈ Icc a b, E t = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.PeriodicUniqueness.gronwall_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L154",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicUniqueness.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 154,
+            "text": "theorem gronwall_zero {a b K : ℝ} {E E' : ℝ → ℝ} (hab : a ≤ b)\n    (hcont : ContinuousOn E (Icc a b)) (hinitial : E a = 0)\n    (hnonneg : ∀ t ∈ Icc a b, 0 ≤ E t)\n    (hderiv : ∀ t ∈ Ioo a b, HasDerivAt E (E' t) t)\n    (hbound : ∀ t ∈ Ioo a b, E' t ≤ K * E t) :\n    ∀ t ∈ Icc a b, E t = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

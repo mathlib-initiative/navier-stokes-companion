@@ -1,26 +1,28 @@
 {
-  "id": "eq-p126-2/key/01.NavierStokes.PeriodicPaper.speedUnbounded_periodize",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicPaper.speedUnbounded_periodize",
-      "line": 58,
-      "module": "NavierStokes.PeriodicPaperSupport",
-      "path": "NavierStokes/PeriodicPaperSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicPaperSupport.lean#L58"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicPaper.speedUnbounded_periodize",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicPaper.speedUnbounded_periodize",
+        "module": "NavierStokes.PeriodicPaperSupport"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 58,
-        "text": "SupportedInCube r u → r < 1/2 → SpeedUnboundedAtOne u → SpeedUnboundedAtOne (periodize u)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PeriodicPaper.speedUnbounded_periodize",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L58",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicPaperSupport.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 58,
+            "text": "theorem speedUnbounded_periodize {u : VelocityField} {r : ℝ}\n    (hu : SupportedInCube r u) (hr : r < 1 / 2) (h : SpeedUnboundedAtOne u) :\n    SpeedUnboundedAtOne (periodize u)"
+          }
+        }
       }
     }
-  }
+  ]
 }

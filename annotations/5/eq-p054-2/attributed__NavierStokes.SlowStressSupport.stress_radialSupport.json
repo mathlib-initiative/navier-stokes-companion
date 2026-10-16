@@ -1,26 +1,28 @@
 {
-  "id": "eq-p054-2/attributed/05.NavierStokes.SlowStressSupport.stress_radialSupport",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.stress_radialSupport",
-      "line": 872,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L872"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.stress_radialSupport",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.stress_radialSupport",
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 872,
-        "text": "(hs : exterior B S F) → (hm : ∀ eta ∈ S, moment B 0 F eta = 0) → radialSupport S a B (stress m F) — the conclusion the paper draws from the display"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.SlowStressSupport.stress_radialSupport",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L872",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 872,
+            "text": "theorem stress_radialSupport (m : ℕ) {F : Field} {S : Set ℝ} {a B : ℝ} (hB : 0 ≤ B)\n    (hinner : ∀ eta ∈ S, ∀ R ∈ Icc 0 a, F (R, eta) = 0)\n    (hs : exterior B S F) (hm : ∀ eta ∈ S, moment B 0 F eta = 0) :\n    radialSupport S a B (stress m F)"
+          }
+        }
       }
     }
-  }
+  ]
 }

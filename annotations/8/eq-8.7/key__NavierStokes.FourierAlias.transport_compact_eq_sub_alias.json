@@ -1,25 +1,27 @@
 {
-  "id": "eq-8.7/key/04.NavierStokes.FourierAlias.transport_compact_eq_sub_alias",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FourierAlias.transport_compact_eq_sub_alias",
-      "line": 222,
-      "module": "NavierStokes.FourierAlias",
-      "path": "NavierStokes/FourierAlias.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FourierAlias.lean#L222"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FourierAlias.transport_compact_eq_sub_alias"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FourierAlias.transport_compact_eq_sub_alias",
+        "module": "NavierStokes.FourierAlias"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 222,
-        "text": "TransportPrimitive.fixedDeriv (1, M • v) (TransportPrimitive.compactIntegral χ M v f) z = f z - cutoffAlias χ M v f z — the same identity in the chart variables before the R = U^{1/d} pullback"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.FourierAlias.transport_compact_eq_sub_alias"
+          },
+          "destination": {
+            "fragment": "L222",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FourierAlias.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 222,
+            "text": "theorem transport_compact_eq_sub_alias [CompleteSpace F] {a b M : ℝ} {v : Plane}\n    {f : State → F} {χ : ℝ → ℝ} (hχ : ContDiff ℝ ∞ χ)\n    (hf : ContDiff ℝ ∞ f) (hs : RadialAlias.RadiallySupported a b f) (z : State) :\n    TransportPrimitive.fixedDeriv (1, M • v) (TransportPrimitive.compactIntegral χ M v f) z =\n      f z - cutoffAlias χ M v f z"
+          }
+        }
       }
     }
-  }
+  ]
 }

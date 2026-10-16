@@ -1,24 +1,27 @@
 {
-  "id": "eq-10.6/key/03.NavierStokes.JointResidualLimits.exists_residual_limits",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.JointResidualLimits.exists_residual_limits",
-      "line": 295
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L295"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.JointResidualLimits.exists_residual_limits",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.JointResidualLimits.exists_residual_limits",
+        "module": "NavierStokes.JointResidualLimits"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 295,
-        "text": "∃ L : Space → FormalMultilinearSeries ℝ SpaceTime V, (∀ n, L 0 n = 0) ∧ (∀ n x, Tendsto (iteratedFDeriv ℝ n f) (𝓝[openPast 1] (1, x)) (𝓝 (L x n))) ∧ (∀ n, TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n f (t, x)) (fun x => L x n) (𝓝[<] 1))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.JointResidualLimits.exists_residual_limits",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L295"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 295,
+            "text": "theorem exists_residual_limits {f : SpaceTime → V}\n    (hzero : VanishingJointJets f) (hext : AwayExtensions f) :\n    ∃ L : Space → FormalMultilinearSeries ℝ SpaceTime V,\n      (∀ n : ℕ, L 0 n = 0) ∧\n      (∀ n : ℕ, ∀ x : Space, Tendsto (iteratedFDeriv ℝ n f)\n        (𝓝[SpacetimeEndpoint.openPast 1] (1, x)) (𝓝 (L x n))) ∧\n      (∀ n : ℕ, TendstoLocallyUniformly (fun t x => iteratedFDeriv ℝ n f (t, x))\n        (fun x => L x n) (𝓝[<] (1 : ℝ)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,32 +1,54 @@
 {
-  "id": "lemma-C.1/support/3.NavierStokes.ParametricModulation.exists_modulated_trueCone_profiles",
-  "location": {
-    "page": 158,
-    "rect": [0.12854, 0.661157, 0.745098, 0.195868]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricModulation.exists_modulated_trueCone_profiles",
-      "line": 580,
-      "module": "NavierStokes.ParametricModulation",
-      "path": "NavierStokes/ParametricModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean#L580"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricModulation.exists_modulated_trueCone_profiles",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 158,
+        "rect": [0.12854, 0.661157, 0.745098, 0.195868]
       },
-      "region": "lemma-C.1@p158",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 580,
-        "text": "theorem exists_modulated_trueCone_profiles\n    (a m p₁ p₂ E U : RadialParameter → ℝ) (KX Kη : Set ℝ) (B : Set RadialParameter)\n    (hKX : IsCompact KX) (hKη : IsCompact Kη) (hB : IsCompact B) (hBK : B ⊆ KX ×ˢ Kη)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₁ : ContDiff ℝ ∞ p₁) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (haK : ∀ p ∈ KX ×ˢ Kη, 0 < a p)\n    (hPK : ∀ p ∈ KX ×ˢ Kη, 2 < p₁ p + p₂ p * m p)\n    (hrelaxed : ∀ p ∈ KX ×ˢ Kη, TrueConeLoop.nominalSpeed (a p) (m p) <\n      ConeAlgebra.coneBound (p₁ p + p₂ p * m p) (p₂ p - p₁ p * m p))\n    (htrueB : ∀ p ∈ B, 2 < TrueConeLoop.nominalSpeed (a p) (m p)) :\n    ∃ r : TrueConeRealization a m p₁ p₂ (KX ×ˢ Kη) B,\n      (∀ p ∈ KX ×ˢ Kη, ∀ θ, TrueConeLoop.InTrueCone (p₁ p) (p₂ p)\n        (r.angularLoop (p, θ)) (r.signedAxialLoop (p, θ))) ∧\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-C.1@p158"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 159,
+        "rect": [0.12854, 0.103306, 0.745098, 0.090083]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-C.1@p159"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricModulation.exists_modulated_trueCone_profiles",
+        "module": "NavierStokes.ParametricModulation"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ParametricModulation.exists_modulated_trueCone_profiles",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L580",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 580,
+            "text": "theorem exists_modulated_trueCone_profiles\n    (a m p₁ p₂ E U : RadialParameter → ℝ) (KX Kη : Set ℝ) (B : Set RadialParameter)\n    (hKX : IsCompact KX) (hKη : IsCompact Kη) (hB : IsCompact B) (hBK : B ⊆ KX ×ˢ Kη)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₁ : ContDiff ℝ ∞ p₁) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (haK : ∀ p ∈ KX ×ˢ Kη, 0 < a p)\n    (hPK : ∀ p ∈ KX ×ˢ Kη, 2 < p₁ p + p₂ p * m p)\n    (hrelaxed : ∀ p ∈ KX ×ˢ Kη, TrueConeLoop.nominalSpeed (a p) (m p) <\n      ConeAlgebra.coneBound (p₁ p + p₂ p * m p) (p₂ p - p₁ p * m p))\n    (htrueB : ∀ p ∈ B, 2 < TrueConeLoop.nominalSpeed (a p) (m p)) :\n    ∃ r : TrueConeRealization a m p₁ p₂ (KX ×ˢ Kη) B,\n      (∀ p ∈ KX ×ˢ Kη, ∀ θ, TrueConeLoop.InTrueCone (p₁ p) (p₂ p)\n        (r.angularLoop (p, θ)) (r.signedAxialLoop (p, θ))) ∧\n  …",
+            "truncated": true
+          }
+        }
+      }
+    }
+  ]
 }

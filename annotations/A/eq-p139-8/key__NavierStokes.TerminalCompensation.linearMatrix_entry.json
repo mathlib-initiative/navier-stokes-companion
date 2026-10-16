@@ -1,24 +1,27 @@
 {
-  "id": "eq-p139-8/key/01.NavierStokes.TerminalCompensation.linearMatrix_entry",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalCompensation.linearMatrix_entry",
-      "line": 220
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCompensation.lean#L220"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalCompensation.linearMatrix_entry",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalCompensation.linearMatrix_entry",
+        "module": "NavierStokes.TerminalCompensation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 220,
-        "text": "linearMatrix P lam i j = bumpMoment P (powers lam i) j = ∫ x, x ^ (powers lam i) * bump P j x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TerminalCompensation.linearMatrix_entry",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L220"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 220,
+            "text": "theorem linearMatrix_entry (P : Patch) (lam : ℝ) (i j : Fin 3) :\n    linearMatrix P lam i j = bumpMoment P (powers lam i) j"
+          }
+        }
       }
     }
-  }
+  ]
 }

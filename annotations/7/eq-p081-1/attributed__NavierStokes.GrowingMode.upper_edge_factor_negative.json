@@ -1,25 +1,27 @@
 {
-  "id": "eq-p081-1/attributed/03.NavierStokes.GrowingMode.upper_edge_factor_negative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GrowingMode.upper_edge_factor_negative",
-      "line": 70,
-      "module": "NavierStokes.GrowingMode",
-      "path": "NavierStokes/GrowingMode.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GrowingMode.lean#L70"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GrowingMode.upper_edge_factor_negative"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GrowingMode.upper_edge_factor_negative",
+        "module": "NavierStokes.GrowingMode"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 70,
-        "text": "e21 + r * (e22 - e11) - r ^ 2 * e12 - 2 * lam * r < 0 — the display's right-hand side as a polynomial in the ratio value r, term for term (the damping cancels in the quotient, as in the paper)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.GrowingMode.upper_edge_factor_negative"
+          },
+          "destination": {
+            "fragment": "L70",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GrowingMode.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 70,
+            "text": "theorem upper_edge_factor_negative\n    {lam lamMin eps r e11 e12 e21 e22 : ℝ}\n    (hr : 0 < r) (hlam : lamMin ≤ lam)\n    (he11 : |e11| ≤ eps) (he12 : |e12| ≤ eps)\n    (he21 : |e21| ≤ eps) (he22 : |e22| ≤ eps)\n    (hgap : eps * (1 + r) ^ 2 < 2 * lamMin * r) :\n    e21 + r * (e22 - e11) - r ^ 2 * e12 - 2 * lam * r < 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

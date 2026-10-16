@@ -1,26 +1,29 @@
 {
-  "id": "eq-A.44/key/02.NavierStokes.TerminalPressure.terminal_forcing_integrable",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalPressure.terminal_forcing_integrable",
-      "line": 958,
-      "module": "NavierStokes.TerminalPressure",
-      "path": "NavierStokes/TerminalPressure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean#L958"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalPressure.terminal_forcing_integrable",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalPressure.terminal_forcing_integrable",
+        "lines": [958, 958],
+        "module": "NavierStokes.TerminalPressure"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 958,
-        "text": "line 957-959: `filter_upwards [hgp'] with u hu; change TerminalStress.correction K g u = 0; simp only [TerminalStress.correction, hu, mul_zero]`, with K = heatAmplitude C (1+h) t and hgp' : deriv g =ᶠ[atTop] 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TerminalPressure.terminal_forcing_integrable",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L958",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 915,
+            "text": "theorem terminal_forcing_integrable (C : ℝ) {h t z r Y : ℝ} {f : ℝ → ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (ht : t < 1) (hr : 0 < r)\n    (hf : ContDiff ℝ ∞ f) (hplateau : ∀ y, Y ≤ y → f y = 1) :\n    IntegrableOn (fun u => u ^ 2 * TerminalStress.viscousResidual\n      (TerminalStress.heatAmplitude C (1 + h) t)\n      (TerminalStress.radialSlice (TerminalStress.flattening h f) t z) u) (Ioi r) ∧\n    IntegrableOn (TerminalStress.correction (TerminalStress.heatAmplitude C (1 + h) t)\n      (TerminalStress.radialSlice (TerminalStress.flattening h f) t z)) (Ioi r) ∧\n    IntegrableOn (fun u => u ^ 2 * TerminalStress.timeResidual C h f t z u) (Ioi r)"
+          }
+        }
       }
     }
-  }
+  ]
 }

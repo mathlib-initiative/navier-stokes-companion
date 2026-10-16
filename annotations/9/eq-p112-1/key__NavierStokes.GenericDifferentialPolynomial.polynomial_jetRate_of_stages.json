@@ -1,26 +1,30 @@
 {
-  "id": "eq-p112-1/key/01.NavierStokes.GenericDifferentialPolynomial.polynomial_jetRate_of_stages",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericDifferentialPolynomial.polynomial_jetRate_of_stages",
-      "line": 265,
-      "module": "NavierStokes.GenericDifferentialPolynomial",
-      "path": "NavierStokes/GenericDifferentialPolynomial.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean#L265"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericDifferentialPolynomial.polynomial_jetRate_of_stages",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericDifferentialPolynomial.polynomial_jetRate_of_stages",
+        "lines": [265, 265],
+        "module": "NavierStokes.GenericDifferentialPolynomial"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 265,
-        "text": "let a : ApproximationRates … := e.approximation_eval … (fun i => ⟨Lbg i, Ltail i, id, fun J m => hbg J i m, fun m J hJ => htail J i m hJ⟩) — the source nodes are given threshold = id"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GenericDifferentialPolynomial.polynomial_jetRate_of_stages",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L265",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 247,
+            "text": "theorem polynomial_jetRate_of_stages {ι κ : Type*}\n    (e : Expression D ι κ) {c : κ → D → ℝ} {u : ι → D → ℝ}\n    {us : ℕ → ι → D → ℝ} {Lbg Ltail : ι → ℕ → ℝ}\n    {Lc : κ → ℕ → ℝ} {Lres : ℕ → ℝ}\n    (hU : IsOpen U) (hlU : ∀ᶠ x in l, x ∈ U)\n    (hq : ∀ᶠ x in l, 0 < q x ∧ q x ≤ 1)\n    (hc : ∀ i, ContDiffOn ℝ ∞ (c i) U)\n    (hu : ∀ i, ContDiffOn ℝ ∞ (u i) U)\n    (hus : ∀ J i, ContDiffOn ℝ ∞ (us J i) U)\n    (hgain : Tendsto gain atTop atTop)\n    (hcg : ∀ i m, JetRate l q (c i) m (-Lc i m))\n    (hbg : ∀ J i m, JetRate l q (us J i) m (-Lbg i m))\n    (htail : ∀ J i m, m ≤ J →\n      JetRate l q (fun x => u i x - us J i x) m (gain J - Ltail i m))\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

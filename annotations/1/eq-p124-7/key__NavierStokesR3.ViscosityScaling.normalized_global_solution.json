@@ -1,25 +1,28 @@
 {
-  "id": "eq-p124-7/key/03.NavierStokesR3.ViscosityScaling.normalized_global_solution",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ViscosityScaling.normalized_global_solution",
-      "line": 194,
-      "module": "NavierStokes.R3.ViscosityScaling",
-      "path": "NavierStokes/R3/ViscosityScaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean#L194"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ViscosityScaling.normalized_global_solution",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ViscosityScaling.normalized_global_solution",
+        "lines": [194, 194],
+        "module": "NavierStokes.R3.ViscosityScaling"
       },
-      "relation": "contains",
-      "snippet": {
-        "line": 194,
-        "text": "simpa only [hcoef, hforce] using rescale_global_solution h (Real.sqrt ν)⁻¹ (inv_ne_zero hs) — i.e. the above at a = (√ν)⁻¹, with hcoef : (√ν)⁻¹ ^ 2 * ν = 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokesR3.ViscosityScaling.normalized_global_solution",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L194",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 182,
+            "text": "def normalized_global_solution {ν : ℝ} (hν : 0 < ν) {f : VelocityField}\n    (h : ProblemStatement.GlobalFiniteEnergySolution ν (scaledVelocity ν f)) :\n    ProblemStatement.GlobalFiniteEnergySolution 1 f"
+          }
+        }
       }
     }
-  }
+  ]
 }

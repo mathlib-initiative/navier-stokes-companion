@@ -1,25 +1,27 @@
 {
-  "id": "eq-p017-5/key/01.NavierStokes.MeanChartCompatibility.physicalToChart_apply",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.physicalToChart_apply",
-      "line": 727,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L727"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.physicalToChart_apply",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.physicalToChart_apply",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 727,
-        "text": "physicalToChart h n i z = (chartScale n * z.1, ((Q n ^ (-CoordinateAlgebra.D h) * z.2.1.1, Q n ^ (-1 : ℝ) * z.2.1.2), coverMap i z.2.2))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.MeanChartCompatibility.physicalToChart_apply",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L727",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 727,
+            "text": "@[simp] theorem physicalToChart_apply (h : ℝ) (n i : ℕ) (z : PressureStream.Lift Plane) :\n    physicalToChart h n i z = (chartScale n * z.1,\n      ((ChartScales.Q n ^ (-CoordinateAlgebra.D h) * z.2.1.1,\n        ChartScales.Q n ^ (-1 : ℝ) * z.2.1.2), TemporalMeanUpdate.coverMap i z.2.2))"
+          }
+        }
       }
     }
-  }
+  ]
 }

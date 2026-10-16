@@ -1,29 +1,31 @@
 {
-  "id": "definition-9.4/attributed/1.NavierStokes.CorrectionState.MeanResidualBounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionState.MeanResidualBounds",
-      "line": 216,
-      "module": "NavierStokes.CorrectionState",
-      "path": "NavierStokes/CorrectionState.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L216"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionState.MeanResidualBounds",
-        "kind": "structure"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionState.MeanResidualBounds",
+        "module": "NavierStokes.CorrectionState"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `angular : MeanClass s (1+sigma) (meanGoodResidual c · · 1)` and `axial : MeanClass s (1+sigma) (meanGoodResidual c · · 2)`: E_theta, E_z in M_{C*_j} with C*_j = 1 + sigma_j, stated for the residual with the stored flat errors removed."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 216,
-        "text": "structure MeanResidualBounds (s : StripData D) (σ : ℝ) (c : Context D)\n    (u : State D) : Prop"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CorrectionState.MeanResidualBounds",
+            "kind": "structure"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: `angular : MeanClass s (1+sigma) (meanGoodResidual c · · 1)` and `axial : MeanClass s (1+sigma) (meanGoodResidual c · · 2)`: E_theta, E_z in M_{C*_j} with C*_j = 1 + sigma_j, stated for the residual with the stored flat errors removed."
+          },
+          "destination": {
+            "fragment": "L216",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean"
+          },
+          "snippet": {
+            "line": 216,
+            "text": "structure MeanResidualBounds (s : StripData D) (σ : ℝ) (c : Context D)\n    (u : State D) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

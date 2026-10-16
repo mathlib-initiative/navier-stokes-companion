@@ -1,31 +1,33 @@
 {
-  "id": "remark-B.9/attributed/1.NavierStokes.TransitionRamp.StockReference.exists_small_log_control",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TransitionRamp.StockReference.exists_small_log_control",
-      "line": 1287,
-      "module": "NavierStokes.TransitionRamp",
-      "path": "NavierStokes/TransitionRamp.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TransitionRamp.lean#L1287"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TransitionRamp.StockReference.exists_small_log_control",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TransitionRamp.StockReference.exists_small_log_control",
+        "module": "NavierStokes.TransitionRamp"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: After the reference path is fixed, for every compact K, order N and epsilon > 0: ∃ T0 > 0, kappa0 > 0, w0 > 0 with 2*w0 < finalTime - bigTime such that every activation time T < T0, every kappa < kappa0 and both final widths w₁, w₂ < w0 give SmallLogControl K N epsilon. This is the last stage of (B.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1287,
-        "text": "theorem exists_small_log_control (hJ : IsOpen J) {K : Set ℝ} (hK : IsCompact K)\n    (hKJ : K ⊆ J) (N : ℕ) (hb : 0 ≤ R.bigTime) {Tmax ε : ℝ}\n    (hTmax : 0 < Tmax) (hε : 0 < ε) :\n    ∃ T0 > 0, ∃ κ0 > 0, ∃ w0 > 0, T0 ≤ Tmax ∧ κ0 < 1 ∧\n      2 * w0 < R.finalTime - R.bigTime ∧\n      ∀ T ∈ Ioo (0 : ℝ) T0, ∀ κ ∈ Ico (0 : ℝ) κ0,\n      ∀ w₁ ∈ Ioo (0 : ℝ) w0, ∀ w₂ ∈ Ioo (0 : ℝ) w0,\n        R.SmallLogControl K N ε T κ w₁ w₂"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TransitionRamp.StockReference.exists_small_log_control",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: After the reference path is fixed, for every compact K, order N and epsilon > 0: ∃ T0 > 0, kappa0 > 0, w0 > 0 with 2*w0 < finalTime - bigTime such that every activation time T < T0, every kappa < kappa0 and both final widths w₁, w₂ < w0 give SmallLogControl K N epsilon. This is the last stage of (B.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1287",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TransitionRamp.lean"
+          },
+          "snippet": {
+            "line": 1287,
+            "text": "theorem exists_small_log_control (hJ : IsOpen J) {K : Set ℝ} (hK : IsCompact K)\n    (hKJ : K ⊆ J) (N : ℕ) (hb : 0 ≤ R.bigTime) {Tmax ε : ℝ}\n    (hTmax : 0 < Tmax) (hε : 0 < ε) :\n    ∃ T0 > 0, ∃ κ0 > 0, ∃ w0 > 0, T0 ≤ Tmax ∧ κ0 < 1 ∧\n      2 * w0 < R.finalTime - R.bigTime ∧\n      ∀ T ∈ Ioo (0 : ℝ) T0, ∀ κ ∈ Ico (0 : ℝ) κ0,\n      ∀ w₁ ∈ Ioo (0 : ℝ) w0, ∀ w₂ ∈ Ioo (0 : ℝ) w0,\n        R.SmallLogControl K N ε T κ w₁ w₂"
+          }
+        }
       }
     }
-  }
+  ]
 }

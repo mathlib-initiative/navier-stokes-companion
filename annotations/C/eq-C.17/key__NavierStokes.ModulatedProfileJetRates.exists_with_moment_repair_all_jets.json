@@ -1,23 +1,26 @@
 {
-  "id": "eq-C.17/key/04.NavierStokes.ModulatedProfileJetRates.exists_with_moment_repair_all_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedProfileJetRates.exists_with_moment_repair_all_jets",
-      "line": 347,
-      "module": "NavierStokes.ModulatedProfileJetRates",
-      "path": "NavierStokes/ModulatedProfileJetRates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileJetRates.lean#L347"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedProfileJetRates.exists_with_moment_repair_all_jets"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedProfileJetRates.exists_with_moment_repair_all_jets",
+        "module": "NavierStokes.ModulatedProfileJetRates"
       },
-      "snippet": {
-        "line": 347,
-        "text": "conclusion clause at :387, (∀ eta ∈ J, ∀ X, patch.right ≤ X → profileRows R (X, eta) = profileRows Q (X, eta)), together with the fields/shears-unchanged clause at :388-393"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ModulatedProfileJetRates.exists_with_moment_repair_all_jets"
+          },
+          "destination": {
+            "fragment": "L347",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileJetRates.lean"
+          },
+          "snippet": {
+            "line": 347,
+            "text": "theorem exists_with_moment_repair_all_jets {D D' : RadialDomain}\n    (W : ModulatedHistories.Window) (r : TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (hK : IsCompact K) (hKW : ∀ p ∈ K, p.1 ∈ Icc W.left W.right)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m)\n    (hp₁ : ContDiff ℝ ∞ p₁) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (haK : ∀ p ∈ K, 0 < a p)\n    (S : Set Point) (hS : IsCompact S) (hSW : ∀ p ∈ S, W.right ≤ p.1)\n    (haNom : ∀ p ∈ K ∪ S, a p = angularShear E p)\n    (hbNom : ∀ p ∈ K ∪ S, a p * m p = signedAxialShear E U p)\n    (hrelaxed : ∀ p ∈ K, TrueConeLoop.nominalSpeed (a p) (m p) <\n      ConeAlgebra.coneBound (p₁ p + p₂ p * m p) (p₂ p - p₁ p * m p))\n    (hScone : ∀ p ∈ S, TrueConeLoop.InTrueCone (p₁ p) (p₂ p) (a p) (a p * m p))\n    (P : ℝ → Profiles D) (Q : Profiles D')\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

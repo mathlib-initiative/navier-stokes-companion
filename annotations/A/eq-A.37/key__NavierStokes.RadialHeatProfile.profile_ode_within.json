@@ -1,23 +1,26 @@
 {
-  "id": "eq-A.37/key/01.NavierStokes.RadialHeatProfile.profile_ode_within",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialHeatProfile.profile_ode_within",
-      "line": 348
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L348"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialHeatProfile.profile_ode_within"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialHeatProfile.profile_ode_within",
+        "module": "NavierStokes.RadialHeatProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 348,
-        "text": "1 < a → 0 ≤ z → z ^ 2 * iteratedDerivWithin 2 (profile a) (Ici 0) z + (1 + 2 * a * z) * derivWithin (profile a) (Ici 0) z + a * (a - 1) * profile a z = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.RadialHeatProfile.profile_ode_within"
+          },
+          "destination": {
+            "fragment": "L348"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 348,
+            "text": "theorem profile_ode_within {a z : ℝ} (ha : 1 < a) (hz : 0 ≤ z) :\n    z ^ 2 * iteratedDerivWithin 2 (profile a) (Ici 0) z +\n      (1 + 2 * a * z) * derivWithin (profile a) (Ici 0) z +\n      a * (a - 1) * profile a z = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

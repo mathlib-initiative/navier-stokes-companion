@@ -1,26 +1,29 @@
 {
-  "id": "eq-p008-5/key/08.NavierStokes.BaseAngularGrowth.normalized_swirl_estimate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseAngularGrowth.normalized_swirl_estimate",
-      "line": 103,
-      "module": "NavierStokes.BaseAngularGrowth",
-      "path": "NavierStokes/BaseAngularGrowth.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseAngularGrowth.lean#L103"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseAngularGrowth.normalized_swirl_estimate",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseAngularGrowth.normalized_swirl_estimate",
+        "lines": [103, 103],
+        "module": "NavierStokes.BaseAngularGrowth"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 103,
-        "text": "hlead : SlowBorelBase.leadingSwirl W.axis.normalization (FinalSlowBase.coefficients H v) (X, 0) = leadingAmplitude v X  (the leading term of the normalized swirl is sqrt(2X) f(X,0) = E(X,0))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.BaseAngularGrowth.normalized_swirl_estimate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L103",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseAngularGrowth.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 87,
+            "text": "theorem normalized_swirl_estimate (upper : ℝ) (B : ℕ) {X : ℝ}\n    (hX : 0 < X) (hXhi : X ≤ FinalSlowBase.boxRadius W upper) :\n    ∃ C : ℝ, 0 < C ∧ ∀ τ : ℝ, 0 < τ → τ ≤ 1 →\n      |SlowBorelBase.normalizedSwirl (FinalSlowBase.scales H v upper B)\n        F.data.h W.axis.normalization (FinalSlowBase.coefficients H v) (τ, (X, 0)) -\n        leadingAmplitude v X| ≤ C * τ ^ (2 * F.data.h)"
+          }
+        }
       }
     }
-  }
+  ]
 }

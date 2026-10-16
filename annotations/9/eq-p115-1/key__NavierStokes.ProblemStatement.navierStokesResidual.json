@@ -1,26 +1,28 @@
 {
-  "id": "eq-p115-1/key/01.NavierStokes.ProblemStatement.navierStokesResidual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProblemStatement.navierStokesResidual",
-      "line": 82,
-      "module": "NavierStokes.ProblemStatement",
-      "path": "NavierStokes/ProblemStatement.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProblemStatement.lean#L82"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProblemStatement.navierStokesResidual",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProblemStatement.navierStokesResidual",
+        "module": "NavierStokes.ProblemStatement"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 82,
-        "text": "navierStokesResidual u p t x = temporalDerivative u t x + advection u t x - spatialLaplacian u t x + pressureGradient p t x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ProblemStatement.navierStokesResidual",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L82",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProblemStatement.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 82,
+            "text": "def navierStokesResidual (u : VelocityField) (p : PressureField)\n    (t : ℝ) (x : Space) : Space"
+          }
+        }
       }
     }
-  }
+  ]
 }

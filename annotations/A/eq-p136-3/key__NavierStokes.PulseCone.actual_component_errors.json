@@ -1,24 +1,27 @@
 {
-  "id": "eq-p136-3/key/01.NavierStokes.PulseCone.actual_component_errors",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseCone.actual_component_errors",
-      "line": 1799
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseCone.lean#L1799"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseCone.actual_component_errors",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseCone.actual_component_errors",
+        "module": "NavierStokes.PulseCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1799,
-        "text": "|directionRatio w amp (d.core.pulseStart + y, eta) - idealDirection d amp eta y| ≤ componentConstant d.core.P d.core.m A * coneRate d.core.lam (second conjunct), with directionRatio = Ns/(E*Qs) = w"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PulseCone.actual_component_errors",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1799"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1799,
+            "text": "theorem actual_component_errors (w : ResetWitness d K)\n    (hwait : d.core.wait = 60 * Real.log (1 / d.core.lam))\n    (hsmall : d.core.lam ≤ 1 / 100000) (hh : d.h ≤ d.core.lam / 100000)\n    (hnum : angularErrorConstant d.core.P d.core.m * d.core.lam ^ 27 ≤ 1 / 4)\n    {amp : ℝ → ℝ} (ha : ContDiff ℝ ∞ amp) {eta y A : ℝ} (hA : 0 ≤ A)\n    (heta : |eta| ≤ 1) (hamp : |amp eta| ≤ 6 / 5) (hamp' : |deriv amp eta| ≤ 1)\n    (hamprate : |deriv amp eta| ≤ A * d.core.lam * (1 + Real.log (1 / d.core.lam)))\n    (hy : 0 ≤ y) (hy' : y ≤ d.core.pulseLength) :\n    |shearB w amp (d.core.pulseStart + y, eta) + mainRatio d.core amp eta y| ≤\n        componentConstant d.core.P d.core.m A * coneRate d.core.lam ∧\n      |directionRatio w amp (d.core.pulseStart + y, eta) - idealDirection d amp eta y| ≤\n        componentConstant d.core.P d.core.m A * coneRate d.core.lam"
+          }
+        }
       }
     }
-  }
+  ]
 }

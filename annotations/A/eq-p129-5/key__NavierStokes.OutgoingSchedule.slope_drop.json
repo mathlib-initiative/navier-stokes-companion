@@ -1,23 +1,26 @@
 {
-  "id": "eq-p129-5/key/03.NavierStokes.OutgoingSchedule.slope_drop",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingSchedule.slope_drop",
-      "line": 119
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean#L119"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingSchedule.slope_drop",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingSchedule.slope_drop",
+        "module": "NavierStokes.OutgoingSchedule"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 119,
-        "text": "slope dropLength lam y = 0 for 1 ≤ y ≤ dropLength + 1   -- the clause l = 0 on this stage"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.OutgoingSchedule.slope_drop",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L119"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 119,
+            "text": "theorem slope_drop {dropLength lam y : ℝ} (hy : 1 ≤ y) (hy' : y ≤ dropLength + 1) :\n    slope dropLength lam y = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

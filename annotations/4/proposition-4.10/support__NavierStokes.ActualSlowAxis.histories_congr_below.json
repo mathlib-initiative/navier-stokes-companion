@@ -1,31 +1,53 @@
 {
-  "id": "proposition-4.10/support/3.NavierStokes.ActualSlowAxis.histories_congr_below",
-  "location": {
-    "page": 36,
-    "rect": [0.12854, 0.677686, 0.746187, 0.221488]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSlowAxis.histories_congr_below",
-      "line": 70,
-      "module": "NavierStokes.ActualSlowAxis",
-      "path": "NavierStokes/ActualSlowAxis.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean#L70"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSlowAxis.histories_congr_below",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 36,
+        "rect": [0.12854, 0.677686, 0.746187, 0.221488]
       },
-      "region": "proposition-4.10@p036",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 70,
-        "text": "theorem histories_congr_below {D D' : ProfileHistories.RadialDomain}\n    (P : ProfileHistories.Profiles D) (Q : ProfileHistories.Profiles D')\n    {X eta : ℝ} (hX : 0 ≤ X) (hP0 : P.pressure0 eta = Q.pressure0 eta)\n    (hf : ∀ Y ∈ Icc (0 : ℝ) X, P.f (Y, eta) = Q.f (Y, eta))\n    (hu : ∀ Y ∈ Icc (0 : ℝ) X, P.U (Y, eta) = Q.U (Y, eta)) :\n    P.Ubar (X, eta) = Q.Ubar (X, eta) ∧ P.pressure (X, eta) = Q.pressure (X, eta)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p036"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 37,
+        "rect": [0.12854, 0.102479, 0.746187, 0.26281]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p037"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSlowAxis.histories_congr_below",
+        "module": "NavierStokes.ActualSlowAxis"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ActualSlowAxis.histories_congr_below",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L70",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 70,
+            "text": "theorem histories_congr_below {D D' : ProfileHistories.RadialDomain}\n    (P : ProfileHistories.Profiles D) (Q : ProfileHistories.Profiles D')\n    {X eta : ℝ} (hX : 0 ≤ X) (hP0 : P.pressure0 eta = Q.pressure0 eta)\n    (hf : ∀ Y ∈ Icc (0 : ℝ) X, P.f (Y, eta) = Q.f (Y, eta))\n    (hu : ∀ Y ∈ Icc (0 : ℝ) X, P.U (Y, eta) = Q.U (Y, eta)) :\n    P.Ubar (X, eta) = Q.Ubar (X, eta) ∧ P.pressure (X, eta) = Q.pressure (X, eta)"
+          }
+        }
+      }
+    }
+  ]
 }

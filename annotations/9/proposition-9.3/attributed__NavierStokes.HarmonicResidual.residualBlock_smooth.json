@@ -1,36 +1,57 @@
 {
-  "id": "proposition-9.3/attributed/1.NavierStokes.HarmonicResidual.residualBlock_smooth",
-  "location": {
-    "page": 103,
-    "rect": [0.12854, 0.555372, 0.745098, 0.328926]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicResidual.residualBlock_smooth",
-      "line": 1542,
-      "module": "NavierStokes.HarmonicResidual",
-      "path": "NavierStokes/HarmonicResidual.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 103,
+        "rect": [0.12854, 0.555372, 0.745098, 0.328926]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-9.3@p103"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicResidual.lean#L1542"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicResidual.residualBlock_smooth",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 104,
+        "rect": [0.12854, 0.103306, 0.745098, 0.283471]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: (hU : IsOpen U) (h : ExtractionRegular U c s labels blocks gaussian aliasError n) (hl : l ∈ labels n) : ∀ i, SmoothCoefficients U ((residualBlock c s (blocks l) (gaussian l) (aliasError l)).velocity n i). The weaker-domain route to C^∞ of f_{γ,m}; for the actual construction U is only ever geometry.",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "region": "proposition-9.3@p103",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 1542,
-        "text": "theorem residualBlock_smooth {ι : Type*} {U : Set D} (hU : IsOpen U)\n    {c : CorrectionState.Context D} {s : CorrectionState.State D} {labels : ℕ → Finset ι}\n    {blocks : ι → CorrectionState.HarmonicBlock D} {gaussian aliasError : ι → BlockCoefficients D} {n : ℕ}\n    (h : ExtractionRegular U c s labels blocks gaussian aliasError n) {l : ι} (hl : l ∈ labels n) :\n    ∀ i, SmoothCoefficients U ((residualBlock c s (blocks l) (gaussian l) (aliasError l)).velocity n i)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-9.3@p104"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicResidual.residualBlock_smooth",
+        "module": "NavierStokes.HarmonicResidual"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.HarmonicResidual.residualBlock_smooth",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: (hU : IsOpen U) (h : ExtractionRegular U c s labels blocks gaussian aliasError n) (hl : l ∈ labels n) : ∀ i, SmoothCoefficients U ((residualBlock c s (blocks l) (gaussian l) (aliasError l)).velocity n i). The weaker-domain route to C^∞ of f_{γ,m}; for the actual construction U is only ever geometry.",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L1542",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicResidual.lean"
+          },
+          "snippet": {
+            "line": 1542,
+            "text": "theorem residualBlock_smooth {ι : Type*} {U : Set D} (hU : IsOpen U)\n    {c : CorrectionState.Context D} {s : CorrectionState.State D} {labels : ℕ → Finset ι}\n    {blocks : ι → CorrectionState.HarmonicBlock D} {gaussian aliasError : ι → BlockCoefficients D} {n : ℕ}\n    (h : ExtractionRegular U c s labels blocks gaussian aliasError n) {l : ι} (hl : l ∈ labels n) :\n    ∀ i, SmoothCoefficients U ((residualBlock c s (blocks l) (gaussian l) (aliasError l)).velocity n i)"
+          }
+        }
+      }
+    }
+  ]
 }

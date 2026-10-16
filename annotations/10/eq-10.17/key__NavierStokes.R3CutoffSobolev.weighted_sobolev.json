@@ -1,23 +1,25 @@
 {
-  "id": "eq-10.17/key/04.NavierStokes.R3CutoffSobolev.weighted_sobolev",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.R3CutoffSobolev.weighted_sobolev",
-      "line": 165,
-      "module": "NavierStokes.R3CutoffSobolev",
-      "path": "NavierStokes/R3CutoffSobolev.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3CutoffSobolev.lean#L165"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.R3CutoffSobolev.weighted_sobolev"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.R3CutoffSobolev.weighted_sobolev",
+        "module": "NavierStokes.R3CutoffSobolev"
       },
-      "snippet": {
-        "line": 165,
-        "text": "lpNorm (R3WeightedLp.fourthWeight phi (fun x => ‖w x‖)) 6 volume <= sobolevConstant * (lpNorm (weightedDerivativeNorm phi w) 2 volume + 4 * D * lpNorm w 2 volume), under hb : forall x, ‖fderiv R phi x‖ <= D and hr : phi x in Icc 0 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.R3CutoffSobolev.weighted_sobolev"
+          },
+          "destination": {
+            "fragment": "L165",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3CutoffSobolev.lean"
+          },
+          "snippet": {
+            "line": 165,
+            "text": "theorem weighted_sobolev {φ : Space → ℝ} {w : Space → Space} {D : ℝ}\n    (hφ : ContDiff ℝ 1 φ) (hc : HasCompactSupport φ) (hw : ContDiff ℝ 1 w)\n    (hr : ∀ x, φ x ∈ Icc (0 : ℝ) 1) (hD : 0 ≤ D) (hb : ∀ x, ‖fderiv ℝ φ x‖ ≤ D)\n    (hw₂ : MemLp w 2) :\n    lpNorm (R3WeightedLp.fourthWeight φ (fun x => ‖w x‖)) 6 volume ≤\n      sobolevConstant * (lpNorm (weightedDerivativeNorm φ w) 2 volume + 4 * D * lpNorm w 2 volume)"
+          }
+        }
       }
     }
-  }
+  ]
 }

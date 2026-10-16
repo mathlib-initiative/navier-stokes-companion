@@ -1,35 +1,56 @@
 {
-  "id": "lemma-A.9/key/0.NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
-  "location": {
-    "page": 141,
-    "rect": [0.12854, 0.822314, 0.745098, 0.080165]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
-      "line": 76,
-      "module": "NavierStokes.FlatPrimitivePaper",
-      "path": "NavierStokes/FlatPrimitivePaper.lean"
+  "subject": [
+    {
+      "location": {
+        "page": 141,
+        "rect": [0.12854, 0.822314, 0.745098, 0.080165]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-A.9@p141"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatPrimitivePaper.lean#L76"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 142,
+        "rect": [0.12854, 0.102479, 0.745098, 0.057851]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: For `K : Set E` compact in a finite-dimensional real normed `E`, `0 < δ₀`, `0 < c`, `j : ℕ`, `U` open with `K ×ˢ Icc 0 δ₀ ⊆ U` and `ContDiffOn ℝ ∞ b U`: `∃ B : E × ℝ → ℝ`, `ContDiff ℝ ∞ B`, `∀ p ∈ K, B (p,0) = b (p,0) / c`, `∀ p ∈ K, ∀ δ ∈ Ioc 0 δ₀, (∫ u in (0:ℝ)..δ, (Real.exp (-c/u^2)/u^j) * b (p,u",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-A.9@p141",
-      "role": "key",
-      "snippet": {
-        "line": 76,
-        "text": "theorem exists_factor_on_rectangle {K : Set E} (hK : IsCompact K)\n    {δ₀ c : ℝ} (hδ : 0 < δ₀) (hc : 0 < c) (j : ℕ)\n    {U : Set (E × ℝ)} (hU : IsOpen U) (hKU : K ×ˢ Icc 0 δ₀ ⊆ U)\n    {b : E × ℝ → ℝ} (hb : ContDiffOn ℝ ∞ b U) :\n    ∃ B : E × ℝ → ℝ, ContDiff ℝ ∞ B ∧\n      (∀ p ∈ K, B (p, 0) = b (p, 0) / c) ∧\n      (∀ p ∈ K, ∀ δ ∈ Ioc 0 δ₀,\n        (∫ u in (0 : ℝ)..δ, (Real.exp (-c / u ^ 2) / u ^ j) * b (p, u)) =\n          (1 / 2 : ℝ) * Real.exp (-c / δ ^ 2) * δ ^ (3 - (j : ℝ)) * B (p, δ)) ∧\n      (∀ n : ℕ, ∃ C ≥ 0, ∀ p ∈ K, ∀ δ ∈ Icc 0 δ₀,\n        ‖iteratedFDeriv ℝ n B (p, δ)‖ ≤ C)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-A.9@p142"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
+        "module": "NavierStokes.FlatPrimitivePaper"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: For `K : Set E` compact in a finite-dimensional real normed `E`, `0 < δ₀`, `0 < c`, `j : ℕ`, `U` open with `K ×ˢ Icc 0 δ₀ ⊆ U` and `ContDiffOn ℝ ∞ b U`: `∃ B : E × ℝ → ℝ`, `ContDiff ℝ ∞ B`, `∀ p ∈ K, B (p,0) = b (p,0) / c`, `∀ p ∈ K, ∀ δ ∈ Ioc 0 δ₀, (∫ u in (0:ℝ)..δ, (Real.exp (-c/u^2)/u^j) * b (p,u",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L76",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatPrimitivePaper.lean"
+          },
+          "snippet": {
+            "line": 76,
+            "text": "theorem exists_factor_on_rectangle {K : Set E} (hK : IsCompact K)\n    {δ₀ c : ℝ} (hδ : 0 < δ₀) (hc : 0 < c) (j : ℕ)\n    {U : Set (E × ℝ)} (hU : IsOpen U) (hKU : K ×ˢ Icc 0 δ₀ ⊆ U)\n    {b : E × ℝ → ℝ} (hb : ContDiffOn ℝ ∞ b U) :\n    ∃ B : E × ℝ → ℝ, ContDiff ℝ ∞ B ∧\n      (∀ p ∈ K, B (p, 0) = b (p, 0) / c) ∧\n      (∀ p ∈ K, ∀ δ ∈ Ioc 0 δ₀,\n        (∫ u in (0 : ℝ)..δ, (Real.exp (-c / u ^ 2) / u ^ j) * b (p, u)) =\n          (1 / 2 : ℝ) * Real.exp (-c / δ ^ 2) * δ ^ (3 - (j : ℝ)) * B (p, δ)) ∧\n      (∀ n : ℕ, ∃ C ≥ 0, ∀ p ∈ K, ∀ δ ∈ Icc 0 δ₀,\n        ‖iteratedFDeriv ℝ n B (p, δ)‖ ≤ C)"
+          }
+        }
+      }
+    }
+  ]
 }

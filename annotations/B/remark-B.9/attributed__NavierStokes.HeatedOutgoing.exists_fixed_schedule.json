@@ -1,31 +1,33 @@
 {
-  "id": "remark-B.9/attributed/1.NavierStokes.HeatedOutgoing.exists_fixed_schedule",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HeatedOutgoing.exists_fixed_schedule",
-      "line": 886,
-      "module": "NavierStokes.HeatedOutgoing",
-      "path": "NavierStokes/HeatedOutgoing.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean#L886"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HeatedOutgoing.exists_fixed_schedule",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HeatedOutgoing.exists_fixed_schedule",
+        "module": "NavierStokes.HeatedOutgoing"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∀ P > 0, m > 0, ∃ lam > 0 and B > 0, ∀ h with 0 < h and 2h < lam, ∃ F : Profile with these parameters and Specification F B, ∃ XR₀ > 0 and C > 0, ∀ XR ≥ XR₀, ∃ CompensationWitness. Docstring: 'The order of choices is P,m, one positive lam, permitted h, one reset/amplitude profile, and then large X_R",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 886,
-        "text": "theorem exists_fixed_schedule (P m : ℝ) (hP : 0 < P) (hm : 0 < m) :\n    ∃ lam B : ℝ, 0 < lam ∧ 0 < B ∧ ∀ h : ℝ, 0 < h → 2 * h < lam →\n      ∃ F : Profile, F.data.core.P = P ∧ F.data.core.m = m ∧\n        F.data.core.lam = lam ∧ F.data.h = h ∧ OutgoingProfile.Specification F B ∧\n        ∃ XR₀ C : ℝ, 0 < XR₀ ∧ 0 < C ∧ ∀ XR : ℝ, XR₀ ≤ XR →\n          ∃ w : CompensationWitness F XR C, Specification F XR w.coefficients"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.HeatedOutgoing.exists_fixed_schedule",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: ∀ P > 0, m > 0, ∃ lam > 0 and B > 0, ∀ h with 0 < h and 2h < lam, ∃ F : Profile with these parameters and Specification F B, ∃ XR₀ > 0 and C > 0, ∀ XR ≥ XR₀, ∃ CompensationWitness. Docstring: 'The order of choices is P,m, one positive lam, permitted h, one reset/amplitude profile, and then large X_R",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L886",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean"
+          },
+          "snippet": {
+            "line": 886,
+            "text": "theorem exists_fixed_schedule (P m : ℝ) (hP : 0 < P) (hm : 0 < m) :\n    ∃ lam B : ℝ, 0 < lam ∧ 0 < B ∧ ∀ h : ℝ, 0 < h → 2 * h < lam →\n      ∃ F : Profile, F.data.core.P = P ∧ F.data.core.m = m ∧\n        F.data.core.lam = lam ∧ F.data.h = h ∧ OutgoingProfile.Specification F B ∧\n        ∃ XR₀ C : ℝ, 0 < XR₀ ∧ 0 < C ∧ ∀ XR : ℝ, XR₀ ≤ XR →\n          ∃ w : CompensationWitness F XR C, Specification F XR w.coefficients"
+          }
+        }
       }
     }
-  }
+  ]
 }

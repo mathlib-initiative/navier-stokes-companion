@@ -1,26 +1,29 @@
 {
-  "id": "eq-p105-1/key/08.NavierStokes.SignedCopyBounds.signed_jet_at",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedCopyBounds.signed_jet_at",
-      "line": 259,
-      "module": "NavierStokes.SignedCopyBounds",
-      "path": "NavierStokes/SignedCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean#L259"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedCopyBounds.signed_jet_at",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedCopyBounds.signed_jet_at",
+        "lines": [259, 259],
+        "module": "NavierStokes.SignedCopyBounds"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 259,
-        "text": "hPj : ∀ i ≤ m, ‖iteratedFDeriv ℝ i (fun y => normalizeAt w g y ^ (-(1/2:ℝ))) x‖ ≤ orderBound (-(1/2)) m * B ^ (2*m+1)  -- the normalized g^(-1/2) jet bound, line 2 before restoring w^(-1/2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.SignedCopyBounds.signed_jet_at",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L259",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 240,
+            "text": "theorem signed_jet_at {g r : D → ℝ} {x : D}\n    (hg : ContDiffAt ℝ ∞ g x) (hr : ContDiffAt ℝ ∞ r x) (hpos : 0 < g x)\n    {w B : ℝ} (hw : 0 < w) (hB : 1 ≤ B) (m : ℕ)\n    (hlo : w / B ≤ g x)\n    (hgj : ∀ i ≤ m, ‖iteratedFDeriv ℝ i g x‖ ≤ w * B)\n    (hrj : ∀ i ≤ m, ‖iteratedFDeriv ℝ i r x‖ ≤ w * B) :\n    ‖iteratedFDeriv ℝ m (fun y => r y / (2 * Real.sqrt (g y))) x‖ ≤\n      Real.sqrt w * SignedCovariance.signedJetCost m * B ^ (2 * m + 2)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-p034-6/key/01.NavierStokes.MomentRepair.correctionIteration_norm_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MomentRepair.correctionIteration_norm_le",
-      "line": 168,
-      "module": "NavierStokes.MomentRepair",
-      "path": "NavierStokes/MomentRepair.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MomentRepair.lean#L168"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MomentRepair.correctionIteration_norm_le",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MomentRepair.correctionIteration_norm_le",
+        "lines": [168, 168],
+        "module": "NavierStokes.MomentRepair"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 168,
-        "text": "calc ‖correctionIteration B Q d c‖ ≤ β * ‖d - Q c‖ ≤ β * (‖d‖ + ‖Q c‖) ≤ β * (‖d‖ + K * r ^ 2) ≤ r (lines 165-170), under hB : ∀ x, ‖B.symm x‖ ≤ β * ‖x‖, hQ : ‖x‖ ≤ r → ‖Q x‖ ≤ K * ‖x‖ ^ 2, hsmall : 4 * β * K * r ≤ 1, hd : 2 * β * ‖d‖ ≤ r, hc : ‖c‖ ≤ r."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.MomentRepair.correctionIteration_norm_le",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L168",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MomentRepair.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 154,
+            "text": "theorem correctionIteration_norm_le\n    (B : E ≃L[ℝ] E) (Q : E → E) (d : E) (β K r : ℝ)\n    (hβ : 0 ≤ β) (hK : 0 ≤ K) (hr : 0 ≤ r)\n    (hB : ∀ x, ‖B.symm x‖ ≤ β * ‖x‖)\n    (hQ : ∀ x, ‖x‖ ≤ r → ‖Q x‖ ≤ K * ‖x‖ ^ 2)\n    (hsmall : 4 * β * K * r ≤ 1) (hd : 2 * β * ‖d‖ ≤ r)\n    (c : E) (hc : ‖c‖ ≤ r) : ‖correctionIteration B Q d c‖ ≤ r"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.12/key/02.NavierStokes.BorelExtension.norm_iteratedDeriv_term_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BorelExtension.norm_iteratedDeriv_term_le",
-      "line": 147,
-      "module": "NavierStokes.BorelExtension",
-      "path": "NavierStokes/BorelExtension.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BorelExtension.lean#L147"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BorelExtension.norm_iteratedDeriv_term_le",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BorelExtension.norm_iteratedDeriv_term_le",
+        "module": "NavierStokes.BorelExtension"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 147,
-        "text": "(hb : 0 < b) → ‖iteratedDeriv k (term b j v) s‖ ≤ (b ^ k / b ^ j) * templateBound j k v"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.BorelExtension.norm_iteratedDeriv_term_le",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L147",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BorelExtension.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 147,
+            "text": "theorem norm_iteratedDeriv_term_le {b : ℝ} (hb : 0 < b)\n    (j k : ℕ) (v : E) (s : ℝ) :\n    ‖iteratedDeriv k (term b j v) s‖ ≤\n      (b ^ k / b ^ j) * templateBound j k v"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.10/key/02.NavierStokes.BasePhaseGeometry.reference_off_diagonal",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BasePhaseGeometry.reference_off_diagonal",
-      "line": 362,
-      "module": "NavierStokes.BasePhaseGeometry",
-      "path": "NavierStokes/BasePhaseGeometry.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean#L362"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BasePhaseGeometry.reference_off_diagonal",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BasePhaseGeometry.reference_off_diagonal",
+        "module": "NavierStokes.BasePhaseGeometry"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 362,
-        "text": "referenceEigenvalue lam u L v / referenceProfile c0 u L v = a/(1+s²) ∧ referenceEigenvalue lam u L v * referenceProfile c0 u L v = b, for a = lam/c0, b = lam*c0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.BasePhaseGeometry.reference_off_diagonal",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L362",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 362,
+            "text": "theorem reference_off_diagonal {lam c0 u L v s a b : ℝ}\n    (hc : c0 ≠ 0) (hs : s ^ 2 = PulseGrowth.slotMagnitude u L v ^ 2)\n    (ha : lam / c0 = a) (hb : lam * c0 = b) :\n    ViscousPropagator.referenceEigenvalue lam u L v / PrimaryODE.referenceProfile c0 u L v =\n        a / (1 + s ^ 2) ∧\n    ViscousPropagator.referenceEigenvalue lam u L v * PrimaryODE.referenceProfile c0 u L v = b"
+          }
+        }
       }
     }
-  }
+  ]
 }

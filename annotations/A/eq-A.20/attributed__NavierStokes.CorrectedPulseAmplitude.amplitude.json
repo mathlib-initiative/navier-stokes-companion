@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.20/attributed/04.NavierStokes.CorrectedPulseAmplitude.amplitude",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectedPulseAmplitude.amplitude",
-      "line": 85
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectedPulseAmplitude.lean#L85"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectedPulseAmplitude.amplitude",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectedPulseAmplitude.amplitude",
+        "module": "NavierStokes.CorrectedPulseAmplitude"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 85,
-        "text": "amplitude d c eta = (-PulseAmplitude.linearTerm d.core eta + √(discriminant d c eta)) / (2 * PulseAmplitude.quadraticCoefficient d.core) — the root of the *corrected* energy polynomial, i.e. the paper's Amp(η) after the angular-moment reset"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.CorrectedPulseAmplitude.amplitude",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L85"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 85,
+            "text": "def amplitude (d : TailData) (c : ℝ → Coeff) (eta : ℝ) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

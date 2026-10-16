@@ -1,26 +1,28 @@
 {
-  "id": "eq-p013-2/attributed/08.NavierStokes.LiftedMeanResidual.realNonlinearResidual_conservative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LiftedMeanResidual.realNonlinearResidual_conservative",
-      "line": 683,
-      "module": "NavierStokes.LiftedMeanResidual",
-      "path": "NavierStokes/LiftedMeanResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LiftedMeanResidual.lean#L683"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LiftedMeanResidual.realNonlinearResidual_conservative",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LiftedMeanResidual.realNonlinearResidual_conservative",
+        "module": "NavierStokes.LiftedMeanResidual"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 683,
-        "text": "realNonlinearResidual ε R Vr Vθ Vz Vt B a p x i = along Vt (a ·  i) x + conservativeFlux R Vr Vθ Vz (quadraticFlux B a) x i + realGradient R Vr Vθ Vz p x i - ε * realFrameLaplacian R Vr Vθ Vz a x i, given realDivergence B x = 0 and realDivergence a x = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.LiftedMeanResidual.realNonlinearResidual_conservative",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L683",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LiftedMeanResidual.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 683,
+            "text": "theorem realNonlinearResidual_conservative (ε : ℝ) (R : D × ℝ → ℝ)\n    (Vr Vθ Vz Vt : D × ℝ → D × ℝ) {B a : D × ℝ → Fin 3 → ℝ} (p : D × ℝ → ℝ)\n    {x : D × ℝ} (hB : ∀ i, DifferentiableAt ℝ (fun y => B y i) x)\n    (ha : ∀ i, DifferentiableAt ℝ (fun y => a y i) x)\n    (hBd : realDivergence R Vr Vθ Vz B x = 0)\n    (had : realDivergence R Vr Vθ Vz a x = 0) (i : Fin 3) :\n    realNonlinearResidual ε R Vr Vθ Vz Vt B a p x i =\n      along Vt (fun y => a y i) x + conservativeFlux R Vr Vθ Vz (quadraticFlux B a) x i +\n      realGradient R Vr Vθ Vz p x i - ε * LinearWaveResidual.realFrameLaplacian R Vr Vθ Vz a x i"
+          }
+        }
       }
     }
-  }
+  ]
 }

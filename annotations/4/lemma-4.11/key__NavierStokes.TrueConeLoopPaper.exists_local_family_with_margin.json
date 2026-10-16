@@ -1,36 +1,57 @@
 {
-  "id": "lemma-4.11/key/0.NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin",
-  "location": {
-    "page": 38,
-    "rect": [0.12854, 0.757851, 0.745098, 0.107438]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin",
-      "line": 21,
-      "module": "NavierStokes.TrueConeLoopPaper",
-      "path": "NavierStokes/TrueConeLoopPaper.lean"
+  "subject": [
+    {
+      "location": {
+        "page": 38,
+        "rect": [0.12854, 0.757851, 0.745098, 0.107438]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.11@p038"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoopPaper.lean#L21"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 39,
+        "rect": [0.12854, 0.102479, 0.745098, 0.102479]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For compact B ⊆ K ⊆ O open in a finite-dimensional E, with a, m, p₁, p₂ ContDiffOn ℝ ∞ on O, 0 < a on K, 2 < p₁ + p₂·m on K, nominalSpeed (a x) (m x) < coneBound (p₁+p₂m) (p₂−p₁m) on K, and 2 < nominalSpeed on B: there exist ε > 0, open U ⊇ K, open N ⊇ B with N ⊆ U, and A C : E × ℝ → ℝ, ContDiffOn ℝ",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-4.11@p038",
-      "role": "key",
-      "snippet": {
-        "line": 21,
-        "text": "theorem exists_local_family_with_margin (a m p₁ p₂ : E → ℝ) {K B O : Set E}\n    (hK : IsCompact K) (hB : IsCompact B) (hBK : B ⊆ K) (hO : IsOpen O) (hKO : K ⊆ O)\n    (ha : ContDiffOn ℝ ∞ a O) (hm : ContDiffOn ℝ ∞ m O)\n    (hp₁ : ContDiffOn ℝ ∞ p₁ O) (hp₂ : ContDiffOn ℝ ∞ p₂ O)\n    (haK : ∀ x ∈ K, 0 < a x)\n    (hPK : ∀ x ∈ K, 2 < p₁ x + p₂ x * m x)\n    (hrelaxed : ∀ x ∈ K, nominalSpeed (a x) (m x) <\n      coneBound (p₁ x + p₂ x * m x) (p₂ x - p₁ x * m x))\n    (htrueB : ∀ x ∈ B, 2 < nominalSpeed (a x) (m x)) :\n    ∃ ε : ℝ, ∃ U N : Set E, ∃ A C : E × ℝ → ℝ,\n      0 < ε ∧ IsOpen U ∧ K ⊆ U ∧ IsOpen N ∧ B ⊆ N ∧ N ⊆ U ∧\n      ContDiffOn ℝ ∞ A (U ×ˢ (univ : Set ℝ)) ∧\n      ContDiffOn ℝ ∞ C (U ×ˢ (univ : Set ℝ)) ∧\n      (∀ x ∈ K, Function.Periodic (fun φ => A (x, φ)) 1 ∧\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.11@p039"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin",
+        "module": "NavierStokes.TrueConeLoopPaper"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For compact B ⊆ K ⊆ O open in a finite-dimensional E, with a, m, p₁, p₂ ContDiffOn ℝ ∞ on O, 0 < a on K, 2 < p₁ + p₂·m on K, nominalSpeed (a x) (m x) < coneBound (p₁+p₂m) (p₂−p₁m) on K, and 2 < nominalSpeed on B: there exist ε > 0, open U ⊇ K, open N ⊇ B with N ⊆ U, and A C : E × ℝ → ℝ, ContDiffOn ℝ",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L21",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoopPaper.lean"
+          },
+          "snippet": {
+            "line": 21,
+            "text": "theorem exists_local_family_with_margin (a m p₁ p₂ : E → ℝ) {K B O : Set E}\n    (hK : IsCompact K) (hB : IsCompact B) (hBK : B ⊆ K) (hO : IsOpen O) (hKO : K ⊆ O)\n    (ha : ContDiffOn ℝ ∞ a O) (hm : ContDiffOn ℝ ∞ m O)\n    (hp₁ : ContDiffOn ℝ ∞ p₁ O) (hp₂ : ContDiffOn ℝ ∞ p₂ O)\n    (haK : ∀ x ∈ K, 0 < a x)\n    (hPK : ∀ x ∈ K, 2 < p₁ x + p₂ x * m x)\n    (hrelaxed : ∀ x ∈ K, nominalSpeed (a x) (m x) <\n      coneBound (p₁ x + p₂ x * m x) (p₂ x - p₁ x * m x))\n    (htrueB : ∀ x ∈ B, 2 < nominalSpeed (a x) (m x)) :\n    ∃ ε : ℝ, ∃ U N : Set E, ∃ A C : E × ℝ → ℝ,\n      0 < ε ∧ IsOpen U ∧ K ⊆ U ∧ IsOpen N ∧ B ⊆ N ∧ N ⊆ U ∧\n      ContDiffOn ℝ ∞ A (U ×ˢ (univ : Set ℝ)) ∧\n      ContDiffOn ℝ ∞ C (U ×ˢ (univ : Set ℝ)) ∧\n      (∀ x ∈ K, Function.Periodic (fun φ => A (x, φ)) 1 ∧\n  …",
+            "truncated": true
+          }
+        }
+      }
+    }
+  ]
 }

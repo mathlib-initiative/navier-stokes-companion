@@ -1,28 +1,30 @@
 {
-  "id": "corollary-8.5/key/0.NavierStokes.SignedMeanGain.physicalSigma_cancels",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedMeanGain.physicalSigma_cancels",
-      "line": 739,
-      "module": "NavierStokes.SignedMeanGain",
-      "path": "NavierStokes/SignedMeanGain.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean#L739"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedMeanGain.physicalSigma_cancels",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For e = 2 or e = 1, f smooth on the moving domain with MovingSupport in [P.a,P.b], and x in the strip: meanBar f n x + (G.operators.radialDiv e (physicalSigma G e f)) n x = removedBump G e f n x. With physicalSigma G e f = physicalBarSigma P e (coordinateQ G.coord) (f n) (L687) and removedBump = phy"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedMeanGain.physicalSigma_cancels",
+        "module": "NavierStokes.SignedMeanGain"
       },
       "role": "key",
-      "snippet": {
-        "line": 739,
-        "text": "theorem physicalSigma_cancels (G : Geometry) (e : ℕ) (he : e = 2 ∨ e = 1)\n    {f : ScalarField Point} (hf : SmoothOn G.domain f)\n    (hs : ∀ n, LocalSignedRequest.MovingSupport G.patch.a G.patch.b G.coord G.region.carrier (f n))\n    (n : ℕ) {x : Point} (hx : x ∈ G.strip.domain) :\n    StateMomentBalances.meanBar f n x + G.operators.radialDiv (e : ℝ) (physicalSigma G e f) n x =\n      removedBump G e f n x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.SignedMeanGain.physicalSigma_cancels",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For e = 2 or e = 1, f smooth on the moving domain with MovingSupport in [P.a,P.b], and x in the strip: meanBar f n x + (G.operators.radialDiv e (physicalSigma G e f)) n x = removedBump G e f n x. With physicalSigma G e f = physicalBarSigma P e (coordinateQ G.coord) (f n) (L687) and removedBump = phy"
+          },
+          "destination": {
+            "fragment": "L739",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean"
+          },
+          "snippet": {
+            "line": 739,
+            "text": "theorem physicalSigma_cancels (G : Geometry) (e : ℕ) (he : e = 2 ∨ e = 1)\n    {f : ScalarField Point} (hf : SmoothOn G.domain f)\n    (hs : ∀ n, LocalSignedRequest.MovingSupport G.patch.a G.patch.b G.coord G.region.carrier (f n))\n    (n : ℕ) {x : Point} (hx : x ∈ G.strip.domain) :\n    StateMomentBalances.meanBar f n x + G.operators.radialDiv (e : ℝ) (physicalSigma G e f) n x =\n      removedBump G e f n x"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,27 @@
 {
-  "id": "eq-7.20/key/01.NavierStokes.WeightedODEJets.jet_solution_hasDerivWithinAt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedODEJets.jet_solution_hasDerivWithinAt",
-      "line": 392
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedODEJets.lean#L392"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedODEJets.jet_solution_hasDerivWithinAt",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedODEJets.jet_solution_hasDerivWithinAt",
+        "module": "NavierStokes.WeightedODEJets"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 392,
-        "text": "let u := fun q => solution hab (A q) (x₀ q) (f q); HasDerivWithinAt (extend hab (jet u l p)) (A p t (jet u l p t) + jetSource A f u l p t) (Icc a b) t"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.WeightedODEJets.jet_solution_hasDerivWithinAt",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L392"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 392,
+            "text": "theorem jet_solution_hasDerivWithinAt (hab : a ≤ b) {U : Set P} (hU : IsOpen U)\n    (A : P → Coefficient a b E) (x₀ : P → E) (f : P → Curve a b E)\n    (hA : ContDiffOn ℝ ∞ A U) (hx₀ : ContDiffOn ℝ ∞ x₀ U)\n    (hf : ContDiffOn ℝ ∞ f U) (l : List P) {p : P} (hp : p ∈ U) (t : Icc a b) :\n    let u"
+          }
+        }
       }
     }
-  }
+  ]
 }

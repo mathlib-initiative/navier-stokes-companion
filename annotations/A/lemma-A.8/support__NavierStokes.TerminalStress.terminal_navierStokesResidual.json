@@ -1,27 +1,30 @@
 {
-  "id": "lemma-A.8/support/3.NavierStokes.TerminalStress.terminal_navierStokesResidual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalStress.terminal_navierStokesResidual",
-      "line": 553,
-      "module": "NavierStokes.TerminalStress",
-      "path": "NavierStokes/TerminalStress.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalStress.lean#L553"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalStress.terminal_navierStokesResidual",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalStress.terminal_navierStokesResidual",
+        "module": "NavierStokes.TerminalStress"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 553,
-        "text": "theorem terminal_navierStokesResidual (C : ℝ) {h t : ℝ} {x : ProblemStatement.Space}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (ht : t < 1)\n    (hs : 0 < AxisymmetricFields.radialEnergy x) {f : ℝ → ℝ}\n    (hf : ContDiffAt ℝ 2 f\n      (Real.log (SimilarityProfile.X h (AxisymmetricFields.profilePoint t x))))\n    {a : ℝ} (ha : a < AxisymmetricFields.radialEnergy x)\n    (hi : IntegrableOn (fun s => swirlCoefficient C h f (t, (s, x 2)) ^ 2) (Ioi a))\n    (hc : ContinuousOn (fun s => swirlCoefficient C h f (t, (s, x 2)) ^ 2) (Ioi a))\n    (hP : DifferentiableAt ℝ (canonicalPressure (swirlCoefficient C h f))\n      (AxisymmetricFields.profilePoint t x)) :\n    ProblemStatement.navierStokesResidual (terminalVelocity C h f) (terminalPressure C h f) t x =\n      AxisymmetricResidual.pack\n        (-x 1 / Real.sqrt (2 * AxisymmetricFields.radialEnergy x) *\n          (leadingResidual C h f t (Real.sqrt (2 * AxisymmetricFields.radialEnergy x)) (x 2) -\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.TerminalStress.terminal_navierStokesResidual",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L553",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalStress.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 553,
+            "text": "theorem terminal_navierStokesResidual (C : ℝ) {h t : ℝ} {x : ProblemStatement.Space}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (ht : t < 1)\n    (hs : 0 < AxisymmetricFields.radialEnergy x) {f : ℝ → ℝ}\n    (hf : ContDiffAt ℝ 2 f\n      (Real.log (SimilarityProfile.X h (AxisymmetricFields.profilePoint t x))))\n    {a : ℝ} (ha : a < AxisymmetricFields.radialEnergy x)\n    (hi : IntegrableOn (fun s => swirlCoefficient C h f (t, (s, x 2)) ^ 2) (Ioi a))\n    (hc : ContinuousOn (fun s => swirlCoefficient C h f (t, (s, x 2)) ^ 2) (Ioi a))\n    (hP : DifferentiableAt ℝ (canonicalPressure (swirlCoefficient C h f))\n      (AxisymmetricFields.profilePoint t x)) :\n    ProblemStatement.navierStokesResidual (terminalVelocity C h f) (terminalPressure C h f) t x =\n      AxisymmetricResidual.pack\n        (-x 1 / Real.sqrt (2 * AxisymmetricFields.radialEnergy x) *\n          (leadingResidual C h f t (Real.sqrt (2 * AxisymmetricFields.radialEnergy x)) (x 2) -\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-p122-9/key/02.NavierStokes.R3PressureKernel.kernel_moment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.R3PressureKernel.kernel_moment",
-      "line": 100,
-      "module": "NavierStokes.R3PressureKernel",
-      "path": "NavierStokes/R3PressureKernel.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3PressureKernel.lean#L100"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.R3PressureKernel.kernel_moment"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.R3PressureKernel.kernel_moment",
+        "module": "NavierStokes.R3PressureKernel"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 100,
-        "text": "kernel R x ^ (4 / 3 : ℝ) = R ^ (-4 : ℝ) * baseMoment (R⁻¹ • x), with baseMoment x = if ‖x‖ < 1 then ‖x‖ ^ (-8/3 : ℝ) else ‖x‖ ^ (-4 : ℝ) (:24) — on ‖x‖ < R this is R^(-4/3) * ‖x‖^(-8/3), the paper's near-field prefactor"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.R3PressureKernel.kernel_moment"
+          },
+          "destination": {
+            "fragment": "L100",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3PressureKernel.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 100,
+            "text": "theorem kernel_moment {R : ℝ} (hR : 0 < R) (x : Space) :\n    kernel R x ^ (4 / 3 : ℝ) = R ^ (-4 : ℝ) * baseMoment (R⁻¹ • x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.27/key/01.NavierStokes.ActualInitialization.phase_split",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualInitialization.phase_split",
-      "line": 55,
-      "module": "NavierStokes.ActualInitialization",
-      "path": "NavierStokes/ActualInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialization.lean#L55"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualInitialization.phase_split",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualInitialization.phase_split",
+        "module": "NavierStokes.ActualInitialization"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 55,
-        "text": "frequency n * phase n (x, θ) = frequency n * phase l n x + (angularMode l n : ℝ) * θ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ActualInitialization.phase_split",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L55",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualInitialization.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 55,
+            "text": "theorem phase_split (l : Index B N0) (n : ℕ) (x : Point) (theta : ℝ) :\n    (primaryPiece l).coefficients.frequency n * (primaryPiece l).coefficients.phase n (x, theta) =\n      (primaryPiece l).coefficients.frequency n * phase l n x + (angularMode l n : ℝ) * theta"
+          }
+        }
       }
     }
-  }
+  ]
 }

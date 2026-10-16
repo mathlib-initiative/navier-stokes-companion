@@ -1,31 +1,33 @@
 {
-  "id": "proposition-4.2/attributed/1.NavierStokes.StressAlgebra.stressFree_angular_lag_algebra",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressAlgebra.stressFree_angular_lag_algebra",
-      "line": 316,
-      "module": "NavierStokes.StressAlgebra",
-      "path": "NavierStokes/StressAlgebra.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressAlgebra.lean#L316"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressAlgebra.stressFree_angular_lag_algebra",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressAlgebra.stressFree_angular_lag_algebra",
+        "module": "NavierStokes.StressAlgebra"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For reals x, L, φ, φx, φxx with φ ≠ 0: x*(-2L(φxx φ - φx²)/φ²) + (2 + x φx/φ)*(-2L φx/φ) = -2L(x φxx + 2 φx)/φ, i.e. the angular lag operator applied to the stress-free Q_s = -2Lφ_X/φ gives the right side of (4.13).",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 316,
-        "text": "theorem stressFree_angular_lag_algebra\n    (x L φ φx φxx : ℝ) (hφ : φ ≠ 0) :\n    x * (-2 * L * (φxx * φ - φx ^ 2) / φ ^ 2) +\n      (2 + x * φx / φ) * (-2 * L * φx / φ) =\n      -2 * L * (x * φxx + 2 * φx) / φ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.StressAlgebra.stressFree_angular_lag_algebra",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For reals x, L, φ, φx, φxx with φ ≠ 0: x*(-2L(φxx φ - φx²)/φ²) + (2 + x φx/φ)*(-2L φx/φ) = -2L(x φxx + 2 φx)/φ, i.e. the angular lag operator applied to the stress-free Q_s = -2Lφ_X/φ gives the right side of (4.13).",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L316",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressAlgebra.lean"
+          },
+          "snippet": {
+            "line": 316,
+            "text": "theorem stressFree_angular_lag_algebra\n    (x L φ φx φxx : ℝ) (hφ : φ ≠ 0) :\n    x * (-2 * L * (φxx * φ - φx ^ 2) / φ ^ 2) +\n      (2 + x * φx / φ) * (-2 * L * φx / φ) =\n      -2 * L * (x * φxx + 2 * φx) / φ"
+          }
+        }
       }
     }
-  }
+  ]
 }

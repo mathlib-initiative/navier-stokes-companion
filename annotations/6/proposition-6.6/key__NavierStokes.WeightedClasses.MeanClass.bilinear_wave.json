@@ -1,29 +1,31 @@
 {
-  "id": "proposition-6.6/key/1.NavierStokes.WeightedClasses.MeanClass.bilinear_wave",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedClasses.MeanClass.bilinear_wave",
-      "line": 450,
-      "module": "NavierStokes.WeightedClasses",
-      "path": "NavierStokes/WeightedClasses.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean#L450"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedClasses.MeanClass.bilinear_wave",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedClasses.MeanClass.bilinear_wave",
+        "module": "NavierStokes.WeightedClasses"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: MeanClass s \\alpha f \\to WaveClass s P \\beta g \\to (h\\zeta : \\forall x \\in s.domain, s.zeta x \\le 1) \\to \\forall L, WaveClass s P (\\alpha+\\beta) (fun n x => L (f n x) (g n x)), proved from \\zeta \\cdot \\sqrt{\\zeta}P \\le \\sqrt{\\zeta}P (:453-458): the paper's M_\\alpha W_\\beta \\subset W_{\\alpha+\\beta} o"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 450,
-        "text": "theorem MeanClass.bilinear_wave {s : StripData D} {P : ℕ → D → ℝ}\n    {α β : ℝ} {f : ℕ → D → E} {g : ℕ → D → F}\n    (hf : MeanClass s α f) (hg : WaveClass s P β g)\n    (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1) (L : E →L[ℝ] F →L[ℝ] G) :\n    WaveClass s P (α + β) (fun n x => L (f n x) (g n x))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.WeightedClasses.MeanClass.bilinear_wave",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: MeanClass s \\alpha f \\to WaveClass s P \\beta g \\to (h\\zeta : \\forall x \\in s.domain, s.zeta x \\le 1) \\to \\forall L, WaveClass s P (\\alpha+\\beta) (fun n x => L (f n x) (g n x)), proved from \\zeta \\cdot \\sqrt{\\zeta}P \\le \\sqrt{\\zeta}P (:453-458): the paper's M_\\alpha W_\\beta \\subset W_{\\alpha+\\beta} o"
+          },
+          "destination": {
+            "fragment": "L450",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean"
+          },
+          "snippet": {
+            "line": 450,
+            "text": "theorem MeanClass.bilinear_wave {s : StripData D} {P : ℕ → D → ℝ}\n    {α β : ℝ} {f : ℕ → D → E} {g : ℕ → D → F}\n    (hf : MeanClass s α f) (hg : WaveClass s P β g)\n    (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1) (L : E →L[ℝ] F →L[ℝ] G) :\n    WaveClass s P (α + β) (fun n x => L (f n x) (g n x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,39 +1,54 @@
 {
-  "id": "eq-p032-1/key/01.NavierStokes.ConeAlgebra.finite_amplitude_cone",
+  "id": "eq-p032-1",
   "kind": "equation",
-  "label": "Display 32.1",
   "status": "partial",
-  "location": {
-    "page": 32,
-    "rect": [0.294118, 0.127273, 0.410695, 0.042975]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ConeAlgebra.finite_amplitude_cone",
-      "line": 124,
-      "module": "NavierStokes.ConeAlgebra",
-      "path": "NavierStokes/ConeAlgebra.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConeAlgebra.lean#L124"
-  },
+  "subject": [
+    {
+      "location": {
+        "page": 32,
+        "rect": [0.294118, 0.127273, 0.410695, 0.042975]
+      },
+      "title": "Display 32.1",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "eq-p032-1@p032"
+        }
+      }
+    }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ConeAlgebra.finite_amplitude_cone",
+        "lines": [124, 124],
+        "module": "NavierStokes.ConeAlgebra"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ConeAlgebra.finite_amplitude_cone",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L124",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConeAlgebra.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 116,
+            "text": "theorem finite_amplitude_cone {c j v p : ℝ} (hp : 0 < p)\n    (hP : 2 < p * c) (hvP : v < p * c)\n    (hscale : 4 * c * v < p * (2 * c ^ 2 - (v - 2) * j ^ 2)) :\n    v < coneBound (p * c) (p * j)"
+          }
+        }
+      }
+    }
+  ],
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ConeAlgebra.finite_amplitude_cone",
-        "kind": "theorem"
-      },
-      "item": "eq-p032-1",
       "locator": {
         "physical": [32],
         "printed": [32],
         "text": "Display 32.1, p. 32, in the proof of Lemma 4.5"
-      },
-      "region": "eq-p032-1@p032",
-      "relation": "contains",
-      "role": "key",
-      "snippet": {
-        "line": 124,
-        "text": "have hid : 2 * (p * c - v) ^ 2 - (v - 2) * (p * j) ^ 2 = p * (p * (2 * c ^ 2 - (v - 2) * j ^ 2) - 4 * c * v) + 2 * v ^ 2 := by ring  (positivity then from hprod at line 122)"
       },
       "verdicts": [
         {
@@ -42,7 +57,7 @@
           "provenance": {
             "actor": "agent",
             "confirmed_by_human": false,
-            "note": "machine audit: worker, gate, reviewer; not confirmed by a human"
+            "note": "machine audit, checked by a second agent; not confirmed by a human"
           },
           "relation": "different",
           "role": "proof_step",

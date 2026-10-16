@@ -1,25 +1,27 @@
 {
-  "id": "eq-p123-6/attributed/03.NavierStokesR3.ComparisonYoung.exists_cutoff_absorption",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ComparisonYoung.exists_cutoff_absorption",
-      "line": 148,
-      "module": "NavierStokes.R3.ComparisonYoung",
-      "path": "NavierStokes/R3/ComparisonYoung.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ComparisonYoung.lean#L148"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ComparisonYoung.exists_cutoff_absorption"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ComparisonYoung.exists_cutoff_absorption",
+        "module": "NavierStokes.R3.ComparisonYoung"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 148,
-        "text": "∃ D ≥ 0, ∀ A ≥ 0, ∀ R ≥ 1, C*((A+R⁻¹)^(1/2)+1)*(R⁻¹*A + R^(-2)) + C*R^(-7/4)*(A+R⁻¹)^(3/4) + C*R⁻¹*(A+R⁻¹)^(3/2) ≤ δ*A^2 + D/R — invoked with δ = 1/2 at ComparisonRateBound.lean:138, which is exactly the half of A_R^2 the paper keeps on the left"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokesR3.ComparisonYoung.exists_cutoff_absorption"
+          },
+          "destination": {
+            "fragment": "L148",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ComparisonYoung.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 148,
+            "text": "theorem exists_cutoff_absorption {C δ : ℝ} (hC : 0 ≤ C) (hδ : 0 < δ) :\n    ∃ D ≥ 0, ∀ A ≥ 0, ∀ R ≥ 1,\n      C * ((A + R⁻¹) ^ (1 / 2 : ℝ) + 1) *\n          (R⁻¹ * A + R ^ (-2 : ℝ)) +\n        C * R ^ (-7 / 4 : ℝ) * (A + R⁻¹) ^ (3 / 4 : ℝ) +\n        C * R⁻¹ * (A + R⁻¹) ^ (3 / 2 : ℝ) ≤\n          δ * A ^ 2 + D / R"
+          }
+        }
       }
     }
-  }
+  ]
 }

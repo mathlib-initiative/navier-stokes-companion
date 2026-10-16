@@ -1,24 +1,27 @@
 {
-  "id": "eq-p078-5/key/01.NavierStokes.GaussianEnvelope.hasDerivAt_referenceRate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaussianEnvelope.hasDerivAt_referenceRate",
-      "line": 213
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaussianEnvelope.lean#L213"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaussianEnvelope.hasDerivAt_referenceRate",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaussianEnvelope.hasDerivAt_referenceRate",
+        "module": "NavierStokes.GaussianEnvelope"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 213,
-        "text": "HasDerivAt (referenceRate lam u ell) (referenceSlope lam u (PulseGrowth.slotMagnitude u ell time) * (u / ell)) time"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GaussianEnvelope.hasDerivAt_referenceRate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L213"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 213,
+            "text": "theorem hasDerivAt_referenceRate (lam u ell time : ℝ) :\n    HasDerivAt (referenceRate lam u ell)\n      (referenceSlope lam u (PulseGrowth.slotMagnitude u ell time) * (u / ell)) time"
+          }
+        }
       }
     }
-  }
+  ]
 }

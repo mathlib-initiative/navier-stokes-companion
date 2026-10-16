@@ -1,31 +1,33 @@
 {
-  "id": "lemma-10.4/attributed/1.NavierStokesR3.CompactEnergy.uniform_finite_energy",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.CompactEnergy.uniform_finite_energy",
-      "line": 343,
-      "module": "NavierStokes.R3.CompactEnergy",
-      "path": "NavierStokes/R3/CompactEnergy.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/CompactEnergy.lean#L343"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.CompactEnergy.uniform_finite_energy",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.CompactEnergy.uniform_finite_energy",
+        "module": "NavierStokes.R3.CompactEnergy"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: From exactly the paper's hypotheses (K compact, u,p smooth on preSingularDomain, tsupport u(t,·) ⊆ K on [0,1), f smooth with compact support, u(0)=0, div u = 0, unit-viscosity NS residual = f) concludes UniformFiniteEnergy (Ico 0 1) u, with the non-sharp constant (1/2)·C·e.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 343,
-        "text": "theorem uniform_finite_energy {u f : VelocityField} {p : PressureField} {K : Set Space}\n    (hK : IsCompact K)\n    (hu : ContDiffOn ℝ ∞ u preSingularDomain)\n    (hp : ContDiffOn ℝ ∞ p preSingularDomain)\n    (hsupp : ∀ t ∈ Ico (0 : ℝ) 1, tsupport (fun x => u (t, x)) ⊆ K)\n    (hf : ContDiff ℝ ∞ f) (hcf : HasCompactSupport f)\n    (hinitial : ∀ x : Space, u (0, x) = 0)\n    (hdiv : ∀ t ∈ Ioo (0 : ℝ) 1, ∀ x, spatialDivergence u t x = 0)\n    (hNS : ∀ t ∈ Ioo (0 : ℝ) 1, ∀ x, navierStokesResidual u p t x = f (t, x)) :\n    ProblemStatement.UniformFiniteEnergy (Ico (0 : ℝ) 1) u"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokesR3.CompactEnergy.uniform_finite_energy",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: From exactly the paper's hypotheses (K compact, u,p smooth on preSingularDomain, tsupport u(t,·) ⊆ K on [0,1), f smooth with compact support, u(0)=0, div u = 0, unit-viscosity NS residual = f) concludes UniformFiniteEnergy (Ico 0 1) u, with the non-sharp constant (1/2)·C·e.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L343",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/CompactEnergy.lean"
+          },
+          "snippet": {
+            "line": 343,
+            "text": "theorem uniform_finite_energy {u f : VelocityField} {p : PressureField} {K : Set Space}\n    (hK : IsCompact K)\n    (hu : ContDiffOn ℝ ∞ u preSingularDomain)\n    (hp : ContDiffOn ℝ ∞ p preSingularDomain)\n    (hsupp : ∀ t ∈ Ico (0 : ℝ) 1, tsupport (fun x => u (t, x)) ⊆ K)\n    (hf : ContDiff ℝ ∞ f) (hcf : HasCompactSupport f)\n    (hinitial : ∀ x : Space, u (0, x) = 0)\n    (hdiv : ∀ t ∈ Ioo (0 : ℝ) 1, ∀ x, spatialDivergence u t x = 0)\n    (hNS : ∀ t ∈ Ioo (0 : ℝ) 1, ∀ x, navierStokesResidual u p t x = f (t, x)) :\n    ProblemStatement.UniformFiniteEnergy (Ico (0 : ℝ) 1) u"
+          }
+        }
       }
     }
-  }
+  ]
 }

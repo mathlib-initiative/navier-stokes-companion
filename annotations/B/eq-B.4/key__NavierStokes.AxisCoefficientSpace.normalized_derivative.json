@@ -1,25 +1,27 @@
 {
-  "id": "eq-B.4/key/01.NavierStokes.AxisCoefficientSpace.normalized_derivative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisCoefficientSpace.normalized_derivative",
-      "line": 224,
-      "module": "NavierStokes.AxisCoefficientSpace",
-      "path": "NavierStokes/AxisCoefficientSpace.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisCoefficientSpace.lean#L224"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisCoefficientSpace.normalized_derivative",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisCoefficientSpace.normalized_derivative",
+        "module": "NavierStokes.AxisCoefficientSpace"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 224,
-        "text": "iteratedDerivWithin m (coefficient I w A n) I.interval x / w n m = A.1 ((n, m), x) — the stored bounded-continuous coordinate, whose ambient sup norm over ((ℕ × ℕ) × I.interval) →ᵇ ℝ is ‖A‖"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.AxisCoefficientSpace.normalized_derivative",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L224",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisCoefficientSpace.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 224,
+            "text": "theorem normalized_derivative (I : Window) (w : ℕ → ℕ → ℝ)\n    (hw : ∀ n m, w n m ≠ 0) (A : CoefficientSpace I w)\n    (n m : ℕ) (x : I.interval) :\n    iteratedDerivWithin m (coefficient I w A n) I.interval x / w n m =\n      A.1 ((n, m), x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

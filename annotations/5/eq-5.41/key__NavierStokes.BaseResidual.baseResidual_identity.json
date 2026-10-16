@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.41/key/03.NavierStokes.BaseResidual.baseResidual_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseResidual.baseResidual_identity",
-      "line": 1490,
-      "module": "NavierStokes.BaseResidual",
-      "path": "NavierStokes/BaseResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean#L1490"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseResidual.baseResidual_identity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseResidual.baseResidual_identity",
+        "module": "NavierStokes.BaseResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1490,
-        "text": "navierStokesResidual (baseVelocity a h C d) (basePressure a h C d) z.1 z.2 = baseStressForce a h C d z + baseResidual a h C d z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.BaseResidual.baseResidual_identity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1490",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1490,
+            "text": "theorem baseResidual_identity (a : ℕ → ℕ) (h C : ℝ) (d : Coefficients) (z : SpaceTime) :\n    navierStokesResidual (baseVelocity a h C d) (basePressure a h C d) z.1 z.2 =\n      baseStressForce a h C d z + baseResidual a h C d z"
+          }
+        }
       }
     }
-  }
+  ]
 }

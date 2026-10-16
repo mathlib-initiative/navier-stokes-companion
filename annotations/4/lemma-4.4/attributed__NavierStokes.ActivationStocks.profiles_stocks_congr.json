@@ -1,36 +1,57 @@
 {
-  "id": "lemma-4.4/attributed/1.NavierStokes.ActivationStocks.profiles_stocks_congr",
-  "location": {
-    "page": 28,
-    "rect": [0.12854, 0.7, 0.745098, 0.200826]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActivationStocks.profiles_stocks_congr",
-      "line": 833,
-      "module": "NavierStokes.ActivationStocks",
-      "path": "NavierStokes/ActivationStocks.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 28,
+        "rect": [0.12854, 0.7, 0.745098, 0.200826]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p028"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationStocks.lean#L833"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActivationStocks.profiles_stocks_congr",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 29,
+        "rect": [0.12854, 0.103306, 0.745098, 0.22314]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: The Delta p_s = 0 clause in the Profiles layer: for P : Profiles D, Q : Profiles D' at (X,eta) with 0 < X, eta in an open J, equal f and U at the point and equal profileHistory for every row at (X,xi) for all xi in J, one gets profileStockOne and profileStockTwo equal at (X,eta). Requires both point",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "region": "lemma-4.4@p028",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 833,
-        "text": "theorem profiles_stocks_congr {D E : RadialDomain} (P : Profiles D) (Q : Profiles E)\n    (h : ℝ) {J : Set ℝ} (hJ : IsOpen J) {X η : ℝ} (hη : η ∈ J)\n    (hp : (X, η) ∈ D.carrier) (hq : (X, η) ∈ E.carrier) (hX : 0 < X)\n    (hf : P.f (X, η) = Q.f (X, η)) (hfne : Q.f (X, η) ≠ 0)\n    (hu : P.U (X, η) = Q.U (X, η))\n    (hH : ∀ r ξ, ξ ∈ J → profileHistory P r (X, ξ) = profileHistory Q r (X, ξ)) :\n    profileStockOne P h (X, η) = profileStockOne Q h (X, η) ∧\n      profileStockTwo P h (X, η) = profileStockTwo Q h (X, η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p029"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActivationStocks.profiles_stocks_congr",
+        "module": "NavierStokes.ActivationStocks"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActivationStocks.profiles_stocks_congr",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: The Delta p_s = 0 clause in the Profiles layer: for P : Profiles D, Q : Profiles D' at (X,eta) with 0 < X, eta in an open J, equal f and U at the point and equal profileHistory for every row at (X,xi) for all xi in J, one gets profileStockOne and profileStockTwo equal at (X,eta). Requires both point",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L833",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationStocks.lean"
+          },
+          "snippet": {
+            "line": 833,
+            "text": "theorem profiles_stocks_congr {D E : RadialDomain} (P : Profiles D) (Q : Profiles E)\n    (h : ℝ) {J : Set ℝ} (hJ : IsOpen J) {X η : ℝ} (hη : η ∈ J)\n    (hp : (X, η) ∈ D.carrier) (hq : (X, η) ∈ E.carrier) (hX : 0 < X)\n    (hf : P.f (X, η) = Q.f (X, η)) (hfne : Q.f (X, η) ≠ 0)\n    (hu : P.U (X, η) = Q.U (X, η))\n    (hH : ∀ r ξ, ξ ∈ J → profileHistory P r (X, ξ) = profileHistory Q r (X, ξ)) :\n    profileStockOne P h (X, η) = profileStockOne Q h (X, η) ∧\n      profileStockTwo P h (X, η) = profileStockTwo Q h (X, η)"
+          }
+        }
+      }
+    }
+  ]
 }

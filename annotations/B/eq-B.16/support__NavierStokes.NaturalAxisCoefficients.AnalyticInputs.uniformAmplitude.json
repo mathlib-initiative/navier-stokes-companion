@@ -1,26 +1,29 @@
 {
-  "id": "eq-B.16/support/03.NavierStokes.NaturalAxisCoefficients.AnalyticInputs.uniformAmplitude",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalAxisCoefficients.AnalyticInputs.uniformAmplitude",
-      "line": 546,
-      "module": "NavierStokes.NaturalAxisCoefficients",
-      "path": "NavierStokes/NaturalAxisCoefficients.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisCoefficients.lean#L546"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalAxisCoefficients.AnalyticInputs.uniformAmplitude",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalAxisCoefficients.AnalyticInputs.uniformAmplitude",
+        "module": "NavierStokes.NaturalAxisCoefficients"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 546,
-        "text": "∀ Λ, 0 ≤ Λ → ∀ C, d.normalizationThreshold Λ ≤ C → ∃ a : AxisSpace window …, ‖a‖ ≤ d.amplitudeBound ∧ … inputValue … = realAmplitude h j σ Λ C x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.NaturalAxisCoefficients.AnalyticInputs.uniformAmplitude",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L546",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisCoefficients.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 546,
+            "text": "theorem AnalyticInputs.uniformAmplitude {h j σ : ℝ} {P : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P) :\n    ∀ Λ : ℝ, 0 ≤ Λ → ∀ C : ℝ, d.normalizationThreshold Λ ≤ C →\n      ∃ a : AxisSpace window d.coefficients.epsilon,\n        ‖a‖ ≤ d.amplitudeBound ∧\n        NaturalAxisBridge.RadiallyConstant window d.coefficients.epsilon a ∧\n        ∀ x ∈ window.interval,\n          NaturalAxisBridge.inputValue window d.coefficients.epsilon a x =\n            realAmplitude h j σ Λ C x"
+          }
+        }
       }
     }
-  }
+  ]
 }

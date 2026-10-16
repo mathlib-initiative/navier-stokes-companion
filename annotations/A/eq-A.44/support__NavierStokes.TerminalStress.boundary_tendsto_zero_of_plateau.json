@@ -1,26 +1,29 @@
 {
-  "id": "eq-A.44/support/06.NavierStokes.TerminalStress.boundary_tendsto_zero_of_plateau",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalStress.boundary_tendsto_zero_of_plateau",
-      "line": 805,
-      "module": "NavierStokes.TerminalStress",
-      "path": "NavierStokes/TerminalStress.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalStress.lean#L805"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalStress.boundary_tendsto_zero_of_plateau",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalStress.boundary_tendsto_zero_of_plateau",
+        "module": "NavierStokes.TerminalStress"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 805,
-        "text": "(K : ℝ → ℝ) (hg : g =ᶠ[atTop] fun _ => c) : Tendsto (boundary K g) atTop (𝓝 0) — boundary K g r = r ^ 2 * K r * deriv g r, with no hypothesis whatever on K"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.TerminalStress.boundary_tendsto_zero_of_plateau",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L805",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalStress.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 805,
+            "text": "theorem boundary_tendsto_zero_of_plateau (K : ℝ → ℝ) {g : ℝ → ℝ} {c : ℝ}\n    (hg : g =ᶠ[atTop] fun _ => c) : Tendsto (boundary K g) atTop (𝓝 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

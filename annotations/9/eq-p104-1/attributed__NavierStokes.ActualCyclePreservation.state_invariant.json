@@ -1,26 +1,28 @@
 {
-  "id": "eq-p104-1/attributed/05.NavierStokes.ActualCyclePreservation.state_invariant",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCyclePreservation.state_invariant",
-      "line": 835,
-      "module": "NavierStokes.ActualCyclePreservation",
-      "path": "NavierStokes/ActualCyclePreservation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean#L835"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCyclePreservation.state_invariant",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCyclePreservation.state_invariant",
+        "module": "NavierStokes.ActualCyclePreservation"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 835,
-        "text": "the stage-j state satisfies `Invariant (ActualIterationLedger.sigma j) …`, which is what instantiates σ (hence α = 1/2+σ_j, μ = 1+σ_j) at each stage"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ActualCyclePreservation.state_invariant",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L835",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 835,
+            "text": "theorem state_invariant (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (j : ℕ) :\n    Invariant (ActualIterationLedger.sigma j) (state B N0 j)"
+          }
+        }
       }
     }
-  }
+  ]
 }

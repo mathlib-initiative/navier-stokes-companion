@@ -1,25 +1,27 @@
 {
-  "id": "eq-p013-1/key/09.NavierStokes.CorrectionState.State.addIncrement",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionState.State.addIncrement",
-      "line": 150,
-      "module": "NavierStokes.CorrectionState",
-      "path": "NavierStokes/CorrectionState.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L150"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionState.State.addIncrement",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionState.State.addIncrement",
+        "module": "NavierStokes.CorrectionState"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 150,
-        "text": "addIncrement s m p u q e := { mean := updated s.mean m, pressure := s.pressure + p, oscillation := s.oscillation + u, oscillatoryPressure := s.oscillatoryPressure + q, errors := s.errors.add e }"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.CorrectionState.State.addIncrement",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L150",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 150,
+            "text": "noncomputable def addIncrement (s : State D) (m : Triple D) (p : ScalarField D)\n    (u : Oscillation D) (q : OscillatoryScalar D) (e : ExcludedErrors D) : State D"
+          }
+        }
       }
     }
-  }
+  ]
 }

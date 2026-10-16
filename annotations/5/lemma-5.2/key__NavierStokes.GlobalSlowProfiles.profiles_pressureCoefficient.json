@@ -1,31 +1,33 @@
 {
-  "id": "lemma-5.2/key/1.NavierStokes.GlobalSlowProfiles.profiles_pressureCoefficient",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_pressureCoefficient",
-      "line": 1779,
-      "module": "NavierStokes.GlobalSlowProfiles",
-      "path": "NavierStokes/GlobalSlowProfiles.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1779"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.profiles_pressureCoefficient",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.profiles_pressureCoefficient",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The globalized order-n coefficient satisfies the pressure relation (5.5) as an identity of coefficients.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 1779,
-        "text": "theorem profiles_pressureCoefficient {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    {n : ℕ} (hn : 0 < n) {w : ℝ × ℝ} (hX : 0 < w.1) (heta : w.2 ∈ S) :\n    SlowExpansionResidual.pressureCoefficient h C (asSlowProfiles s) n w = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.GlobalSlowProfiles.profiles_pressureCoefficient",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: The globalized order-n coefficient satisfies the pressure relation (5.5) as an identity of coefficients.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1779",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean"
+          },
+          "snippet": {
+            "line": 1779,
+            "text": "theorem profiles_pressureCoefficient {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    {n : ℕ} (hn : 0 < n) {w : ℝ × ℝ} (hX : 0 < w.1) (heta : w.2 ∈ S) :\n    SlowExpansionResidual.pressureCoefficient h C (asSlowProfiles s) n w = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

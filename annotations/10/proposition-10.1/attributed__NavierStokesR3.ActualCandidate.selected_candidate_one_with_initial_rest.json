@@ -1,31 +1,33 @@
 {
-  "id": "proposition-10.1/attributed/1.NavierStokesR3.ActualCandidate.selected_candidate_one_with_initial_rest",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ActualCandidate.selected_candidate_one_with_initial_rest",
-      "line": 143,
-      "module": "NavierStokes.R3.ActualCandidate",
-      "path": "NavierStokes/R3/ActualCandidate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ActualCandidate.lean#L143"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ActualCandidate.selected_candidate_one_with_initial_rest",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ActualCandidate.selected_candidate_one_with_initial_rest",
+        "module": "NavierStokes.R3.ActualCandidate"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: ∃ u p f K, CandidateProperties 1 u p f K ∧ ∀ t, |t| ≤ 3/8 → ∀ x, u (t,x) = 0 ∧ p (t,x) = 0. Clauses (i)-(iii) of Proposition 10.1 (and more), but it does not state the agreement with u^loc, p^loc near the origin.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 143,
-        "text": "theorem selected_candidate_one_with_initial_rest :\n    ∃ u : VelocityField, ∃ p : PressureField, ∃ f : VelocityField, ∃ K : Set Space,\n      ProblemStatement.CandidateProperties 1 u p f K ∧\n        ∀ t : ℝ, |t| ≤ 3 / 8 → ∀ x : Space,\n          u (t, x) = 0 ∧ p (t, x) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokesR3.ActualCandidate.selected_candidate_one_with_initial_rest",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: ∃ u p f K, CandidateProperties 1 u p f K ∧ ∀ t, |t| ≤ 3/8 → ∀ x, u (t,x) = 0 ∧ p (t,x) = 0. Clauses (i)-(iii) of Proposition 10.1 (and more), but it does not state the agreement with u^loc, p^loc near the origin.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L143",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ActualCandidate.lean"
+          },
+          "snippet": {
+            "line": 143,
+            "text": "theorem selected_candidate_one_with_initial_rest :\n    ∃ u : VelocityField, ∃ p : PressureField, ∃ f : VelocityField, ∃ K : Set Space,\n      ProblemStatement.CandidateProperties 1 u p f K ∧\n        ∀ t : ℝ, |t| ≤ 3 / 8 → ∀ x : Space,\n          u (t, x) = 0 ∧ p (t, x) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.10/key/01.NavierStokes.OutgoingTail.flattenFactor_before",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingTail.flattenFactor_before",
-      "line": 491,
-      "module": "NavierStokes.OutgoingTail",
-      "path": "NavierStokes/OutgoingTail.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingTail.lean#L491"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingTail.flattenFactor_before",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingTail.flattenFactor_before",
+        "module": "NavierStokes.OutgoingTail"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 491,
-        "text": "flattenFactor d (y, eta) = 1 for y ≤ d.core.endpoint   -- ϑ_f(0) = 1, so E(X_end,η) = e_end f"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.OutgoingTail.flattenFactor_before",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L491",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingTail.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 491,
+            "text": "theorem flattenFactor_before (d : TailData) (eta : ℝ) {y : ℝ}\n    (hy : y ≤ d.core.endpoint) : flattenFactor d (y, eta) = 1"
+          }
+        }
       }
     }
-  }
+  ]
 }

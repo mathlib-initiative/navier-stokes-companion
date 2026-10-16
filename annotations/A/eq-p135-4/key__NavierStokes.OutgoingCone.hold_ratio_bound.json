@@ -1,25 +1,27 @@
 {
-  "id": "eq-p135-4/key/01.NavierStokes.OutgoingCone.hold_ratio_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingCone.hold_ratio_bound",
-      "line": 63,
-      "module": "NavierStokes.OutgoingCone",
-      "path": "NavierStokes/OutgoingCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingCone.lean#L63"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingCone.hold_ratio_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingCone.hold_ratio_bound",
+        "module": "NavierStokes.OutgoingCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 63,
-        "text": "|coneRatio w Amp (d.core.holdStart + t, eta)| ≤ holdRatioConstant d.core.P d.core.m * (1 + t) * Real.exp (d.core.lam * t / 2), for 0 ≤ t ≤ d.core.wait, |eta| ≤ 1; coneRatio = Ns/(E*Qs) = w"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.OutgoingCone.hold_ratio_bound"
+          },
+          "destination": {
+            "fragment": "L63",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 63,
+            "text": "theorem hold_ratio_bound {d : TailData} {K : ℝ} (w : ResetWitness d K)\n    {Amp : ℝ → ℝ} (ha : ContDiff ℝ ∞ Amp) {eta t : ℝ}\n    (hh1 : d.h ≤ 1 / 100) (hhlam : d.h ≤ d.core.lam / 4)\n    (hhT : d.h ≤ Real.exp (-(d.core.holdStart + 3 / 5)) / 8)\n    (heta : |eta| ≤ 1) (ht : 0 ≤ t) (htw : t ≤ d.core.wait) :\n    |coneRatio w Amp (d.core.holdStart + t, eta)| ≤\n      holdRatioConstant d.core.P d.core.m * (1 + t) * Real.exp (d.core.lam * t / 2)"
+          }
+        }
       }
     }
-  }
+  ]
 }

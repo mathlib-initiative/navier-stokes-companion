@@ -1,31 +1,33 @@
 {
-  "id": "proposition-C.3/attributed/1.NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
-      "line": 433,
-      "module": "NavierStokes.AlignedProfileSpectralCone",
-      "path": "NavierStokes/AlignedProfileSpectralCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AlignedProfileSpectralCone.lean#L433"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
+        "module": "NavierStokes.AlignedProfileSpectralCone"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: FullTrueCone v → ∃ D, ContinuousOn D (Icc (-1) 1 ×ˢ Icc (leftEdge W) (rightEdge W)) ∧ ‖D p‖ = 1 there ∧ D p = normalDirection (planeOfPair (logStress … p)) on the open annulus ∧ ∀ p in the closed annulus, ∀ ω > 0, ReferenceCone ω (logShear v ω p) ∧ TargetCone ω (logShear v ω p) (D p).",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 433,
-        "text": "theorem exists_closed_direction (hcone : LeadingStressWeights.FullTrueCone v) :\n    ∃ D : (ℝ × ℝ) → Plane,\n      ContinuousOn D (Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W)) ∧\n      (∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W), ‖D p‖ = 1) ∧\n      (∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Ioo (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W),\n        D p = PrimaryRepresentatives.normalDirection\n          (planeOfPair (LeadingStressWeights.logStress v.profiles F.data.h p))) ∧\n      ∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W),\n        ∀ omega : ℝ, 0 < omega → PrimaryRepresentatives.ReferenceCone omega (logShear v omega p) ∧\n          PrimaryRepresentatives.TargetCone omega (logShear v omega p) (D p)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.AlignedProfileSpectralCone.exists_closed_direction",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: FullTrueCone v → ∃ D, ContinuousOn D (Icc (-1) 1 ×ˢ Icc (leftEdge W) (rightEdge W)) ∧ ‖D p‖ = 1 there ∧ D p = normalDirection (planeOfPair (logStress … p)) on the open annulus ∧ ∀ p in the closed annulus, ∀ ω > 0, ReferenceCone ω (logShear v ω p) ∧ TargetCone ω (logShear v ω p) (D p).",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L433",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AlignedProfileSpectralCone.lean"
+          },
+          "snippet": {
+            "line": 433,
+            "text": "theorem exists_closed_direction (hcone : LeadingStressWeights.FullTrueCone v) :\n    ∃ D : (ℝ × ℝ) → Plane,\n      ContinuousOn D (Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W)) ∧\n      (∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W), ‖D p‖ = 1) ∧\n      (∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Ioo (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W),\n        D p = PrimaryRepresentatives.normalDirection\n          (planeOfPair (LeadingStressWeights.logStress v.profiles F.data.h p))) ∧\n      ∀ p ∈ Icc (-1 : ℝ) 1 ×ˢ Icc (LeadingStressWeights.leftEdge W) (LeadingStressWeights.rightEdge W),\n        ∀ omega : ℝ, 0 < omega → PrimaryRepresentatives.ReferenceCone omega (logShear v omega p) ∧\n          PrimaryRepresentatives.TargetCone omega (logShear v omega p) (D p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

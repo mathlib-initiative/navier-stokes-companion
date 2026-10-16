@@ -1,26 +1,28 @@
 {
-  "id": "eq-p067-3/key/01.NavierStokes.PhysicalWaveSum.masked_finsum_eventually",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalWaveSum.masked_finsum_eventually",
-      "line": 489,
-      "module": "NavierStokes.PhysicalWaveSum",
-      "path": "NavierStokes/PhysicalWaveSum.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalWaveSum.lean#L489"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalWaveSum.masked_finsum_eventually",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalWaveSum.masked_finsum_eventually",
+        "module": "NavierStokes.PhysicalWaveSum"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 489,
-        "text": "∃ s : Finset (WaveIndex H), (∀ I, I ∈ s ↔ physicalParams h w ∈ labelRegion (D h) I.1.val) ∧ (fun y => ∑ᶠ I, f I y) =ᶠ[𝓝 w] fun y => ∑ I ∈ s, f I y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PhysicalWaveSum.masked_finsum_eventually",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L489",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalWaveSum.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 489,
+            "text": "theorem masked_finsum_eventually {E : Type*} [AddCommMonoid E] {h : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) {H : ℕ} (f : WaveIndex H → SpaceTime → E)\n    (hsupp : ∀ I y, y ∈ preterminal → f I y ≠ 0 →\n      physicalParams h y ∈ labelRegion (CoordinateAlgebra.D h) I.1.val)\n    {w : SpaceTime} (hw : w ∈ preterminal) :\n    ∃ s : Finset (WaveIndex H),\n      (∀ I, I ∈ s ↔ physicalParams h w ∈ labelRegion (CoordinateAlgebra.D h) I.1.val) ∧\n      (fun y => ∑ᶠ I, f I y) =ᶠ[𝓝 w] fun y => ∑ I ∈ s, f I y"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.29/attributed/17.NavierStokes.OutgoingDilation.switchRadius_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingDilation.switchRadius_eq",
-      "line": 329,
-      "module": "NavierStokes.OutgoingDilation",
-      "path": "NavierStokes/OutgoingDilation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean#L329"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingDilation.switchRadius_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingDilation.switchRadius_eq",
+        "module": "NavierStokes.OutgoingDilation"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 329,
-        "text": "switchRadius F XR = XR * Real.exp (tailStart F.data + 1 / 5) = XR * exp (switchStart F.data) — with the previous entry this gives carrierAmplitude F · (switchRadius F XR)^A = powerConstant F.data · XR^A, the c_∞ of (4.28)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "17.NavierStokes.OutgoingDilation.switchRadius_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L329",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 329,
+            "text": "theorem switchRadius_eq (F : Profile) (XR : ℝ) :\n    switchRadius F XR = XR * Real.exp (tailStart F.data + 1 / 5)"
+          }
+        }
       }
     }
-  }
+  ]
 }

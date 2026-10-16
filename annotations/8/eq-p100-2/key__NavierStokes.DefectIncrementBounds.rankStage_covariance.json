@@ -1,25 +1,27 @@
 {
-  "id": "eq-p100-2/key/02.NavierStokes.DefectIncrementBounds.rankStage_covariance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.DefectIncrementBounds.rankStage_covariance",
-      "line": 705,
-      "module": "NavierStokes.DefectIncrementBounds",
-      "path": "NavierStokes/DefectIncrementBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DefectIncrementBounds.lean#L705"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.DefectIncrementBounds.rankStage_covariance",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.DefectIncrementBounds.rankStage_covariance",
+        "module": "NavierStokes.DefectIncrementBounds"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 705,
-        "text": "(CorrectionState.rankStage p r axial c u).covariance = u.covariance"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.DefectIncrementBounds.rankStage_covariance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L705",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DefectIncrementBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 705,
+            "text": "theorem rankStage_covariance (p : CorrectionState.ReconstructionData) (r : CorrectionState.RankData P)\n    (axial : P × PressureStream.Plane) (c : CorrectionState.Context (Point P))\n    (u : CorrectionState.State (Point P)) :\n    (CorrectionState.rankStage p r axial c u).covariance = u.covariance"
+          }
+        }
       }
     }
-  }
+  ]
 }

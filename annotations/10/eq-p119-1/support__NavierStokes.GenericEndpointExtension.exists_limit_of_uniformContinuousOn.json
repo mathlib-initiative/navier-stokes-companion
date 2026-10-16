@@ -1,25 +1,28 @@
 {
-  "id": "eq-p119-1/support/02.NavierStokes.GenericEndpointExtension.exists_limit_of_uniformContinuousOn",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericEndpointExtension.exists_limit_of_uniformContinuousOn",
-      "line": 429,
-      "module": "NavierStokes.GenericEndpointExtension",
-      "path": "NavierStokes/GenericEndpointExtension.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericEndpointExtension.lean#L429"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericEndpointExtension.exists_limit_of_uniformContinuousOn"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericEndpointExtension.exists_limit_of_uniformContinuousOn",
+        "module": "NavierStokes.GenericEndpointExtension"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 429,
-        "text": "(hf : UniformContinuousOn f s) (hx : x ∈ closure s) : ∃ v, Tendsto f (𝓝[s] x) (𝓝 v) — the paper's 'uniformly Cauchy as t ↑ 1, so the limit exists'"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GenericEndpointExtension.exists_limit_of_uniformContinuousOn"
+          },
+          "destination": {
+            "fragment": "L429",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericEndpointExtension.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 429,
+            "text": "theorem exists_limit_of_uniformContinuousOn {s : Set Y} {f : Y → V}\n    (hf : UniformContinuousOn f s) {x : Y} (hx : x ∈ closure s) :\n    ∃ v : V, Tendsto f (𝓝[s] x) (𝓝 v)"
+          }
+        }
       }
     }
-  }
+  ]
 }

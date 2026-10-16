@@ -1,26 +1,29 @@
 {
-  "id": "eq-p050-2/support/06.NavierStokes.SlowFirstOrderEdge.stressX_weighted_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowFirstOrderEdge.stressX_weighted_jets",
-      "line": 354,
-      "module": "NavierStokes.SlowFirstOrderEdge",
-      "path": "NavierStokes/SlowFirstOrderEdge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowFirstOrderEdge.lean#L354"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowFirstOrderEdge.stressX_weighted_jets",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowFirstOrderEdge.stressX_weighted_jets",
+        "module": "NavierStokes.SlowFirstOrderEdge"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 354,
-        "text": "‖iteratedFDeriv ℝ n (stressX C d y0) (X, η)‖ ≤ M * zeta cL a y0 X / edgeDistance a y0 X ^ N  -- the ζ(X)δ(X)^{-N} shape of (5.13)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.SlowFirstOrderEdge.stressX_weighted_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L354",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowFirstOrderEdge.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 354,
+            "text": "theorem stressX_weighted_jets (C : ℝ) (d : TailData) (y0 : ℝ) (n : ℕ)\n    {b a cL : ℝ} (hb : 0 < b) (ha : 0 < a) (hcL : 0 < cL)\n    (hcollar : a < Real.exp (y0 + 3 - b)) :\n    ∃ M : ℝ, 0 < M ∧ ∃ N : ℕ, ∀ X ∈ Ico (Real.exp (y0 + 3 - b)) (Real.exp (y0 + 3)),\n      ∀ η ∈ Icc (-1 : ℝ) 1,\n        ‖iteratedFDeriv ℝ n (stressX C d y0) (X, η)‖ ≤\n          M * zeta cL a y0 X / edgeDistance a y0 X ^ N"
+          }
+        }
       }
     }
-  }
+  ]
 }

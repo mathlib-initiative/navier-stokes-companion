@@ -1,26 +1,29 @@
 {
-  "id": "eq-p108-2/support/05.NavierStokes.CorrectionState.reconstructPressure",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionState.reconstructPressure",
-      "line": 271,
-      "module": "NavierStokes.CorrectionState",
-      "path": "NavierStokes/CorrectionState.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L271"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionState.reconstructPressure",
-        "kind": "def"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionState.reconstructPressure",
+        "module": "NavierStokes.CorrectionState"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 271,
-        "text": "reconstructPressure r c u := { u with pressure := fun n => PressureStream.meanPressure … (u.gr c n) } -- recomputes p_m from the updated state's own radial source g_{r,new}"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.CorrectionState.reconstructPressure",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L271",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 271,
+            "text": "noncomputable def reconstructPressure (r : ReconstructionData) (c : Context (Lift S))\n    (u : State (Lift S)) : State (Lift S)"
+          }
+        }
       }
     }
-  }
+  ]
 }

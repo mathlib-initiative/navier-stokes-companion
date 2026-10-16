@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.42/key/02.NavierStokes.ParametricHeatTail.exists_physical_debt_jet_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricHeatTail.exists_physical_debt_jet_bounds",
-      "line": 811,
-      "module": "NavierStokes.ParametricHeatTail",
-      "path": "NavierStokes/ParametricHeatTail.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricHeatTail.lean#L811"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricHeatTail.exists_physical_debt_jet_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricHeatTail.exists_physical_debt_jet_bounds",
+        "module": "NavierStokes.ParametricHeatTail"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 811,
-        "text": "… ∧ |iteratedDerivWithin n (physicalAngular d K) (Icc (-1) 1) eta| ≤ C * Real.sqrt K"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ParametricHeatTail.exists_physical_debt_jet_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L811",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricHeatTail.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 811,
+            "text": "theorem exists_physical_debt_jet_bounds (d : TailData) (n : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ K : ℝ, 1 ≤ K → ∀ eta ∈ Icc (-1 : ℝ) 1,\n      |iteratedDerivWithin n (physicalPressure d K) (Icc (-1 : ℝ) 1) eta| ≤ C / K ∧\n      |iteratedDerivWithin n (physicalEnergy d K) (Icc (-1 : ℝ) 1) eta| ≤ C ∧\n      |iteratedDerivWithin n (physicalAngular d K) (Icc (-1 : ℝ) 1) eta| ≤ C * Real.sqrt K"
+          }
+        }
       }
     }
-  }
+  ]
 }

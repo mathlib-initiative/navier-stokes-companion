@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.19/key/03.NavierStokes.NaturalEntrance.EntranceProfile.regular_cone_at_four",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalEntrance.EntranceProfile.regular_cone_at_four",
-      "line": 1366,
-      "module": "NavierStokes.NaturalEntrance",
-      "path": "NavierStokes/NaturalEntrance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L1366"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalEntrance.EntranceProfile.regular_cone_at_four",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalEntrance.EntranceProfile.regular_cone_at_four",
+        "module": "NavierStokes.NaturalEntrance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1366,
-        "text": "with `p := (4/Λ, η)`, `q := p.1 * regularAngularLag h f U Ubar p / L h η`, `n := p.1 * regularAxialLag h U Ubar Pi p / (L h η * angularVelocity f p)`: `9 / 4 < q + n ^ 2 / q` — (B.19) written in the paper's p₁ = XQ_s/L, p₂ = XN_s/(LE) coordinates"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.NaturalEntrance.EntranceProfile.regular_cone_at_four",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1366",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1366,
+            "text": "theorem EntranceProfile.regular_cone_at_four {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (F : EntranceProfile d Λ C)\n    (hsmall : NaturalAxisRange.Parameters h j) (hΛ : 0 < Λ)\n    {η : ℝ} (hη : η ∈ Icc (-1 : ℝ) 1) :\n    let p : ℝ × ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,29 +1,31 @@
 {
-  "id": "proposition-7.5/attributed/1.NavierStokes.PrimaryTargetBounds.exists_constructed_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryTargetBounds.exists_constructed_bounds",
-      "line": 1014,
-      "module": "NavierStokes.PrimaryTargetBounds",
-      "path": "NavierStokes/PrimaryTargetBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryTargetBounds.lean#L1014"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryTargetBounds.exists_constructed_bounds",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryTargetBounds.exists_constructed_bounds",
+        "module": "NavierStokes.PrimaryTargetBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: Existence of detGap, entryBound, inverseLower > 0 with `ZeroOrderBounds …` holding at every p in `positivePart (referenceSet W) ∩ (domain W a.N).carrier L`; the same gating appears in `exists_actual_bounds` (:960) and `exists_restricted_actual_bounds` (:996)."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1014,
-        "text": "theorem exists_constructed_bounds (hcone : LeadingStressWeights.FullTrueCone v)\n    (upper : ℝ) (B : ℕ) (r0 : ℝ) (hr0 : 0 < r0)\n    (hbox : 2 * NominalConeAssembly.activeRight W ≤ FinalSlowBase.boxRadius W upper)\n    (N0 : ℕ) (vr vt : TorusInverse.Plane) (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) :\n    ∃ a : Prepared H v upper B r0 N0, ∃ detGap entryBound inverseLower : ℝ,\n      0 < detGap ∧ 1 ≤ entryBound ∧ 0 < inverseLower ∧\n      ∀ (L : Index W a.N) (p : Slow),\n        p ∈ PositiveRepresentatives.positivePart (referenceSet W) →\n        p ∈ (domain W a.N).carrier L →\n        ZeroOrderBounds (Real.sqrt (ChartScales.S (BaseChartJets.cellBand L)))\n          detGap entryBound inverseLower (movingWeight W p)\n          (preparedCovariance H v a vr vt L p) (fun k => actualTarget v p k)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PrimaryTargetBounds.exists_constructed_bounds",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: Existence of detGap, entryBound, inverseLower > 0 with `ZeroOrderBounds …` holding at every p in `positivePart (referenceSet W) ∩ (domain W a.N).carrier L`; the same gating appears in `exists_actual_bounds` (:960) and `exists_restricted_actual_bounds` (:996)."
+          },
+          "destination": {
+            "fragment": "L1014",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryTargetBounds.lean"
+          },
+          "snippet": {
+            "line": 1014,
+            "text": "theorem exists_constructed_bounds (hcone : LeadingStressWeights.FullTrueCone v)\n    (upper : ℝ) (B : ℕ) (r0 : ℝ) (hr0 : 0 < r0)\n    (hbox : 2 * NominalConeAssembly.activeRight W ≤ FinalSlowBase.boxRadius W upper)\n    (N0 : ℕ) (vr vt : TorusInverse.Plane) (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) :\n    ∃ a : Prepared H v upper B r0 N0, ∃ detGap entryBound inverseLower : ℝ,\n      0 < detGap ∧ 1 ≤ entryBound ∧ 0 < inverseLower ∧\n      ∀ (L : Index W a.N) (p : Slow),\n        p ∈ PositiveRepresentatives.positivePart (referenceSet W) →\n        p ∈ (domain W a.N).carrier L →\n        ZeroOrderBounds (Real.sqrt (ChartScales.S (BaseChartJets.cellBand L)))\n          detGap entryBound inverseLower (movingWeight W p)\n          (preparedCovariance H v a vr vt L p) (fun k => actualTarget v p k)"
+          }
+        }
       }
     }
-  }
+  ]
 }

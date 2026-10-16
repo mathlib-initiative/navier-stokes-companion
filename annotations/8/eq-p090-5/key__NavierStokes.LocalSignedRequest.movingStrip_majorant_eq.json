@@ -1,25 +1,27 @@
 {
-  "id": "eq-p090-5/key/01.NavierStokes.LocalSignedRequest.movingStrip_majorant_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalSignedRequest.movingStrip_majorant_eq",
-      "line": 200,
-      "module": "NavierStokes.LocalSignedRequest",
-      "path": "NavierStokes/LocalSignedRequest.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean#L200"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalSignedRequest.movingStrip_majorant_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalSignedRequest.movingStrip_majorant_eq",
+        "module": "NavierStokes.LocalSignedRequest"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 200,
-        "text": "majorant s (fun _ x => s.zeta x) α C k n x = (C * ε n ^ α * L n ^ k) * logWeight cL cR a b k (x.1 / √(chartQ coord x)) for s = movingStripData …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.LocalSignedRequest.movingStrip_majorant_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L200",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 200,
+            "text": "theorem movingStrip_majorant_eq {coord : ℝ} (U : SlowRegion coord)\n    (a b cL cR : ℝ) (ha : 0 < a) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n)\n    (α C : ℝ) (k n : ℕ) (x : Point)\n    (hx : (profileMap coord x).1 ∈ Ioo a b) :\n    let s"
+          }
+        }
       }
     }
-  }
+  ]
 }

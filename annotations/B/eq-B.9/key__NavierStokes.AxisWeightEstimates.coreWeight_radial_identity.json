@@ -1,24 +1,27 @@
 {
-  "id": "eq-B.9/key/02.NavierStokes.AxisWeightEstimates.coreWeight_radial_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisWeightEstimates.coreWeight_radial_identity",
-      "line": 201
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisWeightEstimates.lean#L201"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisWeightEstimates.coreWeight_radial_identity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisWeightEstimates.coreWeight_radial_identity",
+        "module": "NavierStokes.AxisWeightEstimates"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 201,
-        "text": "theorem coreWeight_radial_identity : coreWeight ε n m * ((n:ℝ) + m + 1) = 20 * ((n:ℝ) + 1) * coreWeight ε (n + 1) m"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.AxisWeightEstimates.coreWeight_radial_identity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L201"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 201,
+            "text": "theorem coreWeight_radial_identity {ε : ℝ} (hε : 0 < ε) (n m : ℕ) :\n    coreWeight ε n m * ((n : ℝ) + m + 1) =\n      20 * ((n : ℝ) + 1) * coreWeight ε (n + 1) m"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.31/key/01.NavierStokes.TerminalHistoryBridge.energyHistory_eq_square_future",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalHistoryBridge.energyHistory_eq_square_future",
-      "line": 104,
-      "module": "NavierStokes.TerminalHistoryBridge",
-      "path": "NavierStokes/TerminalHistoryBridge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean#L104"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalHistoryBridge.energyHistory_eq_square_future",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalHistoryBridge.energyHistory_eq_square_future",
+        "module": "NavierStokes.TerminalHistoryBridge"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 104,
-        "text": "(hF : OutgoingProfile.Specification F B) (w : CompensationWitness F XR C) (hη : η ∈ HeatedOutgoing.parameterDomain) (hX : OutgoingDilation.switchRadius F XR ≤ X) : energyHistory F XR w.coefficients η X = (1/2 : ℝ) * ∫ u in Ioi X, HeatedOutgoing.E F XR w.coefficients (u,η)^2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TerminalHistoryBridge.energyHistory_eq_square_future",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L104",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 104,
+            "text": "theorem energyHistory_eq_square_future {F : Profile} {XR C B : ℝ}\n    (hF : OutgoingProfile.Specification F B) (w : CompensationWitness F XR C)\n    {η X : ℝ} (hη : η ∈ HeatedOutgoing.parameterDomain)\n    (hX : OutgoingDilation.switchRadius F XR ≤ X) :\n    energyHistory F XR w.coefficients η X =\n      (1/2 : ℝ) * ∫ u in Ioi X, HeatedOutgoing.E F XR w.coefficients (u,η)^2"
+          }
+        }
       }
     }
-  }
+  ]
 }

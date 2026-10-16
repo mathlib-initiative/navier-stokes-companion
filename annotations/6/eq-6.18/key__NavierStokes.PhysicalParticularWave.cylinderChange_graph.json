@@ -1,25 +1,27 @@
 {
-  "id": "eq-6.18/key/05.NavierStokes.PhysicalParticularWave.cylinderChange_graph",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalParticularWave.cylinderChange_graph",
-      "line": 227,
-      "module": "NavierStokes.PhysicalParticularWave",
-      "path": "NavierStokes/PhysicalParticularWave.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalParticularWave.lean#L227"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalParticularWave.cylinderChange_graph",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalParticularWave.cylinderChange_graph",
+        "module": "NavierStokes.PhysicalParticularWave"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 227,
-        "text": "cylinderChange h Q Qr gap ((commonGraph Q h i).map z) = (commonGraph Qr h (i + gap)).map z; the Plane component is coverPower gap applied to the index-i coordinate"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.PhysicalParticularWave.cylinderChange_graph",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L227",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalParticularWave.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 227,
+            "text": "theorem cylinderChange_graph {Q Qr : ℝ} (hQ : 0 < Q) (hQr : 0 < Qr)\n    (h : ℝ) (i gap : ℕ) {z : SpaceTime} (hz : 0 < z.2 0) :\n    cylinderChange h Q Qr gap ((PhysicalResidualBridge.commonGraph Q h i).map z) =\n      (PhysicalResidualBridge.commonGraph Qr h (i + gap)).map z"
+          }
+        }
       }
     }
-  }
+  ]
 }

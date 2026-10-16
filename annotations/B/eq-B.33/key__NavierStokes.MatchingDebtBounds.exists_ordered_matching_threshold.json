@@ -1,25 +1,28 @@
 {
-  "id": "eq-B.33/key/03.NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold",
-      "line": 697,
-      "module": "NavierStokes.MatchingDebtBounds",
-      "path": "NavierStokes/MatchingDebtBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingDebtBounds.lean#L697"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold",
+        "lines": [697, 697],
+        "module": "NavierStokes.MatchingDebtBounds"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 697,
-        "text": "obtain ⟨T, hT, hslopes⟩ := ShapeTransition.exists_duration (2 * BJ) …, where BJ = max BJ0 q.logarithm bounds both the jets of initialShape (= ℓ_i) and those of ShapeTransition.logShape (= log f)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.MatchingDebtBounds.exists_ordered_matching_threshold"
+          },
+          "destination": {
+            "fragment": "L697",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingDebtBounds.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 652,
+            "text": "theorem exists_ordered_matching_threshold (F : OutgoingProfile.Profile) (N : ℕ)\n    {rho : ℝ} (hrho : 0 < rho) :\n    ∃ eps : ℝ, 0 < eps ∧ eps ≤ 1 ∧\n      ∀ j : ℝ, |j| ≤ eps → ∀ hj : NaturalAxisData.SmallParameters F.data.h j,\n      ∀ prep : NominalProfile.AxisPreparation F j,\n      ∃ Λ0 : ℝ, 1 ≤ Λ0 ∧ prep.scaleBound ≤ Λ0 ∧\n        ∀ Λ : ℝ, ∀ hΛlarge : prep.scaleBound ≤ Λ, Λ0 ≤ Λ →\n        ∃ T : ℝ, 0 < T ∧ ∃ C0 : ℝ, 1 ≤ C0 ∧\n          NaturalEntrance.entranceNormalization prep.inputs Λ prep.delta ≤ C0 ∧\n          ∀ C : ℝ, ∀ hClarge : NaturalEntrance.entranceNormalization prep.inputs Λ prep.delta ≤ C,\n          C0 ≤ C → ∀ E : NaturalEntrance.EntranceProfile prep.inputs Λ C,\n          ∀ c : NominalProfile.Controls (NominalProfile.AxisStage.ofEntrance hj prep Λ C hΛlarge hClarge E),\n          c.shapeTime = T → SmallControl c N eps → MatchingBounds c N rho"
+          }
+        }
       }
     }
-  }
+  ]
 }

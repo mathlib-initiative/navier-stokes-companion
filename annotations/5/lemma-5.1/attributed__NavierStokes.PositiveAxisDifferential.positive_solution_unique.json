@@ -1,31 +1,33 @@
 {
-  "id": "lemma-5.1/attributed/1.NavierStokes.PositiveAxisDifferential.positive_solution_unique",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveAxisDifferential.positive_solution_unique",
-      "line": 257,
-      "module": "NavierStokes.PositiveAxisDifferential",
-      "path": "NavierStokes/PositiveAxisDifferential.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisDifferential.lean#L257"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveAxisDifferential.positive_solution_unique",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveAxisDifferential.positive_solution_unique",
+        "module": "NavierStokes.PositiveAxisDifferential"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For the same lower data F, any V with IsDifferentialSolution R U (coefficient0 h lam C F) (coefficient1 h F) (sourceField h C F) V satisfies V r z = positiveSolution hR h lam C F r z for all r in Icc 0 R and z in U: uniqueness for the first-order system (5.7).",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 257,
-        "text": "theorem positive_solution_unique {R T : ℝ} (hR : 0 ≤ R) (hRT : R < T)\n    {U : Set ℂ} (hU : IsOpen U) {h : ℂ} (lam C : ℂ)\n    {F : PositiveAxisSystem.CoefficientData}\n    (hF : PositiveAxisExistence.LowerInputRegularity T U h F)\n    {V : Field}\n    (hV : IsDifferentialSolution R U\n      (PositiveAxisSystem.coefficient0 h lam C F) (PositiveAxisSystem.coefficient1 h F)\n      (PositiveAxisSystem.sourceField h C F) V) :\n    ∀ r ∈ Icc (0 : ℝ) R, ∀ z ∈ U,\n      V r z = PositiveAxisExistence.positiveSolution hR h lam C F r z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PositiveAxisDifferential.positive_solution_unique",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For the same lower data F, any V with IsDifferentialSolution R U (coefficient0 h lam C F) (coefficient1 h F) (sourceField h C F) V satisfies V r z = positiveSolution hR h lam C F r z for all r in Icc 0 R and z in U: uniqueness for the first-order system (5.7).",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L257",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisDifferential.lean"
+          },
+          "snippet": {
+            "line": 257,
+            "text": "theorem positive_solution_unique {R T : ℝ} (hR : 0 ≤ R) (hRT : R < T)\n    {U : Set ℂ} (hU : IsOpen U) {h : ℂ} (lam C : ℂ)\n    {F : PositiveAxisSystem.CoefficientData}\n    (hF : PositiveAxisExistence.LowerInputRegularity T U h F)\n    {V : Field}\n    (hV : IsDifferentialSolution R U\n      (PositiveAxisSystem.coefficient0 h lam C F) (PositiveAxisSystem.coefficient1 h F)\n      (PositiveAxisSystem.sourceField h C F) V) :\n    ∀ r ∈ Icc (0 : ℝ) R, ∀ z ∈ U,\n      V r z = PositiveAxisExistence.positiveSolution hR h lam C F r z"
+          }
+        }
       }
     }
-  }
+  ]
 }

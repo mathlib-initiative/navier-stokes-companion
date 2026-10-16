@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.29/key/03.NavierStokes.StressActivation.shearSize_error",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressActivation.shearSize_error",
-      "line": 1234,
-      "module": "NavierStokes.StressActivation",
-      "path": "NavierStokes/StressActivation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean#L1234"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressActivation.shearSize_error",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressActivation.shearSize_error",
+        "module": "NavierStokes.StressActivation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1234,
-        "text": "shearSize - damping T κ y * referenceSize = damping T κ y * (referenceP2^2/referenceP1) * ((referenceAngular/activatedAngular)^2 - 1) — the exact form of v_s - κ v_r"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.StressActivation.shearSize_error",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1234",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1234,
+            "text": "theorem shearSize_error (T : ℝ) {κ X0 : ℝ} (hκ : κ ∈ Ioc (0 : ℝ) 1) (hX0 : 0 < X0)\n    {J : Set ℝ} (hJ : IsOpen J) {L U : Field}\n    (hL : ContDiffOn ℝ ∞ L (logDomain J hJ).carrier)\n    (hU : ContDiffOn ℝ ∞ U (logDomain J hJ).carrier) (y : ℝ) {η : ℝ} (hη : η ∈ J)\n    (hp : referenceP1 L (y, η) ≠ 0) :\n    shearSize T κ X0 L U (y, η) - damping T κ y * referenceSize X0 L U (y, η) =\n      damping T κ y * (referenceP2 X0 L U (y, η) ^ 2 / referenceP1 L (y, η)) *\n        ((referenceAngular L (y, η) / activatedAngular T κ L (y, η)) ^ 2 - 1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

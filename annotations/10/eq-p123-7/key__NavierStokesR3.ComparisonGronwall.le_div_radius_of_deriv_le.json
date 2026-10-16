@@ -1,24 +1,26 @@
 {
-  "id": "eq-p123-7/key/01.NavierStokesR3.ComparisonGronwall.le_div_radius_of_deriv_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ComparisonGronwall.le_div_radius_of_deriv_le",
-      "line": 105,
-      "module": "NavierStokes.R3.ComparisonGronwall",
-      "path": "NavierStokes/R3/ComparisonGronwall.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ComparisonGronwall.lean#L105"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ComparisonGronwall.le_div_radius_of_deriv_le"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ComparisonGronwall.le_div_radius_of_deriv_le",
+        "module": "NavierStokes.R3.ComparisonGronwall"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 105,
-        "text": "(hbound : ∀ t ∈ Ioo 0 T, E' t ≤ K * E t + C / R) (hinitial : E 0 = 0) → ∀ t ∈ Icc 0 T, E t ≤ (C * T * Real.exp (K * T)) / R"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokesR3.ComparisonGronwall.le_div_radius_of_deriv_le"
+          },
+          "destination": {
+            "fragment": "L105",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ComparisonGronwall.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 105,
+            "text": "theorem le_div_radius_of_deriv_le {T K C R : ℝ} {E E' : ℝ → ℝ}\n    (hT : 0 ≤ T) (hK : 0 ≤ K) (hC : 0 ≤ C) (hR : 0 < R)\n    (hcont : ContinuousOn E (Icc 0 T)) (hinitial : E 0 = 0)\n    (hderiv : ∀ t ∈ Ioo 0 T, HasDerivAt E (E' t) t)\n    (hbound : ∀ t ∈ Ioo 0 T, E' t ≤ K * E t + C / R) :\n    ∀ t ∈ Icc 0 T, E t ≤ (C * T * Real.exp (K * T)) / R"
+          }
+        }
       }
     }
-  }
+  ]
 }

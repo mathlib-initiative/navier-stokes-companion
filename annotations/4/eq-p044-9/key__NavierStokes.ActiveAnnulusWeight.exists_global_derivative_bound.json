@@ -1,26 +1,29 @@
 {
-  "id": "eq-p044-9/key/06.NavierStokes.ActiveAnnulusWeight.exists_global_derivative_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.exists_global_derivative_bound",
-      "line": 526,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L526"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.exists_global_derivative_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.exists_global_derivative_bound",
+        "lines": [526, 526],
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 526,
-        "text": "step at L525-529 `by_cases hleft : y-a ≤ d` / `have hh := hL i hi p hp (y-a) …` then `left_bound_to_weight …`: the inner-collar derivative case; L530-534 the outer collar via right_bound_to_weight; L535-538 the compact middle via compact_jets_bound — the paper's three-region split on this page"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.ActiveAnnulusWeight.exists_global_derivative_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L526",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 468,
+            "text": "theorem exists_global_derivative_bound {K : Set E} (hK : IsCompact K)\n    (hKd : UniqueDiffOn ℝ K) {a b c : ℝ} (hab : a < b) (hc : 0 < c)\n    {T : E × ℝ → V} {O : Set (E × ℝ)} (hO : IsOpen O)\n    (hT : ContDiffOn ℝ ∞ T O) (hKO : K ×ˢ Icc a b ⊆ O)\n    (FL : EdgeFactor K c (leftChart a T)) (FR : EdgeFactor K 4 (rightChart b T))\n    (n : ℕ) : ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ i ≤ n, ∀ p ∈ K,\n      ∀ y ∈ Ioo a b, ‖iteratedFDeriv ℝ i T (p,y)‖ ≤\n        C * weight c a b y / edgeDistance a b y ^ N"
+          }
+        }
       }
     }
-  }
+  ]
 }

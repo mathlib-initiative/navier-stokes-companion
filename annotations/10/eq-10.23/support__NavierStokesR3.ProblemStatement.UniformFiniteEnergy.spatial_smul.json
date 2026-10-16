@@ -1,25 +1,28 @@
 {
-  "id": "eq-10.23/support/02.NavierStokesR3.ProblemStatement.UniformFiniteEnergy.spatial_smul",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ProblemStatement.UniformFiniteEnergy.spatial_smul",
-      "line": 40,
-      "module": "NavierStokes.R3.SpatialEnergyScaling",
-      "path": "NavierStokes/R3/SpatialEnergyScaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/SpatialEnergyScaling.lean#L40"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ProblemStatement.UniformFiniteEnergy.spatial_smul"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ProblemStatement.UniformFiniteEnergy.spatial_smul",
+        "module": "NavierStokes.R3.SpatialEnergyScaling"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 40,
-        "text": "UniformFiniteEnergy times u → b ≠ 0 → UniformFiniteEnergy times (fun z => a • u (z.1, b • z.2))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.ProblemStatement.UniformFiniteEnergy.spatial_smul"
+          },
+          "destination": {
+            "fragment": "L40",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/SpatialEnergyScaling.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 40,
+            "text": "theorem UniformFiniteEnergy.spatial_smul {times : Set ℝ} {u : VelocityField}\n    (hu : UniformFiniteEnergy times u) (a b : ℝ) (hb : b ≠ 0) :\n    UniformFiniteEnergy times (fun z => a • u (z.1, b • z.2))"
+          }
+        }
       }
     }
-  }
+  ]
 }

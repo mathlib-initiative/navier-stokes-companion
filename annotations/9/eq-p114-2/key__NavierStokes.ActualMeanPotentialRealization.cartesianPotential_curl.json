@@ -1,26 +1,28 @@
 {
-  "id": "eq-p114-2/key/01.NavierStokes.ActualMeanPotentialRealization.cartesianPotential_curl",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualMeanPotentialRealization.cartesianPotential_curl",
-      "line": 245,
-      "module": "NavierStokes.ActualMeanPotentialRealization",
-      "path": "NavierStokes/ActualMeanPotentialRealization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualMeanPotentialRealization.lean#L245"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualMeanPotentialRealization.cartesianPotential_curl",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualMeanPotentialRealization.cartesianPotential_curl",
+        "module": "NavierStokes.ActualMeanPotentialRealization"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 245,
-        "text": "SpatialCurl.spatialCurl (cartesianPotential a j G Ψ) w = CyclePhysicalPrefixes.polarVelocityMap a j (CyclePhysicalPrefixes.velocityMap G (meridional G Ψ)) w"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ActualMeanPotentialRealization.cartesianPotential_curl",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L245",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualMeanPotentialRealization.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 245,
+            "text": "theorem cartesianPotential_curl {a : ℝ} (ha : 0 < a) (j : PolarCharts.Index)\n    (G : ScaledGraph) (hl : 0 < G.radialScale) {Ψ : Point → ℝ} {w : SpaceTime}\n    (hw : w ∈ cartesianDomain a j)\n    (hΨ : ContDiffAt ℝ ∞ Ψ (chartPoint G (PhysicalCurlCovariance.polarCoordinates a j w))) :\n    SpatialCurl.spatialCurl (cartesianPotential a j G Ψ) w =\n      CyclePhysicalPrefixes.polarVelocityMap a j (CyclePhysicalPrefixes.velocityMap G (meridional G Ψ)) w"
+          }
+        }
       }
     }
-  }
+  ]
 }

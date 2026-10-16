@@ -1,26 +1,28 @@
 {
-  "id": "eq-p015-5/attributed/04.NavierStokes.RadialHeatProfile.radial_heat_equation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialHeatProfile.radial_heat_equation",
-      "line": 624,
-      "module": "NavierStokes.RadialHeatProfile",
-      "path": "NavierStokes/RadialHeatProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L624"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialHeatProfile.radial_heat_equation",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialHeatProfile.radial_heat_equation",
+        "module": "NavierStokes.RadialHeatProfile"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 624,
-        "text": "(ha : 1 < a) (hτ : 0 < τ) (hr : 0 < r) : -deriv (fun τ => radialProfile a τ r) τ = iteratedDeriv 2 (radialProfile a τ) r + deriv (radialProfile a τ) r / r - radialProfile a τ r / r ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.RadialHeatProfile.radial_heat_equation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L624",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 624,
+            "text": "theorem radial_heat_equation {a τ r : ℝ} (ha : 1 < a) (hτ : 0 < τ) (hr : 0 < r) :\n    -deriv (fun τ => radialProfile a τ r) τ =\n      iteratedDeriv 2 (radialProfile a τ) r + deriv (radialProfile a τ) r / r -\n        radialProfile a τ r / r ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

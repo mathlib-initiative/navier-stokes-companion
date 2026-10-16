@@ -1,26 +1,28 @@
 {
-  "id": "eq-p138-8/key/04.NavierStokes.TerminalEdgeFactor.extended_heat_slope",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgeFactor.extended_heat_slope",
-      "line": 1388,
-      "module": "NavierStokes.TerminalEdgeFactor",
-      "path": "NavierStokes/TerminalEdgeFactor.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1388"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgeFactor.extended_heat_slope",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgeFactor.extended_heat_slope",
+        "module": "NavierStokes.TerminalEdgeFactor"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1388,
-        "text": "(hz : 0 ≤ z) : -z * deriv (extension (1 + d.h)) z < d.h * extension (1 + d.h) z  -- -Z H'/H < h with the denominator cleared, all z ≥ 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.TerminalEdgeFactor.extended_heat_slope",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1388",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1388,
+            "text": "theorem extended_heat_slope (d : TailData) {z : ℝ} (hz : 0 ≤ z) :\n    -z * deriv (HeatProfileExtension.extension (1 + d.h)) z <\n      d.h * HeatProfileExtension.extension (1 + d.h) z"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-p058-7/key/02.NavierStokes.DiagonalJetBounds.scalar_tail_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.DiagonalJetBounds.scalar_tail_bound",
-      "line": 125,
-      "module": "NavierStokes.DiagonalJetBounds",
-      "path": "NavierStokes/DiagonalJetBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiagonalJetBounds.lean#L125"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.DiagonalJetBounds.scalar_tail_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.DiagonalJetBounds.scalar_tail_bound",
+        "module": "NavierStokes.DiagonalJetBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 125,
-        "text": "(∑' n, (1/2)^(J+1+n) * q ^ (g (J+1+n) - L)) ≤ (1/2)^J * q ^ (g (J+1) - L); proved from weighted_tail_bound applied to (fun j => 2 * g j)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.DiagonalJetBounds.scalar_tail_bound"
+          },
+          "destination": {
+            "fragment": "L125",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiagonalJetBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 125,
+            "text": "theorem scalar_tail_bound (g : ℕ → ℝ) (hg : Monotone g) (L q : ℝ)\n    (hq : 0 < q) (hq1 : q ≤ 1) (J : ℕ) :\n    Summable (fun n : ℕ =>\n      (1 / 2 : ℝ) ^ (J + 1 + n) * q ^ (g (J + 1 + n) - L)) ∧\n    (∑' n : ℕ, (1 / 2 : ℝ) ^ (J + 1 + n) * q ^ (g (J + 1 + n) - L)) ≤\n      (1 / 2 : ℝ) ^ J * q ^ (g (J + 1) - L)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-B.29/key/02.NavierStokes.ActivationCone.actual_comparisons",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActivationCone.actual_comparisons",
-      "line": 568,
-      "module": "NavierStokes.ActivationCone",
-      "path": "NavierStokes/ActivationCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean#L568"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActivationCone.actual_comparisons",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActivationCone.actual_comparisons",
+        "module": "NavierStokes.ActivationCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 568,
-        "text": "∃ C ≥ 0, ∀ T ∈ Ioc 0 T0, ∀ κ ∈ Ioo 0 1, ∀ y ∈ Icc 0 T, ∀ η ∈ K: |activatedProjection … - referenceSize …| ≤ C*y*activation T κ y ∧ |shearSize … - damping T κ y * referenceSize …| ≤ C*y*activation T κ y ∧ |activatedCross …| ≤ C*y*activation T κ y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ActivationCone.actual_comparisons",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L568",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 568,
+            "text": "theorem actual_comparisons (h : ℝ) {X0 : ℝ} (hX0 : 0 < X0)\n    (initial : HistoryRow → ℝ → ℝ) {J K : Set ℝ} (hJ : IsOpen J)\n    (hK : IsCompact K) (hKJ : K ⊆ J) {L U : Field}\n    (hL : ContDiffOn ℝ ∞ L (logDomain J hJ).carrier)\n    (hU : ContDiffOn ℝ ∞ U (logDomain J hJ).carrier)\n    (hi : ∀ r, ContDiffOn ℝ ∞ (initial r) J)\n    (hcoef : ∀ η ∈ J, NaturalAxisData.L h η ≠ 0)\n    {T0 Mref : ℝ} (hT0 : T0 ≤ 1) (hMref : 0 ≤ Mref)\n    (href : ∀ y ∈ Icc (0 : ℝ) T0, ∀ η ∈ K,\n      referenceP1 L (y, η) ≠ 0 ∧\n      |referenceP2 X0 L U (y, η)| ≤ Mref ∧\n      |referenceP2 X0 L U (y, η) / referenceP1 L (y, η)| ≤ Mref ∧\n      |referenceP2 X0 L U (y, η) ^ 2 / referenceP1 L (y, η)| ≤ Mref)\n    (hmatch : ∀ y ∈ Icc (0 : ℝ) T0, ∀ η ∈ K,\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

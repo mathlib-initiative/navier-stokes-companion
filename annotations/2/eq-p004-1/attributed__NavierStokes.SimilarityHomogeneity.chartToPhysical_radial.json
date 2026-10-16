@@ -1,26 +1,28 @@
 {
-  "id": "eq-p004-1/attributed/04.NavierStokes.SimilarityHomogeneity.chartToPhysical_radial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SimilarityHomogeneity.chartToPhysical_radial",
-      "line": 218,
-      "module": "NavierStokes.SimilarityHomogeneity",
-      "path": "NavierStokes/SimilarityHomogeneity.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SimilarityHomogeneity.lean#L218"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SimilarityHomogeneity.chartToPhysical_radial",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SimilarityHomogeneity.chartToPhysical_radial",
+        "module": "NavierStokes.SimilarityHomogeneity"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 218,
-        "text": "(chartToPhysical h Q p).2.1 = (Scaling.radialLength Q * p.1) ^ 2 / 2  -- docstring: \"r = sqrt(Q) R\"; in the same def z = Q ^ D h * η, D h = 1/2 - h"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.SimilarityHomogeneity.chartToPhysical_radial",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L218",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SimilarityHomogeneity.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 218,
+            "text": "theorem chartToPhysical_radial {Q : ℝ} (hQ : 0 < Q) (h : ℝ) (p : ChartPoint) :\n    (chartToPhysical h Q p).2.1 = (Scaling.radialLength Q * p.1) ^ 2 / 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

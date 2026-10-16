@@ -1,26 +1,28 @@
 {
-  "id": "eq-p080-2/key/02.NavierStokes.TangentProjection.pressure_cancellation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TangentProjection.pressure_cancellation",
-      "line": 74,
-      "module": "NavierStokes.TangentProjection",
-      "path": "NavierStokes/TangentProjection.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TangentProjection.lean#L74"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TangentProjection.pressure_cancellation",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TangentProjection.pressure_cancellation",
+        "module": "NavierStokes.TangentProjection"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 74,
-        "text": "theorem pressure_cancellation : projectedRhs n n' t Kt f δ + Kt + δ • t - pressureCoefficient n n' t Kt f • n = -f  (the same balance, with f moved to the right)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TangentProjection.pressure_cancellation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L74",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TangentProjection.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 74,
+            "text": "theorem pressure_cancellation (n n' t Kt f : E) (δ : ℝ) :\n    projectedRhs n n' t Kt f δ + Kt + δ • t -\n      pressureCoefficient n n' t Kt f • n = -f"
+          }
+        }
       }
     }
-  }
+  ]
 }

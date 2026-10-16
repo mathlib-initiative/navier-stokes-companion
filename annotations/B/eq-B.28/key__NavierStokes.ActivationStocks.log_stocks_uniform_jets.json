@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.28/key/01.NavierStokes.ActivationStocks.log_stocks_uniform_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActivationStocks.log_stocks_uniform_jets",
-      "line": 711,
-      "module": "NavierStokes.ActivationStocks",
-      "path": "NavierStokes/ActivationStocks.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationStocks.lean#L711"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActivationStocks.log_stocks_uniform_jets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActivationStocks.log_stocks_uniform_jets",
+        "module": "NavierStokes.ActivationStocks"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 711,
-        "text": "∃ M ≥ 0, ∀ T ∈ Ioc 0 T0, ∀ κ ∈ Icc 0 1, ∀ y ∈ Icc 0 T, ∀ η ∈ K: |iteratedDeriv n (fun ξ => logViewOne … (activated) (y,ξ) - logViewOne … (reference) (y,ξ)) η| ≤ M * y * activation T κ y, and the same for logViewTwo"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ActivationStocks.log_stocks_uniform_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L711",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationStocks.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 711,
+            "text": "theorem log_stocks_uniform_jets {K : Set ℝ} (hK : IsCompact K) (hKJ : K ⊆ J)\n    (T0 : ℝ) (n : ℕ) :\n    ∃ M : ℝ, 0 ≤ M ∧ ∀ T ∈ Ioc (0 : ℝ) T0, ∀ κ ∈ Icc (0 : ℝ) 1,\n      ∀ y ∈ Icc (0 : ℝ) T, ∀ η ∈ K,\n        |iteratedDeriv n (fun ξ =>\n          logViewOne h X0 (activatedAngular T κ L)\n              (logHistory X0 initial (activatedAngular T κ L) (controlled T κ U)) (y, ξ) -\n            logViewOne h X0 (referenceAngular L)\n              (logHistory X0 initial (referenceAngular L) U) (y, ξ)) η| ≤ M * y * activation T κ y ∧\n        |iteratedDeriv n (fun ξ =>\n          logViewTwo h X0 (activatedAngular T κ L) (controlled T κ U)\n              (logHistory X0 initial (activatedAngular T κ L) (controlled T κ U)) (y, ξ) -\n            logViewTwo h X0 (referenceAngular L) U\n              (logHistory X0 initial (referenceAngular L) U) (y, ξ)) η| ≤ M * y * activation T κ y"
+          }
+        }
       }
     }
-  }
+  ]
 }

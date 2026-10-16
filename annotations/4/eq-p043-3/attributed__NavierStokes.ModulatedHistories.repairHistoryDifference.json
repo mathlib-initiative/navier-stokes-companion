@@ -1,24 +1,27 @@
 {
-  "id": "eq-p043-3/attributed/03.NavierStokes.ModulatedHistories.repairHistoryDifference",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedHistories.repairHistoryDifference",
-      "line": 1192
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean#L1192"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedHistories.repairHistoryDifference",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedHistories.repairHistoryDifference",
+        "module": "NavierStokes.ModulatedHistories"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 1192,
-        "text": "repairHistoryDifference P A c f U X eta : Debt := fun i => ∫ s in P.left..(patchWindow P).clamp X, repairDensity P A c f U (s, eta) i, with repairDensity = density (after repair) - density (before)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ModulatedHistories.repairHistoryDifference",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L1192"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 1192,
+            "text": "noncomputable def repairHistoryDifference (P : FiveProfileMoments.Patch) (A : ℝ → ℝ)\n    (c : ℝ → Coeff) (f U : Field) (X eta : ℝ) : Debt"
+          }
+        }
       }
     }
-  }
+  ]
 }

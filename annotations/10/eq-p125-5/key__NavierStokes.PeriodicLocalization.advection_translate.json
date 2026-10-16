@@ -1,25 +1,27 @@
 {
-  "id": "eq-p125-5/key/02.NavierStokes.PeriodicLocalization.advection_translate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicLocalization.advection_translate",
-      "line": 67,
-      "module": "NavierStokes.PeriodizePDE",
-      "path": "NavierStokes/PeriodizePDE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodizePDE.lean#L67"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicLocalization.advection_translate"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicLocalization.advection_translate",
+        "module": "NavierStokes.PeriodizePDE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 67,
-        "text": "advection (translate u n) t x = advection u t (x - lattice n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PeriodicLocalization.advection_translate"
+          },
+          "destination": {
+            "fragment": "L67",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodizePDE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 67,
+            "text": "theorem advection_translate (u : VelocityField) (n : Lattice)\n    (t : ℝ) (x : Space) :\n    advection (translate u n) t x = advection u t (x - lattice n)"
+          }
+        }
       }
     }
-  }
+  ]
 }

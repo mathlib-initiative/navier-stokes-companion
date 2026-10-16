@@ -1,26 +1,28 @@
 {
-  "id": "eq-p095-3/attributed/05.NavierStokes.StateMomentBalances.state_radialMoment_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StateMomentBalances.state_radialMoment_eq",
-      "line": 738,
-      "module": "NavierStokes.StateMomentBalances",
-      "path": "NavierStokes/StateMomentBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StateMomentBalances.lean#L738"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StateMomentBalances.state_radialMoment_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StateMomentBalances.state_radialMoment_eq",
+        "module": "NavierStokes.StateMomentBalances"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 738,
-        "text": "CorrectionState.radialMoment k f n s = IntegratedMeanBalances.radialMoment k (averaged f n) s — the bridge between the torus-averaged moment of the residual and SignedStressPrimitive.mass k of its auxiliary average"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.StateMomentBalances.state_radialMoment_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L738",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StateMomentBalances.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 738,
+            "text": "theorem state_radialMoment_eq (k : ℕ) (f : ScalarField (Lift S)) (n : ℕ) (s : S) :\n    CorrectionState.radialMoment k f n s =\n      IntegratedMeanBalances.radialMoment k (averaged f n) s"
+          }
+        }
       }
     }
-  }
+  ]
 }

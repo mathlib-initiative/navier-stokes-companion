@@ -1,25 +1,27 @@
 {
-  "id": "eq-p123-2/key/02.NavierStokesR3.WeightedInterpolation.cutoff_interpolation_four",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.WeightedInterpolation.cutoff_interpolation_four",
-      "line": 179,
-      "module": "NavierStokes.R3.WeightedInterpolation",
-      "path": "NavierStokes/R3/WeightedInterpolation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/WeightedInterpolation.lean#L179"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.WeightedInterpolation.cutoff_interpolation_four"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.WeightedInterpolation.cutoff_interpolation_four",
+        "module": "NavierStokes.R3.WeightedInterpolation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 179,
-        "text": "MemLp (fun x => (φ x ^ 3) • w x) 4 volume ∧ comparisonLpNorm 4 (fun x => (φ x ^ 3) • w x) ≤ comparisonLpNorm 2 w ^ (1/4 : ℝ) * comparisonLpNorm 6 (fun x => (φ x ^ 4) • w x) ^ (3/4 : ℝ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.WeightedInterpolation.cutoff_interpolation_four"
+          },
+          "destination": {
+            "fragment": "L179",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/WeightedInterpolation.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 179,
+            "text": "theorem cutoff_interpolation_four\n    {φ : Space → ℝ} {w : Space → E}\n    (hφm : AEStronglyMeasurable φ volume) (hφ : ∀ x, 0 ≤ φ x)\n    (hw : MemLp w 2 volume)\n    (hweighted : MemLp (fun x => (φ x ^ 4) • w x) 6 volume) :\n    MemLp (fun x => (φ x ^ 3) • w x) 4 volume ∧\n      comparisonLpNorm 4 (fun x => (φ x ^ 3) • w x) ≤\n        comparisonLpNorm 2 w ^ (1 / 4 : ℝ) *\n          comparisonLpNorm 6 (fun x => (φ x ^ 4) • w x) ^ (3 / 4 : ℝ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,26 @@
 {
-  "id": "eq-6.4/key/03.NavierStokes.GraphCalculus.auxiliary_directional_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GraphCalculus.auxiliary_directional_eq",
-      "line": 209
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GraphCalculus.lean#L209"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GraphCalculus.auxiliary_directional_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GraphCalculus.auxiliary_directional_eq",
+        "module": "NavierStokes.GraphCalculus"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 209,
-        "text": "fderiv ℝ F p ((0,0), v) = v.1 * fderiv ℝ F p ((0,0),(1,0)) + v.2 * fderiv ℝ F p ((0,0),(0,1))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.GraphCalculus.auxiliary_directional_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L209"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 209,
+            "text": "theorem auxiliary_directional_eq (F : Lift → ℝ) (p : Lift) (v : Plane) :\n    fderiv ℝ F p ((0, 0), v) =\n      v.1 * fderiv ℝ F p ((0, 0), (1, 0)) +\n        v.2 * fderiv ℝ F p ((0, 0), (0, 1))"
+          }
+        }
       }
     }
-  }
+  ]
 }

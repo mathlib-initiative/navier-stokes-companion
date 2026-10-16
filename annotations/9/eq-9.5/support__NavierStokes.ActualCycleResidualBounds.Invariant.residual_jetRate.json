@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.5/support/18.NavierStokes.ActualCycleResidualBounds.Invariant.residual_jetRate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCycleResidualBounds.Invariant.residual_jetRate",
-      "line": 1158,
-      "module": "NavierStokes.ActualCycleResidualBounds",
-      "path": "NavierStokes/ActualCycleResidualBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean#L1158"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCycleResidualBounds.Invariant.residual_jetRate",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCycleResidualBounds.Invariant.residual_jetRate",
+        "module": "NavierStokes.ActualCycleResidualBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 1158,
-        "text": "JetRate originPast (physicalQ h) (residual u P) m (h * (1/2 + σ) - fixedLoss m) — the Lean's route to the later result: full residual, edges included, flat part folded in at the fixed gain"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "18.NavierStokes.ActualCycleResidualBounds.Invariant.residual_jetRate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1158",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 1158,
+            "text": "theorem residual_jetRate {u : VelocityField} {P : PressureField}\n    (hGeom : ActualCarrierGeometry.geometricThreshold ≤ N0) (hN : 4 ≤ N)\n    (hbase : x.state.errors.base = ActualInitialization.baseError B)\n    (d : PhysicalData B N x.state u P) (m : ℕ) :\n    DiagonalResidual.JetRate GlobalBaseError.originPast (physicalQ ActualPrimary.h) (residual u P) m\n      (ActualPrimary.h * (1/2 + σ) - fixedLoss m)"
+          }
+        }
       }
     }
-  }
+  ]
 }

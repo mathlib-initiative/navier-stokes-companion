@@ -1,31 +1,33 @@
 {
-  "id": "lemma-10.4/attributed/1.NavierStokesR3.CompactEnergy.l2Norm_intervalIntegrable",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.CompactEnergy.l2Norm_intervalIntegrable",
-      "line": 49,
-      "module": "NavierStokes.R3.ForceL2Norm",
-      "path": "NavierStokes/R3/ForceL2Norm.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ForceL2Norm.lean#L49"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.CompactEnergy.l2Norm_intervalIntegrable",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.CompactEnergy.l2Norm_intervalIntegrable",
+        "module": "NavierStokes.R3.ForceL2Norm"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: f continuous with compact support ⊢ IntervalIntegrable (l2Norm f) volume a b. At a=0, b=1 this is the clause F(1) < ∞, under the paper's own hypothesis f ∈ C_c^∞.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 49,
-        "text": "theorem l2Norm_intervalIntegrable {f : VelocityField} (hf : Continuous f)\n    (hcf : HasCompactSupport f) (a b : ℝ) :\n    IntervalIntegrable (l2Norm f) volume a b"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokesR3.CompactEnergy.l2Norm_intervalIntegrable",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: f continuous with compact support ⊢ IntervalIntegrable (l2Norm f) volume a b. At a=0, b=1 this is the clause F(1) < ∞, under the paper's own hypothesis f ∈ C_c^∞.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L49",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ForceL2Norm.lean"
+          },
+          "snippet": {
+            "line": 49,
+            "text": "theorem l2Norm_intervalIntegrable {f : VelocityField} (hf : Continuous f)\n    (hcf : HasCompactSupport f) (a b : ℝ) :\n    IntervalIntegrable (l2Norm f) volume a b"
+          }
+        }
       }
     }
-  }
+  ]
 }

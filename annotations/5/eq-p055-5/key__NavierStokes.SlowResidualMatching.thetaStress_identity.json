@@ -1,21 +1,24 @@
 {
-  "id": "eq-p055-5/key/01.NavierStokes.SlowResidualMatching.thetaStress_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowResidualMatching.thetaStress_identity",
-      "line": 445
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowResidualMatching.lean#L445"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowResidualMatching.thetaStress_identity"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowResidualMatching.thetaStress_identity",
+        "module": "NavierStokes.SlowResidualMatching"
       },
-      "snippet": {
-        "line": 445,
-        "text": "theorem thetaStress_identity {S : Set ℝ} (hS : IsOpen S) (h C : ℝ) (f : SlowProfiles) (n : ℕ) (hF : SlowStressSupport.Smooth S (thetaDensity h C f n)) {w : InnerPoint} (hX : 0 < w.1) (heta : w.2 ∈ S) : Real.sqrt (2 * w.1) * partialX (thetaStress h C f n) w + 2 * thetaStress h C f n w / Real.sqrt (2 * w.1) = -(Real.sqrt (2 * w.1) / C * angularCoefficient h f n w)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SlowResidualMatching.thetaStress_identity"
+          },
+          "destination": {
+            "fragment": "L445"
+          },
+          "snippet": {
+            "line": 445,
+            "text": "theorem thetaStress_identity {S : Set ℝ} (hS : IsOpen S) (h C : ℝ)\n    (f : SlowProfiles) (n : ℕ) (hF : SlowStressSupport.Smooth S (thetaDensity h C f n))\n    {w : InnerPoint} (hX : 0 < w.1) (heta : w.2 ∈ S) :\n    Real.sqrt (2 * w.1) * partialX (thetaStress h C f n) w +\n      2 * thetaStress h C f n w / Real.sqrt (2 * w.1) =\n        -(Real.sqrt (2 * w.1) / C * angularCoefficient h f n w)"
+          }
+        }
       }
     }
-  }
+  ]
 }

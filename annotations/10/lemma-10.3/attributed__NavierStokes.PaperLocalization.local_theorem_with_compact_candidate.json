@@ -1,31 +1,33 @@
 {
-  "id": "lemma-10.3/attributed/1.NavierStokes.PaperLocalization.local_theorem_with_compact_candidate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PaperLocalization.local_theorem_with_compact_candidate",
-      "line": 28,
-      "module": "NavierStokes.PaperLocalization",
-      "path": "NavierStokes/PaperLocalization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PaperLocalization.lean#L28"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PaperLocalization.local_theorem_with_compact_candidate",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PaperLocalization.local_theorem_with_compact_candidate",
+        "module": "NavierStokes.PaperLocalization"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: A larger existential bundling `LocalPaper.Properties`, `CandidateProperties 1 u p f K`, `¬ Nonempty (GlobalFiniteEnergySolution 1 f)`, initial rest, and local agreement with the Prop. 10.1 fields. Its force clauses are the same three, again behind an existential; it adds nothing about the force's su",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 28,
-        "text": "theorem local_theorem_with_compact_candidate :\n    ∃ h qstar Xa Xext C : ℝ,\n      ∃ A D v : VelocityField, ∃ q : PressureField,\n      ∃ u : VelocityField, ∃ p : PressureField, ∃ f : VelocityField, ∃ K : Set Space,\n        LocalPaper.Properties h qstar Xa Xext C A D v q ∧\n        NavierStokesR3.ProblemStatement.CandidateProperties 1 u p f K ∧\n        ¬ Nonempty (NavierStokesR3.ProblemStatement.GlobalFiniteEnergySolution 1 f) ∧\n        (∀ t : ℝ, |t| ≤ 3 / 8 → ∀ x : Space, u (t, x) = 0 ∧ p (t, x) = 0) ∧\n        ∃ U : Set Space, IsOpen U ∧ (0 : Space) ∈ U ∧\n          ∀ t ∈ Ico (3 / 4 : ℝ) 1, ∀ x ∈ U,\n            u (t, x) = v (t, x) ∧ p (t, x) = q (t, x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PaperLocalization.local_theorem_with_compact_candidate",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: A larger existential bundling `LocalPaper.Properties`, `CandidateProperties 1 u p f K`, `¬ Nonempty (GlobalFiniteEnergySolution 1 f)`, initial rest, and local agreement with the Prop. 10.1 fields. Its force clauses are the same three, again behind an existential; it adds nothing about the force's su",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L28",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PaperLocalization.lean"
+          },
+          "snippet": {
+            "line": 28,
+            "text": "theorem local_theorem_with_compact_candidate :\n    ∃ h qstar Xa Xext C : ℝ,\n      ∃ A D v : VelocityField, ∃ q : PressureField,\n      ∃ u : VelocityField, ∃ p : PressureField, ∃ f : VelocityField, ∃ K : Set Space,\n        LocalPaper.Properties h qstar Xa Xext C A D v q ∧\n        NavierStokesR3.ProblemStatement.CandidateProperties 1 u p f K ∧\n        ¬ Nonempty (NavierStokesR3.ProblemStatement.GlobalFiniteEnergySolution 1 f) ∧\n        (∀ t : ℝ, |t| ≤ 3 / 8 → ∀ x : Space, u (t, x) = 0 ∧ p (t, x) = 0) ∧\n        ∃ U : Set Space, IsOpen U ∧ (0 : Space) ∈ U ∧\n          ∀ t ∈ Ico (3 / 4 : ℝ) 1, ∀ x ∈ U,\n            u (t, x) = v (t, x) ∧ p (t, x) = q (t, x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

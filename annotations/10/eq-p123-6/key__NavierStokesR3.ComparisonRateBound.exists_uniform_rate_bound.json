@@ -1,25 +1,27 @@
 {
-  "id": "eq-p123-6/key/01.NavierStokesR3.ComparisonRateBound.exists_uniform_rate_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ComparisonRateBound.exists_uniform_rate_bound",
-      "line": 127,
-      "module": "NavierStokes.R3.ComparisonRateBound",
-      "path": "NavierStokes/R3/ComparisonRateBound.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ComparisonRateBound.lean#L127"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ComparisonRateBound.exists_uniform_rate_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ComparisonRateBound.exists_uniform_rate_bound",
+        "module": "NavierStokes.R3.ComparisonRateBound"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 127,
-        "text": "∃ D ≥ 0, ∀ R ≥ 1, ∀ A ≥ 0, ∀ B ≥ 0, B ≤ S*(A + M/R) → ∀ E E' G, ((1/2)*E' + A^2 ≤ G*E + C0/R^2 + C1/R*B^(3/2) + C2*((B^(1/2)+1)*(A/R + 1/R^2) + R^(-7/4)*B^(3/4))) → E' ≤ 2*G*E + D/R"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokesR3.ComparisonRateBound.exists_uniform_rate_bound"
+          },
+          "destination": {
+            "fragment": "L127",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ComparisonRateBound.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 127,
+            "text": "theorem exists_uniform_rate_bound {C0 C1 C2 S M : ℝ}\n    (hC0 : 0 ≤ C0) (hC1 : 0 ≤ C1) (hC2 : 0 ≤ C2)\n    (hS : 0 ≤ S) (hM : 0 ≤ M) :\n    ∃ D ≥ 0, ∀ R ≥ 1, ∀ A ≥ 0, ∀ B ≥ 0, B ≤ S * (A + M / R) →\n      ∀ E E' G : ℝ,\n        (1 / 2 : ℝ) * E' + A ^ 2 ≤ G * E + C0 / R ^ 2 +\n          C1 / R * B ^ (3 / 2 : ℝ) +\n          C2 * ((B ^ (1 / 2 : ℝ) + 1) * (A / R + 1 / R ^ 2) +\n            R ^ (-7 / 4 : ℝ) * B ^ (3 / 4 : ℝ)) →\n        E' ≤ 2 * G * E + D / R"
+          }
+        }
       }
     }
-  }
+  ]
 }

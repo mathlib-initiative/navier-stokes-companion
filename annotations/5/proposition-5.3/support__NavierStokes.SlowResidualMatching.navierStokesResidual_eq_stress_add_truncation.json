@@ -1,26 +1,29 @@
 {
-  "id": "proposition-5.3/support/3.NavierStokes.SlowResidualMatching.navierStokesResidual_eq_stress_add_truncation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowResidualMatching.navierStokesResidual_eq_stress_add_truncation",
-      "line": 618,
-      "module": "NavierStokes.SlowResidualMatching",
-      "path": "NavierStokes/SlowResidualMatching.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowResidualMatching.lean#L618"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowResidualMatching.navierStokesResidual_eq_stress_add_truncation",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowResidualMatching.navierStokesResidual_eq_stress_add_truncation",
+        "module": "NavierStokes.SlowResidualMatching"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 618,
-        "text": "theorem navierStokesResidual_eq_stress_add_truncation {S : Set ℝ} (hS : IsOpen S)\n    {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2) (N : ℕ) (C : ℝ) (f : SlowProfiles)\n    (hTheta : ∀ n ≤ N, SlowStressSupport.Smooth S (thetaDensity h C f n))\n    (hZ : ∀ n ≤ N, SlowStressSupport.Smooth S (zDensity h f n))\n    {t : ℝ} {x : ProblemStatement.Space} (ht : t < 1) (hs : 0 < radialEnergy x)\n    (heta : (SimilarityProfile.inner h (profilePoint t x)).2 ∈ S)\n    (hv : ∀ n ≤ N, ContDiffAt ℝ 2 (f.flux n) (SimilarityProfile.inner h (profilePoint t x)))\n    (hphi : ∀ n ≤ N, ContDiffAt ℝ 2 (f.phi n) (SimilarityProfile.inner h (profilePoint t x)))\n    (hu : ∀ n ≤ N, ContDiffAt ℝ 2 (f.axial n) (SimilarityProfile.inner h (profilePoint t x)))\n    (hp : ∀ n ≤ N, DifferentiableAt ℝ (f.pressure n) (SimilarityProfile.inner h (profilePoint t x)))\n    (hpressure : ∀ n ≤ N, pressureCoefficient h C f n (SimilarityProfile.inner h (profilePoint t x)) = 0) :\n    ProblemStatement.navierStokesResidual (slowVelocity N h C f) (slowPressureField N h f) t x =\n      tangentialStressForce (physicalThetaStress N h C f) (physicalZStress N h f) t x +\n        truncationResidual N h C f t x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.SlowResidualMatching.navierStokesResidual_eq_stress_add_truncation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L618",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowResidualMatching.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 618,
+            "text": "theorem navierStokesResidual_eq_stress_add_truncation {S : Set ℝ} (hS : IsOpen S)\n    {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2) (N : ℕ) (C : ℝ) (f : SlowProfiles)\n    (hTheta : ∀ n ≤ N, SlowStressSupport.Smooth S (thetaDensity h C f n))\n    (hZ : ∀ n ≤ N, SlowStressSupport.Smooth S (zDensity h f n))\n    {t : ℝ} {x : ProblemStatement.Space} (ht : t < 1) (hs : 0 < radialEnergy x)\n    (heta : (SimilarityProfile.inner h (profilePoint t x)).2 ∈ S)\n    (hv : ∀ n ≤ N, ContDiffAt ℝ 2 (f.flux n) (SimilarityProfile.inner h (profilePoint t x)))\n    (hphi : ∀ n ≤ N, ContDiffAt ℝ 2 (f.phi n) (SimilarityProfile.inner h (profilePoint t x)))\n    (hu : ∀ n ≤ N, ContDiffAt ℝ 2 (f.axial n) (SimilarityProfile.inner h (profilePoint t x)))\n    (hp : ∀ n ≤ N, DifferentiableAt ℝ (f.pressure n) (SimilarityProfile.inner h (profilePoint t x)))\n    (hpressure : ∀ n ≤ N, pressureCoefficient h C f n (SimilarityProfile.inner h (profilePoint t x)) = 0) :\n    ProblemStatement.navierStokesResidual (slowVelocity N h C f) (slowPressureField N h f) t x =\n      tangentialStressForce (physicalThetaStress N h C f) (physicalZStress N h f) t x +\n        truncationResidual N h C f t x"
+          }
+        }
       }
     }
-  }
+  ]
 }

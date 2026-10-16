@@ -1,26 +1,28 @@
 {
-  "id": "eq-p125-6/key/01.NavierStokes.PeriodicLocalization.navier_stokes_periodize",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicLocalization.navier_stokes_periodize",
-      "line": 133,
-      "module": "NavierStokes.PeriodizePDE",
-      "path": "NavierStokes/PeriodizePDE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodizePDE.lean#L133"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicLocalization.navier_stokes_periodize",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicLocalization.navier_stokes_periodize",
+        "module": "NavierStokes.PeriodizePDE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 133,
-        "text": "(hu hp hf : SupportedInCube r …) (hr : r < 1/2) (hNS : ∀ t ∈ times, ∀ x, navierStokesResidual ν u p t x = f (t,x)) : ∀ t ∈ times, ∀ x, navierStokesResidual ν (periodize u) (periodize p) t x = periodize f (t,x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PeriodicLocalization.navier_stokes_periodize",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L133",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodizePDE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 133,
+            "text": "theorem navier_stokes_periodize {r ν : ℝ} {u f : VelocityField} {p : PressureField}\n    {times : Set ℝ} (hu : SupportedInCube r u) (hp : SupportedInCube r p)\n    (hf : SupportedInCube r f) (hr : r < 1 / 2)\n    (hNS : ∀ t ∈ times, ∀ x : Space,\n      NavierStokesR3.ProblemStatement.navierStokesResidual ν u p t x = f (t, x)) :\n    ∀ t ∈ times, ∀ x : Space,\n      NavierStokesR3.ProblemStatement.navierStokesResidual ν\n        (periodize u) (periodize p) t x = periodize f (t, x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

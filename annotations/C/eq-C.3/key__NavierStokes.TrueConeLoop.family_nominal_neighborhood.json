@@ -1,23 +1,25 @@
 {
-  "id": "eq-C.3/key/03.NavierStokes.TrueConeLoop.family_nominal_neighborhood",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.family_nominal_neighborhood",
-      "line": 693,
-      "module": "NavierStokes.TrueConeLoop",
-      "path": "NavierStokes/TrueConeLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L693"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.family_nominal_neighborhood"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.family_nominal_neighborhood",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "snippet": {
-        "line": 693,
-        "text": "∃ N, IsOpen N ∧ B ⊆ N ∧ N ⊆ {x | 0 < a x} ∧ ∀ x ∈ N, ∀ φ, familyA ... (x, φ) = a x ∧ familyC ... (x, φ) = a x * m x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.TrueConeLoop.family_nominal_neighborhood"
+          },
+          "destination": {
+            "fragment": "L693",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean"
+          },
+          "snippet": {
+            "line": 693,
+            "text": "theorem family_nominal_neighborhood (a m p₁ p₂ : E → ℝ) {K B : Set E}\n    (c : FamilyChoices a m p₁ p₂ K B) (ha : Continuous a) (hm : Continuous m) (hBK : B ⊆ K) :\n    ∃ N : Set E, IsOpen N ∧ B ⊆ N ∧ N ⊆ {x | 0 < a x} ∧\n      ∀ x ∈ N, ∀ φ,\n        familyA a m p₂ c.d c.delta (ne_of_gt c.d_pos) c.delta_pos (x, φ) = a x ∧\n        familyC a m p₂ c.d c.delta (ne_of_gt c.d_pos) c.delta_pos (x, φ) = a x * m x"
+          }
+        }
       }
     }
-  }
+  ]
 }

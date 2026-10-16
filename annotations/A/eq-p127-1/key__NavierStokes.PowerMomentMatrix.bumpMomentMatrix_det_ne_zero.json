@@ -1,24 +1,27 @@
 {
-  "id": "eq-p127-1/key/01.NavierStokes.PowerMomentMatrix.bumpMomentMatrix_det_ne_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PowerMomentMatrix.bumpMomentMatrix_det_ne_zero",
-      "line": 261
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PowerMomentMatrix.lean#L261"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PowerMomentMatrix.bumpMomentMatrix_det_ne_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PowerMomentMatrix.bumpMomentMatrix_det_ne_zero",
+        "module": "NavierStokes.PowerMomentMatrix"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 261,
-        "text": "theorem bumpMomentMatrix_det_ne_zero (a l u : Fin n → ℝ) (β : Fin n → ℝ → ℝ) (ha : Function.Injective a) (hl : ∀ j, 0 < l j) (hsep : ∀ i j, i < j → u i < l j) (hcont : ∀ j, Continuous (β j)) (hnonneg : ∀ j t, 0 ≤ β j t) (hnonzero : ∀ j, ∃ t, β j t ≠ 0) (hsupp : ∀ j, Function.support (β j) ⊆ Set.Icc (l j) (u j)) : (bumpMomentMatrix a β).det ≠ 0 — states only the final assertion `det B ≠ 0`, not the integral identity"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PowerMomentMatrix.bumpMomentMatrix_det_ne_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L261"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 261,
+            "text": "theorem bumpMomentMatrix_det_ne_zero {n : ℕ} (a l u : Fin n → ℝ)\n    (β : Fin n → ℝ → ℝ) (ha : Function.Injective a)\n    (hl : ∀ j, 0 < l j) (hsep : ∀ i j, i < j → u i < l j)\n    (hcont : ∀ j, Continuous (β j)) (hnonneg : ∀ j t, 0 ≤ β j t)\n    (hnonzero : ∀ j, ∃ t, β j t ≠ 0)\n    (hsupp : ∀ j, Function.support (β j) ⊆ Set.Icc (l j) (u j)) :\n    (bumpMomentMatrix a β).det ≠ 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

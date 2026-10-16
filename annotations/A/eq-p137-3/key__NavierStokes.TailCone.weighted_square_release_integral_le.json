@@ -1,24 +1,27 @@
 {
-  "id": "eq-p137-3/key/02.NavierStokes.TailCone.weighted_square_release_integral_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TailCone.weighted_square_release_integral_le",
-      "line": 288,
-      "module": "NavierStokes.TailCone",
-      "path": "NavierStokes/TailCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TailCone.lean#L288"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TailCone.weighted_square_release_integral_le"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TailCone.weighted_square_release_integral_le",
+        "lines": [288, 288],
+        "module": "NavierStokes.TailCone"
       },
-      "relation": "contains",
-      "snippet": {
-        "line": 288,
-        "text": "step at line 287-289: heq : d.h * (finalAngular d (y, eta) ^ 2 * (1 / (3 * d.h / 2))) = (2 / 3) * finalAngular d (y, eta) ^ 2, then `rw [heq] at h`, giving h : d.h * (∫ t in Ioi y, Real.exp (t - y) * finalAngular d (t, eta) ^ 2) ≤ (2 / 3) * finalAngular d (y, eta) ^ 2. The theorem's own statement (line 277) is the weaker `≤ finalAngular d (y, eta) ^ 2`."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TailCone.weighted_square_release_integral_le"
+          },
+          "destination": {
+            "fragment": "L288",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TailCone.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 277,
+            "text": "theorem weighted_square_release_integral_le (d : TailData) (eta : ℝ) {y : ℝ}\n    (hy : d.releaseStart ≤ y) :\n    d.h * (∫ t in Ioi y, Real.exp (t - y) * finalAngular d (t, eta) ^ 2) ≤\n      finalAngular d (y, eta) ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

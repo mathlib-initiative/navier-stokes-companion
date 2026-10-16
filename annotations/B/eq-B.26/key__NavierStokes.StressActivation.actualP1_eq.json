@@ -1,25 +1,27 @@
 {
-  "id": "eq-B.26/key/03.NavierStokes.StressActivation.actualP1_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressActivation.actualP1_eq",
-      "line": 1191,
-      "module": "NavierStokes.StressActivation",
-      "path": "NavierStokes/StressActivation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean#L1191"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressActivation.actualP1_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressActivation.actualP1_eq",
+        "module": "NavierStokes.StressActivation"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 1191,
-        "text": "actualP1 T κ L (y, η) = damping T κ y * referenceP1 L (y, η), where actualP1 T κ L p := -2 * deriv (fun y => Real.log (activatedAngular T κ L (y, p.2))) p.1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.StressActivation.actualP1_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1191",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1191,
+            "text": "theorem actualP1_eq (T κ : ℝ) {J : Set ℝ} (hJ : IsOpen J) {L : Field}\n    (hL : ContDiffOn ℝ ∞ L (logDomain J hJ).carrier) (y : ℝ) {η : ℝ} (hη : η ∈ J) :\n    actualP1 T κ L (y, η) = damping T κ y * referenceP1 L (y, η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

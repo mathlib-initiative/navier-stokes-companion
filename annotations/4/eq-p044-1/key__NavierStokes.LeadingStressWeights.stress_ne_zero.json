@@ -1,26 +1,29 @@
 {
-  "id": "eq-p044-1/key/02.NavierStokes.LeadingStressWeights.stress_ne_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.stress_ne_zero",
-      "line": 479,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L479"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.stress_ne_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.stress_ne_zero",
+        "lines": [479, 479],
+        "module": "NavierStokes.LeadingStressWeights"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 479,
-        "text": "have hid (a c : ℝ) (ha : a ≠ 0) : a * (1 + (c / a)^2) = a + c * (c / a) := by field_simp — the step that turns v_s into a + t_s b inside the proof of `stress_ne_zero` (declared at line 462), whose statement is `stress v.profiles F.data.h p ≠ 0` on the open interior"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.LeadingStressWeights.stress_ne_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L479",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 462,
+            "text": "theorem stress_ne_zero (hcone : FullTrueCone v) {p : Point}\n    (hl : NominalConeAssembly.activeLeft W < p.1)\n    (hr : p.1 < NominalConeAssembly.activeRight W) (hη : p.2 ∈ Icc (-1 : ℝ) 1) :\n    stress v.profiles F.data.h p ≠ 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

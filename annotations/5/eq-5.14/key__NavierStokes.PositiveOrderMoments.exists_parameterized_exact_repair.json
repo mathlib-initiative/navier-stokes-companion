@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.14/key/01.NavierStokes.PositiveOrderMoments.exists_parameterized_exact_repair",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveOrderMoments.exists_parameterized_exact_repair",
-      "line": 916,
-      "module": "NavierStokes.PositiveOrderMoments",
-      "path": "NavierStokes/PositiveOrderMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean#L916"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveOrderMoments.exists_parameterized_exact_repair",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveOrderMoments.exists_parameterized_exact_repair",
+        "module": "NavierStokes.PositiveOrderMoments"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 916,
-        "text": "∃ du de : JointProfile, ContDiffOn ℝ ∞ du (univ ×ˢ S) ∧ … ∧ ∀ eta ∈ S, moments n (increment (slice u eta) n (du ·,eta)) (increment (slice e eta) n (de ·,eta)) … = 0; witnesses du := repairU lam (A η) a b (debt η), de := repairE …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PositiveOrderMoments.exists_parameterized_exact_repair",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L916",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 916,
+            "text": "theorem exists_parameterized_exact_repair (lam a b : ℝ) (hlam : 0 < lam)\n    (ha : 0 < a) (hab : a < b) {S : Set ℝ} (hS : IsOpen S)\n    {n : ℕ} (hn : 0 < n) (u e : JointHistory) (omega : JointProfile) (A : ℝ → ℝ)\n    (hA : ContDiffOn ℝ ∞ A S) (hAn : ∀ eta ∈ S, A eta ≠ 0)\n    (hU₀ : ∀ eta ∈ S, ∀ R ∈ Ioo a b, u 0 (R, eta) = 0)\n    (hE₀ : ∀ eta ∈ S, ∀ R ∈ Ioo a b, e 0 (R, eta) = FiveRowRank.background lam (A eta) R)\n    (hd : ∀ i, ContDiffOn ℝ ∞ (fun w => jointRowDensity n u e omega w i) (univ ×ˢ S))\n    {B : ℝ} (hB : 0 ≤ B)\n    (hs : ∀ eta ∈ S, ∀ R, B ≤ R → jointRowDensity n u e omega (R, eta) = 0) :\n    ∃ du de : JointProfile,\n      ContDiffOn ℝ ∞ du (univ ×ˢ S) ∧ ContDiffOn ℝ ∞ de (univ ×ˢ S) ∧\n      (∀ eta, tsupport (fun R => du (R, eta)) ⊆ Ioo a b) ∧\n      (∀ eta, tsupport (fun R => de (R, eta)) ⊆ Ioo a b) ∧\n      ∀ eta ∈ S, moments n (increment (slice u eta) n (fun R => du (R, eta)))\n        (increment (slice e eta) n (fun R => de (R, eta))) (fun R => omega (R, eta)) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

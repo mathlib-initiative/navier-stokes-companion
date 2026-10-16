@@ -1,31 +1,53 @@
 {
-  "id": "definition-6.4/support/3.NavierStokes.WeightedClasses.MemClass.of_separate_bounds",
-  "location": {
-    "page": 69,
-    "rect": [0.12854, 0.747934, 0.745098, 0.109091]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedClasses.MemClass.of_separate_bounds",
-      "line": 147,
-      "module": "NavierStokes.WeightedClasses",
-      "path": "NavierStokes/WeightedClasses.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean#L147"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedClasses.MemClass.of_separate_bounds",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 69,
+        "rect": [0.12854, 0.747934, 0.745098, 0.109091]
       },
-      "region": "definition-6.4@p069",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 147,
-        "text": "theorem of_separate_bounds\n    (hw : ∀ n x, x ∈ s.domain → 0 ≤ w n x)\n    (hsmooth : ∀ n, ContDiffOn ℝ ∞ (f n) s.domain)\n    (hb : ∀ m : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∃ p q : ℕ,\n      ∀ n x, x ∈ s.domain → ∀ j : ℕ, j ≤ m →\n        ‖iteratedFDeriv ℝ j (f n) x‖ ≤\n          C * s.epsilon n ^ α * s.slow n ^ p * (max 1 (s.delta x)⁻¹) ^ q * w n x) :\n    MemClass s w α f"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "definition-6.4@p069"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 70,
+        "rect": [0.12854, 0.103306, 0.745098, 0.093388]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "definition-6.4@p070"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedClasses.MemClass.of_separate_bounds",
+        "module": "NavierStokes.WeightedClasses"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.WeightedClasses.MemClass.of_separate_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L147",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 147,
+            "text": "theorem of_separate_bounds\n    (hw : ∀ n x, x ∈ s.domain → 0 ≤ w n x)\n    (hsmooth : ∀ n, ContDiffOn ℝ ∞ (f n) s.domain)\n    (hb : ∀ m : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∃ p q : ℕ,\n      ∀ n x, x ∈ s.domain → ∀ j : ℕ, j ≤ m →\n        ‖iteratedFDeriv ℝ j (f n) x‖ ≤\n          C * s.epsilon n ^ α * s.slow n ^ p * (max 1 (s.delta x)⁻¹) ^ q * w n x) :\n    MemClass s w α f"
+          }
+        }
+      }
+    }
+  ]
 }

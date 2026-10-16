@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.15/key/02.NavierStokes.GlobalSlowProfiles.reconstructed_flux_derivative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.reconstructed_flux_derivative",
-      "line": 237,
-      "module": "NavierStokes.GlobalSlowProfiles",
-      "path": "NavierStokes/GlobalSlowProfiles.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L237"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.reconstructed_flux_derivative",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.reconstructed_flux_derivative",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 237,
-        "text": "HasDerivAt (fun r => r ^ 2 / 2 * betaFromU d lam u (r, eta)) (-R * PositiveOrderMoments.radialZ h (-PositiveAxisSystem.a h + lam) u (R, eta)) R"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GlobalSlowProfiles.reconstructed_flux_derivative",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L237",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 237,
+            "text": "theorem reconstructed_flux_derivative {S : Set ℝ} {h : ℝ} (d : Domain S h)\n    (lam : ℝ) (u : EvenProfile S) {R eta : ℝ} (heta : eta ∈ S) :\n    HasDerivAt (fun r => r ^ 2 / 2 * betaFromU d lam u (r, eta))\n      (-R * PositiveOrderMoments.radialZ h (-PositiveAxisSystem.a h + lam) u (R, eta)) R"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p113-8/key/01.NavierStokes.SharpPhysicalCarrier.carrier_geometric_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SharpPhysicalCarrier.carrier_geometric_bound",
-      "line": 21,
-      "module": "NavierStokes.SharpPhysicalCarrier",
-      "path": "NavierStokes/SharpPhysicalCarrier.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SharpPhysicalCarrier.lean#L21"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SharpPhysicalCarrier.carrier_geometric_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SharpPhysicalCarrier.carrier_geometric_bound",
+        "module": "NavierStokes.SharpPhysicalCarrier"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 21,
-        "text": "‖iteratedFDeriv ℝ m (fun z => amp (physicalLift h n z) * character ((ChartScales.carrier h n:ℝ)*(j:ℝ)) (Φ z)) w‖ ≤ C * ChartScales.Q n ^ (g-(m:ℝ)*derivativeCost h) * ChartScales.S n ^ (d+e*(m:ℝ))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SharpPhysicalCarrier.carrier_geometric_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L21",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SharpPhysicalCarrier.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 21,
+            "text": "theorem carrier_geometric_bound {h a b : ℝ} (hh : 0 ≤ h) (ha : 0 < a)\n    (m : ℕ) (g d e A B H : ℝ) (hA : 0 ≤ A) (hB : 1 ≤ B)\n    (he : 0 ≤ e) (hH : 0 ≤ H) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℕ, 4 ≤ n → ∀ w : SpaceTime,\n      scaledRadial n w ∈ annulus a b → |w.1| ≤ 1 →\n      ∀ (amp : LiftPoint → ℂ) (Φ : SpaceTime → ℝ) (j : ℤ),\n      ContDiff ℝ ∞ amp → ContDiff ℝ ∞ Φ → |(j:ℝ)| ≤ H →\n      (∀ i ≤ m, ‖iteratedFDeriv ℝ i amp (physicalLift h n w)‖ ≤\n        A * ChartScales.Q n ^ g * ChartScales.S n ^ d) →\n      (∀ i, 1 ≤ i → i ≤ m → ‖iteratedFDeriv ℝ i Φ w‖ ≤\n        (B * ChartScales.S n ^ e * ChartScales.Q n ^ (-(1+h))) ^ i) →\n      ‖iteratedFDeriv ℝ m (fun z => amp (physicalLift h n z) *\n        character ((ChartScales.carrier h n:ℝ)*(j:ℝ)) (Φ z)) w‖ ≤\n        C * ChartScales.Q n ^ (g-(m:ℝ)*derivativeCost h) *\n          ChartScales.S n ^ (d+e*(m:ℝ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

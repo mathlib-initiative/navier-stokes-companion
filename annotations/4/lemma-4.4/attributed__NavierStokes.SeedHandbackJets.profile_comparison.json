@@ -1,37 +1,58 @@
 {
-  "id": "lemma-4.4/attributed/1.NavierStokes.SeedHandbackJets.profile_comparison",
-  "location": {
-    "page": 28,
-    "rect": [0.12854, 0.7, 0.745098, 0.200826]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SeedHandbackJets.profile_comparison",
-      "line": 269,
-      "module": "NavierStokes.SeedHandbackJets",
-      "path": "NavierStokes/SeedHandbackJets.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 28,
+        "rect": [0.12854, 0.7, 0.745098, 0.200826]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p028"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean#L269"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SeedHandbackJets.profile_comparison",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 29,
+        "rect": [0.12854, 0.103306, 0.745098, 0.22314]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: Pointwise form of part (ii): same hypotheses; if Bound (k+1) of Delta E and Delta U is <= eps_f and Bound (k+1) of each Delta history <= eps_m for every X in Icc X0 X1, then for every X in Icc X0 X1 and every output index i, Bound k (Delta outputs i) (C*(eps_f+eps_m)).",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "region": "lemma-4.4@p028",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 269,
-        "text": "theorem profile_comparison (k : ℕ) (h X₀ X₁ μ B B₀ : ℝ)\n    (hh : 0 < h) (hh' : h < 1/2) (hX₀ : 0 < X₀) (hXX : X₀ ≤ X₁)\n    (hμ : 0 < μ) (hB : 0 ≤ B) (hB₀ : 0 ≤ B₀) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ P Q : Profile,\n      P.SmoothOnBand X₀ X₁ → Q.SmoothOnBand X₀ X₁ →\n      P.JetBound (k+1) X₀ X₁ B → Q.JetBound (k+1) X₀ X₁ B →\n      (∀ X ∈ Icc X₀ X₁, ∀ η ∈ J, μ ≤ P.E (X,η)) →\n      (∀ X ∈ Icc X₀ X₁, ∀ η ∈ J, μ ≤ Q.E (X,η)) →\n      ∀ P₀ : ℝ → ℝ, ContDiffOn ℝ ∞ P₀ J → Bound (k+1) P₀ B₀ →\n      ∀ εf εm : ℝ, 0 ≤ εf → 0 ≤ εm →\n      (∀ X ∈ Icc X₀ X₁,\n        Bound (k+1) (fun η => Q.E (X,η)-P.E (X,η)) εf ∧\n        Bound (k+1) (fun η => Q.U (X,η)-P.U (X,η)) εf) →\n      (∀ X ∈ Icc X₀ X₁, ∀ i,\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p029"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SeedHandbackJets.profile_comparison",
+        "module": "NavierStokes.SeedHandbackJets"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SeedHandbackJets.profile_comparison",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: Pointwise form of part (ii): same hypotheses; if Bound (k+1) of Delta E and Delta U is <= eps_f and Bound (k+1) of each Delta history <= eps_m for every X in Icc X0 X1, then for every X in Icc X0 X1 and every output index i, Bound k (Delta outputs i) (C*(eps_f+eps_m)).",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L269",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean"
+          },
+          "snippet": {
+            "line": 269,
+            "text": "theorem profile_comparison (k : ℕ) (h X₀ X₁ μ B B₀ : ℝ)\n    (hh : 0 < h) (hh' : h < 1/2) (hX₀ : 0 < X₀) (hXX : X₀ ≤ X₁)\n    (hμ : 0 < μ) (hB : 0 ≤ B) (hB₀ : 0 ≤ B₀) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ P Q : Profile,\n      P.SmoothOnBand X₀ X₁ → Q.SmoothOnBand X₀ X₁ →\n      P.JetBound (k+1) X₀ X₁ B → Q.JetBound (k+1) X₀ X₁ B →\n      (∀ X ∈ Icc X₀ X₁, ∀ η ∈ J, μ ≤ P.E (X,η)) →\n      (∀ X ∈ Icc X₀ X₁, ∀ η ∈ J, μ ≤ Q.E (X,η)) →\n      ∀ P₀ : ℝ → ℝ, ContDiffOn ℝ ∞ P₀ J → Bound (k+1) P₀ B₀ →\n      ∀ εf εm : ℝ, 0 ≤ εf → 0 ≤ εm →\n      (∀ X ∈ Icc X₀ X₁,\n        Bound (k+1) (fun η => Q.E (X,η)-P.E (X,η)) εf ∧\n        Bound (k+1) (fun η => Q.U (X,η)-P.U (X,η)) εf) →\n      (∀ X ∈ Icc X₀ X₁, ∀ i,\n  …",
+            "truncated": true
+          }
+        }
+      }
+    }
+  ]
 }

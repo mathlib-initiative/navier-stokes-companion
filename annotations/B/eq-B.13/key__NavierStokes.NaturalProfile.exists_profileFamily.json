@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.13/key/01.NavierStokes.NaturalProfile.exists_profileFamily",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalProfile.exists_profileFamily",
-      "line": 603,
-      "module": "NavierStokes.NaturalProfile",
-      "path": "NavierStokes/NaturalProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalProfile.lean#L603"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalProfile.exists_profileFamily",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalProfile.exists_profileFamily",
+        "module": "NavierStokes.NaturalProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 603,
-        "text": "∃ F : ProfileFamily …, whose field mixed_error : UniformMixedError window d.coefficients.epsilon (profileErrorConstant d / (2 * Λ)) phi u (AxisEvaluation.profile window ε (referenceCoefficients …).1) (AxisEvaluation.profile window ε (referenceCoefficients …).2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.NaturalProfile.exists_profileFamily",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L603",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalProfile.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 603,
+            "text": "theorem exists_profileFamily {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (hsmall : NaturalAxisRange.Parameters h j)\n    (hσ : 0 < σ) (hP0 : ContDiff ℝ ∞ P0) :\n    ∃ Λ₀ : ℝ, 0 < Λ₀ ∧ ∀ Λ : ℝ, Λ₀ ≤ Λ →\n      ∀ C : ℝ, d.normalizationThreshold Λ ≤ C → Nonempty (ProfileFamily d Λ C)"
+          }
+        }
       }
     }
-  }
+  ]
 }

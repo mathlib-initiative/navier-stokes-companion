@@ -1,23 +1,25 @@
 {
-  "id": "eq-p061-3/key/03.NavierStokes.SlowBorelBase.blown_tail_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowBorelBase.blown_tail_bound",
-      "line": 400,
-      "module": "NavierStokes.SlowBorelBase",
-      "path": "NavierStokes/SlowBorelBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean#L400"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowBorelBase.blown_tail_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowBorelBase.blown_tail_bound",
+        "module": "NavierStokes.SlowBorelBase"
       },
-      "snippet": {
-        "line": 400,
-        "text": "‖blownJet m (fun y => slowSum a h f y - cutPrefix a h f J y) (q,w)‖ ≤ (1/2)^J * q ^ (h*(J+1))  -- the applied instance of the tail sum"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SlowBorelBase.blown_tail_bound"
+          },
+          "destination": {
+            "fragment": "L400",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean"
+          },
+          "snippet": {
+            "line": 400,
+            "text": "theorem blown_tail_bound {a : ℕ → ℕ} {h : ℝ} (hh : 0 < h)\n    {f : ℕ → Inner → V} (hf : ∀ j, ContDiff ℝ ∞ (f j))\n    {K : Set Inner} (ha : AdmissibleScales h f K a)\n    {q : ℝ} (hq : 0 < q) (hq1 : q ≤ 1) {w : Inner} (hw : w ∈ K)\n    (J m : ℕ) (hm : m ≤ J + 3) :\n    ‖blownJet m (fun y => slowSum a h f y - cutPrefix a h f J y) (q, w)‖ ≤\n      (1 / 2 : ℝ) ^ J * q ^ (h * (J + 1))"
+          }
+        }
       }
     }
-  }
+  ]
 }

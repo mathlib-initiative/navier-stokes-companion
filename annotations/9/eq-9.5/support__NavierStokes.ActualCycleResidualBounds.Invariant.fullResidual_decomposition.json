@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.5/support/15.NavierStokes.ActualCycleResidualBounds.Invariant.fullResidual_decomposition",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCycleResidualBounds.Invariant.fullResidual_decomposition",
-      "line": 310,
-      "module": "NavierStokes.ActualCycleResidualBounds",
-      "path": "NavierStokes/ActualCycleResidualBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean#L310"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCycleResidualBounds.Invariant.fullResidual_decomposition",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCycleResidualBounds.Invariant.fullResidual_decomposition",
+        "module": "NavierStokes.ActualCycleResidualBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 310,
-        "text": "for z ∈ liftDomain geometry.strip.domain only: fullResidual c x.state n z i = (∑ l ∈ labels n, (source x l).oscillation n z i) + meanGoodResidual c n z.1 i + x.state.errors.total n z i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "15.NavierStokes.ActualCycleResidualBounds.Invariant.fullResidual_decomposition",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L310",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 310,
+            "text": "theorem fullResidual_decomposition {n : ℕ}\n    (hreg : LocalResidualGrouping.ExtractionRegular ActualInitialization.geometry.strip.domain\n      (ActualPrimary.commonContext B) x.state x.coefficients.labels x.coefficients.blocks\n      x.coefficients.gaussian x.coefficients.aliasCoefficients n)\n    {z : Cylinder} (hz : z ∈ HarmonicResidual.liftDomain ActualInitialization.geometry.strip.domain)\n    (i : Fin 3) :\n    LiftedMeanResidual.fullResidual (ActualPrimary.commonContext B) x.state n z i =\n      (∑ l ∈ x.coefficients.labels n, (source x l).oscillation n z i) +\n        x.state.meanGoodResidual (ActualPrimary.commonContext B) n z.1 i + x.state.errors.total n z i"
+          }
+        }
       }
     }
-  }
+  ]
 }

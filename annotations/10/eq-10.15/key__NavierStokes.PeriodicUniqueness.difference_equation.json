@@ -1,25 +1,27 @@
 {
-  "id": "eq-10.15/key/01.NavierStokes.PeriodicUniqueness.difference_equation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicUniqueness.difference_equation",
-      "line": 112,
-      "module": "NavierStokes.PeriodicUniqueness",
-      "path": "NavierStokes/PeriodicUniqueness.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicUniqueness.lean#L112"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicUniqueness.difference_equation"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicUniqueness.difference_equation",
+        "module": "NavierStokes.PeriodicUniqueness"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 112,
-        "text": "temporalDerivative (u - v) t x = spatialLaplacian (u - v) t x - spatialDerivative u t x ((u - v) (t,x)) - spatialDerivative (u - v) t x (v (t,x)) - pressureGradient (p - q) t x, under hNS : navierStokesResidual u p t x = navierStokesResidual v q t x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PeriodicUniqueness.difference_equation"
+          },
+          "destination": {
+            "fragment": "L112",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicUniqueness.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 112,
+            "text": "theorem difference_equation {u v : VelocityField} {p q : PressureField} {t : ℝ} {x : Space}\n    (hu : ContDiff ℝ ∞ (fun y : Space => u (t, y)))\n    (hv : ContDiff ℝ ∞ (fun y : Space => v (t, y)))\n    (hp : ContDiff ℝ ∞ (fun y : Space => p (t, y)))\n    (hq : ContDiff ℝ ∞ (fun y : Space => q (t, y)))\n    (htu : DifferentiableAt ℝ (fun s : ℝ => u (s, x)) t)\n    (htv : DifferentiableAt ℝ (fun s : ℝ => v (s, x)) t)\n    (hNS : navierStokesResidual u p t x = navierStokesResidual v q t x) :\n    temporalDerivative (u - v) t x = spatialLaplacian (u - v) t x -\n      spatialDerivative u t x ((u - v) (t, x)) -\n      spatialDerivative (u - v) t x (v (t, x)) - pressureGradient (p - q) t x"
+          }
+        }
       }
     }
-  }
+  ]
 }

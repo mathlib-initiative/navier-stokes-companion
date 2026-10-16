@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.14/key/07.NavierStokes.CrossBasedMeanComposition.fourStage_mean_gain_of_cross_defects",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CrossBasedMeanComposition.fourStage_mean_gain_of_cross_defects",
-      "line": 392,
-      "module": "NavierStokes.CrossBasedMeanComposition",
-      "path": "NavierStokes/CrossBasedMeanComposition.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CrossBasedMeanComposition.lean#L392"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CrossBasedMeanComposition.fourStage_mean_gain_of_cross_defects",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CrossBasedMeanComposition.fourStage_mean_gain_of_cross_defects",
+        "module": "NavierStokes.CrossBasedMeanComposition"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 392,
-        "text": "proof: obtain <hp2, hu2, htheta2, hz2, hbartheta, hbarz, hd2> := bandSignedStage_mean_debt_of_cross_defects G c u1 ... hDtheta hDz, then passes htheta2 hz2 hbartheta hbarz hd2 to meanStages_constructed; only MeanClass G.strip (1+sigma-2*kappa) of the two u2 residuals survives into its conclusion"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.CrossBasedMeanComposition.fourStage_mean_gain_of_cross_defects",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L392",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CrossBasedMeanComposition.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 392,
+            "text": "theorem fourStage_mean_gain_of_cross_defects\n    (hσ : 1/5 ≤ σ) (hκ : 0 ≤ κ) (hκsmall : κ ≤ 1/100000)\n    (H : MeanStateRegularity.PrimitiveData G.region G.patch.a G.patch.b c u)\n    (hop : c.operators = G.operators)\n    (ho : OperatorBounds G.strip G.operators κ) (hb : BaseBounds G.strip c.base)\n    (hu : CorrectionState.CumulativeBounds G.strip u)\n    (hfixed : (reconstructState G.gauge c u).pressure = u.pressure)\n    (hmθ : ∀ n z, z ∈ G.region.carrier → radialMoment 2 u.mean.angular n z = 0)\n    (hmz : ∀ n z, z ∈ G.region.carrier → radialMoment 1 u.mean.axial n z = 0)\n    (hθ : MeanClass G.strip (1+σ) (u.thetaResidual c))\n    (hz : MeanClass G.strip (1+σ) (u.axialResidual c))\n    (hd : DefectBounds G.slowStrip σ c u)\n    (hX₁ : ∀ i j, GaugeMomentBalances.MovingField G.region G.patch.a G.patch.b\n      (SignedMeanGain.covarianceIncrement u.oscillation w₁ i j))\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

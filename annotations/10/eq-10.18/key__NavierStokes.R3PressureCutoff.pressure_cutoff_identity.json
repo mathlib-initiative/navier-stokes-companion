@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.18/key/03.NavierStokes.R3PressureCutoff.pressure_cutoff_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.R3PressureCutoff.pressure_cutoff_identity",
-      "line": 143,
-      "module": "NavierStokes.R3PressureCutoff",
-      "path": "NavierStokes/R3PressureCutoff.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3PressureCutoff.lean#L143"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.R3PressureCutoff.pressure_cutoff_identity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.R3PressureCutoff.pressure_cutoff_identity",
+        "module": "NavierStokes.R3PressureCutoff"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 143,
-        "text": "smulLeftCLM ℂ (powerCutoff φ) (pressureL1 i j g) = pressureL1 i j (weightedLp hφ g) + (commutatorLp hφ i j g hw : 𝓢'(Space, ℂ)), powerCutoff φ = φ^6  -- sixth-power form of the same identity, per index pair, with a concrete kernel commutator"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.R3PressureCutoff.pressure_cutoff_identity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L143",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3PressureCutoff.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 143,
+            "text": "theorem pressure_cutoff_identity {R L : ℝ} {φ : Space → ℝ} (hφ : Cutoff R L φ)\n    (hφg : φ.HasTemperateGrowth) (i j : Fin 3) (g : Lp ℂ 1 (volume : Measure Space))\n    (hw : MemLp (weightedNorm φ g) (3 / 2)) :\n    smulLeftCLM ℂ (powerCutoff φ) (pressureL1 i j g) =\n      pressureL1 i j (weightedLp hφ g) + (commutatorLp hφ i j g hw : 𝓢'(Space, ℂ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

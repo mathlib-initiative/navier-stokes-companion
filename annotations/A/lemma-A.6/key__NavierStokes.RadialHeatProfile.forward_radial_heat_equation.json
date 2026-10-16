@@ -1,29 +1,31 @@
 {
-  "id": "lemma-A.6/key/1.NavierStokes.RadialHeatProfile.forward_radial_heat_equation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialHeatProfile.forward_radial_heat_equation",
-      "line": 635,
-      "module": "NavierStokes.RadialHeatProfile",
-      "path": "NavierStokes/RadialHeatProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L635"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialHeatProfile.forward_radial_heat_equation",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialHeatProfile.forward_radial_heat_equation",
+        "module": "NavierStokes.RadialHeatProfile"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: (ha : 1 < a) (ht : t < 1) (hr : 0 < r) → deriv (fun t => radialProfile a (1-t) r) t = iteratedDeriv 2 (radialProfile a (1-t)) r + deriv (radialProfile a (1-t)) r / r - radialProfile a (1-t) r / r^2. Clause (iv) verbatim in forward time t."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 635,
-        "text": "theorem forward_radial_heat_equation {a t r : ℝ} (ha : 1 < a) (ht : t < 1) (hr : 0 < r) :\n    deriv (fun t => radialProfile a (1 - t) r) t =\n      iteratedDeriv 2 (radialProfile a (1 - t)) r + deriv (radialProfile a (1 - t)) r / r -\n        radialProfile a (1 - t) r / r ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.RadialHeatProfile.forward_radial_heat_equation",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: (ha : 1 < a) (ht : t < 1) (hr : 0 < r) → deriv (fun t => radialProfile a (1-t) r) t = iteratedDeriv 2 (radialProfile a (1-t)) r + deriv (radialProfile a (1-t)) r / r - radialProfile a (1-t) r / r^2. Clause (iv) verbatim in forward time t."
+          },
+          "destination": {
+            "fragment": "L635",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean"
+          },
+          "snippet": {
+            "line": 635,
+            "text": "theorem forward_radial_heat_equation {a t r : ℝ} (ha : 1 < a) (ht : t < 1) (hr : 0 < r) :\n    deriv (fun t => radialProfile a (1 - t) r) t =\n      iteratedDeriv 2 (radialProfile a (1 - t)) r + deriv (radialProfile a (1 - t)) r / r -\n        radialProfile a (1 - t) r / r ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

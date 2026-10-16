@@ -1,25 +1,27 @@
 {
-  "id": "eq-7.23/key/03.NavierStokes.CorrectionState.bilinearCovariance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionState.bilinearCovariance",
-      "line": 76,
-      "module": "NavierStokes.CorrectionState",
-      "path": "NavierStokes/CorrectionState.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L76"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionState.bilinearCovariance",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionState.bilinearCovariance",
+        "module": "NavierStokes.CorrectionState"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 76,
-        "text": "bilinearCovariance (u v : Oscillation D) (i j : Fin 3) : ScalarField D := angularAverage (fun n p => u n p i * v n p j), with angularAverage f n x = (∫ θ in 0..2π, f n (x,θ))/(2π)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CorrectionState.bilinearCovariance",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L76",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 76,
+            "text": "noncomputable def bilinearCovariance (u v : Oscillation D) (i j : Fin 3) : ScalarField D"
+          }
+        }
       }
     }
-  }
+  ]
 }

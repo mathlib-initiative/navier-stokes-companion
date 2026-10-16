@@ -1,23 +1,25 @@
 {
-  "id": "eq-C.13/key/01.NavierStokes.RadialModulation.angular_shear_exact",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialModulation.angular_shear_exact",
-      "line": 136,
-      "module": "NavierStokes.RadialModulation",
-      "path": "NavierStokes/RadialModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialModulation.lean#L136"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialModulation.angular_shear_exact"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialModulation.angular_shear_exact",
+        "module": "NavierStokes.RadialModulation"
       },
-      "snippet": {
-        "line": 136,
-        "text": "hprescribed : partialTheta A (phasePoint n X η) = -(aL - (1 - 2*X*deriv (fun r => E r η) X / E X η)) / 2 ⊢ 1 - 2*X*deriv (fun r => modulatedE n E A r η) X / modulatedE n E A X η = aL - 2*X*partialX A (phasePoint n X η) / n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.RadialModulation.angular_shear_exact"
+          },
+          "destination": {
+            "fragment": "L136",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialModulation.lean"
+          },
+          "snippet": {
+            "line": 136,
+            "text": "theorem angular_shear_exact\n    (E : BaseProfile) (A : PrimitiveProfile) (n X η aL : ℝ)\n    (hn : n ≠ 0) (hX : X ≠ 0) (hE0 : E X η ≠ 0)\n    (hE : DifferentiableAt ℝ (fun r => E r η) X)\n    (hA : DifferentiableAt ℝ A (phasePoint n X η))\n    (hprescribed : partialTheta A (phasePoint n X η) =\n      -(aL - (1 - 2 * X * deriv (fun r => E r η) X / E X η)) / 2) :\n    1 - 2 * X * deriv (fun r => modulatedE n E A r η) X / modulatedE n E A X η =\n      aL - 2 * X * partialX A (phasePoint n X η) / n"
+          }
+        }
       }
     }
-  }
+  ]
 }

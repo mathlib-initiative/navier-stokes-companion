@@ -1,26 +1,29 @@
 {
-  "id": "eq-5.21/key/09.NavierStokes.FirstOrderBaseEdge.first_axial_exterior",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FirstOrderBaseEdge.first_axial_exterior",
-      "line": 89,
-      "module": "NavierStokes.FirstOrderBaseEdge",
-      "path": "NavierStokes/FirstOrderBaseEdge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FirstOrderBaseEdge.lean#L89"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FirstOrderBaseEdge.first_axial_exterior",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FirstOrderBaseEdge.first_axial_exterior",
+        "lines": [89, 89],
+        "module": "NavierStokes.FirstOrderBaseEdge"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 89,
-        "text": "have hmoment : ∀ eta ∈ S, moment s.B 0 (axialDensity h 1 (fluxHistory s) (axialHistory s) (pressureField s 1)) eta = 0 := ... axial_integral_zero ...  (n = 1 axial line, from hmass : moment s.B 1 (axialHistory s 0) = 0)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.FirstOrderBaseEdge.first_axial_exterior",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L89",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FirstOrderBaseEdge.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 85,
+            "text": "theorem first_axial_exterior {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    (hbase : s.base.beta = betaFromU s.domain 0 s.base.axial)\n    (hmass : ∀ eta ∈ S, SlowStressSupport.moment s.B 1 (axialHistory s 0) eta = 0) :\n    SlowStressSupport.exterior s.B S (SlowStressSupport.stress 1 (SlowResidualMatching.zDensity h (asSlowProfiles s) 1))"
+          }
+        }
       }
     }
-  }
+  ]
 }

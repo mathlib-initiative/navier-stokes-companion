@@ -1,24 +1,27 @@
 {
-  "id": "eq-p152-6/key/01.NavierStokes.StressActivation.weightedPrimitive_factorization",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressActivation.weightedPrimitive_factorization",
-      "line": 243
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean#L243"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressActivation.weightedPrimitive_factorization",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressActivation.weightedPrimitive_factorization",
+        "module": "NavierStokes.StressActivation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 243,
-        "text": "(hT : 0 < T) (κ) (B : Field) (p : Point) : weightedPrimitive T κ B p = p.1 * activation T κ p.1 * primitiveFactor T B p, where weightedPrimitive T κ B (y,η) = ∫ x in 0..y, activation T κ x * B (x,η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.StressActivation.weightedPrimitive_factorization",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L243"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 243,
+            "text": "theorem weightedPrimitive_factorization {T : ℝ} (hT : 0 < T) (κ : ℝ) (B : Field)\n    (p : Point) : weightedPrimitive T κ B p = p.1 * activation T κ p.1 * primitiveFactor T B p"
+          }
+        }
       }
     }
-  }
+  ]
 }

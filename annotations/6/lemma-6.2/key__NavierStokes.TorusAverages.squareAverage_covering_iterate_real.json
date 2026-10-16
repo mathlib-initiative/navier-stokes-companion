@@ -1,29 +1,31 @@
 {
-  "id": "lemma-6.2/key/1.NavierStokes.TorusAverages.squareAverage_covering_iterate_real",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TorusAverages.squareAverage_covering_iterate_real",
-      "line": 129,
-      "module": "NavierStokes.TorusAverages",
-      "path": "NavierStokes/TorusAverages.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusAverages.lean#L129"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TorusAverages.squareAverage_covering_iterate_real",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TorusAverages.squareAverage_covering_iterate_real",
+        "module": "NavierStokes.TorusAverages"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The same identity for the unit-square average of a continuous unit-periodic real function, the form consumed downstream."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 129,
-        "text": "theorem squareAverage_covering_iterate_real {f : Plane → ℝ}\n    (hf : Continuous f)\n    (hp : ∀ z : Plane, ∀ k : Frequency, f (z + ((k.1 : ℝ), (k.2 : ℝ))) = f z)\n    (n : ℕ) : squareAverage (fun z => f (covering^[n] z)) = squareAverage f"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TorusAverages.squareAverage_covering_iterate_real",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: The same identity for the unit-square average of a continuous unit-periodic real function, the form consumed downstream."
+          },
+          "destination": {
+            "fragment": "L129",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusAverages.lean"
+          },
+          "snippet": {
+            "line": 129,
+            "text": "theorem squareAverage_covering_iterate_real {f : Plane → ℝ}\n    (hf : Continuous f)\n    (hp : ∀ z : Plane, ∀ k : Frequency, f (z + ((k.1 : ℝ), (k.2 : ℝ))) = f z)\n    (n : ℕ) : squareAverage (fun z => f (covering^[n] z)) = squareAverage f"
+          }
+        }
       }
     }
-  }
+  ]
 }

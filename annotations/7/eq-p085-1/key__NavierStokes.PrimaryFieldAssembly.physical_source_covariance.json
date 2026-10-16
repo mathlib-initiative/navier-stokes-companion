@@ -1,26 +1,28 @@
 {
-  "id": "eq-p085-1/key/03.NavierStokes.PrimaryFieldAssembly.physical_source_covariance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryFieldAssembly.physical_source_covariance",
-      "line": 644,
-      "module": "NavierStokes.PrimaryFieldAssembly",
-      "path": "NavierStokes/PrimaryFieldAssembly.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryFieldAssembly.lean#L644"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryFieldAssembly.physical_source_covariance",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryFieldAssembly.physical_source_covariance",
+        "module": "NavierStokes.PrimaryFieldAssembly"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 644,
-        "text": "doubleAverage (fun Y θ => sourceField A hdet (physicalOuter h N) (physicalViscosity h N) (chartTarget h q N T0) q x Y θ 0 * … i.succ) = q ^ (-velocityExponent h - 1 / 2) * T0 i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.PrimaryFieldAssembly.physical_source_covariance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L644",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryFieldAssembly.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 644,
+            "text": "theorem physical_source_covariance (sys : SlotSystem D h vr vt)\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (N : ℕ) (hN : 1 ≤ N)\n    (A : (U : UnsignedLabel) → SourcePair Q sys (tailLabel N U))\n    {q : ℝ} (hq : 0 < q) (hqN : q ≤ ChartScales.Q N) (x : SlotColoring.Position) (T0 : Vec2)\n    (hcone : ∀ U, mask D (tailLabel N U) q x ≠ 0 →\n      SmoothCovariance.StrictCone (A U).sourceMatrix (chartTarget h q N T0 U)) (i : Fin 2) :\n    doubleAverage (fun Y θ =>\n      sourceField A hdet (physicalOuter h N) (physicalViscosity h N)\n        (chartTarget h q N T0) q x Y θ 0 *\n      sourceField A hdet (physicalOuter h N) (physicalViscosity h N)\n        (chartTarget h q N T0) q x Y θ i.succ) =\n      q ^ (-velocityExponent h - 1 / 2) * T0 i"
+          }
+        }
       }
     }
-  }
+  ]
 }

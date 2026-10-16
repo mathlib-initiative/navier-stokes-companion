@@ -1,26 +1,29 @@
 {
-  "id": "corollary-7.8/support/3.NavierStokes.LabelSumBounds.uniform_symmetricCovariance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LabelSumBounds.uniform_symmetricCovariance",
-      "line": 853,
-      "module": "NavierStokes.LabelSumBounds",
-      "path": "NavierStokes/LabelSumBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean#L853"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LabelSumBounds.uniform_symmetricCovariance",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LabelSumBounds.uniform_symmetricCovariance",
+        "module": "NavierStokes.LabelSumBounds"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 853,
-        "text": "theorem uniform_symmetricCovariance {s : StripData D} {P : ι → ℕ → D → ℝ} {α β : ℝ}\n    (a b : ι → HarmonicBlock D) (N : ℕ) (hband : ∀ l, (a l).BandLimited N)\n    (hcarrier : ∀ l, SameCarrier (a l) (b l))\n    (ha : ∀ i j, UniformWaveClass s P α (fun l n x => (a l).velocity n i j x))\n    (hb : ∀ i j, UniformWaveClass s P β (fun l n x => (b l).velocity n i j x))\n    (hP0 : ∀ l n x, x ∈ s.domain → 0 ≤ P l n x)\n    (hP1 : ∀ l n x, x ∈ s.domain → P l n x ≤ 1)\n    (hkp : ∀ l n, (a l).angularFrequency n ≠ 0) (i j : Fin 3) :\n    UniformMeanClass s (α + β) (fun l => symmetricCovariance (a l).oscillation (b l).oscillation i j)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.LabelSumBounds.uniform_symmetricCovariance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L853",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 853,
+            "text": "theorem uniform_symmetricCovariance {s : StripData D} {P : ι → ℕ → D → ℝ} {α β : ℝ}\n    (a b : ι → HarmonicBlock D) (N : ℕ) (hband : ∀ l, (a l).BandLimited N)\n    (hcarrier : ∀ l, SameCarrier (a l) (b l))\n    (ha : ∀ i j, UniformWaveClass s P α (fun l n x => (a l).velocity n i j x))\n    (hb : ∀ i j, UniformWaveClass s P β (fun l n x => (b l).velocity n i j x))\n    (hP0 : ∀ l n x, x ∈ s.domain → 0 ≤ P l n x)\n    (hP1 : ∀ l n x, x ∈ s.domain → P l n x ≤ 1)\n    (hkp : ∀ l n, (a l).angularFrequency n ≠ 0) (i j : Fin 3) :\n    UniformMeanClass s (α + β) (fun l => symmetricCovariance (a l).oscillation (b l).oscillation i j)"
+          }
+        }
       }
     }
-  }
+  ]
 }

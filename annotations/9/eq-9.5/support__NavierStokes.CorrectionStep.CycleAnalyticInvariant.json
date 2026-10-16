@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.5/support/16.NavierStokes.CorrectionStep.CycleAnalyticInvariant",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.CycleAnalyticInvariant",
-      "line": 9408,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L9408"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.CycleAnalyticInvariant",
-        "kind": "structure"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.CycleAnalyticInvariant",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 9408,
-        "text": "gaussianFlat : ∀ β i j, UniformClass G.strip (√ζ) β (gaussian coefficients); axisFlat : ∀ β, MeanClass G.strip β x.axisymmetricAlias; phase : ContDiffOn … G.strip.domain; gaussianCoefficientSmooth on G.domain; no smoothness field for axisymmetricAlias off the strip"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "16.NavierStokes.CorrectionStep.CycleAnalyticInvariant",
+            "kind": "structure"
+          },
+          "destination": {
+            "fragment": "L9408",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 9408,
+            "text": "structure CycleAnalyticInvariant {ι : Type} (G : SignedMeanGain.Geometry)\n    (c : Context CyclePoint) (primary : ι → HarmonicBlock CyclePoint)\n    (P : ι → ℕ → CyclePoint → ℝ) (labelCarrier : ι → ℕ → Set CyclePoint)\n    (σ : ℝ) (x : CycleState ι) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

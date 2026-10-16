@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.8/key/05.NavierStokes.CorrectionState.MeanResidualBounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionState.MeanResidualBounds",
-      "line": 216,
-      "module": "NavierStokes.CorrectionState",
-      "path": "NavierStokes/CorrectionState.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L216"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionState.MeanResidualBounds",
-        "kind": "structure"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionState.MeanResidualBounds",
+        "module": "NavierStokes.CorrectionState"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 216,
-        "text": "structure MeanResidualBounds (s) (σ : ℝ) (c) (u) where angular : MeanClass s (1 + σ) (fun n x => u.meanGoodResidual c n x 1); axial : MeanClass s (1 + σ) (fun n x => u.meanGoodResidual c n x 2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.CorrectionState.MeanResidualBounds",
+            "kind": "structure"
+          },
+          "destination": {
+            "fragment": "L216",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 216,
+            "text": "structure MeanResidualBounds (s : StripData D) (σ : ℝ) (c : Context D)\n    (u : State D) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

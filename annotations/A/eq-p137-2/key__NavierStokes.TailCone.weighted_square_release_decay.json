@@ -1,23 +1,26 @@
 {
-  "id": "eq-p137-2/key/02.NavierStokes.TailCone.weighted_square_release_decay",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TailCone.weighted_square_release_decay",
-      "line": 245
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TailCone.lean#L245"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TailCone.weighted_square_release_decay"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TailCone.weighted_square_release_decay",
+        "module": "NavierStokes.TailCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 245,
-        "text": "Real.exp (t - y) * finalAngular d (t, eta) ^ 2 ≤ finalAngular d (y, eta) ^ 2 * Real.exp (-(3 * d.h / 2) * (t - y))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TailCone.weighted_square_release_decay"
+          },
+          "destination": {
+            "fragment": "L245"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 245,
+            "text": "theorem weighted_square_release_decay (d : TailData) (eta : ℝ) {y t : ℝ}\n    (hy : d.releaseStart ≤ y) (hyt : y ≤ t) :\n    Real.exp (t - y) * finalAngular d (t, eta) ^ 2 ≤\n      finalAngular d (y, eta) ^ 2 * Real.exp (-(3 * d.h / 2) * (t - y))"
+          }
+        }
       }
     }
-  }
+  ]
 }

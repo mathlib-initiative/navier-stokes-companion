@@ -1,26 +1,28 @@
 {
-  "id": "eq-p120-6/key/01.NavierStokes.CompactSpatialForceDecay.jet_decay",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CompactSpatialForceDecay.jet_decay",
-      "line": 44,
-      "module": "NavierStokes.CompactSpatialForceDecay",
-      "path": "NavierStokes/CompactSpatialForceDecay.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CompactSpatialForceDecay.lean#L44"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CompactSpatialForceDecay.jet_decay",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CompactSpatialForceDecay.jet_decay",
+        "module": "NavierStokes.CompactSpatialForceDecay"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 44,
-        "text": "(hS : IsCompact S) → ContDiffOn ℝ ∞ f futureDomain → SupportedIn S f → CompactFutureTimeSupport f → ∀ m K, ∃ C, 0 < C ∧ ∀ t ≥ 0, ∀ x, ‖iteratedFDerivWithin ℝ m f futureDomain (t, x)‖ ≤ C / (1 + ‖x‖ + t) ^ K"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CompactSpatialForceDecay.jet_decay",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L44",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CompactSpatialForceDecay.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 44,
+            "text": "theorem jet_decay {S : Set Space} (hS : IsCompact S) {f : VelocityField}\n    (hf : ContDiffOn ℝ ∞ f futureDomain) (hs : SupportedIn S f)\n    (htime : CompactFutureTimeSupport f) (m : ℕ) (K : ℝ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ t : ℝ, 0 ≤ t → ∀ x : Space,\n      ‖iteratedFDerivWithin ℝ m f futureDomain (t, x)‖ ≤ C / (1 + ‖x‖ + t) ^ K"
+          }
+        }
       }
     }
-  }
+  ]
 }

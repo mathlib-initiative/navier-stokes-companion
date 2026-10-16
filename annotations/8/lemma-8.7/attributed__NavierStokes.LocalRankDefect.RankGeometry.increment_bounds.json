@@ -1,29 +1,31 @@
 {
-  "id": "lemma-8.7/attributed/1.NavierStokes.LocalRankDefect.RankGeometry.increment_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalRankDefect.RankGeometry.increment_bounds",
-      "line": 857,
-      "module": "NavierStokes.LocalRankDefect",
-      "path": "NavierStokes/LocalRankDefect.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalRankDefect.lean#L857"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalRankDefect.RankGeometry.increment_bounds",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalRankDefect.RankGeometry.increment_bounds",
+        "module": "NavierStokes.LocalRankDefect"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Yields `IncrementBounds` for the realized triple, with the radial (potential) component one order better: Δβ ∈ M_{α+1}."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 857,
-        "text": "theorem RankGeometry.increment_bounds\n    (hangular : MeanClass (PhysicalMeanDomain.localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) H\n      (fun n => MeanRankUpdate.slowLift (CorrectionState.rankAngular r c u n)))\n    (haxial : MeanClass (PhysicalMeanDomain.localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) H\n      (fun n => MeanRankUpdate.slowLift (CorrectionState.rankDesiredAxial r c u n)))\n    (heps : BandBound (PhysicalMeanDomain.localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) 1\n      c.operators.epsilon) :\n    IncrementBounds (PhysicalMeanDomain.localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) H\n      (VariableGaugeMean.rankIncrementState g r axial c u)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LocalRankDefect.RankGeometry.increment_bounds",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Yields `IncrementBounds` for the realized triple, with the radial (potential) component one order better: Δβ ∈ M_{α+1}."
+          },
+          "destination": {
+            "fragment": "L857",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalRankDefect.lean"
+          },
+          "snippet": {
+            "line": 857,
+            "text": "theorem RankGeometry.increment_bounds\n    (hangular : MeanClass (PhysicalMeanDomain.localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) H\n      (fun n => MeanRankUpdate.slowLift (CorrectionState.rankAngular r c u n)))\n    (haxial : MeanClass (PhysicalMeanDomain.localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) H\n      (fun n => MeanRankUpdate.slowLift (CorrectionState.rankDesiredAxial r c u n)))\n    (heps : BandBound (PhysicalMeanDomain.localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) 1\n      c.operators.epsilon) :\n    IncrementBounds (PhysicalMeanDomain.localStripData a b cL cR ha hcL hcR ε L hε hεone hL U hU) H\n      (VariableGaugeMean.rankIncrementState g r axial c u)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "lemma-5.1/support/3.NavierStokes.ActualSlowAxis.hierarchy_on_collar",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSlowAxis.hierarchy_on_collar",
-      "line": 320,
-      "module": "NavierStokes.ActualSlowAxis",
-      "path": "NavierStokes/ActualSlowAxis.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean#L320"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSlowAxis.hierarchy_on_collar",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSlowAxis.hierarchy_on_collar",
+        "module": "NavierStokes.ActualSlowAxis"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 320,
-        "text": "theorem hierarchy_on_collar {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) (hP0 : ContDiff ℝ ∞ P0) (C : ℝ)\n    {n : ℕ} (hn : 0 < n) {X eta : ℝ} (hX : 0 < X)\n    (hcollar : X ≤ N.endpoint * Real.exp δ) (heta : eta ∈ Icc (-1 : ℝ) 1) :\n    SlowRecursion.OrderEquations h C (hierarchy E hT hδ hδT κ hP0 C).coefficients n (X, eta)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ActualSlowAxis.hierarchy_on_collar",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L320",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 320,
+            "text": "theorem hierarchy_on_collar {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) (hP0 : ContDiff ℝ ∞ P0) (C : ℝ)\n    {n : ℕ} (hn : 0 < n) {X eta : ℝ} (hX : 0 < X)\n    (hcollar : X ≤ N.endpoint * Real.exp δ) (heta : eta ∈ Icc (-1 : ℝ) 1) :\n    SlowRecursion.OrderEquations h C (hierarchy E hT hδ hδT κ hP0 C).coefficients n (X, eta)"
+          }
+        }
       }
     }
-  }
+  ]
 }

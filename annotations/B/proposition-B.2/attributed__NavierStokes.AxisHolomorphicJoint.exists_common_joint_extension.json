@@ -1,34 +1,55 @@
 {
-  "id": "proposition-B.2/attributed/1.NavierStokes.AxisHolomorphicJoint.exists_common_joint_extension",
-  "location": {
-    "page": 146,
-    "rect": [0.12854, 0.777686, 0.746187, 0.082645]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisHolomorphicJoint.exists_common_joint_extension",
-      "line": 202,
-      "module": "NavierStokes.AxisHolomorphicJoint",
-      "path": "NavierStokes/AxisHolomorphicJoint.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 146,
+        "rect": [0.12854, 0.777686, 0.746187, 0.082645]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-B.2@p146"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisHolomorphicJoint.lean#L202"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisHolomorphicJoint.exists_common_joint_extension",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 147,
+        "rect": [0.12854, 0.102479, 0.746187, 0.124793]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: For windows J strictly inside I and any R < 20 there is one delta > 0, one S in (R,20) and one constant sequence B such that for EVERY A : AxisSpace I eps and every k, the complex radial jet complexProfile I eps A k is jointly smooth on Ioo (-S) S x parameterTube J delta and, for |Y| <= R, is Analyt"
-      },
-      "region": "proposition-B.2@p146",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 202,
-        "text": "theorem exists_common_joint_extension (I J : Window) (hleft : I.left < J.left)\n    (hright : J.right < I.right) {ε R : ℝ} (hε : 0 < ε) (hR20 : R < 20) :\n    ∃ δ : ℝ, 0 < δ ∧ ∃ S : ℝ, R < S ∧ S < 20 ∧ ∃ B : ℕ → ℝ,\n      (∀ k, 0 ≤ B k) ∧ ∀ (A : AxisSpace I ε) (k : ℕ),\n        ContDiffOn ℝ ∞ (fun p : ℝ × ℂ => complexProfile I ε A k p.1 p.2)\n          (Ioo (-S) S ×ˢ parameterTube J δ) ∧\n        ∀ Y : ℝ, |Y| ≤ R →\n          AnalyticOnNhd ℂ (complexProfile I ε A k Y) (parameterTube J δ) ∧\n          (∀ z ∈ parameterTube J δ, ‖complexProfile I ε A k Y z‖ ≤ B k * ‖A‖) ∧\n          (∀ z ∈ parameterTube J δ,\n            iteratedDeriv k (fun y => complexProfile I ε A 0 y z) Y =\n              complexProfile I ε A k Y z) ∧\n          (∀ (m : ℕ) (x : ℝ), x ∈ J.interval →\n            iteratedDeriv m (complexProfile I ε A k Y) (x : ℂ) =\n              (mixedSeries I ε A k m (Y, x) : ℂ))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-B.2@p147"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisHolomorphicJoint.exists_common_joint_extension",
+        "module": "NavierStokes.AxisHolomorphicJoint"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.AxisHolomorphicJoint.exists_common_joint_extension",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: For windows J strictly inside I and any R < 20 there is one delta > 0, one S in (R,20) and one constant sequence B such that for EVERY A : AxisSpace I eps and every k, the complex radial jet complexProfile I eps A k is jointly smooth on Ioo (-S) S x parameterTube J delta and, for |Y| <= R, is Analyt"
+          },
+          "destination": {
+            "fragment": "L202",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisHolomorphicJoint.lean"
+          },
+          "snippet": {
+            "line": 202,
+            "text": "theorem exists_common_joint_extension (I J : Window) (hleft : I.left < J.left)\n    (hright : J.right < I.right) {ε R : ℝ} (hε : 0 < ε) (hR20 : R < 20) :\n    ∃ δ : ℝ, 0 < δ ∧ ∃ S : ℝ, R < S ∧ S < 20 ∧ ∃ B : ℕ → ℝ,\n      (∀ k, 0 ≤ B k) ∧ ∀ (A : AxisSpace I ε) (k : ℕ),\n        ContDiffOn ℝ ∞ (fun p : ℝ × ℂ => complexProfile I ε A k p.1 p.2)\n          (Ioo (-S) S ×ˢ parameterTube J δ) ∧\n        ∀ Y : ℝ, |Y| ≤ R →\n          AnalyticOnNhd ℂ (complexProfile I ε A k Y) (parameterTube J δ) ∧\n          (∀ z ∈ parameterTube J δ, ‖complexProfile I ε A k Y z‖ ≤ B k * ‖A‖) ∧\n          (∀ z ∈ parameterTube J δ,\n            iteratedDeriv k (fun y => complexProfile I ε A 0 y z) Y =\n              complexProfile I ε A k Y z) ∧\n          (∀ (m : ℕ) (x : ℝ), x ∈ J.interval →\n            iteratedDeriv m (complexProfile I ε A k Y) (x : ℂ) =\n              (mixedSeries I ε A k m (Y, x) : ℂ))"
+          }
+        }
+      }
+    }
+  ]
 }

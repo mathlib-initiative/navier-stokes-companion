@@ -1,24 +1,27 @@
 {
-  "id": "eq-p128-3/key/01.NavierStokes.FiveProfileMoments.linearEquiv_apply",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveProfileMoments.linearEquiv_apply",
-      "line": 342
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L342"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveProfileMoments.linearEquiv_apply",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveProfileMoments.linearEquiv_apply",
+        "module": "NavierStokes.FiveProfileMoments"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 342,
-        "text": "linearEquiv P b hb c = (![∫ x, u P c x, ∫ x, x ^ (b + 1 / 2) * u P c x], ![∫ x, x ^ (1 / 2 : ℝ) * e P c x, ∫ x, x ^ b * e P c x, ∫ x, x ^ (b - 1) * e P c x])"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.FiveProfileMoments.linearEquiv_apply",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L342"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 342,
+            "text": "theorem linearEquiv_apply (P : Patch) (b : ℝ) (hb : GoodExponent b) (c : Coeff) :\n    linearEquiv P b hb c =\n      (![∫ x, u P c x, ∫ x, x ^ (b + 1 / 2) * u P c x],\n        ![∫ x, x ^ (1 / 2 : ℝ) * e P c x, ∫ x, x ^ b * e P c x, ∫ x, x ^ (b - 1) * e P c x])"
+          }
+        }
       }
     }
-  }
+  ]
 }

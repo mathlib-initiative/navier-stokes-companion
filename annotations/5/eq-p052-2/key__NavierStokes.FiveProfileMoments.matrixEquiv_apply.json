@@ -1,25 +1,27 @@
 {
-  "id": "eq-p052-2/key/03.NavierStokes.FiveProfileMoments.matrixEquiv_apply",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveProfileMoments.matrixEquiv_apply",
-      "line": 221,
-      "module": "NavierStokes.FiveProfileMoments",
-      "path": "NavierStokes/FiveProfileMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L221"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveProfileMoments.matrixEquiv_apply"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveProfileMoments.matrixEquiv_apply",
+        "module": "NavierStokes.FiveProfileMoments"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 221,
-        "text": "matrixEquiv P a ha c i = ∫ x, x ^ a i * correction P c x, where matrixEquiv is the continuous linear equivalence given by (momentMatrix P a).mulVec"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.FiveProfileMoments.matrixEquiv_apply"
+          },
+          "destination": {
+            "fragment": "L221",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 221,
+            "text": "theorem matrixEquiv_apply (P : Patch) (a : Fin n → ℝ) (ha : Injective a) (c : Fin n → ℝ) (i : Fin n) :\n    matrixEquiv P a ha c i = ∫ x, x ^ a i * correction P c x"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,28 @@
 {
-  "id": "eq-p029-1/support/03.NavierStokes.ActivationStocks.profiles_stocks_congr",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActivationStocks.profiles_stocks_congr",
-      "line": 833,
-      "module": "NavierStokes.ActivationStocks",
-      "path": "NavierStokes/ActivationStocks.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationStocks.lean#L833"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActivationStocks.profiles_stocks_congr"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActivationStocks.profiles_stocks_congr",
+        "module": "NavierStokes.ActivationStocks"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 833,
-        "text": "(hf : P.f (X,η) = Q.f (X,η)) (hu : P.U (X,η) = Q.U (X,η)) (hH : ∀ r ξ, ξ ∈ J → profileHistory P r (X,ξ) = profileHistory Q r (X,ξ)) : profileStockOne P h (X,η) = profileStockOne Q h (X,η) ∧ profileStockTwo … — consumes the propagated form of this hypothesis"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ActivationStocks.profiles_stocks_congr"
+          },
+          "destination": {
+            "fragment": "L833",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationStocks.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 833,
+            "text": "theorem profiles_stocks_congr {D E : RadialDomain} (P : Profiles D) (Q : Profiles E)\n    (h : ℝ) {J : Set ℝ} (hJ : IsOpen J) {X η : ℝ} (hη : η ∈ J)\n    (hp : (X, η) ∈ D.carrier) (hq : (X, η) ∈ E.carrier) (hX : 0 < X)\n    (hf : P.f (X, η) = Q.f (X, η)) (hfne : Q.f (X, η) ≠ 0)\n    (hu : P.U (X, η) = Q.U (X, η))\n    (hH : ∀ r ξ, ξ ∈ J → profileHistory P r (X, ξ) = profileHistory Q r (X, ξ)) :\n    profileStockOne P h (X, η) = profileStockOne Q h (X, η) ∧\n      profileStockTwo P h (X, η) = profileStockTwo Q h (X, η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.5/key/01.NavierStokes.AxisOperators.jet_regularInverse_succ",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisOperators.jet_regularInverse_succ",
-      "line": 501,
-      "module": "NavierStokes.AxisOperators",
-      "path": "NavierStokes/AxisOperators.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisOperators.lean#L501"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisOperators.jet_regularInverse_succ",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisOperators.jet_regularInverse_succ",
+        "module": "NavierStokes.AxisOperators"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 501,
-        "text": "inputJet I ε (regularInverse I hε r hr A) (n + 1) m x = inputJet I ε A n m x / radialDivisor r n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.AxisOperators.jet_regularInverse_succ",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L501",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisOperators.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 501,
+            "text": "theorem jet_regularInverse_succ (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r)\n    (A : AxisSpace I ε) (n m : ℕ) {x : ℝ} (hx : x ∈ I.interval) :\n    inputJet I ε (regularInverse I hε r hr A) (n + 1) m x =\n      inputJet I ε A n m x / radialDivisor r n"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p095-2/attributed/06.NavierStokes.GaugeMomentBalances.state_angular_moment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaugeMomentBalances.state_angular_moment",
-      "line": 572,
-      "module": "NavierStokes.GaugeMomentBalances",
-      "path": "NavierStokes/GaugeMomentBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean#L572"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaugeMomentBalances.state_angular_moment",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaugeMomentBalances.state_angular_moment",
+        "module": "NavierStokes.GaugeMomentBalances"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 572,
-        "text": "CorrectionState.radialMoment 2 (u.thetaResidual c) n s = ε n * fderiv ℝ (CorrectionState.thetaDefect c u n) s z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.GaugeMomentBalances.state_angular_moment",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L572",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 572,
+            "text": "theorem state_angular_moment {coord a b : ℝ} (U : SlowRegion coord)\n    (ha : 0 < a) (hab : a < b) (r : ReconstructionData)\n    (ε fast : ℕ → ℝ) (z t v : Plane) (c : Context Point) (u : State Point)\n    (ho : c.operators = nativeOperators r ε fast z t v)\n    (H : MovingAngularInputs U a b c u)\n    (hmass : ∀ n s, s ∈ U.carrier → CorrectionState.radialMoment 2 u.mean.angular n s = 0)\n    (n : ℕ) {s : Plane} (hs : s ∈ U.carrier) :\n    CorrectionState.radialMoment 2 (u.thetaResidual c) n s =\n      ε n * fderiv ℝ (CorrectionState.thetaDefect c u n) s z"
+          }
+        }
       }
     }
-  }
+  ]
 }

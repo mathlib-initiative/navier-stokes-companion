@@ -1,26 +1,29 @@
 {
-  "id": "eq-B.6/support/04.NavierStokes.AxisOperators.jet_inverseMixed",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisOperators.jet_inverseMixed",
-      "line": 738,
-      "module": "NavierStokes.AxisOperators",
-      "path": "NavierStokes/AxisOperators.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisOperators.lean#L738"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisOperators.jet_inverseMixed",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisOperators.jet_inverseMixed",
+        "module": "NavierStokes.AxisOperators"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 738,
-        "text": "inputJet I ε (inverseMixed I hε r hr A B) n m x = differentialFamily I ε r 1 (fun j => (j : ℝ)) A B n m x — the convolution with one η-derivative on the first factor, the factor j on the second, divided by radialDivisor r n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.AxisOperators.jet_inverseMixed",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L738",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisOperators.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 738,
+            "text": "theorem jet_inverseMixed (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r)\n    (A B : AxisSpace I ε) (n m : ℕ) {x : ℝ} (hx : x ∈ I.interval) :\n    inputJet I ε (inverseMixed I hε r hr A B) n m x =\n      differentialFamily I ε r 1 (fun j => (j : ℝ)) A B n m x"
+          }
+        }
       }
     }
-  }
+  ]
 }

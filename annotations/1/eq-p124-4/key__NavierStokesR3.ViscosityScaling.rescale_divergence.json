@@ -1,22 +1,25 @@
 {
-  "id": "eq-p124-4/key/02.NavierStokesR3.ViscosityScaling.rescale_divergence",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ViscosityScaling.rescale_divergence",
-      "line": 51
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean#L51"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ViscosityScaling.rescale_divergence"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ViscosityScaling.rescale_divergence",
+        "module": "NavierStokes.R3.ViscosityScaling"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 51,
-        "text": "spatialDivergence (rescale a b u) t x = (a * b) * spatialDivergence u t (b • x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.ViscosityScaling.rescale_divergence"
+          },
+          "destination": {
+            "fragment": "L51"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 51,
+            "text": "theorem rescale_divergence (a b : ℝ) (u : VelocityField) (t : ℝ) (x : Space) :\n    spatialDivergence (rescale a b u) t x = (a * b) * spatialDivergence u t (b • x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

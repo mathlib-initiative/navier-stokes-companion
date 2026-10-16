@@ -1,26 +1,28 @@
 {
-  "id": "eq-p123-5/key/01.NavierStokesR3.WeightedInterpolation.cutoff_transport_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.WeightedInterpolation.cutoff_transport_bound",
-      "line": 195,
-      "module": "NavierStokes.R3.WeightedInterpolation",
-      "path": "NavierStokes/R3/WeightedInterpolation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/WeightedInterpolation.lean#L195"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.WeightedInterpolation.cutoff_transport_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.WeightedInterpolation.cutoff_transport_bound",
+        "module": "NavierStokes.R3.WeightedInterpolation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 195,
-        "text": "Integrable (fun x => φ x ^ 6 * ‖w x‖ ^ 3) ∧ (∫ x, φ x ^ 6 * ‖w x‖ ^ 3) ≤ comparisonLpNorm 2 w ^ (3/2 : ℝ) * comparisonLpNorm 6 (fun x => (φ x ^ 4) • w x) ^ (3/2 : ℝ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokesR3.WeightedInterpolation.cutoff_transport_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L195",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/WeightedInterpolation.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 195,
+            "text": "theorem cutoff_transport_bound\n    {φ : Space → ℝ} {w : Space → E}\n    (hφm : AEStronglyMeasurable φ volume) (hφ : ∀ x, 0 ≤ φ x)\n    (hw : MemLp w 2 volume)\n    (hweighted : MemLp (fun x => (φ x ^ 4) • w x) 6 volume) :\n    Integrable (fun x => φ x ^ 6 * ‖w x‖ ^ 3) volume ∧\n      (∫ x : Space, φ x ^ 6 * ‖w x‖ ^ 3) ≤\n        comparisonLpNorm 2 w ^ (3 / 2 : ℝ) *\n          comparisonLpNorm 6 (fun x => (φ x ^ 4) • w x) ^ (3 / 2 : ℝ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p105-1/key/04.NavierStokes.SignedCovariance.signed_quotient_class",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedCovariance.signed_quotient_class",
-      "line": 569,
-      "module": "NavierStokes.SignedCovariance",
-      "path": "NavierStokes/SignedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L569"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedCovariance.signed_quotient_class",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedCovariance.signed_quotient_class",
+        "module": "NavierStokes.SignedCovariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 569,
-        "text": "MemClass s w 0 g → MemClass s w β r → InverseControl s w g → MemClass s (fun n x => √(w n x)) β (fun n x => r n x / (2 * √(g n x)))  -- line 3, strip-level form"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.SignedCovariance.signed_quotient_class",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L569",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 569,
+            "text": "theorem signed_quotient_class {s : StripData E} {w g r : ℕ → E → ℝ} {β : ℝ}\n    (hw : ∀ n x, x ∈ s.domain → 0 < w n x)\n    (hp : ∀ n x, x ∈ s.domain → 0 < g n x)\n    (hg : MemClass s w 0 g) (hr : MemClass s w β r)\n    (hlower : InverseControl s w g) :\n    MemClass s (fun n x => Real.sqrt (w n x)) β\n      (fun n x => r n x / (2 * Real.sqrt (g n x)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

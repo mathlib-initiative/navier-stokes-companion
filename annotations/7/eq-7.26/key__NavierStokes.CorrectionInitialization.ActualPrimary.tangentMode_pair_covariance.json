@@ -1,23 +1,25 @@
 {
-  "id": "eq-7.26/key/01.NavierStokes.CorrectionInitialization.ActualPrimary.tangentMode_pair_covariance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.tangentMode_pair_covariance",
-      "line": 4667,
-      "module": "NavierStokes.CorrectionInitialization",
-      "path": "NavierStokes/CorrectionInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L4667"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionInitialization.ActualPrimary.tangentMode_pair_covariance"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.tangentMode_pair_covariance",
+        "module": "NavierStokes.CorrectionInitialization"
       },
-      "snippet": {
-        "line": 4667,
-        "text": "doubleAverage (fun Y theta => (∑ j : Fin 2, tangentMode j L p Y theta 0) * (∑ j : Fin 2, tangentMode j L p Y theta i.succ)) = ChartScales.epsilon h (BaseChartJets.cellBand L) * spatialMask L p ^ 2 * PrimaryTargetBounds.actualTarget modulation p i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CorrectionInitialization.ActualPrimary.tangentMode_pair_covariance"
+          },
+          "destination": {
+            "fragment": "L4667",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean"
+          },
+          "snippet": {
+            "line": 4667,
+            "text": "theorem tangentMode_pair_covariance (L : Label B N0) (p : PhaseCalculus.Slow)\n    (hp : p ∈ (PrimaryGeometryAssembly.domain nominal (choice B N0).prepared.N).carrier L)\n    (hK : p ∈ PositiveRepresentatives.positivePart (PrimaryGeometryAssembly.referenceSet nominal))\n    (hw : 0 < PrimaryTargetBounds.movingWeight nominal p) (i : Fin 2) :\n    doubleAverage (fun Y theta =>\n      (∑ j : Fin 2, tangentMode j L p Y theta 0) *\n      (∑ j : Fin 2, tangentMode j L p Y theta i.succ)) =\n      ChartScales.epsilon h (BaseChartJets.cellBand L) * spatialMask L p ^ 2 *\n        PrimaryTargetBounds.actualTarget modulation p i"
+          }
+        }
       }
     }
-  }
+  ]
 }

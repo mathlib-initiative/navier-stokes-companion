@@ -1,25 +1,27 @@
 {
-  "id": "eq-p044-7/attributed/08.NavierStokes.UniformCone.positive_uniform_margin",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.UniformCone.positive_uniform_margin",
-      "line": 29,
-      "module": "NavierStokes.UniformCone",
-      "path": "NavierStokes/UniformCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformCone.lean#L29"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.UniformCone.positive_uniform_margin"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.UniformCone.positive_uniform_margin",
+        "module": "NavierStokes.UniformCone"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 29,
-        "text": "(hK : IsCompact K) (hg : ContinuousOn g K) (hpos : ∀ x ∈ K, 0 < g x) : ∃ ε, 0 < ε ∧ ∀ x ∈ K, ε ≤ g x   -- the compactness extraction that replaces the explicit min"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.UniformCone.positive_uniform_margin"
+          },
+          "destination": {
+            "fragment": "L29",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformCone.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 29,
+            "text": "theorem positive_uniform_margin {K : Set X} (hK : IsCompact K)\n    {g : X → ℝ} (hg : ContinuousOn g K) (hpos : ∀ x ∈ K, 0 < g x) :\n    ∃ ε : ℝ, 0 < ε ∧ ∀ x ∈ K, ε ≤ g x"
+          }
+        }
       }
     }
-  }
+  ]
 }

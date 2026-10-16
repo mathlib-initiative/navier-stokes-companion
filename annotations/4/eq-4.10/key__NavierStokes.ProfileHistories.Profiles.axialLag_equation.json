@@ -1,25 +1,27 @@
 {
-  "id": "eq-4.10/key/02.NavierStokes.ProfileHistories.Profiles.axialLag_equation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProfileHistories.Profiles.axialLag_equation",
-      "line": 650,
-      "module": "NavierStokes.ProfileHistories",
-      "path": "NavierStokes/ProfileHistories.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileHistories.lean#L650"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProfileHistories.Profiles.axialLag_equation",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProfileHistories.Profiles.axialLag_equation",
+        "module": "NavierStokes.ProfileHistories"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 650,
-        "text": "p.1 * deriv (fun x => P.axialLag h (x, p.2)) p.1 + P.axialLag h p = P.axialSource h p   (hX : p.1 ≠ 0)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ProfileHistories.Profiles.axialLag_equation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L650",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileHistories.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 650,
+            "text": "theorem axialLag_equation (h : ℝ) {p : Point} (hp : p ∈ D.carrier) (hX : p.1 ≠ 0) :\n    p.1 * deriv (fun x => P.axialLag h (x, p.2)) p.1 + P.axialLag h p =\n      P.axialSource h p"
+          }
+        }
       }
     }
-  }
+  ]
 }

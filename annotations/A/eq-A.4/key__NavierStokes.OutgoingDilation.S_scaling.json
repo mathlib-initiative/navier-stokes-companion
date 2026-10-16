@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.4/key/04.NavierStokes.OutgoingDilation.S_scaling",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingDilation.S_scaling",
-      "line": 122
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean#L122"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingDilation.S_scaling",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingDilation.S_scaling",
+        "module": "NavierStokes.OutgoingDilation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 122,
-        "text": "S F XR eta X = XR * ∫ u in Ioc 0 (X / XR), F.energyDensity eta u  (fourth factor: rho; energyDensity = U^2 - E^2/2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.OutgoingDilation.S_scaling",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L122"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 122,
+            "text": "theorem S_scaling (F : Profile) (XR eta X : ℝ) (hXR : 0 < XR) :\n    S F XR eta X = XR * ∫ u in Ioc 0 (X / XR), F.energyDensity eta u"
+          }
+        }
       }
     }
-  }
+  ]
 }

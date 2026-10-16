@@ -1,26 +1,29 @@
 {
-  "id": "eq-p123-4/key/02.NavierStokesR3.LocalizedDifferenceEnergy.hasDerivAt_difference_energy_balance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.LocalizedDifferenceEnergy.hasDerivAt_difference_energy_balance",
-      "line": 191,
-      "module": "NavierStokes.R3.LocalizedDifferenceEnergy",
-      "path": "NavierStokes/R3/LocalizedDifferenceEnergy.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/LocalizedDifferenceEnergy.lean#L191"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.LocalizedDifferenceEnergy.hasDerivAt_difference_energy_balance",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.LocalizedDifferenceEnergy.hasDerivAt_difference_energy_balance",
+        "module": "NavierStokes.R3.LocalizedDifferenceEnergy"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 191,
-        "text": "HasDerivAt (weightedEnergy χ (u - v)) (-2 * weightedDissipation χ (u - v) t - 2 * (∫ x, χ x * ⟪w, ∇u·w⟫) + (∫ x, ‖w‖^2 * Δχ) + (∫ x, ‖w‖^2 * fderiv ℝ χ x (v)) + 2 * ∫ x, (p-q) * fderiv ℝ χ x w) t — the same identity with E_R' an actual derivative"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.LocalizedDifferenceEnergy.hasDerivAt_difference_energy_balance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L191",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/LocalizedDifferenceEnergy.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 191,
+            "text": "theorem hasDerivAt_difference_energy_balance {a b t : ℝ} {χ : Space → ℝ}\n    {u v : VelocityField} {p q : PressureField}\n    (hχ : ContDiff ℝ ∞ χ) (hcχ : HasCompactSupport χ)\n    (hu : ContDiffOn ℝ ∞ u (Comparison.slab a b))\n    (hv : ContDiffOn ℝ ∞ v (Comparison.slab a b))\n    (hp : ContDiffOn ℝ ∞ p (Comparison.slab a b))\n    (hq : ContDiffOn ℝ ∞ q (Comparison.slab a b)) (ht : t ∈ Ioo a b)\n    (hdivu : ∀ x : Space, spatialDivergence u t x = 0)\n    (hdivv : ∀ x : Space, spatialDivergence v t x = 0)\n    (hNS : ∀ x : Space, ProblemStatement.navierStokesResidual 1 u p t x =\n      ProblemStatement.navierStokesResidual 1 v q t x) :\n    HasDerivAt (weightedEnergy χ (u - v))\n      (-2 * weightedDissipation χ (u - v) t -\n        2 * (∫ x : Space, χ x *\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

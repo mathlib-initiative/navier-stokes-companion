@@ -1,25 +1,28 @@
 {
-  "id": "eq-p124-5/support/05.NavierStokesR3.ProblemStatement.CompactPositiveTimeSupport.spatialScale",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ProblemStatement.CompactPositiveTimeSupport.spatialScale",
-      "line": 43,
-      "module": "NavierStokes.R3.SpatialSupportScaling",
-      "path": "NavierStokes/R3/SpatialSupportScaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/SpatialSupportScaling.lean#L43"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ProblemStatement.CompactPositiveTimeSupport.spatialScale"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ProblemStatement.CompactPositiveTimeSupport.spatialScale",
+        "module": "NavierStokes.R3.SpatialSupportScaling"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 43,
-        "text": "CompactPositiveTimeSupport f → b ≠ 0 → CompactPositiveTimeSupport (fun z => a • f (z.1, b • z.2))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokesR3.ProblemStatement.CompactPositiveTimeSupport.spatialScale"
+          },
+          "destination": {
+            "fragment": "L43",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/SpatialSupportScaling.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 43,
+            "text": "theorem CompactPositiveTimeSupport.spatialScale {f : VelocityField}\n    (hf : CompactPositiveTimeSupport f) (a b : ℝ) (hb : b ≠ 0) :\n    CompactPositiveTimeSupport (fun z : SpaceTime => a • f (z.1, b • z.2))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-p087-6/support/18.NavierStokes.ActualPrimaryCovariance.physicalScale_tail",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPrimaryCovariance.physicalScale_tail",
-      "line": 527,
-      "module": "NavierStokes.ActualPrimaryCovariance",
-      "path": "NavierStokes/ActualPrimaryCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryCovariance.lean#L527"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPrimaryCovariance.physicalScale_tail",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPrimaryCovariance.physicalScale_tail",
+        "module": "NavierStokes.ActualPrimaryCovariance"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 527,
-        "text": "(hn : (choice B N0).prepared.N + 1 ≤ n) (hx : x ∈ native strip domain) : physicalScale n x ≤ ChartScales.Q (choice B N0).prepared.N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "18.NavierStokes.ActualPrimaryCovariance.physicalScale_tail",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L527",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryCovariance.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 527,
+            "text": "theorem physicalScale_tail (B N0 : ℕ) {n : ℕ} (hn : (choice B N0).prepared.N + 1 ≤ n)\n    {x : Point} (hx : x ∈ (BaseContextAssembly.nativeStrip nominal standardRegion).domain) :\n    physicalScale n x ≤ ChartScales.Q (choice B N0).prepared.N"
+          }
+        }
       }
     }
-  }
+  ]
 }

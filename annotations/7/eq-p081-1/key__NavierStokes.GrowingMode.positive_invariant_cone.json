@@ -1,25 +1,28 @@
 {
-  "id": "eq-p081-1/key/02.NavierStokes.GrowingMode.positive_invariant_cone",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GrowingMode.positive_invariant_cone",
-      "line": 153,
-      "module": "NavierStokes.GrowingMode",
-      "path": "NavierStokes/GrowingMode.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GrowingMode.lean#L153"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GrowingMode.positive_invariant_cone"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GrowingMode.positive_invariant_cone",
+        "lines": [153, 153],
+        "module": "NavierStokes.GrowingMode"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 153,
-        "text": "barrier' : ℝ → ℝ := fun t => 2 * z t 1 * (e21 t * z t 0 + (-lam t - damping t + e22 t) * z t 1) - r ^ 2 * (2 * z t 0 * ((lam t - damping t + e11 t) * z t 0 + e12 t * z t 1)) — the derivative of the quadratic barrier (z t 1)² - r²(z t 0)² (line 152), which on the boundary z₋ = ±r z₊ equals ±2 r z₊² times the display's right-hand side"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GrowingMode.positive_invariant_cone"
+          },
+          "destination": {
+            "fragment": "L153",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GrowingMode.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 128,
+            "text": "theorem positive_invariant_cone\n    {a b r eps lamMin : ℝ} (hab : a ≤ b) (hr : 0 < r)\n    (hgap : eps * (1 + r) ^ 2 < 2 * lamMin * r)\n    (lam damping e11 e12 e21 e22 : ℝ → ℝ) {z : ℝ → State}\n    (hA : ContinuousOn (fun t =>\n      modalOperator (lam t) (damping t) (e11 t) (e12 t) (e21 t) (e22 t)) (Icc a b))\n    (hode : ∀ t ∈ Icc a b, HasDerivAt z\n      (modalOperator (lam t) (damping t) (e11 t) (e12 t) (e21 t) (e22 t) (z t)) t)\n    (hlam : ∀ t ∈ Icc a b, lamMin ≤ lam t)\n    (herr : ∀ t ∈ Icc a b,\n      |e11 t| ≤ eps ∧ |e12 t| ≤ eps ∧ |e21 t| ≤ eps ∧ |e22 t| ≤ eps)\n    (hplus : 0 < z a 0) (hminus : z a 1 = 0) :\n    ∀ t ∈ Icc a b, 0 < z t 0 ∧ |z t 1| ≤ r * z t 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

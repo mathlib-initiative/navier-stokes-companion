@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.10/key/03.NavierStokes.MovingFrameODE.modal_equations_iff",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MovingFrameODE.modal_equations_iff",
-      "line": 686,
-      "module": "NavierStokes.MovingFrameODE",
-      "path": "NavierStokes/MovingFrameODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean#L686"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MovingFrameODE.modal_equations_iff",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MovingFrameODE.modal_equations_iff",
+        "module": "NavierStokes.MovingFrameODE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 686,
-        "text": "the (x,y) = (p+q, h(p−q)) system with coefficients (a − damping, lam/h + b, lam*h + c, −damping) ↔ p' = (lam − damping + modal11)p + modal12 q + …, q' = modal21 p + (−lam − damping + modal22) q + …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.MovingFrameODE.modal_equations_iff",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L686",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 686,
+            "text": "theorem modal_equations_iff {h : ℝ} (hh : h ≠ 0)\n    (p q p' q' lam damping a b c rate fx fy : ℝ) :\n    (p' + q' = (a - damping) * (p + q) + (lam / h + b) * (h * (p - q)) + fx ∧\n      rate * h * (p - q) + h * (p' - q') =\n        (lam * h + c) * (p + q) - damping * (h * (p - q)) + fy) ↔\n    (p' = (lam - damping + modal11 a b c h rate) * p + modal12 a b c h rate * q +\n      (fx + fy / h) / 2 ∧\n     q' = modal21 a b c h rate * p + (-lam - damping + modal22 a b c h rate) * q +\n      (fx - fy / h) / 2)"
+          }
+        }
       }
     }
-  }
+  ]
 }

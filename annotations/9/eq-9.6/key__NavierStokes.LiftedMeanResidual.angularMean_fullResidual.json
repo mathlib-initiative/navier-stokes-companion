@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.6/key/01.NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
-      "line": 1174,
-      "module": "NavierStokes.LiftedMeanResidual",
-      "path": "NavierStokes/LiftedMeanResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LiftedMeanResidual.lean#L1174"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
+        "module": "NavierStokes.LiftedMeanResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1174,
-        "text": "angularMeanVector (fullResidual c u) n x i = u.meanResidual c n x i — and meanResidual = reducedMeanResidual + meanBaseError (CorrectionState.lean:130), the paper's ⟨G_* + F_* − E_{B,*}⟩_θ up to the sign convention on the stored base error"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.LiftedMeanResidual.angularMean_fullResidual",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1174",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LiftedMeanResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1174,
+            "text": "theorem angularMean_fullResidual {U : Set D} {c : CorrectionState.Context D} {u : CorrectionState.State D}\n    (H : MeanHypotheses U c u) (n : ℕ) {x : D} (hx : x ∈ U) (i : Fin 3) :\n    angularMeanVector (fullResidual c u) n x i = u.meanResidual c n x i"
+          }
+        }
       }
     }
-  }
+  ]
 }

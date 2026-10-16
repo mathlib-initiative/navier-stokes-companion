@@ -1,26 +1,28 @@
 {
-  "id": "eq-p085-1/key/02.NavierStokes.PrimaryFieldAssembly.averaged_covariance_expansion",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryFieldAssembly.averaged_covariance_expansion",
-      "line": 456,
-      "module": "NavierStokes.PrimaryFieldAssembly",
-      "path": "NavierStokes/PrimaryFieldAssembly.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryFieldAssembly.lean#L456"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryFieldAssembly.averaged_covariance_expansion",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryFieldAssembly.averaged_covariance_expansion",
+        "module": "NavierStokes.PrimaryFieldAssembly"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 456,
-        "text": "doubleAverage (fun Y θ => (V Y θ + R Y θ) 0 * (V Y θ + R Y θ) i.succ) = doubleAverage (fun Y θ => V Y θ 0 * V Y θ i.succ) + doubleAverage (covarianceError V R i), for V R continuous"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PrimaryFieldAssembly.averaged_covariance_expansion",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L456",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryFieldAssembly.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 456,
+            "text": "theorem averaged_covariance_expansion (V R : Plane → ℝ → Vector)\n    (hV : Continuous V.uncurry) (hR : Continuous R.uncurry) (i : Fin 2) :\n    doubleAverage (fun Y θ => (V Y θ + R Y θ) 0 * (V Y θ + R Y θ) i.succ) =\n      doubleAverage (fun Y θ => V Y θ 0 * V Y θ i.succ) +\n        doubleAverage (covarianceError V R i)"
+          }
+        }
       }
     }
-  }
+  ]
 }

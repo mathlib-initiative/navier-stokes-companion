@@ -1,26 +1,29 @@
 {
-  "id": "eq-4.26/support/13.NavierStokes.AlignedProfileSpectralCone.modulated_representative_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AlignedProfileSpectralCone.modulated_representative_bounds",
-      "line": 716,
-      "module": "NavierStokes.AlignedProfileSpectralCone",
-      "path": "NavierStokes/AlignedProfileSpectralCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AlignedProfileSpectralCone.lean#L716"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AlignedProfileSpectralCone.modulated_representative_bounds",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AlignedProfileSpectralCone.modulated_representative_bounds",
+        "module": "NavierStokes.AlignedProfileSpectralCone"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 716,
-        "text": "∃ T M u eta, 1 ≤ M ∧ 0 < u ∧ 0 < eta ∧ ContinuousOn T K ∧ … ∧ ∃ N, ∀ L, N ≤ L.val.1 → ∀ p ∈ positivePart K, p ∈ gridBox … → ⟪T p, normalDirection (g₀ rep)⟫ ≤ -eta ∧ |c0 … * ⟪T p, transverseDirection …⟫ / ⟪T p, normalDirection …⟫| + eta ≤ slopeRatio u   -- where the Lean actually extracts the uniform margin (compact referenceSet W, spectral encoding); this is the paper's later use of (4.26) on p. 74"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "13.NavierStokes.AlignedProfileSpectralCone.modulated_representative_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L716",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AlignedProfileSpectralCone.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 716,
+            "text": "theorem modulated_representative_bounds (H : NominalConeAssembly.Certificate W)\n    (hcone : LeadingStressWeights.FullTrueCone v) :\n    let K"
+          }
+        }
       }
     }
-  }
+  ]
 }

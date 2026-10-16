@@ -1,26 +1,28 @@
 {
-  "id": "eq-p038-4/attributed/04.NavierStokes.ReferenceEndpointRate.endpointU_eq_physical",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceEndpointRate.endpointU_eq_physical",
-      "line": 293,
-      "module": "NavierStokes.ReferenceEndpointRate",
-      "path": "NavierStokes/ReferenceEndpointRate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean#L293"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceEndpointRate.endpointU_eq_physical",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceEndpointRate.endpointU_eq_physical",
+        "module": "NavierStokes.ReferenceEndpointRate"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 293,
-        "text": "R.endpointU T κ w η = R.physicalU T κ w (110, η) — endpointU is the field at X_i = 110, i.e. G_i(η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ReferenceEndpointRate.endpointU_eq_physical",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L293",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 293,
+            "text": "theorem endpointU_eq_physical {J' : Set ℝ} (R : StockReference J')\n    (hR : R.radius0 < 110) (T κ w η : ℝ) :\n    R.endpointU T κ w η = R.physicalU T κ w (110,η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

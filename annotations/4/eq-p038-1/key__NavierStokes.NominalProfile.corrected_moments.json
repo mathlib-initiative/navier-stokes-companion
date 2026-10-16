@@ -1,26 +1,28 @@
 {
-  "id": "eq-p038-1/key/02.NavierStokes.NominalProfile.corrected_moments",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalProfile.corrected_moments",
-      "line": 289,
-      "module": "NavierStokes.NominalProfile",
-      "path": "NavierStokes/NominalProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L289"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalProfile.corrected_moments",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalProfile.corrected_moments",
+        "module": "NavierStokes.NominalProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 289,
-        "text": "theorem corrected_moments … (hr : resetPatch.right ≤ r) (hs : SmallDebt F debt eta) … : moments (correctedU F U debt) (correctedE F E debt) r eta = moments U E r eta + debt eta   -- the patch pays `debt` across (e^{-6}, e^{-5})"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.NominalProfile.corrected_moments",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L289",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 289,
+            "text": "theorem corrected_moments (F : Profile) (U E : Field) (debt : ℝ → Debt) (eta r : ℝ)\n    (hr : resetPatch.right ≤ r) (hs : SmallDebt F debt eta)\n    (hU : ∀ x ∈ Ioo resetPatch.left resetPatch.right, U (x, eta) = idealU eta)\n    (hE : ∀ x ∈ Ioo resetPatch.left resetPatch.right, E (x, eta) = idealE F (x, eta))\n    (hint : ∀ i : Fin 5, IntegrableOn\n      (fun x => density (fun t => U (t, eta)) (fun t => E (t, eta)) x i) (Ioc 0 r)) :\n    moments (correctedU F U debt) (correctedE F E debt) r eta = moments U E r eta + debt eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

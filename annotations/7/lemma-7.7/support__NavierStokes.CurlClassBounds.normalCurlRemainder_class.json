@@ -1,27 +1,33 @@
 {
-  "id": "lemma-7.7/support/3.NavierStokes.CurlClassBounds.normalCurlRemainder_class",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CurlClassBounds.normalCurlRemainder_class",
-      "line": 291,
-      "module": "NavierStokes.CurlClassBounds",
-      "path": "NavierStokes/CurlClassBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L291"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CurlClassBounds.normalCurlRemainder_class",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "type": "lean",
+      "uri": "https://github.com/openai/NavierStokesAndEuler",
+      "version": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "location": {
+        "declaration": "NavierStokes.CurlClassBounds.normalCurlRemainder_class",
+        "module": "NavierStokes.CurlClassBounds"
       },
-      "declaration_verdict": null,
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 291,
-        "text": "theorem normalCurlRemainder_class {N : ℕ → D → RealVector} {a : ℕ → D → ComplexVector}\n    (hN : PhaseJetBounds.PolynomialJets (phaseDomain s) N) (ha : MemClass s w α a)\n    {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ n x, x ∈ s.domain → b ≤ ‖N n x‖)\n    (hupper : ∀ n x, x ∈ s.domain → ‖N n x‖ ≤ M)\n    (hκ : 0 ≤ κ) (hr : UnweightedClass s (-κ) Vr) (hθ : UnweightedClass s 0 Vθ)\n    (hz : UnweightedClass s 1 Vz) (hR : UnweightedClass s 0 (fun _ x => (R x)⁻¹))\n    (hK : BandBound s (1 / 2) (fun n => 1 / K n)) :\n    MemClass s w (α + 1 / 2 - κ) (fun n =>\n      curlRemainder (K n) R (Vr n) (Vθ n) (Vz n)\n        (fun x => normalCoefficient (N n x) (a n x)))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.CurlClassBounds.normalCurlRemainder_class",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L291",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean",
+            "resolution": "exact"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 291,
+            "text": "theorem normalCurlRemainder_class {N : ℕ → D → RealVector} {a : ℕ → D → ComplexVector}\n    (hN : PhaseJetBounds.PolynomialJets (phaseDomain s) N) (ha : MemClass s w α a)\n    {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ n x, x ∈ s.domain → b ≤ ‖N n x‖)\n    (hupper : ∀ n x, x ∈ s.domain → ‖N n x‖ ≤ M)\n    (hκ : 0 ≤ κ) (hr : UnweightedClass s (-κ) Vr) (hθ : UnweightedClass s 0 Vθ)\n    (hz : UnweightedClass s 1 Vz) (hR : UnweightedClass s 0 (fun _ x => (R x)⁻¹))\n    (hK : BandBound s (1 / 2) (fun n => 1 / K n)) :\n    MemClass s w (α + 1 / 2 - κ) (fun n =>\n      curlRemainder (K n) R (Vr n) (Vθ n) (Vz n)\n        (fun x => normalCoefficient (N n x) (a n x)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,27 @@
 {
-  "id": "eq-B.27/attributed/06.NavierStokes.StressActivation.weightedPrimitive_hasDerivAt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressActivation.weightedPrimitive_hasDerivAt",
-      "line": 78
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean#L78"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressActivation.weightedPrimitive_hasDerivAt",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressActivation.weightedPrimitive_hasDerivAt",
+        "module": "NavierStokes.StressActivation"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 78,
-        "text": "HasDerivAt (fun x => weightedPrimitive T κ B (x, η)) (activation T κ y * B (y, η)) y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.StressActivation.weightedPrimitive_hasDerivAt",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L78"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 78,
+            "text": "theorem weightedPrimitive_hasDerivAt (T κ : ℝ) {J : Set ℝ} (hJ : IsOpen J) {B : Field}\n    (hB : ContDiffOn ℝ ∞ B (logDomain J hJ).carrier) (y : ℝ) {η : ℝ} (hη : η ∈ J) :\n    HasDerivAt (fun x => weightedPrimitive T κ B (x, η))\n      (activation T κ y * B (y, η)) y"
+          }
+        }
       }
     }
-  }
+  ]
 }

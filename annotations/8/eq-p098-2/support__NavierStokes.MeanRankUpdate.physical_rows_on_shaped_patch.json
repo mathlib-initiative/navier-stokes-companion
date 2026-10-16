@@ -1,26 +1,29 @@
 {
-  "id": "eq-p098-2/support/15.NavierStokes.MeanRankUpdate.physical_rows_on_shaped_patch",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanRankUpdate.physical_rows_on_shaped_patch",
-      "line": 1153,
-      "module": "NavierStokes.MeanRankUpdate",
-      "path": "NavierStokes/MeanRankUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanRankUpdate.lean#L1153"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanRankUpdate.physical_rows_on_shaped_patch",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanRankUpdate.physical_rows_on_shaped_patch",
+        "module": "NavierStokes.MeanRankUpdate"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 1153,
-        "text": "FiveRows V G d (angularIncrement lam (shapedAmplitude B η * 2 ^ (1/2+lam)) a b (Real.sqrt q) (q ^ (-A)) d) (desiredAxialIncrement … (Real.sqrt q) (q ^ (-A)) d)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "15.NavierStokes.MeanRankUpdate.physical_rows_on_shaped_patch",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1153",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanRankUpdate.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 1153,
+            "text": "theorem physical_rows_on_shaped_patch {lam B a b q : ℝ} (hlam : 0 < lam) (hB : B ≠ 0)\n    (ha : 0 < a) (hab : a < b) (hq : 0 < q) (A η : ℝ) (d : Debt) (V G : ℝ → ℝ)\n    (hV : ∀ r ∈ Ioo (Real.sqrt q * a) (Real.sqrt q * b),\n      V r = q ^ (-A) * shapedAmplitude B η * (r ^ 2 / (2 * q)) ^ (-(1 / 2 + lam)))\n    (hG : ∀ r ∈ Ioo (Real.sqrt q * a) (Real.sqrt q * b), G r = 0) :\n    FiveRowRank.FiveRows V G d\n      (angularIncrement lam (shapedAmplitude B η * (2 : ℝ) ^ (1 / 2 + lam)) a b\n        (Real.sqrt q) (q ^ (-A)) d)\n      (desiredAxialIncrement lam (shapedAmplitude B η * (2 : ℝ) ^ (1 / 2 + lam)) a b\n        (Real.sqrt q) (q ^ (-A)) d)"
+          }
+        }
       }
     }
-  }
+  ]
 }

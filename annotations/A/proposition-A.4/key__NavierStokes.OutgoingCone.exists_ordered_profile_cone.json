@@ -1,36 +1,57 @@
 {
-  "id": "proposition-A.4/key/1.NavierStokes.OutgoingCone.exists_ordered_profile_cone",
-  "location": {
-    "page": 130,
-    "rect": [0.12854, 0.799174, 0.746187, 0.092562]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingCone.exists_ordered_profile_cone",
-      "line": 503,
-      "module": "NavierStokes.OutgoingCone",
-      "path": "NavierStokes/OutgoingCone.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 130,
+        "rect": [0.12854, 0.799174, 0.746187, 0.092562]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-A.4@p130"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingCone.lean#L503"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingCone.exists_ordered_profile_cone",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 131,
+        "rect": [0.12854, 0.102479, 0.746187, 0.107438]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `∃ M > 0, ∀ m ≥ M, ∀ P ≥ amplitudeThreshold m, ∀ K > 0, ∃ lam0 > 0, ∀ F (F.data.core.P = P, .m = m, F.coefficientBound = K, wait = 60 log(1/lam), lam < lam0, h ≤ heightThreshold m lam), ∀ left ≤ 0, ∃ XR0 > 0, ∀ XR > XR0, ProfileCleanCone F XR left` — the (A.6) nesting m → P → K → λ → h → x_- → X_R.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "proposition-A.4@p130",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 503,
-        "text": "theorem exists_ordered_profile_cone :\n    ∃ M : ℝ, 0 < M ∧ ∀ m : ℝ, M ≤ m → ∀ P : ℝ,\n      OutgoingEntranceCone.amplitudeThreshold m ≤ P → ∀ K : ℝ, 0 < K →\n      ∃ lam0 : ℝ, 0 < lam0 ∧ ∀ F : OutgoingProfile.Profile,\n        F.data.core.P = P → F.data.core.m = m → F.coefficientBound = K →\n        F.data.core.wait = 60 * Real.log (1 / F.data.core.lam) →\n        F.data.core.lam < lam0 → F.data.h ≤ heightThreshold m F.data.core.lam →\n        ∀ left : ℝ, left ≤ 0 →\n          ∃ XR0 : ℝ, 0 < XR0 ∧ ∀ XR : ℝ, XR0 < XR → ProfileCleanCone F XR left"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-A.4@p131"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingCone.exists_ordered_profile_cone",
+        "module": "NavierStokes.OutgoingCone"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.OutgoingCone.exists_ordered_profile_cone",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: `∃ M > 0, ∀ m ≥ M, ∀ P ≥ amplitudeThreshold m, ∀ K > 0, ∃ lam0 > 0, ∀ F (F.data.core.P = P, .m = m, F.coefficientBound = K, wait = 60 log(1/lam), lam < lam0, h ≤ heightThreshold m lam), ∀ left ≤ 0, ∃ XR0 > 0, ∀ XR > XR0, ProfileCleanCone F XR left` — the (A.6) nesting m → P → K → λ → h → x_- → X_R.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L503",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingCone.lean"
+          },
+          "snippet": {
+            "line": 503,
+            "text": "theorem exists_ordered_profile_cone :\n    ∃ M : ℝ, 0 < M ∧ ∀ m : ℝ, M ≤ m → ∀ P : ℝ,\n      OutgoingEntranceCone.amplitudeThreshold m ≤ P → ∀ K : ℝ, 0 < K →\n      ∃ lam0 : ℝ, 0 < lam0 ∧ ∀ F : OutgoingProfile.Profile,\n        F.data.core.P = P → F.data.core.m = m → F.coefficientBound = K →\n        F.data.core.wait = 60 * Real.log (1 / F.data.core.lam) →\n        F.data.core.lam < lam0 → F.data.h ≤ heightThreshold m F.data.core.lam →\n        ∀ left : ℝ, left ≤ 0 →\n          ∃ XR0 : ℝ, 0 < XR0 ∧ ∀ XR : ℝ, XR0 < XR → ProfileCleanCone F XR left"
+          }
+        }
+      }
+    }
+  ]
 }

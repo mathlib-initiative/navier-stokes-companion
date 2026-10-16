@@ -1,30 +1,32 @@
 {
-  "id": "corollary-B.6/attributed/1.NavierStokes.ActivationCone.exists_actual_stress_direction",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActivationCone.exists_actual_stress_direction",
-      "line": 489,
-      "module": "NavierStokes.ActivationCone",
-      "path": "NavierStokes/ActivationCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean#L489"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActivationCone.exists_actual_stress_direction",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActivationCone.exists_actual_stress_direction",
+        "module": "NavierStokes.ActivationCone"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: ∃ D smooth on scaledDomain J with (lines 502-504) D ((κ,T),(0,η)) = (referenceAngular L (0,η) * referenceP1 L (0,η), referenceAngular L (0,η) * referenceP2 X0 L U (0,η)) ∧ activatedStress … (T*u,η) = activation 1 κ u • D ((κ,T),(u,η)). The middle conjunct is (B.30)'s identity B_0(0,η) = F(X_0,η) p_{"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 489,
-        "text": "theorem exists_actual_stress_direction (h : ℝ) {X0 : ℝ} (hX0 : 0 < X0)\n    (initial : HistoryRow → ℝ → ℝ) {J K : Set ℝ} (hJ : IsOpen J) (hKJ : K ⊆ J)\n    {L U : Field} (hL : ContDiffOn ℝ ∞ L (logDomain J hJ).carrier)\n    (hU : ContDiffOn ℝ ∞ U (logDomain J hJ).carrier)\n    (hi : ∀ r, ContDiffOn ℝ ∞ (initial r) J)\n    (hcoef : ∀ η ∈ J, NaturalAxisData.L h η ≠ 0) {T0 : ℝ}\n    (hmatch : ∀ y ∈ Icc (0 : ℝ) T0, ∀ η ∈ K,\n      ActivationStocks.logViewOne h X0 (referenceAngular L)\n          (logHistory X0 initial (referenceAngular L) U) (y, η) = referenceP1 L (y, η) ∧\n      ActivationStocks.logViewTwo h X0 (referenceAngular L) U\n          (logHistory X0 initial (referenceAngular L) U) (y, η) = referenceP2 X0 L U (y, η)) :\n    ∃ D : ActivationBounds.ScaledPoint → ℝ × ℝ,\n      ContDiffOn ℝ ∞ D (ActivationBounds.scaledDomain J) ∧\n      (∀ κ T η : ℝ, D ((κ, T), (0, η)) =\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActivationCone.exists_actual_stress_direction",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: ∃ D smooth on scaledDomain J with (lines 502-504) D ((κ,T),(0,η)) = (referenceAngular L (0,η) * referenceP1 L (0,η), referenceAngular L (0,η) * referenceP2 X0 L U (0,η)) ∧ activatedStress … (T*u,η) = activation 1 κ u • D ((κ,T),(u,η)). The middle conjunct is (B.30)'s identity B_0(0,η) = F(X_0,η) p_{"
+          },
+          "destination": {
+            "fragment": "L489",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean"
+          },
+          "snippet": {
+            "line": 489,
+            "text": "theorem exists_actual_stress_direction (h : ℝ) {X0 : ℝ} (hX0 : 0 < X0)\n    (initial : HistoryRow → ℝ → ℝ) {J K : Set ℝ} (hJ : IsOpen J) (hKJ : K ⊆ J)\n    {L U : Field} (hL : ContDiffOn ℝ ∞ L (logDomain J hJ).carrier)\n    (hU : ContDiffOn ℝ ∞ U (logDomain J hJ).carrier)\n    (hi : ∀ r, ContDiffOn ℝ ∞ (initial r) J)\n    (hcoef : ∀ η ∈ J, NaturalAxisData.L h η ≠ 0) {T0 : ℝ}\n    (hmatch : ∀ y ∈ Icc (0 : ℝ) T0, ∀ η ∈ K,\n      ActivationStocks.logViewOne h X0 (referenceAngular L)\n          (logHistory X0 initial (referenceAngular L) U) (y, η) = referenceP1 L (y, η) ∧\n      ActivationStocks.logViewTwo h X0 (referenceAngular L) U\n          (logHistory X0 initial (referenceAngular L) U) (y, η) = referenceP2 X0 L U (y, η)) :\n    ∃ D : ActivationBounds.ScaledPoint → ℝ × ℝ,\n      ContDiffOn ℝ ∞ D (ActivationBounds.scaledDomain J) ∧\n      (∀ κ T η : ℝ, D ((κ, T), (0, η)) =\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

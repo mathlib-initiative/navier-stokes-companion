@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.2/key/01.NavierStokes.SlowExpansionResidual.divergenceCoefficient_eq_zero_iff",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowExpansionResidual.divergenceCoefficient_eq_zero_iff",
-      "line": 769,
-      "module": "NavierStokes.SlowExpansionResidual",
-      "path": "NavierStokes/SlowExpansionResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowExpansionResidual.lean#L769"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowExpansionResidual.divergenceCoefficient_eq_zero_iff",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowExpansionResidual.divergenceCoefficient_eq_zero_iff",
+        "module": "NavierStokes.SlowExpansionResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 769,
-        "text": "divergenceCoefficient h f n w = 0 ↔ partialX (f.flux n) w = -Z h (axialExponent h + slowOrder h n) (f.axial n) w  — i.e. ∂_X V_n = -Z_{-A+λ_n} U_n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SlowExpansionResidual.divergenceCoefficient_eq_zero_iff",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L769",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowExpansionResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 769,
+            "text": "theorem divergenceCoefficient_eq_zero_iff (h : ℝ) (f : SlowProfiles)\n    (n : ℕ) (w : InnerPoint) :\n    divergenceCoefficient h f n w = 0 ↔\n      partialX (f.flux n) w =\n        -Z h (axialExponent h + slowOrder h n) (f.axial n) w"
+          }
+        }
       }
     }
-  }
+  ]
 }

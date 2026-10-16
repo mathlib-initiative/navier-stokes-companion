@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.23/key/01.NavierStokes.ProfileSpectralCone.stressVector_eq_stocks",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProfileSpectralCone.stressVector_eq_stocks",
-      "line": 205,
-      "module": "NavierStokes.ProfileSpectralCone",
-      "path": "NavierStokes/ProfileSpectralCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean#L205"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProfileSpectralCone.stressVector_eq_stocks",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProfileSpectralCone.stressVector_eq_stocks",
+        "module": "NavierStokes.ProfileSpectralCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 205,
-        "text": "stressVector P h p = P.f p • !₂[ActivationStocks.profileStockOne P h p - ModulatedCone.angularShear P.E p, ActivationStocks.profileStockTwo P h p - ModulatedCone.signedAxialShear P.E P.U p] — i.e. (T_{0,θ},T_{0,z}) = F·(p_{s,1}-a, p_{s,2}-(-b_s)), the input (4.11) of (4.23)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ProfileSpectralCone.stressVector_eq_stocks",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L205",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 205,
+            "text": "theorem stressVector_eq_stocks {D : RadialDomain} (P : Profiles D) (h : ℝ) {p : Point}\n    (hp : p ∈ D.carrier) (hX : 0 < p.1) (hf : P.f p ≠ 0) :\n    stressVector P h p = P.f p •\n      !₂[ActivationStocks.profileStockOne P h p - ModulatedCone.angularShear P.E p,\n        ActivationStocks.profileStockTwo P h p - ModulatedCone.signedAxialShear P.E P.U p]"
+          }
+        }
       }
     }
-  }
+  ]
 }

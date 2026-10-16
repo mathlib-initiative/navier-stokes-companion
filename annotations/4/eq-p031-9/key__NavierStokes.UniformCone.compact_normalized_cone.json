@@ -1,23 +1,26 @@
 {
-  "id": "eq-p031-9/key/01.NavierStokes.UniformCone.compact_normalized_cone",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.UniformCone.compact_normalized_cone",
-      "line": 76,
-      "module": "NavierStokes.UniformCone",
-      "path": "NavierStokes/UniformCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformCone.lean#L76"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.UniformCone.compact_normalized_cone"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.UniformCone.compact_normalized_cone",
+        "lines": [76, 76],
+        "module": "NavierStokes.UniformCone"
       },
-      "snippet": {
-        "line": 76,
-        "text": "let threshold : X → ℝ := fun x => max 0 (max (2 / c x) (max (v x / c x) (4 * c x * v x / d x)));  then p₀ := max 0 B with B an upper bound of threshold '' K (line 87)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.UniformCone.compact_normalized_cone"
+          },
+          "destination": {
+            "fragment": "L76",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformCone.lean"
+          },
+          "snippet": {
+            "line": 62,
+            "text": "theorem compact_normalized_cone {K : Set X} (hK : IsCompact K)\n    {c j v : X → ℝ} (hc : ContinuousOn c K) (hj : ContinuousOn j K)\n    (hv : ContinuousOn v K) (hcpos : ∀ x ∈ K, 0 < c x)\n    (hmargin : ∀ x ∈ K, (v x - 2) * j x ^ 2 < 2 * c x ^ 2) :\n    ∃ ε p₀ : ℝ, 0 < ε ∧ 0 ≤ p₀ ∧\n      (∀ x ∈ K, ε ≤ c x ∧ ε ≤ 2 * c x ^ 2 - (v x - 2) * j x ^ 2) ∧\n      ∀ p : ℝ, p₀ < p → ∀ x ∈ K,\n        2 < p * c x ∧ v x < coneBound (p * c x) (p * j x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

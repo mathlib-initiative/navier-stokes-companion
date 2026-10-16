@@ -1,23 +1,27 @@
 {
-  "id": "eq-B.39/key/02.NavierStokes.ShapeTransition.constructed_prefix_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ShapeTransition.constructed_prefix_bound",
-      "line": 1397
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ShapeTransition.lean#L1397"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ShapeTransition.constructed_prefix_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ShapeTransition.constructed_prefix_bound",
+        "module": "NavierStokes.ShapeTransition"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1397,
-        "text": "prefixJetSize n (resetRadius Xi C P) (separation T C P) (scaledFamily _ oldU) (scaledFamily _ (shapeField Xi T li oldF)) eta ≤ prefixCoefficient n B (shapeJetConstant n Xi T BJ K) (Xi*exp T) * separation T C P + (2^n*(Xi*exp T)*(shapeJetConstant n Xi T BJ K)^2)/C^2 — i.e. the same estimate evaluated at R = X_R, r = x_sep"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ShapeTransition.constructed_prefix_bound"
+          },
+          "destination": {
+            "fragment": "L1397"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1397,
+            "text": "theorem constructed_prefix_bound {Xi C T P B BJ K : ℝ} (hXi : 0 < Xi) (hC : 1 ≤ C)\n    (hT : 0 < T) (hP : 0 < P) (hB : 0 ≤ B) (hBJ : 1 ≤ BJ) (hK : 0 ≤ K)\n    {li Gi : ℝ → ℝ} {oldU oldF : ℝ × ℝ → ℝ}\n    (hli : ContDiff ℝ ∞ li) (hU : ContDiff ℝ ∞ oldU) (hF : ContDiff ℝ ∞ oldF)\n    (n : ℕ) (eta : ℝ) (hsep : separation T C P ≤ 1)\n    (hAxisU : ∀ X ∈ Icc (0 : ℝ) Xi, ∀ k ≤ n, |iteratedDeriv k (fun e => oldU (X, e)) eta| ≤ B)\n    (hGi : ∀ k ≤ n, |iteratedDeriv k Gi eta| ≤ B)\n    (hHoldU : ∀ X, Xi ≤ X → ∀ e, oldU (X, e) = Gi e)\n    (hAxisF : ∀ X ∈ Icc (0 : ℝ) Xi, ∀ k ≤ n, |iteratedDeriv k (fun e => oldF (X, e)) eta| ≤ K / C)\n    (hHoldF : ∀ X, Xi ≤ X → ∀ e, oldF (X, e) =\n      C⁻¹ * Real.exp (Real.log (X / Xi) / 10 + li e) / Real.sqrt (2 * X))\n    (hl : ∀ i ≤ n, |iteratedDeriv i li eta| ≤ BJ)\n    (hshape : ∀ i ≤ n, |iteratedDeriv i logShape eta| ≤ BJ) :\n    prefixJetSize n (resetRadius Xi C P) (separation T C P)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

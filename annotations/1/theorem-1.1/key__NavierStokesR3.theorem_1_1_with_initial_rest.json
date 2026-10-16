@@ -1,30 +1,32 @@
 {
-  "id": "theorem-1.1/key/0.NavierStokesR3.theorem_1_1_with_initial_rest",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.theorem_1_1_with_initial_rest",
-      "line": 26,
-      "module": "NavierStokes.R3.Theorem",
-      "path": "NavierStokes/R3/Theorem.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/Theorem.lean#L26"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.theorem_1_1_with_initial_rest",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Same conclusion as theorem_1_1 for every nu > 0, with the extra clause u (t,x) = 0 and p (t,x) = 0 for all |t| <= 3/8. Strictly stronger than the paper's Theorem 1.1.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.theorem_1_1_with_initial_rest",
+        "module": "NavierStokes.R3.Theorem"
       },
       "role": "key",
-      "snippet": {
-        "line": 26,
-        "text": "theorem theorem_1_1_with_initial_rest (ν : ℝ) (hν : 0 < ν) :\n    ∃ u : VelocityField, ∃ p : PressureField, ∃ f : VelocityField, ∃ K : Set Space,\n      CandidateProperties ν u p f K ∧\n      ¬ Nonempty (GlobalFiniteEnergySolution ν f) ∧\n      ∀ t : ℝ, |t| ≤ 3 / 8 → ∀ x : Space,\n        u (t, x) = 0 ∧ p (t, x) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokesR3.theorem_1_1_with_initial_rest",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Same conclusion as theorem_1_1 for every nu > 0, with the extra clause u (t,x) = 0 and p (t,x) = 0 for all |t| <= 3/8. Strictly stronger than the paper's Theorem 1.1.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L26",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/Theorem.lean"
+          },
+          "snippet": {
+            "line": 26,
+            "text": "theorem theorem_1_1_with_initial_rest (ν : ℝ) (hν : 0 < ν) :\n    ∃ u : VelocityField, ∃ p : PressureField, ∃ f : VelocityField, ∃ K : Set Space,\n      CandidateProperties ν u p f K ∧\n      ¬ Nonempty (GlobalFiniteEnergySolution ν f) ∧\n      ∀ t : ℝ, |t| ≤ 3 / 8 → ∀ x : Space,\n        u (t, x) = 0 ∧ p (t, x) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

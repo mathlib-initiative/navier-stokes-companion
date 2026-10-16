@@ -1,26 +1,29 @@
 {
-  "id": "eq-p012-6/support/09.NavierStokes.R3LocalizedEnergyLimit.localizedEnergy_tendsto",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.R3LocalizedEnergyLimit.localizedEnergy_tendsto",
-      "line": 77,
-      "module": "NavierStokes.R3LocalizedEnergyLimit",
-      "path": "NavierStokes/R3LocalizedEnergyLimit.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3LocalizedEnergyLimit.lean#L77"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.R3LocalizedEnergyLimit.localizedEnergy_tendsto",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.R3LocalizedEnergyLimit.localizedEnergy_tendsto",
+        "module": "NavierStokes.R3LocalizedEnergyLimit"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 77,
-        "text": "Tendsto (fun n => localizedEnergy (χ n) w) atTop (𝓝 (∫ x, ‖w x‖ ^ 2)) for exhausting cutoffs and Integrable ‖w‖²; a limit for the energy only, not for the flux, coupling or dissipation terms"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.R3LocalizedEnergyLimit.localizedEnergy_tendsto",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L77",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3LocalizedEnergyLimit.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 77,
+            "text": "theorem localizedEnergy_tendsto {χ : ℕ → Space → ℝ} {w : Space → Space}\n    (hc : ∀ n, Continuous (χ n)) (hw : Continuous w)\n    (hχ : ∀ n x, χ n x ∈ Icc (0 : ℝ) 1)\n    (hexhaust : ∀ x, Tendsto (fun n => χ n x) atTop (𝓝 1))\n    (hint : Integrable (fun x : Space => ‖w x‖ ^ 2)) :\n    Tendsto (fun n => localizedEnergy (χ n) w) atTop (𝓝 (∫ x : Space, ‖w x‖ ^ 2))"
+          }
+        }
       }
     }
-  }
+  ]
 }

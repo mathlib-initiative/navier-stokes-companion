@@ -1,29 +1,31 @@
 {
-  "id": "proposition-7.5/attributed/1.NavierStokes.WaveEdgeExtension.NativeJets.native_regular_of_inner_growth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WaveEdgeExtension.NativeJets.native_regular_of_inner_growth",
-      "line": 617,
-      "module": "NavierStokes.WaveEdgeExtension",
-      "path": "NavierStokes/WaveEdgeExtension.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveEdgeExtension.lean#L617"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WaveEdgeExtension.NativeJets.native_regular_of_inner_growth",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WaveEdgeExtension.NativeJets.native_regular_of_inner_growth",
+        "module": "NavierStokes.WaveEdgeExtension"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: Any family with `NativeJets` of envelope `A i · √(movingWeight W x.1) · P i x` is `NativeRegularity`: smooth, extending by zero with all jets vanishing at both moving shell edges. Instantiated at `covariance_amplitudes_jets` this is clause (iv) for $a_\\sigma$ alone."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 617,
-        "text": "theorem NativeJets.native_regular_of_inner_growth {F : OutgoingProfile.Profile} (W : NominalProfile.Witness F)\n    {ι : Type*} {V : JetDomain ι NativePoint} {A S : ι → ℝ}\n    {P : ι → NativePoint → ℝ} {f : ι → NativePoint → E}\n    (hf : NativeJets V (fun i x => A i * Real.sqrt (PrimaryTargetBounds.movingWeight W x.1) * P i x) f)\n    (hA : ∀ i, 0 ≤ A i) (hS : ∀ i, 1 ≤ S i)\n    (hP : ∀ i, ContinuousOn (P i) nativeSlowDomain)\n    (hP0 : ∀ i x, x ∈ nativeSlowDomain → 0 ≤ P i x)\n    (hdom : ∀ i, windowDomain nativeSlowDomain (nativeRadius F.data.h)\n      (PrimaryTargetBounds.leftRadius W) (PrimaryTargetBounds.rightRadius W) ⊆ V.carrier i)\n    (q : ℕ) (hG : ∀ i x, x ∈ windowDomain nativeSlowDomain (nativeRadius F.data.h)\n      (PrimaryTargetBounds.leftRadius W) (PrimaryTargetBounds.rightRadius W) →\n      V.growth i x ≤ S i * (max 1 (FinalSlowBase.edgeDistance W\n        (BaseChartJets.normalizedCoordinates F.data.h x.1).2)⁻¹) ^ q) :\n    ∀ i, NativeRegularity W (f i)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.WaveEdgeExtension.NativeJets.native_regular_of_inner_growth",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: Any family with `NativeJets` of envelope `A i · √(movingWeight W x.1) · P i x` is `NativeRegularity`: smooth, extending by zero with all jets vanishing at both moving shell edges. Instantiated at `covariance_amplitudes_jets` this is clause (iv) for $a_\\sigma$ alone."
+          },
+          "destination": {
+            "fragment": "L617",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveEdgeExtension.lean"
+          },
+          "snippet": {
+            "line": 617,
+            "text": "theorem NativeJets.native_regular_of_inner_growth {F : OutgoingProfile.Profile} (W : NominalProfile.Witness F)\n    {ι : Type*} {V : JetDomain ι NativePoint} {A S : ι → ℝ}\n    {P : ι → NativePoint → ℝ} {f : ι → NativePoint → E}\n    (hf : NativeJets V (fun i x => A i * Real.sqrt (PrimaryTargetBounds.movingWeight W x.1) * P i x) f)\n    (hA : ∀ i, 0 ≤ A i) (hS : ∀ i, 1 ≤ S i)\n    (hP : ∀ i, ContinuousOn (P i) nativeSlowDomain)\n    (hP0 : ∀ i x, x ∈ nativeSlowDomain → 0 ≤ P i x)\n    (hdom : ∀ i, windowDomain nativeSlowDomain (nativeRadius F.data.h)\n      (PrimaryTargetBounds.leftRadius W) (PrimaryTargetBounds.rightRadius W) ⊆ V.carrier i)\n    (q : ℕ) (hG : ∀ i x, x ∈ windowDomain nativeSlowDomain (nativeRadius F.data.h)\n      (PrimaryTargetBounds.leftRadius W) (PrimaryTargetBounds.rightRadius W) →\n      V.growth i x ≤ S i * (max 1 (FinalSlowBase.edgeDistance W\n        (BaseChartJets.normalizedCoordinates F.data.h x.1).2)⁻¹) ^ q) :\n    ∀ i, NativeRegularity W (f i)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.27/key/02.NavierStokes.BasePrefixIdentity.prefixStream_axial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BasePrefixIdentity.prefixStream_axial",
-      "line": 85,
-      "module": "NavierStokes.BasePrefixIdentity",
-      "path": "NavierStokes/BasePrefixIdentity.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePrefixIdentity.lean#L85"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BasePrefixIdentity.prefixStream_axial",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BasePrefixIdentity.prefixStream_axial",
+        "module": "NavierStokes.BasePrefixIdentity"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 85,
-        "text": "prefixStream J h C d p + p.2.1 * partialS (prefixStream J h C d) p = slowAxial J h (profiles h d) p, i.e. ∂_s(s·H) = ∂_s S = u_z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.BasePrefixIdentity.prefixStream_axial",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L85",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePrefixIdentity.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 85,
+            "text": "theorem prefixStream_axial {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {d : Coefficients} (hd : SmoothCoefficients d) (J : ℕ) (C : ℝ)\n    {p : Chart} (hp : p.1 < 1) :\n    BaseResidual.prefixStream J h C d p + p.2.1 * AxisymmetricFields.partialS (BaseResidual.prefixStream J h C d) p =\n      SlowExpansionResidual.slowAxial J h (profiles h d) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

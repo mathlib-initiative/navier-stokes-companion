@@ -1,26 +1,29 @@
 {
-  "id": "eq-p067-3/key/02.NavierStokes.ParticularPaddedBackground.padded_normal_germ",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParticularPaddedBackground.padded_normal_germ",
-      "line": 120,
-      "module": "NavierStokes.ParticularPaddedBackground",
-      "path": "NavierStokes/ParticularPaddedBackground.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularPaddedBackground.lean#L120"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParticularPaddedBackground.padded_normal_germ",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParticularPaddedBackground.padded_normal_germ",
+        "lines": [120, 120],
+        "module": "NavierStokes.ParticularPaddedBackground"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 120,
-        "text": "… (CommonCoverSolve.coverPower gap (PhysicalResidualTZ.swapCylinder x).1.2.2) … with gap = nativeIndex h (cellBand i.1.2) - CommonWindow.index h n and the common chart commonGraph (Q n) h (CommonWindow.index h n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ParticularPaddedBackground.padded_normal_germ",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L120",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularPaddedBackground.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 107,
+            "text": "theorem padded_normal_germ {i : CopyIndex B N0} {n : ℕ} {x : ActualPrimary.FullPoint}\n    (hx : x ∈ fullStrip.domain) (hc : x ∈ paddedCell n i) :\n    chartNormal i.1 n =ᶠ[𝓝 x] fun y => normalScale i.1 n •\n      (jointPhase (B"
+          }
+        }
       }
     }
-  }
+  ]
 }

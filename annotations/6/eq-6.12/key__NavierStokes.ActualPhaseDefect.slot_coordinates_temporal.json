@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.12/key/03.NavierStokes.ActualPhaseDefect.slot_coordinates_temporal",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPhaseDefect.slot_coordinates_temporal",
-      "line": 102,
-      "module": "NavierStokes.ActualPhaseDefect",
-      "path": "NavierStokes/ActualPhaseDefect.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPhaseDefect.lean#L102"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPhaseDefect.slot_coordinates_temporal",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPhaseDefect.slot_coordinates_temporal",
+        "module": "NavierStokes.ActualPhaseDefect"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 102,
-        "text": "theorem slot_coordinates_temporal (l) (x) : slotLinear (slotGeometry sys vectors_det l 0) ((commonGraph (ChartScales.Q l.1) h (ChartScales.nativeIndex h l.1)).temporal x) = PhaseCalculus.eV - ChartScales.epsilon h l.1 • PhaseCalculus.eT"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ActualPhaseDefect.slot_coordinates_temporal",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L102",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPhaseDefect.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 102,
+            "text": "theorem slot_coordinates_temporal (l : SlotColoring.Label) (x : Cylinder) :\n    ActualSignedGeometry.slotLinear\n      (ActualSignedGeometry.slotGeometry sys ActualSignedGeometry.vectors_det l 0)\n      ((PhysicalResidualBridge.commonGraph (ChartScales.Q l.1) h (ChartScales.nativeIndex h l.1)).temporal x) =\n      PhaseCalculus.eV-ChartScales.epsilon h l.1 • PhaseCalculus.eT"
+          }
+        }
       }
     }
-  }
+  ]
 }

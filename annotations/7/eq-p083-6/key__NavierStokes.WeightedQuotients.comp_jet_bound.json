@@ -1,23 +1,25 @@
 {
-  "id": "eq-p083-6/key/01.NavierStokes.WeightedQuotients.comp_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedQuotients.comp_jet_bound",
-      "line": 101,
-      "module": "NavierStokes.WeightedQuotients",
-      "path": "NavierStokes/WeightedQuotients.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedQuotients.lean#L101"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedQuotients.comp_jet_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedQuotients.comp_jet_bound",
+        "module": "NavierStokes.WeightedQuotients"
       },
-      "snippet": {
-        "line": 101,
-        "text": "‖iteratedFDeriv ℝ n (g ∘ f) x‖ ≤ n.factorial * C * D ^ n, given ∀ i ≤ n, ‖iteratedFDeriv ℝ i g (f x)‖ ≤ C and ∀ i, 1 ≤ i → i ≤ n → ‖iteratedFDeriv ℝ i f x‖ ≤ D ^ i (proved from Mathlib's norm_iteratedFDerivWithin_comp_le)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.WeightedQuotients.comp_jet_bound"
+          },
+          "destination": {
+            "fragment": "L101",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedQuotients.lean"
+          },
+          "snippet": {
+            "line": 101,
+            "text": "theorem comp_jet_bound {f : E → ℝ} {g : ℝ → ℝ} {s : Set E} {t : Set ℝ}\n    (hs : IsOpen s) (ht : IsOpen t) (hf : ContDiffOn ℝ ∞ f s)\n    (hg : ContDiffOn ℝ ∞ g t) (hmap : MapsTo f s t) {x : E} (hx : x ∈ s)\n    (n : ℕ) {C D : ℝ}\n    (hC : ∀ i ≤ n, ‖iteratedFDeriv ℝ i g (f x)‖ ≤ C)\n    (hD : ∀ i, 1 ≤ i → i ≤ n → ‖iteratedFDeriv ℝ i f x‖ ≤ D ^ i) :\n    ‖iteratedFDeriv ℝ n (g ∘ f) x‖ ≤ n.factorial * C * D ^ n"
+          }
+        }
       }
     }
-  }
+  ]
 }

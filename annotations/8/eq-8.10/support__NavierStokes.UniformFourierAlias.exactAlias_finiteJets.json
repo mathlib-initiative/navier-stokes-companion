@@ -1,25 +1,28 @@
 {
-  "id": "eq-8.10/support/06.NavierStokes.UniformFourierAlias.exactAlias_finiteJets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.UniformFourierAlias.exactAlias_finiteJets",
-      "line": 864,
-      "module": "NavierStokes.UniformFourierAlias",
-      "path": "NavierStokes/UniformFourierAlias.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformFourierAlias.lean#L864"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.UniformFourierAlias.exactAlias_finiteJets"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.UniformFourierAlias.exactAlias_finiteJets",
+        "module": "NavierStokes.UniformFourierAlias"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 864,
-        "text": "same arbitrary-order gain (|M|⁻¹)^p for the retained cutoff alias, from m + 6*p input jets"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.UniformFourierAlias.exactAlias_finiteJets"
+          },
+          "destination": {
+            "fragment": "L864",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformFourierAlias.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 864,
+            "text": "theorem exactAlias_finiteJets (d : Direction) {a b : ℝ} {χ : ℝ → ℝ}\n    (hab : a ≤ b) (hχ : ContDiff ℝ ∞ χ)\n    (hleft : ∀ u ≤ a, χ u = 0) (hright : ∀ u, b ≤ u → χ u = 1) (m p : ℕ) :\n    ∃ K : ℝ, 0 ≤ K ∧ ∀ (f : ℝ × (S × Plane) → ℂ), Admissible a b f →\n      ∀ C : ℝ, 0 ≤ C → FiniteJetBound (m + 6 * p) f (Prod.fst ⁻¹' Icc a b) C →\n      ∀ M : ℝ, M ≠ 0 → ∀ j ≤ m, ∀ z : ℝ × (S × Plane),\n        ‖iteratedFDeriv ℝ j (exactAlias χ M ((0 : S), vector d) f) z‖ ≤\n          K * C * (|M|⁻¹) ^ p"
+          }
+        }
       }
     }
-  }
+  ]
 }

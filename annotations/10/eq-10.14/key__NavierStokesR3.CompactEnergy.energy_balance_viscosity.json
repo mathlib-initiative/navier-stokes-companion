@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.14/key/03.NavierStokesR3.CompactEnergy.energy_balance_viscosity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.CompactEnergy.energy_balance_viscosity",
-      "line": 22,
-      "module": "NavierStokes.R3.ViscousEnergyBalance",
-      "path": "NavierStokes/R3/ViscousEnergyBalance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscousEnergyBalance.lean#L22"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.CompactEnergy.energy_balance_viscosity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.CompactEnergy.energy_balance_viscosity",
+        "module": "NavierStokes.R3.ViscousEnergyBalance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 22,
-        "text": "energyRate u t = -2 * ν * dissipation u t + 2 * ∫ x, ⟪u (t, x), f (t, x)⟫_ℝ, the identity before the derivative is identified"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokesR3.CompactEnergy.energy_balance_viscosity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L22",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscousEnergyBalance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 22,
+            "text": "theorem energy_balance_viscosity {ν : ℝ} {u f : VelocityField} {p : PressureField} {t : ℝ}\n    (hu : ContDiff ℝ ∞ (fun x : Space => u (t, x)))\n    (hp : ContDiff ℝ ∞ (fun x : Space => p (t, x)))\n    (hf : Continuous (fun x : Space => f (t, x)))\n    (hcu : HasCompactSupport (fun x : Space => u (t, x)))\n    (hdiv : ∀ x, spatialDivergence u t x = 0)\n    (hNS : ∀ x, ProblemStatement.navierStokesResidual ν u p t x = f (t, x)) :\n    energyRate u t = -2 * ν * dissipation u t +\n      2 * ∫ x, ⟪u (t, x), f (t, x)⟫_ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

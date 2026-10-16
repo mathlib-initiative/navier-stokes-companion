@@ -1,26 +1,28 @@
 {
-  "id": "eq-p128-1/key/03.NavierStokes.SmoothCutoffs.scaledCutoff_iteratedDeriv",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothCutoffs.scaledCutoff_iteratedDeriv",
-      "line": 204,
-      "module": "NavierStokes.SmoothCutoffs",
-      "path": "NavierStokes/SmoothCutoffs.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothCutoffs.lean#L204"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothCutoffs.scaledCutoff_iteratedDeriv",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SmoothCutoffs.scaledCutoff_iteratedDeriv",
+        "module": "NavierStokes.SmoothCutoffs"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 204,
-        "text": "theorem scaledCutoff_iteratedDeriv (a : ℝ) (n : ℕ) : iteratedDeriv n (scaledCutoff a) = fun q => a ^ n * iteratedDeriv n cutoff (a * q), where scaledCutoff a q = cutoff (a * q) (line 134) — with a = ρ⁻¹ this is ∂_X^r[β(X/ρ)] = ρ^{-r} β^{(r)}(X/ρ). Docstring: 'The exact all-order chain rule for the scale used in Sections 7 and 11.'"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SmoothCutoffs.scaledCutoff_iteratedDeriv",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L204",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothCutoffs.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 204,
+            "text": "theorem scaledCutoff_iteratedDeriv (a : ℝ) (n : ℕ) :\n    iteratedDeriv n (scaledCutoff a) =\n      fun q => a ^ n * iteratedDeriv n cutoff (a * q)"
+          }
+        }
       }
     }
-  }
+  ]
 }

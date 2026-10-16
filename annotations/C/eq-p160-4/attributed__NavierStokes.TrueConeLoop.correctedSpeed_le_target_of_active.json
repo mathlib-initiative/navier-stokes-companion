@@ -1,24 +1,27 @@
 {
-  "id": "eq-p160-4/attributed/04.NavierStokes.TrueConeLoop.correctedSpeed_le_target_of_active",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.correctedSpeed_le_target_of_active",
-      "line": 118
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L118"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.correctedSpeed_le_target_of_active",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.correctedSpeed_le_target_of_active",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 118,
-        "text": "correctedSpeed δ v ≤ targetSpeed δ when speedCutoff δ v ≠ 0 — the paper's middle regime v ≤ v_*"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.TrueConeLoop.correctedSpeed_le_target_of_active",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L118"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 118,
+            "text": "theorem correctedSpeed_le_target_of_active (δ v : ℝ) (hδ : 0 < δ)\n    (hactive : speedCutoff δ v ≠ 0) : correctedSpeed δ v ≤ targetSpeed δ"
+          }
+        }
       }
     }
-  }
+  ]
 }

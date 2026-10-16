@@ -1,26 +1,29 @@
 {
-  "id": "eq-B.24/support/05.NavierStokes.ReferenceBounds.pressureJets_small",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceBounds.pressureJets_small",
-      "line": 955,
-      "module": "NavierStokes.ReferenceBounds",
-      "path": "NavierStokes/ReferenceBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean#L955"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceBounds.pressureJets_small",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceBounds.pressureJets_small",
+        "module": "NavierStokes.ReferenceBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 955,
-        "text": "the C⁻² pressure smallness actually consumed downstream, on holdRegion = Icc 0 110 ×ˢ Icc (-1) 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ReferenceBounds.pressureJets_small",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L955",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 955,
+            "text": "theorem pressureJets_small {p : Point} (hp : p ∈ D.carrier)\n    (hX : p.1 ∈ Icc (0 : ℝ) 110) {Λ C K ε : ℝ} (hε : 0 < ε) (hK : 0 ≤ K)\n    (hΛ : 1 + 1 / ε ≤ Λ) (hC : 1 + 220 * K ^ 2 / ε ≤ C)\n    (hf : ∀ s ∈ Icc (0 : ℝ) p.1, |P.f (s, p.2)| ≤ K / C)\n    (hfη : ∀ s ∈ Icc (0 : ℝ) p.1, |parameterPartial P.f (s, p.2)| ≤ K / C) :\n    ‖pressureJets P Λ p‖ < ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

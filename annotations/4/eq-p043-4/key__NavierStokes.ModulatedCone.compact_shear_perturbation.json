@@ -1,22 +1,25 @@
 {
-  "id": "eq-p043-4/key/02.NavierStokes.ModulatedCone.compact_shear_perturbation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.compact_shear_perturbation",
-      "line": 453
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L453"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.compact_shear_perturbation"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.compact_shear_perturbation",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 453,
-        "text": "∃ δ C, 0 < δ ∧ 0 ≤ C ∧ ∀ F V ε, 0 ≤ ε ≤ δ → (C¹ edit bounds by ε on S) → ∀ p ∈ S, δ ≤ F p ∧ |angularShear F p - angularShear E p| ≤ C * ε ∧ |signedAxialShear F V p - signedAxialShear E U p| ≤ C * ε"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ModulatedCone.compact_shear_perturbation"
+          },
+          "destination": {
+            "fragment": "L453"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 453,
+            "text": "theorem compact_shear_perturbation\n    (E U : RadialParameter → ℝ) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    {S : Set RadialParameter} (hS : IsCompact S) (hpos : ∀ p ∈ S, 0 < E p) :\n    ∃ δ C : ℝ, 0 < δ ∧ 0 ≤ C ∧ ∀ (F V : RadialParameter → ℝ) (ε : ℝ),\n      0 ≤ ε → ε ≤ δ →\n      (∀ p ∈ S, |F p - E p| ≤ ε ∧\n        |radialDerivative F p - radialDerivative E p| ≤ ε ∧\n        |radialDerivative V p - radialDerivative U p| ≤ ε) →\n      ∀ p ∈ S, δ ≤ F p ∧\n        |angularShear F p - angularShear E p| ≤ C * ε ∧\n        |signedAxialShear F V p - signedAxialShear E U p| ≤ C * ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

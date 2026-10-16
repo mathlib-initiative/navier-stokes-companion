@@ -1,31 +1,33 @@
 {
-  "id": "lemma-10.4/attributed/1.NavierStokesR3.CompactEnergy.candidate_uniform_kineticEnergy_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.CompactEnergy.candidate_uniform_kineticEnergy_le",
-      "line": 183,
-      "module": "NavierStokes.R3.IntegratedDissipation",
-      "path": "NavierStokes/R3/IntegratedDissipation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/IntegratedDissipation.lean#L183"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.CompactEnergy.candidate_uniform_kineticEnergy_le",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.CompactEnergy.candidate_uniform_kineticEnergy_le",
+        "module": "NavierStokes.R3.IntegratedDissipation"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: ∀ T ∈ Ico 0 1, SquareIntegrableAtTime u T ∧ kineticEnergy u T ≤ (1/2)*(cumulativeForceNorm f 1)^2: the 'kinetic energy is uniformly bounded' clause, with the explicit constant F(1)²/2 and a T-independent right-hand side.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 183,
-        "text": "theorem candidate_uniform_kineticEnergy_le {ν : ℝ} (hν : 0 < ν)\n    {u f : VelocityField} {p : PressureField} {K : Set Space}\n    (hc : ProblemStatement.CandidateProperties ν u p f K) :\n    ∀ T ∈ Ico (0 : ℝ) 1,\n      ProblemStatement.SquareIntegrableAtTime u T ∧\n      ProblemStatement.kineticEnergy u T ≤ (1 / 2 : ℝ) * (cumulativeForceNorm f 1) ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokesR3.CompactEnergy.candidate_uniform_kineticEnergy_le",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: ∀ T ∈ Ico 0 1, SquareIntegrableAtTime u T ∧ kineticEnergy u T ≤ (1/2)*(cumulativeForceNorm f 1)^2: the 'kinetic energy is uniformly bounded' clause, with the explicit constant F(1)²/2 and a T-independent right-hand side.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L183",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/IntegratedDissipation.lean"
+          },
+          "snippet": {
+            "line": 183,
+            "text": "theorem candidate_uniform_kineticEnergy_le {ν : ℝ} (hν : 0 < ν)\n    {u f : VelocityField} {p : PressureField} {K : Set Space}\n    (hc : ProblemStatement.CandidateProperties ν u p f K) :\n    ∀ T ∈ Ico (0 : ℝ) 1,\n      ProblemStatement.SquareIntegrableAtTime u T ∧\n      ProblemStatement.kineticEnergy u T ≤ (1 / 2 : ℝ) * (cumulativeForceNorm f 1) ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

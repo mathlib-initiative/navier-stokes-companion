@@ -1,26 +1,30 @@
 {
-  "id": "eq-p101-1/support/04.NavierStokes.LocalSignedRequest.normalizedRequest_represents",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalSignedRequest.normalizedRequest_represents",
-      "line": 762,
-      "module": "NavierStokes.LocalSignedRequest",
-      "path": "NavierStokes/LocalSignedRequest.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean#L762"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalSignedRequest.normalizedRequest_represents",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalSignedRequest.normalizedRequest_represents",
+        "module": "NavierStokes.LocalSignedRequest"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 762,
-        "text": "hypotheses heθ/hez: Fθ (r, (t, Y)) = Q ^ (-(2 * A + 1 / 2)) * u.thetaResidual c n (Q ^ (-(1/2 : ℝ)) * r, …)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LocalSignedRequest.normalizedRequest_represents",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L762",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 762,
+            "text": "theorem normalizedRequest_represents {coord : ℝ} (U : SlowRegion coord)\n    (P : SignedStressPrimitive.Patch) (s : StripData Point)\n    (c : CorrectionState.Context Point) (u : CorrectionState.State Point)\n    (n : ℕ) {Q : ℝ} (hQ : 0 < Q) (A : ℝ)\n    (q : S → ℝ) (Fθ Fz : PressureStream.Lift S → ℝ)\n    (C : S →L[ℝ] Plane) (k : ℕ) (t : S) (ht : C t ∈ U.carrier) (hqt : 0 < q t)\n    (hθ : ContDiffOn ℝ ∞ (u.thetaResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hz : ContDiffOn ℝ ∞ (u.axialResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hpθ : PhysicalMeanDomain.PeriodicOn U.carrier (u.thetaResidual c n))\n    (hpz : PhysicalMeanDomain.PeriodicOn U.carrier (u.axialResidual c n))\n    (hlength : Real.sqrt (SimilarityCoordinates.coordinateQ coord (C t)) =\n      Q ^ (-(1 / 2 : ℝ)) * Real.sqrt (q t))\n    (heθ : ∀ r Y, Fθ (r, (t, Y)) = Q ^ (-(2 * A + 1 / 2)) *\n      u.thetaResidual c n (Q ^ (-(1 / 2 : ℝ)) * r, (C t, TemporalMeanUpdate.coverMap k Y)))\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

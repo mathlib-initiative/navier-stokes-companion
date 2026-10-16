@@ -1,26 +1,29 @@
 {
-  "id": "eq-6.25/support/06.NavierStokes.MeanMomentBounds.meanClass_pressureMass",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanMomentBounds.meanClass_pressureMass",
-      "line": 404,
-      "module": "NavierStokes.MeanMomentBounds",
-      "path": "NavierStokes/MeanMomentBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanMomentBounds.lean#L404"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanMomentBounds.meanClass_pressureMass",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanMomentBounds.meanClass_pressureMass",
+        "module": "NavierStokes.MeanMomentBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 404,
-        "text": "… (hclass : MeanClass (logStripData a b cL cR …) α f) : UnweightedClass (slowStripData (D := P) ε S hε hεone hS) α (fun n => PressureStream.pressureMass (f n)) — i.e. puts the radial mass of a mean-class field into the slow class, as the paper puts M_* into S_α (GlobalBandJets appears only inside its proof, lines 413–418)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.MeanMomentBounds.meanClass_pressureMass",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L404",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanMomentBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 404,
+            "text": "theorem meanClass_pressureMass\n    {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1)\n    (hS : ∀ n, 1 ≤ S n) {α : ℝ} {f : ℕ → PressureStream.Lift P → ℝ}\n    (hf : ∀ n, ContDiff ℝ ∞ (f n))\n    (hs : ∀ n, RadialAlias.RadiallySupported a b (f n))\n    (hclass : MeanClass (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α f) :\n    UnweightedClass (slowStripData (D"
+          }
+        }
       }
     }
-  }
+  ]
 }

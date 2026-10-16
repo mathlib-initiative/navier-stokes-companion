@@ -1,24 +1,27 @@
 {
-  "id": "eq-p152-6/key/02.NavierStokes.StressActivation.primitiveFactor_smooth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressActivation.primitiveFactor_smooth",
-      "line": 233
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean#L233"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressActivation.primitiveFactor_smooth",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressActivation.primitiveFactor_smooth",
+        "module": "NavierStokes.StressActivation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 233,
-        "text": "(hT : 0 < T) (hB : ContDiffOn ℝ ∞ B (logDomain J hJ).carrier) : ContDiffOn ℝ ∞ (primitiveFactor T B) (logDomain J hJ).carrier"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.StressActivation.primitiveFactor_smooth",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L233"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 233,
+            "text": "theorem primitiveFactor_smooth {T : ℝ} (hT : 0 < T) {J : Set ℝ} (hJ : IsOpen J)\n    {B : Field} (hB : ContDiffOn ℝ ∞ B (logDomain J hJ).carrier) :\n    ContDiffOn ℝ ∞ (primitiveFactor T B) (logDomain J hJ).carrier"
+          }
+        }
       }
     }
-  }
+  ]
 }

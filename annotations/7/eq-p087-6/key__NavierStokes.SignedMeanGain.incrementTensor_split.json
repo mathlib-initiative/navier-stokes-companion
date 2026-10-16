@@ -1,26 +1,28 @@
 {
-  "id": "eq-p087-6/key/02.NavierStokes.SignedMeanGain.incrementTensor_split",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedMeanGain.incrementTensor_split",
-      "line": 419,
-      "module": "NavierStokes.SignedMeanGain",
-      "path": "NavierStokes/SignedMeanGain.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean#L419"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedMeanGain.incrementTensor_split",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedMeanGain.incrementTensor_split",
+        "module": "NavierStokes.SignedMeanGain"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 419,
-        "text": "incrementTensor f a = crossTensor f a + remainderTensor f a, where incrementTensor = covarianceIncrement (oldField f a) (tangentField f a + curlField f a) and crossTensor = symmetricCovariance (primaryField f a) (tangentField f a); no NativeData hypothesis"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SignedMeanGain.incrementTensor_split",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L419",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 419,
+            "text": "theorem incrementTensor_split (f : SignedFamily s P α δ β η) (a : Assembly f) :\n    incrementTensor f a = crossTensor f a + remainderTensor f a"
+          }
+        }
       }
     }
-  }
+  ]
 }

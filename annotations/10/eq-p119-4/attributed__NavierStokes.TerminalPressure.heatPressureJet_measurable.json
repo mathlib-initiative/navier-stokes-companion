@@ -1,26 +1,28 @@
 {
-  "id": "eq-p119-4/attributed/08.NavierStokes.TerminalPressure.heatPressureJet_measurable",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalPressure.heatPressureJet_measurable",
-      "line": 124,
-      "module": "NavierStokes.TerminalPressure",
-      "path": "NavierStokes/TerminalPressure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean#L124"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalPressure.heatPressureJet_measurable",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalPressure.heatPressureJet_measurable",
+        "module": "NavierStokes.TerminalPressure"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 124,
-        "text": "(hh : 0 < h) (n) (hν : 0 ≤ ν) : AEStronglyMeasurable (heatPressureJet h n ν) (volume.restrict (Ioi 1))  -- hypothesis hm of the chain lemma"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.TerminalPressure.heatPressureJet_measurable",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L124",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 124,
+            "text": "theorem heatPressureJet_measurable {h : ℝ} (hh : 0 < h) (n : ℕ) {ν : ℝ} (hν : 0 ≤ ν) :\n    AEStronglyMeasurable (heatPressureJet h n ν) (volume.restrict (Ioi (1 : ℝ)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

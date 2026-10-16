@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.31/attributed/06.NavierStokes.ActiveAnnulusWeight.WeightedBounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.WeightedBounds",
-      "line": 644,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L644"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.WeightedBounds",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.WeightedBounds",
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 644,
-        "text": "(∃ m > 0, ∀ p ∈ K, ∀ y ∈ Ioo a b, m * weight c a b y ≤ ‖T (p,y)‖) ∧ (∀ n, ∃ C > 0, ∃ N, ∀ i ≤ n, ∀ p ∈ K, ∀ y ∈ Ioo a b, ‖iteratedFDeriv ℝ i T (p,y)‖ ≤ C * weight c a b y / edgeDistance a b y ^ N) ∧ (the same in the radial chart), where weight c a b y = FlatCutoff.edge c (y-a) * FlatCutoff.edge 4 (b-y) and edgeDistance a b y = min 1 (min (y-a) (b-y))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.ActiveAnnulusWeight.WeightedBounds",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L644",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 644,
+            "text": "noncomputable def WeightedBounds (K : Set E) (c a b : ℝ) (T : E × ℝ → V) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

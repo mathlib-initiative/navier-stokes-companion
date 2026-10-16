@@ -1,26 +1,28 @@
 {
-  "id": "eq-p105-1/key/01.NavierStokes.SignedCopyBounds.NativeCovariance.weights_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedCopyBounds.NativeCovariance.weights_jets",
-      "line": 427,
-      "module": "NavierStokes.SignedCopyBounds",
-      "path": "NavierStokes/SignedCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean#L427"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedCopyBounds.NativeCovariance.weights_jets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedCopyBounds.NativeCovariance.weights_jets",
+        "module": "NavierStokes.SignedCopyBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 427,
-        "text": "(∀ a, LocalJets s w β K (fun n i x => R i n x a)) → LocalJets s w β K (fun n i x => SmoothCovariance.weights (H i n x) (R i n x) j)  -- line 1 at w = ζ, β = α-1 (instantiated that way at :474)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SignedCopyBounds.NativeCovariance.weights_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L427",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 427,
+            "text": "theorem weights_jets {R : I → ℕ → D → Vec2} {w : ℕ → D → ℝ} {β : ℝ}\n    (hw : ∀ n x, x ∈ s.domain → 0 ≤ w n x)\n    (hR : ∀ a, LocalJets s w β K (fun n i x => R i n x a)) (j : Fin 2) :\n    LocalJets s w β K (fun n i x => SmoothCovariance.weights (H i n x) (R i n x) j)"
+          }
+        }
       }
     }
-  }
+  ]
 }

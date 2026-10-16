@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.11/key/03.NavierStokes.ProfileSpectralCone.stressVector",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProfileSpectralCone.stressVector",
-      "line": 200,
-      "module": "NavierStokes.ProfileSpectralCone",
-      "path": "NavierStokes/ProfileSpectralCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean#L200"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProfileSpectralCone.stressVector",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProfileSpectralCone.stressVector",
+        "module": "NavierStokes.ProfileSpectralCone"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 200,
-        "text": "stressVector P h p = !₂[LeadingStress.theta P h p, LeadingStress.axial P h p]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ProfileSpectralCone.stressVector",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L200",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 200,
+            "text": "noncomputable def stressVector {D : RadialDomain} (P : Profiles D) (h : ℝ)\n    (p : Point) : Plane"
+          }
+        }
       }
     }
-  }
+  ]
 }

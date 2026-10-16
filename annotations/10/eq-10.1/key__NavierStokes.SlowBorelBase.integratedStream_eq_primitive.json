@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.1/key/01.NavierStokes.SlowBorelBase.integratedStream_eq_primitive",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowBorelBase.integratedStream_eq_primitive",
-      "line": 1272,
-      "module": "NavierStokes.SlowBorelBase",
-      "path": "NavierStokes/SlowBorelBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean#L1272"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowBorelBase.integratedStream_eq_primitive",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowBorelBase.integratedStream_eq_primitive",
+        "module": "NavierStokes.SlowBorelBase"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1272,
-        "text": "integratedStream a h C d p = physicalProfile a h (1 - CoordinateAlgebra.A h) (fun j => ProfileHistories.primitive (d.axial j)) p  (docstring: \"the cut sum of q^(1-A+lambda j) times the radial primitives\")"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SlowBorelBase.integratedStream_eq_primitive",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1272",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1272,
+            "text": "theorem integratedStream_eq_primitive {a : ℕ → ℕ} (ha : StrictMono a) {h : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (C : ℝ) (d : Coefficients)\n    {p : Chart} (hp : p.1 < 1) :\n    integratedStream a h C d p =\n      physicalProfile a h (1 - CoordinateAlgebra.A h)\n        (fun j => ProfileHistories.primitive (d.axial j)) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

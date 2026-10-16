@@ -1,31 +1,53 @@
 {
-  "id": "lemma-4.4/support/3.NavierStokes.ModulatedCone.Repaired.shears_unchanged_outside",
-  "location": {
-    "page": 28,
-    "rect": [0.12854, 0.7, 0.745098, 0.200826]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.Repaired.shears_unchanged_outside",
-      "line": 1069,
-      "module": "NavierStokes.ModulatedCone",
-      "path": "NavierStokes/ModulatedCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L1069"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.Repaired.shears_unchanged_outside",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 28,
+        "rect": [0.12854, 0.7, 0.745098, 0.200826]
       },
-      "region": "lemma-4.4@p028",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 1069,
-        "text": "theorem shears_unchanged_outside {D D' : RadialDomain} (P : Profiles D) (Q : Profiles D')\n    (patch : FiveProfileMoments.Patch) (A : ℝ → ℝ) (c : ℝ → ModulatedHistories.Coeff)\n    (hf : P.f = ModulatedHistories.applyRepairF patch A c Q.f)\n    (hU : P.U = ModulatedHistories.applyRepairU patch A c Q.U)\n    {p : Point} (hp : p.1 ∉ Ioo patch.left patch.right) :\n    P.E p = Q.E p ∧ P.U p = Q.U p ∧\n      angularShear P.E p = angularShear Q.E p ∧\n      signedAxialShear P.E P.U p = signedAxialShear Q.E Q.U p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p028"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 29,
+        "rect": [0.12854, 0.103306, 0.745098, 0.22314]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p029"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.Repaired.shears_unchanged_outside",
+        "module": "NavierStokes.ModulatedCone"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ModulatedCone.Repaired.shears_unchanged_outside",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1069",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 1069,
+            "text": "theorem shears_unchanged_outside {D D' : RadialDomain} (P : Profiles D) (Q : Profiles D')\n    (patch : FiveProfileMoments.Patch) (A : ℝ → ℝ) (c : ℝ → ModulatedHistories.Coeff)\n    (hf : P.f = ModulatedHistories.applyRepairF patch A c Q.f)\n    (hU : P.U = ModulatedHistories.applyRepairU patch A c Q.U)\n    {p : Point} (hp : p.1 ∉ Ioo patch.left patch.right) :\n    P.E p = Q.E p ∧ P.U p = Q.U p ∧\n      angularShear P.E p = angularShear Q.E p ∧\n      signedAxialShear P.E P.U p = signedAxialShear Q.E Q.U p"
+          }
+        }
+      }
+    }
+  ]
 }

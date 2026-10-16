@@ -1,26 +1,28 @@
 {
-  "id": "eq-C.8/attributed/04.NavierStokes.TrueConeLoop.exists_family_choices",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.exists_family_choices",
-      "line": 459,
-      "module": "NavierStokes.TrueConeLoop",
-      "path": "NavierStokes/TrueConeLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L459"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.exists_family_choices",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.exists_family_choices",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 459,
-        "text": "Nonempty (FamilyChoices a m p₁ p₂ K B); proof sets δ := min 1 (min eu eb) with eu from uniform_tilt_cone_margin and eb the boundary gap — the paper's \"Choose 0 < δ_L < 1 … Shrink δ_L further …\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.TrueConeLoop.exists_family_choices",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L459",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 459,
+            "text": "theorem exists_family_choices {X : Type*} [TopologicalSpace X]\n    (a m p₁ p₂ : X → ℝ) {K B : Set X} (hK : IsCompact K) (hB : IsCompact B)\n    (ha : Continuous a) (hm : Continuous m) (hp₁ : Continuous p₁) (hp₂ : Continuous p₂)\n    (haK : ∀ x ∈ K, 0 < a x) (hPK : ∀ x ∈ K, 2 < p₁ x + p₂ x * m x)\n    (htrueB : ∀ x ∈ B, 2 < nominalSpeed (a x) (m x)) :\n    Nonempty (FamilyChoices a m p₁ p₂ K B)"
+          }
+        }
       }
     }
-  }
+  ]
 }

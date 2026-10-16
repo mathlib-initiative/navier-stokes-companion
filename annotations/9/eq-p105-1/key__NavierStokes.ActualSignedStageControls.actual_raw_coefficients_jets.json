@@ -1,26 +1,28 @@
 {
-  "id": "eq-p105-1/key/07.NavierStokes.ActualSignedStageControls.actual_raw_coefficients_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSignedStageControls.actual_raw_coefficients_jets",
-      "line": 1159,
-      "module": "NavierStokes.ActualSignedStageControls",
-      "path": "NavierStokes/ActualSignedStageControls.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedStageControls.lean#L1159"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSignedStageControls.actual_raw_coefficients_jets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSignedStageControls.actual_raw_coefficients_jets",
+        "module": "NavierStokes.ActualSignedStageControls"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1159,
-        "text": "MeanClass G.strip α (u.thetaResidual c) → MeanClass G.strip α (u.axialResidual c) → UniformLocalJets fullStrip (fun l n x => √(fullStrip.zeta x) * envelope l n x) (α - 1/2) phaseCell (… .raw k).amplitude ∧ …  -- line 4 on the actual chart, request at α-1 (:1177)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.ActualSignedStageControls.actual_raw_coefficients_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1159",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedStageControls.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1159,
+            "text": "theorem actual_raw_coefficients_jets (G : SignedMeanGain.Geometry)\n    (hs : G.strip = ActualPrimaryBounds.strip)\n    (c : CorrectionState.Context Point) (u : CorrectionState.State Point) (α : ℝ)\n    (H : MeanStateRegularity.PrimitiveData G.region G.patch.a G.patch.b c u)\n    (hfixed : VariableGaugeMean.reconstructState G.gauge c u = u)\n    (hθ : MeanClass G.strip α (u.thetaResidual c))\n    (hz : MeanClass G.strip α (u.axialResidual c)) :\n    PeriodizedWaveBounds.UniformLocalJets fullStrip\n      (fun (l : SignedLabel B N0) n x => Real.sqrt (fullStrip.zeta x) * envelope l n x) (α - 1 / 2)\n      (phaseCell (B"
+          }
+        }
       }
     }
-  }
+  ]
 }

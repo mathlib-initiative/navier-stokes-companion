@@ -1,25 +1,27 @@
 {
-  "id": "eq-p090-4/key/01.NavierStokes.MeanChartCompatibility.physicalCompact_pull",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.physicalCompact_pull",
-      "line": 148,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L148"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.physicalCompact_pull",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.physicalCompact_pull",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 148,
-        "text": "(hshift : M • C v = (N * l ^ d) • w) (hf : ContDiff ℝ ∞ f) (hs : RadiallySupported (l*a) (l*b) f) : physicalCompact d a b M v (pull l C u f) z = (u / l) * physicalCompact d (l*a) (l*b) N w f (chartLinear l C z)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.MeanChartCompatibility.physicalCompact_pull",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L148",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 148,
+            "text": "theorem physicalCompact_pull {l a b d : ℝ} (hl : 0 < l) (ha : 0 < a)\n    (hab : a < b) (hd : 0 < d) (C : E →L[ℝ] F) (M N u : ℝ) (v : E) (w : F)\n    (hshift : M • C v = (N * l ^ d) • w) {f : ℝ × F → ℝ}\n    (hf : ContDiff ℝ ∞ f) (hs : RadialAlias.RadiallySupported (l * a) (l * b) f)\n    (z : ℝ × E) :\n    RadialPullback.physicalCompact d a b M v (pull l C u f) z =\n      (u / l) * RadialPullback.physicalCompact d (l * a) (l * b) N w f (chartLinear l C z)"
+          }
+        }
       }
     }
-  }
+  ]
 }

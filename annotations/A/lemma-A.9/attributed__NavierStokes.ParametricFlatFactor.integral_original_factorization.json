@@ -1,36 +1,57 @@
 {
-  "id": "lemma-A.9/attributed/1.NavierStokes.ParametricFlatFactor.integral_original_factorization",
-  "location": {
-    "page": 141,
-    "rect": [0.12854, 0.822314, 0.745098, 0.080165]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricFlatFactor.integral_original_factorization",
-      "line": 99,
-      "module": "NavierStokes.ParametricFlatFactor",
-      "path": "NavierStokes/ParametricFlatFactor.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 141,
+        "rect": [0.12854, 0.822314, 0.745098, 0.080165]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-A.9@p141"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricFlatFactor.lean#L99"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricFlatFactor.integral_original_factorization",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 142,
+        "rect": [0.12854, 0.102479, 0.745098, 0.057851]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: For `0 < x`: `(∫ u in (0:ℝ)..x, (Real.exp (-c/u^2)/u^j) * b (p,u)) = Real.exp (-c/x^2) * x ^ (3 - (j:ℝ)) * factor c j b (p,x)`. This is (A.47) for the explicit transformed integral `factor`, with no smoothness hypothesis at all.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-A.9@p141",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 99,
-        "text": "theorem integral_original_factorization (c : ℝ) (j : ℕ) (b : E × ℝ → ℝ)\n    (p : E) {x : ℝ} (hx : 0 < x) :\n    (∫ u in (0 : ℝ)..x, (Real.exp (-c / u ^ 2) / u ^ j) * b (p, u)) =\n      Real.exp (-c / x ^ 2) * x ^ (3 - (j : ℝ)) * factor c j b (p, x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-A.9@p142"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricFlatFactor.integral_original_factorization",
+        "module": "NavierStokes.ParametricFlatFactor"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ParametricFlatFactor.integral_original_factorization",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: For `0 < x`: `(∫ u in (0:ℝ)..x, (Real.exp (-c/u^2)/u^j) * b (p,u)) = Real.exp (-c/x^2) * x ^ (3 - (j:ℝ)) * factor c j b (p,x)`. This is (A.47) for the explicit transformed integral `factor`, with no smoothness hypothesis at all.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L99",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricFlatFactor.lean"
+          },
+          "snippet": {
+            "line": 99,
+            "text": "theorem integral_original_factorization (c : ℝ) (j : ℕ) (b : E × ℝ → ℝ)\n    (p : E) {x : ℝ} (hx : 0 < x) :\n    (∫ u in (0 : ℝ)..x, (Real.exp (-c / u ^ 2) / u ^ j) * b (p, u)) =\n      Real.exp (-c / x ^ 2) * x ^ (3 - (j : ℝ)) * factor c j b (p, x)"
+          }
+        }
+      }
+    }
+  ]
 }

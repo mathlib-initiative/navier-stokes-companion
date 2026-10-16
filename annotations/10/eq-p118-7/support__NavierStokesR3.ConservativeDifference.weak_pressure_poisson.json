@@ -1,23 +1,27 @@
 {
-  "id": "eq-p118-7/support/03.NavierStokesR3.ConservativeDifference.weak_pressure_poisson",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ConservativeDifference.weak_pressure_poisson",
-      "line": 431,
-      "module": "NavierStokes.R3.ConservativeDifference",
-      "path": "NavierStokes/R3/ConservativeDifference.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ConservativeDifference.lean#L431"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ConservativeDifference.weak_pressure_poisson"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ConservativeDifference.weak_pressure_poisson",
+        "module": "NavierStokes.R3.ConservativeDifference"
       },
-      "snippet": {
-        "line": 431,
-        "text": "(∫ x, (p - q) (t, x) * scalarLaplacian ψ x) = -(∑ k : Fin 3, ∑ i : Fin 3, ∫ x, tensorDiff u v t k i x * spatialPartial i (spatialPartial k ψ) x), under hNS : ∀ x, navierStokesResidual u p t x = navierStokesResidual v q t x"
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokesR3.ConservativeDifference.weak_pressure_poisson"
+          },
+          "destination": {
+            "fragment": "L431",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ConservativeDifference.lean"
+          },
+          "snippet": {
+            "line": 431,
+            "text": "theorem weak_pressure_poisson {a b t : ℝ} {u v : VelocityField}\n    {p q : PressureField} {ψ : Space → ℝ}\n    (hu : ContDiffOn ℝ ∞ u (Comparison.slab a b))\n    (hv : ContDiffOn ℝ ∞ v (Comparison.slab a b))\n    (hp : ContDiffOn ℝ ∞ p (Comparison.slab a b))\n    (hq : ContDiffOn ℝ ∞ q (Comparison.slab a b))\n    (ht : t ∈ Ioo a b)\n    (hdivu : ∀ s ∈ Ioo a b, ∀ x, spatialDivergence u s x = 0)\n    (hdivv : ∀ s ∈ Ioo a b, ∀ x, spatialDivergence v s x = 0)\n    (hNS : ∀ x, navierStokesResidual u p t x = navierStokesResidual v q t x)\n    (hψ : ContDiff ℝ ∞ ψ) (hcψ : HasCompactSupport ψ) :\n    (∫ x, (p - q) (t, x) * scalarLaplacian ψ x) =\n      -(∑ k : Fin 3, ∑ i : Fin 3,\n        ∫ x, tensorDiff u v t k i x * spatialPartial i (spatialPartial k ψ) x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

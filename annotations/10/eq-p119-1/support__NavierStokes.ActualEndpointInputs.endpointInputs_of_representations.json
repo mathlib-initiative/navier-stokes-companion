@@ -1,25 +1,28 @@
 {
-  "id": "eq-p119-1/support/05.NavierStokes.ActualEndpointInputs.endpointInputs_of_representations",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualEndpointInputs.endpointInputs_of_representations",
-      "line": 120,
-      "module": "NavierStokes.ActualEndpointInputs",
-      "path": "NavierStokes/ActualEndpointInputs.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualEndpointInputs.lean#L120"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualEndpointInputs.endpointInputs_of_representations"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualEndpointInputs.endpointInputs_of_representations",
+        "module": "NavierStokes.ActualEndpointInputs"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 120,
-        "text": "EndpointInputs h qbig A V P; the potential, direct and pressure clauses are discharged at lines 135-154 by OffplaneJetExtensions.extension_of_eqOn_sublevel / rawStage_extension"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ActualEndpointInputs.endpointInputs_of_representations"
+          },
+          "destination": {
+            "fragment": "L120",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualEndpointInputs.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 120,
+            "text": "theorem endpointInputs_of_representations (B N0 N : ℕ) (hN : 4 ≤ N)\n    {qbig : ℝ} (hq : qbig ≤ ChartScales.Q N)\n    (WA : PhysicalStageBounds.WaveData h DA IA KA (Fin 3))\n    (WP : PhysicalStageBounds.WaveData h DP IP KP Unit)\n    {A V : ℕ → VelocityField} {P : ℕ → PressureField}\n    (E : MixedCandidateAssembly.StageEstimates h qbig A V P)\n    (hA : EqOn (A 0) (initialPotentialModel B N0 N hN WA) (CutStageEstimates.physicalSublevel h qbig))\n    (hV : EqOn (V 0) (initialDirectModel B N0 N) (CutStageEstimates.physicalSublevel h qbig))\n    (hP : EqOn (P 0) (initialPressureModel B N0 N hN WP) (CutStageEstimates.physicalSublevel h qbig)) :\n    EndpointInputs h qbig A V P"
+          }
+        }
       }
     }
-  }
+  ]
 }

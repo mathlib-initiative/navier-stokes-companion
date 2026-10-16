@@ -1,22 +1,25 @@
 {
-  "id": "eq-p136-4/key/04.NavierStokes.PulseCone.perturbed_cone_margins",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseCone.perturbed_cone_margins",
-      "line": 1099
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseCone.lean#L1099"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseCone.perturbed_cone_margins",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseCone.perturbed_cone_margins",
+        "module": "NavierStokes.PulseCone"
       },
-      "snippet": {
-        "line": 1099,
-        "text": "… (hb : |b + R| ≤ eps) (hv : |v - (2 * R - C * Z)| ≤ eps) (hbudget : coneErrorBudget F M eps lam ≤ 1 / 100) : b * v ≤ 74 / 100 ∧ 2 * b * v + b ^ 2 / (2 + 2 * lam) + 2 * lam * v ^ 2 ≤ 168 / 100"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PulseCone.perturbed_cone_margins",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1099"
+          },
+          "snippet": {
+            "line": 1099,
+            "text": "theorem perturbed_cone_margins {lam R C Z b v eps F M : ℝ}\n    (hlam : 0 ≤ lam) (hF : 0 ≤ F) (hM : 0 ≤ M) (heps : 0 ≤ eps) (heps' : eps ≤ 1)\n    (hR : 0 ≤ R) (hR' : R ≤ F) (hC : 0 ≤ C) (hC' : C ≤ 2001 / 1000)\n    (hZ : Z ≤ 6 / 5) (hmain : |2 * R - C * Z| ≤ M)\n    (hb : |b + R| ≤ eps) (hv : |v - (2 * R - C * Z)| ≤ eps)\n    (hbudget : coneErrorBudget F M eps lam ≤ 1 / 100) :\n    b * v ≤ 74 / 100 ∧\n      2 * b * v + b ^ 2 / (2 + 2 * lam) + 2 * lam * v ^ 2 ≤ 168 / 100"
+          }
+        }
       }
     }
-  }
+  ]
 }

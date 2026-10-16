@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.55/key/01.NavierStokes.TerminalPressure.canonicalPressure_partialZ_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalPressure.canonicalPressure_partialZ_bound",
-      "line": 768
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean#L768"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalPressure.canonicalPressure_partialZ_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalPressure.canonicalPressure_partialZ_bound",
+        "module": "NavierStokes.TerminalPressure"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 768,
-        "text": "|partialZ (canonicalPressure (swirlCoefficient C h f)) p| ≤ |logScaleDerivative h p| * physicalHeat C (1+h) p ^ 2 * (1 - f (log (X h p)))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TerminalPressure.canonicalPressure_partialZ_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L768"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 768,
+            "text": "theorem canonicalPressure_partialZ_bound (C : ℝ) {h Y : ℝ} {f : ℝ → ℝ}\n    {p : SimilarityProfile.PhysicalPoint} (hh : 0 < h) (hh1 : h < 1 / 2)\n    (ht : p.1 < 1) (hs : 0 < p.2.1) (hf : ContDiff ℝ ∞ f)\n    (hb : ∀ y, 0 ≤ f y ∧ f y ≤ 1) (hmono : ∀ y, 0 ≤ deriv f y)\n    (hplateau : ∀ y, Y ≤ y → f y = 1) :\n    |SimilarityProfile.partialZ (TerminalStress.canonicalPressure\n      (TerminalStress.swirlCoefficient C h f)) p| ≤\n      |logScaleDerivative h p| * TerminalStress.physicalHeat C (1 + h) p ^ 2 *\n        (1 - f (Real.log (SimilarityProfile.X h p)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

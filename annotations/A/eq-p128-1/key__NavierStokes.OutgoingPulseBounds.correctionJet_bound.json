@@ -1,26 +1,28 @@
 {
-  "id": "eq-p128-1/key/07.NavierStokes.OutgoingPulseBounds.correctionJet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingPulseBounds.correctionJet_bound",
-      "line": 1134,
-      "module": "NavierStokes.OutgoingPulseBounds",
-      "path": "NavierStokes/OutgoingPulseBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingPulseBounds.lean#L1134"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingPulseBounds.correctionJet_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingPulseBounds.correctionJet_bound",
+        "module": "NavierStokes.OutgoingPulseBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1134,
-        "text": "theorem correctionJet_bound (c : Parameters) (hsmall : c.lam ≤ 1/120) (amp : ℝ → ℝ) (k : ℕ) {eta : ℝ} (heta : |eta| ≤ 1) (y : ℝ) : |correctionJet c amp k eta y| ≤ (2 * correctionJetBound c.P c.m k) * Real.exp (-(1 / (4 * c.lam))) * (1 + |amp eta|), where correctionJet … k eta y = iteratedDeriv k (fun t => correction c amp eta (Real.exp t)) y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.OutgoingPulseBounds.correctionJet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1134",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingPulseBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1134,
+            "text": "theorem correctionJet_bound (c : Parameters) (hsmall : c.lam ≤ 1 / 120)\n    (amp : ℝ → ℝ) (k : ℕ) {eta : ℝ} (heta : |eta| ≤ 1) (y : ℝ) :\n    |correctionJet c amp k eta y| ≤\n      (2 * correctionJetBound c.P c.m k) * Real.exp (-(1 / (4 * c.lam))) * (1 + |amp eta|)"
+          }
+        }
       }
     }
-  }
+  ]
 }

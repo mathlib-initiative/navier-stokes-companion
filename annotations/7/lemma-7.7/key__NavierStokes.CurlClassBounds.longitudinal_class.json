@@ -1,29 +1,31 @@
 {
-  "id": "lemma-7.7/key/1.NavierStokes.CurlClassBounds.longitudinal_class",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CurlClassBounds.longitudinal_class",
-      "line": 706,
-      "module": "NavierStokes.CurlClassBounds",
-      "path": "NavierStokes/CurlClassBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L706"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CurlClassBounds.longitudinal_class",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CurlClassBounds.longitudinal_class",
+        "module": "NavierStokes.CurlClassBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: From MemClass s w α a, 0 ≤ κ, UnweightedClass (-κ) Vr, 1 Vz, 0 R⁻¹, K n ≠ 0, BandBound (1/2) (1/K), θ-independence of a_θ and harmonic solenoidality: MemClass s w (α + 1/2 − κ) (fun n x => normalDot (phaseNormal …) (a n x)). This is n_Φ·a_m ∈ W_{α+1/2−κ_s}, the second half of (7.39)."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 706,
-        "text": "theorem longitudinal_class (ha : MemClass s w α a) (hκ : 0 ≤ κ)\n    (hr : UnweightedClass s (-κ) Vr) (hz : UnweightedClass s 1 Vz)\n    (hR : UnweightedClass s 0 (fun _ x => (R x)⁻¹))\n    (hK : ∀ n, K n ≠ 0) (hfreq : BandBound s (1 / 2) (fun n => 1 / K n))\n    (hΦ : ∀ n, DifferentiableOn ℝ (Φ n) s.domain)\n    (hθ : ∀ n x, x ∈ s.domain → HarmonicCalculus.along (Vθ n) (fun y => a n y 1) x = 0)\n    (hdiv : ∀ n x, x ∈ s.domain → HarmonicCalculus.cylindricalDivergence R\n      (Vr n) (Vθ n) (Vz n) (HarmonicCalculus.vectorMode (K n) (Φ n) (a n)) x = 0) :\n    MemClass s w (α + 1 / 2 - κ) (fun n x => HarmonicCalculus.normalDot\n      (HarmonicCalculus.phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n) x) (a n x))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CurlClassBounds.longitudinal_class",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: From MemClass s w α a, 0 ≤ κ, UnweightedClass (-κ) Vr, 1 Vz, 0 R⁻¹, K n ≠ 0, BandBound (1/2) (1/K), θ-independence of a_θ and harmonic solenoidality: MemClass s w (α + 1/2 − κ) (fun n x => normalDot (phaseNormal …) (a n x)). This is n_Φ·a_m ∈ W_{α+1/2−κ_s}, the second half of (7.39)."
+          },
+          "destination": {
+            "fragment": "L706",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean"
+          },
+          "snippet": {
+            "line": 706,
+            "text": "theorem longitudinal_class (ha : MemClass s w α a) (hκ : 0 ≤ κ)\n    (hr : UnweightedClass s (-κ) Vr) (hz : UnweightedClass s 1 Vz)\n    (hR : UnweightedClass s 0 (fun _ x => (R x)⁻¹))\n    (hK : ∀ n, K n ≠ 0) (hfreq : BandBound s (1 / 2) (fun n => 1 / K n))\n    (hΦ : ∀ n, DifferentiableOn ℝ (Φ n) s.domain)\n    (hθ : ∀ n x, x ∈ s.domain → HarmonicCalculus.along (Vθ n) (fun y => a n y 1) x = 0)\n    (hdiv : ∀ n x, x ∈ s.domain → HarmonicCalculus.cylindricalDivergence R\n      (Vr n) (Vθ n) (Vz n) (HarmonicCalculus.vectorMode (K n) (Φ n) (a n)) x = 0) :\n    MemClass s w (α + 1 / 2 - κ) (fun n x => HarmonicCalculus.normalDot\n      (HarmonicCalculus.phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n) x) (a n x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

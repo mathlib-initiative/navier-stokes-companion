@@ -1,29 +1,31 @@
 {
-  "id": "proposition-7.5/attributed/1.NavierStokes.CorrectionInitialization.ActualPrimary.covariance_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.covariance_bounds",
-      "line": 3974,
-      "module": "NavierStokes.CorrectionInitialization",
-      "path": "NavierStokes/CorrectionInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L3974"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionInitialization.ActualPrimary.covariance_bounds",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.covariance_bounds",
+        "module": "NavierStokes.CorrectionInitialization"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: For the chosen `Choice B N0`: `∀ L p, p ∈ PositiveRepresentatives.positivePart (referenceSet W) → p ∈ (domain W a.N).carrier L → ZeroOrderBounds (√(ChartScales.S (cellBand L))) detGap entryBound inverseLower (movingWeight W p) (preparedCovariance …) (actualTarget v p)`. The determinant gap and the p"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 3974,
-        "text": "theorem covariance_bounds (B N0 : ℕ) (L : Label B N0) (p : PhaseCalculus.Slow)\n    (hp : p ∈ PositiveRepresentatives.positivePart (PrimaryGeometryAssembly.referenceSet nominal))\n    (hL : p ∈ (PrimaryGeometryAssembly.domain nominal (choice B N0).prepared.N).carrier L) :\n    PrimaryCovarianceBounds.ZeroOrderBounds (Real.sqrt (ChartScales.S (BaseChartJets.cellBand L)))\n      (choice B N0).detGap (choice B N0).entryBound (choice B N0).inverseLower\n      (PrimaryTargetBounds.movingWeight nominal p) (covariance B N0 L p)\n      (fun j => PrimaryTargetBounds.actualTarget modulation p j)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CorrectionInitialization.ActualPrimary.covariance_bounds",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: For the chosen `Choice B N0`: `∀ L p, p ∈ PositiveRepresentatives.positivePart (referenceSet W) → p ∈ (domain W a.N).carrier L → ZeroOrderBounds (√(ChartScales.S (cellBand L))) detGap entryBound inverseLower (movingWeight W p) (preparedCovariance …) (actualTarget v p)`. The determinant gap and the p"
+          },
+          "destination": {
+            "fragment": "L3974",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean"
+          },
+          "snippet": {
+            "line": 3974,
+            "text": "theorem covariance_bounds (B N0 : ℕ) (L : Label B N0) (p : PhaseCalculus.Slow)\n    (hp : p ∈ PositiveRepresentatives.positivePart (PrimaryGeometryAssembly.referenceSet nominal))\n    (hL : p ∈ (PrimaryGeometryAssembly.domain nominal (choice B N0).prepared.N).carrier L) :\n    PrimaryCovarianceBounds.ZeroOrderBounds (Real.sqrt (ChartScales.S (BaseChartJets.cellBand L)))\n      (choice B N0).detGap (choice B N0).entryBound (choice B N0).inverseLower\n      (PrimaryTargetBounds.movingWeight nominal p) (covariance B N0 L p)\n      (fun j => PrimaryTargetBounds.actualTarget modulation p j)"
+          }
+        }
       }
     }
-  }
+  ]
 }

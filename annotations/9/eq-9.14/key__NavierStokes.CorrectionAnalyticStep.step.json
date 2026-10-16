@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.14/key/06.NavierStokes.CorrectionAnalyticStep.step",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionAnalyticStep.step",
-      "line": 521,
-      "module": "NavierStokes.CorrectionAnalyticStep",
-      "path": "NavierStokes/CorrectionAnalyticStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionAnalyticStep.lean#L521"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionAnalyticStep.step",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionAnalyticStep.step",
+        "module": "NavierStokes.CorrectionAnalyticStep"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 521,
-        "text": "(D : StaticData ...) (H : CycleAnalyticInvariant G c primary P S sigma x) (hsigma : 1/5 <= sigma) (hkappa : kappa <= 1/100000) (d : StepData ...) : StepResult ...; proof gets hDefects from SignedCrossDefectClass.residual_defects_all_exponents_of_primitive with d.tailStart, d.cross_tail and feeds (hDefects (1+sigma+17/100+kappa)) to CrossBasedMeanComposition.CycleParameters.mean_gain_from_waves_of_cross_defects"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.CorrectionAnalyticStep.step",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L521",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionAnalyticStep.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 521,
+            "text": "theorem step (D : StaticData G h index axial r c κ)\n    (H : CycleAnalyticInvariant G c primary P S σ x)\n    (hσ : 1/5 ≤ σ) (hκsmall : κ ≤ 1/100000)\n    (d : StepData G h index axial particular signed r c x primary P S D H hσ) :\n    StepResult G h index axial particular signed r c x primary P S (σ"
+          }
+        }
       }
     }
-  }
+  ]
 }

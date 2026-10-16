@@ -1,24 +1,27 @@
 {
-  "id": "eq-p076-1/attributed/05.NavierStokes.PhaseCalculus.phase_dZ",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhaseCalculus.phase_dZ",
-      "line": 83
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseCalculus.lean#L83"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhaseCalculus.phase_dZ",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhaseCalculus.phase_dZ",
+        "module": "NavierStokes.PhaseCalculus"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 83,
-        "text": "fderiv ℝ (phase ε p pz x0 F G) q eZ = pz/ε - q.2.2*(p*slowZ F q.1 + pz*slowZ G q.1) — it states ∂_ZΦ = pz/ε - v(H_Φ)_Z, not the display's D_zΦ = εΦ_Z; multiplying by ε gives p_z - εv(H_Φ)_Z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.PhaseCalculus.phase_dZ",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L83"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 83,
+            "text": "theorem phase_dZ (ε p pz x0 : ℝ) (F G : Slow → ℝ) (q : Slot)\n    (hF : DifferentiableAt ℝ F q.1) (hG : DifferentiableAt ℝ G q.1) :\n    fderiv ℝ (phase ε p pz x0 F G) q eZ =\n      pz / ε - q.2.2 * (p * slowZ F q.1 + pz * slowZ G q.1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

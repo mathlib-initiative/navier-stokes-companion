@@ -1,26 +1,28 @@
 {
-  "id": "eq-p122-7/key/01.NavierStokes.R3WeightedLp.stress_weight_five",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.R3WeightedLp.stress_weight_five",
-      "line": 191,
-      "module": "NavierStokes.R3WeightedLp",
-      "path": "NavierStokes/R3WeightedLp.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3WeightedLp.lean#L191"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.R3WeightedLp.stress_weight_five",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.R3WeightedLp.stress_weight_five",
+        "module": "NavierStokes.R3WeightedLp"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 191,
-        "text": "given hb : forall x, ‖g x‖ <= W x ^ 2 + 2 * (U x * W x): MemLp (R3PressureCommutator.weightedNorm phi g) (3/2) and lpNorm (R3PressureCommutator.weightedNorm phi g) (3/2) volume <= lpNorm (fourthWeight phi W) 6 volume * lpNorm W 2 volume + 2 * (lpNorm U 6 volume * lpNorm W 2 volume)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.R3WeightedLp.stress_weight_five",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L191",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3WeightedLp.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 191,
+            "text": "theorem stress_weight_five {R L : ℝ} {φ U W : Space → ℝ} {g : Space → ℂ}\n    (hφ : R3PressureCommutator.Cutoff R L φ) (_hWm : Measurable W) (hgm : Measurable g)\n    (hU0 : ∀ x, 0 ≤ U x) (hW0 : ∀ x, 0 ≤ W x)\n    (hU₆ : MemLp U 6) (hW₂ : MemLp W 2) (hA₆ : MemLp (fourthWeight φ W) 6)\n    (hb : ∀ x, ‖g x‖ ≤ W x ^ 2 + 2 * (U x * W x)) :\n    MemLp (R3PressureCommutator.weightedNorm φ g) (3 / 2) ∧\n      lpNorm (R3PressureCommutator.weightedNorm φ g) (3 / 2) volume ≤\n        lpNorm (fourthWeight φ W) 6 volume * lpNorm W 2 volume +\n          2 * (lpNorm U 6 volume * lpNorm W 2 volume)"
+          }
+        }
       }
     }
-  }
+  ]
 }

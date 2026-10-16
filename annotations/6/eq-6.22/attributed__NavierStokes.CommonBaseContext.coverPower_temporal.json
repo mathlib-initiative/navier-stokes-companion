@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.22/attributed/12.NavierStokes.CommonBaseContext.coverPower_temporal",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CommonBaseContext.coverPower_temporal",
-      "line": 190,
-      "module": "NavierStokes.CommonBaseContext",
-      "path": "NavierStokes/CommonBaseContext.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonBaseContext.lean#L190"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CommonBaseContext.coverPower_temporal",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CommonBaseContext.coverPower_temporal",
+        "module": "NavierStokes.CommonBaseContext"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 190,
-        "text": "coverPower k (TorusInverse.vector .temporal) = Tg ^ k • TorusInverse.vector .temporal  -- J_g^Δ v_t = T_g^Δ v_t for every gap; gives the temporal value for general Δ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "12.NavierStokes.CommonBaseContext.coverPower_temporal",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L190",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonBaseContext.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 190,
+            "text": "theorem coverPower_temporal (k : ℕ) :\n    CommonCoverSolve.coverPower k (TorusInverse.vector .temporal) =\n      ChartScales.Tg ^ k • TorusInverse.vector .temporal"
+          }
+        }
       }
     }
-  }
+  ]
 }

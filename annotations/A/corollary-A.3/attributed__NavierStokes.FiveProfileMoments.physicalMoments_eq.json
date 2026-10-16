@@ -1,31 +1,33 @@
 {
-  "id": "corollary-A.3/attributed/1.NavierStokes.FiveProfileMoments.physicalMoments_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveProfileMoments.physicalMoments_eq",
-      "line": 638,
-      "module": "NavierStokes.FiveProfileMoments",
-      "path": "NavierStokes/FiveProfileMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L638"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveProfileMoments.physicalMoments_eq",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveProfileMoments.physicalMoments_eq",
+        "module": "NavierStokes.FiveProfileMoments"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: physicalMoments P b A G c = physicalDebt A G (normalizedMap P b c) for A ≠ 0: the physical five moment changes are the normalized ones composed with the fixed invertible normalization, so e_*, f_*(η), u_c and √2 enter only through bounded invertible factors.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 638,
-        "text": "theorem physicalMoments_eq (P : Patch) (b A G : ℝ) (hA : A ≠ 0) (c : Coeff) :\n    physicalMoments P b A G c = physicalDebt A G (normalizedMap P b c)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.FiveProfileMoments.physicalMoments_eq",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: physicalMoments P b A G c = physicalDebt A G (normalizedMap P b c) for A ≠ 0: the physical five moment changes are the normalized ones composed with the fixed invertible normalization, so e_*, f_*(η), u_c and √2 enter only through bounded invertible factors.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L638",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean"
+          },
+          "snippet": {
+            "line": 638,
+            "text": "theorem physicalMoments_eq (P : Patch) (b A G : ℝ) (hA : A ≠ 0) (c : Coeff) :\n    physicalMoments P b A G c = physicalDebt A G (normalizedMap P b c)"
+          }
+        }
       }
     }
-  }
+  ]
 }

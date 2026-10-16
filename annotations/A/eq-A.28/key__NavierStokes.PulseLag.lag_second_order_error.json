@@ -1,21 +1,24 @@
 {
-  "id": "eq-A.28/key/03.NavierStokes.PulseLag.lag_second_order_error",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseLag.lag_second_order_error",
-      "line": 110
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseLag.lean#L110"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseLag.lag_second_order_error"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseLag.lag_second_order_error",
+        "module": "NavierStokes.PulseLag"
       },
-      "snippet": {
-        "line": 110,
-        "text": "|lag β m₀ f y - (f y / β - f₁ y / β ^ 2 + m₀ * Real.exp (-β * y))| ≤ M / β ^ 3, from convolution_second_order (two integrations by parts) with |f₂| ≤ M on [0,y]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.PulseLag.lag_second_order_error"
+          },
+          "destination": {
+            "fragment": "L110"
+          },
+          "snippet": {
+            "line": 110,
+            "text": "theorem lag_second_order_error {β M y : ℝ} (hβ : 0 < β) (hM : 0 ≤ M) (hy : 0 ≤ y)\n    {f f₁ f₂ : ℝ → ℝ} (hf : ∀ t, HasDerivAt f (f₁ t) t)\n    (hf₁ : ∀ t, HasDerivAt f₁ (f₂ t) t) (hf₂ : Continuous f₂)\n    (hzero : f 0 = 0) (hzero₁ : f₁ 0 = 0)\n    (hbound : ∀ t ∈ Icc (0 : ℝ) y, |f₂ t| ≤ M) (m₀ : ℝ) :\n    |lag β m₀ f y - (f y / β - f₁ y / β ^ 2 + m₀ * Real.exp (-β * y))| ≤ M / β ^ 3"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-1.2/key/04.NavierStokes.ProblemStatement.pressureGradient",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProblemStatement.pressureGradient",
-      "line": 71,
-      "module": "NavierStokes.ProblemStatement",
-      "path": "NavierStokes/ProblemStatement.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProblemStatement.lean#L71"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProblemStatement.pressureGradient",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProblemStatement.pressureGradient",
+        "module": "NavierStokes.ProblemStatement"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 71,
-        "text": "def pressureGradient (p) (t) (x) : Space := ∑ i : Fin 3, (fderiv ℝ (fun y => p (t, y)) x (coordinateVector i)) • coordinateVector i  -- ∇p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ProblemStatement.pressureGradient",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L71",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProblemStatement.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 71,
+            "text": "def pressureGradient (p : PressureField) (t : ℝ) (x : Space) : Space"
+          }
+        }
       }
     }
-  }
+  ]
 }

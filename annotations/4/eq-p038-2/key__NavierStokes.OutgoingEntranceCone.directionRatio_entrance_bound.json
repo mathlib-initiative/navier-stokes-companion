@@ -1,26 +1,28 @@
 {
-  "id": "eq-p038-2/key/05.NavierStokes.OutgoingEntranceCone.directionRatio_entrance_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingEntranceCone.directionRatio_entrance_bound",
-      "line": 1344,
-      "module": "NavierStokes.OutgoingEntranceCone",
-      "path": "NavierStokes/OutgoingEntranceCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingEntranceCone.lean#L1344"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingEntranceCone.directionRatio_entrance_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingEntranceCone.directionRatio_entrance_bound",
+        "module": "NavierStokes.OutgoingEntranceCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1344,
-        "text": "theorem directionRatio_entrance_bound (v) (hh1 : v.h ≤ 1/100) (hy : 0 ≤ y) (hyT : y ≤ v.core.holdStart) (hη : |η| ≤ 1) … : |directionRatio v y η| ≤ entranceRatioBound v.core.P v.core.m   -- a w_*, but on the entrance stage, not the restoration window"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.OutgoingEntranceCone.directionRatio_entrance_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1344",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingEntranceCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1344,
+            "text": "theorem directionRatio_entrance_bound (v : TailData) {y η : ℝ} (hh1 : v.h ≤ 1 / 100)\n    (hy : 0 ≤ y) (hyT : y ≤ v.core.holdStart) (hη : |η| ≤ 1)\n    (hhT : v.h ≤ Real.exp (-(v.core.holdStart + 3 / 5)) / 8) :\n    |directionRatio v y η| ≤ entranceRatioBound v.core.P v.core.m"
+          }
+        }
       }
     }
-  }
+  ]
 }

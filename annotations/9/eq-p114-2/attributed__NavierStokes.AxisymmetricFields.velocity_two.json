@@ -1,26 +1,28 @@
 {
-  "id": "eq-p114-2/attributed/09.NavierStokes.AxisymmetricFields.velocity_two",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisymmetricFields.velocity_two",
-      "line": 144,
-      "module": "NavierStokes.AxisymmetricFields",
-      "path": "NavierStokes/AxisymmetricFields.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean#L144"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisymmetricFields.velocity_two",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisymmetricFields.velocity_two",
+        "module": "NavierStokes.AxisymmetricFields"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 144,
-        "text": "velocity H K (t,x) 2 = H p + radialEnergy x * partialS H p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.AxisymmetricFields.velocity_two",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L144",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 144,
+            "text": "theorem velocity_two (H K : Profile) (t : ℝ) (x : Space)\n    (hH : DifferentiableAt ℝ H (profilePoint t x))\n    (hK : DifferentiableAt ℝ K (profilePoint t x)) :\n    velocity H K (t, x) 2 =\n      H (profilePoint t x) + radialEnergy x * partialS H (profilePoint t x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

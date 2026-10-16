@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.21/key/01.NavierStokes.SlowStressSupport.angular_integral_balance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.angular_integral_balance",
-      "line": 552,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L552"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.angular_integral_balance",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.angular_integral_balance",
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 552,
-        "text": "(hem : moment B 2 (e n) = 0 on S) (hum : moment B 2 (conv n u e) = 0 on S) ... : moment B 0 (angularDensity h n v u e) eta = -moment B 2 (axialOp2 h (orderExponent h (n-1)) (e (n-1))) eta"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SlowStressSupport.angular_integral_balance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L552",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 552,
+            "text": "theorem angular_integral_balance {S : Set ℝ} (hS : IsOpen S) {n : ℕ}\n    {v u e : History} (hv : ∀ j, j ≤ n → Smooth S (v j))\n    (hu : ∀ j, j ≤ n → Smooth S (u j)) (he : ∀ j, j ≤ n → Smooth S (e j))\n    (h B : ℝ) (hell : ∀ eta ∈ S, PositiveAxisSystem.ell h eta ≠ 0)\n    (hev : exterior B S (e n)) (hvv : ∀ j, j ≤ n → exterior B S (v j))\n    (hem : ∀ eta ∈ S, moment B 2 (e n) eta = 0)\n    (hum : ∀ eta ∈ S, moment B 2 (conv n u e) eta = 0)\n    (hug : exterior B S (conv n u e)) {eta : ℝ} (heta : eta ∈ S) :\n    moment B 0 (angularDensity h n v u e) eta =\n      -moment B 2 (axialOp2 h (orderExponent h (n - 1)) (e (n - 1))) eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

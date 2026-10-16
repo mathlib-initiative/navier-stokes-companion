@@ -1,26 +1,29 @@
 {
-  "id": "eq-A.31/support/08.NavierStokes.TerminalHistoryBridge.energyHistory_eq_logS",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalHistoryBridge.energyHistory_eq_logS",
-      "line": 381,
-      "module": "NavierStokes.TerminalHistoryBridge",
-      "path": "NavierStokes/TerminalHistoryBridge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean#L381"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalHistoryBridge.energyHistory_eq_logS",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalHistoryBridge.energyHistory_eq_logS",
+        "module": "NavierStokes.TerminalHistoryBridge"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 381,
-        "text": "energyHistory F XR c η (XR * Real.exp y) = XR * HeatSwitchCone.logS F XR c (y, η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.TerminalHistoryBridge.energyHistory_eq_logS",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L381",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 381,
+            "text": "theorem energyHistory_eq_logS (F : Profile) {XR : ℝ} (hXR : 0 < XR)\n    (c : ℝ → Coeff) {η : ℝ} (hη : η ∈ HeatedOutgoing.parameterDomain) (y : ℝ) :\n    energyHistory F XR c η (XR*Real.exp y) = XR*HeatSwitchCone.logS F XR c (y,η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

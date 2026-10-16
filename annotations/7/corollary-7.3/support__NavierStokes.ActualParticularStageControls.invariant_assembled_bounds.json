@@ -1,26 +1,29 @@
 {
-  "id": "corollary-7.3/support/3.NavierStokes.ActualParticularStageControls.invariant_assembled_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualParticularStageControls.invariant_assembled_bounds",
-      "line": 1472,
-      "module": "NavierStokes.ActualParticularStageControls",
-      "path": "NavierStokes/ActualParticularStageControls.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularStageControls.lean#L1472"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualParticularStageControls.invariant_assembled_bounds",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualParticularStageControls.invariant_assembled_bounds",
+        "module": "NavierStokes.ActualParticularStageControls"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 1472,
-        "text": "theorem invariant_assembled_bounds (x : CycleState (Label B N0))\n    {G : SignedMeanGain.Geometry} {σ : ℝ}\n    (H : CycleAnalyticInvariant G (commonContext B) ActualParticularBackground.primaryBlock\n      meanEnvelope (fun l => ActualCarrierTransportBase.labelCarrier (supportLabel l)) σ x)\n    (hstrip : G.strip = BaseContextAssembly.nativeStrip nominal standardRegion)\n    (hdomain : G.domain = ActualCarrierTransportBase.domain)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) :\n    (∀ i j, LabelSumBounds.UniformWaveClass G.strip meanEnvelope (1/2+σ)\n      (fun l n z => (outputBlock x x.coefficients.residualBand l).velocity n i j z)) ∧\n    (∀ j, LabelSumBounds.UniformWaveClass G.strip meanEnvelope (1+σ)\n      (fun l n z => (outputBlock x x.coefficients.residualBand l).pressure n j z)) ∧\n    (∀ i j, LabelSumBounds.UniformWaveClass G.strip meanEnvelope (1+σ-3*ChartScales.kappa)\n      (fun l n z => (outputGood x x.coefficients.residualBand l).velocity n i j z))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ActualParticularStageControls.invariant_assembled_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1472",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularStageControls.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 1472,
+            "text": "theorem invariant_assembled_bounds (x : CycleState (Label B N0))\n    {G : SignedMeanGain.Geometry} {σ : ℝ}\n    (H : CycleAnalyticInvariant G (commonContext B) ActualParticularBackground.primaryBlock\n      meanEnvelope (fun l => ActualCarrierTransportBase.labelCarrier (supportLabel l)) σ x)\n    (hstrip : G.strip = BaseContextAssembly.nativeStrip nominal standardRegion)\n    (hdomain : G.domain = ActualCarrierTransportBase.domain)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) :\n    (∀ i j, LabelSumBounds.UniformWaveClass G.strip meanEnvelope (1/2+σ)\n      (fun l n z => (outputBlock x x.coefficients.residualBand l).velocity n i j z)) ∧\n    (∀ j, LabelSumBounds.UniformWaveClass G.strip meanEnvelope (1+σ)\n      (fun l n z => (outputBlock x x.coefficients.residualBand l).pressure n j z)) ∧\n    (∀ i j, LabelSumBounds.UniformWaveClass G.strip meanEnvelope (1+σ-3*ChartScales.kappa)\n      (fun l n z => (outputGood x x.coefficients.residualBand l).velocity n i j z))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,26 @@
 {
-  "id": "eq-p038-5/key/02.NavierStokes.ShapeTransition.separation_eventually_before",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ShapeTransition.separation_eventually_before",
-      "line": 363
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ShapeTransition.lean#L363"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ShapeTransition.separation_eventually_before",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ShapeTransition.separation_eventually_before",
+        "module": "NavierStokes.ShapeTransition"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 363,
-        "text": "∀ᶠ C in atTop, separation T C P < Real.exp clock — the use made of the limit (with clock = −8, giving x_sep < e^{-8} before the restoration interval)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ShapeTransition.separation_eventually_before",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L363"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 363,
+            "text": "theorem separation_eventually_before (T : ℝ) {P : ℝ} (hP : 0 < P) (clock : ℝ) :\n    ∀ᶠ C : ℝ in atTop, separation T C P < Real.exp clock"
+          }
+        }
       }
     }
-  }
+  ]
 }

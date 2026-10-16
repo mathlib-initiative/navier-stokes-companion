@@ -1,36 +1,57 @@
 {
-  "id": "proposition-A.4/key/1.NavierStokes.ReservedPatches.clean_fields",
-  "location": {
-    "page": 130,
-    "rect": [0.12854, 0.799174, 0.746187, 0.092562]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReservedPatches.clean_fields",
-      "line": 309,
-      "module": "NavierStokes.ReservedPatches",
-      "path": "NavierStokes/ReservedPatches.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 130,
+        "rect": [0.12854, 0.799174, 0.746187, 0.092562]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-A.4@p130"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReservedPatches.lean#L309"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReservedPatches.clean_fields",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 131,
+        "rect": [0.12854, 0.102479, 0.746187, 0.107438]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `∀ F XR, 0 < XR → ∀ (s : Slot) η, X ∈ window F XR s → OutgoingDilation.U F XR (X,η) = 0 ∧ OutgoingDilation.E F XR (X,η) = xAmplitude F XR η * X ^ (-(1/2 + F.data.core.lam))`. `Slot` has four constructors with clock offsets (−25,−20), (−20,−15), (−14,−9), (−8,−3) from `pulseStart` (lines 22–39, 52–65",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "proposition-A.4@p130",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 309,
-        "text": "theorem clean_fields (F : Profile) (XR : ℝ) (hXR : 0 < XR) (s : Slot)\n    (eta : ℝ) {X : ℝ} (hX : X ∈ window F XR s) :\n    OutgoingDilation.U F XR (X, eta) = 0 ∧\n      OutgoingDilation.E F XR (X, eta) =\n        xAmplitude F XR eta * X ^ (-(1 / 2 + F.data.core.lam))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-A.4@p131"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReservedPatches.clean_fields",
+        "module": "NavierStokes.ReservedPatches"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ReservedPatches.clean_fields",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: `∀ F XR, 0 < XR → ∀ (s : Slot) η, X ∈ window F XR s → OutgoingDilation.U F XR (X,η) = 0 ∧ OutgoingDilation.E F XR (X,η) = xAmplitude F XR η * X ^ (-(1/2 + F.data.core.lam))`. `Slot` has four constructors with clock offsets (−25,−20), (−20,−15), (−14,−9), (−8,−3) from `pulseStart` (lines 22–39, 52–65",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L309",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReservedPatches.lean"
+          },
+          "snippet": {
+            "line": 309,
+            "text": "theorem clean_fields (F : Profile) (XR : ℝ) (hXR : 0 < XR) (s : Slot)\n    (eta : ℝ) {X : ℝ} (hX : X ∈ window F XR s) :\n    OutgoingDilation.U F XR (X, eta) = 0 ∧\n      OutgoingDilation.E F XR (X, eta) =\n        xAmplitude F XR eta * X ^ (-(1 / 2 + F.data.core.lam))"
+          }
+        }
+      }
+    }
+  ]
 }

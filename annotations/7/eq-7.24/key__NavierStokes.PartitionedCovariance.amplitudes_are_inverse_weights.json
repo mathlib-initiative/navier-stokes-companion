@@ -1,25 +1,27 @@
 {
-  "id": "eq-7.24/key/02.NavierStokes.PartitionedCovariance.amplitudes_are_inverse_weights",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.amplitudes_are_inverse_weights",
-      "line": 438,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L438"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.amplitudes_are_inverse_weights",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.amplitudes_are_inverse_weights",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 438,
-        "text": "StrictCone H T → 0 < (H⁻¹.mulVec T) j ∧ amplitudes H T j = Real.sqrt ((H⁻¹.mulVec T) j)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PartitionedCovariance.amplitudes_are_inverse_weights",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L438",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 438,
+            "text": "theorem amplitudes_are_inverse_weights {H : Mat2} {T : Vec2}\n    (h : SmoothCovariance.StrictCone H T) (j : Fin 2) :\n    0 < (H⁻¹.mulVec T) j ∧ SmoothCovariance.amplitudes H T j = Real.sqrt ((H⁻¹.mulVec T) j)"
+          }
+        }
       }
     }
-  }
+  ]
 }

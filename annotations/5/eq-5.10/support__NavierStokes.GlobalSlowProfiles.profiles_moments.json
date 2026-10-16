@@ -1,26 +1,29 @@
 {
-  "id": "eq-5.10/support/06.NavierStokes.GlobalSlowProfiles.profiles_moments",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_moments",
-      "line": 1045,
-      "module": "NavierStokes.GlobalSlowProfiles",
-      "path": "NavierStokes/GlobalSlowProfiles.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1045"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.profiles_moments",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.profiles_moments",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 1045,
-        "text": "PositiveOrderMoments.moments n (slice (fun j => (profiles s j).axial) eta) (slice (fun j => angularField C (profiles s j).phi) eta) (fun R => R^2/2 * previousOmegaDivX .. n (R, eta)) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.GlobalSlowProfiles.profiles_moments",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1045",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 1045,
+            "text": "theorem profiles_moments {S : Set ℝ} {h C : ℝ} (s : Scheme S h C) {n : ℕ} (hn : 0 < n)\n    {eta : ℝ} (heta : eta ∈ S) :\n    PositiveOrderMoments.moments n\n      (PositiveOrderMoments.slice (fun j => ((profiles s j).axial : Field)) eta)\n      (PositiveOrderMoments.slice (fun j => angularField C (profiles s j).phi) eta)\n      (fun R => R ^ 2 / 2 * previousOmegaDivX s.domain\n        (fun j => (profiles s j).axial) (fun j => (profiles s j).beta) n (R, eta)) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,27 @@
 {
-  "id": "eq-p148-3/support/02.NavierStokes.AxisHolomorphic.term_factorial_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisHolomorphic.term_factorial_bound",
-      "line": 57
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisHolomorphic.lean#L57"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisHolomorphic.term_factorial_bound"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisHolomorphic.term_factorial_bound",
+        "module": "NavierStokes.AxisHolomorphic"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 57,
-        "text": "(hR : 1 ≤ R) (hs : R / 20 < s) (hs1 : s < 1) → ‖term I ε A k m n p‖ ≤ (‖A‖/(1-s) * m! * ((ε*(1-s))⁻¹)^m) * (((n:ℝ)+1)^k * (R/20/s)^n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.AxisHolomorphic.term_factorial_bound"
+          },
+          "destination": {
+            "fragment": "L57"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 57,
+            "text": "theorem term_factorial_bound (I : Window) {ε R s : ℝ} (hε : 0 < ε)\n    (hR : 1 ≤ R) (hs : R / 20 < s) (hs1 : s < 1) (A : AxisSpace I ε)\n    (k m n : ℕ) {p : ℝ × ℝ} (hp : |p.1| ≤ R) :\n    ‖term I ε A k m n p‖ ≤\n      (‖A‖ / (1 - s) * (m.factorial : ℝ) * ((ε * (1 - s))⁻¹) ^ m) *\n        (((n : ℝ) + 1) ^ k * (R / 20 / s) ^ n)"
+          }
+        }
       }
     }
-  }
+  ]
 }

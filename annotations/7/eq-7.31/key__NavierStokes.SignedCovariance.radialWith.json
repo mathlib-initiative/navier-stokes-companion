@@ -1,25 +1,27 @@
 {
-  "id": "eq-7.31/key/04.NavierStokes.SignedCovariance.radialWith",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedCovariance.radialWith",
-      "line": 134,
-      "module": "NavierStokes.SignedCovariance",
-      "path": "NavierStokes/SignedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L134"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedCovariance.radialWith",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedCovariance.radialWith",
+        "module": "NavierStokes.SignedCovariance"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 134,
-        "text": "radialWith P hdet outer ε a q x j := wave (outer * (Real.sqrt ε * a j * mask D U q x)) (nativeIndex h U.1) (P.rawRadial hdet j) (P.modes j) (P.phases j)  — the √ε · (coefficient) · b_σ of one sign"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.SignedCovariance.radialWith",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L134",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 134,
+            "text": "noncomputable def radialWith {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt}\n    {U : UnsignedLabel} (P : PairData sys U) (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0)\n    (outer ε : ℝ) (a : Vec2) (q : ℝ) (x : SlotColoring.Position) (j : Fin 2) : Plane → ℝ → ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

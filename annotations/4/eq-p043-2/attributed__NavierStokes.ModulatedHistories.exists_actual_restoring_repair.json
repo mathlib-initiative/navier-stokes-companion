@@ -1,25 +1,28 @@
 {
-  "id": "eq-p043-2/attributed/03.NavierStokes.ModulatedHistories.exists_actual_restoring_repair",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedHistories.exists_actual_restoring_repair",
-      "line": 1397,
-      "module": "NavierStokes.ModulatedHistories",
-      "path": "NavierStokes/ModulatedHistories.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean#L1397"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedHistories.exists_actual_restoring_repair"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedHistories.exists_actual_restoring_repair",
+        "module": "NavierStokes.ModulatedHistories"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 1397,
-        "text": "∃ N0 C, ∀ N ≥ N0, ∃ c V, ContDiff ℝ ∞ c ∧ … ∧ JetBounds.FiniteJetBound q c S (C / N) ∧ (histories restored exactly beyond P.right)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ModulatedHistories.exists_actual_restoring_repair"
+          },
+          "destination": {
+            "fragment": "L1397",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 1397,
+            "text": "theorem exists_actual_restoring_repair (W : Window)\n    (r : ParametricModulation.TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (P : FiveProfileMoments.Patch) (hWP : W.right < P.left) (b : ℝ)\n    (hb : FiveProfileMoments.GoodExponent b) (A G : ℝ → ℝ)\n    (hA : ContDiff ℝ ∞ A) (hG : ContDiff ℝ ∞ G) (hApos : ∀ eta, 0 < A eta)\n    (S J : Set ℝ) (hS : IsCompact S) (hJ : IsOpen J) (hSJ : S ⊆ J)\n    (hpatchU : ∀ eta ∈ J, ∀ X ∈ Ioo P.left P.right, U (X, eta) = G eta)\n    (hpatchE : ∀ eta ∈ J, ∀ X ∈ Ioo P.left P.right,\n      Real.sqrt (2 * X) * f (X, eta) = A eta * X ^ b) (q : ℕ) :\n    ∃ N0 C : ℝ, 1 ≤ N0 ∧ 0 < C ∧ ∀ N : ℝ, N0 ≤ N →\n      ∃ (c : ℝ → Coeff) (V : Set ℝ), ContDiff ℝ ∞ c ∧ IsOpen V ∧ S ⊆ V ∧ V ⊆ J ∧\n        JetBounds.FiniteJetBound q c S (C / N) ∧\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

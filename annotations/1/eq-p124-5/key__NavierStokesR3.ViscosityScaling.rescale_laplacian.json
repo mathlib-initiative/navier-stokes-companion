@@ -1,25 +1,27 @@
 {
-  "id": "eq-p124-5/key/03.NavierStokesR3.ViscosityScaling.rescale_laplacian",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ViscosityScaling.rescale_laplacian",
-      "line": 69,
-      "module": "NavierStokes.R3.ViscosityScaling",
-      "path": "NavierStokes/R3/ViscosityScaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean#L69"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ViscosityScaling.rescale_laplacian"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ViscosityScaling.rescale_laplacian",
+        "module": "NavierStokes.R3.ViscosityScaling"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 69,
-        "text": "spatialLaplacian (rescale a b u) t x = (a * b ^ 2) • spatialLaplacian u t (b • x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokesR3.ViscosityScaling.rescale_laplacian"
+          },
+          "destination": {
+            "fragment": "L69",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 69,
+            "text": "theorem rescale_laplacian (a b : ℝ) (u : VelocityField) (t : ℝ) (x : Space) :\n    spatialLaplacian (rescale a b u) t x = (a * b ^ 2) • spatialLaplacian u t (b • x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

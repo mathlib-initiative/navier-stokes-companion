@@ -1,23 +1,26 @@
 {
-  "id": "eq-p137-2/attributed/04.NavierStokes.TailCone.releaseA_eq_derivative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TailCone.releaseA_eq_derivative",
-      "line": 218
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TailCone.lean#L218"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TailCone.releaseA_eq_derivative"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TailCone.releaseA_eq_derivative",
+        "module": "NavierStokes.TailCone"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 218,
-        "text": "releaseA d y = 1 - 2 * deriv (fun t => Real.log (finalAngular d (t, eta))) y, with releaseA d y = 2 - 2 * profileSlope d y, i.e. (log E)' = l - 1/2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.TailCone.releaseA_eq_derivative"
+          },
+          "destination": {
+            "fragment": "L218"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 218,
+            "text": "theorem releaseA_eq_derivative (d : TailData) (eta : ℝ) {y : ℝ}\n    (hy : d.releaseStart ≤ y) :\n    releaseA d y = 1 - 2 * deriv (fun t => Real.log (finalAngular d (t, eta))) y"
+          }
+        }
       }
     }
-  }
+  ]
 }

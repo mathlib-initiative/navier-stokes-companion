@@ -1,26 +1,28 @@
 {
-  "id": "eq-p155-1/key/04.NavierStokes.MatchingConeBounds.actual_shape_source_threshold",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MatchingConeBounds.actual_shape_source_threshold",
-      "line": 197,
-      "module": "NavierStokes.MatchingConeBounds",
-      "path": "NavierStokes/MatchingConeBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean#L197"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MatchingConeBounds.actual_shape_source_threshold",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MatchingConeBounds.actual_shape_source_threshold",
+        "module": "NavierStokes.MatchingConeBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 197,
-        "text": "∃ M, 0 < M ∧ ∀ Λ ≥ M, … (the same convex-combination hypothesis on ∂_η f / f, with |g| ≤ B and |Λ(P.U - U j)| ≤ B etc.) → (5/4 : ℝ) < ReferenceBounds.sourceQ P h p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.MatchingConeBounds.actual_shape_source_threshold",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L197",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 197,
+            "text": "theorem actual_shape_source_threshold {h j sigma B : ℝ}\n    (hs : SmallParameters h j) (hsigma : 0 < sigma) (hB : 1 ≤ B) :\n    ∃ M : ℝ, 0 < M ∧ ∀ Λ : ℝ, M ≤ Λ →\n      ∀ {D : RadialDomain} (P : Profiles D) (p : Point) (theta ell g : ℝ),\n      p.2 ∈ Icc (-1 : ℝ) 1 → theta ∈ Icc (0 : ℝ) 1 → ell ∈ Icc (11 / 20 : ℝ) (13 / 20) →\n      ReferenceBounds.logSlope P p = ell →\n      parameterPartial P.f p / P.f p =\n        (1 - theta) * (Λ * NaturalAxisCoefficients.realGradient h j sigma p.2 + g) -\n          theta * OutgoingEntranceCone.shapeGradient p.2 →\n      |Λ * (P.U p - U j p.2)| ≤ B → |Λ * (P.Ubar p - U j p.2)| ≤ B →\n      |Λ * (average (parameterPartial P.U) p - 4)| ≤ B → |g| ≤ B →\n      (5 / 4 : ℝ) < ReferenceBounds.sourceQ P h p"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.18/attributed/08.NavierStokes.GaugeMomentBalances.state_axial_moment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaugeMomentBalances.state_axial_moment",
-      "line": 623,
-      "module": "NavierStokes.GaugeMomentBalances",
-      "path": "NavierStokes/GaugeMomentBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean#L623"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaugeMomentBalances.state_axial_moment",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaugeMomentBalances.state_axial_moment",
+        "module": "NavierStokes.GaugeMomentBalances"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 623,
-        "text": "CorrectionState.radialMoment 1 (u.axialResidual c) n s = ε n * fderiv ℝ (axialDebtPotential g c u n) s z, with axialDebtPotential = axialDefect + pressureCoefficient * pressureDefect — i.e. ε∂_Z(𝒥_z + c_ρ𝒫)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.GaugeMomentBalances.state_axial_moment",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L623",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 623,
+            "text": "theorem state_axial_moment {coord : ℝ} (U : SlowRegion coord)\n    (g : VariableGaugeMean.GaugeData Plane) (ha : 0 < g.radial.inner) (hd : 0 < g.radial.exponent)\n    (hg : ∀ n, g.length n = VariableGaugeMean.qLength coord)\n    (ε fast : ℕ → ℝ) (z t v : Plane) (c : Context Point) (u : State Point)\n    (ho : c.operators = nativeOperators g.radial ε fast z t v)\n    (H : MovingAxialInputs U g.radial.inner g.radial.outer c u)\n    (hf : MovingField U g.radial.inner g.radial.outer (u.gr c))\n    (hfixed : VariableGaugeMean.reconstructState g c u = u)\n    (hmass : ∀ n s, s ∈ U.carrier → CorrectionState.radialMoment 1 u.mean.axial n s = 0)\n    (n : ℕ) {s : Plane} (hs : s ∈ U.carrier) :\n    CorrectionState.radialMoment 1 (u.axialResidual c) n s =\n      ε n * fderiv ℝ (axialDebtPotential g c u n) s z"
+          }
+        }
       }
     }
-  }
+  ]
 }

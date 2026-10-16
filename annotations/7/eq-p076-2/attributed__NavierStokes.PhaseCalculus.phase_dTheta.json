@@ -1,23 +1,26 @@
 {
-  "id": "eq-p076-2/attributed/04.NavierStokes.PhaseCalculus.phase_dTheta",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhaseCalculus.phase_dTheta",
-      "line": 76
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseCalculus.lean#L76"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhaseCalculus.phase_dTheta"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhaseCalculus.phase_dTheta",
+        "module": "NavierStokes.PhaseCalculus"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 76,
-        "text": "fderiv ℝ (phase …) q eTheta = p, so F∂_θΦ = pF"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PhaseCalculus.phase_dTheta"
+          },
+          "destination": {
+            "fragment": "L76"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 76,
+            "text": "theorem phase_dTheta (ε p pz x0 : ℝ) (F G : Slow → ℝ) (q : Slot)\n    (hF : DifferentiableAt ℝ F q.1) (hG : DifferentiableAt ℝ G q.1) :\n    fderiv ℝ (phase ε p pz x0 F G) q eTheta = p"
+          }
+        }
       }
     }
-  }
+  ]
 }

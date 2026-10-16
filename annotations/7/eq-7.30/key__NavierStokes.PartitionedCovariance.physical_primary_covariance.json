@@ -1,24 +1,27 @@
 {
-  "id": "eq-7.30/key/01.NavierStokes.PartitionedCovariance.physical_primary_covariance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.physical_primary_covariance",
-      "line": 947
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L947"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.physical_primary_covariance",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.physical_primary_covariance",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 947,
-        "text": "doubleAverage (fun Y θ => assembledRadial P hdet (physicalOuter h N) (physicalViscosity h N) (chartTarget h q N T0) q x Y θ * assembledTangent P hdet (physicalOuter h N) (physicalViscosity h N) (chartTarget h q N T0) q x i Y θ) = q ^ (-velocityExponent h - 1 / 2) * T0 i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PartitionedCovariance.physical_primary_covariance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L947"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 947,
+            "text": "theorem physical_primary_covariance {D h : ℝ} {vr vt : Plane} (sys : SlotSystem D h vr vt)\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (N : ℕ) (hN : 1 ≤ N)\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    {q : ℝ} (hq : 0 < q) (hqN : q ≤ ChartScales.Q N) (x : SlotColoring.Position) (T0 : Vec2)\n    (hcone : ∀ U, mask D (tailLabel N U) q x ≠ 0 →\n      SmoothCovariance.StrictCone (P U).matrix (chartTarget h q N T0 U)) (i : Fin 2) :\n    doubleAverage (fun Y θ =>\n      assembledRadial P hdet (physicalOuter h N) (physicalViscosity h N) (chartTarget h q N T0) q x Y θ *\n      assembledTangent P hdet (physicalOuter h N) (physicalViscosity h N) (chartTarget h q N T0) q x i Y θ) =\n      q ^ (-velocityExponent h - 1 / 2) * T0 i"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-8.24/support/09.NavierStokes.FiveRowRank.five_rows_on_patch",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveRowRank.five_rows_on_patch",
-      "line": 249,
-      "module": "NavierStokes.FiveRowRank",
-      "path": "NavierStokes/FiveRowRank.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveRowRank.lean#L249"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveRowRank.five_rows_on_patch",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveRowRank.five_rows_on_patch",
+        "module": "NavierStokes.FiveRowRank"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 249,
-        "text": "hypotheses (hC : C ≠ 0), (hV : ∀ R ∈ Ioo a b, V R = background lam C R), (hG : ∀ R ∈ Ioo a b, G R = 0) ⊢ FiveRows V G d (deltaV …) (gamma …)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.FiveRowRank.five_rows_on_patch",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L249",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveRowRank.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 249,
+            "text": "theorem five_rows_on_patch (lam C a b : ℝ) (d : Debt) (hlam : 0 < lam) (hC : C ≠ 0)\n    (ha : 0 < a) (hab : a < b) (V G : ℝ → ℝ)\n    (hV : ∀ R ∈ Ioo a b, V R = background lam C R)\n    (hG : ∀ R ∈ Ioo a b, G R = 0) :\n    FiveRows V G d (deltaV lam C a b d) (gamma lam C a b d)"
+          }
+        }
       }
     }
-  }
+  ]
 }

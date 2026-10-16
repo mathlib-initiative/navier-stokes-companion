@@ -1,23 +1,27 @@
 {
-  "id": "eq-p102-2/key/06.NavierStokes.LinearWaveBounds.InputBounds.pressureGradient_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveBounds.InputBounds.pressureGradient_mem",
-      "line": 382
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L382"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveBounds.InputBounds.pressureGradient_mem",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveBounds.InputBounds.pressureGradient_mem",
+        "lines": [382, 382],
+        "module": "NavierStokes.LinearWaveBounds"
       },
-      "relation": "contains",
-      "snippet": {
-        "line": 382,
-        "text": "row 4, gain 1/2 − κ_s: `.mono_exponent (show α + 1/2 - 3*κ ≤ (α + 1/2) - κ …)` for D_rπ, the pressure being in WaveClass (α+1/2) and D_r costing κ; the axial slot (line 388) is sharper at (α+1/2)+1 and the angular slot is identically zero (line 386). Group minimum exactly 1/2 − κ_s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.LinearWaveBounds.InputBounds.pressureGradient_mem",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L382"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 376,
+            "text": "theorem pressureGradient_mem (h : InputBounds s P α κ d a) (i : Fin 3) :\n    WaveClass s P (α + 1 / 2 - 3 * κ) (fun n x =>\n      LinearWaveResidual.strippedPressureGradient (d.radialField n) (d.axialField s n)\n        (a.pressure n) x i)"
+          }
+        }
       }
     }
-  }
+  ]
 }

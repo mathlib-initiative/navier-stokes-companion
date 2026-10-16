@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.17/attributed/07.NavierStokes.SlowBorelBase.compact_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowBorelBase.compact_jet_bound",
-      "line": 1376,
-      "module": "NavierStokes.SlowBorelBase",
-      "path": "NavierStokes/SlowBorelBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean#L1376"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowBorelBase.compact_jet_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowBorelBase.compact_jet_bound",
+        "module": "NavierStokes.SlowBorelBase"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 1376,
-        "text": "(hU : IsOpen U) (hF : ContDiffOn ℝ ∞ F U) (hK : IsCompact K) (hKU : K ⊆ U) (m : ℕ) : ∃ C : ℝ, 1 ≤ C ∧ ∀ x ∈ K, ‖iteratedFDeriv ℝ m F x‖ ≤ C"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.SlowBorelBase.compact_jet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1376",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 1376,
+            "text": "theorem compact_jet_bound {E : Type} [NormedAddCommGroup E] [NormedSpace ℝ E]\n    {F : E → V} {U K : Set E} (hU : IsOpen U) (hF : ContDiffOn ℝ ∞ F U)\n    (hK : IsCompact K) (hKU : K ⊆ U) (m : ℕ) :\n    ∃ C : ℝ, 1 ≤ C ∧ ∀ x ∈ K, ‖iteratedFDeriv ℝ m F x‖ ≤ C"
+          }
+        }
       }
     }
-  }
+  ]
 }

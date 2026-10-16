@@ -1,26 +1,28 @@
 {
-  "id": "eq-p089-2/key/04.NavierStokes.LiftedMeanResidual.advectionIncrement_eq_conservative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LiftedMeanResidual.advectionIncrement_eq_conservative",
-      "line": 375,
-      "module": "NavierStokes.LiftedMeanResidual",
-      "path": "NavierStokes/LiftedMeanResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LiftedMeanResidual.lean#L375"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LiftedMeanResidual.advectionIncrement_eq_conservative",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LiftedMeanResidual.advectionIncrement_eq_conservative",
+        "module": "NavierStokes.LiftedMeanResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 375,
-        "text": "(hBd : realDivergence R Vr Vθ Vz B p = 0) (had : realDivergence R Vr Vθ Vz a p = 0) : advectionIncrement R Vr Vθ Vz B a p = conservativeFlux R Vr Vθ Vz (quadraticFlux B a) p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LiftedMeanResidual.advectionIncrement_eq_conservative",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L375",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LiftedMeanResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 375,
+            "text": "theorem advectionIncrement_eq_conservative (R : D × ℝ → ℝ) (Vr Vθ Vz : D × ℝ → D × ℝ)\n    {B a : D × ℝ → Fin 3 → ℝ} {p : D × ℝ}\n    (hB : ∀ i, DifferentiableAt ℝ (fun y => B y i) p)\n    (ha : ∀ i, DifferentiableAt ℝ (fun y => a y i) p)\n    (hBd : realDivergence R Vr Vθ Vz B p = 0)\n    (had : realDivergence R Vr Vθ Vz a p = 0) :\n    advectionIncrement R Vr Vθ Vz B a p = conservativeFlux R Vr Vθ Vz (quadraticFlux B a) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

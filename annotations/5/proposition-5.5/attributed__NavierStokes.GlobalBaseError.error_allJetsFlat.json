@@ -1,29 +1,31 @@
 {
-  "id": "proposition-5.5/attributed/1.NavierStokes.GlobalBaseError.error_allJetsFlat",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalBaseError.error_allJetsFlat",
-      "line": 141,
-      "module": "NavierStokes.GlobalBaseError",
-      "path": "NavierStokes/GlobalBaseError.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalBaseError.lean#L141"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalBaseError.error_allJetsFlat",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalBaseError.error_allJetsFlat",
+        "module": "NavierStokes.GlobalBaseError"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: For a fixed base with nominalExteriorRadius W ≤ upper, and any filter l with compact carrier, z.1 < 1 eventually and q → 0: ResidualStability.AllJetsFlat l (fun z => (cartesianChart h z).1) (FinalSlowBase.error H v upper B). No bound on the similarity radius X is imposed, because error_zero_outside_"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 141,
-        "text": "theorem error_allJetsFlat (upper : ℝ) (B : ℕ)\n    (hupper : BaseExterior.nominalExteriorRadius W ≤ upper)\n    {l : Filter SpaceTime} {K : Set SpaceTime} (hK : IsCompact K)\n    (hcarrier : ∀ᶠ z in l, z ∈ K) (ht : ∀ᶠ z in l, z.1 < 1)\n    (hq : Tendsto (fun z => (cartesianChart F.data.h z).1) l (𝓝 0)) :\n    ResidualStability.AllJetsFlat l (fun z => (cartesianChart F.data.h z).1)\n      (FinalSlowBase.error H v upper B)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.GlobalBaseError.error_allJetsFlat",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: For a fixed base with nominalExteriorRadius W ≤ upper, and any filter l with compact carrier, z.1 < 1 eventually and q → 0: ResidualStability.AllJetsFlat l (fun z => (cartesianChart h z).1) (FinalSlowBase.error H v upper B). No bound on the similarity radius X is imposed, because error_zero_outside_"
+          },
+          "destination": {
+            "fragment": "L141",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalBaseError.lean"
+          },
+          "snippet": {
+            "line": 141,
+            "text": "theorem error_allJetsFlat (upper : ℝ) (B : ℕ)\n    (hupper : BaseExterior.nominalExteriorRadius W ≤ upper)\n    {l : Filter SpaceTime} {K : Set SpaceTime} (hK : IsCompact K)\n    (hcarrier : ∀ᶠ z in l, z ∈ K) (ht : ∀ᶠ z in l, z.1 < 1)\n    (hq : Tendsto (fun z => (cartesianChart F.data.h z).1) l (𝓝 0)) :\n    ResidualStability.AllJetsFlat l (fun z => (cartesianChart F.data.h z).1)\n      (FinalSlowBase.error H v upper B)"
+          }
+        }
       }
     }
-  }
+  ]
 }

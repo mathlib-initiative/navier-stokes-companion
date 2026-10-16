@@ -1,26 +1,28 @@
 {
-  "id": "eq-p011-3/key/02.NavierStokes.LinearWaveResidual.linearResidual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveResidual.linearResidual",
-      "line": 57,
-      "module": "NavierStokes.LinearWaveResidual",
-      "path": "NavierStokes/LinearWaveResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean#L57"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveResidual.linearResidual",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveResidual.linearResidual",
+        "module": "NavierStokes.LinearWaveResidual"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 57,
-        "text": "linearResidual eps R Vr Vth Vz Vt B a p x = fun i => along Vt (fun y => a y i) x + transport R Vr Vth Vz B a x i + transport R Vr Vth Vz a B x i + gradient R Vr Vth Vz p x i - (eps : C) * cylindricalVectorLaplacian R Vr Vth Vz a x i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.LinearWaveResidual.linearResidual",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L57",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 57,
+            "text": "noncomputable def linearResidual (ε : ℝ) (R : E → ℝ) (Vr Vθ Vz Vt : E → E)\n    (B a : E → ComplexVector) (p : E → ℂ) (x : E) : ComplexVector"
+          }
+        }
       }
     }
-  }
+  ]
 }

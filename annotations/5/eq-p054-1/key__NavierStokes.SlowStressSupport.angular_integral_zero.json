@@ -1,26 +1,28 @@
 {
-  "id": "eq-p054-1/key/04.NavierStokes.SlowStressSupport.angular_integral_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.angular_integral_zero",
-      "line": 693,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L693"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.angular_integral_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.angular_integral_zero",
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 693,
-        "text": "moment B 0 (angularDensity h n v u e) eta = 0, i.e. ∫ R in (0:ℝ)..B, (R²𝔯_{θ,n})(R, eta) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.SlowStressSupport.angular_integral_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L693",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 693,
+            "text": "theorem angular_integral_zero {S : Set ℝ} (hS : IsOpen S) {n : ℕ}\n    {v u e : History} (hv : ∀ j, j ≤ n → Smooth S (v j))\n    (hu : ∀ j, j ≤ n → Smooth S (u j)) (he : ∀ j, j ≤ n → Smooth S (e j))\n    (h B : ℝ) (hell : ∀ eta ∈ S, PositiveAxisSystem.ell h eta ≠ 0)\n    (hev : exterior B S (e n)) (hvv : ∀ j, j ≤ n → exterior B S (v j))\n    (hem : ∀ eta ∈ S, moment B 2 (e n) eta = 0)\n    (hum : ∀ eta ∈ S, moment B 2 (conv n u e) eta = 0)\n    (hug : exterior B S (conv n u e))\n    (heprev : exterior B S (e (n - 1)))\n    (hmprev : ∀ eta ∈ S, moment B 2 (e (n - 1)) eta = 0)\n    {eta : ℝ} (heta : eta ∈ S) : moment B 0 (angularDensity h n v u e) eta = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

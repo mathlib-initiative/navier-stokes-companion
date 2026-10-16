@@ -1,26 +1,28 @@
 {
-  "id": "eq-p044-9/key/02.NavierStokes.ActiveAnnulusWeight.EdgeFactor.derivative_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.derivative_bound",
-      "line": 378,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L378"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.derivative_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.derivative_bound",
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 378,
-        "text": "(F : EdgeFactor K c T) (n : ℕ) … : ∃ C, 0 < C ∧ ∃ N, ∀ i ≤ n, ∀ p ∈ K, ∀ x, 0 < x → x ≤ d → ‖iteratedFDeriv ℝ i T (p,x)‖ ≤ C * FlatCutoff.edge c x / x^N  — the collar derivative bound, with x = y_a (c = c_a) on the inner collar and x = y_b (c = 4) on the outer"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ActiveAnnulusWeight.EdgeFactor.derivative_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L378",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 378,
+            "text": "theorem EdgeFactor.derivative_bound {K : Set E} (hK : IsCompact K)\n    (hKd : UniqueDiffOn ℝ K) {c : ℝ} (hc : 0 < c) {T : E × ℝ → V}\n    (F : EdgeFactor K c T) (n : ℕ) {d : ℝ} (hd : 0 < d) (hdw : d < F.width)\n    (hdom : K ×ˢ Icc (0 : ℝ) d ⊆ F.domain)\n    (hT : ∀ p ∈ K, ∀ x : ℝ, 0 < x → x ≤ d → ContDiffAt ℝ ∞ T (p,x)) :\n    ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ i ≤ n, ∀ p ∈ K,\n      ∀ x : ℝ, 0 < x → x ≤ d →\n        ‖iteratedFDeriv ℝ i T (p,x)‖ ≤ C * FlatCutoff.edge c x / x^N"
+          }
+        }
       }
     }
-  }
+  ]
 }

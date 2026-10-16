@@ -1,26 +1,28 @@
 {
-  "id": "eq-p131-3/key/02.NavierStokes.ReleaseMoments.releaseWeight_hasDerivAt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReleaseMoments.releaseWeight_hasDerivAt",
-      "line": 132,
-      "module": "NavierStokes.ReleaseMoments",
-      "path": "NavierStokes/ReleaseMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReleaseMoments.lean#L132"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReleaseMoments.releaseWeight_hasDerivAt",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReleaseMoments.releaseWeight_hasDerivAt",
+        "module": "NavierStokes.ReleaseMoments"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 132,
-        "text": "HasDerivAt (releaseWeight d) (releaseWeight d y * (1 + profileSlope d y)) y, with releaseWeight d y = exp (3*y/2) * finalAngular d (y, 0) = X·H"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ReleaseMoments.releaseWeight_hasDerivAt",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L132",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReleaseMoments.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 132,
+            "text": "theorem releaseWeight_hasDerivAt (d : TailData) {y : ℝ} (hy : d.releaseStart ≤ y) :\n    HasDerivAt (releaseWeight d) (releaseWeight d y * (1 + profileSlope d y)) y"
+          }
+        }
       }
     }
-  }
+  ]
 }

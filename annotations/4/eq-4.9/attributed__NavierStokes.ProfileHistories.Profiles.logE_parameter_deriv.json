@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.9/attributed/07.NavierStokes.ProfileHistories.Profiles.logE_parameter_deriv",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProfileHistories.Profiles.logE_parameter_deriv",
-      "line": 667,
-      "module": "NavierStokes.ProfileHistories",
-      "path": "NavierStokes/ProfileHistories.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileHistories.lean#L667"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProfileHistories.Profiles.logE_parameter_deriv",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProfileHistories.Profiles.logE_parameter_deriv",
+        "module": "NavierStokes.ProfileHistories"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 667,
-        "text": "(hX : 0 < p.1) (hf : P.f p ≠ 0) : deriv (fun η => Real.log (P.E (p.1, η))) p.2 = parameterPartial P.H p / P.H p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.ProfileHistories.Profiles.logE_parameter_deriv",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L667",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileHistories.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 667,
+            "text": "theorem logE_parameter_deriv {p : Point} (hp : p ∈ D.carrier)\n    (hX : 0 < p.1) (hf : P.f p ≠ 0) :\n    deriv (fun η => Real.log (P.E (p.1, η))) p.2 = parameterPartial P.H p / P.H p"
+          }
+        }
       }
     }
-  }
+  ]
 }

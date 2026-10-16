@@ -1,26 +1,28 @@
 {
-  "id": "eq-p128-1/key/08.NavierStokes.OutgoingPulseBounds.correctionJet_eta_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingPulseBounds.correctionJet_eta_bound",
-      "line": 1160,
-      "module": "NavierStokes.OutgoingPulseBounds",
-      "path": "NavierStokes/OutgoingPulseBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingPulseBounds.lean#L1160"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingPulseBounds.correctionJet_eta_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingPulseBounds.correctionJet_eta_bound",
+        "module": "NavierStokes.OutgoingPulseBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1160,
-        "text": "theorem correctionJet_eta_bound (c : Parameters) (hsmall : c.lam ≤ 1/120) {amp : ℝ → ℝ} {eta amp' : ℝ} (ha : HasDerivAt amp amp' eta) (heta : |eta| ≤ 1) (k : ℕ) (y : ℝ) : |deriv (fun t => correctionJet c amp k t y) eta| ≤ (4 * correctionJetBound c.P c.m k) * Real.exp (-(1 / (4 * c.lam))) * (1 + |amp'|) — one parameter derivative only"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.OutgoingPulseBounds.correctionJet_eta_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1160",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingPulseBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1160,
+            "text": "theorem correctionJet_eta_bound (c : Parameters) (hsmall : c.lam ≤ 1 / 120)\n    {amp : ℝ → ℝ} {eta amp' : ℝ} (ha : HasDerivAt amp amp' eta)\n    (heta : |eta| ≤ 1) (k : ℕ) (y : ℝ) :\n    |deriv (fun t => correctionJet c amp k t y) eta| ≤\n      (4 * correctionJetBound c.P c.m k) * Real.exp (-(1 / (4 * c.lam))) * (1 + |amp'|)"
+          }
+        }
       }
     }
-  }
+  ]
 }

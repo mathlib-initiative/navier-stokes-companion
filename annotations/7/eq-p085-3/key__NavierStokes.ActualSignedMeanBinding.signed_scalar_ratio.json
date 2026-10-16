@@ -1,26 +1,28 @@
 {
-  "id": "eq-p085-3/key/05.NavierStokes.ActualSignedMeanBinding.signed_scalar_ratio",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSignedMeanBinding.signed_scalar_ratio",
-      "line": 133,
-      "module": "NavierStokes.ActualSignedMeanBinding",
-      "path": "NavierStokes/ActualSignedMeanBinding.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean#L133"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSignedMeanBinding.signed_scalar_ratio",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSignedMeanBinding.signed_scalar_ratio",
+        "module": "NavierStokes.ActualSignedMeanBinding"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 133,
-        "text": "√(epsilon h n) * increment (commonMatrix L n x) (commonTarget L n x) (request n (x,0)) j * spatialMask L (nativePoint n x L) = signedRatio request L n x j * velocityScale L n * PartitionedCovariance.amplitude (epsilon h (cellBand L)) (spatialMask …) (commonMatrix L n x) (referenceTarget L n x) j"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ActualSignedMeanBinding.signed_scalar_ratio",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L133",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 133,
+            "text": "theorem signed_scalar_ratio (request : ℕ → FullPoint → Vec2) (L : Label B N0) (n : ℕ)\n    {x : Point} (hx : x ∈ ActualInitialization.geometry.strip.domain) (j : Fin 2) :\n    Real.sqrt (ChartScales.epsilon h n) *\n      SignedCovariance.increment (commonMatrix L n x) (commonTarget L n x) (request n (x, 0)) j *\n        spatialMask L (nativePoint n x L) =\n      signedRatio request L n x j * velocityScale L n *\n        PartitionedCovariance.amplitude (ChartScales.epsilon h (BaseChartJets.cellBand L))\n          (spatialMask L (nativePoint n x L)) (commonMatrix L n x) (referenceTarget L n x) j"
+          }
+        }
       }
     }
-  }
+  ]
 }

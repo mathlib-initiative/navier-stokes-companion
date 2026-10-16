@@ -1,26 +1,28 @@
 {
-  "id": "eq-p085-3/key/03.NavierStokes.ActualSignedMeanBinding.primary_mode_view",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSignedMeanBinding.primary_mode_view",
-      "line": 228,
-      "module": "NavierStokes.ActualSignedMeanBinding",
-      "path": "NavierStokes/ActualSignedMeanBinding.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean#L228"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSignedMeanBinding.primary_mode_view",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSignedMeanBinding.primary_mode_view",
+        "module": "NavierStokes.ActualSignedMeanBinding"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 228,
-        "text": "(ActualInitialization.tangentBlock l).oscillation n ((x.1, (x.2.1, Y)), theta) i = ChartScales.Q n ^ CoordinateAlgebra.A h * viewTangent n x l Y theta i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ActualSignedMeanBinding.primary_mode_view",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L228",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 228,
+            "text": "theorem primary_mode_view (n : ℕ) {x : Point}\n    (hx : x ∈ ActualInitialization.geometry.strip.domain)\n    (l : Label B N0 × Fin 2) (Y : TorusInverse.Plane) (theta : ℝ) (i : Fin 3) :\n    (ActualInitialization.tangentBlock l).oscillation n ((x.1, (x.2.1, Y)), theta) i =\n      ChartScales.Q n ^ CoordinateAlgebra.A h * viewTangent n x l Y theta i"
+          }
+        }
       }
     }
-  }
+  ]
 }

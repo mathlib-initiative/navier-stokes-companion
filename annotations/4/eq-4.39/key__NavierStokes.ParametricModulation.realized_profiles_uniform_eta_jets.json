@@ -1,23 +1,25 @@
 {
-  "id": "eq-4.39/key/01.NavierStokes.ParametricModulation.realized_profiles_uniform_eta_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricModulation.realized_profiles_uniform_eta_jets",
-      "line": 480,
-      "module": "NavierStokes.ParametricModulation",
-      "path": "NavierStokes/ParametricModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean#L480"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricModulation.realized_profiles_uniform_eta_jets"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricModulation.realized_profiles_uniform_eta_jets",
+        "module": "NavierStokes.ParametricModulation"
       },
-      "snippet": {
-        "line": 480,
-        "text": "(r : TrueConeRealization a m p₁ p₂ K B) ... (KX Kη : Set ℝ) (hKX : IsCompact KX) (hKη : IsCompact Kη) (k : ℕ) : ∃ CE CU : ℝ, 0 ≤ CE ∧ 0 ≤ CU ∧ ∀ n : ℝ, 1 ≤ n → ∀ X ∈ KX, ∀ η ∈ Kη, |iteratedDeriv k (realizedE r E n X) η - iteratedDeriv k (fun e => E (X, e)) η| ≤ CE / n ∧ |iteratedDeriv k (realizedU r E U n X) η - iteratedDeriv k (fun e => U (X, e)) η| ≤ CU / n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ParametricModulation.realized_profiles_uniform_eta_jets"
+          },
+          "destination": {
+            "fragment": "L480",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean"
+          },
+          "snippet": {
+            "line": 480,
+            "text": "theorem realized_profiles_uniform_eta_jets\n    (r : TrueConeRealization a m p₁ p₂ K B) (E U : RadialParameter → ℝ)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (KX Kη : Set ℝ) (hKX : IsCompact KX) (hKη : IsCompact Kη) (k : ℕ) :\n    ∃ CE CU : ℝ, 0 ≤ CE ∧ 0 ≤ CU ∧ ∀ n : ℝ, 1 ≤ n → ∀ X ∈ KX, ∀ η ∈ Kη,\n      |iteratedDeriv k (realizedE r E n X) η - iteratedDeriv k (fun e => E (X, e)) η| ≤ CE / n ∧\n      |iteratedDeriv k (realizedU r E U n X) η - iteratedDeriv k (fun e => U (X, e)) η| ≤ CU / n"
+          }
+        }
       }
     }
-  }
+  ]
 }

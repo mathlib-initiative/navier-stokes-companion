@@ -1,36 +1,57 @@
 {
-  "id": "lemma-9.2/key/1.NavierStokes.HarmonicMeanInteraction.meanCross_class",
-  "location": {
-    "page": 102,
-    "rect": [0.12854, 0.846281, 0.745098, 0.044628]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicMeanInteraction.meanCross_class",
-      "line": 310,
-      "module": "NavierStokes.HarmonicMeanInteraction",
-      "path": "NavierStokes/HarmonicMeanInteraction.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 102,
+        "rect": [0.12854, 0.846281, 0.745098, 0.044628]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p102"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicMeanInteraction.lean#L310"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicMeanInteraction.meanCross_class",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 103,
+        "rect": [0.12854, 0.102479, 0.745098, 0.057851]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clause (i) in angular-harmonic form, with no identity needed. OperatorBounds s c.operators κ, κ ≤ 1/2, IncrementBounds s H h, b.WaveBounds s P α, slow phase normal in UnweightedClass 0, BandBound s (-(1/2)) on b.frequency and on b.angularFrequency, 0 ≤ P, j ≠ 0 ⊢ WaveClass s P (α + H - 1/2) (fun n x",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-9.2@p102",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 310,
-        "text": "theorem meanCross_class {s : StripData D} {κ α H : ℝ} {P : ℕ → D → ℝ}\n    (c : CorrectionState.Context D) (ho : MeanIncrementBounds.OperatorBounds s c.operators κ)\n    (hκ : κ ≤ 1 / 2) (hR : ∀ x ∈ s.domain, 0 < c.operators.radius x)\n    {h : MeanIncrementBounds.Triple D} (hh : MeanIncrementBounds.IncrementBounds s H h)\n    {b : CorrectionState.HarmonicBlock D} (hb : b.WaveBounds s P α)\n    (hN : ∀ i, UnweightedClass s 0 (fun n x => slowNormal c ho hR b.phase n x i))\n    (hk : BandBound s (-(1 / 2)) b.frequency)\n    (hkp : BandBound s (-(1 / 2)) (fun n => (b.angularFrequency n : ℝ)))\n    (hP : ∀ n x, x ∈ s.domain → 0 ≤ P n x) {j : ℤ} (hj : j ≠ 0) (i : Fin 3) :\n    WaveClass s P (α + H - 1 / 2) (fun n x => meanCross c h b n i j x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p103"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicMeanInteraction.meanCross_class",
+        "module": "NavierStokes.HarmonicMeanInteraction"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.HarmonicMeanInteraction.meanCross_class",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Clause (i) in angular-harmonic form, with no identity needed. OperatorBounds s c.operators κ, κ ≤ 1/2, IncrementBounds s H h, b.WaveBounds s P α, slow phase normal in UnweightedClass 0, BandBound s (-(1/2)) on b.frequency and on b.angularFrequency, 0 ≤ P, j ≠ 0 ⊢ WaveClass s P (α + H - 1/2) (fun n x",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L310",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicMeanInteraction.lean"
+          },
+          "snippet": {
+            "line": 310,
+            "text": "theorem meanCross_class {s : StripData D} {κ α H : ℝ} {P : ℕ → D → ℝ}\n    (c : CorrectionState.Context D) (ho : MeanIncrementBounds.OperatorBounds s c.operators κ)\n    (hκ : κ ≤ 1 / 2) (hR : ∀ x ∈ s.domain, 0 < c.operators.radius x)\n    {h : MeanIncrementBounds.Triple D} (hh : MeanIncrementBounds.IncrementBounds s H h)\n    {b : CorrectionState.HarmonicBlock D} (hb : b.WaveBounds s P α)\n    (hN : ∀ i, UnweightedClass s 0 (fun n x => slowNormal c ho hR b.phase n x i))\n    (hk : BandBound s (-(1 / 2)) b.frequency)\n    (hkp : BandBound s (-(1 / 2)) (fun n => (b.angularFrequency n : ℝ)))\n    (hP : ∀ n x, x ∈ s.domain → 0 ≤ P n x) {j : ℤ} (hj : j ≠ 0) (i : Fin 3) :\n    WaveClass s P (α + H - 1 / 2) (fun n x => meanCross c h b n i j x)"
+          }
+        }
+      }
+    }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p004-2/key/04.NavierStokes.NaturalCore.coreVelocity_swirl",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalCore.coreVelocity_swirl",
-      "line": 370,
-      "module": "NavierStokes.NaturalCore",
-      "path": "NavierStokes/NaturalCore.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean#L370"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalCore.coreVelocity_swirl",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalCore.coreVelocity_swirl",
+        "module": "NavierStokes.NaturalCore"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 370,
-        "text": "theorem coreVelocity_swirl … (hs : 0 < radialEnergy x) : (x 0 * coreVelocity h f V (t,x) 1 - x 1 * coreVelocity h f V (t,x) 0) / √(2 * radialEnergy x) = physicalQ h (…) ^ (-NaturalAxisData.A h) * √(2 * (similarityPoint h (…)).1) * f (similarityPoint h (…))   -- docstring: \"Away from the axis the cylindrical azimuthal velocity is precisely q^(-A) sqrt(2X) f(X,eta)\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.NaturalCore.coreVelocity_swirl",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L370",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalCore.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 370,
+            "text": "theorem coreVelocity_swirl {h Λ : ℝ} {f V : ℝ × ℝ → ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2)\n    (hf : ContDiffOn ℝ ∞ f (NaturalProfile.domain Λ))\n    (hV : ContDiffOn ℝ ∞ V (NaturalProfile.domain Λ))\n    {t : ℝ} {x : Space} (hx : (t, x) ∈ coreDomain h Λ) (hs : 0 < radialEnergy x) :\n    (x 0 * coreVelocity h f V (t, x) 1 - x 1 * coreVelocity h f V (t, x) 0) /\n        Real.sqrt (2 * radialEnergy x) =\n      physicalQ h (profilePoint t x) ^ (-NaturalAxisData.A h) *\n        Real.sqrt (2 * (similarityPoint h (profilePoint t x)).1) *\n          f (similarityPoint h (profilePoint t x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

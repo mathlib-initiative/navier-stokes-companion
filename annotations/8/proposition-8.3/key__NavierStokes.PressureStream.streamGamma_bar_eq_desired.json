@@ -1,34 +1,55 @@
 {
-  "id": "proposition-8.3/key/1.NavierStokes.PressureStream.streamGamma_bar_eq_desired",
-  "location": {
-    "page": 92,
-    "rect": [0.12854, 0.824793, 0.746187, 0.02562]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PressureStream.streamGamma_bar_eq_desired",
-      "line": 843,
-      "module": "NavierStokes.PressureStream",
-      "path": "NavierStokes/PressureStream.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 92,
+        "rect": [0.12854, 0.824793, 0.746187, 0.02562]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-8.3@p092"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean#L843"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PressureStream.streamGamma_bar_eq_desired",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 93,
+        "rect": [0.12854, 0.102479, 0.746187, 0.31405]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Under hm : forall s, (int_r r * torusAverage gd (r, s)) = 0, torusAverage (streamGamma ... (streamPotential ... gd)) p = torusAverage gd p: <Delta gamma>_Y = <gamma_d>_Y given the vanishing weighted moment."
-      },
-      "region": "proposition-8.3@p092",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 843,
-        "text": "theorem streamGamma_bar_eq_desired {d a b M : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (v : Plane)\n    {γd : Lift S → ℝ} (hγ : ContDiff ℝ ∞ γd) (hs : RadialAlias.RadiallySupported a b γd)\n    (hp : TorusPeriodicLift γd)\n    (hm : ∀ s : S, (∫ r, r * torusAverage γd (r, s)) = 0) (p : ℝ × S) :\n    torusAverage (streamGamma (physicalSpeed d M) (0, v)\n      (streamPotential d a b M (0, v) γd)) p = torusAverage γd p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-8.3@p093"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PressureStream.streamGamma_bar_eq_desired",
+        "module": "NavierStokes.PressureStream"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PressureStream.streamGamma_bar_eq_desired",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Under hm : forall s, (int_r r * torusAverage gd (r, s)) = 0, torusAverage (streamGamma ... (streamPotential ... gd)) p = torusAverage gd p: <Delta gamma>_Y = <gamma_d>_Y given the vanishing weighted moment."
+          },
+          "destination": {
+            "fragment": "L843",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean"
+          },
+          "snippet": {
+            "line": 843,
+            "text": "theorem streamGamma_bar_eq_desired {d a b M : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (v : Plane)\n    {γd : Lift S → ℝ} (hγ : ContDiff ℝ ∞ γd) (hs : RadialAlias.RadiallySupported a b γd)\n    (hp : TorusPeriodicLift γd)\n    (hm : ∀ s : S, (∫ r, r * torusAverage γd (r, s)) = 0) (p : ℝ × S) :\n    torusAverage (streamGamma (physicalSpeed d M) (0, v)\n      (streamPotential d a b M (0, v) γd)) p = torusAverage γd p"
+          }
+        }
+      }
+    }
+  ]
 }

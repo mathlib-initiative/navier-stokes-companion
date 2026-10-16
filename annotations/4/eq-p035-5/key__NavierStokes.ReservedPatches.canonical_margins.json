@@ -1,26 +1,28 @@
 {
-  "id": "eq-p035-5/key/02.NavierStokes.ReservedPatches.canonical_margins",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReservedPatches.canonical_margins",
-      "line": 137,
-      "module": "NavierStokes.ReservedPatches",
-      "path": "NavierStokes/ReservedPatches.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReservedPatches.lean#L137"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReservedPatches.canonical_margins",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReservedPatches.canonical_margins",
+        "module": "NavierStokes.ReservedPatches"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 137,
-        "text": "(hw : wait = 60 * log (1/lam)) : holdStart + 29 < leftClock F s ∧ rightClock F s ≤ pulseStart - 3 — gives X_good < inf I_1 (with 29 log units to spare)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ReservedPatches.canonical_margins",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L137",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReservedPatches.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 137,
+            "text": "theorem canonical_margins (F : Profile)\n    (hw : F.data.core.wait = 60 * Real.log (1 / F.data.core.lam)) (s : Slot) :\n    F.data.core.holdStart + 29 < leftClock F s ∧\n      rightClock F s ≤ F.data.core.pulseStart - 3"
+          }
+        }
       }
     }
-  }
+  ]
 }

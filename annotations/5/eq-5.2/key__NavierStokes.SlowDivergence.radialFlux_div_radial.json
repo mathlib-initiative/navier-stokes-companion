@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.2/key/02.NavierStokes.SlowDivergence.radialFlux_div_radial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowDivergence.radialFlux_div_radial",
-      "line": 29,
-      "module": "NavierStokes.SlowDivergence",
-      "path": "NavierStokes/SlowDivergence.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowDivergence.lean#L29"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowDivergence.radialFlux_div_radial",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowDivergence.radialFlux_div_radial",
+        "module": "NavierStokes.SlowDivergence"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 29,
-        "text": "radialFlux h lam U p / p.1 = (L h p.2)⁻¹ * (2*p.2*U p - 2*p.2*(D h + lam)*average U p - d p.2 * partialEta (average U) p), for p.1 ≠ 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SlowDivergence.radialFlux_div_radial",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L29",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowDivergence.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 29,
+            "text": "theorem radialFlux_div_radial (h lam : ℝ) (U : Field) {p : Point} (hX : p.1 ≠ 0) :\n    radialFlux h lam U p / p.1 = (CoordinateAlgebra.L h p.2)⁻¹ *\n      (2 * p.2 * U p - 2 * p.2 * (CoordinateAlgebra.D h + lam) * average U p -\n        CoordinateAlgebra.d p.2 * SimilarityProfile.partialEta (average U) p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

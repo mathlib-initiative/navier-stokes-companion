@@ -1,36 +1,57 @@
 {
-  "id": "proposition-4.10/attributed/1.NavierStokes.AxisymmetricFields.contDiffOn_velocity",
-  "location": {
-    "page": 36,
-    "rect": [0.12854, 0.677686, 0.746187, 0.221488]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisymmetricFields.contDiffOn_velocity",
-      "line": 196,
-      "module": "NavierStokes.AxisymmetricFields",
-      "path": "NavierStokes/AxisymmetricFields.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 36,
+        "rect": [0.12854, 0.677686, 0.746187, 0.221488]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p036"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean#L196"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisymmetricFields.contDiffOn_velocity",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 37,
+        "rect": [0.12854, 0.102479, 0.746187, 0.26281]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ContDiffOn R n H (times x^s univ) and ContDiffOn R n K (times x^s univ) and m+1 <= n imply ContDiffOn R m (velocity H K) (times x^s univ in Space). The localized-in-time form of the same implication; note the SECOND factor is univ, all of the (s,z) plane, so it cannot be instantiated at profiles kno",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "proposition-4.10@p036",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 196,
-        "text": "theorem contDiffOn_velocity {H K : Profile} {times : Set ℝ} {m n : WithTop ℕ∞}\n    (hH : ContDiffOn ℝ n H (times ×ˢ (univ : Set (ℝ × ℝ))))\n    (hK : ContDiffOn ℝ n K (times ×ˢ (univ : Set (ℝ × ℝ)))) (hmn : m + 1 ≤ n) :\n    ContDiffOn ℝ m (velocity H K) (times ×ˢ (univ : Set Space))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p037"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisymmetricFields.contDiffOn_velocity",
+        "module": "NavierStokes.AxisymmetricFields"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.AxisymmetricFields.contDiffOn_velocity",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: ContDiffOn R n H (times x^s univ) and ContDiffOn R n K (times x^s univ) and m+1 <= n imply ContDiffOn R m (velocity H K) (times x^s univ in Space). The localized-in-time form of the same implication; note the SECOND factor is univ, all of the (s,z) plane, so it cannot be instantiated at profiles kno",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L196",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean"
+          },
+          "snippet": {
+            "line": 196,
+            "text": "theorem contDiffOn_velocity {H K : Profile} {times : Set ℝ} {m n : WithTop ℕ∞}\n    (hH : ContDiffOn ℝ n H (times ×ˢ (univ : Set (ℝ × ℝ))))\n    (hK : ContDiffOn ℝ n K (times ×ˢ (univ : Set (ℝ × ℝ)))) (hmn : m + 1 ≤ n) :\n    ContDiffOn ℝ m (velocity H K) (times ×ˢ (univ : Set Space))"
+          }
+        }
+      }
+    }
+  ]
 }

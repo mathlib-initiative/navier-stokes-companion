@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.2/key/03.NavierStokes.LinearWaveResidual.slowTransport",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveResidual.slowTransport",
-      "line": 80,
-      "module": "NavierStokes.LinearWaveResidual",
-      "path": "NavierStokes/LinearWaveResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean#L80"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveResidual.slowTransport",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveResidual.slowTransport",
+        "module": "NavierStokes.LinearWaveResidual"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 80,
-        "text": "-(ε:ℂ) * along Vs (a · i) x + (b x:ℂ) * along Vr (a · i) x + (G x:ℂ) * along Vz (a · i) x — the paper's (−ε∂_T + bD_r + GD_z)a, with Vs the slow-time direction"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.LinearWaveResidual.slowTransport",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L80",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 80,
+            "text": "noncomputable def slowTransport (ε : ℝ) (b G : E → ℝ) (Vs Vr Vz : E → E)\n    (a : E → ComplexVector) (x : E) : ComplexVector"
+          }
+        }
       }
     }
-  }
+  ]
 }

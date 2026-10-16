@@ -1,26 +1,29 @@
 {
-  "id": "eq-p044-4/key/01.NavierStokes.ProfileSpectralCone.targetCone_of_signedShear",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProfileSpectralCone.targetCone_of_signedShear",
-      "line": 150,
-      "module": "NavierStokes.ProfileSpectralCone",
-      "path": "NavierStokes/ProfileSpectralCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean#L150"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProfileSpectralCone.targetCone_of_signedShear",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProfileSpectralCone.targetCone_of_signedShear",
+        "lines": [150, 150],
+        "module": "NavierStokes.ProfileSpectralCone"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 150,
-        "text": "have hN : ⟪T, normalDirection (F • !₂[-a,-c])⟫_ℝ = -(F / ‖F • !₂[-a,-c]‖) * (a * T 0 + c * T 1)   (and hK at :154 : ⟪T, transverseDirection …⟫_ℝ = (F / ‖…‖) * (a * T 1 - c * T 0))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ProfileSpectralCone.targetCone_of_signedShear",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L150",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 137,
+            "text": "theorem targetCone_of_signedShear {F a c : ℝ} (hF : 0 < F) (ha : 0 < a)\n    (hv : 2 < a * (1 + (c / a) ^ 2)) (T : Plane)\n    (hin : 0 < a * T 0 + c * T 1)\n    (hquad : (a * (1 + (c / a) ^ 2) - 2) * (a * T 1 - c * T 0) ^ 2 <\n      2 * (a * T 0 + c * T 1) ^ 2) :\n    PrimaryRepresentatives.TargetCone F (F • !₂[-a, -c]) T"
+          }
+        }
       }
     }
-  }
+  ]
 }

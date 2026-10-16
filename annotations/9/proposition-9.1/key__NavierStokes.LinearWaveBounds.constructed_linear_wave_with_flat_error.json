@@ -1,31 +1,33 @@
 {
-  "id": "proposition-9.1/key/0.NavierStokes.LinearWaveBounds.constructed_linear_wave_with_flat_error",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveBounds.constructed_linear_wave_with_flat_error",
-      "line": 898,
-      "module": "NavierStokes.LinearWaveBounds",
-      "path": "NavierStokes/LinearWaveBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L898"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveBounds.constructed_linear_wave_with_flat_error",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The general (abstract-data) form: given `InputBounds s P α κ d a` (amplitude in `WaveClass α`, pressure in `WaveClass (α+1/2)`, base/geometry bounds), `κ ≤ 1/2`, a `SlotFamily` cutoff with Gaussian weight bound, nondegenerate `n_Φ`, `BandBound s (1/2) (1/a.frequency)`, and `hsolve : a.principal = -s",
-        "status": "unconfirmed",
-        "verdict": "faithful"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveBounds.constructed_linear_wave_with_flat_error",
+        "module": "NavierStokes.LinearWaveBounds"
       },
       "role": "key",
-      "snippet": {
-        "line": 898,
-        "text": "theorem constructed_linear_wave_with_flat_error {s : StripData D}\n    {P : ℕ → D → ℝ} {α κ : ℝ} {d : GraphDirections D} {a : WaveCoefficients D}\n    (h : InputBounds s P α κ d a) (hκ : κ ≤ 1 / 2)\n    (g : GaussianTailFlat.SlotFamily s)\n    (hfast : ∀ n, g.linear n (d.fastScale n • d.fast) = (g.length n)⁻¹)\n    (edges : GaussianTailFlat.FlatEdges s) (scales : GaussianTailFlat.BandScaleControl s)\n    {source : ℕ → D → ComplexVector} (hsource : WaveClass s P α source)\n    {c : ℝ} (hc : 0 < c)\n    (hP : ∀ n x, x ∈ s.domain →\n      P n x ≤ Real.exp (-c * (g.coordinate n x - 1 / 2) ^ 2 * g.length n))\n    {R : D → ℝ} (hR : a.radius = fun _ => R)\n    (hN : PhaseJetBounds.PolynomialJets (CurlClassBounds.phaseDomain s) (a.normal s d))\n    {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ n x, x ∈ s.domain → b ≤ ‖a.normal s d n x‖)\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.LinearWaveBounds.constructed_linear_wave_with_flat_error",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: The general (abstract-data) form: given `InputBounds s P α κ d a` (amplitude in `WaveClass α`, pressure in `WaveClass (α+1/2)`, base/geometry bounds), `κ ≤ 1/2`, a `SlotFamily` cutoff with Gaussian weight bound, nondegenerate `n_Φ`, `BandBound s (1/2) (1/a.frequency)`, and `hsolve : a.principal = -s",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L898",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean"
+          },
+          "snippet": {
+            "line": 898,
+            "text": "theorem constructed_linear_wave_with_flat_error {s : StripData D}\n    {P : ℕ → D → ℝ} {α κ : ℝ} {d : GraphDirections D} {a : WaveCoefficients D}\n    (h : InputBounds s P α κ d a) (hκ : κ ≤ 1 / 2)\n    (g : GaussianTailFlat.SlotFamily s)\n    (hfast : ∀ n, g.linear n (d.fastScale n • d.fast) = (g.length n)⁻¹)\n    (edges : GaussianTailFlat.FlatEdges s) (scales : GaussianTailFlat.BandScaleControl s)\n    {source : ℕ → D → ComplexVector} (hsource : WaveClass s P α source)\n    {c : ℝ} (hc : 0 < c)\n    (hP : ∀ n x, x ∈ s.domain →\n      P n x ≤ Real.exp (-c * (g.coordinate n x - 1 / 2) ^ 2 * g.length n))\n    {R : D → ℝ} (hR : a.radius = fun _ => R)\n    (hN : PhaseJetBounds.PolynomialJets (CurlClassBounds.phaseDomain s) (a.normal s d))\n    {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ n x, x ∈ s.domain → b ≤ ‖a.normal s d n x‖)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

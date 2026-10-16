@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.51/key/02.NavierStokes.TerminalEdgePaper.profileStress_lower_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgePaper.profileStress_lower_bound",
-      "line": 16,
-      "module": "NavierStokes.TerminalEdgePaper",
-      "path": "NavierStokes/TerminalEdgePaper.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgePaper.lean#L16"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgePaper.profileStress_lower_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgePaper.profileStress_lower_bound",
+        "module": "NavierStokes.TerminalEdgePaper"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 16,
-        "text": "(hC : 0 < C) : ∃ ε c, 0 < ε ∧ 0 < c ∧ ∀ η ∈ Icc (-1:ℝ) 1, ∀ x, 0 < x → x < ε → c * FlatCutoff.edge 4 x / x ^ 3 ≤ ‖profileStress C d y0 (η, x)‖"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TerminalEdgePaper.profileStress_lower_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L16",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgePaper.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 16,
+            "text": "theorem profileStress_lower_bound {C : ℝ} (hC : 0 < C) (d : TailData) (y0 : ℝ) :\n    ∃ ε c : ℝ, 0 < ε ∧ 0 < c ∧ ∀ η ∈ Icc (-1 : ℝ) 1,\n      ∀ x : ℝ, 0 < x → x < ε →\n        c * FlatCutoff.edge 4 x / x ^ 3 ≤ ‖profileStress C d y0 (η, x)‖"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-B.6/support/06.NavierStokes.AxisCoefficientSpace.axisSpace_norm_le_iff",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisCoefficientSpace.axisSpace_norm_le_iff",
-      "line": 450,
-      "module": "NavierStokes.AxisCoefficientSpace",
-      "path": "NavierStokes/AxisCoefficientSpace.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisCoefficientSpace.lean#L450"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisCoefficientSpace.axisSpace_norm_le_iff",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisCoefficientSpace.axisSpace_norm_le_iff",
+        "module": "NavierStokes.AxisCoefficientSpace"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 450,
-        "text": "‖A‖ ≤ C ↔ ∀ n m (x : I.interval), |iteratedDerivWithin m (coefficient … A n) I.interval x| / weight ε n m ≤ C — the ‖·‖_ρ of (B.4)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.AxisCoefficientSpace.axisSpace_norm_le_iff",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L450",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisCoefficientSpace.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 450,
+            "text": "theorem axisSpace_norm_le_iff (I : Window) {ε : ℝ} (hε : 0 < ε)\n    (A : AxisSpace I ε) (C : ℝ) (hC : 0 ≤ C) :\n    ‖A‖ ≤ C ↔ ∀ (n m : ℕ) (x : I.interval),\n      |iteratedDerivWithin m (coefficient I (AxisWeightEstimates.weight ε) A n) I.interval x| /\n        AxisWeightEstimates.weight ε n m ≤ C"
+          }
+        }
       }
     }
-  }
+  ]
 }

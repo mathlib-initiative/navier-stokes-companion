@@ -1,26 +1,28 @@
 {
-  "id": "eq-p119-4/attributed/05.NavierStokes.ParametricHeatTail.iteratedDerivWithin_integral_chain",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricHeatTail.iteratedDerivWithin_integral_chain",
-      "line": 102,
-      "module": "NavierStokes.ParametricHeatTail",
-      "path": "NavierStokes/ParametricHeatTail.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricHeatTail.lean#L102"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricHeatTail.iteratedDerivWithin_integral_chain",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricHeatTail.iteratedDerivWithin_integral_chain",
+        "module": "NavierStokes.ParametricHeatTail"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 102,
-        "text": "(hJ) (hm) (hb : ChainDominated J μ) (n) (hν : 0 ≤ ν) : iteratedDerivWithin n (fun u => ∫ t, J 0 u t ∂μ) (Ici 0) ν = ∫ t, J n ν t ∂μ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ParametricHeatTail.iteratedDerivWithin_integral_chain",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L102",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricHeatTail.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 102,
+            "text": "theorem iteratedDerivWithin_integral_chain (n : ℕ) {ν : ℝ} (hν : 0 ≤ ν) :\n    iteratedDerivWithin n (fun u => ∫ t, J 0 u t ∂μ) (Ici 0) ν =\n      ∫ t, J n ν t ∂μ"
+          }
+        }
       }
     }
-  }
+  ]
 }

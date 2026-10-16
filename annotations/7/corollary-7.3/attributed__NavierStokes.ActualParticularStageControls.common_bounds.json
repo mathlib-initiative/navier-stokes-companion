@@ -1,31 +1,33 @@
 {
-  "id": "corollary-7.3/attributed/1.NavierStokes.ActualParticularStageControls.common_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualParticularStageControls.common_bounds",
-      "line": 1356,
-      "module": "NavierStokes.ActualParticularStageControls",
-      "path": "NavierStokes/ActualParticularStageControls.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularStageControls.lean#L1356"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualParticularStageControls.common_bounds",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualParticularStageControls.common_bounds",
+        "module": "NavierStokes.ActualParticularStageControls"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Same hypotheses plus hx : PreservesCarriers x, hs : InputSupport x, hN : ActualCarrierGeometry.geometricThreshold ≤ N0, for every j ≠ 0: the cut-off copy fields of the same solve lie in LabelSumBounds.UniformWaveClass on the one strip s = sourceStrip (angleStrip slowStrip) with nativeEnvelope, at al",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1356,
-        "text": "theorem common_bounds (x : CycleState (Label B N0)) (hx : PreservesCarriers x)\n    (hs : InputSupport x) (hN : ActualCarrierGeometry.geometricThreshold ≤ N0)\n    {α : ℝ} (j : ℤ) (hj : j ≠ 0)\n    (H : LabelSumBounds.UniformWaveClass\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      nativeEnvelope α (currentSource x j)) :\n    let s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActualParticularStageControls.common_bounds",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Same hypotheses plus hx : PreservesCarriers x, hs : InputSupport x, hN : ActualCarrierGeometry.geometricThreshold ≤ N0, for every j ≠ 0: the cut-off copy fields of the same solve lie in LabelSumBounds.UniformWaveClass on the one strip s = sourceStrip (angleStrip slowStrip) with nativeEnvelope, at al",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1356",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularStageControls.lean"
+          },
+          "snippet": {
+            "line": 1356,
+            "text": "theorem common_bounds (x : CycleState (Label B N0)) (hx : PreservesCarriers x)\n    (hs : InputSupport x) (hN : ActualCarrierGeometry.geometricThreshold ≤ N0)\n    {α : ℝ} (j : ℤ) (hj : j ≠ 0)\n    (H : LabelSumBounds.UniformWaveClass\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      nativeEnvelope α (currentSource x j)) :\n    let s"
+          }
+        }
       }
     }
-  }
+  ]
 }

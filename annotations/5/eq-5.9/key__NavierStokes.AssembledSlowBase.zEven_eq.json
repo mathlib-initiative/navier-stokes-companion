@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.9/key/02.NavierStokes.AssembledSlowBase.zEven_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AssembledSlowBase.zEven_eq",
-      "line": 339,
-      "module": "NavierStokes.AssembledSlowBase",
-      "path": "NavierStokes/AssembledSlowBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean#L339"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AssembledSlowBase.zEven_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AssembledSlowBase.zEven_eq",
+        "module": "NavierStokes.AssembledSlowBase"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 339,
-        "text": "zEven L B0 Z0 n (R, eta) = SlowStressSupport.stress 1 (SlowResidualMatching.zDensity h (asSlowProfiles s) n) (R, eta)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.AssembledSlowBase.zEven_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L339",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 339,
+            "text": "theorem zEven_eq (Z0 : ZeroOrderSolved s inner) (n : ℕ) {R eta : ℝ}\n    (hR : 0 ≤ R) :\n    zEven L B0 Z0 n (R, eta) =\n      SlowStressSupport.stress 1 (SlowResidualMatching.zDensity h (asSlowProfiles s) n) (R, eta)"
+          }
+        }
       }
     }
-  }
+  ]
 }

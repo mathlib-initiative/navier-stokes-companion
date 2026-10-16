@@ -1,23 +1,26 @@
 {
-  "id": "eq-6.4/key/04.NavierStokes.GraphCalculus.partialR_pullback",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GraphCalculus.partialR_pullback",
-      "line": 86
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GraphCalculus.lean#L86"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GraphCalculus.partialR_pullback",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GraphCalculus.partialR_pullback",
+        "module": "NavierStokes.GraphCalculus"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 86,
-        "text": "partialR (pullback d vr vt F) q = radialOp d vr F (graph d vr vt q), for q.1 ≠ 0 and F differentiable at the lift"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.GraphCalculus.partialR_pullback",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L86"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 86,
+            "text": "theorem partialR_pullback (d : ℝ) (vr vt : Plane) (F : Lift → ℝ) (q : Plane)\n    (hr : q.1 ≠ 0) (hF : DifferentiableAt ℝ F (graph d vr vt q)) :\n    partialR (pullback d vr vt F) q = radialOp d vr F (graph d vr vt q)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,33 @@
 {
-  "id": "lemma-6.3/attributed/1.NavierStokes.PhysicalWaveSum.labelRegion_card_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalWaveSum.labelRegion_card_le",
-      "line": 303,
-      "module": "NavierStokes.PhysicalWaveSum",
-      "path": "NavierStokes/PhysicalWaveSum.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalWaveSum.lean#L303"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalWaveSum.labelRegion_card_le",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalWaveSum.labelRegion_card_le",
+        "module": "NavierStokes.PhysicalWaveSum"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: Clause (i) for the actual closed mask regions with the explicit constant: for q > 0, any Finset s of labels L with 1 ≤ L.1 and (q,x) ∈ labelRegion D L has s.card ≤ 2250 (via the proper colouring SlotColoring.colorData and palette_card).",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 303,
-        "text": "theorem labelRegion_card_le {D : ℝ} {z : ℝ × Position} (hq : 0 < z.1)\n    (s : Finset Label) (hs : ∀ L ∈ s, 1 ≤ L.1 ∧ z ∈ labelRegion D L) : s.card ≤ 2250"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PhysicalWaveSum.labelRegion_card_le",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: Clause (i) for the actual closed mask regions with the explicit constant: for q > 0, any Finset s of labels L with 1 ≤ L.1 and (q,x) ∈ labelRegion D L has s.card ≤ 2250 (via the proper colouring SlotColoring.colorData and palette_card).",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L303",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalWaveSum.lean"
+          },
+          "snippet": {
+            "line": 303,
+            "text": "theorem labelRegion_card_le {D : ℝ} {z : ℝ × Position} (hq : 0 < z.1)\n    (s : Finset Label) (hs : ∀ L ∈ s, 1 ≤ L.1 ∧ z ∈ labelRegion D L) : s.card ≤ 2250"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.31/key/03.NavierStokes.ActiveAnnulusWeight.exists_global_derivative_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.exists_global_derivative_bound",
-      "line": 468,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L468"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.exists_global_derivative_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.exists_global_derivative_bound",
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 468,
-        "text": "(hK) (hKd) (hab) (hc) (hO : IsOpen O) (hT : ContDiffOn ℝ ∞ T O) (hKO : K ×ˢ Icc a b ⊆ O) (FL FR) (n) : ∃ C > 0, ∃ N, ∀ i ≤ n, ∀ p ∈ K, ∀ y ∈ Ioo a b, ‖iteratedFDeriv ℝ i T (p,y)‖ ≤ C * weight c a b y / edgeDistance a b y ^ N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ActiveAnnulusWeight.exists_global_derivative_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L468",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 468,
+            "text": "theorem exists_global_derivative_bound {K : Set E} (hK : IsCompact K)\n    (hKd : UniqueDiffOn ℝ K) {a b c : ℝ} (hab : a < b) (hc : 0 < c)\n    {T : E × ℝ → V} {O : Set (E × ℝ)} (hO : IsOpen O)\n    (hT : ContDiffOn ℝ ∞ T O) (hKO : K ×ˢ Icc a b ⊆ O)\n    (FL : EdgeFactor K c (leftChart a T)) (FR : EdgeFactor K 4 (rightChart b T))\n    (n : ℕ) : ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ i ≤ n, ∀ p ∈ K,\n      ∀ y ∈ Ioo a b, ‖iteratedFDeriv ℝ i T (p,y)‖ ≤\n        C * weight c a b y / edgeDistance a b y ^ N"
+          }
+        }
       }
     }
-  }
+  ]
 }

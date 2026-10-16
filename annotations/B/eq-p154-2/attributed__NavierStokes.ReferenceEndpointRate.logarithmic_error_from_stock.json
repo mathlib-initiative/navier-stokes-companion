@@ -1,25 +1,27 @@
 {
-  "id": "eq-p154-2/attributed/02.NavierStokes.ReferenceEndpointRate.logarithmic_error_from_stock",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceEndpointRate.logarithmic_error_from_stock",
-      "line": 199,
-      "module": "NavierStokes.ReferenceEndpointRate",
-      "path": "NavierStokes/ReferenceEndpointRate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean#L199"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceEndpointRate.logarithmic_error_from_stock"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceEndpointRate.logarithmic_error_from_stock",
+        "module": "NavierStokes.ReferenceEndpointRate"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 199,
-        "text": "(hb : ∀ t ∈ Icc 0 R.finalTime, |parameterJet n R.angularStock (t,η)| ≤ M) : |iteratedDeriv n (fun ξ => R.logAmplitude T κ w₁ w₂ (R.finalTime,ξ) - R.initialLog ξ) η| ≤ (M+1)*R.finalTime, with R.finalTime = Real.log (110 / R.radius0) and R.radius0 = 4/Λ. This is the increment bound; the display's printed shape is reached only after jet_transfer inside exists_endpointLog_bound, so the tag is `implies`, not `states`."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ReferenceEndpointRate.logarithmic_error_from_stock"
+          },
+          "destination": {
+            "fragment": "L199",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 199,
+            "text": "theorem logarithmic_error_from_stock {J' : Set ℝ} (hJ : IsOpen J')\n    (R : StockReference J') {T κ w₁ w₂ η M : ℝ} (hκ : κ ∈ Icc (0:ℝ) 1)\n    (hfinal : 0 ≤ R.finalTime) (hη : η ∈ J') (hM : 0 ≤ M) (n : ℕ)\n    (hb : ∀ t ∈ Icc (0:ℝ) R.finalTime, |parameterJet n R.angularStock (t,η)| ≤ M) :\n    |iteratedDeriv n (fun ξ => R.logAmplitude T κ w₁ w₂ (R.finalTime,ξ)-R.initialLog ξ) η| ≤\n      (M+1)*R.finalTime"
+          }
+        }
       }
     }
-  }
+  ]
 }

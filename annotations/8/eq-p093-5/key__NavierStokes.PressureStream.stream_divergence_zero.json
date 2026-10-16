@@ -1,26 +1,28 @@
 {
-  "id": "eq-p093-5/key/01.NavierStokes.PressureStream.stream_divergence_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PressureStream.stream_divergence_zero",
-      "line": 321,
-      "module": "NavierStokes.PressureStream",
-      "path": "NavierStokes/PressureStream.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean#L321"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PressureStream.stream_divergence_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PressureStream.stream_divergence_zero",
+        "module": "NavierStokes.PressureStream"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 321,
-        "text": "theorem stream_divergence_zero (v w : E) (hΨ : ContDiffAt ℝ 2 Ψ p) (hk : DifferentiableAt ℝ k p.1) (hr : p.1 ≠ 0) : graphDivergence k v w (streamBeta w Ψ) (streamGamma k v Ψ) p = 0   -- docstring: \"The cylindrical divergence of the actual stream realization is exactly zero.\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PressureStream.stream_divergence_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L321",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 321,
+            "text": "theorem stream_divergence_zero {Ψ : ℝ × E → ℝ} {k : ℝ → ℝ} (v w : E)\n    {p : ℝ × E} (hΨ : ContDiffAt ℝ 2 Ψ p) (hk : DifferentiableAt ℝ k p.1)\n    (hr : p.1 ≠ 0) :\n    graphDivergence k v w (streamBeta w Ψ) (streamGamma k v Ψ) p = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

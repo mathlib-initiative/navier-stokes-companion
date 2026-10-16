@@ -1,31 +1,33 @@
 {
-  "id": "corollary-A.3/attributed/1.NavierStokes.FiveProfileMoments.local_profile_moments",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveProfileMoments.local_profile_moments",
-      "line": 1137,
-      "module": "NavierStokes.FiveProfileMoments",
-      "path": "NavierStokes/FiveProfileMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L1137"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveProfileMoments.local_profile_moments",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveProfileMoments.local_profile_moments",
+        "module": "NavierStokes.FiveProfileMoments"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If U = G and E = A x^b on the patch, then ∫ over Ioi 0 of profileChangeDensity U E (A u) (A e) equals physicalMoments P b A G c componentwise — the bridge from the full-axis increments of FiveProfileMoments to the literal (4.15) densities; NominalProfile.corrected_density (NominalProfile.lean:263) a",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1137,
-        "text": "theorem local_profile_moments (P : Patch) (b A G : ℝ) (c : Coeff) (U E : ℝ → ℝ)\n    (hU : ∀ x ∈ Ioo P.left P.right, U x = G)\n    (hE : ∀ x ∈ Ioo P.left P.right, E x = A * x ^ b) (i : Fin 5) :\n    (∫ x in Ioi (0 : ℝ), profileChangeDensity U E (fun y => A * u P c y) (fun y => A * e P c y) x i) =\n      physicalMoments P b A G c i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.FiveProfileMoments.local_profile_moments",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: If U = G and E = A x^b on the patch, then ∫ over Ioi 0 of profileChangeDensity U E (A u) (A e) equals physicalMoments P b A G c componentwise — the bridge from the full-axis increments of FiveProfileMoments to the literal (4.15) densities; NominalProfile.corrected_density (NominalProfile.lean:263) a",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1137",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean"
+          },
+          "snippet": {
+            "line": 1137,
+            "text": "theorem local_profile_moments (P : Patch) (b A G : ℝ) (c : Coeff) (U E : ℝ → ℝ)\n    (hU : ∀ x ∈ Ioo P.left P.right, U x = G)\n    (hE : ∀ x ∈ Ioo P.left P.right, E x = A * x ^ b) (i : Fin 5) :\n    (∫ x in Ioi (0 : ℝ), profileChangeDensity U E (fun y => A * u P c y) (fun y => A * e P c y) x i) =\n      physicalMoments P b A G c i"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,28 @@
 {
-  "id": "eq-p009-2/support/03.NavierStokes.LeadingStress.radialDivergence_eq_deriv",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStress.radialDivergence_eq_deriv",
-      "line": 291
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean#L291"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStress.radialDivergence_eq_deriv",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStress.radialDivergence_eq_deriv",
+        "module": "NavierStokes.LeadingStress"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 291,
-        "text": "radialDivergence k S p = deriv (fun r => S (p.1, (r ^ 2 / 2, p.2.2))) (Real.sqrt (2 * p.2.1)) + k * S p / Real.sqrt (2 * p.2.1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.LeadingStress.radialDivergence_eq_deriv",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L291"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 291,
+            "text": "theorem radialDivergence_eq_deriv (k : ℝ) {S : SimilarityProfile.PhysicalProfile}\n    {p : SimilarityProfile.PhysicalPoint} (hs : 0 ≤ p.2.1) (hS : DifferentiableAt ℝ S p) :\n    radialDivergence k S p =\n      deriv (fun r => S (p.1, (r ^ 2 / 2, p.2.2))) (Real.sqrt (2 * p.2.1)) +\n        k * S p / Real.sqrt (2 * p.2.1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

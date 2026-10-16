@@ -1,23 +1,26 @@
 {
-  "id": "eq-p162-3/key/05.NavierStokes.FiveProfileMoments.linearEquiv",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveProfileMoments.linearEquiv",
-      "line": 300
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L300"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveProfileMoments.linearEquiv",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveProfileMoments.linearEquiv",
+        "module": "NavierStokes.FiveProfileMoments"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 300,
-        "text": "linearEquiv P b hb := (matrixEquiv P.leftHalf (axialPowers b) _).prodCongr (matrixEquiv P.rightHalf (angularPowers b) _)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.FiveProfileMoments.linearEquiv",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L300"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 300,
+            "text": "noncomputable def linearEquiv (P : Patch) (b : ℝ) (hb : GoodExponent b) : Coeff ≃L[ℝ] Coeff"
+          }
+        }
       }
     }
-  }
+  ]
 }

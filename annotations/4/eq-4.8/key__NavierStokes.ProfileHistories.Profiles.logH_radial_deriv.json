@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.8/key/02.NavierStokes.ProfileHistories.Profiles.logH_radial_deriv",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProfileHistories.Profiles.logH_radial_deriv",
-      "line": 663,
-      "module": "NavierStokes.ProfileHistories",
-      "path": "NavierStokes/ProfileHistories.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileHistories.lean#L663"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProfileHistories.Profiles.logH_radial_deriv",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProfileHistories.Profiles.logH_radial_deriv",
+        "module": "NavierStokes.ProfileHistories"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 663,
-        "text": "(hH : P.H p ≠ 0) : deriv (fun x => Real.log (P.H (x, p.2))) p.1 = radialPartial P.H p / P.H p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ProfileHistories.Profiles.logH_radial_deriv",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L663",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileHistories.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 663,
+            "text": "theorem logH_radial_deriv {p : Point} (hp : p ∈ D.carrier) (hH : P.H p ≠ 0) :\n    deriv (fun x => Real.log (P.H (x, p.2))) p.1 = radialPartial P.H p / P.H p"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p071-2/key/01.NavierStokes.PhysicalResidualJetBounds.block_expansion",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalResidualJetBounds.block_expansion",
-      "line": 652,
-      "module": "NavierStokes.PhysicalResidualJetBounds",
-      "path": "NavierStokes/PhysicalResidualJetBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualJetBounds.lean#L652"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalResidualJetBounds.block_expansion",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalResidualJetBounds.block_expansion",
+        "module": "NavierStokes.PhysicalResidualJetBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 652,
-        "text": "b.oscillation n x i = ∑ j ∈ J, ((b.velocity n i j x.1) * PhysicalGraphBounds.character 1 (fullPhase b j n x)).re, for (b.velocity n i).support ⊆ J"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PhysicalResidualJetBounds.block_expansion",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L652",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualJetBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 652,
+            "text": "theorem block_expansion (b : CorrectionState.HarmonicBlock Point) (J : Finset ℤ)\n    (n : ℕ) (i : Fin 3) (hs : (b.velocity n i).support ⊆ J) (x : Cylinder) :\n    b.oscillation n x i = ∑ j ∈ J,\n      ((b.velocity n i j x.1) * PhysicalGraphBounds.character 1 (fullPhase b j n x)).re"
+          }
+        }
       }
     }
-  }
+  ]
 }

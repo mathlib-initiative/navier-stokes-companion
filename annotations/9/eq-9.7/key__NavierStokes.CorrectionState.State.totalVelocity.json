@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.7/key/01.NavierStokes.CorrectionState.State.totalVelocity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionState.State.totalVelocity",
-      "line": 101,
-      "module": "NavierStokes.CorrectionState",
-      "path": "NavierStokes/CorrectionState.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L101"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionState.State.totalVelocity",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionState.State.totalVelocity",
+        "module": "NavierStokes.CorrectionState"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 101,
-        "text": "totalVelocity (s : State D) (c : Context D) : Oscillation D := fun n p => ![c.base.radial n p.1 + s.mean.radial n p.1 + s.oscillation n p 0, c.base.angular n p.1 + s.mean.angular n p.1 + s.oscillation n p 1, c.base.axial n p.1 + s.mean.axial n p.1 + s.oscillation n p 2]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CorrectionState.State.totalVelocity",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L101",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 101,
+            "text": "noncomputable def totalVelocity (s : State D) (c : Context D) : Oscillation D"
+          }
+        }
       }
     }
-  }
+  ]
 }

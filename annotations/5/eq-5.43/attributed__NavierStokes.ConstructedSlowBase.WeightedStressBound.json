@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.43/attributed/03.NavierStokes.ConstructedSlowBase.WeightedStressBound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ConstructedSlowBase.WeightedStressBound",
-      "line": 438,
-      "module": "NavierStokes.ConstructedSlowBase",
-      "path": "NavierStokes/ConstructedSlowBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConstructedSlowBase.lean#L438"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ConstructedSlowBase.WeightedStressBound",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ConstructedSlowBase.WeightedStressBound",
+        "module": "NavierStokes.ConstructedSlowBase"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 438,
-        "text": "∀ m, ∃ D, 0 < D ∧ ∃ N, ∀ q, 0 < q → q ≤ 1 → ∀ w ∈ activeWindow left right, ‖blownJet m (fun v => normalizedTensor a h d v - stressPair d 0 v.2) (q, w)‖ ≤ D * q ^ h * activeZeta c left right w * (activeDelta left right w)⁻¹ ^ N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ConstructedSlowBase.WeightedStressBound",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L438",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConstructedSlowBase.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 438,
+            "text": "def WeightedStressBound (a : ℕ → ℕ) (h : ℝ) (d : Coefficients) (c left right : ℝ) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

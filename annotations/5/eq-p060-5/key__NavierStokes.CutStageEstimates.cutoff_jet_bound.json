@@ -1,25 +1,27 @@
 {
-  "id": "eq-p060-5/key/03.NavierStokes.CutStageEstimates.cutoff_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CutStageEstimates.cutoff_jet_bound",
-      "line": 95,
-      "module": "NavierStokes.CutStageEstimates",
-      "path": "NavierStokes/CutStageEstimates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CutStageEstimates.lean#L95"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CutStageEstimates.cutoff_jet_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CutStageEstimates.cutoff_jet_bound",
+        "module": "NavierStokes.CutStageEstimates"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 95,
-        "text": "∃ C, 0 < C ∧ ∀ a, 0 ≤ a → ∀ x ∈ S, ‖iteratedFDeriv ℝ m (fun y => SmoothCutoffs.scaledCutoff a (q y)) x‖ ≤ C * q x ^ (-(m:ℝ))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CutStageEstimates.cutoff_jet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L95",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CutStageEstimates.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 95,
+            "text": "theorem cutoff_jet_bound {U S : Set E} (hU : IsOpen U) (hSU : S ⊆ U)\n    {q : E → ℝ} (hq : ContDiffOn ℝ ∞ q U)\n    (hpos : ∀ x ∈ S, 0 < q x) (B : ℕ → ℝ)\n    (hB : ∀ k x, x ∈ S →\n      ‖iteratedFDeriv ℝ k q x‖ ≤ B k * q x ^ (1 - (k : ℝ))) (m : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ a : ℝ, 0 ≤ a → ∀ x ∈ S,\n      ‖iteratedFDeriv ℝ m (fun y => SmoothCutoffs.scaledCutoff a (q y)) x‖ ≤\n        C * q x ^ (-(m : ℝ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

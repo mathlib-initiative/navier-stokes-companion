@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.17/attributed/09.NavierStokes.PrimaryODE.FrameData.forceX",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.FrameData.forceX",
-      "line": 82,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L82"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.FrameData.forceX",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.FrameData.forceX",
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 82,
-        "text": "noncomputable def forceX (f) (z) : ℝ := -(f z 0 - d.rho z * ⟪d.frame z 0, MovingFrameODE.tail (f z)⟫_ℝ) / (1 + d.rho z ^ 2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.PrimaryODE.FrameData.forceX",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L82",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 82,
+            "text": "noncomputable def forceX (f : Q × ℝ → Space) (z : Q × ℝ) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

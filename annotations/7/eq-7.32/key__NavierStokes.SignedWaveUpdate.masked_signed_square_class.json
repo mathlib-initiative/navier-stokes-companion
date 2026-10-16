@@ -1,25 +1,27 @@
 {
-  "id": "eq-7.32/key/03.NavierStokes.SignedWaveUpdate.masked_signed_square_class",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedWaveUpdate.masked_signed_square_class",
-      "line": 1328,
-      "module": "NavierStokes.SignedWaveUpdate",
-      "path": "NavierStokes/SignedWaveUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean#L1328"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedWaveUpdate.masked_signed_square_class"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedWaveUpdate.masked_signed_square_class",
+        "module": "NavierStokes.SignedWaveUpdate"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1328,
-        "text": "(h : CovarianceControl s H T) (B κ : ℝ) (hR : ∀ i, MeanClass s (B - 1/2 - κ) (fun n x => R n x i)) (hm : UnweightedClass s 0 mask) (i : Fin 2) : MeanClass s (2*B - 2*κ) (fun n x => mask n x ^ 2 * (s.epsilon n * SignedCovariance.squareColumn (H n x) (T n x) (R n x) i))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SignedWaveUpdate.masked_signed_square_class"
+          },
+          "destination": {
+            "fragment": "L1328",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1328,
+            "text": "theorem masked_signed_square_class {s : StripData D} {H : ℕ → D → Mat2} {T R : ℕ → D → Vec2}\n    (h : CovarianceControl s H T) (B κ : ℝ)\n    (hR : ∀ i, MeanClass s (B - 1 / 2 - κ) (fun n x => R n x i))\n    {mask : ℕ → D → ℝ} (hm : UnweightedClass s 0 mask) (i : Fin 2) :\n    MeanClass s (2 * B - 2 * κ)\n      (fun n x => mask n x ^ 2 * (s.epsilon n * SignedCovariance.squareColumn (H n x) (T n x) (R n x) i))"
+          }
+        }
       }
     }
-  }
+  ]
 }

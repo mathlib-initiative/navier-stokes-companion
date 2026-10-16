@@ -1,25 +1,27 @@
 {
-  "id": "eq-C.10/key/03.NavierStokes.TrueConeLoop.FamilyChoices.amplitude_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.FamilyChoices.amplitude_bound",
-      "line": 506,
-      "module": "NavierStokes.TrueConeLoop",
-      "path": "NavierStokes/TrueConeLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L506"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.FamilyChoices.amplitude_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.FamilyChoices.amplitude_bound",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 506,
-        "text": "0 ≤ solveScale c.d (p₂ x) (varianceRoot (a x) c.delta (nominalSpeed (a x) (m x))) ∧ … < c.maxAmplitude   -- 0 ≤ μ < μ_max"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.TrueConeLoop.FamilyChoices.amplitude_bound"
+          },
+          "destination": {
+            "fragment": "L506",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 506,
+            "text": "theorem FamilyChoices.amplitude_bound {X : Type*} {a m p₁ p₂ : X → ℝ} {K B : Set X}\n    (c : FamilyChoices a m p₁ p₂ K B) {x : X} (hx : x ∈ K) :\n    0 ≤ solveScale c.d (p₂ x) (varianceRoot (a x) c.delta (nominalSpeed (a x) (m x))) ∧\n      solveScale c.d (p₂ x) (varianceRoot (a x) c.delta (nominalSpeed (a x) (m x))) < c.maxAmplitude"
+          }
+        }
       }
     }
-  }
+  ]
 }

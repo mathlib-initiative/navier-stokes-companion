@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.44/attributed/04.NavierStokes.RadialHeatProfile.radialProfile_hasDerivAt_time",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialHeatProfile.radialProfile_hasDerivAt_time",
-      "line": 617,
-      "module": "NavierStokes.RadialHeatProfile",
-      "path": "NavierStokes/RadialHeatProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L617"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialHeatProfile.radialProfile_hasDerivAt_time",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialHeatProfile.radialProfile_hasDerivAt_time",
+        "module": "NavierStokes.RadialHeatProfile"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 617,
-        "text": "HasDerivAt (fun τ => radialProfile a τ r) (2 * (r ^ 2 / 2) ^ (spatialExponent a - 1) * profileJet a 1 (2 * τ / (r ^ 2 / 2))) τ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.RadialHeatProfile.radialProfile_hasDerivAt_time",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L617",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 617,
+            "text": "theorem radialProfile_hasDerivAt_time {a τ r : ℝ} (ha : 1 < a) (hτ : 0 < τ) (hr : 0 < r) :\n    HasDerivAt (fun τ => radialProfile a τ r)\n      (2 * (r ^ 2 / 2) ^ (spatialExponent a - 1) * profileJet a 1 (2 * τ / (r ^ 2 / 2))) τ"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,28 @@
 {
-  "id": "eq-p154-2/support/03.NavierStokes.ReferenceEndpointRate.exists_reference_angularStock_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceEndpointRate.exists_reference_angularStock_bound",
-      "line": 174,
-      "module": "NavierStokes.ReferenceEndpointRate",
-      "path": "NavierStokes/ReferenceEndpointRate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean#L174"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceEndpointRate.exists_reference_angularStock_bound"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceEndpointRate.exists_reference_angularStock_bound",
+        "module": "NavierStokes.ReferenceEndpointRate"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 174,
-        "text": "∃ B, 0 ≤ B ∧ ∀ q : Choice d Λ, ∀ n ≤ N, ∀ t ∈ Icc 0 (reference d hΛ hP0 hs q).finalTime, ∀ η ∈ J, |parameterJet n (reference … q).angularStock (t,η)| ≤ B — the B uniform over the amplitude choice q, which is the role the paper's M_k plays"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ReferenceEndpointRate.exists_reference_angularStock_bound"
+          },
+          "destination": {
+            "fragment": "L174",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 174,
+            "text": "theorem exists_reference_angularStock_bound (hΛ1 : 1 ≤ Λ) (hσ : 0 < σ)\n    (hscale : AxisReference.stabilityScale d.coefficients.epsilon (profileErrorConstant d) ≤ Λ)\n    (N : ℕ) : ∃ B, 0 ≤ B ∧ ∀ q : Choice d Λ, ∀ n ≤ N,\n      ∀ t ∈ Icc (0:ℝ) (reference d hΛ hP0 hs q).finalTime, ∀ η ∈ J,\n      |parameterJet n (reference d hΛ hP0 hs q).angularStock (t,η)| ≤ B"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,33 @@
 {
-  "id": "proposition-5.3/key/1.NavierStokes.AxisymmetricFields.divergence_velocity_on",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisymmetricFields.divergence_velocity_on",
-      "line": 208,
-      "module": "NavierStokes.AxisymmetricFields",
-      "path": "NavierStokes/AxisymmetricFields.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean#L208"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisymmetricFields.divergence_velocity_on",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisymmetricFields.divergence_velocity_on",
+        "module": "NavierStokes.AxisymmetricFields"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For H, K with ContDiffOn ℝ 2 on times ×ˢ univ and t ∈ times: spatialDivergence (velocity H K) t x = 0 for every x, including the axis. Instantiated at H = prefixStream, K = prefixSwirl, times = Iio 1 this is clause (ii), and it is the only route found that reaches the axis.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 208,
-        "text": "theorem divergence_velocity_on {H K : Profile} {times : Set ℝ}\n    (hH : ContDiffOn ℝ 2 H (times ×ˢ (univ : Set (ℝ × ℝ))))\n    (hK : ContDiffOn ℝ 2 K (times ×ˢ (univ : Set (ℝ × ℝ))))\n    {t : ℝ} (ht : t ∈ times) (x : Space) : spatialDivergence (velocity H K) t x = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.AxisymmetricFields.divergence_velocity_on",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For H, K with ContDiffOn ℝ 2 on times ×ˢ univ and t ∈ times: spatialDivergence (velocity H K) t x = 0 for every x, including the axis. Instantiated at H = prefixStream, K = prefixSwirl, times = Iio 1 this is clause (ii), and it is the only route found that reaches the axis.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L208",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean"
+          },
+          "snippet": {
+            "line": 208,
+            "text": "theorem divergence_velocity_on {H K : Profile} {times : Set ℝ}\n    (hH : ContDiffOn ℝ 2 H (times ×ˢ (univ : Set (ℝ × ℝ))))\n    (hK : ContDiffOn ℝ 2 K (times ×ˢ (univ : Set (ℝ × ℝ))))\n    {t : ℝ} (ht : t ∈ times) (x : Space) : spatialDivergence (velocity H K) t x = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

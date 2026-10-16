@@ -1,29 +1,31 @@
 {
-  "id": "lemma-7.1/attributed/1.NavierStokes.BasePhaseGeometry.FamilyData.modal_errors",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BasePhaseGeometry.FamilyData.modal_errors",
-      "line": 842,
-      "module": "NavierStokes.BasePhaseGeometry",
-      "path": "NavierStokes/BasePhaseGeometry.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean#L842"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BasePhaseGeometry.FamilyData.modal_errors",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BasePhaseGeometry.FamilyData.modal_errors",
+        "module": "NavierStokes.BasePhaseGeometry"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: |(a.frame i).error11 (q,v)|, |error12|, |error21|, |error22| ≤ modalConstant M u / D.scale i on the enlarged slot. By `PrimaryODE.FrameData.coefficient`, the ODE matrix in the moving eigenbasis is `modalOperator (eigenvalue) (damping) error11 error12 error21 error22` = diag(λ-d, -λ-d) + E; so these "
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 842,
-        "text": "theorem modal_errors (hh : 0 ≤ h) (hr : 0 < r0) (hM : 1 ≤ M)\n    (hu : 0 < u) (huM : u ≤ M) (hL : 1 / (2 * r0) ≤ M)\n    (hslot : 4 * r0 * ChartScales.Tg ≤ M)\n    (i : ι) (hn : LargeBand h M u (a.band i)) {q : Slow} (hq : q ∈ D.carrier i)\n    {v : ℝ} (hv : v ∈ a.slot i) :\n    |(a.frame i).error11 (q, v)| ≤ modalConstant M u / D.scale i ∧\n    |(a.frame i).error12 (q, v)| ≤ modalConstant M u / D.scale i ∧\n    |(a.frame i).error21 (q, v)| ≤ modalConstant M u / D.scale i ∧\n    |(a.frame i).error22 (q, v)| ≤ modalConstant M u / D.scale i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.BasePhaseGeometry.FamilyData.modal_errors",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: |(a.frame i).error11 (q,v)|, |error12|, |error21|, |error22| ≤ modalConstant M u / D.scale i on the enlarged slot. By `PrimaryODE.FrameData.coefficient`, the ODE matrix in the moving eigenbasis is `modalOperator (eigenvalue) (damping) error11 error12 error21 error22` = diag(λ-d, -λ-d) + E; so these "
+          },
+          "destination": {
+            "fragment": "L842",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean"
+          },
+          "snippet": {
+            "line": 842,
+            "text": "theorem modal_errors (hh : 0 ≤ h) (hr : 0 < r0) (hM : 1 ≤ M)\n    (hu : 0 < u) (huM : u ≤ M) (hL : 1 / (2 * r0) ≤ M)\n    (hslot : 4 * r0 * ChartScales.Tg ≤ M)\n    (i : ι) (hn : LargeBand h M u (a.band i)) {q : Slow} (hq : q ∈ D.carrier i)\n    {v : ℝ} (hv : v ∈ a.slot i) :\n    |(a.frame i).error11 (q, v)| ≤ modalConstant M u / D.scale i ∧\n    |(a.frame i).error12 (q, v)| ≤ modalConstant M u / D.scale i ∧\n    |(a.frame i).error21 (q, v)| ≤ modalConstant M u / D.scale i ∧\n    |(a.frame i).error22 (q, v)| ≤ modalConstant M u / D.scale i"
+          }
+        }
       }
     }
-  }
+  ]
 }

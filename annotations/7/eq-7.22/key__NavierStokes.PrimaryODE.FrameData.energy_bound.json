@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.22/key/01.NavierStokes.PrimaryODE.FrameData.energy_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.FrameData.energy_bound",
-      "line": 380,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L380"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.FrameData.energy_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.FrameData.energy_bound",
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 380,
-        "text": "⟪w, d.coefficient j z w⟫_ℝ ≤ (d.eigenvalue z - referenceDamping + (D + 4 * C) / S) * ‖w‖ ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PrimaryODE.FrameData.energy_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L380",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 380,
+            "text": "theorem FrameData.energy_bound {Q : Type} (d : FrameData Q) (z : Q × ℝ)\n    {j : ℤ} (hj : j ≠ 0) {referenceDamping C D S : ℝ}\n    (hlam : 0 ≤ d.eigenvalue z) (hν : 0 ≤ d.viscosity z)\n    (hνerr : referenceDamping - D / S ≤ d.viscosity z)\n    (herr : |d.error11 z| ≤ C / S ∧ |d.error12 z| ≤ C / S ∧\n      |d.error21 z| ≤ C / S ∧ |d.error22 z| ≤ C / S) (w : State) :\n    ⟪w, d.coefficient j z w⟫_ℝ ≤\n      (d.eigenvalue z - referenceDamping + (D + 4 * C) / S) * ‖w‖ ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

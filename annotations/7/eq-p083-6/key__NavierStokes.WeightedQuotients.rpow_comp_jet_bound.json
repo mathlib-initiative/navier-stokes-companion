@@ -1,23 +1,25 @@
 {
-  "id": "eq-p083-6/key/02.NavierStokes.WeightedQuotients.rpow_comp_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedQuotients.rpow_comp_jet_bound",
-      "line": 120,
-      "module": "NavierStokes.WeightedQuotients",
-      "path": "NavierStokes/WeightedQuotients.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedQuotients.lean#L120"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedQuotients.rpow_comp_jet_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedQuotients.rpow_comp_jet_bound",
+        "module": "NavierStokes.WeightedQuotients"
       },
-      "snippet": {
-        "line": 120,
-        "text": "‖iteratedFDeriv ℝ n (fun y => f y ^ p) x‖ ≤ n.factorial * coeffBound p n * B ^ (2 * n + 1), for 0 < f on an open s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.WeightedQuotients.rpow_comp_jet_bound"
+          },
+          "destination": {
+            "fragment": "L120",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedQuotients.lean"
+          },
+          "snippet": {
+            "line": 120,
+            "text": "theorem rpow_comp_jet_bound {f : E → ℝ} {s : Set E} (hs : IsOpen s)\n    (hf : ContDiffOn ℝ ∞ f s) (hfpos : ∀ x ∈ s, 0 < f x)\n    {x : E} (hx : x ∈ s) (p : ℝ) (n : ℕ) {B : ℝ} (hB : 1 ≤ B)\n    (hp : f x ^ p ≤ B) (hi : (f x)⁻¹ ≤ B)\n    (hjet : ∀ i, 1 ≤ i → i ≤ n → ‖iteratedFDeriv ℝ i f x‖ ≤ B) :\n    ‖iteratedFDeriv ℝ n (fun y => f y ^ p) x‖ ≤\n      n.factorial * coeffBound p n * B ^ (2 * n + 1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

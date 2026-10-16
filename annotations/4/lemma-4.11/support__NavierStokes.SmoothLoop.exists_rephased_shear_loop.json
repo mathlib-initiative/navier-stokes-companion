@@ -1,31 +1,53 @@
 {
-  "id": "lemma-4.11/support/3.NavierStokes.SmoothLoop.exists_rephased_shear_loop",
-  "location": {
-    "page": 38,
-    "rect": [0.12854, 0.757851, 0.745098, 0.107438]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothLoop.exists_rephased_shear_loop",
-      "line": 498,
-      "module": "NavierStokes.SmoothLoop",
-      "path": "NavierStokes/SmoothLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean#L498"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothLoop.exists_rephased_shear_loop",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 38,
+        "rect": [0.12854, 0.757851, 0.745098, 0.107438]
       },
-      "region": "lemma-4.11@p038",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 498,
-        "text": "theorem exists_rephased_shear_loop (t : ℝ → ℝ) (a m ρ v : ℝ)\n    (ha : 0 < a) (hv : 0 < v) (ht : ContDiff ℝ (∞ : WithTop ℕ∞) t)\n    (hperiodic : Function.Periodic t (2 * Real.pi))\n    (hmean : angularMean t = m)\n    (hvar : angularMean (fun θ => (t θ - m) ^ 2) = ρ / a)\n    (hspeed : v = a * (1 + m ^ 2) + ρ) :\n    ∃ A C : ℝ → ℝ,\n      ContDiff ℝ (∞ : WithTop ℕ∞) A ∧ ContDiff ℝ (∞ : WithTop ℕ∞) C ∧\n      Function.Periodic A 1 ∧ Function.Periodic C 1 ∧\n      (∫ φ in (0 : ℝ)..1, A φ) = a ∧ (∫ φ in (0 : ℝ)..1, C φ) = a * m ∧\n      ∀ φ, 0 < A φ ∧ A φ * (1 + (C φ / A φ) ^ 2) = v"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.11@p038"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 39,
+        "rect": [0.12854, 0.102479, 0.745098, 0.102479]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.11@p039"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SmoothLoop.exists_rephased_shear_loop",
+        "module": "NavierStokes.SmoothLoop"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.SmoothLoop.exists_rephased_shear_loop",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L498",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 498,
+            "text": "theorem exists_rephased_shear_loop (t : ℝ → ℝ) (a m ρ v : ℝ)\n    (ha : 0 < a) (hv : 0 < v) (ht : ContDiff ℝ (∞ : WithTop ℕ∞) t)\n    (hperiodic : Function.Periodic t (2 * Real.pi))\n    (hmean : angularMean t = m)\n    (hvar : angularMean (fun θ => (t θ - m) ^ 2) = ρ / a)\n    (hspeed : v = a * (1 + m ^ 2) + ρ) :\n    ∃ A C : ℝ → ℝ,\n      ContDiff ℝ (∞ : WithTop ℕ∞) A ∧ ContDiff ℝ (∞ : WithTop ℕ∞) C ∧\n      Function.Periodic A 1 ∧ Function.Periodic C 1 ∧\n      (∫ φ in (0 : ℝ)..1, A φ) = a ∧ (∫ φ in (0 : ℝ)..1, C φ) = a * m ∧\n      ∀ φ, 0 < A φ ∧ A φ * (1 + (C φ / A φ) ^ 2) = v"
+          }
+        }
+      }
+    }
+  ]
 }

@@ -1,25 +1,28 @@
 {
-  "id": "eq-p119-1/support/04.NavierStokes.OffplaneJetExtensions.extension_of_local_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OffplaneJetExtensions.extension_of_local_jets",
-      "line": 113,
-      "module": "NavierStokes.OffplaneJetExtensions",
-      "path": "NavierStokes/OffplaneJetExtensions.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OffplaneJetExtensions.lean#L113"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OffplaneJetExtensions.extension_of_local_jets"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OffplaneJetExtensions.extension_of_local_jets",
+        "module": "NavierStokes.OffplaneJetExtensions"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 113,
-        "text": "(hr : 0 < r) (hf : ContDiffOn ℝ ∞ f (pastBall x r)) (hb : ∀ m, ∃ C, ∀ w ∈ pastBall x r, ‖iteratedFDeriv ℝ m f w‖ ≤ C) : Nonempty (JointResidualLimits.OneSidedExtension f x); built at line 122 from GenericEndpointExtension.extension applied to the bump-localized field g on openStrip"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.OffplaneJetExtensions.extension_of_local_jets"
+          },
+          "destination": {
+            "fragment": "L113",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OffplaneJetExtensions.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 113,
+            "text": "theorem extension_of_local_jets {f : SpaceTime → V} {x : Space} {r : ℝ} (hr : 0 < r)\n    (hf : ContDiffOn ℝ ∞ f (pastBall x r))\n    (hb : ∀ m : ℕ, ∃ C : ℝ, ∀ w ∈ pastBall x r, ‖iteratedFDeriv ℝ m f w‖ ≤ C) :\n    Nonempty (JointResidualLimits.OneSidedExtension f x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

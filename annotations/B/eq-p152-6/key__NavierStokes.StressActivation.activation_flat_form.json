@@ -1,24 +1,27 @@
 {
-  "id": "eq-p152-6/key/03.NavierStokes.StressActivation.activation_flat_form",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressActivation.activation_flat_form",
-      "line": 212
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean#L212"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressActivation.activation_flat_form",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressActivation.activation_flat_form",
+        "module": "NavierStokes.StressActivation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 212,
-        "text": "(hT : 0 < T) (κ y) : activation T κ y = (1 - κ) * FlatCutoff.edge (T ^ 2) y / stepDenominator T y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.StressActivation.activation_flat_form",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L212"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 212,
+            "text": "theorem activation_flat_form {T : ℝ} (hT : 0 < T) (κ y : ℝ) :\n    activation T κ y = (1 - κ) * FlatCutoff.edge (T ^ 2) y / stepDenominator T y"
+          }
+        }
       }
     }
-  }
+  ]
 }

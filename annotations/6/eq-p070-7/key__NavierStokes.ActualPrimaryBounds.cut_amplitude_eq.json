@@ -1,26 +1,28 @@
 {
-  "id": "eq-p070-7/key/07.NavierStokes.ActualPrimaryBounds.cut_amplitude_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPrimaryBounds.cut_amplitude_eq",
-      "line": 1490,
-      "module": "NavierStokes.ActualPrimaryBounds",
-      "path": "NavierStokes/ActualPrimaryBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryBounds.lean#L1490"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPrimaryBounds.cut_amplitude_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPrimaryBounds.cut_amplitude_eq",
+        "module": "NavierStokes.ActualPrimaryBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1490,
-        "text": "x ∈ fullStrip.domain → (cutCoefficients l).amplitude n x = periodized (A h) cutNativeVelocity l n (nativeOfFull x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.ActualPrimaryBounds.cut_amplitude_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1490",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1490,
+            "text": "theorem cut_amplitude_eq (l : SignedLabel B N0) (n : ℕ) {x : ActualPrimary.FullPoint}\n    (hx : x ∈ fullStrip.domain) :\n    (cutCoefficients l).amplitude n x =\n      periodized (CoordinateAlgebra.A ActualPrimary.h) cutNativeVelocity l n (nativeOfFull x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

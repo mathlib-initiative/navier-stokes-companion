@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.14/key/01.NavierStokes.OutgoingPulseBounds.paper_prefix_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingPulseBounds.paper_prefix_bounds",
-      "line": 1280,
-      "module": "NavierStokes.OutgoingPulseBounds",
-      "path": "NavierStokes/OutgoingPulseBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingPulseBounds.lean#L1280"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingPulseBounds.paper_prefix_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingPulseBounds.paper_prefix_bounds",
+        "module": "NavierStokes.OutgoingPulseBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1280,
-        "text": "∃ C > 0, ∀ lam ≤ 1/120, let c := paperParameters P m lam; pulseAmplitude c ≤ C*lam^30 ∧ ∀ amp eta, |eta| ≤ 1 → |massMoment c amp eta c.pulseStart / (exp c.pulseStart * angular c.P c.dropLength c.lam (c.pulseStart, eta))| ≤ C*lam^29 ∧ |deriv (fun t => massMoment c amp t c.pulseStart / (exp c.pulseStart * angular … (c.pulseStart, t))) eta| ≤ C*lam^29"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.OutgoingPulseBounds.paper_prefix_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1280",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingPulseBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1280,
+            "text": "theorem paper_prefix_bounds (P m : ℝ) (hP : 0 < P) (hm : 0 < m) :\n    ∃ C : ℝ, 0 < C ∧ ∀ (lam : ℝ) (hlam : 0 < lam) (hsmall : lam ≤ 1 / 120),\n      let c"
+          }
+        }
       }
     }
-  }
+  ]
 }

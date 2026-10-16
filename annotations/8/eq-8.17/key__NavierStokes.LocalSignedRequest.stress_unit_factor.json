@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.17/key/05.NavierStokes.LocalSignedRequest.stress_unit_factor",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalSignedRequest.stress_unit_factor",
-      "line": 755,
-      "module": "NavierStokes.LocalSignedRequest",
-      "path": "NavierStokes/LocalSignedRequest.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean#L755"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalSignedRequest.stress_unit_factor",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalSignedRequest.stress_unit_factor",
+        "module": "NavierStokes.LocalSignedRequest"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 755,
-        "text": "Q ^ (2*A) * (Q ^ (-(2*A + 1/2)) / Q ^ (-(1/2 : ℝ))) = 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.LocalSignedRequest.stress_unit_factor",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L755",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalSignedRequest.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 755,
+            "text": "theorem stress_unit_factor {Q : ℝ} (hQ : 0 < Q) (A : ℝ) :\n    Q ^ (2 * A) * (Q ^ (-(2 * A + 1 / 2)) / Q ^ (-(1 / 2 : ℝ))) = 1"
+          }
+        }
       }
     }
-  }
+  ]
 }

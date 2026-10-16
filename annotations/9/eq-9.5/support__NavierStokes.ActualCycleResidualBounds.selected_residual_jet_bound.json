@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.5/support/14.NavierStokes.ActualCycleResidualBounds.selected_residual_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCycleResidualBounds.selected_residual_jet_bound",
-      "line": 915,
-      "module": "NavierStokes.ActualCycleResidualBounds",
-      "path": "NavierStokes/ActualCycleResidualBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean#L915"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCycleResidualBounds.selected_residual_jet_bound",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCycleResidualBounds.selected_residual_jet_bound",
+        "module": "NavierStokes.ActualCycleResidualBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 915,
-        "text": "physical bound ‖iteratedFDeriv ℝ m (residual u P) w‖ ≤ C * physicalQ h w ^ (gain - physicalLoss h β m) for the full residual; lines 939-945 treat the edge with realization_native_smooth + jet_bound_at_closure"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "14.NavierStokes.ActualCycleResidualBounds.selected_residual_jet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L915",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleResidualBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 915,
+            "text": "theorem selected_residual_jet_bound {a b h gain β : ℝ} {N Δ : ℕ} {gap : ℕ → ℕ}\n    {U V : Set Cylinder} {S : Set SpaceTime} {c : Context Point} {s : State Point}\n    {p₀ : ℕ → Cylinder → ℝ} {u : VelocityField} {P : PressureField}\n    (r : StateRealization h N gap U c s p₀ u P)\n    (g : SelectedGeometry a b h N Δ gap U V S)\n    (hh : 0 < h) (hh1 : h < 1/2) (ha : 0 < a) (hN : 4 ≤ N)\n    (hf : NativeBounds N V gain (fun m => β * m)\n      (fun (_ : Unit) => LiftedMeanResidual.fullResidual c s)) (m : ℕ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ w, w ∈ preterminal → |w.1| ≤ 1 → physicalQ h w ≤ ChartScales.Q N →\n      w ∈ S → ‖iteratedFDeriv ℝ m (residual u P) w‖ ≤\n        C * physicalQ h w ^ (gain - physicalLoss h β m)"
+          }
+        }
       }
     }
-  }
+  ]
 }

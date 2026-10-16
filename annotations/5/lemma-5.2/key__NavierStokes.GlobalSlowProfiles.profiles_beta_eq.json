@@ -1,31 +1,33 @@
 {
-  "id": "lemma-5.2/key/1.NavierStokes.GlobalSlowProfiles.profiles_beta_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_beta_eq",
-      "line": 1062,
-      "module": "NavierStokes.GlobalSlowProfiles",
-      "path": "NavierStokes/GlobalSlowProfiles.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1062"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.profiles_beta_eq",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.profiles_beta_eq",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: (profiles s n).beta = betaFromU d lam (profiles s n).axial: the globalized profile satisfies the V_n/X formula of (5.2) everywhere, not only on the inner region.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 1062,
-        "text": "theorem profiles_beta_eq {S : Set ℝ} {h C : ℝ} (s : Scheme S h C) {n : ℕ} (hn : 0 < n) :\n    (profiles s n).beta = betaFromU s.domain (AxisSourceRegularity.slowOrder h n) (profiles s n).axial"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.GlobalSlowProfiles.profiles_beta_eq",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: (profiles s n).beta = betaFromU d lam (profiles s n).axial: the globalized profile satisfies the V_n/X formula of (5.2) everywhere, not only on the inner region.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1062",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean"
+          },
+          "snippet": {
+            "line": 1062,
+            "text": "theorem profiles_beta_eq {S : Set ℝ} {h C : ℝ} (s : Scheme S h C) {n : ℕ} (hn : 0 < n) :\n    (profiles s n).beta = betaFromU s.domain (AxisSourceRegularity.slowOrder h n) (profiles s n).axial"
+          }
+        }
       }
     }
-  }
+  ]
 }

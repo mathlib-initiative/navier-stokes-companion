@@ -1,25 +1,28 @@
 {
-  "id": "eq-p081-3/attributed/03.NavierStokes.PrimaryODE.primary_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.primary_bounds",
-      "line": 433,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L433"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.primary_bounds"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.primary_bounds",
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 433,
-        "text": "(Real.exp (-(D + 2*C) * L) / 2) * P (p, v) ≤ radialPrimary hab d P p v ∧ radialPrimary hab d P p v ≤ (3 * Real.exp ((D + 2*C) * L) / 2) * P (p, v) — the specialization to the constructed primary that the paper draws from this display (cP ≤ x ≤ CP of (7.21))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.PrimaryODE.primary_bounds"
+          },
+          "destination": {
+            "fragment": "L433",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 433,
+            "text": "theorem primary_bounds (hab : a ≤ b) (d : FrameData Q) (P : Q × ℝ → ℝ)\n    {U : Set Q} (hA : ContinuousOn (d.coefficient 1) (U ×ˢ Icc a b))\n    {p : Q} (hp : p ∈ U) {S C D L lammin : ℝ}\n    (hlammin : 0 < lammin) (hC : 0 ≤ C) (hD : 0 ≤ D) (hS : 0 < S)\n    (hlarge : 2 * GrowingMode.coneConstant lammin C ≤ S) (hslot : b - a ≤ L * S)\n    (referenceDamping : ℝ → ℝ)\n    (hlam : ∀ v ∈ Icc a b, lammin ≤ d.eigenvalue (p, v))\n    (herr : ∀ v ∈ Icc a b,\n      |d.error11 (p, v)| ≤ C / S ∧ |d.error12 (p, v)| ≤ C / S ∧\n      |d.error21 (p, v)| ≤ C / S ∧ |d.error22 (p, v)| ≤ C / S)\n    (hν : ∀ v ∈ Icc a b, |d.viscosity (p, v) - referenceDamping v| ≤ D / S)\n    (hPpos : ∀ v ∈ Icc a b, 0 < P (p, v))\n    (hP : ∀ v ∈ Icc a b, HasDerivAt (fun t => P (p, t))\n      ((d.eigenvalue (p, v) - referenceDamping v) * P (p, v)) v) :\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

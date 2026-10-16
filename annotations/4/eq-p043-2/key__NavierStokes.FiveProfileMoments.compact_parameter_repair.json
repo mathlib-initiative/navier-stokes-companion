@@ -1,25 +1,27 @@
 {
-  "id": "eq-p043-2/key/02.NavierStokes.FiveProfileMoments.compact_parameter_repair",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveProfileMoments.compact_parameter_repair",
-      "line": 805,
-      "module": "NavierStokes.FiveProfileMoments",
-      "path": "NavierStokes/FiveProfileMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L805"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveProfileMoments.compact_parameter_repair"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveProfileMoments.compact_parameter_repair",
+        "module": "NavierStokes.FiveProfileMoments"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 805,
-        "text": "∀ p ∈ S, ‖c p‖ ≤ K * ‖d p‖ ∧ ∀ k ≤ N, ∀ x, |iteratedDeriv k (fun y => A p * u P (c p) y) x| ≤ K * ‖d p‖ ∧ |iteratedDeriv k (fun y => A p * e P (c p) y) x| ≤ K * ‖d p‖"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.FiveProfileMoments.compact_parameter_repair"
+          },
+          "destination": {
+            "fragment": "L805",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 805,
+            "text": "theorem compact_parameter_repair (P : Patch) (b : ℝ) (hb : GoodExponent b)\n    (S : Set ℝ) (hS : IsCompact S) (A G : ℝ → ℝ)\n    (hA : ContDiff ℝ ∞ A) (hG : ContDiff ℝ ∞ G) (hApos : ∀ p, 0 < A p) (N : ℕ) :\n    ∃ ε K : ℝ, 0 < ε ∧ 0 < K ∧ ∀ d : ℝ → Debt,\n      ContDiff ℝ ∞ d → (∀ p ∈ S, ‖d p‖ < ε) →\n      ∃ (c : ℝ → Coeff) (V : Set ℝ), IsOpen V ∧ S ⊆ V ∧ ContDiffOn ℝ ∞ c V ∧\n        (∀ p ∈ V, physicalMoments P b (A p) (G p) (c p) = d p ∧\n          ∀ x : ℝ, 0 < x → 0 < physicalE P b (A p) (c p) x) ∧\n        ∀ p ∈ S, ‖c p‖ ≤ K * ‖d p‖ ∧ ∀ k ≤ N, ∀ x : ℝ,\n          |iteratedDeriv k (fun y => A p * u P (c p) y) x| ≤ K * ‖d p‖ ∧\n          |iteratedDeriv k (fun y => A p * e P (c p) y) x| ≤ K * ‖d p‖"
+          }
+        }
       }
     }
-  }
+  ]
 }

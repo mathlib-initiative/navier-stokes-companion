@@ -1,29 +1,31 @@
 {
-  "id": "proposition-5.5/key/0.NavierStokes.FinalSlowBase.exists_final_base",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FinalSlowBase.exists_final_base",
-      "line": 639,
-      "module": "NavierStokes.FinalSlowBase",
-      "path": "NavierStokes/FinalSlowBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FinalSlowBase.lean#L639"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FinalSlowBase.exists_final_base",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: Omnibus existence theorem for the final slow base: smoothness (ContDiffOn ℝ ∞) of vectorPotential, velocity, pressure, stressForce and error on BaseResidual.past; velocity = spatialCurl vectorPotential and spatialDivergence (velocity ...) t x = 0 for t < 1; navierStokesResidual (velocity ...) (press"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FinalSlowBase.exists_final_base",
+        "module": "NavierStokes.FinalSlowBase"
       },
       "role": "key",
-      "snippet": {
-        "line": 639,
-        "text": "theorem exists_final_base (upper : ℝ) (B : ℕ) :\n    ∃ (F : OutgoingProfile.Profile) (W : NominalProfile.Witness F)\n      (H : NominalConeAssembly.Certificate W)\n      (ld : ModulatedProfileAssembly.LoopData W) (v : ModulatedProfileAssembly.Witness ld),\n      LeadingStressWeights.FullTrueCone v ∧\n      SmoothCoefficients (coefficients H v) ∧\n      BaseResidual.FiniteIdentities F.data.h W.axis.normalization (coefficients H v) (profileSequence H v) ∧\n      B ≤ scales H v upper B 0 ∧\n      AdmissibleScales F.data.h (coefficientBundle W.axis.normalization (coefficients H v))\n        (innerBox 0 (boxRadius W upper)) (scales H v upper B) ∧\n      AdmissibleScales F.data.h\n        (BaseResidual.weightedBundle W.axis.normalization (coefficients H v) (weight W))\n        (innerBox 0 (boxRadius W upper)) (scales H v upper B) ∧\n      ActiveAnnulusWeight.WeightedBounds (Icc (-1 : ℝ) 1)\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.FinalSlowBase.exists_final_base",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: Omnibus existence theorem for the final slow base: smoothness (ContDiffOn ℝ ∞) of vectorPotential, velocity, pressure, stressForce and error on BaseResidual.past; velocity = spatialCurl vectorPotential and spatialDivergence (velocity ...) t x = 0 for t < 1; navierStokesResidual (velocity ...) (press"
+          },
+          "destination": {
+            "fragment": "L639",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FinalSlowBase.lean"
+          },
+          "snippet": {
+            "line": 639,
+            "text": "theorem exists_final_base (upper : ℝ) (B : ℕ) :\n    ∃ (F : OutgoingProfile.Profile) (W : NominalProfile.Witness F)\n      (H : NominalConeAssembly.Certificate W)\n      (ld : ModulatedProfileAssembly.LoopData W) (v : ModulatedProfileAssembly.Witness ld),\n      LeadingStressWeights.FullTrueCone v ∧\n      SmoothCoefficients (coefficients H v) ∧\n      BaseResidual.FiniteIdentities F.data.h W.axis.normalization (coefficients H v) (profileSequence H v) ∧\n      B ≤ scales H v upper B 0 ∧\n      AdmissibleScales F.data.h (coefficientBundle W.axis.normalization (coefficients H v))\n        (innerBox 0 (boxRadius W upper)) (scales H v upper B) ∧\n      AdmissibleScales F.data.h\n        (BaseResidual.weightedBundle W.axis.normalization (coefficients H v) (weight W))\n        (innerBox 0 (boxRadius W upper)) (scales H v upper B) ∧\n      ActiveAnnulusWeight.WeightedBounds (Icc (-1 : ℝ) 1)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

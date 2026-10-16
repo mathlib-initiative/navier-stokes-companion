@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.34/key/01.NavierStokes.NominalProfile.ideal_rows_moments",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalProfile.ideal_rows_moments",
-      "line": 1401,
-      "module": "NavierStokes.NominalProfile",
-      "path": "NavierStokes/NominalProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L1401"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalProfile.ideal_rows_moments",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalProfile.ideal_rows_moments",
+        "module": "NavierStokes.NominalProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1401,
-        "text": "(hr : 0 ≤ r) : moments (fun p => idealU p.2) (idealE F) r eta = manuscriptIdealRows F r eta  -- the five integrals from 0 of the reference pair U0 = 4η, E0 = P·shape η·x^(1/10), every r ≥ 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.NominalProfile.ideal_rows_moments",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1401",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1401,
+            "text": "theorem ideal_rows_moments (F : Profile) {r : ℝ} (hr : 0 ≤ r) (eta : ℝ) :\n    moments (fun p => idealU p.2) (idealE F) r eta = manuscriptIdealRows F r eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,30 +1,32 @@
 {
-  "id": "proposition-4.2/key/0.NavierStokes.LeadingStress.navierStokesResidual_tangential",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStress.navierStokesResidual_tangential",
-      "line": 571,
-      "module": "NavierStokes.LeadingStress",
-      "path": "NavierStokes/LeadingStress.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean#L571"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStress.navierStokesResidual_tangential",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0<h<1/2, t<1, x off the axis, inner point in the domain and P.f ≠ 0: angularComponent x (ProblemStatement.navierStokesResidual (physicalVelocity P h) (physicalPressure P h) t x) + thetaAxialViscosity P h (profilePoint t x) = -radialDivergence 2 (physicalStressTheta P h) (profilePoint t x), and (",
-        "status": "unconfirmed",
-        "verdict": "faithful"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStress.navierStokesResidual_tangential",
+        "module": "NavierStokes.LeadingStress"
       },
       "role": "key",
-      "snippet": {
-        "line": 571,
-        "text": "theorem navierStokesResidual_tangential {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {t : ℝ} {x : ProblemStatement.Space} (ht : t < 1)\n    (hs : 0 < AxisymmetricFields.radialEnergy x)\n    (hw : inner h (AxisymmetricFields.profilePoint t x) ∈ Ω.carrier)\n    (hf : P.f (inner h (AxisymmetricFields.profilePoint t x)) ≠ 0) :\n    (angularComponent x (ProblemStatement.navierStokesResidual\n        (physicalVelocity P h) (physicalPressure P h) t x) +\n        thetaAxialViscosity P h (AxisymmetricFields.profilePoint t x) =\n      -radialDivergence 2 (physicalStressTheta P h) (AxisymmetricFields.profilePoint t x)) ∧\n    ((ProblemStatement.navierStokesResidual (physicalVelocity P h) (physicalPressure P h) t x) 2 +\n        axialAxialViscosity P h (AxisymmetricFields.profilePoint t x) =\n      -radialDivergence 1 (physicalStressAxial P h) (AxisymmetricFields.profilePoint t x))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.LeadingStress.navierStokesResidual_tangential",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For 0<h<1/2, t<1, x off the axis, inner point in the domain and P.f ≠ 0: angularComponent x (ProblemStatement.navierStokesResidual (physicalVelocity P h) (physicalPressure P h) t x) + thetaAxialViscosity P h (profilePoint t x) = -radialDivergence 2 (physicalStressTheta P h) (profilePoint t x), and (",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L571",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean"
+          },
+          "snippet": {
+            "line": 571,
+            "text": "theorem navierStokesResidual_tangential {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {t : ℝ} {x : ProblemStatement.Space} (ht : t < 1)\n    (hs : 0 < AxisymmetricFields.radialEnergy x)\n    (hw : inner h (AxisymmetricFields.profilePoint t x) ∈ Ω.carrier)\n    (hf : P.f (inner h (AxisymmetricFields.profilePoint t x)) ≠ 0) :\n    (angularComponent x (ProblemStatement.navierStokesResidual\n        (physicalVelocity P h) (physicalPressure P h) t x) +\n        thetaAxialViscosity P h (AxisymmetricFields.profilePoint t x) =\n      -radialDivergence 2 (physicalStressTheta P h) (AxisymmetricFields.profilePoint t x)) ∧\n    ((ProblemStatement.navierStokesResidual (physicalVelocity P h) (physicalPressure P h) t x) 2 +\n        axialAxialViscosity P h (AxisymmetricFields.profilePoint t x) =\n      -radialDivergence 1 (physicalStressAxial P h) (AxisymmetricFields.profilePoint t x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

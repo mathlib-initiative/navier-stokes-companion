@@ -1,29 +1,31 @@
 {
-  "id": "lemma-7.1/attributed/1.NavierStokes.BasePhaseGeometry.FamilyData.phase_estimates",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BasePhaseGeometry.FamilyData.phase_estimates",
-      "line": 732,
-      "module": "NavierStokes.BasePhaseGeometry",
-      "path": "NavierStokes/BasePhaseGeometry.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean#L732"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BasePhaseGeometry.FamilyData.phase_estimates",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BasePhaseGeometry.FamilyData.phase_estimates",
+        "module": "NavierStokes.BasePhaseGeometry"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ‖a.phase.normal i (q,v) - MovingFrameODE.pack (B i * slope i (q,v)) (B i • K i)‖ ≤ phaseConstant M / D.scale i ∧ ‖a.phase.velocity i (q,v)‖ ≤ phaseConstant M / D.scale i, for every label i with LargeBand, every q in the chart carrier and every v in the enlarged slot Ioo(-L, 2L). This is exactly (7.9"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 732,
-        "text": "theorem phase_estimates (hh : 0 ≤ h) (hr : 0 < r0) (hM : 1 ≤ M)\n    (hu : |u| ≤ M) (hL : 1 / (2 * r0) ≤ M) (hslot : 4 * r0 * ChartScales.Tg ≤ M)\n    (i : ι) (hn : LargeBand h M u (a.band i)) {q : Slow} (hq : q ∈ D.carrier i)\n    {v : ℝ} (hv : v ∈ a.slot i) :\n    ‖a.phase.normal i (q, v) - MovingFrameODE.pack (a.B i * a.slope i (q, v)) (a.B i • a.K i)‖ ≤\n      phaseConstant M / D.scale i ∧\n    ‖a.phase.velocity i (q, v)‖ ≤ phaseConstant M / D.scale i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.BasePhaseGeometry.FamilyData.phase_estimates",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: ‖a.phase.normal i (q,v) - MovingFrameODE.pack (B i * slope i (q,v)) (B i • K i)‖ ≤ phaseConstant M / D.scale i ∧ ‖a.phase.velocity i (q,v)‖ ≤ phaseConstant M / D.scale i, for every label i with LargeBand, every q in the chart carrier and every v in the enlarged slot Ioo(-L, 2L). This is exactly (7.9"
+          },
+          "destination": {
+            "fragment": "L732",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean"
+          },
+          "snippet": {
+            "line": 732,
+            "text": "theorem phase_estimates (hh : 0 ≤ h) (hr : 0 < r0) (hM : 1 ≤ M)\n    (hu : |u| ≤ M) (hL : 1 / (2 * r0) ≤ M) (hslot : 4 * r0 * ChartScales.Tg ≤ M)\n    (i : ι) (hn : LargeBand h M u (a.band i)) {q : Slow} (hq : q ∈ D.carrier i)\n    {v : ℝ} (hv : v ∈ a.slot i) :\n    ‖a.phase.normal i (q, v) - MovingFrameODE.pack (a.B i * a.slope i (q, v)) (a.B i • a.K i)‖ ≤\n      phaseConstant M / D.scale i ∧\n    ‖a.phase.velocity i (q, v)‖ ≤ phaseConstant M / D.scale i"
+          }
+        }
       }
     }
-  }
+  ]
 }

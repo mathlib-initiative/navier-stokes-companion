@@ -1,31 +1,33 @@
 {
-  "id": "proposition-B.5/attributed/1.NavierStokes.TransitionRamp.physical_radial_equations",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TransitionRamp.physical_radial_equations",
-      "line": 1152,
-      "module": "NavierStokes.TransitionRamp",
-      "path": "NavierStokes/TransitionRamp.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TransitionRamp.lean#L1152"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TransitionRamp.physical_radial_equations",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TransitionRamp.physical_radial_equations",
+        "module": "NavierStokes.TransitionRamp"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: p.1 · radialPartial (R.physicalU T κ w₁) p = axialSlope T κ R.bigTime w₁ R.axialStock (R.logPoint p), together with the companion log-amplitude equation; combined with axialSlope_after this gives X ∂_X U = 0 past the shutoff radius.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1152,
-        "text": "theorem physical_radial_equations {T κ w₁ w₂ : ℝ} (hT : 0 < T)\n    (hb : δ ≤ (ofNatural F hΛ hsmall hδ hδT hP0).bigTime)\n    (hw₁ : 0 < w₁) (hw₂ : 0 < w₂) {p : Point}\n    (hη : p.2 ∈ parameterInterval) (hX : 0 < p.1) :\n    let R"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TransitionRamp.physical_radial_equations",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: p.1 · radialPartial (R.physicalU T κ w₁) p = axialSlope T κ R.bigTime w₁ R.axialStock (R.logPoint p), together with the companion log-amplitude equation; combined with axialSlope_after this gives X ∂_X U = 0 past the shutoff radius.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1152",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TransitionRamp.lean"
+          },
+          "snippet": {
+            "line": 1152,
+            "text": "theorem physical_radial_equations {T κ w₁ w₂ : ℝ} (hT : 0 < T)\n    (hb : δ ≤ (ofNatural F hΛ hsmall hδ hδT hP0).bigTime)\n    (hw₁ : 0 < w₁) (hw₂ : 0 < w₂) {p : Point}\n    (hη : p.2 ∈ parameterInterval) (hX : 0 < p.1) :\n    let R"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,29 +1,31 @@
 {
-  "id": "definition-3.2/key/1.NavierStokes.SlowBorelBase.baseVelocity_smooth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowBorelBase.baseVelocity_smooth",
-      "line": 1194,
-      "module": "NavierStokes.SlowBorelBase",
-      "path": "NavierStokes/SlowBorelBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean#L1194"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowBorelBase.baseVelocity_smooth",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowBorelBase.baseVelocity_smooth",
+        "module": "NavierStokes.SlowBorelBase"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ContDiffOn ℝ ∞ (baseVelocity a h C d) (Iio 1 ×ˢ (univ : Set Space)): the constructed axisymmetric background velocity (curl of streamFactor, of homogeneity -A, and swirlPotential, of homogeneity 1/2-A) is C^∞ on the whole Cartesian slab t < 1, including r = 0. This is clause (i) for the velocity, wi"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 1194,
-        "text": "theorem baseVelocity_smooth {a : ℕ → ℕ} (ha : StrictMono a) {h : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) {d : Coefficients} (hd : SmoothCoefficients d) (C : ℝ) :\n    ContDiffOn ℝ ∞ (baseVelocity a h C d) (Iio 1 ×ˢ (univ : Set ProblemStatement.Space))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SlowBorelBase.baseVelocity_smooth",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: ContDiffOn ℝ ∞ (baseVelocity a h C d) (Iio 1 ×ˢ (univ : Set Space)): the constructed axisymmetric background velocity (curl of streamFactor, of homogeneity -A, and swirlPotential, of homogeneity 1/2-A) is C^∞ on the whole Cartesian slab t < 1, including r = 0. This is clause (i) for the velocity, wi"
+          },
+          "destination": {
+            "fragment": "L1194",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean"
+          },
+          "snippet": {
+            "line": 1194,
+            "text": "theorem baseVelocity_smooth {a : ℕ → ℕ} (ha : StrictMono a) {h : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) {d : Coefficients} (hd : SmoothCoefficients d) (C : ℝ) :\n    ContDiffOn ℝ ∞ (baseVelocity a h C d) (Iio 1 ×ˢ (univ : Set ProblemStatement.Space))"
+          }
+        }
       }
     }
-  }
+  ]
 }

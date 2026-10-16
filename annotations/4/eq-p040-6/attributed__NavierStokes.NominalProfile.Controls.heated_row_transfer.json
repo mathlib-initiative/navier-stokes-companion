@@ -1,24 +1,27 @@
 {
-  "id": "eq-p040-6/attributed/05.NavierStokes.NominalProfile.Controls.heated_row_transfer",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalProfile.Controls.heated_row_transfer",
-      "line": 2021
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L2021"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalProfile.Controls.heated_row_transfer",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalProfile.Controls.heated_row_transfer",
+        "module": "NavierStokes.NominalProfile"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 2021,
-        "text": "(i : Fin 5) (background : ℝ → ℝ) (hg : IntegrableOn (fun x => density (outer) x i - background x) (Ioi 0)) : … ∧ (∫ x in Ioi 0, density (joined) x i - background x) = ∫ x in Ioi 0, density (outer) x i - background x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.NominalProfile.Controls.heated_row_transfer",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L2021"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 2021,
+            "text": "theorem heated_row_transfer {B : ℝ} (w : HeatedOutgoing.CompensationWitness F c.radius B)\n    (hsep : c.separation ≤ Real.exp (-8)) {eta : ℝ}\n    (hη : eta ∈ HeatedOutgoing.parameterDomain) (hs : SmallDebt F c.debt eta)\n    (i : Fin 5) (background : ℝ → ℝ)\n    (hg : IntegrableOn (fun x => density (fun t => HeatedOutgoing.U F c.radius (t, eta))\n      (fun t => HeatedOutgoing.E F c.radius w.coefficients (t, eta)) x i - background x) (Ioi 0)) :\n    IntegrableOn (fun x => density (fun t => c.U (t, eta))\n      (fun t => c.heatedE w.coefficients (t, eta)) x i - background x) (Ioi 0) ∧\n    (∫ x in Ioi 0, density (fun t => c.U (t, eta))\n      (fun t => c.heatedE w.coefficients (t, eta)) x i - background x) =\n    ∫ x in Ioi 0, density (fun t => HeatedOutgoing.U F c.radius (t, eta))\n      (fun t => HeatedOutgoing.E F c.radius w.coefficients (t, eta)) x i - background x"
+          }
+        }
       }
     }
-  }
+  ]
 }

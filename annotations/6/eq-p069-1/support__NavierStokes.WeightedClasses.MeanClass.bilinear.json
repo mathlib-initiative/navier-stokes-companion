@@ -1,21 +1,24 @@
 {
-  "id": "eq-p069-1/support/02.NavierStokes.WeightedClasses.MeanClass.bilinear",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedClasses.MeanClass.bilinear",
-      "line": 440
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean#L440"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedClasses.MeanClass.bilinear"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedClasses.MeanClass.bilinear",
+        "module": "NavierStokes.WeightedClasses"
       },
-      "snippet": {
-        "line": 440,
-        "text": "theorem MeanClass.bilinear (hf : MeanClass s α f) (hg : MeanClass s β g) (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1) (L : E →L[ℝ] F →L[ℝ] G) : MeanClass s (α + β) (fun n x => L (f n x) (g n x))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.WeightedClasses.MeanClass.bilinear"
+          },
+          "destination": {
+            "fragment": "L440"
+          },
+          "snippet": {
+            "line": 440,
+            "text": "theorem MeanClass.bilinear {s : StripData D} {α β : ℝ}\n    {f : ℕ → D → E} {g : ℕ → D → F}\n    (hf : MeanClass s α f) (hg : MeanClass s β g)\n    (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1) (L : E →L[ℝ] F →L[ℝ] G) :\n    MeanClass s (α + β) (fun n x => L (f n x) (g n x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

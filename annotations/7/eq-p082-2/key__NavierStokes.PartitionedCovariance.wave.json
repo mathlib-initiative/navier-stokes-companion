@@ -1,25 +1,27 @@
 {
-  "id": "eq-p082-2/key/06.NavierStokes.PartitionedCovariance.wave",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.wave",
-      "line": 88,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L88"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.wave",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.wave",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 88,
-        "text": "wave amplitude n f mode phase Y θ := amplitude * covered n f Y * Real.cos ((mode : ℝ) * θ + phase Y), with covered n f Y = TorusAverages.periodize f (covering^[n] Y)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.PartitionedCovariance.wave",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L88",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 88,
+            "text": "noncomputable def wave (amplitude : ℝ) (n : ℕ) (f : Plane → ℝ) (mode : ℤ)\n    (phase : Plane → ℝ) (Y : Plane) (θ : ℝ) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.31/key/03.NavierStokes.TailCone.actualS_uniform",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TailCone.actualS_uniform",
-      "line": 661,
-      "module": "NavierStokes.TailCone",
-      "path": "NavierStokes/TailCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TailCone.lean#L661"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TailCone.actualS_uniform",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TailCone.actualS_uniform",
+        "module": "NavierStokes.TailCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 661,
-        "text": "(hy : d.releaseStart ≤ y) (hz : … totalEnergy … = 0) : OutgoingHistories.S w Amp (y, eta) = (Real.exp y / 2) * releaseFutureEnergy d y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.TailCone.actualS_uniform",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L661",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TailCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 661,
+            "text": "theorem actualS_uniform {d : TailData} {K : ℝ} (w : ResetWitness d K)\n    {Amp : ℝ → ℝ} (ha : ContDiff ℝ ∞ Amp) (eta : ℝ) {y : ℝ}\n    (hy : d.releaseStart ≤ y)\n    (hz : CorrectedPulseAmplitude.totalEnergy d w.coefficients (Amp eta) eta = 0) :\n    OutgoingHistories.S w Amp (y, eta) =\n      (Real.exp y / 2) * releaseFutureEnergy d y"
+          }
+        }
       }
     }
-  }
+  ]
 }

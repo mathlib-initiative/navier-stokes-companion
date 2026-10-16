@@ -1,26 +1,28 @@
 {
-  "id": "eq-p070-7/key/05.NavierStokes.ActualPrimaryBounds.actual_input_cover",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPrimaryBounds.actual_input_cover",
-      "line": 1592,
-      "module": "NavierStokes.ActualPrimaryBounds",
-      "path": "NavierStokes/ActualPrimaryBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryBounds.lean#L1592"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPrimaryBounds.actual_input_cover",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPrimaryBounds.actual_input_cover",
+        "module": "NavierStokes.ActualPrimaryBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1592,
-        "text": "x ∈ fullStrip.domain → (∃ k, x ∈ controlCell n (l,k)) ∨ ((cutCoefficients l).amplitude n =ᶠ[𝓝 x] 0 ∧ (cutCoefficients l).pressure n =ᶠ[𝓝 x] 0); controlCell's clock clause is clockWindow.core = Icc (-r) r ×ˢ Icc 0 L_s, the uncut v-range"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ActualPrimaryBounds.actual_input_cover",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1592",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1592,
+            "text": "theorem actual_input_cover (l : SignedLabel B N0) (n : ℕ) {x : ActualPrimary.FullPoint}\n    (hx : x ∈ fullStrip.domain) :\n    (∃ k, x ∈ controlCell n (l, k)) ∨\n      ((cutCoefficients l).amplitude n =ᶠ[𝓝 x] fun _ => 0) ∧\n      ((cutCoefficients l).pressure n =ᶠ[𝓝 x] fun _ => 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

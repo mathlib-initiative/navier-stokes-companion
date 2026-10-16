@@ -1,25 +1,27 @@
 {
-  "id": "eq-p082-2/key/07.NavierStokes.CorrectionInitialization.ActualPrimary.tangentMode",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.tangentMode",
-      "line": 4600,
-      "module": "NavierStokes.CorrectionInitialization",
-      "path": "NavierStokes/CorrectionInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L4600"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionInitialization.ActualPrimary.tangentMode",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.tangentMode",
+        "module": "NavierStokes.CorrectionInitialization"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 4600,
-        "text": "tangentMode j L p Y theta i := (HarmonicCalculus.vectorMode 1 (fun z => (angularMode … j L : ℝ) * z.2 + carrier * periodicPhase j L p z.1) (fun z => commonAmplitude j L p z.1) (Y, theta) i).re"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.CorrectionInitialization.ActualPrimary.tangentMode",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L4600",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 4600,
+            "text": "noncomputable def tangentMode (j : Fin 2) (L : Label B N0) (p : PhaseCalculus.Slow)\n    (Y : TorusInverse.Plane) (theta : ℝ) : Fin 3 → ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

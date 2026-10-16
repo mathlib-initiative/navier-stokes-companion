@@ -1,26 +1,28 @@
 {
-  "id": "eq-p066-3/attributed/12.NavierStokes.PartitionedCovariance.masks_force_adjacency",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.masks_force_adjacency",
-      "line": 297,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L297"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.masks_force_adjacency",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.masks_force_adjacency",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 297,
-        "text": "physicalMask D L q x ≠ 0 → physicalMask D M q x ≠ 0 → SlotColoring.Adj D L M (with 0 < q, 1 ≤ L.1, 1 ≤ M.1, L ≠ M)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "12.NavierStokes.PartitionedCovariance.masks_force_adjacency",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L297",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 297,
+            "text": "theorem masks_force_adjacency {D q : ℝ} {x : SlotColoring.Position} {L M : SlotColoring.Label}\n    (hq : 0 < q) (hL : 1 ≤ L.1) (hM : 1 ≤ M.1) (hne : L ≠ M)\n    (hmL : physicalMask D L q x ≠ 0) (hmM : physicalMask D M q x ≠ 0) :\n    SlotColoring.Adj D L M"
+          }
+        }
       }
     }
-  }
+  ]
 }

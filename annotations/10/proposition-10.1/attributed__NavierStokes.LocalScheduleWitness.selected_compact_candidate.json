@@ -1,31 +1,33 @@
 {
-  "id": "proposition-10.1/attributed/1.NavierStokes.LocalScheduleWitness.selected_compact_candidate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalScheduleWitness.selected_compact_candidate",
-      "line": 156,
-      "module": "NavierStokes.LocalScheduleWitness",
-      "path": "NavierStokes/LocalScheduleWitness.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalScheduleWitness.lean#L156"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalScheduleWitness.selected_compact_candidate",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalScheduleWitness.selected_compact_candidate",
+        "module": "NavierStokes.LocalScheduleWitness"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: For a selected schedule a: ∃ forcing, CandidateProperties 1 (R3CompactCandidate.velocity (potentialSum a) (directSum a)) (R3CompactCandidate.pressure (pressureSum a)) forcing SpatialLocalization.supportCylinder. Supplies clauses (i), (ii) and the smoothness of Proposition 10.1 for the explicit local",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 156,
-        "text": "theorem selected_compact_candidate {a : ℕ → ℕ} (ha : Selected a) :\n    ∃ forcing : VelocityField,\n      NavierStokesR3.ProblemStatement.CandidateProperties 1\n        (R3CompactCandidate.velocity (potentialSum a) (directSum a))\n        (R3CompactCandidate.pressure (pressureSum a)) forcing\n        SpatialLocalization.supportCylinder"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LocalScheduleWitness.selected_compact_candidate",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: For a selected schedule a: ∃ forcing, CandidateProperties 1 (R3CompactCandidate.velocity (potentialSum a) (directSum a)) (R3CompactCandidate.pressure (pressureSum a)) forcing SpatialLocalization.supportCylinder. Supplies clauses (i), (ii) and the smoothness of Proposition 10.1 for the explicit local",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L156",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalScheduleWitness.lean"
+          },
+          "snippet": {
+            "line": 156,
+            "text": "theorem selected_compact_candidate {a : ℕ → ℕ} (ha : Selected a) :\n    ∃ forcing : VelocityField,\n      NavierStokesR3.ProblemStatement.CandidateProperties 1\n        (R3CompactCandidate.velocity (potentialSum a) (directSum a))\n        (R3CompactCandidate.pressure (pressureSum a)) forcing\n        SpatialLocalization.supportCylinder"
+          }
+        }
       }
     }
-  }
+  ]
 }

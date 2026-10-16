@@ -1,36 +1,57 @@
 {
-  "id": "lemma-4.4/attributed/1.NavierStokes.LeadingStressWeights.stress_eq_of_coordinates",
-  "location": {
-    "page": 28,
-    "rect": [0.12854, 0.7, 0.745098, 0.200826]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.stress_eq_of_coordinates",
-      "line": 84,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 28,
+        "rect": [0.12854, 0.7, 0.745098, 0.200826]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p028"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L84"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.stress_eq_of_coordinates",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 29,
+        "rect": [0.12854, 0.103306, 0.745098, 0.22314]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: For P : Profiles D, Q : Profiles D' at p with 0 < p.1 and Q.f p != 0: equal f, shearA, shearB, p1, p2 at p imply stress P h p = stress Q h p. The last step of the Delta T_0 = 0 clause, but only inside the axis-regular class, and it takes the shear and stock agreement as hypotheses.",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "region": "lemma-4.4@p028",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 84,
-        "text": "theorem stress_eq_of_coordinates {D D' : RadialDomain} (P : Profiles D) (Q : Profiles D')\n    (h : ℝ) {p : Point} (hX : 0 < p.1) (hQ : Q.f p ≠ 0) (hf : P.f p = Q.f p)\n    (ha : ActivationContinuation.shearA P p = ActivationContinuation.shearA Q p)\n    (hb : ActivationContinuation.shearB P p = ActivationContinuation.shearB Q p)\n    (hp1 : ReferenceBounds.p1 P h p = ReferenceBounds.p1 Q h p)\n    (hp2 : ReferenceBounds.p2 P h p = ReferenceBounds.p2 Q h p) :\n    stress P h p = stress Q h p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p029"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.stress_eq_of_coordinates",
+        "module": "NavierStokes.LeadingStressWeights"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LeadingStressWeights.stress_eq_of_coordinates",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: For P : Profiles D, Q : Profiles D' at p with 0 < p.1 and Q.f p != 0: equal f, shearA, shearB, p1, p2 at p imply stress P h p = stress Q h p. The last step of the Delta T_0 = 0 clause, but only inside the axis-regular class, and it takes the shear and stock agreement as hypotheses.",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L84",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "snippet": {
+            "line": 84,
+            "text": "theorem stress_eq_of_coordinates {D D' : RadialDomain} (P : Profiles D) (Q : Profiles D')\n    (h : ℝ) {p : Point} (hX : 0 < p.1) (hQ : Q.f p ≠ 0) (hf : P.f p = Q.f p)\n    (ha : ActivationContinuation.shearA P p = ActivationContinuation.shearA Q p)\n    (hb : ActivationContinuation.shearB P p = ActivationContinuation.shearB Q p)\n    (hp1 : ReferenceBounds.p1 P h p = ReferenceBounds.p1 Q h p)\n    (hp2 : ReferenceBounds.p2 P h p = ReferenceBounds.p2 Q h p) :\n    stress P h p = stress Q h p"
+          }
+        }
+      }
+    }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-10.11/support/04.NavierStokes.SpacetimeGluing.smoothExtension",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SpacetimeGluing.smoothExtension",
-      "line": 339,
-      "module": "NavierStokes.SpacetimeGluing",
-      "path": "NavierStokes/SpacetimeGluing.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpacetimeGluing.lean#L339"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SpacetimeGluing.smoothExtension",
-        "kind": "def"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SpacetimeGluing.smoothExtension",
+        "module": "NavierStokes.SpacetimeGluing"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 339,
-        "text": "smoothExtension T f hf = glue T f (SpatialBorelExtension.rightExtension (normalTrace T f) _ T)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.SpacetimeGluing.smoothExtension",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L339",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpacetimeGluing.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 339,
+            "text": "def smoothExtension (T : ℝ) (f : SpaceTime → V) (hf : ContDiffOn ℝ ∞ f (past T)) :\n    SpaceTime → V"
+          }
+        }
       }
     }
-  }
+  ]
 }

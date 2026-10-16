@@ -1,24 +1,28 @@
 {
-  "id": "eq-p110-5/key/06.NavierStokes.MeanIncrementBounds.axialRemainder_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanIncrementBounds.axialRemainder_mem",
-      "line": 502
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanIncrementBounds.lean#L502"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanIncrementBounds.axialRemainder_mem",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanIncrementBounds.axialRemainder_mem",
+        "lines": [502, 502],
+        "module": "NavierStokes.MeanIncrementBounds"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 502,
-        "text": "h1 := (ho.slowTime hh.axial) at H+1; h2 (line 504) radialDiv at (H+1)-κ; h3 (line 506) dz of (deltaAxialAxial + δp) at H+1; viscosity hh.axial 0 (line 508) at H+1-2κ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.MeanIncrementBounds.axialRemainder_mem",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L502"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 500,
+            "text": "theorem axialRemainder_mem {δp : Field D} (hp : MeanClass s H δp) :\n    MeanClass s (H + 1 - 2 * κ) (axialRemainder o b m h δp)"
+          }
+        }
       }
     }
-  }
+  ]
 }

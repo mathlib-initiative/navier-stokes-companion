@@ -1,26 +1,29 @@
 {
-  "id": "eq-4.24/support/10.NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
-      "line": 310,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L310"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 310,
-        "text": "∃ d m, 0 < d ∧ d < F.width ∧ d ≤ 1 ∧ 0 < m ∧ K ×ˢ Icc (0 : ℝ) d ⊆ F.domain ∧ ∀ p ∈ K, ∀ x, 0 < x → x ≤ d → m * FlatCutoff.edge c x ≤ ‖T (p,x)‖"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.ActiveAnnulusWeight.EdgeFactor.collar",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L310",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 310,
+            "text": "theorem EdgeFactor.collar {K : Set E} (hK : IsCompact K) {c : ℝ} {T : E × ℝ → V}\n    (F : EdgeFactor K c T) :\n    ∃ d m : ℝ, 0 < d ∧ d < F.width ∧ d ≤ 1 ∧ 0 < m ∧\n      K ×ˢ Icc (0 : ℝ) d ⊆ F.domain ∧\n      ∀ p ∈ K, ∀ x : ℝ, 0 < x → x ≤ d → m * FlatCutoff.edge c x ≤ ‖T (p,x)‖"
+          }
+        }
       }
     }
-  }
+  ]
 }

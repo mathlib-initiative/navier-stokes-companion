@@ -1,26 +1,28 @@
 {
-  "id": "eq-p086-2/attributed/03.NavierStokes.CurlClassBounds.cylindricalCurl_const_smul",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CurlClassBounds.cylindricalCurl_const_smul",
-      "line": 389,
-      "module": "NavierStokes.CurlClassBounds",
-      "path": "NavierStokes/CurlClassBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L389"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CurlClassBounds.cylindricalCurl_const_smul",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CurlClassBounds.cylindricalCurl_const_smul",
+        "module": "NavierStokes.CurlClassBounds"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 389,
-        "text": "theorem cylindricalCurl_const_smul (c : ℂ) (hB : ∀ i, DifferentiableAt ℝ (fun y => B y i) x) : cylindricalCurl R Vr Vθ Vz (fun y => c • B y) x = c • cylindricalCurl R Vr Vθ Vz B x  -- lets (i/K)·curl_*(coefficient) be rewritten as curl_*(C_m)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CurlClassBounds.cylindricalCurl_const_smul",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L389",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 389,
+            "text": "theorem cylindricalCurl_const_smul (R : D → ℝ) (Vr Vθ Vz : D → D) (c : ℂ)\n    {B : D → ComplexVector} {x : D} (hB : ∀ i, DifferentiableAt ℝ (fun y => B y i) x) :\n    cylindricalCurl R Vr Vθ Vz (fun y => c • B y) x = c • cylindricalCurl R Vr Vθ Vz B x"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.4/key/01.NavierStokes.OutgoingDilation.M_scaling",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingDilation.M_scaling",
-      "line": 104
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean#L104"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingDilation.M_scaling",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingDilation.M_scaling",
+        "module": "NavierStokes.OutgoingDilation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 104,
-        "text": "M F XR eta X = XR * F.M eta (X / XR)  (first factor: rho)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.OutgoingDilation.M_scaling",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L104"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 104,
+            "text": "theorem M_scaling (F : Profile) (XR eta X : ℝ) (hXR : 0 < XR) :\n    M F XR eta X = XR * F.M eta (X / XR)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-p069-4/support/03.NavierStokes.WeightedClasses.MemClass.directional",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedClasses.MemClass.directional",
-      "line": 256,
-      "module": "NavierStokes.WeightedClasses",
-      "path": "NavierStokes/WeightedClasses.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean#L256"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedClasses.MemClass.directional",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedClasses.MemClass.directional",
+        "module": "NavierStokes.WeightedClasses"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 256,
-        "text": "MemClass … f → MemClass … (fun n x => fderiv ℝ (f n) x v) — a single directional derivative, not an iterated coordinate multi-index"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.WeightedClasses.MemClass.directional",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L256",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 256,
+            "text": "theorem directional (hf : MemClass s w α f) (v : D) :\n    MemClass s w α (fun n x => _root_.fderiv ℝ (f n) x v)"
+          }
+        }
       }
     }
-  }
+  ]
 }

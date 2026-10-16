@@ -1,26 +1,28 @@
 {
-  "id": "eq-p091-3/key/04.NavierStokes.RadialAlias.sourceJet_eq_deriv_inverse_iterate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialAlias.sourceJet_eq_deriv_inverse_iterate",
-      "line": 184,
-      "module": "NavierStokes.RadialAlias",
-      "path": "NavierStokes/RadialAlias.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialAlias.lean#L184"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialAlias.sourceJet_eq_deriv_inverse_iterate",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialAlias.sourceJet_eq_deriv_inverse_iterate",
+        "module": "NavierStokes.RadialAlias"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 184,
-        "text": "sourceJet J f p = slowDeriv^[p] (J^[p] f) when slowDeriv and J commute: the interleaved (∂_U ∘ J)^p is the manuscript's ∂_U^p 𝓛^{-p}"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.RadialAlias.sourceJet_eq_deriv_inverse_iterate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L184",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialAlias.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 184,
+            "text": "theorem sourceJet_eq_deriv_inverse_iterate\n    (J : (ℝ × E → F) → (ℝ × E → F)) (f : ℝ × E → F) (p : ℕ)\n    (hcomm : Function.Commute slowDeriv J) :\n    sourceJet J f p = slowDeriv^[p] (J^[p] f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

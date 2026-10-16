@@ -1,31 +1,53 @@
 {
-  "id": "lemma-4.4/support/3.NavierStokes.LeadingStressWeights.stress_outside",
-  "location": {
-    "page": 28,
-    "rect": [0.12854, 0.7, 0.745098, 0.200826]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.stress_outside",
-      "line": 98,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L98"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.stress_outside",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 28,
+        "rect": [0.12854, 0.7, 0.745098, 0.200826]
       },
-      "region": "lemma-4.4@p028",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 98,
-        "text": "theorem stress_outside {p : Point} (hX : 0 < p.1) (hη : p.2 ∈ Icc (-1 : ℝ) 1)\n    (hout : p.1 < d.modulation.left ∨ (ModulatedProfileAssembly.repairPatch W).right < p.1) :\n    stress v.profiles F.data.h p = stress W.profiles F.data.h p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p028"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 29,
+        "rect": [0.12854, 0.103306, 0.745098, 0.22314]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p029"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.stress_outside",
+        "module": "NavierStokes.LeadingStressWeights"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.LeadingStressWeights.stress_outside",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L98",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 98,
+            "text": "theorem stress_outside {p : Point} (hX : 0 < p.1) (hη : p.2 ∈ Icc (-1 : ℝ) 1)\n    (hout : p.1 < d.modulation.left ∨ (ModulatedProfileAssembly.repairPatch W).right < p.1) :\n    stress v.profiles F.data.h p = stress W.profiles F.data.h p"
+          }
+        }
+      }
+    }
+  ]
 }

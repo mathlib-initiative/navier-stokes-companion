@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.27/key/02.NavierStokes.PartitionedCovariance.Pulse.wave_covariance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.Pulse.wave_covariance",
-      "line": 114,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L114"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.Pulse.wave_covariance",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.Pulse.wave_covariance",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 114,
-        "text": "doubleAverage (fun Y θ => wave a n (radial pulse) mode phase Y θ * wave a n (tangent pulse i) mode phase Y θ) = a^2 * nativePrefactor vr vt r * P.column ci i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PartitionedCovariance.Pulse.wave_covariance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L114",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 114,
+            "text": "theorem Pulse.wave_covariance (P : Pulse) (vr vt center : Plane)\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (ci r : ℝ) (hci : 0 < ci) (hr : 0 < r)\n    (S : Set Plane) (hS : InjOn TorusAverages.quotientPoint S)\n    (hR : support (nativePulse vr vt center hdet ci r (P.radialProfile r)) ⊆ S)\n    (hT : ∀ i, support (nativePulse vr vt center hdet ci r (P.tangentProfile r i)) ⊆ S)\n    (a : ℝ) (n : ℕ) (phase : Plane → ℝ) (mode : ℤ) (hmode : mode ≠ 0) (i : Fin 2) :\n    doubleAverage (fun Y θ =>\n      wave a n (nativePulse vr vt center hdet ci r (P.radialProfile r)) mode phase Y θ *\n      wave a n (nativePulse vr vt center hdet ci r (P.tangentProfile r i)) mode phase Y θ) =\n      a ^ 2 * nativePrefactor vr vt r * P.column ci i"
+          }
+        }
       }
     }
-  }
+  ]
 }

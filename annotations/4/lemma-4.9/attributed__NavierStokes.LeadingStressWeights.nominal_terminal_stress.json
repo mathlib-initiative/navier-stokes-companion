@@ -1,31 +1,33 @@
 {
-  "id": "lemma-4.9/attributed/1.NavierStokes.LeadingStressWeights.nominal_terminal_stress",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.nominal_terminal_stress",
-      "line": 321,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L321"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.nominal_terminal_stress",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.nominal_terminal_stress",
+        "module": "NavierStokes.LeadingStressWeights"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: The assembled nominal field W's stress on the terminal range is the terminal profile stress.",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 321,
-        "text": "theorem nominal_terminal_stress {y eta : ℝ} (hy : TerminalCone.terminalStart F.data ≤ y)\n    (hη : eta ∈ Icc (-1 : ℝ) 1) :\n    stress W.profiles F.data.h (NominalConeAssembly.chart W.controls.radius (y, eta)) =\n      TerminalEdgeFactor.profileStress (TerminalHistoryBridge.normalization F W.controls.radius)\n        F.data (TerminalHistoryBridge.shift F W.controls.radius) (eta, OutgoingTail.tailEnd F.data - y)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LeadingStressWeights.nominal_terminal_stress",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: The assembled nominal field W's stress on the terminal range is the terminal profile stress.",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L321",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "snippet": {
+            "line": 321,
+            "text": "theorem nominal_terminal_stress {y eta : ℝ} (hy : TerminalCone.terminalStart F.data ≤ y)\n    (hη : eta ∈ Icc (-1 : ℝ) 1) :\n    stress W.profiles F.data.h (NominalConeAssembly.chart W.controls.radius (y, eta)) =\n      TerminalEdgeFactor.profileStress (TerminalHistoryBridge.normalization F W.controls.radius)\n        F.data (TerminalHistoryBridge.shift F W.controls.radius) (eta, OutgoingTail.tailEnd F.data - y)"
+          }
+        }
       }
     }
-  }
+  ]
 }

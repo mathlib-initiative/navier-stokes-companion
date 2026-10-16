@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.10/attributed/06.NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
-      "line": 1065,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L1065"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 1065,
-        "text": "‖w‖ ≤ (1 + H) * ‖d.ambient z w‖ given |1 / d.eigenvector z| ≤ H — the uniform bound on the left inverse of the coordinate map B"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.PrimaryODE.FrameData.norm_le_ambient",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1065",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 1065,
+            "text": "theorem FrameData.norm_le_ambient {Q : Type} (d : FrameData Q) (z : Q × ℝ) (w : State)\n    {H : ℝ} (hne : d.eigenvector z ≠ 0) (hh : |1 / d.eigenvector z| ≤ H) :\n    ‖w‖ ≤ (1 + H) * ‖d.ambient z w‖"
+          }
+        }
       }
     }
-  }
+  ]
 }

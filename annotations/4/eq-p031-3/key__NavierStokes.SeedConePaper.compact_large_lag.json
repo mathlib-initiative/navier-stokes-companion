@@ -1,21 +1,24 @@
 {
-  "id": "eq-p031-3/key/01.NavierStokes.SeedConePaper.compact_large_lag",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SeedConePaper.compact_large_lag",
-      "line": 48
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedConePaper.lean#L48"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SeedConePaper.compact_large_lag"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SeedConePaper.compact_large_lag",
+        "module": "NavierStokes.SeedConePaper"
       },
-      "snippet": {
-        "line": 48,
-        "text": "theorem compact_large_lag {K : Set (ℝ × ℝ × ℝ)} (hK : IsCompact K) (ha : ∀ z ∈ K, 0 < z.1) …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SeedConePaper.compact_large_lag"
+          },
+          "destination": {
+            "fragment": "L48"
+          },
+          "snippet": {
+            "line": 48,
+            "text": "theorem compact_large_lag {K : Set (ℝ × ℝ × ℝ)} (hK : IsCompact K)\n    (ha : ∀ z ∈ K, 0 < z.1)\n    (hfirst : ∀ z ∈ K, 0 < z.1 - z.2.1 * z.2.2)\n    (hsecond : ∀ z ∈ K,\n      2 * z.2.1 * z.2.2 + z.2.1 ^ 2 / z.1 + (z.1 - 2) * z.2.2 ^ 2 < 2) :\n    ∃ P : ℝ, 0 < P ∧ ∀ z ∈ K, ∀ p₁ : ℝ, P ≤ p₁ →\n      RelaxedCone z.1 z.2.1 p₁ (z.2.2 * p₁)"
+          }
+        }
       }
     }
-  }
+  ]
 }

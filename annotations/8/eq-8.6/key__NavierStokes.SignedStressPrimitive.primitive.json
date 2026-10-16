@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.6/key/16.NavierStokes.SignedStressPrimitive.primitive",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedStressPrimitive.primitive",
-      "line": 162,
-      "module": "NavierStokes.SignedStressPrimitive",
-      "path": "NavierStokes/SignedStressPrimitive.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L162"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedStressPrimitive.primitive",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedStressPrimitive.primitive",
+        "module": "NavierStokes.SignedStressPrimitive"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 162,
-        "text": "primitive P e F = TransportPrimitive.compactIntegral (cutoff P) 0 0 (weightedSource e F) — literally 𝓘(R^e F) − χ·𝓙(R^e F), with χ = cutoff P"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "16.NavierStokes.SignedStressPrimitive.primitive",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L162",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 162,
+            "text": "noncomputable def primitive (P : Patch) (e : ℕ) (F : ℝ × E → ℝ) : ℝ × E → ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

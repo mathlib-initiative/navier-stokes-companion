@@ -1,26 +1,28 @@
 {
-  "id": "eq-p112-1/key/10.NavierStokes.FlatKernelBounds.Expr.jetOrder",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FlatKernelBounds.Expr.jetOrder",
-      "line": 219,
-      "module": "NavierStokes.FlatKernelBounds",
-      "path": "NavierStokes/FlatKernelBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatKernelBounds.lean#L219"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FlatKernelBounds.Expr.jetOrder",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FlatKernelBounds.Expr.jetOrder",
+        "module": "NavierStokes.FlatKernelBounds"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 219,
-        "text": "def Expr.jetOrder : Expr → ℕ | .jet k => k | .add e f => max e.jetOrder f.jetOrder | .mul e f => max e.jetOrder f.jetOrder | _ => 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.FlatKernelBounds.Expr.jetOrder",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L219",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatKernelBounds.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 219,
+            "text": "def Expr.jetOrder : Expr → ℕ\n  | .jet k => k\n  | .add e f => max e.jetOrder f.jetOrder\n  | .mul e f => max e.jetOrder f.jetOrder\n  | _ => 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.21/attributed/10.NavierStokes.SlowStressSupport.angularDensity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.angularDensity",
-      "line": 443,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L443"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.angularDensity",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.angularDensity",
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 443,
-        "text": "w.1^2 * timeOp h (orderExponent h n) (e n) w + dr (weighted 1 (conv n v e)) w + w.1^2 * axialOp h (pressureExponent h n) (conv n u e) w - dr (angularViscousFlux (e n)) w - w.1^2 * axialOp2 h (orderExponent h (n-1)) (e (n-1)) w  -- R^2 r_{theta,n} in conservative form, inner variables"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.SlowStressSupport.angularDensity",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L443",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 443,
+            "text": "noncomputable def angularDensity (h : ℝ) (n : ℕ) (v u e : History) (w : ℝ × ℝ) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

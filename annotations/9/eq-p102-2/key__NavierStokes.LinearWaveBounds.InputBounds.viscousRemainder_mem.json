@@ -1,23 +1,27 @@
 {
-  "id": "eq-p102-2/key/07.NavierStokes.LinearWaveBounds.InputBounds.viscousRemainder_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveBounds.InputBounds.viscousRemainder_mem",
-      "line": 426
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L426"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveBounds.InputBounds.viscousRemainder_mem",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveBounds.InputBounds.viscousRemainder_mem",
+        "lines": [426, 426],
+        "module": "NavierStokes.LinearWaveBounds"
       },
-      "relation": "contains",
-      "snippet": {
-        "line": 426,
-        "text": "row 5, gain 1 − 2κ_s after the ε: `have hDrr' := hDrr.mono_exponent (show α - 1/2 - 3*κ ≤ (α - κ) - κ …)` puts D_r²a at α − 2κ; the companions R⁻¹D_r a (line 428, α − κ) and D_z²a (line 430, α + 2) are sharper. Multiplying by ε adds 1 (viscousPart_mem), giving the group gain 1 − 2κ_s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.LinearWaveBounds.InputBounds.viscousRemainder_mem",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L426"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 392,
+            "text": "theorem viscousRemainder_mem (h : InputBounds s P α κ d a) (i : Fin 3) :\n    WaveClass s P (α - 1 / 2 - 3 * κ) (fun n x =>\n      LinearWaveResidual.viscousRemainder (a.radius n) (d.radialField n) (fun _ => d.angular)\n        (d.axialField s n) (a.frequency n) (a.phase n) (a.amplitude n) x i)"
+          }
+        }
       }
     }
-  }
+  ]
 }

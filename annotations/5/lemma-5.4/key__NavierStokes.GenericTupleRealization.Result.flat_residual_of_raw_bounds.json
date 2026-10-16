@@ -1,36 +1,57 @@
 {
-  "id": "lemma-5.4/key/0.NavierStokes.GenericTupleRealization.Result.flat_residual_of_raw_bounds",
-  "location": {
-    "page": 57,
-    "rect": [0.12854, 0.802479, 0.746187, 0.080165]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericTupleRealization.Result.flat_residual_of_raw_bounds",
-      "line": 75,
-      "module": "NavierStokes.GenericSummationRealization",
-      "path": "NavierStokes/GenericSummationRealization.lean"
+  "subject": [
+    {
+      "location": {
+        "page": 57,
+        "rect": [0.12854, 0.802479, 0.746187, 0.080165]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-5.4@p057"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSummationRealization.lean#L75"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericTupleRealization.Result.flat_residual_of_raw_bounds",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 58,
+        "rect": [0.12854, 0.103306, 0.746187, 0.161157]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Given `Result`, g → ∞, a SupportedPolynomial P over the component index Fin 3 ⊕ κ with smooth constant and coefficients, per-term regions `region t` with coefficient bounds ‖D^m t.1 x‖ ≤ Cc m (1+|log q x|)^{Pc m} q x^{-Kc m} on region t ((5.32)), FactorSupportAt outside region t for the base and for",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-5.4@p057",
-      "role": "key",
-      "snippet": {
-        "line": 75,
-        "text": "theorem Result.flat_residual_of_raw_bounds {κ : Type*} {U : Set SpaceTime} {q : SpaceTime → ℝ}\n    {u0 : VelocityField} {s0 : κ → PressureField} {A B : ℕ → VelocityField}\n    {R : κ → ℕ → PressureField} {g L : ℕ → ℝ} {a : ℕ → ℕ}\n    (H : Result U q u0 s0 A B R g L a) (hU : IsOpen U)\n    (hqs : ContDiffOn ℝ ∞ q U) (hq : ∀ w ∈ U, 0 < q w ∧ q w ≤ 1)\n    (hu0 : ContDiffOn ℝ ∞ u0 U) (hs0 : ∀ k, ContDiffOn ℝ ∞ (s0 k) U)\n    (hA : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (A j) U)\n    (hB : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (B j) U)\n    (hR : ∀ k j, 1 ≤ j → ContDiffOn ℝ ∞ (R k j) U)\n    (hgtop : Tendsto g atTop atTop) (P : SupportedPolynomial SpaceTime (Fin 3 ⊕ κ))\n    (hconst : ContDiffOn ℝ ∞ P.constant U) (hc : ∀ t ∈ P.terms, ContDiffOn ℝ ∞ t.1 U)\n    (region : ((SpaceTime → ℝ) × Expression SpaceTime (Fin 3 ⊕ κ) Empty) → Set SpaceTime)\n    (Cc Pc Kc : ℕ → ℝ)\n    (hcoeff : ∀ t ∈ P.terms, ∀ m x, x ∈ U → x ∈ region t →\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-5.4@p058"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericTupleRealization.Result.flat_residual_of_raw_bounds",
+        "module": "NavierStokes.GenericSummationRealization"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.GenericTupleRealization.Result.flat_residual_of_raw_bounds",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Given `Result`, g → ∞, a SupportedPolynomial P over the component index Fin 3 ⊕ κ with smooth constant and coefficients, per-term regions `region t` with coefficient bounds ‖D^m t.1 x‖ ≤ Cc m (1+|log q x|)^{Pc m} q x^{-Kc m} on region t ((5.32)), FactorSupportAt outside region t for the base and for",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L75",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSummationRealization.lean"
+          },
+          "snippet": {
+            "line": 75,
+            "text": "theorem Result.flat_residual_of_raw_bounds {κ : Type*} {U : Set SpaceTime} {q : SpaceTime → ℝ}\n    {u0 : VelocityField} {s0 : κ → PressureField} {A B : ℕ → VelocityField}\n    {R : κ → ℕ → PressureField} {g L : ℕ → ℝ} {a : ℕ → ℕ}\n    (H : Result U q u0 s0 A B R g L a) (hU : IsOpen U)\n    (hqs : ContDiffOn ℝ ∞ q U) (hq : ∀ w ∈ U, 0 < q w ∧ q w ≤ 1)\n    (hu0 : ContDiffOn ℝ ∞ u0 U) (hs0 : ∀ k, ContDiffOn ℝ ∞ (s0 k) U)\n    (hA : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (A j) U)\n    (hB : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (B j) U)\n    (hR : ∀ k j, 1 ≤ j → ContDiffOn ℝ ∞ (R k j) U)\n    (hgtop : Tendsto g atTop atTop) (P : SupportedPolynomial SpaceTime (Fin 3 ⊕ κ))\n    (hconst : ContDiffOn ℝ ∞ P.constant U) (hc : ∀ t ∈ P.terms, ContDiffOn ℝ ∞ t.1 U)\n    (region : ((SpaceTime → ℝ) × Expression SpaceTime (Fin 3 ⊕ κ) Empty) → Set SpaceTime)\n    (Cc Pc Kc : ℕ → ℝ)\n    (hcoeff : ∀ t ∈ P.terms, ∀ m x, x ∈ U → x ∈ region t →\n  …",
+            "truncated": true
+          }
+        }
+      }
+    }
+  ]
 }

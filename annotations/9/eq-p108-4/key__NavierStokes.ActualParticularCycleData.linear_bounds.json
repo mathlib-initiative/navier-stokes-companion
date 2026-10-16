@@ -1,26 +1,28 @@
 {
-  "id": "eq-p108-4/key/01.NavierStokes.ActualParticularCycleData.linear_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualParticularCycleData.linear_bounds",
-      "line": 691,
-      "module": "NavierStokes.ActualParticularCycleData",
-      "path": "NavierStokes/ActualParticularCycleData.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularCycleData.lean#L691"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualParticularCycleData.linear_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualParticularCycleData.linear_bounds",
+        "module": "NavierStokes.ActualParticularCycleData"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 691,
-        "text": "∀ i j, j ≠ 0 → UniformWaveClass strip envelope (1+σ-3*ChartScales.kappa) (fun l n z => (residualBlock c x.state (blocks l) (gaussian l) (alias l)).velocity n i j z + (linearGoodBlock c (blocks l) (block x l) (gaussianBlock x l).velocity).velocity n i j z)  -- row 1 on the constructed cycle; 1+σ-3κ = B+1/2-3κ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ActualParticularCycleData.linear_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L691",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularCycleData.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 691,
+            "text": "theorem linear_bounds (H : Invariant σ x) (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) :\n    ∀ i j, j ≠ 0 → LabelSumBounds.UniformWaveClass ActualInitialization.strip\n      ActualInitialization.envelope (1+σ-3*ChartScales.kappa)\n      (fun l n z =>\n        (HarmonicResidual.residualBlock (ActualPrimary.commonContext B) x.state\n          (x.coefficients.blocks l) (x.coefficients.gaussian l)\n          (x.coefficients.aliasCoefficients l)).velocity n i j z +\n        (HarmonicWaveInteraction.linearGoodBlock (ActualPrimary.commonContext B)\n          (x.coefficients.blocks l) (block x l) (gaussianBlock x l).velocity).velocity n i j z)"
+          }
+        }
       }
     }
-  }
+  ]
 }

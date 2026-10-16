@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.12/attributed/07.NavierStokes.SignedStressPrimitive.bump_improvedClass_of_moment_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedStressPrimitive.bump_improvedClass_of_moment_identity",
-      "line": 506,
-      "module": "NavierStokes.SignedStressPrimitive",
-      "path": "NavierStokes/SignedStressPrimitive.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L506"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedStressPrimitive.bump_improvedClass_of_moment_identity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedStressPrimitive.bump_improvedClass_of_moment_identity",
+        "module": "NavierStokes.SignedStressPrimitive"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 506,
-        "text": "(hmoment : ∀ n p, mass e (F n) p = ε n * fderiv ℝ (D n) p v) : MeanClass … (α + 1) (fun n => bumpCorrection P e (F n))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.SignedStressPrimitive.bump_improvedClass_of_moment_identity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L506",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 506,
+            "text": "theorem bump_improvedClass_of_moment_identity (P : Patch) (e : ℕ) {cL cR : ℝ}\n    (hcL : 0 < cL) (hcR : 0 < cR) (ε slow : ℕ → ℝ)\n    (hε : ∀ n, 0 < ε n) (hε1 : ∀ n, ε n ≤ 1) (hslow : ∀ n, 1 ≤ slow n)\n    (α : ℝ) (F : ℕ → ℝ × E → ℝ) (D : ℕ → E → ℝ) (v : E)\n    (hD : ∀ n, ContDiff ℝ ∞ (D n))\n    (hclass : WeightedClasses.UnweightedClass\n      (WeightedRadialPrimitive.logStripData P.a P.b cL cR P.a_pos hcL hcR ε slow hε hε1 hslow)\n      α (fun n (z : ℝ × E) => D n z.2))\n    (hmoment : ∀ n p, mass e (F n) p = ε n * fderiv ℝ (D n) p v) :\n    WeightedClasses.MeanClass\n      (WeightedRadialPrimitive.logStripData P.a P.b cL cR P.a_pos hcL hcR ε slow hε hε1 hslow)\n      (α + 1) (fun n => bumpCorrection P e (F n))"
+          }
+        }
       }
     }
-  }
+  ]
 }

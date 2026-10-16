@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.29/key/06.NavierStokes.PrimaryTargetBounds.prepared_model_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryTargetBounds.prepared_model_mem",
-      "line": 595,
-      "module": "NavierStokes.PrimaryTargetBounds",
-      "path": "NavierStokes/PrimaryTargetBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryTargetBounds.lean#L595"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryTargetBounds.prepared_model_mem",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryTargetBounds.prepared_model_mem",
+        "module": "NavierStokes.PrimaryTargetBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 595,
-        "text": "p ∈ positivePart (referenceSet W) → p ∈ (domain W a.N).carrier L → ((family H v a 0).c0 L, (family H v a 0).K L, a.target p) ∈ modelSet a.M a.u a.eta"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.PrimaryTargetBounds.prepared_model_mem",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L595",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryTargetBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 595,
+            "text": "theorem prepared_model_mem (L : Index W a.N) {p : Slow}\n    (hp : p ∈ PositiveRepresentatives.positivePart (referenceSet W))\n    (hpL : p ∈ (domain W a.N).carrier L) :\n    ((family H v a 0).c0 L, (family H v a 0).K L, a.target p) ∈\n      modelSet a.M a.u a.eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

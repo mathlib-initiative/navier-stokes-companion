@@ -1,28 +1,30 @@
 {
-  "id": "lemma-8.7/key/0.NavierStokes.MeanRankUpdate.physical_rows_on_patch",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanRankUpdate.physical_rows_on_patch",
-      "line": 194,
-      "module": "NavierStokes.MeanRankUpdate",
-      "path": "NavierStokes/MeanRankUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanRankUpdate.lean#L194"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanRankUpdate.physical_rows_on_patch",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For the physically rescaled background (length ell, velocity U) agreeing with the power law on the patch, the explicit increments `angularIncrement lam C a b ell U d` and `desiredAxialIncrement …` satisfy `FiveRowRank.FiveRows V G d`. The solution is a named function of the target d, hence defined f"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanRankUpdate.physical_rows_on_patch",
+        "module": "NavierStokes.MeanRankUpdate"
       },
       "role": "key",
-      "snippet": {
-        "line": 194,
-        "text": "theorem physical_rows_on_patch {lam C a b ell U : ℝ} (hlam : 0 < lam) (hC : C ≠ 0)\n    (ha : 0 < a) (hab : a < b) (hell : 0 < ell) (hU : U ≠ 0) (d : Debt)\n    (V G : ℝ → ℝ) (hV : ∀ r ∈ Ioo (ell * a) (ell * b), V r = background lam C ell U r)\n    (hG : ∀ r ∈ Ioo (ell * a) (ell * b), G r = 0) :\n    FiveRowRank.FiveRows V G d (angularIncrement lam C a b ell U d)\n      (desiredAxialIncrement lam C a b ell U d)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.MeanRankUpdate.physical_rows_on_patch",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For the physically rescaled background (length ell, velocity U) agreeing with the power law on the patch, the explicit increments `angularIncrement lam C a b ell U d` and `desiredAxialIncrement …` satisfy `FiveRowRank.FiveRows V G d`. The solution is a named function of the target d, hence defined f"
+          },
+          "destination": {
+            "fragment": "L194",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanRankUpdate.lean"
+          },
+          "snippet": {
+            "line": 194,
+            "text": "theorem physical_rows_on_patch {lam C a b ell U : ℝ} (hlam : 0 < lam) (hC : C ≠ 0)\n    (ha : 0 < a) (hab : a < b) (hell : 0 < ell) (hU : U ≠ 0) (d : Debt)\n    (V G : ℝ → ℝ) (hV : ∀ r ∈ Ioo (ell * a) (ell * b), V r = background lam C ell U r)\n    (hG : ∀ r ∈ Ioo (ell * a) (ell * b), G r = 0) :\n    FiveRowRank.FiveRows V G d (angularIncrement lam C a b ell U d)\n      (desiredAxialIncrement lam C a b ell U d)"
+          }
+        }
       }
     }
-  }
+  ]
 }

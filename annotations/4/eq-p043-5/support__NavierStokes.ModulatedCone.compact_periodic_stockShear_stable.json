@@ -1,26 +1,29 @@
 {
-  "id": "eq-p043-5/support/08.NavierStokes.ModulatedCone.compact_periodic_stockShear_stable",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.compact_periodic_stockShear_stable",
-      "line": 254,
-      "module": "NavierStokes.ModulatedCone",
-      "path": "NavierStokes/ModulatedCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L254"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.compact_periodic_stockShear_stable",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.compact_periodic_stockShear_stable",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 254,
-        "text": "∃ ρ > 0, ∀ x ∈ K, ∀ θ q₁ q₂ A' C', |q₁ - p₁ x| ≤ ρ → |q₂ - p₂ x| ≤ ρ → |A' - A (x,θ)| ≤ ρ → |C' - C (x,θ)| ≤ ρ → InTrueCone q₁ q₂ A' C'; ρ comes from hcompact.exists_cthickening_subset_open isOpen_stockShearCone (line 276)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.ModulatedCone.compact_periodic_stockShear_stable",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L254",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 254,
+            "text": "theorem compact_periodic_stockShear_stable {X : Type*} [TopologicalSpace X]\n    (p₁ p₂ : X → ℝ) (A C : X × ℝ → ℝ) {K : Set X} (hK : IsCompact K)\n    (hp₁ : ContinuousOn p₁ K) (hp₂ : ContinuousOn p₂ K)\n    (hA : ContinuousOn A (K ×ˢ (univ : Set ℝ)))\n    (hC : ContinuousOn C (K ×ˢ (univ : Set ℝ)))\n    (hAp : ∀ x ∈ K, Function.Periodic (fun θ => A (x, θ)) 1)\n    (hCp : ∀ x ∈ K, Function.Periodic (fun θ => C (x, θ)) 1)\n    (hcone : ∀ x ∈ K, ∀ θ, TrueConeLoop.InTrueCone (p₁ x) (p₂ x) (A (x, θ)) (C (x, θ))) :\n    ∃ ρ : ℝ, 0 < ρ ∧ ∀ x ∈ K, ∀ θ q₁ q₂ A' C' : ℝ,\n      |q₁ - p₁ x| ≤ ρ → |q₂ - p₂ x| ≤ ρ →\n      |A' - A (x, θ)| ≤ ρ → |C' - C (x, θ)| ≤ ρ →\n      TrueConeLoop.InTrueCone q₁ q₂ A' C'"
+          }
+        }
       }
     }
-  }
+  ]
 }

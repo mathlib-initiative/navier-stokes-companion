@@ -1,26 +1,29 @@
 {
-  "id": "eq-p111-1/key/01.NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets",
-      "line": 298,
-      "module": "NavierStokes.MeanLocalDefectBounds",
-      "path": "NavierStokes/MeanLocalDefectBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanLocalDefectBounds.lean#L298"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets",
+        "module": "NavierStokes.MeanLocalDefectBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 298,
-        "text": "(htarget : ∀ i, UnweightedClass … H (debt c u · · i)) (hH : 9/10 ≤ H) : MeanClass … (H + 9/10 - 2*κ) (actualRadialError …) ∧ ∀ i, UnweightedClass … (H + 9/10 - 2*κ) (fun n x => debt c (rankStageState g r axial c u) n x i)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.MeanLocalDefectBounds.rankStage_gain_of_targets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L298",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanLocalDefectBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 298,
+            "text": "theorem rankStage_gain_of_targets {κ H A B : ℝ}\n    (hop : LocalRankDefect.LocalOperators U.carrier c.operators)\n    (hbc : SmoothTriple (LocalRankDefect.positiveDomain U.carrier) c.base)\n    (hmc : SmoothTriple (PhysicalMeanDomain.slowDomain U.carrier) u.mean)\n    (hms : SupportedTriple g.radial.inner g.radial.outer (qLength coord) U.carrier u.mean)\n    (hWc : ∀ i j, SmoothOn (PhysicalMeanDomain.slowDomain U.carrier) (u.covariance i j))\n    (hWs : ∀ i j, Support g.radial.inner g.radial.outer (qLength coord) U.carrier (u.covariance i j))\n    (hV : LocalRankDefect.IsSlowOn U.carrier c.base.angular)\n    (hG : LocalRankDefect.IsSlowOn U.carrier c.base.axial)\n    (ho : OperatorBounds (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR ε L hε hεone hL)\n      c.operators κ)\n    (hb : LocalBaseBounds (movingStripData U g.radial.inner g.radial.outer cL cR ha hcL hcR ε L hε hεone hL)\n      (fun n => tsupport (rankPotential g r c u n)) c.base)\n    (hm : MeanIncrementBounds.CumulativeBounds\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

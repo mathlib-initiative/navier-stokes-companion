@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.17/key/01.NavierStokes.PrimaryODE.solution_hasDerivAt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.solution_hasDerivAt",
-      "line": 194,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L194"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.solution_hasDerivAt",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.solution_hasDerivAt",
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 194,
-        "text": "HasDerivAt (solution hab d j x₀ f p) (d.coefficient j (p, v) (solution hab d j x₀ f p v) + d.forcing f (p, v)) v"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PrimaryODE.solution_hasDerivAt",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L194",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 194,
+            "text": "theorem solution_hasDerivAt (hab : a ≤ b) (d : FrameData Q) (j : ℤ)\n    (x₀ : Q → State) (f : Q × ℝ → Space) {U : Set Q}\n    (hA : ContinuousOn (d.coefficient j) (U ×ˢ Icc a b))\n    (hf : ContinuousOn (d.forcing f) (U ×ˢ Icc a b))\n    {p : Q} (hp : p ∈ U) {v : ℝ} (hv : v ∈ Icc a b) :\n    HasDerivAt (solution hab d j x₀ f p)\n      (d.coefficient j (p, v) (solution hab d j x₀ f p v) + d.forcing f (p, v)) v"
+          }
+        }
       }
     }
-  }
+  ]
 }

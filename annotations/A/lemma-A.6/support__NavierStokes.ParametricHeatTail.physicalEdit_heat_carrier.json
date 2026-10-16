@@ -1,27 +1,33 @@
 {
-  "id": "lemma-A.6/support/3.NavierStokes.ParametricHeatTail.physicalEdit_heat_carrier",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricHeatTail.physicalEdit_heat_carrier",
-      "line": 975,
-      "module": "NavierStokes.ParametricHeatTail",
-      "path": "NavierStokes/ParametricHeatTail.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricHeatTail.lean#L975"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricHeatTail.physicalEdit_heat_carrier",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "type": "lean",
+      "uri": "https://github.com/openai/NavierStokesAndEuler",
+      "version": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "location": {
+        "declaration": "NavierStokes.ParametricHeatTail.physicalEdit_heat_carrier",
+        "module": "NavierStokes.ParametricHeatTail"
       },
-      "declaration_verdict": null,
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 975,
-        "text": "theorem physicalEdit_heat_carrier (d : TailData) {K q s τ eta : ℝ}\n    (hK : 0 < K) (hq : 0 < q) (hs : 0 < s) (hν : diffusion eta = τ / q)\n    (hfull : 1 / 2 ≤ Real.log ((s / q) / K) + 1 / 5) :\n    q ^ (-exponent d.h) * physicalEdit d K eta (s / q) =\n      (outgoingAmplitude d * K ^ exponent d.h) *\n        RadialHeatProfile.spatialProfile (1 + d.h) τ s *\n          tailShape d (Real.log ((s / q) / K) + 1 / 5)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ParametricHeatTail.physicalEdit_heat_carrier",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L975",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricHeatTail.lean",
+            "resolution": "exact"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 975,
+            "text": "theorem physicalEdit_heat_carrier (d : TailData) {K q s τ eta : ℝ}\n    (hK : 0 < K) (hq : 0 < q) (hs : 0 < s) (hν : diffusion eta = τ / q)\n    (hfull : 1 / 2 ≤ Real.log ((s / q) / K) + 1 / 5) :\n    q ^ (-exponent d.h) * physicalEdit d K eta (s / q) =\n      (outgoingAmplitude d * K ^ exponent d.h) *\n        RadialHeatProfile.spatialProfile (1 + d.h) τ s *\n          tailShape d (Real.log ((s / q) / K) + 1 / 5)"
+          }
+        }
       }
     }
-  }
+  ]
 }

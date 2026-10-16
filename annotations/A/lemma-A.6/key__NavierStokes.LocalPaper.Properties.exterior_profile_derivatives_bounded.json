@@ -1,29 +1,31 @@
 {
-  "id": "lemma-A.6/key/1.NavierStokes.LocalPaper.Properties.exterior_profile_derivatives_bounded",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalPaper.Properties.exterior_profile_derivatives_bounded",
-      "line": 27,
-      "module": "NavierStokes.LocalPaperHeat",
-      "path": "NavierStokes/LocalPaperHeat.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperHeat.lean#L27"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalPaper.Properties.exterior_profile_derivatives_bounded",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalPaper.Properties.exterior_profile_derivatives_bounded",
+        "module": "NavierStokes.LocalPaperHeat"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: ∃ M ≥ 0, ∀ y ∈ Ici 0, |iteratedDerivWithin n (exteriorProfile C h) (Ici 0) y| ≤ M, for every fixed n. Clause (ii) in paper-facing form."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 27,
-        "text": "theorem Properties.exterior_profile_derivatives_bounded\n    (hp : Properties h qstar Xa Xext C A D u p) (n : ℕ) :\n    ∃ M : ℝ, 0 ≤ M ∧ ∀ y ∈ Ici (0 : ℝ),\n      |iteratedDerivWithin n (LocalHeatFormula.exteriorProfile C h) (Ici 0) y| ≤ M"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LocalPaper.Properties.exterior_profile_derivatives_bounded",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: ∃ M ≥ 0, ∀ y ∈ Ici 0, |iteratedDerivWithin n (exteriorProfile C h) (Ici 0) y| ≤ M, for every fixed n. Clause (ii) in paper-facing form."
+          },
+          "destination": {
+            "fragment": "L27",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperHeat.lean"
+          },
+          "snippet": {
+            "line": 27,
+            "text": "theorem Properties.exterior_profile_derivatives_bounded\n    (hp : Properties h qstar Xa Xext C A D u p) (n : ℕ) :\n    ∃ M : ℝ, 0 ≤ M ∧ ∀ y ∈ Ici (0 : ℝ),\n      |iteratedDerivWithin n (LocalHeatFormula.exteriorProfile C h) (Ici 0) y| ≤ M"
+          }
+        }
       }
     }
-  }
+  ]
 }

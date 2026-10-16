@@ -1,34 +1,66 @@
 {
-  "id": "theorem-4.6/attributed/1.NavierStokes.LeadingStressWeights.outer_direction_positive",
-  "location": {
-    "page": 32,
-    "rect": [0.12854, 0.768595, 0.745098, 0.090909]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.outer_direction_positive",
-      "line": 968,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 32,
+        "rect": [0.12854, 0.768595, 0.745098, 0.090909]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-4.6@p032"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L968"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.outer_direction_positive",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 33,
+        "rect": [0.12854, 0.102479, 0.745098, 0.760331]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: ∃ an outer EdgeFactor G for the final stress with positive angular coefficient at the edge and HasTrueDirectionCollar. Does not state n(X_b,η) = (1,0)."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-4.6@p033"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 34,
+        "rect": [0.12854, 0.100826, 0.745098, 0.158678]
       },
-      "region": "theorem-4.6@p032",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 968,
-        "text": "theorem outer_direction_positive :\n    ∃ G : EdgeFactor (Icc (-1 : ℝ) 1) 4\n        (rightChart (rightEdge W) (logStress v.profiles F.data.h)),\n      (∀ eta ∈ Icc (-1 : ℝ) 1, 0 < (G.coefficient (eta, 0)).1) ∧\n      HasTrueDirectionCollar (Icc (-1 : ℝ) 1)\n        (rightChart (rightEdge W) (logStress v.profiles F.data.h)) G.coefficient\n        (rightChart (rightEdge W) (logSpeed v.profiles))\n        (rightChart (rightEdge W) (logSlope v.profiles)) G.width"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-4.6@p034"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.outer_direction_positive",
+        "module": "NavierStokes.LeadingStressWeights"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LeadingStressWeights.outer_direction_positive",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: ∃ an outer EdgeFactor G for the final stress with positive angular coefficient at the edge and HasTrueDirectionCollar. Does not state n(X_b,η) = (1,0)."
+          },
+          "destination": {
+            "fragment": "L968",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "snippet": {
+            "line": 968,
+            "text": "theorem outer_direction_positive :\n    ∃ G : EdgeFactor (Icc (-1 : ℝ) 1) 4\n        (rightChart (rightEdge W) (logStress v.profiles F.data.h)),\n      (∀ eta ∈ Icc (-1 : ℝ) 1, 0 < (G.coefficient (eta, 0)).1) ∧\n      HasTrueDirectionCollar (Icc (-1 : ℝ) 1)\n        (rightChart (rightEdge W) (logStress v.profiles F.data.h)) G.coefficient\n        (rightChart (rightEdge W) (logSpeed v.profiles))\n        (rightChart (rightEdge W) (logSlope v.profiles)) G.width"
+          }
+        }
+      }
+    }
+  ]
 }

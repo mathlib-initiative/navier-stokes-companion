@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.19/key/04.NavierStokes.SharpGraphBounds.nativeGraph_positive_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SharpGraphBounds.nativeGraph_positive_jet_bound",
-      "line": 95,
-      "module": "NavierStokes.SharpGraphBounds",
-      "path": "NavierStokes/SharpGraphBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SharpGraphBounds.lean#L95"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SharpGraphBounds.nativeGraph_positive_jet_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SharpGraphBounds.nativeGraph_positive_jet_bound",
+        "lines": [95, 95],
+        "module": "NavierStokes.SharpGraphBounds"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 95,
-        "text": "have hpow : Q n ^ (-h * kappa) * (C * (Q n ^ (-(1/2:ℝ))) ^ k) = C * Q n ^ (-h * kappa - (k:ℝ)/2)  (declaration starts at line 52; its statement only gives Q^(-k(1+h)))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.SharpGraphBounds.nativeGraph_positive_jet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L95",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SharpGraphBounds.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 52,
+            "text": "theorem nativeGraph_positive_jet_bound {h a b : ℝ} (hh : 0 ≤ h) (ha : 0 < a)\n    (m : ℕ) : ∃ C : ℝ, 1 ≤ C ∧ ∀ n : ℕ, 4 ≤ n → ∀ p : SpaceTime,\n      scaledRadial n p ∈ annulus a b → |p.1| ≤ 1 → ∀ k, 1 ≤ k → k ≤ m →\n      ‖iteratedFDeriv ℝ k (nativeGraph h n) p‖ ≤\n        C * ChartScales.Q n ^ (-(k : ℝ) * (1 + h))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.25/attributed/05.NavierStokes.StateMomentBalances.slowClass_globalBandJets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StateMomentBalances.slowClass_globalBandJets",
-      "line": 1021,
-      "module": "NavierStokes.StateMomentBalances",
-      "path": "NavierStokes/StateMomentBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StateMomentBalances.lean#L1021"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StateMomentBalances.slowClass_globalBandJets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StateMomentBalances.slowClass_globalBandJets",
+        "module": "NavierStokes.StateMomentBalances"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 1021,
-        "text": "(hf : UnweightedClass (slowStripData ε slow hε hε1 hslow) α f) : GlobalBandJets ε slow α f — the converse direction, no smoothness hypothesis"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.StateMomentBalances.slowClass_globalBandJets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1021",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StateMomentBalances.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 1021,
+            "text": "theorem slowClass_globalBandJets {ε slow : ℕ → ℝ}\n    {hε : ∀ n, 0 < ε n} {hε1 : ∀ n, ε n ≤ 1} {hslow : ∀ n, 1 ≤ slow n}\n    {α : ℝ} {f : ℕ → S → ℝ}\n    (hf : UnweightedClass (slowStripData ε slow hε hε1 hslow) α f) :\n    GlobalBandJets ε slow α f"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-A.41/support/06.NavierStokes.HeatedOutgoing.energy_decomposition",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HeatedOutgoing.energy_decomposition",
-      "line": 396,
-      "module": "NavierStokes.HeatedOutgoing",
-      "path": "NavierStokes/HeatedOutgoing.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean#L396"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HeatedOutgoing.energy_decomposition",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HeatedOutgoing.energy_decomposition",
+        "module": "NavierStokes.HeatedOutgoing"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 396,
-        "text": "energyDensity F XR c eta X = OutgoingDilation.energyDensity F XR eta X - changeRow F XR c eta 1 X / 2, so ΔS = -(1/2)∫ (E² - E_cl²)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.HeatedOutgoing.energy_decomposition",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L396",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 396,
+            "text": "theorem energy_decomposition (F : Profile) (XR : ℝ) (c : ℝ → Coeff) (eta X : ℝ) :\n    energyDensity F XR c eta X = OutgoingDilation.energyDensity F XR eta X - changeRow F XR c eta 1 X / 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

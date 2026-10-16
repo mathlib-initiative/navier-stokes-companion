@@ -1,26 +1,29 @@
 {
-  "id": "eq-p012-1/support/11.NavierStokes.HarmonicCalculus.graph_deriv_radial_mode",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicCalculus.graph_deriv_radial_mode",
-      "line": 669,
-      "module": "NavierStokes.HarmonicCalculus",
-      "path": "NavierStokes/HarmonicCalculus.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicCalculus.lean#L669"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicCalculus.graph_deriv_radial_mode",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicCalculus.graph_deriv_radial_mode",
+        "module": "NavierStokes.HarmonicCalculus"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 669,
-        "text": "deriv (fun s => mode κ Φ a (GraphCalculus.graph d vr vt (s, t))) r = … — a single harmonic restricted to the graph, i.e. the display applied to one mode"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "11.NavierStokes.HarmonicCalculus.graph_deriv_radial_mode",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L669",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicCalculus.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 669,
+            "text": "theorem graph_deriv_radial_mode (d : ℝ) (vr vt : GraphCalculus.Plane) (κ : ℝ)\n    {Φ : GraphCalculus.Lift → ℝ} {a : GraphCalculus.Lift → ℂ} {r t : ℝ}\n    (hr : r ≠ 0) (hΦ : DifferentiableAt ℝ Φ (GraphCalculus.graph d vr vt (r, t)))\n    (ha : DifferentiableAt ℝ a (GraphCalculus.graph d vr vt (r, t))) :\n    deriv (fun s => mode κ Φ a (GraphCalculus.graph d vr vt (s, t))) r =\n      (along (GraphCalculus.radialVector d vr) a (GraphCalculus.graph d vr vt (r, t)) +\n        phaseFactor κ * Complex.ofReal\n          (along (GraphCalculus.radialVector d vr) Φ (GraphCalculus.graph d vr vt (r, t))) *\n            a (GraphCalculus.graph d vr vt (r, t))) *\n        carrier κ Φ (GraphCalculus.graph d vr vt (r, t))"
+          }
+        }
       }
     }
-  }
+  ]
 }

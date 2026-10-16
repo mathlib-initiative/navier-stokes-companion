@@ -1,26 +1,29 @@
 {
-  "id": "eq-p007-5/key/08.NavierStokes.TerminalPressure.logScaleDerivative_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalPressure.logScaleDerivative_bound",
-      "line": 798,
-      "module": "NavierStokes.TerminalPressure",
-      "path": "NavierStokes/TerminalPressure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean#L798"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalPressure.logScaleDerivative_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalPressure.logScaleDerivative_bound",
+        "lines": [798, 798],
+        "module": "NavierStokes.TerminalPressure"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 798,
-        "text": "have hL0 : 1 - 2 * h ≤ CoordinateAlgebra.L h (SimilarityProfile.eta h p) — the inequality in the Lean's own h, η notation, at line 798 inside the theorem at line 790"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.TerminalPressure.logScaleDerivative_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L798",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 790,
+            "text": "theorem logScaleDerivative_bound {h : ℝ} {p : SimilarityProfile.PhysicalPoint}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (ht : p.1 < 1) :\n    |logScaleDerivative h p| ≤ 2 / (1 - 2 * h) * SimilarityProfile.q h p ^ (-CoordinateAlgebra.D h)"
+          }
+        }
       }
     }
-  }
+  ]
 }

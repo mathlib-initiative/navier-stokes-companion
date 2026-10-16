@@ -1,25 +1,27 @@
 {
-  "id": "eq-p164-2/key/02.NavierStokes.ProfileSpectralCone.stress_inner_transverse",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProfileSpectralCone.stress_inner_transverse",
-      "line": 80,
-      "module": "NavierStokes.ProfileSpectralCone",
-      "path": "NavierStokes/ProfileSpectralCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean#L80"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProfileSpectralCone.stress_inner_transverse"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProfileSpectralCone.stress_inner_transverse",
+        "module": "NavierStokes.ProfileSpectralCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 80,
-        "text": "⟪τ • !₂[p₁ - a, p₂ - c], transverseDirection (F • !₂[-a, -c])⟫_ℝ = (τ * F * a / ‖F • !₂[-a, -c]‖) * (p₂ - p₁ * (c / a))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ProfileSpectralCone.stress_inner_transverse"
+          },
+          "destination": {
+            "fragment": "L80",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 80,
+            "text": "theorem stress_inner_transverse (F τ p₁ p₂ a c : ℝ) (ha : a ≠ 0) :\n    ⟪τ • !₂[p₁ - a, p₂ - c], PrimaryRepresentatives.transverseDirection (F • !₂[-a, -c])⟫_ℝ =\n      (τ * F * a / ‖F • !₂[-a, -c]‖) * (p₂ - p₁ * (c / a))"
+          }
+        }
       }
     }
-  }
+  ]
 }

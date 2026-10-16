@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.18/key/05.NavierStokes.NaturalEntrance.ns_error",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalEntrance.ns_error",
-      "line": 740,
-      "module": "NavierStokes.NaturalEntrance",
-      "path": "NavierStokes/NaturalEntrance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L740"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalEntrance.ns_error",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalEntrance.ns_error",
+        "module": "NavierStokes.NaturalEntrance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 740,
-        "text": "`|ns (axialField j Λ x) p - NaturalAxisData.Z h j P0 p.2 / NaturalAxisData.L h p.2| ≤ AxisEvaluation.jetBound v.epsilon 5 1 0 * K / Λ` — the theorem behind the `ns_error` field"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.NaturalEntrance.ns_error",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L740",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 740,
+            "text": "theorem ns_error {h j σ Λ K : ℝ} {P0 : ℝ → ℝ}\n    (v : CoefficientFamily h j σ P0) (hΛ : 0 < Λ) (_hK : 0 ≤ K)\n    (x : CoefficientPair v.epsilon) (hx : ‖x - referencePair v‖ ≤ K / (2 * Λ))\n    {p : ℝ × ℝ} (hp : rescalePoint Λ p ∈ entranceSet)\n    (hL : NaturalAxisData.L h p.2 ≠ 0) :\n    |ns (axialField j Λ x) p - NaturalAxisData.Z h j P0 p.2 / NaturalAxisData.L h p.2| ≤\n      AxisEvaluation.jetBound v.epsilon 5 1 0 * K / Λ"
+          }
+        }
       }
     }
-  }
+  ]
 }

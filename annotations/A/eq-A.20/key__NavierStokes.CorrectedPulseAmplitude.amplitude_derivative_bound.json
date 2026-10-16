@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.20/key/02.NavierStokes.CorrectedPulseAmplitude.amplitude_derivative_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectedPulseAmplitude.amplitude_derivative_bound",
-      "line": 269
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectedPulseAmplitude.lean#L269"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectedPulseAmplitude.amplitude_derivative_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectedPulseAmplitude.amplitude_derivative_bound",
+        "module": "NavierStokes.CorrectedPulseAmplitude"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 269,
-        "text": "(h : PulseAmplitude.EnergyErrorBounds d eta e) (hshift : |energyShift d c eta| ≤ e) (he : e ≤ 1/1000) (hT : …) (hs : |deriv (energyShift d c) eta| ≤ e) : |deriv (amplitude d c) eta| ≤ 128 * e — the explicit-constant form"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.CorrectedPulseAmplitude.amplitude_derivative_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L269"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 269,
+            "text": "theorem amplitude_derivative_bound (d : TailData) {c : ℝ → Coeff}\n    (hc : ContDiff ℝ ∞ c) (eta e : ℝ) (heta : eta ^ 2 ≤ 1)\n    (h : PulseAmplitude.EnergyErrorBounds d eta e) (hshift : |energyShift d c eta| ≤ e)\n    (he : e ≤ 1 / 1000) (hT : |deriv (PulseAmplitude.normalizedTail d) eta| ≤ e)\n    (hs : |deriv (energyShift d c) eta| ≤ e) : |deriv (amplitude d c) eta| ≤ 128 * e"
+          }
+        }
       }
     }
-  }
+  ]
 }

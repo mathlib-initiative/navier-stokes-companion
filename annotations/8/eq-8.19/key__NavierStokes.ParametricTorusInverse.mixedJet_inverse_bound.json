@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.19/key/03.NavierStokes.ParametricTorusInverse.mixedJet_inverse_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricTorusInverse.mixedJet_inverse_bound",
-      "line": 654,
-      "module": "NavierStokes.ParametricTorusInverse",
-      "path": "NavierStokes/ParametricTorusInverse.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricTorusInverse.lean#L654"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricTorusInverse.mixedJet_inverse_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricTorusInverse.mixedJet_inverse_bound",
+        "module": "NavierStokes.ParametricTorusInverse"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 654,
-        "text": "‖mixedJet q w (inverse d f) (p, Y)‖ ≤ mixedLossConstant w.length * C, assuming ‖xJet (w.length + 5) (slice (parameterJet q f) p)‖ ≤ C and the same for swapFunction"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ParametricTorusInverse.mixedJet_inverse_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L654",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricTorusInverse.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 654,
+            "text": "theorem mixedJet_inverse_bound (d : Direction) {f : Source} (hf : ContDiff ℝ ∞ f)\n    (hp : Periodic f) (q : ℕ) (w : List Bool) (S : Set ℝ) {C : ℝ}\n    (hzero : ∀ p ∈ S, ∀ x ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) 1,\n      ‖parameterJet q f (p, (x, y))‖ ≤ C)\n    (hfirst : ∀ p ∈ S, ∀ x ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) 1,\n      ‖SmoothFourierData.xJet (w.length + 5) (slice (parameterJet q f) p) (x, y)‖ ≤ C)\n    (hsecond : ∀ p ∈ S, ∀ x ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) 1,\n      ‖SmoothFourierData.xJet (w.length + 5)\n        (SmoothFourierData.swapFunction (slice (parameterJet q f) p)) (x, y)‖ ≤ C)\n    (p : ℝ) (hps : p ∈ S) (Y : Plane) :\n    ‖mixedJet q w (inverse d f) (p, Y)‖ ≤ mixedLossConstant w.length * C"
+          }
+        }
       }
     }
-  }
+  ]
 }

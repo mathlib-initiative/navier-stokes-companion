@@ -1,26 +1,28 @@
 {
-  "id": "eq-p094-4/key/03.NavierStokes.IntegratedMeanBalances.constructed_pressure_moment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.IntegratedMeanBalances.constructed_pressure_moment",
-      "line": 867,
-      "module": "NavierStokes.IntegratedMeanBalances",
-      "path": "NavierStokes/IntegratedMeanBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/IntegratedMeanBalances.lean#L867"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.IntegratedMeanBalances.constructed_pressure_moment",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.IntegratedMeanBalances.constructed_pressure_moment",
+        "module": "NavierStokes.IntegratedMeanBalances"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 867,
-        "text": "moment 1 (fun r => torusAverage (meanPressure d a b M hab v f) (r, s)) = -(1 / 2 : ℝ) * moment 2 (fun r => torusAverage f (r, s)) + (moment 2 (rho a b hab) / 2) * pressureMass f s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.IntegratedMeanBalances.constructed_pressure_moment",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L867",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/IntegratedMeanBalances.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 867,
+            "text": "theorem constructed_pressure_moment {d a b M : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (v : ℝ × ℝ)\n    {f : PressureStream.Lift S → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hs : RadialAlias.RadiallySupported a b f) (hper : PressureStream.TorusPeriodicLift f)\n    (s : S) :\n    moment 1 (fun r => PressureStream.torusAverage\n      (PressureStream.meanPressure d a b M hab v f) (r, s)) =\n      -(1 / 2 : ℝ) * moment 2 (fun r => PressureStream.torusAverage f (r, s)) +\n        (moment 2 (PressureStream.rho a b hab) / 2) * PressureStream.pressureMass f s"
+          }
+        }
       }
     }
-  }
+  ]
 }

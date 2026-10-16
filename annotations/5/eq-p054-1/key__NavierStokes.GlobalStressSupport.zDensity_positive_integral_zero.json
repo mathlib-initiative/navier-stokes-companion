@@ -1,26 +1,28 @@
 {
-  "id": "eq-p054-1/key/02.NavierStokes.GlobalStressSupport.zDensity_positive_integral_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalStressSupport.zDensity_positive_integral_zero",
-      "line": 398,
-      "module": "NavierStokes.GlobalStressSupport",
-      "path": "NavierStokes/GlobalStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalStressSupport.lean#L398"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalStressSupport.zDensity_positive_integral_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalStressSupport.zDensity_positive_integral_zero",
+        "module": "NavierStokes.GlobalStressSupport"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 398,
-        "text": "(hn : 2 ≤ n) (heta : eta ∈ S) : (∫ R in Ioi (0:ℝ), SlowResidualMatching.zDensity h (asSlowProfiles s) n (R, eta)) = 0 — the paper's second display verbatim, over (0,∞)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GlobalStressSupport.zDensity_positive_integral_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L398",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalStressSupport.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 398,
+            "text": "theorem zDensity_positive_integral_zero {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    (hbase : s.base.beta = betaFromU s.domain 0 s.base.axial) {n : ℕ} (hn : 2 ≤ n)\n    {eta : ℝ} (heta : eta ∈ S) :\n    (∫ R in Ioi (0 : ℝ), SlowResidualMatching.zDensity h (asSlowProfiles s) n (R, eta)) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

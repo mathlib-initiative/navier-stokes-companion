@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.28/key/02.NavierStokes.PrimaryCovarianceBounds.normalizedPair_entry_error",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryCovarianceBounds.normalizedPair_entry_error",
-      "line": 321,
-      "module": "NavierStokes.PrimaryCovarianceBounds",
-      "path": "NavierStokes/PrimaryCovarianceBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCovarianceBounds.lean#L321"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryCovarianceBounds.normalizedPair_entry_error",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryCovarianceBounds.normalizedPair_entry_error",
+        "module": "NavierStokes.PrimaryCovarianceBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 321,
-        "text": "|normalizedPair P i j - H0 i j| ≤ (E + D * PulseCovariance.concentrationConstant a A b B) / r, given |(P j).t v i / (P j).x v - H0 i j| ≤ E/r^2 + D*|v - r^2/2|/r^2 on Icc 0 (r^2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PrimaryCovarianceBounds.normalizedPair_entry_error",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L321",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCovarianceBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 321,
+            "text": "theorem normalizedPair_entry_error {r a A b B E D : ℝ}\n    (P : Fin 2 → PartitionedCovariance.Pulse)\n    (hP : ∀ j, PulseCovariance.PulseBounds r a A b B (P j).ψ (P j).x)\n    (H0 : Mat2) (hE : 0 ≤ E) (hD : 0 ≤ D)\n    (hratio : ∀ j i v, v ∈ Icc 0 (r ^ 2) →\n      |(P j).t v i / (P j).x v - H0 i j| ≤\n        E / r ^ 2 + D * |v - r ^ 2 / 2| / r ^ 2) (i j : Fin 2) :\n    |normalizedPair P i j - H0 i j| ≤\n      (E + D * PulseCovariance.concentrationConstant a A b B) / r"
+          }
+        }
       }
     }
-  }
+  ]
 }

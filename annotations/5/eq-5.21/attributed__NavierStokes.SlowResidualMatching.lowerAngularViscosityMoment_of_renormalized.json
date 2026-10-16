@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.21/attributed/21.NavierStokes.SlowResidualMatching.lowerAngularViscosityMoment_of_renormalized",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowResidualMatching.lowerAngularViscosityMoment_of_renormalized",
-      "line": 1485,
-      "module": "NavierStokes.SlowResidualMatching",
-      "path": "NavierStokes/SlowResidualMatching.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowResidualMatching.lean#L1485"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowResidualMatching.lowerAngularViscosityMoment_of_renormalized",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowResidualMatching.lowerAngularViscosityMoment_of_renormalized",
+        "module": "NavierStokes.SlowResidualMatching"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 1485,
-        "text": "(hm : ∀ eta ∈ Ioo (-1) 1, RenormalizedHeatMoment.xMoment h C E eta = 0) ... : SlowStressSupport.LowerAngularViscosityMoment (Ioo (-1) 1) B h F"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "21.NavierStokes.SlowResidualMatching.lowerAngularViscosityMoment_of_renormalized",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1485",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowResidualMatching.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 1485,
+            "text": "theorem lowerAngularViscosityMoment_of_renormalized {h C T B : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (hT : 0 < T) (hB : 0 ≤ B)\n    {F E : InnerProfile} (hF : SlowStressSupport.Smooth (Ioo (-1) 1) F)\n    (hFE : ∀ R : ℝ, 0 < R → ∀ eta ∈ Ioo (-1 : ℝ) 1, F (R, eta) = E (R ^ 2 / 2, eta))\n    (he : ∀ eta ∈ Ioo (-1 : ℝ) 1, ∀ X : ℝ, T ≤ X →\n      E (X, eta) = C * X ^ (-RenormalizedHeatMoment.A h) *\n        RadialHeatProfile.profile (1 + h) (2 * (1 - eta ^ 2) / X))\n    (hm : ∀ eta ∈ Ioo (-1 : ℝ) 1, RenormalizedHeatMoment.xMoment h C E eta = 0)\n    (hExt : SlowStressSupport.exterior B (Ioo (-1) 1)\n      (SlowStressSupport.axialOp2 h (SlowStressSupport.orderExponent h 0) F)) :\n    SlowStressSupport.LowerAngularViscosityMoment (Ioo (-1) 1) B h F"
+          }
+        }
       }
     }
-  }
+  ]
 }

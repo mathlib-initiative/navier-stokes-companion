@@ -1,25 +1,27 @@
 {
-  "id": "eq-p147-6/key/03.NavierStokes.AxisOperators.inverseMixed",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisOperators.inverseMixed",
-      "line": 705,
-      "module": "NavierStokes.AxisOperators",
-      "path": "NavierStokes/AxisOperators.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisOperators.lean#L705"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisOperators.inverseMixed",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisOperators.inverseMixed",
+        "module": "NavierStokes.AxisOperators"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 705,
-        "text": "/-- `J_r ((∂η f) D_Y g)`, formed and estimated without either unbounded derivative as a standalone operator -/ def inverseMixed I hε r hr = bilinearLift I hε (inverseMixedData I hε r hr); mixed1/mixed2 of `coefficientOperators` are inverseMixed at r = 1, 2 (AxisContraction.lean:725-726)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.AxisOperators.inverseMixed",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L705",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisOperators.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 705,
+            "text": "def inverseMixed (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r) :\n    AxisSpace I ε →L[ℝ] AxisSpace I ε →L[ℝ] AxisSpace I ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

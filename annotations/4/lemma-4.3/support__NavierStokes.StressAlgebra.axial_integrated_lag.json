@@ -1,26 +1,29 @@
 {
-  "id": "lemma-4.3/support/3.NavierStokes.StressAlgebra.axial_integrated_lag",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressAlgebra.axial_integrated_lag",
-      "line": 255,
-      "module": "NavierStokes.StressAlgebra",
-      "path": "NavierStokes/StressAlgebra.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressAlgebra.lean#L255"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressAlgebra.axial_integrated_lag",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressAlgebra.axial_integrated_lag",
+        "module": "NavierStokes.StressAlgebra"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 255,
-        "text": "theorem axial_integrated_lag\n    {h η X : ℝ} (p : AxialMomentData h η X) (hX : X ≠ 0)\n    (hint : IntervalIntegrable\n      (fun x => axialSource h η x (p.W x) (p.U x) (p.Ux x) (p.Uη x)\n        (p.P x) (p.Px x) (p.Pη x)) volume 0 X) :\n    intervalIntegral\n      (fun x => axialSource h η x (p.W x) (p.U x) (p.Ux x) (p.Uη x)\n        (p.P x) (p.Px x) (p.Pη x)) 0 X volume / X =\n      -p.W X * p.U X + axialExponent h * (p.M X - η * p.Mη X) / X +\n        (4 * h * η * p.S X - coordinateFactor η * p.Sη X) / X +\n        4 * velocityExponent h * η * p.P X - coordinateFactor η * p.Pη X"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.StressAlgebra.axial_integrated_lag",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L255",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressAlgebra.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 255,
+            "text": "theorem axial_integrated_lag\n    {h η X : ℝ} (p : AxialMomentData h η X) (hX : X ≠ 0)\n    (hint : IntervalIntegrable\n      (fun x => axialSource h η x (p.W x) (p.U x) (p.Ux x) (p.Uη x)\n        (p.P x) (p.Px x) (p.Pη x)) volume 0 X) :\n    intervalIntegral\n      (fun x => axialSource h η x (p.W x) (p.U x) (p.Ux x) (p.Uη x)\n        (p.P x) (p.Px x) (p.Pη x)) 0 X volume / X =\n      -p.W X * p.U X + axialExponent h * (p.M X - η * p.Mη X) / X +\n        (4 * h * η * p.S X - coordinateFactor η * p.Sη X) / X +\n        4 * velocityExponent h * η * p.P X - coordinateFactor η * p.Pη X"
+          }
+        }
       }
     }
-  }
+  ]
 }

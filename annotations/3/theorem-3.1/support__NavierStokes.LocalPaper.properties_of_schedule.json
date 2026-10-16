@@ -1,31 +1,53 @@
 {
-  "id": "theorem-3.1/support/3.NavierStokes.LocalPaper.properties_of_schedule",
-  "location": {
-    "page": 15,
-    "rect": [0.12854, 0.516529, 0.746187, 0.371074]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalPaper.properties_of_schedule",
-      "line": 128,
-      "module": "NavierStokes.LocalPaperTheorem",
-      "path": "NavierStokes/LocalPaperTheorem.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperTheorem.lean#L128"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalPaper.properties_of_schedule",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 15,
+        "rect": [0.12854, 0.516529, 0.746187, 0.371074]
       },
-      "region": "theorem-3.1@p015",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 128,
-        "text": "theorem properties_of_schedule {a : ℕ → ℕ} (hs : LocalScheduleWitness.Selected a)\n    (hr : LocalResidualFlatness.AllResidualJetRates ActualPrimary.h\n      ActualCandidateAssembly.selectedPotentialStages ActualCandidateAssembly.selectedDirectStages\n      ActualCandidateAssembly.selectedPressureStages a) :\n    Properties ActualPrimary.h (LocalPaperDomain.qstar a) LocalPaperDomain.innerEdge\n      LocalPaperDomain.outerEdge (BaseExterior.nominalHeatNormalization ActualPrimary.nominal)\n      (LocalPotentialRebundle.potential a) (LocalPotentialRebundle.direct a)\n      (LocalAngularGrowth.selectedRawVelocity a) (LocalPotentialRebundle.pressure a)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-3.1@p015"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 16,
+        "rect": [0.12854, 0.102479, 0.746187, 0.104132]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-3.1@p016"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalPaper.properties_of_schedule",
+        "module": "NavierStokes.LocalPaperTheorem"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.LocalPaper.properties_of_schedule",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L128",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperTheorem.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 128,
+            "text": "theorem properties_of_schedule {a : ℕ → ℕ} (hs : LocalScheduleWitness.Selected a)\n    (hr : LocalResidualFlatness.AllResidualJetRates ActualPrimary.h\n      ActualCandidateAssembly.selectedPotentialStages ActualCandidateAssembly.selectedDirectStages\n      ActualCandidateAssembly.selectedPressureStages a) :\n    Properties ActualPrimary.h (LocalPaperDomain.qstar a) LocalPaperDomain.innerEdge\n      LocalPaperDomain.outerEdge (BaseExterior.nominalHeatNormalization ActualPrimary.nominal)\n      (LocalPotentialRebundle.potential a) (LocalPotentialRebundle.direct a)\n      (LocalAngularGrowth.selectedRawVelocity a) (LocalPotentialRebundle.pressure a)"
+          }
+        }
+      }
+    }
+  ]
 }

@@ -1,24 +1,26 @@
 {
-  "id": "eq-p122-1/key/03.NavierStokes.R3PressureFourier.rieszSymbol_poisson",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.R3PressureFourier.rieszSymbol_poisson",
-      "line": 170,
-      "module": "NavierStokes.R3PressureFourier",
-      "path": "NavierStokes/R3PressureFourier.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3PressureFourier.lean#L170"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.R3PressureFourier.rieszSymbol_poisson"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.R3PressureFourier.rieszSymbol_poisson",
+        "module": "NavierStokes.R3PressureFourier"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 170,
-        "text": "laplacianSymbol x * rieszSymbol i j x = -(coordinateSymbol i x * coordinateSymbol j x)  -- the identity on the Fourier side"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.R3PressureFourier.rieszSymbol_poisson"
+          },
+          "destination": {
+            "fragment": "L170",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3PressureFourier.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 170,
+            "text": "theorem rieszSymbol_poisson (i j : Fin 3) (x : Space) :\n    laplacianSymbol x * rieszSymbol i j x = -(coordinateSymbol i x * coordinateSymbol j x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

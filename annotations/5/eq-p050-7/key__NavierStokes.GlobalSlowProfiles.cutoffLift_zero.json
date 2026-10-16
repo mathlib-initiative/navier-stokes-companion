@@ -1,23 +1,26 @@
 {
-  "id": "eq-p050-7/key/01.NavierStokes.GlobalSlowProfiles.cutoffLift_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.cutoffLift_zero",
-      "line": 392
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L392"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.cutoffLift_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.cutoffLift_zero",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 392,
-        "text": "(hw : stop ≤ w.1 ^ 2 / 2) : cutoffLift … f w = 0 — the product is extended by zero past the cutoff"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GlobalSlowProfiles.cutoffLift_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L392"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 392,
+            "text": "theorem cutoffLift_zero {rho : ℝ} {U : Set ℂ} {S : Set ℝ}\n    (hrho : 0 < rho) (hU : IsOpen U) (hS : IsOpen S) (hSU : ∀ eta ∈ S, (eta : ℂ) ∈ U)\n    {inner stop : ℝ} (his : inner < stop) (hsrho : stop < rho ^ 2)\n    (f : SlowRecursion.AxisFunction rho U) {w : ℝ × ℝ} (hw : stop ≤ w.1 ^ 2 / 2) :\n    cutoffLift hrho hU hS hSU his hsrho f w = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

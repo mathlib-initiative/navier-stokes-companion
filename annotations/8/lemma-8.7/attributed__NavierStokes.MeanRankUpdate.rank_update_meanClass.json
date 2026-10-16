@@ -1,29 +1,31 @@
 {
-  "id": "lemma-8.7/attributed/1.NavierStokes.MeanRankUpdate.rank_update_meanClass",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanRankUpdate.rank_update_meanClass",
-      "line": 899,
-      "module": "NavierStokes.MeanRankUpdate",
-      "path": "NavierStokes/MeanRankUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanRankUpdate.lean#L899"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanRankUpdate.rank_update_meanClass",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanRankUpdate.rank_update_meanClass",
+        "module": "NavierStokes.MeanRankUpdate"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If the target satisfies `WeightedClasses.UnweightedClass s α d` (weight 1, the paper's S_α) then both chart increments satisfy `WeightedClasses.MeanClass s α` (weight ζ, the paper's M_α)."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 899,
-        "text": "theorem rank_update_meanClass (s : WeightedClasses.StripData ChartPoint)\n    {coord A B lam a b qlo qhi rlo rhi α : ℝ} (hc : 0 < coord) (hc1 : coord < 1)\n    (ha : 0 < a) (hab : a < b) (hB : B ≠ 0) (hqlo : 0 < qlo)\n    (hT : ∀ p ∈ s.domain, chartInput p ∈ PhysicalCoordinateBounds.positiveTime)\n    (hq : ∀ p ∈ s.domain, chartQ coord p ∈ Icc qlo qhi)\n    (hR : ∀ p ∈ s.domain, p.1 ∈ Icc rlo rhi)\n    (hz : ∃ δ : ℝ, 0 < δ ∧ ∀ p ∈ s.domain, p ∈ supportBand a b qlo qhi → δ ≤ s.zeta p)\n    {d : ℕ → ChartPoint → Debt} (hd : WeightedClasses.UnweightedClass s α d) :\n    WeightedClasses.MeanClass s α (fun n => chartAngular coord A B lam a b (d n)) ∧\n      WeightedClasses.MeanClass s α (fun n => chartAxial coord A B lam a b (d n))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.MeanRankUpdate.rank_update_meanClass",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: If the target satisfies `WeightedClasses.UnweightedClass s α d` (weight 1, the paper's S_α) then both chart increments satisfy `WeightedClasses.MeanClass s α` (weight ζ, the paper's M_α)."
+          },
+          "destination": {
+            "fragment": "L899",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanRankUpdate.lean"
+          },
+          "snippet": {
+            "line": 899,
+            "text": "theorem rank_update_meanClass (s : WeightedClasses.StripData ChartPoint)\n    {coord A B lam a b qlo qhi rlo rhi α : ℝ} (hc : 0 < coord) (hc1 : coord < 1)\n    (ha : 0 < a) (hab : a < b) (hB : B ≠ 0) (hqlo : 0 < qlo)\n    (hT : ∀ p ∈ s.domain, chartInput p ∈ PhysicalCoordinateBounds.positiveTime)\n    (hq : ∀ p ∈ s.domain, chartQ coord p ∈ Icc qlo qhi)\n    (hR : ∀ p ∈ s.domain, p.1 ∈ Icc rlo rhi)\n    (hz : ∃ δ : ℝ, 0 < δ ∧ ∀ p ∈ s.domain, p ∈ supportBand a b qlo qhi → δ ≤ s.zeta p)\n    {d : ℕ → ChartPoint → Debt} (hd : WeightedClasses.UnweightedClass s α d) :\n    WeightedClasses.MeanClass s α (fun n => chartAngular coord A B lam a b (d n)) ∧\n      WeightedClasses.MeanClass s α (fun n => chartAxial coord A B lam a b (d n))"
+          }
+        }
       }
     }
-  }
+  ]
 }

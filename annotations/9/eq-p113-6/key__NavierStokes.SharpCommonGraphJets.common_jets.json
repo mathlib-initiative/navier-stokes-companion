@@ -1,23 +1,25 @@
 {
-  "id": "eq-p113-6/key/02.NavierStokes.SharpCommonGraphJets.common_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SharpCommonGraphJets.common_jets",
-      "line": 10,
-      "module": "NavierStokes.SharpCommonGraphJets",
-      "path": "NavierStokes/SharpCommonGraphJets.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SharpCommonGraphJets.lean#L10"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SharpCommonGraphJets.common_jets"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SharpCommonGraphJets.common_jets",
+        "module": "NavierStokes.SharpCommonGraphJets"
       },
-      "snippet": {
-        "line": 10,
-        "text": "‖iteratedFDeriv ℝ k (f ∘ commonLift h n d) w‖ ≤ C * A * ChartScales.Q n ^ (-(k:ℝ)*(1+h))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SharpCommonGraphJets.common_jets"
+          },
+          "destination": {
+            "fragment": "L10",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SharpCommonGraphJets.lean"
+          },
+          "snippet": {
+            "line": 10,
+            "text": "theorem common_jets {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]\n    {h a b : ℝ} (hh : 0 ≤ h) (ha : 0 < a) (Δ m : ℕ) :\n    ∃ C : ℝ, 1 ≤ C ∧ ∀ n : ℕ, 4 ≤ n → ∀ d : ℕ, d ≤ Δ → ∀ w : SpaceTime,\n      scaledRadial n w ∈ annulus a b → |w.1| ≤ 1 → ∀ f : PhysicalWaveSum.LiftPoint → E,\n      SmoothNear f (commonLift h n d w) → ∀ A : ℝ, 0 ≤ A →\n      (∀ i ≤ m, ‖iteratedFDeriv ℝ i f (commonLift h n d w)‖ ≤ A) →\n      ∀ k ≤ m, ‖iteratedFDeriv ℝ k (f ∘ commonLift h n d) w‖ ≤\n        C * A * ChartScales.Q n ^ (-(k : ℝ)*(1+h))"
+          }
+        }
       }
     }
-  }
+  ]
 }

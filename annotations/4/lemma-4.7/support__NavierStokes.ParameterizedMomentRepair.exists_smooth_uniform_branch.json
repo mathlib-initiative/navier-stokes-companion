@@ -1,26 +1,29 @@
 {
-  "id": "lemma-4.7/support/3.NavierStokes.ParameterizedMomentRepair.exists_smooth_uniform_branch",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParameterizedMomentRepair.exists_smooth_uniform_branch",
-      "line": 16,
-      "module": "NavierStokes.ParameterizedMomentRepair",
-      "path": "NavierStokes/ParameterizedMomentRepair.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParameterizedMomentRepair.lean#L16"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParameterizedMomentRepair.exists_smooth_uniform_branch",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParameterizedMomentRepair.exists_smooth_uniform_branch",
+        "module": "NavierStokes.ParameterizedMomentRepair"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 16,
-        "text": "theorem exists_smooth_uniform_branch (S : Set P)\n    (B : P → E →L[ℝ] E) (A : P → E →L[ℝ] E →L[ℝ] E) (d : P → E)\n    (hB : ContDiffOn ℝ ∞ B S) (hA : ContDiffOn ℝ ∞ A S) (hd : ContDiffOn ℝ ∞ d S)\n    (ν q δ : ℝ) (hν : 0 ≤ ν) (hq : 0 ≤ q) (hδ : 0 ≤ δ)\n    (hBi : ∀ p ∈ S, (B p).IsInvertible)\n    (hBn : ∀ p ∈ S, ‖(B p).inverse‖ ≤ ν)\n    (hAn : ∀ p ∈ S, ‖A p‖ ≤ q) (hdn : ∀ p ∈ S, ‖d p‖ ≤ δ)\n    (hsmall : 8 * ν^2 * q * δ ≤ 1) :\n    ∃ c : P → E, ContDiffOn ℝ ∞ c S ∧\n      (∀ p ∈ S, ‖c p‖ ≤ 2 * ν * ‖d p‖ ∧ B p (c p) + A p (c p) (c p) = d p) ∧\n      (∀ p ∈ S, ∀ e : E, ‖e‖ ≤ 2 * ν * δ →\n        B p e + A p e e = d p → e = c p)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ParameterizedMomentRepair.exists_smooth_uniform_branch",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L16",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParameterizedMomentRepair.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 16,
+            "text": "theorem exists_smooth_uniform_branch (S : Set P)\n    (B : P → E →L[ℝ] E) (A : P → E →L[ℝ] E →L[ℝ] E) (d : P → E)\n    (hB : ContDiffOn ℝ ∞ B S) (hA : ContDiffOn ℝ ∞ A S) (hd : ContDiffOn ℝ ∞ d S)\n    (ν q δ : ℝ) (hν : 0 ≤ ν) (hq : 0 ≤ q) (hδ : 0 ≤ δ)\n    (hBi : ∀ p ∈ S, (B p).IsInvertible)\n    (hBn : ∀ p ∈ S, ‖(B p).inverse‖ ≤ ν)\n    (hAn : ∀ p ∈ S, ‖A p‖ ≤ q) (hdn : ∀ p ∈ S, ‖d p‖ ≤ δ)\n    (hsmall : 8 * ν^2 * q * δ ≤ 1) :\n    ∃ c : P → E, ContDiffOn ℝ ∞ c S ∧\n      (∀ p ∈ S, ‖c p‖ ≤ 2 * ν * ‖d p‖ ∧ B p (c p) + A p (c p) (c p) = d p) ∧\n      (∀ p ∈ S, ∀ e : E, ‖e‖ ≤ 2 * ν * δ →\n        B p e + A p e e = d p → e = c p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

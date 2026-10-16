@@ -1,25 +1,27 @@
 {
-  "id": "eq-p090-4/key/05.NavierStokes.MeanChartCompatibility.radialFrequency_shift",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.radialFrequency_shift",
-      "line": 713,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L713"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.radialFrequency_shift",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.radialFrequency_shift",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 713,
-        "text": "M • coverMap i (vector .radial) = (radialFrequency h n i d M * chartScale n ^ d) • vector .radial, radialFrequency = M * Lambda^i * Q n^(d/2) -- discharges hshift; the paper's M = Λ_g^{i_0} Q^{d_r/2}"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.MeanChartCompatibility.radialFrequency_shift",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L713",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 713,
+            "text": "theorem radialFrequency_shift (h : ℝ) (n i : ℕ) (d M : ℝ) :\n    M • TemporalMeanUpdate.coverMap i (vector .radial) =\n      (radialFrequency h n i d M * chartScale n ^ d) • vector .radial"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.2/key/03.NavierStokes.SlowDivergence.partialX_radialFlux",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowDivergence.partialX_radialFlux",
-      "line": 104,
-      "module": "NavierStokes.SlowDivergence",
-      "path": "NavierStokes/SlowDivergence.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowDivergence.lean#L104"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowDivergence.partialX_radialFlux",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowDivergence.partialX_radialFlux",
+        "module": "NavierStokes.SlowDivergence"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 104,
-        "text": "partialX (radialFlux h lam U) p = -SimilarityProfile.Z h (-CoordinateAlgebra.A h + lam) U p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SlowDivergence.partialX_radialFlux",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L104",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowDivergence.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 104,
+            "text": "theorem partialX_radialFlux (Ω : RadialDomain) {U : Field}\n    (hU : ContDiffOn ℝ ∞ U Ω.carrier) (h lam : ℝ) {p : Point} (hp : p ∈ Ω.carrier)\n    (hL : CoordinateAlgebra.L h p.2 ≠ 0) :\n    SimilarityProfile.partialX (radialFlux h lam U) p =\n      -SimilarityProfile.Z h (-CoordinateAlgebra.A h + lam) U p"
+          }
+        }
       }
     }
-  }
+  ]
 }

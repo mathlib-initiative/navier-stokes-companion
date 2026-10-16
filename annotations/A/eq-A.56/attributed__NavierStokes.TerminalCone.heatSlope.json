@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.56/attributed/04.NavierStokes.TerminalCone.heatSlope",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalCone.heatSlope",
-      "line": 116
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean#L116"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalCone.heatSlope",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalCone.heatSlope",
+        "module": "NavierStokes.TerminalCone"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 116,
-        "text": "heatSlope d z = -z * deriv (HeatProfileExtension.extension (1 + d.h)) z / HeatProfileExtension.extension (1 + d.h) z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.TerminalCone.heatSlope",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L116"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 116,
+            "text": "noncomputable def heatSlope (d : OutgoingTail.TailData) (z : ℝ) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

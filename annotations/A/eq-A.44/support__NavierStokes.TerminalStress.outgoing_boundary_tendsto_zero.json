@@ -1,26 +1,29 @@
 {
-  "id": "eq-A.44/support/07.NavierStokes.TerminalStress.outgoing_boundary_tendsto_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalStress.outgoing_boundary_tendsto_zero",
-      "line": 827,
-      "module": "NavierStokes.TerminalStress",
-      "path": "NavierStokes/TerminalStress.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalStress.lean#L827"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalStress.outgoing_boundary_tendsto_zero",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalStress.outgoing_boundary_tendsto_zero",
+        "module": "NavierStokes.TerminalStress"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 827,
-        "text": "Tendsto (boundary (heatAmplitude C (1 + d.h) t) (radialSlice (flattening d.h (fun y => OutgoingTail.tailShape d (y - y₀))) t z)) atTop (𝓝 0), proved by boundary_tendsto_zero_of_plateau + tailShape_late"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.TerminalStress.outgoing_boundary_tendsto_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L827",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalStress.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 827,
+            "text": "theorem outgoing_boundary_tendsto_zero (d : OutgoingTail.TailData) (C y₀ : ℝ)\n    {t z : ℝ} (ht : t < 1) :\n    Tendsto (boundary (heatAmplitude C (1 + d.h) t)\n      (radialSlice (flattening d.h (fun y => OutgoingTail.tailShape d (y - y₀))) t z)) atTop (𝓝 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

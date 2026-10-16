@@ -1,25 +1,27 @@
 {
-  "id": "eq-8.1/key/03.NavierStokes.CorrectionStep.fieldSum_angularMean_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.fieldSum_angularMean_zero",
-      "line": 8794,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L8794"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.fieldSum_angularMean_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.fieldSum_angularMean_zero",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 8794,
-        "text": "(hb : ∀ l, ZeroMode (b l)) (hk : ∀ l n, (b l).angularFrequency n ≠ 0) : angularMeanVector (LabelSumBounds.fieldSum labels (fun l => (b l).oscillation)) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CorrectionStep.fieldSum_angularMean_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L8794",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 8794,
+            "text": "theorem fieldSum_angularMean_zero {D ι : Type} [NormedAddCommGroup D] [NormedSpace ℝ D]\n    (labels : ℕ → Finset ι) (b : ι → HarmonicBlock D)\n    (hb : ∀ l, HarmonicWaveInteraction.ZeroMode (b l))\n    (hk : ∀ l n, (b l).angularFrequency n ≠ 0) :\n    angularMeanVector (LabelSumBounds.fieldSum labels (fun l => (b l).oscillation)) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

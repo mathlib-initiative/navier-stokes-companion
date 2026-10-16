@@ -1,26 +1,28 @@
 {
-  "id": "eq-p149-6/key/05.NavierStokes.NaturalProfile.affineProfile_partialY",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalProfile.affineProfile_partialY",
-      "line": 125,
-      "module": "NavierStokes.NaturalProfile",
-      "path": "NavierStokes/NaturalProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalProfile.lean#L125"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalProfile.affineProfile_partialY",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalProfile.affineProfile_partialY",
+        "module": "NavierStokes.NaturalProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 125,
-        "text": "partialY (affineProfile b c Λ F) p = c * Λ * partialY F (rescalePoint Λ p); with b = U_*, c = 1/Λ this is U_X = 𝔲_Y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.NaturalProfile.affineProfile_partialY",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L125",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalProfile.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 125,
+            "text": "theorem affineProfile_partialY {F : ℝ × ℝ → ℝ}\n    (hF : ContDiffOn ℝ ∞ F (AxisEvaluation.strip window 20))\n    (b : ℝ → ℝ) (c Λ : ℝ) {p : ℝ × ℝ} (hp : p ∈ domain Λ) :\n    partialY (affineProfile b c Λ F) p = c * Λ * partialY F (rescalePoint Λ p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

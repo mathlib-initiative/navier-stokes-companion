@@ -1,22 +1,26 @@
 {
-  "id": "eq-p059-3/key/02.NavierStokes.GenericDifferentialPolynomial.TailRates.flat_of_residuals",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericDifferentialPolynomial.TailRates.flat_of_residuals",
-      "module": "NavierStokes.GenericSupportedPolynomial",
-      "path": "NavierStokes/GenericSupportedPolynomial.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSupportedPolynomial.lean#L139"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericDifferentialPolynomial.TailRates.flat_of_residuals"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericDifferentialPolynomial.TailRates.flat_of_residuals",
+        "lines": [139, 139],
+        "module": "NavierStokes.GenericSupportedPolynomial"
       },
-      "relation": "contains",
-      "snippet": {
-        "text": "`obtain ⟨J₀, hJ₀⟩ := eventually_atTop.1 ((hgain.eventually (eventually_ge_atTop (n + a.loss m))).and …)` then `let J := max (a.threshold m) J₀`, giving n ≤ gain J − a.loss m (line 143), with gain J = g (J+1)/2 at the Lemma 5.4 call site"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GenericDifferentialPolynomial.TailRates.flat_of_residuals"
+          },
+          "destination": {
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSupportedPolynomial.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 130,
+            "text": "theorem TailRates.flat_of_residuals {gain rho : ℕ → ℝ} {f : D → ℝ} {fs : ℕ → D → ℝ}\n    (a : TailRates l q gain f fs)\n    (hU : IsOpen U) (hlU : ∀ᶠ x in l, x ∈ U)\n    (hq : ∀ᶠ x in l, 0 < q x ∧ q x ≤ 1)\n    (hf : ContDiffOn ℝ ∞ f U) (hfs : ∀ J, ContDiffOn ℝ ∞ (fs J) U)\n    (hgain : Tendsto gain atTop atTop) (hrho : Tendsto rho atTop atTop)\n    (Lres : ℕ → ℝ) (hres : ∀ J m, JetRate l q (fs J) m (rho J - Lres m))\n    (m : ℕ) (n : ℝ) : JetRate l q f m n"
+          }
+        }
       }
     }
-  }
+  ]
 }

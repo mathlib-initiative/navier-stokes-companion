@@ -1,25 +1,27 @@
 {
-  "id": "eq-9.15/key/05.NavierStokes.ActualCandidateConstruction.pressureNativeStages",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCandidateConstruction.pressureNativeStages",
-      "line": 396,
-      "module": "NavierStokes.ActualCandidateConstruction",
-      "path": "NavierStokes/ActualCandidateConstruction.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCandidateConstruction.lean#L396"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCandidateConstruction.pressureNativeStages",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCandidateConstruction.pressureNativeStages",
+        "module": "NavierStokes.ActualCandidateConstruction"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 396,
-        "text": "fun k => Nat.casesOn k (cycle B N0 0).state.pressure (fun j => (cycle B N0 (j + 1)).state.pressure - (cycle B N0 j).state.pressure)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ActualCandidateConstruction.pressureNativeStages",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L396",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCandidateConstruction.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 396,
+            "text": "noncomputable def pressureNativeStages (B N0 : ℕ) : ℕ → ActualMeanPhysicalData.Scalar"
+          }
+        }
       }
     }
-  }
+  ]
 }

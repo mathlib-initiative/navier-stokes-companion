@@ -1,24 +1,26 @@
 {
-  "id": "eq-7.35/key/03.NavierStokes.SignedWaveUpdate.nativeAssembly",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedWaveUpdate.nativeAssembly",
-      "line": 1193,
-      "module": "NavierStokes.SignedWaveUpdate",
-      "path": "NavierStokes/SignedWaveUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean#L1193"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedWaveUpdate.nativeAssembly",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedWaveUpdate.nativeAssembly",
+        "module": "NavierStokes.SignedWaveUpdate"
       },
-      "snippet": {
-        "line": 1193,
-        "text": "fun Y θ i => ∑ᶠ v : UnsignedLabel × Fin 2, (nativeTangentBlock (P v.1) hdet (outer v.1) (ε v.1) (a v.1) q x v.2).oscillation 0 (Y,θ) i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SignedWaveUpdate.nativeAssembly",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L1193",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean"
+          },
+          "snippet": {
+            "line": 1193,
+            "text": "noncomputable def nativeAssembly {D h : ℝ} {vr vt : TorusInverse.Plane}\n    {sys : SlotSystem D h vr vt} {N : ℕ}\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (a : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position) :\n    TorusInverse.Plane → ℝ → Fin 3 → ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

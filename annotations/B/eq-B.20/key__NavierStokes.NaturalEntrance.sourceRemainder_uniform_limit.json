@@ -1,24 +1,26 @@
 {
-  "id": "eq-B.20/key/05.NavierStokes.NaturalEntrance.sourceRemainder_uniform_limit",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalEntrance.sourceRemainder_uniform_limit",
-      "line": 426,
-      "module": "NavierStokes.NaturalEntrance",
-      "path": "NavierStokes/NaturalEntrance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L426"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalEntrance.sourceRemainder_uniform_limit",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalEntrance.sourceRemainder_uniform_limit",
+        "module": "NavierStokes.NaturalEntrance"
       },
-      "snippet": {
-        "line": 426,
-        "text": "∃ M > 0, ∀ Λ ≥ M, … |sourceRemainder h j σ p (1/Λ) (sourceJets … x p) - referenceRemainder v p| < 1/10"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.NaturalEntrance.sourceRemainder_uniform_limit",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L426",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean"
+          },
+          "snippet": {
+            "line": 426,
+            "text": "theorem sourceRemainder_uniform_limit {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (v : CoefficientFamily h j σ P0) (hσ : 0 < σ) {K : ℝ} (hK : 0 ≤ K) :\n    ∃ M : ℝ, 0 < M ∧ ∀ Λ : ℝ, M ≤ Λ → ∀ x : CoefficientPair v.epsilon,\n      ‖x - referencePair v‖ ≤ K / (2 * Λ) → ∀ p : entranceSet,\n        |sourceRemainder h j σ p (1 / Λ) (sourceJets v.epsilon_pos x p) -\n          referenceRemainder v p| < 1 / 10"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-7.24/key/07.NavierStokes.CorrectionInitialization.ActualPrimary.rawVelocity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.rawVelocity",
-      "line": 4004,
-      "module": "NavierStokes.CorrectionInitialization",
-      "path": "NavierStokes/CorrectionInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L4004"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionInitialization.ActualPrimary.rawVelocity",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.rawVelocity",
+        "module": "NavierStokes.CorrectionInitialization"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 4004,
-        "text": "rawVelocity j L x = PartitionedCovariance.amplitude (ChartScales.epsilon h (cellBand L)) (spatialMask L x.1 * cutoff slots.radius x.2.1) (covariance B N0 L x.1) (fun k => actualTarget modulation x.1 k) j • PrimaryPulseBounds.normalizedPulse …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.CorrectionInitialization.ActualPrimary.rawVelocity",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L4004",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 4004,
+            "text": "noncomputable def rawVelocity (j : Fin 2) (L : Label B N0)\n    (x : PhaseCalculus.Slow × TorusInverse.Plane) : ProblemStatement.Space"
+          }
+        }
       }
     }
-  }
+  ]
 }

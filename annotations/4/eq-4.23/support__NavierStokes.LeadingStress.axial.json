@@ -1,26 +1,29 @@
 {
-  "id": "eq-4.23/support/05.NavierStokes.LeadingStress.axial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStress.axial",
-      "line": 38,
-      "module": "NavierStokes.LeadingStress",
-      "path": "NavierStokes/LeadingStress.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean#L38"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStress.axial",
-        "kind": "def"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStress.axial",
+        "module": "NavierStokes.LeadingStress"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 38,
-        "text": "axial P h w = Real.sqrt (2 * w.1) * (partialX P.U w + P.axialLag h w / (2 * L h w.2)) — the Lean name for T_{0,z}; equals F·(p_{s,2} + b_s) by axial_eq_lag_plus_slope (line 49)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.LeadingStress.axial",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L38",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 38,
+            "text": "noncomputable def axial (h : ℝ) (w : Point) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

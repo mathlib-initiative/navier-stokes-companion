@@ -1,31 +1,33 @@
 {
-  "id": "lemma-5.1/attributed/1.NavierStokes.ActualSlowAxis.fromNatural_profiles_smooth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSlowAxis.fromNatural_profiles_smooth",
-      "line": 468,
-      "module": "NavierStokes.ActualSlowAxis",
-      "path": "NavierStokes/ActualSlowAxis.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean#L468"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSlowAxis.fromNatural_profiles_smooth",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSlowAxis.fromNatural_profiles_smooth",
+        "module": "NavierStokes.ActualSlowAxis"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Every coefficient of every order is C^\\infty in (X,\\eta) on Ico 0 (axisRadius^2) x realParameterDomain(tube): smoothness in X up to and including the axis, on one interval independent of the order.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 468,
-        "text": "theorem fromNatural_profiles_smooth {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) (n : ℕ) (i : Fin 5) :\n    ContDiffOn ℝ ∞\n      (SlowRecursion.profile ((fromNatural hp hP0 F hΛ hsmall hσ hT hδ hδT κ).coefficients n i))\n      (Ico (0 : ℝ) (axisRadius (ReferenceJetBounds.referenceInput F hΛ) δ ^ 2) ×ˢ\n        PositiveAxisExistence.realParameterDomain (parameterDomain\n          (AxisHolomorphic.parameterTube ActivationHolomorphic.parameterWindow (tubeWidth hp hP0 F hΛ hsmall hσ))))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActualSlowAxis.fromNatural_profiles_smooth",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Every coefficient of every order is C^\\infty in (X,\\eta) on Ico 0 (axisRadius^2) x realParameterDomain(tube): smoothness in X up to and including the axis, on one interval independent of the order.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L468",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean"
+          },
+          "snippet": {
+            "line": 468,
+            "text": "theorem fromNatural_profiles_smooth {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) (n : ℕ) (i : Fin 5) :\n    ContDiffOn ℝ ∞\n      (SlowRecursion.profile ((fromNatural hp hP0 F hΛ hsmall hσ hT hδ hδT κ).coefficients n i))\n      (Ico (0 : ℝ) (axisRadius (ReferenceJetBounds.referenceInput F hΛ) δ ^ 2) ×ˢ\n        PositiveAxisExistence.realParameterDomain (parameterDomain\n          (AxisHolomorphic.parameterTube ActivationHolomorphic.parameterWindow (tubeWidth hp hP0 F hΛ hsmall hσ))))"
+          }
+        }
       }
     }
-  }
+  ]
 }

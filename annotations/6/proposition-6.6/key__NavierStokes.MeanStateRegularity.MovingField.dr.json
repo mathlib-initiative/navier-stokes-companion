@@ -1,29 +1,31 @@
 {
-  "id": "proposition-6.6/key/1.NavierStokes.MeanStateRegularity.MovingField.dr",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanStateRegularity.MovingField.dr",
-      "line": 166,
-      "module": "NavierStokes.MeanStateRegularity",
-      "path": "NavierStokes/MeanStateRegularity.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanStateRegularity.lean#L166"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanStateRegularity.MovingField.dr",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanStateRegularity.MovingField.dr",
+        "module": "NavierStokes.MeanStateRegularity"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: MovingField U a b f \\to (ha : 0 < a) \\to (hab : a < b) \\to {o : Operators Point} \\to (ho : OperatorData U.carrier o) \\to MovingField U a b (o.dr f): smoothness, shell support and torus periodicity (descent) are preserved by D_r, given the shell bounds and the regularity/periodicity of the radial pro"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 166,
-        "text": "theorem dr (hf : GaugeMomentBalances.MovingField U a b f) (ha : 0 < a) (hab : a < b)\n    {o : Operators Point} (ho : OperatorData U.carrier o) :\n    GaugeMomentBalances.MovingField U a b (o.dr f)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.MeanStateRegularity.MovingField.dr",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: MovingField U a b f \\to (ha : 0 < a) \\to (hab : a < b) \\to {o : Operators Point} \\to (ho : OperatorData U.carrier o) \\to MovingField U a b (o.dr f): smoothness, shell support and torus periodicity (descent) are preserved by D_r, given the shell bounds and the regularity/periodicity of the radial pro"
+          },
+          "destination": {
+            "fragment": "L166",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanStateRegularity.lean"
+          },
+          "snippet": {
+            "line": 166,
+            "text": "theorem dr (hf : GaugeMomentBalances.MovingField U a b f) (ha : 0 < a) (hab : a < b)\n    {o : Operators Point} (ho : OperatorData U.carrier o) :\n    GaugeMomentBalances.MovingField U a b (o.dr f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

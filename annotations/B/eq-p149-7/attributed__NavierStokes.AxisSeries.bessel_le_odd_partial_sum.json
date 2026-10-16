@@ -1,26 +1,28 @@
 {
-  "id": "eq-p149-7/attributed/06.NavierStokes.AxisSeries.bessel_le_odd_partial_sum",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisSeries.bessel_le_odd_partial_sum",
-      "line": 329,
-      "module": "NavierStokes.AxisSeries",
-      "path": "NavierStokes/AxisSeries.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisSeries.lean#L329"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisSeries.bessel_le_odd_partial_sum",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisSeries.bessel_le_odd_partial_sum",
+        "module": "NavierStokes.AxisSeries"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 329,
-        "text": "(k j) (hj : 1 ≤ j) (hodd : Odd j) (t) (0 ≤ t) (t ≤ 4) : bessel k t ≤ ∑ n ∈ Finset.range j, term k n t — at k = 0, j = 5 this is the display's first inequality"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.AxisSeries.bessel_le_odd_partial_sum",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L329",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisSeries.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 329,
+            "text": "theorem bessel_le_odd_partial_sum (k j : ℕ) (hj : 1 ≤ j) (hodd : Odd j)\n    (t : ℝ) (ht0 : 0 ≤ t) (ht : t ≤ 4) :\n    bessel k t ≤ ∑ n ∈ Finset.range j, term k n t"
+          }
+        }
       }
     }
-  }
+  ]
 }

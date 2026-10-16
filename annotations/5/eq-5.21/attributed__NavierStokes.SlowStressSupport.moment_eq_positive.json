@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.21/attributed/14.NavierStokes.SlowStressSupport.moment_eq_positive",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.moment_eq_positive",
-      "line": 115,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L115"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.moment_eq_positive",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.moment_eq_positive",
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 115,
-        "text": "exterior B S f -> moment B m f eta = PositiveOrderMoments.positiveIntegral (fun R => R^m * f (R, eta))  -- [0,B] to (0,infinity) bridge"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "14.NavierStokes.SlowStressSupport.moment_eq_positive",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L115",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 115,
+            "text": "theorem moment_eq_positive {S : Set ℝ} {f : Field} {B : ℝ} (hB : 0 ≤ B)\n    (hs : exterior B S f) {eta : ℝ} (heta : eta ∈ S) (m : ℕ) :\n    moment B m f eta = PositiveOrderMoments.positiveIntegral (fun R => R ^ m * f (R, eta))"
+          }
+        }
       }
     }
-  }
+  ]
 }

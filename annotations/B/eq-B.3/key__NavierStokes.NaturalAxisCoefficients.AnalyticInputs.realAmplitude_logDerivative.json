@@ -1,25 +1,27 @@
 {
-  "id": "eq-B.3/key/01.NavierStokes.NaturalAxisCoefficients.AnalyticInputs.realAmplitude_logDerivative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalAxisCoefficients.AnalyticInputs.realAmplitude_logDerivative",
-      "line": 524,
-      "module": "NavierStokes.NaturalAxisCoefficients",
-      "path": "NavierStokes/NaturalAxisCoefficients.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisCoefficients.lean#L524"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalAxisCoefficients.AnalyticInputs.realAmplitude_logDerivative",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalAxisCoefficients.AnalyticInputs.realAmplitude_logDerivative",
+        "module": "NavierStokes.NaturalAxisCoefficients"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 524,
-        "text": "deriv (realAmplitude h j σ Λ C) x / realAmplitude h j σ Λ C x = Λ * realGradient h j σ x (docstring: 'the prescribed ξ₀ = Λκ')"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.NaturalAxisCoefficients.AnalyticInputs.realAmplitude_logDerivative",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L524",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisCoefficients.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 524,
+            "text": "theorem AnalyticInputs.realAmplitude_logDerivative {h j σ : ℝ} {P : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P) (Λ : ℝ) {C : ℝ} (hC : 0 < C)\n    {x : ℝ} (hx : x ∈ window.interval) :\n    deriv (realAmplitude h j σ Λ C) x / realAmplitude h j σ Λ C x =\n      Λ * realGradient h j σ x"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,26 @@
 {
-  "id": "eq-p162-3/key/06.NavierStokes.FiveProfileMoments.physicalDensity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveProfileMoments.physicalDensity",
-      "line": 476
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L476"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveProfileMoments.physicalDensity",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveProfileMoments.physicalDensity",
+        "module": "NavierStokes.FiveProfileMoments"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 476,
-        "text": "physicalDensity P b A G c x := ![physicalU - G, √(2x) * (physicalE - A * x^b), physicalU * (√(2x) * physicalE) - G * (√(2x) * A * x^b), (physicalU^2 - physicalE^2/2) - (G^2 - (A*x^b)^2/2), (physicalE^2 - (A*x^b)^2) / (2x)]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.FiveProfileMoments.physicalDensity",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L476"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 476,
+            "text": "noncomputable def physicalDensity (P : Patch) (b A G : ℝ) (c : Coeff) (x : ℝ) : Debt"
+          }
+        }
       }
     }
-  }
+  ]
 }

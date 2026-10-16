@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.8/key/06.NavierStokes.PrimaryODE.FrameData.ofNormalLocal",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.FrameData.ofNormalLocal",
-      "line": 1170,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L1170"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.FrameData.ofNormalLocal",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.FrameData.ofNormalLocal",
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 1170,
-        "text": "rho z := MovingFrameODE.radialSlope (n z);  frame z := localFrame (n z) (= normalFrame (n z), so frame 0 = K_a, frame 1 = quarterTurn K_a);  eigenvector := h"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.PrimaryODE.FrameData.ofNormalLocal",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L1170",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 1170,
+            "text": "noncomputable def FrameData.ofNormalLocal (n nDot : Q × ℝ → Space)\n    (F : Q × ℝ → ℝ) (g : Q × ℝ → State)\n    (lam h hRate viscosityScale : Q × ℝ → ℝ) : FrameData Q"
+          }
+        }
       }
     }
-  }
+  ]
 }

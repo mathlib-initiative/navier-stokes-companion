@@ -1,31 +1,33 @@
 {
-  "id": "lemma-10.3/attributed/1.NavierStokesR3.ActualCandidate.localized_velocity_tsupport",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ActualCandidate.localized_velocity_tsupport",
-      "line": 51,
-      "module": "NavierStokes.R3.ActualCandidate",
-      "path": "NavierStokes/R3/ActualCandidate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ActualCandidate.lean#L51"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ActualCandidate.localized_velocity_tsupport",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ActualCandidate.localized_velocity_tsupport",
+        "module": "NavierStokes.R3.ActualCandidate"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `∀ t, tsupport (fun x => R3CompactCandidate.velocity A B (t,x)) ⊆ SpatialLocalization.supportCylinder`: the Prop. 10.1 support clause for u, at every time, not only on `Ico 0 1`.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 51,
-        "text": "theorem localized_velocity_tsupport (A B : VelocityField) (t : ℝ) :\n    tsupport (fun x : Space => R3CompactCandidate.velocity A B (t, x)) ⊆\n      SpatialLocalization.supportCylinder"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokesR3.ActualCandidate.localized_velocity_tsupport",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: `∀ t, tsupport (fun x => R3CompactCandidate.velocity A B (t,x)) ⊆ SpatialLocalization.supportCylinder`: the Prop. 10.1 support clause for u, at every time, not only on `Ico 0 1`.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L51",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ActualCandidate.lean"
+          },
+          "snippet": {
+            "line": 51,
+            "text": "theorem localized_velocity_tsupport (A B : VelocityField) (t : ℝ) :\n    tsupport (fun x : Space => R3CompactCandidate.velocity A B (t, x)) ⊆\n      SpatialLocalization.supportCylinder"
+          }
+        }
       }
     }
-  }
+  ]
 }

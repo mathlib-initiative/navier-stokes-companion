@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.17/key/02.NavierStokes.RankStateCoherence.measured_debt_on",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RankStateCoherence.measured_debt_on",
-      "line": 74,
-      "module": "NavierStokes.RankStateCoherence",
-      "path": "NavierStokes/RankStateCoherence.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RankStateCoherence.lean#L74"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RankStateCoherence.measured_debt_on",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RankStateCoherence.measured_debt_on",
+        "module": "NavierStokes.RankStateCoherence"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 74,
-        "text": "CorrectionState.debt C u n s = MeanRankUpdate.scaleDebt l⁻¹ c (CorrectionState.debt Cr ur nr (P s)); docstring: 'The powers are pressure c², angular c²/l³, and axial c²/l²'"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.RankStateCoherence.measured_debt_on",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L74",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RankStateCoherence.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 74,
+            "text": "theorem measured_debt_on {l c : ℝ} (hl : 0 < l) (P : S ≃L[ℝ] T) (k : ℕ)\n    {V : Set S} {U : Set T} (hV : IsOpen V) (hU : IsOpen U) (hmap : MapsTo P V U)\n    {C : CorrectionState.Context (PressureStream.Lift S)}\n    {Cr : CorrectionState.Context (PressureStream.Lift T)}\n    {u : CorrectionState.State (PressureStream.Lift S)}\n    {ur : CorrectionState.State (PressureStream.Lift T)} {n nr : ℕ}\n    (H : StateOn (PhysicalMeanDomain.slowDomain V) (GaugeStateCoherence.chartEquiv l hl.ne' P k) c l u ur n nr)\n    (G : ContextOn (PhysicalMeanDomain.slowDomain V) (GaugeStateCoherence.chartEquiv l hl.ne' P k) c l C Cr n nr)\n    (R : DebtRegular U Cr ur nr) {s : S} (hs : s ∈ V) :\n    CorrectionState.debt C u n s =\n      MeanRankUpdate.scaleDebt l⁻¹ c (CorrectionState.debt Cr ur nr (P s))"
+          }
+        }
       }
     }
-  }
+  ]
 }

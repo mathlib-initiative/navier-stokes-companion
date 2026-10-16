@@ -1,25 +1,27 @@
 {
-  "id": "eq-p160-8/key/01.NavierStokes.TrueConeLoop.constructed_means",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.constructed_means",
-      "line": 346,
-      "module": "NavierStokes.TrueConeLoop",
-      "path": "NavierStokes/TrueConeLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L346"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.constructed_means"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.constructed_means",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 346,
-        "text": "(∫ φ in (0:ℝ)..1, constructedA a m d p δ … φ) = a ∧ (∫ φ in (0:ℝ)..1, constructedC a m d p δ … φ) = a * m"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TrueConeLoop.constructed_means"
+          },
+          "destination": {
+            "fragment": "L346",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 346,
+            "text": "theorem constructed_means (a m d p δ : ℝ) (ha : 0 < a) (hd : d ≠ 0) (hδ : 0 < δ) :\n    (∫ φ in (0 : ℝ)..1, constructedA a m d p δ ha hd hδ φ) = a ∧\n      (∫ φ in (0 : ℝ)..1, constructedC a m d p δ ha hd hδ φ) = a * m"
+          }
+        }
       }
     }
-  }
+  ]
 }

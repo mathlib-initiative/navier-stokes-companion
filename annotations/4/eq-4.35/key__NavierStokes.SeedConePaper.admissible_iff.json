@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.35/key/01.NavierStokes.SeedConePaper.admissible_iff",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SeedConePaper.admissible_iff",
-      "line": 37,
-      "module": "NavierStokes.SeedConePaper",
-      "path": "NavierStokes/SeedConePaper.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedConePaper.lean#L37"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SeedConePaper.admissible_iff",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SeedConePaper.admissible_iff",
+        "module": "NavierStokes.SeedConePaper"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 37,
-        "text": "(ha : 0 < a) (hv : 2 < shearMagnitude a b) : AdmissibleCone a b p₁ p₂ ↔ shearMagnitude a b < parallelStress a b p₁ p₂ ∧ (shearMagnitude a b - 2) * transverseStress a b p₁ p₂ ^ 2 < 2 * (parallelStress a b p₁ p₂ - shearMagnitude a b) ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SeedConePaper.admissible_iff",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L37",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedConePaper.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 37,
+            "text": "theorem admissible_iff {a b p₁ p₂ : ℝ} (ha : 0 < a)\n    (hv : 2 < shearMagnitude a b) :\n    AdmissibleCone a b p₁ p₂ ↔\n      shearMagnitude a b < parallelStress a b p₁ p₂ ∧\n        (shearMagnitude a b - 2) * transverseStress a b p₁ p₂ ^ 2 <\n          2 * (parallelStress a b p₁ p₂ - shearMagnitude a b) ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

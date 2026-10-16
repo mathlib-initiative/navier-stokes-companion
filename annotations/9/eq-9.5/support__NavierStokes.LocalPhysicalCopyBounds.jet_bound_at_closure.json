@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.5/support/12.NavierStokes.LocalPhysicalCopyBounds.jet_bound_at_closure",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalPhysicalCopyBounds.jet_bound_at_closure",
-      "line": 83,
-      "module": "NavierStokes.LocalPhysicalCopyBounds",
-      "path": "NavierStokes/LocalPhysicalCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPhysicalCopyBounds.lean#L83"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalPhysicalCopyBounds.jet_bound_at_closure",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalPhysicalCopyBounds.jet_bound_at_closure",
+        "module": "NavierStokes.LocalPhysicalCopyBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 83,
-        "text": "(hf : ContDiffAt ℝ ∞ f x) (hx : x ∈ closure U) (hb : ∀ y ∈ U, ‖iteratedFDeriv ℝ j f y‖ ≤ B) : ‖iteratedFDeriv ℝ j f x‖ ≤ B — the only tool for an edge point, and it needs smoothness at the edge point"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "12.NavierStokes.LocalPhysicalCopyBounds.jet_bound_at_closure",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L83",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPhysicalCopyBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 83,
+            "text": "theorem jet_bound_at_closure {f : E → F} {U : Set E} {x : E} {B : ℝ}\n    (hf : ContDiffAt ℝ ∞ f x) (hx : x ∈ closure U) (j : ℕ)\n    (hb : ∀ y ∈ U, ‖iteratedFDeriv ℝ j f y‖ ≤ B) :\n    ‖iteratedFDeriv ℝ j f x‖ ≤ B"
+          }
+        }
       }
     }
-  }
+  ]
 }

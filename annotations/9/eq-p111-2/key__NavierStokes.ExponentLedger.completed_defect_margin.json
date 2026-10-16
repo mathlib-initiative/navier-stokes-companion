@@ -1,24 +1,27 @@
 {
-  "id": "eq-p111-2/key/07.NavierStokes.ExponentLedger.completed_defect_margin",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ExponentLedger.completed_defect_margin",
-      "line": 220
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ExponentLedger.lean#L220"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ExponentLedger.completed_defect_margin",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ExponentLedger.completed_defect_margin",
+        "module": "NavierStokes.ExponentLedger"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 220,
-        "text": "meanExponent (σ + 1/10) < meanExponent σ + 9/10 - 4*κ — the fifth line, 0.9 - 4κ_s > 0.1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.ExponentLedger.completed_defect_margin",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L220"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 220,
+            "text": "theorem completed_defect_margin {σ κ : ℝ} (hκ : κ ≤ 1 / 100000) :\n    meanExponent (σ + 1 / 10) < meanExponent σ + 9 / 10 - 4 * κ"
+          }
+        }
       }
     }
-  }
+  ]
 }

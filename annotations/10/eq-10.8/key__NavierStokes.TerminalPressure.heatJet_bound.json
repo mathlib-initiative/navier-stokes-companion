@@ -1,25 +1,27 @@
 {
-  "id": "eq-10.8/key/01.NavierStokes.TerminalPressure.heatJet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalPressure.heatJet_bound",
-      "line": 75,
-      "module": "NavierStokes.TerminalPressure",
-      "path": "NavierStokes/TerminalPressure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean#L75"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalPressure.heatJet_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalPressure.heatJet_bound",
+        "module": "NavierStokes.TerminalPressure"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 75,
-        "text": "(hh : 0 < h) (hν : 0 ≤ ν) (hv : 1 ≤ v) (n : ℕ) : |heatJet h n ν v| ≤ heatJetBound h n, where heatJet h n ν v = (2 / v) ^ n * RadialHeatProfile.profileJet (1 + h) n (2 * ν / v) (TerminalPressure.lean:26) — the dimensionless form of the first majorant"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TerminalPressure.heatJet_bound"
+          },
+          "destination": {
+            "fragment": "L75",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 75,
+            "text": "theorem heatJet_bound {h ν v : ℝ} (hh : 0 < h) (hν : 0 ≤ ν) (hv : 1 ≤ v) (n : ℕ) :\n    |heatJet h n ν v| ≤ heatJetBound h n"
+          }
+        }
       }
     }
-  }
+  ]
 }

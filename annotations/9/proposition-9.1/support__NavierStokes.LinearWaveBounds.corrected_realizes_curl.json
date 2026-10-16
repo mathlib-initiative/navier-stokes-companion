@@ -1,26 +1,29 @@
 {
-  "id": "proposition-9.1/support/3.NavierStokes.LinearWaveBounds.corrected_realizes_curl",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveBounds.corrected_realizes_curl",
-      "line": 711,
-      "module": "NavierStokes.LinearWaveBounds",
-      "path": "NavierStokes/LinearWaveBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L711"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveBounds.corrected_realizes_curl",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveBounds.corrected_realizes_curl",
+        "module": "NavierStokes.LinearWaveBounds"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 711,
-        "text": "theorem corrected_realizes_curl {s : StripData D} {P : ℕ → D → ℝ} {α κ : ℝ}\n    {d : GraphDirections D} {a : WaveCoefficients D}\n    (h : InputBounds s P α κ d a) {ψ : ℕ → D → ℝ} (hψ : UnweightedClass s 0 ψ) (n : ℕ)\n    (G : CurlClassBounds.CylindricalGeometry s.domain (a.radius n) (d.radialField n)\n      (fun _ => d.angular) (d.axialField s n))\n    (hK : a.frequency n ≠ 0) (hΦ : ContDiffOn ℝ ∞ (a.phase n) s.domain)\n    (hn : ∀ x ∈ s.domain, a.normal s d n x ≠ 0)\n    (ht : ∀ x ∈ s.domain, normalDot (a.normal s d n x) (a.amplitude n x) = 0)\n    {x : D} (hx : x ∈ s.domain) :\n    CurlClassBounds.cylindricalCurl (a.radius n) (d.radialField n) (fun _ => d.angular)\n        (d.axialField s n) ((a.withCutoff ψ).curlPotential s d n) x =\n      vectorMode (a.frequency n) (a.phase n) ((a.corrected s d ψ).amplitude n) x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.LinearWaveBounds.corrected_realizes_curl",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L711",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 711,
+            "text": "theorem corrected_realizes_curl {s : StripData D} {P : ℕ → D → ℝ} {α κ : ℝ}\n    {d : GraphDirections D} {a : WaveCoefficients D}\n    (h : InputBounds s P α κ d a) {ψ : ℕ → D → ℝ} (hψ : UnweightedClass s 0 ψ) (n : ℕ)\n    (G : CurlClassBounds.CylindricalGeometry s.domain (a.radius n) (d.radialField n)\n      (fun _ => d.angular) (d.axialField s n))\n    (hK : a.frequency n ≠ 0) (hΦ : ContDiffOn ℝ ∞ (a.phase n) s.domain)\n    (hn : ∀ x ∈ s.domain, a.normal s d n x ≠ 0)\n    (ht : ∀ x ∈ s.domain, normalDot (a.normal s d n x) (a.amplitude n x) = 0)\n    {x : D} (hx : x ∈ s.domain) :\n    CurlClassBounds.cylindricalCurl (a.radius n) (d.radialField n) (fun _ => d.angular)\n        (d.axialField s n) ((a.withCutoff ψ).curlPotential s d n) x =\n      vectorMode (a.frequency n) (a.phase n) ((a.corrected s d ψ).amplitude n) x"
+          }
+        }
       }
     }
-  }
+  ]
 }

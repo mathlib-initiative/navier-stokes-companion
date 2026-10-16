@@ -1,23 +1,26 @@
 {
-  "id": "eq-6.30/attributed/03.NavierStokes.WeightedClasses.MemClass.bilinear",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedClasses.MemClass.bilinear",
-      "line": 299
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean#L299"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedClasses.MemClass.bilinear"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedClasses.MemClass.bilinear",
+        "module": "NavierStokes.WeightedClasses"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 299,
-        "text": "(hf : MemClass s w α f) (hu : MemClass s v β u) (L) : MemClass s (fun n x => w n x * v n x) (α + β) (fun n x => L (f n x) (u n x)) — the Leibniz step that adds the exponents; the two inclusions follow by comparing the product weight with ζ resp. √ζ·P"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.WeightedClasses.MemClass.bilinear"
+          },
+          "destination": {
+            "fragment": "L299"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 299,
+            "text": "theorem bilinear {u : ℕ → D → F} (hf : MemClass s w α f)\n    (hu : MemClass s v β u) (L : E →L[ℝ] F →L[ℝ] G) :\n    MemClass s (fun n x => w n x * v n x) (α + β)\n      (fun n x => L (f n x) (u n x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

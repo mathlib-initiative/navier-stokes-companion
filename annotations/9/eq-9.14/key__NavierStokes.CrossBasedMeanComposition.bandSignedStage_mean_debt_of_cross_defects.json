@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.14/key/01.NavierStokes.CrossBasedMeanComposition.bandSignedStage_mean_debt_of_cross_defects",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CrossBasedMeanComposition.bandSignedStage_mean_debt_of_cross_defects",
-      "line": 271,
-      "module": "NavierStokes.CrossBasedMeanComposition",
-      "path": "NavierStokes/CrossBasedMeanComposition.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CrossBasedMeanComposition.lean#L271"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CrossBasedMeanComposition.bandSignedStage_mean_debt_of_cross_defects",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CrossBasedMeanComposition.bandSignedStage_mean_debt_of_cross_defects",
+        "module": "NavierStokes.CrossBasedMeanComposition"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 271,
-        "text": "(G : SignedMeanGain.Geometry) ... no NativeData argument. Hypotheses: 1/5 <= sigma, 0 <= kappa <= 1/100000, f : SignedFamily G.strip P (1/2) (17/25) (1/2+sigma-kappa) (1+sigma-2*kappa), hold : u.oscillation = oldField f a, LocalData, OperatorBounds, CumulativeBounds, regularity, htheta/hz : MeanClass G.strip (1+sigma-kappa) (u.theta/axialResidual c), hd : DefectBounds G.slowStrip (sigma-kappa) c u, hDtheta/hDz : MeanClass G.strip (1+sigma+17/100+kappa) (crossDefect G 2/1 (u.theta/axialResidual c) (crossTensor f a 0 1/2)). Conclusion, with v := waveStage G.gauge c u (tangentField f a + curlField f a) q gaussian: MeanClass G.strip (1+sigma-2*kappa) (v.pressure - u.pressure) /\\ CumulativeBounds G.strip v /\\ MeanClass G.strip (1+sigma-2*kappa) (v.thetaResidual c) /\\ MeanClass G.strip (1+sigma-2*kappa) (v.axialResidual c) /\\ MeanClass G.strip (1+sigma+17/100) (meanBar (v.thetaResidual c)) /\\ MeanClass G.strip (1+sigma+17/100) (meanBar (v.axialResidual c)) /\\ DefectBounds G.slowStrip (sigma-2*kappa) c v"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CrossBasedMeanComposition.bandSignedStage_mean_debt_of_cross_defects",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L271",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CrossBasedMeanComposition.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 271,
+            "text": "theorem bandSignedStage_mean_debt_of_cross_defects {ι : Type}\n    (G : SignedMeanGain.Geometry)\n    (c : Context Point) (u : State Point)\n    {P : ι → ℕ → Point → ℝ} {σ κ : ℝ}\n    (hσ : 1/5 ≤ σ) (hκ : 0 ≤ κ) (hκsmall : κ ≤ 1/100000)\n    (f : LabelSumBounds.SignedFamily G.strip P (1/2) (17/25)\n      (1/2+σ-κ) (1+σ-2*κ)) (a : SignedMeanGain.Assembly f)\n    (q : OscillatoryScalar Point) (gaussian : Oscillation Point)\n    (hold : u.oscillation = SignedMeanGain.oldField f a)\n    (H : SignedMeanGain.LocalData G c u\n      (SignedMeanGain.tangentField f a + SignedMeanGain.curlField f a) q gaussian)\n    (ho : OperatorBounds G.strip G.operators κ)\n    (hu : CorrectionState.CumulativeBounds G.strip u)\n    (hbase : SmoothTriple (LocalRankDefect.positiveDomain G.region.carrier) c.base)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

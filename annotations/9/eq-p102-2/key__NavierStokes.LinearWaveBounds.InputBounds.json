@@ -1,23 +1,26 @@
 {
-  "id": "eq-p102-2/key/01.NavierStokes.LinearWaveBounds.InputBounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveBounds.InputBounds",
-      "line": 270
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L270"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveBounds.InputBounds",
-        "kind": "structure"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveBounds.InputBounds",
+        "module": "NavierStokes.LinearWaveBounds"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 270,
-        "text": "fields `amplitude : ∀ i, WaveClass s P α (a.amplitude · · i)` and `pressure : WaveClass s P (α + 1/2) a.pressure`, plus `loss_nonneg : 0 ≤ κ` and `radial_scale : BandBound s (-κ) d.radialScale` — the table's baseline a ∈ W_α and the paper's π_m ∈ W_{α+1/2} stated just above the table, and the κ that is the paper's κ_s (Dr_mem, line 132, is the paper's D_r : C_α → C_{α−κ_s})"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.LinearWaveBounds.InputBounds",
+            "kind": "structure"
+          },
+          "destination": {
+            "fragment": "L270"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 270,
+            "text": "structure InputBounds (s : StripData D) (P : ℕ → D → ℝ) (α κ : ℝ)\n    (d : GraphDirections D) (a : WaveCoefficients D) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

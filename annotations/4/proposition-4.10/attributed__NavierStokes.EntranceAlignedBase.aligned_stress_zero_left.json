@@ -1,36 +1,57 @@
 {
-  "id": "proposition-4.10/attributed/1.NavierStokes.EntranceAlignedBase.aligned_stress_zero_left",
-  "location": {
-    "page": 36,
-    "rect": [0.12854, 0.677686, 0.746187, 0.221488]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.EntranceAlignedBase.aligned_stress_zero_left",
-      "line": 496,
-      "module": "NavierStokes.EntranceAlignedBase",
-      "path": "NavierStokes/EntranceAlignedBase.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 36,
+        "rect": [0.12854, 0.677686, 0.746187, 0.221488]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p036"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L496"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.EntranceAlignedBase.aligned_stress_zero_left",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 37,
+        "rect": [0.12854, 0.102479, 0.746187, 0.26281]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For every n and every p with p.1 <= activeLeft W: stressTheta n p = 0 and stressAxial n p = 0. T_0 = 0 on the CLOSED [0,X_a], all orders.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "proposition-4.10@p036",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 496,
-        "text": "theorem aligned_stress_zero_left (n : ℕ) {p : ℝ × ℝ}\n    (hp : p.1 ≤ NominalConeAssembly.activeLeft W) :\n    (alignedCoefficients W H Q M hlo).stressTheta n p = 0 ∧\n    (alignedCoefficients W H Q M hlo).stressAxial n p = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p037"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.EntranceAlignedBase.aligned_stress_zero_left",
+        "module": "NavierStokes.EntranceAlignedBase"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.EntranceAlignedBase.aligned_stress_zero_left",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For every n and every p with p.1 <= activeLeft W: stressTheta n p = 0 and stressAxial n p = 0. T_0 = 0 on the CLOSED [0,X_a], all orders.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L496",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean"
+          },
+          "snippet": {
+            "line": 496,
+            "text": "theorem aligned_stress_zero_left (n : ℕ) {p : ℝ × ℝ}\n    (hp : p.1 ≤ NominalConeAssembly.activeLeft W) :\n    (alignedCoefficients W H Q M hlo).stressTheta n p = 0 ∧\n    (alignedCoefficients W H Q M hlo).stressAxial n p = 0"
+          }
+        }
+      }
+    }
+  ]
 }

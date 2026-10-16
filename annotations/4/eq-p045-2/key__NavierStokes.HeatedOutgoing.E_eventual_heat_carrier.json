@@ -1,26 +1,28 @@
 {
-  "id": "eq-p045-2/key/01.NavierStokes.HeatedOutgoing.E_eventual_heat_carrier",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HeatedOutgoing.E_eventual_heat_carrier",
-      "line": 743,
-      "module": "NavierStokes.HeatedOutgoing",
-      "path": "NavierStokes/HeatedOutgoing.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean#L743"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HeatedOutgoing.E_eventual_heat_carrier",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HeatedOutgoing.E_eventual_heat_carrier",
+        "module": "NavierStokes.HeatedOutgoing"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 743,
-        "text": "(hν : ParametricHeatTail.diffusion eta = τ / q) (hlate : 3 ≤ Real.log ((s/q) / switchRadius F XR) + 1/5) : q ^ (-HeatTailEdit.exponent F.data.h) * E F XR c (s/q, eta) = (OutgoingDilation.carrierAmplitude F * switchRadius F XR ^ HeatTailEdit.exponent F.data.h) * RadialHeatProfile.spatialProfile (1 + F.data.h) τ s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.HeatedOutgoing.E_eventual_heat_carrier",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L743",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 743,
+            "text": "theorem E_eventual_heat_carrier (F : Profile) (XR : ℝ) (c : ℝ → Coeff)\n    {q s τ eta : ℝ} (hXR : 0 < XR) (hq : 0 < q) (hs : 0 < s)\n    (hν : ParametricHeatTail.diffusion eta = τ / q)\n    (hlate : 3 ≤ Real.log ((s / q) / switchRadius F XR) + 1 / 5) :\n    q ^ (-HeatTailEdit.exponent F.data.h) * E F XR c (s / q, eta) =\n      (OutgoingDilation.carrierAmplitude F * (switchRadius F XR) ^ HeatTailEdit.exponent F.data.h) *\n        RadialHeatProfile.spatialProfile (1 + F.data.h) τ s"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.21/attributed/06.NavierStokes.BlowupImplication.positive_profile_tendsto_atTop",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BlowupImplication.positive_profile_tendsto_atTop",
-      "line": 37,
-      "module": "NavierStokes.BlowupImplication",
-      "path": "NavierStokes/BlowupImplication.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BlowupImplication.lean#L37"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BlowupImplication.positive_profile_tendsto_atTop",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BlowupImplication.positive_profile_tendsto_atTop",
+        "module": "NavierStokes.BlowupImplication"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 37,
-        "text": "Tendsto (fun t => q t ^ (-A) * (E + error t)) l atTop, for 0 < A, 0 < E, q → 0⁺ and error → 0 — the abstract form of the display's trailing ⟶ +∞"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.BlowupImplication.positive_profile_tendsto_atTop",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L37",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BlowupImplication.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 37,
+            "text": "theorem positive_profile_tendsto_atTop {ι : Type*} {l : Filter ι}\n    {q error : ι → ℝ} {A E : ℝ} (hA : 0 < A) (hE : 0 < E)\n    (hq : Tendsto q l (𝓝[>] (0 : ℝ)))\n    (herror : Tendsto error l (𝓝 0)) :\n    Tendsto (fun t => q t ^ (-A) * (E + error t)) l atTop"
+          }
+        }
       }
     }
-  }
+  ]
 }

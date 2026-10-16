@@ -1,29 +1,31 @@
 {
-  "id": "lemma-6.2/key/1.NavierStokes.TorusAverages.integral_torusCovering_iterate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TorusAverages.integral_torusCovering_iterate",
-      "line": 94,
-      "module": "NavierStokes.TorusAverages",
-      "path": "NavierStokes/TorusAverages.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusAverages.lean#L94"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TorusAverages.integral_torusCovering_iterate",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TorusAverages.integral_torusCovering_iterate",
+        "module": "NavierStokes.TorusAverages"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For continuous f : Torus -> V and every n, int f (torusCovering^[n] z) d(torusMeasure) = int f z d(torusMeasure): clause (c), equation (6.19), for every covering power."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 94,
-        "text": "theorem integral_torusCovering_iterate {V : Type*} [NormedAddCommGroup V]\n    [NormedSpace ℝ V] (f : Torus → V) (hf : Continuous f) (n : ℕ) :\n    (∫ z, f (torusCovering^[n] z) ∂torusMeasure) = ∫ z, f z ∂torusMeasure"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TorusAverages.integral_torusCovering_iterate",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For continuous f : Torus -> V and every n, int f (torusCovering^[n] z) d(torusMeasure) = int f z d(torusMeasure): clause (c), equation (6.19), for every covering power."
+          },
+          "destination": {
+            "fragment": "L94",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusAverages.lean"
+          },
+          "snippet": {
+            "line": 94,
+            "text": "theorem integral_torusCovering_iterate {V : Type*} [NormedAddCommGroup V]\n    [NormedSpace ℝ V] (f : Torus → V) (hf : Continuous f) (n : ℕ) :\n    (∫ z, f (torusCovering^[n] z) ∂torusMeasure) = ∫ z, f z ∂torusMeasure"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,28 @@
 {
-  "id": "eq-7.32/attributed/05.NavierStokes.SignedWaveUpdate.normalizedRequest_class",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedWaveUpdate.normalizedRequest_class",
-      "line": 681,
-      "module": "NavierStokes.SignedWaveUpdate",
-      "path": "NavierStokes/SignedWaveUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean#L681"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedWaveUpdate.normalizedRequest_class"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedWaveUpdate.normalizedRequest_class",
+        "module": "NavierStokes.SignedWaveUpdate"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 681,
-        "text": "from MeanClass s α (requestedStress …) concludes MeanClass s (α - 1) (fun n x => normalizedRequest s p c u n x i), normalizedRequest = (s.epsilon n)⁻¹ • requestedStress — this is the exponent dictionary Σ ∈ M_α ⟹ Σ/ε ∈ M_{α−1}"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.SignedWaveUpdate.normalizedRequest_class"
+          },
+          "destination": {
+            "fragment": "L681",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 681,
+            "text": "theorem normalizedRequest_class\n    (p : SignedStressPrimitive.Patch) {cL cR : ℝ} (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hS : ∀ n, 1 ≤ S n)\n    (c : CorrectionState.Context (PressureStream.Lift E)) (u : CorrectionState.State (PressureStream.Lift E))\n    {α : ℝ} (ht : ∀ n, ContDiff ℝ ∞ (u.thetaResidual c n))\n    (hz : ∀ n, ContDiff ℝ ∞ (u.axialResidual c n))\n    (hst : ∀ n, RadialAlias.RadiallySupported p.a p.b (u.thetaResidual c n))\n    (hsz : ∀ n, RadialAlias.RadiallySupported p.a p.b (u.axialResidual c n))\n    (hct : MeanClass (WeightedRadialPrimitive.logStripData p.a p.b cL cR p.a_pos hcL hcR\n      ε S hε hεone hS) α (u.thetaResidual c))\n    (hcz : MeanClass (WeightedRadialPrimitive.logStripData p.a p.b cL cR p.a_pos hcL hcR\n      ε S hε hεone hS) α (u.axialResidual c)) (i : Fin 2) :\n    MeanClass (WeightedRadialPrimitive.logStripData p.a p.b cL cR p.a_pos hcL hcR\n      ε S hε hεone hS) (α - 1)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

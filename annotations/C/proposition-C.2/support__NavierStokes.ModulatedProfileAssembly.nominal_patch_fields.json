@@ -1,26 +1,29 @@
 {
-  "id": "proposition-C.2/support/3.NavierStokes.ModulatedProfileAssembly.nominal_patch_fields",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedProfileAssembly.nominal_patch_fields",
-      "line": 207,
-      "module": "NavierStokes.ModulatedProfileAssembly",
-      "path": "NavierStokes/ModulatedProfileAssembly.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileAssembly.lean#L207"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedProfileAssembly.nominal_patch_fields",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedProfileAssembly.nominal_patch_fields",
+        "module": "NavierStokes.ModulatedProfileAssembly"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 207,
-        "text": "theorem nominal_patch_fields {F : OutgoingProfile.Profile} (W : NominalProfile.Witness F)\n    (eta : ℝ) {X : ℝ} (hX : X ∈ Ioo (repairPatch W).left (repairPatch W).right) :\n    W.profiles.U (X, eta) = 0 ∧ W.profiles.E (X, eta) =\n      ReservedPatches.xAmplitude F W.controls.radius eta * X ^ (-1 / 2 - F.data.core.lam)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ModulatedProfileAssembly.nominal_patch_fields",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L207",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedProfileAssembly.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 207,
+            "text": "theorem nominal_patch_fields {F : OutgoingProfile.Profile} (W : NominalProfile.Witness F)\n    (eta : ℝ) {X : ℝ} (hX : X ∈ Ioo (repairPatch W).left (repairPatch W).right) :\n    W.profiles.U (X, eta) = 0 ∧ W.profiles.E (X, eta) =\n      ReservedPatches.xAmplitude F W.controls.radius eta * X ^ (-1 / 2 - F.data.core.lam)"
+          }
+        }
       }
     }
-  }
+  ]
 }

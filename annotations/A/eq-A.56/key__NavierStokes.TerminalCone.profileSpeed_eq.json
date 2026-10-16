@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.56/key/01.NavierStokes.TerminalCone.profileSpeed_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalCone.profileSpeed_eq",
-      "line": 165
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean#L165"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalCone.profileSpeed_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalCone.profileSpeed_eq",
+        "module": "NavierStokes.TerminalCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 165,
-        "text": "profileSpeed C d y0 (eta, δ) = 2 + 2 * d.h - 2 * heatSlope d (profileZ y0 (eta, δ)) - 2 * tailShapeDeriv d (3 - δ) / tailShape d (3 - δ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TerminalCone.profileSpeed_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L165"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 165,
+            "text": "theorem profileSpeed_eq {C : ℝ} (hC : 0 < C) (d : OutgoingTail.TailData) (y0 : ℝ)\n    {eta δ : ℝ} (heta : eta ^ 2 ≤ 1) :\n    TerminalEdgeFactor.profileSpeed C d y0 (eta, δ) =\n      2 + 2 * d.h - 2 * heatSlope d (TerminalEdgeFactor.profileZ y0 (eta, δ)) -\n        2 * OutgoingTail.tailShapeDeriv d (3 - δ) / OutgoingTail.tailShape d (3 - δ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

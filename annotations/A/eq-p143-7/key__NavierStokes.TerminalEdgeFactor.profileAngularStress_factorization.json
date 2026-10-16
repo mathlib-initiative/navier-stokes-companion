@@ -1,26 +1,28 @@
 {
-  "id": "eq-p143-7/key/03.NavierStokes.TerminalEdgeFactor.profileAngularStress_factorization",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgeFactor.profileAngularStress_factorization",
-      "line": 876,
-      "module": "NavierStokes.TerminalEdgeFactor",
-      "path": "NavierStokes/TerminalEdgeFactor.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L876"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgeFactor.profileAngularStress_factorization",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgeFactor.profileAngularStress_factorization",
+        "module": "NavierStokes.TerminalEdgeFactor"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 876,
-        "text": "profileAngularStress C d y0 y = (FlatCutoff.edge 4 y.2 / y.2 ^ 3) * profileAngularFactor C d y0 y — i.e. profileAngularFactor is the paper's b_θ(δ, η) in 𝒯_{0,θ} = e^{-4/δ²} δ^{-3} b_θ(δ, η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.TerminalEdgeFactor.profileAngularStress_factorization",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L876",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 876,
+            "text": "theorem profileAngularStress_factorization (C : ℝ) (d : TailData) (y0 : ℝ) (y : ℝ × ℝ) :\n    profileAngularStress C d y0 y =\n      (FlatCutoff.edge 4 y.2 / y.2 ^ 3) * profileAngularFactor C d y0 y"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,27 @@
 {
-  "id": "eq-7.20/key/02.NavierStokes.WeightedODEJets.productJet_split",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedODEJets.productJet_split",
-      "line": 194
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedODEJets.lean#L194"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedODEJets.productJet_split",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedODEJets.productJet_split",
+        "module": "NavierStokes.WeightedODEJets"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 194,
-        "text": "productJet A u l p = applyCoefficient (A p) (jet u l p) + crossJet A u l p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.WeightedODEJets.productJet_split",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L194"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 194,
+            "text": "theorem productJet_split (A : P → Coefficient a b E) (u : P → Curve a b E)\n    (l : List P) (p : P) :\n    productJet A u l p = applyCoefficient (A p) (jet u l p) + crossJet A u l p"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,30 @@
 {
-  "id": "eq-p066-3/support/15.NavierStokes.LabelSumBounds.native_wave_supported",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LabelSumBounds.native_wave_supported",
-      "line": 705,
-      "module": "NavierStokes.LabelSumBounds",
-      "path": "NavierStokes/LabelSumBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean#L705"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LabelSumBounds.native_wave_supported",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LabelSumBounds.native_wave_supported",
+        "module": "NavierStokes.LabelSumBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 705,
-        "text": "SupportedOscillations sys label (fun n x => (logCoordinate (q n x), position n x)) Y U (fun l n p i => wave (scale … * physicalMask d (label n l) …) …)  — discharges the hypothesis for masked native waves"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "15.NavierStokes.LabelSumBounds.native_wave_supported",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L705",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 705,
+            "text": "theorem native_wave_supported {d h : ℝ} {vr vt : TorusInverse.Plane}\n    (sys : PartitionedCovariance.SlotSystem d h vr vt)\n    (label : ℕ → ι → SlotColoring.Label) (hlevel : ∀ n l, 1 ≤ (label n l).1)\n    (q : ℕ → D → ℝ) (position : ℕ → D → SlotColoring.Position)\n    (Y : ℕ → D → TorusInverse.Plane) (U : Set D) (hq : ∀ n x, x ∈ U → 0 < q n x)\n    (scale : ι → ℕ → D → Fin 3 → ℝ)\n    (f : ι → ℕ → D → Fin 3 → TorusInverse.Plane → ℝ)\n    (mode : ι → ℕ → ℤ) (phase : ι → ℕ → D → TorusInverse.Plane → ℝ)\n    (hf : ∀ l n x, x ∈ U → ∀ i, support (f l n x i) ⊆\n      PartitionedCovariance.slotSet h sys.radius vr vt (label n l)) :\n    SupportedOscillations sys label\n      (fun n x => (SquaredPartition.logCoordinate (q n x), position n x)) Y U\n      (fun l n p i => PartitionedCovariance.wave\n        (scale l n p.1 i * PartitionedCovariance.physicalMask d (label n l)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

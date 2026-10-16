@@ -1,24 +1,27 @@
 {
-  "id": "eq-p160-4/key/01.NavierStokes.TrueConeLoop.correction_formula",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.correction_formula",
-      "line": 77
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L77"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.correction_formula",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.correction_formula",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 77,
-        "text": "correction δ v = speedCutoff δ v ^ 2 * (targetSpeed δ - v)   (0 < δ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TrueConeLoop.correction_formula",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L77"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 77,
+            "text": "theorem correction_formula (δ v : ℝ) (hδ : 0 < δ) :\n    correction δ v = speedCutoff δ v ^ 2 * (targetSpeed δ - v)"
+          }
+        }
       }
     }
-  }
+  ]
 }

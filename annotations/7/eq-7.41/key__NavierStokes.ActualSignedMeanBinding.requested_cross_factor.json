@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.41/key/04.NavierStokes.ActualSignedMeanBinding.requested_cross_factor",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSignedMeanBinding.requested_cross_factor",
-      "line": 442,
-      "module": "NavierStokes.ActualSignedMeanBinding",
-      "path": "NavierStokes/ActualSignedMeanBinding.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean#L442"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSignedMeanBinding.requested_cross_factor",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSignedMeanBinding.requested_cross_factor",
+        "module": "NavierStokes.ActualSignedMeanBinding"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 442,
-        "text": "for every n and x in ActualInitialization.geometry.strip.domain, i : Fin 2: meanBar (actualCross B N0 c u 0 i.succ) n x = partitionFactor B N0 n x * LocalSignedRequest.requestedStress geometry.patch geometry.coord c u n x i. The Sigma term of the display with a partition factor in front, on all bands."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ActualSignedMeanBinding.requested_cross_factor",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L442",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 442,
+            "text": "theorem requested_cross_factor (B N0 : ℕ) (c : CorrectionState.Context Point)\n    (u : CorrectionState.State Point) (n : ℕ) {x : Point}\n    (hx : x ∈ ActualInitialization.geometry.strip.domain) (i : Fin 2) :\n    StateMomentBalances.meanBar (actualCross B N0 c u 0 i.succ) n x =\n      partitionFactor B N0 n x * LocalSignedRequest.requestedStress\n        ActualInitialization.geometry.patch ActualInitialization.geometry.coord c u n x i"
+          }
+        }
       }
     }
-  }
+  ]
 }

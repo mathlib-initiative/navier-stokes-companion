@@ -1,31 +1,33 @@
 {
-  "id": "proposition-C.3/attributed/1.NavierStokes.EntranceAlignedBase.base_phi_axial_pressure",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.EntranceAlignedBase.base_phi_axial_pressure",
-      "line": 200,
-      "module": "NavierStokes.EntranceAlignedBase",
-      "path": "NavierStokes/EntranceAlignedBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L200"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.EntranceAlignedBase.base_phi_axial_pressure",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.EntranceAlignedBase.base_phi_axial_pressure",
+        "module": "NavierStokes.EntranceAlignedBase"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: 0 ≤ p.1 → p.1 < cutoffInner W H lo → p.2 ∈ S → xProfile (scheme W H Q M hlo).base.phi p = SlowRecursion.profile ((nominalHierarchy W).coefficients 0 0) p ∧ the same for .axial with coefficient 0 1 and .pressure with coefficient 0 3.",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 200,
-        "text": "theorem base_phi_axial_pressure {p : ℝ × ℝ} (hX : 0 ≤ p.1) (hc : p.1 < cutoffInner W H lo)\n    (heta : p.2 ∈ S) :\n    xProfile (scheme W H Q M hlo).base.phi p =\n      SlowRecursion.profile ((nominalHierarchy W).coefficients 0 0) p ∧\n    xProfile (scheme W H Q M hlo).base.axial p =\n      SlowRecursion.profile ((nominalHierarchy W).coefficients 0 1) p ∧\n    xProfile (scheme W H Q M hlo).base.pressure p =\n      SlowRecursion.profile ((nominalHierarchy W).coefficients 0 3) p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.EntranceAlignedBase.base_phi_axial_pressure",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: 0 ≤ p.1 → p.1 < cutoffInner W H lo → p.2 ∈ S → xProfile (scheme W H Q M hlo).base.phi p = SlowRecursion.profile ((nominalHierarchy W).coefficients 0 0) p ∧ the same for .axial with coefficient 0 1 and .pressure with coefficient 0 3.",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L200",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean"
+          },
+          "snippet": {
+            "line": 200,
+            "text": "theorem base_phi_axial_pressure {p : ℝ × ℝ} (hX : 0 ≤ p.1) (hc : p.1 < cutoffInner W H lo)\n    (heta : p.2 ∈ S) :\n    xProfile (scheme W H Q M hlo).base.phi p =\n      SlowRecursion.profile ((nominalHierarchy W).coefficients 0 0) p ∧\n    xProfile (scheme W H Q M hlo).base.axial p =\n      SlowRecursion.profile ((nominalHierarchy W).coefficients 0 1) p ∧\n    xProfile (scheme W H Q M hlo).base.pressure p =\n      SlowRecursion.profile ((nominalHierarchy W).coefficients 0 3) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

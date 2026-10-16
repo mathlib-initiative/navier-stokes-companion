@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.29/key/03.NavierStokes.BaseContextAssembly.nativeStrip_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseContextAssembly.nativeStrip_mem",
-      "line": 236,
-      "module": "NavierStokes.BaseContextAssembly",
-      "path": "NavierStokes/BaseContextAssembly.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseContextAssembly.lean#L236"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseContextAssembly.nativeStrip_mem",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseContextAssembly.nativeStrip_mem",
+        "module": "NavierStokes.BaseContextAssembly"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 236,
-        "text": "x ∈ (nativeStrip U W).domain ↔ x.2.1 ∈ U.carrier ∧ profileRadius … ∈ Ioo (leftRadius W) (rightRadius W) — no condition on the v-coordinate, which is why MemClass.bounds carries no 0 ≤ v ≤ L_s side condition"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.BaseContextAssembly.nativeStrip_mem",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L236",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseContextAssembly.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 236,
+            "text": "theorem nativeStrip_mem (U : LocalSignedRequest.SlowRegion (2 * F.data.h)) (x : Point) :\n    x ∈ (nativeStrip W U).domain ↔ x.2.1 ∈ U.carrier ∧\n      PrimaryTargetBounds.profileRadius F.data.h (slowCoordinates x) ∈\n        Ioo (PrimaryTargetBounds.leftRadius W) (PrimaryTargetBounds.rightRadius W)"
+          }
+        }
       }
     }
-  }
+  ]
 }

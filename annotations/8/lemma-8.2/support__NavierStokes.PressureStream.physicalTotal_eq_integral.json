@@ -1,26 +1,29 @@
 {
-  "id": "lemma-8.2/support/3.NavierStokes.PressureStream.physicalTotal_eq_integral",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PressureStream.physicalTotal_eq_integral",
-      "line": 779,
-      "module": "NavierStokes.PressureStream",
-      "path": "NavierStokes/PressureStream.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean#L779"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PressureStream.physicalTotal_eq_integral",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PressureStream.physicalTotal_eq_integral",
+        "module": "NavierStokes.PressureStream"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 779,
-        "text": "theorem physicalTotal_eq_integral {d a b M : ℝ} (ha : 0 < a) (hab : a < b) (hd : 0 < d)\n    (v : E) {g : ℝ × E → ℝ} (hg : ContDiff ℝ ∞ g) (hs : RadialAlias.RadiallySupported a b g)\n    (p : ℝ × E) (hp : a ≤ p.1) :\n    physicalTotal d a M v g p =\n      ∫ r in a..b, g (r, p.2 + (M * (r ^ d - p.1 ^ d)) • v)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.PressureStream.physicalTotal_eq_integral",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L779",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PressureStream.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 779,
+            "text": "theorem physicalTotal_eq_integral {d a b M : ℝ} (ha : 0 < a) (hab : a < b) (hd : 0 < d)\n    (v : E) {g : ℝ × E → ℝ} (hg : ContDiff ℝ ∞ g) (hs : RadialAlias.RadiallySupported a b g)\n    (p : ℝ × E) (hp : a ≤ p.1) :\n    physicalTotal d a M v g p =\n      ∫ r in a..b, g (r, p.2 + (M * (r ^ d - p.1 ^ d)) • v)"
+          }
+        }
       }
     }
-  }
+  ]
 }

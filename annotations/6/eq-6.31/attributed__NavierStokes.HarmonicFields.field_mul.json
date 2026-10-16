@@ -1,25 +1,27 @@
 {
-  "id": "eq-6.31/attributed/04.NavierStokes.HarmonicFields.field_mul",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicFields.field_mul",
-      "line": 116,
-      "module": "NavierStokes.HarmonicFields",
-      "path": "NavierStokes/HarmonicFields.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicFields.lean#L116"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicFields.field_mul"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicFields.field_mul",
+        "module": "NavierStokes.HarmonicFields"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 116,
-        "text": "field (c * d) k Φ kp p = field c k Φ kp p * field d k Φ kp p, where Coefficients α = AddMonoidAlgebra (α → ℂ) ℤ — the product of coefficient families is the ℤ-convolution, so the harmonic of a product summand is m + m'"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.HarmonicFields.field_mul"
+          },
+          "destination": {
+            "fragment": "L116",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicFields.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 116,
+            "text": "theorem field_mul {α : Type*} (c d : Coefficients α) (k : ℝ) (Φ : α → ℝ)\n    (kp : ℤ) (p : α × ℝ) :\n    field (c * d) k Φ kp p = field c k Φ kp p * field d k Φ kp p"
+          }
+        }
       }
     }
-  }
+  ]
 }

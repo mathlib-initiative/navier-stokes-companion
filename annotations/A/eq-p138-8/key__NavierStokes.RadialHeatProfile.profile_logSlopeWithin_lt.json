@@ -1,26 +1,28 @@
 {
-  "id": "eq-p138-8/key/01.NavierStokes.RadialHeatProfile.profile_logSlopeWithin_lt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialHeatProfile.profile_logSlopeWithin_lt",
-      "line": 431,
-      "module": "NavierStokes.RadialHeatProfile",
-      "path": "NavierStokes/RadialHeatProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L431"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialHeatProfile.profile_logSlopeWithin_lt",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialHeatProfile.profile_logSlopeWithin_lt",
+        "module": "NavierStokes.RadialHeatProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 431,
-        "text": "(ha : 1 < a) (hz : 0 ≤ z) : -z * derivWithin (profile a) (Ici 0) z / profile a z < a - 1  -- with a = 1 + h: -Z H'/H < h, endpoint Z = 0 included"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.RadialHeatProfile.profile_logSlopeWithin_lt",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L431",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 431,
+            "text": "theorem profile_logSlopeWithin_lt {a z : ℝ} (ha : 1 < a) (hz : 0 ≤ z) :\n    -z * derivWithin (profile a) (Ici 0) z / profile a z < a - 1"
+          }
+        }
       }
     }
-  }
+  ]
 }

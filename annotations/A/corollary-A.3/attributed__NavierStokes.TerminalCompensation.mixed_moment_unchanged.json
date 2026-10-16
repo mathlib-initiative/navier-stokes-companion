@@ -1,31 +1,33 @@
 {
-  "id": "corollary-A.3/attributed/1.NavierStokes.TerminalCompensation.mixed_moment_unchanged",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalCompensation.mixed_moment_unchanged",
-      "line": 794,
-      "module": "NavierStokes.TerminalCompensation",
-      "path": "NavierStokes/TerminalCompensation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCompensation.lean#L794"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalCompensation.mixed_moment_unchanged",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalCompensation.mixed_moment_unchanged",
+        "module": "NavierStokes.TerminalCompensation"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If U vanishes on the reserved patch then ∫ U · (edited E profile) = ∫ U · (clean E profile): the mixed moment J is unchanged by the three E bumps when U₀ = 0.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 794,
-        "text": "theorem mixed_moment_unchanged (P : Patch) (lam R a : ℝ) (c : Coeff) (U : ℝ → ℝ)\n    (hU : ∀ X, X / R ∈ Ioo P.left P.right → U X = 0) :\n    (∫ X, U X * physicalProfile P lam R a c X) = ∫ X, U X * cleanProfile lam R a X"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TerminalCompensation.mixed_moment_unchanged",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: If U vanishes on the reserved patch then ∫ U · (edited E profile) = ∫ U · (clean E profile): the mixed moment J is unchanged by the three E bumps when U₀ = 0.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L794",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCompensation.lean"
+          },
+          "snippet": {
+            "line": 794,
+            "text": "theorem mixed_moment_unchanged (P : Patch) (lam R a : ℝ) (c : Coeff) (U : ℝ → ℝ)\n    (hU : ∀ X, X / R ∈ Ioo P.left P.right → U X = 0) :\n    (∫ X, U X * physicalProfile P lam R a c X) = ∫ X, U X * cleanProfile lam R a X"
+          }
+        }
       }
     }
-  }
+  ]
 }

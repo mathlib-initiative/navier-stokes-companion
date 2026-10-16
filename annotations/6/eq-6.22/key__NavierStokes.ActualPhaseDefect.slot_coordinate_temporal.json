@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.22/key/07.NavierStokes.ActualPhaseDefect.slot_coordinate_temporal",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPhaseDefect.slot_coordinate_temporal",
-      "line": 90,
-      "module": "NavierStokes.ActualPhaseDefect",
-      "path": "NavierStokes/ActualPhaseDefect.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPhaseDefect.lean#L90"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPhaseDefect.slot_coordinate_temporal",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPhaseDefect.slot_coordinate_temporal",
+        "module": "NavierStokes.ActualPhaseDefect"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 90,
-        "text": "(slotGeometry sys vectors_det l 0).coordinateLinear temporalVector = (0, (timeCoefficient h l.1)⁻¹)  -- gap 0 case"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.ActualPhaseDefect.slot_coordinate_temporal",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L90",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPhaseDefect.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 90,
+            "text": "theorem slot_coordinate_temporal (l : SlotColoring.Label) :\n    (ActualSignedGeometry.slotGeometry sys ActualSignedGeometry.vectors_det l 0).coordinateLinear\n      ActualSignedGeometry.temporalVector = (0,(ChartScales.timeCoefficient h l.1)⁻¹)"
+          }
+        }
       }
     }
-  }
+  ]
 }

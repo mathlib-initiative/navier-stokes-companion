@@ -1,21 +1,24 @@
 {
-  "id": "eq-p149-4/key/01.NavierStokes.NaturalEntrance.Sq_coefficient_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalEntrance.Sq_coefficient_identity",
-      "line": 568
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L568"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalEntrance.Sq_coefficient_identity"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalEntrance.Sq_coefficient_identity",
+        "module": "NavierStokes.NaturalEntrance"
       },
-      "snippet": {
-        "line": 568,
-        "text": "Sq h (angularField …) (axialField …) (averageField …) p = L h p.2 * Λ * chi h j σ p.2 + sourceRemainder h j σ (rescalePoint Λ p) (1/Λ) (sourceJets … x (rescalePoint Λ p))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.NaturalEntrance.Sq_coefficient_identity"
+          },
+          "destination": {
+            "fragment": "L568"
+          },
+          "snippet": {
+            "line": 568,
+            "text": "theorem Sq_coefficient_identity {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (x : CoefficientPair d.coefficients.epsilon)\n    (hΛ : 0 < Λ) (hC : 0 < C) {p : ℝ × ℝ} (hp : p ∈ domain Λ)\n    (hval : 1 / 8 ≤ AxisEvaluation.profile window d.coefficients.epsilon x.1\n      (rescalePoint Λ p)) :\n    Sq h (angularField h j σ Λ C x) (axialField j Λ x)\n        (averageField j Λ d.coefficients.epsilon_pos x) p =\n      NaturalAxisData.L h p.2 * Λ * NaturalAxisData.chi h j σ p.2 +\n        sourceRemainder h j σ (rescalePoint Λ p) (1 / Λ)\n          (sourceJets d.coefficients.epsilon_pos x (rescalePoint Λ p))"
+          }
+        }
       }
     }
-  }
+  ]
 }

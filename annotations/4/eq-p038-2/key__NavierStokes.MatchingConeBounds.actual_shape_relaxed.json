@@ -1,26 +1,29 @@
 {
-  "id": "eq-p038-2/key/10.NavierStokes.MatchingConeBounds.actual_shape_relaxed",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MatchingConeBounds.actual_shape_relaxed",
-      "line": 801,
-      "module": "NavierStokes.MatchingConeBounds",
-      "path": "NavierStokes/MatchingConeBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean#L801"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MatchingConeBounds.actual_shape_relaxed",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MatchingConeBounds.actual_shape_relaxed",
+        "lines": [801, 801],
+        "module": "NavierStokes.MatchingConeBounds"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 801,
-        "text": "step `hl : ∀ s ∈ Icc Xi X, ReferenceBounds.logSlope (c.profiles hsep) (s, eta) ∈ Icc (11/20:ℝ) (13/20)` (lines 800-805, via `profiles_shape_logSlope` and `hm.shape_slope`), fed at lines 815-817 through `logSlope_eq_shear` into `zero_axial_relaxed_profile`; the theorem (line 776) concludes `2 < ReferenceBounds.p1 (c.profiles hsep) F.data.h (X, eta) ∧ ActivationContinuation.IsRelaxed …`"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.MatchingConeBounds.actual_shape_relaxed",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L801",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 776,
+            "text": "theorem actual_shape_relaxed {N : ℕ} {rho eps X eta : ℝ}\n    (hm : MatchingDebtBounds.MatchingBounds c N rho)\n    (hrho : rho ≤ NominalProfile.resetSolver.radius)\n    (hscale : shapeScale A.small A.preparation ≤ A.scale)\n    (hc : MatchingDebtBounds.SmallControl c 1 eps) (heps : 0 ≤ eps)\n    (heps1 : eps ≤ min 1 (1 / A.scale))\n    (hX : NominalProfile.Xi ≤ X) (hR : X ≤ c.radius * Real.exp (-8))\n    (hη : eta ∈ Icc (-1 : ℝ) 1)\n    (hinit : 2 < ReferenceBounds.p1 (c.profiles hsep) F.data.h (NominalProfile.Xi, eta)) :\n    2 < ReferenceBounds.p1 (c.profiles hsep) F.data.h (X, eta) ∧\n      ActivationContinuation.IsRelaxed (c.profiles hsep) F.data.h (X, eta)"
+          }
+        }
       }
     }
-  }
+  ]
 }

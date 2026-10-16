@@ -1,24 +1,27 @@
 {
-  "id": "eq-7.16/key/02.NavierStokes.GaussianEnvelope.reference_gaussian_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaussianEnvelope.reference_gaussian_bounds",
-      "line": 251
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaussianEnvelope.lean#L251"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaussianEnvelope.reference_gaussian_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaussianEnvelope.reference_gaussian_bounds",
+        "module": "NavierStokes.GaussianEnvelope"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 251,
-        "text": "the same two-sided bound with the constants exhibited as u * referenceMaxSlope and u * referenceMinSlope over 2 * ell"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GaussianEnvelope.reference_gaussian_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L251"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 251,
+            "text": "theorem reference_gaussian_bounds {lam u ell time : ℝ}\n    (hlam : 0 < lam) (hu : 0 < u) (hell : 0 < ell) (ht : time ∈ Icc 0 ell) :\n    Real.exp (-(u * referenceMaxSlope lam u) * (time - ell / 2) ^ 2 / (2 * ell)) ≤\n        envelope (referenceRate lam u ell) (ell / 2) time ∧\n      envelope (referenceRate lam u ell) (ell / 2) time ≤\n        Real.exp (-(u * referenceMinSlope lam u) * (time - ell / 2) ^ 2 / (2 * ell))"
+          }
+        }
       }
     }
-  }
+  ]
 }

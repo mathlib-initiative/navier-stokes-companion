@@ -1,26 +1,28 @@
 {
-  "id": "eq-p064-4/key/01.NavierStokes.PrimaryRepresentatives.physicalMask_normalized_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryRepresentatives.physicalMask_normalized_mem",
-      "line": 502,
-      "module": "NavierStokes.PrimaryRepresentatives",
-      "path": "NavierStokes/PrimaryRepresentatives.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryRepresentatives.lean#L502"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryRepresentatives.physicalMask_normalized_mem",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryRepresentatives.physicalMask_normalized_mem",
+        "module": "NavierStokes.PrimaryRepresentatives"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 502,
-        "text": "(hq : 0 < q) (hR : 0 ≤ x 0) (hT : 0 ≤ x 2) (he : forwardScalar (2*h) (x 1) q = x 2) (hX : x 0^2/(2*q) ∈ Icc a b) (hm : mask (D h) L q x ≠ 0) : normalizedSlow (D h) L.1 x ∈ referenceCompact h a b"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PrimaryRepresentatives.physicalMask_normalized_mem",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L502",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryRepresentatives.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 502,
+            "text": "theorem physicalMask_normalized_mem {h a b : ℝ} (L : Label) {q : ℝ} {x : Position}\n    (hq : 0 < q) (hR : 0 ≤ x 0) (hT : 0 ≤ x 2)\n    (he : SimilarityCoordinates.forwardScalar (2 * h) (x 1) q = x 2)\n    (hX : x 0 ^ 2 / (2 * q) ∈ Icc a b)\n    (hm : PartitionedCovariance.mask (CoordinateAlgebra.D h) L q x ≠ 0) :\n    normalizedSlow (CoordinateAlgebra.D h) L.1 x ∈ referenceCompact h a b"
+          }
+        }
       }
     }
-  }
+  ]
 }

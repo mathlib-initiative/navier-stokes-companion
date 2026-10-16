@@ -1,26 +1,28 @@
 {
-  "id": "eq-p149-6/key/01.NavierStokes.NaturalEntrance.regularAngularLag_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalEntrance.regularAngularLag_eq",
-      "line": 1260,
-      "module": "NavierStokes.NaturalEntrance",
-      "path": "NavierStokes/NaturalEntrance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L1260"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalEntrance.regularAngularLag_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalEntrance.regularAngularLag_eq",
+        "module": "NavierStokes.NaturalEntrance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1260,
-        "text": "regularAngularLag h f U V p = -2 * NaturalAxisData.L h p.2 * partialY f p / f p  (i.e. Q_s = -2L f_X/f, the X-integral of 2x f S_q divided by X^2 f)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.NaturalEntrance.regularAngularLag_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1260",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1260,
+            "text": "theorem regularAngularLag_eq {h j Λ : ℝ} {P0 a : ℝ → ℝ}\n    {f U V Pr : ℝ × ℝ → ℝ} (hs : IsNaturalSolution h j Λ P0 a f U V Pr)\n    (hΛ : 0 < Λ) {p : ℝ × ℝ} (hp : p ∈ domain Λ) (hX : p.1 ≠ 0)\n    (hf : ∀ x ∈ uIcc (0 : ℝ) p.1, f (x, p.2) ≠ 0) :\n    regularAngularLag h f U V p = -2 * NaturalAxisData.L h p.2 * partialY f p / f p"
+          }
+        }
       }
     }
-  }
+  ]
 }

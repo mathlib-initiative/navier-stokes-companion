@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.19/key/04.NavierStokes.NaturalEntrance.CoefficientProfile.cone_at_four",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalEntrance.CoefficientProfile.cone_at_four",
-      "line": 1050,
-      "module": "NavierStokes.NaturalEntrance",
-      "path": "NavierStokes/NaturalEntrance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L1050"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalEntrance.CoefficientProfile.cone_at_four",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalEntrance.CoefficientProfile.cone_at_four",
+        "module": "NavierStokes.NaturalEntrance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1050,
-        "text": "`… (hη : η ∈ Icc (-1 : ℝ) 1) (hp1 : 0 < p1 F.family.f (4 / Λ, η)) : 9 / 4 < coneSize F.family.f F.family.U (4 / Λ, η)`"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.NaturalEntrance.CoefficientProfile.cone_at_four",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1050",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1050,
+            "text": "theorem CoefficientProfile.cone_at_four {h j σ Λ C δ : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (F : CoefficientProfile d Λ C)\n    (hsmall : NaturalAxisRange.Parameters h j) (hδ : 0 < δ) (hΛ : 1 ≤ Λ)\n    (hscale : 1 + 2 * AxisEvaluation.jetBound d.coefficients.epsilon 5 1 0 *\n      profileErrorConstant d / δ ≤ Λ)\n    (hC : entranceNormalization d Λ δ ≤ C)\n    (hcut : ∀ η ∈ Icc (-1 : ℝ) 1, |NaturalAxisData.Z h j P0 η| ≤ δ →\n      99 / 100 < NaturalAxisData.chi h j σ η)\n    {η : ℝ} (hη : η ∈ Icc (-1 : ℝ) 1)\n    (hp1 : 0 < p1 F.family.f (4 / Λ, η)) :\n    9 / 4 < coneSize F.family.f F.family.U (4 / Λ, η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

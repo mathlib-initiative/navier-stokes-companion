@@ -1,26 +1,28 @@
 {
-  "id": "eq-p114-2/attributed/07.NavierStokes.AxisymmetricFields.velocity_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisymmetricFields.velocity_zero",
-      "line": 124,
-      "module": "NavierStokes.AxisymmetricFields",
-      "path": "NavierStokes/AxisymmetricFields.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean#L124"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisymmetricFields.velocity_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisymmetricFields.velocity_zero",
+        "module": "NavierStokes.AxisymmetricFields"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 124,
-        "text": "velocity H K (t,x) 0 = -x 0 * partialZ H p / 2 + x 1 * partialS K p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.AxisymmetricFields.velocity_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L124",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisymmetricFields.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 124,
+            "text": "theorem velocity_zero (H K : Profile) (t : ℝ) (x : Space)\n    (hH : DifferentiableAt ℝ H (profilePoint t x))\n    (hK : DifferentiableAt ℝ K (profilePoint t x)) :\n    velocity H K (t, x) 0 =\n      -x 0 * partialZ H (profilePoint t x) / 2 + x 1 * partialS K (profilePoint t x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

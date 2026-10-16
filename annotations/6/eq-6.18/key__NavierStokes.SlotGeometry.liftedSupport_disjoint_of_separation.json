@@ -1,25 +1,28 @@
 {
-  "id": "eq-6.18/key/08.NavierStokes.SlotGeometry.liftedSupport_disjoint_of_separation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlotGeometry.liftedSupport_disjoint_of_separation",
-      "line": 369,
-      "module": "NavierStokes.SlotGeometry",
-      "path": "NavierStokes/SlotGeometry.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlotGeometry.lean#L369"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlotGeometry.liftedSupport_disjoint_of_separation",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlotGeometry.liftedSupport_disjoint_of_separation",
+        "lines": [369, 369],
+        "module": "NavierStokes.SlotGeometry"
       },
-      "relation": "contains",
-      "snippet": {
-        "line": 369,
-        "text": "have hp : (cover ^ n) ((cover ^ level) Y) = (cover ^ (level + n)) Y   (π_{Δ} ∘ π_{i_0} = π_{i_0+Δ})"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.SlotGeometry.liftedSupport_disjoint_of_separation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L369",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlotGeometry.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 361,
+            "text": "theorem liftedSupport_disjoint_of_separation (level n : ℕ) (S T : Set Plane)\n    (hsep : ∀ x ∈ S, ∀ y ∈ T, ¬ torusEq ((cover ^ n) x) y) :\n    Disjoint (liftedSupport level S) (liftedSupport (level + n) T)"
+          }
+        }
       }
     }
-  }
+  ]
 }

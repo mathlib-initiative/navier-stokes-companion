@@ -1,25 +1,27 @@
 {
-  "id": "eq-A.17/key/02.NavierStokes.TailEnergyBounds.energyDensity_release_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TailEnergyBounds.energyDensity_release_eq",
-      "line": 140,
-      "module": "NavierStokes.TailEnergyBounds",
-      "path": "NavierStokes/TailEnergyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TailEnergyBounds.lean#L140"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TailEnergyBounds.energyDensity_release_eq"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TailEnergyBounds.energyDensity_release_eq",
+        "module": "NavierStokes.TailEnergyBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 140,
-        "text": "energyDensity d eta y = energyDensity d eta d.releaseStart * Real.exp (2 * releasePrimitive d (y - d.releaseStart)) * (tailShape d (y - tailStart d) / (1 - d.rho)) ^ 2, for d.releaseStart ≤ y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TailEnergyBounds.energyDensity_release_eq"
+          },
+          "destination": {
+            "fragment": "L140",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TailEnergyBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 140,
+            "text": "theorem energyDensity_release_eq (d : TailData) (eta : ℝ) {y : ℝ}\n    (hy : d.releaseStart ≤ y) :\n    energyDensity d eta y = energyDensity d eta d.releaseStart *\n      Real.exp (2 * releasePrimitive d (y - d.releaseStart)) *\n      (tailShape d (y - tailStart d) / (1 - d.rho)) ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

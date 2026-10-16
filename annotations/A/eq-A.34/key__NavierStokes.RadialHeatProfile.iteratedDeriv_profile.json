@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.34/key/02.NavierStokes.RadialHeatProfile.iteratedDeriv_profile",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialHeatProfile.iteratedDeriv_profile",
-      "line": 241,
-      "module": "NavierStokes.RadialHeatProfile",
-      "path": "NavierStokes/RadialHeatProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L241"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialHeatProfile.iteratedDeriv_profile",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialHeatProfile.iteratedDeriv_profile",
+        "module": "NavierStokes.RadialHeatProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 241,
-        "text": "iteratedDeriv n (profile a) z = profileJet a n z, for 1 < a and 0 < z (two-sided derivative in the interior)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.RadialHeatProfile.iteratedDeriv_profile",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L241",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 241,
+            "text": "theorem iteratedDeriv_profile {a z : ℝ} (ha : 1 < a) (n : ℕ) (hz : 0 < z) :\n    iteratedDeriv n (profile a) z = profileJet a n z"
+          }
+        }
       }
     }
-  }
+  ]
 }

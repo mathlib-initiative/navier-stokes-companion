@@ -1,23 +1,25 @@
 {
-  "id": "eq-p110-2/key/01.NavierStokes.MeanChartCompatibility.temporalAtIndex",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.temporalAtIndex",
-      "line": 498,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L498"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.temporalAtIndex"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.temporalAtIndex",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "snippet": {
-        "line": 498,
-        "text": "temporalAtIndex h n i f z = -((ChartScales.Tg ^ i * ChartScales.Q n ^ (1 + h))^{-1}) * TemporalMeanUpdate.temporalInverse (TemporalMeanUpdate.centered f) z  (the paper's -c_{i0}^{-1} N_{i0}^{-1} (.)^o)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.MeanChartCompatibility.temporalAtIndex"
+          },
+          "destination": {
+            "fragment": "L498",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "snippet": {
+            "line": 498,
+            "text": "noncomputable def temporalAtIndex (h : ℝ) (n i : ℕ)\n    (f : PressureStream.Lift S → ℝ) (z : PressureStream.Lift S) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

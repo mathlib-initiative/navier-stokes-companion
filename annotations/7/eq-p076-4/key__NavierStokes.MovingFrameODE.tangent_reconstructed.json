@@ -1,26 +1,29 @@
 {
-  "id": "eq-p076-4/key/03.NavierStokes.MovingFrameODE.tangent_reconstructed",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MovingFrameODE.tangent_reconstructed",
-      "line": 796,
-      "module": "NavierStokes.MovingFrameODE",
-      "path": "NavierStokes/MovingFrameODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean#L796"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MovingFrameODE.tangent_reconstructed",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MovingFrameODE.tangent_reconstructed",
+        "lines": [796, 796],
+        "module": "NavierStokes.MovingFrameODE"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 796,
-        "text": "the declaration (line 785) states `tangent ρ B (t 0) ⟪B 1, tail t⟫_ℝ = t` for `⟪normal β ρ B, t⟫ = 0`, i.e. U∘(e_r^T; N_a^T) = id on n_Φ^⊥; inside its proof the two halves of (e_r^T; N_a^T)U = I₂ appear literally — line 789 (`rfl`, via pack_zero) is the x row, lines 796-797 (`simp [tangent, tail_pack, frame_inner10, frame_inner11]`) the y row"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.MovingFrameODE.tangent_reconstructed",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L796",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 785,
+            "text": "theorem tangent_reconstructed {β ρ : ℝ} (hβ : β ≠ 0) (B : Frame) (t : Space)\n    (ht : ⟪normal β ρ B, t⟫_ℝ = 0) :\n    tangent ρ B (t 0) ⟪B 1, tail t⟫_ℝ = t"
+          }
+        }
       }
     }
-  }
+  ]
 }

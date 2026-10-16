@@ -1,31 +1,33 @@
 {
-  "id": "corollary-A.3/attributed/1.NavierStokes.TerminalCompensation.physicalMoments_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalCompensation.physicalMoments_eq",
-      "line": 540,
-      "module": "NavierStokes.TerminalCompensation",
-      "path": "NavierStokes/TerminalCompensation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCompensation.lean#L540"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalCompensation.physicalMoments_eq",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalCompensation.physicalMoments_eq",
+        "module": "NavierStokes.TerminalCompensation"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For X = R x and profile a(x^{s} + correction), with s = -1/2-lam arbitrary real: ∫(E²-E₀²)/X dX = 2a²·(normalized C_p change), ∫(E²-E₀²)dX = 2Ra²·(normalized S change), ∫√(2X)(E-E₀)dX = R√(2R)a·(normalized I change) — i.e. the (A.4) radial factors 1, ρ, √2ρ^{3/2} for (C_p, S, I); angular_scale_eq (l",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 540,
-        "text": "theorem physicalMoments_eq (P : Patch) (lam R a : ℝ) (hR : 0 < R) (c : Coeff) :\n    physicalMoments P lam R a c =\n      ![2 * a ^ 2 * momentMap P lam c 0,\n        2 * R * a ^ 2 * momentMap P lam c 1,\n        R * Real.sqrt (2 * R) * a * momentMap P lam c 2]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TerminalCompensation.physicalMoments_eq",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For X = R x and profile a(x^{s} + correction), with s = -1/2-lam arbitrary real: ∫(E²-E₀²)/X dX = 2a²·(normalized C_p change), ∫(E²-E₀²)dX = 2Ra²·(normalized S change), ∫√(2X)(E-E₀)dX = R√(2R)a·(normalized I change) — i.e. the (A.4) radial factors 1, ρ, √2ρ^{3/2} for (C_p, S, I); angular_scale_eq (l",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L540",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCompensation.lean"
+          },
+          "snippet": {
+            "line": 540,
+            "text": "theorem physicalMoments_eq (P : Patch) (lam R a : ℝ) (hR : 0 < R) (c : Coeff) :\n    physicalMoments P lam R a c =\n      ![2 * a ^ 2 * momentMap P lam c 0,\n        2 * R * a ^ 2 * momentMap P lam c 1,\n        R * Real.sqrt (2 * R) * a * momentMap P lam c 2]"
+          }
+        }
       }
     }
-  }
+  ]
 }

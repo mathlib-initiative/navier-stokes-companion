@@ -1,25 +1,28 @@
 {
-  "id": "eq-p141-2/key/02.NavierStokes.RenormalizedHeatMoment.radialDifference_integrable",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RenormalizedHeatMoment.radialDifference_integrable",
-      "line": 473,
-      "module": "NavierStokes.RenormalizedHeatMoment",
-      "path": "NavierStokes/RenormalizedHeatMoment.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RenormalizedHeatMoment.lean#L473"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RenormalizedHeatMoment.radialDifference_integrable"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RenormalizedHeatMoment.radialDifference_integrable",
+        "lines": [473, 473],
+        "module": "NavierStokes.RenormalizedHeatMoment"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 473,
-        "text": "step at line 473 of radialDifference_integrable (declared at 457): `exact weighted_heat_difference_bound hh hν (hB.trans hr) C`, closing the integrability of r ↦ radialDifference h C F eta r on Ioi 0 by comparison with the r^(-1-2h) majorant"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.RenormalizedHeatMoment.radialDifference_integrable"
+          },
+          "destination": {
+            "fragment": "L473",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RenormalizedHeatMoment.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 457,
+            "text": "theorem radialDifference_integrable {h C B : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    (hB : 0 < B) {F : ℝ × ℝ → ℝ}\n    (hF : ContDiffOn ℝ ∞ F (univ ×ˢ Ioo (-1 : ℝ) 1))\n    (he : ∀ eta ∈ Ioo (-1 : ℝ) 1, ∀ R : ℝ, B ≤ R →\n      F (R, eta) = heatCarrier h C (1 - eta ^ 2) R)\n    {eta : ℝ} (hη : eta ∈ Ioo (-1 : ℝ) 1) :\n    IntegrableOn (radialDifference h C F eta) (Ioi 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

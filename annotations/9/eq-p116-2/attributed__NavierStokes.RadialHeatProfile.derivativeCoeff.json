@@ -1,26 +1,28 @@
 {
-  "id": "eq-p116-2/attributed/08.NavierStokes.RadialHeatProfile.derivativeCoeff",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialHeatProfile.derivativeCoeff",
-      "line": 202,
-      "module": "NavierStokes.RadialHeatProfile",
-      "path": "NavierStokes/RadialHeatProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L202"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialHeatProfile.derivativeCoeff",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialHeatProfile.derivativeCoeff",
+        "module": "NavierStokes.RadialHeatProfile"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 202,
-        "text": "derivativeCoeff a 0 = 1; derivativeCoeff a (n+1) = derivativeCoeff a n * (1 - a - n); at a = 1+h this is (-1)^n h(h+1)⋯(h+n-1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.RadialHeatProfile.derivativeCoeff",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L202",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 202,
+            "text": "noncomputable def derivativeCoeff (a : ℝ) : ℕ → ℝ\n  | 0 => 1\n  | n + 1 => derivativeCoeff a n * (1 - a - (n : ℝ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

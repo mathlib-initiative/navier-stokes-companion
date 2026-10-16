@@ -1,24 +1,27 @@
 {
-  "id": "eq-B.25/key/01.NavierStokes.ReferenceBounds.p1_equation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceBounds.p1_equation",
-      "line": 261
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean#L261"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceBounds.p1_equation",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceBounds.p1_equation",
+        "module": "NavierStokes.ReferenceBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 261,
-        "text": "p.1 * deriv (fun x => p1 P h (x, p.2)) p.1 + logSlope P p * p1 P h p = p.1 * sourceQ P h p / NaturalAxisData.L h p.2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ReferenceBounds.p1_equation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L261"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 261,
+            "text": "theorem p1_equation {p : Point} (hp : p ∈ D.carrier) (hX : 0 < p.1)\n    (hf : P.f p ≠ 0) (h : ℝ) :\n    p.1 * deriv (fun x => p1 P h (x, p.2)) p.1 + logSlope P p * p1 P h p =\n      p.1 * sourceQ P h p / NaturalAxisData.L h p.2"
+          }
+        }
       }
     }
-  }
+  ]
 }

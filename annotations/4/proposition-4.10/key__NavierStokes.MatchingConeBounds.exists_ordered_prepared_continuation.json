@@ -1,36 +1,57 @@
 {
-  "id": "proposition-4.10/key/0.NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation",
-  "location": {
-    "page": 36,
-    "rect": [0.12854, 0.677686, 0.746187, 0.221488]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation",
-      "line": 852,
-      "module": "NavierStokes.MatchingConeBounds",
-      "path": "NavierStokes/MatchingConeBounds.lean"
+  "subject": [
+    {
+      "location": {
+        "page": 36,
+        "rect": [0.12854, 0.677686, 0.746187, 0.221488]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p036"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean#L852"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 37,
+        "rect": [0.12854, 0.102479, 0.746187, 0.26281]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: exists rho > 0, exists jcap > 0, for all j with |j| <= jcap, all SmallParameters hj, all AxisPreparation prep, all nu > 0 with the chi lower bound: exists Lambda0 >= 1, for all Lambda >= Lambda0: exists T > 0, exists C0 >= 1, FOR ALL C >= C0: exists proofs prep.scaleBound <= Lambda and entranceNorma",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "proposition-4.10@p036",
-      "role": "key",
-      "snippet": {
-        "line": 852,
-        "text": "theorem exists_ordered_prepared_continuation (F : OutgoingProfile.Profile) (N : ℕ)\n    (hN : 1 ≤ N) {delta : ℝ} (hdelta : 0 < delta) (radiusFloor : ℝ) :\n    ∃ rho : ℝ, 0 < rho ∧ ∃ jcap : ℝ, 0 < jcap ∧ jcap ≤ 1 ∧\n      ∀ j : ℝ, |j| ≤ jcap → ∀ hj : SmallParameters F.data.h j,\n      ∀ prep : NominalProfile.AxisPreparation F j,\n      ∀ nu : ℝ, 0 < nu →\n      (∀ eta ∈ Icc (-1 : ℝ) 1, |Z F.data.h j F.axisDatum eta| ≤ nu →\n        99 / 100 < chi F.data.h j prep.sigma eta) →\n      ∃ Λ0 : ℝ, 1 ≤ Λ0 ∧ ∀ Λ : ℝ, ∀ hΛ : 0 < Λ, Λ0 ≤ Λ →\n        ∃ T : ℝ, ∃ hT : 0 < T, ∃ C0 : ℝ, 1 ≤ C0 ∧ ∀ C : ℝ, C0 ≤ C →\n          ∃ hΛlarge : prep.scaleBound ≤ Λ,\n          ∃ hClarge : NaturalEntrance.entranceNormalization prep.inputs Λ prep.delta ≤ C,\n          ∃ E : NaturalEntrance.EntranceProfile prep.inputs Λ C,\n          ∀ J : ℕ, ∀ epsilon : ℝ, 0 < epsilon →\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p037"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation",
+        "module": "NavierStokes.MatchingConeBounds"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: exists rho > 0, exists jcap > 0, for all j with |j| <= jcap, all SmallParameters hj, all AxisPreparation prep, all nu > 0 with the chi lower bound: exists Lambda0 >= 1, for all Lambda >= Lambda0: exists T > 0, exists C0 >= 1, FOR ALL C >= C0: exists proofs prep.scaleBound <= Lambda and entranceNorma",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L852",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean"
+          },
+          "snippet": {
+            "line": 852,
+            "text": "theorem exists_ordered_prepared_continuation (F : OutgoingProfile.Profile) (N : ℕ)\n    (hN : 1 ≤ N) {delta : ℝ} (hdelta : 0 < delta) (radiusFloor : ℝ) :\n    ∃ rho : ℝ, 0 < rho ∧ ∃ jcap : ℝ, 0 < jcap ∧ jcap ≤ 1 ∧\n      ∀ j : ℝ, |j| ≤ jcap → ∀ hj : SmallParameters F.data.h j,\n      ∀ prep : NominalProfile.AxisPreparation F j,\n      ∀ nu : ℝ, 0 < nu →\n      (∀ eta ∈ Icc (-1 : ℝ) 1, |Z F.data.h j F.axisDatum eta| ≤ nu →\n        99 / 100 < chi F.data.h j prep.sigma eta) →\n      ∃ Λ0 : ℝ, 1 ≤ Λ0 ∧ ∀ Λ : ℝ, ∀ hΛ : 0 < Λ, Λ0 ≤ Λ →\n        ∃ T : ℝ, ∃ hT : 0 < T, ∃ C0 : ℝ, 1 ≤ C0 ∧ ∀ C : ℝ, C0 ≤ C →\n          ∃ hΛlarge : prep.scaleBound ≤ Λ,\n          ∃ hClarge : NaturalEntrance.entranceNormalization prep.inputs Λ prep.delta ≤ C,\n          ∃ E : NaturalEntrance.EntranceProfile prep.inputs Λ C,\n          ∀ J : ℕ, ∀ epsilon : ℝ, 0 < epsilon →\n  …",
+            "truncated": true
+          }
+        }
+      }
+    }
+  ]
 }

@@ -1,34 +1,55 @@
 {
-  "id": "lemma-8.6/attributed/1.NavierStokes.TemporalMeanUpdate.axialUpdate_eq_desired_sub_alias",
-  "location": {
-    "page": 95,
-    "rect": [0.12854, 0.703306, 0.745098, 0.152893]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TemporalMeanUpdate.axialUpdate_eq_desired_sub_alias",
-      "line": 775,
-      "module": "NavierStokes.TemporalMeanUpdate",
-      "path": "NavierStokes/TemporalMeanUpdate.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 95,
+        "rect": [0.12854, 0.703306, 0.745098, 0.152893]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p095"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L775"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TemporalMeanUpdate.axialUpdate_eq_desired_sub_alias",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 96,
+        "rect": [0.12854, 0.103306, 0.745098, 0.231405]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: axialUpdate d a b M v h n f = fun z => desiredIncrement h n f z − axialAlias d a b M v h n f z: the paper's Δγ = γ_d − A_1γ_d of (8.21)."
-      },
-      "region": "lemma-8.6@p095",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 775,
-        "text": "theorem axialUpdate_eq_desired_sub_alias {d a b M : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (v : Plane) (h : ℝ) (n : ℕ)\n    {f : PressureStream.Lift S → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hp : PressureStream.TorusPeriodicLift f) (hs : RadialAlias.RadiallySupported a b f) :\n    axialUpdate d a b M v h n f = fun z => desiredIncrement h n f z - axialAlias d a b M v h n f z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p096"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TemporalMeanUpdate.axialUpdate_eq_desired_sub_alias",
+        "module": "NavierStokes.TemporalMeanUpdate"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TemporalMeanUpdate.axialUpdate_eq_desired_sub_alias",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: axialUpdate d a b M v h n f = fun z => desiredIncrement h n f z − axialAlias d a b M v h n f z: the paper's Δγ = γ_d − A_1γ_d of (8.21)."
+          },
+          "destination": {
+            "fragment": "L775",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean"
+          },
+          "snippet": {
+            "line": 775,
+            "text": "theorem axialUpdate_eq_desired_sub_alias {d a b M : ℝ}\n    (ha : 0 < a) (hab : a < b) (hd : 0 < d) (v : Plane) (h : ℝ) (n : ℕ)\n    {f : PressureStream.Lift S → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hp : PressureStream.TorusPeriodicLift f) (hs : RadialAlias.RadiallySupported a b f) :\n    axialUpdate d a b M v h n f = fun z => desiredIncrement h n f z - axialAlias d a b M v h n f z"
+          }
+        }
+      }
+    }
+  ]
 }

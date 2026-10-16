@@ -1,23 +1,26 @@
 {
-  "id": "eq-p011-4/key/03.NavierStokes.Scaling.wave_length_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.Scaling.wave_length_bounds",
-      "line": 163
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/Scaling.lean#L163"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.Scaling.wave_length_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.Scaling.wave_length_bounds",
+        "module": "NavierStokes.Scaling"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 163,
-        "text": "0 < Q -> Q ^ h <= 1 -> Q ^ (1/2 + h/2) / 2 <= waveLength Q h /\\ waveLength Q h <= Q ^ (1/2 + h/2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.Scaling.wave_length_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L163"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 163,
+            "text": "theorem wave_length_bounds {Q h : ℝ} (hQ : 0 < Q) (hε : Q ^ h ≤ 1) :\n    Q ^ (1 / 2 + h / 2) / 2 ≤ waveLength Q h ∧\n      waveLength Q h ≤ Q ^ (1 / 2 + h / 2)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.4/attributed/09.NavierStokes.OutgoingDilation.canonicalKernel_scaling",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingDilation.canonicalKernel_scaling",
-      "line": 97
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean#L97"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingDilation.canonicalKernel_scaling",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingDilation.canonicalKernel_scaling",
+        "module": "NavierStokes.OutgoingDilation"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 97,
-        "text": "canonicalKernel F XR eta X = XR⁻¹ * F.canonicalKernel eta (X / XR); combined with the dilation change of variables (factor XR) this gives factor 1 for the cumulative ∫ over Ioc 0 X as well"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.OutgoingDilation.canonicalKernel_scaling",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L97"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 97,
+            "text": "theorem canonicalKernel_scaling (F : Profile) (XR eta X : ℝ) (hXR : 0 < XR) :\n    canonicalKernel F XR eta X = XR⁻¹ * F.canonicalKernel eta (X / XR)"
+          }
+        }
       }
     }
-  }
+  ]
 }

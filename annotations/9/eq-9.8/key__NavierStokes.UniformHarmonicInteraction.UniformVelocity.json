@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.8/key/04.NavierStokes.UniformHarmonicInteraction.UniformVelocity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.UniformHarmonicInteraction.UniformVelocity",
-      "line": 24,
-      "module": "NavierStokes.UniformHarmonicInteraction",
-      "path": "NavierStokes/UniformHarmonicInteraction.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformHarmonicInteraction.lean#L24"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.UniformHarmonicInteraction.UniformVelocity",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.UniformHarmonicInteraction.UniformVelocity",
+        "module": "NavierStokes.UniformHarmonicInteraction"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 24,
-        "text": "UniformVelocity s P α a : Prop := ∀ i j, j ≠ 0 → UniformWaveClass s P α (fun l n x => (a l).velocity n i j x)  — the nonzero harmonics only, uniformly in the label"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.UniformHarmonicInteraction.UniformVelocity",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L24",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformHarmonicInteraction.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 24,
+            "text": "noncomputable def UniformVelocity (s : StripData D) (P : ι → ℕ → D → ℝ) (α : ℝ)\n    (a : ι → CorrectionState.HarmonicBlock D) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

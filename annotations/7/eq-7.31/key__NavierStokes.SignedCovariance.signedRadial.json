@@ -1,25 +1,27 @@
 {
-  "id": "eq-7.31/key/05.NavierStokes.SignedCovariance.signedRadial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedCovariance.signedRadial",
-      "line": 300,
-      "module": "NavierStokes.SignedCovariance",
-      "path": "NavierStokes/SignedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L300"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedCovariance.signedRadial",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedCovariance.signedRadial",
+        "module": "NavierStokes.SignedCovariance"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 300,
-        "text": "signedRadial P hdet outer ε T R q x := assembledRadialWith P hdet outer ε (fun U => increment (P U).matrix (T U) (R U)) q x  — ∑ over (label, σ) of √ε δa_σ b_σ, radial component"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.SignedCovariance.signedRadial",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L300",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 300,
+            "text": "noncomputable def signedRadial {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt} {N : ℕ}\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (T R : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position) : Plane → ℝ → ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.6/key/01.NavierStokes.OutgoingEntranceCone.chosen_parameters_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingEntranceCone.chosen_parameters_bounds",
-      "line": 1845,
-      "module": "NavierStokes.OutgoingEntranceCone",
-      "path": "NavierStokes/OutgoingEntranceCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingEntranceCone.lean#L1845"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingEntranceCone.chosen_parameters_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingEntranceCone.chosen_parameters_bounds",
+        "module": "NavierStokes.OutgoingEntranceCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1845,
-        "text": "theorem chosen_parameters_bounds (v : TailData) (hP : amplitudeThreshold v.core.m ≤ v.core.P) (hlam : v.core.lam ≤ lambdaThreshold v.core.P v.core.m) (hh : v.h ≤ heightThreshold v.core.m v.core.lam) : Real.exp (v.core.dropLength + 1) ≤ v.core.P ^ 2 ∧ v.core.lam * entranceRatioBound v.core.P v.core.m ^ 2 ≤ 1 / 4 ∧ v.h ≤ 1 / 100 ∧ v.h ≤ Real.exp (-(v.core.holdStart + 3 / 5)) / 8"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.OutgoingEntranceCone.chosen_parameters_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1845",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingEntranceCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1845,
+            "text": "theorem chosen_parameters_bounds (v : TailData)\n    (hP : amplitudeThreshold v.core.m ≤ v.core.P)\n    (hlam : v.core.lam ≤ lambdaThreshold v.core.P v.core.m)\n    (hh : v.h ≤ heightThreshold v.core.m v.core.lam) :\n    Real.exp (v.core.dropLength + 1) ≤ v.core.P ^ 2 ∧\n      v.core.lam * entranceRatioBound v.core.P v.core.m ^ 2 ≤ 1 / 4 ∧\n      v.h ≤ 1 / 100 ∧ v.h ≤ Real.exp (-(v.core.holdStart + 3 / 5)) / 8"
+          }
+        }
       }
     }
-  }
+  ]
 }

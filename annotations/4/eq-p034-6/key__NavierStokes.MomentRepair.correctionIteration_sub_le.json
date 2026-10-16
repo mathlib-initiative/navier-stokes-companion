@@ -1,26 +1,29 @@
 {
-  "id": "eq-p034-6/key/02.NavierStokes.MomentRepair.correctionIteration_sub_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MomentRepair.correctionIteration_sub_le",
-      "line": 184,
-      "module": "NavierStokes.MomentRepair",
-      "path": "NavierStokes/MomentRepair.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MomentRepair.lean#L184"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MomentRepair.correctionIteration_sub_le",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MomentRepair.correctionIteration_sub_le",
+        "lines": [184, 184],
+        "module": "NavierStokes.MomentRepair"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 184,
-        "text": "hcoef : β * (K * (2 * r)) ≤ (1 / 2 : ℝ), derived by nlinarith from hsmall : 4 * β * K * r ≤ 1; it is the Lipschitz constant of c ↦ B.symm (d - Q c) on the ball of radius r (conclusion at line 181)."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.MomentRepair.correctionIteration_sub_le",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L184",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MomentRepair.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 173,
+            "text": "theorem correctionIteration_sub_le\n    (B : E ≃L[ℝ] E) (Q : E → E) (d : E) (β K r : ℝ)\n    (hβ : 0 ≤ β) (hK : 0 ≤ K)\n    (hB : ∀ x, ‖B.symm x‖ ≤ β * ‖x‖)\n    (hQ : ∀ x, ‖x‖ ≤ r → ∀ y, ‖y‖ ≤ r →\n      ‖Q x - Q y‖ ≤ K * (‖x‖ + ‖y‖) * ‖x - y‖)\n    (hsmall : 4 * β * K * r ≤ 1)\n    (x y : E) (hx : ‖x‖ ≤ r) (hy : ‖y‖ ≤ r) :\n    ‖correctionIteration B Q d x - correctionIteration B Q d y‖ ≤\n      (1 / 2 : ℝ) * ‖x - y‖"
+          }
+        }
       }
     }
-  }
+  ]
 }

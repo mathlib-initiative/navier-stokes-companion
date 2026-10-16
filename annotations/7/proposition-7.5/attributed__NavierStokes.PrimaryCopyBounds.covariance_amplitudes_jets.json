@@ -1,29 +1,31 @@
 {
-  "id": "proposition-7.5/attributed/1.NavierStokes.PrimaryCopyBounds.covariance_amplitudes_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryCopyBounds.covariance_amplitudes_jets",
-      "line": 295,
-      "module": "NavierStokes.PrimaryCopyBounds",
-      "path": "NavierStokes/PrimaryCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCopyBounds.lean#L295"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryCopyBounds.covariance_amplitudes_jets",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryCopyBounds.covariance_amplitudes_jets",
+        "module": "NavierStokes.PrimaryCopyBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: Under the same hypotheses, `NativeJets V (√ζ) (amplitudes H T j)`: derivative bounds for $a_\\sigma=\\sqrt{y_\\sigma}$ with the half-power envelope of $\\mathcal{W}_{1/2}$."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 295,
-        "text": "theorem covariance_amplitudes_jets\n    (hr : PolynomialJets V.toDomain (fun i _ => r i)) (hrne : ∀ i, r i ≠ 0)\n    (hH : ∀ k l, PolynomialJets V.toDomain (fun i x => H i x k l))\n    (hT : ∀ k, NativeJets V w (fun i x => T i x k))\n    {b M c : ℝ} (hb : 0 < b) (hM : 1 ≤ M) (hc : 0 < c)\n    (hdet : ∀ i x, x ∈ V.carrier i → b ≤ |(normalizedMatrix (r i) (H i x)).det|)\n    (hentry : ∀ i x, x ∈ V.carrier i → ∀ k l, |r i * H i x k l| ≤ M)\n    (hw : ∀ i x, x ∈ V.carrier i → 0 < w i x)\n    (hlower : ∀ i x, x ∈ V.carrier i → ∀ k, c * w i x ≤ SmoothCovariance.weights (H i x) (T i x) k)\n    (j : Fin 2) :\n    NativeJets V (fun i x => Real.sqrt (w i x)) (fun i x => SmoothCovariance.amplitudes (H i x) (T i x) j)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PrimaryCopyBounds.covariance_amplitudes_jets",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: Under the same hypotheses, `NativeJets V (√ζ) (amplitudes H T j)`: derivative bounds for $a_\\sigma=\\sqrt{y_\\sigma}$ with the half-power envelope of $\\mathcal{W}_{1/2}$."
+          },
+          "destination": {
+            "fragment": "L295",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryCopyBounds.lean"
+          },
+          "snippet": {
+            "line": 295,
+            "text": "theorem covariance_amplitudes_jets\n    (hr : PolynomialJets V.toDomain (fun i _ => r i)) (hrne : ∀ i, r i ≠ 0)\n    (hH : ∀ k l, PolynomialJets V.toDomain (fun i x => H i x k l))\n    (hT : ∀ k, NativeJets V w (fun i x => T i x k))\n    {b M c : ℝ} (hb : 0 < b) (hM : 1 ≤ M) (hc : 0 < c)\n    (hdet : ∀ i x, x ∈ V.carrier i → b ≤ |(normalizedMatrix (r i) (H i x)).det|)\n    (hentry : ∀ i x, x ∈ V.carrier i → ∀ k l, |r i * H i x k l| ≤ M)\n    (hw : ∀ i x, x ∈ V.carrier i → 0 < w i x)\n    (hlower : ∀ i x, x ∈ V.carrier i → ∀ k, c * w i x ≤ SmoothCovariance.weights (H i x) (T i x) k)\n    (j : Fin 2) :\n    NativeJets V (fun i x => Real.sqrt (w i x)) (fun i x => SmoothCovariance.amplitudes (H i x) (T i x) j)"
+          }
+        }
       }
     }
-  }
+  ]
 }

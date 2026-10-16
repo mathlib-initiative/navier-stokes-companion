@@ -1,29 +1,31 @@
 {
-  "id": "definition-9.4/attributed/1.NavierStokes.CorrectionState.DefectBounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionState.DefectBounds",
-      "line": 246,
-      "module": "NavierStokes.CorrectionState",
-      "path": "NavierStokes/CorrectionState.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L246"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionState.DefectBounds",
-        "kind": "def"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionState.DefectBounds",
+        "module": "NavierStokes.CorrectionState"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `forall i : Fin 3, UnweightedClass s (1+sigma) (debt c u · · i)` where `debt = ![pressureDefect, thetaDefect, axialDefect]` in the row order (P, J_theta, J_z): the three integral defects in S_{C*_j}."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 246,
-        "text": "def DefectBounds (s : StripData S) (σ : ℝ) (c : Context (PressureStream.Lift S))\n    (u : State (PressureStream.Lift S)) : Prop"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CorrectionState.DefectBounds",
+            "kind": "def"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: `forall i : Fin 3, UnweightedClass s (1+sigma) (debt c u · · i)` where `debt = ![pressureDefect, thetaDefect, axialDefect]` in the row order (P, J_theta, J_z): the three integral defects in S_{C*_j}."
+          },
+          "destination": {
+            "fragment": "L246",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean"
+          },
+          "snippet": {
+            "line": 246,
+            "text": "def DefectBounds (s : StripData S) (σ : ℝ) (c : Context (PressureStream.Lift S))\n    (u : State (PressureStream.Lift S)) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

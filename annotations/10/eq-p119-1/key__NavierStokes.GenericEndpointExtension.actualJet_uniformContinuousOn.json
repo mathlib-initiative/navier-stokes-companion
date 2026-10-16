@@ -1,25 +1,28 @@
 {
-  "id": "eq-p119-1/key/01.NavierStokes.GenericEndpointExtension.actualJet_uniformContinuousOn",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericEndpointExtension.actualJet_uniformContinuousOn",
-      "line": 461,
-      "module": "NavierStokes.GenericEndpointExtension",
-      "path": "NavierStokes/GenericEndpointExtension.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericEndpointExtension.lean#L461"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericEndpointExtension.actualJet_uniformContinuousOn"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericEndpointExtension.actualJet_uniformContinuousOn",
+        "lines": [461, 461],
+        "module": "NavierStokes.GenericEndpointExtension"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 461,
-        "text": "proof step at line 461: `have hLip : LipschitzOnWith K (iteratedFDeriv ℝ n f) s`, K = ⟨max C 0, _⟩ (line 460) with C from `hb (n+1)`, via `hc.lipschitzOnWith_of_nnnorm_hasFDerivWithin_le` (line 462). The statement (lines 455-458) is only `(hs : IsOpen s) (hc : Convex ℝ s) (hf : ContDiffOn ℝ ∞ f s) (hb : ∀ n, ∃ C, ∀ x ∈ s, ‖iteratedFDeriv ℝ n f x‖ ≤ C) (n : ℕ) : UniformContinuousOn (iteratedFDeriv ℝ n f) s`"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GenericEndpointExtension.actualJet_uniformContinuousOn"
+          },
+          "destination": {
+            "fragment": "L461",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericEndpointExtension.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 455,
+            "text": "theorem actualJet_uniformContinuousOn {s : Set Y} {f : Y → V}\n    (hs : IsOpen s) (hc : Convex ℝ s) (hf : ContDiffOn ℝ ∞ f s)\n    (hb : ∀ n : ℕ, ∃ C : ℝ, ∀ x ∈ s, ‖iteratedFDeriv ℝ n f x‖ ≤ C)\n    (n : ℕ) : UniformContinuousOn (iteratedFDeriv ℝ n f) s"
+          }
+        }
       }
     }
-  }
+  ]
 }

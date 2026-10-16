@@ -1,26 +1,28 @@
 {
-  "id": "eq-p066-3/attributed/10.NavierStokes.PartitionedCovariance.SlotSystem.cross_product_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.SlotSystem.cross_product_zero",
-      "line": 323,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L323"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.SlotSystem.cross_product_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.SlotSystem.cross_product_zero",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 323,
-        "text": "(physicalMask D L q x * covered (nativeIndex h L.1) f Y) * (physicalMask D M q x * covered (nativeIndex h M.1) g Y) = 0  — product-form special case only"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.PartitionedCovariance.SlotSystem.cross_product_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L323",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 323,
+            "text": "theorem SlotSystem.cross_product_zero {D h : ℝ} {vr vt : Plane} (sys : SlotSystem D h vr vt)\n    {L M : SlotColoring.Label} (hL : 1 ≤ L.1) (hM : 1 ≤ M.1) (hne : L ≠ M)\n    {f g : Plane → ℝ} (hf : support f ⊆ slotSet h sys.radius vr vt L)\n    (hg : support g ⊆ slotSet h sys.radius vr vt M) {q : ℝ} (hq : 0 < q)\n    (x : SlotColoring.Position) (Y : Plane) :\n    (physicalMask D L q x * covered (SlotColoring.nativeIndex h L.1) f Y) *\n      (physicalMask D M q x * covered (SlotColoring.nativeIndex h M.1) g Y) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

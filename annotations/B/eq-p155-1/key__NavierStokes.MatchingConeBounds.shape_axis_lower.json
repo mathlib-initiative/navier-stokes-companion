@@ -1,26 +1,29 @@
 {
-  "id": "eq-p155-1/key/05.NavierStokes.MatchingConeBounds.shape_axis_lower",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MatchingConeBounds.shape_axis_lower",
-      "line": 66,
-      "module": "NavierStokes.MatchingConeBounds",
-      "path": "NavierStokes/MatchingConeBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean#L66"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MatchingConeBounds.shape_axis_lower",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MatchingConeBounds.shape_axis_lower",
+        "lines": [66, 66],
+        "module": "NavierStokes.MatchingConeBounds"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 66,
-        "text": "hid : H h j eta * shapeGradient eta = (D h + 4 * d eta) * (eta * shapeGradient eta) + d eta * j * shapeGradient eta — the Lean's analogue of ηH_* = (D+4d)η² + dj_0η"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.MatchingConeBounds.shape_axis_lower",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L66",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 31,
+            "text": "theorem shape_axis_lower {h j eta ell theta : ℝ}\n    (hs : SmallParameters h j) (hη : eta ∈ Icc (-1 : ℝ) 1)\n    (hl : 11 / 20 ≤ ell) (ht : theta ∈ Icc (0 : ℝ) 1) :\n    (8 / 5 : ℝ) < -W h j eta * ell - h * (1 - 2 * eta * U j eta) +\n      theta * H h j eta * OutgoingEntranceCone.shapeGradient eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

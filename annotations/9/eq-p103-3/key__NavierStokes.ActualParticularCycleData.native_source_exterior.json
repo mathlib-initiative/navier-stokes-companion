@@ -1,26 +1,28 @@
 {
-  "id": "eq-p103-3/key/03.NavierStokes.ActualParticularCycleData.native_source_exterior",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualParticularCycleData.native_source_exterior",
-      "line": 153,
-      "module": "NavierStokes.ActualParticularCycleData",
-      "path": "NavierStokes/ActualParticularCycleData.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularCycleData.lean#L153"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualParticularCycleData.native_source_exterior",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualParticularCycleData.native_source_exterior",
+        "module": "NavierStokes.ActualParticularCycleData"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 153,
-        "text": "z ∈ nativeDomain particularChart standardRegion → radius (particularChart.symm z) ∉ Icc (leftRadius nominal) (rightRadius nominal) → (nativeData x l j).source n z = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ActualParticularCycleData.native_source_exterior",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L153",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularCycleData.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 153,
+            "text": "theorem native_source_exterior (H : Invariant σ x) (l : Index B N0) (j : ℤ) (n : ℕ)\n    {z : ActualParticularStageControls.Native}\n    (hz : z ∈ ActualWaveRegularity.nativeDomain ActualWaveRegularity.particularChart ActualPrimary.standardRegion)\n    (hr : ActualWaveRegularityData.radius (ActualWaveRegularity.particularChart.symm z) ∉\n      Icc (PrimaryTargetBounds.leftRadius ActualPrimary.nominal)\n        (PrimaryTargetBounds.rightRadius ActualPrimary.nominal)) :\n    (nativeData x l j).source n z = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,22 +1,25 @@
 {
-  "id": "eq-p043-4/key/04.NavierStokes.ModulatedCone.Repaired.profile_data_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.Repaired.profile_data_bound",
-      "line": 1182
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L1182"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.Repaired.profile_data_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.Repaired.profile_data_bound",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 1182,
-        "text": "∃ δ C₁ C₂ > 0, ∀ n ≥ 1, ∀ c, ∀ ε ∈ [0,δ], FiniteJetBound 1 c J ε → ∀ P Q, P.f = applyRepairF patch A c (localizedF W r f n) → P.U = applyRepairU … → Q.f = f → Q.U = U → … → ‖ModulatedStockBounds.profileData P p - ModulatedStockBounds.profileData Q p‖ ≤ C₁ / n + C₂ * ε"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ModulatedCone.Repaired.profile_data_bound"
+          },
+          "destination": {
+            "fragment": "L1182"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1182,
+            "text": "theorem profile_data_bound (W : ModulatedHistories.Window)\n    (r : TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (patch : FiveProfileMoments.Patch) (hgap : W.right < patch.left)\n    (A : ℝ → ℝ) (hA : ContDiff ℝ ∞ A) (J : Set ℝ) (hJ : IsCompact J) :\n    ∃ δ C₁ C₂ : ℝ, 0 < δ ∧ 0 < C₁ ∧ 0 < C₂ ∧ ∀ n : ℝ, 1 ≤ n →\n      ∀ c : ℝ → ModulatedHistories.Coeff, ContDiff ℝ ∞ c →\n      ∀ ε : ℝ, 0 ≤ ε → ε ≤ δ → JetBounds.FiniteJetBound 1 c J ε →\n      ∀ {D D' : RadialDomain} (P : Profiles D) (Q : Profiles D'),\n      P.f = ModulatedHistories.applyRepairF patch A c (ModulatedHistories.localizedF W r f n) →\n      P.U = ModulatedHistories.applyRepairU patch A c (ModulatedHistories.localizedU W r E U n) →\n      Q.f = f → Q.U = U → P.pressure0 = Q.pressure0 →\n      ∀ p : Point, 0 ≤ p.1 → p.2 ∈ J → p ∈ D.carrier → p ∈ D'.carrier →\n      ‖ModulatedStockBounds.profileData P p - ModulatedStockBounds.profileData Q p‖ ≤ C₁ / n + C₂ * ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

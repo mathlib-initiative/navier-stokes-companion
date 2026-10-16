@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.22/key/09.NavierStokes.ActualSignedGeometry.slotGeometry_common_cost",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSignedGeometry.slotGeometry_common_cost",
-      "line": 443,
-      "module": "NavierStokes.ActualSignedGeometry",
-      "path": "NavierStokes/ActualSignedGeometry.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedGeometry.lean#L443"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSignedGeometry.slotGeometry_common_cost",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSignedGeometry.slotGeometry_common_cost",
+        "module": "NavierStokes.ActualSignedGeometry"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 443,
-        "text": "argumentCost (slotGeometry sys hdet l (nativeIndex h l.1 - index n)) ≤ (25 * bandArgumentCost (slotChart vr vt hdet) (budget + nativeGap h)) * ChartScales.S n, for n within 4 of l.1  -- O(S_*) on the constructed geometry, in the reference band's S"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.ActualSignedGeometry.slotGeometry_common_cost",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L443",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedGeometry.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 443,
+            "text": "theorem slotGeometry_common_cost (hh : 0 ≤ h) {index : ℕ → ℕ} {budget : ℕ}\n    (hi : CommonBaseContext.IndexBounds h index budget) {n : ℕ} {l : SlotColoring.Label}\n    (hn : 1 ≤ n) (hl : 4 ≤ l.1) (hnl : n ≤ l.1 + 4) (hln : l.1 ≤ n + 4) :\n    CommonCoverClass.argumentCost\n      (slotGeometry sys hdet l (ChartScales.nativeIndex h l.1 - index n)) ≤\n      (25 * CommonCoverClass.bandArgumentCost (TorusAverages.slotChart vr vt hdet)\n        (budget + SlotColoring.nativeGap h)) * ChartScales.S n"
+          }
+        }
       }
     }
-  }
+  ]
 }

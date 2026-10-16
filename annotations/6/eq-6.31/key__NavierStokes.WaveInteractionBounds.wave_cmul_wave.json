@@ -1,25 +1,27 @@
 {
-  "id": "eq-6.31/key/01.NavierStokes.WaveInteractionBounds.wave_cmul_wave",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WaveInteractionBounds.wave_cmul_wave",
-      "line": 90,
-      "module": "NavierStokes.WaveInteractionBounds",
-      "path": "NavierStokes/WaveInteractionBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean#L90"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WaveInteractionBounds.wave_cmul_wave"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WaveInteractionBounds.wave_cmul_wave",
+        "module": "NavierStokes.WaveInteractionBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 90,
-        "text": "(hf : WaveClass s P α f) (hg : WaveClass s P β g) (hζ : ζ ≤ 1 on domain) (hP0 : 0 ≤ P) (hP1 : P ≤ 1) : WaveClass s P (α + β) (fun n x => f n x * g n x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.WaveInteractionBounds.wave_cmul_wave"
+          },
+          "destination": {
+            "fragment": "L90",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 90,
+            "text": "theorem wave_cmul_wave {s : StripData D} {P : ℕ → D → ℝ} {α β : ℝ}\n    {f g : ℕ → D → ℂ} (hf : WaveClass s P α f) (hg : WaveClass s P β g)\n    (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1) :\n    WaveClass s P (α + β) (fun n x => f n x * g n x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

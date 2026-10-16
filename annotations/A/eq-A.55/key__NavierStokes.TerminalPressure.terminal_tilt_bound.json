@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.55/key/04.NavierStokes.TerminalPressure.terminal_tilt_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalPressure.terminal_tilt_bound",
-      "line": 1189
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean#L1189"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalPressure.terminal_tilt_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalPressure.terminal_tilt_bound",
+        "module": "NavierStokes.TerminalPressure"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1189,
-        "text": "0 < terminalStress C h f t z r ∧ |axialBackwardStress C h f t z r| / terminalStress C h f t z r ≤ tiltConstant h Λ * q h (radiusPoint t r z) ^ (1 - CoordinateAlgebra.D h) * heatAmplitude C (1+h) t r"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.TerminalPressure.terminal_tilt_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1189"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1189,
+            "text": "theorem terminal_tilt_bound {C h t z r R Y Λ : ℝ} {f : ℝ → ℝ}\n    (hC : 0 < C) (hh : 0 < h) (hh1 : h < 1 / 2) (ht : t < 1)\n    (hr : 0 < r) (hrR : r ≤ R) (hf : ContDiff ℝ ∞ f)\n    (hb : ∀ y, 0 ≤ f y ∧ f y ≤ 1) (hmono : ∀ y, 0 ≤ deriv f y)\n    (hplateau : ∀ y, Y ≤ y → f y = 1)\n    (hR : Y ≤ Real.log (SimilarityProfile.X h (TerminalStress.radiusPoint t R z)))\n    (hΛ : 1 ≤ Λ) (hRΛ : R ^ 2 ≤ Λ * r ^ 2)\n    (hinside : f (Real.log (SimilarityProfile.X h (TerminalStress.radiusPoint t r z))) < 1) :\n    0 < TerminalStress.terminalStress C h f t z r ∧\n    |axialBackwardStress C h f t z r| / TerminalStress.terminalStress C h f t z r ≤\n      tiltConstant h Λ * SimilarityProfile.q h (TerminalStress.radiusPoint t r z) ^ (1 - CoordinateAlgebra.D h) *\n        TerminalStress.heatAmplitude C (1 + h) t r"
+          }
+        }
       }
     }
-  }
+  ]
 }

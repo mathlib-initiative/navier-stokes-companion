@@ -1,25 +1,27 @@
 {
-  "id": "eq-10.8/key/03.NavierStokes.BaseExterior.heatPressure_formula",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseExterior.heatPressure_formula",
-      "line": 405,
-      "module": "NavierStokes.BaseExterior",
-      "path": "NavierStokes/BaseExterior.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseExterior.lean#L405"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseExterior.heatPressure_formula"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseExterior.heatPressure_formula",
+        "module": "NavierStokes.BaseExterior"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 405,
-        "text": "heatPressure C h p = -(C ^ 2 / 2) * p.2.1 ^ (-2 * TerminalPressure.amplitudeExponent h) * TerminalPressure.heatPressureFactor h ((1 - p.1) / p.2.1) — the exact factorisation of the radial powers out of the tail integral, which replaces the paper's ρ-decay estimate"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.BaseExterior.heatPressure_formula"
+          },
+          "destination": {
+            "fragment": "L405",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseExterior.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 405,
+            "text": "theorem heatPressure_formula (C h : ℝ) {p : PhysicalPoint} (hs : 0 < p.2.1) :\n    heatPressure C h p =\n      -(C ^ 2 / 2) * p.2.1 ^ (-2 * TerminalPressure.amplitudeExponent h) *\n        TerminalPressure.heatPressureFactor h ((1 - p.1) / p.2.1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

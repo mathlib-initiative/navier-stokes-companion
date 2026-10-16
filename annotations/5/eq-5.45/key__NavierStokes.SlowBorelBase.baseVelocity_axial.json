@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.45/key/01.NavierStokes.SlowBorelBase.baseVelocity_axial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowBorelBase.baseVelocity_axial",
-      "line": 1326,
-      "module": "NavierStokes.SlowBorelBase",
-      "path": "NavierStokes/SlowBorelBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean#L1326"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowBorelBase.baseVelocity_axial",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowBorelBase.baseVelocity_axial",
+        "module": "NavierStokes.SlowBorelBase"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1326,
-        "text": "baseVelocity a h C d (t,x) 2 = physicalProfile a h (-CoordinateAlgebra.A h) d.axial (profilePoint t x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SlowBorelBase.baseVelocity_axial",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1326",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1326,
+            "text": "theorem baseVelocity_axial {a : ℕ → ℕ} (ha : StrictMono a) {h : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) {d : Coefficients} (hd : SmoothCoefficients d)\n    (C : ℝ) {t : ℝ} (ht : t < 1) (x : ProblemStatement.Space) :\n    baseVelocity a h C d (t, x) 2 =\n      physicalProfile a h (-CoordinateAlgebra.A h) d.axial (AxisymmetricFields.profilePoint t x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

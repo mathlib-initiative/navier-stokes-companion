@@ -1,26 +1,28 @@
 {
-  "id": "eq-p125-6/key/02.NavierStokes.PeriodicLocalization.divergence_free_periodize",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicLocalization.divergence_free_periodize",
-      "line": 117,
-      "module": "NavierStokes.PeriodizePDE",
-      "path": "NavierStokes/PeriodizePDE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodizePDE.lean#L117"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicLocalization.divergence_free_periodize",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicLocalization.divergence_free_periodize",
+        "module": "NavierStokes.PeriodizePDE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 117,
-        "text": "… (hdiv : ∀ t ∈ times, ∀ x, spatialDivergence u t x = 0) : ∀ t ∈ times, ∀ x, spatialDivergence (periodize u) t x = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PeriodicLocalization.divergence_free_periodize",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L117",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodizePDE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 117,
+            "text": "theorem divergence_free_periodize {r : ℝ} {u : VelocityField} {times : Set ℝ}\n    (hu : SupportedInCube r u) (hr : r < 1 / 2)\n    (hdiv : ∀ t ∈ times, ∀ x : Space, spatialDivergence u t x = 0) :\n    ∀ t ∈ times, ∀ x : Space, spatialDivergence (periodize u) t x = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

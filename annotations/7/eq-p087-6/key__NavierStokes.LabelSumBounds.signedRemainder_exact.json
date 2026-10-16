@@ -1,26 +1,28 @@
 {
-  "id": "eq-p087-6/key/04.NavierStokes.LabelSumBounds.signedRemainder_exact",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LabelSumBounds.signedRemainder_exact",
-      "line": 802,
-      "module": "NavierStokes.LabelSumBounds",
-      "path": "NavierStokes/LabelSumBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean#L802"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LabelSumBounds.signedRemainder_exact",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LabelSumBounds.signedRemainder_exact",
+        "module": "NavierStokes.LabelSumBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 802,
-        "text": "signedRemainder primary old tangent curl = symmetricCovariance (old - primary) tangent + symmetricCovariance old curl + bilinearCovariance (tangent + curl) (tangent + curl)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LabelSumBounds.signedRemainder_exact",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L802",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 802,
+            "text": "theorem signedRemainder_exact (primary old tangent curl : Oscillation D)\n    (hp : AngularContinuous primary) (ho : AngularContinuous old)\n    (ht : AngularContinuous tangent) (hc : AngularContinuous curl) :\n    signedRemainder primary old tangent curl =\n      symmetricCovariance (old - primary) tangent + symmetricCovariance old curl +\n        bilinearCovariance (tangent + curl) (tangent + curl)"
+          }
+        }
       }
     }
-  }
+  ]
 }

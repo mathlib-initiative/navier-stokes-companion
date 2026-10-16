@@ -1,34 +1,55 @@
 {
-  "id": "proposition-8.3/key/1.NavierStokes.VariableGaugeMean.temporalIncrementState_divergence_zero",
-  "location": {
-    "page": 92,
-    "rect": [0.12854, 0.824793, 0.746187, 0.02562]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.VariableGaugeMean.temporalIncrementState_divergence_zero",
-      "line": 2959,
-      "module": "NavierStokes.VariableGaugeMean",
-      "path": "NavierStokes/VariableGaugeMean.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 92,
+        "rect": [0.12854, 0.824793, 0.746187, 0.02562]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-8.3@p092"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean#L2959"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.VariableGaugeMean.temporalIncrementState_divergence_zero",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 93,
+        "rect": [0.12854, 0.102479, 0.746187, 0.31405]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Divergence freeness of the assembled increment with graph direction c.operators.epsilon n . axial, i.e. (8.14) with the epsilon of Delta beta present."
-      },
-      "region": "proposition-8.3@p092",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 2959,
-        "text": "theorem temporalIncrementState_divergence_zero (h : ℝ) (index : ℕ → ℕ)\n    (axial : PressureStream.Plane × PressureStream.Plane) (n : ℕ)\n    (hf : ContDiffOn ℝ ∞ (u.axialResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hp : PhysicalMeanDomain.PeriodicOn U.carrier (u.axialResidual c n))\n    (hs : SupportedGauge g.radial.inner g.radial.outer (qLength coord) U.carrier (u.axialResidual c n))\n    {z : Point} (hz : z.2.1 ∈ U.carrier) (hr : z.1 ≠ 0) :\n    PressureStream.graphDivergence (PressureStream.physicalSpeed g.radial.exponent (g.radial.frequency n))\n      ((0 : PressureStream.Plane), g.radial.radialDirection) (c.operators.epsilon n • axial)\n      ((temporalIncrementState g h index axial c u).radial n)\n      ((temporalIncrementState g h index axial c u).axial n) z = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-8.3@p093"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.VariableGaugeMean.temporalIncrementState_divergence_zero",
+        "module": "NavierStokes.VariableGaugeMean"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.VariableGaugeMean.temporalIncrementState_divergence_zero",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Divergence freeness of the assembled increment with graph direction c.operators.epsilon n . axial, i.e. (8.14) with the epsilon of Delta beta present."
+          },
+          "destination": {
+            "fragment": "L2959",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean"
+          },
+          "snippet": {
+            "line": 2959,
+            "text": "theorem temporalIncrementState_divergence_zero (h : ℝ) (index : ℕ → ℕ)\n    (axial : PressureStream.Plane × PressureStream.Plane) (n : ℕ)\n    (hf : ContDiffOn ℝ ∞ (u.axialResidual c n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hp : PhysicalMeanDomain.PeriodicOn U.carrier (u.axialResidual c n))\n    (hs : SupportedGauge g.radial.inner g.radial.outer (qLength coord) U.carrier (u.axialResidual c n))\n    {z : Point} (hz : z.2.1 ∈ U.carrier) (hr : z.1 ≠ 0) :\n    PressureStream.graphDivergence (PressureStream.physicalSpeed g.radial.exponent (g.radial.frequency n))\n      ((0 : PressureStream.Plane), g.radial.radialDirection) (c.operators.epsilon n • axial)\n      ((temporalIncrementState g h index axial c u).radial n)\n      ((temporalIncrementState g h index axial c u).axial n) z = 0"
+          }
+        }
+      }
+    }
+  ]
 }

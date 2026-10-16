@@ -1,25 +1,27 @@
 {
-  "id": "eq-B.22/key/02.NavierStokes.ReferencePath.Input.same_radius_log_slope",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferencePath.Input.same_radius_log_slope",
-      "line": 668,
-      "module": "NavierStokes.ReferencePath",
-      "path": "NavierStokes/ReferencePath.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferencePath.lean#L668"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferencePath.Input.same_radius_log_slope",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferencePath.Input.same_radius_log_slope",
+        "module": "NavierStokes.ReferencePath"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 668,
-        "text": "p.1 * deriv (fun X => Real.log (N.refF δ (X, p.2))) p.1 = slopeCutoff δ (N.logTime p.1) * (p.1 * radialPartial N.f p / N.f p), given 0 < X and N.logTime X < rampLimit — the first line of (B.22) written with 𝒟_X = X∂_X"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ReferencePath.Input.same_radius_log_slope",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L668",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferencePath.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 668,
+            "text": "theorem same_radius_log_slope {δ : ℝ} (hδ : 0 < δ) (hδT : 2 * δ < rampLimit)\n    {p : Point} (hη : p.2 ∈ parameterInterval) (hX : 0 < p.1) (ht : N.logTime p.1 < rampLimit) :\n    p.1 * deriv (fun X => Real.log (N.refF δ (X, p.2))) p.1 =\n      slopeCutoff δ (N.logTime p.1) * (p.1 * radialPartial N.f p / N.f p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

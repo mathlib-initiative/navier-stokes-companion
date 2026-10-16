@@ -1,36 +1,57 @@
 {
-  "id": "lemma-4.11/attributed/1.NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
-  "location": {
-    "page": 38,
-    "rect": [0.12854, 0.757851, 0.745098, 0.107438]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
-      "line": 60,
-      "module": "NavierStokes.TrueConeLoopPaper",
-      "path": "NavierStokes/TrueConeLoopPaper.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 38,
+        "rect": [0.12854, 0.757851, 0.745098, 0.107438]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.11@p038"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoopPaper.lean#L60"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 39,
+        "rect": [0.12854, 0.102479, 0.745098, 0.102479]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: From B compact, N open with B ⊆ N and the agreement clause on K ∩ N, there is δ > 0 with A (x,φ) = a x and C (x,φ) = a x * m x for every x ∈ K within distance δ of B and every φ — the paper's 'near both radial endpoints the loop is independent of φ and equals (a, −b_s)'.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-4.11@p038",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 60,
-        "text": "theorem uniform_boundary_collar {K B N : Set E} (hB : IsCompact B)\n    (hN : IsOpen N) (hBN : B ⊆ N) {a m : E → ℝ} {A C : E × ℝ → ℝ}\n    (hmatch : ∀ x ∈ K ∩ N, ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x) :\n    ∃ δ : ℝ, 0 < δ ∧ ∀ x ∈ K, ∀ y ∈ B, dist x y < δ →\n      ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.11@p039"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
+        "module": "NavierStokes.TrueConeLoopPaper"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: From B compact, N open with B ⊆ N and the agreement clause on K ∩ N, there is δ > 0 with A (x,φ) = a x and C (x,φ) = a x * m x for every x ∈ K within distance δ of B and every φ — the paper's 'near both radial endpoints the loop is independent of φ and equals (a, −b_s)'.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L60",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoopPaper.lean"
+          },
+          "snippet": {
+            "line": 60,
+            "text": "theorem uniform_boundary_collar {K B N : Set E} (hB : IsCompact B)\n    (hN : IsOpen N) (hBN : B ⊆ N) {a m : E → ℝ} {A C : E × ℝ → ℝ}\n    (hmatch : ∀ x ∈ K ∩ N, ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x) :\n    ∃ δ : ℝ, 0 < δ ∧ ∀ x ∈ K, ∀ y ∈ B, dist x y < δ →\n      ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x"
+          }
+        }
+      }
+    }
+  ]
 }

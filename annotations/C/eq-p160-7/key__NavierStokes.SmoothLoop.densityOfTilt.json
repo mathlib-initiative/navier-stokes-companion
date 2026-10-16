@@ -1,26 +1,28 @@
 {
-  "id": "eq-p160-7/key/03.NavierStokes.SmoothLoop.densityOfTilt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothLoop.densityOfTilt",
-      "line": 478,
-      "module": "NavierStokes.SmoothLoop",
-      "path": "NavierStokes/SmoothLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean#L478"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothLoop.densityOfTilt",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SmoothLoop.densityOfTilt",
+        "module": "NavierStokes.SmoothLoop"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 478,
-        "text": "CircleDensity with rate θ := phaseDensity a v (t θ) / (2 * Real.pi) = a(1 + t(θ)^2) / (2π v); the field integral_one makes ∫₀^{2π} rate = 1, so φ gains exactly 1 per turn"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SmoothLoop.densityOfTilt",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L478",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothLoop.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 478,
+            "text": "def densityOfTilt (t : ℝ → ℝ) (a m ρ v : ℝ)\n    (ha : 0 < a) (hv : 0 < v) (ht : ContDiff ℝ (∞ : WithTop ℕ∞) t)\n    (hperiodic : Function.Periodic t (2 * Real.pi))\n    (hmean : angularMean t = m)\n    (hvar : angularMean (fun θ => (t θ - m) ^ 2) = ρ / a)\n    (hspeed : v = a * (1 + m ^ 2) + ρ) : CircleDensity"
+          }
+        }
       }
     }
-  }
+  ]
 }

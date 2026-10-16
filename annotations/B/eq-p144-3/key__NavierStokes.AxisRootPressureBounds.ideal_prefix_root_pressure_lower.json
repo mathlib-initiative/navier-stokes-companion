@@ -1,26 +1,28 @@
 {
-  "id": "eq-p144-3/key/04.NavierStokes.AxisRootPressureBounds.ideal_prefix_root_pressure_lower",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisRootPressureBounds.ideal_prefix_root_pressure_lower",
-      "line": 50,
-      "module": "NavierStokes.AxisRootPressureBounds",
-      "path": "NavierStokes/AxisRootPressureBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisRootPressureBounds.lean#L50"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisRootPressureBounds.ideal_prefix_root_pressure_lower",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisRootPressureBounds.ideal_prefix_root_pressure_lower",
+        "module": "NavierStokes.AxisRootPressureBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 50,
-        "text": "∃ η₀ ∈ Ioo (-j / 4) (-j / 5), H h j η₀ = 0 ∧ j * B ^ 2 / 20 < Z h j (PressureDatum.pressure g a) η₀ ∧ (∀ η ∈ Icc (-1) 1, H h j η = 0 → η = η₀)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.AxisRootPressureBounds.ideal_prefix_root_pressure_lower",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L50",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisRootPressureBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 50,
+            "text": "theorem ideal_prefix_root_pressure_lower {h j : ℝ}\n    (p : NaturalAxisRange.Parameters h j) {g a : ℝ → ℝ} {cap B : ℝ}\n    (hp : PressureDatum.Admissible g a cap) (hB : 2 ≤ B)\n    (hg : ∀ y ≤ 0, g y = B ^ 2 * Real.exp ((1 / 5 : ℝ) * y))\n    (ha : ∀ y ≤ 0, a y = 1) :\n    ∃ η₀ : ℝ, η₀ ∈ Ioo (-j / 4) (-j / 5) ∧ H h j η₀ = 0 ∧\n      j * B ^ 2 / 20 < Z h j (PressureDatum.pressure g a) η₀ ∧\n      ∀ η ∈ Icc (-1 : ℝ) 1, H h j η = 0 → η = η₀"
+          }
+        }
       }
     }
-  }
+  ]
 }

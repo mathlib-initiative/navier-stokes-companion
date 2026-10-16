@@ -1,26 +1,28 @@
 {
-  "id": "eq-p119-4/key/01.NavierStokes.LocalHeatPressure.heatPressure_radius_integral",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalHeatPressure.heatPressure_radius_integral",
-      "line": 77,
-      "module": "NavierStokes.LocalHeatPressure",
-      "path": "NavierStokes/LocalHeatPressure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalHeatPressure.lean#L77"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalHeatPressure.heatPressure_radius_integral",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalHeatPressure.heatPressure_radius_integral",
+        "module": "NavierStokes.LocalHeatPressure"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 77,
-        "text": "(hr : 0 < r) : BaseExterior.heatPressure C h (TerminalStress.radiusPoint t r z) = -(∫ ρ in Ioi r, TerminalStress.heatAmplitude C (1 + h) t ρ ^ 2 / ρ)  -- the j = 0 case, no restriction on t (so also at τ = 1 - t = 0)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.LocalHeatPressure.heatPressure_radius_integral",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L77",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalHeatPressure.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 77,
+            "text": "theorem heatPressure_radius_integral (C h t z : ℝ) {r : ℝ} (hr : 0 < r) :\n    BaseExterior.heatPressure C h (TerminalStress.radiusPoint t r z) =\n      -(∫ ρ in Ioi r, TerminalStress.heatAmplitude C (1 + h) t ρ ^ 2 / ρ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

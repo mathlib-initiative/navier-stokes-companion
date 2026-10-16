@@ -1,26 +1,28 @@
 {
-  "id": "eq-p048-5/key/01.NavierStokes.NilpotentVolterra.regularPrimitive_hasDerivAt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NilpotentVolterra.regularPrimitive_hasDerivAt",
-      "line": 140,
-      "module": "NavierStokes.NilpotentVolterra",
-      "path": "NavierStokes/NilpotentVolterra.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NilpotentVolterra.lean#L140"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NilpotentVolterra.regularPrimitive_hasDerivAt",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NilpotentVolterra.regularPrimitive_hasDerivAt",
+        "module": "NavierStokes.NilpotentVolterra"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 140,
-        "text": "(hf : Continuous f) (ξ : ℝ) : HasDerivAt (regularPrimitive c f) (f ξ - (c:ℝ) • weightedMean c f ξ) ξ — the second displayed identity, at every ξ including ξ = 0 (the paper's 'continuous at zero')"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.NilpotentVolterra.regularPrimitive_hasDerivAt",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L140",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NilpotentVolterra.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 140,
+            "text": "theorem regularPrimitive_hasDerivAt [CompleteSpace E] (c : ℕ)\n    {f : ℝ → E} (hf : Continuous f) (ξ : ℝ) :\n    HasDerivAt (regularPrimitive c f)\n      (f ξ - (c : ℝ) • weightedMean c f ξ) ξ"
+          }
+        }
       }
     }
-  }
+  ]
 }

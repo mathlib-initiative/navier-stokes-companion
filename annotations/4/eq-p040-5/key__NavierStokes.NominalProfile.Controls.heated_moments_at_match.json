@@ -1,24 +1,27 @@
 {
-  "id": "eq-p040-5/key/02.NavierStokes.NominalProfile.Controls.heated_moments_at_match",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalProfile.Controls.heated_moments_at_match",
-      "line": 1970
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L1970"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalProfile.Controls.heated_moments_at_match",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalProfile.Controls.heated_moments_at_match",
+        "module": "NavierStokes.NominalProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1970,
-        "text": "moments c.U (c.heatedE w.coefficients) c.heatJoin eta = moments (HeatedOutgoing.U F c.radius) (HeatedOutgoing.E F c.radius w.coefficients) c.heatJoin eta"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.NominalProfile.Controls.heated_moments_at_match",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1970"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1970,
+            "text": "theorem heated_moments_at_match {B : ℝ} (w : HeatedOutgoing.CompensationWitness F c.radius B)\n    (hsep : c.separation ≤ Real.exp (-8)) {eta : ℝ}\n    (hη : eta ∈ HeatedOutgoing.parameterDomain) (hs : SmallDebt F c.debt eta) :\n    moments c.U (c.heatedE w.coefficients) c.heatJoin eta =\n      moments (HeatedOutgoing.U F c.radius) (HeatedOutgoing.E F c.radius w.coefficients) c.heatJoin eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-8.15/key/03.NavierStokes.CorrectionState.axialDefect",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionState.axialDefect",
-      "line": 236,
-      "module": "NavierStokes.CorrectionState",
-      "path": "NavierStokes/CorrectionState.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L236"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionState.axialDefect",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionState.axialDefect",
+        "module": "NavierStokes.CorrectionState"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 236,
-        "text": "noncomputable def axialDefect (c) (u) : ScalarField S := radialMoment 1 (axialAxial c.base u.mean + u.covariance 2 2) - (1 / 2 : ℝ) • radialMoment 2 (u.gr c)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CorrectionState.axialDefect",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L236",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 236,
+            "text": "noncomputable def axialDefect (c : Context (PressureStream.Lift S))\n    (u : State (PressureStream.Lift S)) : ScalarField S"
+          }
+        }
       }
     }
-  }
+  ]
 }

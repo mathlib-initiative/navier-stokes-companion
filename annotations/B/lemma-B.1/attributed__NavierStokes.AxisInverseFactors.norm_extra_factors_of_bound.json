@@ -1,31 +1,33 @@
 {
-  "id": "lemma-B.1/attributed/1.NavierStokes.AxisInverseFactors.norm_extra_factors_of_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisInverseFactors.norm_extra_factors_of_bound",
-      "line": 253,
-      "module": "NavierStokes.AxisInverseFactors",
-      "path": "NavierStokes/AxisInverseFactors.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisInverseFactors.lean#L253"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisInverseFactors.norm_extra_factors_of_bound",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisInverseFactors.norm_extra_factors_of_bound",
+        "module": "NavierStokes.AxisInverseFactors"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: ‖A‖ ≤ K → ‖insertFactors I hε r hr A Bs‖ ≤ 64^Bs.length * K * (Bs.map norm).prod: the extra-factor clause for the derivative-omitted and averaged variants too.",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 253,
-        "text": "theorem norm_extra_factors_of_bound (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r)\n    (A : AxisSpace I ε) (Bs : List (AxisSpace I ε)) {K : ℝ} (hK : ‖A‖ ≤ K) :\n    ‖insertFactors I hε r hr A Bs‖ ≤ 64 ^ Bs.length * K * (Bs.map norm).prod"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.AxisInverseFactors.norm_extra_factors_of_bound",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: ‖A‖ ≤ K → ‖insertFactors I hε r hr A Bs‖ ≤ 64^Bs.length * K * (Bs.map norm).prod: the extra-factor clause for the derivative-omitted and averaged variants too.",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L253",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisInverseFactors.lean"
+          },
+          "snippet": {
+            "line": 253,
+            "text": "theorem norm_extra_factors_of_bound (I : Window) {ε : ℝ} (hε : 0 < ε) (r : ℕ) (hr : 1 ≤ r)\n    (A : AxisSpace I ε) (Bs : List (AxisSpace I ε)) {K : ℝ} (hK : ‖A‖ ≤ K) :\n    ‖insertFactors I hε r hr A Bs‖ ≤ 64 ^ Bs.length * K * (Bs.map norm).prod"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,29 +1,31 @@
 {
-  "id": "corollary-B.6/attributed/1.NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
-      "line": 1042,
-      "module": "NavierStokes.ActivationHolomorphic",
-      "path": "NavierStokes/ActivationHolomorphic.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationHolomorphic.lean#L1042"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
+        "module": "NavierStokes.ActivationHolomorphic"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: Same hypotheses, ∀ k : ℕ : Regular (Ioi (-R)) Ω (radialJet (E.f T κ δ) k) ∧ … for U, Ubar, Pi, with radialJet F k p = iteratedDeriv k (fun x => F (x,p.2)) p.1. This states the first half of clause (ii) — the same Ω at every fixed radial order — and nothing about finiteness of bounds on a smaller nei"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1042,
-        "text": "theorem all_radial_jets {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2*δ < ReferencePath.rampLimit) (κ : ℝ) (k : ℕ) :\n    Regular (Ioi (-R)) Ω (radialJet (E.f T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.U T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.Ubar T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.Pi T κ δ) k)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActivationHolomorphic.InitialTube.all_radial_jets",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: Same hypotheses, ∀ k : ℕ : Regular (Ioi (-R)) Ω (radialJet (E.f T κ δ) k) ∧ … for U, Ubar, Pi, with radialJet F k p = iteratedDeriv k (fun x => F (x,p.2)) p.1. This states the first half of clause (ii) — the same Ω at every fixed radial order — and nothing about finiteness of bounds on a smaller nei"
+          },
+          "destination": {
+            "fragment": "L1042",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationHolomorphic.lean"
+          },
+          "snippet": {
+            "line": 1042,
+            "text": "theorem all_radial_jets {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2*δ < ReferencePath.rampLimit) (κ : ℝ) (k : ℕ) :\n    Regular (Ioi (-R)) Ω (radialJet (E.f T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.U T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.Ubar T κ δ) k) ∧\n    Regular (Ioi (-R)) Ω (radialJet (E.Pi T κ δ) k)"
+          }
+        }
       }
     }
-  }
+  ]
 }

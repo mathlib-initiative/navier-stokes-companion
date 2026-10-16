@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.30/key/01.NavierStokes.PulseCone.Ns_pulse_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseCone.Ns_pulse_identity",
-      "line": 636
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseCone.lean#L636"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseCone.Ns_pulse_identity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseCone.Ns_pulse_identity",
+        "module": "NavierStokes.PulseCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 636,
-        "text": "Ns w amp (pulseStart + y, eta) / E w (pulseStart + y, eta) = -pulseRatio d.core amp (y, eta) + ((1/2 - d.h) + (1/2 - d.h) * eta * shapeGradient eta) * normalizedLag d.core amp eta y - (1/2 - d.h) * eta * deriv (fun t => normalizedLag d.core amp t y) eta + axialHistoryError w amp eta y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PulseCone.Ns_pulse_identity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L636"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 636,
+            "text": "theorem Ns_pulse_identity (w : ResetWitness d K) {amp : ℝ → ℝ}\n    (ha : ContDiff ℝ ∞ amp) (eta : ℝ) {y : ℝ}\n    (hy : 0 ≤ y) (hy' : y ≤ d.core.pulseLength) :\n    Ns w amp (d.core.pulseStart + y, eta) / E w (d.core.pulseStart + y, eta) =\n      -pulseRatio d.core amp (y, eta) +\n        ((1 / 2 - d.h) + (1 / 2 - d.h) * eta * shapeGradient eta) * normalizedLag d.core amp eta y -\n        (1 / 2 - d.h) * eta * deriv (fun t => normalizedLag d.core amp t y) eta +\n        axialHistoryError w amp eta y"
+          }
+        }
       }
     }
-  }
+  ]
 }

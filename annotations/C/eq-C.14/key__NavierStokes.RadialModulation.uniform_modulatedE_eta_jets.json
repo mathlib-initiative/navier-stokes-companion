@@ -1,23 +1,25 @@
 {
-  "id": "eq-C.14/key/02.NavierStokes.RadialModulation.uniform_modulatedE_eta_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialModulation.uniform_modulatedE_eta_jets",
-      "line": 372,
-      "module": "NavierStokes.RadialModulation",
-      "path": "NavierStokes/RadialModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialModulation.lean#L372"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialModulation.uniform_modulatedE_eta_jets"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialModulation.uniform_modulatedE_eta_jets",
+        "module": "NavierStokes.RadialModulation"
       },
-      "snippet": {
-        "line": 372,
-        "text": "∃ C, 0 ≤ C ∧ ∀ n, 1 ≤ n → ∀ X ∈ KX, ∀ η ∈ Kη, |iteratedDeriv k (modulatedE n E A X) η - iteratedDeriv k (E X) η| ≤ C / n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.RadialModulation.uniform_modulatedE_eta_jets"
+          },
+          "destination": {
+            "fragment": "L372",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialModulation.lean"
+          },
+          "snippet": {
+            "line": 372,
+            "text": "theorem uniform_modulatedE_eta_jets\n    (E : BaseProfile) (A : PrimitiveProfile)\n    (hE : ContDiff ℝ ∞ (Function.uncurry E)) (hA : ContDiff ℝ ∞ A)\n    (hperiodic : ∀ X η, Function.Periodic (fun θ => A (X, η, θ)) 1)\n    (KX Kη : Set ℝ) (hKX : IsCompact KX) (hKη : IsCompact Kη) (k : ℕ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℝ, 1 ≤ n → ∀ X ∈ KX, ∀ η ∈ Kη,\n      |iteratedDeriv k (modulatedE n E A X) η - iteratedDeriv k (E X) η| ≤ C / n"
+          }
+        }
       }
     }
-  }
+  ]
 }

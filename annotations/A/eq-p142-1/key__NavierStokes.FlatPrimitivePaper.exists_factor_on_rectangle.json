@@ -1,26 +1,29 @@
 {
-  "id": "eq-p142-1/key/01.NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
-      "line": 88,
-      "module": "NavierStokes.FlatPrimitivePaper",
-      "path": "NavierStokes/FlatPrimitivePaper.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatPrimitivePaper.lean#L88"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
+        "lines": [88, 88],
+        "module": "NavierStokes.FlatPrimitivePaper"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 88,
-        "text": "let B : E × ℝ → ℝ := fun x => 2 * ParametricFlatFactor.factor c j b' x  -- the witness exhibited for Lemma A.9's coefficient B"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.FlatPrimitivePaper.exists_factor_on_rectangle",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L88",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatPrimitivePaper.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 76,
+            "text": "theorem exists_factor_on_rectangle {K : Set E} (hK : IsCompact K)\n    {δ₀ c : ℝ} (hδ : 0 < δ₀) (hc : 0 < c) (j : ℕ)\n    {U : Set (E × ℝ)} (hU : IsOpen U) (hKU : K ×ˢ Icc 0 δ₀ ⊆ U)\n    {b : E × ℝ → ℝ} (hb : ContDiffOn ℝ ∞ b U) :\n    ∃ B : E × ℝ → ℝ, ContDiff ℝ ∞ B ∧\n      (∀ p ∈ K, B (p, 0) = b (p, 0) / c) ∧\n      (∀ p ∈ K, ∀ δ ∈ Ioc 0 δ₀,\n        (∫ u in (0 : ℝ)..δ, (Real.exp (-c / u ^ 2) / u ^ j) * b (p, u)) =\n          (1 / 2 : ℝ) * Real.exp (-c / δ ^ 2) * δ ^ (3 - (j : ℝ)) * B (p, δ)) ∧\n      (∀ n : ℕ, ∃ C ≥ 0, ∀ p ∈ K, ∀ δ ∈ Icc 0 δ₀,\n        ‖iteratedFDeriv ℝ n B (p, δ)‖ ≤ C)"
+          }
+        }
       }
     }
-  }
+  ]
 }

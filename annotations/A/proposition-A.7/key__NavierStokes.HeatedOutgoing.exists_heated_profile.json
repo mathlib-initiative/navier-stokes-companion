@@ -1,30 +1,32 @@
 {
-  "id": "proposition-A.7/key/0.NavierStokes.HeatedOutgoing.exists_heated_profile",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HeatedOutgoing.exists_heated_profile",
-      "line": 875,
-      "module": "NavierStokes.HeatedOutgoing",
-      "path": "NavierStokes/HeatedOutgoing.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean#L875"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HeatedOutgoing.exists_heated_profile",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Given OutgoingProfile.Specification F B: exists XR0 C > 0 such that for every XR >= XR0 there is a CompensationWitness w : CompensationWitness F XR C with HeatedOutgoing.Specification F XR w.coefficients.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HeatedOutgoing.exists_heated_profile",
+        "module": "NavierStokes.HeatedOutgoing"
       },
       "role": "key",
-      "snippet": {
-        "line": 875,
-        "text": "theorem exists_heated_profile {F : Profile} {B : ℝ} (hF : OutgoingProfile.Specification F B) :\n    ∃ XR₀ C : ℝ, 0 < XR₀ ∧ 0 < C ∧ ∀ XR : ℝ, XR₀ ≤ XR →\n      ∃ w : CompensationWitness F XR C, Specification F XR w.coefficients"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.HeatedOutgoing.exists_heated_profile",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Given OutgoingProfile.Specification F B: exists XR0 C > 0 such that for every XR >= XR0 there is a CompensationWitness w : CompensationWitness F XR C with HeatedOutgoing.Specification F XR w.coefficients.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L875",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatedOutgoing.lean"
+          },
+          "snippet": {
+            "line": 875,
+            "text": "theorem exists_heated_profile {F : Profile} {B : ℝ} (hF : OutgoingProfile.Specification F B) :\n    ∃ XR₀ C : ℝ, 0 < XR₀ ∧ 0 < C ∧ ∀ XR : ℝ, XR₀ ≤ XR →\n      ∃ w : CompensationWitness F XR C, Specification F XR w.coefficients"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-7.31/key/01.NavierStokes.SignedCovariance.increment_eq_inverse",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedCovariance.increment_eq_inverse",
-      "line": 31,
-      "module": "NavierStokes.SignedCovariance",
-      "path": "NavierStokes/SignedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean#L31"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedCovariance.increment_eq_inverse",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedCovariance.increment_eq_inverse",
+        "module": "NavierStokes.SignedCovariance"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 31,
-        "text": "increment H T R j = (H⁻¹.mulVec R) j / (2 * Real.sqrt ((H⁻¹.mulVec T) j)) under StrictCone H T  — the denominator is 2 a_σ with a_σ = √y_σ, y = H⁻¹ T_{0,*} of (7.24)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SignedCovariance.increment_eq_inverse",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L31",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 31,
+            "text": "theorem increment_eq_inverse (H : Mat2) (T R : Vec2)\n    (hcone : SmoothCovariance.StrictCone H T) (j : Fin 2) :\n    increment H T R j = (H⁻¹.mulVec R) j / (2 * Real.sqrt ((H⁻¹.mulVec T) j))"
+          }
+        }
       }
     }
-  }
+  ]
 }

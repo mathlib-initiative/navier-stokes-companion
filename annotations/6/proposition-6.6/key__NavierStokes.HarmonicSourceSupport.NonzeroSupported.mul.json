@@ -1,29 +1,31 @@
 {
-  "id": "proposition-6.6/key/1.NavierStokes.HarmonicSourceSupport.NonzeroSupported.mul",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicSourceSupport.NonzeroSupported.mul",
-      "line": 59,
-      "module": "NavierStokes.HarmonicSourceSupport",
-      "path": "NavierStokes/HarmonicSourceSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicSourceSupport.lean#L59"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicSourceSupport.NonzeroSupported.mul",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicSourceSupport.NonzeroSupported.mul",
+        "module": "NavierStokes.HarmonicSourceSupport"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: NonzeroSupported K c \\to NonzeroSupported K d \\to NonzeroSupported K (c*d): the spatial support set K of the nonzero harmonics is retained by the convolution product. This is the paper's 'supports are retained' clause, not the harmonic bookkeeping."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 59,
-        "text": "theorem mul (hc : NonzeroSupported K c) (hd : NonzeroSupported K d) :\n    NonzeroSupported K (c * d)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.HarmonicSourceSupport.NonzeroSupported.mul",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: NonzeroSupported K c \\to NonzeroSupported K d \\to NonzeroSupported K (c*d): the spatial support set K of the nonzero harmonics is retained by the convolution product. This is the paper's 'supports are retained' clause, not the harmonic bookkeeping."
+          },
+          "destination": {
+            "fragment": "L59",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicSourceSupport.lean"
+          },
+          "snippet": {
+            "line": 59,
+            "text": "theorem mul (hc : NonzeroSupported K c) (hd : NonzeroSupported K d) :\n    NonzeroSupported K (c * d)"
+          }
+        }
       }
     }
-  }
+  ]
 }

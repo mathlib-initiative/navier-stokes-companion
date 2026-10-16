@@ -1,31 +1,33 @@
 {
-  "id": "lemma-B.7/attributed/1.NavierStokes.ReferenceEndpointRate.exists_linear_Ck_constants",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceEndpointRate.exists_linear_Ck_constants",
-      "line": 156,
-      "module": "NavierStokes.ReferenceEndpointRate",
-      "path": "NavierStokes/ReferenceEndpointRate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean#L156"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceEndpointRate.exists_linear_Ck_constants",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceEndpointRate.exists_linear_Ck_constants",
+        "module": "NavierStokes.ReferenceEndpointRate"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The second line of (B.32) alone: ∃ Cnat ≥ 0 (before Λ), ∀ Λ ≥ max(1, stabilityScale), ∃ Cjoin ≥ 0, ∀ q, T > 0, κ ∈ Icc 0 1, w₁,w₂ ≥ 0, n ≤ N, η ∈ J: |D^n(endpointU T κ w₁ − NaturalAxisData.U j)(η)| ≤ Cnat/Λ + Cjoin*(T+κ+w₁+w₂).",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 156,
-        "text": "theorem exists_linear_Ck_constants (hσ : 0 < σ) (N : ℕ) :\n    ∃ Cnat, 0 ≤ Cnat ∧ ∀ Λ, ∀ hΛ : 0 < Λ, 1 ≤ Λ →\n      AxisReference.stabilityScale d.coefficients.epsilon (profileErrorConstant d) ≤ Λ →\n      ∃ Cjoin, 0 ≤ Cjoin ∧ ∀ q : Choice d Λ,\n      ∀ T, 0 < T → ∀ κ ∈ Icc (0:ℝ) 1, ∀ w₁, 0 ≤ w₁ → ∀ w₂, 0 ≤ w₂ →\n      ∀ n ≤ N, ∀ η ∈ J,\n      |iteratedDeriv n (fun ξ => (reference d hΛ hP0 hs q).endpointU T κ w₁ ξ-\n        NaturalAxisData.U j ξ) η| ≤ Cnat/Λ+Cjoin*(T+κ+w₁+w₂)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ReferenceEndpointRate.exists_linear_Ck_constants",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: The second line of (B.32) alone: ∃ Cnat ≥ 0 (before Λ), ∀ Λ ≥ max(1, stabilityScale), ∃ Cjoin ≥ 0, ∀ q, T > 0, κ ∈ Icc 0 1, w₁,w₂ ≥ 0, n ≤ N, η ∈ J: |D^n(endpointU T κ w₁ − NaturalAxisData.U j)(η)| ≤ Cnat/Λ + Cjoin*(T+κ+w₁+w₂).",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L156",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceEndpointRate.lean"
+          },
+          "snippet": {
+            "line": 156,
+            "text": "theorem exists_linear_Ck_constants (hσ : 0 < σ) (N : ℕ) :\n    ∃ Cnat, 0 ≤ Cnat ∧ ∀ Λ, ∀ hΛ : 0 < Λ, 1 ≤ Λ →\n      AxisReference.stabilityScale d.coefficients.epsilon (profileErrorConstant d) ≤ Λ →\n      ∃ Cjoin, 0 ≤ Cjoin ∧ ∀ q : Choice d Λ,\n      ∀ T, 0 < T → ∀ κ ∈ Icc (0:ℝ) 1, ∀ w₁, 0 ≤ w₁ → ∀ w₂, 0 ≤ w₂ →\n      ∀ n ≤ N, ∀ η ∈ J,\n      |iteratedDeriv n (fun ξ => (reference d hΛ hP0 hs q).endpointU T κ w₁ ξ-\n        NaturalAxisData.U j ξ) η| ≤ Cnat/Λ+Cjoin*(T+κ+w₁+w₂)"
+          }
+        }
       }
     }
-  }
+  ]
 }

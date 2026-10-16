@@ -1,26 +1,28 @@
 {
-  "id": "eq-p095-2/key/03.NavierStokes.SignedMeanGain.physicalSigma_cancels",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedMeanGain.physicalSigma_cancels",
-      "line": 739,
-      "module": "NavierStokes.SignedMeanGain",
-      "path": "NavierStokes/SignedMeanGain.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean#L739"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedMeanGain.physicalSigma_cancels",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedMeanGain.physicalSigma_cancels",
+        "module": "NavierStokes.SignedMeanGain"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 739,
-        "text": "StateMomentBalances.meanBar f n x + G.operators.radialDiv (e : ℝ) (physicalSigma G e f) n x = removedBump G e f n x, for e = 2 or e = 1 — the same identity with the native operators"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SignedMeanGain.physicalSigma_cancels",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L739",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 739,
+            "text": "theorem physicalSigma_cancels (G : Geometry) (e : ℕ) (he : e = 2 ∨ e = 1)\n    {f : ScalarField Point} (hf : SmoothOn G.domain f)\n    (hs : ∀ n, LocalSignedRequest.MovingSupport G.patch.a G.patch.b G.coord G.region.carrier (f n))\n    (n : ℕ) {x : Point} (hx : x ∈ G.strip.domain) :\n    StateMomentBalances.meanBar f n x + G.operators.radialDiv (e : ℝ) (physicalSigma G e f) n x =\n      removedBump G e f n x"
+          }
+        }
       }
     }
-  }
+  ]
 }

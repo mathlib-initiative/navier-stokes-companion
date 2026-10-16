@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.29/key/01.NavierStokes.PulseCone.actual_Qs_pulse_error",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseCone.actual_Qs_pulse_error",
-      "line": 1640,
-      "module": "NavierStokes.PulseCone",
-      "path": "NavierStokes/PulseCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseCone.lean#L1640"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseCone.actual_Qs_pulse_error",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseCone.actual_Qs_pulse_error",
+        "module": "NavierStokes.PulseCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1640,
-        "text": "|Qs w amp (d.core.pulseStart + y, eta) - angularEquilibrium d eta| ≤ angularErrorConstant d.core.P d.core.m * d.core.lam ^ 28, under hwait : wait = 60*log(1/lam), lam ≤ 1/120, h ≤ 1/100, |eta| ≤ 1, 0 ≤ y ≤ pulseLength"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PulseCone.actual_Qs_pulse_error",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1640",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1640,
+            "text": "theorem actual_Qs_pulse_error (w : ResetWitness d K)\n    (hwait : d.core.wait = 60 * Real.log (1 / d.core.lam)) (hsmall : d.core.lam ≤ 1 / 120)\n    (hh : d.h ≤ 1 / 100) {amp : ℝ → ℝ} (ha : ContDiff ℝ ∞ amp) {eta y : ℝ}\n    (heta : |eta| ≤ 1) (hamp : |amp eta| ≤ 6 / 5) (hamp' : |deriv amp eta| ≤ 1)\n    (hy : 0 ≤ y) (hy' : y ≤ d.core.pulseLength) :\n    |Qs w amp (d.core.pulseStart + y, eta) - angularEquilibrium d eta| ≤\n      angularErrorConstant d.core.P d.core.m * d.core.lam ^ 28"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-p123-1/attributed/04.NavierStokesR3.PressureRecovery.gradient_recovery",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.PressureRecovery.gradient_recovery",
-      "line": 407,
-      "module": "NavierStokes.R3.PressureRecovery",
-      "path": "NavierStokes/R3/PressureRecovery.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureRecovery.lean#L407"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.PressureRecovery.gradient_recovery"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.PressureRecovery.gradient_recovery",
+        "module": "NavierStokes.R3.PressureRecovery"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 407,
-        "text": "(∫ x, spatialPartial k (fun y => (p - q) (t, y)) x * ψ x) = -(∑ i, ∑ j, pressurePair i j (tensorDiff u v t i j) (partialCLM k (realTest ψ hψ hcψ))).re, for ψ smooth with compact support and t ∈ Ioo 0 T — this is the lemma pressure_flux_eq_canonical actually feeds to pressure_flux_eq_of_gradient_identification (ActualPressureFlux.lean:58)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokesR3.PressureRecovery.gradient_recovery"
+          },
+          "destination": {
+            "fragment": "L407",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureRecovery.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 407,
+            "text": "theorem gradient_recovery {T t : ℝ} {u v : VelocityField} {p q : PressureField}\n    (H : Hypotheses T u v p q) (ht : t ∈ Ioo 0 T)\n    {ψ : Space → ℝ} (hψ : ContDiff ℝ ∞ ψ) (hcψ : HasCompactSupport ψ) (k : Fin 3) :\n    (∫ x, spatialPartial k (fun y => (p - q) (t, y)) x * ψ x) =\n      -(∑ i : Fin 3, ∑ j : Fin 3, pressurePair i j (tensorDiff u v t i j)\n        (partialCLM k (realTest ψ hψ hcψ))).re"
+          }
+        }
       }
     }
-  }
+  ]
 }

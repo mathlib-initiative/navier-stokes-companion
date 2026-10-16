@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.33/attributed/10.NavierStokes.ActiveAnnulusWeight.EdgeFactor.transfer",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.transfer",
-      "line": 261,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L261"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.transfer",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.EdgeFactor.transfer",
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 261,
-        "text": "noncomputable def EdgeFactor.transfer (F : EdgeFactor K c T) (hw : 0 < w) (hww : w ≤ F.width) (he : ∀ p ∈ K, ∀ x, 0 < x → x < w → S (p,x) = T (p,x)) : EdgeFactor K c S where coefficient := F.coefficient; order := F.order; width := w  -- carries the nominal factorization (order 0, same coefficient) over to the assembled stress at LeadingStressWeights.lean:955"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.ActiveAnnulusWeight.EdgeFactor.transfer",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L261",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 261,
+            "text": "noncomputable def EdgeFactor.transfer {K : Set E} {c : ℝ} {T S : E × ℝ → V}\n    (F : EdgeFactor K c T) {w : ℝ} (hw : 0 < w) (hww : w ≤ F.width)\n    (he : ∀ p ∈ K, ∀ x : ℝ, 0 < x → x < w → S (p,x) = T (p,x)) :\n    EdgeFactor K c S"
+          }
+        }
       }
     }
-  }
+  ]
 }

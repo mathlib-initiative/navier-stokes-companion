@@ -1,36 +1,57 @@
 {
-  "id": "proposition-4.10/attributed/1.NavierStokes.EntranceAlignedBase.zero_coefficients",
-  "location": {
-    "page": 36,
-    "rect": [0.12854, 0.677686, 0.746187, 0.221488]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.EntranceAlignedBase.zero_coefficients",
-      "line": 310,
-      "module": "NavierStokes.EntranceAlignedBase",
-      "path": "NavierStokes/EntranceAlignedBase.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 36,
+        "rect": [0.12854, 0.677686, 0.746187, 0.221488]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p036"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L310"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.EntranceAlignedBase.zero_coefficients",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 37,
+        "rect": [0.12854, 0.102479, 0.746187, 0.26281]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0 < p.1 < activeLeft W and p.2 in S: angularCoefficient .. 0 p = 0 and axialCoefficient .. 0 p = 0. This is (4.13) at order zero, on the OPEN interval (0, X_a).",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "proposition-4.10@p036",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 310,
-        "text": "theorem zero_coefficients {p : ℝ × ℝ} (hX : 0 < p.1)\n    (he : p.1 < NominalConeAssembly.activeLeft W) (heta : p.2 ∈ S) :\n    SlowExpansionResidual.angularCoefficient F.data.h (asSlowProfiles (scheme W H Q M hlo)) 0 p = 0 ∧\n    SlowExpansionResidual.axialCoefficient F.data.h (asSlowProfiles (scheme W H Q M hlo)) 0 p = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-4.10@p037"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.EntranceAlignedBase.zero_coefficients",
+        "module": "NavierStokes.EntranceAlignedBase"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.EntranceAlignedBase.zero_coefficients",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For 0 < p.1 < activeLeft W and p.2 in S: angularCoefficient .. 0 p = 0 and axialCoefficient .. 0 p = 0. This is (4.13) at order zero, on the OPEN interval (0, X_a).",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L310",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean"
+          },
+          "snippet": {
+            "line": 310,
+            "text": "theorem zero_coefficients {p : ℝ × ℝ} (hX : 0 < p.1)\n    (he : p.1 < NominalConeAssembly.activeLeft W) (heta : p.2 ∈ S) :\n    SlowExpansionResidual.angularCoefficient F.data.h (asSlowProfiles (scheme W H Q M hlo)) 0 p = 0 ∧\n    SlowExpansionResidual.axialCoefficient F.data.h (asSlowProfiles (scheme W H Q M hlo)) 0 p = 0"
+          }
+        }
+      }
+    }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p123-5/key/02.NavierStokesR3.LocalizedFluxEstimates.transport_flux_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.LocalizedFluxEstimates.transport_flux_bound",
-      "line": 90,
-      "module": "NavierStokes.R3.LocalizedFluxEstimates",
-      "path": "NavierStokes/R3/LocalizedFluxEstimates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/LocalizedFluxEstimates.lean#L90"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.LocalizedFluxEstimates.transport_flux_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.LocalizedFluxEstimates.transport_flux_bound",
+        "module": "NavierStokes.R3.LocalizedFluxEstimates"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 90,
-        "text": "|∫ x, ‖(u-v)(t,x)‖^2 * fderiv ℝ (fun y => φ y ^ 8) x (v (t,x))| ≤ (8*L) * comparisonLpNorm 2 (fun x => (u-v)(t,x)) ^ (3/2 : ℝ) * cutoffL6 φ (u-v) t ^ (3/2 : ℝ), under hvanish : ∀ x, fderiv ℝ (φ^8) x (u (t,x)) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.LocalizedFluxEstimates.transport_flux_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L90",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/LocalizedFluxEstimates.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 90,
+            "text": "theorem transport_flux_bound {φ : Space → ℝ} {u v : VelocityField} {t : ℝ}\n    (hφ : ContDiff ℝ 1 φ) (hs : HasCompactSupport φ)\n    (hu : Continuous (fun x => u (t, x))) (hv : Continuous (fun x => v (t, x)))\n    (hw2 : MemLp (fun x => (u - v) (t, x)) 2 volume)\n    (hφ0 : ∀ x, 0 ≤ φ x) (hφ1 : ∀ x, φ x ≤ 1)\n    {L : ℝ} (hL0 : 0 ≤ L) (hL : ∀ x, ‖fderiv ℝ φ x‖ ≤ L)\n    (hvanish : ∀ x, fderiv ℝ (fun y => φ y ^ 8) x (u (t, x)) = 0) :\n    Integrable (fun x => ‖(u - v) (t, x)‖ ^ 2 *\n      fderiv ℝ (fun y => φ y ^ 8) x (v (t, x))) volume ∧\n    |∫ x, ‖(u - v) (t, x)‖ ^ 2 * fderiv ℝ (fun y => φ y ^ 8) x (v (t, x))| ≤\n      (8 * L) * comparisonLpNorm 2 (fun x => (u - v) (t, x)) ^ (3 / 2 : ℝ) *\n        cutoffL6 φ (u - v) t ^ (3 / 2 : ℝ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

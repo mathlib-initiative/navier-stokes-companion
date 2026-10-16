@@ -1,25 +1,27 @@
 {
-  "id": "eq-9.21/key/01.NavierStokes.LocalPotentialRebundle.velocity_eq_original",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalPotentialRebundle.velocity_eq_original",
-      "line": 96,
-      "module": "NavierStokes.LocalPotentialRebundle",
-      "path": "NavierStokes/LocalPotentialRebundle.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPotentialRebundle.lean#L96"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalPotentialRebundle.velocity_eq_original",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalPotentialRebundle.velocity_eq_original",
+        "module": "NavierStokes.LocalPotentialRebundle"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 96,
-        "text": "velocity a w = MixedPeriodicAssembly.velocity (LocalAngularGrowth.selectedPotential a) (LocalAngularGrowth.selectedDirect a) w  (moving the axial part leaves curl A + D unchanged)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.LocalPotentialRebundle.velocity_eq_original",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L96",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPotentialRebundle.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 96,
+            "text": "theorem velocity_eq_original {a : ℕ → ℕ}\n    (hs : MixedDiagonalSchedule.ThreeSmoothSums a ActualPrimary.h\n      ActualCandidateAssembly.selectedPotentialStages ActualCandidateAssembly.selectedDirectStages\n      ActualCandidateAssembly.selectedPressureStages) {w : SpaceTime}\n    (hw : w ∈ PhysicalWaveSum.preterminal) :\n    velocity a w = MixedPeriodicAssembly.velocity\n      (LocalAngularGrowth.selectedPotential a) (LocalAngularGrowth.selectedDirect a) w"
+          }
+        }
       }
     }
-  }
+  ]
 }

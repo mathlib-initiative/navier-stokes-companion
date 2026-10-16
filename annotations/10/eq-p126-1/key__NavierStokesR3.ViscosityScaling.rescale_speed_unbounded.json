@@ -1,23 +1,26 @@
 {
-  "id": "eq-p126-1/key/01.NavierStokesR3.ViscosityScaling.rescale_speed_unbounded",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ViscosityScaling.rescale_speed_unbounded",
-      "line": 97,
-      "module": "NavierStokes.R3.ViscosityScaling",
-      "path": "NavierStokes/R3/ViscosityScaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean#L97"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ViscosityScaling.rescale_speed_unbounded"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ViscosityScaling.rescale_speed_unbounded",
+        "lines": [97, 97],
+        "module": "NavierStokes.R3.ViscosityScaling"
       },
-      "snippet": {
-        "line": 97,
-        "text": "refine ⟨t, a • x, ht, hnear, ?_⟩  -- for `rescale a a⁻¹ u` the large-speed point of `u` at `(t, x)` moves to `(t, a • x)`; `scaledVelocity ν` is this with `a = Real.sqrt ν` (ViscosityScaling.lean:163)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokesR3.ViscosityScaling.rescale_speed_unbounded"
+          },
+          "destination": {
+            "fragment": "L97",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean"
+          },
+          "snippet": {
+            "line": 93,
+            "text": "theorem rescale_speed_unbounded {u : VelocityField} (hu : SpeedUnboundedAtOne u)\n    {a : ℝ} (ha : 0 < a) : SpeedUnboundedAtOne (rescale a a⁻¹ u)"
+          }
+        }
       }
     }
-  }
+  ]
 }

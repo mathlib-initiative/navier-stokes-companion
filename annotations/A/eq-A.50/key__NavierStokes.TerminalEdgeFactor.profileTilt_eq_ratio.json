@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.50/key/01.NavierStokes.TerminalEdgeFactor.profileTilt_eq_ratio",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgeFactor.profileTilt_eq_ratio",
-      "line": 1322
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1322"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgeFactor.profileTilt_eq_ratio",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgeFactor.profileTilt_eq_ratio",
+        "module": "NavierStokes.TerminalEdgeFactor"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1322,
-        "text": "(hx : 0 < x) : profileAxialStress C d y0 (η, x) / profileAngularStress C d y0 (η, x) = profileTilt C d y0 (η, x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TerminalEdgeFactor.profileTilt_eq_ratio",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1322"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1322,
+            "text": "theorem profileTilt_eq_ratio (C : ℝ) (d : TailData) (y0 η : ℝ) {x : ℝ} (hx : 0 < x) :\n    profileAxialStress C d y0 (η, x) / profileAngularStress C d y0 (η, x) =\n      profileTilt C d y0 (η, x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

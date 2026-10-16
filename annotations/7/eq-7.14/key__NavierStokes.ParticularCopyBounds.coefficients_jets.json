@@ -1,26 +1,29 @@
 {
-  "id": "eq-7.14/key/02.NavierStokes.ParticularCopyBounds.coefficients_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParticularCopyBounds.coefficients_jets",
-      "line": 246,
-      "module": "NavierStokes.ParticularCopyBounds",
-      "path": "NavierStokes/ParticularCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularCopyBounds.lean#L246"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParticularCopyBounds.coefficients_jets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParticularCopyBounds.coefficients_jets",
+        "module": "NavierStokes.ParticularCopyBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 246,
-        "text": "LocalJets s (sqrt zeta * W) alpha cells (... complexCopyCoefficients ... amplitude n) ∧ LocalJets s (sqrt zeta * W) (alpha + 1/2) cells (... pressure n), from hf : LocalJets s (sqrt zeta * W) alpha cells (fun n _ => source n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ParticularCopyBounds.coefficients_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L246",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularCopyBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 246,
+            "text": "theorem coefficients_jets\n    (hr : ModalControl s α d (fun n => realData (t n) (source n)) harmonic g L envelope cells)\n    (hi : ModalControl s α d (fun n => imagData (t n) (source n)) harmonic g L envelope cells)\n    (hW : ∀ n x, x ∈ s.domain → 0 ≤ W n x)\n    (hcompare : ∀ n k x, x ∈ s.domain → x ∈ cells n k →\n      envelope n ((g n).coordinates k x.2).2 ≤ W n x)\n    (hN : LocalJets s (fun _ _ => 1) 0 cells\n      (fun n k x => (t n).normal (nativePoint (g n) k x)))\n    (hNd : LocalJets s (fun _ _ => 1) 0 cells\n      (fun n k x => (t n).normalDot (nativePoint (g n) k x)))\n    (hA : LocalJets s (fun _ _ => 1) 0 cells\n      (fun n k x => (t n).action (nativePoint (g n) k x)))\n    (hf : LocalJets s (fun n x => Real.sqrt (s.zeta x) * W n x) α cells (fun n _ => source n))\n    {b M : ℝ} (hb : 0 < b)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

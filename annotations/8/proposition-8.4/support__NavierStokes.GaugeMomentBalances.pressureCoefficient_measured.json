@@ -1,26 +1,29 @@
 {
-  "id": "proposition-8.4/support/3.NavierStokes.GaugeMomentBalances.pressureCoefficient_measured",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaugeMomentBalances.pressureCoefficient_measured",
-      "line": 75,
-      "module": "NavierStokes.GaugeMomentBalances",
-      "path": "NavierStokes/GaugeMomentBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean#L75"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaugeMomentBalances.pressureCoefficient_measured",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaugeMomentBalances.pressureCoefficient_measured",
+        "module": "NavierStokes.GaugeMomentBalances"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 75,
-        "text": "theorem pressureCoefficient_measured (g : VariableGaugeMean.GaugeData S) (n : ℕ) (s : S)\n    (hl : 0 < g.length n s) (Y : Plane) :\n    (IntegratedMeanBalances.moment 2 (fun R => VariableGaugeMean.density\n      g.radial.inner g.radial.outer g.radial.inner_lt_outer (g.length n) (R, (s, Y)))) / 2 =\n      pressureCoefficient g n s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.GaugeMomentBalances.pressureCoefficient_measured",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L75",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeMomentBalances.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 75,
+            "text": "theorem pressureCoefficient_measured (g : VariableGaugeMean.GaugeData S) (n : ℕ) (s : S)\n    (hl : 0 < g.length n s) (Y : Plane) :\n    (IntegratedMeanBalances.moment 2 (fun R => VariableGaugeMean.density\n      g.radial.inner g.radial.outer g.radial.inner_lt_outer (g.length n) (R, (s, Y)))) / 2 =\n      pressureCoefficient g n s"
+          }
+        }
       }
     }
-  }
+  ]
 }

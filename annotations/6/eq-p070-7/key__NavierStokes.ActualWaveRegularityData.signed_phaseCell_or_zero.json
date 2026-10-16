@@ -1,26 +1,28 @@
 {
-  "id": "eq-p070-7/key/02.NavierStokes.ActualWaveRegularityData.signed_phaseCell_or_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualWaveRegularityData.signed_phaseCell_or_zero",
-      "line": 561,
-      "module": "NavierStokes.ActualWaveRegularityData",
-      "path": "NavierStokes/ActualWaveRegularityData.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualWaveRegularityData.lean#L561"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualWaveRegularityData.signed_phaseCell_or_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualWaveRegularityData.signed_phaseCell_or_zero",
+        "module": "NavierStokes.ActualWaveRegularityData"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 561,
-        "text": "x ∈ fullStrip.domain → x ∈ phaseCell l n k ∨ (cutoff l k n =ᶠ[𝓝 x] fun _ => 0) ∨ (mask l k n =ᶠ[𝓝 x] fun _ => 0)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ActualWaveRegularityData.signed_phaseCell_or_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L561",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualWaveRegularityData.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 561,
+            "text": "theorem signed_phaseCell_or_zero (l : Index B N0) (n : ℕ) (k : Frequency)\n    {x : FullPoint} (hx : x ∈ ActualSignedStageControls.fullStrip.domain) :\n    x ∈ ActualSignedStageControls.phaseCell l n k ∨\n      (ActualSignedStageControls.cutoff l k n =ᶠ[𝓝 x] fun _ => 0) ∨\n      (ActualSignedStageControls.mask l k n =ᶠ[𝓝 x] fun _ => 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p043-7/key/04.NavierStokes.NominalProfile.outgoing_axis_halfKernel",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalProfile.outgoing_axis_halfKernel",
-      "line": 1692,
-      "module": "NavierStokes.NominalProfile",
-      "path": "NavierStokes/NominalProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L1692"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalProfile.outgoing_axis_halfKernel",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalProfile.outgoing_axis_halfKernel",
+        "module": "NavierStokes.NominalProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1692,
-        "text": "F.axisDatum eta = -(∫ x in Ioi 0, halfKernel (OutgoingDilation.E F R) eta x) — the paper's C_p(∞,η) = -Π_0(η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.NominalProfile.outgoing_axis_halfKernel",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1692",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1692,
+            "text": "theorem outgoing_axis_halfKernel (F : Profile) (R eta : ℝ) (hR : 0 < R) :\n    F.axisDatum eta = -(∫ x in Ioi 0, halfKernel (OutgoingDilation.E F R) eta x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

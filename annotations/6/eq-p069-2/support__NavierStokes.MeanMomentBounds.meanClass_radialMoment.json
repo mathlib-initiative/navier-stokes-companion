@@ -1,26 +1,29 @@
 {
-  "id": "eq-p069-2/support/07.NavierStokes.MeanMomentBounds.meanClass_radialMoment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanMomentBounds.meanClass_radialMoment",
-      "line": 482,
-      "module": "NavierStokes.MeanMomentBounds",
-      "path": "NavierStokes/MeanMomentBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanMomentBounds.lean#L482"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanMomentBounds.meanClass_radialMoment",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanMomentBounds.meanClass_radialMoment",
+        "module": "NavierStokes.MeanMomentBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 482,
-        "text": "… (hclass : MeanClass (logStripData …) α f) (k : ℕ) : UnweightedClass (slowStripData (D := P) ε S hε hεone hS) α (fun n => IntegratedMeanBalances.radialMoment k (PressureStream.torusAverage (f n)))  — the Lean form of \"g_r ∈ M_α ⟹ the radial moment F(Z,T) ∈ S_α\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.MeanMomentBounds.meanClass_radialMoment",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L482",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanMomentBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 482,
+            "text": "theorem meanClass_radialMoment\n    {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1)\n    (hS : ∀ n, 1 ≤ S n) {α : ℝ} {f : ℕ → PressureStream.Lift P → ℝ}\n    (hf : ∀ n, ContDiff ℝ ∞ (f n))\n    (hs : ∀ n, RadialAlias.RadiallySupported a b (f n))\n    (hclass : MeanClass (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α f)\n    (k : ℕ) :\n    UnweightedClass (slowStripData (D"
+          }
+        }
       }
     }
-  }
+  ]
 }

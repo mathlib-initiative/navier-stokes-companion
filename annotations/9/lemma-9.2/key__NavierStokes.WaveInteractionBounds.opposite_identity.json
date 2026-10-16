@@ -1,36 +1,57 @@
 {
-  "id": "lemma-9.2/key/1.NavierStokes.WaveInteractionBounds.opposite_identity",
-  "location": {
-    "page": 102,
-    "rect": [0.12854, 0.846281, 0.745098, 0.044628]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WaveInteractionBounds.opposite_identity",
-      "line": 591,
-      "module": "NavierStokes.WaveInteractionBounds",
-      "path": "NavierStokes/WaveInteractionBounds.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 102,
+        "rect": [0.12854, 0.846281, 0.745098, 0.044628]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p102"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean#L591"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WaveInteractionBounds.opposite_identity",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 103,
+        "rect": [0.12854, 0.102479, 0.745098, 0.057851]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clause (iii), identity. transport(vectorMode ν Φ a, vectorMode (-ν) Φ b) = sameCoefficient G Φ (-ν) a b: at opposite frequencies the carrier is 1, so the ordered product IS its zero harmonic.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-9.2@p102",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 591,
-        "text": "theorem opposite_identity {s : StripData D} {κ : ℝ} (G : Geometry s κ)\n    (Φ : ℕ → D → ℝ) (ν : ℕ → ℝ) (a b : Family D)\n    (hbθ : AngularIndependent G b) (n : ℕ) {x : D} (hx : x ∈ s.domain)\n    (hΦ : DifferentiableAt ℝ (Φ n) x)\n    (hb : ∀ i, DifferentiableAt ℝ (fun y => b n y i) x) (i : Fin 3) :\n    LinearWaveResidual.transport (G.radius n) (G.radial n) (G.angular n) (G.axial n)\n      (vectorMode (ν n) (Φ n) (a n)) (vectorMode (-(ν n)) (Φ n) (b n)) x i =\n        sameCoefficient G Φ (fun n => -(ν n)) a b n x i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p103"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WaveInteractionBounds.opposite_identity",
+        "module": "NavierStokes.WaveInteractionBounds"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.WaveInteractionBounds.opposite_identity",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Clause (iii), identity. transport(vectorMode ν Φ a, vectorMode (-ν) Φ b) = sameCoefficient G Φ (-ν) a b: at opposite frequencies the carrier is 1, so the ordered product IS its zero harmonic.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L591",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean"
+          },
+          "snippet": {
+            "line": 591,
+            "text": "theorem opposite_identity {s : StripData D} {κ : ℝ} (G : Geometry s κ)\n    (Φ : ℕ → D → ℝ) (ν : ℕ → ℝ) (a b : Family D)\n    (hbθ : AngularIndependent G b) (n : ℕ) {x : D} (hx : x ∈ s.domain)\n    (hΦ : DifferentiableAt ℝ (Φ n) x)\n    (hb : ∀ i, DifferentiableAt ℝ (fun y => b n y i) x) (i : Fin 3) :\n    LinearWaveResidual.transport (G.radius n) (G.radial n) (G.angular n) (G.axial n)\n      (vectorMode (ν n) (Φ n) (a n)) (vectorMode (-(ν n)) (Φ n) (b n)) x i =\n        sameCoefficient G Φ (fun n => -(ν n)) a b n x i"
+          }
+        }
+      }
+    }
+  ]
 }

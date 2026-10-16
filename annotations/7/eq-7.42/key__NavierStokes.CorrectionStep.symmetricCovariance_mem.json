@@ -1,25 +1,27 @@
 {
-  "id": "eq-7.42/key/01.NavierStokes.CorrectionStep.symmetricCovariance_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.symmetricCovariance_mem",
-      "line": 2344,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L2344"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.symmetricCovariance_mem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.symmetricCovariance_mem",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 2344,
-        "text": "TensorClass s (α + β) (symmetricCovariance a.oscillation b.oscillation), for blocks a, b with the same carrier and WaveBounds of exponents α, β — the paper's first two memberships in general form"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CorrectionStep.symmetricCovariance_mem"
+          },
+          "destination": {
+            "fragment": "L2344",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 2344,
+            "text": "theorem symmetricCovariance_mem {s : StripData D} {P : ℕ → D → ℝ} {α β : ℝ}\n    (a b : HarmonicBlock D) (hcarrier : SameCarrier a b) (N : ℕ)\n    (hNa : a.BandLimited N) (ha : a.WaveBounds s P α) (hb : b.WaveBounds s P β)\n    (ha0 : ∀ n i, a.velocity n i 0 = 0) (hb0 : ∀ n i, b.velocity n i 0 = 0)\n    (hkp : ∀ n, a.angularFrequency n ≠ 0)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1) :\n    TensorClass s (α + β) (symmetricCovariance a.oscillation b.oscillation)"
+          }
+        }
       }
     }
-  }
+  ]
 }

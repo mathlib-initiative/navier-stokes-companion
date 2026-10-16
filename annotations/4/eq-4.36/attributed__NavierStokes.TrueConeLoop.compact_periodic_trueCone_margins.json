@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.36/attributed/05.NavierStokes.TrueConeLoop.compact_periodic_trueCone_margins",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.compact_periodic_trueCone_margins",
-      "line": 289,
-      "module": "NavierStokes.TrueConeLoop",
-      "path": "NavierStokes/TrueConeLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L289"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.compact_periodic_trueCone_margins",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.compact_periodic_trueCone_margins",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 289,
-        "text": "pointwise InTrueCone for all x ∈ K (compact) and all φ, with A, C continuous and 1-periodic, yields ∃ ε, 0 < ε ∧ ∀ x ∈ K, ∀ φ, HasConeMargin ε … — the compactness upgrade from strict positivity to one uniform margin"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.TrueConeLoop.compact_periodic_trueCone_margins",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L289",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 289,
+            "text": "theorem compact_periodic_trueCone_margins {X : Type*} [TopologicalSpace X]\n    (p₁ p₂ : X → ℝ) (A C : X × ℝ → ℝ) {K : Set X} (hK : IsCompact K)\n    (hp₁ : ContinuousOn p₁ K) (hp₂ : ContinuousOn p₂ K)\n    (hA : ContinuousOn A (K ×ˢ (univ : Set ℝ)))\n    (hC : ContinuousOn C (K ×ˢ (univ : Set ℝ)))\n    (hAp : ∀ x ∈ K, Function.Periodic (fun φ => A (x, φ)) 1)\n    (hCp : ∀ x ∈ K, Function.Periodic (fun φ => C (x, φ)) 1)\n    (hcone : ∀ x ∈ K, ∀ φ, InTrueCone (p₁ x) (p₂ x) (A (x, φ)) (C (x, φ))) :\n    ∃ ε : ℝ, 0 < ε ∧ ∀ x ∈ K, ∀ φ,\n      HasConeMargin ε (p₁ x) (p₂ x) (A (x, φ)) (C (x, φ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

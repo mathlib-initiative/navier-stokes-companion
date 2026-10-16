@@ -1,32 +1,34 @@
 {
-  "id": "proposition-9.1/attributed/1.NavierStokes.LinearWaveBounds.excludedSlotError_carrier_physical_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveBounds.excludedSlotError_carrier_physical_bound",
-      "line": 932,
-      "module": "NavierStokes.LinearWaveBounds",
-      "path": "NavierStokes/LinearWaveBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean#L932"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveBounds.excludedSlotError_carrier_physical_bound",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveBounds.excludedSlotError_carrier_physical_bound",
+        "module": "NavierStokes.LinearWaveBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The literal Cartesian clause: for every jet order `m` and every `N`, `‖iteratedFDeriv ℝ m ((excludedSlotError … · character(k·j, Φ)) ∘ physicalLift h n) p‖ ≤ C q^N`, uniformly over bands with `q/2 ≤ Q n ≤ 2q`, i.e. the retained tails times the harmonic carrier, restricted to the physical graph, vani",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 932,
-        "text": "theorem excludedSlotError_carrier_physical_bound {s : StripData LiftPoint}\n    (g : GaussianTailFlat.SlotFamily s) (d : GraphDirections LiftPoint)\n    (hfast : ∀ n, g.linear n (d.fastScale n • d.fast) = (g.length n)⁻¹)\n    (edges : GaussianTailFlat.FlatEdges s) (scales : GaussianTailFlat.BandScaleControl s)\n    {P : ℕ → LiftPoint → ℝ} {α c : ℝ} {a source : ℕ → LiftPoint → ComplexVector}\n    (ha : WaveClass s P α a) (hf : WaveClass s P α source) (hc : 0 < c)\n    (hP : ∀ n x, x ∈ s.domain →\n      P n x ≤ Real.exp (-c * (g.coordinate n x - 1 / 2) ^ 2 * g.length n))\n    (ha_smooth : ∀ n, ContDiffOn ℝ ∞ (a n) {x | g.coordinate n x ∈ Ioo 0 1})\n    (hf_smooth : ∀ n, ContDiff ℝ ∞ (source n))\n    {h rLower rUpper B e H : ℝ} (hh : 0 ≤ h) (hh1 : h ≤ 1 / 2) (hrLower : 0 < rLower)\n    (hB : 1 ≤ B) (he : 0 ≤ e) (hH : 0 ≤ H) (i : Fin 3) (m : ℕ) (N : ℝ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℕ, 4 ≤ n → ∀ p : ProblemStatement.SpaceTime,\n      scaledRadial n p ∈ annulus rLower rUpper → |p.1| ≤ 1 → physicalLift h n p ∈ s.domain →\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LinearWaveBounds.excludedSlotError_carrier_physical_bound",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: The literal Cartesian clause: for every jet order `m` and every `N`, `‖iteratedFDeriv ℝ m ((excludedSlotError … · character(k·j, Φ)) ∘ physicalLift h n) p‖ ≤ C q^N`, uniformly over bands with `q/2 ≤ Q n ≤ 2q`, i.e. the retained tails times the harmonic carrier, restricted to the physical graph, vani",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L932",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveBounds.lean"
+          },
+          "snippet": {
+            "line": 932,
+            "text": "theorem excludedSlotError_carrier_physical_bound {s : StripData LiftPoint}\n    (g : GaussianTailFlat.SlotFamily s) (d : GraphDirections LiftPoint)\n    (hfast : ∀ n, g.linear n (d.fastScale n • d.fast) = (g.length n)⁻¹)\n    (edges : GaussianTailFlat.FlatEdges s) (scales : GaussianTailFlat.BandScaleControl s)\n    {P : ℕ → LiftPoint → ℝ} {α c : ℝ} {a source : ℕ → LiftPoint → ComplexVector}\n    (ha : WaveClass s P α a) (hf : WaveClass s P α source) (hc : 0 < c)\n    (hP : ∀ n x, x ∈ s.domain →\n      P n x ≤ Real.exp (-c * (g.coordinate n x - 1 / 2) ^ 2 * g.length n))\n    (ha_smooth : ∀ n, ContDiffOn ℝ ∞ (a n) {x | g.coordinate n x ∈ Ioo 0 1})\n    (hf_smooth : ∀ n, ContDiff ℝ ∞ (source n))\n    {h rLower rUpper B e H : ℝ} (hh : 0 ≤ h) (hh1 : h ≤ 1 / 2) (hrLower : 0 < rLower)\n    (hB : 1 ≤ B) (he : 0 ≤ e) (hH : 0 ≤ H) (i : Fin 3) (m : ℕ) (N : ℝ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℕ, 4 ≤ n → ∀ p : ProblemStatement.SpaceTime,\n      scaledRadial n p ∈ annulus rLower rUpper → |p.1| ≤ 1 → physicalLift h n p ∈ s.domain →\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

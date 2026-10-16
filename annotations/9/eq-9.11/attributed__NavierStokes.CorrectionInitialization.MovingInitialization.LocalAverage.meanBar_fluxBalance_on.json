@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.11/attributed/04.NavierStokes.CorrectionInitialization.MovingInitialization.LocalAverage.meanBar_fluxBalance_on",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionInitialization.MovingInitialization.LocalAverage.meanBar_fluxBalance_on",
-      "line": 2359,
-      "module": "NavierStokes.CorrectionInitialization",
-      "path": "NavierStokes/CorrectionInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L2359"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionInitialization.MovingInitialization.LocalAverage.meanBar_fluxBalance_on",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionInitialization.MovingInitialization.LocalAverage.meanBar_fluxBalance_on",
+        "module": "NavierStokes.CorrectionInitialization"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 2359,
-        "text": "Agree (slowDomain V) (meanBar (o.radialDiv c R + o.dz A - o.radialDiv c T)) (o.radialDiv c (meanBar R - meanBar T) + o.dz (meanBar A)) — moves the auxiliary (Y) average ⟨·⟩_Y inside the operators, turning the two lemmas above into the paper's averaged display"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.CorrectionInitialization.MovingInitialization.LocalAverage.meanBar_fluxBalance_on",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L2359",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 2359,
+            "text": "theorem meanBar_fluxBalance_on (hV : IsOpen V) (o : Operators (PressureStream.Lift S))\n    (hradius : o.radius = Prod.fst)\n    (hprofile : ∀ R s, s ∈ V → ∀ Y, o.radialProfile (R, (s, Y)) = o.radialProfile (R, (s, 0)))\n    (R A T : ScalarField (PressureStream.Lift S)) (c : ℝ)\n    (hR : ∀ n, ContDiffOn ℝ ∞ (R n) (slowDomain V))\n    (hA : ∀ n, ContDiffOn ℝ ∞ (A n) (slowDomain V))\n    (hT : ∀ n, ContDiffOn ℝ ∞ (T n) (slowDomain V))\n    (hpR : ∀ n, PeriodicOn V (R n)) (hpA : ∀ n, PeriodicOn V (A n))\n    (hpT : ∀ n, PeriodicOn V (T n)) :\n    Agree (slowDomain V) (meanBar (o.radialDiv c R + o.dz A - o.radialDiv c T))\n      (o.radialDiv c (meanBar R - meanBar T) + o.dz (meanBar A))"
+          }
+        }
       }
     }
-  }
+  ]
 }

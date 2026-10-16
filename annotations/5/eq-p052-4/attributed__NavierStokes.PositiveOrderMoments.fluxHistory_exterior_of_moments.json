@@ -1,26 +1,28 @@
 {
-  "id": "eq-p052-4/attributed/05.NavierStokes.PositiveOrderMoments.fluxHistory_exterior_of_moments",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveOrderMoments.fluxHistory_exterior_of_moments",
-      "line": 604,
-      "module": "NavierStokes.PositiveOrderMoments",
-      "path": "NavierStokes/PositiveOrderMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean#L604"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveOrderMoments.fluxHistory_exterior_of_moments",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveOrderMoments.fluxHistory_exterior_of_moments",
+        "module": "NavierStokes.PositiveOrderMoments"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 604,
-        "text": "supplies hm from row 0 of the five-moment system: exact congrFun (hm eta) 0, i.e. m_{n,1}(η) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.PositiveOrderMoments.fluxHistory_exterior_of_moments",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L604",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 604,
+            "text": "theorem fluxHistory_exterior_of_moments (h lam : ℝ) {n : ℕ} {u e : JointHistory}\n    {omega : JointProfile} (hu : ContDiff ℝ ∞ (u n)) {B : ℝ}\n    (hB : 0 ≤ B) (hs : ∀ eta R, B ≤ R → u n (R, eta) = 0)\n    (hm : ∀ eta, moments n (slice u eta) (slice e eta) (fun R => omega (R, eta)) = 0)\n    {R eta : ℝ} (hR : B ≤ R) : fluxHistory h lam (u n) (R, eta) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

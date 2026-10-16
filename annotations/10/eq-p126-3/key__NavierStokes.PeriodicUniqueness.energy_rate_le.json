@@ -1,26 +1,29 @@
 {
-  "id": "eq-p126-3/key/02.NavierStokes.PeriodicUniqueness.energy_rate_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicUniqueness.energy_rate_le",
-      "line": 553,
-      "module": "NavierStokes.PeriodicUniqueness",
-      "path": "NavierStokes/PeriodicUniqueness.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicUniqueness.lean#L553"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicUniqueness.energy_rate_le",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicUniqueness.energy_rate_le",
+        "module": "NavierStokes.PeriodicUniqueness"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 553,
-        "text": "energyRate u v t ≤ (2 * B) * energy u v t  (the dissipation term is discarded via dissipation_nonneg)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PeriodicUniqueness.energy_rate_le",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L553",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicUniqueness.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 553,
+            "text": "theorem energy_rate_le {u v : VelocityField} {p q : PressureField} {t B : ℝ}\n    (hu : ContDiff ℝ ∞ (fun x : Space => u (t, x)))\n    (hv : ContDiff ℝ ∞ (fun x : Space => v (t, x)))\n    (hp : ContDiff ℝ ∞ (fun x : Space => p (t, x)))\n    (hq : ContDiff ℝ ∞ (fun x : Space => q (t, x)))\n    (hpu : UnitPeriods (fun x : Space => u (t, x)))\n    (hpv : UnitPeriods (fun x : Space => v (t, x)))\n    (hpp : UnitPeriods (fun x : Space => p (t, x)))\n    (hpq : UnitPeriods (fun x : Space => q (t, x)))\n    (hdu : ∀ x, spatialDivergence u t x = 0)\n    (hdv : ∀ x, spatialDivergence v t x = 0)\n    (htu : ∀ x, DifferentiableAt ℝ (fun s : ℝ => u (s, x)) t)\n    (htv : ∀ x, DifferentiableAt ℝ (fun s : ℝ => v (s, x)) t)\n    (hNS : ∀ x, navierStokesResidual u p t x = navierStokesResidual v q t x)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

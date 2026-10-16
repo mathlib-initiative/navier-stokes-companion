@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.20/key/03.NavierStokes.CorrectedPulseAmplitude.amplitude_spec",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectedPulseAmplitude.amplitude_spec",
-      "line": 406
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectedPulseAmplitude.lean#L406"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectedPulseAmplitude.amplitude_spec",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectedPulseAmplitude.amplitude_spec",
+        "module": "NavierStokes.CorrectedPulseAmplitude"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 406,
-        "text": "(w : ResetWitness d K) … (hscale : combinedScale d K ≤ 1/1000) : … ∀ eta, eta ^ 2 ≤ 1 → 9/10 < amplitude d w.coefficients eta ∧ … ∧ |deriv (amplitude d w.coefficients) eta| ≤ 128 * combinedScale d K ∧ (uniqueness in Icc (9/10) (6/5))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CorrectedPulseAmplitude.amplitude_spec",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L406"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 406,
+            "text": "theorem amplitude_spec {d : TailData} {K : ℝ} (w : ResetWitness d K) (hK : 0 < K)\n    (hsmall : d.core.lam ≤ 1 / 120) (hwait : d.core.wait = 60 * Real.log (1 / d.core.lam))\n    (hscale : combinedScale d K ≤ 1 / 1000) :\n    ContDiff ℝ ∞ (amplitude d w.coefficients) ∧ ∀ eta : ℝ, eta ^ 2 ≤ 1 →\n      9 / 10 < amplitude d w.coefficients eta ∧ amplitude d w.coefficients eta < 6 / 5 ∧\n      totalEnergy d w.coefficients (amplitude d w.coefficients eta) eta = 0 ∧\n      |deriv (amplitude d w.coefficients) eta| ≤ 128 * combinedScale d K ∧\n      (∀ A ∈ Icc (9 / 10 : ℝ) (6 / 5), totalEnergy d w.coefficients A eta = 0 →\n        A = amplitude d w.coefficients eta)"
+          }
+        }
       }
     }
-  }
+  ]
 }

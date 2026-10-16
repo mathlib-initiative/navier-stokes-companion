@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.34/key/01.NavierStokes.GenericTupleRealization.components",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericTupleRealization.components",
-      "line": 35,
-      "module": "NavierStokes.GenericTupleRealization",
-      "path": "NavierStokes/GenericTupleRealization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericTupleRealization.lean#L35"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericTupleRealization.components",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericTupleRealization.components",
+        "module": "NavierStokes.GenericTupleRealization"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 35,
-        "text": "components a q u0 s0 A B R : Fin 3 ⊕ κ → PressureField | .inl i => fun w => positiveVelocity a q u0 A B w i | .inr k => realized a q (s0 k) (R k)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GenericTupleRealization.components",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L35",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericTupleRealization.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 35,
+            "text": "def components {κ : Type*} (a : ℕ → ℝ) (q : SpaceTime → ℝ)\n    (u0 : VelocityField) (s0 : κ → PressureField)\n    (A B : ℕ → VelocityField) (R : κ → ℕ → PressureField) :\n    Fin 3 ⊕ κ → PressureField\n  | .inl i => fun w => positiveVelocity a q u0 A B w i\n  | .inr k => realized a q (s0 k) (R k)"
+          }
+        }
       }
     }
-  }
+  ]
 }

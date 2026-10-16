@@ -1,26 +1,28 @@
 {
-  "id": "eq-p009-4/key/02.NavierStokes.SlowStressSupport.axial_integral_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.axial_integral_zero",
-      "line": 708,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L708"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.axial_integral_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.axial_integral_zero",
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 708,
-        "text": "… moment B 0 (axialDensity h n v u p) eta = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SlowStressSupport.axial_integral_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L708",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 708,
+            "text": "theorem axial_integral_zero {S : Set ℝ} (hS : IsOpen S) {n : ℕ}\n    {v u : History} {p : Field} (hv : ∀ j, j ≤ n → Smooth S (v j))\n    (hu : ∀ j, j ≤ n → Smooth S (u j)) (hp : Smooth S p)\n    (h B : ℝ) (hell : ∀ eta ∈ S, PositiveAxisSystem.ell h eta ≠ 0)\n    (huv : exterior B S (u n)) (hvv : ∀ j, j ≤ n → exterior B S (v j))\n    (haxis : ∀ eta ∈ S, conv n v u (0, eta) = 0)\n    (hum : ∀ eta ∈ S, moment B 1 (u n) eta = 0)\n    (hflux : ∀ eta ∈ S, moment B 1 (fun w => conv n u u w + p w) eta = 0)\n    (hfluxB : ∀ eta ∈ S, conv n u u (B, eta) + p (B, eta) = 0)\n    (huprev : exterior B S (u (n - 1)))\n    (hmprev : ∀ eta ∈ S, moment B 1 (u (n - 1)) eta = 0)\n    {eta : ℝ} (heta : eta ∈ S) : moment B 0 (axialDensity h n v u p) eta = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p085-1/key/06.NavierStokes.PartitionedCovariance.PairData.diagonal_pair_reconstruct",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.PairData.diagonal_pair_reconstruct",
-      "line": 722,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L722"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.PairData.diagonal_pair_reconstruct",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.PairData.diagonal_pair_reconstruct",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 722,
-        "text": "(∑ j : Fin 2, doubleAverage (fun Y θ => P.radialWave … j Y θ * P.tangentWave … j i Y θ)) = outer ^ 2 * ε * mask D U q x ^ 2 * T i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.PartitionedCovariance.PairData.diagonal_pair_reconstruct",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L722",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 722,
+            "text": "theorem PairData.diagonal_pair_reconstruct {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt}\n    {U : UnsignedLabel} (P : PairData sys U) (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0)\n    (outer ε : ℝ) (hε : 0 ≤ ε) {T : Vec2} (hcone : SmoothCovariance.StrictCone P.matrix T)\n    (q : ℝ) (x : SlotColoring.Position) (i : Fin 2) :\n    (∑ j : Fin 2, doubleAverage (fun Y θ => P.radialWave hdet outer ε T q x j Y θ *\n      P.tangentWave hdet outer ε T q x j i Y θ)) =\n      outer ^ 2 * ε * mask D U q x ^ 2 * T i"
+          }
+        }
       }
     }
-  }
+  ]
 }

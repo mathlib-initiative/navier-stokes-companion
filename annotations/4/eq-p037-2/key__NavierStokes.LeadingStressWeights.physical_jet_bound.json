@@ -1,26 +1,28 @@
 {
-  "id": "eq-p037-2/key/02.NavierStokes.LeadingStressWeights.physical_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.physical_jet_bound",
-      "line": 1137,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L1137"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.physical_jet_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.physical_jet_bound",
+        "module": "NavierStokes.LeadingStressWeights"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1137,
-        "text": "theorem physical_jet_bound (hcone : FullTrueCone v) (n : ℕ) : ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ eta ∈ Icc (-1:ℝ) 1, ∀ X ∈ Ioo (NominalConeAssembly.activeLeft W) (NominalConeAssembly.activeRight W), ‖iteratedFDeriv ℝ n (fun p : ℝ × ℝ => stress v.profiles F.data.h (p.2,p.1)) (eta,X)‖ ≤ C * zeta v X / distance v X ^ N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.LeadingStressWeights.physical_jet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1137",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1137,
+            "text": "theorem physical_jet_bound (hcone : FullTrueCone v) (n : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ eta ∈ Icc (-1 : ℝ) 1,\n      ∀ X ∈ Ioo (NominalConeAssembly.activeLeft W) (NominalConeAssembly.activeRight W),\n        ‖iteratedFDeriv ℝ n (fun p : ℝ × ℝ => stress v.profiles F.data.h (p.2, p.1)) (eta, X)‖ ≤\n          C * zeta v X / distance v X ^ N"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-8.7/key/01.NavierStokes.VariableGaugeMean.compactPrimitive_radial_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.VariableGaugeMean.compactPrimitive_radial_identity",
-      "line": 2115,
-      "module": "NavierStokes.VariableGaugeMean",
-      "path": "NavierStokes/VariableGaugeMean.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean#L2115"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.VariableGaugeMean.compactPrimitive_radial_identity"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.VariableGaugeMean.compactPrimitive_radial_identity",
+        "module": "NavierStokes.VariableGaugeMean"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 2115,
-        "text": "PressureStream.graphDr (PressureStream.physicalSpeed d M) (0, v) (compactPrimitive d a b M (qLength coord) v f) z = f z - compactAlias d a b M (qLength coord) v f z  — the case e = 0 in the moving q-gauge"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.VariableGaugeMean.compactPrimitive_radial_identity"
+          },
+          "destination": {
+            "fragment": "L2115",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 2115,
+            "text": "theorem compactPrimitive_radial_identity (M : ℝ) (v : PressureStream.Plane) {f : Point → ℝ}\n    (hf : ContDiffOn ℝ ∞ f (PhysicalMeanDomain.slowDomain U.carrier))\n    (hs : SupportedGauge a b (qLength coord) U.carrier f) {z : Point} (hz : z.2.1 ∈ U.carrier) :\n    PressureStream.graphDr (PressureStream.physicalSpeed d M) ((0 : PressureStream.Plane), v)\n      (compactPrimitive d a b M (qLength coord) v f) z =\n        f z - compactAlias d a b M (qLength coord) v f z"
+          }
+        }
       }
     }
-  }
+  ]
 }

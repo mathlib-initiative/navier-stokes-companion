@@ -1,36 +1,57 @@
 {
-  "id": "lemma-4.4/attributed/1.NavierStokes.NominalProfile.moments_propagate",
-  "location": {
-    "page": 28,
-    "rect": [0.12854, 0.7, 0.745098, 0.200826]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalProfile.moments_propagate",
-      "line": 486,
-      "module": "NavierStokes.NominalProfile",
-      "path": "NavierStokes/NominalProfile.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 28,
+        "rect": [0.12854, 0.7, 0.745098, 0.200826]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p028"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L486"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalProfile.moments_propagate",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 29,
+        "rect": [0.12854, 0.103306, 0.745098, 0.22314]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: The clause m_1 = m_2 of part (i), generically and for all five rows: for arbitrary fields U,E,V,G and a <= r, if all five densities are IntegrableOn (Ioc 0 r) for both pairs, moments U E a eta = moments V G a eta (the anchor at X_h), and (U,E) = (V,G) at (x,eta) for every x > a, then moments U E r e",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "region": "lemma-4.4@p028",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 486,
-        "text": "theorem moments_propagate {U E V G : Field} {a r eta : ℝ} (har : a ≤ r)\n    (hU : ∀ i : Fin 5, IntegrableOn\n      (fun x => density (fun t => U (t, eta)) (fun t => E (t, eta)) x i) (Ioc 0 r))\n    (hV : ∀ i : Fin 5, IntegrableOn\n      (fun x => density (fun t => V (t, eta)) (fun t => G (t, eta)) x i) (Ioc 0 r))\n    (head : moments U E a eta = moments V G a eta)\n    (tail : ∀ x, a < x → U (x, eta) = V (x, eta) ∧ E (x, eta) = G (x, eta)) :\n    moments U E r eta = moments V G r eta"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p029"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalProfile.moments_propagate",
+        "module": "NavierStokes.NominalProfile"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.NominalProfile.moments_propagate",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: The clause m_1 = m_2 of part (i), generically and for all five rows: for arbitrary fields U,E,V,G and a <= r, if all five densities are IntegrableOn (Ioc 0 r) for both pairs, moments U E a eta = moments V G a eta (the anchor at X_h), and (U,E) = (V,G) at (x,eta) for every x > a, then moments U E r e",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L486",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean"
+          },
+          "snippet": {
+            "line": 486,
+            "text": "theorem moments_propagate {U E V G : Field} {a r eta : ℝ} (har : a ≤ r)\n    (hU : ∀ i : Fin 5, IntegrableOn\n      (fun x => density (fun t => U (t, eta)) (fun t => E (t, eta)) x i) (Ioc 0 r))\n    (hV : ∀ i : Fin 5, IntegrableOn\n      (fun x => density (fun t => V (t, eta)) (fun t => G (t, eta)) x i) (Ioc 0 r))\n    (head : moments U E a eta = moments V G a eta)\n    (tail : ∀ x, a < x → U (x, eta) = V (x, eta) ∧ E (x, eta) = G (x, eta)) :\n    moments U E r eta = moments V G r eta"
+          }
+        }
+      }
+    }
+  ]
 }

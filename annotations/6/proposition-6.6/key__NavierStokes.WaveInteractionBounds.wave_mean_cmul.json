@@ -1,29 +1,31 @@
 {
-  "id": "proposition-6.6/key/1.NavierStokes.WaveInteractionBounds.wave_mean_cmul",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WaveInteractionBounds.wave_mean_cmul",
-      "line": 77,
-      "module": "NavierStokes.WaveInteractionBounds",
-      "path": "NavierStokes/WaveInteractionBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean#L77"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WaveInteractionBounds.wave_mean_cmul",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WaveInteractionBounds.wave_mean_cmul",
+        "module": "NavierStokes.WaveInteractionBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: WaveClass s P \\alpha f \\to MeanClass s \\beta g \\to (\\zeta \\le 1 on s.domain) \\to WaveClass s P (\\alpha+\\beta) (f \\cdot g): the coefficient-level W \\cdot M \\to W rule; mean_wave_cmul (:71) is its M \\cdot W \\to W mirror."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 77,
-        "text": "theorem wave_mean_cmul {s : StripData D} {P : ℕ → D → ℝ} {α β : ℝ}\n    {f g : ℕ → D → ℂ} (hf : WaveClass s P α f) (hg : MeanClass s β g)\n    (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1) :\n    WaveClass s P (α + β) (fun n x => f n x * g n x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.WaveInteractionBounds.wave_mean_cmul",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: WaveClass s P \\alpha f \\to MeanClass s \\beta g \\to (\\zeta \\le 1 on s.domain) \\to WaveClass s P (\\alpha+\\beta) (f \\cdot g): the coefficient-level W \\cdot M \\to W rule; mean_wave_cmul (:71) is its M \\cdot W \\to W mirror."
+          },
+          "destination": {
+            "fragment": "L77",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean"
+          },
+          "snippet": {
+            "line": 77,
+            "text": "theorem wave_mean_cmul {s : StripData D} {P : ℕ → D → ℝ} {α β : ℝ}\n    {f g : ℕ → D → ℂ} (hf : WaveClass s P α f) (hg : MeanClass s β g)\n    (hζ : ∀ x ∈ s.domain, s.zeta x ≤ 1) :\n    WaveClass s P (α + β) (fun n x => f n x * g n x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,26 @@
 {
-  "id": "eq-p081-2/attributed/03.NavierStokes.GrowingMode.scaled_cone_conditions",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GrowingMode.scaled_cone_conditions",
-      "line": 211
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GrowingMode.lean#L211"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GrowingMode.scaled_cone_conditions"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GrowingMode.scaled_cone_conditions",
+        "module": "NavierStokes.GrowingMode"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 211,
-        "text": "(hlamMin : 0 < lamMin) (hC : 0 ≤ C) (hS : 0 < S) (hlarge : 2 * coneConstant lamMin C ≤ S) : 0 < coneConstant lamMin C / S ∧ coneConstant lamMin C / S ≤ 1/2 ∧ (C / S) * (1 + coneConstant lamMin C / S) ^ 2 < 2 * lamMin * (coneConstant lamMin C / S) — discharges the gap hypothesis of the two edge lemmas at K_b/S_* = coneConstant lamMin C / S, with coneConstant lamMin C = 4(C+1)/lamMin"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.GrowingMode.scaled_cone_conditions"
+          },
+          "destination": {
+            "fragment": "L211"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 211,
+            "text": "theorem scaled_cone_conditions {lamMin C S : ℝ}\n    (hlamMin : 0 < lamMin) (hC : 0 ≤ C) (hS : 0 < S)\n    (hlarge : 2 * coneConstant lamMin C ≤ S) :\n    0 < coneConstant lamMin C / S ∧\n      coneConstant lamMin C / S ≤ 1 / 2 ∧\n      (C / S) * (1 + coneConstant lamMin C / S) ^ 2 <\n        2 * lamMin * (coneConstant lamMin C / S)"
+          }
+        }
       }
     }
-  }
+  ]
 }

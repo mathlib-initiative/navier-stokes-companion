@@ -1,31 +1,53 @@
 {
-  "id": "proposition-B.3/support/3.NavierStokes.NaturalExitBounds.ideal_prefix_exit",
-  "location": {
-    "page": 148,
-    "rect": [0.12854, 0.773554, 0.744009, 0.109091]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalExitBounds.ideal_prefix_exit",
-      "line": 230,
-      "module": "NavierStokes.NaturalExitBounds",
-      "path": "NavierStokes/NaturalExitBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalExitBounds.lean#L230"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalExitBounds.ideal_prefix_exit",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 148,
+        "rect": [0.12854, 0.773554, 0.744009, 0.109091]
       },
-      "region": "proposition-B.3@p148",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 230,
-        "text": "theorem ideal_prefix_exit {h j : ℝ} (hsmall : NaturalAxisRange.Parameters h j)\n    {g a : ℝ → ℝ} {cap amplitude : ℝ}\n    (hp : PressureDatum.Admissible g a cap) (hA : 2 ≤ amplitude)\n    (hg : ∀ y ≤ 0, g y = amplitude ^ 2 * Real.exp ((1 / 5 : ℝ) * y))\n    (ha : ∀ y ≤ 0, a y = 1) :\n    ∃ δ σ : ℝ, 0 < δ ∧ 0 < σ ∧\n      ∃ d : AnalyticInputs h j σ (PressureDatum.pressure g a),\n        0 < lowerConstant d ∧ ∃ B : ℕ → ℝ, (∀ m, 1 ≤ B m) ∧\n          ∃ M > 0, ∀ Λ ≥ M, ∀ C, entranceNormalization d Λ δ ≤ C →\n            ∃ E : EntranceProfile d Λ C, Estimates d E B"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-B.3@p148"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 149,
+        "rect": [0.12854, 0.103306, 0.744009, 0.119835]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-B.3@p149"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalExitBounds.ideal_prefix_exit",
+        "module": "NavierStokes.NaturalExitBounds"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.NaturalExitBounds.ideal_prefix_exit",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L230",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalExitBounds.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 230,
+            "text": "theorem ideal_prefix_exit {h j : ℝ} (hsmall : NaturalAxisRange.Parameters h j)\n    {g a : ℝ → ℝ} {cap amplitude : ℝ}\n    (hp : PressureDatum.Admissible g a cap) (hA : 2 ≤ amplitude)\n    (hg : ∀ y ≤ 0, g y = amplitude ^ 2 * Real.exp ((1 / 5 : ℝ) * y))\n    (ha : ∀ y ≤ 0, a y = 1) :\n    ∃ δ σ : ℝ, 0 < δ ∧ 0 < σ ∧\n      ∃ d : AnalyticInputs h j σ (PressureDatum.pressure g a),\n        0 < lowerConstant d ∧ ∃ B : ℕ → ℝ, (∀ m, 1 ≤ B m) ∧\n          ∃ M > 0, ∀ Λ ≥ M, ∀ C, entranceNormalization d Λ δ ≤ C →\n            ∃ E : EntranceProfile d Λ C, Estimates d E B"
+          }
+        }
+      }
+    }
+  ]
 }

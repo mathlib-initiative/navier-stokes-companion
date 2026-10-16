@@ -1,26 +1,28 @@
 {
-  "id": "eq-p112-1/key/02.NavierStokes.GenericDifferentialPolynomial.ApproximationRates",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates",
-      "line": 14,
-      "module": "NavierStokes.GenericDifferentialPolynomial",
-      "path": "NavierStokes/GenericDifferentialPolynomial.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean#L14"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates",
-        "kind": "structure"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates",
+        "module": "NavierStokes.GenericDifferentialPolynomial"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 14,
-        "text": "structure ApproximationRates (l q gain f stage) where growthLoss tailLoss : ℕ → ℝ; threshold : ℕ → ℕ; stage_growth : ∀ J m, JetRate l q (stage J) m (-growthLoss m); tail_rate : ∀ m J, threshold m ≤ J → JetRate l q (fun x => f x - stage J x) m (gain J - tailLoss m)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GenericDifferentialPolynomial.ApproximationRates",
+            "kind": "structure"
+          },
+          "destination": {
+            "fragment": "L14",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 14,
+            "text": "structure ApproximationRates (l : Filter D) (q : D → ℝ) (gain : ℕ → ℝ)\n    (f : D → ℝ) (stage : ℕ → D → ℝ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

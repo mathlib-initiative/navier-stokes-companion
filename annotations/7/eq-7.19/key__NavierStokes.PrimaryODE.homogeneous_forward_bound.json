@@ -1,25 +1,28 @@
 {
-  "id": "eq-7.19/key/01.NavierStokes.PrimaryODE.homogeneous_forward_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.homogeneous_forward_bound",
-      "line": 528,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L528"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.homogeneous_forward_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.homogeneous_forward_bound",
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 528,
-        "text": "{j : ℤ} (hj : j ≠ 0) … (hslot : b - a ≤ L * S) … ∀ v ∈ Icc a b, ‖solution hab d j x₀ (fun _ => 0) p v‖ ≤ Real.exp ((D + 4 * C) * L) * (P v / P a) * ‖x₀ p‖"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PrimaryODE.homogeneous_forward_bound"
+          },
+          "destination": {
+            "fragment": "L528",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 528,
+            "text": "theorem homogeneous_forward_bound (hab : a ≤ b) (d : FrameData Q) {j : ℤ} (hj : j ≠ 0)\n    (x₀ : Q → State) {U : Set Q}\n    (hA : ContinuousOn (d.coefficient j) (U ×ˢ Icc a b))\n    {p : Q} (hp : p ∈ U) (referenceDamping rate P : ℝ → ℝ)\n    {S C D L : ℝ} (hS : 0 < S) (hC : 0 ≤ C) (hD : 0 ≤ D)\n    (hslot : b - a ≤ L * S)\n    (hPpos : ∀ v, 0 < P v) (hP : ∀ v, HasDerivAt P (rate v * P v) v)\n    (hreference : ∀ v ∈ Icc a b, rate v = d.eigenvalue (p, v) - referenceDamping v)\n    (hlam : ∀ v ∈ Icc a b, 0 ≤ d.eigenvalue (p, v))\n    (hν : ∀ v ∈ Icc a b, 0 ≤ d.viscosity (p, v))\n    (hνerr : ∀ v ∈ Icc a b, referenceDamping v - D / S ≤ d.viscosity (p, v))\n    (herr : ∀ v ∈ Icc a b,\n      |d.error11 (p, v)| ≤ C / S ∧ |d.error12 (p, v)| ≤ C / S ∧\n      |d.error21 (p, v)| ≤ C / S ∧ |d.error22 (p, v)| ≤ C / S) :\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p013-2/key/03.NavierStokes.CorrectionStep.fullResidual_actual_update",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.fullResidual_actual_update",
-      "line": 533,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L533"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.fullResidual_actual_update",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.fullResidual_actual_update",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 533,
-        "text": "fullResidual c (s.addIncrement m p v q e) n x i - fullResidual c s n x i = (fullDifferentialIncrement c s m p v q n x i).re + e.base n x i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CorrectionStep.fullResidual_actual_update",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L533",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 533,
+            "text": "theorem fullResidual_actual_update {U : Set (D × ℝ)} (hU : IsOpen U)\n    (c : Context D) (s : State D) (m : Triple D) (p : ScalarField D)\n    (v : Oscillation D) (q : OscillatoryScalar D) (e : ExcludedErrors D) (n : ℕ)\n    (hr : ContDiffOn ℝ ∞ (radialDirection c n) U)\n    (ha : ∀ i, ContDiffOn ℝ ∞ (fun x => complexPerturbation s n x i) U)\n    (hb : ∀ i, ContDiffOn ℝ ∞ (fun x => complexIncrement m v n x i) U)\n    (hp : ContDiffOn ℝ ∞ (complexPressure s n) U)\n    (hq : ContDiffOn ℝ ∞ (complexPressureIncrement p q n) U)\n    {x : D × ℝ} (hx : x ∈ U) (i : Fin 3) :\n    fullResidual c (s.addIncrement m p v q e) n x i - fullResidual c s n x i =\n      (fullDifferentialIncrement c s m p v q n x i).re + e.base n x i"
+          }
+        }
       }
     }
-  }
+  ]
 }

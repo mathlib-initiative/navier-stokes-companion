@@ -1,23 +1,27 @@
 {
-  "id": "eq-p135-2/support/02.NavierStokes.OutgoingEntranceCone.canonical_Ns_before",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingEntranceCone.canonical_Ns_before",
-      "line": 1572
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingEntranceCone.lean#L1572"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingEntranceCone.canonical_Ns_before"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingEntranceCone.canonical_Ns_before",
+        "module": "NavierStokes.OutgoingEntranceCone"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 1572,
-        "text": "(hy : y ≤ v.core.pulseStart) : OutgoingHistories.Ns w Amp (y, η) = axialLag v y η"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.OutgoingEntranceCone.canonical_Ns_before"
+          },
+          "destination": {
+            "fragment": "L1572"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 1572,
+            "text": "theorem canonical_Ns_before {v : TailData} {K : ℝ}\n    (w : UniformAngularReset.ResetWitness v K) {Amp : ℝ → ℝ}\n    (ha : ContDiff ℝ ∞ Amp) {y : ℝ} (hy : y ≤ v.core.pulseStart) (η : ℝ) :\n    OutgoingHistories.Ns w Amp (y, η) = axialLag v y η"
+          }
+        }
       }
     }
-  }
+  ]
 }

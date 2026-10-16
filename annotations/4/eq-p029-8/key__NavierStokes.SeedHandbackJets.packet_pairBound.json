@@ -1,26 +1,29 @@
 {
-  "id": "eq-p029-8/key/02.NavierStokes.SeedHandbackJets.packet_pairBound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SeedHandbackJets.packet_pairBound",
-      "line": 39,
-      "module": "NavierStokes.SeedHandbackJets",
-      "path": "NavierStokes/SeedHandbackJets.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean#L39"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SeedHandbackJets.packet_pairBound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SeedHandbackJets.packet_pairBound",
+        "lines": [39, 39],
+        "module": "NavierStokes.SeedHandbackJets"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 39,
-        "text": "have hp := (PairBound.same hP hb ε).add (h 6)  -- common P₀ has difference coefficient 0, so the Pi row's difference bound is the C_p row's"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SeedHandbackJets.packet_pairBound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L39",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 31,
+            "text": "theorem packet_pairBound {k : ℕ} {f g : Curves} {P₀ : ℝ → ℝ} {B B₀ ε : ℝ}\n    (h : ∀ i, PairBound (k+1) (f i) (g i) B 1 ε)\n    (hP : ContDiffOn ℝ ∞ P₀ J) (hb : Bound (k+1) P₀ B₀) :\n    ∀ i, PairBound k (packet P₀ f i) (packet P₀ g i) (B+B₀) 1 ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

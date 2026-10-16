@@ -1,24 +1,27 @@
 {
-  "id": "eq-p052-5/key/01.NavierStokes.PositiveOrderMoments.pressureHistory_exterior",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveOrderMoments.pressureHistory_exterior",
-      "line": 503
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean#L503"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveOrderMoments.pressureHistory_exterior",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveOrderMoments.pressureHistory_exterior",
+        "module": "NavierStokes.PositiveOrderMoments"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 503,
-        "text": "theorem pressureHistory_exterior (hB : 0 ≤ B) (hs : ∀ eta R, B ≤ R → jointPressureGradient n e omega (R,eta) = 0) (hm : ∀ eta, positiveIntegral (fun R => jointPressureGradient n e omega (R,eta)) = 0) (hR : B ≤ R) : pressureHistory n e omega (R, eta) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PositiveOrderMoments.pressureHistory_exterior",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L503"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 503,
+            "text": "theorem pressureHistory_exterior {n : ℕ} {e : JointHistory} {omega : JointProfile} {B : ℝ}\n    (hB : 0 ≤ B) (hs : ∀ eta R, B ≤ R → jointPressureGradient n e omega (R, eta) = 0)\n    (hm : ∀ eta, positiveIntegral (fun R => jointPressureGradient n e omega (R, eta)) = 0)\n    {R eta : ℝ} (hR : B ≤ R) : pressureHistory n e omega (R, eta) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

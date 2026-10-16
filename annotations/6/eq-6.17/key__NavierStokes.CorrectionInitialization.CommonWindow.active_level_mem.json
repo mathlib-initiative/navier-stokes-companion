@@ -1,25 +1,27 @@
 {
-  "id": "eq-6.17/key/02.NavierStokes.CorrectionInitialization.CommonWindow.active_level_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionInitialization.CommonWindow.active_level_mem",
-      "line": 3809,
-      "module": "NavierStokes.CorrectionInitialization",
-      "path": "NavierStokes/CorrectionInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L3809"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionInitialization.CommonWindow.active_level_mem",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionInitialization.CommonWindow.active_level_mem",
+        "module": "NavierStokes.CorrectionInitialization"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 3809,
-        "text": "0 < q → Q n / 2 ≤ q → q ≤ 2 * Q n → 1 ≤ L.1 → (q, x) ∈ PhysicalWaveSum.labelRegion D L → L.1 ∈ levels n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.CorrectionInitialization.CommonWindow.active_level_mem",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L3809",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 3809,
+            "text": "theorem active_level_mem {D q : ℝ} {n : ℕ} {L : SlotColoring.Label}\n    (hq : 0 < q) (hlo : ChartScales.Q n / 2 ≤ q) (hhi : q ≤ 2 * ChartScales.Q n)\n    (hL : 1 ≤ L.1) {x : SlotColoring.Position}\n    (hs : (q, x) ∈ PhysicalWaveSum.labelRegion D L) : L.1 ∈ levels n"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.28/attributed/06.NavierStokes.OutgoingDilation.powerE_coefficient",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingDilation.powerE_coefficient",
-      "line": 356,
-      "module": "NavierStokes.OutgoingDilation",
-      "path": "NavierStokes/OutgoingDilation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean#L356"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingDilation.powerE_coefficient",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingDilation.powerE_coefficient",
+        "module": "NavierStokes.OutgoingDilation"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 356,
-        "text": "powerE F XR X = (powerConstant F.data * XR ^ (1 / 2 + F.data.h)) * X ^ (-(1 / 2 + F.data.h)) — exhibits the η-independent constant c_∞ and the exponent −A"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.OutgoingDilation.powerE_coefficient",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L356",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 356,
+            "text": "theorem powerE_coefficient (F : Profile) (XR X : ℝ) (hXR : 0 < XR) (hX : 0 < X) :\n    powerE F XR X = (powerConstant F.data * XR ^ (1 / 2 + F.data.h)) * X ^ (-(1 / 2 + F.data.h))"
+          }
+        }
       }
     }
-  }
+  ]
 }

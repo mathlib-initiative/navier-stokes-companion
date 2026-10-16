@@ -1,25 +1,27 @@
 {
-  "id": "eq-p044-7/key/05.NavierStokes.TerminalCone.full_interval_direction_margin",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalCone.full_interval_direction_margin",
-      "line": 546,
-      "module": "NavierStokes.TerminalCone",
-      "path": "NavierStokes/TerminalCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean#L546"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalCone.full_interval_direction_margin"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalCone.full_interval_direction_margin",
+        "module": "NavierStokes.TerminalCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 546,
-        "text": "(hy : terminalStart F.data ≤ y) (hy' : y ≤ OutgoingTail.tailEnd F.data) (heta : eta ∈ Icc (-1) 1) : 2 + F.data.h < profileSpeed … ∧ profileSpeed … ≤ 2 + 2*F.data.h ∧ 3/2 ≤ profileConeGap (normalization F XR) F.data (shift F XR) (profilePoint F y eta)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.TerminalCone.full_interval_direction_margin"
+          },
+          "destination": {
+            "fragment": "L546",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 546,
+            "text": "theorem full_interval_direction_margin (F : OutgoingProfile.Profile) {XR y eta : ℝ}\n    (hsmall : SmallTail F.data) (hXR : radiusThreshold F ≤ XR)\n    (hy : terminalStart F.data ≤ y) (hy' : y ≤ OutgoingTail.tailEnd F.data)\n    (heta : eta ∈ Icc (-1 : ℝ) 1) :\n    2 + F.data.h < TerminalEdgeFactor.profileSpeed (normalization F XR) F.data\n      (shift F XR) (profilePoint F y eta) ∧\n    TerminalEdgeFactor.profileSpeed (normalization F XR) F.data\n      (shift F XR) (profilePoint F y eta) ≤ 2 + 2 * F.data.h ∧\n    3 / 2 ≤ TerminalEdgeFactor.profileConeGap (normalization F XR) F.data\n      (shift F XR) (profilePoint F y eta)"
+          }
+        }
       }
     }
-  }
+  ]
 }

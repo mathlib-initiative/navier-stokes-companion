@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.8/key/02.NavierStokes.NilpotentVolterra.layer_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NilpotentVolterra.layer_bound",
-      "line": 588,
-      "module": "NavierStokes.NilpotentVolterra",
-      "path": "NavierStokes/NilpotentVolterra.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NilpotentVolterra.lean#L588"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NilpotentVolterra.layer_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NilpotentVolterra.layer_bound",
+        "module": "NavierStokes.NilpotentVolterra"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 588,
-        "text": "‖layer hR exponent A₀ A₁ F k z‖ ≤ B * 2^k * wordMajorant (M*R) (max 1 (σ-ρ)⁻¹) k — the same bound on the path-space side, sup over the whole radial interval"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.NilpotentVolterra.layer_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L588",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NilpotentVolterra.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 588,
+            "text": "theorem layer_bound {R : ℝ} (hR : 0 ≤ R)\n    {A₀ A₁ : ℂ → CoefficientPath R} {F : ℂ → Path R} {U : Set ℂ}\n    (hU : IsOpen U) (hA₀ : DifferentiableOn ℂ A₀ U) (hA₁ : DifferentiableOn ℂ A₁ U)\n    (hF : DifferentiableOn ℂ F U) {center : ℂ} {ρ σ B M : ℝ}\n    (hDisk : Metric.closedBall center σ ⊆ U) (hgap : ρ < σ)\n    (hB : 0 ≤ B) (hM : 0 ≤ M)\n    (hshape : VolterraAnalyticBounds.DerivativeShape (rawCoefficient hR A₁))\n    (hbA₀ : VolterraAnalyticBounds.MatrixBound (rawCoefficient hR A₀) R center σ M)\n    (hbA₁ : VolterraAnalyticBounds.MatrixBound (rawCoefficient hR A₁) R center σ M)\n    (hbF : ∀ z ∈ Metric.closedBall center σ, ‖F z‖ ≤ B)\n    (k : ℕ) {z : ℂ} (hz : z ∈ Metric.closedBall center ρ) :\n    ‖layer hR VolterraAnalyticBounds.exponent A₀ A₁ F k z‖ ≤\n      B * 2 ^ k * VolterraAnalyticBounds.wordMajorant (M * R) (max 1 (σ - ρ)⁻¹) k"
+          }
+        }
       }
     }
-  }
+  ]
 }

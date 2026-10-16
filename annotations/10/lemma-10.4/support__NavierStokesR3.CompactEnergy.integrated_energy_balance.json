@@ -1,26 +1,29 @@
 {
-  "id": "lemma-10.4/support/3.NavierStokesR3.CompactEnergy.integrated_energy_balance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.CompactEnergy.integrated_energy_balance",
-      "line": 27,
-      "module": "NavierStokes.R3.IntegratedDissipation",
-      "path": "NavierStokes/R3/IntegratedDissipation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/IntegratedDissipation.lean#L27"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.CompactEnergy.integrated_energy_balance",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.CompactEnergy.integrated_energy_balance",
+        "module": "NavierStokes.R3.IntegratedDissipation"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 27,
-        "text": "theorem integrated_energy_balance {ν T : ℝ} {u f : VelocityField}\n    {p : PressureField} {K : Set Space} (hT : 0 < T)\n    (hK : IsCompact K) (hu : ContDiffOn ℝ ∞ u (slab 0 T))\n    (hp : ContDiffOn ℝ ∞ p (slab 0 T)) (hf : Continuous f)\n    (hsupp : ∀ r ∈ Icc (0 : ℝ) T, tsupport (fun x => u (r, x)) ⊆ K)\n    (hinitial : ∀ x : Space, u (0, x) = 0)\n    (hdiv : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x, spatialDivergence u t x = 0)\n    (hNS : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x,\n      ProblemStatement.navierStokesResidual ν u p t x = f (t, x)) :\n    l2Sq u T + 2 * ν * (∫ t in (0 : ℝ)..T, dissipation u t) =\n      2 * ∫ t in (0 : ℝ)..T, ∫ x, ⟪u (t, x), f (t, x)⟫_ℝ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokesR3.CompactEnergy.integrated_energy_balance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L27",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/IntegratedDissipation.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 27,
+            "text": "theorem integrated_energy_balance {ν T : ℝ} {u f : VelocityField}\n    {p : PressureField} {K : Set Space} (hT : 0 < T)\n    (hK : IsCompact K) (hu : ContDiffOn ℝ ∞ u (slab 0 T))\n    (hp : ContDiffOn ℝ ∞ p (slab 0 T)) (hf : Continuous f)\n    (hsupp : ∀ r ∈ Icc (0 : ℝ) T, tsupport (fun x => u (r, x)) ⊆ K)\n    (hinitial : ∀ x : Space, u (0, x) = 0)\n    (hdiv : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x, spatialDivergence u t x = 0)\n    (hNS : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x,\n      ProblemStatement.navierStokesResidual ν u p t x = f (t, x)) :\n    l2Sq u T + 2 * ν * (∫ t in (0 : ℝ)..T, dissipation u t) =\n      2 * ∫ t in (0 : ℝ)..T, ∫ x, ⟪u (t, x), f (t, x)⟫_ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

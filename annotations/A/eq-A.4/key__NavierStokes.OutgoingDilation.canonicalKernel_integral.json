@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.4/key/05.NavierStokes.OutgoingDilation.canonicalKernel_integral",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingDilation.canonicalKernel_integral",
-      "line": 248
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean#L248"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingDilation.canonicalKernel_integral",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingDilation.canonicalKernel_integral",
+        "module": "NavierStokes.OutgoingDilation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 248,
-        "text": "(∫ u in Ioi X, canonicalKernel F XR eta u) = ∫ u in Ioi (X / XR), F.canonicalKernel eta u  (fifth factor: 1, for the E^2/(2x) pressure integral, up to the global 1/2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.OutgoingDilation.canonicalKernel_integral",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L248"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 248,
+            "text": "theorem canonicalKernel_integral (F : Profile) (XR eta X : ℝ) (hXR : 0 < XR) :\n    (∫ u in Ioi X, canonicalKernel F XR eta u) = ∫ u in Ioi (X / XR), F.canonicalKernel eta u"
+          }
+        }
       }
     }
-  }
+  ]
 }

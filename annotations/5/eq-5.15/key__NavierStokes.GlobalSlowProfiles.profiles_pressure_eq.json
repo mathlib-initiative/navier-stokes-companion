@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.15/key/05.NavierStokes.GlobalSlowProfiles.profiles_pressure_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.profiles_pressure_eq",
-      "line": 1066,
-      "module": "NavierStokes.GlobalSlowProfiles",
-      "path": "NavierStokes/GlobalSlowProfiles.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1066"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.profiles_pressure_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.profiles_pressure_eq",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 1066,
-        "text": "(profiles s n).pressure = pressureFromSource … (pressureSource C (fun j => (profiles s j).phi) (previousOmegaDivX …) n)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.GlobalSlowProfiles.profiles_pressure_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1066",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1066,
+            "text": "theorem profiles_pressure_eq {S : Set ℝ} {h C : ℝ} (s : Scheme S h C) {n : ℕ} (hn : 0 < n) :\n    (profiles s n).pressure = pressureFromSource s.domain.isOpen\n      (pressureSource C (fun j => (profiles s j).phi)\n        (previousOmegaDivX s.domain (fun j => (profiles s j).axial)\n          (fun j => (profiles s j).beta) n) n)"
+          }
+        }
       }
     }
-  }
+  ]
 }

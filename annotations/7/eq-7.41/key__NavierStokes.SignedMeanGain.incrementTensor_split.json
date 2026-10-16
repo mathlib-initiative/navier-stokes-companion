@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.41/key/01.NavierStokes.SignedMeanGain.incrementTensor_split",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedMeanGain.incrementTensor_split",
-      "line": 419,
-      "module": "NavierStokes.SignedMeanGain",
-      "path": "NavierStokes/SignedMeanGain.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean#L419"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedMeanGain.incrementTensor_split",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedMeanGain.incrementTensor_split",
+        "module": "NavierStokes.SignedMeanGain"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 419,
-        "text": "incrementTensor f a = crossTensor f a + remainderTensor f a, for any SignedFamily f and Assembly a (no NativeData); with crossTensor = symmetricCovariance primaryField tangentField and incrementTensor = covarianceIncrement oldField (tangentField + curlField). This is C(U+V) - C(U) = B(W0as, Las Sigma) + remainder, before the Sigma substitution. Used on the actual path in CrossBasedMeanComposition.signed_mean_gain_of_cross_defects (lines 167-183)."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SignedMeanGain.incrementTensor_split",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L419",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 419,
+            "text": "theorem incrementTensor_split (f : SignedFamily s P α δ β η) (a : Assembly f) :\n    incrementTensor f a = crossTensor f a + remainderTensor f a"
+          }
+        }
       }
     }
-  }
+  ]
 }

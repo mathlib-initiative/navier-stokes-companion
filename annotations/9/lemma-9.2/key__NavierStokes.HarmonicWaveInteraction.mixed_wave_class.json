@@ -1,36 +1,57 @@
 {
-  "id": "lemma-9.2/key/1.NavierStokes.HarmonicWaveInteraction.mixed_wave_class",
-  "location": {
-    "page": 102,
-    "rect": [0.12854, 0.846281, 0.745098, 0.044628]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicWaveInteraction.mixed_wave_class",
-      "line": 471,
-      "module": "NavierStokes.HarmonicWaveInteraction",
-      "path": "NavierStokes/HarmonicWaveInteraction.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 102,
+        "rect": [0.12854, 0.846281, 0.745098, 0.044628]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p102"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicWaveInteraction.lean#L471"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicWaveInteraction.mixed_wave_class",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 103,
+        "rect": [0.12854, 0.102479, 0.745098, 0.057851]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clause (ii) in angular-harmonic form, already symmetrized. a.WaveBounds α, b.WaveBounds β, zero stored modes, finite bands, smooth phase, a.frequency ≠ 0, ModeSolenoidal of a and of (withCarrier a b), 0 ≤ P ≤ 1, every j : ℤ ⊢ WaveClass s P (α + β - κ) (blockTransport c a a b n i j + blockTransport c",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-9.2@p102",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 471,
-        "text": "theorem mixed_wave_class {s : StripData D} {κ α β : ℝ} {P : ℕ → D → ℝ}\n    (c : CorrectionState.Context D) (ho : MeanIncrementBounds.OperatorBounds s c.operators κ)\n    (hR : ∀ x ∈ s.domain, 0 < c.operators.radius x)\n    {a b : CorrectionState.HarmonicBlock D} {M N : ℕ}\n    (ha : a.WaveBounds s P α) (hb : b.WaveBounds s P β)\n    (ha0 : ZeroMode a) (hb0 : ZeroMode b) (hM : a.BandLimited M) (hN : b.BandLimited N)\n    (hΦ : ∀ n, ContDiffOn ℝ ∞ (a.phase n) s.domain) (hk : ∀ n, a.frequency n ≠ 0)\n    (hda : ModeSolenoidal s c a) (hdb : ModeSolenoidal s c (withCarrier a b))\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1) (j : ℤ) (i : Fin 3) :\n    WaveClass s P (α + β - κ) (fun n x =>\n      blockTransport c a a b n i j x + blockTransport c a b a n i j x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p103"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicWaveInteraction.mixed_wave_class",
+        "module": "NavierStokes.HarmonicWaveInteraction"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.HarmonicWaveInteraction.mixed_wave_class",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Clause (ii) in angular-harmonic form, already symmetrized. a.WaveBounds α, b.WaveBounds β, zero stored modes, finite bands, smooth phase, a.frequency ≠ 0, ModeSolenoidal of a and of (withCarrier a b), 0 ≤ P ≤ 1, every j : ℤ ⊢ WaveClass s P (α + β - κ) (blockTransport c a a b n i j + blockTransport c",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L471",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicWaveInteraction.lean"
+          },
+          "snippet": {
+            "line": 471,
+            "text": "theorem mixed_wave_class {s : StripData D} {κ α β : ℝ} {P : ℕ → D → ℝ}\n    (c : CorrectionState.Context D) (ho : MeanIncrementBounds.OperatorBounds s c.operators κ)\n    (hR : ∀ x ∈ s.domain, 0 < c.operators.radius x)\n    {a b : CorrectionState.HarmonicBlock D} {M N : ℕ}\n    (ha : a.WaveBounds s P α) (hb : b.WaveBounds s P β)\n    (ha0 : ZeroMode a) (hb0 : ZeroMode b) (hM : a.BandLimited M) (hN : b.BandLimited N)\n    (hΦ : ∀ n, ContDiffOn ℝ ∞ (a.phase n) s.domain) (hk : ∀ n, a.frequency n ≠ 0)\n    (hda : ModeSolenoidal s c a) (hdb : ModeSolenoidal s c (withCarrier a b))\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1) (j : ℤ) (i : Fin 3) :\n    WaveClass s P (α + β - κ) (fun n x =>\n      blockTransport c a a b n i j x + blockTransport c a b a n i j x)"
+          }
+        }
+      }
+    }
+  ]
 }

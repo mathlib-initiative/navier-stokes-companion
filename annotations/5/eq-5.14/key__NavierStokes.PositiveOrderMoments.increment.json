@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.14/key/06.NavierStokes.PositiveOrderMoments.increment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveOrderMoments.increment",
-      "line": 28,
-      "module": "NavierStokes.PositiveOrderMoments",
-      "path": "NavierStokes/PositiveOrderMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean#L28"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveOrderMoments.increment",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveOrderMoments.increment",
+        "module": "NavierStokes.PositiveOrderMoments"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 28,
-        "text": "increment u n du := Function.update u n (fun R => u n R + du R) — only the order-n entry is changed"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.PositiveOrderMoments.increment",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L28",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 28,
+            "text": "noncomputable def increment (u : History) (n : ℕ) (du : Profile) : History"
+          }
+        }
       }
     }
-  }
+  ]
 }

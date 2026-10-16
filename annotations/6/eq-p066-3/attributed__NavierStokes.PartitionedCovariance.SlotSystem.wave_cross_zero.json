@@ -1,26 +1,28 @@
 {
-  "id": "eq-p066-3/attributed/11.NavierStokes.PartitionedCovariance.SlotSystem.wave_cross_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PartitionedCovariance.SlotSystem.wave_cross_zero",
-      "line": 563,
-      "module": "NavierStokes.PartitionedCovariance",
-      "path": "NavierStokes/PartitionedCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean#L563"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PartitionedCovariance.SlotSystem.wave_cross_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PartitionedCovariance.SlotSystem.wave_cross_zero",
+        "module": "NavierStokes.PartitionedCovariance"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 563,
-        "text": "wave (a * physicalMask D L q x) (nativeIndex h L.1) f modeL phaseL Y θ * wave (b * physicalMask D M q x) (nativeIndex h M.1) g modeM phaseM Y θ = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "11.NavierStokes.PartitionedCovariance.SlotSystem.wave_cross_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L563",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PartitionedCovariance.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 563,
+            "text": "theorem SlotSystem.wave_cross_zero {D h : ℝ} {vr vt : Plane} (sys : SlotSystem D h vr vt)\n    {L M : SlotColoring.Label} (hL : 1 ≤ L.1) (hM : 1 ≤ M.1) (hne : L ≠ M)\n    {f g : Plane → ℝ} (hf : support f ⊆ slotSet h sys.radius vr vt L)\n    (hg : support g ⊆ slotSet h sys.radius vr vt M) {q : ℝ} (hq : 0 < q)\n    (x : SlotColoring.Position) (Y : Plane) (θ a b : ℝ) (modeL modeM : ℤ)\n    (phaseL phaseM : Plane → ℝ) :\n    wave (a * physicalMask D L q x) (SlotColoring.nativeIndex h L.1) f modeL phaseL Y θ *\n      wave (b * physicalMask D M q x) (SlotColoring.nativeIndex h M.1) g modeM phaseM Y θ = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

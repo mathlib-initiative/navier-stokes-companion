@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.22/key/06.NavierStokes.ActualPrimaryDynamics.geometry_temporal",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPrimaryDynamics.geometry_temporal",
-      "line": 210,
-      "module": "NavierStokes.ActualPrimaryDynamics",
-      "path": "NavierStokes/ActualPrimaryDynamics.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryDynamics.lean#L210"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPrimaryDynamics.geometry_temporal",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPrimaryDynamics.geometry_temporal",
+        "module": "NavierStokes.ActualPrimaryDynamics"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 210,
-        "text": "(geometry j L).coordinateLinear temporalVector = (0, (Q (cellBand L) ^ (1+h))⁻¹)  -- = (0, T_g^Δ/c_i) since timeCoefficient = Tg^nativeIndex * Q^(1+h); stated for gap = nativeIndex only"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.ActualPrimaryDynamics.geometry_temporal",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L210",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryDynamics.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 210,
+            "text": "theorem geometry_temporal (j : Fin 2) (L : Label B N0) :\n    (geometry j L).coordinateLinear temporalVector =\n      (0, (ChartScales.Q (BaseChartJets.cellBand L) ^ (1+h))⁻¹)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,33 @@
 {
-  "id": "corollary-7.8/key/0.NavierStokes.CorrectionStep.signedTensorRemainder_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.signedTensorRemainder_mem",
-      "line": 2366,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L2366"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.signedTensorRemainder_mem",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For same-carrier band-limited blocks primary/old/tangent/curl with old.WaveBounds α, (subBlock old primary).WaveBounds δ, tangent.WaveBounds β, curl.WaveBounds η, β ≤ η, and γ ≤ δ+β, γ ≤ α+η, γ ≤ 2β: TensorClass s γ (signedTensorRemainder primary old tangent curl), i.e. C(U+V)−C(U)−B(W0,LΣ) lies in ",
-        "status": "unconfirmed",
-        "verdict": "faithful"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.signedTensorRemainder_mem",
+        "module": "NavierStokes.CorrectionStep"
       },
       "role": "key",
-      "snippet": {
-        "line": 2366,
-        "text": "theorem signedTensorRemainder_mem {s : StripData D} {P : ℕ → D → ℝ}\n    {α δ β η γ : ℝ} (primary old tangent curl : HarmonicBlock D) (N : ℕ)\n    (hop : SameCarrier old primary) (hot : SameCarrier old tangent)\n    (hoc : SameCarrier old curl)\n    (hpN : primary.BandLimited N) (hoN : old.BandLimited N)\n    (htN : tangent.BandLimited N) (hcN : curl.BandLimited N)\n    (ho : old.WaveBounds s P α)\n    (hd : (subBlock old primary).WaveBounds s P δ)\n    (ht : tangent.WaveBounds s P β) (hc : curl.WaveBounds s P η)\n    (hp0 : ∀ n i, primary.velocity n i 0 = 0) (ho0 : ∀ n i, old.velocity n i 0 = 0)\n    (ht0 : ∀ n i, tangent.velocity n i 0 = 0) (hc0 : ∀ n i, curl.velocity n i 0 = 0)\n    (hβη : β ≤ η) (hγd : γ ≤ δ + β) (hγc : γ ≤ α + η) (hγs : γ ≤ 2 * β)\n    (hkp : ∀ n, old.angularFrequency n ≠ 0)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.CorrectionStep.signedTensorRemainder_mem",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For same-carrier band-limited blocks primary/old/tangent/curl with old.WaveBounds α, (subBlock old primary).WaveBounds δ, tangent.WaveBounds β, curl.WaveBounds η, β ≤ η, and γ ≤ δ+β, γ ≤ α+η, γ ≤ 2β: TensorClass s γ (signedTensorRemainder primary old tangent curl), i.e. C(U+V)−C(U)−B(W0,LΣ) lies in ",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L2366",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "snippet": {
+            "line": 2366,
+            "text": "theorem signedTensorRemainder_mem {s : StripData D} {P : ℕ → D → ℝ}\n    {α δ β η γ : ℝ} (primary old tangent curl : HarmonicBlock D) (N : ℕ)\n    (hop : SameCarrier old primary) (hot : SameCarrier old tangent)\n    (hoc : SameCarrier old curl)\n    (hpN : primary.BandLimited N) (hoN : old.BandLimited N)\n    (htN : tangent.BandLimited N) (hcN : curl.BandLimited N)\n    (ho : old.WaveBounds s P α)\n    (hd : (subBlock old primary).WaveBounds s P δ)\n    (ht : tangent.WaveBounds s P β) (hc : curl.WaveBounds s P η)\n    (hp0 : ∀ n i, primary.velocity n i 0 = 0) (ho0 : ∀ n i, old.velocity n i 0 = 0)\n    (ht0 : ∀ n i, tangent.velocity n i 0 = 0) (hc0 : ∀ n i, curl.velocity n i 0 = 0)\n    (hβη : β ≤ η) (hγd : γ ≤ δ + β) (hγc : γ ≤ α + η) (hγs : γ ≤ 2 * β)\n    (hkp : ∀ n, old.angularFrequency n ≠ 0)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

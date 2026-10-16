@@ -1,26 +1,28 @@
 {
-  "id": "eq-p114-1/attributed/03.NavierStokes.SharpPhysicalLoss.rescale_with_common_loss",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SharpPhysicalLoss.rescale_with_common_loss",
-      "line": 14,
-      "module": "NavierStokes.SharpPhysicalLoss",
-      "path": "NavierStokes/SharpPhysicalLoss.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SharpPhysicalLoss.lean#L14"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SharpPhysicalLoss.rescale_with_common_loss",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SharpPhysicalLoss.rescale_with_common_loss",
+        "module": "NavierStokes.SharpPhysicalLoss"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 14,
-        "text": "(hσ : -(2*CoordinateAlgebra.A h) ≤ σ) (hkm : k ≤ m+1) → ‖iteratedFDeriv ℝ k (fun z => Q n^σ • f z) w‖ ≤ C*Q n^(g-physicalLoss h m)*S n^e"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SharpPhysicalLoss.rescale_with_common_loss",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L14",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SharpPhysicalLoss.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 14,
+            "text": "theorem rescale_with_common_loss {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]\n    {h σ g e C : ℝ} (hh : 0 ≤ h) (hσ : -(2*CoordinateAlgebra.A h) ≤ σ) (hC : 0 ≤ C)\n    (n m k : ℕ) (hkm : k ≤ m+1) {f : SpaceTime → E} {w : SpaceTime}\n    (hf : ContDiffAt ℝ ∞ f w)\n    (hb : ‖iteratedFDeriv ℝ k f w‖ ≤ C*ChartScales.Q n^(g-(k:ℝ)*derivativeCost h)*ChartScales.S n^e) :\n    ‖iteratedFDeriv ℝ k (fun z => ChartScales.Q n^σ • f z) w‖ ≤\n      C*ChartScales.Q n^(g-physicalLoss h m)*ChartScales.S n^e"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,33 @@
 {
-  "id": "lemma-4.8/key/1.NavierStokes.OutgoingCone.clean_relaxed_margins",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingCone.clean_relaxed_margins",
-      "line": 550,
-      "module": "NavierStokes.OutgoingCone",
-      "path": "NavierStokes/OutgoingCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingCone.lean#L550"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingCone.clean_relaxed_margins",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingCone.clean_relaxed_margins",
+        "module": "NavierStokes.OutgoingCone"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Given CleanOutgoingCone w XR left: exists eps>0 with eps <= Qs, eps <= coneA, eps <= normalP - 2 and eps <= coneBound(normalP,normalJ) - normalV at every point of cleanWindow d left. The paper's positive minimum for each defining gap on the relaxed rectangle, for the unedited corrected profile; eps ",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 550,
-        "text": "theorem clean_relaxed_margins {d : TailData} {K : ℝ} (w : ResetWitness d K)\n    {XR left : ℝ} (h : CleanOutgoingCone w XR left) :\n    ∃ eps : ℝ, 0 < eps ∧ ∀ p ∈ cleanWindow d left,\n      eps ≤ OutgoingHistories.Qs w (CorrectedPulseAmplitude.amplitude d w.coefficients) p ∧\n      eps ≤ coneA w p ∧ eps ≤ normalP w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p - 2 ∧\n      eps ≤ ConeAlgebra.coneBound\n        (normalP w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p)\n        (normalJ w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p) -\n          normalV w (CorrectedPulseAmplitude.amplitude d w.coefficients) p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.OutgoingCone.clean_relaxed_margins",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Given CleanOutgoingCone w XR left: exists eps>0 with eps <= Qs, eps <= coneA, eps <= normalP - 2 and eps <= coneBound(normalP,normalJ) - normalV at every point of cleanWindow d left. The paper's positive minimum for each defining gap on the relaxed rectangle, for the unedited corrected profile; eps ",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L550",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingCone.lean"
+          },
+          "snippet": {
+            "line": 550,
+            "text": "theorem clean_relaxed_margins {d : TailData} {K : ℝ} (w : ResetWitness d K)\n    {XR left : ℝ} (h : CleanOutgoingCone w XR left) :\n    ∃ eps : ℝ, 0 < eps ∧ ∀ p ∈ cleanWindow d left,\n      eps ≤ OutgoingHistories.Qs w (CorrectedPulseAmplitude.amplitude d w.coefficients) p ∧\n      eps ≤ coneA w p ∧ eps ≤ normalP w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p - 2 ∧\n      eps ≤ ConeAlgebra.coneBound\n        (normalP w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p)\n        (normalJ w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p) -\n          normalV w (CorrectedPulseAmplitude.amplitude d w.coefficients) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

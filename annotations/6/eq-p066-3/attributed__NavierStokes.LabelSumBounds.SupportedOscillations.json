@@ -1,26 +1,28 @@
 {
-  "id": "eq-p066-3/attributed/02.NavierStokes.LabelSumBounds.SupportedOscillations",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LabelSumBounds.SupportedOscillations",
-      "line": 513,
-      "module": "NavierStokes.LabelSumBounds",
-      "path": "NavierStokes/LabelSumBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean#L513"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LabelSumBounds.SupportedOscillations",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LabelSumBounds.SupportedOscillations",
+        "module": "NavierStokes.LabelSumBounds"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 513,
-        "text": "∀ l n x, x ∈ U → ∀ θ i, u l n (x, θ) i ≠ 0 → χ n x ∈ closedWindow d (label n l) ∧ Y n x ∈ SlotGeometry.liftedSupport (SlotColoring.nativeIndex h (label n l).1) (PartitionedCovariance.slotSet h sys.radius vr vt (label n l))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.LabelSumBounds.SupportedOscillations",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L513",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 513,
+            "text": "noncomputable def SupportedOscillations {d h : ℝ} {vr vt : TorusInverse.Plane}\n    (sys : PartitionedCovariance.SlotSystem d h vr vt)\n    (label : ℕ → ι → SlotColoring.Label) (χ : ℕ → D → WindowPoint)\n    (Y : ℕ → D → TorusInverse.Plane) (U : Set D) (u : ι → Oscillation D) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

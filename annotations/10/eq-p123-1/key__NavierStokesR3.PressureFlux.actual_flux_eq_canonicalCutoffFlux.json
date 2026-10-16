@@ -1,25 +1,27 @@
 {
-  "id": "eq-p123-1/key/01.NavierStokesR3.PressureFlux.actual_flux_eq_canonicalCutoffFlux",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.PressureFlux.actual_flux_eq_canonicalCutoffFlux",
-      "line": 211,
-      "module": "NavierStokes.R3.PressureFlux",
-      "path": "NavierStokes/R3/PressureFlux.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureFlux.lean#L211"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.PressureFlux.actual_flux_eq_canonicalCutoffFlux"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.PressureFlux.actual_flux_eq_canonicalCutoffFlux",
+        "module": "NavierStokes.R3.PressureFlux"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 211,
-        "text": "(∫ x, (p - q) (t, x) * fderiv ℝ (ComparisonCutoffs.weight R) x ((u - v) (t, x))) = (canonicalCutoffFlux R hR u v t hu hv).re, for t ∈ Ioo 0 T and 0 < R"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokesR3.PressureFlux.actual_flux_eq_canonicalCutoffFlux"
+          },
+          "destination": {
+            "fragment": "L211",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureFlux.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 211,
+            "text": "theorem actual_flux_eq_canonicalCutoffFlux {T t R : ℝ} {u v : VelocityField}\n    {p q : PressureField} (H : PressureRecovery.Hypotheses T u v p q)\n    (ht : t ∈ Ioo 0 T) (hR : 0 < R)\n    (hu : ContDiff ℝ ∞ (fun x => u (t, x))) (hv : ContDiff ℝ ∞ (fun x => v (t, x))) :\n    (∫ x, (p - q) (t, x) * fderiv ℝ (ComparisonCutoffs.weight R) x ((u - v) (t, x))) =\n      (canonicalCutoffFlux R hR u v t hu hv).re"
+          }
+        }
       }
     }
-  }
+  ]
 }

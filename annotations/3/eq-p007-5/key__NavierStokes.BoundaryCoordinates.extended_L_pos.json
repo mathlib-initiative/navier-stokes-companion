@@ -1,26 +1,28 @@
 {
-  "id": "eq-p007-5/key/07.NavierStokes.BoundaryCoordinates.extended_L_pos",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BoundaryCoordinates.extended_L_pos",
-      "line": 301,
-      "module": "NavierStokes.BoundaryCoordinates",
-      "path": "NavierStokes/BoundaryCoordinates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BoundaryCoordinates.lean#L301"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BoundaryCoordinates.extended_L_pos",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BoundaryCoordinates.extended_L_pos",
+        "module": "NavierStokes.BoundaryCoordinates"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 301,
-        "text": "0 < 1 - a * extendedEta a p ^ 2, proved as lt_of_lt_of_le (sub_pos.mpr ha1) (extended_L_lowerBound …) — the paper's chain 1 - 2hη² ≥ 1 - 2h > 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.BoundaryCoordinates.extended_L_pos",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L301",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BoundaryCoordinates.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 301,
+            "text": "theorem extended_L_pos {a : ℝ} (ha : 0 < a) (ha1 : a < 1)\n    {p : ℝ × ℝ} (hp : p ∈ domain) : 0 < 1 - a * extendedEta a p ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

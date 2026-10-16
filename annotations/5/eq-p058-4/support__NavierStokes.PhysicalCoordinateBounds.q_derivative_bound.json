@@ -1,25 +1,28 @@
 {
-  "id": "eq-p058-4/support/02.NavierStokes.PhysicalCoordinateBounds.q_derivative_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalCoordinateBounds.q_derivative_bound",
-      "line": 410,
-      "module": "NavierStokes.PhysicalCoordinateBounds",
-      "path": "NavierStokes/PhysicalCoordinateBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalCoordinateBounds.lean#L410"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalCoordinateBounds.q_derivative_bound"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalCoordinateBounds.q_derivative_bound",
+        "module": "NavierStokes.PhysicalCoordinateBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 410,
-        "text": "∃ C, 0 < C ∧ ∀ p ∈ positiveTime, … → ‖iteratedFDeriv ℝ n (qCoord a) p‖ ≤ C * qCoord a p ^ (1 - (n:ℝ)) — the Lean form of the hypothesis (5.28), for the actual similarity coordinate"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PhysicalCoordinateBounds.q_derivative_bound"
+          },
+          "destination": {
+            "fragment": "L410",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalCoordinateBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 410,
+            "text": "theorem q_derivative_bound {a : ℝ} (ha : 0 < a) (ha1 : a < 1)\n    (lo hi qbig : ℝ) (n : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ p ∈ positiveTime, qCoord a p ≤ qbig → xCoord a p ∈ Icc lo hi →\n      ‖iteratedFDeriv ℝ n (qCoord a) p‖ ≤ C * qCoord a p ^ (1 - (n : ℝ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

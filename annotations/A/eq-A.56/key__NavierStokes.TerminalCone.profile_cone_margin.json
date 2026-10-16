@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.56/key/03.NavierStokes.TerminalCone.profile_cone_margin",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalCone.profile_cone_margin",
-      "line": 398
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean#L398"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalCone.profile_cone_margin",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalCone.profile_cone_margin",
+        "module": "NavierStokes.TerminalCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 398,
-        "text": "2 + d.h < profileSpeed … ∧ profileSpeed … ≤ 2 + 2 * d.h ∧ 3/2 ≤ profileConeGap …, for 0 ≤ δ ≤ 5/2 and eta ∈ Icc (-1) 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.TerminalCone.profile_cone_margin",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L398"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 398,
+            "text": "theorem profile_cone_margin (d : OutgoingTail.TailData) (hsmall : SmallTail d)\n    {K δ eta : ℝ} (hK : 32 ≤ K) (hδ : 0 ≤ δ) (hδ' : δ ≤ 5 / 2)\n    (heta : eta ∈ Icc (-1 : ℝ) 1) :\n    2 + d.h < TerminalEdgeFactor.profileSpeed (TerminalPressure.releasedNormalization d K) d\n      (Real.log K - 1 / 5) (eta, δ) ∧\n    TerminalEdgeFactor.profileSpeed (TerminalPressure.releasedNormalization d K) d\n      (Real.log K - 1 / 5) (eta, δ) ≤ 2 + 2 * d.h ∧\n    3 / 2 ≤ TerminalEdgeFactor.profileConeGap (TerminalPressure.releasedNormalization d K) d\n      (Real.log K - 1 / 5) (eta, δ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-p124-5/key/01.NavierStokesR3.ViscosityScaling.rescale_temporalDerivative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ViscosityScaling.rescale_temporalDerivative",
-      "line": 38,
-      "module": "NavierStokes.R3.ViscosityScaling",
-      "path": "NavierStokes/R3/ViscosityScaling.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean#L38"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ViscosityScaling.rescale_temporalDerivative"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ViscosityScaling.rescale_temporalDerivative",
+        "module": "NavierStokes.R3.ViscosityScaling"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 38,
-        "text": "temporalDerivative (rescale a b u) t x = a • temporalDerivative u t (b • x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokesR3.ViscosityScaling.rescale_temporalDerivative"
+          },
+          "destination": {
+            "fragment": "L38",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscosityScaling.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 38,
+            "text": "theorem rescale_temporalDerivative (a b : ℝ) (u : VelocityField) (t : ℝ) (x : Space) :\n    temporalDerivative (rescale a b u) t x = a • temporalDerivative u t (b • x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

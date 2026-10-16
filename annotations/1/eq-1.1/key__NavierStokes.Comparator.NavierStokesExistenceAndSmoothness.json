@@ -1,26 +1,28 @@
 {
-  "id": "eq-1.1/key/03.NavierStokes.Comparator.NavierStokesExistenceAndSmoothness",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.Comparator.NavierStokesExistenceAndSmoothness",
-      "line": 217,
-      "module": "ComparatorChallenges.NavierStokes",
-      "path": "ComparatorChallenges/NavierStokes.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/ComparatorChallenges/NavierStokes.lean#L217"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.Comparator.NavierStokesExistenceAndSmoothness",
-        "kind": "structure"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.Comparator.NavierStokesExistenceAndSmoothness",
+        "module": "ComparatorChallenges.NavierStokes"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 217,
-        "text": "navier_stokes : ∀ x, ∀ t ≥ 0, derivWithin (v x ·) (Set.Ici 0) t + fderiv ℝ (v · t) x (v x t) = nu • Δ (v · t) x - gradient (p · t) x + f x t;  div_free : ∀ x, ∀ t ≥ 0, ∇⬝ (v · t) x = 0;  initial_condition : ∀ x, v x 0 = u₀ x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.Comparator.NavierStokesExistenceAndSmoothness",
+            "kind": "structure"
+          },
+          "destination": {
+            "fragment": "L217",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/ComparatorChallenges/NavierStokes.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 217,
+            "text": "structure NavierStokesExistenceAndSmoothness\n    (nu : ℝ) (u₀ : ℝ^n → ℝ^n) (f : ℝ^n → ℝ → ℝ^n)\n    (v : ℝ^n → ℝ → ℝ^n) (p : ℝ^n → ℝ → ℝ) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

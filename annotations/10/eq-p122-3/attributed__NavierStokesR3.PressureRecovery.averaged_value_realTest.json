@@ -1,26 +1,28 @@
 {
-  "id": "eq-p122-3/attributed/03.NavierStokesR3.PressureRecovery.averaged_value_realTest",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.PressureRecovery.averaged_value_realTest",
-      "line": 173,
-      "module": "NavierStokes.R3.PressureRecovery",
-      "path": "NavierStokes/R3/PressureRecovery.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureRecovery.lean#L173"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.PressureRecovery.averaged_value_realTest",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.PressureRecovery.averaged_value_realTest",
+        "module": "NavierStokes.R3.PressureRecovery"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 173,
-        "text": "identifies averagedPressureDifferenceValue (built from the time-averaged data W0, W1, G) with the time-averaged pairing of the k-th component of the pressure-gradient difference against a real test function"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokesR3.PressureRecovery.averaged_value_realTest",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L173",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureRecovery.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 173,
+            "text": "theorem averaged_value_realTest {T : ℝ} {u v : VelocityField} {p q : PressureField}\n    (H : Hypotheses T u v p q) {a : ℝ → ℝ}\n    (ha : ContDiff ℝ ∞ a) (hsupp : tsupport a ⊆ Ioo 0 T)\n    {ψ : Space → ℝ} (hψ : ContDiff ℝ ∞ ψ) (hcψ : HasCompactSupport ψ) (k : Fin 3) :\n    averagedPressureDifferenceValue (velocityAverage T a u v k)\n      (velocityAverage T (deriv a) u v k) (tensorAverage T a u v) k (realTest ψ hψ hcψ) =\n      ((∫ t in Icc 0 T, a t *\n        (∫ x, spatialPartial k (fun y => (p - q) (t, y)) x * ψ x) : ℝ) : ℂ) +\n      ∑ i : Fin 3, ∑ j : Fin 3,\n        pressurePair i j (tensorAverage T a u v i j) (partialCLM k (realTest ψ hψ hcψ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

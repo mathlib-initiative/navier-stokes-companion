@@ -1,21 +1,24 @@
 {
-  "id": "eq-5.23/key/02.NavierStokes.DiagonalResidual.JetRate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.DiagonalResidual.JetRate",
-      "line": 33
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiagonalResidual.lean#L33"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.DiagonalResidual.JetRate"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.DiagonalResidual.JetRate",
+        "module": "NavierStokes.DiagonalResidual"
       },
-      "snippet": {
-        "line": 33,
-        "text": "def JetRate ... := ∃ C, 0 ≤ C ∧ ∀ᶠ x in l, ‖iteratedFDeriv ℝ m f x‖ ≤ C * (q x) ^ r"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.DiagonalResidual.JetRate"
+          },
+          "destination": {
+            "fragment": "L33"
+          },
+          "snippet": {
+            "line": 33,
+            "text": "def JetRate (l : Filter D) (q : D → ℝ) (f : D → V) (m : ℕ) (r : ℝ) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

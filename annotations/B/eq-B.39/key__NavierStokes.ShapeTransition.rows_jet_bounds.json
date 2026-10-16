@@ -1,23 +1,26 @@
 {
-  "id": "eq-B.39/key/01.NavierStokes.ShapeTransition.rows_jet_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ShapeTransition.rows_jet_bounds",
-      "line": 687
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ShapeTransition.lean#L687"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ShapeTransition.rows_jet_bounds"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ShapeTransition.rows_jet_bounds",
+        "module": "NavierStokes.ShapeTransition"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 687,
-        "text": "|∂_η^n (rowM u r)| ≤ B*r ∧ |∂_η^n (rowI R f r)| ≤ 2*√R*(K/C)*r^2 ∧ |∂_η^n (rowJ R u f r)| ≤ 2*√R*(2^n*B*(K/C))*r^2 ∧ |∂_η^n (rowS R u f r)| ≤ (2^n*B^2 + R*r*(2^n*(K/C)^2))*r ∧ |∂_η^n (rowP R f r)| ≤ R*(2^n*(K/C)^2)*r, under |∂_η^k u(x,·)| ≤ B and |∂_η^k f(x,·)| ≤ K/C for x ∈ Ioc 0 r, k ≤ n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ShapeTransition.rows_jet_bounds"
+          },
+          "destination": {
+            "fragment": "L687"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 687,
+            "text": "theorem rows_jet_bounds {R r B K C : ℝ} (hR : 0 ≤ R) (hr : 0 ≤ r)\n    (hB : 0 ≤ B) (hK : 0 ≤ K) (hC : 0 < C)\n    {u f : ℝ × ℝ → ℝ} (hu : ContDiff ℝ ∞ u) (hf : ContDiff ℝ ∞ f)\n    (n : ℕ) (eta : ℝ)\n    (hub : ∀ x ∈ Ioc (0 : ℝ) r, ∀ k ≤ n, |iteratedDeriv k (fun e => u (x, e)) eta| ≤ B)\n    (hfb : ∀ x ∈ Ioc (0 : ℝ) r, ∀ k ≤ n, |iteratedDeriv k (fun e => f (x, e)) eta| ≤ K / C) :\n    |iteratedDeriv n (rowM u r) eta| ≤ B * r ∧\n    |iteratedDeriv n (rowI R f r) eta| ≤ 2 * Real.sqrt R * (K / C) * r ^ 2 ∧\n    |iteratedDeriv n (rowJ R u f r) eta| ≤ 2 * Real.sqrt R * (2 ^ n * B * (K / C)) * r ^ 2 ∧\n    |iteratedDeriv n (rowS R u f r) eta| ≤\n      (2 ^ n * B ^ 2 + R * r * (2 ^ n * (K / C) ^ 2)) * r ∧\n    |iteratedDeriv n (rowP R f r) eta| ≤ R * (2 ^ n * (K / C) ^ 2) * r"
+          }
+        }
       }
     }
-  }
+  ]
 }

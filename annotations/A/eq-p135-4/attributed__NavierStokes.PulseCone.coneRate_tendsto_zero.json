@@ -1,25 +1,27 @@
 {
-  "id": "eq-p135-4/attributed/03.NavierStokes.PulseCone.coneRate_tendsto_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PulseCone.coneRate_tendsto_zero",
-      "line": 1706,
-      "module": "NavierStokes.PulseCone",
-      "path": "NavierStokes/PulseCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseCone.lean#L1706"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PulseCone.coneRate_tendsto_zero"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PulseCone.coneRate_tendsto_zero",
+        "module": "NavierStokes.PulseCone"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 1706,
-        "text": "Tendsto coneRate (𝓝[>] 0) (𝓝 0), with coneRate lam = lam + Real.sqrt lam * (1 + Real.log (1/lam)); this is the `= o(1)` clause"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.PulseCone.coneRate_tendsto_zero"
+          },
+          "destination": {
+            "fragment": "L1706",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PulseCone.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 1706,
+            "text": "theorem coneRate_tendsto_zero : Tendsto coneRate (𝓝[>] (0 : ℝ)) (𝓝 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

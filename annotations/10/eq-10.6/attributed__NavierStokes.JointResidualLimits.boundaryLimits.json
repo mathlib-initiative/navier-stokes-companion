@@ -1,24 +1,27 @@
 {
-  "id": "eq-10.6/attributed/04.NavierStokes.JointResidualLimits.boundaryLimits",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.JointResidualLimits.boundaryLimits",
-      "line": 120
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/JointResidualLimits.lean#L120"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.JointResidualLimits.boundaryLimits",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.JointResidualLimits.boundaryLimits",
+        "module": "NavierStokes.JointResidualLimits"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 120,
-        "text": "noncomputable def boundaryLimits (f) (hext : AwayExtensions f) (x : Space) : FormalMultilinearSeries ℝ SpaceTime V := if hx : x = 0 then 0 else ftaylorSeries ℝ (Classical.choice (hext x hx)).value (1, x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.JointResidualLimits.boundaryLimits",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L120"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 120,
+            "text": "noncomputable def boundaryLimits (f : SpaceTime → V) (hext : AwayExtensions f)\n    (x : Space) : FormalMultilinearSeries ℝ SpaceTime V"
+          }
+        }
       }
     }
-  }
+  ]
 }

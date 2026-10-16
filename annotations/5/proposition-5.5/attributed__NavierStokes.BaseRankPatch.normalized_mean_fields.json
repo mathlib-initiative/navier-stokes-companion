@@ -1,29 +1,31 @@
 {
-  "id": "proposition-5.5/attributed/1.NavierStokes.BaseRankPatch.normalized_mean_fields",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseRankPatch.normalized_mean_fields",
-      "line": 232,
-      "module": "NavierStokes.BaseRankPatch",
-      "path": "NavierStokes/BaseRankPatch.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseRankPatch.lean#L232"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseRankPatch.normalized_mean_fields",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseRankPatch.normalized_mean_fields",
+        "module": "NavierStokes.BaseRankPatch"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: On the reserved mean interval: normalizedSwirl ... (q,p) = xAmplitude F W.controls.radius p.2 * p.1 ^ (-(1/2 + lam)) ∧ slowSum a h (coefficients H v).axial (q,p) = 0. This is (5.44)'s swirl formula q^A u_{\\theta,B} = E_0 and u_{z,B} = 0; there is no clause for the radial/stream component, i.e. for t"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 232,
-        "text": "theorem normalized_mean_fields (a : ℕ → ℕ) (q : ℝ) {p : Inner}\n    (hp : p.1 ∈ ReservedPatches.window F W.controls.radius .mean) (heta : |p.2| ≤ 1) :\n    SlowBorelBase.normalizedSwirl a F.data.h W.axis.normalization\n        (FinalSlowBase.coefficients H v) (q, p) =\n      ReservedPatches.xAmplitude F W.controls.radius p.2 * p.1 ^ (-(1 / 2 + F.data.core.lam)) ∧\n      SlowBorelBase.slowSum a F.data.h (FinalSlowBase.coefficients H v).axial (q, p) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.BaseRankPatch.normalized_mean_fields",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: On the reserved mean interval: normalizedSwirl ... (q,p) = xAmplitude F W.controls.radius p.2 * p.1 ^ (-(1/2 + lam)) ∧ slowSum a h (coefficients H v).axial (q,p) = 0. This is (5.44)'s swirl formula q^A u_{\\theta,B} = E_0 and u_{z,B} = 0; there is no clause for the radial/stream component, i.e. for t"
+          },
+          "destination": {
+            "fragment": "L232",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseRankPatch.lean"
+          },
+          "snippet": {
+            "line": 232,
+            "text": "theorem normalized_mean_fields (a : ℕ → ℕ) (q : ℝ) {p : Inner}\n    (hp : p.1 ∈ ReservedPatches.window F W.controls.radius .mean) (heta : |p.2| ≤ 1) :\n    SlowBorelBase.normalizedSwirl a F.data.h W.axis.normalization\n        (FinalSlowBase.coefficients H v) (q, p) =\n      ReservedPatches.xAmplitude F W.controls.radius p.2 * p.1 ^ (-(1 / 2 + F.data.core.lam)) ∧\n      SlowBorelBase.slowSum a F.data.h (FinalSlowBase.coefficients H v).axial (q, p) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

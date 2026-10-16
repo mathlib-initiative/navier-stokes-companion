@@ -1,26 +1,28 @@
 {
-  "id": "eq-p089-2/key/01.NavierStokes.MeanResidual.conservativeRadial_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanResidual.conservativeRadial_eq",
-      "line": 426,
-      "module": "NavierStokes.MeanResidual",
-      "path": "NavierStokes/MeanResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanResidual.lean#L426"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanResidual.conservativeRadial_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanResidual.conservativeRadial_eq",
+        "module": "NavierStokes.MeanResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 426,
-        "text": "conservativeRadial w p q = residualRadial w p q + w 0 q * divergence w q"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.MeanResidual.conservativeRadial_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L426",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 426,
+            "text": "theorem conservativeRadial_eq {w : Components} (hw : ∀ i, ContDiff ℝ ∞ (w i))\n    (p : Scalar) (q : SpaceTime) :\n    conservativeRadial w p q = residualRadial w p q + w 0 q * divergence w q"
+          }
+        }
       }
     }
-  }
+  ]
 }

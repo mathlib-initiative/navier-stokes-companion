@@ -1,23 +1,26 @@
 {
-  "id": "eq-8.9/key/02.NavierStokes.TransportPrimitive.pastIntegral",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TransportPrimitive.pastIntegral",
-      "line": 117
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TransportPrimitive.lean#L117"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TransportPrimitive.pastIntegral",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TransportPrimitive.pastIntegral",
+        "module": "NavierStokes.TransportPrimitive"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 117,
-        "text": "pastIntegral M v f z = ∫ u in Iic (0:ℝ), f (shift M v z u), with shift M v z u = z + (u, (M*u) • v) (TransportPrimitive.lean:113): A_-"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TransportPrimitive.pastIntegral",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L117"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 117,
+            "text": "noncomputable def pastIntegral (M : ℝ) (v : E) (f : ℝ × E → F) (z : ℝ × E) : F"
+          }
+        }
       }
     }
-  }
+  ]
 }

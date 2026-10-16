@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.41/key/01.NavierStokes.ParametricHeatTail.physicalEnergy_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricHeatTail.physicalEnergy_jet_bound",
-      "line": 787,
-      "module": "NavierStokes.ParametricHeatTail",
-      "path": "NavierStokes/ParametricHeatTail.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricHeatTail.lean#L787"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricHeatTail.physicalEnergy_jet_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricHeatTail.physicalEnergy_jet_bound",
+        "module": "NavierStokes.ParametricHeatTail"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 787,
-        "text": "|iteratedDerivWithin n (physicalEnergy d K) (Icc (-1) 1) eta| ≤ etaConstant d true 0 n, for 1 ≤ K and eta ∈ Icc (-1) 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ParametricHeatTail.physicalEnergy_jet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L787",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricHeatTail.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 787,
+            "text": "theorem physicalEnergy_jet_bound (d : TailData) {K : ℝ} (hK : 1 ≤ K)\n    (n : ℕ) {eta : ℝ} (hη : eta ∈ Icc (-1 : ℝ) 1) :\n    |iteratedDerivWithin n (physicalEnergy d K) (Icc (-1 : ℝ) 1) eta| ≤\n      etaConstant d true 0 n"
+          }
+        }
       }
     }
-  }
+  ]
 }

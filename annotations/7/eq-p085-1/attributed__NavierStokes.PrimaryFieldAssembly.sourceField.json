@@ -1,26 +1,28 @@
 {
-  "id": "eq-p085-1/attributed/11.NavierStokes.PrimaryFieldAssembly.sourceField",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryFieldAssembly.sourceField",
-      "line": 622,
-      "module": "NavierStokes.PrimaryFieldAssembly",
-      "path": "NavierStokes/PrimaryFieldAssembly.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryFieldAssembly.lean#L622"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryFieldAssembly.sourceField",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryFieldAssembly.sourceField",
+        "module": "NavierStokes.PrimaryFieldAssembly"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 622,
-        "text": "noncomputable def sourceField A hdet outer ε T q x Y θ : Vector := ∑ᶠ a : SignedIndex, (A a.1).actualVelocity hdet (outer a.1) (ε a.1) (T a.1) q x a.2 Y θ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "11.NavierStokes.PrimaryFieldAssembly.sourceField",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L622",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryFieldAssembly.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 622,
+            "text": "noncomputable def sourceField {N : ℕ}\n    (A : (U : UnsignedLabel) → SourcePair Q sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (T : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position)\n    (Y : Plane) (θ : ℝ) : Vector"
+          }
+        }
       }
     }
-  }
+  ]
 }

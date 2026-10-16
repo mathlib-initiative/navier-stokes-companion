@@ -1,31 +1,33 @@
 {
-  "id": "proposition-9.9/attributed/1.NavierStokes.LocalPaper.Properties.exterior_radial_form",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalPaper.Properties.exterior_radial_form",
-      "line": 51,
-      "module": "NavierStokes.LocalPaperHeat",
-      "path": "NavierStokes/LocalPaperHeat.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperHeat.lean#L51"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalPaper.Properties.exterior_radial_form",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalPaper.Properties.exterior_radial_form",
+        "module": "NavierStokes.LocalPaperHeat"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: From any `Properties` instance: for `w.1 < 1`, `q < qstar`, `Xext ≤ radialEnergy w.2 / q`, with `r = √(2 radialEnergy w.2)`: `0 < r`, `D w = (amplitude C h (1-w.1) r / r) • angularVector w`, `p w = -∫_{ρ>r} amplitude(ρ)²/ρ`, plus integrability — the literal (3.5) forms `\\mathcal{B}=K e_\\theta` and `",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 51,
-        "text": "theorem Properties.exterior_radial_form\n    (hp : Properties h qstar Xa Xext C A D u p) {w : SpaceTime}\n    (ht : w.1 < 1) (hq : PhysicalWaveSum.physicalQ h w < qstar)\n    (hX : Xext ≤ AxisymmetricFields.radialEnergy w.2 / PhysicalWaveSum.physicalQ h w) :\n    let r"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LocalPaper.Properties.exterior_radial_form",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: From any `Properties` instance: for `w.1 < 1`, `q < qstar`, `Xext ≤ radialEnergy w.2 / q`, with `r = √(2 radialEnergy w.2)`: `0 < r`, `D w = (amplitude C h (1-w.1) r / r) • angularVector w`, `p w = -∫_{ρ>r} amplitude(ρ)²/ρ`, plus integrability — the literal (3.5) forms `\\mathcal{B}=K e_\\theta` and `",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L51",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalPaperHeat.lean"
+          },
+          "snippet": {
+            "line": 51,
+            "text": "theorem Properties.exterior_radial_form\n    (hp : Properties h qstar Xa Xext C A D u p) {w : SpaceTime}\n    (ht : w.1 < 1) (hq : PhysicalWaveSum.physicalQ h w < qstar)\n    (hX : Xext ≤ AxisymmetricFields.radialEnergy w.2 / PhysicalWaveSum.physicalQ h w) :\n    let r"
+          }
+        }
       }
     }
-  }
+  ]
 }

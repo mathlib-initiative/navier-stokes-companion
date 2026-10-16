@@ -1,25 +1,27 @@
 {
-  "id": "eq-p053-5/attributed/03.NavierStokes.SlowStressSupport.moment_dr",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.moment_dr",
-      "line": 152,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L152"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.moment_dr"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.moment_dr",
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 152,
-        "text": "moment B (m + 1) (dr f) eta = B ^ (m + 1) * f (B, eta) - ((m + 1 : ℕ) : ℝ) * moment B m f eta; at m = 1 with f (B, eta) = 0 this is ∫_0^B R f dR = -(1/2)∫_0^B R² ∂_R f dR"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SlowStressSupport.moment_dr"
+          },
+          "destination": {
+            "fragment": "L152",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 152,
+            "text": "theorem moment_dr {S : Set ℝ} (hS : IsOpen S) {f : Field} (hf : Smooth S f)\n    (B : ℝ) (m : ℕ) {eta : ℝ} (heta : eta ∈ S) :\n    moment B (m + 1) (dr f) eta = B ^ (m + 1) * f (B, eta) -\n      ((m + 1 : ℕ) : ℝ) * moment B m f eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

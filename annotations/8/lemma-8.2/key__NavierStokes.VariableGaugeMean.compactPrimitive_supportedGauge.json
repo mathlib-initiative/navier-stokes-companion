@@ -1,31 +1,33 @@
 {
-  "id": "lemma-8.2/key/1.NavierStokes.VariableGaugeMean.compactPrimitive_supportedGauge",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.VariableGaugeMean.compactPrimitive_supportedGauge",
-      "line": 794,
-      "module": "NavierStokes.VariableGaugeMean",
-      "path": "NavierStokes/VariableGaugeMean.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean#L794"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.VariableGaugeMean.compactPrimitive_supportedGauge",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.VariableGaugeMean.compactPrimitive_supportedGauge",
+        "module": "NavierStokes.VariableGaugeMean"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: U open, 0 < ell s on U, f smooth on slowDomain U, SupportedGauge a b ell U f \\vdash SupportedGauge a b ell U (compactPrimitive d a b M ell v f). The active-radial-shell support clause at e=0; SupportedGauge (:67-69) constrains only z.1, slow-pointwise, to Icc (ell z.2.1 * a) (ell z.2.1 * b).",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 794,
-        "text": "theorem compactPrimitive_supportedGauge {a b d M : ℝ} (ha : 0 < a) (hab : a < b)\n    (hd : 0 < d) (ell : S → ℝ) (v : PressureStream.Plane) {U : Set S} (hU : IsOpen U)\n    (hl : ∀ s ∈ U, 0 < ell s) {f : PressureStream.Lift S → ℝ}\n    (hf : ContDiffOn ℝ ∞ f (PhysicalMeanDomain.slowDomain U)) (hs : SupportedGauge a b ell U f) :\n    SupportedGauge a b ell U (compactPrimitive d a b M ell v f)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.VariableGaugeMean.compactPrimitive_supportedGauge",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: U open, 0 < ell s on U, f smooth on slowDomain U, SupportedGauge a b ell U f \\vdash SupportedGauge a b ell U (compactPrimitive d a b M ell v f). The active-radial-shell support clause at e=0; SupportedGauge (:67-69) constrains only z.1, slow-pointwise, to Icc (ell z.2.1 * a) (ell z.2.1 * b).",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L794",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VariableGaugeMean.lean"
+          },
+          "snippet": {
+            "line": 794,
+            "text": "theorem compactPrimitive_supportedGauge {a b d M : ℝ} (ha : 0 < a) (hab : a < b)\n    (hd : 0 < d) (ell : S → ℝ) (v : PressureStream.Plane) {U : Set S} (hU : IsOpen U)\n    (hl : ∀ s ∈ U, 0 < ell s) {f : PressureStream.Lift S → ℝ}\n    (hf : ContDiffOn ℝ ∞ f (PhysicalMeanDomain.slowDomain U)) (hs : SupportedGauge a b ell U f) :\n    SupportedGauge a b ell U (compactPrimitive d a b M ell v f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

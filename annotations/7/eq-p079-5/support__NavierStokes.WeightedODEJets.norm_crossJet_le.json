@@ -1,25 +1,28 @@
 {
-  "id": "eq-p079-5/support/05.NavierStokes.WeightedODEJets.norm_crossJet_le",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedODEJets.norm_crossJet_le",
-      "line": 299,
-      "module": "NavierStokes.WeightedODEJets",
-      "path": "NavierStokes/WeightedODEJets.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedODEJets.lean#L299"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedODEJets.norm_crossJet_le"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedODEJets.norm_crossJet_le",
+        "module": "NavierStokes.WeightedODEJets"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 299,
-        "text": "(hA : ∀ k, k.length ≤ l.length → UnitWord k → ‖jet A k p t‖ ≤ M) (hu : ∀ k, k.length < l.length → UnitWord k → ‖jet u k p t‖ ≤ B) → ‖crossJet A u l p t‖ ≤ 2^l.length * M * B  (one M for all coefficient orders, one B for all lower solution orders)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.WeightedODEJets.norm_crossJet_le"
+          },
+          "destination": {
+            "fragment": "L299",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedODEJets.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 299,
+            "text": "theorem norm_crossJet_le\n    (A : P → Coefficient a b E) (u : P → Curve a b E) (l : List P)\n    (p : P) (t : Icc a b) {M B : ℝ} (hM : 0 ≤ M) (hB : 0 ≤ B)\n    (hA : ∀ k : List P, k.length ≤ l.length → UnitWord k → ‖jet A k p t‖ ≤ M)\n    (hu : ∀ k : List P, k.length < l.length → UnitWord k → ‖jet u k p t‖ ≤ B)\n    (hl : UnitWord l) :\n    ‖crossJet A u l p t‖ ≤ (2 : ℝ) ^ l.length * M * B"
+          }
+        }
       }
     }
-  }
+  ]
 }

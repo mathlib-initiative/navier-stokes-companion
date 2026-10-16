@@ -1,25 +1,27 @@
 {
-  "id": "eq-p052-2/attributed/04.NavierStokes.MomentRepair.coefficients_unique",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MomentRepair.coefficients_unique",
-      "line": 53,
-      "module": "NavierStokes.MomentRepair",
-      "path": "NavierStokes/MomentRepair.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MomentRepair.lean#L53"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MomentRepair.coefficients_unique"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MomentRepair.coefficients_unique",
+        "module": "NavierStokes.MomentRepair"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 53,
-        "text": "theorem coefficients_unique (B) (hB : B.det ≠ 0) (d c) (hc : B.mulVec c = d) : c = coefficients B d"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.MomentRepair.coefficients_unique"
+          },
+          "destination": {
+            "fragment": "L53",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MomentRepair.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 53,
+            "text": "theorem coefficients_unique (B : Matrix ι ι ℝ) (hB : B.det ≠ 0)\n    (d c : ι → ℝ) (hc : B.mulVec c = d) : c = coefficients B d"
+          }
+        }
       }
     }
-  }
+  ]
 }

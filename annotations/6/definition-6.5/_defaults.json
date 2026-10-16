@@ -1,24 +1,30 @@
 {
+  "id": "definition-6.5",
   "kind": "definition",
-  "label": "Definition 6.5",
   "status": "formalized",
-  "location": {
-    "page": 70,
-    "rect": [0.12854, 0.575207, 0.745098, 0.208264]
+  "subject": {
+    "location": {
+      "page": 70,
+      "rect": [0.12854, 0.575207, 0.745098, 0.208264]
+    },
+    "title": "Definition 6.5",
+    "extensions": {
+      "org.mathlib-initiative.formal-companion.overlay": {
+        "region": "definition-6.5@p070"
+      }
+    }
   },
   "extensions": {
     "org.mathlib-initiative.formal-companion.overlay": {
-      "item": "definition-6.5",
       "locator": {
         "physical": [70, 71],
         "printed": [70, 71],
         "text": "Section 6, Definition 6.5, p. 70"
       },
-      "region": "definition-6.5@p070",
       "verdicts": [
         {
           "confidence": 0.78,
-          "evidence": ["ATTRIBUTION_GAP: NavierStokes.WeightedClasses.WaveClass (NavierStokes/WeightedClasses.lean:118) unfolds to MemClass (:107), whose only fields are weight_nonneg, smooth and bounds. The other clauses are separate: NavierStokes.HarmonicSourceSupport.NonzeroSupportedOn (NavierStokes/HarmonicSourceSupport.lean:620) and InputSupportOn (:678); NavierStokes.PhysicalResidualNaturality.BlockFieldsOn (NavierStokes/PhysicalResidualNaturality.lean:481) with NavierStokes.ActualCycleCoherence.BlocksCoherent (NavierStokes/ActualCycleCoherence.lean:43); NavierStokes.ActualCyclePeriodicity.Periodic (NavierStokes/ActualCyclePeriodicity.lean:249). They meet in NavierStokes.CorrectionStep.CycleAnalyticInvariant (NavierStokes/CorrectionStep.lean:9408, fields 9415/9425/9432) and in NavierStokes.ActualCyclePreservation.RunInvariant (NavierStokes/ActualCyclePreservation.lean:768), both predicates on a concrete CycleState.", "CONVENTION: NavierStokes.CorrectionState.HarmonicBlock (NavierStokes/CorrectionState.lean:170) has velocity : ℕ → Fin 3 → HarmonicFields.Coefficients D = AddMonoidAlgebra (D → ℂ) ℤ (HarmonicFields.lean:21); with D = Point = ℝ × ((ℝ×ℝ) × (ℝ×ℝ)) (PressureStream.lean:25-26) there is no angle to differentiate, and NavierStokes.HarmonicFields.field (NavierStokes/HarmonicFields.lean:107) introduces θ only as the second factor of α × ℝ, inside the character. WaveClass (WeightedClasses.lean:118) bounds iteratedFDeriv on exactly that five-coordinate space, matching I ∈ ℕ_0^5 of (6.29).", "CONVENTION: NavierStokes.WeightedClasses.StripData (NavierStokes/WeightedClasses.lean:31) asks of zeta only zeta_smooth and zeta_nonneg, so for a general strip √ζ carries no edge flatness and the extension does not follow from WaveClass. The repository states it for the concrete weight: NavierStokes.WaveEdgeExtension.boundaryControls_of_majorants (NavierStokes/WaveEdgeExtension.lean:314), whose hypotheses include ContinuousOn P Ω and whose weight is flatWeight = WeightedRadialPrimitive.zeta (:276), then NavierStokes.WaveEdgeExtension.extension_contDiffOn (:208). NavierStokes.WeightedRadialPrimitive.logStripData (NavierStokes/WeightedRadialPrimitive.lean:1005) is the StripData with exactly those weights.", "Definition 6.5 is rendered by several predicates rather than one. WaveClass (WeightedClasses.lean:118) is clause (v) and interior smoothness and nothing else; clause (iii) is NonzeroSupportedOn (HarmonicSourceSupport.lean:620), clause (i) is BlockFieldsOn/BlocksCoherent together with Periodic, clause (ii) is structural, and clause (iv) is the WaveEdgeExtension chain for the (6.23) weight. Each is a stated predicate on the same HarmonicBlock data, and RunInvariant (ActualCyclePreservation.lean:768) already conjoins them for the construction's state. Recovering the paper's membership needs no analytic fact the repository leaves unstated, so the brief's packaging rule makes this an attribution gap of low severity, not a mathematical difference: different_formulation and OK."],
+          "evidence": ["ATTRIBUTION_GAP: NavierStokes.WeightedClasses.WaveClass (NavierStokes/WeightedClasses.lean:118) unfolds to MemClass (:107), whose only fields are weight_nonneg, smooth and bounds. The other clauses are separate: NavierStokes.HarmonicSourceSupport.NonzeroSupportedOn (NavierStokes/HarmonicSourceSupport.lean:620) and InputSupportOn (:678); NavierStokes.PhysicalResidualNaturality.BlockFieldsOn (NavierStokes/PhysicalResidualNaturality.lean:481) with NavierStokes.ActualCycleCoherence.BlocksCoherent (NavierStokes/ActualCycleCoherence.lean:43); NavierStokes.ActualCyclePeriodicity.Periodic (NavierStokes/ActualCyclePeriodicity.lean:249). They meet in NavierStokes.CorrectionStep.CycleAnalyticInvariant (NavierStokes/CorrectionStep.lean:9408, fields 9415/9425/9432) and in NavierStokes.ActualCyclePreservation.RunInvariant (NavierStokes/ActualCyclePreservation.lean:768), both predicates on a concrete CycleState.", "CONVENTION: NavierStokes.CorrectionState.HarmonicBlock (NavierStokes/CorrectionState.lean:170) has velocity : ℕ → Fin 3 → HarmonicFields.Coefficients D = AddMonoidAlgebra (D → ℂ) ℤ (HarmonicFields.lean:21); with D = Point = ℝ × ((ℝ×ℝ) × (ℝ×ℝ)) (PressureStream.lean:25-26) there is no angle to differentiate, and NavierStokes.HarmonicFields.field (NavierStokes/HarmonicFields.lean:107) introduces θ only as the second factor of α × ℝ, inside the character. WaveClass (WeightedClasses.lean:118) bounds iteratedFDeriv on exactly that five-coordinate space, matching I ∈ ℕ_0^5 of (6.29).", "CONVENTION: NavierStokes.WeightedClasses.StripData (NavierStokes/WeightedClasses.lean:31) asks of zeta only zeta_smooth and zeta_nonneg, so for a general strip √ζ carries no edge flatness and the extension does not follow from WaveClass. The repository states it for the concrete weight: NavierStokes.WaveEdgeExtension.boundaryControls_of_majorants (NavierStokes/WaveEdgeExtension.lean:314), whose hypotheses include ContinuousOn P Ω and whose weight is flatWeight = WeightedRadialPrimitive.zeta (:276), then NavierStokes.WaveEdgeExtension.extension_contDiffOn (:208). NavierStokes.WeightedRadialPrimitive.logStripData (NavierStokes/WeightedRadialPrimitive.lean:1005) is the StripData with exactly those weights.", "Definition 6.5 is rendered by several predicates rather than one. WaveClass (WeightedClasses.lean:118) is clause (v) and interior smoothness and nothing else; clause (iii) is NonzeroSupportedOn (HarmonicSourceSupport.lean:620), clause (i) is BlockFieldsOn/BlocksCoherent together with Periodic, clause (ii) is structural, and clause (iv) is the WaveEdgeExtension chain for the (6.23) weight. Each is a stated predicate on the same HarmonicBlock data, and RunInvariant (ActualCyclePreservation.lean:768) already conjoins them for the construction's state. Recovering the paper's membership needs no analytic fact the repository leaves unstated, so the audit's packaging rule makes this an attribution gap of low severity, not a mathematical difference: different_formulation and OK."],
           "findings": [
             {
               "confidence": 0.85,

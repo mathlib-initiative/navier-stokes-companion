@@ -1,24 +1,27 @@
 {
-  "id": "eq-B.27/key/01.NavierStokes.StressActivation.controlled_sub",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressActivation.controlled_sub",
-      "line": 122
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean#L122"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressActivation.controlled_sub",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressActivation.controlled_sub",
+        "module": "NavierStokes.StressActivation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 122,
-        "text": "controlled T κ F (y, η) - F (y, η) = -weightedPrimitive T κ (radialPartial F) (y, η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.StressActivation.controlled_sub",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L122"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 122,
+            "text": "theorem controlled_sub (T κ : ℝ) {J : Set ℝ} (hJ : IsOpen J) {F : Field}\n    (hF : ContDiffOn ℝ ∞ F (logDomain J hJ).carrier) (y : ℝ) {η : ℝ} (hη : η ∈ J) :\n    controlled T κ F (y, η) - F (y, η) =\n      -weightedPrimitive T κ (radialPartial F) (y, η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

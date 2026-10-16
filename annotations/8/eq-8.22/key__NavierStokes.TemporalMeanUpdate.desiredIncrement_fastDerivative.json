@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.22/key/02.NavierStokes.TemporalMeanUpdate.desiredIncrement_fastDerivative",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TemporalMeanUpdate.desiredIncrement_fastDerivative",
-      "line": 590,
-      "module": "NavierStokes.TemporalMeanUpdate",
-      "path": "NavierStokes/TemporalMeanUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L590"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TemporalMeanUpdate.desiredIncrement_fastDerivative",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TemporalMeanUpdate.desiredIncrement_fastDerivative",
+        "module": "NavierStokes.TemporalMeanUpdate"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 590,
-        "text": "fastDerivative h n (desiredIncrement h n f) z = -centered f z, where fastDerivative h n g = timeCoefficient h n * graphDz ((0 : S), vector .temporal) g"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TemporalMeanUpdate.desiredIncrement_fastDerivative",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L590",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 590,
+            "text": "theorem desiredIncrement_fastDerivative (h : ℝ) (n : ℕ) {f : PressureStream.Lift S → ℝ}\n    (hf : ContDiff ℝ ∞ f) (hp : PressureStream.TorusPeriodicLift f) (z : PressureStream.Lift S) :\n    fastDerivative h n (desiredIncrement h n f) z = -centered f z"
+          }
+        }
       }
     }
-  }
+  ]
 }

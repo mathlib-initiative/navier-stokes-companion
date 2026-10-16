@@ -1,26 +1,29 @@
 {
-  "id": "eq-p016-3/support/06.NavierStokes.SpatialLocalization.localizedVelocity_eq_curl",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SpatialLocalization.localizedVelocity_eq_curl",
-      "line": 397,
-      "module": "NavierStokes.SpatialLocalization",
-      "path": "NavierStokes/SpatialLocalization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpatialLocalization.lean#L397"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SpatialLocalization.localizedVelocity_eq_curl",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SpatialLocalization.localizedVelocity_eq_curl",
+        "module": "NavierStokes.SpatialLocalization"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 397,
-        "text": "localizedVelocity A (t, x) = SpatialCurl.spatialCurl (localizedPotential A) (t, x)  -- the periodized analogue: the time factor passes through the spatial curl; it has no B term"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.SpatialLocalization.localizedVelocity_eq_curl",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L397",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpatialLocalization.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 397,
+            "text": "theorem localizedVelocity_eq_curl {A : VelocityField} {times : Set ℝ}\n    (hA : ContDiffOn ℝ ∞ A (times ×ˢ (univ : Set Space)))\n    {t : ℝ} (ht : t ∈ times) (x : Space) :\n    localizedVelocity A (t, x) = SpatialCurl.spatialCurl (localizedPotential A) (t, x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

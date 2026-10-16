@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.50/key/02.NavierStokes.TerminalEdgeFactor.profileTilt_tendsto_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalEdgeFactor.profileTilt_tendsto_zero",
-      "line": 1342
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalEdgeFactor.lean#L1342"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalEdgeFactor.profileTilt_tendsto_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalEdgeFactor.profileTilt_tendsto_zero",
+        "module": "NavierStokes.TerminalEdgeFactor"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1342,
-        "text": "(hC : 0 < C) (hη : η ∈ Icc (-1 : ℝ) 1) : Tendsto (profileTilt C d y0) (𝓝 (η, 0)) (𝓝 0)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TerminalEdgeFactor.profileTilt_tendsto_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1342"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1342,
+            "text": "theorem profileTilt_tendsto_zero {C : ℝ} (hC : 0 < C) (d : TailData) (y0 : ℝ)\n    {η : ℝ} (hη : η ∈ Icc (-1 : ℝ) 1) :\n    Tendsto (profileTilt C d y0) (𝓝 (η, 0)) (𝓝 0)"
+          }
+        }
       }
     }
-  }
+  ]
 }

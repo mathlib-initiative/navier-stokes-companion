@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.41/key/06.NavierStokes.ActualSignedMeanBinding.family_requested_cross_tail",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSignedMeanBinding.family_requested_cross_tail",
-      "line": 655,
-      "module": "NavierStokes.ActualSignedMeanBinding",
-      "path": "NavierStokes/ActualSignedMeanBinding.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean#L655"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSignedMeanBinding.family_requested_cross_tail",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSignedMeanBinding.family_requested_cross_tail",
+        "module": "NavierStokes.ActualSignedMeanBinding"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 655,
-        "text": "for a SignedFamily f on geometry.strip with f.primary = ActualInitialization.tangentBlock, f.tangent = actualSignedBlock c u, a.labels = activeLabels standardRegion B N0, and N + 1 <= n, x in the strip domain: meanBar (SignedMeanGain.crossTensor f a 0 i.succ) n x = requestedStress ... c u n x i. Supplies StepData.cross_tail (tailStart = N + 1) in ActualCyclePreservation.stepData_of_waves (line 599)."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.ActualSignedMeanBinding.family_requested_cross_tail",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L655",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedMeanBinding.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 655,
+            "text": "theorem family_requested_cross_tail (c : Context Point) (u : State Point)\n    (f : LabelSumBounds.SignedFamily ActualInitialization.geometry.strip P α δ β η)\n    (a : SignedMeanGain.Assembly f)\n    (hprimary : f.primary = ActualInitialization.tangentBlock)\n    (htangent : f.tangent = actualSignedBlock c u)\n    (hlabels : a.labels = activeLabels standardRegion B N0) {n : ℕ}\n    (hn : (choice B N0).prepared.N + 1 ≤ n) {x : Point}\n    (hx : x ∈ ActualInitialization.geometry.strip.domain) (i : Fin 2) :\n    StateMomentBalances.meanBar (SignedMeanGain.crossTensor f a 0 i.succ) n x =\n      LocalSignedRequest.requestedStress ActualInitialization.geometry.patch\n        ActualInitialization.geometry.coord c u n x i"
+          }
+        }
       }
     }
-  }
+  ]
 }

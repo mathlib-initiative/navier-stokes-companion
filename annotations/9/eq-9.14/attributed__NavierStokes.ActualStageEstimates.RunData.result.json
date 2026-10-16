@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.14/attributed/14.NavierStokes.ActualStageEstimates.RunData.result",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualStageEstimates.RunData.result",
-      "line": 104,
-      "module": "NavierStokes.ActualStageEstimates",
-      "path": "NavierStokes/ActualStageEstimates.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualStageEstimates.lean#L104"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualStageEstimates.RunData.result",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualStageEstimates.RunData.result",
+        "module": "NavierStokes.ActualStageEstimates"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 104,
-        "text": "(R : RunData B N0) (j : Nat) : CorrectionAnalyticStep.StepResult ActualInitialization.geometry h ... (sigma := ActualIterationLedger.sigma j) (kappa := ChartScales.kappa), := CorrectionAnalyticStep.step ... (R.step j)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "14.NavierStokes.ActualStageEstimates.RunData.result",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L104",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualStageEstimates.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 104,
+            "text": "theorem RunData.result {B N0 : ℕ} (R : RunData B N0) (j : ℕ) :\n    CorrectionAnalyticStep.StepResult ActualInitialization.geometry h (CommonWindow.index h)\n      ActualInitialization.axial\n      (fun l => ActualParticularStageControls.canonicalParameters (ActualCycleParameters.swap B N0 l))\n      ActualSignedStageControls.parameters rankData (commonContext B)\n      (ActualCyclePreservation.state B N0 j) ActualInitialization.tangentBlock\n      ActualInitialization.envelope ActualCoreSupport.refinedCarrier\n      (σ"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-p079-5/key/02.NavierStokes.WeightedODEJets.amplitude_le_polynomial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedODEJets.amplitude_le_polynomial",
-      "line": 562,
-      "module": "NavierStokes.WeightedODEJets",
-      "path": "NavierStokes/WeightedODEJets.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedODEJets.lean#L562"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedODEJets.amplitude_le_polynomial"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedODEJets.amplitude_le_polynomial",
+        "module": "NavierStokes.WeightedODEJets"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 562,
-        "text": "(hLS : L ≤ K * S) : K * (w*K*S^m + L*(w*K*S^m)) * (1 + K*L*(2^N*(K*S^m)))^n ≤ w * (2^(N+1) * K^3)^(n+1) * S^((m+1)*(n+1))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.WeightedODEJets.amplitude_le_polynomial"
+          },
+          "destination": {
+            "fragment": "L562",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedODEJets.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 562,
+            "text": "theorem amplitude_le_polynomial {S K w L : ℝ} (hS : 1 ≤ S) (hK : 1 ≤ K)\n    (hw : 0 ≤ w) (hL : 0 ≤ L) (hLS : L ≤ K * S) (m N n : ℕ) :\n    K * (w * K * S ^ m + L * (w * K * S ^ m)) *\n        (1 + K * L * ((2 : ℝ) ^ N * (K * S ^ m))) ^ n ≤\n      w * ((2 : ℝ) ^ (N + 1) * K ^ 3) ^ (n + 1) * S ^ ((m + 1) * (n + 1))"
+          }
+        }
       }
     }
-  }
+  ]
 }

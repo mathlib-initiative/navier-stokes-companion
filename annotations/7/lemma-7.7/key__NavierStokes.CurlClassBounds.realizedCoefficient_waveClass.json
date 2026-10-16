@@ -1,29 +1,31 @@
 {
-  "id": "lemma-7.7/key/1.NavierStokes.CurlClassBounds.realizedCoefficient_waveClass",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CurlClassBounds.realizedCoefficient_waveClass",
-      "line": 772,
-      "module": "NavierStokes.CurlClassBounds",
-      "path": "NavierStokes/CurlClassBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean#L772"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CurlClassBounds.realizedCoefficient_waveClass",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CurlClassBounds.realizedCoefficient_waveClass",
+        "module": "NavierStokes.CurlClassBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Same hypotheses plus κ ≤ 1/2: WaveClass s P α (realizedCoefficient (K n) …), i.e. a_m = t_m + r_m ∈ W_α."
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 772,
-        "text": "theorem realizedCoefficient_waveClass\n    (hN : PhaseJetBounds.PolynomialJets (phaseDomain s)\n      (fun n => HarmonicCalculus.phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n)))\n    (ha : WaveClass s P α a) {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ n x, x ∈ s.domain → b ≤ ‖HarmonicCalculus.phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n) x‖)\n    (hupper : ∀ n x, x ∈ s.domain → ‖HarmonicCalculus.phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n) x‖ ≤ M)\n    (hκ : 0 ≤ κ) (hκhalf : κ ≤ 1 / 2)\n    (hr : UnweightedClass s (-κ) Vr) (hθ : UnweightedClass s 0 Vθ)\n    (hz : UnweightedClass s 1 Vz) (hR : UnweightedClass s 0 (fun _ x => (R x)⁻¹))\n    (hK : BandBound s (1 / 2) (fun n => 1 / K n)) :\n    WaveClass s P α (fun n => realizedCoefficient (K n) R (Vr n) (Vθ n) (Vz n) (Φ n) (a n))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CurlClassBounds.realizedCoefficient_waveClass",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Same hypotheses plus κ ≤ 1/2: WaveClass s P α (realizedCoefficient (K n) …), i.e. a_m = t_m + r_m ∈ W_α."
+          },
+          "destination": {
+            "fragment": "L772",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CurlClassBounds.lean"
+          },
+          "snippet": {
+            "line": 772,
+            "text": "theorem realizedCoefficient_waveClass\n    (hN : PhaseJetBounds.PolynomialJets (phaseDomain s)\n      (fun n => HarmonicCalculus.phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n)))\n    (ha : WaveClass s P α a) {b M : ℝ} (hb : 0 < b)\n    (hlower : ∀ n x, x ∈ s.domain → b ≤ ‖HarmonicCalculus.phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n) x‖)\n    (hupper : ∀ n x, x ∈ s.domain → ‖HarmonicCalculus.phaseNormal R (Vr n) (Vθ n) (Vz n) (Φ n) x‖ ≤ M)\n    (hκ : 0 ≤ κ) (hκhalf : κ ≤ 1 / 2)\n    (hr : UnweightedClass s (-κ) Vr) (hθ : UnweightedClass s 0 Vθ)\n    (hz : UnweightedClass s 1 Vz) (hR : UnweightedClass s 0 (fun _ x => (R x)⁻¹))\n    (hK : BandBound s (1 / 2) (fun n => 1 / K n)) :\n    WaveClass s P α (fun n => realizedCoefficient (K n) R (Vr n) (Vθ n) (Vz n) (Φ n) (a n))"
+          }
+        }
       }
     }
-  }
+  ]
 }

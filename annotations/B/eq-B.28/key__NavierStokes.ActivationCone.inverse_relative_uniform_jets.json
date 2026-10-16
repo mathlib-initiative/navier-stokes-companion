@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.28/key/02.NavierStokes.ActivationCone.inverse_relative_uniform_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActivationCone.inverse_relative_uniform_jets",
-      "line": 54,
-      "module": "NavierStokes.ActivationCone",
-      "path": "NavierStokes/ActivationCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean#L54"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActivationCone.inverse_relative_uniform_jets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActivationCone.inverse_relative_uniform_jets",
+        "module": "NavierStokes.ActivationCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 54,
-        "text": "∃ M ≥ 0, … |iteratedDeriv n (fun ξ => referenceAngular L (y,ξ) / activatedAngular T κ L (y,ξ) - 1) η| ≤ M * y * activation T κ y"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ActivationCone.inverse_relative_uniform_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L54",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 54,
+            "text": "theorem inverse_relative_uniform_jets {J K : Set ℝ} (hJ : IsOpen J) (hK : IsCompact K)\n    (hKJ : K ⊆ J) {L : Field} (hL : ContDiffOn ℝ ∞ L (logDomain J hJ).carrier)\n    (T0 : ℝ) (n : ℕ) :\n    ∃ M : ℝ, 0 ≤ M ∧ ∀ T ∈ Ioc (0 : ℝ) T0, ∀ κ ∈ Icc (0 : ℝ) 1,\n      ∀ y ∈ Icc (0 : ℝ) T, ∀ η ∈ K,\n        |iteratedDeriv n (fun ξ =>\n          referenceAngular L (y, ξ) / activatedAngular T κ L (y, ξ) - 1) η| ≤\n            M * y * activation T κ y"
+          }
+        }
       }
     }
-  }
+  ]
 }

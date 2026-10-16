@@ -1,26 +1,29 @@
 {
-  "id": "eq-p105-1/support/12.NavierStokes.SignedCopyBounds.local_input_envelope",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedCopyBounds.local_input_envelope",
-      "line": 284,
-      "module": "NavierStokes.SignedCopyBounds",
-      "path": "NavierStokes/SignedCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean#L284"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedCopyBounds.local_input_envelope",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedCopyBounds.local_input_envelope",
+        "module": "NavierStokes.SignedCopyBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 284,
-        "text": "∃ C ≥ 1, ∃ p, ∀ n i x ∈ domain ∩ K n i, 1 ≤ C*growth^p ∧ w/(C*growth^p) ≤ g ∧ (∀ j ≤ m, ‖D^j g‖ ≤ w*(C*growth^p)) ∧ …  -- supplies B = C·growth^p and the lower bound needed by the power bound"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "12.NavierStokes.SignedCopyBounds.local_input_envelope",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L284",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 284,
+            "text": "theorem local_input_envelope (hw : ∀ n x, x ∈ s.domain → 0 < w n x)\n    (hg : LocalJets s w 0 K g) (hr : LocalJets s w 0 K r)\n    {c : ℝ} (hc : 0 < c)\n    (hl : ∀ n i x, x ∈ s.domain → x ∈ K n i → c * w n x ≤ g n i x) (m : ℕ) :\n    ∃ C : ℝ, 1 ≤ C ∧ ∃ p : ℕ, ∀ n i x, x ∈ s.domain → x ∈ K n i →\n      1 ≤ C * s.growth n x ^ p ∧ w n x / (C * s.growth n x ^ p) ≤ g n i x ∧\n      (∀ j ≤ m, ‖iteratedFDeriv ℝ j (g n i) x‖ ≤ w n x * (C * s.growth n x ^ p)) ∧\n      (∀ j ≤ m, ‖iteratedFDeriv ℝ j (r n i) x‖ ≤ w n x * (C * s.growth n x ^ p))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-p027-2/key/01.NavierStokes.ProfileSpectralCone.leading_shear_eq_profile",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProfileSpectralCone.leading_shear_eq_profile",
-      "line": 374,
-      "module": "NavierStokes.ProfileSpectralCone",
-      "path": "NavierStokes/ProfileSpectralCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean#L374"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProfileSpectralCone.leading_shear_eq_profile",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProfileSpectralCone.leading_shear_eq_profile",
+        "module": "NavierStokes.ProfileSpectralCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 374,
-        "text": "PhaseEstimates.shearVector (BaseChartJets.leadingFrequency h C d) (BaseChartJets.leadingAxial h d) p = BaseChartJets.leadingFrequency h C d p • !₂[-ModulatedCone.angularShear P.E w, -ModulatedCone.signedAxialShear P.E P.U w]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ProfileSpectralCone.leading_shear_eq_profile",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L374",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 374,
+            "text": "theorem leading_shear_eq_profile {D : RadialDomain} (P : Profiles D)\n    {h C : ℝ} {d : SlowBorelBase.Coefficients}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (hC : C ≠ 0) (hd : SlowBorelBase.SmoothCoefficients d)\n    {p : Slow} (hT : 0 < p.2.2) (hR : 0 < p.1)\n    (hp : (BaseChartJets.normalizedCoordinates h p).2 ∈ D.carrier)\n    (hf : P.f (BaseChartJets.normalizedCoordinates h p).2 ≠ 0)\n    (hphi : (fun X => d.phi 0 (X, (BaseChartJets.normalizedCoordinates h p).2.2)) =ᶠ[\n      𝓝 (BaseChartJets.normalizedCoordinates h p).2.1]\n      (fun X => C * P.f (X, (BaseChartJets.normalizedCoordinates h p).2.2)))\n    (hU : (fun X => d.axial 0 (X, (BaseChartJets.normalizedCoordinates h p).2.2)) =ᶠ[\n      𝓝 (BaseChartJets.normalizedCoordinates h p).2.1]\n      (fun X => P.U (X, (BaseChartJets.normalizedCoordinates h p).2.2))) :\n    PhaseEstimates.shearVector (BaseChartJets.leadingFrequency h C d) (BaseChartJets.leadingAxial h d) p =\n      BaseChartJets.leadingFrequency h C d p •\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

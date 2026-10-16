@@ -1,26 +1,28 @@
 {
-  "id": "eq-p083-4/key/02.NavierStokes.SmoothCovariance.weights_signed_model",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SmoothCovariance.weights_signed_model",
-      "line": 110,
-      "module": "NavierStokes.SmoothCovariance",
-      "path": "NavierStokes/SmoothCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothCovariance.lean#L110"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SmoothCovariance.weights_signed_model",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SmoothCovariance.weights_signed_model",
+        "module": "NavierStokes.SmoothCovariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 110,
-        "text": "weights (Covariance.signedMatrix a b sm sp) (Covariance.target m t) = Covariance.coefficients a b sm sp m t"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SmoothCovariance.weights_signed_model",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L110",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SmoothCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 110,
+            "text": "theorem weights_signed_model {a b sm sp : ℝ} (m t : ℝ)\n    (ha : 0 < a) (hb : 0 < b) (hm : 0 < sm) (hp : 0 < sp) :\n    weights (Covariance.signedMatrix a b sm sp) (Covariance.target m t) =\n      Covariance.coefficients a b sm sp m t"
+          }
+        }
       }
     }
-  }
+  ]
 }

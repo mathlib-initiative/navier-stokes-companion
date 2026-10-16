@@ -1,26 +1,28 @@
 {
-  "id": "eq-p139-2/attributed/06.NavierStokes.HeatSwitchCone.actualObservations",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HeatSwitchCone.actualObservations",
-      "line": 874,
-      "module": "NavierStokes.HeatSwitchCone",
-      "path": "NavierStokes/HeatSwitchCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatSwitchCone.lean#L874"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HeatSwitchCone.actualObservations",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HeatSwitchCone.actualObservations",
+        "module": "NavierStokes.HeatSwitchCone"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 874,
-        "text": "![logE F XR c p, deriv (fun y => logE F XR c (y, p.2)) p.1, derivWithin (fun eta => logE F XR c (p.1, eta)) parameterDomain p.2, …] with logE F XR c p = HeatedOutgoing.E F XR c (XR * Real.exp p.1, p.2) (line 489), so entry 1 is literally X∂_X E and entry 2 is ∂_η E; observations F (0, p) 1 = radialJet (freeE F) (0, p) = dY F.logE p by radialJet_zero (line 211), the clean X∂_X E_cl"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.HeatSwitchCone.actualObservations",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L874",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatSwitchCone.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 874,
+            "text": "noncomputable def actualObservations (F : Profile) (XR : ℝ) (c : ℝ → Coeff)\n    (p : Point) : Fin 18 → ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,33 @@
 {
-  "id": "lemma-4.9/attributed/1.NavierStokes.NominalConeAssembly.Witness.terminal_true",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalConeAssembly.Witness.terminal_true",
-      "line": 946,
-      "module": "NavierStokes.NominalConeAssembly",
-      "path": "NavierStokes/NominalConeAssembly.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean#L946"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalConeAssembly.Witness.terminal_true",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalConeAssembly.Witness.terminal_true",
+        "module": "NavierStokes.NominalConeAssembly"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: For an assembled NominalProfile.Witness W and terminalStart ≤ y < tailEnd, IsTrue W.profiles F.data.h (chart W.controls.radius (y, eta)): the cone holds on the whole terminal interval for the assembled field.",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 946,
-        "text": "theorem terminal_true {y eta : ℝ} (hsmall : TerminalCone.SmallTail F.data)\n    (hXR : TerminalCone.radiusThreshold F ≤ W.controls.radius)\n    (hy : TerminalCone.terminalStart F.data ≤ y) (hy' : y < OutgoingTail.tailEnd F.data)\n    (heta : eta ∈ HeatedOutgoing.parameterDomain) :\n    IsTrue W.profiles F.data.h (chart W.controls.radius (y, eta))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.NominalConeAssembly.Witness.terminal_true",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: For an assembled NominalProfile.Witness W and terminalStart ≤ y < tailEnd, IsTrue W.profiles F.data.h (chart W.controls.radius (y, eta)): the cone holds on the whole terminal interval for the assembled field.",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L946",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalConeAssembly.lean"
+          },
+          "snippet": {
+            "line": 946,
+            "text": "theorem terminal_true {y eta : ℝ} (hsmall : TerminalCone.SmallTail F.data)\n    (hXR : TerminalCone.radiusThreshold F ≤ W.controls.radius)\n    (hy : TerminalCone.terminalStart F.data ≤ y) (hy' : y < OutgoingTail.tailEnd F.data)\n    (heta : eta ∈ HeatedOutgoing.parameterDomain) :\n    IsTrue W.profiles F.data.h (chart W.controls.radius (y, eta))"
+          }
+        }
       }
     }
-  }
+  ]
 }

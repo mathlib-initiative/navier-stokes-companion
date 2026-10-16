@@ -1,31 +1,33 @@
 {
-  "id": "corollary-7.8/attributed/1.NavierStokes.CorrectionStep.signedTensorRemainder_exact",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.signedTensorRemainder_exact",
-      "line": 2313,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L2313"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.signedTensorRemainder_exact",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.signedTensorRemainder_exact",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For angularly continuous primary/old/tangent/curl: signedTensorRemainder primary old tangent curl = symmetricCovariance (old−primary) tangent + symmetricCovariance old curl + bilinearCovariance (tangent+curl) (tangent+curl). With the definition at line 2309 this is exactly (7.41) with B(W0^as, L^asΣ",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 2313,
-        "text": "theorem signedTensorRemainder_exact (primary old tangent curl : Oscillation D)\n    (hp : AngularContinuous primary) (ho : AngularContinuous old)\n    (ht : AngularContinuous tangent) (hc : AngularContinuous curl) :\n    signedTensorRemainder primary old tangent curl =\n      symmetricCovariance (old - primary) tangent + symmetricCovariance old curl +\n        bilinearCovariance (tangent + curl) (tangent + curl)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CorrectionStep.signedTensorRemainder_exact",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For angularly continuous primary/old/tangent/curl: signedTensorRemainder primary old tangent curl = symmetricCovariance (old−primary) tangent + symmetricCovariance old curl + bilinearCovariance (tangent+curl) (tangent+curl). With the definition at line 2309 this is exactly (7.41) with B(W0^as, L^asΣ",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L2313",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "snippet": {
+            "line": 2313,
+            "text": "theorem signedTensorRemainder_exact (primary old tangent curl : Oscillation D)\n    (hp : AngularContinuous primary) (ho : AngularContinuous old)\n    (ht : AngularContinuous tangent) (hc : AngularContinuous curl) :\n    signedTensorRemainder primary old tangent curl =\n      symmetricCovariance (old - primary) tangent + symmetricCovariance old curl +\n        bilinearCovariance (tangent + curl) (tangent + curl)"
+          }
+        }
       }
     }
-  }
+  ]
 }

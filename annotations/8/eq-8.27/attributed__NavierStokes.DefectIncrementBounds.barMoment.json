@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.27/attributed/03.NavierStokes.DefectIncrementBounds.barMoment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.DefectIncrementBounds.barMoment",
-      "line": 214,
-      "module": "NavierStokes.DefectIncrementBounds",
-      "path": "NavierStokes/DefectIncrementBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DefectIncrementBounds.lean#L214"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.DefectIncrementBounds.barMoment",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.DefectIncrementBounds.barMoment",
+        "module": "NavierStokes.DefectIncrementBounds"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 214,
-        "text": "barMoment k f = CorrectionState.radialMoment k f; barMoment_apply: barMoment k f n p = ∫ r, r ^ k * PressureStream.torusAverage (f n) (r, p)  (= ∫ R^k ⟨f⟩_Y dR)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.DefectIncrementBounds.barMoment",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L214",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DefectIncrementBounds.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 214,
+            "text": "noncomputable def barMoment (k : ℕ) (f : ScalarField (Point P)) : ScalarField P"
+          }
+        }
       }
     }
-  }
+  ]
 }

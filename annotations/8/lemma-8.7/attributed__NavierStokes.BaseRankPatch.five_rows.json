@@ -1,29 +1,31 @@
 {
-  "id": "lemma-8.7/attributed/1.NavierStokes.BaseRankPatch.five_rows",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseRankPatch.five_rows",
-      "line": 335,
-      "module": "NavierStokes.BaseRankPatch",
-      "path": "NavierStokes/BaseRankPatch.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseRankPatch.lean#L335"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseRankPatch.five_rows",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseRankPatch.five_rows",
+        "module": "NavierStokes.BaseRankPatch"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: The five rows hold for the actual summed base slices `angularSlice`/`axialSlice` of the final profile on the reserved mean patch, for every target `debt`. Hypothesis (8.24) is here discharged, not assumed (via `rank_fields`, line 289)."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 335,
-        "text": "theorem five_rows (upper : ℝ) (B : ℕ) (Q : ℝ)\n    {s : ℝ × ℝ} (hs : 0 < s.1) (debt : MeanRankUpdate.Debt) :\n    FiveRowRank.FiveRows (angularSlice H v upper B Q s) (axialSlice H v upper B Q s) debt\n      (MeanRankUpdate.angularIncrement F.data.core.lam (rankCoefficient F W.controls.radius s)\n        (ReservedPatches.radialSupportLeft F W.controls.radius .mean)\n        (ReservedPatches.radialSupportRight F W.controls.radius .mean)\n        (rankLength F.data.h s) (rankVelocity F.data.h s) debt)\n      (MeanRankUpdate.desiredAxialIncrement F.data.core.lam (rankCoefficient F W.controls.radius s)\n        (ReservedPatches.radialSupportLeft F W.controls.radius .mean)\n        (ReservedPatches.radialSupportRight F W.controls.radius .mean)\n        (rankLength F.data.h s) (rankVelocity F.data.h s) debt)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.BaseRankPatch.five_rows",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: The five rows hold for the actual summed base slices `angularSlice`/`axialSlice` of the final profile on the reserved mean patch, for every target `debt`. Hypothesis (8.24) is here discharged, not assumed (via `rank_fields`, line 289)."
+          },
+          "destination": {
+            "fragment": "L335",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseRankPatch.lean"
+          },
+          "snippet": {
+            "line": 335,
+            "text": "theorem five_rows (upper : ℝ) (B : ℕ) (Q : ℝ)\n    {s : ℝ × ℝ} (hs : 0 < s.1) (debt : MeanRankUpdate.Debt) :\n    FiveRowRank.FiveRows (angularSlice H v upper B Q s) (axialSlice H v upper B Q s) debt\n      (MeanRankUpdate.angularIncrement F.data.core.lam (rankCoefficient F W.controls.radius s)\n        (ReservedPatches.radialSupportLeft F W.controls.radius .mean)\n        (ReservedPatches.radialSupportRight F W.controls.radius .mean)\n        (rankLength F.data.h s) (rankVelocity F.data.h s) debt)\n      (MeanRankUpdate.desiredAxialIncrement F.data.core.lam (rankCoefficient F W.controls.radius s)\n        (ReservedPatches.radialSupportLeft F W.controls.radius .mean)\n        (ReservedPatches.radialSupportRight F W.controls.radius .mean)\n        (rankLength F.data.h s) (rankVelocity F.data.h s) debt)"
+          }
+        }
       }
     }
-  }
+  ]
 }

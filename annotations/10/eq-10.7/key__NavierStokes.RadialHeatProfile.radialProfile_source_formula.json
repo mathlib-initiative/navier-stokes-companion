@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.7/key/01.NavierStokes.RadialHeatProfile.radialProfile_source_formula",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialHeatProfile.radialProfile_source_formula",
-      "line": 695,
-      "module": "NavierStokes.RadialHeatProfile",
-      "path": "NavierStokes/RadialHeatProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean#L695"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialHeatProfile.radialProfile_source_formula",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialHeatProfile.radialProfile_source_formula",
+        "module": "NavierStokes.RadialHeatProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 695,
-        "text": "radialProfile (1 + h) τ r = (r ^ 2 / 2) ^ (-(1 / 2 + h)) * profile (1 + h) (2 * τ / (r ^ 2 / 2)); docstring: \"The physical power is exactly `s^(-A)`, where `A = 1/2 + h`\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.RadialHeatProfile.radialProfile_source_formula",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L695",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialHeatProfile.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 695,
+            "text": "theorem radialProfile_source_formula (h τ r : ℝ) :\n    radialProfile (1 + h) τ r =\n      (r ^ 2 / 2) ^ (-(1 / 2 + h)) * profile (1 + h) (2 * τ / (r ^ 2 / 2))"
+          }
+        }
       }
     }
-  }
+  ]
 }

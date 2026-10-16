@@ -1,31 +1,33 @@
 {
-  "id": "proposition-A.7/attributed/1.NavierStokes.HeatSwitchCone.preserves_true_cone",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HeatSwitchCone.preserves_true_cone",
-      "line": 1018,
-      "module": "NavierStokes.HeatSwitchCone",
-      "path": "NavierStokes/HeatSwitchCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatSwitchCone.lean#L1018"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HeatSwitchCone.preserves_true_cone",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HeatSwitchCone.preserves_true_cone",
+        "module": "NavierStokes.HeatSwitchCone"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Given the Proposition A.4 clean cone (OutgoingCone.CleanOutgoingCone F.reset anchor left, 0 < anchor) and any coefficient constant C: exists XR0 > 0 such that for every XR >= XR0, every w : HeatedOutgoing.CompensationWitness F XR C and every p in OutgoingCone.trueWindow F.data, HeatSwitchCone.TrueAt",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1018,
-        "text": "theorem preserves_true_cone (F : Profile) {anchor left : ℝ}\n    (h : OutgoingCone.CleanOutgoingCone F.reset anchor left) (ha : 0 < anchor) (C : ℝ) :\n    ∃ XR₀ : ℝ, 0 < XR₀ ∧ ∀ XR : ℝ, XR₀ ≤ XR →\n      ∀ w : HeatedOutgoing.CompensationWitness F XR C,\n      ∀ p ∈ OutgoingCone.trueWindow F.data, TrueAt F XR w.coefficients p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.HeatSwitchCone.preserves_true_cone",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Given the Proposition A.4 clean cone (OutgoingCone.CleanOutgoingCone F.reset anchor left, 0 < anchor) and any coefficient constant C: exists XR0 > 0 such that for every XR >= XR0, every w : HeatedOutgoing.CompensationWitness F XR C and every p in OutgoingCone.trueWindow F.data, HeatSwitchCone.TrueAt",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1018",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatSwitchCone.lean"
+          },
+          "snippet": {
+            "line": 1018,
+            "text": "theorem preserves_true_cone (F : Profile) {anchor left : ℝ}\n    (h : OutgoingCone.CleanOutgoingCone F.reset anchor left) (ha : 0 < anchor) (C : ℝ) :\n    ∃ XR₀ : ℝ, 0 < XR₀ ∧ ∀ XR : ℝ, XR₀ ≤ XR →\n      ∀ w : HeatedOutgoing.CompensationWitness F XR C,\n      ∀ p ∈ OutgoingCone.trueWindow F.data, TrueAt F XR w.coefficients p"
+          }
+        }
       }
     }
-  }
+  ]
 }

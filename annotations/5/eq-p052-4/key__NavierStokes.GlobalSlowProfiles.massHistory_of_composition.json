@@ -1,26 +1,28 @@
 {
-  "id": "eq-p052-4/key/01.NavierStokes.GlobalSlowProfiles.massHistory_of_composition",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.massHistory_of_composition",
-      "line": 1416,
-      "module": "NavierStokes.GlobalSlowProfiles",
-      "path": "NavierStokes/GlobalSlowProfiles.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L1416"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.massHistory_of_composition",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.massHistory_of_composition",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1416,
-        "text": "if u(r,η) = g(r²/2,η) on [0,R] then massHistory u (R,η) = ProfileHistories.primitive g (R²/2, η) = ∫_0^{X} g(x,η) dx with X = R²/2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GlobalSlowProfiles.massHistory_of_composition",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1416",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1416,
+            "text": "theorem massHistory_of_composition (u : EvenProfile S) (g : Field) {R eta : ℝ}\n    (hR : 0 ≤ R) (hg : ContinuousOn (fun X => g (X, eta)) (Icc 0 (R ^ 2 / 2)))\n    (hu : ∀ r ∈ Icc 0 R, u (r, eta) = g (r ^ 2 / 2, eta)) :\n    PositiveOrderMoments.massHistory u (R, eta) = ProfileHistories.primitive g (R ^ 2 / 2, eta)"
+          }
+        }
       }
     }
-  }
+  ]
 }

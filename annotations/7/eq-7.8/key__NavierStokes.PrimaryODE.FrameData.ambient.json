@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.8/key/05.NavierStokes.PrimaryODE.FrameData.ambient",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.FrameData.ambient",
-      "line": 93,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L93"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.FrameData.ambient",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.FrameData.ambient",
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 93,
-        "text": "ambient z w = MovingFrameODE.tangent (d.rho z) (d.frame z) (w 0 + w 1) (d.eigenvector z * (w 0 - w 1))   (the 3×2 map B, docstring: `eigenvector` is the scalar h in x = p+q, y = h(p−q))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.PrimaryODE.FrameData.ambient",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L93",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 93,
+            "text": "noncomputable def ambient (z : Q × ℝ) (w : State) : Space"
+          }
+        }
       }
     }
-  }
+  ]
 }

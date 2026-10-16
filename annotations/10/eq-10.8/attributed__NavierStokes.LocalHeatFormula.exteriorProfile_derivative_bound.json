@@ -1,25 +1,27 @@
 {
-  "id": "eq-10.8/attributed/04.NavierStokes.LocalHeatFormula.exteriorProfile_derivative_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalHeatFormula.exteriorProfile_derivative_bound",
-      "line": 50,
-      "module": "NavierStokes.LocalHeatFormula",
-      "path": "NavierStokes/LocalHeatFormula.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalHeatFormula.lean#L50"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalHeatFormula.exteriorProfile_derivative_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalHeatFormula.exteriorProfile_derivative_bound",
+        "module": "NavierStokes.LocalHeatFormula"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 50,
-        "text": "|iteratedDerivWithin n (exteriorProfile C h) (Ici 0) y| ≤ exteriorDerivativeBound C h n for y ≥ 0; with amplitude_formula (K = r^{-1-2h} H_ext(τ/r²)) the chain rule ∂_τ^j K = r^{-1-2h-2j} H_ext^{(j)}(τ/r²) gives the paper's first majorant in a few lines, but that composition is not itself stated"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LocalHeatFormula.exteriorProfile_derivative_bound"
+          },
+          "destination": {
+            "fragment": "L50",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalHeatFormula.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 50,
+            "text": "theorem exteriorProfile_derivative_bound (C : ℝ) {h : ℝ} (hh : 0 < h)\n    (n : ℕ) {y : ℝ} (hy : 0 ≤ y) :\n    |iteratedDerivWithin n (exteriorProfile C h) (Ici 0) y| ≤ exteriorDerivativeBound C h n"
+          }
+        }
       }
     }
-  }
+  ]
 }

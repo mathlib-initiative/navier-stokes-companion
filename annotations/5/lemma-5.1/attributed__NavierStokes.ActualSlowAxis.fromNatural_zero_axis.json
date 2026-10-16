@@ -1,31 +1,33 @@
 {
-  "id": "lemma-5.1/attributed/1.NavierStokes.ActualSlowAxis.fromNatural_zero_axis",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSlowAxis.fromNatural_zero_axis",
-      "line": 478,
-      "module": "NavierStokes.ActualSlowAxis",
-      "path": "NavierStokes/ActualSlowAxis.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean#L478"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSlowAxis.fromNatural_zero_axis",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSlowAxis.fromNatural_zero_axis",
+        "module": "NavierStokes.ActualSlowAxis"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For n>0 and every eta in [-1,1], all five coefficients of the constructed hierarchy vanish at the axis: coefficients n i (0,eta)=0, i.e. \\phi_n(0,\\eta)=U_n(0,\\eta)=K_n(0,\\eta)=\\Pi_n(0,\\eta)=\\beta_n(0,\\eta)=0.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 478,
-        "text": "theorem fromNatural_zero_axis {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) {n : ℕ} (hn : 0 < n)\n    (i : Fin 5) {eta : ℝ} (heta : eta ∈ Icc (-1 : ℝ) 1) :\n    (fromNatural hp hP0 F hΛ hsmall hσ hT hδ hδT κ).coefficients n i (0, (eta : ℂ)) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActualSlowAxis.fromNatural_zero_axis",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For n>0 and every eta in [-1,1], all five coefficients of the constructed hierarchy vanish at the axis: coefficients n i (0,eta)=0, i.e. \\phi_n(0,\\eta)=U_n(0,\\eta)=K_n(0,\\eta)=\\Pi_n(0,\\eta)=\\beta_n(0,\\eta)=0.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L478",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSlowAxis.lean"
+          },
+          "snippet": {
+            "line": 478,
+            "text": "theorem fromNatural_zero_axis {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) {n : ℕ} (hn : 0 < n)\n    (i : Fin 5) {eta : ℝ} (heta : eta ∈ Icc (-1 : ℝ) 1) :\n    (fromNatural hp hP0 F hΛ hsmall hσ hT hδ hδT κ).coefficients n i (0, (eta : ℂ)) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

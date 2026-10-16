@@ -1,26 +1,28 @@
 {
-  "id": "eq-p131-3/key/01.NavierStokes.ReleaseMoments.momentCandidate_hasDerivAt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReleaseMoments.momentCandidate_hasDerivAt",
-      "line": 145,
-      "module": "NavierStokes.ReleaseMoments",
-      "path": "NavierStokes/ReleaseMoments.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReleaseMoments.lean#L145"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReleaseMoments.momentCandidate_hasDerivAt",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReleaseMoments.momentCandidate_hasDerivAt",
+        "module": "NavierStokes.ReleaseMoments"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 145,
-        "text": "given HasDerivAt q (-profileSlope d y - d.h - (1 + profileSlope d y) * q y) y, HasDerivAt (momentCandidate d q) (releaseWeight d y) y, where momentCandidate d q y = (1 + q y) * releaseWeight d y / (1 - d.h)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ReleaseMoments.momentCandidate_hasDerivAt",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L145",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReleaseMoments.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 145,
+            "text": "theorem momentCandidate_hasDerivAt (d : TailData) (q : ℝ → ℝ) {y : ℝ}\n    (hy : d.releaseStart ≤ y)\n    (hq : HasDerivAt q (-profileSlope d y - d.h - (1 + profileSlope d y) * q y) y) :\n    HasDerivAt (momentCandidate d q) (releaseWeight d y) y"
+          }
+        }
       }
     }
-  }
+  ]
 }

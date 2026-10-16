@@ -1,36 +1,57 @@
 {
-  "id": "lemma-4.4/attributed/1.NavierStokes.ModulatedCone.shears_eq_of_radial_eventuallyEq",
-  "location": {
-    "page": 28,
-    "rect": [0.12854, 0.7, 0.745098, 0.200826]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.shears_eq_of_radial_eventuallyEq",
-      "line": 514,
-      "module": "NavierStokes.ModulatedCone",
-      "path": "NavierStokes/ModulatedCone.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 28,
+        "rect": [0.12854, 0.7, 0.745098, 0.200826]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p028"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L514"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.shears_eq_of_radial_eventuallyEq",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 29,
+        "rect": [0.12854, 0.103306, 0.745098, 0.22314]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: For arbitrary E U F V : RadialParameter -> R, if X |-> E(X,p.2) =f[nhds p.1] X |-> F(X,p.2) and likewise for U, V, then angularShear and signedAxialShear agree at p. No regularity hypothesis. It gives Delta a = Delta b_s = 0 at every X > X_h from the paper's tail hypothesis; its germ is two-sided, s",
-        "status": "unconfirmed",
-        "verdict": "deviation"
-      },
-      "region": "lemma-4.4@p028",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 514,
-        "text": "theorem shears_eq_of_radial_eventuallyEq\n    {E U F V : RadialParameter → ℝ} {p : RadialParameter}\n    (hE : (fun X => E (X, p.2)) =ᶠ[𝓝 p.1] (fun X => F (X, p.2)))\n    (hU : (fun X => U (X, p.2)) =ᶠ[𝓝 p.1] (fun X => V (X, p.2))) :\n    angularShear E p = angularShear F p ∧\n      signedAxialShear E U p = signedAxialShear F V p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-4.4@p029"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.shears_eq_of_radial_eventuallyEq",
+        "module": "NavierStokes.ModulatedCone"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ModulatedCone.shears_eq_of_radial_eventuallyEq",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: For arbitrary E U F V : RadialParameter -> R, if X |-> E(X,p.2) =f[nhds p.1] X |-> F(X,p.2) and likewise for U, V, then angularShear and signedAxialShear agree at p. No regularity hypothesis. It gives Delta a = Delta b_s = 0 at every X > X_h from the paper's tail hypothesis; its germ is two-sided, s",
+            "status": "unconfirmed",
+            "verdict": "deviation"
+          },
+          "destination": {
+            "fragment": "L514",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean"
+          },
+          "snippet": {
+            "line": 514,
+            "text": "theorem shears_eq_of_radial_eventuallyEq\n    {E U F V : RadialParameter → ℝ} {p : RadialParameter}\n    (hE : (fun X => E (X, p.2)) =ᶠ[𝓝 p.1] (fun X => F (X, p.2)))\n    (hU : (fun X => U (X, p.2)) =ᶠ[𝓝 p.1] (fun X => V (X, p.2))) :\n    angularShear E p = angularShear F p ∧\n      signedAxialShear E U p = signedAxialShear F V p"
+          }
+        }
+      }
+    }
+  ]
 }

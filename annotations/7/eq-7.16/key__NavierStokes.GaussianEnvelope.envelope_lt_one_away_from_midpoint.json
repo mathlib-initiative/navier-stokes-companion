@@ -1,24 +1,27 @@
 {
-  "id": "eq-7.16/key/03.NavierStokes.GaussianEnvelope.envelope_lt_one_away_from_midpoint",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaussianEnvelope.envelope_lt_one_away_from_midpoint",
-      "line": 121
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaussianEnvelope.lean#L121"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaussianEnvelope.envelope_lt_one_away_from_midpoint",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaussianEnvelope.envelope_lt_one_away_from_midpoint",
+        "module": "NavierStokes.GaussianEnvelope"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 121,
-        "text": "envelope rate midpoint time < 1 (away from the midpoint, under the same hypotheses as gaussian_envelope_bounds)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.GaussianEnvelope.envelope_lt_one_away_from_midpoint",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L121"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 121,
+            "text": "theorem envelope_lt_one_away_from_midpoint {D : Set ℝ} {rate : ℝ → ℝ}\n    {midpoint time c C ell : ℝ} (hD : Convex ℝ D)\n    (hcont : ContinuousOn rate D)\n    (hdiff : DifferentiableOn ℝ rate (interior D))\n    (hderiv : ∀ x ∈ interior D,\n      -C / ell ≤ deriv rate x ∧ deriv rate x ≤ -c / ell)\n    (hm : midpoint ∈ D) (ht : time ∈ D) (hzero : rate midpoint = 0)\n    (hc : 0 < c) (hell : 0 < ell) (hne : time ≠ midpoint) :\n    envelope rate midpoint time < 1"
+          }
+        }
       }
     }
-  }
+  ]
 }

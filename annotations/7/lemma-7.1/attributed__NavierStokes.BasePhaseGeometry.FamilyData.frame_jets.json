@@ -1,29 +1,31 @@
 {
-  "id": "lemma-7.1/attributed/1.NavierStokes.BasePhaseGeometry.FamilyData.frame_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BasePhaseGeometry.FamilyData.frame_jets",
-      "line": 1069,
-      "module": "NavierStokes.BasePhaseGeometry",
-      "path": "NavierStokes/BasePhaseGeometry.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean#L1069"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BasePhaseGeometry.FamilyData.frame_jets",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BasePhaseGeometry.FamilyData.frame_jets",
+        "module": "NavierStokes.BasePhaseGeometry"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Under the same hypotheses as `construction`, PhaseJetBounds.FrameJets holds for a.frame on the enlarged slot domain: uniform polynomial-in-S_* jet bounds for the whole frame record (frame vectors, ρ, rotation, eigenvector, eigenRate, viscosity) and hence, via `coefficient_jets`, for the ODE coeffici"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1069,
-        "text": "theorem frame_jets (hh : 0 ≤ h) (hr : 0 < r0) (hM : 1 ≤ M)\n    (hu : 0 < u) (huM : u ≤ M) (hL : 1 / (2 * r0) ≤ M)\n    (hslot : 4 * r0 * ChartScales.Tg ≤ M) (hlarge : ∀ i, LargeBand h M u (a.band i)) :\n    PhaseJetBounds.FrameJets (D.slot a.slot (fun _ => isOpen_Ioo)) a.frame"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.BasePhaseGeometry.FamilyData.frame_jets",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Under the same hypotheses as `construction`, PhaseJetBounds.FrameJets holds for a.frame on the enlarged slot domain: uniform polynomial-in-S_* jet bounds for the whole frame record (frame vectors, ρ, rotation, eigenvector, eigenRate, viscosity) and hence, via `coefficient_jets`, for the ODE coeffici"
+          },
+          "destination": {
+            "fragment": "L1069",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BasePhaseGeometry.lean"
+          },
+          "snippet": {
+            "line": 1069,
+            "text": "theorem frame_jets (hh : 0 ≤ h) (hr : 0 < r0) (hM : 1 ≤ M)\n    (hu : 0 < u) (huM : u ≤ M) (hL : 1 / (2 * r0) ≤ M)\n    (hslot : 4 * r0 * ChartScales.Tg ≤ M) (hlarge : ∀ i, LargeBand h M u (a.band i)) :\n    PhaseJetBounds.FrameJets (D.slot a.slot (fun _ => isOpen_Ioo)) a.frame"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p112-1/key/04.NavierStokes.GenericDifferentialPolynomial.ApproximationRates.directional",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates.directional",
-      "line": 156,
-      "module": "NavierStokes.GenericDifferentialPolynomial",
-      "path": "NavierStokes/GenericDifferentialPolynomial.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean#L156"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates.directional",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericDifferentialPolynomial.ApproximationRates.directional",
+        "module": "NavierStokes.GenericDifferentialPolynomial"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 156,
-        "text": "ApproximationRates … (fun x => fderiv ℝ f x v) … where growthLoss m := a.growthLoss (m+1); tailLoss m := a.tailLoss (m+1); threshold m := a.threshold (m + 1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.GenericDifferentialPolynomial.ApproximationRates.directional",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L156",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 156,
+            "text": "def ApproximationRates.directional\n    (a : ApproximationRates l q gain f fs)\n    (hU : IsOpen U) (hlU : ∀ᶠ x in l, x ∈ U)\n    (hf : ContDiffOn ℝ ∞ f U) (hfs : ∀ J, ContDiffOn ℝ ∞ (fs J) U) (v : D) :\n    ApproximationRates l q gain (fun x => fderiv ℝ f x v)\n      (fun J x => fderiv ℝ (fs J) x v)"
+          }
+        }
       }
     }
-  }
+  ]
 }

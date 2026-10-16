@@ -1,26 +1,28 @@
 {
-  "id": "eq-p110-6/key/04.NavierStokes.GaugeDebtIncrement.temporalStage_defectBounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaugeDebtIncrement.temporalStage_defectBounds",
-      "line": 667,
-      "module": "NavierStokes.GaugeDebtIncrement",
-      "path": "NavierStokes/GaugeDebtIncrement.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeDebtIncrement.lean#L667"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaugeDebtIncrement.temporalStage_defectBounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaugeDebtIncrement.temporalStage_defectBounds",
+        "module": "NavierStokes.GaugeDebtIncrement"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 667,
-        "text": "the same clause packaged as CorrectionState.DefectBounds for the temporal stage"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.GaugeDebtIncrement.temporalStage_defectBounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L667",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeDebtIncrement.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 667,
+            "text": "theorem temporalStage_defectBounds {σ τ : ℝ} (hσ : τ ≤ σ) (hτ : 1 + τ ≤ H)\n    (hold : DefectBounds (PhysicalMeanDomain.localSlowStripData U.carrier U.isOpen\n      ε L hε hεone hL) σ c u) :\n    DefectBounds (PhysicalMeanDomain.localSlowStripData U.carrier U.isOpen\n      ε L hε hεone hL) τ c (VariableGaugeMean.temporalStageState g h index axial c u)"
+          }
+        }
       }
     }
-  }
+  ]
 }

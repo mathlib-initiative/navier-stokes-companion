@@ -1,29 +1,31 @@
 {
-  "id": "lemma-8.7/attributed/1.NavierStokes.LocalRankDefect.RankGeometry.axial_exact",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalRankDefect.RankGeometry.axial_exact",
-      "line": 651,
-      "module": "NavierStokes.LocalRankDefect",
-      "path": "NavierStokes/LocalRankDefect.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalRankDefect.lean#L651"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalRankDefect.RankGeometry.axial_exact",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalRankDefect.RankGeometry.axial_exact",
+        "module": "NavierStokes.LocalRankDefect"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For a `RankGeometry` (whose `angular_model`/`axial_model` fields encode (8.24)), the realized axial increment equals the desired γ_d exactly: the clause Δγ = γ_d of the (8.14) realization."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 651,
-        "text": "theorem axial_exact {a b : ℝ} (ha : 0 < a) (hab : a < b) (hU : IsOpen U)\n    (hleft : ∀ n x, x ∈ U → a ≤ r.length n x * r.inner)\n    (hright : ∀ n x, x ∈ U → r.length n x * r.outer ≤ b)\n    (axial : P × PressureStream.Plane) (n : ℕ) {p : Point P} (hp : p.2.1 ∈ U) :\n    (VariableGaugeMean.rankIncrementState g r axial c u).axial n p =\n      CorrectionState.rankDesiredAxial r c u n (p.1, p.2.1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LocalRankDefect.RankGeometry.axial_exact",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For a `RankGeometry` (whose `angular_model`/`axial_model` fields encode (8.24)), the realized axial increment equals the desired γ_d exactly: the clause Δγ = γ_d of the (8.14) realization."
+          },
+          "destination": {
+            "fragment": "L651",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalRankDefect.lean"
+          },
+          "snippet": {
+            "line": 651,
+            "text": "theorem axial_exact {a b : ℝ} (ha : 0 < a) (hab : a < b) (hU : IsOpen U)\n    (hleft : ∀ n x, x ∈ U → a ≤ r.length n x * r.inner)\n    (hright : ∀ n x, x ∈ U → r.length n x * r.outer ≤ b)\n    (axial : P × PressureStream.Plane) (n : ℕ) {p : Point P} (hp : p.2.1 ∈ U) :\n    (VariableGaugeMean.rankIncrementState g r axial c u).axial n p =\n      CorrectionState.rankDesiredAxial r c u n (p.1, p.2.1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

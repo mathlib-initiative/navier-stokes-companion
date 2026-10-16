@@ -1,24 +1,26 @@
 {
-  "id": "eq-p122-1/key/04.NavierStokesR3.RieszTestOperators.pressurePair_laplacianCLM",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.RieszTestOperators.pressurePair_laplacianCLM",
-      "line": 278,
-      "module": "NavierStokes.R3.RieszTestOperators",
-      "path": "NavierStokes/R3/RieszTestOperators.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/RieszTestOperators.lean#L278"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.RieszTestOperators.pressurePair_laplacianCLM"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.RieszTestOperators.pressurePair_laplacianCLM",
+        "module": "NavierStokes.R3.RieszTestOperators"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 278,
-        "text": "pressurePair i j g (laplacianCLM ψ) = -(∫ x : Space, (g x : ℂ) * (partialCLM i (partialCLM j ψ)) x)   -- docstring: \"The canonical pressure functional solves the test-function Poisson equation.\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokesR3.RieszTestOperators.pressurePair_laplacianCLM"
+          },
+          "destination": {
+            "fragment": "L278",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/RieszTestOperators.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 278,
+            "text": "theorem pressurePair_laplacianCLM (i j : Fin 3) (g : Space → ℝ) (ψ : ComplexTest) :\n    pressurePair i j g (laplacianCLM ψ) =\n      -(∫ x : Space, (g x : ℂ) * (partialCLM i (partialCLM j ψ)) x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

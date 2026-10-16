@@ -1,23 +1,25 @@
 {
-  "id": "eq-A.45/key/03.NavierStokes.RenormalizedHeatMoment.xMoment_eq_outgoing_reference",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RenormalizedHeatMoment.xMoment_eq_outgoing_reference",
-      "line": 715,
-      "module": "NavierStokes.RenormalizedHeatMoment",
-      "path": "NavierStokes/RenormalizedHeatMoment.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RenormalizedHeatMoment.lean#L715"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RenormalizedHeatMoment.xMoment_eq_outgoing_reference"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RenormalizedHeatMoment.xMoment_eq_outgoing_reference",
+        "module": "NavierStokes.RenormalizedHeatMoment"
       },
-      "snippet": {
-        "line": 715,
-        "text": "xMoment rewritten as ∫ X in Ioi 0, (HeatedOutgoing.H F XR c (X, eta) - OutgoingDilation.powerH F XR X)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.RenormalizedHeatMoment.xMoment_eq_outgoing_reference"
+          },
+          "destination": {
+            "fragment": "L715",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RenormalizedHeatMoment.lean"
+          },
+          "snippet": {
+            "line": 715,
+            "text": "theorem xMoment_eq_outgoing_reference (P : OutgoingProfile.Profile) {XR : ℝ} (hXR : 0 < XR)\n    (E : ℝ × ℝ → ℝ) (eta : ℝ) :\n    xMoment P.data.h (outgoingPowerAmplitude P XR) E eta =\n      ∫ X in Ioi (0 : ℝ), Real.sqrt (2 * X) * E (X, eta) - OutgoingDilation.powerH P XR X"
+          }
+        }
       }
     }
-  }
+  ]
 }

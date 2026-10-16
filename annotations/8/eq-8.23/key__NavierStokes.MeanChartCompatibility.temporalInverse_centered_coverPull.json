@@ -1,23 +1,25 @@
 {
-  "id": "eq-8.23/key/03.NavierStokes.MeanChartCompatibility.temporalInverse_centered_coverPull",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.temporalInverse_centered_coverPull",
-      "line": 453,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L453"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.temporalInverse_centered_coverPull"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.temporalInverse_centered_coverPull",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "snippet": {
-        "line": 453,
-        "text": "TemporalMeanUpdate.temporalInverse (TemporalMeanUpdate.centered (coverPull l P k u f)) z = (ChartScales.Tg ^ k)⁻¹ * coverPull l P k u (TemporalMeanUpdate.temporalInverse (TemporalMeanUpdate.centered f)) z — the second identity again, for the parameterised lift with slow/parameter factors carried along"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.MeanChartCompatibility.temporalInverse_centered_coverPull"
+          },
+          "destination": {
+            "fragment": "L453",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "snippet": {
+            "line": 453,
+            "text": "theorem temporalInverse_centered_coverPull (l : ℝ) (P : S →L[ℝ] T) (k : ℕ) (u : ℝ)\n    {f : PressureStream.Lift T → ℝ} (hf : ContDiff ℝ ∞ f)\n    (hp : PressureStream.TorusPeriodicLift f) (z : PressureStream.Lift S) :\n    TemporalMeanUpdate.temporalInverse (TemporalMeanUpdate.centered (coverPull l P k u f)) z =\n      (ChartScales.Tg ^ k)⁻¹ * coverPull l P k u\n        (TemporalMeanUpdate.temporalInverse (TemporalMeanUpdate.centered f)) z"
+          }
+        }
       }
     }
-  }
+  ]
 }

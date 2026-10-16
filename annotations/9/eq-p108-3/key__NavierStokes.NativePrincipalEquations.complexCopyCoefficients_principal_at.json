@@ -1,25 +1,28 @@
 {
-  "id": "eq-p108-3/key/02.NavierStokes.NativePrincipalEquations.complexCopyCoefficients_principal_at",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NativePrincipalEquations.complexCopyCoefficients_principal_at",
-      "line": 107,
-      "module": "NavierStokes.NativePrincipalEquations",
-      "path": "NavierStokes/NativePrincipalEquations.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NativePrincipalEquations.lean#L107"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NativePrincipalEquations.complexCopyCoefficients_principal_at",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NativePrincipalEquations.complexCopyCoefficients_principal_at",
+        "module": "NavierStokes.NativePrincipalEquations"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 107,
-        "text": "(complexCopyCoefficients base t source g (fun _ => k) L hL).principal s dirs n x = -source n x  -- ℒ_m(t_m, π_m) = -f_m"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.NativePrincipalEquations.complexCopyCoefficients_principal_at",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L107",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NativePrincipalEquations.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 107,
+            "text": "theorem complexCopyCoefficients_principal_at\n    (base : LinearWaveBounds.WaveCoefficients (P × Plane)) (hL : ∀ n, 0 < L n)\n    (hr : ParticularCopyBounds.ModalControl s α frame\n      (fun n => realData (t n) (source n)) harmonic g L envelope K)\n    (hi : ParticularCopyBounds.ModalControl s α frame\n      (fun n => imagData (t n) (source n)) harmonic g L envelope K)\n    (n : ℕ) (k : Frequency) {x : P × Plane} (hx : x ∈ s.domain) (hk : x ∈ K n k)\n    (hfrequency : base.frequency n ≠ 0)\n    (hN : base.normal s dirs n x = (t n).normal (nativePoint (g n) k x))\n    (hδ : (t n).damping (nativePoint (g n) k x) =\n      s.epsilon n * base.frequency n ^ 2 * ‖base.normal s dirs n x‖ ^ 2)\n    (hfast : dirs.fastScale n • dirs.fast = ((0 : P), slotDirection (g n)))\n    (hA : ∀ z : ProblemStatement.Space,\n      CurlClassBounds.complexify ((t n).action (nativePoint (g n) k x) z) =\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

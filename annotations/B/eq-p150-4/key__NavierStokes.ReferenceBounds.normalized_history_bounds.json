@@ -1,26 +1,28 @@
 {
-  "id": "eq-p150-4/key/02.NavierStokes.ReferenceBounds.normalized_history_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceBounds.normalized_history_bounds",
-      "line": 1134,
-      "module": "NavierStokes.ReferenceBounds",
-      "path": "NavierStokes/ReferenceBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean#L1134"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceBounds.normalized_history_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceBounds.normalized_history_bounds",
+        "module": "NavierStokes.ReferenceBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1134,
-        "text": "(hU : ∀ p ∈ holdRegion, |Λ * (P.U p - NaturalAxisData.U j p.2)| ≤ B) (hUη : ∀ p ∈ holdRegion, |Λ * (parameterPartial P.U p - 4)| ≤ B) (hp : p ∈ holdRegion) : |Λ * (P.Ubar p - NaturalAxisData.U j p.2)| ≤ B ∧ |Λ * (average (parameterPartial P.U) p - 4)| ≤ B — proved by two applications of average_error_bound (lines 1142–1144); P.Ubar = average P.U (ProfileHistories.lean:326)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ReferenceBounds.normalized_history_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1134",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1134,
+            "text": "theorem normalized_history_bounds {D : RadialDomain} (P : Profiles D)\n    {Λ B j : ℝ}\n    (hU : ∀ p ∈ holdRegion, |Λ * (P.U p - NaturalAxisData.U j p.2)| ≤ B)\n    (hUη : ∀ p ∈ holdRegion, |Λ * (parameterPartial P.U p - 4)| ≤ B)\n    {p : Point} (hp : p ∈ holdRegion) (hpD : p ∈ D.carrier) :\n    |Λ * (P.Ubar p - NaturalAxisData.U j p.2)| ≤ B ∧\n      |Λ * (average (parameterPartial P.U) p - 4)| ≤ B"
+          }
+        }
       }
     }
-  }
+  ]
 }

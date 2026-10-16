@@ -1,30 +1,32 @@
 {
-  "id": "proposition-9.5/attributed/1.NavierStokes.CorrectionInitialization.MovingInitialization.initializedBands_mean_defects",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionInitialization.MovingInitialization.initializedBands_mean_defects",
-      "line": 3717,
-      "module": "NavierStokes.CorrectionInitialization",
-      "path": "NavierStokes/CorrectionInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L3717"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionInitialization.MovingInitialization.initializedBands_mean_defects",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionInitialization.MovingInitialization.initializedBands_mean_defects",
+        "module": "NavierStokes.CorrectionInitialization"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: The abstract (not instance-specific) form of the mean half of Proposition 9.5: for arbitrary gauge/rank data, labels, pieces and base error satisfying the primary-covariance match hypotheses hθmatch/hzmatch (class 3/2−κ, the paper's Proposition 7.5 input), the four stages give CumulativeBounds ∧ Mea"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 3717,
-        "text": "theorem initializedBands_mean_defects {h A B : ℝ} (hh : 0 ≤ h)\n    (hscale : ∀ n, ChartScales.S n ≤ L n) (index : ℕ → ℕ) (D : ℕ)\n    (hgap : ∀ n, ChartScales.nativeIndex h n ≤ index n + D)\n    (axial : PressureStream.Plane × PressureStream.Plane)\n    (hv : c.operators.vT = (0, (0, TorusInverse.vector .temporal)))\n    (hfast : ∀ n, c.operators.fastCoefficient n = ChartScales.Tg ^ index n * ChartScales.Q n ^ (1 + h))\n    (hθmatch : MeanClass st (3 / 2 - ChartScales.kappa)\n      (StateMomentBalances.meanBar ((bandSeed labels pieces baseError).covariance 0 1) -\n        StateMomentBalances.meanBar c.virtualTheta))\n    (hzmatch : MeanClass st (3 / 2 - ChartScales.kappa)\n      (StateMomentBalances.meanBar ((bandSeed labels pieces baseError).covariance 0 2) -\n        StateMomentBalances.meanBar c.virtualAxial))\n    (hrank : LocalRankDefect.RankGeometry g r U.carrier c\n      (GaugeInitialization.temporalBands g h index axial c labels pieces baseError))\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CorrectionInitialization.MovingInitialization.initializedBands_mean_defects",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: The abstract (not instance-specific) form of the mean half of Proposition 9.5: for arbitrary gauge/rank data, labels, pieces and base error satisfying the primary-covariance match hypotheses hθmatch/hzmatch (class 3/2−κ, the paper's Proposition 7.5 input), the four stages give CumulativeBounds ∧ Mea"
+          },
+          "destination": {
+            "fragment": "L3717",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean"
+          },
+          "snippet": {
+            "line": 3717,
+            "text": "theorem initializedBands_mean_defects {h A B : ℝ} (hh : 0 ≤ h)\n    (hscale : ∀ n, ChartScales.S n ≤ L n) (index : ℕ → ℕ) (D : ℕ)\n    (hgap : ∀ n, ChartScales.nativeIndex h n ≤ index n + D)\n    (axial : PressureStream.Plane × PressureStream.Plane)\n    (hv : c.operators.vT = (0, (0, TorusInverse.vector .temporal)))\n    (hfast : ∀ n, c.operators.fastCoefficient n = ChartScales.Tg ^ index n * ChartScales.Q n ^ (1 + h))\n    (hθmatch : MeanClass st (3 / 2 - ChartScales.kappa)\n      (StateMomentBalances.meanBar ((bandSeed labels pieces baseError).covariance 0 1) -\n        StateMomentBalances.meanBar c.virtualTheta))\n    (hzmatch : MeanClass st (3 / 2 - ChartScales.kappa)\n      (StateMomentBalances.meanBar ((bandSeed labels pieces baseError).covariance 0 2) -\n        StateMomentBalances.meanBar c.virtualAxial))\n    (hrank : LocalRankDefect.RankGeometry g r U.carrier c\n      (GaugeInitialization.temporalBands g h index axial c labels pieces baseError))\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,29 +1,31 @@
 {
-  "id": "lemma-8.7/attributed/1.NavierStokes.LocalRankDefect.RankGeometry.solved_rows",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LocalRankDefect.RankGeometry.solved_rows",
-      "line": 775,
-      "module": "NavierStokes.LocalRankDefect",
-      "path": "NavierStokes/LocalRankDefect.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalRankDefect.lean#L775"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LocalRankDefect.RankGeometry.solved_rows",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LocalRankDefect.RankGeometry.solved_rows",
+        "module": "NavierStokes.LocalRankDefect"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: `linearRows … = -debt`: when the target is the current defect, the last three rows cancel the base contributions, the paper's final clause."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 775,
-        "text": "theorem solved_rows {a b : ℝ} (ha : 0 < a) (hab : a < b) (hU : IsOpen U)\n    (hleft : ∀ n x, x ∈ U → a ≤ r.length n x * r.inner)\n    (hright : ∀ n x, x ∈ U → r.length n x * r.outer ≤ b)\n    (axial : P × PressureStream.Plane) (hop : LocalOperators U c.operators)\n    (hb : SmoothTriple (positiveDomain U) c.base)\n    (hV : IsSlowOn U c.base.angular) (hG : IsSlowOn U c.base.axial)\n    (n : ℕ) {x : P} (hx : x ∈ U) :\n    linearRows c.operators c.base (VariableGaugeMean.rankIncrementState g r axial c u) n x =\n      -CorrectionState.debt c u n x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.LocalRankDefect.RankGeometry.solved_rows",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: `linearRows … = -debt`: when the target is the current defect, the last three rows cancel the base contributions, the paper's final clause."
+          },
+          "destination": {
+            "fragment": "L775",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LocalRankDefect.lean"
+          },
+          "snippet": {
+            "line": 775,
+            "text": "theorem solved_rows {a b : ℝ} (ha : 0 < a) (hab : a < b) (hU : IsOpen U)\n    (hleft : ∀ n x, x ∈ U → a ≤ r.length n x * r.inner)\n    (hright : ∀ n x, x ∈ U → r.length n x * r.outer ≤ b)\n    (axial : P × PressureStream.Plane) (hop : LocalOperators U c.operators)\n    (hb : SmoothTriple (positiveDomain U) c.base)\n    (hV : IsSlowOn U c.base.angular) (hG : IsSlowOn U c.base.axial)\n    (n : ℕ) {x : P} (hx : x ∈ U) :\n    linearRows c.operators c.base (VariableGaugeMean.rankIncrementState g r axial c u) n x =\n      -CorrectionState.debt c u n x"
+          }
+        }
       }
     }
-  }
+  ]
 }

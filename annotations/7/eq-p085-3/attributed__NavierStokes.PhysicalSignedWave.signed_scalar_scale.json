@@ -1,26 +1,28 @@
 {
-  "id": "eq-p085-3/attributed/14.NavierStokes.PhysicalSignedWave.signed_scalar_scale",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalSignedWave.signed_scalar_scale",
-      "line": 103,
-      "module": "NavierStokes.PhysicalSignedWave",
-      "path": "NavierStokes/PhysicalSignedWave.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalSignedWave.lean#L103"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalSignedWave.signed_scalar_scale",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalSignedWave.signed_scalar_scale",
+        "module": "NavierStokes.PhysicalSignedWave"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 103,
-        "text": "√epsilon * increment H (c^2 • T) (c^2 • R) j * mask = velocityScale * (√referenceEpsilon * increment H T R j * mask), c = coefficientScale epsilon referenceEpsilon velocityScale"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "14.NavierStokes.PhysicalSignedWave.signed_scalar_scale",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L103",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalSignedWave.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 103,
+            "text": "theorem signed_scalar_scale (H : Mat2) (T R : Vec2) (mask : ℝ)\n    {epsilon referenceEpsilon velocityScale : ℝ}\n    (he : 0 < epsilon) (hr : 0 < referenceEpsilon) (hv : 0 < velocityScale) (j : Fin 2) :\n    Real.sqrt epsilon * SignedCovariance.increment H\n      (coefficientScale epsilon referenceEpsilon velocityScale ^ 2 • T)\n      (coefficientScale epsilon referenceEpsilon velocityScale ^ 2 • R) j * mask =\n      velocityScale * (Real.sqrt referenceEpsilon * SignedCovariance.increment H T R j * mask)"
+          }
+        }
       }
     }
-  }
+  ]
 }

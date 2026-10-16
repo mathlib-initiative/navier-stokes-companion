@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.27/key/04.NavierStokes.SlowExpansionResidual.slowVelocity_components",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowExpansionResidual.slowVelocity_components",
-      "line": 863,
-      "module": "NavierStokes.SlowExpansionResidual",
-      "path": "NavierStokes/SlowExpansionResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowExpansionResidual.lean#L863"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowExpansionResidual.slowVelocity_components",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowExpansionResidual.slowVelocity_components",
+        "module": "NavierStokes.SlowExpansionResidual"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 863,
-        "text": "slowVelocity … (t,x) = pack (x 0 * (slowFlux/(2·radialEnergy x)) - x 1 * slowSwirl) (x 1 * (…) + x 0 * slowSwirl) (slowAxial), so slowFlux = r·u_r and slowAxial = u_z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.SlowExpansionResidual.slowVelocity_components",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L863",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowExpansionResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 863,
+            "text": "theorem slowVelocity_components (N : ℕ) (h C : ℝ) (f : SlowProfiles)\n    (t : ℝ) (x : ProblemStatement.Space) :\n    slowVelocity N h C f (t, x) =\n      AxisymmetricResidual.pack\n        (x 0 * (slowFlux N h f (profilePoint t x) / (2 * radialEnergy x)) -\n          x 1 * slowSwirl N h C f (profilePoint t x))\n        (x 1 * (slowFlux N h f (profilePoint t x) / (2 * radialEnergy x)) +\n          x 0 * slowSwirl N h C f (profilePoint t x))\n        (slowAxial N h f (profilePoint t x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

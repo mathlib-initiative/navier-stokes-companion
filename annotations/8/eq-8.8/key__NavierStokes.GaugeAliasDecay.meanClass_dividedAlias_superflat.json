@@ -1,23 +1,26 @@
 {
-  "id": "eq-8.8/key/02.NavierStokes.GaugeAliasDecay.meanClass_dividedAlias_superflat",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaugeAliasDecay.meanClass_dividedAlias_superflat",
-      "line": 539,
-      "module": "NavierStokes.GaugeAliasDecay",
-      "path": "NavierStokes/GaugeAliasDecay.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeAliasDecay.lean#L539"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaugeAliasDecay.meanClass_dividedAlias_superflat"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaugeAliasDecay.meanClass_dividedAlias_superflat",
+        "module": "NavierStokes.GaugeAliasDecay"
       },
-      "snippet": {
-        "line": 539,
-        "text": "same hypotheses, conclusion ∀ β, MeanClass … β (fun n => PressureStream.divideRadius (compactAlias … (f n))) — the R^{-1}(∂_R χ_m)J(·) shape of A_1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GaugeAliasDecay.meanClass_dividedAlias_superflat"
+          },
+          "destination": {
+            "fragment": "L539",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaugeAliasDecay.lean"
+          },
+          "snippet": {
+            "line": 539,
+            "text": "theorem meanClass_dividedAlias_superflat {coord a b h Mbase α : ℝ} (U : SlowRegion coord)\n    (ha : 0 < a) (hab : a < b) {cL cR : ℝ} (hcL : 0 < cL) (hcR : 0 < cR)\n    (hh : 0 < h) (hM : Mbase ≠ 0) (index : ℕ → ℕ) (D : ℕ)\n    (hgap : ∀ n, ChartScales.nativeIndex h n ≤ index n + D)\n    (L : ℕ → ℝ) (hL : ∀ n, 1 ≤ L n) (hS : ∀ n, ChartScales.S n ≤ L n)\n    {f : ℕ → Point Plane → ℝ}\n    (hf : ∀ n, ContDiffOn ℝ ∞ (f n) (PhysicalMeanDomain.slowDomain U.carrier))\n    (hs : ∀ n, SupportedGauge a b (qLength coord) U.carrier (f n))\n    (hp : ∀ n, PhysicalMeanDomain.PeriodicOn U.carrier (f n))\n    (hm : ∀ n s, s ∈ U.carrier → PressureStream.pressureMass (f n) s = 0)\n    (hclass : MeanClass (movingStripData U a b cL cR ha hcL hcR (ChartScales.epsilon h) L\n      (ChartScales.epsilon_pos h) (ChartScales.epsilon_le_one h hh.le) hL) α f) (β : ℝ) :\n    MeanClass (movingStripData U a b cL cR ha hcL hcR (ChartScales.epsilon h) L\n      (ChartScales.epsilon_pos h) (ChartScales.epsilon_le_one h hh.le) hL) β\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

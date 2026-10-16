@@ -1,31 +1,33 @@
 {
-  "id": "lemma-10.4/attributed/1.NavierStokesR3.CompactEnergy.candidate_integrable_dissipation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.CompactEnergy.candidate_integrable_dissipation",
-      "line": 73,
-      "module": "NavierStokes.R3.IntegratedDissipation",
-      "path": "NavierStokes/R3/IntegratedDissipation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/IntegratedDissipation.lean#L73"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.CompactEnergy.candidate_integrable_dissipation",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.CompactEnergy.candidate_integrable_dissipation",
+        "module": "NavierStokes.R3.IntegratedDissipation"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: 0 < ν, hc : CandidateProperties ν u p f K ⊢ IntegrableOn (dissipation u) (Ico (0:ℝ) 1): the 'total dissipation on [0,1) is finite' clause, as genuine integrability rather than a totalized integral.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 73,
-        "text": "theorem candidate_integrable_dissipation {ν : ℝ} (hν : 0 < ν)\n    {u f : VelocityField} {p : PressureField} {K : Set Space}\n    (hc : ProblemStatement.CandidateProperties ν u p f K) :\n    IntegrableOn (dissipation u) (Ico (0 : ℝ) 1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokesR3.CompactEnergy.candidate_integrable_dissipation",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: 0 < ν, hc : CandidateProperties ν u p f K ⊢ IntegrableOn (dissipation u) (Ico (0:ℝ) 1): the 'total dissipation on [0,1) is finite' clause, as genuine integrability rather than a totalized integral.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L73",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/IntegratedDissipation.lean"
+          },
+          "snippet": {
+            "line": 73,
+            "text": "theorem candidate_integrable_dissipation {ν : ℝ} (hν : 0 < ν)\n    {u f : VelocityField} {p : PressureField} {K : Set Space}\n    (hc : ProblemStatement.CandidateProperties ν u p f K) :\n    IntegrableOn (dissipation u) (Ico (0 : ℝ) 1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

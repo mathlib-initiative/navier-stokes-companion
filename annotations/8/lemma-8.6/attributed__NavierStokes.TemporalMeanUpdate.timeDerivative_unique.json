@@ -1,34 +1,55 @@
 {
-  "id": "lemma-8.6/attributed/1.NavierStokes.TemporalMeanUpdate.timeDerivative_unique",
-  "location": {
-    "page": 95,
-    "rect": [0.12854, 0.703306, 0.745098, 0.152893]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TemporalMeanUpdate.timeDerivative_unique",
-      "line": 128,
-      "module": "NavierStokes.TemporalMeanUpdate",
-      "path": "NavierStokes/TemporalMeanUpdate.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 95,
+        "rect": [0.12854, 0.703306, 0.745098, 0.152893]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p095"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L128"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TemporalMeanUpdate.timeDerivative_unique",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 96,
+        "rect": [0.12854, 0.103306, 0.745098, 0.231405]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: f, g smooth and UnitPeriodic, timeDerivative f = timeDerivative g, squareAverage f = squareAverage g → f = g. With both averages 0 this is the paper's uniqueness of the smooth zero-mean solution."
-      },
-      "region": "lemma-8.6@p095",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 128,
-        "text": "theorem timeDerivative_unique {f g : Plane → ℂ} (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)\n    (hpf : SmoothFourierData.UnitPeriodic f) (hpg : SmoothFourierData.UnitPeriodic g)\n    (hD : timeDerivative f = timeDerivative g)\n    (hm : TorusAverages.squareAverage f = TorusAverages.squareAverage g) : f = g"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-8.6@p096"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TemporalMeanUpdate.timeDerivative_unique",
+        "module": "NavierStokes.TemporalMeanUpdate"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TemporalMeanUpdate.timeDerivative_unique",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: f, g smooth and UnitPeriodic, timeDerivative f = timeDerivative g, squareAverage f = squareAverage g → f = g. With both averages 0 this is the paper's uniqueness of the smooth zero-mean solution."
+          },
+          "destination": {
+            "fragment": "L128",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean"
+          },
+          "snippet": {
+            "line": 128,
+            "text": "theorem timeDerivative_unique {f g : Plane → ℂ} (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)\n    (hpf : SmoothFourierData.UnitPeriodic f) (hpg : SmoothFourierData.UnitPeriodic g)\n    (hD : timeDerivative f = timeDerivative g)\n    (hm : TorusAverages.squareAverage f = TorusAverages.squareAverage g) : f = g"
+          }
+        }
+      }
+    }
+  ]
 }

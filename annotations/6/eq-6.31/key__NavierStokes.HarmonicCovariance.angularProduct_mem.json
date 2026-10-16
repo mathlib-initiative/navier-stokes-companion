@@ -1,25 +1,27 @@
 {
-  "id": "eq-6.31/key/03.NavierStokes.HarmonicCovariance.angularProduct_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicCovariance.angularProduct_mem",
-      "line": 29,
-      "module": "NavierStokes.HarmonicCovariance",
-      "path": "NavierStokes/HarmonicCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicCovariance.lean#L29"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicCovariance.angularProduct_mem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicCovariance.angularProduct_mem",
+        "module": "NavierStokes.HarmonicCovariance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 29,
-        "text": "coefficients a, b with a j ∈ W_α, b (−j) ∈ W_β for j in a common finite F, kp n ≠ 0 : MeanClass s (α + β) (fun n x => angularMean (fun θ => field (a n) … (x,θ) * field (b n) … (x,θ)))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.HarmonicCovariance.angularProduct_mem"
+          },
+          "destination": {
+            "fragment": "L29",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicCovariance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 29,
+            "text": "theorem angularProduct_mem {s : StripData D} {P : ℕ → D → ℝ} {α β : ℝ}\n    (a b : ℕ → Coefficients D) (F : Finset ℤ)\n    (hF : ∀ n, (a n).support ⊆ F)\n    (ha : ∀ j ∈ F, WaveClass s P α (fun n x => a n j x))\n    (hb : ∀ j ∈ F, WaveClass s P β (fun n x => b n (-j) x))\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1)\n    (k : ℕ → ℝ) (phase : ℕ → D → ℝ) (kp : ℕ → ℤ) (hkp : ∀ n, kp n ≠ 0) :\n    MeanClass s (α + β) (fun n x => HarmonicFields.angularMean\n      (fun θ => field (a n) (k n) (phase n) (kp n) (x, θ) *\n        field (b n) (k n) (phase n) (kp n) (x, θ)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

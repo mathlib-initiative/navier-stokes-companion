@@ -1,26 +1,28 @@
 {
-  "id": "eq-p103-3/key/01.NavierStokes.ActualCycleCoherence.source_smooth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCycleCoherence.source_smooth",
-      "line": 386,
-      "module": "NavierStokes.ActualCycleCoherence",
-      "path": "NavierStokes/ActualCycleCoherence.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleCoherence.lean#L386"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCycleCoherence.source_smooth",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCycleCoherence.source_smooth",
+        "module": "NavierStokes.ActualCycleCoherence"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 386,
-        "text": "ContDiffOn ℝ ∞ (ParticularWaveAssembly.residualSource (commonContext B) x.state (x.coefficients.blocks l) (x.coefficients.gaussian l) (x.coefficients.aliasCoefficients l) j n) ActualInitialization.geometry.domain"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ActualCycleCoherence.source_smooth",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L386",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCycleCoherence.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 386,
+            "text": "theorem source_smooth (hS : ∀ l n, IsClosed (S l n))\n    (hpos : ∀ l n z, z ∈ ActualInitialization.geometry.domain → z ∈ S l n → 0 < z.1)\n    (l : Index B N0) (j : ℤ) (n : ℕ) :\n    ContDiffOn ℝ ∞ (ParticularWaveAssembly.residualSource (commonContext B) x.state\n      (x.coefficients.blocks l) (x.coefficients.gaussian l) (x.coefficients.aliasCoefficients l) j n)\n      ActualInitialization.geometry.domain"
+          }
+        }
       }
     }
-  }
+  ]
 }

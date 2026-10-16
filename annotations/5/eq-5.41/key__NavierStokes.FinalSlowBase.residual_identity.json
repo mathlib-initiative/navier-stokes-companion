@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.41/key/01.NavierStokes.FinalSlowBase.residual_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FinalSlowBase.residual_identity",
-      "line": 330,
-      "module": "NavierStokes.FinalSlowBase",
-      "path": "NavierStokes/FinalSlowBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FinalSlowBase.lean#L330"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FinalSlowBase.residual_identity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FinalSlowBase.residual_identity",
+        "module": "NavierStokes.FinalSlowBase"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 330,
-        "text": "ProblemStatement.navierStokesResidual (velocity H v upper B) (pressure H v upper B) z.1 z.2 = stressForce H v upper B z + error H v upper B z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.FinalSlowBase.residual_identity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L330",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FinalSlowBase.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 330,
+            "text": "theorem residual_identity (upper : ℝ) (B : ℕ) (z : ProblemStatement.SpaceTime) :\n    ProblemStatement.navierStokesResidual (velocity H v upper B) (pressure H v upper B) z.1 z.2 =\n      stressForce H v upper B z + error H v upper B z"
+          }
+        }
       }
     }
-  }
+  ]
 }

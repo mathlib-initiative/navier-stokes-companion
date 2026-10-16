@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.7/key/01.NavierStokes.DiophantineGraph.graph_directions_diophantine",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.DiophantineGraph.graph_directions_diophantine",
-      "line": 266,
-      "module": "NavierStokes.DiophantineGraph",
-      "path": "NavierStokes/DiophantineGraph.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiophantineGraph.lean#L266"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.DiophantineGraph.graph_directions_diophantine",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.DiophantineGraph.graph_directions_diophantine",
+        "module": "NavierStokes.DiophantineGraph"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 266,
-        "text": "(1/6 : ℝ) / (1 + frequencyLength k.1 k.2) ≤ |k.1 + (1 - √2) * k.2| ∧ (1/6 : ℝ) / (1 + frequencyLength k.1 k.2) ≤ |(√2 - 1) * k.1 + k.2|, for k : ℤ × ℤ, k ≠ 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.DiophantineGraph.graph_directions_diophantine",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L266",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiophantineGraph.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 266,
+            "text": "theorem graph_directions_diophantine (k : ℤ × ℤ) (hk : k ≠ 0) :\n    (1 / 6 : ℝ) / (1 + frequencyLength k.1 k.2) ≤\n        |(k.1 : ℝ) + (1 - Real.sqrt 2) * (k.2 : ℝ)| ∧\n      (1 / 6 : ℝ) / (1 + frequencyLength k.1 k.2) ≤\n        |(Real.sqrt 2 - 1) * (k.1 : ℝ) + (k.2 : ℝ)|"
+          }
+        }
       }
     }
-  }
+  ]
 }

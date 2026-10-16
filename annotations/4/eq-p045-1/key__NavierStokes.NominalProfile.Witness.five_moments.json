@@ -1,23 +1,25 @@
 {
-  "id": "eq-p045-1/key/05.NavierStokes.NominalProfile.Witness.five_moments",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalProfile.Witness.five_moments",
-      "line": 2536,
-      "module": "NavierStokes.NominalProfile",
-      "path": "NavierStokes/NominalProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L2536"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalProfile.Witness.five_moments"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalProfile.Witness.five_moments",
+        "module": "NavierStokes.NominalProfile"
       },
-      "snippet": {
-        "line": 2536,
-        "text": "FiveMomentCertificate W.U W.E (powerH …) (F.axisDatum eta) eta, whose fields are mass_zero : ∫ x in Ioi 0, U = 0, transport_zero : ∫ x in Ioi 0, U·√(2x)·E = 0, energy_zero : ∫ x in Ioi 0, U^2 − E^2/2 = 0, angular_zero : ∫ x in Ioi 0, √(2x)·E − powerH x = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.NominalProfile.Witness.five_moments"
+          },
+          "destination": {
+            "fragment": "L2536",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean"
+          },
+          "snippet": {
+            "line": 2536,
+            "text": "theorem five_moments {eta : ℝ} (hη : eta ∈ HeatedOutgoing.parameterDomain) :\n    FiveMomentCertificate W.U W.E (OutgoingDilation.powerH F W.controls.radius) (F.axisDatum eta) eta"
+          }
+        }
       }
     }
-  }
+  ]
 }

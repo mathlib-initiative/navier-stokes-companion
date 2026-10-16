@@ -1,26 +1,28 @@
 {
-  "id": "eq-p143-1/key/01.NavierStokes.TerminalPressure.terminalStress_ge_mass",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalPressure.terminalStress_ge_mass",
-      "line": 980,
-      "module": "NavierStokes.TerminalPressure",
-      "path": "NavierStokes/TerminalPressure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean#L980"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalPressure.terminalStress_ge_mass",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalPressure.terminalStress_ge_mass",
+        "module": "NavierStokes.TerminalPressure"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 980,
-        "text": "(r * heatAmplitude C (1+h) t R / (2 * timeDenominator h t z)) * (1 - f (log (X h (radiusPoint t r z)))) ≤ terminalStress C h f t z r"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TerminalPressure.terminalStress_ge_mass",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L980",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 980,
+            "text": "theorem terminalStress_ge_mass {C h t z r R Y : ℝ} {f : ℝ → ℝ}\n    (hC : 0 < C) (hh : 0 < h) (hh1 : h < 1 / 2) (ht : t < 1)\n    (hr : 0 < r) (hrR : r ≤ R) (hf : ContDiff ℝ ∞ f) (hmono : ∀ y, 0 ≤ deriv f y)\n    (hplateau : ∀ y, Y ≤ y → f y = 1)\n    (hR : Y ≤ Real.log (SimilarityProfile.X h (TerminalStress.radiusPoint t R z))) :\n    (r * TerminalStress.heatAmplitude C (1 + h) t R / (2 * TerminalStress.timeDenominator h t z)) *\n      (1 - f (Real.log (SimilarityProfile.X h (TerminalStress.radiusPoint t r z)))) ≤\n        TerminalStress.terminalStress C h f t z r"
+          }
+        }
       }
     }
-  }
+  ]
 }

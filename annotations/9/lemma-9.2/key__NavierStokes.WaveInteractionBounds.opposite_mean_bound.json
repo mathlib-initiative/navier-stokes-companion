@@ -1,36 +1,57 @@
 {
-  "id": "lemma-9.2/key/1.NavierStokes.WaveInteractionBounds.opposite_mean_bound",
-  "location": {
-    "page": 102,
-    "rect": [0.12854, 0.846281, 0.745098, 0.044628]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WaveInteractionBounds.opposite_mean_bound",
-      "line": 602,
-      "module": "NavierStokes.WaveInteractionBounds",
-      "path": "NavierStokes/WaveInteractionBounds.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 102,
+        "rect": [0.12854, 0.846281, 0.745098, 0.044628]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p102"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean#L602"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WaveInteractionBounds.opposite_mean_bound",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 103,
+        "rect": [0.12854, 0.102479, 0.745098, 0.057851]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Clause (iii), bound. Same hypotheses as the wave case but with the advecting mode solenoidal: WaveVector α a, WaveVector β b, smooth phase, ν ≠ 0, a angular-independent, cylindricalDivergence (vectorMode ν Φ a) = 0, 0 ≤ P ≤ 1 ⊢ MeanClass s (α + β - κ) (sameCoefficient G Φ (-ν) a b i). No ζ ≤ 1 neede",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-9.2@p102",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 602,
-        "text": "theorem opposite_mean_bound {s : StripData D} {P : ℕ → D → ℝ} {α β κ : ℝ}\n    (G : Geometry s κ) (hκ : 0 ≤ κ) {Φ : ℕ → D → ℝ} {ν : ℕ → ℝ} {a b : Family D}\n    (ha : WaveVector s P α a) (hb : WaveVector s P β b)\n    (hΦ : ∀ n, ContDiffOn ℝ ∞ (Φ n) s.domain) (hν : ∀ n, ν n ≠ 0)\n    (haθ : AngularIndependent G a)\n    (hdiv : ∀ n x, x ∈ s.domain → cylindricalDivergence\n      (G.radius n) (G.radial n) (G.angular n) (G.axial n) (vectorMode (ν n) (Φ n) (a n)) x = 0)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1) (i : Fin 3) :\n    MeanClass s (α + β - κ) (fun n x => sameCoefficient G Φ (fun n => -(ν n)) a b n x i)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-9.2@p103"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WaveInteractionBounds.opposite_mean_bound",
+        "module": "NavierStokes.WaveInteractionBounds"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.WaveInteractionBounds.opposite_mean_bound",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Clause (iii), bound. Same hypotheses as the wave case but with the advecting mode solenoidal: WaveVector α a, WaveVector β b, smooth phase, ν ≠ 0, a angular-independent, cylindricalDivergence (vectorMode ν Φ a) = 0, 0 ≤ P ≤ 1 ⊢ MeanClass s (α + β - κ) (sameCoefficient G Φ (-ν) a b i). No ζ ≤ 1 neede",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L602",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveInteractionBounds.lean"
+          },
+          "snippet": {
+            "line": 602,
+            "text": "theorem opposite_mean_bound {s : StripData D} {P : ℕ → D → ℝ} {α β κ : ℝ}\n    (G : Geometry s κ) (hκ : 0 ≤ κ) {Φ : ℕ → D → ℝ} {ν : ℕ → ℝ} {a b : Family D}\n    (ha : WaveVector s P α a) (hb : WaveVector s P β b)\n    (hΦ : ∀ n, ContDiffOn ℝ ∞ (Φ n) s.domain) (hν : ∀ n, ν n ≠ 0)\n    (haθ : AngularIndependent G a)\n    (hdiv : ∀ n x, x ∈ s.domain → cylindricalDivergence\n      (G.radius n) (G.radial n) (G.angular n) (G.axial n) (vectorMode (ν n) (Φ n) (a n)) x = 0)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1) (i : Fin 3) :\n    MeanClass s (α + β - κ) (fun n x => sameCoefficient G Φ (fun n => -(ν n)) a b n x i)"
+          }
+        }
+      }
+    }
+  ]
 }

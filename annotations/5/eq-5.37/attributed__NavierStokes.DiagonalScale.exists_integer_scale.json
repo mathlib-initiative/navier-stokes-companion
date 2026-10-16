@@ -1,24 +1,27 @@
 {
-  "id": "eq-5.37/attributed/03.NavierStokes.DiagonalScale.exists_integer_scale",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.DiagonalScale.exists_integer_scale",
-      "line": 68
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/DiagonalScale.lean#L68"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.DiagonalScale.exists_integer_scale",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.DiagonalScale.exists_integer_scale",
+        "module": "NavierStokes.DiagonalScale"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 68,
-        "text": "∃ a : ℕ, 0 < a ∧ ∀ i ∈ s, ∀ q, 0 < q → q ≤ 1 / (a:ℝ) → |logPowerWeight (C i) (p i) r q| ≤ ε — the finite-family step behind the schedule"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.DiagonalScale.exists_integer_scale",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L68"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 68,
+            "text": "theorem exists_integer_scale {ι : Type*} (s : Finset ι) (C p : ι → ℝ)\n    (r ε : ℝ) (hr : 0 < r) (hε : 0 < ε) :\n    ∃ a : ℕ, 0 < a ∧\n      ∀ i ∈ s, ∀ q : ℝ, 0 < q → q ≤ 1 / (a : ℝ) →\n        |logPowerWeight (C i) (p i) r q| ≤ ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

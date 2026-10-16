@@ -1,26 +1,29 @@
 {
-  "id": "eq-p066-3/support/14.NavierStokes.LabelSumBounds.supported_covariance_fieldSum_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LabelSumBounds.supported_covariance_fieldSum_eq",
-      "line": 563,
-      "module": "NavierStokes.LabelSumBounds",
-      "path": "NavierStokes/LabelSumBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean#L563"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LabelSumBounds.supported_covariance_fieldSum_eq",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LabelSumBounds.supported_covariance_fieldSum_eq",
+        "module": "NavierStokes.LabelSumBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 563,
-        "text": "bilinearCovariance (fieldSum labels u) (fieldSum labels v) i j n x = ∑ l ∈ labels n, bilinearCovariance (u l) (v l) i j n x  (proof applies supported_cross_product_zero at :578)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "14.NavierStokes.LabelSumBounds.supported_covariance_fieldSum_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L563",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelSumBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 563,
+            "text": "theorem supported_covariance_fieldSum_eq {d h : ℝ} {vr vt : TorusInverse.Plane}\n    {sys : PartitionedCovariance.SlotSystem d h vr vt}\n    (labels : ℕ → Finset ι) (label : ℕ → ι → SlotColoring.Label)\n    (hinj : ∀ n, Set.InjOn (label n) (labels n : Set ι))\n    (hlevel : ∀ n l, l ∈ labels n → 1 ≤ (label n l).1)\n    (χ : ℕ → D → WindowPoint) (Y : ℕ → D → TorusInverse.Plane) {U : Set D}\n    (u v : ι → Oscillation D)\n    (hu : ∀ l, AngularContinuous (u l)) (hv : ∀ l, AngularContinuous (v l))\n    (hsu : SupportedOscillations sys label χ Y U u)\n    (hsv : SupportedOscillations sys label χ Y U v)\n    (n : ℕ) {x : D} (hx : x ∈ U) (i j : Fin 3) :\n    bilinearCovariance (fieldSum labels u) (fieldSum labels v) i j n x =\n      ∑ l ∈ labels n, bilinearCovariance (u l) (v l) i j n x"
+          }
+        }
       }
     }
-  }
+  ]
 }

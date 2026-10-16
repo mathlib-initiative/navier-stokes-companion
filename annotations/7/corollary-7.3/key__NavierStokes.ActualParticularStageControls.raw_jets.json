@@ -1,31 +1,33 @@
 {
-  "id": "corollary-7.3/key/0.NavierStokes.ActualParticularStageControls.raw_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualParticularStageControls.raw_jets",
-      "line": 924,
-      "module": "NavierStokes.ActualParticularStageControls",
-      "path": "NavierStokes/ActualParticularStageControls.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularStageControls.lean#L924"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualParticularStageControls.raw_jets",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For every cycle state x : CycleState (Label B N0), every exponent alpha and every harmonic j with hj : j ≠ 0, given hfrequency and H : LabelSumBounds.UniformWaveClass (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip)) nativeEnvelope alpha (currentSource x j), the stage sol",
-        "status": "unconfirmed",
-        "verdict": "faithful"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualParticularStageControls.raw_jets",
+        "module": "NavierStokes.ActualParticularStageControls"
       },
       "role": "key",
-      "snippet": {
-        "line": 924,
-        "text": "theorem raw_jets (x : CycleState (Label B N0))\n    (hfrequency : ∀ l n, (x.coefficients.blocks l).frequency n = ChartScales.carrier h n)\n    {α : ℝ} (j : ℤ) (hj : j ≠ 0)\n    (H : LabelSumBounds.UniformWaveClass\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      nativeEnvelope α (currentSource x j)) :\n    PeriodizedWaveBounds.UniformLocalJets\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      (fun l n z => Real.sqrt ((CommonCoverClass.sourceStrip\n        (ActualParticularControl.angleStrip slowStrip)).zeta z) * nativeEnvelope l n z)\n      α controlPatch (fun l => (data x l j).amplitude) ∧\n    PeriodizedWaveBounds.UniformLocalJets\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      (fun l n z => Real.sqrt ((CommonCoverClass.sourceStrip\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.ActualParticularStageControls.raw_jets",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For every cycle state x : CycleState (Label B N0), every exponent alpha and every harmonic j with hj : j ≠ 0, given hfrequency and H : LabelSumBounds.UniformWaveClass (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip)) nativeEnvelope alpha (currentSource x j), the stage sol",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L924",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualParticularStageControls.lean"
+          },
+          "snippet": {
+            "line": 924,
+            "text": "theorem raw_jets (x : CycleState (Label B N0))\n    (hfrequency : ∀ l n, (x.coefficients.blocks l).frequency n = ChartScales.carrier h n)\n    {α : ℝ} (j : ℤ) (hj : j ≠ 0)\n    (H : LabelSumBounds.UniformWaveClass\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      nativeEnvelope α (currentSource x j)) :\n    PeriodizedWaveBounds.UniformLocalJets\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      (fun l n z => Real.sqrt ((CommonCoverClass.sourceStrip\n        (ActualParticularControl.angleStrip slowStrip)).zeta z) * nativeEnvelope l n z)\n      α controlPatch (fun l => (data x l j).amplitude) ∧\n    PeriodizedWaveBounds.UniformLocalJets\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      (fun l n z => Real.sqrt ((CommonCoverClass.sourceStrip\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

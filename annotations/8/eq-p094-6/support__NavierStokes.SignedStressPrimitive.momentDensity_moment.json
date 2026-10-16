@@ -1,24 +1,28 @@
 {
-  "id": "eq-p094-6/support/04.NavierStokes.SignedStressPrimitive.momentDensity_moment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedStressPrimitive.momentDensity_moment",
-      "line": 136
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L136"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedStressPrimitive.momentDensity_moment",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedStressPrimitive.momentDensity_moment",
+        "module": "NavierStokes.SignedStressPrimitive"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 136,
-        "text": "(∫ r, r ^ e * momentDensity P e r) = 1 — the paper's ∫ ξ² σ̂_θ = ∫ ξ σ̂_z = 1 at e = 2, 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.SignedStressPrimitive.momentDensity_moment",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L136"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 136,
+            "text": "theorem momentDensity_moment (P : Patch) (e : ℕ) : (∫ r, r ^ e * momentDensity P e r) = 1"
+          }
+        }
       }
     }
-  }
+  ]
 }

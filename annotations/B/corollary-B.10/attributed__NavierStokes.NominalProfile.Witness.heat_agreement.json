@@ -1,31 +1,33 @@
 {
-  "id": "corollary-B.10/attributed/1.NavierStokes.NominalProfile.Witness.heat_agreement",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NominalProfile.Witness.heat_agreement",
-      "line": 2564,
-      "module": "NavierStokes.NominalProfile",
-      "path": "NavierStokes/NominalProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean#L2564"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NominalProfile.Witness.heat_agreement",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NominalProfile.Witness.heat_agreement",
+        "module": "NavierStokes.NominalProfile"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: W.controls.heatJoin < p.1 → η ∈ parameterDomain → W.U p = HeatedOutgoing.U F radius p ∧ W.E p = HeatedOutgoing.E … ∧ W.Pi p = HeatedOutgoing pressure — exact agreement of fields and pressure from the matching point on.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 2564,
-        "text": "theorem heat_agreement {p : Point} (hX : W.controls.heatJoin < p.1)\n    (hη : p.2 ∈ HeatedOutgoing.parameterDomain) :\n    W.U p = HeatedOutgoing.U F W.controls.radius p ∧\n    W.E p = HeatedOutgoing.E F W.controls.radius W.heat.physical.coefficients p ∧\n    W.Pi p = HeatedOutgoing.Pi F W.controls.radius W.heat.physical.coefficients p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.NominalProfile.Witness.heat_agreement",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: W.controls.heatJoin < p.1 → η ∈ parameterDomain → W.U p = HeatedOutgoing.U F radius p ∧ W.E p = HeatedOutgoing.E … ∧ W.Pi p = HeatedOutgoing pressure — exact agreement of fields and pressure from the matching point on.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L2564",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NominalProfile.lean"
+          },
+          "snippet": {
+            "line": 2564,
+            "text": "theorem heat_agreement {p : Point} (hX : W.controls.heatJoin < p.1)\n    (hη : p.2 ∈ HeatedOutgoing.parameterDomain) :\n    W.U p = HeatedOutgoing.U F W.controls.radius p ∧\n    W.E p = HeatedOutgoing.E F W.controls.radius W.heat.physical.coefficients p ∧\n    W.Pi p = HeatedOutgoing.Pi F W.controls.radius W.heat.physical.coefficients p"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,25 @@
 {
-  "id": "eq-9.4/key/01.NavierStokes.CorrectionStep.fullGoodWaveResidual_grouped",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.fullGoodWaveResidual_grouped",
-      "line": 1405,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L1405"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.fullGoodWaveResidual_grouped"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.fullGoodWaveResidual_grouped",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "snippet": {
-        "line": 1405,
-        "text": "fullGoodWaveResidual c u n x i = ∑ l ∈ labels n, (HarmonicResidual.residualBlock c u (blocks l) (gaussian l) (aliasError l)).oscillation n x i, where fullGoodWaveResidual = angularNonconstant (fullGoodResidual c u) = 𝒢 − ⟨𝒢⟩_θ (CorrectionStep.lean:408-412)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CorrectionStep.fullGoodWaveResidual_grouped"
+          },
+          "destination": {
+            "fragment": "L1405",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "snippet": {
+            "line": 1405,
+            "text": "theorem fullGoodWaveResidual_grouped {ι : Type*} {U : Set D} (hU : IsOpen U)\n    {c : Context D} {u : State D} {labels : ℕ → Finset ι}\n    {blocks : ι → HarmonicBlock D}\n    {gaussian aliasError : ι → HarmonicResidual.BlockCoefficients D}\n    (hrep : HarmonicResidual.BlockRepresentation labels blocks gaussian aliasError u) {n : ℕ}\n    (h : HarmonicResidual.ExtractionRegular U c u labels blocks gaussian aliasError n)\n    {x : D × ℝ} (hx : x ∈ HarmonicResidual.liftDomain U) (i : Fin 3) :\n    fullGoodWaveResidual c u n x i =\n      ∑ l ∈ labels n,\n        (HarmonicResidual.residualBlock c u (blocks l) (gaussian l) (aliasError l)).oscillation n x i"
+          }
+        }
       }
     }
-  }
+  ]
 }

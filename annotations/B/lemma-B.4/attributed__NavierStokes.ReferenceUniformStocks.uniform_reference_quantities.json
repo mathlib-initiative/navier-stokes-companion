@@ -1,31 +1,33 @@
 {
-  "id": "lemma-B.4/attributed/1.NavierStokes.ReferenceUniformStocks.uniform_reference_quantities",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceUniformStocks.uniform_reference_quantities",
-      "line": 414,
-      "module": "NavierStokes.ReferenceUniformStocks",
-      "path": "NavierStokes/ReferenceUniformStocks.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceUniformStocks.lean#L414"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceUniformStocks.uniform_reference_quantities",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceUniformStocks.uniform_reference_quantities",
+        "module": "NavierStokes.ReferenceUniformStocks"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For every k : ℕ and 0 < a ≤ R, under a Λ-threshold hscale: `Uniform k` holds for each of the four families indexed by `Choice d Λ × PositiveSlab a R` — q.C * E (X,η), its inverse, profileStockOne (X,η), and axialLag (X,η)/L η. `Choice d Λ` ranges over all C ≥ 1, all coefficient profiles, and all δ w",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 414,
-        "text": "theorem uniform_reference_quantities (hs : NaturalAxisRange.Parameters h j) (hσ : 0 < σ)\n    (hscale : AxisReference.stabilityScale d.coefficients.epsilon (profileErrorConstant d) ≤ Λ)\n    (k : ℕ) {a R : ℝ} (ha : 0 < a) (haR : a ≤ R) :\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      q.1.C*(q.1.profiles hΛ hP0).E (q.2,η)) ∧\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      (q.1.C*(q.1.profiles hΛ hP0).E (q.2,η))⁻¹) ∧\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      ActivationStocks.profileStockOne (q.1.profiles hΛ hP0) h (q.2,η)) ∧\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      (q.1.profiles hΛ hP0).axialLag h (q.2,η) / NaturalAxisData.L h η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ReferenceUniformStocks.uniform_reference_quantities",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For every k : ℕ and 0 < a ≤ R, under a Λ-threshold hscale: `Uniform k` holds for each of the four families indexed by `Choice d Λ × PositiveSlab a R` — q.C * E (X,η), its inverse, profileStockOne (X,η), and axialLag (X,η)/L η. `Choice d Λ` ranges over all C ≥ 1, all coefficient profiles, and all δ w",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L414",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceUniformStocks.lean"
+          },
+          "snippet": {
+            "line": 414,
+            "text": "theorem uniform_reference_quantities (hs : NaturalAxisRange.Parameters h j) (hσ : 0 < σ)\n    (hscale : AxisReference.stabilityScale d.coefficients.epsilon (profileErrorConstant d) ≤ Λ)\n    (k : ℕ) {a R : ℝ} (ha : 0 < a) (haR : a ≤ R) :\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      q.1.C*(q.1.profiles hΛ hP0).E (q.2,η)) ∧\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      (q.1.C*(q.1.profiles hΛ hP0).E (q.2,η))⁻¹) ∧\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      ActivationStocks.profileStockOne (q.1.profiles hΛ hP0) h (q.2,η)) ∧\n    Uniform k (fun q : Choice d Λ × PositiveSlab a R => fun η =>\n      (q.1.profiles hΛ hP0).axialLag h (q.2,η) / NaturalAxisData.L h η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,33 @@
 {
-  "id": "definition-6.5/key/1.NavierStokes.CorrectionStep.CycleAnalyticInvariant",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.CycleAnalyticInvariant",
-      "line": 9408,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L9408"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.CycleAnalyticInvariant",
-        "kind": "structure"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.CycleAnalyticInvariant",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: structure CycleAnalyticInvariant G c primary P labelCarrier σ x, with (among many other fields) inputSupport : ∀ l, InputSupportOn G.domain (labelCarrier l) (x.coefficients.blocks l) … (line 9415), coefficientSmooth (line 9425), angular : ∀ l n, angularFrequency ≠ 0 (line 9424) and wave : ∀ i j, Uni",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 9408,
-        "text": "structure CycleAnalyticInvariant {ι : Type} (G : SignedMeanGain.Geometry)\n    (c : Context CyclePoint) (primary : ι → HarmonicBlock CyclePoint)\n    (P : ι → ℕ → CyclePoint → ℝ) (labelCarrier : ι → ℕ → Set CyclePoint)\n    (σ : ℝ) (x : CycleState ι) : Prop"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CorrectionStep.CycleAnalyticInvariant",
+            "kind": "structure"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: structure CycleAnalyticInvariant G c primary P labelCarrier σ x, with (among many other fields) inputSupport : ∀ l, InputSupportOn G.domain (labelCarrier l) (x.coefficients.blocks l) … (line 9415), coefficientSmooth (line 9425), angular : ∀ l n, angularFrequency ≠ 0 (line 9424) and wave : ∀ i j, Uni",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L9408",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "snippet": {
+            "line": 9408,
+            "text": "structure CycleAnalyticInvariant {ι : Type} (G : SignedMeanGain.Geometry)\n    (c : Context CyclePoint) (primary : ι → HarmonicBlock CyclePoint)\n    (P : ι → ℕ → CyclePoint → ℝ) (labelCarrier : ι → ℕ → Set CyclePoint)\n    (σ : ℝ) (x : CycleState ι) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

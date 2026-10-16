@@ -1,36 +1,57 @@
 {
-  "id": "lemma-C.1/attributed/1.NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
-  "location": {
-    "page": 158,
-    "rect": [0.12854, 0.661157, 0.745098, 0.195868]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
-      "line": 60,
-      "module": "NavierStokes.TrueConeLoopPaper",
-      "path": "NavierStokes/TrueConeLoopPaper.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 158,
+        "rect": [0.12854, 0.661157, 0.745098, 0.195868]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-C.1@p158"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoopPaper.lean#L60"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 159,
+        "rect": [0.12854, 0.103306, 0.745098, 0.090083]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If B is compact, N open with B ⊆ N, and A(x,φ) = a x, C(x,φ) = a x · m x for all x ∈ K ∩ N and all φ, then there is δ > 0 with: for all x ∈ K, y ∈ B with dist x y < δ and all φ, A(x,φ) = a x and C(x,φ) = a x · m x. (This is the single collar width δ_∂ of (C.3).)",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "region": "lemma-C.1@p158",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 60,
-        "text": "theorem uniform_boundary_collar {K B N : Set E} (hB : IsCompact B)\n    (hN : IsOpen N) (hBN : B ⊆ N) {a m : E → ℝ} {A C : E × ℝ → ℝ}\n    (hmatch : ∀ x ∈ K ∩ N, ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x) :\n    ∃ δ : ℝ, 0 < δ ∧ ∀ x ∈ K, ∀ y ∈ B, dist x y < δ →\n      ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "lemma-C.1@p159"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
+        "module": "NavierStokes.TrueConeLoopPaper"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.TrueConeLoopPaper.uniform_boundary_collar",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: If B is compact, N open with B ⊆ N, and A(x,φ) = a x, C(x,φ) = a x · m x for all x ∈ K ∩ N and all φ, then there is δ > 0 with: for all x ∈ K, y ∈ B with dist x y < δ and all φ, A(x,φ) = a x and C(x,φ) = a x · m x. (This is the single collar width δ_∂ of (C.3).)",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L60",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoopPaper.lean"
+          },
+          "snippet": {
+            "line": 60,
+            "text": "theorem uniform_boundary_collar {K B N : Set E} (hB : IsCompact B)\n    (hN : IsOpen N) (hBN : B ⊆ N) {a m : E → ℝ} {A C : E × ℝ → ℝ}\n    (hmatch : ∀ x ∈ K ∩ N, ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x) :\n    ∃ δ : ℝ, 0 < δ ∧ ∀ x ∈ K, ∀ y ∈ B, dist x y < δ →\n      ∀ φ, A (x, φ) = a x ∧ C (x, φ) = a x * m x"
+          }
+        }
+      }
+    }
+  ]
 }

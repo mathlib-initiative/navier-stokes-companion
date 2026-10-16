@@ -1,26 +1,28 @@
 {
-  "id": "eq-p144-3/key/05.NavierStokes.AxisRootPressureBounds.Z_at_root_pressure_lower",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisRootPressureBounds.Z_at_root_pressure_lower",
-      "line": 12,
-      "module": "NavierStokes.AxisRootPressureBounds",
-      "path": "NavierStokes/AxisRootPressureBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisRootPressureBounds.lean#L12"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisRootPressureBounds.Z_at_root_pressure_lower",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisRootPressureBounds.Z_at_root_pressure_lower",
+        "module": "NavierStokes.AxisRootPressureBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 12,
-        "text": "(hz : H h j η = 0) (hP : P η ≤ -(B ^ 2 / 4)) (hP' : deriv P η ≤ 0) : j * B ^ 2 / 20 < Z h j P η"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.AxisRootPressureBounds.Z_at_root_pressure_lower",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L12",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisRootPressureBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 12,
+            "text": "theorem Z_at_root_pressure_lower {h j η B : ℝ} {P : ℝ → ℝ}\n    (p : NaturalAxisRange.Parameters h j) (hB : 2 ≤ B)\n    (hη : η ∈ Ioo (-j / 4) (-j / 5)) (hz : H h j η = 0)\n    (hP : P η ≤ -(B ^ 2 / 4)) (hP' : deriv P η ≤ 0) :\n    j * B ^ 2 / 20 < Z h j P η"
+          }
+        }
       }
     }
-  }
+  ]
 }

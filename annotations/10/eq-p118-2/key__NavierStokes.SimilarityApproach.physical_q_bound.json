@@ -1,26 +1,28 @@
 {
-  "id": "eq-p118-2/key/08.NavierStokes.SimilarityApproach.physical_q_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SimilarityApproach.physical_q_bound",
-      "line": 73,
-      "module": "NavierStokes.SimilarityApproach",
-      "path": "NavierStokes/SimilarityApproach.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SimilarityApproach.lean#L73"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SimilarityApproach.physical_q_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SimilarityApproach.physical_q_bound",
+        "module": "NavierStokes.SimilarityApproach"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 73,
-        "text": "q h p ≤ 2 * (1 - p.1) + (2 * p.2.2 ^ 2) ^ (1 - 2 * h)⁻¹  [counterpart of (10.3); not connected to the cutoff]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.SimilarityApproach.physical_q_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L73",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SimilarityApproach.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 73,
+            "text": "theorem physical_q_bound {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {p : SimilarityProfile.PhysicalPoint} (ht : p.1 < 1) :\n    SimilarityProfile.q h p ≤\n      2 * (1 - p.1) + (2 * p.2.2 ^ 2) ^ (1 - 2 * h)⁻¹"
+          }
+        }
       }
     }
-  }
+  ]
 }

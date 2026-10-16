@@ -1,26 +1,28 @@
 {
-  "id": "eq-p049-1/attributed/10.NavierStokes.SlowExpansionResidual.angular_finite_expansion",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowExpansionResidual.angular_finite_expansion",
-      "line": 581,
-      "module": "NavierStokes.SlowExpansionResidual",
-      "path": "NavierStokes/SlowExpansionResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowExpansionResidual.lean#L581"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowExpansionResidual.angular_finite_expansion",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowExpansionResidual.angular_finite_expansion",
+        "module": "NavierStokes.SlowExpansionResidual"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 581,
-        "text": "transportResidual 1 2 (slowFlux ..) (slowAxial ..) (slowSwirl ..) 0 p = C⁻¹ * (finiteSeries N q h (angularExponent h - 1) (fun n => angularCoefficient h f n (inner h p)) + transportTail ..)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.SlowExpansionResidual.angular_finite_expansion",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L581",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowExpansionResidual.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 581,
+            "text": "theorem angular_finite_expansion {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    (N : ℕ) (C : ℝ) (f : SlowProfiles) {p : ProfilePoint} (hp : p.1 < 1) (hs : 0 < p.2.1)\n    (hf : ∀ n ≤ N, ContDiffAt ℝ 2 (f.phi n) (SimilarityProfile.inner h p)) :\n    transportResidual 1 2 (slowFlux N h f) (slowAxial N h f) (slowSwirl N h C f) (fun _ => 0) p =\n      C⁻¹ * (finiteSeries N (SimilarityProfile.q h p) h (angularExponent h - 1)\n        (fun n => angularCoefficient h f n (SimilarityProfile.inner h p)) +\n        transportTail N (SimilarityProfile.q h p) h (angularExponent h) 1\n          f.flux f.axial f.phi (SimilarityProfile.inner h p))"
+          }
+        }
       }
     }
-  }
+  ]
 }

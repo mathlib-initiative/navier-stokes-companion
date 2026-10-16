@@ -1,34 +1,55 @@
 {
-  "id": "proposition-7.2/key/1.NavierStokes.CommonCoverSolve.LinearData.commonSolve_periodic",
-  "location": {
-    "page": 77,
-    "rect": [0.12854, 0.72562, 0.745098, 0.14876]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CommonCoverSolve.LinearData.commonSolve_periodic",
-      "line": 545,
-      "module": "NavierStokes.CommonCoverSolve",
-      "path": "NavierStokes/CommonCoverSolve.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 77,
+        "rect": [0.12854, 0.72562, 0.745098, 0.14876]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-7.2@p077"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean#L545"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CommonCoverSolve.LinearData.commonSolve_periodic",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 78,
+        "rect": [0.12854, 0.103306, 0.745098, 0.320661]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If the source is periodic at p, commonSolve g hab κ (p, Y + latticePoint n) = commonSolve g hab κ (p, Y): the κ-localized periodized solution descends to the same torus H."
-      },
-      "region": "proposition-7.2@p077",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 545,
-        "text": "theorem commonSolve_periodic (κ : Plane → ℝ) (p : P) (hp : PeriodicAt d.source p)\n    (Y : Plane) (n : Frequency) :\n    d.commonSolve g hab κ (p, Y + TorusAverages.latticePoint n) =\n      d.commonSolve g hab κ (p, Y)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-7.2@p078"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CommonCoverSolve.LinearData.commonSolve_periodic",
+        "module": "NavierStokes.CommonCoverSolve"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CommonCoverSolve.LinearData.commonSolve_periodic",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: If the source is periodic at p, commonSolve g hab κ (p, Y + latticePoint n) = commonSolve g hab κ (p, Y): the κ-localized periodized solution descends to the same torus H."
+          },
+          "destination": {
+            "fragment": "L545",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverSolve.lean"
+          },
+          "snippet": {
+            "line": 545,
+            "text": "theorem commonSolve_periodic (κ : Plane → ℝ) (p : P) (hp : PeriodicAt d.source p)\n    (Y : Plane) (n : Frequency) :\n    d.commonSolve g hab κ (p, Y + TorusAverages.latticePoint n) =\n      d.commonSolve g hab κ (p, Y)"
+          }
+        }
+      }
+    }
+  ]
 }

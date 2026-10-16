@@ -1,22 +1,25 @@
 {
-  "id": "eq-p043-4/key/05.NavierStokes.ModulatedCone.Localized.physical_after_window_agreement",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.Localized.physical_after_window_agreement",
-      "line": 947
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L947"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.Localized.physical_after_window_agreement"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.Localized.physical_after_window_agreement",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 947,
-        "text": "(hp : W.right ≤ p.1) → (hη : p.2 ∈ J) → (hphys : E =ᶠ[𝓝 p] fun q => √(2 q.1) * f q) → (P.E =ᶠ[𝓝 p] E) ∧ (P.U =ᶠ[𝓝 p] U), for P.f = localizedF W r f n, P.U = localizedU W r E U n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ModulatedCone.Localized.physical_after_window_agreement"
+          },
+          "destination": {
+            "fragment": "L947"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 947,
+            "text": "theorem physical_after_window_agreement {D : RadialDomain} (W : ModulatedHistories.Window)\n    (r : TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (hBK : B ⊆ K) (J : Set ℝ)\n    (hends : ∀ η ∈ J, (W.left, η) ∈ B ∧ (W.right, η) ∈ B)\n    (n : ℝ) (P : Profiles D)\n    (hPf : P.f = ModulatedHistories.localizedF W r f n)\n    (hPU : P.U = ModulatedHistories.localizedU W r E U n)\n    {p : Point} (hp : W.right ≤ p.1) (hη : p.2 ∈ J)\n    (hphys : E =ᶠ[𝓝 p] fun q => Real.sqrt (2 * q.1) * f q) :\n    (P.E =ᶠ[𝓝 p] E) ∧ (P.U =ᶠ[𝓝 p] U)"
+          }
+        }
       }
     }
-  }
+  ]
 }

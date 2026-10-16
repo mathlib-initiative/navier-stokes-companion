@@ -1,21 +1,24 @@
 {
-  "id": "eq-p034-5/support/02.NavierStokes.PowerMomentMatrix.intervalMomentMatrix_det_ne_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PowerMomentMatrix.intervalMomentMatrix_det_ne_zero",
-      "line": 216
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PowerMomentMatrix.lean#L216"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PowerMomentMatrix.intervalMomentMatrix_det_ne_zero"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PowerMomentMatrix.intervalMomentMatrix_det_ne_zero",
+        "module": "NavierStokes.PowerMomentMatrix"
       },
-      "snippet": {
-        "line": 216,
-        "text": "proof step at line 229: `hroots : ∀ j, ∃ t ∈ Set.Icc (l j) (u j), powerSum a (c - d) t = 0`, obtained from a vanishing column combination by exists_zero_of_setIntegral_eq_zero (mean value for the integral). This is what stands in place of the paper's determinant expansion."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PowerMomentMatrix.intervalMomentMatrix_det_ne_zero"
+          },
+          "destination": {
+            "fragment": "L216"
+          },
+          "snippet": {
+            "line": 216,
+            "text": "theorem intervalMomentMatrix_det_ne_zero {n : ℕ} (a l u : Fin n → ℝ)\n    (μ : Fin n → Measure ℝ) [∀ j, IsFiniteMeasure (μ j)]\n    (ha : Function.Injective a) (hl : ∀ j, 0 < l j)\n    (hsep : ∀ i j, i < j → u i < l j)\n    (hmass : ∀ j, μ j (Set.Icc (l j) (u j)) ≠ 0) :\n    (intervalMomentMatrix a l u μ).det ≠ 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

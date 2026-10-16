@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.19/key/03.NavierStokes.ResetEnergyBounds.resetDensity_support",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ResetEnergyBounds.resetDensity_support",
-      "line": 66,
-      "module": "NavierStokes.ResetEnergyBounds",
-      "path": "NavierStokes/ResetEnergyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ResetEnergyBounds.lean#L66"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ResetEnergyBounds.resetDensity_support",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ResetEnergyBounds.resetDensity_support",
+        "module": "NavierStokes.ResetEnergyBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 66,
-        "text": "support (resetDensity d c eta) ⊆ Icc (d.releaseStart - 4) d.releaseStart — the reset energy comes only from the relative change E ↦ E(1 + c₀ bump₀ + c₁ bump₁) at the exterior-transition start"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ResetEnergyBounds.resetDensity_support",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L66",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ResetEnergyBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 66,
+            "text": "theorem resetDensity_support (d : TailData) (c : ℝ → Coeff) (eta : ℝ) :\n    support (resetDensity d c eta) ⊆ Icc (d.releaseStart - 4) d.releaseStart"
+          }
+        }
       }
     }
-  }
+  ]
 }

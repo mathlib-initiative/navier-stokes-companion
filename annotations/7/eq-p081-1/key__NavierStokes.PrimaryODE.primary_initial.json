@@ -1,25 +1,27 @@
 {
-  "id": "eq-p081-1/key/01.NavierStokes.PrimaryODE.primary_initial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.primary_initial",
-      "line": 415,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L415"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.primary_initial"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.primary_initial",
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 415,
-        "text": "primary hab d P p a = !₂[P (p, a), 0] — i.e. z₊(a) = P(a) and z₋(a) = 0, the display's initial condition r(a) = 0 written in the two modal coordinates rather than in the quotient"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PrimaryODE.primary_initial"
+          },
+          "destination": {
+            "fragment": "L415",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 415,
+            "text": "theorem primary_initial (hab : a ≤ b) (d : FrameData Q) (P : Q × ℝ → ℝ) (p : Q) :\n    primary hab d P p a = !₂[P (p, a), 0]"
+          }
+        }
       }
     }
-  }
+  ]
 }

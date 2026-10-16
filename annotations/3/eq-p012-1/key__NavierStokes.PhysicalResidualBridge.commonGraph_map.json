@@ -1,26 +1,28 @@
 {
-  "id": "eq-p012-1/key/02.NavierStokes.PhysicalResidualBridge.commonGraph_map",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalResidualBridge.commonGraph_map",
-      "line": 476,
-      "module": "NavierStokes.PhysicalResidualBridge",
-      "path": "NavierStokes/PhysicalResidualBridge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualBridge.lean#L476"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalResidualBridge.commonGraph_map",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalResidualBridge.commonGraph_map",
+        "module": "NavierStokes.PhysicalResidualBridge"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 476,
-        "text": "theorem commonGraph_map (hQ : 0 < Q) (h : ℝ) (i : ℕ) (hr : 0 < p.2 0) : (commonGraph Q h i).map p = ((Q ^ (-(1/2)) * p.2 0, ((Q ^ (-CoordinateAlgebra.D h) * p.2 2, (1 - p.1) / Q), (SlotGeometry.cover ^ i) ((p.2 0) ^ ChartScales.radialExponent h • radialDirection + p.1 • timeDirection))), p.2 1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PhysicalResidualBridge.commonGraph_map",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L476",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualBridge.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 476,
+            "text": "theorem commonGraph_map {Q : ℝ} (hQ : 0 < Q) (h : ℝ) (i : ℕ)\n    {p : SpaceTime} (hr : 0 < p.2 0) :\n    (commonGraph Q h i).map p =\n      ((Q ^ (-(1 / 2 : ℝ)) * p.2 0,\n        ((Q ^ (-CoordinateAlgebra.D h) * p.2 2, (1 - p.1) / Q),\n          (SlotGeometry.cover ^ i)\n            ((p.2 0) ^ ChartScales.radialExponent h • PhysicalGraphBounds.radialDirection +\n              p.1 • PhysicalGraphBounds.timeDirection))), p.2 1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

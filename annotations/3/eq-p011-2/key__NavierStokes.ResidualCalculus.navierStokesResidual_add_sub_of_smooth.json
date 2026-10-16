@@ -1,23 +1,25 @@
 {
-  "id": "eq-p011-2/key/02.NavierStokes.ResidualCalculus.navierStokesResidual_add_sub_of_smooth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ResidualCalculus.navierStokesResidual_add_sub_of_smooth",
-      "line": 155,
-      "module": "NavierStokes.ResidualCalculus",
-      "path": "NavierStokes/ResidualCalculus.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ResidualCalculus.lean#L155"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ResidualCalculus.navierStokesResidual_add_sub_of_smooth"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ResidualCalculus.navierStokesResidual_add_sub_of_smooth",
+        "module": "NavierStokes.ResidualCalculus"
       },
-      "snippet": {
-        "line": 155,
-        "text": "same identity, with the pointwise differentiability hypotheses replaced by ContDiffOn R top u/e/p/q preSingularDomain and t in Ioo 0 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ResidualCalculus.navierStokesResidual_add_sub_of_smooth"
+          },
+          "destination": {
+            "fragment": "L155",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ResidualCalculus.lean"
+          },
+          "snippet": {
+            "line": 155,
+            "text": "theorem navierStokesResidual_add_sub_of_smooth\n    (u e : VelocityField) (p q : PressureField)\n    (hu : ContDiffOn ℝ ∞ u preSingularDomain)\n    (he : ContDiffOn ℝ ∞ e preSingularDomain)\n    (hp : ContDiffOn ℝ ∞ p preSingularDomain)\n    (hq : ContDiffOn ℝ ∞ q preSingularDomain)\n    (t : ℝ) (ht : t ∈ Ioo (0 : ℝ) 1) (x : Space) :\n    navierStokesResidual (fun z => u z + e z) (fun z => p z + q z) t x -\n      navierStokesResidual u p t x =\n        temporalDerivative e t x - spatialLaplacian e t x + pressureGradient q t x +\n          spatialDerivative u t x (e (t, x)) + spatialDerivative e t x (u (t, x)) +\n          spatialDerivative e t x (e (t, x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

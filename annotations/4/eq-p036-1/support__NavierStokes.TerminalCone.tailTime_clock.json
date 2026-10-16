@@ -1,26 +1,29 @@
 {
-  "id": "eq-p036-1/support/06.NavierStokes.TerminalCone.tailTime_clock",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalCone.tailTime_clock",
-      "line": 477,
-      "module": "NavierStokes.TerminalCone",
-      "path": "NavierStokes/TerminalCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean#L477"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalCone.tailTime_clock",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalCone.tailTime_clock",
+        "module": "NavierStokes.TerminalCone"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 477,
-        "text": "log ((XR * exp y) / switchRadius F XR) + 1/5 = y - OutgoingTail.tailStart F.data   -- turns hfull into y > tailStart + 1/2 = terminalStart"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.TerminalCone.tailTime_clock",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L477",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 477,
+            "text": "theorem tailTime_clock (F : OutgoingProfile.Profile) {XR : ℝ} (hXR : 0 < XR) (y : ℝ) :\n    Real.log ((XR * Real.exp y) / OutgoingDilation.switchRadius F XR) + 1 / 5 =\n      y - OutgoingTail.tailStart F.data"
+          }
+        }
       }
     }
-  }
+  ]
 }

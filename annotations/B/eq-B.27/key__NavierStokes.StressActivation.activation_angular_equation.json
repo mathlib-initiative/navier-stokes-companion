@@ -1,24 +1,27 @@
 {
-  "id": "eq-B.27/key/02.NavierStokes.StressActivation.activation_angular_equation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressActivation.activation_angular_equation",
-      "line": 333
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean#L333"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressActivation.activation_angular_equation",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressActivation.activation_angular_equation",
+        "module": "NavierStokes.StressActivation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 333,
-        "text": "∂_y log(activatedAngular T κ L) = -(damping T κ y * referenceP1 L (y, η))/2; the reference equation ∂_y L = -referenceP1/2 holds by the definition of referenceP1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.StressActivation.activation_angular_equation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L333"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 333,
+            "text": "theorem activation_angular_equation (T κ : ℝ) {J : Set ℝ} (hJ : IsOpen J) {L : Field}\n    (hL : ContDiffOn ℝ ∞ L (logDomain J hJ).carrier) (y : ℝ) {η : ℝ} (hη : η ∈ J) :\n    HasDerivAt (fun x => Real.log (activatedAngular T κ L (x, η)))\n      (-(damping T κ y * referenceP1 L (y, η)) / 2) y"
+          }
+        }
       }
     }
-  }
+  ]
 }

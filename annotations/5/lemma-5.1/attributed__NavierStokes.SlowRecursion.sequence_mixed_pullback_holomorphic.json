@@ -1,31 +1,33 @@
 {
-  "id": "lemma-5.1/attributed/1.NavierStokes.SlowRecursion.sequence_mixed_pullback_holomorphic",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowRecursion.sequence_mixed_pullback_holomorphic",
-      "line": 1230,
-      "module": "NavierStokes.SlowRecursion",
-      "path": "NavierStokes/SlowRecursion.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowRecursion.lean#L1230"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowRecursion.sequence_mixed_pullback_holomorphic",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowRecursion.sequence_mixed_pullback_holomorphic",
+        "module": "NavierStokes.SlowRecursion"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For every order n, component i and every pair (k,m) of radial/parameter jet indices, z |-> mixedAxisJet (sequence ... n i) k m (r^2,z) is holomorphic on U for each r in Ioo(-core,core): each fixed radial derivative is holomorphic in \\eta on the same fixed neighbourhood.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1230,
-        "text": "theorem sequence_mixed_pullback_holomorphic {core buffer : ℝ} {U : Set ℂ} {h : ℝ}\n    (c : Domain (radius core buffer 0) U h) (hcore : 0 < core) (hbuffer : 0 < buffer)\n    (C : ℝ) (base : Coefficient (radius core buffer 0) U) (n : ℕ) (i : Fin 5) (k m : ℕ)\n    {r : ℝ} (hr : r ∈ Ioo (-core) core) :\n    DifferentiableOn ℂ\n      (fun z => BoundaryAxisJets.mixedAxisJet (sequence c hcore hbuffer C base n i) k m (r ^ 2, z)) U"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SlowRecursion.sequence_mixed_pullback_holomorphic",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For every order n, component i and every pair (k,m) of radial/parameter jet indices, z |-> mixedAxisJet (sequence ... n i) k m (r^2,z) is holomorphic on U for each r in Ioo(-core,core): each fixed radial derivative is holomorphic in \\eta on the same fixed neighbourhood.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1230",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowRecursion.lean"
+          },
+          "snippet": {
+            "line": 1230,
+            "text": "theorem sequence_mixed_pullback_holomorphic {core buffer : ℝ} {U : Set ℂ} {h : ℝ}\n    (c : Domain (radius core buffer 0) U h) (hcore : 0 < core) (hbuffer : 0 < buffer)\n    (C : ℝ) (base : Coefficient (radius core buffer 0) U) (n : ℕ) (i : Fin 5) (k m : ℕ)\n    {r : ℝ} (hr : r ∈ Ioo (-core) core) :\n    DifferentiableOn ℂ\n      (fun z => BoundaryAxisJets.mixedAxisJet (sequence c hcore hbuffer C base n i) k m (r ^ 2, z)) U"
+          }
+        }
       }
     }
-  }
+  ]
 }

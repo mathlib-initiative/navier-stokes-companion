@@ -1,23 +1,26 @@
 {
-  "id": "eq-p148-2/key/04.NavierStokes.AxisContraction.naturalRemainder",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisContraction.naturalRemainder",
-      "line": 339
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisContraction.lean#L339"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisContraction.naturalRemainder",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisContraction.naturalRemainder",
+        "module": "NavierStokes.AxisContraction"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 339,
-        "text": "naturalRemainder O d S t a x = (S (O.product d.inverseL (lin1 + quad1 - t • slow1)), O.product d.inverseL (lin2 - t • slow2 + pressure))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.AxisContraction.naturalRemainder",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L339"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 339,
+            "text": "def naturalRemainder (O : NaturalOperators V) (d : AxisData V)\n    (S : V →L[ℝ] V) (t : ℝ) (a : V) (x : V × V) : V × V"
+          }
+        }
       }
     }
-  }
+  ]
 }

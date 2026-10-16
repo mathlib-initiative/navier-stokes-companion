@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.2/key/01.NavierStokes.LinearWaveResidual.linearResidual_mode_split",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveResidual.linearResidual_mode_split",
-      "line": 206,
-      "module": "NavierStokes.LinearWaveResidual",
-      "path": "NavierStokes/LinearWaveResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean#L206"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveResidual.linearResidual_mode_split",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveResidual.linearResidual_mode_split",
+        "module": "NavierStokes.LinearWaveResidual"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 206,
-        "text": "linearResidual ε R Vr Vθ Vz (timeDirection ε Vf Vs) (complexBase R b F G) (vectorMode κ Φ a) (mode κ Φ p) x = fun i => (principal … + remainder …) * carrier κ Φ x — i.e. that the displayed formula really is the remainder of the linearization about (b,V,G) = base R b F G, after subtracting (9.1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.LinearWaveResidual.linearResidual_mode_split",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L206",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 206,
+            "text": "theorem linearResidual_mode_split {U : Set E} (ε κ : ℝ) (R b F G : E → ℝ)\n    {Vr Vθ Vz : E → E} (Vf Vs : E → E) {Φ : E → ℝ} {a : E → ComplexVector}\n    {p : E → ℂ} {pθ : ℝ} {x : E}\n    (hU : IsOpen U) (hr : ContDiffOn ℝ ∞ Vr U) (hθ : ContDiffOn ℝ ∞ Vθ U)\n    (hz : ContDiffOn ℝ ∞ Vz U) (hΦ : ContDiffOn ℝ ∞ Φ U)\n    (ha : ∀ i, ContDiffOn ℝ ∞ (fun y => a y i) U)\n    (hR : DifferentiableAt ℝ R x) (hb : DifferentiableAt ℝ b x)\n    (hF : DifferentiableAt ℝ F x) (hG : DifferentiableAt ℝ G x)\n    (hRx : R x ≠ 0) (hDr : along Vr R x = 1)\n    (hBθ : ∀ i, along Vθ (fun y => base R b F G y i) x = 0)\n    (haθ : ∀ i, EqOn (along Vθ (fun y => a y i)) (fun _ => 0) U)\n    (hΦθ : EqOn (along Vθ Φ) (fun _ => pθ) U)\n    (hp : DifferentiableAt ℝ p x) (hpθ : along Vθ p x = 0) (hx : x ∈ U) :\n    linearResidual ε R Vr Vθ Vz (timeDirection ε Vf Vs) (complexBase R b F G)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

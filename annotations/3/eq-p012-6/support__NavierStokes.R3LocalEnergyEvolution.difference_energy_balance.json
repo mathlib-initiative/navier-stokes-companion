@@ -1,26 +1,30 @@
 {
-  "id": "eq-p012-6/support/05.NavierStokes.R3LocalEnergyEvolution.difference_energy_balance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.R3LocalEnergyEvolution.difference_energy_balance",
-      "line": 48,
-      "module": "NavierStokes.R3LocalEnergyEvolution",
-      "path": "NavierStokes/R3LocalEnergyEvolution.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3LocalEnergyEvolution.lean#L48"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.R3LocalEnergyEvolution.difference_energy_balance",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.R3LocalEnergyEvolution.difference_energy_balance",
+        "module": "NavierStokes.R3LocalEnergyEvolution"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 48,
-        "text": "energyRate χ (u - v) t = -2 * dissipation χ (u-v) - 2 * diffusionFlux χ (u-v) + transportFlux χ (u-v) v - 2 * coupling χ (u-v) u + 2 * pressureFlux χ (u-v) (p-q), from equal Navier–Stokes residuals; the only caller of R3CompactEnergy.energy_balance (line 65), with u ≠ v"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.R3LocalEnergyEvolution.difference_energy_balance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L48",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3LocalEnergyEvolution.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 48,
+            "text": "theorem difference_energy_balance {χ : Space → ℝ} {u v : VelocityField}\n    {p q : PressureField} {t : ℝ} (hχ : ContDiff ℝ ∞ χ) (hc : HasCompactSupport χ)\n    (hu : ContDiff ℝ ∞ (fun x : Space => u (t, x)))\n    (hv : ContDiff ℝ ∞ (fun x : Space => v (t, x)))\n    (hp : ContDiff ℝ ∞ (fun x : Space => p (t, x)))\n    (hq : ContDiff ℝ ∞ (fun x : Space => q (t, x)))\n    (htu : ∀ x, DifferentiableAt ℝ (fun s => u (s, x)) t)\n    (htv : ∀ x, DifferentiableAt ℝ (fun s => v (s, x)) t)\n    (hdu : ∀ x, spatialDivergence u t x = 0)\n    (hdv : ∀ x, spatialDivergence v t x = 0)\n    (heq : ∀ x, navierStokesResidual u p t x = navierStokesResidual v q t x) :\n    energyRate χ (u - v) t =\n      -2 * R3CompactEnergy.dissipation χ (fun x => (u - v) (t, x)) -\n      2 * R3CompactEnergy.diffusionFlux χ (fun x => (u - v) (t, x)) +\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

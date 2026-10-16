@@ -1,26 +1,28 @@
 {
-  "id": "eq-p104-4/key/02.NavierStokes.FlatPrimitiveFactor.exists_smooth_factor",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FlatPrimitiveFactor.exists_smooth_factor",
-      "line": 272,
-      "module": "NavierStokes.FlatPrimitiveFactor",
-      "path": "NavierStokes/FlatPrimitiveFactor.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatPrimitiveFactor.lean#L272"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FlatPrimitiveFactor.exists_smooth_factor",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FlatPrimitiveFactor.exists_smooth_factor",
+        "module": "NavierStokes.FlatPrimitiveFactor"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 272,
-        "text": "same factorization with the explicit witness F := factor c j b (an improper integral, FlatPrimitiveFactor.lean:34), smooth by factor_contDiff and with value b 0 / (2 * c) at 0 — so the constant is exhibited, not obtained as a limit"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.FlatPrimitiveFactor.exists_smooth_factor",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L272",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FlatPrimitiveFactor.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 272,
+            "text": "theorem exists_smooth_factor {c : ℝ} (hc : 0 < c) (j : ℕ) {b : ℝ → ℝ}\n    (hb : ContDiff ℝ ∞ b) :\n    ∃ F : ℝ → ℝ, ContDiff ℝ ∞ F ∧ F 0 = b 0 / (2 * c) ∧\n      ∀ x : ℝ, 0 ≤ x → primitive c j b x = scale c j x * F x"
+          }
+        }
       }
     }
-  }
+  ]
 }

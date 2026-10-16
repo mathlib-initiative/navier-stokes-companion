@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.26/attributed/07.NavierStokes.ProfileSpectralCone.targetCone_of_signedShear",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ProfileSpectralCone.targetCone_of_signedShear",
-      "line": 137,
-      "module": "NavierStokes.ProfileSpectralCone",
-      "path": "NavierStokes/ProfileSpectralCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean#L137"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ProfileSpectralCone.targetCone_of_signedShear",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ProfileSpectralCone.targetCone_of_signedShear",
+        "module": "NavierStokes.ProfileSpectralCone"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 137,
-        "text": "0 < F → 0 < a → 2 < a*(1+(c/a)^2) → 0 < a * T 0 + c * T 1 → (a*(1+(c/a)^2) - 2) * (a * T 1 - c * T 0)^2 < 2 * (a * T 0 + c * T 1)^2 → TargetCone F (F • !₂[-a, -c]) T   -- scalar (4.26, kappa = 0) form ⇒ spectral form; the converse is the same algebra read backwards (hN, hK at lines 150-158 and c0_sq_signedShear)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.ProfileSpectralCone.targetCone_of_signedShear",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L137",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ProfileSpectralCone.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 137,
+            "text": "theorem targetCone_of_signedShear {F a c : ℝ} (hF : 0 < F) (ha : 0 < a)\n    (hv : 2 < a * (1 + (c / a) ^ 2)) (T : Plane)\n    (hin : 0 < a * T 0 + c * T 1)\n    (hquad : (a * (1 + (c / a) ^ 2) - 2) * (a * T 1 - c * T 0) ^ 2 <\n      2 * (a * T 0 + c * T 1) ^ 2) :\n    PrimaryRepresentatives.TargetCone F (F • !₂[-a, -c]) T"
+          }
+        }
       }
     }
-  }
+  ]
 }

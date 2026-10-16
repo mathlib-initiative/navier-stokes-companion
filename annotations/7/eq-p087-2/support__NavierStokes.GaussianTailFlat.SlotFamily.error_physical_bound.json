@@ -1,23 +1,27 @@
 {
-  "id": "eq-p087-2/support/03.NavierStokes.GaussianTailFlat.SlotFamily.error_physical_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GaussianTailFlat.SlotFamily.error_physical_bound",
-      "line": 807
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GaussianTailFlat.lean#L807"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GaussianTailFlat.SlotFamily.error_physical_bound"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GaussianTailFlat.SlotFamily.error_physical_bound",
+        "module": "NavierStokes.GaussianTailFlat"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 807,
-        "text": "∃ C, 0 ≤ C ∧ ∀ n, 4 ≤ n → … ∀ q : ℝ, 0 < q → q/2 ≤ ChartScales.Q n → ChartScales.Q n ≤ 2*q → ‖iteratedFDeriv ℝ m (g.error u f n ∘ physicalLift h n) p‖ ≤ C * q ^ N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.GaussianTailFlat.SlotFamily.error_physical_bound"
+          },
+          "destination": {
+            "fragment": "L807"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 807,
+            "text": "theorem error_physical_bound {s : StripData LiftPoint} (g : SlotFamily s)\n    (edges : FlatEdges s) (scales : BandScaleControl s)\n    {P : ℕ → LiftPoint → ℝ} {α c : ℝ} {u f : ℕ → LiftPoint → E}\n    (hu : WaveClass s P α u) (hf : WaveClass s P α f) (hc : 0 < c)\n    (hP : ∀ n x, x ∈ s.domain →\n      P n x ≤ Real.exp (-c * (g.coordinate n x - 1 / 2) ^ 2 * g.length n))\n    (hu_smooth : ∀ n, ContDiffOn ℝ ∞ (u n) {x | g.coordinate n x ∈ Ioo (0 : ℝ) 1})\n    (hf_smooth : ∀ n, ContDiff ℝ ∞ (f n))\n    {h a b : ℝ} (hh : 0 ≤ h) (hh1 : h ≤ 1 / 2) (ha : 0 < a) (m : ℕ) (N : ℝ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℕ, 4 ≤ n → ∀ p : SpaceTime,\n      scaledRadial n p ∈ annulus a b → |p.1| ≤ 1 → physicalLift h n p ∈ s.domain →\n      ∀ q : ℝ, 0 < q → q / 2 ≤ ChartScales.Q n → ChartScales.Q n ≤ 2 * q →\n      ‖iteratedFDeriv ℝ m (g.error u f n ∘ physicalLift h n) p‖ ≤ C * q ^ N"
+          }
+        }
       }
     }
-  }
+  ]
 }

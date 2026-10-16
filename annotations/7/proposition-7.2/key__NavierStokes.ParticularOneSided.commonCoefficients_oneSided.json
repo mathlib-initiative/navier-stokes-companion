@@ -1,34 +1,55 @@
 {
-  "id": "proposition-7.2/key/1.NavierStokes.ParticularOneSided.commonCoefficients_oneSided",
-  "location": {
-    "page": 77,
-    "rect": [0.12854, 0.72562, 0.745098, 0.14876]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParticularOneSided.commonCoefficients_oneSided",
-      "line": 169,
-      "module": "NavierStokes.ParticularOneSided",
-      "path": "NavierStokes/ParticularOneSided.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 77,
+        "rect": [0.12854, 0.72562, 0.745098, 0.14876]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-7.2@p077"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularOneSided.lean#L169"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParticularOneSided.commonCoefficients_oneSided",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 78,
+        "rect": [0.12854, 0.103306, 0.745098, 0.320661]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If the normal, its motion, action, damping and source are ContDiffOn ℝ ∞ on slowDomain W ×ˢ univ = (Ici 0 ×ˢ W) ×ˢ Plane with nonvanishing normal, and tsupport κ ⊆ univ ×ˢ Ioo a b, then commonVelocity and commonPressure are ContDiffOn ℝ ∞ on the same τ ≥ 0 closed set: the one-sided τ = 0 clause."
-      },
-      "region": "proposition-7.2@p077",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 169,
-        "text": "theorem commonCoefficients_oneSided (t : TangentData (ℝ × X) ProblemStatement.Space)\n    (f : (ℝ × X) × Plane → HarmonicCalculus.ComplexVector) (g : Geometry)\n    {a b : ℝ} (hab : a ≤ b) {W : Set X} (hW : IsOpen W) (hcW : Convex ℝ W)\n    (hN : ContDiffOn ℝ ∞ t.normal (slowDomain W ×ˢ univ))\n    (hNd : ContDiffOn ℝ ∞ t.normalDot (slowDomain W ×ˢ univ))\n    (hK : ContDiffOn ℝ ∞ t.action (slowDomain W ×ˢ univ))\n    (hδ : ContDiffOn ℝ ∞ t.damping (slowDomain W ×ˢ univ))\n    (hf : ContDiffOn ℝ ∞ f (slowDomain W ×ˢ univ))\n    (hn : ∀ x ∈ slowDomain W ×ˢ univ, t.normal x ≠ 0)\n    {κ : Plane → ℝ} (hκ : ContDiff ℝ ∞ κ) (hcκ : HasCompactSupport κ)\n    (hsupp : tsupport κ ⊆ univ ×ˢ Ioo a b) (frequency : ℝ) :\n    ContDiffOn ℝ ∞ (commonVelocity t f g hab κ) (slowDomain W ×ˢ univ) ∧\n      ContDiffOn ℝ ∞ (commonPressure t f g hab κ frequency) (slowDomain W ×ˢ univ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-7.2@p078"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParticularOneSided.commonCoefficients_oneSided",
+        "module": "NavierStokes.ParticularOneSided"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ParticularOneSided.commonCoefficients_oneSided",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: If the normal, its motion, action, damping and source are ContDiffOn ℝ ∞ on slowDomain W ×ˢ univ = (Ici 0 ×ˢ W) ×ˢ Plane with nonvanishing normal, and tsupport κ ⊆ univ ×ˢ Ioo a b, then commonVelocity and commonPressure are ContDiffOn ℝ ∞ on the same τ ≥ 0 closed set: the one-sided τ = 0 clause."
+          },
+          "destination": {
+            "fragment": "L169",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularOneSided.lean"
+          },
+          "snippet": {
+            "line": 169,
+            "text": "theorem commonCoefficients_oneSided (t : TangentData (ℝ × X) ProblemStatement.Space)\n    (f : (ℝ × X) × Plane → HarmonicCalculus.ComplexVector) (g : Geometry)\n    {a b : ℝ} (hab : a ≤ b) {W : Set X} (hW : IsOpen W) (hcW : Convex ℝ W)\n    (hN : ContDiffOn ℝ ∞ t.normal (slowDomain W ×ˢ univ))\n    (hNd : ContDiffOn ℝ ∞ t.normalDot (slowDomain W ×ˢ univ))\n    (hK : ContDiffOn ℝ ∞ t.action (slowDomain W ×ˢ univ))\n    (hδ : ContDiffOn ℝ ∞ t.damping (slowDomain W ×ˢ univ))\n    (hf : ContDiffOn ℝ ∞ f (slowDomain W ×ˢ univ))\n    (hn : ∀ x ∈ slowDomain W ×ˢ univ, t.normal x ≠ 0)\n    {κ : Plane → ℝ} (hκ : ContDiff ℝ ∞ κ) (hcκ : HasCompactSupport κ)\n    (hsupp : tsupport κ ⊆ univ ×ˢ Ioo a b) (frequency : ℝ) :\n    ContDiffOn ℝ ∞ (commonVelocity t f g hab κ) (slowDomain W ×ˢ univ) ∧\n      ContDiffOn ℝ ∞ (commonPressure t f g hab κ frequency) (slowDomain W ×ˢ univ)"
+          }
+        }
+      }
+    }
+  ]
 }

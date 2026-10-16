@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.2/key/09.NavierStokes.HarmonicCalculus.phaseNormal",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicCalculus.phaseNormal",
-      "line": 189,
-      "module": "NavierStokes.HarmonicCalculus",
-      "path": "NavierStokes/HarmonicCalculus.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicCalculus.lean#L189"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicCalculus.phaseNormal",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicCalculus.phaseNormal",
+        "module": "NavierStokes.HarmonicCalculus"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 189,
-        "text": "phaseNormal R Vr Vθ Vz Φ x = !₂[along Vr Φ x, along Vθ Φ x / R x, along Vz Φ x] — the paper's n_Φ = ∇_*Φ of (7.4), whose middle entry is R⁻¹∂_θΦ; so the Lean's `phaseNormal … 1 / R` is the paper's n_{Φ,θ}/R"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.HarmonicCalculus.phaseNormal",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L189",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicCalculus.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 189,
+            "text": "noncomputable def phaseNormal (R : E → ℝ) (Vr Vθ Vz : E → E)\n    (Φ : E → ℝ) (x : E) : EuclideanSpace ℝ (Fin 3)"
+          }
+        }
       }
     }
-  }
+  ]
 }

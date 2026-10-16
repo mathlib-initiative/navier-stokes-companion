@@ -1,24 +1,27 @@
 {
-  "id": "eq-6.20/attributed/04.NavierStokes.ActualMeanPhysicalData.Atlas.physical_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualMeanPhysicalData.Atlas.physical_eq",
-      "line": 133
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualMeanPhysicalData.lean#L133"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualMeanPhysicalData.Atlas.physical_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualMeanPhysicalData.Atlas.physical_eq",
+        "module": "NavierStokes.ActualMeanPhysicalData"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 133,
-        "text": "A.physical U degree f z = ChartScales.Q n ^ (-degree) * f n (A.chart n z) for every band n valid at z — the Lean form of 'both sides equal the original field in that chart'"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.ActualMeanPhysicalData.Atlas.physical_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L133"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 133,
+            "text": "theorem Atlas.physical_eq {h degree : ℝ} {N Δ : ℕ} (A : Atlas h N Δ)\n    {U : Set Plane} {f : Scalar} (H : A.OverlapLaw U degree f)\n    {z : Point} {n : ℕ} (hn : A.Valid U z n) :\n    A.physical U degree f z = ChartScales.Q n ^ (-degree) * f n (A.chart n z)"
+          }
+        }
       }
     }
-  }
+  ]
 }

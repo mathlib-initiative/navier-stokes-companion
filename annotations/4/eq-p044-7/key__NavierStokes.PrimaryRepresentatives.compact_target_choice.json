@@ -1,25 +1,27 @@
 {
-  "id": "eq-p044-7/key/03.NavierStokes.PrimaryRepresentatives.compact_target_choice",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryRepresentatives.compact_target_choice",
-      "line": 596,
-      "module": "NavierStokes.PrimaryRepresentatives",
-      "path": "NavierStokes/PrimaryRepresentatives.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryRepresentatives.lean#L596"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryRepresentatives.compact_target_choice"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryRepresentatives.compact_target_choice",
+        "module": "NavierStokes.PrimaryRepresentatives"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 596,
-        "text": "(hK : IsCompact K) … (ht : ∀ q ∈ K, TargetCone (F q) (g q) (T q)) : ∃ u η, 0 < u ∧ 0 < η ∧ ∀ q ∈ K, ⟪T q, normalDirection (g q)⟫_ℝ ≤ -η ∧ targetRatio (F q) (g q) (T q) + η ≤ slopeRatio u"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.PrimaryRepresentatives.compact_target_choice"
+          },
+          "destination": {
+            "fragment": "L596",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryRepresentatives.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 596,
+            "text": "theorem compact_target_choice {K : Set Slow} (hK : IsCompact K)\n    {F : Slow → ℝ} {g T : Slow → Plane}\n    (hF : ContinuousOn F K) (hg : ContinuousOn g K) (hT : ContinuousOn T K)\n    (hc : ∀ q ∈ K, ReferenceCone (F q) (g q))\n    (ht : ∀ q ∈ K, TargetCone (F q) (g q) (T q)) :\n    ∃ u η : ℝ, 0 < u ∧ 0 < η ∧ ∀ q ∈ K,\n      ⟪T q, normalDirection (g q)⟫_ℝ ≤ -η ∧\n      targetRatio (F q) (g q) (T q) + η ≤ slopeRatio u"
+          }
+        }
       }
     }
-  }
+  ]
 }

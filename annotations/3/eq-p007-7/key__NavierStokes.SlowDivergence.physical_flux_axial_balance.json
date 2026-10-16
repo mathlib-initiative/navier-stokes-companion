@@ -1,26 +1,28 @@
 {
-  "id": "eq-p007-7/key/01.NavierStokes.SlowDivergence.physical_flux_axial_balance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowDivergence.physical_flux_axial_balance",
-      "line": 148,
-      "module": "NavierStokes.SlowDivergence",
-      "path": "NavierStokes/SlowDivergence.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowDivergence.lean#L148"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowDivergence.physical_flux_axial_balance",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowDivergence.physical_flux_axial_balance",
+        "module": "NavierStokes.SlowDivergence"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 148,
-        "text": "SimilarityProfile.partialS (pullback h lam (radialFlux h lam U)) p + SimilarityProfile.partialZ (pullback h (-CoordinateAlgebra.A h + lam) U) p = 0; docstring: \"Physical incompressibility in flux coordinates (t,s,z), s=r^2/2\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SlowDivergence.physical_flux_axial_balance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L148",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowDivergence.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 148,
+            "text": "theorem physical_flux_axial_balance (Ω : RadialDomain) {U : Field}\n    (hU : ContDiffOn ℝ ∞ U Ω.carrier) {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    (lam : ℝ) {p : SimilarityProfile.PhysicalPoint} (hp : p.1 < 1)\n    (hi : SimilarityProfile.inner h p ∈ Ω.carrier) :\n    SimilarityProfile.partialS (SimilarityProfile.pullback h lam (radialFlux h lam U)) p +\n      SimilarityProfile.partialZ (SimilarityProfile.pullback h (-CoordinateAlgebra.A h + lam) U) p = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

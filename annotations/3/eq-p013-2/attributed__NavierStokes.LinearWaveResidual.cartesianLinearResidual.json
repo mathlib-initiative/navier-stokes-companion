@@ -1,26 +1,28 @@
 {
-  "id": "eq-p013-2/attributed/04.NavierStokes.LinearWaveResidual.cartesianLinearResidual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveResidual.cartesianLinearResidual",
-      "line": 511,
-      "module": "NavierStokes.LinearWaveResidual",
-      "path": "NavierStokes/LinearWaveResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean#L511"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveResidual.cartesianLinearResidual",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveResidual.cartesianLinearResidual",
+        "module": "NavierStokes.LinearWaveResidual"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 511,
-        "text": "cartesianLinearResidual ε B a p t x := temporalDerivative a t x + spatialDerivative a t x (B (t,x)) + spatialDerivative B t x (a (t,x)) + pressureGradient p t x - ε • spatialLaplacian a t x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LinearWaveResidual.cartesianLinearResidual",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L511",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 511,
+            "text": "noncomputable def cartesianLinearResidual (ε : ℝ) (B a : VelocityField) (p : PressureField)\n    (t : ℝ) (x : Space) : Space"
+          }
+        }
       }
     }
-  }
+  ]
 }

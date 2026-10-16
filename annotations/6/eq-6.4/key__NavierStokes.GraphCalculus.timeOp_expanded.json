@@ -1,23 +1,26 @@
 {
-  "id": "eq-6.4/key/01.NavierStokes.GraphCalculus.timeOp_expanded",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GraphCalculus.timeOp_expanded",
-      "line": 233
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GraphCalculus.lean#L233"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GraphCalculus.timeOp_expanded",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GraphCalculus.timeOp_expanded",
+        "module": "NavierStokes.GraphCalculus"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 233,
-        "text": "timeOp vt F p = fderiv ℝ F p ((0,1),(0,0)) + (vt.1 * fderiv ℝ F p ((0,0),(1,0)) + vt.2 * fderiv ℝ F p ((0,0),(0,1))); docstring \"This is exactly ∂t + vt · ∂Y\""
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GraphCalculus.timeOp_expanded",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L233"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 233,
+            "text": "theorem timeOp_expanded (vt : Plane) (F : Lift → ℝ) (p : Lift) :\n    timeOp vt F p = fderiv ℝ F p ((0, 1), (0, 0)) +\n      (vt.1 * fderiv ℝ F p ((0, 0), (1, 0)) +\n        vt.2 * fderiv ℝ F p ((0, 0), (0, 1)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,25 +1,27 @@
 {
-  "id": "eq-4.12/key/04.NavierStokes.LeadingStress.thetaAxialViscosity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStress.thetaAxialViscosity",
-      "line": 380,
-      "module": "NavierStokes.LeadingStress",
-      "path": "NavierStokes/LeadingStress.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean#L380"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStress.thetaAxialViscosity",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStress.thetaAxialViscosity",
+        "module": "NavierStokes.LeadingStress"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 380,
-        "text": "thetaAxialViscosity P h p = Real.sqrt (2 * p.2.1) * partialZ (partialZ (swirlProfile P h)) p  (= r ∂_z^2(u_θ^{(0)}/r) = ∂_z^2 u_θ^{(0)})"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LeadingStress.thetaAxialViscosity",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L380",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStress.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 380,
+            "text": "noncomputable def thetaAxialViscosity (h : ℝ) (p : SimilarityProfile.PhysicalPoint) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

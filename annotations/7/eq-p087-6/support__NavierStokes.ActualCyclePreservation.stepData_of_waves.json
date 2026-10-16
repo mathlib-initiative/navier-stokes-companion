@@ -1,26 +1,29 @@
 {
-  "id": "eq-p087-6/support/21.NavierStokes.ActualCyclePreservation.stepData_of_waves",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualCyclePreservation.stepData_of_waves",
-      "line": 556,
-      "module": "NavierStokes.ActualCyclePreservation",
-      "path": "NavierStokes/ActualCyclePreservation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean#L556"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualCyclePreservation.stepData_of_waves",
-        "kind": "def"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualCyclePreservation.stepData_of_waves",
+        "module": "NavierStokes.ActualCyclePreservation"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 556,
-        "text": "tailStart := (ActualPrimary.choice B N0).prepared.N + 1; cross_tail filled by ActualSignedMeanBinding.family_requested_cross_tail c ((p).afterParticular v c u) _ a rfl rfl ha hn hz i (lines 595-600)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "21.NavierStokes.ActualCyclePreservation.stepData_of_waves",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L556",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualCyclePreservation.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 556,
+            "text": "noncomputable def stepData_of_waves (H : Invariant σ x)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) (hσ : 1/5 ≤ σ)\n    (hl : (v).labels = ActualPrimary.activeLabels ActualPrimary.standardRegion B N0)\n    (W : CorrectionAnalyticStep.WaveData G p v c u ActualInitialization.envelope\n      ActualCoreSupport.refinedCarrier σ κ) :\n    CorrectionAnalyticStep.StepData G ActualPrimary.h (CommonWindow.index ActualPrimary.h)\n      ActualInitialization.axial\n      (fun l => ActualParticularStageControls.canonicalParameters (l.2,l.1))\n      ActualSignedStageControls.parameters ActualPrimary.rankData c x\n      ActualInitialization.tangentBlock ActualInitialization.envelope\n      ActualCoreSupport.refinedCarrier (staticData B) H hσ"
+          }
+        }
       }
     }
-  }
+  ]
 }

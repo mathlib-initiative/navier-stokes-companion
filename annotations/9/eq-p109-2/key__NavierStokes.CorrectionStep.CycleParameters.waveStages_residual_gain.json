@@ -1,26 +1,30 @@
 {
-  "id": "eq-p109-2/key/02.NavierStokes.CorrectionStep.CycleParameters.waveStages_residual_gain",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.CycleParameters.waveStages_residual_gain",
-      "line": 9618,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L9618"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.CycleParameters.waveStages_residual_gain",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.CycleParameters.waveStages_residual_gain",
+        "lines": [9618, 9618],
+        "module": "NavierStokes.CorrectionStep"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 9618,
-        "text": "have hsecond := waveStage_residual_uniform c ho hκhalf hR (p.afterParticular v c u) (p.afterSigned v c u) hm hmean … (p.beforeSignedBlock v c u) (p.signedBlock v c u) (fun i j _ => hbefore i j) (fun i j _ => hsigned i j) … ((hlinearS i j hj).mono_exponent (show 1/2+σ+1/10 ≤ 1+σ-4*κ by linarith)) (by linarith) (by linarith) (by linarith)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.CorrectionStep.CycleParameters.waveStages_residual_gain",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L9618",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 9521,
+            "text": "theorem waveStages_residual_gain {P : ι → ℕ → CyclePoint → ℝ} {σ κ : ℝ}\n    (hσ : 1/5 ≤ σ) (hκsmall : κ ≤ 1/100000)\n    (ho : OperatorBounds p.strip c.operators κ)\n    (hR : ∀ x ∈ p.strip.domain, 0 < c.operators.radius x)\n    (hbase : BaseBounds p.strip c.base)\n    (hu : MeanIncrementBounds.CumulativeBounds p.strip u.mean)\n    (hc : ∀ l, SameCarrier (v.blocks l) (p.signedBlock v c u l))\n    (hold : ∀ i j, UniformWaveClass p.strip P (1/2)\n      (fun l n x => (v.blocks l).velocity n i j x))\n    (hpart : ∀ i j, UniformWaveClass p.strip P (1/2+σ)\n      (fun l n x => (p.particularBlock v c u l).velocity n i j x))\n    (hsigned : ∀ i j, UniformWaveClass p.strip P (1/2+σ-κ)\n      (fun l n x => (p.signedBlock v c u l).velocity n i j x))\n    (hpold : ∀ l n, HarmonicResidual.SmoothCoefficients p.strip.domain ((v.blocks l).pressure n))\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

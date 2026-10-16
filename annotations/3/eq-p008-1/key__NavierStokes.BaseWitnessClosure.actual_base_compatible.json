@@ -1,25 +1,27 @@
 {
-  "id": "eq-p008-1/key/02.NavierStokes.BaseWitnessClosure.actual_base_compatible",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseWitnessClosure.actual_base_compatible",
-      "line": 65,
-      "module": "NavierStokes.BaseWitnessClosure",
-      "path": "NavierStokes/BaseWitnessClosure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseWitnessClosure.lean#L65"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseWitnessClosure.actual_base_compatible",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseWitnessClosure.actual_base_compatible",
+        "module": "NavierStokes.BaseWitnessClosure"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 65,
-        "text": "… ∧ ActualPrimary.modulation.profiles.pressure0 = ActualPrimary.outgoing.axisDatum"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.BaseWitnessClosure.actual_base_compatible",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L65",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseWitnessClosure.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 65,
+            "text": "theorem actual_base_compatible :\n    OutgoingProfile.Specification ActualPrimary.outgoing ActualPrimary.nominal.outgoingBound ∧\n      NominalConeAssembly.Certificate ActualPrimary.nominal ∧\n      LeadingStressWeights.FullTrueCone ActualPrimary.modulation ∧\n      ActualPrimary.modulation.profiles.pressure0 = ActualPrimary.outgoing.axisDatum"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.12/key/03.NavierStokes.StateMomentBalances.state_axial_moment",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StateMomentBalances.state_axial_moment",
-      "line": 980,
-      "module": "NavierStokes.StateMomentBalances",
-      "path": "NavierStokes/StateMomentBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StateMomentBalances.lean#L980"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StateMomentBalances.state_axial_moment",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StateMomentBalances.state_axial_moment",
+        "module": "NavierStokes.StateMomentBalances"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 980,
-        "text": "CorrectionState.radialMoment 1 (u.axialResidual c) n s = ε n * fderiv ℝ (axialDebtPotential r c u n) s z,  axialDebtPotential = axialDefect + pressureCoefficient • pressureDefect"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.StateMomentBalances.state_axial_moment",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L980",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StateMomentBalances.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 980,
+            "text": "theorem state_axial_moment (r : ReconstructionData) (ha : 0 < r.inner) (hd : 0 < r.exponent)\n    (ε fast : ℕ → ℝ) (z t : S) (v : PressureStream.Plane)\n    (c : Context (Lift S)) (u : State (Lift S))\n    (ho : c.operators = nativeOperators r ε fast z t v) (H : AxialInputs r.inner r.outer c u)\n    (hg : DefectIncrementBounds.Shell r.inner r.outer (u.gr c))\n    (pg : ∀ n, PressureStream.TorusPeriodicLift (u.gr c n))\n    (hrecipe : u.pressure = pressureRecipe r c u)\n    (hmass : CorrectionState.radialMoment 1 u.mean.axial = 0) (n : ℕ) (s : S) :\n    CorrectionState.radialMoment 1 (u.axialResidual c) n s =\n      ε n * fderiv ℝ (axialDebtPotential r c u n) s z"
+          }
+        }
       }
     }
-  }
+  ]
 }

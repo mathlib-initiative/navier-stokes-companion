@@ -1,26 +1,29 @@
 {
-  "id": "eq-7.8/support/10.NavierStokes.PhaseJetBounds.PhaseFamily.frameData",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhaseJetBounds.PhaseFamily.frameData",
-      "line": 914,
-      "module": "NavierStokes.PhaseJetBounds",
-      "path": "NavierStokes/PhaseJetBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseJetBounds.lean#L914"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhaseJetBounds.PhaseFamily.frameData",
-        "kind": "def"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhaseJetBounds.PhaseFamily.frameData",
+        "module": "NavierStokes.PhaseJetBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 914,
-        "text": "FrameData.ofNormalLocal (a.normal i) … (fun z => ViscousPropagator.referenceEigenvalue (lam i) (u i) (ell i) z.2) (fun z => PrimaryODE.referenceProfile (c0 i) (u i) (ell i) z.2) …   (eigenvalue := λ₀/√(1+s(v)²), eigenvector h := c0·√(1+s(v)²))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.PhaseJetBounds.PhaseFamily.frameData",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L914",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseJetBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 914,
+            "text": "noncomputable def PhaseFamily.frameData (a : PhaseFamily ι)\n    (lam c0 u ell ν : ι → ℝ) (i : ι) : PrimaryODE.FrameData Slow"
+          }
+        }
       }
     }
-  }
+  ]
 }

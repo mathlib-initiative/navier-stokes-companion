@@ -1,26 +1,28 @@
 {
-  "id": "eq-p091-3/key/02.NavierStokes.FourierAlias.fourierSourceJet_eq_parameterJet",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FourierAlias.fourierSourceJet_eq_parameterJet",
-      "line": 499,
-      "module": "NavierStokes.FourierAlias",
-      "path": "NavierStokes/FourierAlias.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FourierAlias.lean#L499"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FourierAlias.fourierSourceJet_eq_parameterJet",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FourierAlias.fourierSourceJet_eq_parameterJet",
+        "module": "NavierStokes.FourierAlias"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 499,
-        "text": "fourierSourceJet d f p = parameterJet p (iterateInverse d p f), i.e. sourceJet with J = 𝓛^{-1} is literally ∂_U^p 𝓛^{-p} f"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.FourierAlias.fourierSourceJet_eq_parameterJet",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L499",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FourierAlias.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 499,
+            "text": "theorem fourierSourceJet_eq_parameterJet (d : Direction) {f : State → ℂ}\n    (hf : ContDiff ℝ ∞ f) (hp : ParametricTorusInverse.Periodic f) (p : ℕ) :\n    fourierSourceJet d f p = parameterJet p (iterateInverse d p f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

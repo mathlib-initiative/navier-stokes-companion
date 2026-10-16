@@ -1,23 +1,26 @@
 {
-  "id": "eq-p050-7/key/02.NavierStokes.GlobalSlowProfiles.cutoffLift",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.cutoffLift",
-      "line": 350
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L350"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.cutoffLift",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.cutoffLift",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 350,
-        "text": "cutoffLift … f := ⟨fun w => coreCutoff inner stop w * radialLift f w, …⟩"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GlobalSlowProfiles.cutoffLift",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L350"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 350,
+            "text": "noncomputable def cutoffLift {rho : ℝ} {U : Set ℂ} {S : Set ℝ}\n    (hrho : 0 < rho) (hU : IsOpen U) (_hS : IsOpen S)\n    (hSU : ∀ eta ∈ S, (eta : ℂ) ∈ U)\n    {inner stop : ℝ} (his : inner < stop) (hsrho : stop < rho ^ 2)\n    (f : SlowRecursion.AxisFunction rho U) : EvenProfile S"
+          }
+        }
       }
     }
-  }
+  ]
 }

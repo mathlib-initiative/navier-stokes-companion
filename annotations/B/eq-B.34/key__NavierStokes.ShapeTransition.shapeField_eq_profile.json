@@ -1,25 +1,27 @@
 {
-  "id": "eq-B.34/key/01.NavierStokes.ShapeTransition.shapeField_eq_profile",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ShapeTransition.shapeField_eq_profile",
-      "line": 480,
-      "module": "NavierStokes.ShapeTransition",
-      "path": "NavierStokes/ShapeTransition.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ShapeTransition.lean#L480"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ShapeTransition.shapeField_eq_profile",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ShapeTransition.shapeField_eq_profile",
+        "module": "NavierStokes.ShapeTransition"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 480,
-        "text": "shapeField Xi T li old (X, eta) = angular C T li (Real.log (X / Xi), eta) / Real.sqrt (2 * X) — fixes the radial variable as y_i = log(X/X_i)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ShapeTransition.shapeField_eq_profile",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L480",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ShapeTransition.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 480,
+            "text": "theorem shapeField_eq_profile {Xi C T X : ℝ} (hXi : 0 < Xi) (hC : 0 < C)\n    (hT : 0 < T) (hX : 0 < X) (li : ℝ → ℝ) (old : ℝ × ℝ → ℝ) (eta : ℝ)\n    (hold : old (X, eta) = C⁻¹ * Real.exp (Real.log (X / Xi) / 10 + li eta) /\n      Real.sqrt (2 * X)) :\n    shapeField Xi T li old (X, eta) =\n      angular C T li (Real.log (X / Xi), eta) / Real.sqrt (2 * X)"
+          }
+        }
       }
     }
-  }
+  ]
 }

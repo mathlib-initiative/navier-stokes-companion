@@ -1,25 +1,27 @@
 {
-  "id": "eq-10.10/key/02.NavierStokes.SpacetimeEndpoint.extendedJets_hasFDerivWithinAt",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SpacetimeEndpoint.extendedJets_hasFDerivWithinAt",
-      "line": 198,
-      "module": "NavierStokes.SpacetimeEndpoint",
-      "path": "NavierStokes/SpacetimeEndpoint.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpacetimeEndpoint.lean#L198"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SpacetimeEndpoint.extendedJets_hasFDerivWithinAt"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SpacetimeEndpoint.extendedJets_hasFDerivWithinAt",
+        "module": "NavierStokes.SpacetimeEndpoint"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 198,
-        "text": "HasFDerivWithinAt (fun y => extendJets T J L y n) (extendJets T J L z (n+1)).curryLeft (closedPast T) z — the same compatibility at every tensor order, proved at line 218 by applying hasFDerivWithinAt_extendTrace to (J · n, (J · (n+1)).curryLeft)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SpacetimeEndpoint.extendedJets_hasFDerivWithinAt"
+          },
+          "destination": {
+            "fragment": "L198",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SpacetimeEndpoint.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 198,
+            "text": "theorem extendedJets_hasFDerivWithinAt {T : ℝ}\n    {J : SpaceTime → FormalMultilinearSeries ℝ SpaceTime V}\n    {L : Space → FormalMultilinearSeries ℝ SpaceTime V}\n    (hderiv : ∀ n : ℕ, ∀ z : SpaceTime, z.1 < T →\n      HasFDerivAt (fun y => J y n) (J z (n + 1)).curryLeft z)\n    (hlim : ∀ n : ℕ, TendstoLocallyUniformly (fun t x => J (t, x) n)\n      (fun x => L x n) (𝓝[<] T)) (n : ℕ) (z : SpaceTime)\n    (hz : z ∈ closedPast T) :\n    HasFDerivWithinAt (fun y => extendJets T J L y n)\n      (extendJets T J L z (n + 1)).curryLeft (closedPast T) z"
+          }
+        }
       }
     }
-  }
+  ]
 }

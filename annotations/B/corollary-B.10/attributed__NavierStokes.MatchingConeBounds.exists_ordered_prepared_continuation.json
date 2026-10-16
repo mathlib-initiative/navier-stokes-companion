@@ -1,32 +1,34 @@
 {
-  "id": "corollary-B.10/attributed/1.NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation",
-      "line": 852,
-      "module": "NavierStokes.MatchingConeBounds",
-      "path": "NavierStokes/MatchingConeBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean#L852"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation",
+        "module": "NavierStokes.MatchingConeBounds"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: A nested chain of existentials and universals in the order ρ, j, prepared inputs, ν, Λ_0 ≤ Λ, T, C_0 ≤ C, the entrance profile E, then the matching tolerance and the continuation witness w, ending in PreparedBounds (Controls.ofContinuation A w T hT) — the (B.40) order of choices.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 852,
-        "text": "theorem exists_ordered_prepared_continuation (F : OutgoingProfile.Profile) (N : ℕ)\n    (hN : 1 ≤ N) {delta : ℝ} (hdelta : 0 < delta) (radiusFloor : ℝ) :\n    ∃ rho : ℝ, 0 < rho ∧ ∃ jcap : ℝ, 0 < jcap ∧ jcap ≤ 1 ∧\n      ∀ j : ℝ, |j| ≤ jcap → ∀ hj : SmallParameters F.data.h j,\n      ∀ prep : NominalProfile.AxisPreparation F j,\n      ∀ nu : ℝ, 0 < nu →\n      (∀ eta ∈ Icc (-1 : ℝ) 1, |Z F.data.h j F.axisDatum eta| ≤ nu →\n        99 / 100 < chi F.data.h j prep.sigma eta) →\n      ∃ Λ0 : ℝ, 1 ≤ Λ0 ∧ ∀ Λ : ℝ, ∀ hΛ : 0 < Λ, Λ0 ≤ Λ →\n        ∃ T : ℝ, ∃ hT : 0 < T, ∃ C0 : ℝ, 1 ≤ C0 ∧ ∀ C : ℝ, C0 ≤ C →\n          ∃ hΛlarge : prep.scaleBound ≤ Λ,\n          ∃ hClarge : NaturalEntrance.entranceNormalization prep.inputs Λ prep.delta ≤ C,\n          ∃ E : NaturalEntrance.EntranceProfile prep.inputs Λ C,\n          ∀ J : ℕ, ∀ epsilon : ℝ, 0 < epsilon →\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.MatchingConeBounds.exists_ordered_prepared_continuation",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: A nested chain of existentials and universals in the order ρ, j, prepared inputs, ν, Λ_0 ≤ Λ, T, C_0 ≤ C, the entrance profile E, then the matching tolerance and the continuation witness w, ending in PreparedBounds (Controls.ofContinuation A w T hT) — the (B.40) order of choices.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L852",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MatchingConeBounds.lean"
+          },
+          "snippet": {
+            "line": 852,
+            "text": "theorem exists_ordered_prepared_continuation (F : OutgoingProfile.Profile) (N : ℕ)\n    (hN : 1 ≤ N) {delta : ℝ} (hdelta : 0 < delta) (radiusFloor : ℝ) :\n    ∃ rho : ℝ, 0 < rho ∧ ∃ jcap : ℝ, 0 < jcap ∧ jcap ≤ 1 ∧\n      ∀ j : ℝ, |j| ≤ jcap → ∀ hj : SmallParameters F.data.h j,\n      ∀ prep : NominalProfile.AxisPreparation F j,\n      ∀ nu : ℝ, 0 < nu →\n      (∀ eta ∈ Icc (-1 : ℝ) 1, |Z F.data.h j F.axisDatum eta| ≤ nu →\n        99 / 100 < chi F.data.h j prep.sigma eta) →\n      ∃ Λ0 : ℝ, 1 ≤ Λ0 ∧ ∀ Λ : ℝ, ∀ hΛ : 0 < Λ, Λ0 ≤ Λ →\n        ∃ T : ℝ, ∃ hT : 0 < T, ∃ C0 : ℝ, 1 ≤ C0 ∧ ∀ C : ℝ, C0 ≤ C →\n          ∃ hΛlarge : prep.scaleBound ≤ Λ,\n          ∃ hClarge : NaturalEntrance.entranceNormalization prep.inputs Λ prep.delta ≤ C,\n          ∃ E : NaturalEntrance.EntranceProfile prep.inputs Λ C,\n          ∀ J : ℕ, ∀ epsilon : ℝ, 0 < epsilon →\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

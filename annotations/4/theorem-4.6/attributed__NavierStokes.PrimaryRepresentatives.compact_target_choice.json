@@ -1,34 +1,66 @@
 {
-  "id": "theorem-4.6/attributed/1.NavierStokes.PrimaryRepresentatives.compact_target_choice",
-  "location": {
-    "page": 32,
-    "rect": [0.12854, 0.768595, 0.745098, 0.090909]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryRepresentatives.compact_target_choice",
-      "line": 596,
-      "module": "NavierStokes.PrimaryRepresentatives",
-      "path": "NavierStokes/PrimaryRepresentatives.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 32,
+        "rect": [0.12854, 0.768595, 0.745098, 0.090909]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-4.6@p032"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryRepresentatives.lean#L596"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryRepresentatives.compact_target_choice",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 33,
+        "rect": [0.12854, 0.102479, 0.745098, 0.760331]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: IsCompact K → ContinuousOn F/g/T → ReferenceCone and TargetCone at every q ∈ K → ∃ u η > 0, ∀ q ∈ K, ⟪T q, normalDirection (g q)⟫ ≤ -η ∧ targetRatio (F q) (g q) (T q) + η ≤ slopeRatio u. This is clause (iii)'s uniform margin, in the normalized target-cone variables."
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-4.6@p033"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 34,
+        "rect": [0.12854, 0.100826, 0.745098, 0.158678]
       },
-      "region": "theorem-4.6@p032",
-      "relation": "part",
-      "role": "attributed",
-      "snippet": {
-        "line": 596,
-        "text": "theorem compact_target_choice {K : Set Slow} (hK : IsCompact K)\n    {F : Slow → ℝ} {g T : Slow → Plane}\n    (hF : ContinuousOn F K) (hg : ContinuousOn g K) (hT : ContinuousOn T K)\n    (hc : ∀ q ∈ K, ReferenceCone (F q) (g q))\n    (ht : ∀ q ∈ K, TargetCone (F q) (g q) (T q)) :\n    ∃ u η : ℝ, 0 < u ∧ 0 < η ∧ ∀ q ∈ K,\n      ⟪T q, normalDirection (g q)⟫_ℝ ≤ -η ∧\n      targetRatio (F q) (g q) (T q) + η ≤ slopeRatio u"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "theorem-4.6@p034"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryRepresentatives.compact_target_choice",
+        "module": "NavierStokes.PrimaryRepresentatives"
+      },
+      "role": "attributed",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PrimaryRepresentatives.compact_target_choice",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: IsCompact K → ContinuousOn F/g/T → ReferenceCone and TargetCone at every q ∈ K → ∃ u η > 0, ∀ q ∈ K, ⟪T q, normalDirection (g q)⟫ ≤ -η ∧ targetRatio (F q) (g q) (T q) + η ≤ slopeRatio u. This is clause (iii)'s uniform margin, in the normalized target-cone variables."
+          },
+          "destination": {
+            "fragment": "L596",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryRepresentatives.lean"
+          },
+          "snippet": {
+            "line": 596,
+            "text": "theorem compact_target_choice {K : Set Slow} (hK : IsCompact K)\n    {F : Slow → ℝ} {g T : Slow → Plane}\n    (hF : ContinuousOn F K) (hg : ContinuousOn g K) (hT : ContinuousOn T K)\n    (hc : ∀ q ∈ K, ReferenceCone (F q) (g q))\n    (ht : ∀ q ∈ K, TargetCone (F q) (g q) (T q)) :\n    ∃ u η : ℝ, 0 < u ∧ 0 < η ∧ ∀ q ∈ K,\n      ⟪T q, normalDirection (g q)⟫_ℝ ≤ -η ∧\n      targetRatio (F q) (g q) (T q) + η ≤ slopeRatio u"
+          }
+        }
+      }
+    }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.21/key/08.NavierStokes.FirstOrderBaseEdge.actual_viscosity_total_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FirstOrderBaseEdge.actual_viscosity_total_zero",
-      "line": 207,
-      "module": "NavierStokes.FirstOrderBaseEdge",
-      "path": "NavierStokes/FirstOrderBaseEdge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FirstOrderBaseEdge.lean#L207"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FirstOrderBaseEdge.actual_viscosity_total_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FirstOrderBaseEdge.actual_viscosity_total_zero",
+        "module": "NavierStokes.FirstOrderBaseEdge"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 207,
-        "text": "(∫ R in Ioi 0, R^2 * SlowStressSupport.axialOp2 F.data.h (orderExponent F.data.h 0) G (R, eta)) = 0  -- n = 1 angular viscosity moment for the actual profile"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.FirstOrderBaseEdge.actual_viscosity_total_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L207",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FirstOrderBaseEdge.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 207,
+            "text": "theorem actual_viscosity_total_zero (F : OutgoingProfile.Profile) {XR cost L : ℝ}\n    (w : HeatedOutgoing.CompensationWitness F XR cost) {E G : ℝ × ℝ → ℝ}\n    (hG : SlowStressSupport.Smooth (Ioo (-1) 1) G)\n    (hGE : ∀ R : ℝ, 0 < R → ∀ eta ∈ Ioo (-1 : ℝ) 1, G (R, eta) = E (R ^ 2 / 2, eta))\n    (hmatch : ∀ eta ∈ Ioo (-1 : ℝ) 1, ∀ X : ℝ, L ≤ X →\n      E (X, eta) = HeatedOutgoing.E F XR w.coefficients (X, eta))\n    (hreset : ∀ eta ∈ Ioo (-1 : ℝ) 1,\n      (∫ X in Ioi (0 : ℝ), Real.sqrt (2 * X) * E (X, eta) - OutgoingDilation.powerH F XR X) =\n      ∫ X in Ioi (0 : ℝ), HeatedOutgoing.H F XR w.coefficients (X, eta) - OutgoingDilation.powerH F XR X)\n    {eta : ℝ} (heta : eta ∈ Ioo (-1 : ℝ) 1) :\n    IntegrableOn (fun R => R ^ 2 *\n      SlowStressSupport.axialOp2 F.data.h (SlowStressSupport.orderExponent F.data.h 0) G (R, eta)) (Ioi 0) ∧\n    (∫ R in Ioi (0 : ℝ), R ^ 2 *\n      SlowStressSupport.axialOp2 F.data.h (SlowStressSupport.orderExponent F.data.h 0) G (R, eta)) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

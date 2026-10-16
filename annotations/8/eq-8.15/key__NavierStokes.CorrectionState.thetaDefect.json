@@ -1,25 +1,27 @@
 {
-  "id": "eq-8.15/key/02.NavierStokes.CorrectionState.thetaDefect",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionState.thetaDefect",
-      "line": 232,
-      "module": "NavierStokes.CorrectionState",
-      "path": "NavierStokes/CorrectionState.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean#L232"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionState.thetaDefect",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionState.thetaDefect",
+        "module": "NavierStokes.CorrectionState"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 232,
-        "text": "noncomputable def thetaDefect (c) (u) : ScalarField S := radialMoment 2 (thetaAxial c.base u.mean + u.covariance 2 1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.CorrectionState.thetaDefect",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L232",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionState.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 232,
+            "text": "noncomputable def thetaDefect (c : Context (PressureStream.Lift S))\n    (u : State (PressureStream.Lift S)) : ScalarField S"
+          }
+        }
       }
     }
-  }
+  ]
 }

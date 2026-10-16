@@ -1,26 +1,28 @@
 {
-  "id": "eq-p110-4/key/04.NavierStokes.MeanIncrementBounds.axialResidual_change",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanIncrementBounds.axialResidual_change",
-      "line": 659,
-      "module": "NavierStokes.MeanIncrementBounds",
-      "path": "NavierStokes/MeanIncrementBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanIncrementBounds.lean#L659"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanIncrementBounds.axialResidual_change",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanIncrementBounds.axialResidual_change",
+        "module": "NavierStokes.MeanIncrementBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 659,
-        "text": "axialResidual difference = o.fastTime h.axial + axialRemainder o b m h δp"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.MeanIncrementBounds.axialResidual_change",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L659",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanIncrementBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 659,
+            "text": "theorem axialResidual_change (p δp T : Field D) (hp : SmoothOn U p)\n    (hδp : SmoothOn U δp) :\n    Agree U (axialResidual o b (updated m h) W (p + δp) T - axialResidual o b m W p T)\n      (o.fastTime h.axial + axialRemainder o b m h δp)"
+          }
+        }
       }
     }
-  }
+  ]
 }

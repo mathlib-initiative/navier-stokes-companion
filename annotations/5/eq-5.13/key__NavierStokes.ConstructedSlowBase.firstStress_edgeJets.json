@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.13/key/02.NavierStokes.ConstructedSlowBase.firstStress_edgeJets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ConstructedSlowBase.firstStress_edgeJets",
-      "line": 468,
-      "module": "NavierStokes.ConstructedSlowBase",
-      "path": "NavierStokes/ConstructedSlowBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConstructedSlowBase.lean#L468"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ConstructedSlowBase.firstStress_edgeJets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ConstructedSlowBase.firstStress_edgeJets",
+        "module": "NavierStokes.ConstructedSlowBase"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 468,
-        "text": "… (hz : ∀ w, w.1 < inner → stressPair d 1 w = 0) (he : stressPair d 1 =ᶠ (stressX …, 0) on the outer collar) : PolynomialEdgeJets (activeWindow left (y0 + 3)) (activeZeta c left (y0 + 3)) (activeDelta left (y0 + 3)) (stressPair d 1)   -- n = 1, whole window, generic d"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ConstructedSlowBase.firstStress_edgeJets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L468",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ConstructedSlowBase.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 468,
+            "text": "theorem firstStress_edgeJets (Cedge : ℝ) (tail : OutgoingTail.TailData) (y0 : ℝ)\n    {d : Coefficients} (hd : SmoothCoefficients d)\n    {c left width inner : ℝ} (hc : 0 < c) (hw : 0 < width)\n    (hl : Real.exp left < inner) (hi : inner ≤ Real.exp (y0 + 3 - width))\n    (hz : ∀ w : Inner, w.1 < inner → stressPair d 1 w = 0)\n    (he : ∀ w ∈ outerWindow (Real.exp (y0 + 3 - width)) (y0 + 3),\n      stressPair d 1 =ᶠ[𝓝 w] (fun v => (SlowFirstOrderEdge.stressX Cedge tail y0 v, 0))) :\n    PolynomialEdgeJets (activeWindow left (y0 + 3))\n      (activeZeta c left (y0 + 3)) (activeDelta left (y0 + 3)) (stressPair d 1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

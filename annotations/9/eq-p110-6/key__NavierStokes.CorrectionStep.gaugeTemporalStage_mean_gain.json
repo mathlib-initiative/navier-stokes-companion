@@ -1,26 +1,29 @@
 {
-  "id": "eq-p110-6/key/01.NavierStokes.CorrectionStep.gaugeTemporalStage_mean_gain",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.gaugeTemporalStage_mean_gain",
-      "line": 2962,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L2962"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.gaugeTemporalStage_mean_gain",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.gaugeTemporalStage_mean_gain",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 2962,
-        "text": "… (hbarθ : MeanClass s β (meanBar (u.thetaResidual c))) (hbarz : MeanClass s β (meanBar (u.axialResidual c))) (hH : 9/10 ≤ H) (hβ : β ≤ H + 1 - 2*κ) : MeanClass s β ((temporalStageState …).thetaResidual c) ∧ MeanClass s β (fun n x => (temporalStageState …).axialResidual c n x - temporalAliasState … n (x,0) 2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CorrectionStep.gaugeTemporalStage_mean_gain",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L2962",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 2962,
+            "text": "theorem gaugeTemporalStage_mean_gain {s : StripData (PressureStream.Lift S)}\n    {V : Set S} (hV : IsOpen V) (hUV : ∀ x ∈ s.domain, x.2.1 ∈ V)\n    (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ) (axial : S × PressureStream.Plane)\n    (c : Context (PressureStream.Lift S)) (u : State (PressureStream.Lift S)) {H κ β : ℝ}\n    (hv : c.operators.vT = (0, (0, TorusInverse.vector .temporal)))\n    (hfast : ∀ n, c.operators.fastCoefficient n =\n      ChartScales.Tg ^ index n * ChartScales.Q n ^ (1 + h))\n    (ho : OperatorBounds s c.operators κ) (hb : BaseBounds s c.base)\n    (hu : CorrectionState.CumulativeBounds s u)\n    (hi : IncrementBounds s H (temporalIncrementState g h index axial c u))\n    (hdp : MeanClass s H (gaugeTemporalPressureChange g h index axial c u))\n    (hW : ∀ i j, SmoothOn s.domain (u.covariance i j))\n    (hbarθ : MeanClass s β (meanBar (u.thetaResidual c)))\n    (hbarz : MeanClass s β (meanBar (u.axialResidual c)))\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

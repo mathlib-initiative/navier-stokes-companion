@@ -1,23 +1,25 @@
 {
-  "id": "eq-4.39/key/02.NavierStokes.ModulatedCone.realized_shears_uniform_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedCone.realized_shears_uniform_bound",
-      "line": 173,
-      "module": "NavierStokes.ModulatedCone",
-      "path": "NavierStokes/ModulatedCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean#L173"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedCone.realized_shears_uniform_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedCone.realized_shears_uniform_bound",
+        "module": "NavierStokes.ModulatedCone"
       },
-      "snippet": {
-        "line": 173,
-        "text": "∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℝ, 1 ≤ n → ∀ p ∈ K, |angularShear (fun q => realizedE r E n q.1 q.2) p - r.angularLoop (p, n * Real.log p.1)| ≤ C / n ∧ |signedAxialShear (fun q => realizedE r E n q.1 q.2) (fun q => realizedU r E U n q.1 q.2) p - r.signedAxialLoop (p, n * Real.log p.1)| ≤ C / n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ModulatedCone.realized_shears_uniform_bound"
+          },
+          "destination": {
+            "fragment": "L173",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedCone.lean"
+          },
+          "snippet": {
+            "line": 173,
+            "text": "theorem realized_shears_uniform_bound\n    (r : TrueConeRealization a m p₁ p₂ K B) (E U : RadialParameter → ℝ)\n    (hK : IsCompact K)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (haK : ∀ p ∈ K, 0 < a p) (hX : ∀ p ∈ K, p.1 ≠ 0)\n    (hE0 : ∀ p ∈ K, E p ≠ 0)\n    (haNom : ∀ p ∈ K, a p = angularShear E p)\n    (hbNom : ∀ p ∈ K, a p * m p = signedAxialShear E U p) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℝ, 1 ≤ n → ∀ p ∈ K,\n      |angularShear (fun q => realizedE r E n q.1 q.2) p -\n        r.angularLoop (p, n * Real.log p.1)| ≤ C / n ∧\n      |signedAxialShear (fun q => realizedE r E n q.1 q.2)\n        (fun q => realizedU r E U n q.1 q.2) p -\n        r.signedAxialLoop (p, n * Real.log p.1)| ≤ C / n"
+          }
+        }
       }
     }
-  }
+  ]
 }

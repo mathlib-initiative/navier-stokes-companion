@@ -1,26 +1,28 @@
 {
-  "id": "eq-p035-8/attributed/06.NavierStokes.HeatProfileExtension.physicalProfile_eq_profile",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HeatProfileExtension.physicalProfile_eq_profile",
-      "line": 249,
-      "module": "NavierStokes.HeatProfileExtension",
-      "path": "NavierStokes/HeatProfileExtension.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatProfileExtension.lean#L249"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HeatProfileExtension.physicalProfile_eq_profile",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HeatProfileExtension.physicalProfile_eq_profile",
+        "module": "NavierStokes.HeatProfileExtension"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 249,
-        "text": "(hX : 0 < X) (hη : η ∈ Icc (-1) 1) : physicalProfile a X η = profile a (2 * (1 - η ^ 2) / X); with a = 1 + h and d = 1 - η² this is exactly 𝓗(2d/X)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.HeatProfileExtension.physicalProfile_eq_profile",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L249",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HeatProfileExtension.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 249,
+            "text": "theorem physicalProfile_eq_profile (a : ℝ) {X η : ℝ} (hX : 0 < X)\n    (hη : η ∈ Icc (-1 : ℝ) 1) :\n    physicalProfile a X η = profile a (2 * (1 - η ^ 2) / X)"
+          }
+        }
       }
     }
-  }
+  ]
 }

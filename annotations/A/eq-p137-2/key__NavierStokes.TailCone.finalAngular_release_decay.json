@@ -1,23 +1,26 @@
 {
-  "id": "eq-p137-2/key/01.NavierStokes.TailCone.finalAngular_release_decay",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TailCone.finalAngular_release_decay",
-      "line": 227
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TailCone.lean#L227"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TailCone.finalAngular_release_decay"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TailCone.finalAngular_release_decay",
+        "module": "NavierStokes.TailCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 227,
-        "text": "(hy : d.releaseStart ≤ y) (hyt : y ≤ t) : finalAngular d (t, eta) ≤ finalAngular d (y, eta) * Real.exp (-(1 / 2 + 3 * d.h / 4) * (t - y))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TailCone.finalAngular_release_decay"
+          },
+          "destination": {
+            "fragment": "L227"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 227,
+            "text": "theorem finalAngular_release_decay (d : TailData) (eta : ℝ) {y t : ℝ}\n    (hy : d.releaseStart ≤ y) (hyt : y ≤ t) :\n    finalAngular d (t, eta) ≤ finalAngular d (y, eta) *\n      Real.exp (-(1 / 2 + 3 * d.h / 4) * (t - y))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.53/attributed/04.NavierStokes.TerminalPressure.axialPressureIntegral",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalPressure.axialPressureIntegral",
-      "line": 555,
-      "module": "NavierStokes.TerminalPressure",
-      "path": "NavierStokes/TerminalPressure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean#L555"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalPressure.axialPressureIntegral",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalPressure.axialPressureIntegral",
+        "module": "NavierStokes.TerminalPressure"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 555,
-        "text": "axialPressureIntegral C h f p := ∫ s in Ioi p.2.1, physicalHeat C (1+h) (p.1,(s,p.2.2)) ^ 2 * f (log (s / q h p)) * deriv f (log (s / q h p)) / s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.TerminalPressure.axialPressureIntegral",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L555",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalPressure.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 555,
+            "text": "noncomputable def axialPressureIntegral (C h : ℝ) (f : ℝ → ℝ)\n    (p : SimilarityProfile.PhysicalPoint) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

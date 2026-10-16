@@ -1,24 +1,27 @@
 {
-  "id": "eq-p094-6/key/01.NavierStokes.SignedStressPrimitive.physicalDensity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedStressPrimitive.physicalDensity",
-      "line": 592
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L592"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedStressPrimitive.physicalDensity",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedStressPrimitive.physicalDensity",
+        "module": "NavierStokes.SignedStressPrimitive"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 592,
-        "text": "physicalDensity P e q z = momentDensity P e (z.1 / lengthScale q z.2) / lengthScale q z.2 ^ (e + 1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.SignedStressPrimitive.physicalDensity",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L592"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 592,
+            "text": "noncomputable def physicalDensity (P : Patch) (e : ℕ) (q : E → ℝ) (z : ℝ × E) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

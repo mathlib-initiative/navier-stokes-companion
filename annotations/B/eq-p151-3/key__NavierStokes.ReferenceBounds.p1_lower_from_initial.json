@@ -1,25 +1,27 @@
 {
-  "id": "eq-p151-3/key/01.NavierStokes.ReferenceBounds.p1_lower_from_initial",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceBounds.p1_lower_from_initial",
-      "line": 202,
-      "module": "NavierStokes.ReferenceBounds",
-      "path": "NavierStokes/ReferenceBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean#L202"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceBounds.p1_lower_from_initial"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceBounds.p1_lower_from_initial",
+        "module": "NavierStokes.ReferenceBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 202,
-        "text": "(ha : 0 < a) (haX : a ≤ p.1) (hb : 0 ≤ b) (hq : 0 ≤ q) (hf : ∀ s ∈ Icc 0 p.1, 0 < P.f (s, p.2)) (hmono : AntitoneOn (fun s => P.f (s, p.2)) (Icc 0 p.1)) (hsource : ∀ s ∈ Icc a p.1, q ≤ sourceQ P h (s, p.2)) (hinit : b ≤ p1 P h (a, p.2)) : b * a / p.1 + q / (2 * NaturalAxisData.L h p.2) * (p.1 - a ^ 2 / p.1) ≤ p1 P h p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ReferenceBounds.p1_lower_from_initial"
+          },
+          "destination": {
+            "fragment": "L202",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 202,
+            "text": "theorem p1_lower_from_initial {p : Point} (hp : p ∈ D.carrier) (hX : 0 < p.1)\n    (h : ℝ) (hL : 0 < NaturalAxisData.L h p.2) {a b q : ℝ}\n    (ha : 0 < a) (haX : a ≤ p.1) (hb : 0 ≤ b) (hq : 0 ≤ q)\n    (hf : ∀ s ∈ Icc (0 : ℝ) p.1, 0 < P.f (s, p.2))\n    (hmono : AntitoneOn (fun s => P.f (s, p.2)) (Icc (0 : ℝ) p.1))\n    (hsource : ∀ s ∈ Icc a p.1, q ≤ sourceQ P h (s, p.2))\n    (hinit : b ≤ p1 P h (a, p.2)) :\n    b * a / p.1 + q / (2 * NaturalAxisData.L h p.2) * (p.1 - a ^ 2 / p.1) ≤ p1 P h p"
+          }
+        }
       }
     }
-  }
+  ]
 }

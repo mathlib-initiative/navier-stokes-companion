@@ -1,26 +1,28 @@
 {
-  "id": "eq-p113-8/key/02.NavierStokes.SharpCurrentModeJets.lift_mode_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SharpCurrentModeJets.lift_mode_bound",
-      "line": 18,
-      "module": "NavierStokes.SharpCurrentModeJets",
-      "path": "NavierStokes/SharpCurrentModeJets.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SharpCurrentModeJets.lean#L18"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SharpCurrentModeJets.lift_mode_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SharpCurrentModeJets.lift_mode_bound",
+        "module": "NavierStokes.SharpCurrentModeJets"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 18,
-        "text": "‖iteratedFDeriv ℝ m (fun y => character (j:ℝ) (weightedPhase i.1 n (nativeMap a c n d y)) • f (commonLift h n d y)) w‖ ≤ C*ChartScales.Q n^(g-(m:ℝ)*derivativeCost h)*ChartScales.S n^p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SharpCurrentModeJets.lift_mode_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L18",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SharpCurrentModeJets.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 18,
+            "text": "theorem lift_mode_bound {E : Type} [NormedAddCommGroup E] [NormedSpace ℝ E]\n    [NormedSpace ℂ E] [IsScalarTower ℝ ℂ E]\n    {a b : ℝ} (ha : 0 < a) (Δ m : ℕ) (g A : ℝ) (e : ℕ) (hA : 0 ≤ A) (j : ℤ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∃ p : ℕ, ∀ n : ℕ, 4 ≤ n → ∀ d : ℕ, d ≤ Δ →\n      ∀ c : PolarCharts.Index, ∀ i : ActualPhaseJetBounds.CopyIndex B N0, ∀ w : SpaceTime,\n      PhysicalGraphBounds.scaledRadial n w ∈ PhysicalGraphBounds.annulus a b → |w.1| ≤ 1 →\n      fullMap a c n d w ∈ ActualPhaseJetBounds.phaseCell n i →\n      ∀ f : PhysicalWaveSum.LiftPoint → E, SmoothNear f (PhysicalWaveSum.commonLift h n d w) →\n      (∀ r ≤ m, ‖iteratedFDeriv ℝ r f (PhysicalWaveSum.commonLift h n d w)‖ ≤\n        A*ChartScales.Q n^g*ChartScales.S n^e) →\n      ‖iteratedFDeriv ℝ m (fun y => PhysicalGraphBounds.character (j:ℝ)\n        (ActualCurrentCarrierJets.weightedPhase i.1 n (nativeMap a c n d y)) •\n          f (PhysicalWaveSum.commonLift h n d y)) w‖ ≤\n        C*ChartScales.Q n^(g-(m:ℝ)*SharpPhysicalCarrier.derivativeCost h)*ChartScales.S n^p"
+          }
+        }
       }
     }
-  }
+  ]
 }

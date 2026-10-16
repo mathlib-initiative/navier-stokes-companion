@@ -1,25 +1,27 @@
 {
-  "id": "eq-4.37/key/01.NavierStokes.TrueConeLoop.familyDensity_rate_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.familyDensity_rate_eq",
-      "line": 582,
-      "module": "NavierStokes.TrueConeLoop",
-      "path": "NavierStokes/TrueConeLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L582"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.familyDensity_rate_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.familyDensity_rate_eq",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 582,
-        "text": "(familyDensity a m p d δ hd hδ x).rate θ = phaseDensity (a x) (seedSpeed (a x) (m x) δ) (seedTilt (a x) (m x) d (p x) δ θ) / (2 * Real.pi)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TrueConeLoop.familyDensity_rate_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L582",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 582,
+            "text": "theorem familyDensity_rate_eq (a m p : E → ℝ) (d δ : ℝ) (hd : d ≠ 0) (hδ : 0 < δ)\n    (x : E) (hx : 0 < a x) (θ : ℝ) :\n    (familyDensity a m p d δ hd hδ x).rate θ =\n      phaseDensity (a x) (seedSpeed (a x) (m x) δ) (seedTilt (a x) (m x) d (p x) δ θ) /\n        (2 * Real.pi)"
+          }
+        }
       }
     }
-  }
+  ]
 }

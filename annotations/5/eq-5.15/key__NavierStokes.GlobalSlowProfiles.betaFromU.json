@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.15/key/10.NavierStokes.GlobalSlowProfiles.betaFromU",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.betaFromU",
-      "line": 217,
-      "module": "NavierStokes.GlobalSlowProfiles",
-      "path": "NavierStokes/GlobalSlowProfiles.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L217"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.betaFromU",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.betaFromU",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 217,
-        "text": "betaFromU d lam u := (2η·u - 2(dScale h + lam)·η·massAverage u - (1-η²)·massAverage (∂_η u))·(ell h η)⁻¹, with V = X·β"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.GlobalSlowProfiles.betaFromU",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L217",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 217,
+            "text": "noncomputable def betaFromU {S : Set ℝ} {h : ℝ} (d : Domain S h)\n    (lam : ℝ) (u : EvenProfile S) : EvenProfile S"
+          }
+        }
       }
     }
-  }
+  ]
 }

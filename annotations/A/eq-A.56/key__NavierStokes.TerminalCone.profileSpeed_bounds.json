@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.56/key/02.NavierStokes.TerminalCone.profileSpeed_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalCone.profileSpeed_bounds",
-      "line": 184
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalCone.lean#L184"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalCone.profileSpeed_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalCone.profileSpeed_bounds",
+        "module": "NavierStokes.TerminalCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 184,
-        "text": "2 + d.h < profileSpeed C d (Real.log K - 1/5) (eta, δ) ∧ profileSpeed C d (Real.log K - 1/5) (eta, δ) ≤ 2 + 2 * d.h, given 0 < C, d.h ≤ 1/4, 32 ≤ K, δ ≤ 5/2, eta^2 ≤ 1"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TerminalCone.profileSpeed_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L184"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 184,
+            "text": "theorem profileSpeed_bounds {C : ℝ} (hC : 0 < C) (d : OutgoingTail.TailData) (hh : d.h ≤ 1 / 4)\n    {K δ eta : ℝ} (hK : 32 ≤ K) (hδ : δ ≤ 5 / 2) (heta : eta ^ 2 ≤ 1) :\n    2 + d.h < TerminalEdgeFactor.profileSpeed C d (Real.log K - 1 / 5) (eta, δ) ∧\n      TerminalEdgeFactor.profileSpeed C d (Real.log K - 1 / 5) (eta, δ) ≤ 2 + 2 * d.h"
+          }
+        }
       }
     }
-  }
+  ]
 }

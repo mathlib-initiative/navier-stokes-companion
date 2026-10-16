@@ -1,26 +1,29 @@
 {
-  "id": "eq-p121-4/support/03.NavierStokesR3.PressureRecovery.velocityAverage",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.PressureRecovery.velocityAverage",
-      "line": 46,
-      "module": "NavierStokes.R3.PressureRecovery",
-      "path": "NavierStokes/R3/PressureRecovery.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureRecovery.lean#L46"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.PressureRecovery.velocityAverage",
-        "kind": "def"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.PressureRecovery.velocityAverage",
+        "module": "NavierStokes.R3.PressureRecovery"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 46,
-        "text": "velocityAverage T a u v k := timeAverage T a (fun z => (u - v) z k)  -- the difference field is written inline as `u - v`, never named `w`"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokesR3.PressureRecovery.velocityAverage",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L46",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/PressureRecovery.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 46,
+            "text": "def velocityAverage (T : ℝ) (a : ℝ → ℝ) (u v : VelocityField) (k : Fin 3) : Space → ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,33 @@
 {
-  "id": "corollary-7.8/attributed/1.NavierStokes.SignedMeanGain.native_physical_cross",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedMeanGain.native_physical_cross",
-      "line": 510,
-      "module": "NavierStokes.SignedMeanGain",
-      "path": "NavierStokes/SignedMeanGain.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean#L510"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedMeanGain.native_physical_cross",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedMeanGain.native_physical_cross",
+        "module": "NavierStokes.SignedMeanGain"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For every target T and every σ : Vec2, under the strict cone condition on the primary target at the slow position x: doubleAverage (primary_r · signed_{i+1} + signed_r · primary_{i+1}) = σ i, where signed is the native assembly built from SignedCovariance.increment/chartStress of σ. This is (7.36), ",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 510,
-        "text": "theorem native_physical_cross\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (N : ℕ) (hN : 1 ≤ N)\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    {q : ℝ} (hq : 0 < q) (hqN : q ≤ ChartScales.Q N) (x : SlotColoring.Position)\n    (T σ : SignedWaveUpdate.Vec2)\n    (hcone : ∀ U, mask d (tailLabel N U) q x ≠ 0 →\n      SmoothCovariance.StrictCone (P U).matrix (chartTarget h q N T U)) (i : Fin 2) :\n    let primary"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SignedMeanGain.native_physical_cross",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For every target T and every σ : Vec2, under the strict cone condition on the primary target at the slow position x: doubleAverage (primary_r · signed_{i+1} + signed_r · primary_{i+1}) = σ i, where signed is the native assembly built from SignedCovariance.increment/chartStress of σ. This is (7.36), ",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L510",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean"
+          },
+          "snippet": {
+            "line": 510,
+            "text": "theorem native_physical_cross\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (N : ℕ) (hN : 1 ≤ N)\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    {q : ℝ} (hq : 0 < q) (hqN : q ≤ ChartScales.Q N) (x : SlotColoring.Position)\n    (T σ : SignedWaveUpdate.Vec2)\n    (hcone : ∀ U, mask d (tailLabel N U) q x ≠ 0 →\n      SmoothCovariance.StrictCone (P U).matrix (chartTarget h q N T U)) (i : Fin 2) :\n    let primary"
+          }
+        }
       }
     }
-  }
+  ]
 }

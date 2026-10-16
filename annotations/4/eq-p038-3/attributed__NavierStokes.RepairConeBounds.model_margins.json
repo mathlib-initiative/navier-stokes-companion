@@ -1,26 +1,28 @@
 {
-  "id": "eq-p038-3/attributed/06.NavierStokes.RepairConeBounds.model_margins",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RepairConeBounds.model_margins",
-      "line": 755,
-      "module": "NavierStokes.RepairConeBounds",
-      "path": "NavierStokes/RepairConeBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RepairConeBounds.lean#L755"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RepairConeBounds.model_margins",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RepairConeBounds.model_margins",
+        "module": "NavierStokes.RepairConeBounds"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 755,
-        "text": "∃ delta > 0, ∀ v, ‖v‖ ≤ delta → ∀ p ∈ window, 3/5 ≤ familyA F (v,p) ∧ familySpeed F (v,p) ≤ 1 ∧ Real.exp (-8)/2 ≤ familyProjection F (v,p)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.RepairConeBounds.model_margins",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L755",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RepairConeBounds.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 755,
+            "text": "theorem model_margins (F : Profile) (hh : F.data.h ≤ 1 / 100) :\n    ∃ delta : ℝ, 0 < delta ∧ ∀ v : Control, ‖v‖ ≤ delta → ∀ p ∈ window,\n      3 / 5 ≤ familyA F (v, p) ∧ familySpeed F (v, p) ≤ 1 ∧\n        Real.exp (-8) / 2 ≤ familyProjection F (v, p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

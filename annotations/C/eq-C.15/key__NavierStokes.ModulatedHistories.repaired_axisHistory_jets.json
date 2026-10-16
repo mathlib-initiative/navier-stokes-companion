@@ -1,26 +1,28 @@
 {
-  "id": "eq-C.15/key/03.NavierStokes.ModulatedHistories.repaired_axisHistory_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedHistories.repaired_axisHistory_jets",
-      "line": 1364,
-      "module": "NavierStokes.ModulatedHistories",
-      "path": "NavierStokes/ModulatedHistories.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean#L1364"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedHistories.repaired_axisHistory_jets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedHistories.repaired_axisHistory_jets",
+        "module": "NavierStokes.ModulatedHistories"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1364,
-        "text": "∃ delta C1 C2, … FiniteJetBound q (fun eta => axisHistory (applyRepairF …) (applyRepairU …) (X, eta) - axisHistory f U (X, eta)) S (C1 / N + C2 * eps)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ModulatedHistories.repaired_axisHistory_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1364",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedHistories.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1364,
+            "text": "theorem repaired_axisHistory_jets (W : Window)\n    (r : ParametricModulation.TrueConeRealization a m p₁ p₂ K B) (f E U : Field)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hf : ContDiff ℝ ∞ f) (hE : ContDiff ℝ ∞ E) (hU : ContDiff ℝ ∞ U)\n    (P : FiveProfileMoments.Patch) (hWP : W.right < P.left) (A : ℝ → ℝ)\n    (hA : ContDiff ℝ ∞ A) (S : Set ℝ) (hS : IsCompact S) (q : ℕ) :\n    ∃ delta C1 C2 : ℝ, 0 < delta ∧ 0 < C1 ∧ 0 < C2 ∧ ∀ N : ℝ, 1 ≤ N →\n      ∀ c : ℝ → Coeff, ContDiff ℝ ∞ c → ∀ eps : ℝ, 0 ≤ eps → eps ≤ delta →\n        JetBounds.FiniteJetBound q c S eps → ∀ X : ℝ, 0 ≤ X →\n        JetBounds.FiniteJetBound q (fun eta =>\n          axisHistory (applyRepairF P A c (localizedF W r f N))\n            (applyRepairU P A c (localizedU W r E U N)) (X, eta) - axisHistory f U (X, eta))\n          S (C1 / N + C2 * eps)"
+          }
+        }
       }
     }
-  }
+  ]
 }

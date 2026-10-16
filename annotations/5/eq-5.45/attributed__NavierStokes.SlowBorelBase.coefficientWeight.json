@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.45/attributed/02.NavierStokes.SlowBorelBase.coefficientWeight",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowBorelBase.coefficientWeight",
-      "line": 805,
-      "module": "NavierStokes.SlowBorelBase",
-      "path": "NavierStokes/SlowBorelBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean#L805"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowBorelBase.coefficientWeight",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowBorelBase.coefficientWeight",
+        "module": "NavierStokes.SlowBorelBase"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 805,
-        "text": "coefficientWeight a h q j = if j = 0 then 0 else SmoothCutoffs.scaledCutoff (a j) q * q ^ (2*h*j)  -- χ(c_n q) q^{2nh}"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SlowBorelBase.coefficientWeight",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L805",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowBorelBase.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 805,
+            "text": "noncomputable def coefficientWeight (a : ℕ → ℕ) (h q : ℝ) (j : ℕ) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

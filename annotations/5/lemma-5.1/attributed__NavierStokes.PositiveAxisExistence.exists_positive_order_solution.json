@@ -1,31 +1,33 @@
 {
-  "id": "lemma-5.1/attributed/1.NavierStokes.PositiveAxisExistence.exists_positive_order_solution",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveAxisExistence.exists_positive_order_solution",
-      "line": 864,
-      "module": "NavierStokes.PositiveAxisExistence",
-      "path": "NavierStokes/PositiveAxisExistence.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisExistence.lean#L864"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveAxisExistence.exists_positive_order_solution",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveAxisExistence.exists_positive_order_solution",
+        "module": "NavierStokes.PositiveAxisExistence"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0<R<T, U open, n>0, and lower-order input data F with LowerInputRegularity T U h F compatible with the given history, there is a six-component field W with IsPositiveOrderSolution: it solves the symmetric integral equation, is jointly smooth on radialDomain R x U, has the (5.7) parity, satisfies",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 864,
-        "text": "theorem exists_positive_order_solution {R T : ℝ} (hR : 0 < R) (hRT : R < T)\n    {U : Set ℂ} (hU : IsOpen U) (h C : ℝ) {n : ℕ} (hn : 0 < n)\n    (phi u beta : ℕ → InnerProfile) (omegaQuotient : InnerProfile)\n    {F : CoefficientData} (hF : LowerInputRegularity T U (h : ℂ) F)\n    (hreal : RealCompatible R U F (lowerHistoryData h n phi u beta omegaQuotient)) :\n    ∃ W : Field, IsPositiveOrderSolution R U h C n phi u beta omegaQuotient F W"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.PositiveAxisExistence.exists_positive_order_solution",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For 0<R<T, U open, n>0, and lower-order input data F with LowerInputRegularity T U h F compatible with the given history, there is a six-component field W with IsPositiveOrderSolution: it solves the symmetric integral equation, is jointly smooth on radialDomain R x U, has the (5.7) parity, satisfies",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L864",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveAxisExistence.lean"
+          },
+          "snippet": {
+            "line": 864,
+            "text": "theorem exists_positive_order_solution {R T : ℝ} (hR : 0 < R) (hRT : R < T)\n    {U : Set ℂ} (hU : IsOpen U) (h C : ℝ) {n : ℕ} (hn : 0 < n)\n    (phi u beta : ℕ → InnerProfile) (omegaQuotient : InnerProfile)\n    {F : CoefficientData} (hF : LowerInputRegularity T U (h : ℂ) F)\n    (hreal : RealCompatible R U F (lowerHistoryData h n phi u beta omegaQuotient)) :\n    ∃ W : Field, IsPositiveOrderSolution R U h C n phi u beta omegaQuotient F W"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.20/attributed/02.NavierStokes.SlowStressSupport.repaired_moment_data",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlowStressSupport.repaired_moment_data",
-      "line": 645,
-      "module": "NavierStokes.SlowStressSupport",
-      "path": "NavierStokes/SlowStressSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean#L645"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlowStressSupport.repaired_moment_data",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlowStressSupport.repaired_moment_data",
+        "module": "NavierStokes.SlowStressSupport"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 645,
-        "text": "moment B 1 (u n) eta = 0 ∧ moment B 2 (e n) eta = 0 ∧ moment B 2 (conv n u e) eta = 0 ∧ moment B 1 (fun w => conv n u u w + PositiveOrderMoments.pressureHistory n e omega w) eta = 0, where moment B m f eta = ∫ R in (0:ℝ)..B, R ^ m * f (R, eta)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.SlowStressSupport.repaired_moment_data",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L645",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlowStressSupport.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 645,
+            "text": "theorem repaired_moment_data {S : Set ℝ} (hS : IsOpen S) {n : ℕ}\n    {u e : History} {omega : Field} (hu : ∀ j, j ≤ n → Smooth S (u j))\n    (hq : Smooth S (PositiveOrderMoments.jointPressureGradient n e omega))\n    {B : ℝ} (hB : 0 ≤ B)\n    (hs : ∀ eta ∈ S, ∀ R, B ≤ R → PositiveOrderMoments.jointRowDensity n u e omega (R, eta) = 0)\n    (hm : ∀ eta ∈ S, PositiveOrderMoments.moments n (PositiveOrderMoments.slice u eta)\n      (PositiveOrderMoments.slice e eta) (fun R => omega (R, eta)) = 0)\n    {eta : ℝ} (heta : eta ∈ S) :\n    moment B 1 (u n) eta = 0 ∧ moment B 2 (e n) eta = 0 ∧\n      moment B 2 (conv n u e) eta = 0 ∧\n      moment B 1 (fun w => conv n u u w + PositiveOrderMoments.pressureHistory n e omega w) eta = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

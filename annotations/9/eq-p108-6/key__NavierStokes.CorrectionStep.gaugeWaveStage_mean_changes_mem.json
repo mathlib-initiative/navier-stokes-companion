@@ -1,26 +1,28 @@
 {
-  "id": "eq-p108-6/key/02.NavierStokes.CorrectionStep.gaugeWaveStage_mean_changes_mem",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.gaugeWaveStage_mean_changes_mem",
-      "line": 3426,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L3426"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.gaugeWaveStage_mean_changes_mem",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.gaugeWaveStage_mean_changes_mem",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 3426,
-        "text": "(hX : TensorClass s α (covarianceIncrement u.oscillation w)) (hδp : MeanClass s (α-κ) (gaugeWavePressureChange …)) : … ∧ MeanClass s (α - κ) ((gaugeWaveStage g c u w q e).gr c - u.gr c)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.CorrectionStep.gaugeWaveStage_mean_changes_mem",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L3426",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 3426,
+            "text": "theorem gaugeWaveStage_mean_changes_mem {s : StripData (PressureStream.Lift S)} {α κ : ℝ}\n    (g : GaugeData S) (c : Context (PressureStream.Lift S))\n    (u : State (PressureStream.Lift S)) (w : Oscillation (PressureStream.Lift S))\n    (q : OscillatoryScalar (PressureStream.Lift S)) (e : ExcludedErrors (PressureStream.Lift S))\n    (hu : AngularContinuous u.oscillation) (hw : AngularContinuous w)\n    (ho : OperatorBounds s c.operators κ) (hb : BaseBounds s c.base)\n    (hm : CorrectionState.CumulativeBounds s u)\n    (hW : ∀ i j, SmoothOn s.domain (u.covariance i j))\n    (hX : TensorClass s α (covarianceIncrement u.oscillation w))\n    (hδp : MeanClass s (α - κ) (gaugeWavePressureChange g c u w q e)) :\n    MeanClass s (α - κ) ((gaugeWaveStage g c u w q e).thetaResidual c - u.thetaResidual c) ∧\n      MeanClass s (α - κ) ((gaugeWaveStage g c u w q e).axialResidual c - u.axialResidual c) ∧\n      MeanClass s (α - κ) ((gaugeWaveStage g c u w q e).gr c - u.gr c)"
+          }
+        }
       }
     }
-  }
+  ]
 }

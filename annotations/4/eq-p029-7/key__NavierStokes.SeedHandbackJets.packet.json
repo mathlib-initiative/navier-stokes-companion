@@ -1,26 +1,28 @@
 {
-  "id": "eq-p029-7/key/06.NavierStokes.SeedHandbackJets.packet",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SeedHandbackJets.packet",
-      "line": 25,
-      "module": "NavierStokes.SeedHandbackJets",
-      "path": "NavierStokes/SeedHandbackJets.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean#L25"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SeedHandbackJets.packet",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SeedHandbackJets.packet",
+        "module": "NavierStokes.SeedHandbackJets"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 25,
-        "text": "packet P₀ f := ![f 0, f 1, f 2, derivWithin (f 2) J, …, (fun η => P₀ η + f 6 η), derivWithin (fun η => P₀ η + f 6 η) J] — entry 10 is Π = Π_ax + C_p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.SeedHandbackJets.packet",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L25",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 25,
+            "text": "def packet (P₀ : ℝ → ℝ) (f : Curves) : Packet"
+          }
+        }
       }
     }
-  }
+  ]
 }

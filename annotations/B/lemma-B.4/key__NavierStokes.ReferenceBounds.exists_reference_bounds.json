@@ -1,30 +1,32 @@
 {
-  "id": "lemma-B.4/key/0.NavierStokes.ReferenceBounds.exists_reference_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceBounds.exists_reference_bounds",
-      "line": 1180,
-      "module": "NavierStokes.ReferenceBounds",
-      "path": "NavierStokes/ReferenceBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean#L1180"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceBounds.exists_reference_bounds",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Given the fixed analytic inputs d (axis/outer parameters), SmallParameters, 0<sigma, P0 smooth, 0<nu and the chi-cutoff hypothesis: ∃ M>0, ∀ Λ ≥ M, ∃ C₀>0, ∀ C ≥ C₀, ∃ an entrance profile E, ∃ r>0, ∀ δ ∈ (0,r), 2δ < rampLimit and `ReferenceBoundsOnHold E.profile hΛ hδ hδT hP0`. The quantifier order ",
-        "status": "unconfirmed",
-        "verdict": "faithful"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceBounds.exists_reference_bounds",
+        "module": "NavierStokes.ReferenceBounds"
       },
       "role": "key",
-      "snippet": {
-        "line": 1180,
-        "text": "theorem exists_reference_bounds {h j σ ν : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hσ : 0 < σ) (hP0 : ContDiff ℝ ∞ P0) (hν : 0 < ν)\n    (hcut : ∀ η ∈ Icc (-1 : ℝ) 1, |NaturalAxisData.Z h j P0 η| ≤ ν →\n      99 / 100 < NaturalAxisData.chi h j σ η) :\n    ∃ M > 0, ∀ Λ : ℝ, ∀ hΛ : 0 < Λ, M ≤ Λ →\n      ∃ C₀ > 0, ∀ C : ℝ, C₀ ≤ C →\n        ∃ E : NaturalEntrance.EntranceProfile d Λ C,\n          ∃ r > 0, ∀ δ : ℝ, ∀ hδ : 0 < δ, δ < r →\n            ∃ hδT : 2 * δ < ReferencePath.rampLimit,\n              ReferenceBoundsOnHold E.profile hΛ hδ hδT hP0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.ReferenceBounds.exists_reference_bounds",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Given the fixed analytic inputs d (axis/outer parameters), SmallParameters, 0<sigma, P0 smooth, 0<nu and the chi-cutoff hypothesis: ∃ M>0, ∀ Λ ≥ M, ∃ C₀>0, ∀ C ≥ C₀, ∃ an entrance profile E, ∃ r>0, ∀ δ ∈ (0,r), 2δ < rampLimit and `ReferenceBoundsOnHold E.profile hΛ hδ hδT hP0`. The quantifier order ",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L1180",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean"
+          },
+          "snippet": {
+            "line": 1180,
+            "text": "theorem exists_reference_bounds {h j σ ν : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hσ : 0 < σ) (hP0 : ContDiff ℝ ∞ P0) (hν : 0 < ν)\n    (hcut : ∀ η ∈ Icc (-1 : ℝ) 1, |NaturalAxisData.Z h j P0 η| ≤ ν →\n      99 / 100 < NaturalAxisData.chi h j σ η) :\n    ∃ M > 0, ∀ Λ : ℝ, ∀ hΛ : 0 < Λ, M ≤ Λ →\n      ∃ C₀ > 0, ∀ C : ℝ, C₀ ≤ C →\n        ∃ E : NaturalEntrance.EntranceProfile d Λ C,\n          ∃ r > 0, ∀ δ : ℝ, ∀ hδ : 0 < δ, δ < r →\n            ∃ hδT : 2 * δ < ReferencePath.rampLimit,\n              ReferenceBoundsOnHold E.profile hΛ hδ hδT hP0"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p150-4/key/01.NavierStokes.ReferenceBounds.average_error_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ReferenceBounds.average_error_bound",
-      "line": 566,
-      "module": "NavierStokes.ReferenceBounds",
-      "path": "NavierStokes/ReferenceBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean#L566"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ReferenceBounds.average_error_bound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ReferenceBounds.average_error_bound",
+        "module": "NavierStokes.ReferenceBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 566,
-        "text": "(hF : ContDiffOn ℝ ∞ F D.carrier) (hp : p ∈ D.carrier) (hbound : ∀ t ∈ Icc (0:ℝ) 1, |Λ * (F (t * p.1, p.2) - b)| ≤ B) : |Λ * (ProfileHistories.average F p - b)| ≤ B"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.ReferenceBounds.average_error_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L566",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ReferenceBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 566,
+            "text": "theorem average_error_bound {F : ProfileHistories.Field} (hF : ContDiffOn ℝ ∞ F D.carrier)\n    {p : Point} (hp : p ∈ D.carrier) {Λ b B : ℝ}\n    (hbound : ∀ t ∈ Icc (0 : ℝ) 1, |Λ * (F (t * p.1, p.2) - b)| ≤ B) :\n    |Λ * (average F p - b)| ≤ B"
+          }
+        }
       }
     }
-  }
+  ]
 }

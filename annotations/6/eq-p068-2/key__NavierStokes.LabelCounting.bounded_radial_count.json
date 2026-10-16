@@ -1,24 +1,27 @@
 {
-  "id": "eq-p068-2/key/02.NavierStokes.LabelCounting.bounded_radial_count",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LabelCounting.bounded_radial_count",
-      "line": 173
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LabelCounting.lean#L173"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LabelCounting.bounded_radial_count",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LabelCounting.bounded_radial_count",
+        "module": "NavierStokes.LabelCounting"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 173,
-        "text": "theorem bounded_radial_count (A : ℝ) (hI : Bornology.IsBounded I) : ∃ C > 0, ∀ n : ℕ, 1 ≤ n → ∀ Z T : ℝ, (relevantLabels n A (radialSlice I Z T)).Finite ∧ ((relevantLabels n A (radialSlice I Z T)).ncard : ℝ) ≤ C * ChartScales.S n ^ 3"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.LabelCounting.bounded_radial_count",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L173"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 173,
+            "text": "theorem bounded_radial_count (A : ℝ) {I : Set ℝ} (hI : Bornology.IsBounded I) :\n    ∃ C > 0, ∀ n : ℕ, 1 ≤ n → ∀ Z T : ℝ,\n      (relevantLabels n A (radialSlice I Z T)).Finite ∧\n        ((relevantLabels n A (radialSlice I Z T)).ncard : ℝ) ≤ C * ChartScales.S n ^ 3"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,33 +1,58 @@
 {
-  "id": "proposition-7.2/support/3.NavierStokes.ParticularOneSided.commonCoefficients_endpoint_jets",
-  "location": {
-    "page": 77,
-    "rect": [0.12854, 0.72562, 0.745098, 0.14876]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParticularOneSided.commonCoefficients_endpoint_jets",
-      "line": 187,
-      "module": "NavierStokes.ParticularOneSided",
-      "path": "NavierStokes/ParticularOneSided.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularOneSided.lean#L187"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParticularOneSided.commonCoefficients_endpoint_jets",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "subject": [
+    {
+      "location": {
+        "page": 77,
+        "rect": [0.12854, 0.72562, 0.745098, 0.14876]
       },
-      "declaration_verdict": null,
-      "region": "proposition-7.2@p077",
-      "relation": "supporting",
-      "role": "support",
-      "snippet": {
-        "line": 187,
-        "text": "theorem commonCoefficients_endpoint_jets (t : TangentData (ℝ × X) ProblemStatement.Space)\n    (f : (ℝ × X) × Plane → HarmonicCalculus.ComplexVector) (g : Geometry)\n    {a b : ℝ} (hab : a ≤ b) {W : Set X} (hW : IsOpen W) (hcW : Convex ℝ W)\n    (hN : ContDiffOn ℝ ∞ t.normal (slowDomain W ×ˢ univ))\n    (hNd : ContDiffOn ℝ ∞ t.normalDot (slowDomain W ×ˢ univ))\n    (hK : ContDiffOn ℝ ∞ t.action (slowDomain W ×ˢ univ))\n    (hδ : ContDiffOn ℝ ∞ t.damping (slowDomain W ×ˢ univ))\n    (hf : ContDiffOn ℝ ∞ f (slowDomain W ×ˢ univ))\n    (hn : ∀ x ∈ slowDomain W ×ˢ univ, t.normal x ≠ 0)\n    {κ : Plane → ℝ} (hκ : ContDiff ℝ ∞ κ) (hcκ : HasCompactSupport κ)\n    (hsupp : tsupport κ ⊆ univ ×ˢ Ioo a b) (frequency : ℝ)\n    {x : X} (hx : x ∈ W) (Y : Plane) (n : ℕ) :\n    Tendsto (iteratedFDeriv ℝ n (commonVelocity t f g hab κ))\n        (𝓝[positiveDomain W ×ˢ univ] ((0, x), Y))\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-7.2@p077"
+        }
+      }
+    },
+    {
+      "location": {
+        "page": 78,
+        "rect": [0.12854, 0.103306, 0.745098, 0.320661]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-7.2@p078"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "type": "lean",
+      "uri": "https://github.com/openai/NavierStokesAndEuler",
+      "version": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "location": {
+        "declaration": "NavierStokes.ParticularOneSided.commonCoefficients_endpoint_jets",
+        "module": "NavierStokes.ParticularOneSided"
+      },
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ParticularOneSided.commonCoefficients_endpoint_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L187",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularOneSided.lean",
+            "resolution": "exact"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 187,
+            "text": "theorem commonCoefficients_endpoint_jets (t : TangentData (ℝ × X) ProblemStatement.Space)\n    (f : (ℝ × X) × Plane → HarmonicCalculus.ComplexVector) (g : Geometry)\n    {a b : ℝ} (hab : a ≤ b) {W : Set X} (hW : IsOpen W) (hcW : Convex ℝ W)\n    (hN : ContDiffOn ℝ ∞ t.normal (slowDomain W ×ˢ univ))\n    (hNd : ContDiffOn ℝ ∞ t.normalDot (slowDomain W ×ˢ univ))\n    (hK : ContDiffOn ℝ ∞ t.action (slowDomain W ×ˢ univ))\n    (hδ : ContDiffOn ℝ ∞ t.damping (slowDomain W ×ˢ univ))\n    (hf : ContDiffOn ℝ ∞ f (slowDomain W ×ˢ univ))\n    (hn : ∀ x ∈ slowDomain W ×ˢ univ, t.normal x ≠ 0)\n    {κ : Plane → ℝ} (hκ : ContDiff ℝ ∞ κ) (hcκ : HasCompactSupport κ)\n    (hsupp : tsupport κ ⊆ univ ×ˢ Ioo a b) (frequency : ℝ)\n    {x : X} (hx : x ∈ W) (Y : Plane) (n : ℕ) :\n    Tendsto (iteratedFDeriv ℝ n (commonVelocity t f g hab κ))\n        (𝓝[positiveDomain W ×ˢ univ] ((0, x), Y))\n  …",
+            "truncated": true
+          }
+        }
+      }
+    }
+  ]
 }

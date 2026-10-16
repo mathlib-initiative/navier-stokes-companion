@@ -1,25 +1,28 @@
 {
-  "id": "eq-p029-1/support/02.NavierStokes.ModulatedExterior.integral_equal_after",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ModulatedExterior.integral_equal_after",
-      "line": 28,
-      "module": "NavierStokes.ModulatedExterior",
-      "path": "NavierStokes/ModulatedExterior.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedExterior.lean#L28"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ModulatedExterior.integral_equal_after"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ModulatedExterior.integral_equal_after",
+        "module": "NavierStokes.ModulatedExterior"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 28,
-        "text": "(hanchor : (∫ r in (0:ℝ)..B, f r) = ∫ r in (0:ℝ)..B, g r) (htail : EqOn f g (Icc B X)) : (∫ r in (0:ℝ)..X, f r) = ∫ r in (0:ℝ)..X, g r — the scalar, closed-interval form of the same anchor-plus-tail hypothesis pair"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ModulatedExterior.integral_equal_after"
+          },
+          "destination": {
+            "fragment": "L28",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ModulatedExterior.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 28,
+            "text": "theorem integral_equal_after {f g : ℝ → ℝ} {B X : ℝ}\n    (hB : 0 ≤ B) (hX : B ≤ X)\n    (hf : ContinuousOn f (Icc 0 X)) (hg : ContinuousOn g (Icc 0 X))\n    (hanchor : (∫ r in (0 : ℝ)..B, f r) = ∫ r in (0 : ℝ)..B, g r)\n    (htail : EqOn f g (Icc B X)) :\n    (∫ r in (0 : ℝ)..X, f r) = ∫ r in (0 : ℝ)..X, g r"
+          }
+        }
       }
     }
-  }
+  ]
 }

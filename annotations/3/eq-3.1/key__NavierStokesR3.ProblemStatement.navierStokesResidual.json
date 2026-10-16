@@ -1,23 +1,25 @@
 {
-  "id": "eq-3.1/key/02.NavierStokesR3.ProblemStatement.navierStokesResidual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ProblemStatement.navierStokesResidual",
-      "line": 57,
-      "module": "NavierStokes.R3.ProblemStatement",
-      "path": "NavierStokes/R3/ProblemStatement.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ProblemStatement.lean#L57"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ProblemStatement.navierStokesResidual"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ProblemStatement.navierStokesResidual",
+        "module": "NavierStokes.R3.ProblemStatement"
       },
-      "snippet": {
-        "line": 57,
-        "text": "def navierStokesResidual (ν : ℝ) (u p) (t x) := temporalDerivative u t x + advection u t x - ν • spatialLaplacian u t x + pressureGradient p t x  (the viscosity-ν form; `residual_at_viscosity_one`, same file line 166, proves ν = 1 gives the previous one)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.ProblemStatement.navierStokesResidual"
+          },
+          "destination": {
+            "fragment": "L57",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ProblemStatement.lean"
+          },
+          "snippet": {
+            "line": 57,
+            "text": "def navierStokesResidual (ν : ℝ) (u : VelocityField) (p : PressureField)\n    (t : ℝ) (x : Space) : Space"
+          }
+        }
       }
     }
-  }
+  ]
 }

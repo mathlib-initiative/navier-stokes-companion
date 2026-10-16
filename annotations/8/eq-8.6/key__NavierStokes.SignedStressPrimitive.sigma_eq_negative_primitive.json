@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.6/key/04.NavierStokes.SignedStressPrimitive.sigma_eq_negative_primitive",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedStressPrimitive.sigma_eq_negative_primitive",
-      "line": 272,
-      "module": "NavierStokes.SignedStressPrimitive",
-      "path": "NavierStokes/SignedStressPrimitive.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L272"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedStressPrimitive.sigma_eq_negative_primitive",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedStressPrimitive.sigma_eq_negative_primitive",
+        "module": "NavierStokes.SignedStressPrimitive"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 272,
-        "text": "sigma P e F z = -(∫ r in (0:ℝ)..z.1, r ^ e * adjusted P e F (r, z.2)) / z.1 ^ e — the integral form of −T_e"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.SignedStressPrimitive.sigma_eq_negative_primitive",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L272",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 272,
+            "text": "theorem sigma_eq_negative_primitive (P : Patch) (e : ℕ) {F : ℝ × E → ℝ}\n    (hF : ContDiff ℝ ∞ F) (hs : RadialAlias.RadiallySupported P.a P.b F) (z : ℝ × E) :\n    sigma P e F z = -(∫ r in (0 : ℝ)..z.1, r ^ e * adjusted P e F (r, z.2)) / z.1 ^ e"
+          }
+        }
       }
     }
-  }
+  ]
 }

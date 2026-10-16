@@ -1,26 +1,28 @@
 {
-  "id": "eq-4.33/key/05.NavierStokes.ActiveAnnulusWeight.activationCoefficient_edge",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActiveAnnulusWeight.activationCoefficient_edge",
-      "line": 974,
-      "module": "NavierStokes.ActiveAnnulusWeight",
-      "path": "NavierStokes/ActiveAnnulusWeight.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean#L974"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActiveAnnulusWeight.activationCoefficient_edge",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActiveAnnulusWeight.activationCoefficient_edge",
+        "module": "NavierStokes.ActiveAnnulusWeight"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 974,
-        "text": "activationCoefficient T κ D (η,0) = ((1-κ) / stepDenominator T 0) • D ((κ,T),(0,η))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.ActiveAnnulusWeight.activationCoefficient_edge",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L974",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActiveAnnulusWeight.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 974,
+            "text": "theorem activationCoefficient_edge {T κ : ℝ}\n    {D : ActivationBounds.ScaledPoint → ℝ × ℝ} (η : ℝ) :\n    activationCoefficient T κ D (η,0) = ((1-κ) / stepDenominator T 0) • D ((κ,T),(0,η))"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.11/key/04.NavierStokes.UniformAngularReset.complete_angular_reset",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.UniformAngularReset.complete_angular_reset",
-      "line": 1251,
-      "module": "NavierStokes.UniformAngularReset",
-      "path": "NavierStokes/UniformAngularReset.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformAngularReset.lean#L1251"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.UniformAngularReset.complete_angular_reset",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.UniformAngularReset.complete_angular_reset",
+        "module": "NavierStokes.UniformAngularReset"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1251,
-        "text": "∃ lam0 > 0, ∀ d, d.core.lam < lam0 → ∃ c, … ∧ (∀ eta y, y ∉ Ioo (d.releaseStart-4) d.releaseStart → correctedAngular d c (y,eta) = finalAngular d (y,eta)) ∧ (∀ eta, (∫ y, (correctedAngular d c (y,eta))^2 - (finalAngular d (y,eta))^2) = 0 ∧ √2 * correctedHistory d c eta = (exp R * √(2*exp R) * correctedAngular d c (R,eta))/(1 - d.core.lam))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.UniformAngularReset.complete_angular_reset",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1251",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformAngularReset.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1251,
+            "text": "theorem complete_angular_reset :\n    ∃ lam0 : ℝ, 0 < lam0 ∧ ∀ d : TailData, d.core.lam < lam0 →\n      ∃ c : ℝ → Coeff,\n        ContDiff ℝ ∞ (correctedAngular d c) ∧\n        (∀ p, 0 < correctedAngular d c p) ∧\n        (∀ eta y, y ∉ Ioo (d.releaseStart - 4) d.releaseStart →\n          correctedAngular d c (y, eta) = finalAngular d (y, eta)) ∧\n        (∀ eta, (∫ y, (correctedAngular d c (y, eta)) ^ 2 - (finalAngular d (y, eta)) ^ 2) = 0 ∧\n          Real.sqrt 2 * correctedHistory d c eta =\n            (Real.exp d.releaseStart * Real.sqrt (2 * Real.exp d.releaseStart) *\n              correctedAngular d c (d.releaseStart, eta)) / (1 - d.core.lam)) ∧\n        (∀ eta y, y ∈ Ioo (d.releaseStart - 4) d.releaseStart →\n          logSlope (fun t => correctedAngular d c (t, eta)) y ≤ -d.core.lam / 2)"
+          }
+        }
       }
     }
-  }
+  ]
 }

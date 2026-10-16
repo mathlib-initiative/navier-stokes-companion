@@ -1,26 +1,29 @@
 {
-  "id": "lemma-4.9/support/3.NavierStokes.LeadingStressWeights.stress_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LeadingStressWeights.stress_eq",
-      "line": 26,
-      "module": "NavierStokes.LeadingStressWeights",
-      "path": "NavierStokes/LeadingStressWeights.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean#L26"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LeadingStressWeights.stress_eq",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LeadingStressWeights.stress_eq",
+        "module": "NavierStokes.LeadingStressWeights"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 26,
-        "text": "theorem stress_eq {D : RadialDomain} (P : Profiles D) (h : ℝ) {p : Point}\n    (hX : 0 < p.1) (hf : P.f p ≠ 0) :\n    stress P h p = P.f p •\n      (ReferenceBounds.p1 P h p - ActivationContinuation.shearA P p,\n        ReferenceBounds.p2 P h p - ActivationContinuation.shearB P p)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.LeadingStressWeights.stress_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L26",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LeadingStressWeights.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 26,
+            "text": "theorem stress_eq {D : RadialDomain} (P : Profiles D) (h : ℝ) {p : Point}\n    (hX : 0 < p.1) (hf : P.f p ≠ 0) :\n    stress P h p = P.f p •\n      (ReferenceBounds.p1 P h p - ActivationContinuation.shearA P p,\n        ReferenceBounds.p2 P h p - ActivationContinuation.shearB P p)"
+          }
+        }
       }
     }
-  }
+  ]
 }

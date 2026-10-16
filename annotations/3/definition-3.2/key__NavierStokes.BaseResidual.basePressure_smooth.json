@@ -1,29 +1,31 @@
 {
-  "id": "definition-3.2/key/1.NavierStokes.BaseResidual.basePressure_smooth",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseResidual.basePressure_smooth",
-      "line": 1496,
-      "module": "NavierStokes.BaseResidual",
-      "path": "NavierStokes/BaseResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean#L1496"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseResidual.basePressure_smooth",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseResidual.basePressure_smooth",
+        "module": "NavierStokes.BaseResidual"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ContDiffOn ℝ ∞ (basePressure a h C d) past, where past = Iio 1 ×ˢ univ (BaseResidual.lean:547) and basePressure (SlowBorelBase.lean:1183) is the profile of homogeneity -2A composed with profilePoint, matching p^{(0)} = q^{-2A}\\Pi. This is clause (i) for the pressure, on the same Cartesian slab t < 1"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 1496,
-        "text": "theorem basePressure_smooth {a : ℕ → ℕ} (ha : StrictMono a) {h : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) {d : Coefficients} (hd : SmoothCoefficients d) (C : ℝ) :\n    ContDiffOn ℝ ∞ (basePressure a h C d) past"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.BaseResidual.basePressure_smooth",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: ContDiffOn ℝ ∞ (basePressure a h C d) past, where past = Iio 1 ×ˢ univ (BaseResidual.lean:547) and basePressure (SlowBorelBase.lean:1183) is the profile of homogeneity -2A composed with profilePoint, matching p^{(0)} = q^{-2A}\\Pi. This is clause (i) for the pressure, on the same Cartesian slab t < 1"
+          },
+          "destination": {
+            "fragment": "L1496",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean"
+          },
+          "snippet": {
+            "line": 1496,
+            "text": "theorem basePressure_smooth {a : ℕ → ℕ} (ha : StrictMono a) {h : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) {d : Coefficients} (hd : SmoothCoefficients d) (C : ℝ) :\n    ContDiffOn ℝ ∞ (basePressure a h C d) past"
+          }
+        }
       }
     }
-  }
+  ]
 }

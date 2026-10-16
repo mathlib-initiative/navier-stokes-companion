@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.46/key/02.NavierStokes.TerminalHistoryBridge.physical_forwardAxial_eq_terminal",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalHistoryBridge.physical_forwardAxial_eq_terminal",
-      "line": 1246,
-      "module": "NavierStokes.TerminalHistoryBridge",
-      "path": "NavierStokes/TerminalHistoryBridge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean#L1246"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalHistoryBridge.physical_forwardAxial_eq_terminal",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalHistoryBridge.physical_forwardAxial_eq_terminal",
+        "module": "NavierStokes.TerminalHistoryBridge"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1246,
-        "text": "q ^ (-TerminalPressure.amplitudeExponent h - 1/2) * forwardAxial … = TerminalPressure.axialBackwardStress …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.TerminalHistoryBridge.physical_forwardAxial_eq_terminal",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1246",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1246,
+            "text": "theorem physical_forwardAxial_eq_terminal (F : Profile) {XR C B t r z : ℝ}\n    (hF : OutgoingProfile.Specification F B) (w : CompensationWitness F XR C) (ht : t < 1) (hr : 0 < r)\n    (hfull : 1/2 < Real.log (SimilarityProfile.X F.data.h (TerminalStress.radiusPoint t r z) /\n      OutgoingDilation.switchRadius F XR)+1/5) :\n    SimilarityProfile.q F.data.h (TerminalStress.radiusPoint t r z)^(-TerminalPressure.amplitudeExponent F.data.h-1/2) *\n      forwardAxial F XR w.coefficients (logPoint XR (SimilarityProfile.inner F.data.h (TerminalStress.radiusPoint t r z))) =\n        TerminalPressure.axialBackwardStress (normalization F XR) F.data.h\n          (TerminalPressure.outgoingTaper F.data (shift F XR)) t z r"
+          }
+        }
       }
     }
-  }
+  ]
 }

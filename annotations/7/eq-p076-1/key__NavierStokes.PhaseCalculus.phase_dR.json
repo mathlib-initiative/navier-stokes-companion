@@ -1,24 +1,27 @@
 {
-  "id": "eq-p076-1/key/02.NavierStokes.PhaseCalculus.phase_dR",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhaseCalculus.phase_dR",
-      "line": 70
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhaseCalculus.lean#L70"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhaseCalculus.phase_dR",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhaseCalculus.phase_dR",
+        "module": "NavierStokes.PhaseCalculus"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 70,
-        "text": "fderiv ℝ (phase ε p pz x0 F G) q eR = x0 - q.2.2*(p*slowR F q.1 + pz*slowR G q.1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.PhaseCalculus.phase_dR",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L70"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 70,
+            "text": "theorem phase_dR (ε p pz x0 : ℝ) (F G : Slow → ℝ) (q : Slot)\n    (hF : DifferentiableAt ℝ F q.1) (hG : DifferentiableAt ℝ G q.1) :\n    fderiv ℝ (phase ε p pz x0 F G) q eR =\n      x0 - q.2.2 * (p * slowR F q.1 + pz * slowR G q.1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

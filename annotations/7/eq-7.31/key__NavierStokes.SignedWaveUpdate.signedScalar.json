@@ -1,25 +1,27 @@
 {
-  "id": "eq-7.31/key/07.NavierStokes.SignedWaveUpdate.signedScalar",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedWaveUpdate.signedScalar",
-      "line": 168,
-      "module": "NavierStokes.SignedWaveUpdate",
-      "path": "NavierStokes/SignedWaveUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean#L168"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedWaveUpdate.signedScalar",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedWaveUpdate.signedScalar",
+        "module": "NavierStokes.SignedWaveUpdate"
       },
-      "relation": "defines",
-      "snippet": {
-        "line": 168,
-        "text": "signedScalar s H T R mask j := fun n x => Real.sqrt (s.epsilon n) * SignedCovariance.increment (H n x) (T n x) (R n x) j * mask n x  — the scalar √ε δa_σ (times the slow cutoff) of the strip formulation"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.SignedWaveUpdate.signedScalar",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L168",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedWaveUpdate.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 168,
+            "text": "noncomputable def signedScalar (s : StripData D) (H : ℕ → D → Mat2)\n    (T R : ℕ → D → Vec2) (mask : ℕ → D → ℝ) (j : Fin 2) : ℕ → D → ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

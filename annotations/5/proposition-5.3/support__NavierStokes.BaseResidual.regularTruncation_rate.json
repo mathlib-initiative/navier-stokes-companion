@@ -1,26 +1,29 @@
 {
-  "id": "proposition-5.3/support/3.NavierStokes.BaseResidual.regularTruncation_rate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.BaseResidual.regularTruncation_rate",
-      "line": 2390,
-      "module": "NavierStokes.BaseResidual",
-      "path": "NavierStokes/BaseResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean#L2390"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.BaseResidual.regularTruncation_rate",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.BaseResidual.regularTruncation_rate",
+        "module": "NavierStokes.BaseResidual"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 2390,
-        "text": "theorem regularTruncation_rate {l : Filter SpaceTime} {h lo hi : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (A : PhysicalApproach l h lo hi)\n    {O : Set Inner} (hO : IsOpen O) (hKO : innerBox lo hi ⊆ O)\n    (N : ℕ) (C : ℝ) (phi u beta : ℕ → Inner → ℝ)\n    (hp : ∀ j ≤ N, ContDiffOn ℝ ∞ (phi j) O)\n    (hu : ∀ j ≤ N, ContDiffOn ℝ ∞ (u j) O)\n    (hb : ∀ j ≤ N, ContDiffOn ℝ ∞ (beta j) O)\n    (hL : ∀ w ∈ O, CoordinateAlgebra.L h w.2 ≠ 0) (M : ℕ) :\n    FiniteJetRate l (fun z => (cartesianChart h z).1)\n      (regularTruncation N h C phi u beta) M (2 * (N : ℝ) * h - 2 - M)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.BaseResidual.regularTruncation_rate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L2390",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/BaseResidual.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 2390,
+            "text": "theorem regularTruncation_rate {l : Filter SpaceTime} {h lo hi : ℝ}\n    (hh : 0 < h) (hh1 : h < 1 / 2) (A : PhysicalApproach l h lo hi)\n    {O : Set Inner} (hO : IsOpen O) (hKO : innerBox lo hi ⊆ O)\n    (N : ℕ) (C : ℝ) (phi u beta : ℕ → Inner → ℝ)\n    (hp : ∀ j ≤ N, ContDiffOn ℝ ∞ (phi j) O)\n    (hu : ∀ j ≤ N, ContDiffOn ℝ ∞ (u j) O)\n    (hb : ∀ j ≤ N, ContDiffOn ℝ ∞ (beta j) O)\n    (hL : ∀ w ∈ O, CoordinateAlgebra.L h w.2 ≠ 0) (M : ℕ) :\n    FiniteJetRate l (fun z => (cartesianChart h z).1)\n      (regularTruncation N h C phi u beta) M (2 * (N : ℝ) * h - 2 - M)"
+          }
+        }
       }
     }
-  }
+  ]
 }

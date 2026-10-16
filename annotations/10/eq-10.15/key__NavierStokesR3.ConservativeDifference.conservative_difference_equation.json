@@ -1,25 +1,27 @@
 {
-  "id": "eq-10.15/key/02.NavierStokesR3.ConservativeDifference.conservative_difference_equation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ConservativeDifference.conservative_difference_equation",
-      "line": 137,
-      "module": "NavierStokes.R3.ConservativeDifference",
-      "path": "NavierStokes/R3/ConservativeDifference.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ConservativeDifference.lean#L137"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ConservativeDifference.conservative_difference_equation"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ConservativeDifference.conservative_difference_equation",
+        "module": "NavierStokes.R3.ConservativeDifference"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 137,
-        "text": "temporalDerivative (u - v) t x k = spatialLaplacian (u - v) t x k - (∑ i : Fin 3, spatialPartial i (tensorDiff u v t k i) x) - spatialPartial k (fun y => (p - q) (t,y)) x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.ConservativeDifference.conservative_difference_equation"
+          },
+          "destination": {
+            "fragment": "L137",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ConservativeDifference.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 137,
+            "text": "theorem conservative_difference_equation {u v : VelocityField} {p q : PressureField}\n    {t : ℝ} {x : Space}\n    (hu : ContDiff ℝ ∞ (fun y : Space => u (t, y)))\n    (hv : ContDiff ℝ ∞ (fun y : Space => v (t, y)))\n    (hp : ContDiff ℝ ∞ (fun y : Space => p (t, y)))\n    (hq : ContDiff ℝ ∞ (fun y : Space => q (t, y)))\n    (htu : DifferentiableAt ℝ (fun s : ℝ => u (s, x)) t)\n    (htv : DifferentiableAt ℝ (fun s : ℝ => v (s, x)) t)\n    (hdivu : spatialDivergence u t x = 0)\n    (hdivv : spatialDivergence v t x = 0)\n    (hNS : navierStokesResidual u p t x = navierStokesResidual v q t x)\n    (k : Fin 3) :\n    temporalDerivative (u - v) t x k = spatialLaplacian (u - v) t x k -\n      (∑ i : Fin 3, spatialPartial i (tensorDiff u v t k i) x) -\n      spatialPartial k (fun y => (p - q) (t, y)) x"
+          }
+        }
       }
     }
-  }
+  ]
 }

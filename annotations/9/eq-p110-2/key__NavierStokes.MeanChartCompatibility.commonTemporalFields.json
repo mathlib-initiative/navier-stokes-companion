@@ -1,23 +1,25 @@
 {
-  "id": "eq-p110-2/key/03.NavierStokes.MeanChartCompatibility.commonTemporalFields",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.commonTemporalFields",
-      "line": 949,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L949"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.commonTemporalFields"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.commonTemporalFields",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "snippet": {
-        "line": 949,
-        "text": "radial := streamBeta (epsilon n . axial) (commonTemporalPotential ...); angular := temporalAtIndex h n (index n) (ftheta n); axial := streamGamma (physicalSpeed ...) ((0,(r n).radialDirection)) (commonTemporalPotential ...)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.MeanChartCompatibility.commonTemporalFields"
+          },
+          "destination": {
+            "fragment": "L949",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "snippet": {
+            "line": 949,
+            "text": "noncomputable def commonTemporalFields (r : ℕ → CorrectionState.ReconstructionData)\n    (h : ℝ) (index : ℕ → ℕ) (epsilon : ℕ → ℝ) (axial : S × Plane)\n    (fθ fz : ℕ → PressureStream.Lift S → ℝ) : MeanIncrementBounds.Triple (PressureStream.Lift S)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-p012-1/key/04.NavierStokes.PhysicalResidualBridge.commonGraph_fastTimeScale",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalResidualBridge.commonGraph_fastTimeScale",
-      "line": 443,
-      "module": "NavierStokes.PhysicalResidualBridge",
-      "path": "NavierStokes/PhysicalResidualBridge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualBridge.lean#L443"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalResidualBridge.commonGraph_fastTimeScale",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalResidualBridge.commonGraph_fastTimeScale",
+        "module": "NavierStokes.PhysicalResidualBridge"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 443,
-        "text": "(commonGraph Q h i).velocityScale * (commonGraph Q h i).radialScale * (commonGraph Q h i).fastCoefficient = ChartScales.Tg ^ i"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PhysicalResidualBridge.commonGraph_fastTimeScale",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L443",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualBridge.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 443,
+            "text": "theorem commonGraph_fastTimeScale {Q : ℝ} (hQ : 0 < Q) (h : ℝ) (i : ℕ) :\n    (commonGraph Q h i).velocityScale * (commonGraph Q h i).radialScale *\n      (commonGraph Q h i).fastCoefficient = ChartScales.Tg ^ i"
+          }
+        }
       }
     }
-  }
+  ]
 }

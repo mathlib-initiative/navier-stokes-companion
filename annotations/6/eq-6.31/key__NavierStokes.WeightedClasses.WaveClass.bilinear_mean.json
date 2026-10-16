@@ -1,25 +1,27 @@
 {
-  "id": "eq-6.31/key/02.NavierStokes.WeightedClasses.WaveClass.bilinear_mean",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WeightedClasses.WaveClass.bilinear_mean",
-      "line": 413,
-      "module": "NavierStokes.WeightedClasses",
-      "path": "NavierStokes/WeightedClasses.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean#L413"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WeightedClasses.WaveClass.bilinear_mean"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WeightedClasses.WaveClass.bilinear_mean",
+        "module": "NavierStokes.WeightedClasses"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 413,
-        "text": "(hf : WaveClass s P α f) (hg : WaveClass s P β g) (hP0 : 0 ≤ P) (hP1 : P ≤ 1) (L) : MeanClass s (α + β) (fun n x => L (f n x) (g n x)) — proved from (√ζ·P)² ≤ ζ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.WeightedClasses.WaveClass.bilinear_mean"
+          },
+          "destination": {
+            "fragment": "L413",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WeightedClasses.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 413,
+            "text": "theorem WaveClass.bilinear_mean {s : StripData D} {P : ℕ → D → ℝ}\n    {α β : ℝ} {f : ℕ → D → E} {g : ℕ → D → F}\n    (hf : WaveClass s P α f) (hg : WaveClass s P β g)\n    (hP0 : ∀ n x, x ∈ s.domain → 0 ≤ P n x)\n    (hP1 : ∀ n x, x ∈ s.domain → P n x ≤ 1)\n    (L : E →L[ℝ] F →L[ℝ] G) :\n    MeanClass s (α + β) (fun n x => L (f n x) (g n x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

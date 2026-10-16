@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.11/attributed/03.NavierStokes.ActualPrimaryCovariance.averagedDefect",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPrimaryCovariance.averagedDefect",
-      "line": 737,
-      "module": "NavierStokes.ActualPrimaryCovariance",
-      "path": "NavierStokes/ActualPrimaryCovariance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryCovariance.lean#L737"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPrimaryCovariance.averagedDefect",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPrimaryCovariance.averagedDefect",
+        "module": "NavierStokes.ActualPrimaryCovariance"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 737,
-        "text": "noncomputable def averagedDefect (B N0 : ℕ) (i : Fin 2) := StateMomentBalances.meanBar (tangentCovariance B N0 0 i.succ) - leadingStress i — the paper's grouped difference ⟨W_{rθ}⟩_Y − Σ_θ^{(0)} (i = 0) and ⟨W_{rz}⟩_Y − Σ_z^{(0)} (i = 1), for the assembled primary tangent covariance"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ActualPrimaryCovariance.averagedDefect",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L737",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryCovariance.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 737,
+            "text": "noncomputable def averagedDefect (B N0 : ℕ) (i : Fin 2) : CorrectionState.ScalarField Point"
+          }
+        }
       }
     }
-  }
+  ]
 }

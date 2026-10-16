@@ -1,23 +1,26 @@
 {
-  "id": "eq-p162-3/key/02.NavierStokes.FiveProfileMoments.physicalMoments_hasFDerivAt_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FiveProfileMoments.physicalMoments_hasFDerivAt_zero",
-      "line": 656
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FiveProfileMoments.lean#L656"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FiveProfileMoments.physicalMoments_hasFDerivAt_zero",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FiveProfileMoments.physicalMoments_hasFDerivAt_zero",
+        "module": "NavierStokes.FiveProfileMoments"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 656,
-        "text": "HasFDerivAt (physicalMoments P b A G) (actualLinearEquiv P b A G hb hA).toContinuousLinearMap 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.FiveProfileMoments.physicalMoments_hasFDerivAt_zero",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L656"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 656,
+            "text": "theorem physicalMoments_hasFDerivAt_zero (P : Patch) (b A G : ℝ) (hb : GoodExponent b)\n    (hA : A ≠ 0) : HasFDerivAt (physicalMoments P b A G)\n      (actualLinearEquiv P b A G hb hA).toContinuousLinearMap 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

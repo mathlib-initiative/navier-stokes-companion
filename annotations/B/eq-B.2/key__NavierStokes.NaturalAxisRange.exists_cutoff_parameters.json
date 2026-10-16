@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.2/key/01.NavierStokes.NaturalAxisRange.exists_cutoff_parameters",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalAxisRange.exists_cutoff_parameters",
-      "line": 212,
-      "module": "NavierStokes.NaturalAxisRange",
-      "path": "NavierStokes/NaturalAxisRange.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisRange.lean#L212"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalAxisRange.exists_cutoff_parameters",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalAxisRange.exists_cutoff_parameters",
+        "module": "NavierStokes.NaturalAxisRange"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 212,
-        "text": "(p : Parameters h j) (pP : PressureData P) : ∃ δ σ, 0 < δ ∧ 0 < σ ∧ (∀ η ∈ Icc (-1 : ℝ) 1, |Z h j P η| ≤ δ → 99 / 100 < chi h j σ η) ∧ ContDiff ℝ ∞ (chi h j σ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.NaturalAxisRange.exists_cutoff_parameters",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L212",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisRange.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 212,
+            "text": "theorem exists_cutoff_parameters {h j : ℝ} {P : ℝ → ℝ}\n    (p : Parameters h j) (pP : PressureData P) :\n    ∃ δ σ : ℝ, 0 < δ ∧ 0 < σ ∧\n      (∀ η ∈ Icc (-1 : ℝ) 1, |Z h j P η| ≤ δ → 99 / 100 < chi h j σ η) ∧\n      ContDiff ℝ ∞ (chi h j σ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

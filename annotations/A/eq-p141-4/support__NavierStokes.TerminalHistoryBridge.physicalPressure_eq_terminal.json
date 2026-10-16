@@ -1,26 +1,29 @@
 {
-  "id": "eq-p141-4/support/03.NavierStokes.TerminalHistoryBridge.physicalPressure_eq_terminal",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalHistoryBridge.physicalPressure_eq_terminal",
-      "line": 178,
-      "module": "NavierStokes.TerminalHistoryBridge",
-      "path": "NavierStokes/TerminalHistoryBridge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean#L178"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalHistoryBridge.physicalPressure_eq_terminal",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalHistoryBridge.physicalPressure_eq_terminal",
+        "module": "NavierStokes.TerminalHistoryBridge"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 178,
-        "text": "physical pressure = q ^ (-2 * A) * Π (pointwise), i.e. the q-power conversion is carried on the field, not on a radial moment"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.TerminalHistoryBridge.physicalPressure_eq_terminal",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L178",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 178,
+            "text": "theorem physicalPressure_eq_terminal (F : Profile) {XR : ℝ} (hXR : 0 < XR)\n    (c : ℝ → Coeff) {p : SimilarityProfile.PhysicalPoint}\n    (ht : p.1 < 1) (hs : 0 < p.2.1)\n    (hfull : 1/2 ≤ Real.log (SimilarityProfile.X F.data.h p /\n      OutgoingDilation.switchRadius F XR) + 1/5) :\n    physicalPressure F XR c p =\n      TerminalPressure.outgoingPressure (normalization F XR) F.data (shift F XR) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

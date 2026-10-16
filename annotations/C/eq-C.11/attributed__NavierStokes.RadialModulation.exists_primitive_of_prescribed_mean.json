@@ -1,25 +1,27 @@
 {
-  "id": "eq-C.11/attributed/03.NavierStokes.RadialModulation.exists_primitive_of_prescribed_mean",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.RadialModulation.exists_primitive_of_prescribed_mean",
-      "line": 257,
-      "module": "NavierStokes.RadialModulation",
-      "path": "NavierStokes/RadialModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialModulation.lean#L257"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.RadialModulation.exists_primitive_of_prescribed_mean"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.RadialModulation.exists_primitive_of_prescribed_mean",
+        "module": "NavierStokes.RadialModulation"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 257,
-        "text": "∃ A, ContDiff ℝ ∞ A ∧ Periodic A 1 ∧ ∫_0^1 A = 0 ∧ ∀ θ, HasDerivAt A (c * (f θ - m)) θ, with hmean : ∫_0^1 f = m; docstring: `c = -1/2` gives the angular primitive, `c = E/2` the axial one"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.RadialModulation.exists_primitive_of_prescribed_mean"
+          },
+          "destination": {
+            "fragment": "L257",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/RadialModulation.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 257,
+            "text": "theorem exists_primitive_of_prescribed_mean\n    (f : ℝ → ℝ) (hf : ContDiff ℝ ∞ f) (hperiodic : Function.Periodic f 1)\n    (m c : ℝ) (hmean : intervalIntegral f 0 1 volume = m) :\n    ∃ A : ℝ → ℝ, ContDiff ℝ ∞ A ∧ Function.Periodic A 1 ∧\n      intervalIntegral A 0 1 volume = 0 ∧ ∀ θ, HasDerivAt A (c * (f θ - m)) θ"
+          }
+        }
       }
     }
-  }
+  ]
 }

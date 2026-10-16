@@ -1,26 +1,29 @@
 {
-  "id": "eq-p012-6/support/10.NavierStokes.PeriodicUniqueness.energy_balance",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicUniqueness.energy_balance",
-      "line": 491,
-      "module": "NavierStokes.PeriodicUniqueness",
-      "path": "NavierStokes/PeriodicUniqueness.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicUniqueness.lean#L491"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicUniqueness.energy_balance",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicUniqueness.energy_balance",
+        "module": "NavierStokes.PeriodicUniqueness"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 491,
-        "text": "energyRate u v t = -2 * dissipation (u - v) t - 2 * coupling u (u - v) t, for unit-periodic u, v with equal Navier–Stokes residuals (cube integrals)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "10.NavierStokes.PeriodicUniqueness.energy_balance",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L491",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodicUniqueness.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 491,
+            "text": "theorem energy_balance {u v : VelocityField} {p q : PressureField} {t : ℝ}\n    (hu : ContDiff ℝ ∞ (fun x : Space => u (t, x)))\n    (hv : ContDiff ℝ ∞ (fun x : Space => v (t, x)))\n    (hp : ContDiff ℝ ∞ (fun x : Space => p (t, x)))\n    (hq : ContDiff ℝ ∞ (fun x : Space => q (t, x)))\n    (hpu : UnitPeriods (fun x : Space => u (t, x)))\n    (hpv : UnitPeriods (fun x : Space => v (t, x)))\n    (hpp : UnitPeriods (fun x : Space => p (t, x)))\n    (hpq : UnitPeriods (fun x : Space => q (t, x)))\n    (hdu : ∀ x, spatialDivergence u t x = 0)\n    (hdv : ∀ x, spatialDivergence v t x = 0)\n    (htu : ∀ x, DifferentiableAt ℝ (fun s : ℝ => u (s, x)) t)\n    (htv : ∀ x, DifferentiableAt ℝ (fun s : ℝ => v (s, x)) t)\n    (hNS : ∀ x, navierStokesResidual u p t x = navierStokesResidual v q t x) :\n    energyRate u v t = -2 * dissipation (u - v) t - 2 * coupling u (u - v) t"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.2/key/04.NavierStokes.LinearWaveResidual.materialPhaseDefect",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.LinearWaveResidual.materialPhaseDefect",
-      "line": 76,
-      "module": "NavierStokes.LinearWaveResidual",
-      "path": "NavierStokes/LinearWaveResidual.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean#L76"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.LinearWaveResidual.materialPhaseDefect",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.LinearWaveResidual.materialPhaseDefect",
+        "module": "NavierStokes.LinearWaveResidual"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 76,
-        "text": "along Vt Φ x + b x * along Vr Φ x + F x * along Vθ Φ x + G x * along Vz Φ x, with Vt = timeDirection ε Vf Vs = Vf − εVs — the paper's E_ik = (t_* + bD_r + (V/R)∂_θ + GD_z)Φ of (7.9), using V = R F so V/R = F"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.LinearWaveResidual.materialPhaseDefect",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L76",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/LinearWaveResidual.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 76,
+            "text": "noncomputable def materialPhaseDefect (_R b F G : E → ℝ) (Vr Vθ Vz Vt : E → E)\n    (Φ : E → ℝ) (x : E) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

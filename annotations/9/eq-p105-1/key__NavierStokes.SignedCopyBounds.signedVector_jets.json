@@ -1,26 +1,28 @@
 {
-  "id": "eq-p105-1/key/05.NavierStokes.SignedCopyBounds.signedVector_jets",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedCopyBounds.signedVector_jets",
-      "line": 506,
-      "module": "NavierStokes.SignedCopyBounds",
-      "path": "NavierStokes/SignedCopyBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean#L506"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedCopyBounds.signedVector_jets",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedCopyBounds.signedVector_jets",
+        "module": "NavierStokes.SignedCopyBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 506,
-        "text": "NativeCovariance s K H T → … → LocalJets s (fun n x => Real.sqrt (s.zeta x) * W n x) (β + 1/2) K (fun n i => SignedWaveUpdate.signedVector s (H i) (T i) (R i) (mask i) (v i) j n)  -- line 4"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.SignedCopyBounds.signedVector_jets",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L506",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedCopyBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 506,
+            "text": "theorem signedVector_jets (h : NativeCovariance s K H T)\n    (hR : ∀ a, LocalJets s (fun _ x => s.zeta x) β K (fun n i x => R i n x a))\n    (hm : LocalJets s (fun _ _ => 1) 0 K (fun n i => mask i n))\n    (hv : LocalJets s W 0 K (fun n i => v i n))\n    (hW : ∀ n x, x ∈ s.domain → 0 ≤ W n x) (j : Fin 2) :\n    LocalJets s (fun n x => Real.sqrt (s.zeta x) * W n x) (β + 1 / 2) K\n      (fun n i => SignedWaveUpdate.signedVector s (H i) (T i) (R i) (mask i) (v i) j n)"
+          }
+        }
       }
     }
-  }
+  ]
 }

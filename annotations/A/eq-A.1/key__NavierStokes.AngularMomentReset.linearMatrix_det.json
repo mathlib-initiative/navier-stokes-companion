@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.1/key/03.NavierStokes.AngularMomentReset.linearMatrix_det",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AngularMomentReset.linearMatrix_det",
-      "line": 119,
-      "module": "NavierStokes.AngularMomentReset",
-      "path": "NavierStokes/AngularMomentReset.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AngularMomentReset.lean#L119"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AngularMomentReset.linearMatrix_det",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AngularMomentReset.linearMatrix_det",
+        "module": "NavierStokes.AngularMomentReset"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 119,
-        "text": "(linearMatrix lam).det = 2 * moment (angularSlope lam) * moment (pressureSlope lam) * (Real.exp (2 * pressureSlope lam) - Real.exp (2 * angularSlope lam)), with linearMatrix lam = !![m s₁, e^(2 s₁) * m s₁; 2 * m s₂, 2 * (e^(2 s₂) * m s₂)]"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.AngularMomentReset.linearMatrix_det",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L119",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AngularMomentReset.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 119,
+            "text": "theorem linearMatrix_det (lam : ℝ) :\n    (linearMatrix lam).det = 2 * moment (angularSlope lam) * moment (pressureSlope lam) *\n      (Real.exp (2 * pressureSlope lam) - Real.exp (2 * angularSlope lam))"
+          }
+        }
       }
     }
-  }
+  ]
 }

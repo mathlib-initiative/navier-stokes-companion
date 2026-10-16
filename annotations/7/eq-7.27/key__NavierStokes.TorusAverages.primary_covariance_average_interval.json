@@ -1,26 +1,28 @@
 {
-  "id": "eq-7.27/key/01.NavierStokes.TorusAverages.primary_covariance_average_interval",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TorusAverages.primary_covariance_average_interval",
-      "line": 678,
-      "module": "NavierStokes.TorusAverages",
-      "path": "NavierStokes/TorusAverages.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusAverages.lean#L678"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TorusAverages.primary_covariance_average_interval",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TorusAverages.primary_covariance_average_interval",
+        "module": "NavierStokes.TorusAverages"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 678,
-        "text": "squareAverage (fun z => angularMean (fun θ => amp z * Real.cos (j*θ + phase z)^2)) = (|vr.1*vt.2 - vr.2*vt.1| / 2) * (∫ ξ, χ ξ ^ 2) * (ci * ∫ v in (0:ℝ)..r^2, ψ v ^ 2 * x v * t v i)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TorusAverages.primary_covariance_average_interval",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L678",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TorusAverages.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 678,
+            "text": "theorem primary_covariance_average_interval (vr vt center : Plane)\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (ci r0 : ℝ) (hci : 0 < ci)\n    {r a A b B : ℝ} {χ ψ x : ℝ → ℝ} {t : ℝ → PulseCovariance.Vec2}\n    (hp : PulseCovariance.PulseBounds r a A b B ψ x)\n    (hχ : Continuous χ) (ht : Continuous t) (hcχ : HasCompactSupport χ)\n    (i : Fin 2) (n : ℕ) (phase : Plane → ℝ) (j : ℤ) (hj : j ≠ 0) :\n    let amp"
+          }
+        }
       }
     }
-  }
+  ]
 }

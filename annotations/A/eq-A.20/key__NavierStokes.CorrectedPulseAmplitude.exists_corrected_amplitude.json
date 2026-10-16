@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.20/key/01.NavierStokes.CorrectedPulseAmplitude.exists_corrected_amplitude",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectedPulseAmplitude.exists_corrected_amplitude",
-      "line": 427
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectedPulseAmplitude.lean#L427"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectedPulseAmplitude.exists_corrected_amplitude",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectedPulseAmplitude.exists_corrected_amplitude",
+        "module": "NavierStokes.CorrectedPulseAmplitude"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 427,
-        "text": "∃ lam₀ K C, … ∀ d, … d.core.lam < lam₀ → ∃ w : ResetWitness d K, ContDiff ℝ ∞ (amplitude d w.coefficients) ∧ ∀ eta, eta ^ 2 ≤ 1 → … ∧ |deriv (amplitude d w.coefficients) eta| ≤ C * d.core.lam * (1 + Real.log (1 / d.core.lam)) ∧ …, with C = 128 * combinedConstant P m K"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CorrectedPulseAmplitude.exists_corrected_amplitude",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L427"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 427,
+            "text": "theorem exists_corrected_amplitude (P m : ℝ) (hP : 0 < P) :\n    ∃ lam₀ K C : ℝ, 0 < lam₀ ∧ 0 < K ∧ 0 < C ∧ ∀ d : TailData,\n      d.core.P = P → d.core.m = m → d.core.wait = 60 * Real.log (1 / d.core.lam) →\n      d.core.lam < lam₀ → ∃ w : ResetWitness d K,\n        ContDiff ℝ ∞ (amplitude d w.coefficients) ∧ ∀ eta : ℝ, eta ^ 2 ≤ 1 →\n          9 / 10 < amplitude d w.coefficients eta ∧ amplitude d w.coefficients eta < 6 / 5 ∧\n          totalEnergy d w.coefficients (amplitude d w.coefficients eta) eta = 0 ∧\n          |deriv (amplitude d w.coefficients) eta| ≤ C * d.core.lam * (1 + Real.log (1 / d.core.lam)) ∧\n          (∀ XR : ℝ, 0 < XR →\n            IntegrableOn (radialEnergyIntegrand d w.coefficients (amplitude d w.coefficients) eta XR) (Ioi 0) ∧\n            (∫ X in Ioi 0, radialEnergyIntegrand d w.coefficients (amplitude d w.coefficients) eta XR X) = 0) ∧\n          (∀ A ∈ Icc (9 / 10 : ℝ) (6 / 5), totalEnergy d w.coefficients A eta = 0 →\n            A = amplitude d w.coefficients eta)"
+          }
+        }
       }
     }
-  }
+  ]
 }

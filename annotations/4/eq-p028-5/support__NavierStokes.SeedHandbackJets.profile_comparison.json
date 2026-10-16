@@ -1,26 +1,30 @@
 {
-  "id": "eq-p028-5/support/05.NavierStokes.SeedHandbackJets.profile_comparison",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SeedHandbackJets.profile_comparison",
-      "line": 269,
-      "module": "NavierStokes.SeedHandbackJets",
-      "path": "NavierStokes/SeedHandbackJets.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean#L269"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SeedHandbackJets.profile_comparison",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SeedHandbackJets.profile_comparison",
+        "module": "NavierStokes.SeedHandbackJets"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 269,
-        "text": "∀ P₀ : ℝ → ℝ, ContDiffOn ℝ ∞ P₀ J → Bound (k+1) P₀ B₀ → … Bound k (fun η => Q.outputs h P₀ X i η - P.outputs h P₀ X i η) (C*(εf+εm)) — one and the same P₀ is used for both profiles (J = Icc (-1) 1)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.SeedHandbackJets.profile_comparison",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L269",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 269,
+            "text": "theorem profile_comparison (k : ℕ) (h X₀ X₁ μ B B₀ : ℝ)\n    (hh : 0 < h) (hh' : h < 1/2) (hX₀ : 0 < X₀) (hXX : X₀ ≤ X₁)\n    (hμ : 0 < μ) (hB : 0 ≤ B) (hB₀ : 0 ≤ B₀) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ P Q : Profile,\n      P.SmoothOnBand X₀ X₁ → Q.SmoothOnBand X₀ X₁ →\n      P.JetBound (k+1) X₀ X₁ B → Q.JetBound (k+1) X₀ X₁ B →\n      (∀ X ∈ Icc X₀ X₁, ∀ η ∈ J, μ ≤ P.E (X,η)) →\n      (∀ X ∈ Icc X₀ X₁, ∀ η ∈ J, μ ≤ Q.E (X,η)) →\n      ∀ P₀ : ℝ → ℝ, ContDiffOn ℝ ∞ P₀ J → Bound (k+1) P₀ B₀ →\n      ∀ εf εm : ℝ, 0 ≤ εf → 0 ≤ εm →\n      (∀ X ∈ Icc X₀ X₁,\n        Bound (k+1) (fun η => Q.E (X,η)-P.E (X,η)) εf ∧\n        Bound (k+1) (fun η => Q.U (X,η)-P.U (X,η)) εf) →\n      (∀ X ∈ Icc X₀ X₁, ∀ i,\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

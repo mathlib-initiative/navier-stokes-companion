@@ -1,25 +1,27 @@
 {
-  "id": "eq-C.11/key/02.NavierStokes.ParametricModulation.realized_primitive_theta",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricModulation.realized_primitive_theta",
-      "line": 527,
-      "module": "NavierStokes.ParametricModulation",
-      "path": "NavierStokes/ParametricModulation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean#L527"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricModulation.realized_primitive_theta"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricModulation.realized_primitive_theta",
+        "module": "NavierStokes.ParametricModulation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 527,
-        "text": "partialTheta (asRadialPrimitive r.angularPrimitive) (X, η, θ) = -(r.angularLoop ((X,η), θ) - a (X,η)) / 2 ∧ partialTheta (asRadialPrimitive (r.axialPrimitive E)) (X, η, θ) = E (X,η) * (-r.signedAxialLoop ((X,η), θ) + a (X,η) * m (X,η)) / 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ParametricModulation.realized_primitive_theta"
+          },
+          "destination": {
+            "fragment": "L527",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricModulation.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 527,
+            "text": "theorem realized_primitive_theta\n    (r : TrueConeRealization a m p₁ p₂ K B) (E : RadialParameter → ℝ)\n    (ha : ContDiff ℝ ∞ a) (hm : ContDiff ℝ ∞ m) (hp₂ : ContDiff ℝ ∞ p₂)\n    (hE : ContDiff ℝ ∞ E) (X η θ : ℝ) (hp : (X, η) ∈ K) :\n    RadialModulation.partialTheta (asRadialPrimitive r.angularPrimitive) (X, η, θ) =\n        -(r.angularLoop ((X, η), θ) - a (X, η)) / 2 ∧\n      RadialModulation.partialTheta (asRadialPrimitive (r.axialPrimitive E)) (X, η, θ) =\n        E (X, η) * (-r.signedAxialLoop ((X, η), θ) + a (X, η) * m (X, η)) / 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

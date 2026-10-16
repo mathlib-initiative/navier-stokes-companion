@@ -1,26 +1,28 @@
 {
-  "id": "eq-p133-2/key/03.NavierStokes.CorrectedPulseAmplitude.energyShift_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectedPulseAmplitude.energyShift_bounds",
-      "line": 158,
-      "module": "NavierStokes.CorrectedPulseAmplitude",
-      "path": "NavierStokes/CorrectedPulseAmplitude.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectedPulseAmplitude.lean#L158"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectedPulseAmplitude.energyShift_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectedPulseAmplitude.energyShift_bounds",
+        "module": "NavierStokes.CorrectedPulseAmplitude"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 158,
-        "text": "(w : ResetWitness d K) (hK : 0 < K) (heta : eta ^ 2 ≤ 1) : |energyShift d w.coefficients eta| ≤ combinedScale d K ∧ |deriv (energyShift d w.coefficients) eta| ≤ combinedScale d K"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CorrectedPulseAmplitude.energyShift_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L158",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectedPulseAmplitude.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 158,
+            "text": "theorem energyShift_bounds {d : TailData} {K : ℝ} (w : ResetWitness d K) (hK : 0 < K) (eta : ℝ)\n    (heta : eta ^ 2 ≤ 1) :\n    |energyShift d w.coefficients eta| ≤ combinedScale d K ∧\n      |deriv (energyShift d w.coefficients) eta| ≤ combinedScale d K"
+          }
+        }
       }
     }
-  }
+  ]
 }

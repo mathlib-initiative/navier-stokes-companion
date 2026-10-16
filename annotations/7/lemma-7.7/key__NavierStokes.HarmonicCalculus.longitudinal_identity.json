@@ -1,29 +1,31 @@
 {
-  "id": "lemma-7.7/key/1.NavierStokes.HarmonicCalculus.longitudinal_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicCalculus.longitudinal_identity",
-      "line": 414,
-      "module": "NavierStokes.HarmonicCalculus",
-      "path": "NavierStokes/HarmonicCalculus.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicCalculus.lean#L414"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicCalculus.longitudinal_identity",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicCalculus.longitudinal_identity",
+        "module": "NavierStokes.HarmonicCalculus"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: If along Vθ (a·1) x = 0 and cylindricalDivergence R Vr Vθ Vz (vectorMode κ Φ a) x = 0, then phaseFactor κ * normalDot (phaseNormal R Vr Vθ Vz Φ x) (a x) = −strippedDivergence R Vr Vz a x, with phaseFactor κ = iκ and strippedDivergence = D_r a_r + R^{-1} a_r + D_z a_z. This is the first half of (7.39"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 414,
-        "text": "theorem longitudinal_identity (R : E → ℝ) (Vr Vθ Vz : E → E)\n    (κ : ℝ) {Φ : E → ℝ} {a : E → ComplexVector} {x : E}\n    (hΦ : DifferentiableAt ℝ Φ x)\n    (ha : ∀ i, DifferentiableAt ℝ (fun y => a y i) x)\n    (haθ : along Vθ (fun y => a y 1) x = 0)\n    (hdiv : cylindricalDivergence R Vr Vθ Vz (vectorMode κ Φ a) x = 0) :\n    phaseFactor κ * normalDot (phaseNormal R Vr Vθ Vz Φ x) (a x) =\n      -strippedDivergence R Vr Vz a x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.HarmonicCalculus.longitudinal_identity",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: If along Vθ (a·1) x = 0 and cylindricalDivergence R Vr Vθ Vz (vectorMode κ Φ a) x = 0, then phaseFactor κ * normalDot (phaseNormal R Vr Vθ Vz Φ x) (a x) = −strippedDivergence R Vr Vz a x, with phaseFactor κ = iκ and strippedDivergence = D_r a_r + R^{-1} a_r + D_z a_z. This is the first half of (7.39"
+          },
+          "destination": {
+            "fragment": "L414",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicCalculus.lean"
+          },
+          "snippet": {
+            "line": 414,
+            "text": "theorem longitudinal_identity (R : E → ℝ) (Vr Vθ Vz : E → E)\n    (κ : ℝ) {Φ : E → ℝ} {a : E → ComplexVector} {x : E}\n    (hΦ : DifferentiableAt ℝ Φ x)\n    (ha : ∀ i, DifferentiableAt ℝ (fun y => a y i) x)\n    (haθ : along Vθ (fun y => a y 1) x = 0)\n    (hdiv : cylindricalDivergence R Vr Vθ Vz (vectorMode κ Φ a) x = 0) :\n    phaseFactor κ * normalDot (phaseNormal R Vr Vθ Vz Φ x) (a x) =\n      -strippedDivergence R Vr Vz a x"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "proposition-A.7/support/3.NavierStokes.ParametricTerminalCompensation.exists_physical_heat_compensation",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParametricTerminalCompensation.exists_physical_heat_compensation",
-      "line": 471,
-      "module": "NavierStokes.ParametricTerminalCompensation",
-      "path": "NavierStokes/ParametricTerminalCompensation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricTerminalCompensation.lean#L471"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParametricTerminalCompensation.exists_physical_heat_compensation",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParametricTerminalCompensation.exists_physical_heat_compensation",
+        "module": "NavierStokes.ParametricTerminalCompensation"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 471,
-        "text": "theorem exists_physical_heat_compensation (P : Patch) (lam : ℝ) (hlam : 0 ≤ lam)\n    (T : OutgoingTail.TailData) (q : ℝ) (hq : 0 < q)\n    (a : ℝ → ℝ) (ha : ContDiffOn ℝ ∞ a (Icc (-1 : ℝ) 1))\n    (hpos : ∀ η ∈ Icc (-1 : ℝ) 1, 0 < a η) :\n    ∃ K₀ C : ℝ, 0 < K₀ ∧ 0 < C ∧ ∀ K : ℝ, K₀ ≤ K →\n      ∃ c : ℝ → Coeff, ContDiffOn ℝ ∞ c (Icc (-1 : ℝ) 1) ∧\n        ∀ η ∈ Icc (-1 : ℝ) 1,\n          physicalMoments P lam (q * K) (a η) (c η) + physicalDebt T K η = 0 ∧\n          ‖c η‖ ≤ C / K ∧ ‖derivWithin c (Icc (-1 : ℝ) 1) η‖ ≤ C / K ∧\n          FirstJetWithinBound P a c (Icc (-1 : ℝ) 1) η (C / K) ∧\n          ∀ X : ℝ, 0 < X → 0 < physicalProfile P lam (q * K) (a η) (c η) X"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.ParametricTerminalCompensation.exists_physical_heat_compensation",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L471",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParametricTerminalCompensation.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 471,
+            "text": "theorem exists_physical_heat_compensation (P : Patch) (lam : ℝ) (hlam : 0 ≤ lam)\n    (T : OutgoingTail.TailData) (q : ℝ) (hq : 0 < q)\n    (a : ℝ → ℝ) (ha : ContDiffOn ℝ ∞ a (Icc (-1 : ℝ) 1))\n    (hpos : ∀ η ∈ Icc (-1 : ℝ) 1, 0 < a η) :\n    ∃ K₀ C : ℝ, 0 < K₀ ∧ 0 < C ∧ ∀ K : ℝ, K₀ ≤ K →\n      ∃ c : ℝ → Coeff, ContDiffOn ℝ ∞ c (Icc (-1 : ℝ) 1) ∧\n        ∀ η ∈ Icc (-1 : ℝ) 1,\n          physicalMoments P lam (q * K) (a η) (c η) + physicalDebt T K η = 0 ∧\n          ‖c η‖ ≤ C / K ∧ ‖derivWithin c (Icc (-1 : ℝ) 1) η‖ ≤ C / K ∧\n          FirstJetWithinBound P a c (Icc (-1 : ℝ) 1) η (C / K) ∧\n          ∀ X : ℝ, 0 < X → 0 < physicalProfile P lam (q * K) (a η) (c η) X"
+          }
+        }
       }
     }
-  }
+  ]
 }

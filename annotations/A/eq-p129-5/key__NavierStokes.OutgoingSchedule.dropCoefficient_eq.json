@@ -1,23 +1,26 @@
 {
-  "id": "eq-p129-5/key/01.NavierStokes.OutgoingSchedule.dropCoefficient_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingSchedule.dropCoefficient_eq",
-      "line": 213
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingSchedule.lean#L213"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingSchedule.dropCoefficient_eq",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingSchedule.dropCoefficient_eq",
+        "module": "NavierStokes.OutgoingSchedule"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 213,
-        "text": "dropCoefficient m y = 4 * (1 - sigma (Real.log y / m)) for 0 < m, 0 < y (the `if` branch is the same formula)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.OutgoingSchedule.dropCoefficient_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L213"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 213,
+            "text": "theorem dropCoefficient_eq {m y : ℝ} (hm : 0 < m) (hy : 0 < y) :\n    dropCoefficient m y = 4 * (1 - sigma (Real.log y / m))"
+          }
+        }
       }
     }
-  }
+  ]
 }

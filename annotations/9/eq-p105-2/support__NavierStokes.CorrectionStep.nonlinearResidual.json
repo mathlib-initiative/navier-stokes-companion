@@ -1,26 +1,29 @@
 {
-  "id": "eq-p105-2/support/03.NavierStokes.CorrectionStep.nonlinearResidual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.nonlinearResidual",
-      "line": 338,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L338"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.nonlinearResidual",
-        "kind": "def"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.nonlinearResidual",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 338,
-        "text": "nonlinearResidual ε R Vr Vθ Vz Vt B a p x = linearResidual ε R Vr Vθ Vz Vt B a p x + transport R Vr Vθ Vz a a x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CorrectionStep.nonlinearResidual",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L338",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 338,
+            "text": "noncomputable def nonlinearResidual (ε : ℝ) (R : D → ℝ) (Vr Vθ Vz Vt : D → D)\n    (B a : D → ComplexVector) (p : D → ℂ) (x : D) : ComplexVector"
+          }
+        }
       }
     }
-  }
+  ]
 }

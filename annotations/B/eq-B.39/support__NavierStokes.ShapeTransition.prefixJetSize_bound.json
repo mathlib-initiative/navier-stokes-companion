@@ -1,23 +1,27 @@
 {
-  "id": "eq-B.39/support/03.NavierStokes.ShapeTransition.prefixJetSize_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ShapeTransition.prefixJetSize_bound",
-      "line": 781
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ShapeTransition.lean#L781"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ShapeTransition.prefixJetSize_bound"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ShapeTransition.prefixJetSize_bound",
+        "module": "NavierStokes.ShapeTransition"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 781,
-        "text": "prefixJetSize n R r u f eta ≤ prefixCoefficient n B K L * r + (2^n*L*K^2)/C^2, with R*r = L: the aggregated five-row form"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.ShapeTransition.prefixJetSize_bound"
+          },
+          "destination": {
+            "fragment": "L781"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 781,
+            "text": "theorem prefixJetSize_bound {R r L B K C : ℝ} (hR : 0 ≤ R) (hr : 0 ≤ r) (hr1 : r ≤ 1)\n    (hRL : R * r = L) (hB : 0 ≤ B) (hK : 0 ≤ K) (hC : 1 ≤ C)\n    {u f : ℝ × ℝ → ℝ} (hu : ContDiff ℝ ∞ u) (hf : ContDiff ℝ ∞ f)\n    (n : ℕ) (eta : ℝ)\n    (hub : ∀ x ∈ Ioc (0 : ℝ) r, ∀ k ≤ n, |iteratedDeriv k (fun e => u (x, e)) eta| ≤ B)\n    (hfb : ∀ x ∈ Ioc (0 : ℝ) r, ∀ k ≤ n, |iteratedDeriv k (fun e => f (x, e)) eta| ≤ K / C) :\n    prefixJetSize n R r u f eta ≤\n      prefixCoefficient n B K L * r + (2 ^ n * L * K ^ 2) / C ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

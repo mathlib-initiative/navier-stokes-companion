@@ -1,25 +1,27 @@
 {
-  "id": "eq-p140-2/key/01.NavierStokes.TerminalHistoryBridge.angularHistory_eq_power_sub_future",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TerminalHistoryBridge.angularHistory_eq_power_sub_future",
-      "line": 59,
-      "module": "NavierStokes.TerminalHistoryBridge",
-      "path": "NavierStokes/TerminalHistoryBridge.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean#L59"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TerminalHistoryBridge.angularHistory_eq_power_sub_future"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TerminalHistoryBridge.angularHistory_eq_power_sub_future",
+        "module": "NavierStokes.TerminalHistoryBridge"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 59,
-        "text": "angularHistory F XR w.coefficients η X = powerHistory F XR X - ∫ u in Ioi X, HeatedOutgoing.H F XR w.coefficients (u, η) - OutgoingDilation.powerH F XR u"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TerminalHistoryBridge.angularHistory_eq_power_sub_future"
+          },
+          "destination": {
+            "fragment": "L59",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TerminalHistoryBridge.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 59,
+            "text": "theorem angularHistory_eq_power_sub_future {F : Profile} {XR C : ℝ}\n    (w : CompensationWitness F XR C) {η X : ℝ}\n    (hη : η ∈ HeatedOutgoing.parameterDomain) (hX : 0 < X) :\n    angularHistory F XR w.coefficients η X = powerHistory F XR X -\n      ∫ u in Ioi X, HeatedOutgoing.H F XR w.coefficients (u,η) -\n        OutgoingDilation.powerH F XR u"
+          }
+        }
       }
     }
-  }
+  ]
 }

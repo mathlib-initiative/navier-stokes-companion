@@ -1,26 +1,30 @@
 {
-  "id": "eq-p115-1/support/03.NavierStokes.GenericTupleRealization.Result.flat_residual",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericTupleRealization.Result.flat_residual",
-      "line": 171,
-      "module": "NavierStokes.GenericTupleRealization",
-      "path": "NavierStokes/GenericTupleRealization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericTupleRealization.lean#L171"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericTupleRealization.Result.flat_residual",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericTupleRealization.Result.flat_residual",
+        "module": "NavierStokes.GenericTupleRealization"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 171,
-        "text": "for P : SupportedPolynomial SpaceTime (Fin 3 ⊕ κ), hres : ∀ J m, JetRate (scaleApproach U q) q (P.eval (stageComponents …)) m (rho J - Lres m) → ∃ δ C, 0 < δ ∧ 0 < C ∧ ∀ x ∈ U, 0 < q x → q x < δ → ‖iteratedFDeriv ℝ m (P.eval (components …)) x‖ ≤ C * q x ^ N: the generic Lemma 5.4, stated for an arbitrary ℱ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.GenericTupleRealization.Result.flat_residual",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L171",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericTupleRealization.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 171,
+            "text": "theorem Result.flat_residual {κ : Type*} {U : Set SpaceTime} {q : SpaceTime → ℝ}\n    {u0 : VelocityField} {s0 : κ → PressureField} {A B : ℕ → VelocityField}\n    {R : κ → ℕ → PressureField} {g L : ℕ → ℝ} {a : ℕ → ℕ}\n    (H : Result U q u0 s0 A B R g L a) (hU : IsOpen U)\n    (hq : ∀ w ∈ U, 0 < q w ∧ q w ≤ 1)\n    (hu0 : ContDiffOn ℝ ∞ u0 U) (hs0 : ∀ k, ContDiffOn ℝ ∞ (s0 k) U)\n    (hA : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (A j) U)\n    (hB : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (B j) U)\n    (hR : ∀ k j, 1 ≤ j → ContDiffOn ℝ ∞ (R k j) U)\n    (hgtop : Tendsto g atTop atTop) (P : SupportedPolynomial SpaceTime (Fin 3 ⊕ κ))\n    (hconst : ContDiffOn ℝ ∞ P.constant U)\n    (hc : ∀ t ∈ P.terms, ContDiffOn ℝ ∞ t.1 U)\n    (region : ((SpaceTime → ℝ) × Expression SpaceTime (Fin 3 ⊕ κ) Empty) → Set SpaceTime)\n    (Lc : ((SpaceTime → ℝ) × Expression SpaceTime (Fin 3 ⊕ κ) Empty) → ℕ → ℝ)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

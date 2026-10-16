@@ -1,26 +1,29 @@
 {
-  "id": "eq-p026-5/support/12.NavierStokes.ZerothStressIdentity.weightedTheta_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ZerothStressIdentity.weightedTheta_eq",
-      "line": 125,
-      "module": "NavierStokes.ZerothStressIdentity",
-      "path": "NavierStokes/ZerothStressIdentity.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ZerothStressIdentity.lean#L125"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ZerothStressIdentity.weightedTheta_eq",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ZerothStressIdentity.weightedTheta_eq",
+        "module": "NavierStokes.ZerothStressIdentity"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 125,
-        "text": "(hR : 0 < R) (hf : P.f (R^2/2, eta) ≠ 0) (hL : L h eta ≠ 0) : weightedTheta P h R eta = R^2 * LeadingStress.theta P h (R^2/2, eta)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "12.NavierStokes.ZerothStressIdentity.weightedTheta_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L125",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ZerothStressIdentity.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 125,
+            "text": "theorem weightedTheta_eq (h : ℝ) {R eta : ℝ} (hR : 0 < R)\n    (hf : P.f (R ^ 2 / 2, eta) ≠ 0) (hL : CoordinateAlgebra.L h eta ≠ 0) :\n    weightedTheta P h R eta = R ^ 2 * LeadingStress.theta P h (R ^ 2 / 2, eta)"
+          }
+        }
       }
     }
-  }
+  ]
 }

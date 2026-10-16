@@ -1,29 +1,31 @@
 {
-  "id": "corollary-B.6/attributed/1.NavierStokes.ActivationHolomorphic.exists_initialTube",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActivationHolomorphic.exists_initialTube",
-      "line": 1108,
-      "module": "NavierStokes.ActivationHolomorphic",
-      "path": "NavierStokes/ActivationHolomorphic.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationHolomorphic.lean#L1108"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActivationHolomorphic.exists_initialTube",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActivationHolomorphic.exists_initialTube",
+        "module": "NavierStokes.ActivationHolomorphic"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation partial; the auditor's reading: For an admissible pressure datum, a CoefficientProfile F and 0 < Λ: ∃ ρ, 0 < ρ ∧ Nonempty (InitialTube (referenceInput F hΛ) h (PressureDatum.pressure g a) (5/Λ) (parameterTube parameterWindow ρ)). ρ is produced before the widths T, κ, δ, so the parameter neighborhood is one and the same for all of "
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 1108,
-        "text": "theorem exists_initialTube {h j σ Λ C : ℝ} {g a : ℝ → ℝ} {cap : ℝ}\n    (hp : PressureDatum.Admissible g a cap)\n    {d : AnalyticInputs h j σ (PressureDatum.pressure g a)}\n    (F : CoefficientProfile d Λ C) (hΛ : 0 < Λ)\n    (hsmall : NaturalAxisData.SmallParameters h j) (hσ : 0 < σ) :\n    ∃ ρ : ℝ, 0 < ρ ∧ Nonempty (InitialTube (ReferenceJetBounds.referenceInput F hΛ) h\n      (PressureDatum.pressure g a) (5/Λ) (AxisHolomorphic.parameterTube parameterWindow ρ))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActivationHolomorphic.exists_initialTube",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation partial; the auditor's reading: For an admissible pressure datum, a CoefficientProfile F and 0 < Λ: ∃ ρ, 0 < ρ ∧ Nonempty (InitialTube (referenceInput F hΛ) h (PressureDatum.pressure g a) (5/Λ) (parameterTube parameterWindow ρ)). ρ is produced before the widths T, κ, δ, so the parameter neighborhood is one and the same for all of "
+          },
+          "destination": {
+            "fragment": "L1108",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationHolomorphic.lean"
+          },
+          "snippet": {
+            "line": 1108,
+            "text": "theorem exists_initialTube {h j σ Λ C : ℝ} {g a : ℝ → ℝ} {cap : ℝ}\n    (hp : PressureDatum.Admissible g a cap)\n    {d : AnalyticInputs h j σ (PressureDatum.pressure g a)}\n    (F : CoefficientProfile d Λ C) (hΛ : 0 < Λ)\n    (hsmall : NaturalAxisData.SmallParameters h j) (hσ : 0 < σ) :\n    ∃ ρ : ℝ, 0 < ρ ∧ Nonempty (InitialTube (ReferenceJetBounds.referenceInput F hΛ) h\n      (PressureDatum.pressure g a) (5/Λ) (AxisHolomorphic.parameterTube parameterWindow ρ))"
+          }
+        }
       }
     }
-  }
+  ]
 }

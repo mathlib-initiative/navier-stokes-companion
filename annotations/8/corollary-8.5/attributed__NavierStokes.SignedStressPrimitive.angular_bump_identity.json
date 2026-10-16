@@ -1,29 +1,31 @@
 {
-  "id": "corollary-8.5/attributed/1.NavierStokes.SignedStressPrimitive.angular_bump_identity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedStressPrimitive.angular_bump_identity",
-      "line": 991,
-      "module": "NavierStokes.SignedStressPrimitive",
-      "path": "NavierStokes/SignedStressPrimitive.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean#L991"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedStressPrimitive.angular_bump_identity",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedStressPrimitive.angular_bump_identity",
+        "module": "NavierStokes.SignedStressPrimitive"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Under radialMoment 2 v = 0 (the (8.2) hypothesis) and shell smoothness: bumpCorrection P 2 (angularBalance eps v radialFlux axialFlux virtualFlux) z = momentDensity P 2 z.1 * (eps * d_Z (radialMoment 2 axialFlux) z.2), i.e. the removed bump equals sigma_theta * eps d_Z J_theta."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 991,
-        "text": "theorem angular_bump_identity (P : Patch) (ε : ℝ)\n    {v radialFlux axialFlux virtualFlux : MeanField}\n    (hv : SmoothShell P.a P.b v) (hr : SmoothShell P.a P.b radialFlux)\n    (hz : SmoothShell P.a P.b axialFlux) (hT : SmoothShell P.a P.b virtualFlux)\n    (hmass : radialMoment 2 v = 0) (z : MeanPoint) :\n    bumpCorrection P 2 (angularBalance ε v radialFlux axialFlux virtualFlux) z =\n      momentDensity P 2 z.1 * (ε * fderiv ℝ (radialMoment 2 axialFlux) z.2 (0, 1))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SignedStressPrimitive.angular_bump_identity",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Under radialMoment 2 v = 0 (the (8.2) hypothesis) and shell smoothness: bumpCorrection P 2 (angularBalance eps v radialFlux axialFlux virtualFlux) z = momentDensity P 2 z.1 * (eps * d_Z (radialMoment 2 axialFlux) z.2), i.e. the removed bump equals sigma_theta * eps d_Z J_theta."
+          },
+          "destination": {
+            "fragment": "L991",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedStressPrimitive.lean"
+          },
+          "snippet": {
+            "line": 991,
+            "text": "theorem angular_bump_identity (P : Patch) (ε : ℝ)\n    {v radialFlux axialFlux virtualFlux : MeanField}\n    (hv : SmoothShell P.a P.b v) (hr : SmoothShell P.a P.b radialFlux)\n    (hz : SmoothShell P.a P.b axialFlux) (hT : SmoothShell P.a P.b virtualFlux)\n    (hmass : radialMoment 2 v = 0) (z : MeanPoint) :\n    bumpCorrection P 2 (angularBalance ε v radialFlux axialFlux virtualFlux) z =\n      momentDensity P 2 z.1 * (ε * fderiv ℝ (radialMoment 2 axialFlux) z.2 (0, 1))"
+          }
+        }
       }
     }
-  }
+  ]
 }

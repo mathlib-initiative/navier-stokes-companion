@@ -1,23 +1,26 @@
 {
-  "id": "eq-8.8/key/04.NavierStokes.UniformFourierAlias.realMeanClass_alias_superflat_of_integratedMean_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.UniformFourierAlias.realMeanClass_alias_superflat_of_integratedMean_zero",
-      "line": 1278,
-      "module": "NavierStokes.UniformFourierAlias",
-      "path": "NavierStokes/UniformFourierAlias.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformFourierAlias.lean#L1278"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.UniformFourierAlias.realMeanClass_alias_superflat_of_integratedMean_zero"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.UniformFourierAlias.realMeanClass_alias_superflat_of_integratedMean_zero",
+        "module": "NavierStokes.UniformFourierAlias"
       },
-      "snippet": {
-        "line": 1278,
-        "text": "hypothesis hm : ∀ n s, (∫ U in a..b, sourceMean (f n) (U, s)) = 0 — literally ∫ ⟨f⟩_Y dR = 0 at every slow point — with f ∈ MeanClass α gives ∀ N, ∃ C, eventually ∀ j ≤ m, ∀ z, ‖iteratedFDeriv ℝ j (exactAlias χ (M n) (0, vector d) (f n)) z‖ ≤ C * ε n ^ N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.UniformFourierAlias.realMeanClass_alias_superflat_of_integratedMean_zero"
+          },
+          "destination": {
+            "fragment": "L1278",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformFourierAlias.lean"
+          },
+          "snippet": {
+            "line": 1278,
+            "text": "theorem realMeanClass_alias_superflat_of_integratedMean_zero (d : Direction)\n    {a b cL cR h α : ℝ}\n    (ha : 0 < a) (hab : a ≤ b) (hcL : 0 < cL) (hcR : 0 < cR) (hh : 0 < h)\n    {χ : ℝ → ℝ} (hχ : ContDiff ℝ ∞ χ)\n    (hleft : ∀ u ≤ a, χ u = 0) (hright : ∀ u, b ≤ u → χ u = 1)\n    {f : ℕ → ℝ × (S × Plane) → ℝ}\n    (hf : MeanClass (chartStrip a b cL cR ha hcL hcR h hh) α f)\n    (hfc : ∀ n, ContDiff ℝ ∞ (f n)) (hp : ∀ n, SourcePeriodic (f n))\n    (hm : ∀ n s, (∫ U in a..b, sourceMean (f n) (U, s)) = 0)\n    (hs : ∀ n, RadialAlias.RadiallySupported a b (f n))\n    {M : ℕ → ℝ} {κ A growth : ℝ} (hκ : 0 < κ)\n    (hM : ∀ᶠ n in atTop, M n ≠ 0)\n    (hfrequency : ∀ᶠ n in atTop, |M n|⁻¹ ≤\n      A * ChartScales.epsilon h n ^ κ * ChartScales.S n ^ growth) (m N : ℕ) :\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,28 @@
 {
-  "id": "eq-C.8/key/01.NavierStokes.TrueConeLoop.uniform_tilt_cone_margin",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.uniform_tilt_cone_margin",
-      "line": 164,
-      "module": "NavierStokes.TrueConeLoop",
-      "path": "NavierStokes/TrueConeLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L164"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.uniform_tilt_cone_margin",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.uniform_tilt_cone_margin",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 164,
-        "text": "∃ ε, 0 < ε ∧ ∀ x ∈ K, ∀ r ∈ Icc (0:ℝ) R, ∀ θ, 2 + ε ≤ coneBound (p₁ x + p₂ x * solvedTilt (m x) d (p₂ x) r θ) (p₂ x - p₁ x * solvedTilt (m x) d (p₂ x) r θ)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TrueConeLoop.uniform_tilt_cone_margin",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L164",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 164,
+            "text": "theorem uniform_tilt_cone_margin {X : Type*} [TopologicalSpace X]\n    {K : Set X} (hK : IsCompact K) (m p₁ p₂ : X → ℝ)\n    (hm : Continuous m) (hp₁ : Continuous p₁) (hp₂ : Continuous p₂)\n    (d R : ℝ) (hd : 0 < d)\n    (hmargin : ∀ x ∈ K, 2 ≤ p₁ x + p₂ x * m x - d) :\n    ∃ ε : ℝ, 0 < ε ∧ ∀ x ∈ K, ∀ r ∈ Icc (0 : ℝ) R, ∀ θ : ℝ,\n      2 + ε ≤ coneBound (p₁ x + p₂ x * solvedTilt (m x) d (p₂ x) r θ)\n        (p₂ x - p₁ x * solvedTilt (m x) d (p₂ x) r θ)"
+          }
+        }
       }
     }
-  }
+  ]
 }

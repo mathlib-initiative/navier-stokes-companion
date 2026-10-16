@@ -1,25 +1,27 @@
 {
-  "id": "eq-C.10/attributed/06.NavierStokes.TrueConeLoop.varianceRoot_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoop.varianceRoot_bound",
-      "line": 140,
-      "module": "NavierStokes.TrueConeLoop",
-      "path": "NavierStokes/TrueConeLoop.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean#L140"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoop.varianceRoot_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoop.varianceRoot_bound",
+        "module": "NavierStokes.TrueConeLoop"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 140,
-        "text": "varianceRoot a δ v ≤ Real.sqrt (3 / amin)   (0 < amin ≤ a, 0 < δ ≤ 1, 0 < v) — the reparameterized form of the (C.7) bound that puts the solution below μ_max"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.TrueConeLoop.varianceRoot_bound"
+          },
+          "destination": {
+            "fragment": "L140",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoop.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 140,
+            "text": "theorem varianceRoot_bound (amin a δ v : ℝ) (hmin : 0 < amin) (ha : amin ≤ a)\n    (hδ : 0 < δ) (hδ₁ : δ ≤ 1) (hv : 0 < v) :\n    varianceRoot a δ v ≤ Real.sqrt (3 / amin)"
+          }
+        }
       }
     }
-  }
+  ]
 }

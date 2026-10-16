@@ -1,25 +1,27 @@
 {
-  "id": "eq-p125-5/key/01.NavierStokes.PeriodicLocalization.periodize_eventuallyEq_translate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PeriodicLocalization.periodize_eventuallyEq_translate",
-      "line": 32,
-      "module": "NavierStokes.PeriodizePDE",
-      "path": "NavierStokes/PeriodizePDE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodizePDE.lean#L32"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PeriodicLocalization.periodize_eventuallyEq_translate"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PeriodicLocalization.periodize_eventuallyEq_translate",
+        "module": "NavierStokes.PeriodizePDE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 32,
-        "text": "(hf : SupportedInCube r f) (n) (hz : z.2 - lattice n ∈ innerCube r) : periodize f =ᶠ[𝓝 z] translate f n"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.PeriodicLocalization.periodize_eventuallyEq_translate"
+          },
+          "destination": {
+            "fragment": "L32",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PeriodizePDE.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 32,
+            "text": "theorem periodize_eventuallyEq_translate {r : ℝ} {f : SpaceTime → V}\n    (hf : SupportedInCube r f) {z : SpaceTime} (n : Lattice)\n    (hz : z.2 - lattice n ∈ innerCube r) :\n    periodize f =ᶠ[𝓝 z] translate f n"
+          }
+        }
       }
     }
-  }
+  ]
 }

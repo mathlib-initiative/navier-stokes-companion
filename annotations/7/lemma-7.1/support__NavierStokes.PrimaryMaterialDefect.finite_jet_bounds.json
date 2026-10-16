@@ -1,27 +1,33 @@
 {
-  "id": "lemma-7.1/support/3.NavierStokes.PrimaryMaterialDefect.finite_jet_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryMaterialDefect.finite_jet_bounds",
-      "line": 450,
-      "module": "NavierStokes.PrimaryMaterialDefect",
-      "path": "NavierStokes/PrimaryMaterialDefect.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryMaterialDefect.lean#L450"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryMaterialDefect.finite_jet_bounds",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "type": "lean",
+      "uri": "https://github.com/openai/NavierStokesAndEuler",
+      "version": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+      "location": {
+        "declaration": "NavierStokes.PrimaryMaterialDefect.finite_jet_bounds",
+        "module": "NavierStokes.PrimaryMaterialDefect"
       },
-      "declaration_verdict": null,
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 450,
-        "text": "theorem finite_jet_bounds {s : StripData E} {f : ℕ → E → ℝ}\n    (hf : UnweightedClass s 1 f) (m : ℕ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∃ p : ℕ, ∀ n x, x ∈ s.domain → ∀ j ≤ m,\n      ‖iteratedFDeriv ℝ j (f n) x‖ ≤ C * s.epsilon n * s.growth n x ^ p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.PrimaryMaterialDefect.finite_jet_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L450",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryMaterialDefect.lean",
+            "resolution": "exact"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 450,
+            "text": "theorem finite_jet_bounds {s : StripData E} {f : ℕ → E → ℝ}\n    (hf : UnweightedClass s 1 f) (m : ℕ) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∃ p : ℕ, ∀ n x, x ∈ s.domain → ∀ j ≤ m,\n      ‖iteratedFDeriv ℝ j (f n) x‖ ≤ C * s.epsilon n * s.growth n x ^ p"
+          }
+        }
       }
     }
-  }
+  ]
 }

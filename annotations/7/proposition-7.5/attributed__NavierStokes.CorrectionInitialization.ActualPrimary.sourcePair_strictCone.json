@@ -1,29 +1,31 @@
 {
-  "id": "proposition-7.5/attributed/1.NavierStokes.CorrectionInitialization.ActualPrimary.sourcePair_strictCone",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.sourcePair_strictCone",
-      "line": 4619,
-      "module": "NavierStokes.CorrectionInitialization",
-      "path": "NavierStokes/CorrectionInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L4619"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionInitialization.ActualPrimary.sourcePair_strictCone",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.sourcePair_strictCone",
+        "module": "NavierStokes.CorrectionInitialization"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_DELTA; relation lean weaker; the auditor's reading: `StrictCone` for the actual primary column matrix and the order-zero target, i.e. invertibility together with positive Cramer weights — asserted at points of the same `positivePart (referenceSet) ∩ carrier L`."
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 4619,
-        "text": "theorem sourcePair_strictCone (L : Label B N0) (p : PhaseCalculus.Slow)\n    (hp : p ∈ (PrimaryGeometryAssembly.domain nominal (choice B N0).prepared.N).carrier L)\n    (hK : p ∈ PositiveRepresentatives.positivePart (PrimaryGeometryAssembly.referenceSet nominal))\n    (hw : 0 < PrimaryTargetBounds.movingWeight nominal p) :\n    SmoothCovariance.StrictCone (sourcePair L p hp).pairData.matrix\n      (fun k => PrimaryTargetBounds.actualTarget modulation p k)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.CorrectionInitialization.ActualPrimary.sourcePair_strictCone",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated in part or not at all (DELTA); relation lean weaker; the auditor's reading: `StrictCone` for the actual primary column matrix and the order-zero target, i.e. invertibility together with positive Cramer weights — asserted at points of the same `positivePart (referenceSet) ∩ carrier L`."
+          },
+          "destination": {
+            "fragment": "L4619",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean"
+          },
+          "snippet": {
+            "line": 4619,
+            "text": "theorem sourcePair_strictCone (L : Label B N0) (p : PhaseCalculus.Slow)\n    (hp : p ∈ (PrimaryGeometryAssembly.domain nominal (choice B N0).prepared.N).carrier L)\n    (hK : p ∈ PositiveRepresentatives.positivePart (PrimaryGeometryAssembly.referenceSet nominal))\n    (hw : 0 < PrimaryTargetBounds.movingWeight nominal p) :\n    SmoothCovariance.StrictCone (sourcePair L p hp).pairData.matrix\n      (fun k => PrimaryTargetBounds.actualTarget modulation p k)"
+          }
+        }
       }
     }
-  }
+  ]
 }

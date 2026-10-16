@@ -1,26 +1,29 @@
 {
-  "id": "eq-p016-4/support/09.NavierStokesR3.ProblemStatement.residual_at_viscosity_one",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ProblemStatement.residual_at_viscosity_one",
-      "line": 166,
-      "module": "NavierStokes.R3.ProblemStatement",
-      "path": "NavierStokes/R3/ProblemStatement.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ProblemStatement.lean#L166"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ProblemStatement.residual_at_viscosity_one",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ProblemStatement.residual_at_viscosity_one",
+        "module": "NavierStokes.R3.ProblemStatement"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 166,
-        "text": "navierStokesResidual 1 u p t x = NavierStokes.ProblemStatement.navierStokesResidual u p t x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokesR3.ProblemStatement.residual_at_viscosity_one",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L166",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ProblemStatement.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 166,
+            "text": "@[simp] theorem residual_at_viscosity_one (u : VelocityField) (p : PressureField)\n    (t : ℝ) (x : Space) :\n    navierStokesResidual 1 u p t x =\n      NavierStokes.ProblemStatement.navierStokesResidual u p t x"
+          }
+        }
       }
     }
-  }
+  ]
 }

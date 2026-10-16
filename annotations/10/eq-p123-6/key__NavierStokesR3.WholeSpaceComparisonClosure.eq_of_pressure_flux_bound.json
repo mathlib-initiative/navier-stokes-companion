@@ -1,25 +1,29 @@
 {
-  "id": "eq-p123-6/key/02.NavierStokesR3.WholeSpaceComparisonClosure.eq_of_pressure_flux_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.WholeSpaceComparisonClosure.eq_of_pressure_flux_bound",
-      "line": 142,
-      "module": "NavierStokes.R3.WholeSpaceComparisonClosure",
-      "path": "NavierStokes/R3/WholeSpaceComparisonClosure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/WholeSpaceComparisonClosure.lean#L142"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.WholeSpaceComparisonClosure.eq_of_pressure_flux_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.WholeSpaceComparisonClosure.eq_of_pressure_flux_bound",
+        "lines": [142, 142],
+        "module": "NavierStokes.R3.WholeSpaceComparisonClosure"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 142,
-        "text": "`rw [hAsq, hbalance]` after `apply hrate R hR1 A hA B hB hSob (weightedEnergy (weight R) (u-v) t) (weightedEnergyRate (weight R) (u-v) t) G` (lines 140–142): the field-level instance, with G a uniform bound hG : ∀ t ∈ Icc 0 T, ∀ x, ‖spatialDerivative u t x‖ ≤ G"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.WholeSpaceComparisonClosure.eq_of_pressure_flux_bound"
+          },
+          "destination": {
+            "fragment": "L142",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/WholeSpaceComparisonClosure.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 32,
+            "text": "theorem eq_of_pressure_flux_bound {T M G CP R₀ : ℝ}\n    {u v : VelocityField} {p q : PressureField}\n    (hT : 0 ≤ T) (hM0 : 0 ≤ M) (hG0 : 0 ≤ G) (hCP0 : 0 ≤ CP)\n    (hu : ContDiffOn ℝ ∞ u (Comparison.slab 0 T))\n    (hv : ContDiffOn ℝ ∞ v (Comparison.slab 0 T))\n    (hp : ContDiffOn ℝ ∞ p (Comparison.slab 0 T))\n    (hq : ContDiffOn ℝ ∞ q (Comparison.slab 0 T))\n    (hwu : ∀ t ∈ Icc (0 : ℝ) T, MemLp (fun x => (u - v) (t, x)) 2 volume)\n    (hM : ∀ t ∈ Icc (0 : ℝ) T, comparisonLpNorm 2 (fun x => (u - v) (t, x)) ≤ M)\n    (hG : ∀ t ∈ Icc (0 : ℝ) T, ∀ x, ‖spatialDerivative u t x‖ ≤ G)\n    (hdu : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x, spatialDivergence u t x = 0)\n    (hdv : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x, spatialDivergence v t x = 0)\n    (hNS : ∀ t ∈ Ioo (0 : ℝ) T, ∀ x,\n      navierStokesResidual 1 u p t x = navierStokesResidual 1 v q t x)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

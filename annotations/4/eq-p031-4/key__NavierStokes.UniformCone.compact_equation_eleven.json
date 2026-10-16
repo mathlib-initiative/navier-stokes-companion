@@ -1,23 +1,25 @@
 {
-  "id": "eq-p031-4/key/03.NavierStokes.UniformCone.compact_equation_eleven",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.UniformCone.compact_equation_eleven",
-      "line": 148,
-      "module": "NavierStokes.UniformCone",
-      "path": "NavierStokes/UniformCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformCone.lean#L148"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.UniformCone.compact_equation_eleven"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.UniformCone.compact_equation_eleven",
+        "module": "NavierStokes.UniformCone"
       },
-      "snippet": {
-        "line": 148,
-        "text": "(hfirst : ∀ x ∈ K, 0 < a x - b x * w x) (hsecond : ∀ x ∈ K, 2 * b x * w x + b x ^ 2 / a x + (a x - 2) * w x ^ 2 < 2)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.UniformCone.compact_equation_eleven"
+          },
+          "destination": {
+            "fragment": "L148",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformCone.lean"
+          },
+          "snippet": {
+            "line": 148,
+            "text": "theorem compact_equation_eleven {K : Set X} (hK : IsCompact K)\n    {a b w : X → ℝ} (ha : ContinuousOn a K) (hb : ContinuousOn b K)\n    (hw : ContinuousOn w K) (hapos : ∀ x ∈ K, 0 < a x)\n    (hfirst : ∀ x ∈ K, 0 < a x - b x * w x)\n    (hsecond : ∀ x ∈ K,\n      2 * b x * w x + b x ^ 2 / a x + (a x - 2) * w x ^ 2 < 2) :\n    ∃ ε p₀ : ℝ, 0 < ε ∧ 0 ≤ p₀ ∧\n      (∀ x ∈ K, ε ≤ 1 - b x * w x / a x ∧\n        ε ≤ 2 * (1 - b x * w x / a x) ^ 2 -\n          (a x * (1 + (b x / a x) ^ 2) - 2) * (w x + b x / a x) ^ 2) ∧\n      ∀ p : ℝ, p₀ < p → ∀ x ∈ K,\n        2 < p * (1 - b x * w x / a x) ∧\n        a x * (1 + (b x / a x) ^ 2) <\n          coneBound (p * (1 - b x * w x / a x)) (p * (w x + b x / a x))"
+          }
+        }
       }
     }
-  }
+  ]
 }

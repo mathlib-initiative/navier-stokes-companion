@@ -1,26 +1,29 @@
 {
-  "id": "proposition-9.9/support/3.NavierStokes.PaperLocalization.local_theorem_with_compact_candidate",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PaperLocalization.local_theorem_with_compact_candidate",
-      "line": 28,
-      "module": "NavierStokes.PaperLocalization",
-      "path": "NavierStokes/PaperLocalization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PaperLocalization.lean#L28"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PaperLocalization.local_theorem_with_compact_candidate",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PaperLocalization.local_theorem_with_compact_candidate",
+        "module": "NavierStokes.PaperLocalization"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 28,
-        "text": "theorem local_theorem_with_compact_candidate :\n    ∃ h qstar Xa Xext C : ℝ,\n      ∃ A D v : VelocityField, ∃ q : PressureField,\n      ∃ u : VelocityField, ∃ p : PressureField, ∃ f : VelocityField, ∃ K : Set Space,\n        LocalPaper.Properties h qstar Xa Xext C A D v q ∧\n        NavierStokesR3.ProblemStatement.CandidateProperties 1 u p f K ∧\n        ¬ Nonempty (NavierStokesR3.ProblemStatement.GlobalFiniteEnergySolution 1 f) ∧\n        (∀ t : ℝ, |t| ≤ 3 / 8 → ∀ x : Space, u (t, x) = 0 ∧ p (t, x) = 0) ∧\n        ∃ U : Set Space, IsOpen U ∧ (0 : Space) ∈ U ∧\n          ∀ t ∈ Ico (3 / 4 : ℝ) 1, ∀ x ∈ U,\n            u (t, x) = v (t, x) ∧ p (t, x) = q (t, x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.PaperLocalization.local_theorem_with_compact_candidate",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L28",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PaperLocalization.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 28,
+            "text": "theorem local_theorem_with_compact_candidate :\n    ∃ h qstar Xa Xext C : ℝ,\n      ∃ A D v : VelocityField, ∃ q : PressureField,\n      ∃ u : VelocityField, ∃ p : PressureField, ∃ f : VelocityField, ∃ K : Set Space,\n        LocalPaper.Properties h qstar Xa Xext C A D v q ∧\n        NavierStokesR3.ProblemStatement.CandidateProperties 1 u p f K ∧\n        ¬ Nonempty (NavierStokesR3.ProblemStatement.GlobalFiniteEnergySolution 1 f) ∧\n        (∀ t : ℝ, |t| ≤ 3 / 8 → ∀ x : Space, u (t, x) = 0 ∧ p (t, x) = 0) ∧\n        ∃ U : Set Space, IsOpen U ∧ (0 : Space) ∈ U ∧\n          ∀ t ∈ Ico (3 / 4 : ℝ) 1, ∀ x ∈ U,\n            u (t, x) = v (t, x) ∧ p (t, x) = q (t, x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,26 +1,29 @@
 {
-  "id": "eq-9.5/support/08.NavierStokes.PhysicalResidualJetBounds.cartesianPull_jet_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PhysicalResidualJetBounds.cartesianPull_jet_bound",
-      "line": 275,
-      "module": "NavierStokes.PhysicalResidualJetBounds",
-      "path": "NavierStokes/PhysicalResidualJetBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualJetBounds.lean#L275"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PhysicalResidualJetBounds.cartesianPull_jet_bound",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PhysicalResidualJetBounds.cartesianPull_jet_bound",
+        "module": "NavierStokes.PhysicalResidualJetBounds"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 275,
-        "text": "∀ F : Cylinder → Components, SmoothNear F (polarGraph a h j n d w) → (∀ i ≤ m, ‖iteratedFDeriv ℝ i F (polarGraph a h j n d w)‖ ≤ A * Q n ^ gain * S n ^ e) → ‖iteratedFDeriv ℝ m (cartesianPull a h j n d degree F) w‖ ≤ C * q ^ (gain - loss degree m) — the SmoothNear hypothesis at the chart point is required"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.PhysicalResidualJetBounds.cartesianPull_jet_bound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L275",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PhysicalResidualJetBounds.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 275,
+            "text": "theorem cartesianPull_jet_bound {h a b : ℝ} (hh : 0 ≤ h) (hh1 : h ≤ 1 / 2) (ha : 0 < a)\n    (Δ m : ℕ) (gain degree e A : ℝ) (hA : 0 ≤ A) :\n    ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℕ, 4 ≤ n → ∀ d : ℕ, d ≤ Δ →\n      ∀ w : SpaceTime, PhysicalGraphBounds.scaledRadial n w ∈ PhysicalGraphBounds.annulus a b →\n      |w.1| ≤ 1 → ∀ q : ℝ, 0 < q → q / 2 ≤ ChartScales.Q n → ChartScales.Q n ≤ 2 * q →\n      ∀ j : PolarCharts.Index, ∀ F : Cylinder → Components, SmoothNear F (polarGraph a h j n d w) →\n      (∀ i ≤ m, ‖iteratedFDeriv ℝ i F (polarGraph a h j n d w)‖ ≤\n        A * ChartScales.Q n ^ gain * ChartScales.S n ^ e) →\n      ‖iteratedFDeriv ℝ m (cartesianPull a h j n d degree F) w‖ ≤\n        C * q ^ (gain - PhysicalMeanJetBounds.loss degree m)"
+          }
+        }
       }
     }
-  }
+  ]
 }

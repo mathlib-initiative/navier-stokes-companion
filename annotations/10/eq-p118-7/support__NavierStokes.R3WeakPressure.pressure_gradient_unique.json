@@ -1,23 +1,27 @@
 {
-  "id": "eq-p118-7/support/04.NavierStokes.R3WeakPressure.pressure_gradient_unique",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.R3WeakPressure.pressure_gradient_unique",
-      "line": 161,
-      "module": "NavierStokes.R3WeakPressure",
-      "path": "NavierStokes/R3WeakPressure.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3WeakPressure.lean#L161"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.R3WeakPressure.pressure_gradient_unique"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.R3WeakPressure.pressure_gradient_unique",
+        "module": "NavierStokes.R3WeakPressure"
       },
-      "snippet": {
-        "line": 161,
-        "text": "(hU : divergence U = 0) (hV : divergence V = 0) (hP : ∀ i φ, HasCompactSupport φ → momentumGradient U V G i φ = -(∫ z, (∂_{spaceDirection i} φ) z * p z)) : momentumGradient U V G m = ∂_{spaceDirection m} (stressPressure G)"
+      "role": "support",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.R3WeakPressure.pressure_gradient_unique"
+          },
+          "destination": {
+            "fragment": "L161",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3WeakPressure.lean"
+          },
+          "snippet": {
+            "line": 161,
+            "text": "theorem pressure_gradient_unique\n    (U V : Fin 3 → Lp ℂ 2 (volume : Measure Domain))\n    (G : Fin 3 → Fin 3 → Lp ℂ 1 (volume : Measure Domain)) (p : Domain → ℂ)\n    (hU : divergence (fun i => (U i : 𝓢'(Domain, ℂ))) = 0)\n    (hV : divergence (fun i => (V i : 𝓢'(Domain, ℂ))) = 0)\n    (hP : ∀ i (φ : 𝓢(Domain, ℂ)), HasCompactSupport (φ : Domain → ℂ) →\n      momentumGradient U V G i φ = -(∫ z : Domain, (∂_{spaceDirection i} φ) z * p z))\n    (m : Fin 3) :\n    momentumGradient U V G m = ∂_{spaceDirection m} (stressPressure G)"
+          }
+        }
       }
     }
-  }
+  ]
 }

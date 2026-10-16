@@ -1,26 +1,28 @@
 {
-  "id": "eq-p091-3/key/01.NavierStokes.FourierAlias.totalIntegral_sourceJet",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.FourierAlias.totalIntegral_sourceJet",
-      "line": 374,
-      "module": "NavierStokes.FourierAlias",
-      "path": "NavierStokes/FourierAlias.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FourierAlias.lean#L374"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.FourierAlias.totalIntegral_sourceJet",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.FourierAlias.totalIntegral_sourceJet",
+        "module": "NavierStokes.FourierAlias"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 374,
-        "text": "TransportPrimitive.totalIntegral M v f z = (-M⁻¹)^p • TransportPrimitive.totalIntegral M v (RadialAlias.sourceJet J f p) z, for J a right inverse of v·∂_y on each iterate, smooth and radially supported"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.FourierAlias.totalIntegral_sourceJet",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L374",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/FourierAlias.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 374,
+            "text": "theorem totalIntegral_sourceJet {a b M : ℝ} {v : Plane}\n    (J : (State → ℂ) → State → ℂ) (f : State → ℂ) (p : ℕ) (hM : M ≠ 0)\n    (hf : ContDiff ℝ ∞ f) (hsf : RadialAlias.RadiallySupported a b f)\n    (hJ : ∀ n < p, ContDiff ℝ ∞ (J (RadialAlias.sourceJet J f n)))\n    (hsJ : ∀ n < p, RadialAlias.RadiallySupported a b (J (RadialAlias.sourceJet J f n)))\n    (hr : ∀ n < p, RadialAlias.directionalDeriv v (J (RadialAlias.sourceJet J f n)) =\n      RadialAlias.sourceJet J f n) (z : State) :\n    TransportPrimitive.totalIntegral M v f z = (-M⁻¹) ^ p •\n      TransportPrimitive.totalIntegral M v (RadialAlias.sourceJet J f p) z"
+          }
+        }
       }
     }
-  }
+  ]
 }

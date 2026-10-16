@@ -1,24 +1,27 @@
 {
-  "id": "eq-A.4/key/03.NavierStokes.OutgoingDilation.J_scaling",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingDilation.J_scaling",
-      "line": 115
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingDilation.lean#L115"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingDilation.J_scaling",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingDilation.J_scaling",
+        "module": "NavierStokes.OutgoingDilation"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 115,
-        "text": "J F XR eta X = (XR * Real.sqrt XR) * F.J eta (X / XR)  (third factor: rho^{3/2})"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.OutgoingDilation.J_scaling",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L115"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 115,
+            "text": "theorem J_scaling (F : Profile) (XR eta X : ℝ) (hXR : 0 < XR) :\n    J F XR eta X = (XR * Real.sqrt XR) * F.J eta (X / XR)"
+          }
+        }
       }
     }
-  }
+  ]
 }

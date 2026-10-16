@@ -1,31 +1,33 @@
 {
-  "id": "lemma-5.2/key/1.NavierStokes.EntranceAlignedBase.modulated_positive_stress_zero",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.EntranceAlignedBase.modulated_positive_stress_zero",
-      "line": 833,
-      "module": "NavierStokes.EntranceAlignedBase",
-      "path": "NavierStokes/EntranceAlignedBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean#L833"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.EntranceAlignedBase.modulated_positive_stress_zero",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.EntranceAlignedBase.modulated_positive_stress_zero",
+        "module": "NavierStokes.EntranceAlignedBase"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: For 0 < n and p.1 <= zeroEnd: stressTheta n p = 0 and stressAxial n p = 0. The inner vanishing half of supp_X T_n subset [X_-, ...] for every positive order.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 833,
-        "text": "theorem modulated_positive_stress_zero {n : ℕ} (hn : 0 < n) {p : ℝ × ℝ}\n    (hp : p.1 ≤ zeroEnd W H d.modulation.left) :\n    (modulatedCoefficients H v).stressTheta n p = 0 ∧ (modulatedCoefficients H v).stressAxial n p = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.EntranceAlignedBase.modulated_positive_stress_zero",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: For 0 < n and p.1 <= zeroEnd: stressTheta n p = 0 and stressAxial n p = 0. The inner vanishing half of supp_X T_n subset [X_-, ...] for every positive order.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L833",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/EntranceAlignedBase.lean"
+          },
+          "snippet": {
+            "line": 833,
+            "text": "theorem modulated_positive_stress_zero {n : ℕ} (hn : 0 < n) {p : ℝ × ℝ}\n    (hp : p.1 ≤ zeroEnd W H d.modulation.left) :\n    (modulatedCoefficients H v).stressTheta n p = 0 ∧ (modulatedCoefficients H v).stressAxial n p = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

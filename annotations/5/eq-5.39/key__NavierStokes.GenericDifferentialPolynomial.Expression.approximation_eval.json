@@ -1,26 +1,29 @@
 {
-  "id": "eq-5.39/key/02.NavierStokes.GenericDifferentialPolynomial.Expression.approximation_eval",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericDifferentialPolynomial.Expression.approximation_eval",
-      "line": 234,
-      "module": "NavierStokes.GenericDifferentialPolynomial",
-      "path": "NavierStokes/GenericDifferentialPolynomial.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean#L234"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericDifferentialPolynomial.Expression.approximation_eval",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericDifferentialPolynomial.Expression.approximation_eval",
+        "lines": [234, 234],
+        "module": "NavierStokes.GenericDifferentialPolynomial"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 234,
-        "text": "the `| mul a b ha hb => exact ha.mul hb …` case of the induction over Expression (input/coeff/add/mul/directional) producing ApproximationRates for the whole differential polynomial"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GenericDifferentialPolynomial.Expression.approximation_eval",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L234",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericDifferentialPolynomial.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 217,
+            "text": "def approximation_eval (e : Expression D ι κ)\n    {c : κ → D → ℝ} {u : ι → D → ℝ} {us : ℕ → ι → D → ℝ}\n    (hU : IsOpen U) (hlU : ∀ᶠ x in l, x ∈ U)\n    (hq : ∀ᶠ x in l, 0 < q x ∧ q x ≤ 1)\n    (hc : ∀ i, ContDiffOn ℝ ∞ (c i) U)\n    (hu : ∀ i, ContDiffOn ℝ ∞ (u i) U)\n    (hus : ∀ J i, ContDiffOn ℝ ∞ (us J i) U)\n    (hgain : Tendsto gain atTop atTop)\n    (Lc : κ → ℕ → ℝ) (hcg : ∀ i m, JetRate l q (c i) m (-Lc i m))\n    (happrox : ∀ i, ApproximationRates l q gain (u i) (fun J => us J i)) :\n    ApproximationRates l q gain (eval c u e) (fun J => eval c (us J) e)"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,31 +1,33 @@
 {
-  "id": "lemma-A.2/attributed/1.NavierStokes.ClosedIntervalMomentRepair.Data.linear_solution",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ClosedIntervalMomentRepair.Data.linear_solution",
-      "line": 210,
-      "module": "NavierStokes.ClosedIntervalMomentRepair",
-      "path": "NavierStokes/ClosedIntervalMomentRepair.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ClosedIntervalMomentRepair.lean#L210"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ClosedIntervalMomentRepair.Data.linear_solution",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ClosedIntervalMomentRepair.Data.linear_solution",
+        "module": "NavierStokes.ClosedIntervalMomentRepair"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: If ∀ x ∈ I, D.A x = 0, then (with no smallness hypothesis) x ↦ (B x).inverse (d x) is ContDiffOn ℝ ∞ on I, solves B x (c x) + A x (c x) (c x) = d x on I, and satisfies ‖c‖_{Cᵏ} ≤ inverseNorm k · debtNorm k for every k : ℕ.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 210,
-        "text": "theorem linear_solution (hA : ∀ x ∈ I, D.A x = 0) :\n    ∃ hc : ContDiffOn ℝ ∞ (fun x => (D.B x).inverse (D.d x)) I,\n      (∀ x ∈ I, D.B x ((D.B x).inverse (D.d x)) +\n        D.A x ((D.B x).inverse (D.d x)) ((D.B x).inverse (D.d x)) = D.d x) ∧\n      ∀ k : ℕ, ‖ofContDiffOn (fun x => (D.B x).inverse (D.d x))\n        (hc.of_le ("
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ClosedIntervalMomentRepair.Data.linear_solution",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: If ∀ x ∈ I, D.A x = 0, then (with no smallness hypothesis) x ↦ (B x).inverse (d x) is ContDiffOn ℝ ∞ on I, solves B x (c x) + A x (c x) (c x) = d x on I, and satisfies ‖c‖_{Cᵏ} ≤ inverseNorm k · debtNorm k for every k : ℕ.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L210",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ClosedIntervalMomentRepair.lean"
+          },
+          "snippet": {
+            "line": 210,
+            "text": "theorem linear_solution (hA : ∀ x ∈ I, D.A x = 0) :\n    ∃ hc : ContDiffOn ℝ ∞ (fun x => (D.B x).inverse (D.d x)) I,\n      (∀ x ∈ I, D.B x ((D.B x).inverse (D.d x)) +\n        D.A x ((D.B x).inverse (D.d x)) ((D.B x).inverse (D.d x)) = D.d x) ∧\n      ∀ k : ℕ, ‖ofContDiffOn (fun x => (D.B x).inverse (D.d x))\n        (hc.of_le ("
+          }
+        }
       }
     }
-  }
+  ]
 }

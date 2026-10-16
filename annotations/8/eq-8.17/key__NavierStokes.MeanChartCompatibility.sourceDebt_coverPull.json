@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.17/key/03.NavierStokes.MeanChartCompatibility.sourceDebt_coverPull",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.sourceDebt_coverPull",
-      "line": 1231,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L1231"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.sourceDebt_coverPull",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.sourceDebt_coverPull",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1231,
-        "text": "sourceDebt (coverPull l P k (l*u^2) g) (coverPull l P k (u^2) qθ) (coverPull l P k (u^2) qz) s = MeanRankUpdate.scaleDebt l⁻¹ u (sourceDebt g qθ qz (P s))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.MeanChartCompatibility.sourceDebt_coverPull",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1231",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1231,
+            "text": "theorem sourceDebt_coverPull {l : ℝ} (hl : 0 < l) (P : S →L[ℝ] T) (k : ℕ) (u : ℝ)\n    {g qθ qz : PressureStream.Lift T → ℝ}\n    (hg : ContDiff ℝ ∞ g) (hθ : ContDiff ℝ ∞ qθ) (hz : ContDiff ℝ ∞ qz)\n    (hpg : PressureStream.TorusPeriodicLift g) (hpθ : PressureStream.TorusPeriodicLift qθ)\n    (hpz : PressureStream.TorusPeriodicLift qz) (s : S) :\n    sourceDebt (coverPull l P k (l * u ^ 2) g) (coverPull l P k (u ^ 2) qθ)\n      (coverPull l P k (u ^ 2) qz) s =\n        MeanRankUpdate.scaleDebt l⁻¹ u (sourceDebt g qθ qz (P s))"
+          }
+        }
       }
     }
-  }
+  ]
 }

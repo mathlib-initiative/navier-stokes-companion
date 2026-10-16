@@ -1,25 +1,28 @@
 {
-  "id": "eq-p058-3/key/02.NavierStokes.GenericSolenoidalRealization.divergence_cut_direct",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericSolenoidalRealization.divergence_cut_direct",
-      "line": 81,
-      "module": "NavierStokes.GenericSolenoidalRealization",
-      "path": "NavierStokes/GenericSolenoidalRealization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSolenoidalRealization.lean#L81"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericSolenoidalRealization.divergence_cut_direct"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericSolenoidalRealization.divergence_cut_direct",
+        "lines": [81, 81],
+        "module": "NavierStokes.GenericSolenoidalRealization"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 81,
-        "text": "hc : HasFDerivAt (fun x : Space => χ (q (w.1, x))) (deriv χ (q w) • fderiv ℝ (fun x : Space => q (w.1, x)) w.2) w.2, with χ = SmoothCutoffs.scaledCutoff a"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.GenericSolenoidalRealization.divergence_cut_direct"
+          },
+          "destination": {
+            "fragment": "L81",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSolenoidalRealization.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 71,
+            "text": "theorem divergence_cut_direct {q : SpaceTime → ℝ} {B : VelocityField} {w : SpaceTime}\n    (hq : DifferentiableAt ℝ (fun x : Space => q (w.1, x)) w.2)\n    (hB : DifferentiableAt ℝ (fun x : Space => B (w.1, x)) w.2)\n    (hdiv : spatialDivergence B w.1 w.2 = 0)\n    (htan : ∑ i : Fin 3, fderiv ℝ (fun x : Space => q (w.1, x)) w.2\n      (coordinateVector i) * B w i = 0) (a : ℝ) :\n    spatialDivergence (fun z => SmoothCutoffs.scaledCutoff a (q z) • B z) w.1 w.2 = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

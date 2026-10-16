@@ -1,26 +1,29 @@
 {
-  "id": "eq-5.17/support/08.NavierStokes.AssembledSlowBase.extendedCoefficient_eq",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AssembledSlowBase.extendedCoefficient_eq",
-      "line": 130,
-      "module": "NavierStokes.AssembledSlowBase",
-      "path": "NavierStokes/AssembledSlowBase.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean#L130"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AssembledSlowBase.extendedCoefficient_eq",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AssembledSlowBase.extendedCoefficient_eq",
+        "module": "NavierStokes.AssembledSlowBase"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 130,
-        "text": "(hX : 0 ≤ p.1) (heta : |p.2| ≤ 1) : extendedCoefficient s hI n i p = xProfile (component (profiles s n) i) p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "08.NavierStokes.AssembledSlowBase.extendedCoefficient_eq",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L130",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AssembledSlowBase.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 130,
+            "text": "theorem extendedCoefficient_eq {S : Set ℝ} {h C : ℝ} (s : Scheme S h C)\n    (hI : Icc (-1 : ℝ) 1 ⊆ S) (n : ℕ) (i : Fin 4) {p : ℝ × ℝ}\n    (hX : 0 ≤ p.1) (heta : |p.2| ≤ 1) :\n    extendedCoefficient s hI n i p = xProfile (component (profiles s n) i) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

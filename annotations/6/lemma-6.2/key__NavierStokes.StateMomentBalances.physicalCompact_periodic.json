@@ -1,29 +1,31 @@
 {
-  "id": "lemma-6.2/key/1.NavierStokes.StateMomentBalances.physicalCompact_periodic",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StateMomentBalances.physicalCompact_periodic",
-      "line": 838,
-      "module": "NavierStokes.StateMomentBalances",
-      "path": "NavierStokes/StateMomentBalances.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StateMomentBalances.lean#L838"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StateMomentBalances.physicalCompact_periodic",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StateMomentBalances.physicalCompact_periodic",
+        "module": "NavierStokes.StateMomentBalances"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: TorusPeriodicLift f implies TorusPeriodicLift (RadialPullback.physicalCompact d a b M (0,v) f): the radially integrated, transport-shifted compact primitive preserves descent in the torus variable at fixed slow data. PressureStream.pressureSource_periodic (PressureStream.lean:539) is the same for th"
-      },
-      "relation": "part",
       "role": "key",
-      "snippet": {
-        "line": 838,
-        "text": "theorem physicalCompact_periodic (d a b M : ℝ) (v : PressureStream.Plane)\n    {f : Lift S → ℝ} (hp : PressureStream.TorusPeriodicLift f) :\n    PressureStream.TorusPeriodicLift (RadialPullback.physicalCompact d a b M (0, v) f)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.StateMomentBalances.physicalCompact_periodic",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: TorusPeriodicLift f implies TorusPeriodicLift (RadialPullback.physicalCompact d a b M (0,v) f): the radially integrated, transport-shifted compact primitive preserves descent in the torus variable at fixed slow data. PressureStream.pressureSource_periodic (PressureStream.lean:539) is the same for th"
+          },
+          "destination": {
+            "fragment": "L838",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StateMomentBalances.lean"
+          },
+          "snippet": {
+            "line": 838,
+            "text": "theorem physicalCompact_periodic (d a b M : ℝ) (v : PressureStream.Plane)\n    {f : Lift S → ℝ} (hp : PressureStream.TorusPeriodicLift f) :\n    PressureStream.TorusPeriodicLift (RadialPullback.physicalCompact d a b M (0, v) f)"
+          }
+        }
       }
     }
-  }
+  ]
 }

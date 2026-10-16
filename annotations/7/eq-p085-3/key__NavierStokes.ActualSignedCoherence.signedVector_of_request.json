@@ -1,26 +1,28 @@
 {
-  "id": "eq-p085-3/key/07.NavierStokes.ActualSignedCoherence.signedVector_of_request",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualSignedCoherence.signedVector_of_request",
-      "line": 331,
-      "module": "NavierStokes.ActualSignedCoherence",
-      "path": "NavierStokes/ActualSignedCoherence.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedCoherence.lean#L331"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualSignedCoherence.signedVector_of_request",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualSignedCoherence.signedVector_of_request",
+        "module": "NavierStokes.ActualSignedCoherence"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 331,
-        "text": "request B u n x = coefficientWeight n m ^ 2 • request B u m (chart n m k x) → signedVector … l.2 n x = bandVelocityScale h n m • signedVector … l.2 m (chart n m k x)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.ActualSignedCoherence.signedVector_of_request",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L331",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualSignedCoherence.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 331,
+            "text": "theorem signedVector_of_request (l : SignedLabel B N0) (u : CorrectionState.State Point)\n    (n m k : ℕ) (hi : CommonWindow.index h n + k = CommonWindow.index h m)\n    (copy : TorusInverse.Frequency) (x : FullPoint)\n    (hR : request B u n x = coefficientWeight n m ^ 2 • request B u m (chart n m k x)) :\n    SignedWaveUpdate.signedVector fullStrip (ActualSignedStageControls.matrix l copy)\n      (ActualSignedStageControls.target l copy) (request B u) (ActualSignedStageControls.mask l copy)\n      (ActualSignedStageControls.fundamental l copy) l.2 n x =\n    bandVelocityScale h n m •\n      SignedWaveUpdate.signedVector fullStrip (ActualSignedStageControls.matrix l copy)\n        (ActualSignedStageControls.target l copy) (request B u) (ActualSignedStageControls.mask l copy)\n        (ActualSignedStageControls.fundamental l copy) l.2 m (chart n m k x)"
+          }
+        }
       }
     }
-  }
+  ]
 }

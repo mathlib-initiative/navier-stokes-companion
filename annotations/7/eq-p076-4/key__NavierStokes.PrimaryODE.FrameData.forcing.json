@@ -1,26 +1,28 @@
 {
-  "id": "eq-p076-4/key/07.NavierStokes.PrimaryODE.FrameData.forcing",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PrimaryODE.FrameData.forcing",
-      "line": 89,
-      "module": "NavierStokes.PrimaryODE",
-      "path": "NavierStokes/PrimaryODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean#L89"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PrimaryODE.FrameData.forcing",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PrimaryODE.FrameData.forcing",
+        "module": "NavierStokes.PrimaryODE"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 89,
-        "text": "forcing f z = !₂[(forceX + forceY/h)/2, (forceX - forceY/h)/2] with forceX = -(f 0 - ρ⟪B 0, tail f⟫)/(1+ρ²) and forceY = -⟪B 1, tail f⟫ (lines 82-87) — these are the same two rows applied to the projected forcing: with n = pack (βρ) (β•B 0), (tangentProj n f) 0 = (f 0 - ρ⟪B 0, tail f⟫)/(1+ρ²) and ⟪B 1, tail (tangentProj n f)⟫ = ⟪B 1, tail f⟫, so forceX = e_r^T(-tangentProj n f) and forceY = (B 1)^T(-tangentProj n f); the !₂[…] bracket is M⁻¹, i.e. p = (x + y/h)/2, q = (x - y/h)/2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "07.NavierStokes.PrimaryODE.FrameData.forcing",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L89",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PrimaryODE.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 89,
+            "text": "noncomputable def forcing (f : Q × ℝ → Space) (z : Q × ℝ) : State"
+          }
+        }
       }
     }
-  }
+  ]
 }

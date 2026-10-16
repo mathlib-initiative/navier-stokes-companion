@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.28/attributed/06.NavierStokes.StressActivation.history_parameter_jet_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.StressActivation.history_parameter_jet_bounds",
-      "line": 781,
-      "module": "NavierStokes.StressActivation",
-      "path": "NavierStokes/StressActivation.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean#L781"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.StressActivation.history_parameter_jet_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.StressActivation.history_parameter_jet_bounds",
+        "module": "NavierStokes.StressActivation"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 781,
-        "text": "∃ M ≥ 0, … |iteratedDeriv n (actual logHistory - reference logHistory) η| ≤ M * y * activation T κ y — the moment histories entering p_s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.StressActivation.history_parameter_jet_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L781",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/StressActivation.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 781,
+            "text": "theorem history_parameter_jet_bounds {T : ℝ} (hT : 0 < T) (X0 : ℝ)\n    (initial : HistoryRow → ℝ → ℝ) {J K : Set ℝ}\n    (hJ : IsOpen J) (hK : IsCompact K) (hKJ : K ⊆ J) {L U : Field}\n    (hL : ContDiffOn ℝ ∞ L (logDomain J hJ).carrier)\n    (hU : ContDiffOn ℝ ∞ U (logDomain J hJ).carrier) (r : HistoryRow) (n : ℕ) :\n    ∃ M : ℝ, 0 ≤ M ∧ ∀ κ ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) T, ∀ η ∈ K,\n      |iteratedDeriv n (fun ξ =>\n        logHistory X0 initial (activatedAngular T κ L) (controlled T κ U) r (y, ξ) -\n          logHistory X0 initial (referenceAngular L) U r (y, ξ)) η| ≤\n            M * y * activation T κ y"
+          }
+        }
       }
     }
-  }
+  ]
 }

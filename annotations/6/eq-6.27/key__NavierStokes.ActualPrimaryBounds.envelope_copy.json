@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.27/key/06.NavierStokes.ActualPrimaryBounds.envelope_copy",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPrimaryBounds.envelope_copy",
-      "line": 189,
-      "module": "NavierStokes.ActualPrimaryBounds",
-      "path": "NavierStokes/ActualPrimaryBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryBounds.lean#L189"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPrimaryBounds.envelope_copy",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPrimaryBounds.envelope_copy",
+        "module": "NavierStokes.ActualPrimaryBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 189,
-        "text": "x ∈ (copyCells l).carrier n k → envelope l n x = pulseEnvelope l (copyPoint l n k x).2.2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.ActualPrimaryBounds.envelope_copy",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L189",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPrimaryBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 189,
+            "text": "theorem envelope_copy (l : SignedLabel B N0) (n : ℕ) (k : TorusInverse.Frequency)\n    {x : Native} (hx : x ∈ (copyCells l).carrier n k) :\n    envelope l n x = pulseEnvelope l (copyPoint l n k x).2.2"
+          }
+        }
       }
     }
-  }
+  ]
 }

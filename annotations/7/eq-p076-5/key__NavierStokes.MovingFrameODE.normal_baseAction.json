@@ -1,24 +1,27 @@
 {
-  "id": "eq-p076-5/key/01.NavierStokes.MovingFrameODE.normal_baseAction",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MovingFrameODE.normal_baseAction",
-      "line": 148
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean#L148"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MovingFrameODE.normal_baseAction",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MovingFrameODE.normal_baseAction",
+        "module": "NavierStokes.MovingFrameODE"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 148,
-        "text": "⟪normal β ρ B, baseAction F g (tangent ρ B x y)⟫_ℝ = β*((2F(1+ρ²)(B 0) 0 + ⟪B 0, g⟫)·x - 2Fρ(B 1) 0·y)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.MovingFrameODE.normal_baseAction",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L148"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 148,
+            "text": "theorem normal_baseAction (β ρ F : ℝ) (B : Frame) (g : Plane) (x y : ℝ) :\n    ⟪normal β ρ B, baseAction F g (tangent ρ B x y)⟫_ℝ =\n      β * ((2 * F * (1 + ρ ^ 2) * (B 0) 0 + ⟪B 0, g⟫_ℝ) * x -\n        2 * F * ρ * (B 1) 0 * y)"
+          }
+        }
       }
     }
-  }
+  ]
 }

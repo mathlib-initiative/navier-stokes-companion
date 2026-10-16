@@ -1,26 +1,28 @@
 {
-  "id": "eq-A.10/key/02.NavierStokes.OutgoingTail.flattened_uniform",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingTail.flattened_uniform",
-      "line": 502,
-      "module": "NavierStokes.OutgoingTail",
-      "path": "NavierStokes/OutgoingTail.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingTail.lean#L502"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingTail.flattened_uniform",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingTail.flattened_uniform",
+        "module": "NavierStokes.OutgoingTail"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 502,
-        "text": "flattened d (y, eta) = radialAmplitude d.core.P d.core.dropLength d.core.lam y / 2 for d.flattenEnd ≤ y   -- ϑ_f = 0: η-independent, factor exactly 1/2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.OutgoingTail.flattened_uniform",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L502",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingTail.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 502,
+            "text": "theorem flattened_uniform (d : TailData) (eta : ℝ) {y : ℝ}\n    (hy : d.flattenEnd ≤ y) :\n    flattened d (y, eta) = radialAmplitude d.core.P d.core.dropLength d.core.lam y / 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

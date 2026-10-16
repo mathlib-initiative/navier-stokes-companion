@@ -1,26 +1,28 @@
 {
-  "id": "eq-p070-5/key/03.NavierStokes.HarmonicSourceSupport.coefficient_nativeSupport_of_field",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.HarmonicSourceSupport.coefficient_nativeSupport_of_field",
-      "line": 812,
-      "module": "NavierStokes.HarmonicSourceSupport",
-      "path": "NavierStokes/HarmonicSourceSupport.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicSourceSupport.lean#L812"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.HarmonicSourceSupport.coefficient_nativeSupport_of_field",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.HarmonicSourceSupport.coefficient_nativeSupport_of_field",
+        "module": "NavierStokes.HarmonicSourceSupport"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 812,
-        "text": "NonzeroSupportedOn U (nativeUnion g K) (realCoefficients c)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.HarmonicSourceSupport.coefficient_nativeSupport_of_field",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L812",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/HarmonicSourceSupport.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 812,
+            "text": "theorem coefficient_nativeSupport_of_field\n    (c : HarmonicFields.Coefficients (P × Plane)) (k : ℝ) (Φ : P × Plane → ℝ)\n    {kp : ℤ} (hkp : kp ≠ 0) (g : Geometry) (K : Set Plane)\n    {U : Set (P × Plane)} (level : ℕ) (slot : Set Plane) (Y : P × Plane → Plane)\n    (hcoord : ∀ x, x ∈ U → coverPower g.gap x.2 = (SlotGeometry.cover ^ level) (Y x))\n    (hslot : slot ⊆ (fun v => g.center + g.basis v) '' K)\n    (hf : ∀ x, x ∈ U → ∀ θ, (field c k Φ kp (x, θ)).re ≠ 0 →\n      Y x ∈ SlotGeometry.liftedSupport level slot) :\n    NonzeroSupportedOn U (nativeUnion g K) (realCoefficients c)"
+          }
+        }
       }
     }
-  }
+  ]
 }

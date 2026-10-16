@@ -1,31 +1,33 @@
 {
-  "id": "lemma-6.1/attributed/1.NavierStokes.SlotGeometry.colored_labels_have_slots",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SlotGeometry.colored_labels_have_slots",
-      "line": 454,
-      "module": "NavierStokes.SlotGeometry",
-      "path": "NavierStokes/SlotGeometry.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlotGeometry.lean#L454"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SlotGeometry.colored_labels_have_slots",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SlotGeometry.colored_labels_have_slots",
+        "module": "NavierStokes.SlotGeometry"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Same disjointness conclusion for an abstract `Label` with a proper coloring `color` and `|level i - level j| ≤ D` on adjacent pairs.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 454,
-        "text": "theorem colored_labels_have_slots {Label : Type*} (m D : ℕ) (a b : Plane)\n    (Adj : Label → Label → Prop) (color : Label → Fin m) (level : Label → ℕ)\n    (hcolor : ∀ i j, Adj i j → color i ≠ color j)\n    (hlevel : ∀ i j, Adj i j → level i ≤ level j + D ∧ level j ≤ level i + D) :\n    ∃ r : ℝ, 0 < r ∧ ∀ i j, Adj i j →\n      Disjoint\n        (liftedSupport (level i) (orientedRectangle (center m D (color i)) a b (2 * r)))\n        (liftedSupport (level j) (orientedRectangle (center m D (color j)) a b (2 * r)))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.SlotGeometry.colored_labels_have_slots",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Same disjointness conclusion for an abstract `Label` with a proper coloring `color` and `|level i - level j| ≤ D` on adjacent pairs.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L454",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SlotGeometry.lean"
+          },
+          "snippet": {
+            "line": 454,
+            "text": "theorem colored_labels_have_slots {Label : Type*} (m D : ℕ) (a b : Plane)\n    (Adj : Label → Label → Prop) (color : Label → Fin m) (level : Label → ℕ)\n    (hcolor : ∀ i j, Adj i j → color i ≠ color j)\n    (hlevel : ∀ i j, Adj i j → level i ≤ level j + D ∧ level j ≤ level i + D) :\n    ∃ r : ℝ, 0 < r ∧ ∀ i j, Adj i j →\n      Disjoint\n        (liftedSupport (level i) (orientedRectangle (center m D (color i)) a b (2 * r)))\n        (liftedSupport (level j) (orientedRectangle (center m D (color j)) a b (2 * r)))"
+          }
+        }
       }
     }
-  }
+  ]
 }

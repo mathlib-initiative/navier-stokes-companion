@@ -1,27 +1,30 @@
 {
-  "id": "eq-p029-8/key/03.NavierStokes.SeedHandbackJets.basis_pairBound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SeedHandbackJets.basis_pairBound",
-      "line": 189,
-      "module": "NavierStokes.SeedHandbackJets",
-      "path": "NavierStokes/SeedHandbackJets.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean#L189"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SeedHandbackJets.basis_pairBound",
-        "kind": "theorem",
-        "private": true
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SeedHandbackJets.basis_pairBound",
+        "lines": [189, 189],
+        "module": "NavierStokes.SeedHandbackJets"
       },
-      "relation": "contains",
       "role": "key",
-      "snippet": {
-        "line": 189,
-        "text": "exact PairBound.same contDiffOn_const hXsroot ε  -- (sqrt(2X))⁻¹ common to both profiles (X, X⁻¹ at lines 187-188)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.SeedHandbackJets.basis_pairBound",
+            "kind": "theorem",
+            "private": true
+          },
+          "destination": {
+            "fragment": "L189",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SeedHandbackJets.lean"
+          },
+          "relation": "contains",
+          "snippet": {
+            "line": 141,
+            "text": "private theorem basis_pairBound {k : ℕ} {h X₀ X₁ X μ D T L ε : ℝ}\n    (hh : 0 ≤ h) (hh' : h < 1/2) (hX₀ : 0 < X₀) (hX : X ∈ Icc X₀ X₁)\n    (hμ : 0 < μ) {p q : Packet}\n    (hpq : ∀ i, PairBound k (p i) (q i) D 1 ε)\n    (hp : ∀ η ∈ J, μ ≤ p 0 η) (hq : ∀ η ∈ J, μ ≤ q 0 η)\n    (hT : ∀ z : ℝ → ℝ, ContDiffOn ℝ ∞ z J →\n      (∀ η ∈ J, μ ≤ z η) → Bound k z D → Bound k (fun η => (z η)⁻¹) T)\n    (hL : Bound k (fun η => (NaturalAxisData.L h η)⁻¹) L) :\n    ∀ i, PairBound k (basis h X p i) (basis h X q i)\n      (inputBounds k D X₀ X₁ T L i)\n      (differenceBounds ((2:ℝ)^k*((2:ℝ)^k*1*T)*T) i) ε"
+          }
+        }
       }
     }
-  }
+  ]
 }

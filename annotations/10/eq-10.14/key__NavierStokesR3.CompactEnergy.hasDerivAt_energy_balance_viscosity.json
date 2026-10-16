@@ -1,26 +1,28 @@
 {
-  "id": "eq-10.14/key/02.NavierStokesR3.CompactEnergy.hasDerivAt_energy_balance_viscosity",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.CompactEnergy.hasDerivAt_energy_balance_viscosity",
-      "line": 56,
-      "module": "NavierStokes.R3.ViscousEnergyBalance",
-      "path": "NavierStokes/R3/ViscousEnergyBalance.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscousEnergyBalance.lean#L56"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.CompactEnergy.hasDerivAt_energy_balance_viscosity",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.CompactEnergy.hasDerivAt_energy_balance_viscosity",
+        "module": "NavierStokes.R3.ViscousEnergyBalance"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 56,
-        "text": "HasDerivAt (l2Sq u) (-2 * ν * dissipation u t + 2 * ∫ x, ⟪u (t, x), f (t, x)⟫_ℝ) t, same identity with the viscosity kept"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokesR3.CompactEnergy.hasDerivAt_energy_balance_viscosity",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L56",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ViscousEnergyBalance.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 56,
+            "text": "theorem hasDerivAt_energy_balance_viscosity {ν a b t : ℝ} {u f : VelocityField}\n    {p : PressureField} {K : Set Space}\n    (hK : IsCompact K) (hu : ContDiffOn ℝ ∞ u (slab a b))\n    (hp : ContDiffOn ℝ ∞ p (slab a b))\n    (hf : Continuous (fun x : Space => f (t, x)))\n    (hsupp : ∀ r ∈ Icc a b, tsupport (fun x => u (r, x)) ⊆ K)\n    (ht : t ∈ Ioo a b)\n    (hdiv : ∀ x, spatialDivergence u t x = 0)\n    (hNS : ∀ x, ProblemStatement.navierStokesResidual ν u p t x = f (t, x)) :\n    HasDerivAt (l2Sq u)\n      (-2 * ν * dissipation u t + 2 * ∫ x, ⟪u (t, x), f (t, x)⟫_ℝ) t"
+          }
+        }
       }
     }
-  }
+  ]
 }

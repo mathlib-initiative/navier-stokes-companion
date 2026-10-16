@@ -1,26 +1,28 @@
 {
-  "id": "eq-p070-7/key/06.NavierStokes.ActualPhaseJetBounds.phaseCell_of_cut_tsupport",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualPhaseJetBounds.phaseCell_of_cut_tsupport",
-      "line": 520,
-      "module": "NavierStokes.ActualPhaseJetBounds",
-      "path": "NavierStokes/ActualPhaseJetBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPhaseJetBounds.lean#L520"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualPhaseJetBounds.phaseCell_of_cut_tsupport",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualPhaseJetBounds.phaseCell_of_cut_tsupport",
+        "module": "NavierStokes.ActualPhaseJetBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 520,
-        "text": "x ∈ fullStrip.domain → x ∈ tsupport ((cutCoefficients l).amplitude n) → ∃ k, x ∈ phaseCell n (l,k) — again with the uncut clock core"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.ActualPhaseJetBounds.phaseCell_of_cut_tsupport",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L520",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualPhaseJetBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 520,
+            "text": "theorem phaseCell_of_cut_tsupport (l : SignedLabel B N0) (n : ℕ)\n    {x : ActualPrimary.FullPoint} (hx : x ∈ ActualPrimaryBounds.fullStrip.domain)\n    (hs : x ∈ tsupport ((ActualPrimaryBounds.cutCoefficients l).amplitude n)) :\n    ∃ k : TorusInverse.Frequency, x ∈ phaseCell n (l,k)"
+          }
+        }
       }
     }
-  }
+  ]
 }

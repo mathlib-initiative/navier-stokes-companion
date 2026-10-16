@@ -1,25 +1,28 @@
 {
-  "id": "eq-5.28/key/01.NavierStokes.GenericTupleRealization.exists_angular_realization",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericTupleRealization.exists_angular_realization",
-      "line": 29,
-      "module": "NavierStokes.GenericSummationRealization",
-      "path": "NavierStokes/GenericSummationRealization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSummationRealization.lean#L29"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericTupleRealization.exists_angular_realization"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericTupleRealization.exists_angular_realization",
+        "module": "NavierStokes.GenericSummationRealization"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 29,
-        "text": "(Q : ℝ × ℝ → ℝ) (haxial : q = fun w => Q (w.1, w.2 2)) (hpos : ∀ w ∈ U, 0 < q w ∧ q w ≤ 1) (Bq : ℕ → ℝ) (hBq : ∀ k w, w ∈ U → q w ≤ 1 → ‖iteratedFDeriv ℝ k q w‖ ≤ Bq k * q w ^ (1 - (k : ℝ)))"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GenericTupleRealization.exists_angular_realization"
+          },
+          "destination": {
+            "fragment": "L29",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericSummationRealization.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 29,
+            "text": "theorem exists_angular_realization {κ : Type*} [Fintype κ] {U : Set SpaceTime}\n    (hU : IsOpen U) {q : SpaceTime → ℝ} (hq : ContDiffOn ℝ ∞ q U)\n    (Q : ℝ × ℝ → ℝ) (haxial : q = fun w => Q (w.1, w.2 2))\n    (hpos : ∀ w ∈ U, 0 < q w ∧ q w ≤ 1)\n    (Bq : ℕ → ℝ) (hBq : ∀ k w, w ∈ U → q w ≤ 1 →\n      ‖iteratedFDeriv ℝ k q w‖ ≤ Bq k * q w ^ (1 - (k : ℝ)))\n    {u0 : VelocityField} {s0 : κ → PressureField}\n    (hu0 : ContDiffOn ℝ ∞ u0 U) (hs0 : ∀ k, ContDiffOn ℝ ∞ (s0 k) U)\n    (K0 : ℕ → ℝ) (Ks : κ → ℕ → ℝ)\n    (hbaseU : ∀ m, JetRate (scaleApproach U q) q u0 m (-K0 m))\n    (hbaseS : ∀ k m, JetRate (scaleApproach U q) q (s0 k) m (-Ks k m))\n    {A B : ℕ → VelocityField} {R : κ → ℕ → PressureField}\n    (hA : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (A j) U)\n    (hB : ∀ j, 1 ≤ j → ContDiffOn ℝ ∞ (B j) U)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

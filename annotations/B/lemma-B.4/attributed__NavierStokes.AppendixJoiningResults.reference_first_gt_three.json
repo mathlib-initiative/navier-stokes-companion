@@ -1,31 +1,33 @@
 {
-  "id": "lemma-B.4/attributed/1.NavierStokes.AppendixJoiningResults.reference_first_gt_three",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AppendixJoiningResults.reference_first_gt_three",
-      "line": 67,
-      "module": "NavierStokes.AppendixJoiningResults",
-      "path": "NavierStokes/AppendixJoiningResults.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AppendixJoiningResults.lean#L67"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AppendixJoiningResults.reference_first_gt_three",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AppendixJoiningResults.reference_first_gt_three",
+        "module": "NavierStokes.AppendixJoiningResults"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: From `ReferenceBoundsOnHold` for the same reference profile: ∀ X ∈ Icc 100 110, ∀ η ∈ Icc (-1) 1, 3 < p1 (referenceProfiles …) h (X, η). Proved from the field source_lower via p1_lower_from_source, not from at_hundred.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 67,
-        "text": "theorem reference_first_gt_three {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (E : NaturalEntrance.EntranceProfile d Λ C)\n    (hΛ : 0 < Λ) (hsmall : NaturalAxisData.SmallParameters h j) (hσ : 0 < σ)\n    {δ : ℝ} (hδ : 0 < δ) (hδT : 2 * δ < ReferencePath.rampLimit)\n    (hP0 : ContDiff ℝ ∞ P0)\n    (hb : ReferenceBoundsOnHold E.profile hΛ hδ hδT hP0)\n    {X η : ℝ} (hX : X ∈ Icc (100 : ℝ) 110) (hη : η ∈ Icc (-1 : ℝ) 1) :\n    3 < p1 (referenceProfiles E.profile hΛ hδ hδT hP0) h (X, η)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.AppendixJoiningResults.reference_first_gt_three",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: From `ReferenceBoundsOnHold` for the same reference profile: ∀ X ∈ Icc 100 110, ∀ η ∈ Icc (-1) 1, 3 < p1 (referenceProfiles …) h (X, η). Proved from the field source_lower via p1_lower_from_source, not from at_hundred.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L67",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AppendixJoiningResults.lean"
+          },
+          "snippet": {
+            "line": 67,
+            "text": "theorem reference_first_gt_three {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (E : NaturalEntrance.EntranceProfile d Λ C)\n    (hΛ : 0 < Λ) (hsmall : NaturalAxisData.SmallParameters h j) (hσ : 0 < σ)\n    {δ : ℝ} (hδ : 0 < δ) (hδT : 2 * δ < ReferencePath.rampLimit)\n    (hP0 : ContDiff ℝ ∞ P0)\n    (hb : ReferenceBoundsOnHold E.profile hΛ hδ hδT hP0)\n    {X η : ℝ} (hX : X ∈ Icc (100 : ℝ) 110) (hη : η ∈ Icc (-1 : ℝ) 1) :\n    3 < p1 (referenceProfiles E.profile hΛ hδ hδT hP0) h (X, η)"
+          }
+        }
       }
     }
-  }
+  ]
 }

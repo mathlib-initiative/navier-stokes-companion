@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.15/key/04.NavierStokes.GlobalSlowProfiles.pressureFromSource_eq_primitive",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GlobalSlowProfiles.pressureFromSource_eq_primitive",
-      "line": 295,
-      "module": "NavierStokes.GlobalSlowProfiles",
-      "path": "NavierStokes/GlobalSlowProfiles.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean#L295"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GlobalSlowProfiles.pressureFromSource_eq_primitive",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GlobalSlowProfiles.pressureFromSource_eq_primitive",
+        "module": "NavierStokes.GlobalSlowProfiles"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 295,
-        "text": "pressureFromSource hS source w = ProfileHistories.primitive (fun p => p.1 * source p) w = ∫_0^R r·source(r,η) dr"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.GlobalSlowProfiles.pressureFromSource_eq_primitive",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L295",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GlobalSlowProfiles.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 295,
+            "text": "theorem pressureFromSource_eq_primitive {S : Set ℝ} (hS : IsOpen S)\n    (source : EvenProfile S) (w : ℝ × ℝ) :\n    pressureFromSource hS source w =\n      ProfileHistories.primitive (fun p => p.1 * source p) w"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,23 +1,25 @@
 {
-  "id": "eq-A.15/key/03.NavierStokes.OutgoingPulseBounds.affineCoefficients_exp_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.OutgoingPulseBounds.affineCoefficients_exp_bound",
-      "line": 957,
-      "module": "NavierStokes.OutgoingPulseBounds",
-      "path": "NavierStokes/OutgoingPulseBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingPulseBounds.lean#L957"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.OutgoingPulseBounds.affineCoefficients_exp_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.OutgoingPulseBounds.affineCoefficients_exp_bound",
+        "module": "NavierStokes.OutgoingPulseBounds"
       },
-      "snippet": {
-        "line": 957,
-        "text": "|affineCoefficients c q A j| ≤ coefficientBound c.P c.m * exp (-(1/(4*c.lam))) * (|q| + |A|)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.OutgoingPulseBounds.affineCoefficients_exp_bound"
+          },
+          "destination": {
+            "fragment": "L957",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/OutgoingPulseBounds.lean"
+          },
+          "snippet": {
+            "line": 957,
+            "text": "theorem affineCoefficients_exp_bound (c : Parameters) (hsmall : c.lam ≤ 1 / 120)\n    (q A : ℝ) (j : Fin 2) :\n    |affineCoefficients c q A j| ≤\n      coefficientBound c.P c.m * Real.exp (-(1 / (4 * c.lam))) * (|q| + |A|)"
+          }
+        }
       }
     }
-  }
+  ]
 }

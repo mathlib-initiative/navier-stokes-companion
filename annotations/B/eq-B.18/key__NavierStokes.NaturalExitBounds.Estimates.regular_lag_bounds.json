@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.18/key/02.NavierStokes.NaturalExitBounds.Estimates.regular_lag_bounds",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalExitBounds.Estimates.regular_lag_bounds",
-      "line": 203,
-      "module": "NavierStokes.NaturalExitBounds",
-      "path": "NavierStokes/NaturalExitBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalExitBounds.lean#L203"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalExitBounds.Estimates.regular_lag_bounds",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalExitBounds.Estimates.regular_lag_bounds",
+        "module": "NavierStokes.NaturalExitBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 203,
-        "text": "for `0 < X`, `X ≤ (41/10)/Λ`, `η ∈ Icc (-1) 1`, with `Q := regularAngularLag …`, `N := regularAxialLag …`: `lowerConstant d ≤ (X*Q/L h η)/X ∧ 0 < X*Q/L h η ∧ X*Q/L h η ≤ B 0 ∧ |N/L h η - Z h j P0 η / L h η| ≤ jetBound ε 5 1 0 * profileErrorConstant d / Λ` — the same three clauses written in the paper's own p₁ = XQ_s/L, n_s = N_s/L coordinates"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.NaturalExitBounds.Estimates.regular_lag_bounds",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L203",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalExitBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 203,
+            "text": "theorem Estimates.regular_lag_bounds {Λ C : ℝ} {E : EntranceProfile d Λ C} {B : ℕ → ℝ}\n    (H : Estimates d E B) (hsmall : NaturalAxisRange.Parameters h j) (hΛ : 0 < Λ)\n    {X η : ℝ} (hX : 0 < X) (hY : X ≤ (41 / 10) / Λ) (hη : η ∈ Icc (-1 : ℝ) 1) :\n    let Q"
+          }
+        }
       }
     }
-  }
+  ]
 }

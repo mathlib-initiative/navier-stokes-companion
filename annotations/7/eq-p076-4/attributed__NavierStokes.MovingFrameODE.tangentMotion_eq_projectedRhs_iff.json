@@ -1,26 +1,28 @@
 {
-  "id": "eq-p076-4/attributed/09.NavierStokes.MovingFrameODE.tangentMotion_eq_projectedRhs_iff",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MovingFrameODE.tangentMotion_eq_projectedRhs_iff",
-      "line": 227,
-      "module": "NavierStokes.MovingFrameODE",
-      "path": "NavierStokes/MovingFrameODE.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean#L227"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MovingFrameODE.tangentMotion_eq_projectedRhs_iff",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MovingFrameODE.tangentMotion_eq_projectedRhs_iff",
+        "module": "NavierStokes.MovingFrameODE"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 227,
-        "text": "tangentMotion ρ ρ' rot B x y x' y' = projectedRhs … ↔ x' = rhsX … ∧ y' = rhsY … — the ambient equation on n_Φ^⊥ is equivalent to the two scalar coordinate equations, which is what the paper obtains by applying B^ℓ"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.MovingFrameODE.tangentMotion_eq_projectedRhs_iff",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L227",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MovingFrameODE.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 227,
+            "text": "theorem tangentMotion_eq_projectedRhs_iff {β : ℝ} (hβ : β ≠ 0)\n    (β' ρ ρ' rot F d : ℝ) (B : Frame) (g : Plane) (f : Space) (x y x' y' : ℝ) :\n    tangentMotion ρ ρ' rot B x y x' y' =\n      TangentProjection.projectedRhs (normal β ρ B) (normalMotion β β' ρ ρ' rot B)\n        (tangent ρ B x y) (baseAction F g (tangent ρ B x y)) f d ↔\n    x' = rhsX F d ρ ρ' rot B g f x y ∧ y' = rhsY F d ρ rot B g f x y"
+          }
+        }
       }
     }
-  }
+  ]
 }

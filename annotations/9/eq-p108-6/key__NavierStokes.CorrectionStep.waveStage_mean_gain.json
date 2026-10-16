@@ -1,26 +1,29 @@
 {
-  "id": "eq-p108-6/key/01.NavierStokes.CorrectionStep.waveStage_mean_gain",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionStep.waveStage_mean_gain",
-      "line": 9665,
-      "module": "NavierStokes.CorrectionStep",
-      "path": "NavierStokes/CorrectionStep.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean#L9665"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionStep.waveStage_mean_gain",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionStep.waveStage_mean_gain",
+        "module": "NavierStokes.CorrectionStep"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 9665,
-        "text": "let next := SignedMeanGain.waveStage G.gauge c u w q gaussian; MeanClass G.strip (1+σ-κ) (next.pressure-u.pressure) ∧ … ∧ MeanClass G.strip (1+σ-κ) (next.thetaResidual c) ∧ MeanClass G.strip (1+σ-κ) (next.axialResidual c) ∧ DefectBounds G.slowStrip (σ-κ) c next ∧ …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.CorrectionStep.waveStage_mean_gain",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L9665",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionStep.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 9665,
+            "text": "theorem waveStage_mean_gain (G : SignedMeanGain.Geometry)\n    (c : Context Point) (u : State Point) (w : Oscillation Point)\n    (q : OscillatoryScalar Point) (gaussian : Oscillation Point)\n    {σ κ : ℝ} (hσ : 1/5 ≤ σ) (hκ : 0 ≤ κ) (hκsmall : κ ≤ 1/100000)\n    (H : MeanStateRegularity.PrimitiveData G.region G.patch.a G.patch.b c u)\n    (ho : OperatorBounds G.strip c.operators κ) (hb : BaseBounds G.strip c.base)\n    (hu : CorrectionState.CumulativeBounds G.strip u)\n    (hfixed : (reconstructState G.gauge c u).pressure = u.pressure)\n    (hθ : MeanClass G.strip (1+σ) (u.thetaResidual c))\n    (hz : MeanClass G.strip (1+σ) (u.axialResidual c))\n    (hd : DefectBounds G.slowStrip σ c u)\n    (hX : ∀ i j, GaugeMomentBalances.MovingField G.region G.patch.a G.patch.b\n      (SignedMeanGain.covarianceIncrement u.oscillation w i j))\n    (hXC : SignedMeanGain.TensorClass G.strip (1+σ)\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

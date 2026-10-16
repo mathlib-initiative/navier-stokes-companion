@@ -1,26 +1,28 @@
 {
-  "id": "eq-6.22/key/03.NavierStokes.CommonCoverClass.native_band_path",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CommonCoverClass.native_band_path",
-      "line": 1291,
-      "module": "NavierStokes.CommonCoverClass",
-      "path": "NavierStokes/CommonCoverClass.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverClass.lean#L1291"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CommonCoverClass.native_band_path",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CommonCoverClass.native_band_path",
+        "module": "NavierStokes.CommonCoverClass"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1291,
-        "text": "(bandGeometry nativeBasis h n gap center).path k Y s = Y + (coverPower gap).symm ((timeCoefficient h n * (s - (coordinates k Y).2)) • timeDirection)  -- (6.21) with the actual c_i, v_t; differentiating in Y gives I - (D_H v) c_i J_g^{-Δ} v_t"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.CommonCoverClass.native_band_path",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1291",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CommonCoverClass.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1291,
+            "text": "theorem native_band_path (h : ℝ) (n gap : ℕ) (center : Plane) (k : Frequency)\n    (Y : Plane) (s : ℝ) :\n    (bandGeometry nativeBasis h n gap center).path k Y s =\n      Y + (CommonCoverSolve.coverPower gap).symm\n        ((ChartScales.timeCoefficient h n *\n          (s - ((bandGeometry nativeBasis h n gap center).coordinates k Y).2)) •\n            PhysicalGraphBounds.timeDirection)"
+          }
+        }
       }
     }
-  }
+  ]
 }

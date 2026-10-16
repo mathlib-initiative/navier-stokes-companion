@@ -1,23 +1,26 @@
 {
-  "id": "eq-p038-7/key/01.NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin",
-      "line": 21,
-      "module": "NavierStokes.TrueConeLoopPaper",
-      "path": "NavierStokes/TrueConeLoopPaper.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoopPaper.lean#L21"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin",
+        "module": "NavierStokes.TrueConeLoopPaper"
       },
-      "snippet": {
-        "line": 21,
-        "text": "∃ ε, ∃ U N, ∃ A C : E × ℝ → ℝ, … ∀ x ∈ K, Function.Periodic (fun φ => A (x, φ)) 1 ∧ Function.Periodic (fun φ => C (x, φ)) 1 ∧ (∫ φ in (0:ℝ)..1, A (x, φ)) = a x ∧ (∫ φ in (0:ℝ)..1, C (x, φ)) = a x * m x ∧ …"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.TrueConeLoopPaper.exists_local_family_with_margin"
+          },
+          "destination": {
+            "fragment": "L21",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TrueConeLoopPaper.lean"
+          },
+          "snippet": {
+            "line": 21,
+            "text": "theorem exists_local_family_with_margin (a m p₁ p₂ : E → ℝ) {K B O : Set E}\n    (hK : IsCompact K) (hB : IsCompact B) (hBK : B ⊆ K) (hO : IsOpen O) (hKO : K ⊆ O)\n    (ha : ContDiffOn ℝ ∞ a O) (hm : ContDiffOn ℝ ∞ m O)\n    (hp₁ : ContDiffOn ℝ ∞ p₁ O) (hp₂ : ContDiffOn ℝ ∞ p₂ O)\n    (haK : ∀ x ∈ K, 0 < a x)\n    (hPK : ∀ x ∈ K, 2 < p₁ x + p₂ x * m x)\n    (hrelaxed : ∀ x ∈ K, nominalSpeed (a x) (m x) <\n      coneBound (p₁ x + p₂ x * m x) (p₂ x - p₁ x * m x))\n    (htrueB : ∀ x ∈ B, 2 < nominalSpeed (a x) (m x)) :\n    ∃ ε : ℝ, ∃ U N : Set E, ∃ A C : E × ℝ → ℝ,\n      0 < ε ∧ IsOpen U ∧ K ⊆ U ∧ IsOpen N ∧ B ⊆ N ∧ N ⊆ U ∧\n      ContDiffOn ℝ ∞ A (U ×ˢ (univ : Set ℝ)) ∧\n      ContDiffOn ℝ ∞ C (U ×ˢ (univ : Set ℝ)) ∧\n      (∀ x ∈ K, Function.Periodic (fun φ => A (x, φ)) 1 ∧\n  …",
+            "truncated": true
+          }
+        }
       }
     }
-  }
+  ]
 }

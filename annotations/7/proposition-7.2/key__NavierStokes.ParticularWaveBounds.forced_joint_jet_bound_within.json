@@ -1,35 +1,56 @@
 {
-  "id": "proposition-7.2/key/1.NavierStokes.ParticularWaveBounds.forced_joint_jet_bound_within",
-  "location": {
-    "page": 77,
-    "rect": [0.12854, 0.72562, 0.745098, 0.14876]
-  },
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ParticularWaveBounds.forced_joint_jet_bound_within",
-      "line": 21,
-      "module": "NavierStokes.ParticularWithinBounds",
-      "path": "NavierStokes/ParticularWithinBounds.lean"
+  "relation": "hasPart",
+  "subject": [
+    {
+      "location": {
+        "page": 77,
+        "rect": [0.12854, 0.72562, 0.745098, 0.14876]
+      },
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-7.2@p077"
+        }
+      }
     },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularWithinBounds.lean#L21"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ParticularWaveBounds.forced_joint_jet_bound_within",
-        "kind": "theorem"
+    {
+      "location": {
+        "page": 78,
+        "rect": [0.12854, 0.103306, 0.745098, 0.320661]
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: Within-jets of JointODE.actualSolution hL.le A (fun _ => 0) f on U ×ˢ Icc 0 L, at both pulse endpoints, are ≤ w·(2^{N+1}·rescaleConstant N K³)^{j+1}·S^{(m+2)(j+1)}·P t, from interior input bounds only. Path-coordinate form of (7.14) on the closed interval."
-      },
-      "region": "proposition-7.2@p077",
-      "relation": "part",
-      "role": "key",
-      "snippet": {
-        "line": 21,
-        "text": "theorem forced_joint_jet_bound_within\n    {L S K μ w : ℝ} (hL : 0 < L) (hS : 1 ≤ S) (hK : 1 ≤ K) (hμ : 0 ≤ μ)\n    (hw : 0 ≤ w) (hslot : L ≤ K * S) (hExp : Real.exp (μ * L) ≤ K)\n    {U : Set Q} (hU : Convex ℝ U) (hu : UniqueDiffOn ℝ U)\n    (A : Q × ℝ → H →L[ℝ] H) (hA : ContDiffOn ℝ ∞ A (U ×ˢ univ))\n    (P rate : ℝ → ℝ) (hP : ∀ t, 0 < P t)\n    (hdP : ∀ t, HasDerivAt P (rate t * P t) t)\n    (f : Q × ℝ → H) (hf : ContDiffOn ℝ ∞ f (U ×ˢ univ))\n    {p : Q} (hp : p ∈ U) (hpc : p ∈ closure (interior U))\n    {t : ℝ} (ht : t ∈ Icc 0 L)\n    (henergy : ∀ q ∈ interior U, ∀ v ∈ Icc 0 L, ∀ x : H,\n      ⟪x, A (q, v) x⟫_ℝ ≤ (rate v + μ) * ‖x‖ ^ 2)\n    (m N : ℕ)\n    (hjets : ∀ q ∈ interior U, ∀ j ≤ N, ∀ v ∈ Icc 0 L,\n  …",
-        "truncated": true
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "region": "proposition-7.2@p078"
+        }
       }
     }
-  }
+  ],
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ParticularWaveBounds.forced_joint_jet_bound_within",
+        "module": "NavierStokes.ParticularWithinBounds"
+      },
+      "role": "key",
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ParticularWaveBounds.forced_joint_jet_bound_within",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: Within-jets of JointODE.actualSolution hL.le A (fun _ => 0) f on U ×ˢ Icc 0 L, at both pulse endpoints, are ≤ w·(2^{N+1}·rescaleConstant N K³)^{j+1}·S^{(m+2)(j+1)}·P t, from interior input bounds only. Path-coordinate form of (7.14) on the closed interval."
+          },
+          "destination": {
+            "fragment": "L21",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ParticularWithinBounds.lean"
+          },
+          "snippet": {
+            "line": 21,
+            "text": "theorem forced_joint_jet_bound_within\n    {L S K μ w : ℝ} (hL : 0 < L) (hS : 1 ≤ S) (hK : 1 ≤ K) (hμ : 0 ≤ μ)\n    (hw : 0 ≤ w) (hslot : L ≤ K * S) (hExp : Real.exp (μ * L) ≤ K)\n    {U : Set Q} (hU : Convex ℝ U) (hu : UniqueDiffOn ℝ U)\n    (A : Q × ℝ → H →L[ℝ] H) (hA : ContDiffOn ℝ ∞ A (U ×ˢ univ))\n    (P rate : ℝ → ℝ) (hP : ∀ t, 0 < P t)\n    (hdP : ∀ t, HasDerivAt P (rate t * P t) t)\n    (f : Q × ℝ → H) (hf : ContDiffOn ℝ ∞ f (U ×ˢ univ))\n    {p : Q} (hp : p ∈ U) (hpc : p ∈ closure (interior U))\n    {t : ℝ} (ht : t ∈ Icc 0 L)\n    (henergy : ∀ q ∈ interior U, ∀ v ∈ Icc 0 L, ∀ x : H,\n      ⟪x, A (q, v) x⟫_ℝ ≤ (rate v + μ) * ‖x‖ ^ 2)\n    (m N : ℕ)\n    (hjets : ∀ q ∈ interior U, ∀ j ≤ N, ∀ v ∈ Icc 0 L,\n  …",
+            "truncated": true
+          }
+        }
+      }
+    }
+  ]
 }

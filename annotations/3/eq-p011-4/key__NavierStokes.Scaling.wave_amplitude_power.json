@@ -1,23 +1,26 @@
 {
-  "id": "eq-p011-4/key/01.NavierStokes.Scaling.wave_amplitude_power",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.Scaling.wave_amplitude_power",
-      "line": 64
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/Scaling.lean#L64"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.Scaling.wave_amplitude_power",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.Scaling.wave_amplitude_power",
+        "module": "NavierStokes.Scaling"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 64,
-        "text": "coreVelocity Q h * Real.sqrt (Q ^ h) = Q ^ (-1 / 2 - h / 2)   (docstring: 'The physical amplitude prefactor of the primary wave.')"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.Scaling.wave_amplitude_power",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L64"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 64,
+            "text": "theorem wave_amplitude_power {Q : ℝ} (hQ : 0 < Q) (h : ℝ) :\n    coreVelocity Q h * Real.sqrt (Q ^ h) = Q ^ (-1 / 2 - h / 2)"
+          }
+        }
       }
     }
-  }
+  ]
 }

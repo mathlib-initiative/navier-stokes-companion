@@ -1,31 +1,33 @@
 {
-  "id": "corollary-B.10/attributed/1.NavierStokes.ActivationCone.natural_activation_direction",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActivationCone.natural_activation_direction",
-      "line": 908,
-      "module": "NavierStokes.ActivationCone",
-      "path": "NavierStokes/ActivationCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean#L908"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActivationCone.natural_activation_direction",
-        "kind": "theorem"
+  "relation": "hasPart",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActivationCone.natural_activation_direction",
+        "module": "NavierStokes.ActivationCone"
       },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation different formulation; the auditor's reading: ∃ D : ScaledPoint → ℝ × ℝ, ∃ ε > 0, ContDiffOn ℝ ∞ D (scaledDomain …) ∧ (∀ η ∈ Icc (-1) 1, ε ≤ (D ((κ,T),(0,η))).1 ∧ …) ∧ ∀ T > 0, ∀ κ u η, T*u ∈ Icc 0 δ → η ∈ Icc (-1) 1 → activatedStress h N.endpoint I L U T κ (T*u, η) = (activation 1 κ u * (D …).1, activation 1 κ u * (D …).2). No hypothesis κ < 1",
-        "status": "unconfirmed",
-        "verdict": "faithful"
-      },
-      "relation": "part",
       "role": "attributed",
-      "snippet": {
-        "line": 908,
-        "text": "theorem natural_activation_direction {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    (hP0 : ContDiff ℝ ∞ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2 * δ < ReferencePath.rampLimit) :\n    let N"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "1.NavierStokes.ActivationCone.natural_activation_direction",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation different formulation; the auditor's reading: ∃ D : ScaledPoint → ℝ × ℝ, ∃ ε > 0, ContDiffOn ℝ ∞ D (scaledDomain …) ∧ (∀ η ∈ Icc (-1) 1, ε ≤ (D ((κ,T),(0,η))).1 ∧ …) ∧ ∀ T > 0, ∀ κ u η, T*u ∈ Icc 0 δ → η ∈ Icc (-1) 1 → activatedStress h N.endpoint I L U T κ (T*u, η) = (activation 1 κ u * (D …).1, activation 1 κ u * (D …).2). No hypothesis κ < 1",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L908",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean"
+          },
+          "snippet": {
+            "line": 908,
+            "text": "theorem natural_activation_direction {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    (hP0 : ContDiff ℝ ∞ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2 * δ < ReferencePath.rampLimit) :\n    let N"
+          }
+        }
       }
     }
-  }
+  ]
 }

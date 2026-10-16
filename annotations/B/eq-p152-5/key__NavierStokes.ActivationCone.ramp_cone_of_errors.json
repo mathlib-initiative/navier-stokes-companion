@@ -1,25 +1,27 @@
 {
-  "id": "eq-p152-5/key/02.NavierStokes.ActivationCone.ramp_cone_of_errors",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActivationCone.ramp_cone_of_errors",
-      "line": 68,
-      "module": "NavierStokes.ActivationCone",
-      "path": "NavierStokes/ActivationCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean#L68"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActivationCone.ramp_cone_of_errors"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActivationCone.ramp_cone_of_errors",
+        "module": "NavierStokes.ActivationCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 68,
-        "text": "hypotheses |P - r| ≤ s*e, |v - (1-e)*r| ≤ s*e, |J| ≤ s*e, … ⊢ e ≤ P - v ∧ 2 + c/4 < P ∧ (v - 2) * J ^ 2 < 2 * (P - v) ^ 2"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ActivationCone.ramp_cone_of_errors"
+          },
+          "destination": {
+            "fragment": "L68",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActivationCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 68,
+            "text": "theorem ramp_cone_of_errors {c B r e s P J v : ℝ}\n    (hc : 0 < c) (hr : 2 + c ≤ r) (hrB : r ≤ B)\n    (he : 0 < e) (he1 : e ≤ 1) (hs : 0 ≤ s)\n    (hsquarter : s ≤ 1 / 4) (hsc : s ≤ c / 2)\n    (hsB : (B + 1) * s ≤ 1 / 4)\n    (hP : |P - r| ≤ s * e) (hv : |v - (1 - e) * r| ≤ s * e)\n    (hJ : |J| ≤ s * e) :\n    e ≤ P - v ∧ 2 + c / 4 < P ∧ (v - 2) * J ^ 2 < 2 * (P - v) ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }

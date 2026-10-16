@@ -1,26 +1,28 @@
 {
-  "id": "eq-p042-2/key/03.NavierStokes.UniformCone.compact_trueCone_margins",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.UniformCone.compact_trueCone_margins",
-      "line": 219,
-      "module": "NavierStokes.UniformCone",
-      "path": "NavierStokes/UniformCone.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformCone.lean#L219"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.UniformCone.compact_trueCone_margins",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.UniformCone.compact_trueCone_margins",
+        "module": "NavierStokes.UniformCone"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 219,
-        "text": "∃ ε : ℝ, 0 < ε ∧ ∀ x ∈ K, ε ≤ v x - 2 ∧ ε ≤ P x - 2 ∧ ε ≤ coneBound (P x) (J x) - v x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.UniformCone.compact_trueCone_margins",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L219",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/UniformCone.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 219,
+            "text": "theorem compact_trueCone_margins {K : Set X} (hK : IsCompact K)\n    {P J v : X → ℝ} (hP : ContinuousOn P K) (hJ : ContinuousOn J K)\n    (hv : ContinuousOn v K)\n    (hcone : ∀ x ∈ K, 2 < v x ∧ 2 < P x ∧ v x < coneBound (P x) (J x)) :\n    ∃ ε : ℝ, 0 < ε ∧ ∀ x ∈ K,\n      ε ≤ v x - 2 ∧ ε ≤ P x - 2 ∧ ε ≤ coneBound (P x) (J x) - v x"
+          }
+        }
       }
     }
-  }
+  ]
 }

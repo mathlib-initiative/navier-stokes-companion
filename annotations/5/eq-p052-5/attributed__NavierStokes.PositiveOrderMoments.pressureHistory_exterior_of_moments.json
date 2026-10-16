@@ -1,24 +1,27 @@
 {
-  "id": "eq-p052-5/attributed/04.NavierStokes.PositiveOrderMoments.pressureHistory_exterior_of_moments",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.PositiveOrderMoments.pressureHistory_exterior_of_moments",
-      "line": 511
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/PositiveOrderMoments.lean#L511"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.PositiveOrderMoments.pressureHistory_exterior_of_moments",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.PositiveOrderMoments.pressureHistory_exterior_of_moments",
+        "module": "NavierStokes.PositiveOrderMoments"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 511,
-        "text": "same conclusion with hm replaced by moments n (slice u eta) (slice e eta) … = 0; the proof is exact congrFun (hm eta) 2, i.e. the third row m_{n,3}(η) = 0"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "04.NavierStokes.PositiveOrderMoments.pressureHistory_exterior_of_moments",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L511"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 511,
+            "text": "theorem pressureHistory_exterior_of_moments {n : ℕ} {u e : JointHistory} {omega : JointProfile}\n    {B : ℝ} (hB : 0 ≤ B)\n    (hs : ∀ eta R, B ≤ R → jointPressureGradient n e omega (R, eta) = 0)\n    (hm : ∀ eta, moments n (slice u eta) (slice e eta) (fun R => omega (R, eta)) = 0)\n    {R eta : ℝ} (hR : B ≤ R) : pressureHistory n e omega (R, eta) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

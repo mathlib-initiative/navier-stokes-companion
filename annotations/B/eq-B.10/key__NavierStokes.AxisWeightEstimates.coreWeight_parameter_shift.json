@@ -1,24 +1,27 @@
 {
-  "id": "eq-B.10/key/02.NavierStokes.AxisWeightEstimates.coreWeight_parameter_shift",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.AxisWeightEstimates.coreWeight_parameter_shift",
-      "line": 227
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/AxisWeightEstimates.lean#L227"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.AxisWeightEstimates.coreWeight_parameter_shift",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.AxisWeightEstimates.coreWeight_parameter_shift",
+        "module": "NavierStokes.AxisWeightEstimates"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 227,
-        "text": "theorem coreWeight_parameter_shift : coreWeight ε i (k + 1) = (20 / ε) * ((i : ℝ) + 1) * coreWeight ε (i + 1) k"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.AxisWeightEstimates.coreWeight_parameter_shift",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L227"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 227,
+            "text": "theorem coreWeight_parameter_shift {ε : ℝ} (hε : 0 < ε) (i k : ℕ) :\n    coreWeight ε i (k + 1) =\n      (20 / ε) * ((i : ℝ) + 1) * coreWeight ε (i + 1) k"
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -1,24 +1,26 @@
 {
-  "id": "eq-p122-1/key/06.NavierStokesR3.RieszTestOperators.laplacian_rieszTest",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.RieszTestOperators.laplacian_rieszTest",
-      "line": 284,
-      "module": "NavierStokes.R3.RieszTestOperators",
-      "path": "NavierStokes/R3/RieszTestOperators.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/RieszTestOperators.lean#L284"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.RieszTestOperators.laplacian_rieszTest"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.RieszTestOperators.laplacian_rieszTest",
+        "module": "NavierStokes.R3.RieszTestOperators"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 284,
-        "text": "(∑ k : Fin 3, partialD k (partialD k (rieszTest i j ψ)) x) = -partialD i (partialD j (fun y => ψ y)) x"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokesR3.RieszTestOperators.laplacian_rieszTest"
+          },
+          "destination": {
+            "fragment": "L284",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/RieszTestOperators.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 284,
+            "text": "theorem laplacian_rieszTest (i j : Fin 3) (ψ : ComplexTest) (x : Space) :\n    (∑ k : Fin 3, Comparison.partialD k\n      (Comparison.partialD k (rieszTest i j ψ)) x) =\n      -Comparison.partialD i (Comparison.partialD j (fun y => ψ y)) x"
+          }
+        }
       }
     }
-  }
+  ]
 }

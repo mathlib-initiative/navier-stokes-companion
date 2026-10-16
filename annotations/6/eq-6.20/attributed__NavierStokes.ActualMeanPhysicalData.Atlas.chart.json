@@ -1,24 +1,27 @@
 {
-  "id": "eq-6.20/attributed/02.NavierStokes.ActualMeanPhysicalData.Atlas.chart",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.ActualMeanPhysicalData.Atlas.chart",
-      "line": 47
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ActualMeanPhysicalData.lean#L47"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.ActualMeanPhysicalData.Atlas.chart",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.ActualMeanPhysicalData.Atlas.chart",
+        "module": "NavierStokes.ActualMeanPhysicalData"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 47,
-        "text": "A.chart n = VariableGaugeMean.physicalToChartTZ h n (A.index n); by PhysicalMeanJetBounds.physicalToChartTZ_apply (NavierStokes/PhysicalMeanJetBounds.lean:40, rfl) this sends p to (chartScale n * p.1, ((Q n ^ (-1) * p.2.1.1, Q n ^ (-D h) * p.2.1.2), coverMap (A.index n) p.2.2)) — the cover power J_g^{i(n)} on the torus variable, but with the radial and slow coordinates rescaled by the band n, so the tuple is not the display's fixed (R, Z, T)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.ActualMeanPhysicalData.Atlas.chart",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L47"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 47,
+            "text": "noncomputable def Atlas.chart {h : ℝ} {N Δ : ℕ} (A : Atlas h N Δ) (n : ℕ) : Point →L[ℝ] Point"
+          }
+        }
       }
     }
-  }
+  ]
 }

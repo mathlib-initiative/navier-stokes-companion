@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.11/key/02.NavierStokes.InitialPhysicalData.velocity_chart_slow",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.InitialPhysicalData.velocity_chart_slow",
-      "line": 2812,
-      "module": "NavierStokes.InitialPhysicalData",
-      "path": "NavierStokes/InitialPhysicalData.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/InitialPhysicalData.lean#L2812"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.InitialPhysicalData.velocity_chart_slow",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.InitialPhysicalData.velocity_chart_slow",
+        "module": "NavierStokes.InitialPhysicalData"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 2812,
-        "text": "chart velocity = ChartScales.Q n ^ CoordinateAlgebra.A ActualPrimary.h * … spatialCurl (potential B N0) …  (the u_* = Q^A u_phys line)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.InitialPhysicalData.velocity_chart_slow",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L2812",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/InitialPhysicalData.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 2812,
+            "text": "theorem velocity_chart_slow (n d : ℕ) (z : ProblemStatement.SpaceTime)\n    (ht : z.1 < 1) (hr : 0 < z.2 0)\n    (hs : (PhysicalMeanJetBounds.graph ActualPrimary.h n d\n      (z.1, CylindricalResidual.chart z.2)).2.1 ∈ ActualPrimary.standardRegion.carrier) (i : Fin 3) :\n    (∑ l ∈ ActualPrimary.activeLabels ActualPrimary.standardRegion B N0 n,\n      (ActualPrimary.piece ActualPrimary.standardRegion l.2 l.1).velocity n\n        (PhysicalResidualTZ.swapCylinder\n          ((PhysicalResidualBridge.commonGraph (ChartScales.Q n) ActualPrimary.h\n            (CommonWindow.index ActualPrimary.h n)).map z)) i) =\n      ChartScales.Q n ^ CoordinateAlgebra.A ActualPrimary.h *\n        CylindricalResidual.frame (-(z.2 1))\n          (SpatialCurl.spatialCurl (potential B N0) (z.1, CylindricalResidual.chart z.2)) i"
+          }
+        }
       }
     }
-  }
+  ]
 }

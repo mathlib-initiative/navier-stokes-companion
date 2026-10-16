@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.17/key/01.NavierStokes.MeanChartCompatibility.sourceMoment_coverPull",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.MeanChartCompatibility.sourceMoment_coverPull",
-      "line": 1209,
-      "module": "NavierStokes.MeanChartCompatibility",
-      "path": "NavierStokes/MeanChartCompatibility.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean#L1209"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.MeanChartCompatibility.sourceMoment_coverPull",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.MeanChartCompatibility.sourceMoment_coverPull",
+        "module": "NavierStokes.MeanChartCompatibility"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 1209,
-        "text": "sourceMoment m (coverPull l P k u f) s = (u / l ^ (m + 1)) * sourceMoment m f (P s), where sourceMoment m f s = pressureMass (fun z => z.1 ^ m * f z) s"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.MeanChartCompatibility.sourceMoment_coverPull",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L1209",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/MeanChartCompatibility.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 1209,
+            "text": "theorem sourceMoment_coverPull {l : ℝ} (hl : 0 < l) (P : S →L[ℝ] T)\n    (k m : ℕ) (u : ℝ) {f : PressureStream.Lift T → ℝ}\n    (hf : ContDiff ℝ ∞ f) (hp : PressureStream.TorusPeriodicLift f) (s : S) :\n    sourceMoment m (coverPull l P k u f) s =\n      (u / l ^ (m + 1)) * sourceMoment m f (P s)"
+          }
+        }
       }
     }
-  }
+  ]
 }

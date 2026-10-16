@@ -1,30 +1,32 @@
 {
-  "id": "lemma-4.1/key/0.NavierStokes.SimilarityProfile.partialZ_pullback",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SimilarityProfile.partialZ_pullback",
-      "line": 233,
-      "module": "NavierStokes.SimilarityProfile",
-      "path": "NavierStokes/SimilarityProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SimilarityProfile.lean#L233"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SimilarityProfile.partialZ_pullback",
-        "kind": "theorem"
-      },
-      "declaration_verdict": {
-        "note": "SINGLE_SOURCE_OK; relation lean stronger; the auditor's reading: The same axial identity as a joint partial: partialZ (pullback h b f) p = pullback h (b - D h) (Z h b f) p.",
-        "status": "unconfirmed",
-        "verdict": "faithful"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SimilarityProfile.partialZ_pullback",
+        "module": "NavierStokes.SimilarityProfile"
       },
       "role": "key",
-      "snippet": {
-        "line": 233,
-        "text": "theorem partialZ_pullback {h b : ℝ} {f : InnerProfile}\n    (hh : 0 < h) (hh1 : h < 1 / 2) {p : PhysicalPoint} (hp : p.1 < 1)\n    (hf : DifferentiableAt ℝ f (inner h p)) :\n    partialZ (pullback h b f) p = pullback h (b - D h) (Z h b f) p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "0.NavierStokes.SimilarityProfile.partialZ_pullback",
+            "kind": "theorem"
+          },
+          "declaration_verdict": {
+            "note": "stated (OK); relation lean stronger; the auditor's reading: The same axial identity as a joint partial: partialZ (pullback h b f) p = pullback h (b - D h) (Z h b f) p.",
+            "status": "unconfirmed",
+            "verdict": "faithful"
+          },
+          "destination": {
+            "fragment": "L233",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SimilarityProfile.lean"
+          },
+          "snippet": {
+            "line": 233,
+            "text": "theorem partialZ_pullback {h b : ℝ} {f : InnerProfile}\n    (hh : 0 < h) (hh1 : h < 1 / 2) {p : PhysicalPoint} (hp : p.1 < 1)\n    (hf : DifferentiableAt ℝ f (inner h p)) :\n    partialZ (pullback h b f) p = pullback h (b - D h) (Z h b f) p"
+          }
+        }
       }
     }
-  }
+  ]
 }

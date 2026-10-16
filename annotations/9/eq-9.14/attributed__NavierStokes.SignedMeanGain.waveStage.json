@@ -1,26 +1,28 @@
 {
-  "id": "eq-9.14/attributed/09.NavierStokes.SignedMeanGain.waveStage",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SignedMeanGain.waveStage",
-      "line": 168,
-      "module": "NavierStokes.SignedMeanGain",
-      "path": "NavierStokes/SignedMeanGain.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean#L168"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SignedMeanGain.waveStage",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SignedMeanGain.waveStage",
+        "module": "NavierStokes.SignedMeanGain"
       },
-      "relation": "defines",
       "role": "attributed",
-      "snippet": {
-        "line": 168,
-        "text": "waveStage g c u w q gaussian := VariableGaugeMean.reconstructState g c (u.addIncrement zeroTriple 0 w q <0, gaussian, 0>)  (the state after pressure reconstruction)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "09.NavierStokes.SignedMeanGain.waveStage",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L168",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SignedMeanGain.lean"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 168,
+            "text": "noncomputable def waveStage (g : VariableGaugeMean.GaugeData S)\n    (c : Context (PressureStream.Lift S)) (u : State (PressureStream.Lift S))\n    (w : Oscillation (PressureStream.Lift S)) (q : OscillatoryScalar (PressureStream.Lift S))\n    (gaussian : Oscillation (PressureStream.Lift S)) : State (PressureStream.Lift S)"
+          }
+        }
       }
     }
-  }
+  ]
 }

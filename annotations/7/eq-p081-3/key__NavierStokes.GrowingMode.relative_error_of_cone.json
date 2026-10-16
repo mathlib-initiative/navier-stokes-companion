@@ -1,25 +1,27 @@
 {
-  "id": "eq-p081-3/key/01.NavierStokes.GrowingMode.relative_error_of_cone",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GrowingMode.relative_error_of_cone",
-      "line": 333,
-      "module": "NavierStokes.GrowingMode",
-      "path": "NavierStokes/GrowingMode.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GrowingMode.lean#L333"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GrowingMode.relative_error_of_cone"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GrowingMode.relative_error_of_cone",
+        "module": "NavierStokes.GrowingMode"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 333,
-        "text": "(hp : 0 < p) (hcone : |q| ≤ r * p) (h11 : |e11| ≤ eps) (h12 : |e12| ≤ eps) (hd : |damping - referenceDamping| ≤ δ) : |(lam - damping + e11) * p + e12 * q - (lam - referenceDamping) * p| ≤ (δ + eps * (1 + r)) * p; its proof rewrites the left side as |(referenceDamping - damping + e11) * p + e12 * q| (line 351), which is |-(d - d_ref) + E₁₁ + E₁₂ (q/p)| * p"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.GrowingMode.relative_error_of_cone"
+          },
+          "destination": {
+            "fragment": "L333",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GrowingMode.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 333,
+            "text": "theorem relative_error_of_cone\n    {p q lam damping referenceDamping e11 e12 eps δ r : ℝ}\n    (hp : 0 < p) (heps : 0 ≤ eps) (hcone : |q| ≤ r * p)\n    (h11 : |e11| ≤ eps) (h12 : |e12| ≤ eps)\n    (hd : |damping - referenceDamping| ≤ δ) :\n    |(lam - damping + e11) * p + e12 * q - (lam - referenceDamping) * p| ≤\n      (δ + eps * (1 + r)) * p"
+          }
+        }
       }
     }
-  }
+  ]
 }

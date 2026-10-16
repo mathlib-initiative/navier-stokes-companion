@@ -1,25 +1,27 @@
 {
-  "id": "eq-5.38/attributed/03.NavierStokes.GenericRealizationBounds.jetRate_of_log_bound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.GenericRealizationBounds.jetRate_of_log_bound",
-      "line": 47,
-      "module": "NavierStokes.GenericRealizationBounds",
-      "path": "NavierStokes/GenericRealizationBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericRealizationBounds.lean#L47"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.GenericRealizationBounds.jetRate_of_log_bound"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.GenericRealizationBounds.jetRate_of_log_bound",
+        "module": "NavierStokes.GenericRealizationBounds"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 47,
-        "text": "(∀ᶠ x, ‖D^m f x‖ ≤ C * (1 + |log (q x)|)^P * q x ^ r) → JetRate l q f m (r - 1): the Λ_log factor costs exactly one power of q"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.GenericRealizationBounds.jetRate_of_log_bound"
+          },
+          "destination": {
+            "fragment": "L47",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/GenericRealizationBounds.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 47,
+            "text": "theorem jetRate_of_log_bound {l : Filter E} {q : E → ℝ} {f : E → V}\n    (hq : ∀ᶠ x in l, 0 < q x) (hqzero : Tendsto q l (𝓝 0))\n    (m : ℕ) (C P r : ℝ)\n    (hb : ∀ᶠ x in l, ‖iteratedFDeriv ℝ m f x‖ ≤\n      C * (1 + |Real.log (q x)|) ^ P * q x ^ r) :\n    JetRate l q f m (r - 1)"
+          }
+        }
       }
     }
-  }
+  ]
 }

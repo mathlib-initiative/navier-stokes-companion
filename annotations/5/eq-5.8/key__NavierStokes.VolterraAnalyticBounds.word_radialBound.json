@@ -1,26 +1,28 @@
 {
-  "id": "eq-5.8/key/03.NavierStokes.VolterraAnalyticBounds.word_radialBound",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.VolterraAnalyticBounds.word_radialBound",
-      "line": 331,
-      "module": "NavierStokes.VolterraAnalyticBounds",
-      "path": "NavierStokes/VolterraAnalyticBounds.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VolterraAnalyticBounds.lean#L331"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.VolterraAnalyticBounds.word_radialBound",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.VolterraAnalyticBounds.word_radialBound",
+        "module": "NavierStokes.VolterraAnalyticBounds"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 331,
-        "text": "RadialBound (word A₀ A₁ w F) T c ρ (B * M^w.length * (δ⁻¹)^losses w) w.length, i.e. ‖·‖ ≤ B M^k δ^(-losses w) r^k / k! — the ordered-simplex factor and the split of the Cauchy gap among the derivative letters only"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "03.NavierStokes.VolterraAnalyticBounds.word_radialBound",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L331",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/VolterraAnalyticBounds.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 331,
+            "text": "theorem word_radialBound {A₀ A₁ : Coeff} {F : Field} {T σ B M δ : ℝ} {c : ℂ}\n    (hB : 0 ≤ B) (hM : 0 ≤ M) (hδ : 0 < δ)\n    (hA₀ : MatrixBound A₀ T c σ M) (hA₁ : MatrixBound A₁ T c σ M)\n    (hF : RadialBound F T c σ B 0)\n    (ha : ∀ v, AnalyticField (word A₀ A₁ v F) T c σ)\n    (w : List Bool) {ρ : ℝ} (hgap : ρ + (losses w : ℝ) * δ ≤ σ) :\n    RadialBound (word A₀ A₁ w F) T c ρ\n      (B * M ^ w.length * (δ⁻¹) ^ losses w) w.length"
+          }
+        }
       }
     }
-  }
+  ]
 }

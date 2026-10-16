@@ -1,26 +1,29 @@
 {
-  "id": "eq-1.2/support/06.NavierStokesR3.ProblemStatement.CandidateProperties",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokesR3.ProblemStatement.CandidateProperties",
-      "line": 92,
-      "module": "NavierStokes.R3.ProblemStatement",
-      "path": "NavierStokes/R3/ProblemStatement.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ProblemStatement.lean#L92"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokesR3.ProblemStatement.CandidateProperties",
-        "kind": "structure"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokesR3.ProblemStatement.CandidateProperties",
+        "module": "NavierStokes.R3.ProblemStatement"
       },
-      "relation": "uses",
       "role": "support",
-      "snippet": {
-        "line": 92,
-        "text": "structure CandidateProperties (ν : ℝ) (u) (p) (f) (K) : Prop where ... divergence_free : ∀ t ∈ Ico 0 1, ∀ x, spatialDivergence u t x = 0 (104-105); navier_stokes : ∀ t ∈ Ioo 0 1, ∀ x, navierStokesResidual ν u p t x = f (t, x) (106-107)  -- no hypothesis on ν"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokesR3.ProblemStatement.CandidateProperties",
+            "kind": "structure"
+          },
+          "destination": {
+            "fragment": "L92",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/R3/ProblemStatement.lean"
+          },
+          "relation": "uses",
+          "snippet": {
+            "line": 92,
+            "text": "structure CandidateProperties (ν : ℝ) (u : VelocityField) (p : PressureField)\n    (f : VelocityField) (K : Set Space) : Prop"
+          }
+        }
       }
     }
-  }
+  ]
 }

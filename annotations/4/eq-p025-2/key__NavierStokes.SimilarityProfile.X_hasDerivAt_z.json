@@ -1,25 +1,27 @@
 {
-  "id": "eq-p025-2/key/06.NavierStokes.SimilarityProfile.X_hasDerivAt_z",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.SimilarityProfile.X_hasDerivAt_z",
-      "line": 141,
-      "module": "NavierStokes.SimilarityProfile",
-      "path": "NavierStokes/SimilarityProfile.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SimilarityProfile.lean#L141"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.SimilarityProfile.X_hasDerivAt_z"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.SimilarityProfile.X_hasDerivAt_z",
+        "module": "NavierStokes.SimilarityProfile"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 141,
-        "text": "HasDerivAt (fun z => X h (p.1, (p.2.1, z))) (CoordinateAlgebra.xAxial (q h p) h (eta h p) (X h p)) p.2.2, with `def xAxial (q h η X) := -2 * η * X / (q ^ D h * L h η)`"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.SimilarityProfile.X_hasDerivAt_z"
+          },
+          "destination": {
+            "fragment": "L141",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/SimilarityProfile.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 141,
+            "text": "theorem X_hasDerivAt_z {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2)\n    {p : PhysicalPoint} (hp : p.1 < 1) :\n    HasDerivAt (fun z => X h (p.1, (p.2.1, z)))\n      (CoordinateAlgebra.xAxial (q h p) h (eta h p) (X h p)) p.2.2"
+          }
+        }
       }
     }
-  }
+  ]
 }

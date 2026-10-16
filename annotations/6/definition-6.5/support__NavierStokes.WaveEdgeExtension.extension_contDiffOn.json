@@ -1,26 +1,29 @@
 {
-  "id": "definition-6.5/support/3.NavierStokes.WaveEdgeExtension.extension_contDiffOn",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.WaveEdgeExtension.extension_contDiffOn",
-      "line": 208,
-      "module": "NavierStokes.WaveEdgeExtension",
-      "path": "NavierStokes/WaveEdgeExtension.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveEdgeExtension.lean#L208"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.WaveEdgeExtension.extension_contDiffOn",
-        "kind": "theorem"
+  "relation": "relatedMatch",
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.WaveEdgeExtension.extension_contDiffOn",
+        "module": "NavierStokes.WaveEdgeExtension"
       },
-      "relation": "supporting",
       "role": "support",
-      "snippet": {
-        "line": 208,
-        "text": "theorem extension_contDiffOn {Ω : Set D} (hΩ : IsOpen Ω) {ρ : D → ℝ}\n    (hρ : ContDiffOn ℝ ∞ ρ Ω) {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b)\n    (hcL : 0 < cL) (hcR : 0 < cR) {f : D → E}\n    (hf : ContDiffOn ℝ ∞ f (windowDomain Ω ρ a b))\n    (hB : BoundaryControls Ω ρ a b cL cR f) :\n    ContDiffOn ℝ ∞ (extension ρ a b f) Ω"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "3.NavierStokes.WaveEdgeExtension.extension_contDiffOn",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L208",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/WaveEdgeExtension.lean"
+          },
+          "relation": "supporting",
+          "snippet": {
+            "line": 208,
+            "text": "theorem extension_contDiffOn {Ω : Set D} (hΩ : IsOpen Ω) {ρ : D → ℝ}\n    (hρ : ContDiffOn ℝ ∞ ρ Ω) {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b)\n    (hcL : 0 < cL) (hcR : 0 < cR) {f : D → E}\n    (hf : ContDiffOn ℝ ∞ f (windowDomain Ω ρ a b))\n    (hB : BoundaryControls Ω ρ a b cL cR f) :\n    ContDiffOn ℝ ∞ (extension ρ a b f) Ω"
+          }
+        }
       }
     }
-  }
+  ]
 }

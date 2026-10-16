@@ -1,25 +1,27 @@
 {
-  "id": "eq-p082-2/key/02.NavierStokes.CorrectionInitialization.ActualPrimary.cutVelocity_eq_localProfile",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.cutVelocity_eq_localProfile",
-      "line": 4197,
-      "module": "NavierStokes.CorrectionInitialization",
-      "path": "NavierStokes/CorrectionInitialization.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean#L4197"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.CorrectionInitialization.ActualPrimary.cutVelocity_eq_localProfile",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.CorrectionInitialization.ActualPrimary.cutVelocity_eq_localProfile",
+        "module": "NavierStokes.CorrectionInitialization"
       },
-      "relation": "states",
-      "snippet": {
-        "line": 4197,
-        "text": "cutVelocity j L (p, z) = PartitionedCovariance.amplitude ε (spatialMask L p) (covariance B N0 L p) (actualTarget …) j • PrimaryPulseBounds.localPrimaryProfile (frame L) (lam L) (u L) (L L) slots.radius p z"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "02.NavierStokes.CorrectionInitialization.ActualPrimary.cutVelocity_eq_localProfile",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L4197",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/CorrectionInitialization.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 4197,
+            "text": "theorem cutVelocity_eq_localProfile (j : Fin 2) (L : Label B N0)\n    (p : PhaseCalculus.Slow) (z : TorusInverse.Plane) :\n    cutVelocity j L (p, z) =\n      PartitionedCovariance.amplitude (ChartScales.epsilon h (BaseChartJets.cellBand L))\n        (spatialMask L p) (covariance B N0 L p) (fun k => PrimaryTargetBounds.actualTarget modulation p k) j •\n      PrimaryPulseBounds.localPrimaryProfile ((phases B N0 j).frame L) ((phases B N0 j).lam L)\n        ((phases B N0 j).u L) ((phases B N0 j).L L) slots.radius p z"
+          }
+        }
       }
     }
-  }
+  ]
 }

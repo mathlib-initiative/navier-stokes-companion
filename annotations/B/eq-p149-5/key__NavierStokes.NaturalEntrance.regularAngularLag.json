@@ -1,24 +1,27 @@
 {
-  "id": "eq-p149-5/key/01.NavierStokes.NaturalEntrance.regularAngularLag",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalEntrance.regularAngularLag",
-      "line": 1231
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalEntrance.lean#L1231"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalEntrance.regularAngularLag",
-        "kind": "def"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalEntrance.regularAngularLag",
+        "module": "NavierStokes.NaturalEntrance"
       },
-      "relation": "defines",
       "role": "key",
-      "snippet": {
-        "line": 1231,
-        "text": "regularAngularLag h f U V p = (∫ x in (0:ℝ)..p.1, (2 * x * f (x, p.2)) * Sq h f U V (x, p.2)) / (p.1 * (2 * p.1 * f p))  — docstring: 'This is the manuscript's Q_s, before multiplication by X/L'"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "01.NavierStokes.NaturalEntrance.regularAngularLag",
+            "kind": "def"
+          },
+          "destination": {
+            "fragment": "L1231"
+          },
+          "relation": "defines",
+          "snippet": {
+            "line": 1231,
+            "text": "noncomputable def regularAngularLag (h : ℝ) (f U V : ℝ × ℝ → ℝ) (p : ℝ × ℝ) : ℝ"
+          }
+        }
       }
     }
-  }
+  ]
 }

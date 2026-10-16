@@ -1,26 +1,28 @@
 {
-  "id": "eq-8.22/key/05.NavierStokes.TemporalMeanUpdate.temporal_mean_update",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.TemporalMeanUpdate.temporal_mean_update",
-      "line": 818,
-      "module": "NavierStokes.TemporalMeanUpdate",
-      "path": "NavierStokes/TemporalMeanUpdate.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean#L818"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.TemporalMeanUpdate.temporal_mean_update",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.TemporalMeanUpdate.temporal_mean_update",
+        "module": "NavierStokes.TemporalMeanUpdate"
       },
-      "relation": "states",
       "role": "key",
-      "snippet": {
-        "line": 818,
-        "text": "fastDerivative h n (desiredIncrement h n fθ) z + centered fθ z = 0 ∧ fastDerivative h n (axialUpdate … fz) z + centered fz z = -fastDerivative h n (axialAlias … fz) z ∧ (divergence, two zero-mean clauses)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "05.NavierStokes.TemporalMeanUpdate.temporal_mean_update",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L818",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/TemporalMeanUpdate.lean"
+          },
+          "relation": "states",
+          "snippet": {
+            "line": 818,
+            "text": "theorem temporal_mean_update {d a b M : ℝ} (ha : 0 < a) (hab : a < b) (hd : 0 < d)\n    (v : Plane) (w : S × Plane) (h : ℝ) (n : ℕ) {fθ fz : PressureStream.Lift S → ℝ}\n    (hθ : ContDiff ℝ ∞ fθ) (hz : ContDiff ℝ ∞ fz)\n    (hpθ : PressureStream.TorusPeriodicLift fθ) (hpz : PressureStream.TorusPeriodicLift fz)\n    (hsz : RadialAlias.RadiallySupported a b fz) (z : PressureStream.Lift S) :\n    fastDerivative h n (desiredIncrement h n fθ) z + centered fθ z = 0 ∧\n    fastDerivative h n (axialUpdate d a b M v h n fz) z + centered fz z =\n      -fastDerivative h n (axialAlias d a b M v h n fz) z ∧\n    PressureStream.graphDivergence (PressureStream.physicalSpeed d M) (0, v) w\n      (radialUpdate d a b M v w h n fz) (axialUpdate d a b M v h n fz) z = 0 ∧\n    PressureStream.torusAverage (desiredIncrement h n fθ) (z.1, z.2.1) = 0 ∧\n    PressureStream.torusAverage (axialUpdate d a b M v h n fz) (z.1, z.2.1) = 0"
+          }
+        }
       }
     }
-  }
+  ]
 }

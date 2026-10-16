@@ -1,26 +1,28 @@
 {
-  "id": "eq-B.2/attributed/06.NavierStokes.NaturalAxisRange.low_Z_has_H_margin",
-  "target": {
-    "pin": {
-      "declaration": "NavierStokes.NaturalAxisRange.low_Z_has_H_margin",
-      "line": 173,
-      "module": "NavierStokes.NaturalAxisRange",
-      "path": "NavierStokes/NaturalAxisRange.lean"
-    },
-    "uri": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisRange.lean#L173"
-  },
-  "extensions": {
-    "org.mathlib-initiative.formal-companion.overlay": {
-      "declaration": {
-        "id": "NavierStokes.NaturalAxisRange.low_Z_has_H_margin",
-        "kind": "theorem"
+  "object": [
+    {
+      "location": {
+        "declaration": "NavierStokes.NaturalAxisRange.low_Z_has_H_margin",
+        "module": "NavierStokes.NaturalAxisRange"
       },
-      "relation": "implies",
       "role": "attributed",
-      "snippet": {
-        "line": 173,
-        "text": "∃ m, 0 < m ∧ ∀ η ∈ Icc (-1 : ℝ) 1, |Z h j P η| ≤ j / 10 → m ≤ (H h j η) ^ 2  (compact set K := Icc (-1) 1 ∩ {|Z| ≤ j/10}, line 178)"
+      "extensions": {
+        "org.mathlib-initiative.formal-companion.overlay": {
+          "declaration": {
+            "id": "06.NavierStokes.NaturalAxisRange.low_Z_has_H_margin",
+            "kind": "theorem"
+          },
+          "destination": {
+            "fragment": "L173",
+            "href": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/NaturalAxisRange.lean"
+          },
+          "relation": "implies",
+          "snippet": {
+            "line": 173,
+            "text": "theorem low_Z_has_H_margin {h j : ℝ} {P : ℝ → ℝ}\n    (p : Parameters h j) (pP : PressureData P) :\n    ∃ m : ℝ, 0 < m ∧ ∀ η ∈ Icc (-1 : ℝ) 1,\n      |Z h j P η| ≤ j / 10 → m ≤ (H h j η) ^ 2"
+          }
+        }
       }
     }
-  }
+  ]
 }
