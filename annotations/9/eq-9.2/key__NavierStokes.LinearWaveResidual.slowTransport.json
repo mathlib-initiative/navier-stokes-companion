@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 80,
-            "text": "noncomputable def slowTransport (ε : ℝ) (b G : E → ℝ) (Vs Vr Vz : E → E)\n    (a : E → ComplexVector) (x : E) : ComplexVector"
+            "text": "noncomputable def slowTransport (ε : ℝ) (b G : E → ℝ) (Vs Vr Vz : E → E)\n    (a : E → ComplexVector) (x : E) : ComplexVector := fun i =>\n  -(ε : ℂ) * along Vs (fun y => a y i) x +\n    (b x : ℂ) * along Vr (fun y => a y i) x +\n    (G x : ℂ) * along Vz (fun y => a y i) x"
           }
         }
       }

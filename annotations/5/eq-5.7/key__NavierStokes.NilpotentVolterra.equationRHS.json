@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 786,
-            "text": "def equationRHS (A₀ A₁ : VolterraAnalyticBounds.Coeff)\n    (f W : VolterraAnalyticBounds.Field) : VolterraAnalyticBounds.Field"
+            "text": "def equationRHS (A₀ A₁ : VolterraAnalyticBounds.Coeff)\n    (f W : VolterraAnalyticBounds.Field) : VolterraAnalyticBounds.Field :=\n  fun r z => f r z + (VolterraAnalyticBounds.matrixAction A₀ W r z +\n    VolterraAnalyticBounds.matrixAction A₁ (VolterraAnalyticBounds.parameterDeriv W) r z)"
           }
         }
       }

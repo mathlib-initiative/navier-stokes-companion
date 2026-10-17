@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 432,
-            "text": "structure Witness {F : OutgoingProfile.Profile} {W : NominalProfile.Witness F}\n    (d : LoopData W)"
+            "text": "structure Witness {F : OutgoingProfile.Profile} {W : NominalProfile.Witness F}\n    (d : LoopData W) where\n  realization : d.Realization\n  frequency : ℕ\n  frequency_pos : 0 < frequency\n  coefficients : ℝ → ModulatedHistories.Coeff\n  coefficients_smooth : ContDiff ℝ ∞ coefficients\n  profiles : Profiles d.domain\n  f_formula : profiles.f = d.outputF realization frequency coefficients\n  U_formula : profiles.U = d.outputU realization frequency coefficients\n  pressure0 : profiles.pressure0 = W.profiles.pressure0\n  restored : ∀ eta ∈ d.parameters, ∀ X : ℝ, (repairPatch W).right ≤ X →\n    ModulatedHistories.profileRows profiles (X, eta) = ModulatedHistories.profileRows W.profiles (X, eta)\n  true_cone : ∀ p ∈ Icc d.modulation.left (repairPatch W).right ×ˢ d.parameters,\n    0 < profiles.f p ∧ TrueConeLoop.InTrueCone\n      (ActivationStocks.profileStockOne profiles F.data.h p)\n      (ActivationStocks.profileStockTwo profiles F.data.h p)\n      (ModulatedCone.angularShear profiles.E p) (ModulatedCone.signedAxialShear profiles.E profiles.U p)"
           }
         }
       }

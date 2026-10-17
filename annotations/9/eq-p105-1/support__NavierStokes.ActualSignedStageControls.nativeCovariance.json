@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 816,
-            "text": "noncomputable def nativeCovariance (B N0 : ℕ) :\n    SignedCopyBounds.UniformNativeCovariance fullStrip (phaseCell (B"
+            "text": "noncomputable def nativeCovariance (B N0 : ℕ) :\n    SignedCopyBounds.UniformNativeCovariance fullStrip (phaseCell (B := B) (N0 := N0)) matrix target where\n  matrix_jets := matrix_local_jets\n  target_jets := target_local_jets\n  zeta_pos := fun _ hx => fullStrip_zeta_pos hx\n  determinantGap := (1 / 5 : ℝ) ^ 2 * (ActualPrimary.choice B N0).detGap\n  entryBound := 5 * (ActualPrimary.choice B N0).entryBound\n  primaryLower := coefficientLower ^ 2 * (ActualPrimary.choice B N0).inverseLower\n  gap_pos := mul_pos (by norm_num) (ActualPrimary.choice B N0).detGap_pos\n  entry_one := one_le_mul_of_one_le_of_one_le (by norm_num) (ActualPrimary.choice B N0).entryBound_ge_one\n  lower_pos := mul_pos (sq_pos_of_pos coefficientLower_pos) (ActualPrimary.choice B N0).inverseLower_pos\n  determinant := fun _ _ _ _ hx hc => (covariance_margins hx hc).1\n  entries := fun _ _ _ _ hx hc => (covariance_margins hx hc).2.1\n  lower := fun _ _ _ _ hx hc => (covariance_margins hx hc).2.2"
           }
         }
       }

@@ -22,7 +22,7 @@
           },
           "snippet": {
             "line": 213,
-            "text": "noncomputable def base {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) (hP0 : ContDiff ℝ ∞ P0)\n    (C : ℝ) {S : ℝ} (hS : 0 < S) : Coefficient S (parameterDomain Ω)"
+            "text": "noncomputable def base {T δ : ℝ} (hT : 0 < T) (hδ : 0 < δ)\n    (hδT : 2 * δ < ReferencePath.rampLimit) (κ : ℝ) (hP0 : ContDiff ℝ ∞ P0)\n    (C : ℝ) {S : ℝ} (hS : 0 < S) : Coefficient S (parameterDomain Ω) :=\n  SlowRecursion.makeBase (domain E hS)\n    (SlowRecursion.realConstant S (parameterDomain Ω) C * element E hT hδ hδT κ hP0 S 0)\n    (element E hT hδ hδT κ hP0 S 1) (element E hT hδ hδT κ hP0 S 2)\n    (element E hT hδ hδT κ hP0 S 3)"
           }
         }
       }

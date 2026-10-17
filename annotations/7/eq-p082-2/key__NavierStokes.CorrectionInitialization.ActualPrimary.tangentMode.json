@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 4600,
-            "text": "noncomputable def tangentMode (j : Fin 2) (L : Label B N0) (p : PhaseCalculus.Slow)\n    (Y : TorusInverse.Plane) (theta : ℝ) : Fin 3 → ℝ"
+            "text": "noncomputable def tangentMode (j : Fin 2) (L : Label B N0) (p : PhaseCalculus.Slow)\n    (Y : TorusInverse.Plane) (theta : ℝ) : Fin 3 → ℝ :=\n  fun i => (HarmonicCalculus.vectorMode 1\n    (fun z : TorusInverse.Plane × ℝ =>\n      (PrimaryGeometryAssembly.angularMode certificate modulation (choice B N0).prepared j L : ℝ) * z.2 +\n        ChartScales.carrier h (BaseChartJets.cellBand L) * periodicPhase j L p z.1)\n    (fun z => commonAmplitude j L p z.1) (Y, theta) i).re"
           }
         }
       }

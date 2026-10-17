@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 42,
-            "text": "def AngularRayGrowth (h Xa : ℝ) (u : VelocityField) : Prop"
+            "text": "def AngularRayGrowth (h Xa : ℝ) (u : VelocityField) : Prop :=\n  ∃ Xin : ℝ, 0 < Xin ∧ Xin < Xa ∧ ∃ e₀ C δ : ℝ,\n    0 < e₀ ∧ 0 < C ∧ 0 < δ ∧ δ ≤ 1 ∧\n    ∀ τ : ℝ, 0 < τ → τ < δ →\n      |τ ^ CoordinateAlgebra.A h * u (1 - τ, BaseAngularGrowth.ray Xin τ) 1 - e₀| ≤\n        C * τ ^ (2 * h)"
           }
         }
       }

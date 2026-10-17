@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 520,
-            "text": "noncomputable def fullDifferentialIncrement (c : Context D) (s : State D)\n    (m : Triple D) (p : ScalarField D) (v : Oscillation D) (q : OscillatoryScalar D) :\n    ℕ → D × ℝ → ComplexVector"
+            "text": "noncomputable def fullDifferentialIncrement (c : Context D) (s : State D)\n    (m : Triple D) (p : ScalarField D) (v : Oscillation D) (q : OscillatoryScalar D) :\n    ℕ → D × ℝ → ComplexVector := fun n x =>\n  let R : D × ℝ → ℝ := fun y => c.operators.radius y.1\n  let a := complexPerturbation s n\n  let b := complexIncrement m v n\n  LinearWaveResidual.linearResidual (c.operators.epsilon n) R\n      (radialDirection c n) angularDirection (axialDirection c n) (timeDirection c n)\n      (complexBase c n) b (complexPressureIncrement p q n) x +\n    LinearWaveResidual.transport R (radialDirection c n) angularDirection (axialDirection c n) a b x +\n    LinearWaveResidual.transport R (radialDirection c n) angularDirection (axialDirection c n) b a x +\n    LinearWaveResidual.transport R (radialDirection c n) angularDirection (axialDirection c n) b b x"
           }
         }
       }

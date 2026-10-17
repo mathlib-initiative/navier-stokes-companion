@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 825,
-            "text": "structure PreparedBounds {F : OutgoingProfile.Profile} {A : NominalProfile.AxisStage F}\n    (c : NominalProfile.Controls A) (N : ℕ) (rho delta radiusFloor : ℝ) : Prop"
+            "text": "structure PreparedBounds {F : OutgoingProfile.Profile} {A : NominalProfile.AxisStage F}\n    (c : NominalProfile.Controls A) (N : ℕ) (rho delta radiusFloor : ℝ) : Prop where\n  matching : MatchingDebtBounds.MatchingBounds c N rho\n  debt_radius : rho ≤ NominalProfile.resetSolver.radius\n  scale_large : shapeScale A.small A.preparation ≤ A.scale\n  control : MatchingDebtBounds.SmallControl c 1 (min 1 (1 / A.scale))\n  radius_large : radiusFloor ≤ c.radius\n  coefficients : JetBounds.FiniteJetBound N (NominalProfile.resetCoefficients F c.debt)\n    (Icc (-1 : ℝ) 1) delta\n  endpoint : ∀ eta ∈ Icc (-1 : ℝ) 1, ∀ n ≤ N,\n    |iteratedDeriv n (fun e => c.initialAxial e - 4 * e) eta| ≤ delta"
           }
         }
       }

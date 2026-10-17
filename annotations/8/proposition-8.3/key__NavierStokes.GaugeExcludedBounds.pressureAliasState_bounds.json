@@ -46,7 +46,7 @@
           },
           "snippet": {
             "line": 193,
-            "text": "theorem pressureAliasState_bounds {κ γ : ℝ}\n    (H : MeanStateRegularity.PrimitiveData U a b c u)\n    (ho : OperatorBounds (actualStrip (b"
+            "text": "theorem pressureAliasState_bounds {κ γ : ℝ}\n    (H : MeanStateRegularity.PrimitiveData U a b c u)\n    (ho : OperatorBounds (actualStrip (b := b) U ha hcL hcR hh L hL) c.operators κ)\n    (hb : BaseBounds (actualStrip (b := b) U ha hcL hcR hh L hL) c.base)\n    (hu : CorrectionState.CumulativeBounds (actualStrip (b := b) U ha hcL hcR hh L hL) u)\n    (hW : ∀ i j, MeanClass (actualStrip (b := b) U ha hcL hcR hh L hL) γ (u.covariance i j)) (β : ℝ) :\n    UnweightedClass (actualStrip (b := b) U ha hcL hcR hh L hL) β\n      (fun n z => pressureAliasState (actualGauge h a b Mbase hab index) c u n (z, 0)) ∧\n      UnweightedClass (HarmonicWaveInteraction.productStrip (actualStrip (b := b) U ha hcL hcR hh L hL)) β\n        (pressureAliasState (actualGauge h a b Mbase hab index) c u)"
           }
         }
       }

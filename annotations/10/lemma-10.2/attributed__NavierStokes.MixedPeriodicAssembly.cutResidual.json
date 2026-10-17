@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 43,
-            "text": "def cutResidual (A v : VelocityField) (p : PressureField) : VelocityField"
+            "text": "def cutResidual (A v : VelocityField) (p : PressureField) : VelocityField :=\n  fun z => navierStokesResidual (cutVelocity A v)\n    (SpatialLocalization.cutPressure p) z.1 z.2"
           }
         }
       }

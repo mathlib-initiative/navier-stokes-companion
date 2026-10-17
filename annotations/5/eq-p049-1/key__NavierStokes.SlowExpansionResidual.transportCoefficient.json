@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 420,
-            "text": "def transportCoefficient (h e α m : ℝ) (v u f source : ℕ → InnerProfile)\n    (n : ℕ) (w : InnerPoint) : ℝ"
+            "text": "def transportCoefficient (h e α m : ℝ) (v u f source : ℕ → InnerProfile)\n    (n : ℕ) (w : InnerPoint) : ℝ :=\n  recurrence\n    (transportLinear w.1 m (fun j => T h (e + slowOrder h j) (f j) w)\n      (fun j => partialX (f j) w) (fun j => partialX (partialX (f j)) w) (fun j => source j w))\n    (transportPair w.1 α (fun j => v j w) (fun j => u j w) (fun j => f j w)\n      (fun j => partialX (f j) w) (fun j => Z h (e + slowOrder h j) (f j) w))\n    (fun j => Z2 h (e + slowOrder h j) (f j) w) n"
           }
         }
       }

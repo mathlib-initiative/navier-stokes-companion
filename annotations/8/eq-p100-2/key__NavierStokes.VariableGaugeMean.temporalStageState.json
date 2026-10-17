@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 559,
-            "text": "noncomputable def temporalStageState (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (axial : S × PressureStream.Plane) (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) : CorrectionState.State (PressureStream.Lift S)"
+            "text": "noncomputable def temporalStageState (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (axial : S × PressureStream.Plane) (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) : CorrectionState.State (PressureStream.Lift S) :=\n  reconstructState g c (u.addIncrement (temporalIncrementState g h index axial c u) 0 0 0\n    ⟨0, 0, temporalAliasState g h index c u⟩)"
           }
         }
       }

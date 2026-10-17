@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 409,
-            "text": "noncomputable def conservativeRadial (w : Components) (p : Scalar) (q : SpaceTime) : ℝ"
+            "text": "noncomputable def conservativeRadial (w : Components) (p : Scalar) (q : SpaceTime) : ℝ :=\n  dt (w 0) q + radialDivergence 1 (fun y => w 0 y * w 0 y) q +\n    dtheta (fun y => w 1 y * w 0 y) q / radius q +\n    dz (fun y => w 2 y * w 0 y) q - (w 1 q * w 1 q) / radius q - laplacian (w 0) q +\n    w 0 q / radius q ^ 2 + 2 * dtheta (w 1) q / radius q ^ 2 + dr p q"
           }
         }
       }

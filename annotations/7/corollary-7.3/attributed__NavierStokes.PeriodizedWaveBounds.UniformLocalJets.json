@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 254,
-            "text": "structure UniformLocalJets (s : StripData D) (w : L → ℕ → D → ℝ) (α : ℝ)\n    (K : L → ℕ → I → Set D) (f : L → ℕ → I → D → E) : Prop"
+            "text": "structure UniformLocalJets (s : StripData D) (w : L → ℕ → D → ℝ) (α : ℝ)\n    (K : L → ℕ → I → Set D) (f : L → ℕ → I → D → E) : Prop where\n  smooth : ∀ l n i x, x ∈ s.domain → x ∈ K l n i → ContDiffAt ℝ ∞ (f l n i) x\n  bounds : ∀ m : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∃ p : ℕ,\n    ∀ l n i x, x ∈ s.domain → x ∈ K l n i → ∀ j : ℕ, j ≤ m →\n      ‖iteratedFDeriv ℝ j (f l n i) x‖ ≤ majorant s (w l) α C p n x"
           }
         }
       }

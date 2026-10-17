@@ -18,7 +18,7 @@
           "relation": "states",
           "snippet": {
             "line": 94,
-            "text": "def ExpandedEquations (h lam C eta X : K) (b : BaseJet K) (s : SourceJet K)\n    (phi u k p : Jet K) : Prop"
+            "text": "def ExpandedEquations (h lam C eta X : K) (b : BaseJet K) (s : SourceJet K)\n    (phi u k p : Jet K) : Prop :=\n  X * (u.radial + k.radial) + k.value = 0 ∧\n  p.radial = pressureValue C b s phi ∧\n  2 * (X * phi.radial2 + 2 * phi.radial) = angularRHS h lam eta X b s phi u k ∧\n  2 * (X * u.radial2 + u.radial) = axialRHS h lam eta X b s phi u k p"
           }
         }
       }

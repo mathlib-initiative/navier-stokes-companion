@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 314,
-            "text": "noncomputable def fullResidual (c : CorrectionState.Context D) (u : CorrectionState.State D) :\n    CorrectionState.Oscillation D"
+            "text": "noncomputable def fullResidual (c : CorrectionState.Context D) (u : CorrectionState.State D) :\n    CorrectionState.Oscillation D := fun n x i =>\n  (nonlinearResidual (c.operators.epsilon n) (fun y : D × ℝ => c.operators.radius y.1)\n    (radialDirection c n) angularDirection (axialDirection c n) (timeDirection c n)\n    (complexBase c n) (complexPerturbation u n) (complexPressure u n) x i).re +\n      virtualDivergence c n x i + u.errors.base n x i"
           }
         }
       }

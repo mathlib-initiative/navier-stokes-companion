@@ -16,7 +16,7 @@
           },
           "snippet": {
             "line": 151,
-            "text": "theorem exists_smooth_same_branch (hsmall : D.Small 0) :\n    ∃ c : ℝ → E, ∃ hc : ContDiffOn ℝ ∞ c I,\n      ‖ofContDiffOn c (hc.of_le ("
+            "text": "theorem exists_smooth_same_branch (hsmall : D.Small 0) :\n    ∃ c : ℝ → E, ∃ hc : ContDiffOn ℝ ∞ c I,\n      ‖ofContDiffOn c (hc.of_le (by simp : (0 : ℕ∞ω) ≤ ∞))‖ ≤\n        2 * D.inverseNorm 0 * D.debtNorm 0 ∧\n      (∀ x ∈ I, D.B x (c x) + D.A x (c x) (c x) = D.d x) ∧\n      (∀ k : ℕ, D.Small k →\n        ‖ofContDiffOn c (hc.of_le (by simp : (k : ℕ∞ω) ≤ ∞))‖ ≤\n          2 * D.inverseNorm k * D.debtNorm k) ∧\n      (∀ e : ℝ → E, ∀ he : ContinuousOn e I,\n        ‖ofContDiffOn e (contDiffOn_zero.mpr he)‖ ≤ 2 * D.inverseNorm 0 * D.debtNorm 0 →\n        (∀ x ∈ I, D.B x (e x) + D.A x (e x) (e x) = D.d x) → EqOn e c I) ∧\n      Tendsto (fun n : ℕ =>\n        (MomentRepair.correctionIteration (D.matrix 0) (fun f => D.bilinearMap 0 f f) (D.debt 0))^[n] 0)\n        atTop (𝓝 (ofContDiffOn c (hc.of_le (by simp : (0 : ℕ∞ω) ≤ ∞))))"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 213,
-            "text": "noncomputable def cylindricalCurl {D : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D]\n    (R : D → ℝ) (Vr Vθ Vz : D → D) (a : D → ComplexVector) (x : D) : ComplexVector"
+            "text": "noncomputable def cylindricalCurl {D : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D]\n    (R : D → ℝ) (Vr Vθ Vz : D → D) (a : D → ComplexVector) (x : D) : ComplexVector :=\n  ![(R x)⁻¹ • HarmonicCalculus.along Vθ (fun y => a y 2) x -\n      HarmonicCalculus.along Vz (fun y => a y 1) x,\n    HarmonicCalculus.along Vz (fun y => a y 0) x -\n      HarmonicCalculus.along Vr (fun y => a y 2) x,\n    HarmonicCalculus.along Vr (fun y => a y 1) x + (R x)⁻¹ • a x 1 -\n      (R x)⁻¹ • HarmonicCalculus.along Vθ (fun y => a y 0) x]"
           }
         }
       }

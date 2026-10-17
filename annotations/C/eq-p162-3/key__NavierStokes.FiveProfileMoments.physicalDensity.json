@@ -17,7 +17,7 @@
           "relation": "defines",
           "snippet": {
             "line": 476,
-            "text": "noncomputable def physicalDensity (P : Patch) (b A G : ℝ) (c : Coeff) (x : ℝ) : Debt"
+            "text": "noncomputable def physicalDensity (P : Patch) (b A G : ℝ) (c : Coeff) (x : ℝ) : Debt :=\n  ![physicalU P A G c x - G,\n    Real.sqrt (2 * x) * (physicalE P b A c x - A * x ^ b),\n    physicalU P A G c x * Real.sqrt (2 * x) * physicalE P b A c x - G * Real.sqrt (2 * x) * (A * x ^ b),\n    (physicalU P A G c x ^ 2 - physicalE P b A c x ^ 2 / 2) - (G ^ 2 - (A * x ^ b) ^ 2 / 2),\n    (physicalE P b A c x ^ 2 - (A * x ^ b) ^ 2) / (2 * x)]"
           }
         }
       }

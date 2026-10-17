@@ -16,7 +16,7 @@
           },
           "snippet": {
             "line": 298,
-            "text": "def angularRemainder (d : ParameterData) (t : ℝ)\n    (Φ u B : ℝ × ℝ → ℝ) (p : ℝ × ℝ) : ℝ"
+            "text": "def angularRemainder (d : ParameterData) (t : ℝ)\n    (Φ u B : ℝ × ℝ → ℝ) (p : ℝ × ℝ) : ℝ :=\n  d.inverseL p.2 *\n    ((reconstructedW d t B p + d.h * (1 - 2 * p.2 * reconstructedU d t u p) +\n        d.d p.2 * u p * d.kappa p.2) * Φ p +\n      reconstructedW d t B p * (p.1 * partialY Φ p) +\n      reconstructedH d t u p * partialEta Φ p)"
           }
         }
       }

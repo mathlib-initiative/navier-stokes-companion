@@ -19,7 +19,7 @@
           "relation": "contains",
           "snippet": {
             "line": 182,
-            "text": "def normalized_global_solution {ν : ℝ} (hν : 0 < ν) {f : VelocityField}\n    (h : ProblemStatement.GlobalFiniteEnergySolution ν (scaledVelocity ν f)) :\n    ProblemStatement.GlobalFiniteEnergySolution 1 f"
+            "text": "def normalized_global_solution {ν : ℝ} (hν : 0 < ν) {f : VelocityField}\n    (h : ProblemStatement.GlobalFiniteEnergySolution ν (scaledVelocity ν f)) :\n    ProblemStatement.GlobalFiniteEnergySolution 1 f := by\n  have hs : Real.sqrt ν ≠ 0 := (Real.sqrt_pos.mpr hν).ne'\n  have hcoef : (Real.sqrt ν)⁻¹ ^ 2 * ν = 1 := by\n    calc\n      (Real.sqrt ν)⁻¹ ^ 2 * ν = (Real.sqrt ν)⁻¹ ^ 2 * (Real.sqrt ν) ^ 2 :=\n        congrArg ((Real.sqrt ν)⁻¹ ^ 2 * ·) (Real.sq_sqrt hν.le).symm\n      _ = 1 := by field_simp\n  have hforce : rescale (Real.sqrt ν)⁻¹ ((Real.sqrt ν)⁻¹)⁻¹ (scaledVelocity ν f) = f := by\n    funext z\n    simp [scaledVelocity, rescale, smul_smul, hs]\n  simpa only [hcoef, hforce] using\n    rescale_global_solution h (Real.sqrt ν)⁻¹ (inv_ne_zero hs)"
           }
         }
       }

@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 532,
-            "text": "noncomputable def temporalPotential (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) (n : ℕ) : PressureStream.Lift S → ℝ"
+            "text": "noncomputable def temporalPotential (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) (n : ℕ) : PressureStream.Lift S → ℝ :=\n  streamPotential g.radial.exponent g.radial.inner g.radial.outer (g.radial.frequency n)\n    (g.length n) g.radial.radialDirection (MeanChartCompatibility.temporalAtIndex h n (index n) (u.axialResidual c n))"
           }
         }
       }

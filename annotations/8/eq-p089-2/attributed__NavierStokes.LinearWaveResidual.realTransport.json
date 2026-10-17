@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 429,
-            "text": "noncomputable def realTransport (R : E → ℝ) (Vr Vθ Vz : E → E)\n    (u v : E → Fin 3 → ℝ) (x : E) : Fin 3 → ℝ"
+            "text": "noncomputable def realTransport (R : E → ℝ) (Vr Vθ Vz : E → E)\n    (u v : E → Fin 3 → ℝ) (x : E) : Fin 3 → ℝ := fun i =>\n  u x 0 * along Vr (fun y => v y i) x +\n    (u x 1 / R x) * (along Vθ (fun y => v y i) x + realAngularGenerator (v x) i) +\n    u x 2 * along Vz (fun y => v y i) x"
           }
         }
       }

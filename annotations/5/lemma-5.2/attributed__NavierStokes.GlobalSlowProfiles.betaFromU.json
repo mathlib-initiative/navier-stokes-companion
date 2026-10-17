@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 217,
-            "text": "noncomputable def betaFromU {S : Set ℝ} {h : ℝ} (d : Domain S h)\n    (lam : ℝ) (u : EvenProfile S) : EvenProfile S"
+            "text": "noncomputable def betaFromU {S : Set ℝ} {h : ℝ} (d : Domain S h)\n    (lam : ℝ) (u : EvenProfile S) : EvenProfile S :=\n  (constant S 2 * parameter S * u -\n    constant S (2 * (PositiveAxisSystem.dScale h + lam)) * parameter S * massAverage d.isOpen u -\n    (1 - parameter S ^ 2) * massAverage d.isOpen (etaDerivative d.isOpen u)) *\n      inverseDenominator d"
           }
         }
       }

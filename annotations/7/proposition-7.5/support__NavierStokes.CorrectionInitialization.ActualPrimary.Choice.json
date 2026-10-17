@@ -24,7 +24,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 3907,
-            "text": "structure Choice (B N0 : ℕ)"
+            "text": "structure Choice (B N0 : ℕ) where\n  prepared : PrimaryGeometryAssembly.Prepared certificate modulation upper B slots.radius N0\n  detGap : ℝ\n  entryBound : ℝ\n  inverseLower : ℝ\n  detGap_pos : 0 < detGap\n  entryBound_ge_one : 1 ≤ entryBound\n  inverseLower_pos : 0 < inverseLower\n  covariance : ∀ (L : PrimaryGeometryAssembly.Index nominal prepared.N) (p : PhaseCalculus.Slow),\n    p ∈ PositiveRepresentatives.positivePart (PrimaryGeometryAssembly.referenceSet nominal) →\n    p ∈ (PrimaryGeometryAssembly.domain nominal prepared.N).carrier L →\n    PrimaryCovarianceBounds.ZeroOrderBounds (Real.sqrt (ChartScales.S (BaseChartJets.cellBand L)))\n      detGap entryBound inverseLower (PrimaryTargetBounds.movingWeight nominal p)\n      (PrimaryTargetBounds.preparedCovariance certificate modulation prepared radialVector temporalVector L p)\n      (fun j => PrimaryTargetBounds.actualTarget modulation p j)"
           }
         }
       }

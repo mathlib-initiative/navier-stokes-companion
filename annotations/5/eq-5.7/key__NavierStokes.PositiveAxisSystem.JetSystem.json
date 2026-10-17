@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 156,
-            "text": "def JetSystem (h lam C r eta : K) (b : BaseJet K) (s : SourceJet K)\n    (phi u k p : Jet K) (q₄ q₅ : K) : Prop"
+            "text": "def JetSystem (h lam C r eta : K) (b : BaseJet K) (s : SourceJet K)\n    (phi u k p : Jet K) (q₄ q₅ : K) : Prop :=\n  (fun i => radialJetVector r phi u k p i + diagonal i / r * jetVector r phi u k p i) =\n    matrixRHS h lam C r eta b s (jetVector r phi u k p) (parameterJetVector phi u k p q₄ q₅)"
           }
         }
       }

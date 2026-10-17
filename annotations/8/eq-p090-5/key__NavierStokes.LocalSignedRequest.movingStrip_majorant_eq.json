@@ -18,7 +18,7 @@
           "relation": "states",
           "snippet": {
             "line": 200,
-            "text": "theorem movingStrip_majorant_eq {coord : ℝ} (U : SlowRegion coord)\n    (a b cL cR : ℝ) (ha : 0 < a) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n)\n    (α C : ℝ) (k n : ℕ) (x : Point)\n    (hx : (profileMap coord x).1 ∈ Ioo a b) :\n    let s"
+            "text": "theorem movingStrip_majorant_eq {coord : ℝ} (U : SlowRegion coord)\n    (a b cL cR : ℝ) (ha : 0 < a) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n)\n    (α C : ℝ) (k n : ℕ) (x : Point)\n    (hx : (profileMap coord x).1 ∈ Ioo a b) :\n    let s := movingStripData U a b cL cR ha hcL hcR ε L hε hεone hL\n    majorant s (fun _ x => s.zeta x) α C k n x =\n      (C * ε n ^ α * L n ^ k) * logWeight cL cR a b k\n        (x.1 / Real.sqrt (MeanRankUpdate.chartQ coord x))"
           }
         }
       }

@@ -22,7 +22,7 @@
           },
           "snippet": {
             "line": 51,
-            "text": "theorem Properties.exterior_radial_form\n    (hp : Properties h qstar Xa Xext C A D u p) {w : SpaceTime}\n    (ht : w.1 < 1) (hq : PhysicalWaveSum.physicalQ h w < qstar)\n    (hX : Xext ≤ AxisymmetricFields.radialEnergy w.2 / PhysicalWaveSum.physicalQ h w) :\n    let r"
+            "text": "theorem Properties.exterior_radial_form\n    (hp : Properties h qstar Xa Xext C A D u p) {w : SpaceTime}\n    (ht : w.1 < 1) (hq : PhysicalWaveSum.physicalQ h w < qstar)\n    (hX : Xext ≤ AxisymmetricFields.radialEnergy w.2 / PhysicalWaveSum.physicalQ h w) :\n    let r := Real.sqrt (2 * AxisymmetricFields.radialEnergy w.2)\n    0 < r ∧\n      D w = (LocalHeatFormula.amplitude C h (1 - w.1) r / r) • BaseResidual.angularVector w ∧\n      p w = -(∫ ρ in Ioi r, LocalHeatFormula.amplitude C h (1 - w.1) ρ ^ 2 / ρ) ∧\n      IntegrableOn (fun ρ => LocalHeatFormula.amplitude C h (1 - w.1) ρ ^ 2 / ρ) (Ioi r)"
           }
         }
       }

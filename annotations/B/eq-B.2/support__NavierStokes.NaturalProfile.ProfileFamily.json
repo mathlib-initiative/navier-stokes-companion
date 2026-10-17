@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 559,
-            "text": "structure ProfileFamily {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (Λ C : ℝ)"
+            "text": "structure ProfileFamily {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (Λ C : ℝ) where\n  phi : ℝ × ℝ → ℝ\n  u : ℝ × ℝ → ℝ\n  average : ℝ × ℝ → ℝ\n  pressure : ℝ × ℝ → ℝ\n  natural : IsNaturalSolution h j Λ P0 (realAmplitude h j σ Λ C)\n    (angularProfile (realAmplitude h j σ Λ C) Λ phi)\n    (affineProfile (NaturalAxisData.U j) (1 / Λ) Λ u)\n    (affineProfile (NaturalAxisData.U j) (1 / Λ) Λ average)\n    (affineProfile P0 (1 / Λ) Λ pressure)\n  mixed_error : UniformMixedError window d.coefficients.epsilon\n    (profileErrorConstant d / (2 * Λ)) phi u\n    (AxisEvaluation.profile window d.coefficients.epsilon\n      (referenceCoefficients window d.coefficients.epsilon_pos\n        (d.coefficients.elements .chi) d.coefficients.axisData).1)\n    (AxisEvaluation.profile window d.coefficients.epsilon\n      (referenceCoefficients window d.coefficients.epsilon_pos\n        (d.coefficients.elements .chi) d.coefficients.axisData).2)\n  positive : ∀ p ∈ domain Λ, 0 ≤ Λ * p.1 → Λ * p.1 ≤ 41 / 10 →\n    0 < angularProfile (realAmplitude h j σ Λ C) Λ phi p\n  slope : ∀ η ∈ Ioo window.left window.right, 99 / 100 ≤ NaturalAxisData.chi h j σ η →\n    23 / 10 <\n      -2 * (4 / Λ) * partialY (angularProfile (realAmplitude h j σ Λ C) Λ phi) (4 / Λ, η) /\n        angularProfile (realAmplitude h j σ Λ C) Λ phi (4 / Λ, η)"
           }
         }
       }

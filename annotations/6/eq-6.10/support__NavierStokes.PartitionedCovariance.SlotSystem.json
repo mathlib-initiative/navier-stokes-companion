@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 224,
-            "text": "structure SlotSystem (D h : ℝ) (vr vt : Plane)"
+            "text": "structure SlotSystem (D h : ℝ) (vr vt : Plane) where\n  radius : ℝ\n  radius_pos : 0 < radius\n  injective : ∀ L, InjOn TorusAverages.quotientPoint (slotSet h radius vr vt L)\n  disjoint : ∀ L M, SlotColoring.Adj D L M →\n    Disjoint\n      (SlotGeometry.liftedSupport (SlotColoring.nativeIndex h L.1) (slotSet h radius vr vt L))\n      (SlotGeometry.liftedSupport (SlotColoring.nativeIndex h M.1) (slotSet h radius vr vt M))"
           }
         }
       }

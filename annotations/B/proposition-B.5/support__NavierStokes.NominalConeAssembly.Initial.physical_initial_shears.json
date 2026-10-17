@@ -20,7 +20,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 1097,
-            "text": "theorem physical_initial_shears {h j σ Λ C : ℝ} {P0 : ℝ → ℝ} {d : AnalyticInputs h j σ P0}\n    (E : NaturalEntrance.EntranceProfile d Λ C) {hΛ : 0 < Λ}\n    {hsmall : NaturalAxisData.SmallParameters h j} {hP0 : ContDiff ℝ ∞ P0}\n    (r : ActivationContinuation.RampParameters E.profile.family hΛ hsmall hP0)\n    {y η : ℝ} (hy : y ≤ r.refTime) (hη : η ∈ ReferencePath.parameterInterval) :\n    let N"
+            "text": "theorem physical_initial_shears {h j σ Λ C : ℝ} {P0 : ℝ → ℝ} {d : AnalyticInputs h j σ P0}\n    (E : NaturalEntrance.EntranceProfile d Λ C) {hΛ : 0 < Λ}\n    {hsmall : NaturalAxisData.SmallParameters h j} {hP0 : ContDiff ℝ ∞ P0}\n    (r : ActivationContinuation.RampParameters E.profile.family hΛ hsmall hP0)\n    {y η : ℝ} (hy : y ≤ r.refTime) (hη : η ∈ ReferencePath.parameterInterval) :\n    let N := ReferencePath.Input.ofNatural hΛ E.profile.family\n    let L := StressActivation.FromReference.refLog N r.refTime\n    let U := StressActivation.FromReference.refAxial N r.refTime\n    let z : Point := (radius N.endpoint y, η)\n    ActivationContinuation.shearA r.profiles z = actualP1 r.actTime r.kappa L (y, η) ∧\n      ActivationContinuation.shearB r.profiles z = actualP2 r.actTime r.kappa N.endpoint L U (y, η)"
           }
         }
       }

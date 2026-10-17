@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 874,
-            "text": "structure SignedFamily (s : StripData D) (P : ι → ℕ → D → ℝ) (α δ β η : ℝ)"
+            "text": "structure SignedFamily (s : StripData D) (P : ι → ℕ → D → ℝ) (α δ β η : ℝ) where\n  primary : ι → HarmonicBlock D\n  old : ι → HarmonicBlock D\n  tangent : ι → HarmonicBlock D\n  curl : ι → HarmonicBlock D\n  bandwidth : ℕ\n  primary_band : ∀ l, (primary l).BandLimited bandwidth\n  old_band : ∀ l, (old l).BandLimited bandwidth\n  tangent_band : ∀ l, (tangent l).BandLimited bandwidth\n  curl_band : ∀ l, (curl l).BandLimited bandwidth\n  primary_carrier : ∀ l, SameCarrier (old l) (primary l)\n  tangent_carrier : ∀ l, SameCarrier (old l) (tangent l)\n  curl_carrier : ∀ l, SameCarrier (old l) (curl l)\n  old_bounds : ∀ i j, UniformWaveClass s P α (fun l n x => (old l).velocity n i j x)\n  difference_bounds : ∀ i j, UniformWaveClass s P δ\n    (fun l n x => (old l).velocity n i j x - (primary l).velocity n i j x)\n  tangent_bounds : ∀ i j, UniformWaveClass s P β (fun l n x => (tangent l).velocity n i j x)\n  curl_bounds : ∀ i j, UniformWaveClass s P η (fun l n x => (curl l).velocity n i j x)\n  envelope_nonneg : ∀ l n x, x ∈ s.domain → 0 ≤ P l n x\n  envelope_le_one : ∀ l n x, x ∈ s.domain → P l n x ≤ 1\n  angular_ne_zero : ∀ l n, (old l).angularFrequency n ≠ 0"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 26,
-            "text": "structure CandidateProperties (ν : ℝ) (u : VelocityField) (p : PressureField)\n    (f : VelocityField) (K : Set Space) : Prop"
+            "text": "structure CandidateProperties (ν : ℝ) (u : VelocityField) (p : PressureField)\n    (f : VelocityField) (K : Set Space) : Prop where\n  velocity_smooth : ContDiffOn ℝ ∞ u preSingularDomain\n  pressure_smooth : ContDiffOn ℝ ∞ p preSingularDomain\n  force_smooth : ContDiff ℝ ∞ f\n  velocity_periodic : UnitSpatialPeriodsOn (Ico 0 1) u\n  pressure_periodic : UnitSpatialPeriodsOn (Ico 0 1) p\n  force_periodic : UnitSpatialPeriodsOn (Ici 0) f\n  support_compact : IsCompact K\n  support_interior : K ⊆ fundamentalInterior\n  velocity_support : ∀ t ∈ Ico (0 : ℝ) 1,\n    tsupport (fun x : Space => u (t, x)) ∩ fundamentalCube ⊆ K\n  pressure_support : ∀ t ∈ Ico (0 : ℝ) 1,\n    tsupport (fun x : Space => p (t, x)) ∩ fundamentalCube ⊆ K\n  zero_initial_velocity : ∀ x : Space, u (0, x) = 0\n  force_time_support : CompactFutureTimeSupport f\n  force_zero_nonpos : ∀ t ≤ (0 : ℝ), ∀ x : Space, f (t, x) = 0\n  divergence_free : ∀ t ∈ Ico (0 : ℝ) 1, ∀ x : Space,\n    spatialDivergence u t x = 0\n  navier_stokes : ∀ t ∈ Ioo (0 : ℝ) 1, ∀ x : Space,\n    NavierStokesR3.ProblemStatement.navierStokesResidual ν u p t x = f (t, x)\n  speed_unbounded : SpeedUnboundedAtOne u"
           }
         }
       }

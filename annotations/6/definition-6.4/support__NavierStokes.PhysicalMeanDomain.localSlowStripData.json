@@ -44,7 +44,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 1042,
-            "text": "noncomputable def localSlowStripData (U : Set S) (hU : IsOpen U)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n) :\n    StripData S"
+            "text": "noncomputable def localSlowStripData (U : Set S) (hU : IsOpen U)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n) :\n    StripData S :=\n  { MeanMomentBounds.slowStripData ε L hε hεone hL with\n    domain := U, isOpen_domain := hU\n    delta_pos := fun _ _ => zero_lt_one\n    zeta_smooth := contDiffOn_const\n    zeta_nonneg := fun _ _ => zero_le_one }"
           }
         }
       }

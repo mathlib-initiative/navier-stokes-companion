@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 71,
-            "text": "noncomputable def baseDerivativeRemainder (R b F G : E → ℝ) (Vr Vz : E → E)\n    (a : E → ComplexVector) (x : E) : ComplexVector"
+            "text": "noncomputable def baseDerivativeRemainder (R b F G : E → ℝ) (Vr Vz : E → E)\n    (a : E → ComplexVector) (x : E) : ComplexVector := fun i =>\n  (![a x 0 * Complex.ofReal (along Vr b x), (b x : ℂ) / (R x : ℂ) * a x 1, 0] i) +\n    a x 2 * Complex.ofReal (along Vz (fun y => base R b F G y i) x)"
           }
         }
       }

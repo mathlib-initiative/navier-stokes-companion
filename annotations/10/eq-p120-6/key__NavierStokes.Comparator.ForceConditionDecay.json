@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 159,
-            "text": "structure ForceConditionDecay (f : ℝ^n → ℝ → ℝ^n) : Prop extends ForceCondition f"
+            "text": "structure ForceConditionDecay (f : ℝ^n → ℝ → ℝ^n) : Prop extends ForceCondition f where\n  /-- All derivatives of f decay faster than any polynomial in space and time (condition 5).\n  For any derivative order $m$ and any decay rate $K$, there exists $C$ such that\n  $\\lVert \\partial^m_{x,t} f(x,t) \\rVert \\le C/(1+\\lVert x \\rVert+t)^K$ for\n  $t \\ge 0$. -/\n  decay : ∀ m : ℕ, ∀ K : ℝ, ∃ C : ℝ, ∀ x, ∀ t ≥ 0,\n    ‖iteratedFDerivWithin ℝ m (↿f) (Set.univ ×ˢ Set.Ici 0) (x, t)‖ ≤ C / (1 + ‖x‖ + t) ^ K"
           }
         }
       }

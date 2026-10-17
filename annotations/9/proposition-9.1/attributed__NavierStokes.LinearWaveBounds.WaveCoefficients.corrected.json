@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 258,
-            "text": "noncomputable def corrected (a : WaveCoefficients D) (s : StripData D)\n    (d : GraphDirections D) (ψ : ℕ → D → ℝ) : WaveCoefficients D"
+            "text": "noncomputable def corrected (a : WaveCoefficients D) (s : StripData D)\n    (d : GraphDirections D) (ψ : ℕ → D → ℝ) : WaveCoefficients D :=\n  (a.withCutoff ψ).addAmplitude ((a.withCutoff ψ).curlCorrection s d)"
           }
         }
       }

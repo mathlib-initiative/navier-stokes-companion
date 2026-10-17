@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 622,
-            "text": "noncomputable def sourceField {N : ℕ}\n    (A : (U : UnsignedLabel) → SourcePair Q sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (T : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position)\n    (Y : Plane) (θ : ℝ) : Vector"
+            "text": "noncomputable def sourceField {N : ℕ}\n    (A : (U : UnsignedLabel) → SourcePair Q sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (T : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position)\n    (Y : Plane) (θ : ℝ) : Vector :=\n  ∑ᶠ a : SignedIndex,\n    (A a.1).actualVelocity hdet (outer a.1) (ε a.1) (T a.1) q x a.2 Y θ"
           }
         }
       }

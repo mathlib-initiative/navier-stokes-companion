@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 105,
-            "text": "noncomputable def principal (ε κ : ℝ) (R F G : E → ℝ) (Vr Vθ Vz Vf : E → E)\n    (Φ : E → ℝ) (a : E → ComplexVector) (p : E → ℂ) (x : E) : ComplexVector"
+            "text": "noncomputable def principal (ε κ : ℝ) (R F G : E → ℝ) (Vr Vθ Vz Vf : E → E)\n    (Φ : E → ℝ) (a : E → ComplexVector) (p : E → ℂ) (x : E) : ComplexVector := fun i =>\n  along Vf (fun y => a y i) x + shear R F G Vr a x i +\n    Complex.ofReal (ε * κ ^ 2 * ‖phaseNormal R Vr Vθ Vz Φ x‖ ^ 2) * a x i +\n    phaseFactor κ * Complex.ofReal (phaseNormal R Vr Vθ Vz Φ x i) * p x"
           }
         }
       }

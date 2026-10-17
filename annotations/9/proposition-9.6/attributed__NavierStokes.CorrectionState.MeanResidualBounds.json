@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 216,
-            "text": "structure MeanResidualBounds (s : StripData D) (σ : ℝ) (c : Context D)\n    (u : State D) : Prop"
+            "text": "structure MeanResidualBounds (s : StripData D) (σ : ℝ) (c : Context D)\n    (u : State D) : Prop where\n  angular : MeanClass s (1 + σ) (fun n x => u.meanGoodResidual c n x 1)\n  axial : MeanClass s (1 + σ) (fun n x => u.meanGoodResidual c n x 2)"
           }
         }
       }

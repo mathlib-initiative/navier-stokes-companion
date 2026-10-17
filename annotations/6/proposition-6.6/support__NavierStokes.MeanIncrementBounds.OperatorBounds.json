@@ -24,7 +24,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 200,
-            "text": "structure OperatorBounds (s : StripData D) (o : Operators D) (κ : ℝ) : Prop"
+            "text": "structure OperatorBounds (s : StripData D) (o : Operators D) (κ : ℝ) : Prop where\n  epsilon_eq : o.epsilon = s.epsilon\n  radialProfile : UnweightedClass s 0 (fun _ => o.radialProfile)\n  invRadius : UnweightedClass s 0 o.invRadius\n  radialFrequency : BandBound s (-κ) o.radialFrequency\n  fastCoefficient : BandBound s 0 o.fastCoefficient\n  kappa_nonneg : 0 ≤ κ\n  weight_le_one : ∀ x ∈ s.domain, s.zeta x ≤ 1"
           }
         }
       }

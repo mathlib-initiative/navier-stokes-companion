@@ -46,7 +46,7 @@
           },
           "snippet": {
             "line": 404,
-            "text": "theorem meanClass_pressureMass\n    {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1)\n    (hS : ∀ n, 1 ≤ S n) {α : ℝ} {f : ℕ → PressureStream.Lift P → ℝ}\n    (hf : ∀ n, ContDiff ℝ ∞ (f n))\n    (hs : ∀ n, RadialAlias.RadiallySupported a b (f n))\n    (hclass : MeanClass (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α f) :\n    UnweightedClass (slowStripData (D"
+            "text": "theorem meanClass_pressureMass\n    {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1)\n    (hS : ∀ n, 1 ≤ S n) {α : ℝ} {f : ℕ → PressureStream.Lift P → ℝ}\n    (hf : ∀ n, ContDiff ℝ ∞ (f n))\n    (hs : ∀ n, RadialAlias.RadiallySupported a b (f n))\n    (hclass : MeanClass (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α f) :\n    UnweightedClass (slowStripData (D := P) ε S hε hεone hS) α\n      (fun n => PressureStream.pressureMass (f n))"
           }
         }
       }

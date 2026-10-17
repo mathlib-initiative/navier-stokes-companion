@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 1766,
-            "text": "noncomputable def Controls.ofContinuation {F : Profile} (A : AxisStage F) {N : ℕ} {eps : ℝ}\n    (w : ActivationContinuation.ContinuationWitness A.natural A.scale_pos A.small\n      F.axisDatum_contDiff N eps) (T : ℝ) (hT : 0 < T) : Controls A"
+            "text": "noncomputable def Controls.ofContinuation {F : Profile} (A : AxisStage F) {N : ℕ} {eps : ℝ}\n    (w : ActivationContinuation.ContinuationWitness A.natural A.scale_pos A.small\n      F.axisDatum_contDiff N eps) (T : ℝ) (hT : 0 < T) : Controls A where\n  referenceWidth := w.parameters.refTime\n  referenceWidth_pos := w.parameters.refTime_pos\n  referenceWidth_small := w.parameters.refTime_bound\n  activationTime := w.parameters.actTime\n  activationTime_pos := w.parameters.actTime_pos\n  activationTime_le := w.parameters.actTime_le\n  kappa := w.parameters.kappa\n  kappa_pos := w.parameters.kappa_pos\n  kappa_le_one := w.parameters.kappa_lt_one.le\n  axialWidth := w.parameters.widthU\n  axialWidth_pos := w.parameters.widthU_pos\n  angularWidth := w.parameters.widthA\n  angularWidth_pos := w.parameters.widthA_pos\n  before_big := w.parameters.before_big\n  finish := w.parameters.finish_before.le\n  shapeTime := T\n  shapeTime_pos := hT"
           }
         }
       }

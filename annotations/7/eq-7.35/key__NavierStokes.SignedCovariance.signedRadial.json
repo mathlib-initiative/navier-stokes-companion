@@ -17,7 +17,7 @@
           },
           "snippet": {
             "line": 300,
-            "text": "noncomputable def signedRadial {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt} {N : ℕ}\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (T R : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position) : Plane → ℝ → ℝ"
+            "text": "noncomputable def signedRadial {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt} {N : ℕ}\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (T R : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position) : Plane → ℝ → ℝ :=\n  assembledRadialWith P hdet outer ε (fun U => increment (P U).matrix (T U) (R U)) q x"
           }
         }
       }

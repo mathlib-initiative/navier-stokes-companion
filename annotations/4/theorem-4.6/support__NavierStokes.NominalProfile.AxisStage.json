@@ -59,7 +59,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 62,
-            "text": "structure AxisStage (F : Profile)"
+            "text": "structure AxisStage (F : Profile) where\n  j : ℝ\n  small : NaturalAxisData.SmallParameters F.data.h j\n  preparation : AxisPreparation F j\n  scale : ℝ\n  normalization : ℝ\n  scale_large : preparation.scaleBound ≤ scale\n  normalization_large :\n    NaturalEntrance.entranceNormalization preparation.inputs scale preparation.delta ≤ normalization\n  chosenNatural : NaturalEntrance.EntranceProfile preparation.inputs scale normalization"
           }
         }
       }

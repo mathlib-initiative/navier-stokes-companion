@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 339,
-            "text": "def smoothExtension (T : ℝ) (f : SpaceTime → V) (hf : ContDiffOn ℝ ∞ f (past T)) :\n    SpaceTime → V"
+            "text": "def smoothExtension (T : ℝ) (f : SpaceTime → V) (hf : ContDiffOn ℝ ∞ f (past T)) :\n    SpaceTime → V :=\n  glue T f (SpatialBorelExtension.rightExtension (normalTrace T f)\n    (normalTrace_contDiff hf) T)"
           }
         }
       }

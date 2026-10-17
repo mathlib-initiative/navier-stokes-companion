@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 167,
-            "text": "noncomputable def massAverage {S : Set ℝ} (hS : IsOpen S) (f : EvenProfile S) :\n    EvenProfile S"
+            "text": "noncomputable def massAverage {S : Set ℝ} (hS : IsOpen S) (f : EvenProfile S) :\n    EvenProfile S := by\n  refine ⟨fun w => 2 * ∫ t in (0 : ℝ)..1, t * f (t * w.1, w.2), ⟨?_, ?_⟩⟩\n  · let G : (ℝ × ℝ) × ℝ → ℝ := fun w => w.2 * f (w.2 * w.1.1, w.1.2)\n    have hg : ContDiffOn ℝ ∞ G (region S ×ˢ univ) :=\n      contDiffOn_snd.mul (f.smooth.comp\n        ((contDiffOn_snd.mul contDiffOn_fst.fst).prodMk contDiffOn_fst.snd)\n        (fun w hw => ⟨mem_univ _, hw.1.2⟩))\n    exact contDiffOn_const.mul\n      (ParametricRephase.intervalIntegral_contDiffOn_of_joint G (region S)\n        (isOpen_univ.prod hS) hg 0 1 zero_le_one)\n  · intro eta heta R\n    congr 1\n    apply intervalIntegral.integral_congr\n    intro t _\n    change t * f (t * -R, eta) = t * f (t * R, eta)\n    rw [mul_neg, f.even heta]"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 721,
-            "text": "structure FluxInputs (a b : ℝ) (u R Z T : ScalarField (Lift S)) : Prop"
+            "text": "structure FluxInputs (a b : ℝ) (u R Z T : ScalarField (Lift S)) : Prop where\n  velocity : DefectIncrementBounds.Shell a b u\n  radial : DefectIncrementBounds.Shell a b R\n  axial : DefectIncrementBounds.Shell a b Z\n  stress : DefectIncrementBounds.Shell a b T\n  velocity_periodic : ∀ n, PressureStream.TorusPeriodicLift (u n)\n  radial_periodic : ∀ n, PressureStream.TorusPeriodicLift (R n)\n  axial_periodic : ∀ n, PressureStream.TorusPeriodicLift (Z n)\n  stress_periodic : ∀ n, PressureStream.TorusPeriodicLift (T n)"
           }
         }
       }

@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 952,
-            "text": "structure PreparedWitness (F : OutgoingProfile.Profile) (N : ℕ) (delta radiusFloor : ℝ)"
+            "text": "structure PreparedWitness (F : OutgoingProfile.Profile) (N : ℕ) (delta radiusFloor : ℝ) where\n  axis : NominalProfile.AxisStage F\n  order : ℕ\n  order_ge : N ≤ order\n  tolerance : ℝ\n  tolerance_pos : 0 < tolerance\n  continuation : ActivationContinuation.ContinuationWitness axis.natural axis.scale_pos\n    axis.small F.axisDatum_contDiff order tolerance\n  shapeTime : ℝ\n  shapeTime_pos : 0 < shapeTime\n  rho : ℝ\n  rho_pos : 0 < rho\n  bounds : PreparedBounds\n    (NominalProfile.Controls.ofContinuation axis continuation shapeTime shapeTime_pos)\n    N rho delta radiusFloor"
           }
         }
       }

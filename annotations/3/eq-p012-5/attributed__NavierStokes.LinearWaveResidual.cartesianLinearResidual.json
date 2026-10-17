@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 511,
-            "text": "noncomputable def cartesianLinearResidual (ε : ℝ) (B a : VelocityField) (p : PressureField)\n    (t : ℝ) (x : Space) : Space"
+            "text": "noncomputable def cartesianLinearResidual (ε : ℝ) (B a : VelocityField) (p : PressureField)\n    (t : ℝ) (x : Space) : Space :=\n  temporalDerivative a t x + spatialDerivative a t x (B (t, x)) +\n    spatialDerivative B t x (a (t, x)) + pressureGradient p t x -\n    ε • spatialLaplacian a t x"
           }
         }
       }

@@ -16,7 +16,7 @@
           },
           "snippet": {
             "line": 949,
-            "text": "noncomputable def commonTemporalFields (r : ℕ → CorrectionState.ReconstructionData)\n    (h : ℝ) (index : ℕ → ℕ) (epsilon : ℕ → ℝ) (axial : S × Plane)\n    (fθ fz : ℕ → PressureStream.Lift S → ℝ) : MeanIncrementBounds.Triple (PressureStream.Lift S)"
+            "text": "noncomputable def commonTemporalFields (r : ℕ → CorrectionState.ReconstructionData)\n    (h : ℝ) (index : ℕ → ℕ) (epsilon : ℕ → ℝ) (axial : S × Plane)\n    (fθ fz : ℕ → PressureStream.Lift S → ℝ) : MeanIncrementBounds.Triple (PressureStream.Lift S) where\n  radial := fun n => PressureStream.streamBeta (epsilon n • axial)\n    (commonTemporalPotential r h index fz n)\n  angular := fun n => temporalAtIndex h n (index n) (fθ n)\n  axial := fun n => PressureStream.streamGamma\n    (PressureStream.physicalSpeed (r n).exponent ((r n).frequency n))\n    ((0 : S), (r n).radialDirection) (commonTemporalPotential r h index fz n)"
           }
         }
       }

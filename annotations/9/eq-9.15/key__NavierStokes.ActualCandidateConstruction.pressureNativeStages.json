@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 396,
-            "text": "noncomputable def pressureNativeStages (B N0 : ℕ) : ℕ → ActualMeanPhysicalData.Scalar"
+            "text": "noncomputable def pressureNativeStages (B N0 : ℕ) : ℕ → ActualMeanPhysicalData.Scalar :=\n  fun k => Nat.casesOn k (cycle B N0 0).state.pressure\n    (fun j => (cycle B N0 (j + 1)).state.pressure - (cycle B N0 j).state.pressure)"
           }
         }
       }

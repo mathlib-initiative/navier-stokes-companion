@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 125,
-            "text": "structure GlobalFiniteEnergySolution (ν : ℝ) (f : VelocityField)"
+            "text": "structure GlobalFiniteEnergySolution (ν : ℝ) (f : VelocityField) where\n  velocity : VelocityField\n  pressure : PressureField\n  velocity_smooth : ContDiffOn ℝ ∞ velocity futureDomain\n  pressure_smooth : ContDiffOn ℝ ∞ pressure futureDomain\n  zero_initial_velocity : ∀ x : Space, velocity (0, x) = 0\n  divergence_free : ∀ t ∈ Ici (0 : ℝ), ∀ x : Space,\n    NavierStokes.ProblemStatement.spatialDivergence velocity t x = 0\n  navier_stokes : ∀ t ∈ Ioi (0 : ℝ), ∀ x : Space,\n    navierStokesResidual ν velocity pressure t x = f (t, x)\n  energy_bounded : UniformFiniteEnergy (Ici 0) velocity"
           }
         }
       }

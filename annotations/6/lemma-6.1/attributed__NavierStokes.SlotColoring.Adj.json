@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 116,
-            "text": "structure Adj (D : ℝ) (L M : Label) : Prop"
+            "text": "structure Adj (D : ℝ) (L M : Label) : Prop where\n  left_positive : 1 ≤ L.1\n  right_positive : 1 ≤ M.1\n  distinct : L ≠ M\n  left_level_le : L.1 ≤ M.1 + 4\n  right_level_le : M.1 ≤ L.1 + 4\n  overlap : (physicalBox D L ∩ physicalBox D M).Nonempty"
           }
         }
       }

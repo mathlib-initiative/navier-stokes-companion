@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 1925,
-            "text": "structure ContinuationWitness {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (E : NaturalEntrance.EntranceProfile d Λ C)\n    (hΛ : 0 < Λ) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hP0 : ContDiff ℝ ∞ P0) (N : ℕ) (ε : ℝ)"
+            "text": "structure ContinuationWitness {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (E : NaturalEntrance.EntranceProfile d Λ C)\n    (hΛ : 0 < Λ) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hP0 : ContDiff ℝ ∞ P0) (N : ℕ) (ε : ℝ) where\n  parameters : RampParameters E.profile.family hΛ hsmall hP0\n  initial_activation : InitialActivationBound parameters\n  relaxed : ∀ p : Point, p.2 ∈ Icc (-1 : ℝ) 1 →\n    p.1 ∈ Icc parameters.startRadius (110 : ℝ) → IsRelaxed parameters.profiles h p\n  final_first : ∀ X ∈ Icc parameters.holdRadius (110 : ℝ), ∀ η ∈ Icc (-1 : ℝ) 1,\n    2 < ReferenceBounds.p1 parameters.profiles h (X, η)\n  final_source : ∀ X ∈ Icc parameters.holdRadius (110 : ℝ), ∀ η ∈ Icc (-1 : ℝ) 1,\n    (5 / 4 : ℝ) < ReferenceBounds.sourceQ parameters.profiles h (X, η)\n  physical_control : parameters.reference.SmallPhysicalControl (Icc (-1 : ℝ) 1) N ε\n    parameters.actTime parameters.kappa parameters.widthU parameters.widthA\n  logarithmic_control : parameters.reference.SmallLogControl (Icc (-1 : ℝ) 1) N ε\n    parameters.actTime parameters.kappa parameters.widthU parameters.widthA"
           }
         }
       }

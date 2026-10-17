@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 40,
-            "text": "structure NativeJets (V : JetDomain ι D) (w : ι → D → ℝ) (f : ι → D → E) : Prop"
+            "text": "structure NativeJets (V : JetDomain ι D) (w : ι → D → ℝ) (f : ι → D → E) : Prop where\n  nonneg : ∀ i x, x ∈ V.carrier i → 0 ≤ w i x\n  smooth : ∀ i, ContDiffOn ℝ ∞ (f i) (V.carrier i)\n  bound : ∀ m : ℕ, ∃ C : ℝ, 1 ≤ C ∧ ∃ p : ℕ, ∀ i x, x ∈ V.carrier i → ∀ j ≤ m,\n    ‖iteratedFDeriv ℝ j (f i) x‖ ≤ C * V.growth i x ^ p * w i x"
           }
         }
       }

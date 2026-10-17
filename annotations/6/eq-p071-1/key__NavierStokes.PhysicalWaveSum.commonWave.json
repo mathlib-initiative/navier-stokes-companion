@@ -17,7 +17,7 @@
           "relation": "defines",
           "snippet": {
             "line": 166,
-            "text": "noncomputable def commonWave (a h : ℝ) (n d : ℕ) (r0 : ℝ) (c : CarrierData)\n    (amp : LiftPoint → ℂ) (j : ℤ) (w : SpaceTime) : ℂ"
+            "text": "noncomputable def commonWave (a h : ℝ) (n d : ℕ) (r0 : ℝ) (c : CarrierData)\n    (amp : LiftPoint → ℂ) (j : ℤ) (w : SpaceTime) : ℂ :=\n  amp (commonLift h n d w) *\n    PhysicalGraphBounds.character ((ChartScales.carrier h n : ℝ) * (j : ℝ))\n      (c.phase a h n r0 (PhysicalGraphBounds.physicalLift h n w))"
           }
         }
       }

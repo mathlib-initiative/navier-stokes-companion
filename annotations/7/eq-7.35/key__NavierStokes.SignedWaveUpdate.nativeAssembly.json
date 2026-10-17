@@ -17,7 +17,7 @@
           },
           "snippet": {
             "line": 1193,
-            "text": "noncomputable def nativeAssembly {D h : ℝ} {vr vt : TorusInverse.Plane}\n    {sys : SlotSystem D h vr vt} {N : ℕ}\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (a : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position) :\n    TorusInverse.Plane → ℝ → Fin 3 → ℝ"
+            "text": "noncomputable def nativeAssembly {D h : ℝ} {vr vt : TorusInverse.Plane}\n    {sys : SlotSystem D h vr vt} {N : ℕ}\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (a : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position) :\n    TorusInverse.Plane → ℝ → Fin 3 → ℝ := fun Y θ i =>\n  ∑ᶠ v : UnsignedLabel × Fin 2,\n    (nativeTangentBlock (P v.1) hdet (outer v.1) (ε v.1) (a v.1) q x v.2).oscillation 0 (Y,θ) i"
           }
         }
       }

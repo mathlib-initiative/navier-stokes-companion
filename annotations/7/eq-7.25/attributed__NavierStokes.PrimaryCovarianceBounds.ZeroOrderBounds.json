@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 337,
-            "text": "structure ZeroOrderBounds (R detGap entryBound inverseLower zeta : ℝ) (H : Mat2) (T : Vec2) : Prop"
+            "text": "structure ZeroOrderBounds (R detGap entryBound inverseLower zeta : ℝ) (H : Mat2) (T : Vec2) : Prop where\n  determinant : detGap ≤ |(PrimaryPulseBounds.normalizedMatrix R H).det|\n  entries : ∀ i j, |R * H i j| ≤ entryBound\n  weights : ∀ j, inverseLower * R * zeta ≤ SmoothCovariance.weights H T j"
           }
         }
       }

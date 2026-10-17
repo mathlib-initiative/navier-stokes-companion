@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 247,
-            "text": "structure EdgeFactor (K : Set E) (c : ℝ) (T : E × ℝ → V)"
+            "text": "structure EdgeFactor (K : Set E) (c : ℝ) (T : E × ℝ → V) where\n  coefficient : E × ℝ → V\n  order : ℕ\n  width : ℝ\n  width_pos : 0 < width\n  domain : Set (E × ℝ)\n  domain_open : IsOpen domain\n  boundary_mem : K ×ˢ ({0} : Set ℝ) ⊆ domain\n  smooth : ContDiffOn ℝ ∞ coefficient domain\n  boundary_ne_zero : ∀ p ∈ K, coefficient (p,0) ≠ 0\n  identity : ∀ p ∈ K, ∀ x : ℝ, 0 < x → x < width →\n    T (p,x) = (FlatCutoff.edge c x / x ^ order) • coefficient (p,x)"
           }
         }
       }

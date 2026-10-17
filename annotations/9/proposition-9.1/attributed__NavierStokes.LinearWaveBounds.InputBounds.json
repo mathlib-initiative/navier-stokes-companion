@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 270,
-            "text": "structure InputBounds (s : StripData D) (P : ℕ → D → ℝ) (α κ : ℝ)\n    (d : GraphDirections D) (a : WaveCoefficients D) : Prop"
+            "text": "structure InputBounds (s : StripData D) (P : ℕ → D → ℝ) (α κ : ℝ)\n    (d : GraphDirections D) (a : WaveCoefficients D) : Prop where\n  loss_nonneg : 0 ≤ κ\n  zeta_le_one : ∀ x ∈ s.domain, s.zeta x ≤ 1\n  radial_profile : UnweightedClass s 0 (fun _ => d.radialProfile)\n  radial_scale : BandBound s (-κ) d.radialScale\n  fast_scale : BandBound s 0 d.fastScale\n  frequency_scale : BandBound s (-(1 / 2 : ℝ)) a.frequency\n  radius : UnweightedClass s 0 a.radius\n  inverse_radius : UnweightedClass s 0 (fun n x => (a.radius n x)⁻¹)\n  radial_base : UnweightedClass s 1 a.radialBase\n  frequency_base : UnweightedClass s 0 a.frequencyBase\n  axial_base : UnweightedClass s 0 a.axialBase\n  radial_base_aux : ∀ n x, x ∈ s.domain → fderiv ℝ (a.radialBase n) x d.auxiliary = 0\n  frequency_base_aux : ∀ n x, x ∈ s.domain → fderiv ℝ (a.frequencyBase n) x d.auxiliary = 0\n  axial_base_aux : ∀ n x, x ∈ s.domain → fderiv ℝ (a.axialBase n) x d.auxiliary = 0\n  normal : ∀ i, UnweightedClass s 0 (fun n x => a.normal s d n x i)\n  defect : UnweightedClass s 1 (a.defect s d)\n  amplitude : ∀ i, WaveClass s P α (fun n x => a.amplitude n x i)\n  pressure : WaveClass s P (α + 1 / 2) a.pressure"
           }
         }
       }

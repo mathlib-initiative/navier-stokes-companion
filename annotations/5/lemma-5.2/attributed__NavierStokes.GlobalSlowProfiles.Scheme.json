@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 730,
-            "text": "structure Scheme (S : Set ℝ) (h C : ℝ)"
+            "text": "structure Scheme (S : Set ℝ) (h C : ℝ) where\n  domain : Domain S h\n  nonzero_scale : C ≠ 0\n  lam : ℝ\n  lam_pos : 0 < lam\n  a : ℝ\n  b : ℝ\n  B : ℝ\n  a_pos : 0 < a\n  a_lt_b : a < b\n  b_le_B : b ≤ B\n  amplitude : ℝ → ℝ\n  amplitude_smooth : ContDiffOn ℝ ∞ amplitude S\n  amplitude_ne : ∀ eta ∈ S, amplitude eta ≠ 0\n  base : Coefficient S\n  base_axial_exterior : Exterior B S base.axial\n  base_beta_exterior : Exterior B S base.beta\n  base_axial_patch : ∀ eta ∈ S, ∀ R ∈ Ioo a b, base.axial (R, eta) = 0\n  base_angular_patch : ∀ eta ∈ S, ∀ R ∈ Ioo a b,\n    angularField C base.phi (R, eta) = FiveRowRank.background lam (amplitude eta) R\n  seedAxial : ℕ → EvenProfile S\n  seedPhi : ℕ → EvenProfile S\n  seedAxial_exterior : ∀ n, Exterior B S (seedAxial n)\n  seedPhi_exterior : ∀ n, Exterior B S (seedPhi n)"
           }
         }
       }

@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 406,
-            "text": "noncomputable def commonGraph (Q h : ℝ) (i : ℕ) : ScaledGraph"
+            "text": "noncomputable def commonGraph (Q h : ℝ) (i : ℕ) : ScaledGraph where\n  radialScale := Q ^ (-(1 / 2 : ℝ))\n  velocityScale := Q ^ (-CoordinateAlgebra.A h)\n  epsilon := Q ^ h\n  exponent := ChartScales.radialExponent h\n  frequency := ChartScales.Lambda ^ i * Q ^ (ChartScales.radialExponent h / 2)\n  fastCoefficient := ChartScales.Tg ^ i * Q ^ (1 + h)\n  radialVector := PhysicalGraphBounds.radialDirection\n  temporalVector := PhysicalGraphBounds.timeDirection"
           }
         }
       }

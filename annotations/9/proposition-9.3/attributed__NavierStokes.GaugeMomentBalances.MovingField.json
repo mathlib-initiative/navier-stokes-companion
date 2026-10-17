@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 461,
-            "text": "structure MovingField {coord : ℝ} (U : SlowRegion coord) (a b : ℝ)\n    (f : ScalarField Point) : Prop"
+            "text": "structure MovingField {coord : ℝ} (U : SlowRegion coord) (a b : ℝ)\n    (f : ScalarField Point) : Prop where\n  smooth : ∀ n, ContDiffOn ℝ ∞ (f n) (PhysicalMeanDomain.slowDomain U.carrier)\n  supported : ∀ n, VariableGaugeMean.SupportedGauge a b\n    (VariableGaugeMean.qLength coord) U.carrier (f n)\n  periodic : ∀ n, PhysicalMeanDomain.PeriodicOn U.carrier (f n)"
           }
         }
       }

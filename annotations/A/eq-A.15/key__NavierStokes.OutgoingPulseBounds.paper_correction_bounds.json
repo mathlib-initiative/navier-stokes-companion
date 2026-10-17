@@ -16,7 +16,7 @@
           },
           "snippet": {
             "line": 1319,
-            "text": "theorem paper_correction_bounds (P m : ℝ) (hP : 0 < P) (hm : 0 < m) (k : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ (lam : ℝ) (hlam : 0 < lam) (hsmall : lam ≤ 1 / 120),\n      let c"
+            "text": "theorem paper_correction_bounds (P m : ℝ) (hP : 0 < P) (hm : 0 < m) (k : ℕ) :\n    ∃ C : ℝ, 0 < C ∧ ∀ (lam : ℝ) (hlam : 0 < lam) (hsmall : lam ≤ 1 / 120),\n      let c := paperParameters P m lam hP hm hlam (by linarith)\n      ∀ (amp : ℝ → ℝ) (eta y : ℝ), |eta| ≤ 1 →\n        |correctionJet c amp k eta y| ≤ C * Real.exp (-(1 / (4 * lam))) * (1 + |amp eta|) ∧\n        ∀ amp' : ℝ, HasDerivAt amp amp' eta →\n          |deriv (fun t => correctionJet c amp k t y) eta| ≤\n            C * Real.exp (-(1 / (4 * lam))) * (1 + |amp'|)"
           }
         }
       }

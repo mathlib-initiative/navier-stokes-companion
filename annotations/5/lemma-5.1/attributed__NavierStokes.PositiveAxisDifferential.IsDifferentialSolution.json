@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 53,
-            "text": "structure IsDifferentialSolution (R : ℝ) (U : Set ℂ) (A₀ A₁ : Coeff) (f W : Field) : Prop"
+            "text": "structure IsDifferentialSolution (R : ℝ) (U : Set ℂ) (A₀ A₁ : Coeff) (f W : Field) : Prop where\n  jointly_continuous : ContinuousOn (fun p : ℝ × ℂ => W p.1 p.2) (Icc (0 : ℝ) R ×ˢ U)\n  parameter_holomorphic : ∀ r ∈ Icc (0 : ℝ) R, ∀ i,\n    DifferentiableOn ℂ (fun z => W r z i) U\n  axis_zero : ∀ z ∈ U, W 0 z = 0\n  equation : ∀ r ∈ Ioo (0 : ℝ) R, ∀ z ∈ U, ∀ i,\n    HasDerivAt (fun s => W s z i)\n      (equationRHS A₀ A₁ f W r z i - ((exponent i : ℝ) / r) • W r z i) r"
           }
         }
       }

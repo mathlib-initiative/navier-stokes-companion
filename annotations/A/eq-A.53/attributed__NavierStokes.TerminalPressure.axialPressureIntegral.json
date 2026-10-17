@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 555,
-            "text": "noncomputable def axialPressureIntegral (C h : ℝ) (f : ℝ → ℝ)\n    (p : SimilarityProfile.PhysicalPoint) : ℝ"
+            "text": "noncomputable def axialPressureIntegral (C h : ℝ) (f : ℝ → ℝ)\n    (p : SimilarityProfile.PhysicalPoint) : ℝ :=\n  ∫ s in Ioi p.2.1, TerminalStress.physicalHeat C (1 + h) (p.1, (s, p.2.2)) ^ 2 *\n    f (Real.log (s / SimilarityProfile.q h p)) *\n    deriv f (Real.log (s / SimilarityProfile.q h p)) / s"
           }
         }
       }

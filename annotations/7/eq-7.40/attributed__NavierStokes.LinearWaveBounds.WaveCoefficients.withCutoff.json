@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 220,
-            "text": "noncomputable def withCutoff (a : WaveCoefficients D) (ψ : ℕ → D → ℝ) : WaveCoefficients D"
+            "text": "noncomputable def withCutoff (a : WaveCoefficients D) (ψ : ℕ → D → ℝ) : WaveCoefficients D :=\n  { a with\n    amplitude := fun n x => ψ n x • a.amplitude n x\n    pressure := fun n x => (ψ n x : ℂ) * a.pressure n x }"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 506,
-            "text": "structure StepResult : Prop"
+            "text": "structure StepResult : Prop where\n  invariant : CycleAnalyticInvariant G c primary P S (σ+1/10) (CycleState.step p c x)\n  temporal : IncrementBounds G.strip (1+σ-2*κ) ((p).temporalIncrement v c u)\n  rank : IncrementBounds G.strip (1+σ-2*κ) ((p).rankIncrement v c u)\n  pressure : MeanClass G.strip (1+σ-2*κ) (((p).next v c u).pressure - (u).pressure)\n  velocityCoefficients : ∀ i j, LabelSumBounds.UniformWaveClass G.strip P (1/2+σ-κ)\n    (fun l n z => ((p).finalBlock v c u l).velocity n i j z - ((v).blocks l).velocity n i j z)\n  pressureCoefficients : ∀ j, LabelSumBounds.UniformWaveClass G.strip P (1+σ-κ)\n    (fun l n z => ((p).finalBlock v c u l).pressure n j z - ((v).blocks l).pressure n j z)\n  afterSignedTheta : MeanClass G.strip (1+σ-2*κ) (((p).afterSigned v c u).thetaResidual c)\n  afterSignedAxial : MeanClass G.strip (1+σ-2*κ) (((p).afterSigned v c u).axialResidual c)"
           }
         }
       }

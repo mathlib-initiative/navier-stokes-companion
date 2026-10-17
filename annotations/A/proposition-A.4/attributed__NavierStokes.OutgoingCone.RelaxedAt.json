@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 235,
-            "text": "structure RelaxedAt {d : TailData} {K : ℝ} (w : ResetWitness d K)\n    (Amp : ℝ → ℝ) (XR : ℝ) (p : ℝ × ℝ) : Prop"
+            "text": "structure RelaxedAt {d : TailData} {K : ℝ} (w : ResetWitness d K)\n    (Amp : ℝ → ℝ) (XR : ℝ) (p : ℝ × ℝ) : Prop where\n  angular_positive : 0 < OutgoingHistories.Qs w Amp p\n  radial_positive : 0 < coneA w p\n  stress_gt_two : 2 < normalP w Amp XR p\n  root_strict : normalV w Amp p < ConeAlgebra.coneBound (normalP w Amp XR p) (normalJ w Amp XR p)"
           }
         }
       }

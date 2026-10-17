@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 335,
-            "text": "noncomputable def velocity (G : ScaledGraph) (a : Cylinder → Fin 3 → ℝ) : VelocityField"
+            "text": "noncomputable def velocity (G : ScaledGraph) (a : Cylinder → Fin 3 → ℝ) : VelocityField :=\n  fun p => AxisymmetricResidual.pack (G.velocityScale * a (G.map p) 0)\n    (G.velocityScale * a (G.map p) 1) (G.velocityScale * a (G.map p) 2)"
           }
         }
       }

@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 38,
-            "text": "def RadialDomain.rectangle (R a b : ℝ) : RadialDomain"
+            "text": "def RadialDomain.rectangle (R a b : ℝ) : RadialDomain where\n  carrier := Ioo (-R) R ×ˢ Ioo a b\n  isOpen := isOpen_Ioo.prod isOpen_Ioo\n  scale_mem := by\n    intro p hp t ht\n    refine ⟨?_, hp.2⟩\n    have hX : |p.1| < R := abs_lt.mpr hp.1\n    have hmul : |t * p.1| ≤ |p.1| := by\n      rw [abs_mul, abs_of_nonneg ht.1]\n      exact mul_le_of_le_one_left (abs_nonneg _) ht.2\n    exact abs_lt.mp (hmul.trans_lt hX)"
           }
         }
       }

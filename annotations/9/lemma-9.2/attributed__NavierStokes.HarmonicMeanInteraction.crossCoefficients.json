@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 119,
-            "text": "noncomputable def crossCoefficients (g : HarmonicResidual.Frame D) (k : ℝ) (Φ : D → ℝ) (kp : ℤ)\n    (m : D → ComplexVector) (a : HarmonicResidual.VectorCoefficients D) : HarmonicResidual.VectorCoefficients D"
+            "text": "noncomputable def crossCoefficients (g : HarmonicResidual.Frame D) (k : ℝ) (Φ : D → ℝ) (kp : ℤ)\n    (m : D → ComplexVector) (a : HarmonicResidual.VectorCoefficients D) : HarmonicResidual.VectorCoefficients D := fun i =>\n  HarmonicResidual.transport g k Φ kp (HarmonicResidual.constantVector m) a i +\n    HarmonicResidual.transport g k Φ kp a (HarmonicResidual.constantVector m) i"
           }
         }
       }

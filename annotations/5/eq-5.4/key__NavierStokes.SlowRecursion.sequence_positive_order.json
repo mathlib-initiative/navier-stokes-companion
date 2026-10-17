@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 1090,
-            "text": "theorem sequence_positive_order {core buffer : ℝ} {U : Set ℂ} {h : ℝ}\n    (c : Domain (radius core buffer 0) U h) (hcore : 0 < core) (hbuffer : 0 < buffer)\n    (C : ℝ) (base : Coefficient (radius core buffer 0) U) {n : ℕ} (hn : 0 < n)\n    {X eta : ℝ} (hX : X ∈ Ioo (0 : ℝ) (core ^ 2)) (heta : (eta : ℂ) ∈ U) :\n    let A"
+            "text": "theorem sequence_positive_order {core buffer : ℝ} {U : Set ℂ} {h : ℝ}\n    (c : Domain (radius core buffer 0) U h) (hcore : 0 < core) (hbuffer : 0 < buffer)\n    (C : ℝ) (base : Coefficient (radius core buffer 0) U) {n : ℕ} (hn : 0 < n)\n    {X eta : ℝ} (hX : X ∈ Ioo (0 : ℝ) (core ^ 2)) (heta : (eta : ℂ) ∈ U) :\n    let A := sequence c hcore hbuffer C base\n    PositiveAxisSystem.PositiveOrderEquations h C eta X n\n      (fun j => PositiveAxisSystem.actualJet (profile (A j 0)) (X, eta))\n      (fun j => PositiveAxisSystem.actualJet (profile (A j 1)) (X, eta))\n      (fun j => profile (A j 4) (X, eta))\n      (PositiveAxisSystem.actualJet (profile (A n 2)) (X, eta))\n      (PositiveAxisSystem.actualJet (profile (A n 3)) (X, eta))\n      (PositiveAxisSystem.precedingDiffusion h (PositiveAxisSystem.angularPower h) (fun j => profile (A j 0)) n (X, eta))\n      (PositiveAxisSystem.precedingDiffusion h (PositiveAxisSystem.axialPower h) (fun j => profile (A j 1)) n (X, eta))\n      (AxisSourceRegularity.previousOmegaDivX h (fun j => profile (A j 1)) (fun j => profile (A j 4)) n (X, eta))"
           }
         }
       }

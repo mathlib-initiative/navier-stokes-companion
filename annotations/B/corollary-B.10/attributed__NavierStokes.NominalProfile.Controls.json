@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 551,
-            "text": "structure Controls {F : Profile} (A : AxisStage F)"
+            "text": "structure Controls {F : Profile} (A : AxisStage F) where\n  referenceWidth : ℝ\n  referenceWidth_pos : 0 < referenceWidth\n  referenceWidth_small : 2 * referenceWidth < ReferencePath.rampLimit\n  activationTime : ℝ\n  activationTime_pos : 0 < activationTime\n  activationTime_le : activationTime ≤ referenceWidth\n  kappa : ℝ\n  kappa_pos : 0 < kappa\n  kappa_le_one : kappa ≤ 1\n  axialWidth : ℝ\n  axialWidth_pos : 0 < axialWidth\n  angularWidth : ℝ\n  angularWidth_pos : 0 < angularWidth\n  before_big : referenceWidth ≤\n    (A.activation referenceWidth referenceWidth_pos referenceWidth_small).bigTime\n  finish : (A.activation referenceWidth referenceWidth_pos referenceWidth_small).bigTime +\n    axialWidth + angularWidth ≤\n      (A.activation referenceWidth referenceWidth_pos referenceWidth_small).finalTime\n  shapeTime : ℝ\n  shapeTime_pos : 0 < shapeTime"
           }
         }
       }

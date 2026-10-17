@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 16,
-            "text": "structure Data (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]"
+            "text": "structure Data (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E] where\n  B : ℝ → E →L[ℝ] E\n  A : ℝ → E →L[ℝ] E →L[ℝ] E\n  d : ℝ → E\n  hB : ContDiffOn ℝ ∞ B I\n  hA : ContDiffOn ℝ ∞ A I\n  hd : ContDiffOn ℝ ∞ d I\n  invertible : ∀ x ∈ I, (B x).IsInvertible"
           }
         }
       }

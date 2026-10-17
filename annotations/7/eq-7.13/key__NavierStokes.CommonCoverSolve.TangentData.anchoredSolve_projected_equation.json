@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 970,
-            "text": "theorem anchoredSolve_projected_equation {U : Set P} (k : Frequency)\n    (hA : ContinuousOn t.linearData.coefficient (U ×ˢ univ))\n    (hB : ContinuousOn t.linearData.forcingMap (U ×ˢ univ))\n    (hf : ContinuousOn t.source (U ×ˢ univ)) {p : P} (hp : p ∈ U)\n    (Y : Plane) (s : Icc a b) :\n    let z"
+            "text": "theorem anchoredSolve_projected_equation {U : Set P} (k : Frequency)\n    (hA : ContinuousOn t.linearData.coefficient (U ×ˢ univ))\n    (hB : ContinuousOn t.linearData.forcingMap (U ×ˢ univ))\n    (hf : ContinuousOn t.source (U ×ˢ univ)) {p : P} (hp : p ∈ U)\n    (Y : Plane) (s : Icc a b) :\n    let z := (p, ((g.coordinates k Y).1, (s : ℝ)))\n    HasDerivAt (t.linearData.anchoredSolve g hab k (p, Y))\n      (TangentProjection.projectedRhs (t.normal z) (t.normalDot z)\n        (t.linearData.anchoredSolve g hab k (p, Y) s)\n        (t.action z (t.linearData.anchoredSolve g hab k (p, Y) s))\n        (t.source (p, g.path k Y s)) (t.damping z)) s"
           }
         }
       }

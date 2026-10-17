@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 698,
-            "text": "noncomputable def betaOperator {R : ℝ} {U : Set ℂ} {h : ℝ} (c : Domain R U h)\n    (n : ℕ) (u k : AxisFunction R U) : AxisFunction R U"
+            "text": "noncomputable def betaOperator {R : ℝ} {U : Set ℂ} {h : ℝ} (c : Domain R U h)\n    (n : ℕ) (u k : AxisFunction R U) : AxisFunction R U :=\n  (realConstant R U 2 * parameter R U *\n      realConstant R U (PositiveAxisSystem.a h - PositiveAxisSystem.slowPower h n) * u -\n    realConstant R U 2 * parameter R U *\n      realConstant R U (PositiveAxisSystem.dScale h + PositiveAxisSystem.slowPower h n) * k -\n    (1 - parameter R U ^ 2) * (parameterDerivative c.open_set u + parameterDerivative c.open_set k)) *\n    inverseDenominator c"
           }
         }
       }

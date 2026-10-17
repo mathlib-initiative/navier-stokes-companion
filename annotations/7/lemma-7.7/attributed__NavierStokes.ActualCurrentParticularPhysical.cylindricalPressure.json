@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 83,
-            "text": "noncomputable def cylindricalPressure (x : CycleState (Label B N0)) (l : Label B N0)\n    (j : ℤ) (n : ℕ) (z : SpaceTime) : ℝ"
+            "text": "noncomputable def cylindricalPressure (x : CycleState (Label B N0)) (l : Label B N0)\n    (j : ℤ) (n : ℕ) (z : SpaceTime) : ℝ :=\n  (ChartScales.Q n) ^ (-2 * CoordinateAlgebra.A CorrectionInitialization.ActualPrimary.h) *\n    (nativePressure x l j n\n      (PhysicalParticularWave.nativeMap CorrectionInitialization.ActualPrimary.h\n        (ChartScales.Q n) (CommonWindow.index CorrectionInitialization.ActualPrimary.h n) z)).re"
           }
         }
       }

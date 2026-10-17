@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 415,
-            "text": "noncomputable def conservativeAngular (w : Components) (p : Scalar) (q : SpaceTime) : ℝ"
+            "text": "noncomputable def conservativeAngular (w : Components) (p : Scalar) (q : SpaceTime) : ℝ :=\n  dt (w 1) q + radialDivergence 2 (fun y => w 0 y * w 1 y) q +\n    dtheta (fun y => w 1 y * w 1 y) q / radius q +\n    dz (fun y => w 2 y * w 1 y) q - laplacian (w 1) q +\n    w 1 q / radius q ^ 2 - 2 * dtheta (w 0) q / radius q ^ 2 + dtheta p q / radius q"
           }
         }
       }

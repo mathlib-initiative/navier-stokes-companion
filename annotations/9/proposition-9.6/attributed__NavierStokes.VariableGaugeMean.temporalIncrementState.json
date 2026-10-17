@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 538,
-            "text": "noncomputable def temporalIncrementState (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (axial : S × PressureStream.Plane) (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) : MeanIncrementBounds.Triple (PressureStream.Lift S)"
+            "text": "noncomputable def temporalIncrementState (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (axial : S × PressureStream.Plane) (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) : MeanIncrementBounds.Triple (PressureStream.Lift S) where\n  radial := fun n => PressureStream.streamBeta (c.operators.epsilon n • axial) (temporalPotential g h index c u n)\n  angular := fun n => MeanChartCompatibility.temporalAtIndex h n (index n) (u.thetaResidual c n)\n  axial := fun n => PressureStream.streamGamma\n    (PressureStream.physicalSpeed g.radial.exponent (g.radial.frequency n)) ((0 : S), g.radial.radialDirection)\n    (temporalPotential g h index c u n)"
           }
         }
       }

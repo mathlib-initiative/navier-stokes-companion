@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 554,
-            "text": "noncomputable def temporalAliasState (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) : CorrectionState.Oscillation (PressureStream.Lift S)"
+            "text": "noncomputable def temporalAliasState (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) : CorrectionState.Oscillation (PressureStream.Lift S) :=\n  fun n p => ![0, 0, -c.operators.fastTime (temporalAxialDifference g h index c u) n p.1]"
           }
         }
       }

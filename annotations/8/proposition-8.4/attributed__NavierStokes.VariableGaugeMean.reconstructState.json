@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 517,
-            "text": "noncomputable def reconstructState (g : GaugeData S)\n    (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) : CorrectionState.State (PressureStream.Lift S)"
+            "text": "noncomputable def reconstructState (g : GaugeData S)\n    (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) : CorrectionState.State (PressureStream.Lift S) :=\n  { u with\n    pressure := fun n =>\n      meanPressure g.radial.exponent g.radial.inner g.radial.outer (g.radial.frequency n)\n        g.radial.inner_lt_outer (g.length n) g.radial.radialDirection (u.gr c n) }"
           }
         }
       }

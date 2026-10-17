@@ -19,7 +19,7 @@
           "relation": "implies",
           "snippet": {
             "line": 261,
-            "text": "noncomputable def EdgeFactor.transfer {K : Set E} {c : ℝ} {T S : E × ℝ → V}\n    (F : EdgeFactor K c T) {w : ℝ} (hw : 0 < w) (hww : w ≤ F.width)\n    (he : ∀ p ∈ K, ∀ x : ℝ, 0 < x → x < w → S (p,x) = T (p,x)) :\n    EdgeFactor K c S"
+            "text": "noncomputable def EdgeFactor.transfer {K : Set E} {c : ℝ} {T S : E × ℝ → V}\n    (F : EdgeFactor K c T) {w : ℝ} (hw : 0 < w) (hww : w ≤ F.width)\n    (he : ∀ p ∈ K, ∀ x : ℝ, 0 < x → x < w → S (p,x) = T (p,x)) :\n    EdgeFactor K c S where\n  coefficient := F.coefficient\n  order := F.order\n  width := w\n  width_pos := hw\n  domain := F.domain\n  domain_open := F.domain_open\n  boundary_mem := F.boundary_mem\n  smooth := F.smooth\n  boundary_ne_zero := F.boundary_ne_zero\n  identity := fun p hp x hx hxw => (he p hp x hx hxw).trans\n    (F.identity p hp x hx (hxw.trans_le hww))"
           }
         }
       }

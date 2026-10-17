@@ -47,7 +47,7 @@
           },
           "snippet": {
             "line": 130,
-            "text": "structure Estimates {Λ C : ℝ} (E : EntranceProfile d Λ C) (B : ℕ → ℝ) : Prop"
+            "text": "structure Estimates {Λ C : ℝ} (E : EntranceProfile d Λ C) (B : ℕ → ℝ) : Prop where\n  phi_lower : ∀ Y ∈ Icc (0 : ℝ) (41 / 10), ∀ η ∈ Icc (-1 : ℝ) 1,\n    1 / 8 < E.profile.family.phi (Y, η)\n  source_lower : ∀ p, rescalePoint Λ p ∈ entranceSet →\n    (19 / 20 : ℝ) * NaturalAxisData.L h p.2 * Λ * NaturalAxisData.chi h j σ p.2 + 5 / 2 <\n      Sq h E.profile.family.f E.profile.family.U E.profile.family.Ubar p\n  p1_lower : ∀ X η, 0 < X → Λ * X ≤ 41 / 10 → η ∈ Icc (-1 : ℝ) 1 →\n    lowerConstant d ≤ p1 E.profile.family.f (X, η) / X\n  p1_positive_upper : ∀ X η, 0 < X → Λ * X ≤ 41 / 10 → η ∈ Icc (-1 : ℝ) 1 →\n    0 < p1 E.profile.family.f (X, η) ∧ p1 E.profile.family.f (X, η) ≤ B 0\n  ns_error : ∀ p, rescalePoint Λ p ∈ entranceSet →\n    |ns E.profile.family.U p - NaturalAxisData.Z h j P0 p.2 / NaturalAxisData.L h p.2| ≤\n      AxisEvaluation.jetBound d.coefficients.epsilon 5 1 0 * profileErrorConstant d / Λ\n  cone_margin : ∀ η ∈ Icc (-1 : ℝ) 1,\n    2 + 1 / 4 < coneSize E.profile.family.f E.profile.family.U (4 / Λ, η)\n  parameter_jets : ∀ m X, Λ * X ∈ Icc (0 : ℝ) (41 / 10) → ∀ η ∈ Icc (-1 : ℝ) 1,\n    |iteratedDeriv m (fun ξ => E.profile.family.phi (Λ * X, ξ)) η| ≤ B m ∧\n    |iteratedDeriv m (fun ξ => Real.log (E.profile.family.phi (Λ * X, ξ))) η| ≤ B m ∧\n    |iteratedDeriv m (fun ξ => E.profile.family.u (Λ * X, ξ)) η| ≤ B m ∧\n    |iteratedDeriv m (fun ξ => p1 E.profile.family.f (X, ξ)) η| ≤ B m ∧\n    |iteratedDeriv m (fun ξ => ns E.profile.family.U (X, ξ)) η| ≤ B m"
           }
         }
       }

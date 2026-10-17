@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 591,
-            "text": "noncomputable def requestedStress (P : SignedStressPrimitive.Patch) (coord : ℝ)\n    (c : CorrectionState.Context Point) (u : CorrectionState.State Point) :\n    ℕ → Point → SignedWaveUpdate.Vec2"
+            "text": "noncomputable def requestedStress (P : SignedStressPrimitive.Patch) (coord : ℝ)\n    (c : CorrectionState.Context Point) (u : CorrectionState.State Point) :\n    ℕ → Point → SignedWaveUpdate.Vec2 :=\n  fun n x => ![SignedStressPrimitive.physicalBarSigma P 2 (SimilarityCoordinates.coordinateQ coord)\n      (u.thetaResidual c n) (x.1, x.2.1),\n    SignedStressPrimitive.physicalBarSigma P 1 (SimilarityCoordinates.coordinateQ coord)\n      (u.axialResidual c n) (x.1, x.2.1)]"
           }
         }
       }

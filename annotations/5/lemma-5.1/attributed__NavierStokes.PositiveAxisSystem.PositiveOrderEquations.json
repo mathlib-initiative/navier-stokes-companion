@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 381,
-            "text": "def PositiveOrderEquations (h C eta X : K) (n : ℕ) (phi u : ℕ → Jet K)\n    (beta : ℕ → K) (k p : Jet K)\n    (previousAngularDiffusion previousAxialDiffusion omegaQuotient : K) : Prop"
+            "text": "def PositiveOrderEquations (h C eta X : K) (n : ℕ) (phi u : ℕ → Jet K)\n    (beta : ℕ → K) (k p : Jet K)\n    (previousAngularDiffusion previousAxialDiffusion omegaQuotient : K) : Prop :=\n  X * ((u n).radial + k.radial) + k.value = 0 ∧\n  p.radial = inverseSquare C * convolution n (fun i j => (phi i).value * (phi j).value) -\n    omegaQuotient / 2 ∧\n  2 * (X * (phi n).radial2 + 2 * (phi n).radial) =\n    timeValue h (angularPower h + slowPower h n) eta X (phi n) +\n      convolution n (angularConvection h eta X phi u beta) - previousAngularDiffusion ∧\n  2 * (X * (u n).radial2 + (u n).radial) =\n    timeValue h (axialPower h + slowPower h n) eta X (u n) +\n      convolution n (axialConvection h eta X u beta) +\n      axialValue h (-2 * a h + slowPower h n) eta X p - previousAxialDiffusion"
           }
         }
       }

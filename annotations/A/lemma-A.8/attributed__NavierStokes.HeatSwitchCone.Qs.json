@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 772,
-            "text": "noncomputable def Qs (F : Profile) (XR : ℝ) (c : ℝ → Coeff) (p : Point) : ℝ"
+            "text": "noncomputable def Qs (F : Profile) (XR : ℝ) (c : ℝ → Coeff) (p : Point) : ℝ :=\n  -OutgoingHistories.W F.data F.amp p +\n    ((1 - F.data.h) * logI F XR c p - axialExponent F.data.h * p.2 *\n      derivWithin (fun eta => logI F XR c (p.1, eta)) HeatedOutgoing.parameterDomain p.2 -\n      coordinateFactor p.2 * OutgoingHistories.dEta (OutgoingHistories.J F.reset F.amp) p +\n      2 * (F.data.h - axialExponent F.data.h) * p.2 * OutgoingHistories.J F.reset F.amp p) /\n        (Real.exp (3 * p.1 / 2) * logE F XR c p)"
           }
         }
       }

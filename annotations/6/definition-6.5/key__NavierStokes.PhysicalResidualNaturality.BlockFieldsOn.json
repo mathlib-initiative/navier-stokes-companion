@@ -24,7 +24,7 @@
           },
           "snippet": {
             "line": 481,
-            "text": "structure BlockFieldsOn (U : Set D) (e : D ≃L[ℝ] E) (c l : ℝ)\n    (b : CorrectionState.HarmonicBlock D) (br : CorrectionState.HarmonicBlock E)\n    (G A : HarmonicResidual.BlockCoefficients D) (Gr Ar : HarmonicResidual.BlockCoefficients E)\n    (n nr : ℕ) : Prop"
+            "text": "structure BlockFieldsOn (U : Set D) (e : D ≃L[ℝ] E) (c l : ℝ)\n    (b : CorrectionState.HarmonicBlock D) (br : CorrectionState.HarmonicBlock E)\n    (G A : HarmonicResidual.BlockCoefficients D) (Gr Ar : HarmonicResidual.BlockCoefficients E)\n    (n nr : ℕ) : Prop where\n  phase : EqOn (fun x => b.frequency n*b.phase n x)\n    (fun x => br.frequency nr*br.phase nr (e x)) U\n  angular : b.angularFrequency n = br.angularFrequency nr\n  angular_ne : b.angularFrequency n ≠ 0\n  velocity : ∀ x ∈ U, ∀ theta i, b.oscillation n (x,theta) i =\n    c * br.oscillation nr (e x,theta) i\n  pressure : ∀ x ∈ U, ∀ theta, b.oscillatoryPressure n (x,theta) =\n    (c*c) * br.oscillatoryPressure nr (e x,theta)\n  gaussian : ∀ x ∈ U, ∀ theta i,\n    (field (G n i) (b.frequency n) (b.phase n) (b.angularFrequency n) (x,theta)).re =\n      (c*c*l) * (field (Gr nr i) (br.frequency nr) (br.phase nr)\n        (br.angularFrequency nr) (e x,theta)).re\n  aliasError : ∀ x ∈ U, ∀ theta i,\n    (field (A n i) (b.frequency n) (b.phase n) (b.angularFrequency n) (x,theta)).re =\n      (c*c*l) * (field (Ar nr i) (br.frequency nr) (br.phase nr)\n        (br.angularFrequency nr) (e x,theta)).re"
           }
         }
       }

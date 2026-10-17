@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 236,
-            "text": "noncomputable def axialDefect (c : Context (PressureStream.Lift S))\n    (u : State (PressureStream.Lift S)) : ScalarField S"
+            "text": "noncomputable def axialDefect (c : Context (PressureStream.Lift S))\n    (u : State (PressureStream.Lift S)) : ScalarField S :=\n  radialMoment 1 (axialAxial c.base u.mean + u.covariance 2 2) -\n    (1 / 2 : ℝ) • radialMoment 2 (u.gr c)"
           }
         }
       }

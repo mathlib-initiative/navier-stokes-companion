@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 23,
-            "text": "structure Regular (R : ℝ) (U : Set ℂ) (F : Raw) : Prop"
+            "text": "structure Regular (R : ℝ) (U : Set ℂ) (F : Raw) : Prop where\n  smooth : ContDiffOn ℝ ∞ F (Ioo (-R) R ×ˢ U)\n  holomorphic : ∀ r ∈ Ioo (-R) R, DifferentiableOn ℂ (fun z => F (r, z)) U\n  even : ∀ z ∈ U, ∀ r ∈ Ioo (-R) R, F (-r, z) = F (r, z)\n  real : ∀ r ∈ Ioo (-R) R, ∀ eta : ℝ, (eta : ℂ) ∈ U → (F (r, (eta : ℂ))).im = 0"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 57,
-            "text": "noncomputable def linearResidual (ε : ℝ) (R : E → ℝ) (Vr Vθ Vz Vt : E → E)\n    (B a : E → ComplexVector) (p : E → ℂ) (x : E) : ComplexVector"
+            "text": "noncomputable def linearResidual (ε : ℝ) (R : E → ℝ) (Vr Vθ Vz Vt : E → E)\n    (B a : E → ComplexVector) (p : E → ℂ) (x : E) : ComplexVector := fun i =>\n  along Vt (fun y => a y i) x + transport R Vr Vθ Vz B a x i +\n    transport R Vr Vθ Vz a B x i + gradient R Vr Vθ Vz p x i -\n    (ε : ℂ) * cylindricalVectorLaplacian R Vr Vθ Vz a x i"
           }
         }
       }

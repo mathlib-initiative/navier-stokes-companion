@@ -48,7 +48,7 @@
           },
           "snippet": {
             "line": 772,
-            "text": "theorem natural_reference_bounds {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2 * δ < ReferencePath.rampLimit) :\n    let N"
+            "text": "theorem natural_reference_bounds {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2 * δ < ReferencePath.rampLimit) :\n    let N := ReferencePath.Input.ofNatural hΛ F.profile.family\n    let A := referenceP1 (FromReference.refLog N δ)\n    let B := referenceP2 N.endpoint (FromReference.refLog N δ) (FromReference.refAxial N δ)\n    ∃ τ α M : ℝ, 0 < τ ∧ τ ≤ δ ∧ 0 < α ∧ 1 ≤ M ∧\n      ∀ y ∈ Icc (0 : ℝ) τ, ∀ η ∈ Icc (-1 : ℝ) 1,\n        α ≤ A (y, η) ∧ 2 + 1 / 8 < A (y, η) + B (y, η) ^ 2 / A (y, η) ∧\n        A (y, η) + B (y, η) ^ 2 / A (y, η) ≤ M ∧\n        |B (y, η)| ≤ M ∧ |B (y, η) / A (y, η)| ≤ M ∧ |B (y, η) ^ 2 / A (y, η)| ≤ M"
           }
         }
       }

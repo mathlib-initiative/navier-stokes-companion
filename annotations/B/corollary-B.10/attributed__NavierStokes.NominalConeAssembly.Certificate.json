@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 1362,
-            "text": "structure Certificate {F : Profile} (W : NominalProfile.Witness F) : Prop"
+            "text": "structure Certificate {F : Profile} (W : NominalProfile.Witness F) : Prop where\n  relaxed : ∀ p : Point, activeLeft W < p.1 → p.1 < activeRight W →\n    p.2 ∈ HeatedOutgoing.parameterDomain → ActivationContinuation.IsRelaxed W.profiles F.data.h p\n  initial : ∃ t : ℝ, 0 < t ∧ t ≤ W.controls.activationTime ∧\n    ∀ y eta : ℝ, 0 < y → y ≤ t → eta ∈ HeatedOutgoing.parameterDomain →\n      IsTrue W.profiles F.data.h (chart (activeLeft W) (y, eta))\n  outgoing : ∀ y eta : ℝ, F.data.core.holdStart ≤ y → y < OutgoingTail.tailEnd F.data →\n    eta ∈ HeatedOutgoing.parameterDomain → IsTrue W.profiles F.data.h (chart W.controls.radius (y, eta))"
           }
         }
       }

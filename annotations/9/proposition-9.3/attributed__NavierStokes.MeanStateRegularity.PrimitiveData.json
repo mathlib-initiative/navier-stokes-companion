@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 339,
-            "text": "structure PrimitiveData {coord : ℝ} (U : SlowRegion coord) (a b : ℝ)\n    (c : Context Point) (u : State Point) : Prop"
+            "text": "structure PrimitiveData {coord : ℝ} (U : SlowRegion coord) (a b : ℝ)\n    (c : Context Point) (u : State Point) : Prop where\n  operators : OperatorData U.carrier c.operators\n  base : BaseData U.carrier c.base\n  mean : MovingTriple U a b u.mean\n  covariance : ∀ i j, GaugeMomentBalances.MovingField U a b (u.covariance i j)\n  virtualTheta : GaugeMomentBalances.MovingField U a b c.virtualTheta\n  virtualAxial : GaugeMomentBalances.MovingField U a b c.virtualAxial"
           }
         }
       }

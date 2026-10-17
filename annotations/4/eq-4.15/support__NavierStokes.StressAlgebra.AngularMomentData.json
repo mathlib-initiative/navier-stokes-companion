@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 128,
-            "text": "structure AngularMomentData (h η X : ℝ)"
+            "text": "structure AngularMomentData (h η X : ℝ) where\n  W : ℝ → ℝ\n  Wx : ℝ → ℝ\n  H : ℝ → ℝ\n  Hx : ℝ → ℝ\n  Hη : ℝ → ℝ\n  U : ℝ → ℝ\n  Uη : ℝ → ℝ\n  I : ℝ → ℝ\n  Iη : ℝ → ℝ\n  J : ℝ → ℝ\n  Jη : ℝ → ℝ\n  W_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt W (Wx x) x\n  H_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt H (Hx x) x\n  I_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt I (H x) x\n  Iη_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt Iη (Hη x) x\n  J_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt J (U x * H x) x\n  Jη_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt Jη (Uη x * H x + U x * Hη x) x\n  W_balance : ∀ x ∈ uIcc 0 X,\n    W x + x * Wx x = 1 - 2 * axialExponent h * η * U x - coordinateFactor η * Uη x\n  I_zero : I 0 = 0\n  Iη_zero : Iη 0 = 0\n  J_zero : J 0 = 0\n  Jη_zero : Jη 0 = 0"
           }
         }
       }

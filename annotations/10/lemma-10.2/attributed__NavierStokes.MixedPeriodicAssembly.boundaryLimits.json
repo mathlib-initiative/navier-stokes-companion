@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 267,
-            "text": "def boundaryLimits (A v : VelocityField) (p : PressureField)\n    (eA : JointResidualLimits.AwayExtensions A)\n    (ev : JointResidualLimits.AwayExtensions v)\n    (ep : JointResidualLimits.AwayExtensions p) (x : Space) :\n    FormalMultilinearSeries ℝ SpaceTime Space"
+            "text": "def boundaryLimits (A v : VelocityField) (p : PressureField)\n    (eA : JointResidualLimits.AwayExtensions A)\n    (ev : JointResidualLimits.AwayExtensions v)\n    (ep : JointResidualLimits.AwayExtensions p) (x : Space) :\n    FormalMultilinearSeries ℝ SpaceTime Space :=\n  JointResidualLimits.boundaryLimits (cutResidual A v p)\n    (cutResidual_awayExtensions eA ev ep) (PeriodicResidualLimits.representative x)"
           }
         }
       }

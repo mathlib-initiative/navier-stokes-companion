@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 1386,
-            "text": "structure Assembly (d : PreparedOutgoing.PreparedProfile)"
+            "text": "structure Assembly (d : PreparedOutgoing.PreparedProfile) where\n  family : CompensatedFamily d.profile\n  delta : ℝ\n  radiusFloor : ℝ\n  matching : MatchingConeBounds.PreparedWitness d.profile 1 delta radiusFloor\n  family_floor : family.radiusFloor ≤ radiusFloor\n  terminal_floor : TerminalCone.radiusThreshold d.profile ≤ matching.controls.radius\n  clean : OutgoingCone.ProfileCleanCone d.profile matching.controls.radius (-5)\n  repair : ∀ p : Point,\n    p.1 ∈ Icc (matching.controls.radius * Real.exp (-8)) (matching.controls.radius * Real.exp (-5)) →\n    p.2 ∈ HeatedOutgoing.parameterDomain →\n    ActivationContinuation.IsRelaxed\n      (matching.controls.profiles matching.bounds.matching.separation.le) d.profile.data.h p"
           }
         }
       }

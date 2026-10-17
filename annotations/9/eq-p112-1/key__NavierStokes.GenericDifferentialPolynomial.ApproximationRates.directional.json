@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 156,
-            "text": "def ApproximationRates.directional\n    (a : ApproximationRates l q gain f fs)\n    (hU : IsOpen U) (hlU : ∀ᶠ x in l, x ∈ U)\n    (hf : ContDiffOn ℝ ∞ f U) (hfs : ∀ J, ContDiffOn ℝ ∞ (fs J) U) (v : D) :\n    ApproximationRates l q gain (fun x => fderiv ℝ f x v)\n      (fun J x => fderiv ℝ (fs J) x v)"
+            "text": "def ApproximationRates.directional\n    (a : ApproximationRates l q gain f fs)\n    (hU : IsOpen U) (hlU : ∀ᶠ x in l, x ∈ U)\n    (hf : ContDiffOn ℝ ∞ f U) (hfs : ∀ J, ContDiffOn ℝ ∞ (fs J) U) (v : D) :\n    ApproximationRates l q gain (fun x => fderiv ℝ f x v)\n      (fun J x => fderiv ℝ (fs J) x v) where\n  growthLoss m := a.growthLoss (m + 1)\n  tailLoss m := a.tailLoss (m + 1)\n  threshold m := a.threshold (m + 1)\n  stage_growth J m := rate_directional hU hlU (hfs J) v (a.stage_growth J (m + 1))\n  tail_rate m J hJ := by\n    have h := rate_directional hU hlU (hf.sub (hfs J)) v\n      (a.tail_rate (m + 1) J hJ)\n    exact h.congr_on hU hlU (directional_sub_eqOn hU hf (hfs J) v)"
           }
         }
       }

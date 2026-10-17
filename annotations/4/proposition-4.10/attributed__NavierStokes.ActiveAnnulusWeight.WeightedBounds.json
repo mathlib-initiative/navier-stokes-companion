@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 644,
-            "text": "noncomputable def WeightedBounds (K : Set E) (c a b : ℝ) (T : E × ℝ → V) : Prop"
+            "text": "noncomputable def WeightedBounds (K : Set E) (c a b : ℝ) (T : E × ℝ → V) : Prop :=\n  (∃ m : ℝ, 0 < m ∧ ∀ p ∈ K, ∀ y ∈ Ioo a b, m * weight c a b y ≤ ‖T (p,y)‖) ∧\n  (∀ n : ℕ, ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ i ≤ n, ∀ p ∈ K,\n    ∀ y ∈ Ioo a b, ‖iteratedFDeriv ℝ i T (p,y)‖ ≤\n      C * weight c a b y / edgeDistance a b y ^ N) ∧\n  (∀ n : ℕ, ∃ C : ℝ, 0 < C ∧ ∃ N : ℕ, ∀ p ∈ K,\n    ∀ X ∈ Ioo (Real.exp a) (Real.exp b),\n      ‖iteratedFDeriv ℝ n (radialPullback T) (p,X)‖ ≤\n        C * radialWeight c a b X / edgeDistance a b (Real.log X)^N)"
           }
         }
       }

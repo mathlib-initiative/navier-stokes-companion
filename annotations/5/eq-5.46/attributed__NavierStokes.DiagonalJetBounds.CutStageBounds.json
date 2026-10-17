@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 196,
-            "text": "def CutStageBounds (a : ℕ → ℝ) (q : E → ℝ) (A : ℕ → E → V)\n    (g L : ℕ → ℝ) (U : Set E) : Prop"
+            "text": "def CutStageBounds (a : ℕ → ℝ) (q : E → ℝ) (A : ℕ → E → V)\n    (g L : ℕ → ℝ) (U : Set E) : Prop :=\n  ∀ j, 1 ≤ j → ∀ m, m ≤ j + 2 → ∀ x ∈ U,\n    ‖iteratedFDeriv ℝ m (SolenoidalDiagonal.cutStage a q A j) x‖ ≤\n      (1 / 2 : ℝ) ^ j * (q x) ^ (g j - L m)"
           }
         }
       }

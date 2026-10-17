@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 936,
-            "text": "theorem physical_source_plus_remainder {Q : Type} [NormedAddCommGroup Q]\n    (sys : SlotSystem D h vr vt) (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0)\n    (N : ℕ) (hN : 1 ≤ N) (A : (U : UnsignedLabel) → SourcePair Q sys (tailLabel N U))\n    {q : ℝ} (hq : 0 < q) (hqN : q ≤ ChartScales.Q N) (x : SlotColoring.Position) (T0 : Vec2)\n    (hcone : ∀ U, mask D (tailLabel N U) q x ≠ 0 →\n      SmoothCovariance.StrictCone (A U).sourceMatrix (chartTarget h q N T0 U))\n    (hphase : ∀ U j, Continuous ((A U).phase j))\n    (R : Plane → ℝ → Vector) (hR : Continuous R.uncurry) (i : Fin 2) :\n    let V"
+            "text": "theorem physical_source_plus_remainder {Q : Type} [NormedAddCommGroup Q]\n    (sys : SlotSystem D h vr vt) (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0)\n    (N : ℕ) (hN : 1 ≤ N) (A : (U : UnsignedLabel) → SourcePair Q sys (tailLabel N U))\n    {q : ℝ} (hq : 0 < q) (hqN : q ≤ ChartScales.Q N) (x : SlotColoring.Position) (T0 : Vec2)\n    (hcone : ∀ U, mask D (tailLabel N U) q x ≠ 0 →\n      SmoothCovariance.StrictCone (A U).sourceMatrix (chartTarget h q N T0 U))\n    (hphase : ∀ U j, Continuous ((A U).phase j))\n    (R : Plane → ℝ → Vector) (hR : Continuous R.uncurry) (i : Fin 2) :\n    let V := sourceField A hdet (physicalOuter h N) (physicalViscosity h N) (chartTarget h q N T0) q x\n    doubleAverage (fun Y θ => (V Y θ + R Y θ) 0 * (V Y θ + R Y θ) i.succ) =\n      q ^ (-velocityExponent h - 1 / 2) * T0 i + doubleAverage (covarianceError V R i)"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 426,
-            "text": "noncomputable def leadingResidual (C h : ℝ) (f : ℝ → ℝ) (t r z : ℝ) : ℝ"
+            "text": "noncomputable def leadingResidual (C h : ℝ) (f : ℝ → ℝ) (t r z : ℝ) : ℝ :=\n  heatAmplitude C (1 + h) t r *\n    (deriv f (Real.log (SimilarityProfile.X h (radiusPoint t r z))) /\n      (SimilarityProfile.q h (radiusPoint t r z) *\n        CoordinateAlgebra.L h (SimilarityProfile.eta h (radiusPoint t r z)))) +\n    viscousResidual (heatAmplitude C (1 + h) t) (radialSlice (flattening h f) t z) r"
           }
         }
       }

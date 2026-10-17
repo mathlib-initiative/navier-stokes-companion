@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 210,
-            "text": "def pathInverse {R : ℝ} (hR : 0 ≤ R) (c : Fin 6 → ℕ) : Path R →L[ℂ] Path R"
+            "text": "def pathInverse {R : ℝ} (hR : 0 ≤ R) (c : Fin 6 → ℕ) : Path R →L[ℂ] Path R :=\n  LinearMap.mkContinuous {\n    toFun := pathInverseValue hR c\n    map_add' := by\n      intro f g\n      ext ξ i\n      change (ξ : ℝ) • (∫ t in (0 : ℝ)..1,\n          (t ^ c i) • (extendPath hR f (t * ξ) i + extendPath hR g (t * ξ) i)) = _\n      simp only [smul_add]\n      rw [intervalIntegral.integral_add, smul_add]\n      · rfl\n      · exact ((continuous_id.pow (c i)).smul\n          (((continuous_apply i).comp (extendPath_continuous hR f)).comp\n            (continuous_id.mul continuous_const))).intervalIntegrable _ _\n      · exact ((continuous_id.pow (c i)).smul\n          (((continuous_apply i).comp (extendPath_continuous hR g)).comp\n            (continuous_id.mul continuous_const))).intervalIntegrable _ _\n    map_smul' := by\n      intro a f\n      ext ξ i\n      change (ξ : ℝ) • (∫ t in (0 : ℝ)..1,\n          (t ^ c i) • (a • extendPath hR f (t * ξ) i)) =\n        a • ((ξ : ℝ) • ∫ t in (0 : ℝ)..1, (t ^ c i) • extendPath hR f (t * ξ) i)\n      conv_lhs => arg 2; arg 1; ext t; rw [smul_comm (t ^ c i) a]\n      rw [intervalIntegral.integral_smul, smul_comm]\n  } R (norm_pathInverseValue_le hR c)"
           }
         }
       }

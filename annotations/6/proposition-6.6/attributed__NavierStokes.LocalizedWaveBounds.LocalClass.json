@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 27,
-            "text": "structure LocalClass (s : StripData D) (K : ℕ → I → Set D)\n    (w : ℕ → I → D → ℝ) (α : ℝ) (f : ℕ → I → D → E) : Prop"
+            "text": "structure LocalClass (s : StripData D) (K : ℕ → I → Set D)\n    (w : ℕ → I → D → ℝ) (α : ℝ) (f : ℕ → I → D → E) : Prop where\n  weight_nonneg : ∀ n i x, x ∈ s.domain → 0 ≤ w n i x\n  smooth : ∀ n i x, x ∈ s.domain → x ∈ K n i → ContDiffAt ℝ ∞ (f n i) x\n  bounds : ∀ m : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∃ p : ℕ,\n    ∀ n i x, x ∈ s.domain → x ∈ K n i → ∀ j ≤ m,\n      ‖iteratedFDeriv ℝ j (f n i) x‖ ≤ majorant s (fun n x => w n i x) α C p n x"
           }
         }
       }

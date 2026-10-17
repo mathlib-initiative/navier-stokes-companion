@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 22,
-            "text": "noncomputable def modalOperator (lam damping e11 e12 e21 e22 : ℝ) : State →L[ℝ] State"
+            "text": "noncomputable def modalOperator (lam damping e11 e12 e21 e22 : ℝ) : State →L[ℝ] State :=\n  LinearMap.toContinuousLinearMap {\n    toFun := fun z => !₂[(lam - damping + e11) * z 0 + e12 * z 1,\n      e21 * z 0 + (-lam - damping + e22) * z 1]\n    map_add' := by\n      intro x y\n      ext i\n      fin_cases i <;> simp <;> ring\n    map_smul' := by\n      intro c x\n      ext i\n      fin_cases i <;> simp <;> ring }"
           }
         }
       }

@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 333,
-            "text": "noncomputable def axialResidual (o : Operators D) (b m : Triple D)\n    (W : Fin 3 → Fin 3 → Field D) (p T : Field D) : Field D"
+            "text": "noncomputable def axialResidual (o : Operators D) (b m : Triple D)\n    (W : Fin 3 → Fin 3 → Field D) (p T : Field D) : Field D :=\n  o.time m.axial + o.radialDiv 1 (axialRadial b m + W 0 2) +\n    o.dz (axialAxial b m + W 2 2 + p) - o.viscosity 0 m.axial - o.radialDiv 1 T"
           }
         }
       }

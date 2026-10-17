@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 107,
-            "text": "structure FullCleanOutgoingCone {d : TailData} {K : ℝ} (w : ResetWitness d K)\n    (XR left : ℝ) : Prop extends CleanOutgoingCone w XR left"
+            "text": "structure FullCleanOutgoingCone {d : TailData} {K : ℝ} (w : ResetWitness d K)\n    (XR left : ℝ) : Prop extends CleanOutgoingCone w XR left where\n  true_from_transition : ∀ p ∈ trueWindowFromTransition d,\n    TrueAt w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p"
           }
         }
       }

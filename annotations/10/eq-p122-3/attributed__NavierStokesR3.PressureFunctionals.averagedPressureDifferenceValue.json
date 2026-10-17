@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 122,
-            "text": "def averagedPressureDifferenceValue (W0 W1 : Space → ℝ)\n    (G : Fin 3 → Fin 3 → Space → ℝ) (k : Fin 3) (ψ : ComplexTest) : ℂ"
+            "text": "def averagedPressureDifferenceValue (W0 W1 : Space → ℝ)\n    (G : Fin 3 → Fin 3 → Space → ℝ) (k : Fin 3) (ψ : ComplexTest) : ℂ :=\n  (∫ x : Space, (W0 x : ℂ) * laplacianCLM ψ x) +\n    (∫ x : Space, (W1 x : ℂ) * ψ x) +\n    (∑ i : Fin 3, ∫ x : Space, (G k i x : ℂ) * partialCLM i ψ x) +\n    ∑ i : Fin 3, ∑ j : Fin 3, pressurePair i j (G i j) (partialCLM k ψ)"
           }
         }
       }

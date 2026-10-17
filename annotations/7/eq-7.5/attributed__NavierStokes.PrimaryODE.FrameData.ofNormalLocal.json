@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 1170,
-            "text": "noncomputable def FrameData.ofNormalLocal (n nDot : Q × ℝ → Space)\n    (F : Q × ℝ → ℝ) (g : Q × ℝ → State)\n    (lam h hRate viscosityScale : Q × ℝ → ℝ) : FrameData Q"
+            "text": "noncomputable def FrameData.ofNormalLocal (n nDot : Q × ℝ → Space)\n    (F : Q × ℝ → ℝ) (g : Q × ℝ → State)\n    (lam h hRate viscosityScale : Q × ℝ → ℝ) : FrameData Q where\n  beta z := MovingFrameODE.normalScale (n z)\n  betaDot z := PhaseEstimates.scaleDerivative (n z) (nDot z)\n  rho z := MovingFrameODE.radialSlope (n z)\n  rhoDot z := PhaseEstimates.slopeDerivative (n z) (nDot z)\n  rotation z := PhaseEstimates.angularVelocity (n z) (nDot z)\n  F := F\n  shear := g\n  frame z := localFrame (n z)\n  eigenvalue := lam\n  eigenvector := h\n  eigenRate := hRate\n  viscosity z := viscosityScale z * ‖n z‖ ^ 2"
           }
         }
       }

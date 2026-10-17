@@ -48,7 +48,7 @@
           },
           "snippet": {
             "line": 1039,
-            "text": "theorem exists_natural_activation_factor_aligned {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    (hP0 : ContDiff ℝ ∞ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2*δ < ReferencePath.rampLimit)\n    {T κ : ℝ} (hT : 0 < T) (hκ : κ < 1) :\n    let N"
+            "text": "theorem exists_natural_activation_factor_aligned {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : NaturalAxisCoefficients.AnalyticInputs h j σ P0}\n    (hΛ : 0 < Λ) (F : NaturalEntrance.EntranceProfile d Λ C)\n    (hP0 : ContDiff ℝ ∞ P0) (hsmall : NaturalAxisData.SmallParameters h j)\n    {δ : ℝ} (hδ : 0 < δ) (hδlim : 2*δ < ReferencePath.rampLimit)\n    {T κ : ℝ} (hT : 0 < T) (hκ : κ < 1) :\n    let N := ReferencePath.Input.ofNatural hΛ F.profile.family\n    let L := FromReference.refLog N δ\n    let U := FromReference.refAxial N δ\n    let I := ActivationStocks.FromReference.initial N hδ hδlim P0 hP0\n    ∃ G : EdgeFactor (Icc (-1 : ℝ) 1) (T^2)\n        (fun q => activatedStress h N.endpoint I L U T κ (q.2,q.1)),\n      (∀ η ∈ Icc (-1 : ℝ) 1, 0 < (G.coefficient (η,0)).1) ∧\n      ∀ η ∈ Icc (-1 : ℝ) 1, tilt (G.coefficient (η,0)) =\n        referenceP2 N.endpoint L U (0,η) / referenceP1 L (0,η)"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 2760,
-            "text": "noncomputable def gaugeTemporalPressureChange (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (axial : S × PressureStream.Plane) (c : Context (PressureStream.Lift S))\n    (u : State (PressureStream.Lift S)) : ScalarField (PressureStream.Lift S)"
+            "text": "noncomputable def gaugeTemporalPressureChange (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (axial : S × PressureStream.Plane) (c : Context (PressureStream.Lift S))\n    (u : State (PressureStream.Lift S)) : ScalarField (PressureStream.Lift S) :=\n  (temporalStageState g h index axial c u).pressure - u.pressure"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 22,
-            "text": "structure PreparedProfile"
+            "text": "structure PreparedProfile where\n  profile : Profile\n  bound : ℝ\n  bound_pos : 0 < bound\n  specification : Specification profile bound\n  schedule : ExtendedHeatedOutgoing.ScheduleBounds profile\n  terminal : TerminalCone.SmallTail profile.data\n  amplitude_lower : 2 ≤ profile.data.core.P\n  height_upper : profile.data.h ≤ 1 / 1000\n  clean : ∀ left : ℝ, left ≤ 0 →\n    ∃ R0 : ℝ, 0 < R0 ∧ ∀ R : ℝ, R0 < R → OutgoingCone.ProfileCleanCone profile R left"
           }
         }
       }

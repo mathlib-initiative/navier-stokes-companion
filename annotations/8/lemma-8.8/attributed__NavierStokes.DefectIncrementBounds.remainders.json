@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 341,
-            "text": "noncomputable def remainders (o : Operators (Point P)) (base m h : Triple (Point P))\n    (W : Fin 3 → Fin 3 → ScalarField (Point P)) : ℕ → P → Fin 3 → ℝ"
+            "text": "noncomputable def remainders (o : Operators (Point P)) (base m h : Triple (Point P))\n    (W : Fin 3 → Fin 3 → ScalarField (Point P)) : ℕ → P → Fin 3 → ℝ := fun n p =>\n  ![barMoment 0 (actualRadialError o base m h W) n p,\n    barMoment 2 (thetaQuadratic m h) n p,\n    barMoment 1 (axialQuadratic m h) n p -\n      (1 / 2) * barMoment 2 (actualRadialError o base m h W) n p]"
           }
         }
       }

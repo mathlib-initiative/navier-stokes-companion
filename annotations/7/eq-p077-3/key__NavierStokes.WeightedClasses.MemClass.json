@@ -17,7 +17,7 @@
           },
           "snippet": {
             "line": 107,
-            "text": "structure MemClass (s : StripData D) (w : ℕ → D → ℝ) (α : ℝ)\n    (f : ℕ → D → E) : Prop"
+            "text": "structure MemClass (s : StripData D) (w : ℕ → D → ℝ) (α : ℝ)\n    (f : ℕ → D → E) : Prop where\n  weight_nonneg : ∀ n x, x ∈ s.domain → 0 ≤ w n x\n  smooth : ∀ n, ContDiffOn ℝ ∞ (f n) s.domain\n  bounds : ∀ m : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∃ p : ℕ,\n    ∀ n x, x ∈ s.domain → ∀ j : ℕ, j ≤ m →\n      ‖iteratedFDeriv ℝ j (f n) x‖ ≤ majorant s w α C p n x"
           }
         }
       }

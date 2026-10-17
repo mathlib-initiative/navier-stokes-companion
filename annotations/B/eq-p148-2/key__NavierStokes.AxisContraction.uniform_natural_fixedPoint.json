@@ -17,7 +17,7 @@
           "relation": "states",
           "snippet": {
             "line": 587,
-            "text": "theorem uniform_natural_fixedPoint [CompleteSpace V]\n    (O : NaturalOperators V) (d : AxisData V) (S : V →L[ℝ] V)\n    (M : ℝ) (hM : 0 ≤ M) :\n    ∃ Λ₀ : ℝ, 0 < Λ₀ ∧ ∀ Λ : ℝ, Λ₀ ≤ Λ → ∀ a : V, ‖a‖ ≤ M →\n      ∃ x : V × V,\n        ‖x - referencePair O d S‖ ≤ 1 ∧\n        referencePair O d S +\n          (1 / (2 * Λ)) • naturalRemainder O d S (1 / Λ) a x = x ∧\n        ‖x - referencePair O d S‖ ≤\n          remainderBound O d S (‖referencePair O d S‖ + 1) M ("
+            "text": "theorem uniform_natural_fixedPoint [CompleteSpace V]\n    (O : NaturalOperators V) (d : AxisData V) (S : V →L[ℝ] V)\n    (M : ℝ) (hM : 0 ≤ M) :\n    ∃ Λ₀ : ℝ, 0 < Λ₀ ∧ ∀ Λ : ℝ, Λ₀ ≤ Λ → ∀ a : V, ‖a‖ ≤ M →\n      ∃ x : V × V,\n        ‖x - referencePair O d S‖ ≤ 1 ∧\n        referencePair O d S +\n          (1 / (2 * Λ)) • naturalRemainder O d S (1 / Λ) a x = x ∧\n        ‖x - referencePair O d S‖ ≤\n          remainderBound O d S (‖referencePair O d S‖ + 1) M (by positivity) hM / (2 * Λ) ∧\n        ∀ y : V × V, ‖y - referencePair O d S‖ ≤ 1 →\n          referencePair O d S +\n            (1 / (2 * Λ)) • naturalRemainder O d S (1 / Λ) a y = y → y = x"
           }
         }
       }

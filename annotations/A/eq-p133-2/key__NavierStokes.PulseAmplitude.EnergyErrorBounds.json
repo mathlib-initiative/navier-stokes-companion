@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 1129,
-            "text": "structure EnergyErrorBounds (d : OutgoingTail.TailData) (eta e : ℝ) : Prop"
+            "text": "structure EnergyErrorBounds (d : OutgoingTail.TailData) (eta e : ℝ) : Prop where\n  scale_nonneg : 0 ≤ e\n  quadratic_error : quadraticCoefficient d.core - pulseConstant ≤ e\n  linear_error : |linearCoefficient d.core| ≤ e\n  correction_nonneg : 0 ≤ constantCorrection d.core\n  correction_error : constantCorrection d.core ≤ e\n  prefix_axial_nonneg : 0 ≤ normalizedPrefixAxial d.core\n  prefix_axial_error : normalizedPrefixAxial d.core ≤ e\n  prefix_angular_nonneg : 0 ≤ normalizedPrefixAngular d.core\n  prefix_angular_error : normalizedPrefixAngular d.core ≤ e\n  tail_nonneg : 0 ≤ normalizedTail d eta\n  tail_error : normalizedTail d eta ≤ e"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 1242,
-            "text": "def OrderEquations {R : ℝ} {U : Set ℂ} (h C : ℝ) (A : ℕ → Coefficient R U)\n    (n : ℕ) (w : SimilarityProfile.InnerPoint) : Prop"
+            "text": "def OrderEquations {R : ℝ} {U : Set ℂ} (h C : ℝ) (A : ℕ → Coefficient R U)\n    (n : ℕ) (w : SimilarityProfile.InnerPoint) : Prop :=\n  PositiveAxisSystem.PositiveOrderEquations h C w.2 w.1 n\n    (fun j => PositiveAxisSystem.actualJet (profile (A j 0)) w)\n    (fun j => PositiveAxisSystem.actualJet (profile (A j 1)) w)\n    (fun j => profile (A j 4) w)\n    (PositiveAxisSystem.actualJet (profile (A n 2)) w)\n    (PositiveAxisSystem.actualJet (profile (A n 3)) w)\n    (PositiveAxisSystem.precedingDiffusion h (PositiveAxisSystem.angularPower h) (fun j => profile (A j 0)) n w)\n    (PositiveAxisSystem.precedingDiffusion h (PositiveAxisSystem.axialPower h) (fun j => profile (A j 1)) n w)\n    (AxisSourceRegularity.previousOmegaDivX h (fun j => profile (A j 1)) (fun j => profile (A j 4)) n w)"
           }
         }
       }

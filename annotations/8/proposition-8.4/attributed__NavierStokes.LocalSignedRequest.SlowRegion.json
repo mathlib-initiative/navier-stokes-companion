@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 111,
-            "text": "structure SlowRegion (coord : ℝ)"
+            "text": "structure SlowRegion (coord : ℝ) where\n  carrier : Set Plane\n  isOpen : IsOpen carrier\n  coord_pos : 0 < coord\n  coord_lt_one : coord < 1\n  qlo : ℝ\n  qhi : ℝ\n  qlo_pos : 0 < qlo\n  time_pos : ∀ s ∈ carrier, 0 < s.1\n  q_mem : ∀ s ∈ carrier, SimilarityCoordinates.coordinateQ coord s ∈ Icc qlo qhi"
           }
         }
       }

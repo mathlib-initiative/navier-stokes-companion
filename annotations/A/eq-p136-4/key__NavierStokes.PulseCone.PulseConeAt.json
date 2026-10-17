@@ -16,7 +16,7 @@
           },
           "snippet": {
             "line": 1862,
-            "text": "structure PulseConeAt (w : ResetWitness d K) (amp : ℝ → ℝ) (p : Point) : Prop"
+            "text": "structure PulseConeAt (w : ResetWitness d K) (amp : ℝ → ℝ) (p : Point) : Prop where\n  angular_positive : 0 < Qs w amp p\n  first_margin : shearB w amp p * directionRatio w amp p ≤ 74 / 100\n  second_margin : 2 * shearB w amp p * directionRatio w amp p +\n    shearB w amp p ^ 2 / radialA w p + (radialA w p - 2) * directionRatio w amp p ^ 2 ≤ 168 / 100\n  radial_gt_two : 2 < radialA w p"
           }
         }
       }

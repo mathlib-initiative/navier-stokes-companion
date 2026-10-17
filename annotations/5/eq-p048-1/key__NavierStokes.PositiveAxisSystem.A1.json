@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 135,
-            "text": "noncomputable def A1 (h r eta : K) (b : BaseJet K) : Matrix (Fin 6) (Fin 6) K"
+            "text": "noncomputable def A1 (h r eta : K) (b : BaseJet K) : Matrix (Fin 6) (Fin 6) K :=\n  let H := dScale h * eta + edge eta * b.axial.value\n  let Gphi := r ^ 2 * b.phi.radial + b.phi.value\n  let Gu := r ^ 2 * b.axial.radial\n  !![0, 0, 0, 0, 0, 0;\n     0, 0, 0, 0, 0, 0;\n     0, 0, 0, 0, 0, 0;\n     0, 0, 0, 0, 0, 0;\n     2 * H / ell h eta, -2 * edge eta * Gphi / ell h eta,\n       -2 * edge eta * Gphi / ell h eta, 0, 0, 0;\n     0, 2 * (H - edge eta * Gu) / ell h eta,\n       -2 * edge eta * Gu / ell h eta, 2 * edge eta / ell h eta, 0, 0]"
           }
         }
       }

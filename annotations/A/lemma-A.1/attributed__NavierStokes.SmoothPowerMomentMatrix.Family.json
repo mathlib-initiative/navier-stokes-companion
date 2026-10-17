@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 93,
-            "text": "structure Family (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]\n    (n : ℕ) (U : Set E)"
+            "text": "structure Family (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]\n    (n : ℕ) (U : Set E) where\n  exponent : E → Fin n → ℝ\n  lower : E → Fin n → ℝ\n  upper : E → Fin n → ℝ\n  bump : E → Fin n → ℝ → ℝ\n  exponent_smooth : ∀ i, ContDiffOn ℝ ∞ (fun p => exponent p i) U\n  lower_continuous : ∀ j, ContinuousOn (fun p => lower p j) U\n  upper_continuous : ∀ j, ContinuousOn (fun p => upper p j) U\n  bump_smooth : ∀ j, ContDiffOn ℝ ∞ (fun z : E × ℝ => bump z.1 j z.2) (U ×ˢ univ)\n  exponent_injective : ∀ p ∈ U, Injective (exponent p)\n  lower_pos : ∀ p ∈ U, ∀ j, 0 < lower p j\n  separated : ∀ p ∈ U, ∀ i j, i < j → upper p i < lower p j\n  bump_nonnegative : ∀ p ∈ U, ∀ j t, 0 ≤ bump p j t\n  bump_nonzero : ∀ p ∈ U, ∀ j, ∃ t, bump p j t ≠ 0\n  bump_support : ∀ p ∈ U, ∀ j, support (bump p j) ⊆ Icc (lower p j) (upper p j)"
           }
         }
       }

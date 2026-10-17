@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 868,
-            "text": "noncomputable def HasTrueDirectionCollar (K : Set E) (T B : E × ℝ → ℝ × ℝ)\n    (v s : E × ℝ → ℝ) (width : ℝ) : Prop"
+            "text": "noncomputable def HasTrueDirectionCollar (K : Set E) (T B : E × ℝ → ℝ × ℝ)\n    (v s : E × ℝ → ℝ) (width : ℝ) : Prop :=\n  HasStrictDirectionCollar K T B v s width ∧\n  ∃ d ε : ℝ, 0 < d ∧ d < width ∧ 0 < ε ∧\n    ∀ p ∈ K, ∀ x : ℝ, 0 < x → x ≤ d →\n      ε ≤ v (p,x)-2 ∧\n      ε ≤ directionProjection (s (p,x)) (tilt (T (p,x))) ∧\n      ε ≤ directionGap (v (p,x)) (s (p,x)) (tilt (T (p,x)))"
           }
         }
       }

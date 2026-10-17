@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 874,
-            "text": "noncomputable def actualObservations (F : Profile) (XR : ℝ) (c : ℝ → Coeff)\n    (p : Point) : Fin 18 → ℝ"
+            "text": "noncomputable def actualObservations (F : Profile) (XR : ℝ) (c : ℝ → Coeff)\n    (p : Point) : Fin 18 → ℝ :=\n  ![logE F XR c p, deriv (fun y => logE F XR c (y, p.2)) p.1,\n    derivWithin (fun eta => logE F XR c (p.1, eta)) HeatedOutgoing.parameterDomain p.2,\n    logI F XR c p,\n    derivWithin (fun eta => logI F XR c (p.1, eta)) HeatedOutgoing.parameterDomain p.2,\n    logS F XR c p,\n    derivWithin (fun eta => logS F XR c (p.1, eta)) HeatedOutgoing.parameterDomain p.2,\n    logPi F XR c p,\n    derivWithin (fun eta => logPi F XR c (p.1, eta)) HeatedOutgoing.parameterDomain p.2,\n    Qs F XR c p, Ns F XR c p, radialA F XR c p, radialB F XR c p, ratio F XR c p,\n    sourceC F XR c p, sourceJ F XR c p, normalV F XR c p, leadingGap F XR c p]"
           }
         }
       }

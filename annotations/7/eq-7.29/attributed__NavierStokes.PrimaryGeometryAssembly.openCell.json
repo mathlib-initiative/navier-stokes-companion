@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 29,
-            "text": "noncomputable def openCell (n : ℕ) (k : SlotColoring.Grid) : Set Slow"
+            "text": "noncomputable def openCell (n : ℕ) (k : SlotColoring.Grid) : Set Slow :=\n  let s := SquaredPartition.nativeSpacing n\n  (Ioo (s * (k 0 : ℝ) - 2 * s) (s * (k 0 : ℝ) + 2 * s) ×ˢ\n    (Ioo (s * (k 1 : ℝ) - 2 * s) (s * (k 1 : ℝ) + 2 * s) ×ˢ\n      Ioo (s * (k 2 : ℝ) - 2 * s) (s * (k 2 : ℝ) + 2 * s))) ∩\n    PositiveRepresentatives.positiveTime"
           }
         }
       }

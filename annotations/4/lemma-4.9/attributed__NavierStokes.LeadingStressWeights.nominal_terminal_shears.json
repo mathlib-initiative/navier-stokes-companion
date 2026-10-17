@@ -24,7 +24,7 @@
           },
           "snippet": {
             "line": 643,
-            "text": "theorem nominal_terminal_shears {y eta : ℝ} (hy : TerminalCone.terminalStart F.data ≤ y)\n    (hη : eta ∈ Icc (-1 : ℝ) 1) :\n    let p"
+            "text": "theorem nominal_terminal_shears {y eta : ℝ} (hy : TerminalCone.terminalStart F.data ≤ y)\n    (hη : eta ∈ Icc (-1 : ℝ) 1) :\n    let p := NominalConeAssembly.chart W.controls.radius (y, eta)\n    ActivationContinuation.shearA W.profiles p =\n      TerminalEdgeFactor.profileSpeed (TerminalHistoryBridge.normalization F W.controls.radius)\n        F.data (TerminalHistoryBridge.shift F W.controls.radius) (eta, OutgoingTail.tailEnd F.data - y) ∧\n    ActivationContinuation.shearB W.profiles p = 0"
           }
         }
       }

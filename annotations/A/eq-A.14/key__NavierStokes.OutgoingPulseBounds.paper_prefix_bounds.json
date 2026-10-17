@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 1280,
-            "text": "theorem paper_prefix_bounds (P m : ℝ) (hP : 0 < P) (hm : 0 < m) :\n    ∃ C : ℝ, 0 < C ∧ ∀ (lam : ℝ) (hlam : 0 < lam) (hsmall : lam ≤ 1 / 120),\n      let c"
+            "text": "theorem paper_prefix_bounds (P m : ℝ) (hP : 0 < P) (hm : 0 < m) :\n    ∃ C : ℝ, 0 < C ∧ ∀ (lam : ℝ) (hlam : 0 < lam) (hsmall : lam ≤ 1 / 120),\n      let c := paperParameters P m lam hP hm hlam (by linarith)\n      pulseAmplitude c ≤ C * lam ^ 30 ∧\n        ∀ (amp : ℝ → ℝ) (eta : ℝ), |eta| ≤ 1 →\n          |massMoment c amp eta c.pulseStart /\n            (Real.exp c.pulseStart * angular c.P c.dropLength c.lam (c.pulseStart, eta))| ≤ C * lam ^ 29 ∧\n          |deriv (fun t => massMoment c amp t c.pulseStart /\n            (Real.exp c.pulseStart * angular c.P c.dropLength c.lam (c.pulseStart, t))) eta| ≤ C * lam ^ 29"
           }
         }
       }

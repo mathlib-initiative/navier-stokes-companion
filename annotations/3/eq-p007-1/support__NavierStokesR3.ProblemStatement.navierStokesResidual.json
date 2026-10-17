@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 57,
-            "text": "def navierStokesResidual (ν : ℝ) (u : VelocityField) (p : PressureField)\n    (t : ℝ) (x : Space) : Space"
+            "text": "def navierStokesResidual (ν : ℝ) (u : VelocityField) (p : PressureField)\n    (t : ℝ) (x : Space) : Space :=\n  NavierStokes.ProblemStatement.temporalDerivative u t x +\n    NavierStokes.ProblemStatement.advection u t x -\n    ν • NavierStokes.ProblemStatement.spatialLaplacian u t x +\n    NavierStokes.ProblemStatement.pressureGradient p t x"
           }
         }
       }

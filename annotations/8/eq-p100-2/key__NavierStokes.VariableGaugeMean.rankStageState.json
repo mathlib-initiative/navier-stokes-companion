@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 580,
-            "text": "noncomputable def rankStageState (g : GaugeData S) (r : CorrectionState.RankData S)\n    (axial : S × PressureStream.Plane) (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) : CorrectionState.State (PressureStream.Lift S)"
+            "text": "noncomputable def rankStageState (g : GaugeData S) (r : CorrectionState.RankData S)\n    (axial : S × PressureStream.Plane) (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) : CorrectionState.State (PressureStream.Lift S) :=\n  reconstructState g c (u.addIncrement (rankIncrementState g r axial c u) 0 0 0 CorrectionState.ExcludedErrors.zero)"
           }
         }
       }

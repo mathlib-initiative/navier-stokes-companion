@@ -16,7 +16,7 @@
           },
           "snippet": {
             "line": 943,
-            "text": "noncomputable def commonTemporalPotential (r : ℕ → CorrectionState.ReconstructionData)\n    (h : ℝ) (index : ℕ → ℕ) (f : ℕ → PressureStream.Lift S → ℝ) (n : ℕ) :\n    PressureStream.Lift S → ℝ"
+            "text": "noncomputable def commonTemporalPotential (r : ℕ → CorrectionState.ReconstructionData)\n    (h : ℝ) (index : ℕ → ℕ) (f : ℕ → PressureStream.Lift S → ℝ) (n : ℕ) :\n    PressureStream.Lift S → ℝ :=\n  PressureStream.streamPotential (r n).exponent (r n).inner (r n).outer ((r n).frequency n)\n    ((0 : S), (r n).radialDirection) (temporalAtIndex h n (index n) (f n))"
           }
         }
       }

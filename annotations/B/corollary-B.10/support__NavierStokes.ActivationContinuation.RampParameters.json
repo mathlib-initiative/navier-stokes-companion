@@ -20,7 +20,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 1468,
-            "text": "structure RampParameters {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (F : NaturalProfile.ProfileFamily d Λ C)\n    (hΛ : 0 < Λ) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hP0 : ContDiff ℝ ∞ P0)"
+            "text": "structure RampParameters {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (F : NaturalProfile.ProfileFamily d Λ C)\n    (hΛ : 0 < Λ) (hsmall : NaturalAxisData.SmallParameters h j)\n    (hP0 : ContDiff ℝ ∞ P0) where\n  refTime : ℝ\n  actTime : ℝ\n  kappa : ℝ\n  widthU : ℝ\n  widthA : ℝ\n  refTime_pos : 0 < refTime\n  refTime_bound : 2 * refTime < ReferencePath.rampLimit\n  actTime_pos : 0 < actTime\n  actTime_le : actTime ≤ refTime\n  kappa_pos : 0 < kappa\n  kappa_lt_one : kappa < 1\n  widthU_pos : 0 < widthU\n  widthA_pos : 0 < widthA\n  before_big : refTime ≤\n    (TransitionRamp.ofNatural F hΛ hsmall refTime_pos refTime_bound hP0).bigTime\n  finish_before :\n    (TransitionRamp.ofNatural F hΛ hsmall refTime_pos refTime_bound hP0).bigTime + widthU + widthA <\n      (TransitionRamp.ofNatural F hΛ hsmall refTime_pos refTime_bound hP0).finalTime"
           }
         }
       }

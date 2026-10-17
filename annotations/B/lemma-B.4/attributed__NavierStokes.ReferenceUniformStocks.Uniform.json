@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 15,
-            "text": "def Uniform {ι : Type*} (k : ℕ) (F : ι → ℝ → ℝ) : Prop"
+            "text": "def Uniform {ι : Type*} (k : ℕ) (F : ι → ℝ → ℝ) : Prop :=\n  (∀ i, ContDiffOn ℝ ∞ (F i) J) ∧ ∃ B, 0 ≤ B ∧ ∀ i, Bound k (F i) B"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 171,
-            "text": "def ApproximationRates.fixed {c : D → ℝ} {L : ℕ → ℝ}\n    (hc : ∀ m, JetRate l q c m (-L m)) :\n    ApproximationRates l q gain c (fun _ => c)"
+            "text": "def ApproximationRates.fixed {c : D → ℝ} {L : ℕ → ℝ}\n    (hc : ∀ m, JetRate l q c m (-L m)) :\n    ApproximationRates l q gain c (fun _ => c) where\n  growthLoss := L\n  tailLoss := 0\n  threshold := 0\n  stage_growth _ m := hc m\n  tail_rate m J _ := by\n    simpa only [sub_self] using (rate_zero (l := l) (q := q) (m := m)\n      (r := gain J - (0 : ℕ → ℝ) m))"
           }
         }
       }

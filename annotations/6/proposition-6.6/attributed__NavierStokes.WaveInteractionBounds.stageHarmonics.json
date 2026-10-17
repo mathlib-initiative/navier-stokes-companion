@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 1122,
-            "text": "noncomputable def stageHarmonics (initial : Finset ℤ) : ℕ → Finset ℤ\n  | 0 => initial\n  | stage + 1 =>\n    let current"
+            "text": "noncomputable def stageHarmonics (initial : Finset ℤ) : ℕ → Finset ℤ\n  | 0 => initial\n  | stage + 1 =>\n    let current := stageHarmonics initial stage\n    current ∪ current.image (fun j => -j) ∪ (current.product current).image (fun p => p.1 + p.2)"
           }
         }
       }

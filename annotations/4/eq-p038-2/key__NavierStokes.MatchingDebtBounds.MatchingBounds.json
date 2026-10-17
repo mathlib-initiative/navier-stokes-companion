@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 578,
-            "text": "structure MatchingBounds {F : OutgoingProfile.Profile} {A : NominalProfile.AxisStage F}\n    (c : NominalProfile.Controls A) (N : ℕ) (rho : ℝ) : Prop"
+            "text": "structure MatchingBounds {F : OutgoingProfile.Profile} {A : NominalProfile.AxisStage F}\n    (c : NominalProfile.Controls A) (N : ℕ) (rho : ℝ) : Prop where\n  separation : c.separation < Real.exp (-8)\n  normalized_jets : ∀ n ≤ N, ∀ eta ∈ Icc (-1 : ℝ) 1,\n    ‖iteratedFDeriv ℝ n (NominalProfile.normalizedDebt F c.debt) eta‖ < rho\n  shape_slope : ∀ y : ℝ, ∀ eta ∈ Icc (-1 : ℝ) 1,\n    11 / 20 ≤ 1 / 2 + deriv (fun s => ShapeTransition.logProfile A.normalization c.shapeTime\n      c.initialShape (s, eta)) y ∧\n    1 / 2 + deriv (fun s => ShapeTransition.logProfile A.normalization c.shapeTime\n      c.initialShape (s, eta)) y ≤ 13 / 20"
           }
         }
       }

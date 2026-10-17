@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 438,
-            "text": "structure Estimates {ι : Type*} (D : Domain ι Slow) (Q : ι → ℝ)\n    (a : ℕ → ℕ) (h C : ℝ) (d : SlowBorelBase.Coefficients) : Prop"
+            "text": "structure Estimates {ι : Type*} (D : Domain ι Slow) (Q : ι → ℝ)\n    (a : ℕ → ℕ) (h C : ℝ) (d : SlowBorelBase.Coefficients) : Prop where\n  frequency_error : EnvelopeJets (unitScale D) (fun i _ => Q i ^ (2 * h))\n    (fun i p => frequency a h C d (Q i) p - leadingFrequency h C d p)\n  axial_error : EnvelopeJets (unitScale D) (fun i _ => Q i ^ (2 * h))\n    (fun i p => axial a h d (Q i) p - leadingAxial h d p)\n  leading_frequency : PolynomialJets (unitScale D) (fun _ => leadingFrequency h C d)\n  leading_axial : PolynomialJets (unitScale D) (fun _ => leadingAxial h d)\n  frequency_jets : PolynomialJets (unitScale D) (fun i => frequency a h C d (Q i))\n  axial_jets : PolynomialJets (unitScale D) (fun i => axial a h d (Q i))"
           }
         }
       }

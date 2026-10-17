@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 619,
-            "text": "noncomputable def angularBalance (ε : ℝ) (v radialFlux axialFlux virtualFlux : MeanField)\n    (x : MeanPoint) : ℝ"
+            "text": "noncomputable def angularBalance (ε : ℝ) (v radialFlux axialFlux virtualFlux : MeanField)\n    (x : MeanPoint) : ℝ :=\n  (-ε) * parameterPartial (1, 0) v x +\n    radialDivergence 2 (fun r => radialFlux (r, x.2)) x.1 +\n    ε * parameterPartial (0, 1) axialFlux x -\n    ε * (angularRadialViscosity (fun r => v (r, x.2)) x.1 +\n      ε ^ 2 * parameterPartial (0, 1) (parameterPartial (0, 1) v) x) -\n    radialDivergence 2 (fun r => virtualFlux (r, x.2)) x.1"
           }
         }
       }

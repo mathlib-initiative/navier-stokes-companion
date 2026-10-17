@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 503,
-            "text": "noncomputable def axialDebtPotential (g : VariableGaugeMean.GaugeData Plane)\n    (c : Context Point) (u : State Point) : ScalarField Plane"
+            "text": "noncomputable def axialDebtPotential (g : VariableGaugeMean.GaugeData Plane)\n    (c : Context Point) (u : State Point) : ScalarField Plane :=\n  fun n s => CorrectionState.axialDefect c u n s +\n    pressureCoefficient g n s * CorrectionState.pressureDefect c u n s"
           }
         }
       }

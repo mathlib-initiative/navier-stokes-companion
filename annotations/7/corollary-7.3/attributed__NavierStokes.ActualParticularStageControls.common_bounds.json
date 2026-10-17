@@ -24,7 +24,7 @@
           },
           "snippet": {
             "line": 1356,
-            "text": "theorem common_bounds (x : CycleState (Label B N0)) (hx : PreservesCarriers x)\n    (hs : InputSupport x) (hN : ActualCarrierGeometry.geometricThreshold ≤ N0)\n    {α : ℝ} (j : ℤ) (hj : j ≠ 0)\n    (H : LabelSumBounds.UniformWaveClass\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      nativeEnvelope α (currentSource x j)) :\n    let s"
+            "text": "theorem common_bounds (x : CycleState (Label B N0)) (hx : PreservesCarriers x)\n    (hs : InputSupport x) (hN : ActualCarrierGeometry.geometricThreshold ≤ N0)\n    {α : ℝ} (j : ℤ) (hj : j ≠ 0)\n    (H : LabelSumBounds.UniformWaveClass\n      (CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip))\n      nativeEnvelope α (currentSource x j)) :\n    let s := CommonCoverClass.sourceStrip (ActualParticularControl.angleStrip slowStrip)\n    LabelSumBounds.UniformWaveClass s nativeEnvelope α (fun l => (data x l j).common.amplitude) ∧\n    LabelSumBounds.UniformWaveClass s nativeEnvelope α\n      (fun l => ((data x l j).commonCorrected s (directions (B := B))).amplitude) ∧\n    LabelSumBounds.UniformWaveClass s nativeEnvelope (α+1/2) (fun l => (data x l j).common.pressure) ∧\n    LabelSumBounds.UniformWaveClass s nativeEnvelope (α+1/2-ChartScales.kappa)\n      (fun l => (data x l j).common.curlCorrection s (directions (B := B))) ∧\n    LabelSumBounds.UniformWaveClass s nativeEnvelope (α+1/2-3*ChartScales.kappa)\n      (fun l => (data x l j).globalGood s (directions (B := B)))"
           }
         }
       }

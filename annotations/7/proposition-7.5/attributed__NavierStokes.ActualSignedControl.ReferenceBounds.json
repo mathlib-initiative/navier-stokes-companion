@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 85,
-            "text": "structure ReferenceBounds (V : JetDomain ι D) (U : Domain ι PhaseCalculus.Slow)\n    (F : Fin 2 → PhaseConstruction U) (pref : Fin 2 → ι → ℝ)\n    (χ : ι → D → PhaseCalculus.Slow × ℝ) (T : ι → D → Vec2)\n    (mask ζ : ι → D → ℝ)"
+            "text": "structure ReferenceBounds (V : JetDomain ι D) (U : Domain ι PhaseCalculus.Slow)\n    (F : Fin 2 → PhaseConstruction U) (pref : Fin 2 → ι → ℝ)\n    (χ : ι → D → PhaseCalculus.Slow × ℝ) (T : ι → D → Vec2)\n    (mask ζ : ι → D → ℝ) where\n  scale : ∀ i, U.scale i = V.scale i\n  coordinate_jets : PolynomialJets V.toDomain χ\n  coordinate_mem : ∀ i x, x ∈ V.carrier i → χ i x ∈ U.carrier i ×ˢ Ioo (0 : ℝ) 1\n  prefactor_jets : ∀ j, PolynomialJets U (fun i _ => pref j i)\n  target_jets : ∀ q, NativeJets V ζ (fun i x => T i x q)\n  mask_jets : PolynomialJets V.toDomain mask\n  weight_pos : ∀ i x, x ∈ V.carrier i → 0 < ζ i x\n  determinantGap : ℝ\n  entryBound : ℝ\n  primaryLower : ℝ\n  gap_pos : 0 < determinantGap\n  entry_one : 1 ≤ entryBound\n  lower_pos : 0 < primaryLower\n  zero_order : ∀ i x, x ∈ V.carrier i →\n    PrimaryCovarianceBounds.ZeroOrderBounds (Real.sqrt (V.scale i))\n      determinantGap entryBound primaryLower (ζ i x)\n      (pulseMatrix F pref χ i x) (T i x)"
           }
         }
       }

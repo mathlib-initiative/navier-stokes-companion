@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 328,
-            "text": "noncomputable def thetaResidual (o : Operators D) (b m : Triple D)\n    (W : Fin 3 → Fin 3 → Field D) (T : Field D) : Field D"
+            "text": "noncomputable def thetaResidual (o : Operators D) (b m : Triple D)\n    (W : Fin 3 → Fin 3 → Field D) (T : Field D) : Field D :=\n  o.time m.angular + o.radialDiv 2 (thetaRadial b m + W 0 1) +\n    o.dz (thetaAxial b m + W 2 1) - o.viscosity 1 m.angular - o.radialDiv 2 T"
           }
         }
       }

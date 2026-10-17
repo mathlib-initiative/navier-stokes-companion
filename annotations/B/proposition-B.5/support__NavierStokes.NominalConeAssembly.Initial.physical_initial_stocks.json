@@ -20,7 +20,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 1212,
-            "text": "theorem physical_initial_stocks {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (E : NaturalEntrance.EntranceProfile d Λ C)\n    {hΛ : 0 < Λ} {hsmall : NaturalAxisData.SmallParameters h j}\n    {hP0 : ContDiff ℝ ∞ P0}\n    (r : ActivationContinuation.RampParameters E.profile.family hΛ hsmall hP0)\n    {y η : ℝ} (hy : y ≤ r.refTime) (hη : η ∈ ReferencePath.parameterInterval) :\n    let N"
+            "text": "theorem physical_initial_stocks {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (E : NaturalEntrance.EntranceProfile d Λ C)\n    {hΛ : 0 < Λ} {hsmall : NaturalAxisData.SmallParameters h j}\n    {hP0 : ContDiff ℝ ∞ P0}\n    (r : ActivationContinuation.RampParameters E.profile.family hΛ hsmall hP0)\n    {y η : ℝ} (hy : y ≤ r.refTime) (hη : η ∈ ReferencePath.parameterInterval) :\n    let N := ReferencePath.Input.ofNatural hΛ E.profile.family\n    let L := StressActivation.FromReference.refLog N r.refTime\n    let U := StressActivation.FromReference.refAxial N r.refTime\n    let I := ActivationStocks.FromReference.initial N r.refTime_pos r.refTime_bound P0 hP0\n    let z : Point := (radius N.endpoint y, η)\n    ReferenceBounds.p1 r.profiles h z =\n      ActivationCone.activatedStockOne h N.endpoint I L U r.actTime r.kappa (y, η) ∧\n    ReferenceBounds.p2 r.profiles h z =\n      ActivationCone.activatedStockTwo h N.endpoint I L U r.actTime r.kappa (y, η)"
           }
         }
       }

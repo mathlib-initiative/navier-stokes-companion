@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 185,
-            "text": "noncomputable def crossJet (A : P → Coefficient a b E) (u : P → Curve a b E)\n    (l : List P) : P → Curve a b E"
+            "text": "noncomputable def crossJet (A : P → Coefficient a b E) (u : P → Curve a b E)\n    (l : List P) : P → Curve a b E :=\n  (List.rec\n    (motive := fun _ : List P =>\n      (P → Coefficient a b E) → (P → Curve a b E) → P → Curve a b E)\n    (fun _ _ _ => 0)\n    (fun v tail rec B z p => productJet (directional B v) z tail p +\n      rec B (directional z v) p) l) A u"
           }
         }
       }

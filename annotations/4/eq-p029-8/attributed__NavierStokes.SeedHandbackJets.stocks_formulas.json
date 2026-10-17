@@ -19,7 +19,7 @@
           "relation": "implies",
           "snippet": {
             "line": 94,
-            "text": "theorem stocks_formulas (h X : ℝ) (P₀ : ℝ → ℝ) (f : Curves) (η : ℝ) :\n    let p"
+            "text": "theorem stocks_formulas (h X : ℝ) (P₀ : ℝ → ℝ) (f : Curves) (η : ℝ) :\n    let p := packet P₀ f\n    let W := (X-2*NaturalAxisData.D h*η*p 2 η-NaturalAxisData.d η*p 3 η)/X\n    stocks h X P₀ f 0 η = -W+\n      ((1-h)*p 4 η-NaturalAxisData.D h*η*p 5 η-NaturalAxisData.d η*p 7 η+\n        2*(h-NaturalAxisData.D h)*η*p 6 η)/(X*Real.sqrt (2*X)*p 0 η) ∧\n    stocks h X P₀ f 1 η = -W*p 1 η+\n      (NaturalAxisData.D h*(p 2 η-η*p 3 η)+4*h*η*p 8 η-NaturalAxisData.d η*p 9 η)/X+\n      4*NaturalAxisData.A h*η*p 10 η-NaturalAxisData.d η*p 11 η ∧\n    stocks h X P₀ f 2 η = X/NaturalAxisData.L h η*stocks h X P₀ f 0 η ∧\n    stocks h X P₀ f 3 η = X/(NaturalAxisData.L h η*p 0 η)*stocks h X P₀ f 1 η"
           }
         }
       }

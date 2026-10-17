@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 547,
-            "text": "noncomputable def temporalAxialDifference (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) (n : ℕ) (z : PressureStream.Lift S) : ℝ"
+            "text": "noncomputable def temporalAxialDifference (g : GaugeData S) (h : ℝ) (index : ℕ → ℕ)\n    (c : CorrectionState.Context (PressureStream.Lift S))\n    (u : CorrectionState.State (PressureStream.Lift S)) (n : ℕ) (z : PressureStream.Lift S) : ℝ :=\n  MeanChartCompatibility.temporalAtIndex h n (index n) (u.axialResidual c n) z -\n    PressureStream.streamGamma (PressureStream.physicalSpeed g.radial.exponent (g.radial.frequency n))\n      ((0 : S), g.radial.radialDirection) (temporalPotential g h index c u n) z"
           }
         }
       }

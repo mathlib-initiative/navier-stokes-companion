@@ -24,7 +24,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 207,
-            "text": "noncomputable def matrixEquiv (P : Patch) (a : Fin n → ℝ) (ha : Injective a) :\n    (Fin n → ℝ) ≃L[ℝ] (Fin n → ℝ)"
+            "text": "noncomputable def matrixEquiv (P : Patch) (a : Fin n → ℝ) (ha : Injective a) :\n    (Fin n → ℝ) ≃L[ℝ] (Fin n → ℝ) :=\n  LinearEquiv.toContinuousLinearEquiv\n    { toFun := (momentMatrix P a).mulVec\n      invFun := (momentMatrix P a)⁻¹.mulVec\n      map_add' := Matrix.mulVec_add _\n      map_smul' := fun r c => Matrix.mulVec_smul _ r c\n      left_inv := fun c => by\n        rw [Matrix.mulVec_mulVec, Matrix.nonsing_inv_mul _\n          (isUnit_iff_ne_zero.mpr (momentMatrix_det_ne_zero P a ha)), Matrix.one_mulVec]\n      right_inv := fun c => by\n        rw [Matrix.mulVec_mulVec, Matrix.mul_nonsing_inv _\n          (isUnit_iff_ne_zero.mpr (momentMatrix_det_ne_zero P a ha)), Matrix.one_mulVec] }"
           }
         }
       }

@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 192,
-            "text": "structure PressureData (P : ℝ → ℝ) : Prop"
+            "text": "structure PressureData (P : ℝ → ℝ) : Prop where\n  smooth : ContDiff ℝ ∞ P\n  negative : ∀ η ∈ Icc (-1 : ℝ) 1, P η ≤ -1\n  derivative_sign : ∀ η ∈ Icc (-1 : ℝ) 1, 0 ≤ η * deriv P η"
           }
         }
       }

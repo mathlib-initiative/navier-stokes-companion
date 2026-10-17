@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 31,
-            "text": "structure StripData (D : Type*) [NormedAddCommGroup D] [NormedSpace ℝ D]"
+            "text": "structure StripData (D : Type*) [NormedAddCommGroup D] [NormedSpace ℝ D] where\n  domain : Set D\n  isOpen_domain : IsOpen domain\n  epsilon : ℕ → ℝ\n  epsilon_pos : ∀ n, 0 < epsilon n\n  epsilon_le_one : ∀ n, epsilon n ≤ 1\n  slow : ℕ → ℝ\n  one_le_slow : ∀ n, 1 ≤ slow n\n  delta : D → ℝ\n  delta_pos : ∀ x ∈ domain, 0 < delta x\n  zeta : D → ℝ\n  zeta_smooth : ContDiffOn ℝ ∞ zeta domain\n  zeta_nonneg : ∀ x ∈ domain, 0 ≤ zeta x"
           }
         }
       }

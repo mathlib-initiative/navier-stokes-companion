@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 292,
-            "text": "structure AdmissibleScales (h : ℝ) (f : ℕ → Inner → V) (K : Set Inner)\n    (a : ℕ → ℕ) : Prop"
+            "text": "structure AdmissibleScales (h : ℝ) (f : ℕ → Inner → V) (K : Set Inner)\n    (a : ℕ → ℕ) : Prop where\n  positive : ∀ j, 0 < a j\n  doubling : ∀ j, 2 * a j ≤ a (j + 1)\n  strictMono : StrictMono a\n  ordinary : ∀ j, 1 ≤ j → ∀ m, m ≤ j + 2 → ∀ q : ℝ, 0 < q → q ≤ 1 →\n    ∀ w ∈ K, ‖iteratedFDeriv ℝ m (slowStage a h f j) (q, w)‖ ≤\n      (1 / 2 : ℝ) ^ j * q ^ (h * j - m)\n  blown : ∀ j, 1 ≤ j → ∀ m, m ≤ j + 2 → ∀ q : ℝ, 0 < q → q ≤ 1 →\n    ∀ w ∈ K, ‖blownJet m (slowStage a h f j) (q, w)‖ ≤\n      (1 / 2 : ℝ) ^ j * q ^ (h * j)"
           }
         }
       }

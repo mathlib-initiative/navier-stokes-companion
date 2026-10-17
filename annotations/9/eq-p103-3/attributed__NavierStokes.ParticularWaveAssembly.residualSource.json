@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 79,
-            "text": "noncomputable def residualSource {D : Type} [NormedAddCommGroup D] [NormedSpace ℝ D]\n    (c : Context D) (u : State D) (b : HarmonicBlock D)\n    (G A : HarmonicResidual.BlockCoefficients D) (j : ℤ) (n : ℕ) (x : D) : ComplexVector"
+            "text": "noncomputable def residualSource {D : Type} [NormedAddCommGroup D] [NormedSpace ℝ D]\n    (c : Context D) (u : State D) (b : HarmonicBlock D)\n    (G A : HarmonicResidual.BlockCoefficients D) (j : ℤ) (n : ℕ) (x : D) : ComplexVector :=\n  fun i => (HarmonicResidual.residualBlock c u b G A).velocity n i j x"
           }
         }
       }

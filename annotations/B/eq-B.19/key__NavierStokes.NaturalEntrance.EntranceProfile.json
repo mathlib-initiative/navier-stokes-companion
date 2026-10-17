@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 1096,
-            "text": "structure EntranceProfile {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (Λ C : ℝ)"
+            "text": "structure EntranceProfile {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (Λ C : ℝ) where\n  profile : CoefficientProfile d Λ C\n  source_lower : ∀ p : ℝ × ℝ, rescalePoint Λ p ∈ entranceSet →\n    (19 / 20 : ℝ) * NaturalAxisData.L h p.2 * Λ * NaturalAxisData.chi h j σ p.2 + 5 / 2 <\n      Sq h profile.family.f profile.family.U profile.family.Ubar p\n  slope_positive : ∀ p : ℝ × ℝ, rescalePoint Λ p ∈ entranceSet → 0 < p.1 →\n    0 < p1 profile.family.f p\n  cone_margin : ∀ η ∈ Icc (-1 : ℝ) 1,\n    9 / 4 < coneSize profile.family.f profile.family.U (4 / Λ, η)"
           }
         }
       }

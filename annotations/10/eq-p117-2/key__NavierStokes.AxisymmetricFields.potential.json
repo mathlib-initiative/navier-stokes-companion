@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 34,
-            "text": "def potential (H K : Profile) : VelocityField"
+            "text": "def potential (H K : Profile) : VelocityField := fun w =>\n  ((-(1 / 2) : ℝ) * (w.2 1 * H (profilePoint w.1 w.2))) • coordinateVector 0 +\n  ((1 / 2 : ℝ) * (w.2 0 * H (profilePoint w.1 w.2))) • coordinateVector 1 +\n  K (profilePoint w.1 w.2) • coordinateVector 2"
           }
         }
       }

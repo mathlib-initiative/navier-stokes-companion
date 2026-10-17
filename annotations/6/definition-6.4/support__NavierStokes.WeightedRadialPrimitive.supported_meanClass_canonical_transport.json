@@ -44,7 +44,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 1086,
-            "text": "theorem supported_meanClass_canonical_transport\n    {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hS : ∀ n, 1 ≤ S n)\n    (α : ℝ) (M : ℕ → ℝ) (v : ℕ → E) (f : ℕ → ℝ × E → V)\n    (hf : ∀ n, ContDiff ℝ ∞ (f n)) (hs : ∀ n, RadialAlias.RadiallySupported a b (f n))\n    (hclass : WeightedClasses.MeanClass\n      (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α f) :\n    let g"
+            "text": "theorem supported_meanClass_canonical_transport\n    {a b cL cR : ℝ} (ha : 0 < a) (hab : a < b) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε S : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hS : ∀ n, 1 ≤ S n)\n    (α : ℝ) (M : ℕ → ℝ) (v : ℕ → E) (f : ℕ → ℝ × E → V)\n    (hf : ∀ n, ContDiff ℝ ∞ (f n)) (hs : ∀ n, RadialAlias.RadiallySupported a b (f n))\n    (hclass : WeightedClasses.MeanClass\n      (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α f) :\n    let g := fun n => TransportPrimitive.compactIntegral (TransportPrimitive.interiorCutoff a b)\n      (M n) (v n) (f n)\n    (∀ n, ContDiff ℝ ∞ (g n)) ∧\n      (∀ n, RadialAlias.RadiallySupported a b (g n)) ∧\n      WeightedClasses.MeanClass (logStripData a b cL cR ha hcL hcR ε S hε hεone hS) α g"
           }
         }
       }

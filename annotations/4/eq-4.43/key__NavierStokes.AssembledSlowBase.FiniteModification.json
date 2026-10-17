@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 1518,
-            "text": "structure FiniteModification (S : Set ℝ) (lo hi : ℝ) : Prop"
+            "text": "structure FiniteModification (S : Set ℝ) (lo hi : ℝ) : Prop where\n  isOpen : IsOpen S\n  contains : Icc (-1 : ℝ) 1 ⊆ S\n  subset : S ⊆ nominalParameters W\n  halfPlane : ∀ X, 0 ≤ X → ∀ eta ∈ S, (X, eta) ∈ D.carrier\n  inner : nominalInner W ≤ lo\n  ordered : lo < hi\n  outer : hi ≤ ReservedPatches.left F W.controls.radius .positive\n  pressure0 : Q.pressure0 = W.profiles.pressure0\n  fields : ∀ p : ℝ × ℝ, 0 ≤ p.1 → p.2 ∈ S → p.1 ≤ lo ∨ hi ≤ p.1 →\n    Q.f p = W.profiles.f p ∧ Q.U p = W.profiles.U p\n  mass : ∀ eta ∈ S, Q.M (nominalOuterX W, eta) = W.profiles.M (nominalOuterX W, eta)"
           }
         }
       }

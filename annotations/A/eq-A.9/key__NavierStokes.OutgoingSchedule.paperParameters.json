@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 978,
-            "text": "def paperParameters (P m lam : ℝ) (hP : 0 < P) (hm : 0 < m)\n    (hlam : 0 < lam) (hlam' : lam < 1 / 10) : Parameters"
+            "text": "def paperParameters (P m lam : ℝ) (hP : 0 < P) (hm : 0 < m)\n    (hlam : 0 < lam) (hlam' : lam < 1 / 10) : Parameters where\n  P := P\n  m := m\n  lam := lam\n  wait := 60 * Real.log (1 / lam)\n  P_pos := hP\n  m_pos := hm\n  lam_pos := hlam\n  lam_lt := hlam'\n  wait_gt := by\n    have h := Real.one_sub_inv_le_log_of_pos (one_div_pos.mpr hlam)\n    simp only [one_div, inv_inv] at h ⊢\n    nlinarith"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 165,
-            "text": "structure ExteriorCoefficients (d : Coefficients) (R : ℝ) : Prop"
+            "text": "structure ExteriorCoefficients (d : Coefficients) (R : ℝ) : Prop where\n  axial : ∀ n : ℕ, ∀ w : Inner, R < w.1 → w.2 ∈ Icc (-1) 1 → d.axial n w = 0\n  mass : ∀ n : ℕ, ∀ w : Inner, R < w.1 → w.2 ∈ Icc (-1) 1 →\n    ProfileHistories.primitive (d.axial n) w = 0\n  phi : ∀ n : ℕ, 0 < n → ∀ w : Inner, R < w.1 → w.2 ∈ Icc (-1) 1 → d.phi n w = 0\n  pressure : ∀ n : ℕ, 0 < n → ∀ w : Inner, R < w.1 → w.2 ∈ Icc (-1) 1 → d.pressure n w = 0"
           }
         }
       }

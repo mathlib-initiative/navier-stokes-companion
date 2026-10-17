@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 175,
-            "text": "noncomputable def patchRow (F : Profile) (XR : ℝ) (c : ℝ → Coeff) (eta : ℝ) (i : Fin 3) (X : ℝ) : ℝ"
+            "text": "noncomputable def patchRow (F : Profile) (XR : ℝ) (c : ℝ → Coeff) (eta : ℝ) (i : Fin 3) (X : ℝ) : ℝ :=\n  let A := TerminalCompensation.physicalProfile compensationPatch F.data.core.lam\n    (patchRadius F XR) (shapedPatchAmplitude F eta) (c eta) X\n  let B := TerminalCompensation.cleanProfile F.data.core.lam (patchRadius F XR) (shapedPatchAmplitude F eta) X\n  ![(A ^ 2 - B ^ 2) / X, A ^ 2 - B ^ 2, Real.sqrt (2 * X) * (A - B)] i"
           }
         }
       }

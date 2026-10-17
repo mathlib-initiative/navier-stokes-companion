@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 33,
-            "text": "structure UniformClass (s : StripData D) (w : ι → ℕ → D → ℝ) (α : ℝ)\n    (f : ι → ℕ → D → E) : Prop"
+            "text": "structure UniformClass (s : StripData D) (w : ι → ℕ → D → ℝ) (α : ℝ)\n    (f : ι → ℕ → D → E) : Prop where\n  weight_nonneg : ∀ l n x, x ∈ s.domain → 0 ≤ w l n x\n  smooth : ∀ l n, ContDiffOn ℝ ∞ (f l n) s.domain\n  bounds : ∀ m : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∃ p : ℕ,\n    ∀ l n x, x ∈ s.domain → ∀ j : ℕ, j ≤ m →\n      ‖iteratedFDeriv ℝ j (f l n) x‖ ≤ majorant s (w l) α C p n x"
           }
         }
       }

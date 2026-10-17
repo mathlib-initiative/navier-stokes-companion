@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 199,
-            "text": "def RawStageBounds (q : E → ℝ) (A : ℕ → E → V) (g L : ℕ → ℝ)\n    (C p : ℕ → ℕ → ℝ) (S : Set E) : Prop"
+            "text": "def RawStageBounds (q : E → ℝ) (A : ℕ → E → V) (g L : ℕ → ℝ)\n    (C p : ℕ → ℕ → ℝ) (S : Set E) : Prop :=\n  ∀ j, 1 ≤ j → ∀ m x, x ∈ S → q x ≤ 1 →\n    ‖iteratedFDeriv ℝ m (A j) x‖ ≤\n      C j m * (1 + |Real.log (q x)|) ^ (p j m) * q x ^ (g j - L m)"
           }
         }
       }

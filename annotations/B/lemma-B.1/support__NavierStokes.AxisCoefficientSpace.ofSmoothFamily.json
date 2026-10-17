@@ -20,7 +20,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 387,
-            "text": "def ofSmoothFamily (I : Window) (w : ℕ → ℕ → ℝ) (hw : ∀ n m, 0 < w n m)\n    (F : ℕ → ℝ → ℝ) (hF : ∀ n, ContDiffOn ℝ ∞ (F n) I.interval)\n    (C : ℝ) (hC : 0 ≤ C)\n    (hbound : ∀ n m x, x ∈ I.interval →\n      |iteratedDerivWithin m (F n) I.interval x| ≤ C * w n m) : CoefficientSpace I w"
+            "text": "def ofSmoothFamily (I : Window) (w : ℕ → ℕ → ℝ) (hw : ∀ n m, 0 < w n m)\n    (F : ℕ → ℝ → ℝ) (hF : ∀ n, ContDiffOn ℝ ∞ (F n) I.interval)\n    (C : ℝ) (hC : 0 ≤ C)\n    (hbound : ∀ n m x, x ∈ I.interval →\n      |iteratedDerivWithin m (F n) I.interval x| ≤ C * w n m) : CoefficientSpace I w :=\n  ofJetFamily I w hw (fun n m => iteratedDerivWithin m (F n) I.interval)\n    (fun n m => (hF n).continuousOn_iteratedDerivWithin (m := m)\n      (by exact_mod_cast (ENat.natCast_lt_top m).le)\n      (uniqueDiffOn_Icc I.nondegenerate))\n    (fun n m _ hx => hasDerivWithinAt_iterated_smooth I F hF n m hx) C hC hbound"
           }
         }
       }

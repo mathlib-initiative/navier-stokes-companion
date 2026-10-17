@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 339,
-            "text": "def naturalRemainder (O : NaturalOperators V) (d : AxisData V)\n    (S : V →L[ℝ] V) (t : ℝ) (a : V) (x : V × V) : V × V"
+            "text": "def naturalRemainder (O : NaturalOperators V) (d : AxisData V)\n    (S : V →L[ℝ] V) (t : ℝ) (a : V) (x : V × V) : V × V :=\n  let φ := x.1\n  let u := x.2\n  let bu := O.average u\n  let lin1 := O.j2 (O.product (angularLinearCoefficient O d) φ) +\n    O.dot2 d.wStar φ + O.param2 φ d.hStar\n  let quad1 := O.j2 (O.product (O.product (angularQuadraticCoefficient O d) u) φ)\n  let slow1 := O.j2 (O.product\n      (O.product (averageCoefficient d) bu + O.product (angularSlowCoefficient d) u) φ) +\n    O.param2 bu (O.product d.d φ) +\n    O.dot2 (O.product (averageCoefficient d) bu) φ +\n    O.product d.d (O.mixed2 bu φ) -\n    O.param2 φ (O.product d.d u)\n  let lin2 := O.j1 (O.product (axialLinearCoefficient O d) u) +\n    O.dot1 d.wStar u + O.param1 u d.hStar\n  let slow2 := O.j1 (O.product (axialQuadraticCoefficient d) (O.product u u)) +\n    O.dot1 (O.product (averageCoefficient d) bu) u +\n    O.product d.d (O.mixed1 bu u) -\n    O.param1 u (O.product d.d u)\n  let source := O.product (O.product a a) (O.product φ φ)\n  let pressure := O.j1\n    (-O.product ((4 * d.A) • d.eta) (O.primitive source) +\n      O.product d.d (O.parameterPrimitive source) -\n      O.product ((2 : ℝ) • d.eta) (O.mulY source))\n  (S (O.product d.inverseL (lin1 + quad1 - t • slow1)),\n    O.product d.inverseL (lin2 - t • slow2 + pressure))"
           }
         }
       }

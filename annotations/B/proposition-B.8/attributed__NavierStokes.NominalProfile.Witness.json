@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 2481,
-            "text": "structure Witness (F : Profile)"
+            "text": "structure Witness (F : Profile) where\n  axis : AxisStage F\n  controls : Controls axis\n  outgoingBound : ℝ\n  outgoing_specification : OutgoingProfile.Specification F outgoingBound\n  heatBound : ℝ\n  heat : ExtendedHeatedOutgoing.Witness F controls.radius heatBound\n  separated : controls.separation ≤ Real.exp (-8)\n  debt_small : ∀ eta ∈ HeatedOutgoing.parameterDomain, SmallDebt F controls.debt eta"
           }
         }
       }

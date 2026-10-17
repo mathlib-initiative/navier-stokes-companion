@@ -24,7 +24,7 @@
           },
           "snippet": {
             "line": 1090,
-            "text": "noncomputable def estimates (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) :\n    MixedCandidateAssembly.StageEstimates h (ActualCandidateConstruction.qbig B N0)\n      (potentialStages B N0 hN) (directStages B N0 hN) (pressureStages B N0 hN)"
+            "text": "noncomputable def estimates (B N0 : ℕ)\n    (hN : ActualCarrierGeometry.geometricThreshold ≤ N0) :\n    MixedCandidateAssembly.StageEstimates h (ActualCandidateConstruction.qbig B N0)\n      (potentialStages B N0 hN) (directStages B N0 hN) (pressureStages B N0 hN) :=\n  GluedStageEstimates.actualStageEstimates (runData B N0 hN) (meanCycleInput B N0 hN)\n    (ActualCandidateConstruction.firstBand_four B N0) (ActualSignedWaveData.signedInputs B N0 hN)\n    (ActualCyclePreservation.state_coherent B N0 hN) le_rfl\n    (ActualCandidateConstruction.qbig_pos B N0) hN _ _ _\n    (representations B N0 hN) (physicalData B N0 hN)"
           }
         }
       }

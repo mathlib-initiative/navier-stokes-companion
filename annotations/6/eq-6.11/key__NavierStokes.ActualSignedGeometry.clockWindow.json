@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 372,
-            "text": "noncomputable def clockWindow (m : ℕ) : PeriodicPhaseAssembly.ClockWindow"
+            "text": "noncomputable def clockWindow (m : ℕ) : PeriodicPhaseAssembly.ClockWindow where\n  lower := (-sys.radius, 0)\n  upper := (sys.radius, ChartScales.slotLength sys.radius h m)\n  padding := min sys.radius (ChartScales.slotLength sys.radius h m) / 16\n  padding_pos := div_pos (lt_min sys.radius_pos\n    (div_pos (mul_pos (by norm_num) sys.radius_pos) (ChartScales.timeCoefficient_pos h m))) (by norm_num)"
           }
         }
       }

@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 88,
-            "text": "theorem exists_continuous_branch (hsmall : D.Small 0) :\n    ∃ c₀ : CK (E"
+            "text": "theorem exists_continuous_branch (hsmall : D.Small 0) :\n    ∃ c₀ : CK (E := E) 0,\n      ‖c₀‖ ≤ 2 * D.inverseNorm 0 * D.debtNorm 0 ∧\n      D.matrix 0 c₀ + D.bilinearMap 0 c₀ c₀ = D.debt 0 ∧\n      Tendsto (fun n : ℕ =>\n        (MomentRepair.correctionIteration (D.matrix 0) (fun c => D.bilinearMap 0 c c) (D.debt 0))^[n] 0)\n        atTop (𝓝 c₀) ∧\n      ∀ k : ℕ, D.Small k → ∃ cₖ : CK (E := E) k,\n        lower (Nat.zero_le k) cₖ = c₀ ∧\n        ‖cₖ‖ ≤ 2 * D.inverseNorm k * D.debtNorm k"
           }
         }
       }

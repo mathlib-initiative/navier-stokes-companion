@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 300,
-            "text": "structure CompensationWitness (F : Profile) (XR C : ℝ)"
+            "text": "structure CompensationWitness (F : Profile) (XR C : ℝ) where\n  radius_pos : 0 < XR\n  switch_large : 1 ≤ switchRadius F XR\n  coefficients : ℝ → Coeff\n  smooth : ContDiffOn ℝ ∞ coefficients parameterDomain\n  moments : ∀ eta ∈ parameterDomain,\n    TerminalCompensation.physicalMoments compensationPatch F.data.core.lam\n      (patchRadius F XR) (shapedPatchAmplitude F eta) (coefficients eta) +\n      ParametricTerminalCompensation.physicalDebt F.data (switchRadius F XR) eta = 0\n  coefficient_bound : ∀ eta ∈ parameterDomain, ‖coefficients eta‖ ≤ C / switchRadius F XR\n  derivative_bound : ∀ eta ∈ parameterDomain,\n    ‖derivWithin coefficients parameterDomain eta‖ ≤ C / switchRadius F XR\n  first_jet : ∀ eta ∈ parameterDomain,\n    ParametricTerminalCompensation.FirstJetWithinBound compensationPatch (shapedPatchAmplitude F)\n      coefficients parameterDomain eta (C / switchRadius F XR)\n  patch_positive : ∀ eta ∈ parameterDomain, ∀ X : ℝ, 0 < X →\n    0 < TerminalCompensation.physicalProfile compensationPatch F.data.core.lam\n      (patchRadius F XR) (shapedPatchAmplitude F eta) (coefficients eta) X"
           }
         }
       }

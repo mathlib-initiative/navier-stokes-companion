@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 1079,
-            "text": "structure BaseData (S : Set ℝ) (C lam a b B : ℝ)"
+            "text": "structure BaseData (S : Set ℝ) (C lam a b B : ℝ) where\n  fields : Coefficient S\n  axial_exterior : Exterior B S fields.axial\n  beta_exterior : Exterior B S fields.beta\n  amplitude : ℝ → ℝ\n  amplitude_smooth : ContDiffOn ℝ ∞ amplitude S\n  amplitude_ne : ∀ eta ∈ S, amplitude eta ≠ 0\n  axial_patch : ∀ eta ∈ S, ∀ R ∈ Ioo a b, fields.axial (R, eta) = 0\n  angular_patch : ∀ eta ∈ S, ∀ R ∈ Ioo a b,\n    angularField C fields.phi (R, eta) = FiveRowRank.background lam (amplitude eta) R"
           }
         }
       }

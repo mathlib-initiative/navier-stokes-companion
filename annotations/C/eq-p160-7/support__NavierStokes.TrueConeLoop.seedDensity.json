@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 265,
-            "text": "def seedDensity (a m d p δ : ℝ) (ha : 0 < a) (hd : d ≠ 0) (hδ : 0 < δ) : CircleDensity"
+            "text": "def seedDensity (a m d p δ : ℝ) (ha : 0 < a) (hd : d ≠ 0) (hδ : 0 < δ) : CircleDensity :=\n  densityOfTilt (seedTilt a m d p δ) a m (seedRho a m δ) (seedSpeed a m δ) ha\n    (lt_trans (by norm_num) (seedSpeed_gt_two a m δ hδ))\n    (seedTilt_contDiff a m d p δ) (seedTilt_periodic a m d p δ)\n    (seedTilt_mean a m d p δ) (seedTilt_variance a m d p δ ha hd) rfl"
           }
         }
       }

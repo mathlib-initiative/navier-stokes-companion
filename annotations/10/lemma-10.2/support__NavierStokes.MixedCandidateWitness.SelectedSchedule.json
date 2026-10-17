@@ -20,7 +20,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 25,
-            "text": "noncomputable def SelectedSchedule (h qbig : ℝ) (A B : ℕ → VelocityField)\n    (P : ℕ → PressureField) (a : ℕ → ℕ) : Prop"
+            "text": "noncomputable def SelectedSchedule (h qbig : ℝ) (A B : ℕ → VelocityField)\n    (P : ℕ → PressureField) (a : ℕ → ℕ) : Prop :=\n  1 ≤ a 0 ∧ (∀ j, 0 < a j) ∧ (∀ j, 2 * a j ≤ a (j + 1)) ∧ StrictMono a ∧\n    Tendsto (fun j => (a j : ℝ)) atTop atTop ∧ (∀ j, 1 / (a j : ℝ) < qbig) ∧\n    MixedDiagonalSchedule.ThreeSmoothSums a h A B P ∧\n    JointResidualLimits.VanishingJointJets\n      (MixedDiagonalResidual.residual (fun j => (a j : ℝ)) (PhysicalWaveSum.physicalQ h) A B P)"
           }
         }
       }

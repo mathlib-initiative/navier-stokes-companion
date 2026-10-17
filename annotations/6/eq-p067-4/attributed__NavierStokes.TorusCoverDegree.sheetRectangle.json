@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 214,
-            "text": "def sheetRectangle (g : Geometry) (r : ℝ) (i : Sheet g.gap) : Set Torus"
+            "text": "def sheetRectangle (g : Geometry) (r : ℝ) (i : Sheet g.gap) : Set Torus :=\n  sheetLift g.gap i '' ((fun z => g.center + g.basis z) '' Metric.ball (0 : Plane) r)"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 14,
-            "text": "structure ApproximationRates (l : Filter D) (q : D → ℝ) (gain : ℕ → ℝ)\n    (f : D → ℝ) (stage : ℕ → D → ℝ)"
+            "text": "structure ApproximationRates (l : Filter D) (q : D → ℝ) (gain : ℕ → ℝ)\n    (f : D → ℝ) (stage : ℕ → D → ℝ) where\n  growthLoss : ℕ → ℝ\n  tailLoss : ℕ → ℝ\n  threshold : ℕ → ℕ\n  stage_growth : ∀ J m, JetRate l q (stage J) m (-growthLoss m)\n  tail_rate : ∀ m J, threshold m ≤ J →\n    JetRate l q (fun x => f x - stage J x) m (gain J - tailLoss m)"
           }
         }
       }

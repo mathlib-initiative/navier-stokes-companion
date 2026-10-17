@@ -19,7 +19,7 @@
           "relation": "contains",
           "snippet": {
             "line": 141,
-            "text": "def rescale_global_solution {μ : ℝ} {f : VelocityField}\n    (h : ProblemStatement.GlobalFiniteEnergySolution μ f) (a : ℝ) (ha : a ≠ 0) :\n    ProblemStatement.GlobalFiniteEnergySolution (a ^ 2 * μ) (rescale a a⁻¹ f)"
+            "text": "def rescale_global_solution {μ : ℝ} {f : VelocityField}\n    (h : ProblemStatement.GlobalFiniteEnergySolution μ f) (a : ℝ) (ha : a ≠ 0) :\n    ProblemStatement.GlobalFiniteEnergySolution (a ^ 2 * μ) (rescale a a⁻¹ f) := by\n  refine {\n    velocity := rescale a a⁻¹ h.velocity\n    pressure := rescale (a ^ 2) a⁻¹ h.pressure\n    velocity_smooth := rescale_smooth_on h.velocity_smooth _ _\n    pressure_smooth := rescale_smooth_on h.pressure_smooth _ _\n    zero_initial_velocity := ?_\n    divergence_free := ?_\n    navier_stokes := ?_\n    energy_bounded := h.energy_bounded.spatial_smul a a⁻¹ (inv_ne_zero ha)\n  }\n  · intro x\n    simp only [rescale, h.zero_initial_velocity, smul_zero]\n  · intro t ht x\n    rw [rescale_divergence, h.divergence_free t ht, mul_zero]\n  · intro t ht x\n    rw [rescale_residual μ a ha, h.navier_stokes t ht]\n    rfl"
           }
         }
       }

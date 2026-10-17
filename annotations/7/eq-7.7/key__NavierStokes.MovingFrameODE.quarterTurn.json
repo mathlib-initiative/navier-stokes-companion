@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 315,
-            "text": "noncomputable def quarterTurn : Plane →L[ℝ] Plane"
+            "text": "noncomputable def quarterTurn : Plane →L[ℝ] Plane :=\n  LinearMap.toContinuousLinearMap {\n    toFun := fun w => !₂[-w 1, w 0]\n    map_add' := by\n      intro u v\n      ext i\n      fin_cases i <;> simp\n      ring\n    map_smul' := by\n      intro c u\n      ext i\n      fin_cases i <;> simp }"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 73,
-            "text": "structure OneSidedExtension (f : SpaceTime → V) (x : Space)"
+            "text": "structure OneSidedExtension (f : SpaceTime → V) (x : Space) where\n  value : SpaceTime → V\n  domain : Set SpaceTime\n  isOpen : IsOpen domain\n  mem : (1, x) ∈ domain\n  smooth : ContDiffOn ℝ ∞ value domain\n  agrees : EqOn value f (domain ∩ SpacetimeEndpoint.openPast 1)"
           }
         }
       }

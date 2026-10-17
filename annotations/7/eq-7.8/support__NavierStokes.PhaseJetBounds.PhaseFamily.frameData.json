@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 914,
-            "text": "noncomputable def PhaseFamily.frameData (a : PhaseFamily ι)\n    (lam c0 u ell ν : ι → ℝ) (i : ι) : PrimaryODE.FrameData Slow"
+            "text": "noncomputable def PhaseFamily.frameData (a : PhaseFamily ι)\n    (lam c0 u ell ν : ι → ℝ) (i : ι) : PrimaryODE.FrameData Slow :=\n  PrimaryODE.FrameData.ofNormalLocal (a.normal i) (a.velocity i)\n    (fun z => a.F i z.1) (a.shear i)\n    (fun z => ViscousPropagator.referenceEigenvalue (lam i) (u i) (ell i) z.2)\n    (fun z => PrimaryODE.referenceProfile (c0 i) (u i) (ell i) z.2)\n    (fun z => PrimaryODE.referenceProfileRate (u i) (ell i) z.2)\n    (fun _ => ν i)"
           }
         }
       }

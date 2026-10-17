@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 103,
-            "text": "def phaseNormal (ε p pz x0 : ℝ) (F G : Slow → ℝ) (q : Slot) : Vec3"
+            "text": "def phaseNormal (ε p pz x0 : ℝ) (F G : Slow → ℝ) (q : Slot) : Vec3 :=\n  !₂[fderiv ℝ (phase ε p pz x0 F G) q eR,\n    fderiv ℝ (phase ε p pz x0 F G) q eTheta / q.1.1,\n    ε * fderiv ℝ (phase ε p pz x0 F G) q eZ]"
           }
         }
       }

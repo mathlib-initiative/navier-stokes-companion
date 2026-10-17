@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 415,
-            "text": "noncomputable def phiCorrection {S : Set ℝ} (_hS : IsOpen S) {a b : ℝ} (ha : 0 < a)\n    {f : Field} (hf : Smooth S f) (hs : PatchSupport a b f) (C : ℝ) : EvenProfile S"
+            "text": "noncomputable def phiCorrection {S : Set ℝ} (_hS : IsOpen S) {a b : ℝ} (ha : 0 < a)\n    {f : Field} (hf : Smooth S f) (hs : PatchSupport a b f) (C : ℝ) : EvenProfile S := by\n  refine ⟨fun w => C * (f w - f (-w.1, w.2)) / w.1, ⟨?_, ?_⟩⟩\n  · intro w hw\n    by_cases hR : w.1 = 0\n    · have hn : ∀ᶠ p : ℝ × ℝ in 𝓝 w, |p.1| < a :=\n        (isOpen_lt continuous_fst.abs continuous_const).mem_nhds (by simpa [hR] using ha)\n      have he : (fun p : ℝ × ℝ => C * (f p - f (-p.1, p.2)) / p.1) =ᶠ[𝓝 w]\n          fun _ => (0 : ℝ) := by\n        filter_upwards [hn] with p hp\n        have h1 := patch_zero hs (eta := p.2) (R := p.1) (by\n          intro hh; linarith [(abs_lt.mp hp).2, hh.1])\n        have h2 := patch_zero hs (eta := p.2) (R := -p.1) (by\n          intro hh; linarith [(abs_lt.mp hp).1, hh.1])\n        simp [h1, h2]\n      exact ((contDiffAt_const : ContDiffAt ℝ ∞ (fun _ : ℝ × ℝ => (0 : ℝ)) w).congr_of_eventuallyEq he).contDiffWithinAt\n    · have hfr := hf.comp (s := region S) (contDiffOn_fst.neg.prodMk contDiffOn_snd)\n        (fun p hp => (show (-p.1, p.2) ∈ region S from ⟨mem_univ _, hp.2⟩))\n      exact (contDiffWithinAt_const.mul ((hf w hw).sub (hfr w hw))).div\n        contDiffWithinAt_fst hR\n  · intro eta _ R\n    simp only [neg_neg]\n    ring"
           }
         }
       }

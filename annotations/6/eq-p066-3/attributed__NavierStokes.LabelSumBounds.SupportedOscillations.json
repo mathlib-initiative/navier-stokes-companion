@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 513,
-            "text": "noncomputable def SupportedOscillations {d h : ℝ} {vr vt : TorusInverse.Plane}\n    (sys : PartitionedCovariance.SlotSystem d h vr vt)\n    (label : ℕ → ι → SlotColoring.Label) (χ : ℕ → D → WindowPoint)\n    (Y : ℕ → D → TorusInverse.Plane) (U : Set D) (u : ι → Oscillation D) : Prop"
+            "text": "noncomputable def SupportedOscillations {d h : ℝ} {vr vt : TorusInverse.Plane}\n    (sys : PartitionedCovariance.SlotSystem d h vr vt)\n    (label : ℕ → ι → SlotColoring.Label) (χ : ℕ → D → WindowPoint)\n    (Y : ℕ → D → TorusInverse.Plane) (U : Set D) (u : ι → Oscillation D) : Prop :=\n  ∀ l n x, x ∈ U → ∀ θ i, u l n (x, θ) i ≠ 0 →\n    χ n x ∈ closedWindow d (label n l) ∧\n      Y n x ∈ SlotGeometry.liftedSupport (SlotColoring.nativeIndex h (label n l).1)\n        (PartitionedCovariance.slotSet h sys.radius vr vt (label n l))"
           }
         }
       }

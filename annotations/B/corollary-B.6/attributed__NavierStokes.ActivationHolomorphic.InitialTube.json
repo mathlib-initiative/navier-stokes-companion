@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 1008,
-            "text": "structure InitialTube (N : ReferencePath.Input) (h : ℝ) (P0 : ℝ → ℝ)\n    (R : ℝ) (Ω : Set ℂ)"
+            "text": "structure InitialTube (N : ReferencePath.Input) (h : ℝ) (P0 : ℝ → ℝ)\n    (R : ℝ) (Ω : Set ℂ) where\n  natural : NaturalExtension N Ω R\n  isOpen : IsOpen Ω\n  real_mem : ∀ η ∈ Icc (-1 : ℝ) 1, (η : ℂ) ∈ Ω\n  elliptic_ne_zero : ∀ z ∈ Ω, complexL h z ≠ 0\n  pressure0 : ℂ → ℂ\n  pressure0_analytic : AnalyticOnNhd ℂ pressure0 Ω\n  pressure0_real : ∀ η : ℝ, pressure0 (η : ℂ) = (P0 η : ℂ)"
           }
         }
       }

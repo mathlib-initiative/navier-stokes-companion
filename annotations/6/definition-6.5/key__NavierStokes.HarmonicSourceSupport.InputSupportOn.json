@@ -24,7 +24,7 @@
           },
           "snippet": {
             "line": 678,
-            "text": "structure InputSupportOn (U : Set D) (K : ℕ → Set D)\n    (b : CorrectionState.HarmonicBlock D) (G A : HarmonicResidual.BlockCoefficients D) : Prop"
+            "text": "structure InputSupportOn (U : Set D) (K : ℕ → Set D)\n    (b : CorrectionState.HarmonicBlock D) (G A : HarmonicResidual.BlockCoefficients D) : Prop where\n  velocity : ∀ n i, NonzeroSupportedOn U (K n) (realCoefficients (b.velocity n i))\n  pressure : ∀ n, NonzeroSupportedOn U (K n) (realCoefficients (b.pressure n))\n  gaussian : ∀ n i, NonzeroSupportedOn U (K n) (realCoefficients (G n i))\n  aliasError : ∀ n i, NonzeroSupportedOn U (K n) (realCoefficients (A n i))"
           }
         }
       }

@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 178,
-            "text": "structure AxialMomentData (h η X : ℝ)"
+            "text": "structure AxialMomentData (h η X : ℝ) where\n  W : ℝ → ℝ\n  Wx : ℝ → ℝ\n  U : ℝ → ℝ\n  Ux : ℝ → ℝ\n  Uη : ℝ → ℝ\n  E : ℝ → ℝ\n  Eη : ℝ → ℝ\n  P : ℝ → ℝ\n  Px : ℝ → ℝ\n  Pη : ℝ → ℝ\n  Pηx : ℝ → ℝ\n  M : ℝ → ℝ\n  Mη : ℝ → ℝ\n  S : ℝ → ℝ\n  Sη : ℝ → ℝ\n  W_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt W (Wx x) x\n  U_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt U (Ux x) x\n  M_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt M (U x) x\n  Mη_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt Mη (Uη x) x\n  S_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt S (U x ^ 2 - E x ^ 2 / 2) x\n  Sη_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt Sη (2 * U x * Uη x - E x * Eη x) x\n  P_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt P (Px x) x\n  Pη_deriv : ∀ x ∈ uIcc 0 X, HasDerivAt Pη (Pηx x) x\n  W_balance : ∀ x ∈ uIcc 0 X,\n    W x + x * Wx x = 1 - 2 * axialExponent h * η * U x - coordinateFactor η * Uη x\n  pressure_balance : ∀ x ∈ uIcc 0 X, x * Px x = E x ^ 2 / 2\n  pressure_η_balance : ∀ x ∈ uIcc 0 X, x * Pηx x = E x * Eη x\n  M_zero : M 0 = 0\n  Mη_zero : Mη 0 = 0\n  S_zero : S 0 = 0\n  Sη_zero : Sη 0 = 0"
           }
         }
       }

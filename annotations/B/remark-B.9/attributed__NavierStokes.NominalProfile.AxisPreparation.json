@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 35,
-            "text": "structure AxisPreparation (F : Profile) (j : ℝ)"
+            "text": "structure AxisPreparation (F : Profile) (j : ℝ) where\n  delta : ℝ\n  sigma : ℝ\n  delta_pos : 0 < delta\n  sigma_pos : 0 < sigma\n  inputs : NaturalAxisCoefficients.AnalyticInputs F.data.h j sigma F.axisDatum\n  scaleBound : ℝ\n  scaleBound_pos : 0 < scaleBound\n  entrances : ∀ Λ : ℝ, scaleBound ≤ Λ → ∀ C : ℝ,\n    NaturalEntrance.entranceNormalization inputs Λ delta ≤ C →\n      Nonempty (NaturalEntrance.EntranceProfile inputs Λ C)"
           }
         }
       }

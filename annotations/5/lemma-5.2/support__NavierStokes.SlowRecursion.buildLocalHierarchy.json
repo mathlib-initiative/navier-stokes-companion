@@ -20,7 +20,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 1272,
-            "text": "noncomputable def buildLocalHierarchy {core buffer : ℝ} {U : Set ℂ} {h : ℝ}\n    (c : Domain (radius core buffer 0) U h) (hcore : 0 < core) (hbuffer : 0 < buffer)\n    (C : ℝ) (base : Coefficient (radius core buffer 0) U) :\n    LocalHierarchy core U h C (fun i => profile (base i))"
+            "text": "noncomputable def buildLocalHierarchy {core buffer : ℝ} {U : Set ℂ} {h : ℝ}\n    (c : Domain (radius core buffer 0) U h) (hcore : 0 < core) (hbuffer : 0 < buffer)\n    (C : ℝ) (base : Coefficient (radius core buffer 0) U) :\n    LocalHierarchy core U h C (fun i => profile (base i)) where\n  coefficients := sequence c hcore hbuffer C base\n  starts := sequence_zero c hcore hbuffer C base\n  zero_axis := fun _ hn i _ hz => sequence_axis_zero c hcore hbuffer C base hn i hz\n  beta := fun _ hn _ hX _ heta => sequence_beta c hcore hbuffer C base hn hX heta\n  equations := fun _ hn _ hX _ heta => sequence_positive_order c hcore hbuffer C base hn hX heta\n  average := fun _ hn _ hX _ heta => sequence_average c hcore hbuffer C base hn hX heta"
           }
         }
       }

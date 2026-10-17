@@ -16,7 +16,7 @@
           },
           "snippet": {
             "line": 199,
-            "text": "noncomputable def gradient (g : Frame D) (k : ℝ) (Φ : D → ℝ) (kp : ℤ)\n    (p : Coefficients D) : VectorCoefficients D"
+            "text": "noncomputable def gradient (g : Frame D) (k : ℝ) (Φ : D → ℝ) (kp : ℤ)\n    (p : Coefficients D) : VectorCoefficients D :=\n  ![differentiate g.radial k Φ p,\n    constantCoefficient (fun x => ((g.radius x)⁻¹ : ℝ) : D → ℂ) * angularDifferentiate kp p,\n    differentiate g.axial k Φ p]"
           }
         }
       }

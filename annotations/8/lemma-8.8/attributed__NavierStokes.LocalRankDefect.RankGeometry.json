@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 503,
-            "text": "structure RankGeometry (g : VariableGaugeMean.GaugeData P) (r : CorrectionState.RankData P)\n    (U : Set P) (c : CorrectionState.Context (Point P)) (u : CorrectionState.State (Point P)) : Prop"
+            "text": "structure RankGeometry (g : VariableGaugeMean.GaugeData P) (r : CorrectionState.RankData P)\n    (U : Set P) (c : CorrectionState.Context (Point P)) (u : CorrectionState.State (Point P)) : Prop where\n  primitive_inner_pos : 0 < g.radial.inner\n  exponent_pos : 0 < g.radial.exponent\n  lambda_pos : 0 < r.lambda\n  inner_pos : 0 < r.inner\n  inner_lt_outer : r.inner < r.outer\n  coefficient_ne : ∀ n x, x ∈ U → r.coefficient n x ≠ 0\n  length_pos : ∀ n x, x ∈ U → 0 < r.length n x\n  velocity_ne : ∀ n x, x ∈ U → r.velocity n x ≠ 0\n  coefficient_smooth : ∀ n, ContDiffOn ℝ ∞ (r.coefficient n) U\n  length_smooth : ∀ n, ContDiffOn ℝ ∞ (r.length n) U\n  velocity_smooth : ∀ n, ContDiffOn ℝ ∞ (r.velocity n) U\n  debt_smooth : ∀ n, ContDiffOn ℝ ∞ (CorrectionState.debt c u n) U\n  gauge_length_pos : ∀ n x, x ∈ U → 0 < g.length n x\n  gauge_left : ∀ n x, x ∈ U → g.length n x * g.radial.inner ≤ r.length n x * r.inner\n  gauge_right : ∀ n x, x ∈ U → r.length n x * r.outer ≤ g.length n x * g.radial.outer\n  angular_model : ∀ n x, x ∈ U → ∀ R ∈ Ioo (r.length n x * r.inner) (r.length n x * r.outer),\n    c.base.angular n (R, (x, 0)) =\n      MeanRankUpdate.background r.lambda (r.coefficient n x) (r.length n x) (r.velocity n x) R\n  axial_model : ∀ n x, x ∈ U → ∀ R ∈ Ioo (r.length n x * r.inner) (r.length n x * r.outer),\n    c.base.axial n (R, (x, 0)) = 0"
           }
         }
       }

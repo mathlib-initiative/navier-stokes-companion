@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 512,
-            "text": "noncomputable def physicalEquiv (A G : ℝ) (hA : A ≠ 0) : Coeff ≃L[ℝ] Debt"
+            "text": "noncomputable def physicalEquiv (A G : ℝ) (hA : A ≠ 0) : Coeff ≃L[ℝ] Debt :=\n  LinearEquiv.toContinuousLinearEquiv\n    { toFun := physicalDebt A G\n      invFun := normalizedDebt A G\n      left_inv := normalized_physical_debt A G hA\n      right_inv := physical_normalized_debt A G hA\n      map_add' := fun c d => by ext i; fin_cases i <;> simp [physicalDebt] <;> ring\n      map_smul' := fun r c => by ext i; fin_cases i <;> simp [physicalDebt, smul_eq_mul] <;> ring }"
           }
         }
       }

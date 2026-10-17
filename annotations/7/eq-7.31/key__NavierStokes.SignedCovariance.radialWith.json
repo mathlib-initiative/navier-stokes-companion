@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 134,
-            "text": "noncomputable def radialWith {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt}\n    {U : UnsignedLabel} (P : PairData sys U) (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0)\n    (outer ε : ℝ) (a : Vec2) (q : ℝ) (x : SlotColoring.Position) (j : Fin 2) : Plane → ℝ → ℝ"
+            "text": "noncomputable def radialWith {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt}\n    {U : UnsignedLabel} (P : PairData sys U) (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0)\n    (outer ε : ℝ) (a : Vec2) (q : ℝ) (x : SlotColoring.Position) (j : Fin 2) : Plane → ℝ → ℝ :=\n  wave (outer * (Real.sqrt ε * a j * mask D U q x))\n    (SlotColoring.nativeIndex h U.1) (P.rawRadial hdet j) (P.modes j) (P.phases j)"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 203,
-            "text": "theorem Estimates.regular_lag_bounds {Λ C : ℝ} {E : EntranceProfile d Λ C} {B : ℕ → ℝ}\n    (H : Estimates d E B) (hsmall : NaturalAxisRange.Parameters h j) (hΛ : 0 < Λ)\n    {X η : ℝ} (hX : 0 < X) (hY : X ≤ (41 / 10) / Λ) (hη : η ∈ Icc (-1 : ℝ) 1) :\n    let Q"
+            "text": "theorem Estimates.regular_lag_bounds {Λ C : ℝ} {E : EntranceProfile d Λ C} {B : ℕ → ℝ}\n    (H : Estimates d E B) (hsmall : NaturalAxisRange.Parameters h j) (hΛ : 0 < Λ)\n    {X η : ℝ} (hX : 0 < X) (hY : X ≤ (41 / 10) / Λ) (hη : η ∈ Icc (-1 : ℝ) 1) :\n    let Q := regularAngularLag h E.profile.family.f E.profile.family.U E.profile.family.Ubar (X, η)\n    let N := regularAxialLag h E.profile.family.U E.profile.family.Ubar E.profile.family.Pi (X, η)\n    lowerConstant d ≤ (X * Q / NaturalAxisData.L h η) / X ∧\n    0 < X * Q / NaturalAxisData.L h η ∧ X * Q / NaturalAxisData.L h η ≤ B 0 ∧\n    |N / NaturalAxisData.L h η - NaturalAxisData.Z h j P0 η / NaturalAxisData.L h η| ≤\n      AxisEvaluation.jetBound d.coefficients.epsilon 5 1 0 * profileErrorConstant d / Λ"
           }
         }
       }

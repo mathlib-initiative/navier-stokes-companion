@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 168,
-            "text": "noncomputable def signedScalar (s : StripData D) (H : ℕ → D → Mat2)\n    (T R : ℕ → D → Vec2) (mask : ℕ → D → ℝ) (j : Fin 2) : ℕ → D → ℝ"
+            "text": "noncomputable def signedScalar (s : StripData D) (H : ℕ → D → Mat2)\n    (T R : ℕ → D → Vec2) (mask : ℕ → D → ℝ) (j : Fin 2) : ℕ → D → ℝ :=\n  fun n x => Real.sqrt (s.epsilon n) * SignedCovariance.increment (H n x) (T n x) (R n x) j * mask n x"
           }
         }
       }

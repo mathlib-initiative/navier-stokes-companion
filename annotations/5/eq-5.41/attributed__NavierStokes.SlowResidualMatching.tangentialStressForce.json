@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 568,
-            "text": "noncomputable def tangentialStressForce (theta axial : PhysicalProfile)\n    (t : ℝ) (x : ProblemStatement.Space) : ProblemStatement.Space"
+            "text": "noncomputable def tangentialStressForce (theta axial : PhysicalProfile)\n    (t : ℝ) (x : ProblemStatement.Space) : ProblemStatement.Space :=\n  let r := Real.sqrt (2 * radialEnergy x)\n  let a := LeadingStress.radialDivergence 2 theta (profilePoint t x)\n  let z := LeadingStress.radialDivergence 1 axial (profilePoint t x)\n  AxisymmetricResidual.pack (x 1 / r * a) (-x 0 / r * a) (-z)"
           }
         }
       }

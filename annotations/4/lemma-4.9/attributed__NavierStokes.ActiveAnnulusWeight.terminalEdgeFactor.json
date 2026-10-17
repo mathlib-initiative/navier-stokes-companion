@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 1188,
-            "text": "noncomputable def terminalEdgeFactor {C : ℝ} (hC : 0 < C) (d : TailData) (y0 w : ℝ) (hw : 0 < w) :\n    EdgeFactor (Icc (-1 : ℝ) 1) 4 (profileStress C d y0)"
+            "text": "noncomputable def terminalEdgeFactor {C : ℝ} (hC : 0 < C) (d : TailData) (y0 w : ℝ) (hw : 0 < w) :\n    EdgeFactor (Icc (-1 : ℝ) 1) 4 (profileStress C d y0) where\n  coefficient := profileStressFactor C d y0\n  order := 3\n  width := w\n  width_pos := hw\n  domain := univ\n  domain_open := isOpen_univ\n  boundary_mem := subset_univ _\n  smooth := (profileStressFactor_contDiff C d y0).contDiffOn\n  boundary_ne_zero := fun _ hη => profileStressFactor_zero_ne hC d y0 hη\n  identity := fun η _ x _ _ => profileStress_factorization C d y0 (η,x)"
           }
         }
       }

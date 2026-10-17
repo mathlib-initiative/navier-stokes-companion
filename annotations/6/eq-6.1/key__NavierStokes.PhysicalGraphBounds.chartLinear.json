@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 398,
-            "text": "noncomputable def chartLinear (h : ℝ) (n : ℕ) : SpaceTime →L[ℝ] ChartPoint"
+            "text": "noncomputable def chartLinear (h : ℝ) (n : ℕ) : SpaceTime →L[ℝ] ChartPoint :=\n  (-ChartScales.Q n ^ (-1 : ℝ) • ContinuousLinearMap.fst ℝ ℝ Space).prod\n    ((ChartScales.Q n ^ (-(1 / 2 : ℝ)) • coordinateProjection 0).prod\n      ((ChartScales.Q n ^ (-(1 / 2 : ℝ)) • coordinateProjection 1).prod\n        (ChartScales.Q n ^ (-CoordinateAlgebra.D h) • coordinateProjection 2)))"
           }
         }
       }

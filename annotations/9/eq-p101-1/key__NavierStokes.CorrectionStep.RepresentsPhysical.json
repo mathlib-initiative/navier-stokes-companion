@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 940,
-            "text": "structure RepresentsPhysical (chart : ℕ → P → D) (domain : ℕ → Set P)\n    (Q : ℕ → ℝ) (A : ℝ) (u : State D) (v : PhysicalFields P) : Prop"
+            "text": "structure RepresentsPhysical (chart : ℕ → P → D) (domain : ℕ → Set P)\n    (Q : ℕ → ℝ) (A : ℝ) (u : State D) (v : PhysicalFields P) : Prop where\n  mean : ∀ n x, x ∈ domain n → ∀ i,\n    meanComponents u.mean n (chart n x) i = Q n ^ A * v.mean x i\n  pressure : ∀ n x, x ∈ domain n → u.pressure n (chart n x) = Q n ^ (2 * A) * v.pressure x\n  oscillation : ∀ n x, x ∈ domain n → ∀ θ i,\n    u.oscillation n (chart n x, θ) i = Q n ^ A * v.oscillation (x, θ) i\n  oscillatoryPressure : ∀ n x, x ∈ domain n → ∀ θ,\n    u.oscillatoryPressure n (chart n x, θ) = Q n ^ (2 * A) * v.oscillatoryPressure (x, θ)\n  baseError : ∀ n x, x ∈ domain n → ∀ θ i,\n    u.errors.base n (chart n x, θ) i = Q n ^ (2 * A + 1 / 2) * v.baseError (x, θ) i\n  gaussianError : ∀ n x, x ∈ domain n → ∀ θ i,\n    u.errors.gaussian n (chart n x, θ) i = Q n ^ (2 * A + 1 / 2) * v.gaussianError (x, θ) i\n  aliasError : ∀ n x, x ∈ domain n → ∀ θ i,\n    u.errors.aliasError n (chart n x, θ) i = Q n ^ (2 * A + 1 / 2) * v.aliasError (x, θ) i"
           }
         }
       }

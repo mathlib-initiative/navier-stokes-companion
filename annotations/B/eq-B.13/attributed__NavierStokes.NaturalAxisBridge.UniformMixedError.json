@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 689,
-            "text": "def UniformMixedError (I : Window) (ε K : ℝ)\n    (Φ u Φ₀ u₀ : ℝ × ℝ → ℝ) : Prop"
+            "text": "def UniformMixedError (I : Window) (ε K : ℝ)\n    (Φ u Φ₀ u₀ : ℝ × ℝ → ℝ) : Prop :=\n  ∀ R : ℝ, 1 ≤ R → R < 20 → ∀ k m : ℕ, ∀ p : ℝ × ℝ,\n    |p.1| ≤ R → p.2 ∈ Ioo I.left I.right →\n      |mixedDerivative k m Φ p - mixedDerivative k m Φ₀ p| ≤\n          AxisEvaluation.jetBound ε R k m * K ∧\n        |mixedDerivative k m u p - mixedDerivative k m u₀ p| ≤\n          AxisEvaluation.jetBound ε R k m * K"
           }
         }
       }

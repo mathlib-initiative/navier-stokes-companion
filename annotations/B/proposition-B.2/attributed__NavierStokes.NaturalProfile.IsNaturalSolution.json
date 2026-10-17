@@ -47,7 +47,7 @@
           "relation": "definition",
           "snippet": {
             "line": 291,
-            "text": "structure IsNaturalSolution (h j Λ : ℝ) (P0 a₀ : ℝ → ℝ)\n    (f U V Pr : ℝ × ℝ → ℝ) : Prop"
+            "text": "structure IsNaturalSolution (h j Λ : ℝ) (P0 a₀ : ℝ → ℝ)\n    (f U V Pr : ℝ × ℝ → ℝ) : Prop where\n  f_smooth : ContDiffOn ℝ ∞ f (domain Λ)\n  U_smooth : ContDiffOn ℝ ∞ U (domain Λ)\n  average_smooth : ContDiffOn ℝ ∞ V (domain Λ)\n  pressure_smooth : ContDiffOn ℝ ∞ Pr (domain Λ)\n  f_axis : ∀ η ∈ Ioo window.left window.right, f (0, η) = a₀ η\n  U_axis : ∀ η ∈ Ioo window.left window.right, U (0, η) = NaturalAxisData.U j η\n  average_axis : ∀ η ∈ Ioo window.left window.right, V (0, η) = NaturalAxisData.U j η\n  pressure_axis : ∀ η ∈ Ioo window.left window.right, Pr (0, η) = P0 η\n  average_equation : ∀ p ∈ domain Λ, V p + p.1 * partialY V p = U p\n  pressure_equation : ∀ p ∈ domain Λ, partialY Pr p = (f p) ^ 2\n  average_integral : ∀ p ∈ domain Λ,\n    p.1 * V p = ∫ X in (0 : ℝ)..p.1, U (X, p.2)\n  pressure_integral : ∀ p ∈ domain Λ,\n    Pr p - P0 p.2 = ∫ X in (0 : ℝ)..p.1, (f (X, p.2)) ^ 2\n  angular_equation : ∀ p ∈ domain Λ,\n    2 * NaturalAxisData.L h p.2 * radialDifferential 2 f p =\n      transportW h V p * (p.1 * partialY f p + f p) +\n      h * (1 - 2 * p.2 * U p) * f p + transportH h U p * partialEta f p\n  axial_equation : ∀ p ∈ domain Λ,\n    2 * NaturalAxisData.L h p.2 * radialDifferential 1 U p =\n      transportW h V p * (p.1 * partialY U p) +\n      NaturalAxisData.A h * (1 - 2 * p.2 * U p) * U p +\n      transportH h U p * partialEta U p + NaturalAxisData.d p.2 * partialEta Pr p -\n      4 * NaturalAxisData.A h * p.2 * Pr p - 2 * p.2 * p.1 * partialY Pr p"
           }
         }
       }

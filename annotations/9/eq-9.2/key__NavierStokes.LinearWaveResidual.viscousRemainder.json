@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 90,
-            "text": "noncomputable def viscousRemainder (R : E → ℝ) (Vr Vθ Vz : E → E) (κ : ℝ)\n    (Φ : E → ℝ) (a : E → ComplexVector) (x : E) : ComplexVector"
+            "text": "noncomputable def viscousRemainder (R : E → ℝ) (Vr Vθ Vz : E → E) (κ : ℝ)\n    (Φ : E → ℝ) (a : E → ComplexVector) (x : E) : ComplexVector := fun i =>\n  along Vr (along Vr (fun y => a y i)) x + (R x)⁻¹ • along Vr (fun y => a y i) x +\n    along Vz (along Vz (fun y => a y i)) x +\n    ((R x) ^ 2)⁻¹ • angularGenerator (angularGenerator (a x)) i +\n    2 * phaseFactor κ *\n      (Complex.ofReal (phaseNormal R Vr Vθ Vz Φ x 0) * along Vr (fun y => a y i) x +\n        Complex.ofReal (phaseNormal R Vr Vθ Vz Φ x 2) * along Vz (fun y => a y i) x) +\n    phaseFactor κ * Complex.ofReal\n      (along Vr (fun y => phaseNormal R Vr Vθ Vz Φ y 0) x +\n        phaseNormal R Vr Vθ Vz Φ x 0 / R x +\n        along Vz (fun y => phaseNormal R Vr Vθ Vz Φ y 2) x) * a x i +\n    2 * phaseFactor κ * Complex.ofReal (phaseNormal R Vr Vθ Vz Φ x 1 / R x) *\n      angularGenerator (a x) i"
           }
         }
       }

@@ -18,7 +18,7 @@
           "relation": "states",
           "snippet": {
             "line": 321,
-            "text": "structure IsScaledSolution (I : Window) (d : ParameterData) (t : ℝ) (a : ℝ → ℝ)\n    (Φ u B P : ℝ × ℝ → ℝ) : Prop"
+            "text": "structure IsScaledSolution (I : Window) (d : ParameterData) (t : ℝ) (a : ℝ → ℝ)\n    (Φ u B P : ℝ × ℝ → ℝ) : Prop where\n  phi_smooth : ContDiffOn ℝ ∞ Φ (AxisEvaluation.strip I 20)\n  u_smooth : ContDiffOn ℝ ∞ u (AxisEvaluation.strip I 20)\n  average_smooth : ContDiffOn ℝ ∞ B (AxisEvaluation.strip I 20)\n  pressure_smooth : ContDiffOn ℝ ∞ P (AxisEvaluation.strip I 20)\n  phi_axis : ∀ η ∈ Ioo I.left I.right, Φ (0, η) = 1\n  u_axis : ∀ η ∈ Ioo I.left I.right, u (0, η) = 0\n  average_axis : ∀ η ∈ Ioo I.left I.right, B (0, η) = u (0, η)\n  pressure_axis : ∀ η ∈ Ioo I.left I.right, P (0, η) = 0\n  average_equation : ∀ p ∈ AxisEvaluation.strip I 20,\n    B p + p.1 * partialY B p = u p\n  pressure_equation : ∀ p ∈ AxisEvaluation.strip I 20,\n    partialY P p = (a p.2) ^ 2 * (Φ p) ^ 2\n  average_integral : ∀ p ∈ AxisEvaluation.strip I 20,\n    p.1 * B p = ∫ y in (0 : ℝ)..p.1, u (y, p.2)\n  pressure_integral : ∀ p ∈ AxisEvaluation.strip I 20,\n    P p = ∫ y in (0 : ℝ)..p.1, (a p.2) ^ 2 * (Φ (y, p.2)) ^ 2\n  angular_equation : ∀ p ∈ AxisEvaluation.strip I 20,\n    2 * radialDifferential 2 Φ p = -d.chi p.2 * Φ p + t * angularRemainder d t Φ u B p\n  axial_equation : ∀ p ∈ AxisEvaluation.strip I 20,\n    2 * radialDifferential 1 u p = -d.inverseL p.2 * d.zStar p.2 + t * axialRemainder d t u B P p"
           }
         }
       }

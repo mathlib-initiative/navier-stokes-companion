@@ -16,7 +16,7 @@
           },
           "snippet": {
             "line": 308,
-            "text": "def axialRemainder (d : ParameterData) (t : ℝ)\n    (u B P : ℝ × ℝ → ℝ) (p : ℝ × ℝ) : ℝ"
+            "text": "def axialRemainder (d : ParameterData) (t : ℝ)\n    (u B P : ℝ × ℝ → ℝ) (p : ℝ × ℝ) : ℝ :=\n  d.inverseL p.2 *\n    (d.A * (1 - 4 * p.2 * d.uStar p.2) * u p -\n      2 * d.A * p.2 * t * (u p) ^ 2 +\n      reconstructedW d t B p * (p.1 * partialY u p) +\n      d.hStar p.2 * partialEta u p + d.d p.2 * d.uStarEta p.2 * u p +\n      t * d.d p.2 * u p * partialEta u p -\n      4 * d.A * p.2 * P p + d.d p.2 * partialEta P p -\n      2 * p.2 * (p.1 * partialY P p))"
           }
         }
       }

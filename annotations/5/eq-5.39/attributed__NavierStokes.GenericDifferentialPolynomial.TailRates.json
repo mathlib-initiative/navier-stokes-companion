@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 50,
-            "text": "structure TailRates (l : Filter D) (q : D → ℝ) (gain : ℕ → ℝ)\n    (f : D → ℝ) (stage : ℕ → D → ℝ)"
+            "text": "structure TailRates (l : Filter D) (q : D → ℝ) (gain : ℕ → ℝ)\n    (f : D → ℝ) (stage : ℕ → D → ℝ) where\n  loss : ℕ → ℝ\n  threshold : ℕ → ℕ\n  rate : ∀ m J, threshold m ≤ J →\n    JetRate l q (fun x => f x - stage J x) m (gain J - loss m)"
           }
         }
       }

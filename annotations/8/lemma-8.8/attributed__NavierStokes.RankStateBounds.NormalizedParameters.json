@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 90,
-            "text": "structure NormalizedParameters (coord A B : ℝ) (r : CorrectionState.RankData Plane)\n    (U : Set Plane) : Prop"
+            "text": "structure NormalizedParameters (coord A B : ℝ) (r : CorrectionState.RankData Plane)\n    (U : Set Plane) : Prop where\n  length : ∀ n x, x ∈ U → r.length n x = VariableGaugeMean.qLength coord x\n  velocity : ∀ n x, x ∈ U →\n    r.velocity n x = MeanRankUpdate.chartQ coord (0, x, 0) ^ (-A)\n  coefficient : ∀ n x, x ∈ U →\n    r.coefficient n x = MeanRankUpdate.shapedAmplitude B (MeanRankUpdate.chartEta coord (0, x, 0))"
           }
         }
       }

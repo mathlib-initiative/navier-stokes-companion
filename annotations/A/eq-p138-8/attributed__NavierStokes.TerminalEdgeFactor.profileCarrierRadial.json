@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 780,
-            "text": "noncomputable def profileCarrierRadial (C : ℝ) (d : TailData) (y0 : ℝ) (y : ℝ × ℝ) : ℝ"
+            "text": "noncomputable def profileCarrierRadial (C : ℝ) (d : TailData) (y0 : ℝ) (y : ℝ × ℝ) : ℝ :=\n  C * (profileS y0 y.2) ^ (RadialHeatProfile.spatialExponent (1 + d.h) - 1) *\n    (RadialHeatProfile.spatialExponent (1 + d.h) *\n        HeatProfileExtension.extension (1 + d.h) (profileZ y0 y) -\n      profileZ y0 y * deriv (HeatProfileExtension.extension (1 + d.h)) (profileZ y0 y)) *\n    profileRadius y0 y.2"
           }
         }
       }

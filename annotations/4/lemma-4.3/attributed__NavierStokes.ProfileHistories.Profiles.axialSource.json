@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 558,
-            "text": "def axialSource (h : ℝ) : Field"
+            "text": "def axialSource (h : ℝ) : Field := fun p =>\n  StressAlgebra.axialSource h p.2 p.1 (P.W h p) (P.U p)\n    (radialPartial P.U p) (parameterPartial P.U p) (P.pressure p)\n      (P.f p ^ 2) (parameterPartial P.pressure p)"
           }
         }
       }

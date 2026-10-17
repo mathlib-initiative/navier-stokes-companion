@@ -16,7 +16,7 @@
           },
           "snippet": {
             "line": 389,
-            "text": "noncomputable def cylindricalDivergence (R : E → ℝ) (Vr Vθ Vz : E → E)\n    (a : E → ComplexVector) (x : E) : ℂ"
+            "text": "noncomputable def cylindricalDivergence (R : E → ℝ) (Vr Vθ Vz : E → E)\n    (a : E → ComplexVector) (x : E) : ℂ :=\n  along Vr (fun y => a y 0) x + (R x)⁻¹ • a x 0 +\n    (R x)⁻¹ • along Vθ (fun y => a y 1) x + along Vz (fun y => a y 2) x"
           }
         }
       }

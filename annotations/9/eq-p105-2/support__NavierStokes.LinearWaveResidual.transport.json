@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 46,
-            "text": "noncomputable def transport (R : E → ℝ) (Vr Vθ Vz : E → E)\n    (u v : E → ComplexVector) (x : E) : ComplexVector"
+            "text": "noncomputable def transport (R : E → ℝ) (Vr Vθ Vz : E → E)\n    (u v : E → ComplexVector) (x : E) : ComplexVector := fun i =>\n  u x 0 * along Vr (fun y => v y i) x +\n    (u x 1 / (R x : ℂ)) * (along Vθ (fun y => v y i) x + angularGenerator (v x) i) +\n    u x 2 * along Vz (fun y => v y i) x"
           }
         }
       }

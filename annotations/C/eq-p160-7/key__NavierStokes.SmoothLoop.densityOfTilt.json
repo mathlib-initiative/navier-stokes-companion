@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 478,
-            "text": "def densityOfTilt (t : ℝ → ℝ) (a m ρ v : ℝ)\n    (ha : 0 < a) (hv : 0 < v) (ht : ContDiff ℝ (∞ : WithTop ℕ∞) t)\n    (hperiodic : Function.Periodic t (2 * Real.pi))\n    (hmean : angularMean t = m)\n    (hvar : angularMean (fun θ => (t θ - m) ^ 2) = ρ / a)\n    (hspeed : v = a * (1 + m ^ 2) + ρ) : CircleDensity"
+            "text": "def densityOfTilt (t : ℝ → ℝ) (a m ρ v : ℝ)\n    (ha : 0 < a) (hv : 0 < v) (ht : ContDiff ℝ (∞ : WithTop ℕ∞) t)\n    (hperiodic : Function.Periodic t (2 * Real.pi))\n    (hmean : angularMean t = m)\n    (hvar : angularMean (fun θ => (t θ - m) ^ 2) = ρ / a)\n    (hspeed : v = a * (1 + m ^ 2) + ρ) : CircleDensity where\n  rate θ := phaseDensity a v (t θ) / (2 * Real.pi)\n  smooth := ((contDiff_const.mul (contDiff_const.add (ht.pow 2))).div_const v).div_const _\n  positive θ := div_pos (phaseDensity_pos a v (t θ) ha hv) period_pos\n  periodic := by intro θ; dsimp only; rw [hperiodic θ]\n  integral_one := by\n    rw [intervalIntegral.integral_div]\n    exact (angular_rephasing_moments t a m ρ v (ne_of_gt ha) (ne_of_gt hv)\n      ht.continuous hmean hvar hspeed).1"
           }
         }
       }

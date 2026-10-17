@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 98,
-            "text": "noncomputable def slowStripData (ε S : ℕ → ℝ)\n    (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hS : ∀ n, 1 ≤ S n) :\n    StripData D"
+            "text": "noncomputable def slowStripData (ε S : ℕ → ℝ)\n    (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hS : ∀ n, 1 ≤ S n) :\n    StripData D where\n  domain := univ\n  isOpen_domain := isOpen_univ\n  epsilon := ε\n  epsilon_pos := hε\n  epsilon_le_one := hεone\n  slow := S\n  one_le_slow := hS\n  delta := fun _ => 1\n  delta_pos := fun _ _ => zero_lt_one\n  zeta := fun _ => 1\n  zeta_smooth := contDiffOn_const\n  zeta_nonneg := fun _ _ => zero_le_one"
           }
         }
       }

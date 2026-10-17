@@ -24,7 +24,7 @@
           "relation": "supporting",
           "snippet": {
             "line": 2079,
-            "text": "structure FiveMomentCertificate (U E : Field) (powerH : ℝ → ℝ) (P0 eta : ℝ) : Prop"
+            "text": "structure FiveMomentCertificate (U E : Field) (powerH : ℝ → ℝ) (P0 eta : ℝ) : Prop where\n  mass_integrable : IntegrableOn (fun x => density (fun t => U (t, eta)) (fun t => E (t, eta)) x 0) (Ioi 0)\n  transport_integrable : IntegrableOn (fun x => density (fun t => U (t, eta)) (fun t => E (t, eta)) x 2) (Ioi 0)\n  energy_integrable : IntegrableOn (fun x => density (fun t => U (t, eta)) (fun t => E (t, eta)) x 3) (Ioi 0)\n  angular_integrable : IntegrableOn (fun x => density (fun t => U (t, eta)) (fun t => E (t, eta)) x 1 - powerH x) (Ioi 0)\n  pressure_integrable : IntegrableOn (halfKernel E eta) (Ioi 0)\n  mass_zero : (∫ x in Ioi 0, U (x, eta)) = 0\n  transport_zero : (∫ x in Ioi 0, U (x, eta) * Real.sqrt (2 * x) * E (x, eta)) = 0\n  energy_zero : (∫ x in Ioi 0, U (x, eta) ^ 2 - E (x, eta) ^ 2 / 2) = 0\n  angular_zero : (∫ x in Ioi 0, Real.sqrt (2 * x) * E (x, eta) - powerH x) = 0\n  pressure_datum : P0 = -(∫ x in Ioi 0, halfKernel E eta x)"
           }
         }
       }

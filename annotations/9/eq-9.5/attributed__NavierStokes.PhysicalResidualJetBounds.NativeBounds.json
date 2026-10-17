@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 375,
-            "text": "structure NativeBounds {D E ι : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D]\n    [NormedAddCommGroup E] [NormedSpace ℝ E]\n    (N : ℕ) (U : Set D) (gain : ℝ) (loss : ℕ → ℝ) (f : ι → ℕ → D → E) : Prop"
+            "text": "structure NativeBounds {D E ι : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D]\n    [NormedAddCommGroup E] [NormedSpace ℝ E]\n    (N : ℕ) (U : Set D) (gain : ℝ) (loss : ℕ → ℝ) (f : ι → ℕ → D → E) : Prop where\n  smooth : ∀ l n, N ≤ n → ContDiffOn ℝ ∞ (f l n) U\n  bounds : ∀ m, ∃ A : ℝ, 0 ≤ A ∧ ∃ p : ℕ, ∀ l n, N ≤ n → ∀ x ∈ U, ∀ j ≤ m,\n    ‖iteratedFDeriv ℝ j (f l n) x‖ ≤ A * ChartScales.Q n ^ (gain - loss m) * ChartScales.S n ^ p"
           }
         }
       }

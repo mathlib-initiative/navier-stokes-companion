@@ -16,7 +16,7 @@
           },
           "snippet": {
             "line": 94,
-            "text": "def canonicalPressureLinear (g : Fin 3 → Fin 3 → Space → ℝ)\n    (hg : ∀ i j : Fin 3, Integrable (g i j)) : ComplexTest →ₗ[ℂ] ℂ"
+            "text": "def canonicalPressureLinear (g : Fin 3 → Fin 3 → Space → ℝ)\n    (hg : ∀ i j : Fin 3, Integrable (g i j)) : ComplexTest →ₗ[ℂ] ℂ :=\n  ∑ i : Fin 3, ∑ j : Fin 3, PressureFunctionals.pressurePairLinear i j (g i j) (hg i j)"
           }
         }
       }

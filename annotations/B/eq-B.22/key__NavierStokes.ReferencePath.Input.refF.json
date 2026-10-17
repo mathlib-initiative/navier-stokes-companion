@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 468,
-            "text": "def refF (δ : ℝ) : Field"
+            "text": "def refF (δ : ℝ) : Field := fun p => if p.1 ≤ N.endpoint then N.f p else\n  Real.exp (continuation δ N.logF (N.logTime p.1, p.2))"
           }
         }
       }

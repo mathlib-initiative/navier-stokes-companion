@@ -45,7 +45,7 @@
           },
           "snippet": {
             "line": 936,
-            "text": "structure CoefficientProfile {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (Λ C : ℝ)"
+            "text": "structure CoefficientProfile {h j σ : ℝ} {P0 : ℝ → ℝ}\n    (d : AnalyticInputs h j σ P0) (Λ C : ℝ) where\n  family : ProfileFamily d Λ C\n  coefficients : CoefficientPair d.coefficients.epsilon\n  phi_eq : family.phi = AxisEvaluation.profile window d.coefficients.epsilon coefficients.1\n  u_eq : family.u = AxisEvaluation.profile window d.coefficients.epsilon coefficients.2\n  average_eq : family.average = AxisEvaluation.profile window d.coefficients.epsilon\n    (AxisOperators.average window d.coefficients.epsilon_pos coefficients.2)\n  norm_ball : ‖coefficients - referencePair d.coefficients‖ ≤ 1\n  norm_error : ‖coefficients - referencePair d.coefficients‖ ≤ profileErrorConstant d / (2 * Λ)\n  scaled : IsScaledSolution window (actualData h j σ P0) (1 / Λ)\n    (realAmplitude h j σ Λ C) family.phi family.u family.average family.pressure"
           }
         }
       }

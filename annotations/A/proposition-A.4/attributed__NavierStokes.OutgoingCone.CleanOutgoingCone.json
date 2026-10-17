@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 392,
-            "text": "structure CleanOutgoingCone {d : TailData} {K : ℝ} (w : ResetWitness d K) (XR left : ℝ) : Prop"
+            "text": "structure CleanOutgoingCone {d : TailData} {K : ℝ} (w : ResetWitness d K) (XR left : ℝ) : Prop where\n  relaxed : ∀ p ∈ cleanWindow d left,\n    RelaxedAt w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p\n  true_from_hold : ∀ p ∈ trueWindow d,\n    TrueAt w (CorrectedPulseAmplitude.amplitude d w.coefficients) XR p"
           }
         }
       }

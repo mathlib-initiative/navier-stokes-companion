@@ -23,7 +23,7 @@
           },
           "snippet": {
             "line": 1251,
-            "text": "theorem activation_cone {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (E : NaturalEntrance.EntranceProfile d Λ C)\n    {hΛ : 0 < Λ} {hsmall : NaturalAxisData.SmallParameters h j}\n    {hP0 : ContDiff ℝ ∞ P0} {order : ℕ} {eps : ℝ}\n    (w : ActivationContinuation.ContinuationWitness E hΛ hsmall hP0 order eps) :\n    let N"
+            "text": "theorem activation_cone {h j σ Λ C : ℝ} {P0 : ℝ → ℝ}\n    {d : AnalyticInputs h j σ P0} (E : NaturalEntrance.EntranceProfile d Λ C)\n    {hΛ : 0 < Λ} {hsmall : NaturalAxisData.SmallParameters h j}\n    {hP0 : ContDiff ℝ ∞ P0} {order : ℕ} {eps : ℝ}\n    (w : ActivationContinuation.ContinuationWitness E hΛ hsmall hP0 order eps) :\n    let N := ReferencePath.Input.ofNatural hΛ E.profile.family\n    (∀ y eta : ℝ, 0 < y → y ≤ w.parameters.actTime → eta ∈ Icc (-1 : ℝ) 1 →\n      ActivationContinuation.IsRelaxed w.parameters.profiles h (radius N.endpoint y, eta)) ∧\n    ∃ t : ℝ, 0 < t ∧ t ≤ w.parameters.actTime ∧\n      ∀ y eta : ℝ, 0 < y → y ≤ t → eta ∈ Icc (-1 : ℝ) 1 →\n        IsTrue w.parameters.profiles h (radius N.endpoint y, eta)"
           }
         }
       }

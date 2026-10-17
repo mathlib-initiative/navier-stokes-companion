@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 30,
-            "text": "noncomputable def standardSlowRegion {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2) :\n    LocalSignedRequest.SlowRegion (2 * h)"
+            "text": "noncomputable def standardSlowRegion {h : ℝ} (hh : 0 < h) (hh1 : h < 1 / 2) :\n    LocalSignedRequest.SlowRegion (2 * h) where\n  carrier := {z | 0 < z.1 ∧ SimilarityCoordinates.coordinateQ (2 * h) z ∈ Ioo (1 / 2 : ℝ) 2}\n  isOpen := by\n    rw [isOpen_iff_mem_nhds]\n    intro z hz\n    have hq := (SimilarityCoordinates.coordinateQ_smooth\n      (by linarith : 0 < 2 * h) (by linarith : 2 * h < 1) hz.1).continuousAt\n    exact inter_mem (isOpen_lt continuous_const continuous_fst |>.mem_nhds hz.1)\n      (hq.preimage_mem_nhds (isOpen_Ioo.mem_nhds hz.2))\n  coord_pos := by linarith\n  coord_lt_one := by linarith\n  qlo := 1 / 2\n  qhi := 2\n  qlo_pos := by norm_num\n  time_pos := fun _ hz => hz.1\n  q_mem := fun _ hz => ⟨hz.2.1.le, hz.2.2.le⟩"
           }
         }
       }

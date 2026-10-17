@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 308,
-            "text": "noncomputable def lowerSource (h eta X : K) (n : ℕ) (phi u : ℕ → Jet K)\n    (beta : ℕ → K) (previousAngularDiffusion previousAxialDiffusion omegaQuotient : K) :\n    SourceJet K"
+            "text": "noncomputable def lowerSource (h eta X : K) (n : ℕ) (phi u : ℕ → Jet K)\n    (beta : ℕ → K) (previousAngularDiffusion previousAxialDiffusion omegaQuotient : K) :\n    SourceJet K where\n  angular := lowerConvolution n (angularConvection h eta X phi u beta) - previousAngularDiffusion\n  axial := lowerConvolution n (axialConvection h eta X u beta) - previousAxialDiffusion\n  pressureProduct := lowerConvolution n (fun i j => (phi i).value * (phi j).value)\n  omegaQuotient := omegaQuotient"
           }
         }
       }

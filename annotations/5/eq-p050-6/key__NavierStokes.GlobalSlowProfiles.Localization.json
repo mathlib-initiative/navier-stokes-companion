@@ -19,7 +19,7 @@
           "relation": "states",
           "snippet": {
             "line": 1295,
-            "text": "structure Localization {S : Set ℝ} {h C rho : ℝ} {U : Set ℂ}\n    {base : Fin 5 → SimilarityProfile.InnerProfile} (s : Scheme S h C)\n    (A : SlowRecursion.LocalHierarchy rho U h C base) (inner : ℝ) : Prop"
+            "text": "structure Localization {S : Set ℝ} {h C rho : ℝ} {U : Set ℂ}\n    {base : Fin 5 → SimilarityProfile.InnerProfile} (s : Scheme S h C)\n    (A : SlowRecursion.LocalHierarchy rho U h C base) (inner : ℝ) : Prop where\n  radius_pos : 0 < rho\n  parameter_open : IsOpen U\n  parameter_embedding : ∀ eta ∈ S, (eta : ℂ) ∈ U\n  inner_pos : 0 < inner\n  inner_radius : inner < rho ^ 2\n  inner_patch : inner < s.a ^ 2 / 2\n  axial_seed : ∀ n w, 0 ≤ w.1 → w.1 ≤ inner →\n    xProfile (s.seedAxial n) w = SlowRecursion.profile (A.coefficients n 1) w\n  phi_seed : ∀ n w, 0 ≤ w.1 → w.1 ≤ inner →\n    xProfile (s.seedPhi n) w = SlowRecursion.profile (A.coefficients n 0) w"
           }
         }
       }

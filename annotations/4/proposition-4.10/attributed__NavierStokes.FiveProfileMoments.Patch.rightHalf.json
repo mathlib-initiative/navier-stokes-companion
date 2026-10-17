@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 33,
-            "text": "noncomputable def Patch.rightHalf (P : Patch) : Patch"
+            "text": "noncomputable def Patch.rightHalf (P : Patch) : Patch :=\n  ⟨P.mid, P.right, by dsimp [Patch.mid]; linarith [P.left_pos, P.ordered],\n    by dsimp [Patch.mid]; linarith [P.ordered]⟩"
           }
         }
       }

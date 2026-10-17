@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 1256,
-            "text": "structure LocalHierarchy (R : ℝ) (U : Set ℂ) (h C : ℝ)\n    (base : Fin 5 → SimilarityProfile.InnerProfile)"
+            "text": "structure LocalHierarchy (R : ℝ) (U : Set ℂ) (h C : ℝ)\n    (base : Fin 5 → SimilarityProfile.InnerProfile) where\n  coefficients : ℕ → Coefficient R U\n  starts : ∀ i, profile (coefficients 0 i) = base i\n  zero_axis : ∀ n, 0 < n → ∀ i : Fin 5, ∀ z ∈ U, coefficients n i (0, z) = 0\n  beta : ∀ n, 0 < n → ∀ X ∈ Ioo (0 : ℝ) (R ^ 2), ∀ eta : ℝ, (eta : ℂ) ∈ U →\n    profile (coefficients n 4) (X, eta) = PositiveAxisExistence.newBeta h n\n      (profile (coefficients n 1)) (profile (coefficients n 2)) (X, eta)\n  equations : ∀ n, 0 < n → ∀ X ∈ Ioo (0 : ℝ) (R ^ 2), ∀ eta : ℝ, (eta : ℂ) ∈ U →\n    OrderEquations h C coefficients n (X, eta)\n  average : ∀ n, 0 < n → ∀ X ∈ Ico (0 : ℝ) (R ^ 2), ∀ eta : ℝ, (eta : ℂ) ∈ U →\n    ProfileHistories.average (profile (coefficients n 1)) (X, eta) =\n      profile (coefficients n 1) (X, eta) + profile (coefficients n 2) (X, eta)"
           }
         }
       }

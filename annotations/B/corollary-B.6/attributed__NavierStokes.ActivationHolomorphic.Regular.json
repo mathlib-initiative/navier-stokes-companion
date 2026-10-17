@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 30,
-            "text": "structure Regular (S : Set ℝ) (Ω : Set ℂ) (F : CField) : Prop"
+            "text": "structure Regular (S : Set ℝ) (Ω : Set ℂ) (F : CField) : Prop where\n  smooth : ContDiffOn ℝ ∞ F (S ×ˢ Ω)\n  holomorphic : ∀ x ∈ S, DifferentiableOn ℂ (fun z => F (x, z)) Ω"
           }
         }
       }

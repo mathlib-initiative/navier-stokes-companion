@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 287,
-            "text": "noncomputable def pressureSource {S : Set ℝ} (C : ℝ) (phi : ℕ → EvenProfile S)\n    (omega : EvenProfile S) (n : ℕ) : EvenProfile S"
+            "text": "noncomputable def pressureSource {S : Set ℝ} (C : ℝ) (phi : ℕ → EvenProfile S)\n    (omega : EvenProfile S) (n : ℕ) : EvenProfile S :=\n  constant S (C ^ 2)⁻¹ * (∑ i ∈ Finset.range (n + 1), phi i * phi (n - i)) -\n    constant S (1 / 2) * omega"
           }
         }
       }

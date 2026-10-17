@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 438,
-            "text": "def WeightedStressBound (a : ℕ → ℕ) (h : ℝ) (d : Coefficients) (c left right : ℝ) : Prop"
+            "text": "def WeightedStressBound (a : ℕ → ℕ) (h : ℝ) (d : Coefficients) (c left right : ℝ) : Prop :=\n  ∀ m : ℕ, ∃ D : ℝ, 0 < D ∧ ∃ N : ℕ, ∀ q : ℝ, 0 < q → q ≤ 1 →\n    ∀ w ∈ activeWindow left right,\n      ‖blownJet m (fun v => normalizedTensor a h d v - stressPair d 0 v.2) (q, w)‖ ≤\n        D * q ^ h * activeZeta c left right w * (activeDelta left right w)⁻¹ ^ N"
           }
         }
       }

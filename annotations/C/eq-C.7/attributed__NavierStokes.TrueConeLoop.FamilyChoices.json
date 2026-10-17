@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 439,
-            "text": "structure FamilyChoices {X : Type*} (a m p₁ p₂ : X → ℝ) (K B : Set X)"
+            "text": "structure FamilyChoices {X : Type*} (a m p₁ p₂ : X → ℝ) (K B : Set X) where\n  aMin : ℝ\n  d : ℝ\n  radius : ℝ\n  maxAmplitude : ℝ\n  delta : ℝ\n  aMin_pos : 0 < aMin\n  d_pos : 0 < d\n  radius_eq : radius = Real.sqrt (3 / aMin)\n  maxAmplitude_pos : 0 < maxAmplitude\n  delta_pos : 0 < delta\n  delta_le_one : delta ≤ 1\n  aMin_le : ∀ x ∈ K, aMin ≤ a x\n  projection_margin : ∀ x ∈ K, 2 ≤ p₁ x + p₂ x * m x - d\n  amplitude_large : ∀ x ∈ K, 3 / aMin < tiltVariance d (p₂ x) maxAmplitude\n  cone_margin : ∀ x ∈ K, ∀ r ∈ Icc (0 : ℝ) radius, ∀ θ,\n    2 + delta ≤ coneBound (p₁ x + p₂ x * solvedTilt (m x) d (p₂ x) r θ)\n      (p₂ x - p₁ x * solvedTilt (m x) d (p₂ x) r θ)\n  boundary_inactive : ∀ x ∈ B, highSpeed delta < nominalSpeed (a x) (m x)"
           }
         }
       }

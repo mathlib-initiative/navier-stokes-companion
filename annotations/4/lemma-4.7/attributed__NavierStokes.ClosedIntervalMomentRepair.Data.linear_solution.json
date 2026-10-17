@@ -24,7 +24,7 @@
           },
           "snippet": {
             "line": 210,
-            "text": "theorem linear_solution (hA : ∀ x ∈ I, D.A x = 0) :\n    ∃ hc : ContDiffOn ℝ ∞ (fun x => (D.B x).inverse (D.d x)) I,\n      (∀ x ∈ I, D.B x ((D.B x).inverse (D.d x)) +\n        D.A x ((D.B x).inverse (D.d x)) ((D.B x).inverse (D.d x)) = D.d x) ∧\n      ∀ k : ℕ, ‖ofContDiffOn (fun x => (D.B x).inverse (D.d x))\n        (hc.of_le ("
+            "text": "theorem linear_solution (hA : ∀ x ∈ I, D.A x = 0) :\n    ∃ hc : ContDiffOn ℝ ∞ (fun x => (D.B x).inverse (D.d x)) I,\n      (∀ x ∈ I, D.B x ((D.B x).inverse (D.d x)) +\n        D.A x ((D.B x).inverse (D.d x)) ((D.B x).inverse (D.d x)) = D.d x) ∧\n      ∀ k : ℕ, ‖ofContDiffOn (fun x => (D.B x).inverse (D.d x))\n        (hc.of_le (by simp : (k : ℕ∞ω) ≤ ∞))‖ ≤ D.inverseNorm k * D.debtNorm k"
           }
         }
       }

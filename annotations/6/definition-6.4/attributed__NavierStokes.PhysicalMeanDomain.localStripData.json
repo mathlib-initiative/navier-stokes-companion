@@ -43,7 +43,7 @@
           "relation": "definition",
           "snippet": {
             "line": 45,
-            "text": "noncomputable def localStripData (a b cL cR : ℝ) (ha : 0 < a)\n    (hcL : 0 < cL) (hcR : 0 < cR) (ε L : ℕ → ℝ)\n    (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n)\n    (U : Set S) (hU : IsOpen U) : StripData (PressureStream.Lift S)"
+            "text": "noncomputable def localStripData (a b cL cR : ℝ) (ha : 0 < a)\n    (hcL : 0 < cL) (hcR : 0 < cR) (ε L : ℕ → ℝ)\n    (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n)\n    (U : Set S) (hU : IsOpen U) : StripData (PressureStream.Lift S) :=\n  { logStripData a b cL cR ha hcL hcR ε L hε hεone hL with\n    domain := stripDomain a b U\n    isOpen_domain := stripDomain_open a b hU\n    delta_pos := fun _ hp => delta_pos (logPosition_mem ha hp.1)\n    zeta_smooth := (logStripData a b cL cR ha hcL hcR ε L hε hεone hL).zeta_smooth.mono\n      (fun _ hp => hp.1)\n    zeta_nonneg := fun _ hp => (zeta_pos cL cR (logPosition_mem ha hp.1)).le }"
           }
         }
       }

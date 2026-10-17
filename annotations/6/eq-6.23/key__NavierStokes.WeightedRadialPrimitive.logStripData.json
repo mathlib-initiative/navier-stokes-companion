@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 1005,
-            "text": "noncomputable def logStripData (a b cL cR : ℝ) (ha : 0 < a)\n    (hcL : 0 < cL) (hcR : 0 < cR) (ε S : ℕ → ℝ)\n    (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hS : ∀ n, 1 ≤ S n) :\n    WeightedClasses.StripData (ℝ × E)"
+            "text": "noncomputable def logStripData (a b cL cR : ℝ) (ha : 0 < a)\n    (hcL : 0 < cL) (hcR : 0 < cR) (ε S : ℕ → ℝ)\n    (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hS : ∀ n, 1 ≤ S n) :\n    WeightedClasses.StripData (ℝ × E) where\n  domain := Prod.fst ⁻¹' Ioo a b\n  isOpen_domain := isOpen_Ioo.preimage continuous_fst\n  epsilon := ε\n  epsilon_pos := hε\n  epsilon_le_one := hεone\n  slow := S\n  one_le_slow := hS\n  delta := fun z => delta (logLength a b) (logPosition a z.1)\n  delta_pos := fun _ hz => delta_pos (logPosition_mem ha hz)\n  zeta := fun z => zeta cL cR (logLength a b) (logPosition a z.1)\n  zeta_smooth := by\n    have hlog : ContDiffOn ℝ ∞ (fun z : ℝ × E => logPosition a z.1)\n        (Prod.fst ⁻¹' Ioo a b) :=\n      (contDiffOn_fst.div_const a).log (fun z hz => div_ne_zero (ha.trans hz.1).ne' ha.ne')\n    exact ((edge_contDiff hcL : ContDiff ℝ ∞ _).comp_contDiffOn hlog).mul\n      ((edge_contDiff hcR : ContDiff ℝ ∞ _).comp_contDiffOn (contDiffOn_const.sub hlog))\n  zeta_nonneg := fun _ hz => (zeta_pos cL cR (logPosition_mem ha hz)).le"
           }
         }
       }

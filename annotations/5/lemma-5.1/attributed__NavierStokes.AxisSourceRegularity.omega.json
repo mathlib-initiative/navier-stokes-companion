@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 109,
-            "text": "noncomputable def omega (h : ℝ) (U V : ℕ → InnerProfile) (k : ℕ) (w : InnerPoint) : ℝ"
+            "text": "noncomputable def omega (h : ℝ) (U V : ℕ → InnerProfile) (k : ℕ) (w : InnerPoint) : ℝ :=\n  T h (slowOrder h k) (V k) w +\n    (∑ ij ∈ Finset.antidiagonal k,\n      (V ij.1 w * (partialX (V ij.2) w - V ij.2 w / (2 * w.1)) +\n        U ij.1 w * Z h (slowOrder h ij.2) (V ij.2) w)) -\n    2 * w.1 * partialX (partialX (V k)) w - shiftedAxial h V k w"
           }
         }
       }

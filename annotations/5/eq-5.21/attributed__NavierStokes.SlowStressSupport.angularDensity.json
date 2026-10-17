@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 443,
-            "text": "noncomputable def angularDensity (h : ℝ) (n : ℕ) (v u e : History) (w : ℝ × ℝ) : ℝ"
+            "text": "noncomputable def angularDensity (h : ℝ) (n : ℕ) (v u e : History) (w : ℝ × ℝ) : ℝ :=\n  w.1 ^ 2 * timeOp h (orderExponent h n) (e n) w +\n    dr (weighted 1 (conv n v e)) w +\n    w.1 ^ 2 * axialOp h (pressureExponent h n) (conv n u e) w -\n    dr (angularViscousFlux (e n)) w -\n    w.1 ^ 2 * axialOp2 h (orderExponent h (n - 1)) (e (n - 1)) w"
           }
         }
       }

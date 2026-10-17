@@ -17,7 +17,7 @@
           },
           "snippet": {
             "line": 223,
-            "text": "noncomputable def assembledTangentWith {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt} {N : ℕ}\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (a : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position) (i : Fin 2) (Y : Plane) (θ : ℝ) : ℝ"
+            "text": "noncomputable def assembledTangentWith {D h : ℝ} {vr vt : Plane} {sys : SlotSystem D h vr vt} {N : ℕ}\n    (P : (U : UnsignedLabel) → PairData sys (tailLabel N U))\n    (hdet : vr.1 * vt.2 - vr.2 * vt.1 ≠ 0) (outer ε : UnsignedLabel → ℝ)\n    (a : UnsignedLabel → Vec2) (q : ℝ) (x : SlotColoring.Position) (i : Fin 2) (Y : Plane) (θ : ℝ) : ℝ :=\n  ∑ᶠ v : UnsignedLabel × Fin 2, tangentWith (P v.1) hdet (outer v.1) (ε v.1) (a v.1) q x v.2 i Y θ"
           }
         }
       }

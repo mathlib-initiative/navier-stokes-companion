@@ -11,10 +11,12 @@ under the Apache License, Version 2.0:
   f9e8bc5b38b6e212696e8a30e3e91517af887bbd: the "snippet" text in
   annotations/ and in pdf-overlay/annotations.bundle.json, and the Lean
   names and expressions quoted in REPORT.md. Each snippet is a declaration's
-  source text from its first line to the end of its statement, with its line
-  breaks kept; a snippet marked "truncated" is cut after 14 lines and ends
-  with "…". Snippets taken from ComparatorChallenges/NavierStokes.lean and
-  NavierStokes/ComparatorDefinitions.lean come from files that carry the
+  source text from its first line, with its line breaks kept: a def, abbrev,
+  instance, structure or inductive whole, up to the next command, and any
+  other declaration to the end of its statement. A snippet marked
+  "truncated" is cut after 60 lines (a definition) or 14 lines (any other)
+  and ends with "…". Snippets taken from ComparatorChallenges/NavierStokes.lean
+  and NavierStokes/ComparatorDefinitions.lean come from files that carry the
   notice "Copyright 2026 The Formal Conjectures Authors".
 
 - pdf-overlay/viewer/, pdf-overlay/schema/ and pdf-overlay/tools/, except

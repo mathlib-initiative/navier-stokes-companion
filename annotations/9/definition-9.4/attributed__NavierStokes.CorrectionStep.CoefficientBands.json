@@ -22,7 +22,7 @@
           },
           "snippet": {
             "line": 6807,
-            "text": "structure CoefficientBands {ι : Type} (v : CycleCoefficients ι) : Prop"
+            "text": "structure CoefficientBands {ι : Type} (v : CycleCoefficients ι) : Prop where\n  velocityPressure : ∀ l, (v.blocks l).BandLimited v.residualBand\n  gaussian : ∀ l n i, HarmonicFields.BandLimited (v.gaussian l n i) v.residualBand\n  aliasError : ∀ l n i, HarmonicFields.BandLimited (v.aliasCoefficients l n i) v.residualBand"
           }
         }
       }

@@ -18,7 +18,7 @@
           "relation": "states",
           "snippet": {
             "line": 796,
-            "text": "structure IsRegularSolution (R : ℝ) (U : Set ℂ)\n    (A₀ A₁ : VolterraAnalyticBounds.Coeff) (f W : VolterraAnalyticBounds.Field) : Prop"
+            "text": "structure IsRegularSolution (R : ℝ) (U : Set ℂ)\n    (A₀ A₁ : VolterraAnalyticBounds.Coeff) (f W : VolterraAnalyticBounds.Field) : Prop where\n  jointly_continuous : ContinuousOn (fun p : ℝ × ℂ => W p.1 p.2) (Icc (0 : ℝ) R ×ˢ U)\n  parameter_holomorphic : ∀ r ∈ Icc (0 : ℝ) R, ∀ i,\n    DifferentiableOn ℂ (fun z => W r z i) U\n  radial_differentiable : ∀ z ∈ U, ∀ i, Differentiable ℝ (fun r => W r z i)\n  radial_derivative_continuous : ∀ z ∈ U, ∀ i, Continuous (fun r => radialDeriv W r z i)\n  axis_zero : ∀ z ∈ U, W 0 z = 0\n  equation : ∀ r ∈ Icc (0 : ℝ) R, r ≠ 0 → ∀ z ∈ U, ∀ i,\n    radialDeriv W r z i + ((VolterraAnalyticBounds.exponent i : ℝ) / r) • W r z i =\n      equationRHS A₀ A₁ f W r z i\n  axis_derivative : ∀ z ∈ U, ∀ i,\n    radialDeriv W 0 z i =\n      (1 / ((VolterraAnalyticBounds.exponent i : ℝ) + 1)) • equationRHS A₀ A₁ f W 0 z i"
           }
         }
       }

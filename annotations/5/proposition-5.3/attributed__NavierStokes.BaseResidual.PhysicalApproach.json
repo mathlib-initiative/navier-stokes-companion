@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 350,
-            "text": "structure PhysicalApproach (l : Filter SpaceTime) (h lo hi : ℝ)"
+            "text": "structure PhysicalApproach (l : Filter SpaceTime) (h lo hi : ℝ) where\n  carrier : Set SpaceTime\n  compact : IsCompact carrier\n  in_carrier : ∀ᶠ z in l, z ∈ carrier\n  past : ∀ᶠ z in l, z.1 < 1\n  radial : ∀ᶠ z in l, (cartesianChart h z).2.1 ∈ Icc lo hi\n  scale : Tendsto (fun z => (cartesianChart h z).1) l (𝓝 0)"
           }
         }
       }

@@ -24,7 +24,7 @@
           },
           "snippet": {
             "line": 786,
-            "text": "def StepProperties {S : Set ℝ} {h C : ℝ} (s : Scheme S h C) (n : ℕ)\n    (previous : (j : ℕ) → j < n → Admissible s j) (out : Admissible s n) : Prop"
+            "text": "def StepProperties {S : Set ℝ} {h C : ℝ} (s : Scheme S h C) (n : ℕ)\n    (previous : (j : ℕ) → j < n → Admissible s j) (out : Admissible s n) : Prop :=\n  out.data.beta = betaFromU s.domain (AxisSourceRegularity.slowOrder h n) out.data.axial ∧\n  out.data.pressure = pressureFromSource s.domain.isOpen\n    (pressureSource C (Function.update (previousPhi s n previous) n out.data.phi)\n      (previousSource s n previous) n) ∧\n  ∀ eta ∈ S, PositiveOrderMoments.moments n\n    (PositiveOrderMoments.slice (fun j =>\n      (Function.update (previousAxial s n previous) n out.data.axial j : Field)) eta)\n    (PositiveOrderMoments.slice (fun j =>\n      angularField C (Function.update (previousPhi s n previous) n out.data.phi j)) eta)\n    (fun R => R ^ 2 / 2 * previousSource s n previous (R, eta)) = 0"
           }
         }
       }

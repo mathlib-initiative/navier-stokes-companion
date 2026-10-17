@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 91,
-            "text": "noncomputable def stepPressureComponents (n : ℕ) : Cylinder → ℝ"
+            "text": "noncomputable def stepPressureComponents (n : ℕ) : Cylinder → ℝ :=\n  fun x =>\n    ((p.afterParticular v c u).pressure n x.1 - u.pressure n x.1) +\n    ((p.afterSigned v c u).pressure n x.1 - (p.afterParticular v c u).pressure n x.1) +\n    ((p.afterTemporal v c u).pressure n x.1 - (p.afterSigned v c u).pressure n x.1) +\n    ((p.afterRank v c u).pressure n x.1 - (p.afterTemporal v c u).pressure n x.1) +\n    p.particularPressure v c u n x + p.signedPressure v c u n x"
           }
         }
       }

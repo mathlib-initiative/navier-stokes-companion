@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 64,
-            "text": "noncomputable def shear (R F G : E → ℝ) (Vr : E → E)\n    (a : E → ComplexVector) (x : E) : ComplexVector"
+            "text": "noncomputable def shear (R F G : E → ℝ) (Vr : E → E)\n    (a : E → ComplexVector) (x : E) : ComplexVector :=\n  ![-2 * (F x : ℂ) * a x 1,\n    Complex.ofReal (2 * F x + R x * along Vr F x) * a x 0,\n    Complex.ofReal (along Vr G x) * a x 0]"
           }
         }
       }

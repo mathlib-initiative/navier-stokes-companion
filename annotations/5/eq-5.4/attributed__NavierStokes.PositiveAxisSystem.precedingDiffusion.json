@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 536,
-            "text": "noncomputable def precedingDiffusion (h power : ℝ) (F : ℕ → InnerProfile) (n : ℕ) : InnerProfile"
+            "text": "noncomputable def precedingDiffusion (h power : ℝ) (F : ℕ → InnerProfile) (n : ℕ) : InnerProfile :=\n  if n = 0 then fun _ => 0 else\n    Z h (power + slowPower h (n - 1) - dScale h)\n      (Z h (power + slowPower h (n - 1)) (F (n - 1)))"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 34,
-            "text": "def UniformJetsOnScaleStrips {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]\n    (h : ℝ) (f : SpaceTime → V) : Prop"
+            "text": "def UniformJetsOnScaleStrips {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]\n    (h : ℝ) (f : SpaceTime → V) : Prop :=\n  ∀ K : Set Space, IsCompact K → ∀ c c' : ℝ, 0 < c → ∀ n : ℕ,\n    ∃ C : ℝ, 0 < C ∧ ∀ w : SpaceTime, w.1 < 1 → w.2 ∈ K →\n      c ≤ PhysicalWaveSum.physicalQ h w → PhysicalWaveSum.physicalQ h w ≤ c' →\n      ‖iteratedFDeriv ℝ n f w‖ ≤ C"
           }
         }
       }

@@ -18,7 +18,7 @@
           "relation": "defines",
           "snippet": {
             "line": 138,
-            "text": "noncomputable def phaseCell (n : ℕ) (i : CopyIndex B N0) : Set ActualPrimary.FullPoint"
+            "text": "noncomputable def phaseCell (n : ℕ) (i : CopyIndex B N0) : Set ActualPrimary.FullPoint :=\n  {x | ActualPrimaryBounds.near i.1 n ∧\n    (ActualPrimaryBounds.fullCopy i.1 n i.2 x).1 ∈\n      (PrimaryGeometryAssembly.domain ActualPrimary.nominal\n        (ActualPrimary.choice B N0).prepared.N).carrier i.1.2 ∧\n    (ActualPrimaryBounds.fullCopy i.1 n i.2 x).2 ∈ (ActualPrimary.clockWindow i.1.2).core}"
           }
         }
       }

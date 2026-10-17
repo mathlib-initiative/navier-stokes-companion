@@ -23,7 +23,7 @@
           "relation": "definition",
           "snippet": {
             "line": 135,
-            "text": "def ModeSolenoidal (s : StripData D) (c : CorrectionState.Context D)\n    (b : CorrectionState.HarmonicBlock D) : Prop"
+            "text": "def ModeSolenoidal (s : StripData D) (c : CorrectionState.Context D)\n    (b : CorrectionState.HarmonicBlock D) : Prop :=\n  ∀ j : ℤ, j ≠ 0 → ∀ n p, p.1 ∈ s.domain →\n    cylindricalDivergence (fun q => c.operators.radius q.1)\n      (HarmonicResidual.liftDirection (HarmonicResidual.contextFrame c n).radial)\n      HarmonicResidual.angularDirection\n      (HarmonicResidual.liftDirection (HarmonicResidual.contextFrame c n).axial)\n      (singleMode b j n) p = 0"
           }
         }
       }

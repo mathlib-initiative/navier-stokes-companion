@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 182,
-            "text": "noncomputable def movingStripData {coord : ℝ} (U : SlowRegion coord)\n    (a b cL cR : ℝ) (ha : 0 < a) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n) :\n    StripData Point"
+            "text": "noncomputable def movingStripData {coord : ℝ} (U : SlowRegion coord)\n    (a b cL cR : ℝ) (ha : 0 < a) (hcL : 0 < cL) (hcR : 0 < cR)\n    (ε L : ℕ → ℝ) (hε : ∀ n, 0 < ε n) (hεone : ∀ n, ε n ≤ 1) (hL : ∀ n, 1 ≤ L n) :\n    StripData Point :=\n  localPullbackStrip\n    (PhysicalMeanDomain.localStripData a b cL cR ha hcL hcR ε L hε hεone hL U.carrier U.isOpen)\n    (profileMap coord) (PhysicalMeanDomain.slowDomain U.carrier)\n    (PhysicalMeanDomain.slowDomain_open U.isOpen) (profileMap_smooth U)"
           }
         }
       }

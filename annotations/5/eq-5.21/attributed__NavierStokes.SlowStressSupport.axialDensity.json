@@ -19,7 +19,7 @@
           "relation": "defines",
           "snippet": {
             "line": 450,
-            "text": "noncomputable def axialDensity (h : ℝ) (n : ℕ) (v u : History) (p : Field) (w : ℝ × ℝ) : ℝ"
+            "text": "noncomputable def axialDensity (h : ℝ) (n : ℕ) (v u : History) (p : Field) (w : ℝ × ℝ) : ℝ :=\n  w.1 * timeOp h (orderExponent h n) (u n) w + dr (conv n v u) w +\n    w.1 * axialOp h (pressureExponent h n) (fun p' => conv n u u p' + p p') w -\n    dr (axialViscousFlux (u n)) w -\n    w.1 * axialOp2 h (orderExponent h (n - 1)) (u (n - 1)) w"
           }
         }
       }

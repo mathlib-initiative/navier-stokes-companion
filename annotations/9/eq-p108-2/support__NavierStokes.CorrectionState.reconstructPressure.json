@@ -20,7 +20,7 @@
           "relation": "uses",
           "snippet": {
             "line": 271,
-            "text": "noncomputable def reconstructPressure (r : ReconstructionData) (c : Context (Lift S))\n    (u : State (Lift S)) : State (Lift S)"
+            "text": "noncomputable def reconstructPressure (r : ReconstructionData) (c : Context (Lift S))\n    (u : State (Lift S)) : State (Lift S) :=\n  { u with pressure := (fun n => PressureStream.meanPressure r.exponent r.inner r.outer\n      (r.frequency n) r.inner_lt_outer r.radialDirection (u.gr c n)) }"
           }
         }
       }

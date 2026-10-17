@@ -24,7 +24,7 @@
           },
           "snippet": {
             "line": 249,
-            "text": "structure Periodic {B N0 : ℕ} (x : CycleState (Index B N0)) : Prop"
+            "text": "structure Periodic {B N0 : ℕ} (x : CycleState (Index B N0)) : Prop where\n  velocity : ∀ l n, ActualWaveRegularityData.Ordered l n → ∀ k i,\n    CoefficientsTranslation ActualInitialization.geometry.domain (pointDeck k)\n      ((x.coefficients.blocks l).velocity n i)\n  pressure : ∀ l n, ActualWaveRegularityData.Ordered l n → ∀ k,\n    CoefficientsTranslation ActualInitialization.geometry.domain (pointDeck k)\n      ((x.coefficients.blocks l).pressure n)\n  gaussian : ∀ l n, ActualWaveRegularityData.Ordered l n → ∀ k i,\n    CoefficientsTranslation ActualInitialization.geometry.domain (pointDeck k)\n      (x.coefficients.gaussian l n i)"
           }
         }
       }

@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 19,
-            "text": "def reference (q : Choice d Λ) : StockReference parameterInterval"
+            "text": "def reference (q : Choice d Λ) : StockReference parameterInterval where\n  exponent := h\n  radius0 := (q.input hΛ).endpoint\n  radius0_pos := (q.input hΛ).endpoint_pos\n  domain := (q.input hΛ).radialDomain\n  profiles := q.profiles hΛ hP0\n  log_mem := fun y _ hη => StressActivation.FromReference.log_radius_mem (q.input hΛ) y hη\n  f_pos := fun y _ hη => (q.input hΛ).refF_pos q.δ\n    (StressActivation.FromReference.log_radius_mem (q.input hΛ) y hη)\n    (mul_pos (q.input hΛ).endpoint_pos (Real.exp_pos _)).le\n  L_ne_zero := fun η hη => (lt_of_lt_of_le (by norm_num : (0:ℝ)<4879/5000)\n    (AppendixJoiningResults.axis_L_lower_bound_window hs.h_pos.le hs.h_le\n      ⟨hη.1.le,hη.2.le⟩)).ne'"
           }
         }
       }

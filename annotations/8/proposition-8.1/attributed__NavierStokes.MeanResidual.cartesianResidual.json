@@ -19,7 +19,7 @@
           "relation": "definition",
           "snippet": {
             "line": 1049,
-            "text": "noncomputable def cartesianResidual (u : VelocityField) (p : PressureField)\n    (i : Fin 3) (q : SpaceTime) : ℝ"
+            "text": "noncomputable def cartesianResidual (u : VelocityField) (p : PressureField)\n    (i : Fin 3) (q : SpaceTime) : ℝ :=\n  (CylindricalResidual.frame (-(q.2 1))\n    (navierStokesResidual u p q.1 (CylindricalResidual.chart q.2))) i"
           }
         }
       }
