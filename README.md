@@ -2,6 +2,8 @@
 
 > **Unreviewed machine audit.** AI agents produced every verdict; no mathematician has checked any of it.
 
+**Independence.** This is an independent audit. It is not affiliated with or endorsed by OpenAI, the authors of the paper or of its Lean formalization, or the authors of arXiv:2610.08144, and none of them has reviewed it. Corrections are welcome as issues on this repository.
+
 This repository records an agent audit of OpenAI's *Finite time blowup for Navier–Stokes* (166 pages) against its Lean formalization, [openai/NavierStokesAndEuler](https://github.com/openai/NavierStokesAndEuler) at commit `f9e8bc5b38b6e212696e8a30e3e91517af887bbd`. For each of the paper's 80 numbered items and 762 displayed equations, it names the Lean declarations that state it and records whether they say what the paper says. It has three parts:
 
 - [Literature Links](https://github.com/mathlib-initiative/literature-links) annotations, which link each item and display to its declarations;
@@ -43,4 +45,4 @@ Names `eq-<number>` are numbered equations. In `eq-p<page>-<k>`, k counts every 
 
 ## License
 
-Apache License 2.0: see [`LICENSE`](LICENSE), and [`NOTICE`](NOTICE) for the code from other projects and the excerpts of openai/NavierStokesAndEuler included here. The paper is not in this repository; the short passages and displayed formulas that the annotations and `REPORT.md` quote from it, and from the Clay problem statement, are not covered by this license.
+Apache License 2.0, as for openai/NavierStokesAndEuler: see [`LICENSE`](LICENSE), and [`NOTICE`](NOTICE) for the code from other projects and the excerpts of openai/NavierStokesAndEuler included here. The paper is not in this repository; the short passages and displayed formulas that the annotations and `REPORT.md` quote from it, and from the Clay problem statement, are not covered by this license.
