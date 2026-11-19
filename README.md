@@ -22,6 +22,13 @@ Method: two independent agent audits of the items; where they differed, an adjud
 
 ## Viewing
 
+Online: <https://deicyde.github.io/formal-companions/navier-stokes/pdf-overlay/viewer/index.html>, in the
+[formal-companions](https://github.com/Deicyde/formal-companions) library. The site does not host the PDF:
+the overlay's config sets `pdf.remote`, so your browser fetches the PDF from its official URL, which allows
+cross-origin reads, and the viewer checks its sha256 before showing it.
+
+Locally:
+
 ```sh
 python3 pdf-overlay/tools/serve.py --build   # later runs: omit --build
 ```
