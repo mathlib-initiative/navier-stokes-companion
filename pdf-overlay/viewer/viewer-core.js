@@ -26,6 +26,13 @@ export const MAX_JSON_BYTES = 64 * 1024 * 1024;
 
 /** `pdf.route` must start with this and carry no `..` (the contract's section 3). */
 export const ROUTE_PREFIX = "/__";
+/**
+ * `pdf.publish.license`: the open licenses under which the PDF may be published
+ * with the site (the contract's section 3). A published PDF sits beside
+ * `overlay.config.json`, so its URL is relative and works under a project path.
+ */
+export const OPEN_LICENSES = Object.freeze(["Apache-2.0", "CC-BY-4.0", "CC-BY-SA-4.0", "CC0-1.0", "MIT"]);
+const PUBLISHED_FILE_NAME = /^[A-Za-z0-9_][A-Za-z0-9._-]*\.pdf$/;
 
 export const DEFAULT_MOUNT = "pdf-overlay";
 export const DEFAULT_STORAGE_KEY = "formal-companion-overlay-page";
@@ -338,11 +345,7 @@ export function readConfig(raw) {
   if (!title) {
     fail("overlay.config.json names no title.");
   }
-  const route = text(isObject(raw.pdf) ? raw.pdf.route : "");
-  if (!route.startsWith(ROUTE_PREFIX) || route.includes("..")) {
-    fail(`overlay.config.json has pdf.route ${JSON.stringify(route)}; a route starts with `
-         + `"${ROUTE_PREFIX}" and carries no "..".`);
-  }
+  const { pdfLicense, pdfRemote, pdfUrl } = readPdf(isObject(raw.pdf) ? raw.pdf : {});
   // No back_link, or one whose href is refused, is no back link: the top bar starts with the title.
   const back = isObject(raw.back_link) ? raw.back_link : {};
   const backHref = safeBackLinkHref(back.href);
@@ -352,7 +355,9 @@ export function readConfig(raw) {
   return {
     backLink: backHref && backText ? { href: backHref, text: backText } : null,
     lede: text(raw.lede),
-    pdfRoute: route,
+    pdfLicense,
+    pdfRemote,
+    pdfUrl,
     // build_site.py publishes the annotation files at the site root, the same
     // place relative to the built pages as in the repository; it is this far up.
     siteRoot: siteRootFor(site.mount ?? DEFAULT_MOUNT),
@@ -362,6 +367,75 @@ export function readConfig(raw) {
     minimal: display.minimal === true,
     title,
   };
+}
+
+/**
+ * Where the PDF is fetched from, relative to the viewer page: `pdf.route` on
+ * loopback, or, when `pdf.publish` names an open license, `../<file_name>`,
+ * beside `overlay.config.json` in the built site. With `pdf.remote` it is
+ * neither: the address is the one the records' PDF end names, which
+ * `pdfFetchUrl` reads once the records are in.
+ */
+function readPdf(pdf) {
+  if (pdf.remote !== undefined && typeof pdf.remote !== "boolean") {
+    fail(`overlay.config.json has pdf.remote ${JSON.stringify(pdf.remote)}; it is true or false.`);
+  }
+  if (pdf.remote === true) {
+    if (pdf.publish !== undefined) {
+      fail("overlay.config.json has both pdf.remote and pdf.publish; they are two ways to show "
+           + "one PDF.");
+    }
+    return { pdfLicense: null, pdfRemote: true, pdfUrl: null };
+  }
+  if (pdf.publish === undefined) {
+    const route = text(pdf.route);
+    if (!route.startsWith(ROUTE_PREFIX) || route.includes("..")) {
+      fail(`overlay.config.json has pdf.route ${JSON.stringify(route)}; a route starts with `
+           + `"${ROUTE_PREFIX}" and carries no "..".`);
+    }
+    return { pdfLicense: null, pdfRemote: false, pdfUrl: route };
+  }
+  const license = isObject(pdf.publish) ? pdf.publish.license : undefined;
+  if (!OPEN_LICENSES.includes(license)) {
+    fail(`overlay.config.json has pdf.publish.license ${JSON.stringify(license ?? null)}; `
+         + `a published PDF carries one of ${OPEN_LICENSES.join(", ")}.`);
+  }
+  if (typeof pdf.file_name !== "string" || !PUBLISHED_FILE_NAME.test(pdf.file_name)) {
+    fail(`overlay.config.json has pdf.file_name ${JSON.stringify(pdf.file_name ?? null)}; `
+         + "a published PDF is one plain file name ending in .pdf.");
+  }
+  return { pdfLicense: license, pdfRemote: false, pdfUrl: `../${pdf.file_name}` };
+}
+
+/**
+ * The absolute URL the viewer fetches the PDF from: resolved against its own
+ * page, or, with `pdf.remote`, the `uri` of `source`, the records' PDF end.
+ */
+export function pdfFetchUrl(config, pageUrl, source) {
+  if (config.pdfRemote) {
+    return remotePdfUrl(source);
+  }
+  return new URL(config.pdfUrl, pageUrl).href;
+}
+
+/**
+ * The address a remote PDF is fetched from, held to what the tools hold one
+ * they fetch to: HTTPS, no credentials, no fragment, no port other than 443.
+ */
+function remotePdfUrl(source) {
+  const uri = text(isObject(source) ? source.uri : "");
+  let url = null;
+  try {
+    url = new URL(uri);
+  } catch {
+    // A relative reference, or no address at all: refused below.
+  }
+  if (!url || url.protocol !== "https:" || url.username || url.password || url.hash
+      || (url.port && url.port !== "443")) {
+    fail(`pdf.remote needs the PDF end's uri to be an HTTPS address with no credentials, fragment `
+         + `or port; it is ${JSON.stringify(uri)}.`);
+  }
+  return url.href;
 }
 
 // --- the bundle -------------------------------------------------------------
@@ -615,6 +689,9 @@ export function locatorText(locator) {
   }
   const printed = pageList(locator.printed);
   const physical = pageList(locator.physical);
+  if (printed && printed === physical) {
+    return printed;
+  }
   return [printed && `printed ${printed}`, physical && `PDF ${physical}`].filter(Boolean).join(", ");
 }
 
@@ -691,14 +768,83 @@ function card(record, end, context) {
     module: text(location.module),
     name: stripPrefix(fullName, context.stripPrefix) || fullName,
     provenanceMethod: isObject(recordExt.provenance) ? text(recordExt.provenance.method) : "",
+    // "" until `nameRepositories` finds a card of the same name from another repository
+    repository: "",
     reviewed: isObject(recordExt.provenance) && typeof recordExt.provenance.confirmed_by_human === "boolean"
       ? recordExt.provenance.confirmed_by_human : null,
     resolution: text(destination?.resolution),
     role: text(end.role),
+    proofContext: proofContext(ext.proof_context, href, end.title),
     snippet,
     target: ours ? cardTarget(end) : null,
+    uri: text(end.uri),
     verdict,
   };
+}
+
+/**
+ * A repository as a card names it: the last two parts of its address, which on
+ * a git host are the owner and the name (`an-owner/notes-companion`), without
+ * a closing `.git`; an address with no path is itself.
+ */
+export function repositoryName(uri) {
+  const value = text(uri).replace(/\/+$/, "").replace(/\.git$/, "");
+  const hosted = /^[a-z][a-z0-9+.-]*:\/\/[^/]+\/(.+)$/i.exec(value);
+  const parts = (hosted ? hosted[1] : value).split("/").filter(Boolean);
+  return parts.slice(-2).join("/") || value;
+}
+
+/**
+ * Says which repository a card is of where the item has another card of the
+ * same name from another one. A source formalized in two repositories links
+ * one declaration name twice, and nothing else on the two cards tells them
+ * apart; their ids are told apart the same way. A card whose name no other
+ * repository's card shares says nothing, so an overlay of one repository, or
+ * of a library and the dependencies under it, reads as it did.
+ */
+function nameRepositories(cards) {
+  const addresses = new Map();
+  for (const entry of cards) {
+    if (!addresses.has(entry.fullName)) {
+      addresses.set(entry.fullName, new Set());
+    }
+    addresses.get(entry.fullName).add(entry.uri);
+  }
+  for (const entry of cards) {
+    const shared = addresses.get(entry.fullName);
+    if (shared.size > 1) {
+      // two addresses that end alike are named in full
+      const names = new Set([...shared].map(repositoryName));
+      entry.repository = names.size === shared.size ? repositoryName(entry.uri) : entry.uri;
+      entry.id = `${entry.id}@${entry.repository}`;
+    }
+  }
+  return cards;
+}
+
+/** Optional, authored explanations. Source links stay on the card's already validated URL. */
+function proofContext(value, href, title) {
+  if (!isObject(value) || !text(value.declaration) || !text(value.conclusion)) return null;
+  const lines = lineRange(value.lines);
+  let enclosingHref = null;
+  if (href && lines) {
+    const url = new URL(href);
+    url.hash = `L${lines[0]}-L${lines[1]}`;
+    enclosingHref = url.href;
+  }
+  return {
+    declaration: text(value.declaration), lines, href: enclosingHref,
+    label: text(title) || text(value.conclusion),
+    conclusion: text(value.conclusion), explanation: text(value.explanation),
+    bookkeeping: text(value.bookkeeping),
+    notation: asArray(value.notation).filter(isObject)
+      .map(row => ({ math: text(row.math), lean: text(row.lean) })).filter(row => row.math && row.lean),
+  };
+}
+
+function proofGuide(value) {
+  if (!isObject(value) || !["direct", "helper", "chain"].includes(value.kind)) return null;
+  return { kind: value.kind, summary: text(value.summary) };
 }
 
 /**
@@ -879,6 +1025,7 @@ export function buildIndex(files, config, { pageOrigin = "", siteUrl = null } = 
           label: title || itemId,
           locator: locatorText(ext.locator),
           place: null,
+          proofGuide: proofGuide(ext.proof),
           relations: [],
           stepOf: null,
           steps: [],
@@ -934,7 +1081,7 @@ export function buildIndex(files, config, { pageOrigin = "", siteUrl = null } = 
   }
   for (const item of items.values()) {
     if (!isStep(item)) {
-      item.cards = orderCards(item.cards);
+      item.cards = orderCards(nameRepositories(item.cards));
     }
   }
   linkSteps(items, folders);
@@ -1031,6 +1178,31 @@ export function coverageWord(coverage) {
   return COVERAGE_WORDS[coverage] ?? "";
 }
 
+/**
+ * The one word for where an item stands: its coverage's, and for an item whose
+ * records name none, what its links show, a key declaration or no key
+ * declaration. A key link says a declaration is linked as the item's
+ * statement; only a record's own status says the item is formalized.
+ */
+export function standingWord(item) {
+  return coverageWord(text(item?.coverage)) || (firstKeyCard(item) ? "Key declaration" : "No key declaration");
+}
+
+/**
+ * The legend's word for a solid region. Every solid region has a key
+ * declaration, and "Formalized" is said only when each item drawn solid says
+ * so itself; where a producer wrote key links and no status, the word is the
+ * one that is true of them all.
+ */
+export function solidWord(items) {
+  for (const item of items) {
+    if (!isStep(item) && regionCoverage(item) === "formalized" && text(item?.coverage) !== "formalized") {
+      return "Key declaration";
+    }
+  }
+  return "Formalized";
+}
+
 /** The statuses whose region is drawn dashed: something, but not a key statement of the item. */
 const PARTIAL_COVERAGE = Object.freeze(["partial", "support_only", "example_only", "private_only"]);
 
@@ -1039,28 +1211,43 @@ const NUMBERING = /^(?:\p{L}?[\d.]*\d\p{L}?|[ivxlc]+|\p{L})$/iu;
 
 const SUBSCRIPTS = "₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐₑₒₓₔₕₖₗₘₙₚₛₜᵢᵣᵤᵥᵦᵧᵨᵩᵪⱼ";
 const SUPERSCRIPTS = "⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁱⁿʰʲʳʷʸˡˢˣᴬᴮᴰᴱᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾᴿᵀᵁⱽᵂᵃᵇᶜᵈᵉᶠᵍᵏᵐᵒᵖᵗᵘᵛᶻᵝᵞᵟᵠᵡ";
-const SCRIPT_RUN = new RegExp(`((?:[${SUBSCRIPTS}]\\p{M}*)+)|((?:[${SUPERSCRIPTS}]\\p{M}*)+)`, "gu");
+const SCRIPT_RUN = new RegExp(`([_^])\\{|((?:[${SUBSCRIPTS}]\\p{M}*)+)|((?:[${SUPERSCRIPTS}]\\p{M}*)+)`, "gu");
 
 /**
- * A title cut into `[kind, text]` runs: "text", or "sub" or "sup" with the
- * plain characters its script characters stand for. Firefox on macOS draws a
- * box for U+2096, U+2098 and U+2099 after a serif letter, and a plain letter
- * set small needs no font to hold them.
+ * A title cut into text/sub/sup runs. Unicode script characters are normalized
+ * to plain letters; braced scripts retain characters Unicode cannot express,
+ * such as a capital S or [r,s]. Braces may nest, but no TeX commands or HTML
+ * are interpreted. The renderer handles each script's contents the same way.
  */
 export function scriptRuns(value) {
   const whole = text(value);
   const runs = [];
   let at = 0;
-  for (const match of whole.matchAll(SCRIPT_RUN)) {
-    if (match.index > at) {
-      runs.push(["text", whole.slice(at, match.index)]);
+  SCRIPT_RUN.lastIndex = 0;
+  for (let match; (match = SCRIPT_RUN.exec(whole));) {
+    let end = SCRIPT_RUN.lastIndex;
+    let kind, content;
+    if (match[1]) {
+      let depth = 1;
+      while (end < whole.length && depth) {
+        if (whole[end] === "{") depth += 1;
+        if (whole[end] === "}") depth -= 1;
+        end += 1;
+      }
+      // A malformed or empty script remains literal text.
+      if (depth || end === SCRIPT_RUN.lastIndex + 1) continue;
+      kind = match[1] === "_" ? "sub" : "sup";
+      content = whole.slice(SCRIPT_RUN.lastIndex, end - 1);
+      SCRIPT_RUN.lastIndex = end;
+    } else {
+      kind = match[2] ? "sub" : "sup";
+      content = match[0].normalize("NFKC");
     }
-    runs.push([match[1] ? "sub" : "sup", match[0].normalize("NFKC")]);
-    at = match.index + match[0].length;
+    if (match.index > at) runs.push(["text", whole.slice(at, match.index)]);
+    runs.push([kind, content]);
+    at = end;
   }
-  if (at < whole.length) {
-    runs.push(["text", whole.slice(at)]);
-  }
+  if (at < whole.length) runs.push(["text", whole.slice(at)]);
   return runs;
 }
 
@@ -1118,7 +1305,7 @@ export function stepCards(item) {
       groups.set(key, { ...entry, ranges: [] });
     }
     if (entry.lines || entry.snippet) {
-      groups.get(key).ranges.push({ lines: entry.lines, snippet: entry.snippet });
+      groups.get(key).ranges.push({ lines: entry.lines, snippet: entry.snippet, target: entry.target });
     }
   }
   return [...groups.values()];
@@ -1152,6 +1339,17 @@ export function stepParts(item, items) {
  */
 export function stepRelation(item, { minimal = false } = {}) {
   const shown = asArray(item?.relations).filter((relation) => !minimal || relation !== "exactMatch");
+  // The guide describes the correspondence, not a stronger claim of formal equivalence.
+  // Absence and broader/narrower claims must never be hidden by an authored guide.
+  const guide = isStep(item) && item.proofGuide;
+  if (guide && asArray(item.relations).every(r => ["exactMatch", "closeMatch"].includes(r))) {
+    const count = stepCards(item).length;
+    return {
+      word: guide.kind === "chain" ? `${count} linked lemmas`
+        : guide.kind === "helper" ? "Helper lemma" : "Proof excerpt",
+      title: [guide.summary, ...shown.map(r => RELATION_SUMMARIES[r] ?? "")].filter(Boolean).join(" "),
+    };
+  }
   return {
     title: shown.map((relation) => RELATION_SUMMARIES[relation] ?? "").filter(Boolean).join(" "),
     word: shown.map((relation) => RELATION_WORDS[relation] ?? relation).join(", "),

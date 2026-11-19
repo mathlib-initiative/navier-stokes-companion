@@ -29,15 +29,25 @@ python3 pdf-overlay/tools/build_site.py       # publish into an already-built si
 
 The PDF is fetched over HTTPS from the URLs the annotations' PDF ends name,
 verified against their sha256, cached under `pdf.cache_dir` and served only on
-loopback at `pdf.route`; it is never committed. `build_site.py` copies the
-viewer and the bundle into `<site.output_root>/<site.mount>/` and the
-annotation files into `<site.output_root>/annotations/`; a declaration's
-rendered page is a page of `<site.output_root>`. It also writes
+loopback at `pdf.route`; it is never committed. A PDF under an open license
+may be published with the site instead: with `pdf.publish` naming its license,
+`build_site.py` also copies the verified PDF to `<site.mount>/<pdf.file_name>`,
+and the built site works from a static host such as GitHub Pages
+(`docs/overlay.md` section 3 in the formal-companion skill). A PDF with no
+open license that sits at a public address is shown from such a host with
+`pdf.remote: true`: no PDF is copied, and the built viewer fetches it from
+that address in the reader's browser and verifies it (the same section).
+
+`build_site.py` copies the viewer and the bundle into
+`<site.output_root>/<site.mount>/` and the annotation files into
+`<site.output_root>/annotations/`; a declaration's rendered page is a page
+of `<site.output_root>`. It also writes
 `<site.mount>/verso.json` from the site's Verso pages: each card's
 statement with its tokens and hovers (the viewer draws the key cards'). A
 site without them gets your committed `pdf-overlay/verso.json`, less the
 statements whose snippet changed since, or an empty one; a committed file
-cut from a build of a commit no card pins is refused.
+cut from a build of a commit no card pins is refused, and so is one with a
+statement whose card pins a release tag rather than a full commit.
 
 ## Checking it in CI
 
@@ -62,3 +72,10 @@ cf overlay check <companion>
 ```
 
 `cf overlay` writes only here and in `annotations/`.
+
+## Reading the PDF alone
+
+Choose **Read PDF** in the viewer's top bar to hide the annotation boxes and
+Lean panel. Page, zoom and rotation controls still work, and the PDF text is
+selectable. Choose **Show links**, or press Escape, to restore the annotations
+and your selected passage. Reading mode lasts for the current visit.
